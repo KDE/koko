@@ -50,7 +50,7 @@ RowLayout {
         radius: width * 0.5
     }
 
-    Label {
+    PlasmaComponents.Label {
         id: label
     }
 }

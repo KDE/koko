@@ -24,8 +24,8 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
 GridView {
-    cellWidth: 350
-    cellHeight: 350
+    cellWidth: 250
+    cellHeight: 250
 
     model: ListModel {
         ListElement {
@@ -69,8 +69,8 @@ GridView {
     delegate: ColumnLayout {
         Rectangle {
             color: "black"
-            width: 300
-            height: 300
+            width: 200
+            height: 200
         }
 
         Label {

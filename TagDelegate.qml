@@ -23,6 +23,8 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
+import org.kde.plasma.components 2.0 as PlasmaComponents
+
 RowLayout {
     Rectangle {
         width: label.height * 0.5
@@ -32,7 +34,7 @@ RowLayout {
         radius: width * 0.5
     }
 
-    Label {
+    PlasmaComponents.Label {
         id: label
         text: model.name
     }

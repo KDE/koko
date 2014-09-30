@@ -23,29 +23,38 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
+import org.kde.plasma.components 2.0 as PlasmaComponents
+
 ColumnLayout {
-    Label {
+    PlasmaComponents.Label {
         text: "Navigation"
         font.bold: true
+        Layout.fillWidth: true
     }
 
-    Button {
+    PlasmaComponents.ToolButton {
         iconName: "system-search"
         text: "Compose Filter"
+        Layout.fillWidth: true
     }
-    Button {
+    PlasmaComponents.ToolButton {
         iconName: "object-flip-vertical"
         text: "Show All"
+        Layout.fillWidth: true
     }
-    Button {
+    PlasmaComponents.ToolButton {
         iconName: "object-flip-vertical"
         text: "Not Tagged"
+        Layout.fillWidth: true
     }
 
     ColumnLayout {
-        Label {
+        Layout.fillWidth: true
+
+        PlasmaComponents.Label {
             text: "Pinned Filters"
             font.bold: true
+            Layout.fillWidth: true
         }
 
         Tag {

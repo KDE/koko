@@ -23,23 +23,25 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
+import org.kde.plasma.components 2.0 as PlasmaComponents
+
 ApplicationWindow {
     id: window
-    color: "#192629"
+//    color: "#192629"
 
     toolBar: ToolBar {
         RowLayout {
             anchors.fill: parent
-            Button {
+            PlasmaComponents.ToolButton {
                 iconName: "go-previous"
                 text: "Previous"
             }
-            Button {
+            PlasmaComponents.ToolButton {
                 iconName: "go-next"
                 text: "Next"
             }
             // TODO: Add seperator?
-            Button {
+            PlasmaComponents.ToolButton {
                 iconName: "document-share"
                 text: "Share"
             }
@@ -48,7 +50,7 @@ ApplicationWindow {
             Item {
                 Layout.fillWidth: true
             }
-            Button {
+            PlasmaComponents.ToolButton {
                 iconName: "view-fullscreen"
                 text: "Fullscreen"
                 Layout.alignment: Qt.AlignRight
@@ -61,20 +63,19 @@ ApplicationWindow {
 
         Navigation {
             id: navigation
-            Layout.minimumWidth: 600
-            Layout.maximumWidth: 600
+            Layout.minimumWidth: 400
+            Layout.maximumWidth: 400
 
             Layout.fillHeight: true
             Layout.alignment: Qt.AlignTop
         }
 
-        /*
         ImageGrid {
-            Layout.alignment: Qt.AlignTop | Qt.AlignCenter
-            Layout.maximumWidth: 600
             id: images
+            Layout.alignment: Qt.AlignTop | Qt.AlignCenter
+            Layout.fillHeight: true
+            Layout.fillWidth: true
         }
-        */
 
         ColumnLayout {
             Layout.alignment: Qt.AlignTop | Qt.AlignRight
