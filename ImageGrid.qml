@@ -24,6 +24,9 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
 GridView {
+    id: root
+    signal imageSelected(string filePath)
+
     cellWidth: 250
     cellHeight: 250
 
@@ -77,6 +80,11 @@ GridView {
             text: model.name
             horizontalAlignment: Text.AlignHCenter
             Layout.fillWidth: true
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: root.imageSelected("/home/vishesh/Images/p.jpeg")
         }
     }
 }

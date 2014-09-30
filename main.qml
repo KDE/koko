@@ -58,36 +58,20 @@ ApplicationWindow {
         }
     }
 
-    RowLayout {
-        anchors.fill: parent
-
-        Navigation {
-            id: navigation
-            Layout.minimumWidth: 400
-            Layout.maximumWidth: 400
-
-            Layout.fillHeight: true
-            Layout.alignment: Qt.AlignTop
-        }
-
-        ImageGrid {
-            id: images
-            Layout.alignment: Qt.AlignTop | Qt.AlignCenter
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
-
-        ColumnLayout {
-            Layout.alignment: Qt.AlignTop | Qt.AlignRight
-            Layout.maximumWidth: 500
-            Layout.fillHeight: true
-            Actions {
-                id: actions
+    StackView {
+        id: view
+        initialItem: MainScreen {
+            id: mainScreen
+            onImageSelected: {
+                view.push(imageScreenComponent)
             }
+        }
+    }
 
-            TagEditor {
-                id: tagEditor
-            }
+    Component {
+        id: imageScreenComponent
+        ImageViewingScreen {
+            id: imageViewer
         }
     }
 }
