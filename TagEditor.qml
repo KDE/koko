@@ -25,13 +25,15 @@ import QtQuick.Controls 1.0
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 ColumnLayout {
-    PlasmaComponents.Label {
+    PlasmaExtras.Heading {
         text: "Tags"
     }
     PlasmaComponents.TextField {
         text: "Add Tag"
+        Layout.fillWidth: true
     }
 
     Tag {
