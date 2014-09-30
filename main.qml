@@ -22,6 +22,7 @@
 import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
+import QtQuick.Window 2.1
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
@@ -54,6 +55,14 @@ ApplicationWindow {
                 iconName: "view-fullscreen"
                 text: "Fullscreen"
                 Layout.alignment: Qt.AlignRight
+
+                onClicked: {
+                    if (window.visibility == Window.FullScreen)
+                        window.visibility = Window.Maximized
+                    else
+                        window.visibility = Window.FullScreen
+                }
+
             }
         }
     }
