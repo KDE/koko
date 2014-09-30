@@ -26,8 +26,10 @@ import QtQuick.Controls 1.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 RowLayout {
-    Rectangle {
-        color: "green"
+    property alias filePath: image.source
+
+    Image {
+        id: image
 
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -35,7 +37,7 @@ RowLayout {
 
     ColumnLayout {
         Layout.alignment: Qt.AlignTop | Qt.AlignRight
-        Layout.maximumWidth: 500
+        Layout.minimumWidth: 500
         Layout.fillHeight: true
 
         Actions {

@@ -72,15 +72,14 @@ ApplicationWindow {
         initialItem: MainScreen {
             id: mainScreen
             onImageSelected: {
-                view.push(imageScreenComponent)
+                imageViewer.filePath = filePath
+                view.push(imageViewer)
             }
         }
     }
 
-    Component {
-        id: imageScreenComponent
-        ImageViewingScreen {
-            id: imageViewer
-        }
+    ImageViewingScreen {
+        id: imageViewer
+        visible: false
     }
 }

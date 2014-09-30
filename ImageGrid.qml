@@ -33,47 +33,62 @@ GridView {
     model: ListModel {
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06820.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06821.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06822.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06823.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06824.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06825.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06826.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06827.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06828.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06829.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06830.JPG"
         }
         ListElement {
             name: "Name of Picture"
+            url: "/home/vishesh/Images/bs/DSC06831.JPG"
         }
     }
 
     delegate: ColumnLayout {
-        Rectangle {
-            color: "black"
-            width: 200
-            height: 200
+        Image {
+            source: model.url
+            asynchronous: true
+            fillMode: Image.PreserveAspectFit
+
+            Layout.maximumWidth: 200
+            Layout.maximumHeight: 200
         }
 
         Label {
@@ -84,7 +99,7 @@ GridView {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: root.imageSelected("/home/vishesh/Images/p.jpeg")
+            onClicked: root.imageSelected(model.url)
         }
     }
 }
