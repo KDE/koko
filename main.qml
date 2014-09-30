@@ -84,10 +84,8 @@ ApplicationWindow {
                 id: actions
             }
 
-            Rectangle {
-                color: "#31363B"
-                anchors.fill: parent
-                z: -1
+            TagEditor {
+                id: tagEditor
             }
         }
     }
