@@ -31,6 +31,7 @@ ColumnLayout {
         text: "Navigation"
         font.bold: true
         Layout.fillWidth: true
+        level: 2
     }
 
     PlasmaComponents.ToolButton {
@@ -52,10 +53,11 @@ ColumnLayout {
     ColumnLayout {
         Layout.fillWidth: true
 
-        PlasmaComponents.Label {
+        PlasmaExtras.Heading {
             text: "Pinned Filters"
             font.bold: true
             Layout.fillWidth: true
+            level: 4
         }
 
         Tag {

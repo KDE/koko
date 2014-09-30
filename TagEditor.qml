@@ -30,6 +30,8 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 ColumnLayout {
     PlasmaExtras.Heading {
         text: "Tags"
+        level: 2
+        font.bold: true
     }
     PlasmaComponents.TextField {
         text: "Add Tag"

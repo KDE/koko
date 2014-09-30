@@ -31,6 +31,8 @@ ColumnLayout {
     PlasmaExtras.Heading {
         Layout.fillWidth: true
         text: "Actions"
+        level: 2
+        font.bold: true
     }
 
     PlasmaComponents.ToolButton {
