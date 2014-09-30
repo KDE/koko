@@ -27,28 +27,33 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 ColumnLayout {
-    Label {
+    PlasmaComponents.Label {
+        Layout.fillWidth: true
         text: "Actions"
-        font.bold: true
-        color: "white"
     }
-    Button {
+
+    PlasmaComponents.ToolButton {
+        Layout.fillWidth: true
         iconName: "edit-rename"
         text: "Rename"
     }
-    Button {
+    PlasmaComponents.ToolButton {
+        Layout.fillWidth: true
         iconName: "object-flip-vertical"
         text: "Flip"
     }
-    Button {
+    PlasmaComponents.ToolButton {
+        Layout.fillWidth: true
         iconName: "object-flip-horizontal"
         text: "Mirror"
     }
-    Button {
+    PlasmaComponents.ToolButton {
+        Layout.fillWidth: true
         iconName: "object-rotate-left"
         text: "Rotate 9O left"
     }
-    Button {
+    PlasmaComponents.ToolButton {
+        Layout.fillWidth: true
         iconName: "object-rotate-right"
         text: "Rotate 9O right"
     }
