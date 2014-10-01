@@ -31,11 +31,18 @@ ColumnLayout {
         text: "Favorite Tags"
         font.bold: true
         level: 4
+
+        Layout.fillWidth: true
     }
 
     ListView {
         height: 500
-        delegate: TagDelegate {}
+        Layout.fillWidth: true
+
+        delegate: Tag {
+            text: model.name
+            color: model.color
+        }
         model: ListModel {
             ListElement {
                 name: "Biology Presentation"

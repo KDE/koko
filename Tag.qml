@@ -21,36 +21,19 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 1.0
+import QtQuick.Controls 1.0 as QtControls
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 
-RowLayout {
-    id: root
-    property alias color: circle.color
-    property alias text: label.text
-    signal tagRemoved()
+QtControls.ToolButton {
+    id: button
 
-    ToolButton {
-        iconName: "tab-close"
-        Layout.minimumWidth: Layout.maximumWidth
-        Layout.minimumHeight: Layout.maximumHeight
-        Layout.maximumWidth: label.height * 0.5
-        Layout.maximumHeight: label.height * 0.5
+    property font font: theme.defaultFont
+    property string color: "green"
+    property bool flat: true
 
-        onClicked: tagRemoved()
-    }
+    style: TagButtonStyle {}
 
-    Rectangle {
-        id: circle
-        width: label.height * 0.5
-        height: width
-
-        radius: width * 0.5
-    }
-
-    PlasmaComponents.Label {
-        id: label
-    }
+    iconName: "tab-close"
 }

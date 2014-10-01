@@ -41,13 +41,16 @@ ColumnLayout {
     Tag {
         color: "#BABF3B"
         text: "Food"
+        Layout.fillWidth: true
     }
     Tag {
         color: "#23DB19"
         text: "Healthy"
+        Layout.fillWidth: true
     }
     Tag {
         color: "#DA1819"
         text: "Too much"
+        Layout.fillWidth: true
     }
 }
