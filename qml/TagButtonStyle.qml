@@ -64,16 +64,14 @@ QtQuickControlStyle.ButtonStyle {
             }
 
             PlasmaCore.IconItem {
-                id: icon
                 source: "tab-close"
                 anchors.verticalCenter: parent.verticalCenter
 
                 implicitHeight: label.implicitHeight * 0.75
                 implicitWidth: implicitHeight
 
-                Layout.minimumWidth: valid ? parent.height * 0.75: 0
+                Layout.minimumWidth: parent.height * 0.75
                 Layout.maximumWidth: Layout.minimumWidth
-                visible: valid
                 Layout.minimumHeight: Layout.minimumWidth
                 Layout.maximumHeight: Layout.minimumWidth
                 active: control.hovered
@@ -105,7 +103,7 @@ QtQuickControlStyle.ButtonStyle {
                 Layout.fillWidth: true
                 height: parent.height
                 color: control.hovered || !control.flat ? theme.buttonTextColor : theme.textColor
-                horizontalAlignment: icon.valid ? Text.AlignLeft : Text.AlignHCenter
+                horizontalAlignment: Text.AlignLeft
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
             }
