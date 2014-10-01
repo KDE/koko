@@ -65,7 +65,7 @@ QtQuickControlStyle.ButtonStyle {
 
             PlasmaCore.IconItem {
                 id: icon
-                source: control.iconName || control.iconSource
+                source: "tab-close"
                 anchors.verticalCenter: parent.verticalCenter
 
                 implicitHeight: label.implicitHeight * 0.75
@@ -78,6 +78,11 @@ QtQuickControlStyle.ButtonStyle {
                 Layout.maximumHeight: Layout.minimumWidth
                 active: control.hovered
                 colorGroup: control.hovered || !control.flat ? PlasmaCore.Theme.ButtonColorGroup : PlasmaCore.Theme.NormalColorGroup
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: control.tagRemoved()
+                }
             }
 
             Rectangle {

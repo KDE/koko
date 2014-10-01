@@ -30,10 +30,9 @@ QtControls.ToolButton {
     id: button
 
     property font font: theme.defaultFont
-    property string color: "green"
+    property string color
     property bool flat: true
+    signal tagRemoved
 
     style: TagButtonStyle {}
-
-    iconName: "tab-close"
 }
