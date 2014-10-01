@@ -63,14 +63,24 @@ ColumnLayout {
         Tag {
             color: "red"
             text: "Wallpapers"
+            Layout.fillWidth: true
         }
         Tag {
             color: "blue"
             text: "School"
+            Layout.fillWidth: true
         }
     }
 
     FavoriteTags {
         id: favoriteTags
+    }
+
+    Rectangle {
+        SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
+
+        color: myPalette.alternateBase
+        anchors.fill: parent
+        z: -1
     }
 }

@@ -43,7 +43,7 @@ QtQuickControlStyle.ButtonStyle {
         RowLayout {
             id: buttonContent
             anchors.fill: parent
-            spacing: units.smallSpacing
+            spacing: units.smallSpacing * 2
 
             Layout.preferredHeight: Math.max(units.iconSizes.small, label.implicitHeight)
 

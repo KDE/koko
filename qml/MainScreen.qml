@@ -26,25 +26,44 @@ import QtQuick.Controls 1.0
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
 RowLayout {
-    property alias filePath: image.source
+    id: root
+    signal imageSelected(string filePath)
 
-    Image {
-        id: image
+    Navigation {
+        id: navigation
+        Layout.minimumWidth: 400
+        Layout.maximumWidth: 400
 
-        Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.alignment: Qt.AlignTop
+    }
+
+    ImageGrid {
+        id: images
+        Layout.alignment: Qt.AlignTop | Qt.AlignCenter
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+
+        onImageSelected: root.imageSelected(filePath)
     }
 
     ColumnLayout {
         Layout.alignment: Qt.AlignTop | Qt.AlignRight
-        Layout.minimumWidth: 500
+        Layout.maximumWidth: 500
         Layout.fillHeight: true
-
         Actions {
             id: actions
         }
+
         TagEditor {
             id: tagEditor
+        }
+
+        Rectangle {
+            SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
+            color: myPalette.alternateBase
+            anchors.fill: parent
+            z: -1
         }
     }
 }
