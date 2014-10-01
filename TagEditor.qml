@@ -34,7 +34,8 @@ ColumnLayout {
         font.bold: true
     }
     PlasmaComponents.TextField {
-        text: "Add Tag"
+        placeholderText: "Add Tag"
+        clearButtonShown: true
         Layout.fillWidth: true
     }
 
