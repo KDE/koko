@@ -27,6 +27,8 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
+import org.kde.gallery 0.1 as Gallery
+
 ColumnLayout {
     PlasmaExtras.Heading {
         text: "Tags"
@@ -34,24 +36,35 @@ ColumnLayout {
         font.bold: true
     }
     PlasmaComponents.TextField {
+        id: input
         placeholderText: "Add Tag"
         clearButtonShown: true
         Layout.fillWidth: true
+
+        onAccepted: {
+            tagModel.addTag(input.text);
+            input.text = "";
+        }
     }
 
-    Tag {
-        color: "#BABF3B"
-        text: "Food"
+    ListView {
+        height: 500
         Layout.fillWidth: true
-    }
-    Tag {
-        color: "#23DB19"
-        text: "Healthy"
-        Layout.fillWidth: true
-    }
-    Tag {
-        color: "#DA1819"
-        text: "Too much"
-        Layout.fillWidth: true
+
+        delegate: Tag {
+            text: model.display
+            color: model.color
+            width: view.width
+
+            onTagRemoved: {
+                console.log("Remove me!!");
+                view.model.remove(model.index)
+            }
+        }
+
+        model: Gallery.TagModel {
+            id: tagModel
+            tags: ["Fire", "Flower", "Hunger"]
+        }
     }
 }
