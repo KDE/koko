@@ -55,6 +55,12 @@ RowLayout {
             id: actions
         }
 
+        PlasmaExtras.Heading {
+            text: "Tags"
+            level: 2
+            font.bold: true
+        }
+
         TagEditor {
             id: tagEditor
         }

@@ -32,11 +32,6 @@ import org.kde.gallery 0.1 as Gallery
 ColumnLayout {
     property alias tags: tagModel.tags
 
-    PlasmaExtras.Heading {
-        text: "Tags"
-        level: 2
-        font.bold: true
-    }
     PlasmaComponents.TextField {
         id: input
         placeholderText: "Add Tag"
@@ -58,7 +53,7 @@ ColumnLayout {
             property variant theModel: model
             text: model.display
             color: model.color
-            width: view.width
+            width: listView.width
 
             onTagRemoved: {
                 listView.model.removeRows(model.index, 1)
