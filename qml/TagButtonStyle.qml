@@ -63,6 +63,13 @@ QtQuickControlStyle.ButtonStyle {
                 }
             }
 
+            //
+            // We're making an icon item which is also present in Tag.qml
+            // This one is invisible, and the one in Tag.qml overwrites it
+            // We need to overwrite it cause we need a MouseArea in this.
+            // The MouseaArea in AbstractButton overwrites any MouseaArea
+            // in the style and makes it useless.
+            //
             PlasmaCore.IconItem {
                 source: "tab-close"
                 anchors.verticalCenter: parent.verticalCenter
@@ -74,13 +81,9 @@ QtQuickControlStyle.ButtonStyle {
                 Layout.maximumWidth: Layout.minimumWidth
                 Layout.minimumHeight: Layout.minimumWidth
                 Layout.maximumHeight: Layout.minimumWidth
-                active: control.hovered
-                colorGroup: control.hovered || !control.flat ? PlasmaCore.Theme.ButtonColorGroup : PlasmaCore.Theme.NormalColorGroup
 
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: control.tagRemoved()
-                }
+                visible: true
+                opacity: 0
             }
 
             Rectangle {

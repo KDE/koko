@@ -35,4 +35,23 @@ QtControls.ToolButton {
     signal tagRemoved
 
     style: TagButtonStyle {}
+
+    PlasmaCore.IconItem {
+        id: removeButton
+        source: "tab-close"
+        anchors {
+            left: parent.left
+            leftMargin: 6
+            verticalCenter: parent.verticalCenter
+        }
+
+        // FIXME: Why * 0.6
+        height: parent.height * 0.6
+        width: height
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: tagRemoved()
+        }
+    }
 }
