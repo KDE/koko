@@ -35,27 +35,8 @@ ColumnLayout {
         Layout.fillWidth: true
     }
 
-    ListView {
-        height: 500
+    TagView {
+        tags: ["Biology Presentation", "Beach", "Green"]
         Layout.fillWidth: true
-
-        delegate: Tag {
-            text: model.name
-            color: model.color
-        }
-        model: ListModel {
-            ListElement {
-                name: "Biology Presentation"
-                color: "orange"
-            }
-            ListElement {
-                name: "Beach"
-                color: "green"
-            }
-            ListElement {
-                name: "Wow"
-                color: "cyan"
-            }
-        }
     }
 }
