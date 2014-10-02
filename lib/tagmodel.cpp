@@ -89,8 +89,11 @@ bool TagModel::removeRows(int row, int count, const QModelIndex& parent)
         return false;
     }
 
-    beginRemoveRows(parent, row, row + count);
-    //m_tags.remove(row, count);
+    beginRemoveRows(parent, row, row + count - 1);
+    while (count) {
+        m_tags.removeAt(row);
+        count--;
+    }
     endRemoveRows();
 
     return QAbstractItemModel::removeRows(row, count, parent);

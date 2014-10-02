@@ -37,9 +37,10 @@ public:
     virtual QHash<int, QByteArray> roleNames() const;
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
-    virtual bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex());
 
 public slots:
+    virtual bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex());
+
     QStringList tags() const;
     void setTags(const QStringList& tags);
     void addTag(const QString& tag);

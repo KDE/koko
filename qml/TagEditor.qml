@@ -48,17 +48,19 @@ ColumnLayout {
     }
 
     ListView {
+        id: listView
         height: 500
         Layout.fillWidth: true
 
         delegate: Tag {
+            property variant theModel: model
             text: model.display
             color: model.color
             width: view.width
 
             onTagRemoved: {
                 console.log("Remove me!!");
-                view.model.remove(model.index)
+                listView.model.removeRows(model.index, 1)
             }
         }
 
