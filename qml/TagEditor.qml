@@ -31,6 +31,7 @@ import org.kde.gallery 0.1 as Gallery
 
 ColumnLayout {
     property alias tags: tagModel.tags
+    property alias colors: tagModel.colors
 
     PlasmaComponents.TextField {
         id: input

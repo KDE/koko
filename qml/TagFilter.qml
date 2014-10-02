@@ -38,7 +38,7 @@ ColumnLayout {
         property bool flat: true
         signal tagRemoved
 
-        property var colors: ["red", "green", "black"]
+        property alias colors: editor.colors
         text: "Wallpapers"
 
         style: TagFilterButtonStyle {}
@@ -60,6 +60,7 @@ ColumnLayout {
     RowLayout {
         Layout.alignment: Qt.AlignTop
 
+        // Padding
         Item {
             Layout.minimumWidth: units.largeSpacing
             Layout.maximumWidth: Layout.minimumWidth

@@ -65,6 +65,9 @@ void TagModel::setTags(const QStringList& tags)
     beginResetModel();
     m_tags = tags;
     endResetModel();
+
+    emit tagsChanged();
+    emit colorsChanged();
 }
 
 QStringList TagModel::tags() const
@@ -81,6 +84,9 @@ void TagModel::addTag(const QString& tag)
     beginInsertRows(QModelIndex(), m_tags.size(), m_tags.size());
     m_tags << tag;
     endInsertRows();
+
+    emit tagsChanged();
+    emit colorsChanged();
 }
 
 bool TagModel::removeRows(int row, int count, const QModelIndex& parent)
@@ -96,5 +102,18 @@ bool TagModel::removeRows(int row, int count, const QModelIndex& parent)
     }
     endRemoveRows();
 
+    emit tagsChanged();
+    emit colorsChanged();
+
     return QAbstractItemModel::removeRows(row, count, parent);
+}
+
+QStringList TagModel::colors() const
+{
+    QStringList list;
+    for (int i = 0; i < m_tags.size(); i++) {
+        list << QStringLiteral("green");
+    }
+
+    return list;
 }

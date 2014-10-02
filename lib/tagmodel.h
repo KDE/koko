@@ -25,7 +25,8 @@
 class TagModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QStringList tags READ tags WRITE setTags)
+    Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY tagsChanged)
+    Q_PROPERTY(QStringList colors READ colors NOTIFY colorsChanged)
 
 public:
     TagModel(QObject* parent = 0);
@@ -38,12 +39,21 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
+signals:
+    void tagsChanged();
+    void colorsChanged();
+
 public slots:
     virtual bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex());
 
     QStringList tags() const;
     void setTags(const QStringList& tags);
     void addTag(const QString& tag);
+
+    /**
+     * Return the colors of all the tags
+     */
+    QStringList colors() const;
 
 private:
     QStringList m_tags;
