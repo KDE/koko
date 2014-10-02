@@ -60,14 +60,14 @@ ColumnLayout {
             level: 4
         }
 
-        Tag {
-            color: "red"
+        TagFilter {
             text: "Wallpapers"
+            tags: ["TagA", "TagB"]
             Layout.fillWidth: true
         }
-        Tag {
-            color: "blue"
+        TagFilter {
             text: "School"
+            tags: ["Chemistry", "Homework", "Iodine"]
             Layout.fillWidth: true
         }
     }

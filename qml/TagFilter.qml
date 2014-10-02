@@ -29,6 +29,8 @@ ColumnLayout {
     id: rootLayout
 
     signal tagRemoved
+    property alias text: button.text
+    property alias tags: editor.tags
 
     ToolButton {
         id: button
@@ -39,7 +41,6 @@ ColumnLayout {
         signal tagRemoved
 
         property alias colors: editor.colors
-        text: "Wallpapers"
 
         style: TagFilterButtonStyle {}
 

@@ -49,6 +49,8 @@ ColumnLayout {
         id: listView
         height: 500
         Layout.fillWidth: true
+        Layout.minimumHeight: contentHeight
+        Layout.maximumHeight: Layout.minimumHeight
 
         delegate: Tag {
             property variant theModel: model
