@@ -29,24 +29,46 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 import org.kde.gallery 0.1 as Gallery
 
-ColumnLayout {
-    property alias tagModel: listView.model
-    property alias tags: listView.tags
-    property alias colors: listView.colors
+ListView {
+    id: listView
+    height: 500
+    Layout.fillWidth: true
+    Layout.minimumHeight: contentHeight
+    Layout.maximumHeight: Layout.minimumHeight
 
-    PlasmaComponents.TextField {
-        id: input
-        placeholderText: "Add Tag"
-        clearButtonShown: true
-        Layout.fillWidth: true
+    property alias tags: tagModel.tags
+    property alias colors: tagModel.colors
 
-        onAccepted: {
-            tagModel.addTag(input.text);
-            input.text = "";
+    delegate: Tag {
+        property variant theModel: model
+        text: model.display
+        color: model.color
+        width: listView.width
+
+        onTagRemoved: {
+            listView.model.removeRows(model.index, 1)
         }
     }
 
-    TagView {
-        id: listView
+    model: Gallery.TagModel {
+        id: tagModel
+        tags: ["Fire", "Flower", "Hunger"]
+    }
+
+    //
+    // Animations
+    //
+    add: Transition {
+        NumberAnimation { property: "opacity"; from: 0; to: 1.0; duration: 400 }
+        NumberAnimation { property: "scale"; from: 0; to: 1.0; duration: 400 }
+    }
+
+    displaced: Transition {
+        NumberAnimation { properties: "x,y"; duration: 400; easing.type: Easing.OutBounce }
+    }
+
+    remove: Transition {
+        NumberAnimation { property: "opacity"; from: 1.0; to: 0; duration: 400 }
+        NumberAnimation { property: "scale"; from: 1.0; to: 0; duration: 400 }
     }
 }
