@@ -19,6 +19,8 @@
 
 #include "tagmodel.h"
 
+static QStringList s_tags = {"green", "blue", "red", "black", "orange", "purple", "yellow", "cyan", "brown"};
+
 TagModel::TagModel(QObject* parent)
     : QAbstractListModel(parent)
 {
@@ -45,7 +47,11 @@ QVariant TagModel::data(const QModelIndex& index, int role) const
     }
 
     case ColorRole:
-        return QStringLiteral("green");
+        if (index.row() < s_tags.size()) {
+            return s_tags.at(index.row());
+        } else {
+            return QStringLiteral("maroon");
+        }
     }
 
     return QVariant();
@@ -110,10 +116,5 @@ bool TagModel::removeRows(int row, int count, const QModelIndex& parent)
 
 QStringList TagModel::colors() const
 {
-    QStringList list;
-    for (int i = 0; i < m_tags.size(); i++) {
-        list << QStringLiteral("green");
-    }
-
-    return list;
+    return s_tags.mid(0, m_tags.size());
 }
