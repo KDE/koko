@@ -28,6 +28,8 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 ColumnLayout {
     id: rootLayout
 
+    signal tagRemoved
+
     ToolButton {
         id: button
 
@@ -45,8 +47,13 @@ ColumnLayout {
         Layout.alignment: Qt.AlignTop
 
         property bool expanded: false
-        onClicked: {
-            expanded = !expanded
+
+        //
+        // EVIL: The main button has a MouseArea which interfers with our mousea
+        // area in the style
+        //
+        Component.onCompleted: {
+            __behavior.propagateComposedEvents = true
         }
     }
 

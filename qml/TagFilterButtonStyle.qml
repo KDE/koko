@@ -78,6 +78,11 @@ QtQuickControlStyle.ButtonStyle {
                 colorGroup: control.hovered || !control.flat ? PlasmaCore.Theme.ButtonColorGroup : PlasmaCore.Theme.NormalColorGroup
 
                 visible: control.expanded
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: rootLayout.tagRemoved()
+                }
             }
 
             MultipleCircles {
@@ -121,6 +126,13 @@ QtQuickControlStyle.ButtonStyle {
 
                 visible: control.expanded ? true : control.hovered
                 Layout.alignment: Qt.AlignRight
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        control.expanded = !control.expanded
+                    }
+                }
             }
         }
     }
