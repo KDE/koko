@@ -68,6 +68,8 @@ QtControls.ApplicationWindow {
                     iconName: "transform-crop"
                     onClicked: {
                         clipRect.visible = !clipRect.visible
+                        // Marking the button as in use. It's an ugly way
+                        flat = !clipRect.visible
                         // Reset the clip rectangle?
                     }
                 }
