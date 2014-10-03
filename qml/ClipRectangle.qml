@@ -24,8 +24,8 @@ import QtQuick 2.1
 Item {
     id: root
     property var source
-    property rect rectangle: Qt.rect(topLeftHandle.x - source.x,
-                                     topLeftHandle.y - source.y,
+    property rect rectangle: Qt.rect(topLeftHandle.x + 10 - source.x,
+                                     topLeftHandle.y + 10 - source.y,
                                      bottomRightHandle.x - topLeftHandle.x + 1,
                                      bottomRightHandle.y - topLeftHandle.y + 1)
     property string color: "black"
@@ -51,8 +51,6 @@ Item {
 
         x: source.x
         y: source.y
-        xPadding: -radius
-        yPadding: -radius
 
         MouseArea {
             anchors.fill: parent
@@ -75,8 +73,6 @@ Item {
 
         x: source.x + source.width
         y: source.y + source.height
-        xPadding: -radius
-        yPadding: -radius
 
         MouseArea {
             anchors.fill: parent
@@ -98,9 +94,6 @@ Item {
         y: topLeftHandle.y
         radius: 10
         color: "white"
-
-        xPadding: -radius
-        yPadding: -radius
 
         MouseArea {
             anchors.fill: parent
@@ -125,9 +118,6 @@ Item {
         y: bottomRightHandle.y
         radius: 10
         color: "white"
-
-        xPadding: -radius
-        yPadding: -radius
 
         MouseArea {
             anchors.fill: parent
