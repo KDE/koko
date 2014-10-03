@@ -39,11 +39,18 @@ QtControls.ApplicationWindow {
     ColumnLayout {
         anchors.fill: parent
         Image {
+            id: img
             source: "/home/vishesh/Images/danbo.jpeg"
             fillMode: Image.PreserveAspectFit
 
             Layout.fillWidth: true
             Layout.fillHeight: true
+        }
+
+        ClipRectangle {
+            id: clipRect
+            source: img
+            visible: false
         }
 
         QtControls.ToolBar {
@@ -59,6 +66,10 @@ QtControls.ApplicationWindow {
                 }
                 PlasmaComponents.ToolButton {
                     iconName: "transform-crop"
+                    onClicked: {
+                        clipRect.visible = !clipRect.visible
+                        // Reset the clip rectangle?
+                    }
                 }
                 PlasmaComponents.ToolButton {
                     iconName: "trash-empty"

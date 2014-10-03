@@ -20,8 +20,17 @@
 import QtQuick 2.0
 
 Item {
-    property int radius : 50
+    property int radius
     property alias color : tagCircle.color
+
+    //
+    // Sometimes the circle is assumed to be at (x,y) but it isn't
+    // because it is drawn from (x,y). These variables can then
+    // be used to adjust where the circle is drawn.
+    // In the above example, it should be (-radius, -radius)
+    //
+    property int xPadding: 0
+    property int yPadding: 0
 
     width: radius * 2
     height: radius * 2
@@ -29,6 +38,10 @@ Item {
     Rectangle {
         id: tagCircle
         radius: parent.radius
-        anchors.fill: parent
+
+        width: parent.width
+        height: parent.height
+        x: xPadding
+        y: yPadding
     }
 }
