@@ -25,34 +25,36 @@ import QtQuick.Controls 1.0
 
 import org.kde.gallery 0.1 as Gallery
 
-GridView {
+ScrollView {
     id: root
     signal imageSelected(string filePath)
 
-    cellWidth: 250
-    cellHeight: 250
+    GridView {
+        cellWidth: 250
+        cellHeight: 250
 
-    model: Gallery.ImagesModel {}
+        model: Gallery.ImagesModel {}
 
-    delegate: ColumnLayout {
-        Image {
-            source: model.filePath
-            asynchronous: true
-            fillMode: Image.PreserveAspectFit
+        delegate: ColumnLayout {
+            Image {
+                source: model.filePath
+                asynchronous: true
+                fillMode: Image.PreserveAspectFit
 
-            Layout.maximumWidth: 200
-            Layout.maximumHeight: 200
-        }
+                Layout.maximumWidth: 200
+                Layout.maximumHeight: 200
+            }
 
-        Label {
-            text: model.display
-            horizontalAlignment: Text.AlignHCenter
-            Layout.fillWidth: true
-        }
+            Label {
+                text: model.display
+                horizontalAlignment: Text.AlignHCenter
+                Layout.fillWidth: true
+            }
 
-        MouseArea {
-            anchors.fill: parent
-            onClicked: root.imageSelected(model.filePath)
+            MouseArea {
+                anchors.fill: parent
+                onClicked: root.imageSelected(model.filePath)
+            }
         }
     }
 }
