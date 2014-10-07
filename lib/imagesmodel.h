@@ -1,4 +1,5 @@
 /*
+ * <one line to give the library's name and an idea of what it does.>
  * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
  *
  * This library is free software; you can redistribute it and/or
@@ -17,46 +18,27 @@
  *
  */
 
-#ifndef TAGMODEL_H
-#define TAGMODEL_H
+#ifndef IMAGESMODEL_H
+#define IMAGESMODEL_H
 
 #include <QAbstractListModel>
 
-class TagModel : public QAbstractListModel
+class ImagesModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY tagsChanged)
-    Q_PROPERTY(QStringList colors READ colors NOTIFY colorsChanged)
-
 public:
-    explicit TagModel(QObject* parent = 0);
+    explicit ImagesModel(QObject* parent = 0);
 
     enum Roles {
-        ColorRole = Qt::UserRole + 1
+        FilePathRole = Qt::UserRole + 1
     };
 
     virtual QHash<int, QByteArray> roleNames() const;
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
-signals:
-    void tagsChanged();
-    void colorsChanged();
-
-public slots:
-    virtual bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex());
-
-    QStringList tags() const;
-    void setTags(const QStringList& tags);
-    void addTag(const QString& tag);
-
-    /**
-     * Return the colors of all the tags
-     */
-    QStringList colors() const;
-
 private:
-    QStringList m_tags;
+    QStringList m_images;
 };
 
-#endif // TAGMODEL_H
+#endif // IMAGESMODEL_H

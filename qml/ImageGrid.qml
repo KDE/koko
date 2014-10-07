@@ -23,6 +23,8 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
+import org.kde.gallery 0.1 as Gallery
+
 GridView {
     id: root
     signal imageSelected(string filePath)
@@ -30,60 +32,11 @@ GridView {
     cellWidth: 250
     cellHeight: 250
 
-    model: ListModel {
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06820.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06821.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06822.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06823.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06824.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06825.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06826.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06827.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06828.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06829.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06830.JPG"
-        }
-        ListElement {
-            name: "Name of Picture"
-            url: "/home/vishesh/Images/bs/DSC06831.JPG"
-        }
-    }
+    model: Gallery.ImagesModel {}
 
     delegate: ColumnLayout {
         Image {
-            source: model.url
+            source: model.filePath
             asynchronous: true
             fillMode: Image.PreserveAspectFit
 
@@ -92,14 +45,14 @@ GridView {
         }
 
         Label {
-            text: model.name
+            text: model.display
             horizontalAlignment: Text.AlignHCenter
             Layout.fillWidth: true
         }
 
         MouseArea {
             anchors.fill: parent
-            onClicked: root.imageSelected(model.url)
+            onClicked: root.imageSelected(model.filePath)
         }
     }
 }

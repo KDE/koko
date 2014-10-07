@@ -22,6 +22,7 @@
 #include "qmlplugins.h"
 
 #include "tagmodel.h"
+#include "imagesmodel.h"
 
 #include <QtQml/qqml.h>
 
@@ -32,5 +33,6 @@ void QmlPlugins::initializeEngine(QQmlEngine *, const char *)
 void QmlPlugins::registerTypes(const char *uri)
 {
     qmlRegisterType<TagModel> (uri, 0, 1, "TagModel");
+    qmlRegisterType<ImagesModel> (uri, 0, 1, "ImagesModel");
 }
 
