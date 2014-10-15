@@ -32,15 +32,24 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-QtControls.ApplicationWindow {
-    id: window
-    color: "#192629"
+Item {
+//QtControls.ApplicationWindow {
+    id: root
+
+//    color: "#192629"
+    Rectangle {
+        color: "#192629"
+        anchors.fill: parent
+        z: -1
+    }
+
+    property string filePath: "/home/vishesh/Images/danbo.jpeg"
 
     ColumnLayout {
         anchors.fill: parent
         Image {
             id: img
-            source: "/home/vishesh/Images/danbo.jpeg"
+            source: root.filePath
             fillMode: Image.PreserveAspectFit
 
             Layout.fillWidth: true
