@@ -12,7 +12,7 @@ target_link_libraries (galleryqmlplugin
     Qt5::Qml
     Qt5::Positioning
     KF5::ConfigCore
-    KF5::BalooCore
+    KF5::Baloo
 )
 
 install (TARGETS galleryqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/gallery)
