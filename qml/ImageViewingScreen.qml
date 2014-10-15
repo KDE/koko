@@ -46,6 +46,7 @@ RowLayout {
     ColumnLayout {
         Layout.alignment: Qt.AlignTop | Qt.AlignRight
         Layout.minimumWidth: 500
+        Layout.maximumWidth: Layout.minimumWidth
         Layout.fillHeight: true
 
         Actions {
