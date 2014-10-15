@@ -30,31 +30,38 @@ ScrollView {
     signal imageSelected(string filePath)
 
     GridView {
-        cellWidth: 250
-        cellHeight: 250
+        id: view
+        cellWidth: 300 + spacing
+        cellHeight: 300 + spacing
 
+        property int spacing: 5
         model: Gallery.ImagesModel {}
 
-        delegate: ColumnLayout {
+        delegate: Item {
+            width: view.cellWidth
+            height: view.cellHeight
+
             Image {
                 source: model.filePath
                 asynchronous: true
-                fillMode: Image.PreserveAspectFit
+                fillMode: Image.PreserveAspectCrop
 
-                Layout.maximumWidth: 200
-                Layout.maximumHeight: 200
-            }
+                width: parent.width - view.spacing
+                height: parent.height - view.spacing
+                anchors.centerIn: parent
 
-            Label {
-                text: model.display
-                horizontalAlignment: Text.AlignHCenter
-                Layout.fillWidth: true
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: root.imageSelected(model.filePath)
+                }
             }
+        }
 
-            MouseArea {
-                anchors.fill: parent
-                onClicked: root.imageSelected(model.filePath)
-            }
+        Rectangle {
+            SystemPalette { id: myPalette }
+            color: myPalette.dark
+            anchors.fill: parent
+            z: -1
         }
     }
 }
