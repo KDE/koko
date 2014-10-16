@@ -69,9 +69,11 @@ Item {
                 anchors.fill: parent
                 PlasmaComponents.ToolButton {
                     iconName: "object-rotate-left"
+                    onClicked: img.rotation = img.rotation - 90
                 }
                 PlasmaComponents.ToolButton {
                     iconName: "object-rotate-right"
+                    onClicked: img.rotation = img.rotation + 90
                 }
                 PlasmaComponents.ToolButton {
                     iconName: "transform-crop"
