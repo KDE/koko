@@ -93,8 +93,15 @@ Item {
                     Layout.fillWidth: true
                 }
                 QtControls.Slider {
-                    value: 0.4
+                    minimumValue: 0.0
+                    maximumValue: 5.0
+                    value: 1.0
+
                     Layout.alignment: Qt.AlignRight
+
+                    onValueChanged: {
+                        img.scale = value
+                    }
                 }
             }
         }
