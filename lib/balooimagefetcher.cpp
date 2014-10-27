@@ -43,6 +43,5 @@ void BalooImageFetcher::fetchAllImages()
 
 void BalooImageFetcher::queryResult(Baloo::QueryRunnable*, const Baloo::Result &result)
 {
-    const QString filePath = result.url().toLocalFile();
-    emit imageFile(filePath);
+    emit imageFile(result.filePath());
 }
