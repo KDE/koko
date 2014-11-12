@@ -37,6 +37,8 @@ void BalooImageFetcher::fetchAllImages()
     Baloo::QueryRunnable *runnable = new Baloo::QueryRunnable(query);
     connect(runnable, SIGNAL(queryResult(Baloo::QueryRunnable*, Baloo::Result)),
             this, SLOT(queryResult(Baloo::QueryRunnable*, Baloo::Result)), Qt::QueuedConnection);
+    connect(runnable, SIGNAL(finished(Baloo::QueryRunnable*)),
+            this, SIGNAL(finished()));
 
     QThreadPool::globalInstance()->start(runnable);
 }

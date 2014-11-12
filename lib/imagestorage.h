@@ -18,25 +18,41 @@
  *
  */
 
-#ifndef BALOOIMAGEFETCHER_H
-#define BALOOIMAGEFETCHER_H
+#ifndef IMAGESTORAGE_H
+#define IMAGESTORAGE_H
 
 #include <QObject>
-#include <Baloo/QueryRunnable>
+#include <QGeoLocation>
+#include <QGeoAddress>
+#include <QDateTime>
+#include <QDataStream>
 
-class BalooImageFetcher : public QObject
+#include <KConfig>
+
+struct ImageInfo {
+    QString path;
+    QGeoLocation location;
+    QDate date;
+};
+
+QDataStream &operator<<(QDataStream &stream, const QGeoAddress &addr);
+QDataStream &operator>>(QDataStream &stream, QGeoAddress &addr);
+
+
+class ImageStorage : public QObject
 {
     Q_OBJECT
 public:
-    explicit BalooImageFetcher(QObject* parent = 0);
-    void fetchAllImages();
+    ImageStorage(QObject* parent = 0);
+    virtual ~ImageStorage();
 
-signals:
-    void imageFile(const QString& filePath);
-    void finished();
-
-private slots:
-    void queryResult(Baloo::QueryRunnable*, const Baloo::Result& result);
+    void addImage(const ImageInfo& ii);
+    QList<ImageInfo> images();
+private:
+    KConfig m_config;
 };
 
-#endif // BALOOIMAGEFETCHER_H
+
+Q_DECLARE_METATYPE(ImageInfo);
+
+#endif // IMAGESTORAGE_H
