@@ -35,7 +35,7 @@ ImageLocationModel::ImageLocationModel(QObject* parent)
 QHash<int, QByteArray> ImageLocationModel::roleNames() const
 {
     auto hash = QAbstractItemModel::roleNames();
-    hash.insert(FilePathRole, "filePath");
+    hash.insert(FilesRole, "files");
 
     return hash;
 }
@@ -52,8 +52,17 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             return key;
 
-        case FilePathRole:
-            return key;
+        case FilesRole: {
+            if (m_distance >= 1000) {
+                return m_categorizer.imagesForCountry(key);
+            }
+
+            if (m_distance >= 100) {
+                return m_categorizer.imagesForState(key);
+            }
+
+            return m_categorizer.imagesForCities(key);
+        }
     }
 
     return QVariant();

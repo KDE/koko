@@ -35,7 +35,7 @@ public:
     explicit ImageLocationModel(QObject* parent = 0);
 
     enum Roles {
-        FilePathRole = Qt::UserRole + 1
+        FilesRole = Qt::UserRole + 1
     };
 
     virtual QHash< int, QByteArray > roleNames() const;

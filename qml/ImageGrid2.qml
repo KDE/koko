@@ -23,60 +23,44 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.gallery 0.1 as Gallery
 
-ColumnLayout {
+ScrollView {
     id: root
+    property alias model: view.model
     signal imageSelected(string filePath)
-    PlasmaExtras.Heading {
-        text: "Locations"
-        font.bold: true
-        Layout.alignment: Qt.AlignHCenter
-    }
 
     GridView {
         id: view
-        cellWidth: 400
-        cellHeight: 400
+        cellWidth: 300 + spacing
+        cellHeight: 300 + spacing
 
-        Layout.fillWidth: true
-        Layout.fillHeight: true
+        property int spacing: 5
 
-        model: Gallery.ImageLocationModel {
-            distance: 10
-        }
+        delegate: Item {
+            width: view.cellWidth
+            height: view.cellHeight
 
-        delegate: ColumnLayout {
             Image {
-                source: model.files[1]
+                source: model.modelData
                 asynchronous: true
                 fillMode: Image.PreserveAspectCrop
 
-                Layout.maximumWidth: 300
-                Layout.maximumHeight: 300
-
-                width: 300
-                height: 300
+                width: parent.width - view.spacing
+                height: parent.height - view.spacing
+                anchors.centerIn: parent
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: root.imageSelected(model.filePath)
+                    onClicked: root.imageSelected(model.modelData)
                 }
-            }
-
-            PlasmaComponents.Label {
-                text: model.display
-                Layout.alignment: Qt.AlignHCenter
             }
         }
     }
 
     Rectangle {
         SystemPalette { id: myPalette }
-        color: myPalette.window
+        color: myPalette.dark
         anchors.fill: parent
         z: -1
     }
