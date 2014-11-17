@@ -34,6 +34,13 @@ ApplicationWindow {
         RowLayout {
             anchors.fill: parent
             PlasmaComponents.ToolButton {
+                iconName: "view-choose"
+                text: "Browse"
+                onClicked: {
+                    view.pop(mainScreen)
+                }
+            }
+            PlasmaComponents.ToolButton {
                 iconName: "go-previous"
                 text: "Previous"
             }
