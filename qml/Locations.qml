@@ -31,6 +31,7 @@ import org.kde.gallery 0.1 as Gallery
 ColumnLayout {
     id: root
     signal imagesSelected(var files)
+    property alias distance: imageLocationsModel.distance
 
     PlasmaExtras.Heading {
         text: "Locations"
@@ -47,7 +48,7 @@ ColumnLayout {
         Layout.fillHeight: true
 
         model: Gallery.ImageLocationModel {
-            distance: 10
+            id: imageLocationsModel
         }
 
         delegate: ColumnLayout {

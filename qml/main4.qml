@@ -25,6 +25,7 @@ import QtQuick.Controls 1.0
 import QtQuick.Window 2.1
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 ApplicationWindow {
     id: window
@@ -42,28 +43,93 @@ ApplicationWindow {
         }
     }
 
-    StackView {
-        id: view
-        initialItem: Locations {
-            id: locationView
-            onImagesSelected: {
-                imageGrid.model = files
-                view.push(imageGrid)
+    RowLayout {
+        anchors.fill: parent
+
+        ColumnLayout {
+            Layout.alignment: Qt.AlignTop
+            Layout.minimumWidth: 400
+            Layout.maximumWidth: 400
+            Layout.fillHeight: true
+
+            PlasmaExtras.Heading {
+                text: "Navigation"
+                font.bold: true
+                Layout.fillWidth: true
+                level: 2
+            }
+
+            ColumnLayout {
+                Layout.fillWidth: true
+
+                PlasmaExtras.Heading {
+                    text: "Locations"
+                    font.bold: true
+                    Layout.fillWidth: true
+                    level: 4
+                }
+                PlasmaComponents.ToolButton {
+                    text: "1000 kms"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+                    onClicked: {
+                        locationView.distance = 1000
+                    }
+                }
+                PlasmaComponents.ToolButton {
+                    text: "100 kms"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+                    onClicked: {
+                        locationView.distance = 100
+                    }
+                }
+                PlasmaComponents.ToolButton {
+                    text: "10 kms"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+
+                    onClicked: {
+                        locationView.distance = 10
+                    }
+                }
+            }
+
+            Rectangle {
+                SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
+
+                color: myPalette.alternateBase
+                anchors.fill: parent
+                z: -1
             }
         }
-    }
 
-    ImageGrid2 {
-        id: imageGrid
-        visible: false
-        onImageSelected: {
-            imageViewer.filePath = filePath
-            view.push(imageViewer)
+        StackView {
+            id: view
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            initialItem: Locations {
+                id: locationView
+                onImagesSelected: {
+                    imageGrid.model = files
+                    view.push(imageGrid)
+                }
+            }
+
+            ImageGrid2 {
+                id: imageGrid
+                visible: false
+                onImageSelected: {
+                    imageViewer.filePath = filePath
+                    view.push(imageViewer)
+                }
+            }
+
+            Viewer {
+                id: imageViewer
+                visible: false
+            }
         }
-    }
-
-    Viewer {
-        id: imageViewer
-        visible: false
     }
 }
