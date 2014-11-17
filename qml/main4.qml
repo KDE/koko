@@ -29,6 +29,19 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 ApplicationWindow {
     id: window
 
+    toolBar: ToolBar {
+        RowLayout {
+            PlasmaComponents.ToolButton {
+                iconName: "draw-arrow-back"
+                text: "Back"
+
+                onClicked: {
+                    view.pop()
+                }
+            }
+        }
+    }
+
     StackView {
         id: view
         initialItem: Locations {
