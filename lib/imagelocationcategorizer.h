@@ -38,9 +38,17 @@ public:
     QStringList countries() const;
     QStringList imagesForCountry(const QString& country) const;
 
+    QStringList states() const;
+    QStringList imagesForState(const QString& state) const;
+
+    QStringList cities() const;
+    QStringList imagesForCities(const QString& city) const;
+
 private:
     QVector<ImageInfo> m_images;
     QHash< QString, QList<ImageInfo> > m_countryHash;
+    QHash< QString, QList<ImageInfo> > m_stateHash;
+    QHash< QString, QList<ImageInfo> > m_cityHash;
 };
 
 #endif // IMAGELOCATIONCATEGORIZER_H

@@ -30,6 +30,7 @@
 class ImageLocationModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(int distance READ distance WRITE setDistance)
 public:
     explicit ImageLocationModel(QObject* parent = 0);
 
@@ -41,8 +42,14 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
+    int distance() const;
+    void setDistance(int kms);
+
 private:
     ImageLocationCategorizer m_categorizer;
+    int m_distance;
+
+    QStringList fetchKeyList() const;
 };
 
 #endif // IMAGELOCATIONMODEL_H

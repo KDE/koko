@@ -22,6 +22,7 @@
 
 ImageLocationModel::ImageLocationModel(QObject* parent)
     : QAbstractListModel(parent)
+    , m_distance(0)
 {
     ImageStorage storage;
     QList<ImageInfo> list = storage.images();
@@ -45,14 +46,14 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    QString country = m_categorizer.countries().at(index.row());
+    QString key = fetchKeyList().at(index.row());
 
     switch (role) {
         case Qt::DisplayRole:
-            return country;
+            return key;
 
         case FilePathRole:
-            return country;
+            return key;
     }
 
     return QVariant();
@@ -65,5 +66,28 @@ int ImageLocationModel::rowCount(const QModelIndex& parent) const
         return 0;
     }
 
-    return m_categorizer.countries().size();
+    return fetchKeyList().size();
+}
+
+int ImageLocationModel::distance() const
+{
+    return m_distance;
+}
+
+void ImageLocationModel::setDistance(int kms)
+{
+    m_distance = kms;
+}
+
+QStringList ImageLocationModel::fetchKeyList() const
+{
+    if (m_distance >= 1000) {
+        return m_categorizer.countries();
+    }
+
+    if (m_distance >= 100) {
+        return m_categorizer.states();
+    }
+
+    return m_categorizer.cities();
 }
