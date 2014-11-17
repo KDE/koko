@@ -43,15 +43,19 @@ ApplicationWindow {
             PlasmaComponents.ToolButton {
                 iconName: "go-previous"
                 text: "Previous"
+                enabled: imageViewer.visible
+
             }
             PlasmaComponents.ToolButton {
                 iconName: "go-next"
                 text: "Next"
+                enabled: imageViewer.visible
             }
             // TODO: Add seperator?
             PlasmaComponents.ToolButton {
                 iconName: "document-share"
                 text: "Share"
+                enabled: imageViewer.visible
             }
 
             // Spacer
