@@ -29,6 +29,9 @@ void ImageLocationCategorizer::addImage(const ImageInfo& ii)
 {
     m_images << ii;
 
+    //
+    // Location
+    //
     auto addr = ii.location.address();
 
     QString key = addr.country();
@@ -112,3 +115,58 @@ QStringList ImageLocationCategorizer::imagesForCities(const QString& city) const
     return QStringList();
 }
 
+QHash< QString, QList< ImageInfo > > ImageLocationCategorizer::hourImages(int hours) const
+{
+    Q_ASSERT(hours >= 24);
+
+    QHash< QString, QList<ImageInfo> > hash;
+    for (const ImageInfo& ii : m_images) {
+        QDate date = ii.date;
+        if (date.isNull()) {
+            continue;
+        }
+
+        QString monthName = QDate::longMonthName(date.month());
+        QString year = QString::number(date.year());
+
+        QString key;
+        if (hours == 24) {
+            key = date.toString(Qt::SystemLocaleLongDate);
+        }
+        else if (hours == 24 * 7) {
+            key = "Week " + QString::number(date.weekNumber()) + ", " + monthName + ", " + year;
+        }
+        else if (hours == 24 * 30) {
+            key = monthName + ", " + year;
+        }
+        else if (hours == 24 * 365) {
+            key = year;
+        }
+
+        hash[key].append(ii);
+    }
+
+    return hash;
+}
+
+QStringList ImageLocationCategorizer::groupByHours(int hours) const
+{
+    return hourImages(hours).keys();
+}
+
+QStringList ImageLocationCategorizer::imagesForHours(int hours, const QString& groupName) const
+{
+    auto hash = hourImages(hours);
+    if (hash.contains(groupName)) {
+        QList<ImageInfo> list = hash.value(groupName);
+
+        QStringList images;
+        for (const ImageInfo& info : list) {
+            images << info.path;
+        }
+
+        return images;
+    }
+
+    return QStringList();
+}

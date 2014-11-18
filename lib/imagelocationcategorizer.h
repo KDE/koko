@@ -44,11 +44,17 @@ public:
     QStringList cities() const;
     QStringList imagesForCities(const QString& city) const;
 
+    QStringList groupByHours(int hours) const;
+    QStringList imagesForHours(int hours, const QString& groupName) const;
+
 private:
     QVector<ImageInfo> m_images;
     QHash< QString, QList<ImageInfo> > m_countryHash;
     QHash< QString, QList<ImageInfo> > m_stateHash;
     QHash< QString, QList<ImageInfo> > m_cityHash;
+
+
+    QHash< QString, QList<ImageInfo> > hourImages(int hour) const;
 };
 
 #endif // IMAGELOCATIONCATEGORIZER_H

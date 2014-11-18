@@ -74,6 +74,9 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     onClicked: {
                         locationView.distance = 1000
+                        if (view.currentItem != locationView) {
+                            view.push(locationView)
+                        }
                     }
                 }
                 PlasmaComponents.ToolButton {
@@ -82,6 +85,9 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     onClicked: {
                         locationView.distance = 100
+                        if (view.currentItem != locationView) {
+                            view.push(locationView)
+                        }
                     }
                 }
                 PlasmaComponents.ToolButton {
@@ -91,6 +97,66 @@ ApplicationWindow {
 
                     onClicked: {
                         locationView.distance = 10
+                        if (view.currentItem != locationView) {
+                            view.push(locationView)
+                        }
+                    }
+                }
+            }
+
+            ColumnLayout {
+                Layout.fillWidth: true
+
+                PlasmaExtras.Heading {
+                    text: "Time"
+                    font.bold: true
+                    Layout.fillWidth: true
+                    level: 4
+                }
+                PlasmaComponents.ToolButton {
+                    text: "year"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+                    onClicked: {
+                        timeImages.hours = 24 * 365;
+                        if (view.currentItem != timeImages) {
+                            view.push(timeImages)
+                        }
+                    }
+                }
+                PlasmaComponents.ToolButton {
+                    text: "month"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+                    onClicked: {
+                        timeImages.hours = 24 * 30;
+                        if (view.currentItem != timeImages) {
+                            view.push(timeImages)
+                        }
+                    }
+                }
+                PlasmaComponents.ToolButton {
+                    text: "week"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+
+                    onClicked: {
+                        timeImages.hours = 24 * 7;
+                        if (view.currentItem != timeImages) {
+                            view.push(timeImages)
+                        }
+                    }
+                }
+                PlasmaComponents.ToolButton {
+                    text: "day"
+                    iconName: "system-search"
+                    Layout.fillWidth: true
+
+                    onClicked: {
+                        timeImages.hours = 24;
+                        if (view.currentItem != timeImages) {
+                            view.push(timeImages)
+                        }
                     }
                 }
             }
@@ -129,6 +195,15 @@ ApplicationWindow {
             Viewer {
                 id: imageViewer
                 visible: false
+            }
+
+            TimeImages {
+                id: timeImages
+                visible: false
+                onImagesSelected: {
+                    imageGrid.model = files
+                    view.push(imageGrid)
+                }
             }
         }
     }

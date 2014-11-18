@@ -28,31 +28,31 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.gallery 0.1 as Gallery
 
-ColumnLayout {
-    id: root
-    signal imagesSelected(var files)
-    property alias distance: imageLocationsModel.distance
+GridView {
+    cellWidth: 400
+    cellHeight: 400
 
-    PlasmaExtras.Heading {
-        text: "Locations"
-        font.bold: true
-        Layout.alignment: Qt.AlignHCenter
-    }
+    delegate: ColumnLayout {
+        Image {
+            source: model.files[1]
+            asynchronous: true
+            fillMode: Image.PreserveAspectCrop
 
-    AlbumView {
-        id: view
-        Layout.fillWidth: true
-        Layout.fillHeight: true
+            Layout.maximumWidth: 300
+            Layout.maximumHeight: 300
 
-        model: Gallery.ImageLocationModel {
-            id: imageLocationsModel
+            width: Layout.maximumWidth
+            height: Layout.maximumHeight
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: root.imagesSelected(model.files)
+            }
         }
-    }
 
-    Rectangle {
-        SystemPalette { id: myPalette }
-        color: myPalette.window
-        anchors.fill: parent
-        z: -1
+        PlasmaComponents.Label {
+            text: model.display
+            Layout.alignment: Qt.AlignHCenter
+        }
     }
 }
