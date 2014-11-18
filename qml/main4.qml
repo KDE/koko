@@ -74,7 +74,9 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     onClicked: {
                         locationView.distance = 1000
-                        if (view.currentItem != locationView) {
+                        if (locationView.Stack.index != -1) {
+                            view.pop(locationView)
+                        } else {
                             view.push(locationView)
                         }
                     }
@@ -85,7 +87,9 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     onClicked: {
                         locationView.distance = 100
-                        if (view.currentItem != locationView) {
+                        if (locationView.Stack.index != -1) {
+                            view.pop(locationView)
+                        } else {
                             view.push(locationView)
                         }
                     }
@@ -97,7 +101,9 @@ ApplicationWindow {
 
                     onClicked: {
                         locationView.distance = 10
-                        if (view.currentItem != locationView) {
+                        if (locationView.Stack.index != -1) {
+                            view.pop(locationView)
+                        } else {
                             view.push(locationView)
                         }
                     }
@@ -119,7 +125,9 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     onClicked: {
                         timeImages.hours = 24 * 365;
-                        if (view.currentItem != timeImages) {
+                        if (timeImages.Stack.index != -1) {
+                            view.pop(timeImages)
+                        } else {
                             view.push(timeImages)
                         }
                     }
@@ -130,7 +138,9 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     onClicked: {
                         timeImages.hours = 24 * 30;
-                        if (view.currentItem != timeImages) {
+                        if (timeImages.Stack.index != -1) {
+                            view.pop(timeImages)
+                        } else {
                             view.push(timeImages)
                         }
                     }
@@ -142,7 +152,9 @@ ApplicationWindow {
 
                     onClicked: {
                         timeImages.hours = 24 * 7;
-                        if (view.currentItem != timeImages) {
+                        if (timeImages.Stack.index != -1) {
+                            view.pop(timeImages)
+                        } else {
                             view.push(timeImages)
                         }
                     }
@@ -154,7 +166,9 @@ ApplicationWindow {
 
                     onClicked: {
                         timeImages.hours = 24;
-                        if (view.currentItem != timeImages) {
+                        if (timeImages.Stack.index != -1) {
+                            view.pop(timeImages)
+                        } else {
                             view.push(timeImages)
                         }
                     }
