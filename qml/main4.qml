@@ -161,6 +161,17 @@ ApplicationWindow {
                 }
             }
 
+            PlasmaComponents.ToolButton {
+                text: "By Folders"
+                iconName: "system-search"
+                Layout.fillWidth: true
+                onClicked: {
+                    if (view.currentItem != folderImages) {
+                        view.push(folderImages)
+                    }
+                }
+            }
+
             Rectangle {
                 SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
 
@@ -199,6 +210,15 @@ ApplicationWindow {
 
             TimeImages {
                 id: timeImages
+                visible: false
+                onImagesSelected: {
+                    imageGrid.model = files
+                    view.push(imageGrid)
+                }
+            }
+
+            Folders {
+                id: folderImages
                 visible: false
                 onImagesSelected: {
                     imageGrid.model = files

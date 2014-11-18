@@ -6,6 +6,7 @@ set (qml_plugin_SRCS
     reversegeocodelookupjob.cpp
     imagelocationmodel.cpp
     imagetimemodel.cpp
+    imagefoldermodel.cpp
     imagelocationcategorizer.cpp
     imagestorage.cpp
 )

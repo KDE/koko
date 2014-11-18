@@ -20,6 +20,7 @@
 
 #include "imagelocationcategorizer.h"
 #include "reversegeocodelookupjob.h"
+#include <QUrl>
 
 ImageLocationCategorizer::ImageLocationCategorizer()
 {
@@ -27,6 +28,9 @@ ImageLocationCategorizer::ImageLocationCategorizer()
 
 void ImageLocationCategorizer::addImage(const ImageInfo& ii)
 {
+    if (!ii.path.startsWith('/')) {
+        return;
+    }
     m_images << ii;
 
     //
@@ -159,6 +163,43 @@ QStringList ImageLocationCategorizer::imagesForHours(int hours, const QString& g
     auto hash = hourImages(hours);
     if (hash.contains(groupName)) {
         QList<ImageInfo> list = hash.value(groupName);
+
+        QStringList images;
+        for (const ImageInfo& info : list) {
+            images << info.path;
+        }
+
+        return images;
+    }
+
+    return QStringList();
+}
+
+QHash< QString, QList< ImageInfo > > ImageLocationCategorizer::folderImages() const
+{
+    QHash< QString, QList<ImageInfo> > hash;
+    for (const ImageInfo& ii : m_images) {
+        QUrl url = QUrl::fromLocalFile(ii.path);
+        url = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
+
+        QString folderName = url.fileName();
+        hash[folderName].append(ii);
+    }
+
+    return hash;
+}
+
+QStringList ImageLocationCategorizer::folders() const
+{
+    auto hash = folderImages();
+    return hash.keys();
+}
+
+QStringList ImageLocationCategorizer::imagesForFolders(const QString& folder) const
+{
+    auto hash = folderImages();
+    if (hash.contains(folder)) {
+        QList<ImageInfo> list = hash.value(folder);
 
         QStringList images;
         for (const ImageInfo& info : list) {

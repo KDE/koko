@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014  Vishesh Handa <vhanda@kde.org>
+ * Copyright (C) 2014 Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -19,25 +19,37 @@
  *
  */
 
-#include "qmlplugins.h"
+import QtQuick 2.1
+import QtQuick.Layouts 1.1
+import QtQuick.Controls 1.0
 
-#include "tagmodel.h"
-#include "imagesmodel.h"
-#include "imagelocationmodel.h"
-#include "imagetimemodel.h"
-#include "imagefoldermodel.h"
+import org.kde.plasma.components 2.0 as PlasmaComponents
+import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.gallery 0.1 as Gallery
 
-#include <QtQml/qqml.h>
+ColumnLayout {
+    id: root
+    signal imagesSelected(var files)
 
-void QmlPlugins::initializeEngine(QQmlEngine *, const char *)
-{
-}
+    PlasmaExtras.Heading {
+        text: "Folders"
+        font.bold: true
+        Layout.alignment: Qt.AlignHCenter
+    }
 
-void QmlPlugins::registerTypes(const char *uri)
-{
-    qmlRegisterType<TagModel> (uri, 0, 1, "TagModel");
-    qmlRegisterType<ImagesModel> (uri, 0, 1, "ImagesModel");
-    qmlRegisterType<ImageLocationModel> (uri, 0, 1, "ImageLocationModel");
-    qmlRegisterType<ImageTimeModel> (uri, 0, 1, "ImageTimeModel");
-    qmlRegisterType<ImageFolderModel> (uri, 0, 1, "ImageFolderModel");
+    AlbumView {
+        id: view
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+
+        model: Gallery.ImageFolderModel {}
+    }
+
+    Rectangle {
+        SystemPalette { id: myPalette }
+        color: myPalette.window
+        anchors.fill: parent
+        z: -1
+    }
 }

@@ -47,6 +47,9 @@ public:
     QStringList groupByHours(int hours) const;
     QStringList imagesForHours(int hours, const QString& groupName) const;
 
+    QStringList folders() const;
+    QStringList imagesForFolders(const QString& folder) const;
+
 private:
     QVector<ImageInfo> m_images;
     QHash< QString, QList<ImageInfo> > m_countryHash;
@@ -55,6 +58,7 @@ private:
 
 
     QHash< QString, QList<ImageInfo> > hourImages(int hour) const;
+    QHash< QString, QList<ImageInfo> > folderImages() const;
 };
 
 #endif // IMAGELOCATIONCATEGORIZER_H
