@@ -186,6 +186,25 @@ ApplicationWindow {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
+            delegate: StackViewDelegate {
+                pushTransition: StackViewTransition {
+                    PropertyAnimation {
+                        target: enterItem
+                        property: "y"
+                        from: exitItem.height
+                        to: 0
+                    }
+                }
+                popTransition: StackViewTransition {
+                    PropertyAnimation {
+                        target: exitItem
+                        property: "y"
+                        from: 0
+                        to: enterItem.height
+                    }
+                }
+            }
+
             initialItem: Locations {
                 id: locationView
                 onImagesSelected: {
