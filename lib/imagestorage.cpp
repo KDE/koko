@@ -37,6 +37,11 @@ ImageStorage::~ImageStorage()
 
 }
 
+bool ImageStorage::hasImage(const QString& path)
+{
+    return m_config.groupList().contains(path);
+}
+
 QList<ImageInfo> ImageStorage::images()
 {
     QList<ImageInfo> list;

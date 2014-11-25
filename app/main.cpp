@@ -25,6 +25,7 @@
 
 #include <QStandardPaths>
 #include <QDebug>
+#include <QFileInfo>
 
 #include <KFileMetaData/ExtractorCollection>
 #include <KFileMetaData/Extractor>
@@ -43,7 +44,6 @@ int main(int argc, char** argv)
 
     QStringList paths;
     auto func = [&](const QString& path) {
-        qDebug() << path;
         paths << path;
     };
     QEventLoop loop;
@@ -57,31 +57,38 @@ int main(int argc, char** argv)
     auto imageExtractor = extractors.fetchExtractors("image/jpeg").first();
 
     for (const QString& path : paths) {
+        if (storage.hasImage(path))
+            continue;
+
+        ImageInfo ii;
+        ii.path = path;
+
         KFileMetaData::SimpleExtractionResult result(path);
         imageExtractor->extract(&result);
 
         double latitude = result.properties().value(KFileMetaData::Property::PhotoGpsLatitude).toDouble();
         double longitude = result.properties().value(KFileMetaData::Property::PhotoGpsLongitude).toDouble();
 
-        if (latitude == 0 || longitude == 0) {
-            continue;
+        if (latitude && longitude) {
+            qDebug() << path << latitude << longitude;
+
+            ReverseGeoCodeLookupJob* job = new ReverseGeoCodeLookupJob(QGeoCoordinate(latitude, longitude));
+            QEventLoop loop;
+            QObject::connect(job, SIGNAL(result(QGeoLocation)), &loop, SLOT(quit()));
+            QObject::connect(job, &ReverseGeoCodeLookupJob::result, [&](const QGeoLocation& result) {
+                ii.location = result;
+            });
+            job->start();
+            loop.exec();
         }
-        qDebug() << path << latitude << longitude;
 
-        ReverseGeoCodeLookupJob* job = new ReverseGeoCodeLookupJob(QGeoCoordinate(latitude, longitude));
-
-        ImageInfo ii;
-        ii.path = path;
-
-        QEventLoop loop;
-        QObject::connect(job, SIGNAL(result(QGeoLocation)), &loop, SLOT(quit()));
-        QObject::connect(job, &ReverseGeoCodeLookupJob::result, [&](const QGeoLocation& result) {
-            ii.location = result;
-        });
-        job->start();
-        loop.exec();
-
-        ii.date = result.properties().value(KFileMetaData::Property::ImageDateTime).toDate();
+        ii.date = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDate();
+        if (ii.date.isNull()) {
+            ii.date = result.properties().value(KFileMetaData::Property::ImageDateTime).toDate();
+        }
+        if (ii.date.isNull()) {
+            ii.date = QFileInfo(path).created().date();
+        }
 
         qDebug() << path;
 
