@@ -24,8 +24,7 @@ ImageLocationModel::ImageLocationModel(QObject* parent)
     : QAbstractListModel(parent)
     , m_distance(0)
 {
-    ImageStorage storage;
-    QList<ImageInfo> list = storage.images();
+    QList<ImageInfo> list = ImageStorage::instance()->images();
 
     for (const ImageInfo& ii : list) {
         m_categorizer.addImage(ii);

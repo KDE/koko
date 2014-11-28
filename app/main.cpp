@@ -40,8 +40,6 @@ int main(int argc, char** argv)
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Gallery");
 
-    ImageStorage storage;
-
     KFileMetaData::ExtractorCollection extractors;
     KFileMetaData::Extractor* imageExtractor = extractors.fetchExtractors("image/jpeg").first();
 
@@ -78,23 +76,19 @@ int main(int argc, char** argv)
 
         qDebug() << path << ii.date;
 
-        storage.addImage(ii);
+        ImageStorage::instance()->addImage(ii);
     };
 
     FileSystemTracker tracker;
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, func);
 
-    return app.exec();
-    /*
     qDebug() << "Starting QML";
     QQmlEngine engine;
     QQmlContext* objectContext = engine.rootContext();
 
-    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
+    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main4.qml");
     QQmlComponent component(&engine, path);
     component.create(objectContext);
 
-
     return app.exec();
-    */
 }

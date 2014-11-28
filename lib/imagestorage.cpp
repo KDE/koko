@@ -50,6 +50,12 @@ ImageStorage::~ImageStorage()
 
 }
 
+ImageStorage* ImageStorage::instance()
+{
+    static ImageStorage storage;
+    return &storage;
+}
+
 QList<ImageInfo> ImageStorage::images()
 {
     QList<ImageInfo> list;

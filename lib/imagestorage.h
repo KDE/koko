@@ -46,6 +46,8 @@ public:
     void addImage(const ImageInfo& ii);
     QList<ImageInfo> images();
 
+    static ImageStorage* instance();
+
 private:
     KVariantStore m_db;
     KVariantCollection m_coll;

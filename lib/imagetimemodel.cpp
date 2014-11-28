@@ -24,8 +24,7 @@ ImageTimeModel::ImageTimeModel(QObject* parent)
     : QAbstractListModel(parent)
     , m_hours(24)
 {
-    ImageStorage storage;
-    QList<ImageInfo> list = storage.images();
+    QList<ImageInfo> list = ImageStorage::instance()->images();
 
     for (const ImageInfo& ii : list) {
         m_categorizer.addImage(ii);

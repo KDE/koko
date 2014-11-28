@@ -29,6 +29,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 ApplicationWindow {
     id: window
+    visible: true
 
     toolBar: ToolBar {
         RowLayout {
