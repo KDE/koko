@@ -29,7 +29,7 @@ BalooImageFetcher::BalooImageFetcher(QObject* parent)
 {
 }
 
-void BalooImageFetcher::fetchAllImages()
+void BalooImageFetcher::fetch()
 {
     Baloo::Query query;
     query.setType("Image");
@@ -45,5 +45,5 @@ void BalooImageFetcher::fetchAllImages()
 
 void BalooImageFetcher::queryResult(Baloo::QueryRunnable*, const Baloo::Result &result)
 {
-    emit imageFile(result.filePath());
+    emit imageResult(result.filePath());
 }

@@ -33,8 +33,8 @@ ImagesModel::ImagesModel(QObject* parent)
         m_images << path;
         endInsertRows();
     };
-    connect(fetcher, &BalooImageFetcher::imageFile, this, func);
-    fetcher->fetchAllImages();
+    connect(fetcher, &BalooImageFetcher::imageResult, this, func);
+    fetcher->fetch();
 }
 
 QHash<int, QByteArray> ImagesModel::roleNames() const

@@ -47,9 +47,9 @@ int main(int argc, char** argv)
         paths << path;
     };
     QEventLoop loop;
-    QObject::connect(&fetcher, &BalooImageFetcher::imageFile, func);
+    QObject::connect(&fetcher, &BalooImageFetcher::imageResult, func);
     QObject::connect(&fetcher, &BalooImageFetcher::finished, &loop, &QEventLoop::quit);
-    fetcher.fetchAllImages();
+    fetcher.fetch();
     loop.exec();
 
     ImageStorage storage;

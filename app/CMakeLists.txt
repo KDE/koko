@@ -3,6 +3,7 @@ add_executable(gallery
     ../lib/imagestorage.cpp
     ../lib/reversegeocodelookupjob.cpp
     ../lib/balooimagefetcher.cpp
+    ../lib/filesystemtracker.cpp
 )
 
 target_link_libraries(gallery

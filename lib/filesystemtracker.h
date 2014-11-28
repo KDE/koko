@@ -1,5 +1,4 @@
 /*
- * <one line to give the library's name and an idea of what it does.>
  * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
  *
  * This library is free software; you can redistribute it and/or
@@ -18,25 +17,40 @@
  *
  */
 
-#ifndef BALOOIMAGEFETCHER_H
-#define BALOOIMAGEFETCHER_H
+#ifndef _FILESYSTEMTRACKER_H
+#define _FILESYSTEMTRACKER_H
 
 #include <QObject>
-#include <Baloo/QueryRunnable>
+#include <QSet>
 
-class BalooImageFetcher : public QObject
+#include <KVariantStore/KVariantStore>
+#include <KVariantStore/KVariantCollection>
+
+namespace Jungle {
+
+class FileSystemTracker : public QObject
 {
     Q_OBJECT
 public:
-    explicit BalooImageFetcher(QObject* parent = 0);
-    void fetch();
+    explicit FileSystemTracker(QObject* parent = 0);
+    virtual ~FileSystemTracker();
 
 signals:
-    void imageResult(const QString& filePath);
-    void finished();
+    void imageAdded(const QString& filePath);
+    void imageRemoved(const QString& filePath);
 
 private slots:
-    void queryResult(Baloo::QueryRunnable*, const Baloo::Result& result);
+    void init();
+    void slotImageResult(const QString& filePath);
+    void slotFetchFinished();
+
+private:
+    KVariantStore* m_db;
+    KVariantCollection m_coll;
+
+    QSet<QString> m_filePaths;
 };
 
-#endif // BALOOIMAGEFETCHER_H
+}
+
+#endif
