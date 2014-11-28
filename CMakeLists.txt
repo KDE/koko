@@ -16,7 +16,6 @@ include(KDECompilerSettings)
 include(GenerateExportHeader)
 
 add_subdirectory(lib)
-add_subdirectory(app)
 add_subdirectory(qml)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -30,13 +30,15 @@
 #include <KVariantStore/KVariantStore>
 #include <KVariantStore/KVariantCollection>
 
+#include "gallery_export.h"
+
 struct ImageInfo {
     QString path;
     QGeoLocation location;
     QDateTime date;
 };
 
-class ImageStorage : public QObject
+class GALLERY_EXPORT ImageStorage : public QObject
 {
     Q_OBJECT
 public:

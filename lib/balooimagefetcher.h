@@ -24,7 +24,9 @@
 #include <QObject>
 #include <Baloo/QueryRunnable>
 
-class BalooImageFetcher : public QObject
+#include "gallery_export.h"
+
+class GALLERY_EXPORT BalooImageFetcher : public QObject
 {
     Q_OBJECT
 public:
