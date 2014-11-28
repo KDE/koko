@@ -27,8 +27,6 @@
 #include <QVariantMap>
 #include <QDir>
 
-using namespace Jungle;
-
 FileSystemTracker::FileSystemTracker(QObject* parent)
     : QObject(parent)
 {

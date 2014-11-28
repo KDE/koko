@@ -31,7 +31,7 @@
 #include <KFileMetaData/Extractor>
 #include <KFileMetaData/SimpleExtractionResult>
 
-#include "../lib/balooimagefetcher.h"
+#include "../lib/filesystemtracker.h"
 #include "../lib/reversegeocodelookupjob.h"
 #include "../lib/imagestorage.h"
 
@@ -40,26 +40,12 @@ int main(int argc, char** argv)
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Gallery");
 
-    BalooImageFetcher fetcher;
-
-    QStringList paths;
-    auto func = [&](const QString& path) {
-        paths << path;
-    };
-    QEventLoop loop;
-    QObject::connect(&fetcher, &BalooImageFetcher::imageResult, func);
-    QObject::connect(&fetcher, &BalooImageFetcher::finished, &loop, &QEventLoop::quit);
-    fetcher.fetch();
-    loop.exec();
-
     ImageStorage storage;
+
     KFileMetaData::ExtractorCollection extractors;
-    auto imageExtractor = extractors.fetchExtractors("image/jpeg").first();
+    KFileMetaData::Extractor* imageExtractor = extractors.fetchExtractors("image/jpeg").first();
 
-    for (const QString& path : paths) {
-        if (storage.hasImage(path))
-            continue;
-
+    auto func = [&](const QString& path) {
         ImageInfo ii;
         ii.path = path;
 
@@ -90,12 +76,15 @@ int main(int argc, char** argv)
             ii.date = QFileInfo(path).created();
         }
 
-        qDebug() << path;
+        qDebug() << path << ii.date;
 
         storage.addImage(ii);
-    }
+    };
 
-    return 0;
+    FileSystemTracker tracker;
+    QObject::connect(&tracker, &FileSystemTracker::imageAdded, func);
+
+    return app.exec();
     /*
     qDebug() << "Starting QML";
     QQmlEngine engine;

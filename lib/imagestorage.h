@@ -43,7 +43,6 @@ public:
     ImageStorage(QObject* parent = 0);
     virtual ~ImageStorage();
 
-    bool hasImage(const QString& path);
     void addImage(const ImageInfo& ii);
     QList<ImageInfo> images();
 

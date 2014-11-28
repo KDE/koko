@@ -26,8 +26,6 @@
 #include <KVariantStore/KVariantStore>
 #include <KVariantStore/KVariantCollection>
 
-namespace Jungle {
-
 class FileSystemTracker : public QObject
 {
     Q_OBJECT
@@ -50,7 +48,5 @@ private:
 
     QSet<QString> m_filePaths;
 };
-
-}
 
 #endif

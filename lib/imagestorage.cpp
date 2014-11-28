@@ -50,12 +50,6 @@ ImageStorage::~ImageStorage()
 
 }
 
-bool ImageStorage::hasImage(const QString& path)
-{
-    QVariantMap map{{"path", path}};
-    return !m_coll.findOne(map).isEmpty();
-}
-
 QList<ImageInfo> ImageStorage::images()
 {
     QList<ImageInfo> list;
