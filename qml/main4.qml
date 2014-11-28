@@ -70,7 +70,7 @@ ApplicationWindow {
                     level: 4
                 }
                 PlasmaComponents.ToolButton {
-                    text: "1000 kms"
+                    text: "By Country"
                     iconName: "system-search"
                     Layout.fillWidth: true
                     onClicked: {
@@ -83,7 +83,7 @@ ApplicationWindow {
                     }
                 }
                 PlasmaComponents.ToolButton {
-                    text: "100 kms"
+                    text: "By State"
                     iconName: "system-search"
                     Layout.fillWidth: true
                     onClicked: {
@@ -96,7 +96,7 @@ ApplicationWindow {
                     }
                 }
                 PlasmaComponents.ToolButton {
-                    text: "10 kms"
+                    text: "By City"
                     iconName: "system-search"
                     Layout.fillWidth: true
 
@@ -121,7 +121,7 @@ ApplicationWindow {
                     level: 4
                 }
                 PlasmaComponents.ToolButton {
-                    text: "year"
+                    text: "By Year"
                     iconName: "system-search"
                     Layout.fillWidth: true
                     onClicked: {
@@ -134,7 +134,7 @@ ApplicationWindow {
                     }
                 }
                 PlasmaComponents.ToolButton {
-                    text: "month"
+                    text: "By Month"
                     iconName: "system-search"
                     Layout.fillWidth: true
                     onClicked: {
@@ -147,7 +147,7 @@ ApplicationWindow {
                     }
                 }
                 PlasmaComponents.ToolButton {
-                    text: "week"
+                    text: "By Week"
                     iconName: "system-search"
                     Layout.fillWidth: true
 
@@ -161,7 +161,7 @@ ApplicationWindow {
                     }
                 }
                 PlasmaComponents.ToolButton {
-                    text: "day"
+                    text: "By Day"
                     iconName: "system-search"
                     Layout.fillWidth: true
 
@@ -177,7 +177,7 @@ ApplicationWindow {
             }
 
             PlasmaComponents.ToolButton {
-                text: "By Folders"
+                text: "By Folder"
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
