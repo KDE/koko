@@ -13,6 +13,7 @@ target_link_libraries(gallery
     KF5::ConfigCore
     KF5::Baloo
     KF5::FileMetaData
+    KVariantStore
 )
 
 install(TARGETS gallery ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -6,6 +6,7 @@ set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Test Positioning)
 find_package(KF5 REQUIRED COMPONENTS Plasma I18n Declarative Config Baloo FileMetaData)
+find_package(KVariantStore REQUIRED)
 
 include(FeatureSummary)
 include(ECMAddTests)

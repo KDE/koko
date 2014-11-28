@@ -27,17 +27,14 @@
 #include <QDateTime>
 #include <QDataStream>
 
-#include <KConfig>
+#include <KVariantStore/KVariantStore>
+#include <KVariantStore/KVariantCollection>
 
 struct ImageInfo {
     QString path;
     QGeoLocation location;
-    QDate date;
+    QDateTime date;
 };
-
-QDataStream &operator<<(QDataStream &stream, const QGeoAddress &addr);
-QDataStream &operator>>(QDataStream &stream, QGeoAddress &addr);
-
 
 class ImageStorage : public QObject
 {
@@ -49,8 +46,10 @@ public:
     bool hasImage(const QString& path);
     void addImage(const ImageInfo& ii);
     QList<ImageInfo> images();
+
 private:
-    KConfig m_config;
+    KVariantStore m_db;
+    KVariantCollection m_coll;
 };
 
 

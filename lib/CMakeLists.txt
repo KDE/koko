@@ -19,6 +19,7 @@ target_link_libraries (galleryqmlplugin
     KF5::ConfigCore
     KF5::Baloo
     KF5::FileMetaData
+    KVariantStore
 )
 
 install (TARGETS galleryqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/gallery)

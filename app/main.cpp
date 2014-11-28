@@ -82,12 +82,12 @@ int main(int argc, char** argv)
             loop.exec();
         }
 
-        ii.date = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDate();
+        ii.date = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDateTime();
         if (ii.date.isNull()) {
-            ii.date = result.properties().value(KFileMetaData::Property::ImageDateTime).toDate();
+            ii.date = result.properties().value(KFileMetaData::Property::ImageDateTime).toDateTime();
         }
         if (ii.date.isNull()) {
-            ii.date = QFileInfo(path).created().date();
+            ii.date = QFileInfo(path).created();
         }
 
         qDebug() << path;

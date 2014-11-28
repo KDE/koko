@@ -19,17 +19,30 @@
  */
 
 #include "imagestorage.h"
-#include <KConfigGroup>
 
+#include <QDebug>
 #include <QGeoCoordinate>
 #include <QGeoAddress>
 #include <QDataStream>
-#include <QDebug>
+
+#include <QStandardPaths>
+#include <QDir>
+
+#include <KVariantStore/KVariantQuery>
 
 ImageStorage::ImageStorage(QObject* parent)
     : QObject(parent)
-    , m_config("gallerystorage")
 {
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/gallery";
+    QDir().mkpath(dir);
+
+    m_db.setPath(dir + "/db");
+    if (!m_db.open()) {
+        qDebug() << "Could not open db";
+        return;
+    }
+
+    m_coll = m_db.collection("images");
 }
 
 ImageStorage::~ImageStorage()
@@ -39,32 +52,36 @@ ImageStorage::~ImageStorage()
 
 bool ImageStorage::hasImage(const QString& path)
 {
-    return m_config.groupList().contains(path);
+    QVariantMap map{{"path", path}};
+    return !m_coll.findOne(map).isEmpty();
 }
 
 QList<ImageInfo> ImageStorage::images()
 {
     QList<ImageInfo> list;
-    QStringList groups = m_config.groupList();
-    for (const QString& group : groups) {
-        KConfigGroup kg = m_config.group(group);
+
+    auto query = m_coll.find(QVariantMap());
+    while (query.next()) {
+        QVariantMap map = query.result();
 
         ImageInfo ii;
-        ii.path = group;
-        ii.date = kg.readEntry("date", QDate());
+        ii.path = map.value("path").toString();
+        ii.date = map.value("dt").toDateTime();
 
-        double lat = kg.readEntry("loc_lat", static_cast<double>(0.0));
-        double lon = kg.readEntry("loc_lon", static_cast<double>(0.0));
-        double alt = kg.readEntry("loc_alt", static_cast<double>(0.0));
+        ii.location.coordinate().setLatitude(map.value("lat").toDouble());
+        ii.location.coordinate().setLongitude(map.value("lon").toDouble());
+        ii.location.coordinate().setAltitude(map.value("alt").toDouble());
 
-        ii.location.coordinate().setLatitude(lat);
-        ii.location.coordinate().setLongitude(lon);
-        ii.location.coordinate().setAltitude(alt);
-
-        QByteArray arr = kg.readEntry("loc_addr", QByteArray());
-        QDataStream stream(&arr, QIODevice::ReadOnly);
         QGeoAddress addr;
-        stream >> addr;
+        addr.setCity(map.value("city").toString());
+        addr.setCountry(map.value("country").toString());
+        addr.setCountryCode(map.value("countryCode").toString());
+        addr.setDistrict(map.value("district").toString());
+        addr.setPostalCode(map.value("postalCode").toString());
+        addr.setState(map.value("state").toString());
+        addr.setStreet(map.value("street").toString());
+        addr.setText(map.value("text").toString());
+
         ii.location.setAddress(addr);
 
         list << ii;
@@ -75,61 +92,22 @@ QList<ImageInfo> ImageStorage::images()
 
 void ImageStorage::addImage(const ImageInfo& ii)
 {
-    KConfigGroup kg = m_config.group(ii.path);
-    kg.writeEntry("date", ii.date);
-    kg.writeEntry("loc_lat", ii.location.coordinate().latitude());
-    kg.writeEntry("loc_lon", ii.location.coordinate().longitude());
-    kg.writeEntry("loc_alt", ii.location.coordinate().altitude());
+    QVariantMap map;
+    map["path"] = ii.path;
+    map["dt"] = ii.date;
+    map["lat"] = ii.location.coordinate().latitude();
+    map["lon"] = ii.location.coordinate().longitude();
+    map["alt"] = ii.location.coordinate().altitude();
 
-    QByteArray arr;
-    QDataStream st(&arr, QIODevice::WriteOnly);
-    st << ii.location.address();
+    QGeoAddress addr = ii.location.address();
+    map["city"] = addr.city();
+    map["country"] = addr.country();
+    map["countryCode"] = addr.countryCode();
+    map["district"] = addr.district();
+    map["postalCode"] = addr.postalCode();
+    map["state"] = addr.state();
+    map["street"] = addr.street();
+    map["text"] = addr.text();
 
-    kg.writeEntry("loc_addr", arr);
-    kg.sync();
-}
-
-QDataStream& operator<<(QDataStream& stream, const QGeoAddress& addr)
-{
-    stream << addr.city() << addr.country() << addr.countryCode() << addr.district()
-           << addr.postalCode() << addr.state() << addr.street() << addr.text();
-
-    return stream;
-}
-
-QDataStream& operator>>(QDataStream& stream, QGeoAddress& addr)
-{
-    QString city;
-    stream >> city;
-    addr.setCity(city);
-
-    QString country;
-    stream >> country;
-    addr.setCountry(country);
-
-    QString countryCode;
-    stream >> countryCode;
-    addr.setCountryCode(countryCode);
-
-    QString district;
-    stream >> district;
-    addr.setDistrict(district);
-
-    QString postalCode;
-    stream >> postalCode;
-    addr.setPostalCode(postalCode);
-
-    QString state;
-    stream >> state;
-    addr.setState(state);
-
-    QString street;
-    stream >> street;
-    addr.setStreet(street);
-
-    QString text;
-    stream >> text;
-    addr.setText(text);
-
-    return stream;
+    m_coll.insert(map);
 }

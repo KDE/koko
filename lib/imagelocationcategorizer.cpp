@@ -125,11 +125,12 @@ QHash< QString, QList< ImageInfo > > ImageLocationCategorizer::hourImages(int ho
 
     QHash< QString, QList<ImageInfo> > hash;
     for (const ImageInfo& ii : m_images) {
-        QDate date = ii.date;
-        if (date.isNull()) {
+        QDateTime dt = ii.date;
+        if (dt.isNull()) {
             continue;
         }
 
+        QDate date = dt.date();
         QString monthName = QDate::longMonthName(date.month());
         QString year = QString::number(date.year());
 
