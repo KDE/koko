@@ -68,5 +68,3 @@ target_link_libraries (galleryqmlplugin
 
 install (TARGETS galleryqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/gallery)
 install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/gallery)
-
-add_subdirectory(autotest)

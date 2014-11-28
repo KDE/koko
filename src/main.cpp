@@ -31,9 +31,9 @@
 #include <KFileMetaData/Extractor>
 #include <KFileMetaData/SimpleExtractionResult>
 
-#include "../lib/filesystemtracker.h"
-#include "../lib/reversegeocodelookupjob.h"
-#include "../lib/imagestorage.h"
+#include "filesystemtracker.h"
+#include "reversegeocodelookupjob.h"
+#include "imagestorage.h"
 
 int main(int argc, char** argv)
 {

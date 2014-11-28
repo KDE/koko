@@ -20,7 +20,7 @@
 #include <QTest>
 #include <QSignalSpy>
 
-#include "../reversegeocodelookupjob.h"
+#include "reversegeocodelookupjob.h"
 
 class ReverseGeoCodeTest : public QObject
 {

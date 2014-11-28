@@ -15,7 +15,14 @@ include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(GenerateExportHeader)
 
-add_subdirectory(lib)
+include_directories(
+  ${CMAKE_SOURCE_DIR}
+  ${CMAKE_SOURCE_DIR}/src
+  ${CMAKE_BINARY_DIR}/src
+)
+
+add_subdirectory(src)
+add_subdirectory(autotests)
 add_subdirectory(qml)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
