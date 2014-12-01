@@ -27,7 +27,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-import org.kde.gallery 0.1 as Gallery
+import org.kde.koko 0.1 as Koko
 
 ListView {
     id: listView
@@ -50,7 +50,7 @@ ListView {
         }
     }
 
-    model: Gallery.TagModel {
+    model: Koko.TagModel {
         id: tagModel
         tags: ["Fire", "Flower", "Hunger"]
     }

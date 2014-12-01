@@ -6,28 +6,28 @@ set(LIB_SRCS
     balooimagefetcher.cpp
 )
 
-add_library(gallerycommon SHARED ${LIB_SRCS})
-target_link_libraries(gallerycommon
+add_library(kokocommon SHARED ${LIB_SRCS})
+target_link_libraries(kokocommon
     Qt5::Core
     Qt5::Positioning
     KF5::Baloo
     KVariantStore
 )
 
-generate_export_header(gallerycommon BASE_NAME GALLERY EXPORT_FILE_NAME gallery_export.h)
+generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
 
-install(TARGETS gallerycommon EXPORT GalleryLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 #
 # Application
 #
-add_executable(gallery
+add_executable(koko
     main.cpp
     reversegeocodelookupjob.cpp
     filesystemtracker.cpp
 )
 
-target_link_libraries(gallery
+target_link_libraries(koko
     Qt5::Quick
     Qt5::Widgets
     Qt5::Qml
@@ -36,10 +36,10 @@ target_link_libraries(gallery
     KF5::Baloo
     KF5::FileMetaData
     KVariantStore
-    gallerycommon
+    kokocommon
 )
 
-install(TARGETS gallery ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 #
 # QML Plugin
@@ -54,17 +54,17 @@ set (qml_plugin_SRCS
     imagelocationcategorizer.cpp
 )
 
-add_library (galleryqmlplugin SHARED ${qml_plugin_SRCS})
+add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
-target_link_libraries (galleryqmlplugin
+target_link_libraries (kokoqmlplugin
     Qt5::Qml
     Qt5::Positioning
     KF5::ConfigCore
     KF5::Baloo
     KF5::FileMetaData
-    gallerycommon
+    kokocommon
     KVariantStore
 )
 
-install (TARGETS galleryqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/gallery)
-install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/gallery)
+install (TARGETS kokoqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
+install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)

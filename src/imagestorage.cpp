@@ -33,7 +33,7 @@
 ImageStorage::ImageStorage(QObject* parent)
     : QObject(parent)
 {
-    QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/gallery";
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
     QDir().mkpath(dir);
 
     m_db.setPath(dir + "/db");

@@ -1,2 +1,2 @@
-module org.kde.gallery
-plugin galleryqmlplugin
+module org.kde.koko
+plugin kokoqmlplugin

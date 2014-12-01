@@ -30,7 +30,7 @@
 #include <KVariantStore/KVariantStore>
 #include <KVariantStore/KVariantCollection>
 
-#include "gallery_export.h"
+#include "koko_export.h"
 
 struct ImageInfo {
     QString path;
@@ -38,7 +38,7 @@ struct ImageInfo {
     QDateTime date;
 };
 
-class GALLERY_EXPORT ImageStorage : public QObject
+class KOKO_EXPORT ImageStorage : public QObject
 {
     Q_OBJECT
 public:

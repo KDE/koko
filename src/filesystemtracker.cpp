@@ -26,11 +26,13 @@
 #include <QTimer>
 #include <QVariantMap>
 #include <QDir>
+#include <QDebug>
+#include <QTime>
 
 FileSystemTracker::FileSystemTracker(QObject* parent)
     : QObject(parent)
 {
-    static QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/gallery/";
+    static QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko/";
     QDir().mkpath(dir);
 
     m_db = new KVariantStore();

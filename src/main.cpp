@@ -38,7 +38,7 @@
 int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
-    app.setApplicationDisplayName("Gallery");
+    app.setApplicationDisplayName("Koko");
 
     KFileMetaData::ExtractorCollection extractors;
     KFileMetaData::Extractor* imageExtractor = extractors.fetchExtractors("image/jpeg").first();

@@ -23,7 +23,7 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-import org.kde.gallery 0.1 as Gallery
+import org.kde.koko 0.1 as Koko
 
 ScrollView {
     id: root
@@ -35,7 +35,7 @@ ScrollView {
         cellHeight: 300 + spacing
 
         property int spacing: 5
-        model: Gallery.ImagesModel {}
+        model: Koko.ImagesModel {}
 
         delegate: Item {
             width: view.cellWidth
