@@ -27,9 +27,8 @@ import QtQuick.Window 2.1
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
-ApplicationWindow {
+MainWindow {
     id: window
-    visible: true
 
     toolBar: ToolBar {
         RowLayout {
