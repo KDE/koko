@@ -28,10 +28,65 @@ ApplicationWindow {
     id: root
     visible: true
 
-    Rectangle {
-        SystemPalette { id: sysPal; }
-        color: myPalette.dark
+    property Item leftSidebar
+    property Item rightSidebar
+    property Item mainItem
+
+    onLeftSidebarChanged: {
+        if (leftSidebar)
+            leftSidebar.parent = leftSidebarArea
+    }
+
+    onRightSidebarChanged: {
+        if (rightSidebar)
+            rightSidebar.parent = rightSidebarArea
+    }
+
+    onMainItemChanged: {
+        if (mainItem)
+            mainItem.parent = mainItemArea
+    }
+
+    SystemPalette { id: sysPal; }
+
+    Item {
+        id: backgroundItem
         anchors.fill: parent
-        z: -1
+
+        Item {
+            id: leftSidebarArea
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+
+            implicitHeight: childrenRect.height
+            implicitWidth: childrenRect.width
+        }
+
+        Item {
+            id: mainItemArea
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.left: leftSidebarArea.right
+            anchors.right: rightSidebarArea.left
+
+            implicitHeight: childrenRect.height
+            implicitWidth: childrenRect.width
+
+            Rectangle {
+                color: sysPal.dark
+                anchors.fill: parent
+            }
+        }
+
+        Item {
+            id: rightSidebarArea
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+
+            implicitHeight: childrenRect.height
+            implicitWidth: childrenRect.width
+        }
     }
 }
