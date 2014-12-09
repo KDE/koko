@@ -22,39 +22,27 @@
 import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
+import QtQuick.Window 2.1
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.koko 0.1 as Koko
 
-GridView {
-    cellWidth: 400
-    cellHeight: 400
+Item {
+    id: highlight
 
-    delegate: ColumnLayout {
-        Image {
-            source: model.files[1]
-            asynchronous: true
-            fillMode: Image.PreserveAspectCrop
+    width: ListView.view ? ListView.view.width: (GridView.view ? GridView.view.cellWidth : undefined)
+    height: GridView.view ? GridView.view.cellHeight : undefined
 
-            Layout.maximumWidth: 300
-            Layout.maximumHeight: 300
-
-            width: Layout.maximumWidth
-            height: Layout.maximumHeight
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: root.imagesSelected(model.files)
-            }
+    /*
+    Behavior on opacity {
+        NumberAnimation {
+            duration: units.longDuration
+            easing.type: Easing.OutQuad
         }
+    }*/
 
-        PlasmaComponents.Label {
-            text: model.display
-            Layout.alignment: Qt.AlignHCenter
-        }
+    SystemPalette { id: sysPal; }
+    Rectangle {
+        color: sysPal.highlight
+        anchors.fill: parent
     }
-
-    highlight: Highlight {}
 }

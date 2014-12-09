@@ -56,6 +56,8 @@ ScrollView {
                 }
             }
         }
+
+        highlight: Highlight {}
     }
 
     Rectangle {
