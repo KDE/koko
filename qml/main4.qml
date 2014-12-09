@@ -30,6 +30,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 MainWindow {
     id: window
 
+    /*
     toolBar: ToolBar {
         RowLayout {
             PlasmaComponents.ToolButton {
@@ -41,222 +42,218 @@ MainWindow {
                 }
             }
         }
-    }
+    }*/
 
-    RowLayout {
-        anchors.fill: parent
+    leftSidebar: ColumnLayout {
+        Layout.alignment: Qt.AlignTop
+        Layout.minimumWidth: 400
+        Layout.maximumWidth: 400
+        Layout.fillHeight: true
+
+        PlasmaExtras.Heading {
+            text: "Navigation"
+            font.bold: true
+            Layout.fillWidth: true
+            level: 2
+        }
 
         ColumnLayout {
-            Layout.alignment: Qt.AlignTop
-            Layout.minimumWidth: 400
-            Layout.maximumWidth: 400
-            Layout.fillHeight: true
+            Layout.fillWidth: true
 
             PlasmaExtras.Heading {
-                text: "Navigation"
+                text: "Locations"
                 font.bold: true
                 Layout.fillWidth: true
-                level: 2
+                level: 4
             }
-
-            ColumnLayout {
-                Layout.fillWidth: true
-
-                PlasmaExtras.Heading {
-                    text: "Locations"
-                    font.bold: true
-                    Layout.fillWidth: true
-                    level: 4
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By Country"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-                    onClicked: {
-                        locationView.distance = 1000
-                        if (locationView.Stack.index != -1) {
-                            view.pop(locationView)
-                        } else {
-                            view.push(locationView)
-                        }
-                    }
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By State"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-                    onClicked: {
-                        locationView.distance = 100
-                        if (locationView.Stack.index != -1) {
-                            view.pop(locationView)
-                        } else {
-                            view.push(locationView)
-                        }
-                    }
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By City"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-
-                    onClicked: {
-                        locationView.distance = 10
-                        if (locationView.Stack.index != -1) {
-                            view.pop(locationView)
-                        } else {
-                            view.push(locationView)
-                        }
-                    }
-                }
-            }
-
-            ColumnLayout {
-                Layout.fillWidth: true
-
-                PlasmaExtras.Heading {
-                    text: "Time"
-                    font.bold: true
-                    Layout.fillWidth: true
-                    level: 4
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By Year"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-                    onClicked: {
-                        timeImages.hours = 24 * 365;
-                        if (timeImages.Stack.index != -1) {
-                            view.pop(timeImages)
-                        } else {
-                            view.push(timeImages)
-                        }
-                    }
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By Month"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-                    onClicked: {
-                        timeImages.hours = 24 * 30;
-                        if (timeImages.Stack.index != -1) {
-                            view.pop(timeImages)
-                        } else {
-                            view.push(timeImages)
-                        }
-                    }
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By Week"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-
-                    onClicked: {
-                        timeImages.hours = 24 * 7;
-                        if (timeImages.Stack.index != -1) {
-                            view.pop(timeImages)
-                        } else {
-                            view.push(timeImages)
-                        }
-                    }
-                }
-                PlasmaComponents.ToolButton {
-                    text: "By Day"
-                    iconName: "system-search"
-                    Layout.fillWidth: true
-
-                    onClicked: {
-                        timeImages.hours = 24;
-                        if (timeImages.Stack.index != -1) {
-                            view.pop(timeImages)
-                        } else {
-                            view.push(timeImages)
-                        }
-                    }
-                }
-            }
-
             PlasmaComponents.ToolButton {
-                text: "By Folder"
+                text: "By Country"
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    if (view.currentItem != folderImages) {
-                        view.push(folderImages)
+                    locationView.distance = 1000
+                    if (locationView.Stack.index != -1) {
+                        view.pop(locationView)
+                    } else {
+                        view.push(locationView)
                     }
                 }
             }
+            PlasmaComponents.ToolButton {
+                text: "By State"
+                iconName: "system-search"
+                Layout.fillWidth: true
+                onClicked: {
+                    locationView.distance = 100
+                    if (locationView.Stack.index != -1) {
+                        view.pop(locationView)
+                    } else {
+                        view.push(locationView)
+                    }
+                }
+            }
+            PlasmaComponents.ToolButton {
+                text: "By City"
+                iconName: "system-search"
+                Layout.fillWidth: true
 
-            Rectangle {
-                SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
-
-                color: myPalette.alternateBase
-                anchors.fill: parent
-                z: -1
+                onClicked: {
+                    locationView.distance = 10
+                    if (locationView.Stack.index != -1) {
+                        view.pop(locationView)
+                    } else {
+                        view.push(locationView)
+                    }
+                }
             }
         }
 
-        StackView {
-            id: view
+        ColumnLayout {
             Layout.fillWidth: true
-            Layout.fillHeight: true
 
-            delegate: StackViewDelegate {
-                pushTransition: StackViewTransition {
-                    PropertyAnimation {
-                        target: enterItem
-                        property: "y"
-                        from: exitItem.height
-                        to: 0
+            PlasmaExtras.Heading {
+                text: "Time"
+                font.bold: true
+                Layout.fillWidth: true
+                level: 4
+            }
+            PlasmaComponents.ToolButton {
+                text: "By Year"
+                iconName: "system-search"
+                Layout.fillWidth: true
+                onClicked: {
+                    timeImages.hours = 24 * 365;
+                    if (timeImages.Stack.index != -1) {
+                        view.pop(timeImages)
+                    } else {
+                        view.push(timeImages)
                     }
                 }
-                popTransition: StackViewTransition {
-                    PropertyAnimation {
-                        target: exitItem
-                        property: "y"
-                        from: 0
-                        to: enterItem.height
+            }
+            PlasmaComponents.ToolButton {
+                text: "By Month"
+                iconName: "system-search"
+                Layout.fillWidth: true
+                onClicked: {
+                    timeImages.hours = 24 * 30;
+                    if (timeImages.Stack.index != -1) {
+                        view.pop(timeImages)
+                    } else {
+                        view.push(timeImages)
                     }
                 }
             }
+            PlasmaComponents.ToolButton {
+                text: "By Week"
+                iconName: "system-search"
+                Layout.fillWidth: true
 
-            initialItem: Locations {
-                id: locationView
-                onImagesSelected: {
-                    imageGrid.model = files
-                    view.push(imageGrid)
+                onClicked: {
+                    timeImages.hours = 24 * 7;
+                    if (timeImages.Stack.index != -1) {
+                        view.pop(timeImages)
+                    } else {
+                        view.push(timeImages)
+                    }
                 }
             }
+            PlasmaComponents.ToolButton {
+                text: "By Day"
+                iconName: "system-search"
+                Layout.fillWidth: true
 
-            ImageGrid2 {
-                id: imageGrid
-                visible: false
-                onImageSelected: {
-                    imageViewer.filePath = filePath
-                    view.push(imageViewer)
+                onClicked: {
+                    timeImages.hours = 24;
+                    if (timeImages.Stack.index != -1) {
+                        view.pop(timeImages)
+                    } else {
+                        view.push(timeImages)
+                    }
                 }
             }
+        }
 
-            Viewer {
-                id: imageViewer
-                visible: false
-            }
-
-            TimeImages {
-                id: timeImages
-                visible: false
-                onImagesSelected: {
-                    imageGrid.model = files
-                    view.push(imageGrid)
+        PlasmaComponents.ToolButton {
+            text: "By Folder"
+            iconName: "system-search"
+            Layout.fillWidth: true
+            onClicked: {
+                if (view.currentItem != folderImages) {
+                    view.push(folderImages)
                 }
             }
+        }
 
-            Folders {
-                id: folderImages
-                visible: false
-                onImagesSelected: {
-                    imageGrid.model = files
-                    view.push(imageGrid)
+        Rectangle {
+            SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
+
+            color: myPalette.alternateBase
+            anchors.fill: parent
+            z: -1
+        }
+    }
+
+    mainItem: StackView {
+        id: view
+        //Layout.fillWidth: true
+        //Layout.fillHeight: true
+
+        delegate: StackViewDelegate {
+            pushTransition: StackViewTransition {
+                PropertyAnimation {
+                    target: enterItem
+                    property: "y"
+                    from: exitItem.height
+                    to: 0
                 }
+            }
+            popTransition: StackViewTransition {
+                PropertyAnimation {
+                    target: exitItem
+                    property: "y"
+                    from: 0
+                    to: enterItem.height
+                }
+            }
+        }
+
+        initialItem: Locations {
+            id: locationView
+            onImagesSelected: {
+                imageGrid.model = files
+                view.push(imageGrid)
+            }
+        }
+
+        ImageGrid2 {
+            id: imageGrid
+            visible: false
+            onImageSelected: {
+                imageViewer.filePath = filePath
+                view.push(imageViewer)
+            }
+        }
+
+        Viewer {
+            id: imageViewer
+            visible: false
+        }
+
+        TimeImages {
+            id: timeImages
+            visible: false
+            onImagesSelected: {
+                imageGrid.model = files
+                view.push(imageGrid)
+            }
+        }
+
+        Folders {
+            id: folderImages
+            visible: false
+            onImagesSelected: {
+                imageGrid.model = files
+                view.push(imageGrid)
             }
         }
     }
