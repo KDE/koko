@@ -27,6 +27,7 @@ import QtGraphicalEffects 1.0
 
 Item {
     property alias imageSource: img.source
+    property bool hover: false
 
     Image {
         id: img
@@ -48,10 +49,18 @@ Item {
     }
 
     OpacityMask {
+        id: opacityMask
         cached: true
         anchors.fill: parent
         source: img
         maskSource: maskRect
+    }
+
+    GammaAdjust {
+        id: gammaEffect
+        anchors.fill: parent
+        source: opacityMask
+        gamma: 1.0
     }
 
     DropShadow {
@@ -71,5 +80,12 @@ Item {
 
         border.color: "#CCCCCC"
         border.width: 1
+    }
+
+    onHoverChanged: {
+        if (hover)
+            gammaEffect.gamma = 1.2
+        else
+            gammaEffect.gamma = 1.0
     }
 }

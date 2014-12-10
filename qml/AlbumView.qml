@@ -53,10 +53,11 @@ GridView {
         MouseArea {
             anchors.fill: parent
             hoverEnabled: true
+
             onClicked: root.imagesSelected(model.files)
 
-            //onEntered: background.color = hoverColor
-            //onExited: background.color = normalColor
+            onEntered: album.hover = true
+            onExited: album.hover = false
         }
     }
 
