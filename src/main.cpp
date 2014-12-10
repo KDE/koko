@@ -86,7 +86,7 @@ int main(int argc, char** argv)
     QQmlEngine engine;
     QQmlContext* objectContext = engine.rootContext();
 
-    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main4.qml");
+    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
     QQmlComponent component(&engine, path);
     component.create(objectContext);
 
