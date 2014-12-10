@@ -44,15 +44,11 @@ MainWindow {
     }
 
     leftSidebar: ColumnLayout {
-        Layout.alignment: Qt.AlignTop
-        Layout.minimumWidth: 400
-        Layout.maximumWidth: 400
-        Layout.fillHeight: true
+        width: 400
 
         PlasmaExtras.Heading {
             text: "Navigation"
             font.bold: true
-            Layout.fillWidth: true
             level: 2
         }
 
@@ -182,20 +178,10 @@ MainWindow {
                 }
             }
         }
-
-        Rectangle {
-            SystemPalette { id: myPalette; colorGroup: SystemPalette.Active }
-
-            color: myPalette.alternateBase
-            anchors.fill: parent
-            z: -1
-        }
     }
 
     mainItem: StackView {
         id: view
-        //Layout.fillWidth: true
-        //Layout.fillHeight: true
 
         delegate: StackViewDelegate {
             pushTransition: StackViewTransition {
