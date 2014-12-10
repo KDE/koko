@@ -30,7 +30,7 @@
 class ImageLocationModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(int distance READ distance WRITE setDistance)
+    Q_PROPERTY(int distance READ distance WRITE setDistance NOTIFY distanceChanged)
 public:
     explicit ImageLocationModel(QObject* parent = 0);
 
@@ -44,6 +44,9 @@ public:
 
     int distance() const;
     void setDistance(int kms);
+
+signals:
+    void distanceChanged();
 
 private:
     ImageLocationCategorizer m_categorizer;

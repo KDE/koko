@@ -87,6 +87,8 @@ void ImageLocationModel::setDistance(int kms)
     beginResetModel();
     m_distance = kms;
     endResetModel();
+
+    emit distanceChanged();
 }
 
 QStringList ImageLocationModel::fetchKeyList() const
