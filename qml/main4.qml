@@ -30,7 +30,6 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 MainWindow {
     id: window
 
-    /*
     toolBar: ToolBar {
         RowLayout {
             PlasmaComponents.ToolButton {
@@ -42,7 +41,7 @@ MainWindow {
                 }
             }
         }
-    }*/
+    }
 
     leftSidebar: ColumnLayout {
         Layout.alignment: Qt.AlignTop
