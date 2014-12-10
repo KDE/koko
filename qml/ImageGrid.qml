@@ -32,6 +32,7 @@ ScrollView {
 
     GridView {
         id: view
+        anchors.fill: parent
         cellWidth: 300 + spacing
         cellHeight: 300 + spacing
 
@@ -58,12 +59,5 @@ ScrollView {
         }
 
         highlight: Highlight {}
-    }
-
-    Rectangle {
-        SystemPalette { id: myPalette }
-        color: myPalette.dark
-        anchors.fill: parent
-        z: -1
     }
 }
