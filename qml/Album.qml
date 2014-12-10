@@ -23,35 +23,36 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.koko 0.1 as Koko
+import QtGraphicalEffects 1.0
 
-GridView {
-    cellWidth: 400
-    cellHeight: 400
+Item {
+    property alias imageSource: img.source
 
-    delegate: GridItem {
-        ColumnLayout {
-            Album {
-                imageSource: model.files[1]
+    Image {
+        id: img
+        asynchronous: true
+        width: 300
+        height: 300
 
-                Layout.maximumWidth: 300
-                Layout.maximumHeight: 300
-
-                width: Layout.maximumWidth
-                height: Layout.maximumHeight
-            }
-
-            PlasmaComponents.Label {
-                text: model.display
-                Layout.alignment: Qt.AlignHCenter
-            }
-        }
-
-        onClicked: root.imagesSelected(model.files)
+        fillMode: Image.PreserveAspectCrop
+        anchors.fill: parent
+        visible: false
     }
 
-    highlight: Highlight {}
+    Rectangle {
+        id: rect
+        anchors.fill: parent
+        radius: img.width / 10
+
+        border.color: "#aaa"
+        border.width: img.width / 20
+        visible: false
+    }
+
+    OpacityMask {
+        cached: true
+        anchors.fill: parent
+        source: img
+        maskSource: rect
+    }
 }
