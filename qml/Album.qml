@@ -45,6 +45,7 @@ Item {
         anchors.fill: parent
         radius: borderRect.radius
 
+        antialiasing: true
         visible: false
     }
 
@@ -79,6 +80,7 @@ Item {
         color: "#00000000"
         radius: img.width / 7
 
+        antialiasing: true
         border.color: "#CCCCCC"
         border.width: 1
     }
