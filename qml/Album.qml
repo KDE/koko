@@ -67,6 +67,7 @@ Item {
         anchors.fill: parent
         radius: 18
         samples: 16
+        fast: true
         color: "#80000000"
         source: maskRect
         z: -1

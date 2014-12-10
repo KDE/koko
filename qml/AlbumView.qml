@@ -34,13 +34,13 @@ GridView {
 
             Layout.maximumWidth: 300
             Layout.maximumHeight: 300
-
-            width: Layout.maximumWidth
-            height: Layout.maximumHeight
+            Layout.minimumWidth: 300
+            Layout.minimumHeight: 300
         }
 
         Label {
             text: model.display
+            color: "white"
 
             font.bold: true
             horizontalAlignment: Qt.AlignHCenter
