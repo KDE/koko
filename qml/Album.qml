@@ -40,12 +40,10 @@ Item {
     }
 
     Rectangle {
-        id: rect
+        id: maskRect
         anchors.fill: parent
-        radius: img.width / 10
+        radius: borderRect.radius
 
-        border.color: "#aaa"
-        border.width: img.width / 20
         visible: false
     }
 
@@ -53,6 +51,25 @@ Item {
         cached: true
         anchors.fill: parent
         source: img
-        maskSource: rect
+        maskSource: maskRect
+    }
+
+    DropShadow {
+        anchors.fill: parent
+        radius: 18
+        samples: 16
+        color: "#80000000"
+        source: maskRect
+        z: -1
+    }
+
+    Rectangle {
+        id: borderRect
+        anchors.fill: parent
+        color: "#00000000"
+        radius: img.width / 7
+
+        border.color: "#CCCCCC"
+        border.width: 1
     }
 }

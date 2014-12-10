@@ -49,10 +49,4 @@ ColumnLayout {
         }
     }
 
-    Rectangle {
-        SystemPalette { id: myPalette }
-        color: myPalette.window
-        anchors.fill: parent
-        z: -1
-    }
 }

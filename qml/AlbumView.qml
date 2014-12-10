@@ -23,34 +23,41 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.koko 0.1 as Koko
-
 GridView {
     cellWidth: 400
     cellHeight: 400
 
-    delegate: GridItem {
-        ColumnLayout {
-            Album {
-                imageSource: model.files[1]
+    delegate: ColumnLayout {
+        Album {
+            id: album
+            imageSource: model.files[1]
 
-                Layout.maximumWidth: 300
-                Layout.maximumHeight: 300
+            Layout.maximumWidth: 300
+            Layout.maximumHeight: 300
 
-                width: Layout.maximumWidth
-                height: Layout.maximumHeight
-            }
-
-            PlasmaComponents.Label {
-                text: model.display
-                Layout.alignment: Qt.AlignHCenter
-            }
+            width: Layout.maximumWidth
+            height: Layout.maximumHeight
         }
 
-        onClicked: root.imagesSelected(model.files)
+        Label {
+            text: model.display
+
+            font.bold: true
+            horizontalAlignment: Qt.AlignHCenter
+            wrapMode: Text.Wrap
+
+            Layout.maximumWidth: album.width
+            Layout.minimumWidth: album.width
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            hoverEnabled: true
+            onClicked: root.imagesSelected(model.files)
+
+            //onEntered: background.color = hoverColor
+            //onExited: background.color = normalColor
+        }
     }
 
     highlight: Highlight {}
