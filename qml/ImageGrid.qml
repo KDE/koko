@@ -27,6 +27,7 @@ import org.kde.koko 0.1 as Koko
 
 ScrollView {
     id: root
+    property alias model: view.model
     signal imageSelected(string filePath)
 
     GridView {
@@ -35,14 +36,13 @@ ScrollView {
         cellHeight: 300 + spacing
 
         property int spacing: 5
-        model: Koko.ImagesModel {}
 
         delegate: Item {
             width: view.cellWidth
             height: view.cellHeight
 
             Image {
-                source: model.filePath
+                source: model.modelData
                 asynchronous: true
                 fillMode: Image.PreserveAspectCrop
 
@@ -52,16 +52,18 @@ ScrollView {
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: root.imageSelected(model.filePath)
+                    onClicked: root.imageSelected(model.modelData)
                 }
             }
         }
 
-        Rectangle {
-            SystemPalette { id: myPalette }
-            color: myPalette.dark
-            anchors.fill: parent
-            z: -1
-        }
+        highlight: Highlight {}
+    }
+
+    Rectangle {
+        SystemPalette { id: myPalette }
+        color: myPalette.dark
+        anchors.fill: parent
+        z: -1
     }
 }

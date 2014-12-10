@@ -210,7 +210,7 @@ MainWindow {
             }
         }
 
-        ImageGrid2 {
+        ImageGrid {
             id: imageGrid
             visible: false
             onImageSelected: {
