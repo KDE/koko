@@ -24,40 +24,69 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
 GridView {
-    cellWidth: 400
-    cellHeight: 400
+    id: gridView
+    cellWidth: cellActualWidth + spacing
+    cellHeight: cellActualHeight + minSpacing
 
-    delegate: ColumnLayout {
-        Album {
-            id: album
-            imageSource: model.files[1]
+    property int minSpacing : 50
+    property int spacing : minSpacing
+    property int cellActualWidth: 300
+    property int cellActualHeight: 300
 
-            Layout.maximumWidth: 300
-            Layout.maximumHeight: 300
-            Layout.minimumWidth: 300
-            Layout.minimumHeight: 300
+    function calculateSpacing()
+    {
+        var minItemWidth = cellActualWidth + minSpacing
+        var numCol = Math.min(count, Math.floor(gridView.width / minItemWidth))
+        if (numCol <= 1) {
+            spacing = minSpacing
+            return
         }
 
-        Label {
-            text: model.display
-            color: "white"
+        var minSpaceConsumed = numCol * (cellActualWidth + minSpacing)
+        var extraSpace = gridView.width - minSpaceConsumed;
+        spacing = minSpacing + (extraSpace / numCol);
+    }
 
-            font.bold: true
-            horizontalAlignment: Qt.AlignHCenter
-            wrapMode: Text.Wrap
+    onWidthChanged: calculateSpacing()
 
-            Layout.maximumWidth: album.width
-            Layout.minimumWidth: album.width
-        }
+    delegate: Item {
+        width: cellWidth
+        height: cellHeight
 
-        MouseArea {
-            anchors.fill: parent
-            hoverEnabled: true
+        ColumnLayout {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            Album {
+                id: album
+                imageSource: model.files[1]
 
-            onClicked: root.imagesSelected(model.files)
+                Layout.maximumWidth: 300
+                Layout.maximumHeight: 300
+                Layout.minimumWidth: 300
+                Layout.minimumHeight: 300
+            }
 
-            onEntered: album.hover = true
-            onExited: album.hover = false
+            Label {
+                text: model.display
+                color: "white"
+
+                font.bold: true
+                horizontalAlignment: Qt.AlignHCenter
+                wrapMode: Text.Wrap
+
+                Layout.maximumWidth: album.width
+                Layout.minimumWidth: album.width
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                hoverEnabled: true
+
+                onClicked: root.imagesSelected(model.files)
+
+                onEntered: album.hover = true
+                onExited: album.hover = false
+            }
         }
     }
 
