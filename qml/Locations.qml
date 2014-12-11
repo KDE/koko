@@ -28,25 +28,38 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.koko 0.1 as Koko
 
-ColumnLayout {
+FocusScope {
     id: root
     signal imagesSelected(var files)
     property alias distance: imageLocationsModel.distance
 
-    PlasmaExtras.Heading {
-        text: "Locations"
-        font.bold: true
-        Layout.alignment: Qt.AlignHCenter
-    }
+    ColumnLayout {
+        anchors.fill: parent
 
-    AlbumView {
-        id: view
-        Layout.fillWidth: true
-        Layout.fillHeight: true
+        PlasmaExtras.Heading {
+            text: "Locations"
+            font.bold: true
+            Layout.alignment: Qt.AlignHCenter
+        }
 
-        model: Koko.ImageLocationModel {
-            id: imageLocationsModel
+        AlbumView {
+            id: view
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            focus: true
+
+            model: Koko.ImageLocationModel {
+                id: imageLocationsModel
+            }
         }
     }
 
+    MouseArea {
+        anchors.fill: parent
+        propagateComposedEvents: true
+        onClicked: {
+            console.log(view.activeFocus)
+            root.focus = true
+        }
+    }
 }

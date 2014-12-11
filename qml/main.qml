@@ -208,6 +208,7 @@ MainWindow {
                 imageGrid.model = files
                 view.push(imageGrid)
             }
+            focus: true
         }
 
         ImageGrid {
