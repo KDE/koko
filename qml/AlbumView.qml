@@ -25,26 +25,28 @@ import QtQuick.Controls 1.0
 
 GridView {
     id: gridView
-    cellWidth: cellActualWidth + spacing
-    cellHeight: cellActualHeight + minSpacing
+    cellWidth: cellActualWidth + columnSpacing
+    cellHeight: cellActualHeight + minRowSpacing
 
-    property int minSpacing : 50
-    property int spacing : minSpacing
+    property int minColumnSpacing : 50
+    property int minRowSpacing : 100
+
+    property int columnSpacing : minColumnSpacing
     property int cellActualWidth: 300
     property int cellActualHeight: 300
 
     function calculateSpacing()
     {
-        var minItemWidth = cellActualWidth + minSpacing
+        var minItemWidth = cellActualWidth + minColumnSpacing
         var numCol = Math.min(count, Math.floor(gridView.width / minItemWidth))
         if (numCol <= 1) {
-            spacing = minSpacing
+            columnSpacing = minColumnSpacing
             return
         }
 
-        var minSpaceConsumed = numCol * (cellActualWidth + minSpacing)
+        var minSpaceConsumed = numCol * minItemWidth;
         var extraSpace = gridView.width - minSpaceConsumed;
-        spacing = minSpacing + (extraSpace / numCol);
+        columnSpacing = minColumnSpacing + (extraSpace / numCol);
     }
 
     onWidthChanged: calculateSpacing()
