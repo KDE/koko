@@ -54,12 +54,11 @@ FocusScope {
         }
     }
 
+    onDistanceChanged: view.calculateSpacing()
+
     MouseArea {
         anchors.fill: parent
         propagateComposedEvents: true
-        onClicked: {
-            console.log(view.activeFocus)
-            root.focus = true
-        }
+        onClicked: root.focus = true
     }
 }
