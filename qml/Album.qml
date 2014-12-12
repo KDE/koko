@@ -50,18 +50,21 @@ Item {
     }
 
     OpacityMask {
-        id: opacityMask
         cached: true
         anchors.fill: parent
         source: img
         maskSource: maskRect
     }
 
-    GammaAdjust {
+    // We were using a GammaEffect before this, but that
+    // resulted in really high cpu usage. Apparently mixing two
+    // graphical effects is not ideal.
+    Rectangle {
         id: gammaEffect
         anchors.fill: parent
-        source: opacityMask
-        gamma: 1.0
+        color: "white"
+        radius: borderRect.radius
+        opacity: 0.0
     }
 
     DropShadow {
@@ -71,6 +74,7 @@ Item {
         fast: true
         color: "#80000000"
         source: maskRect
+        cached: true
         z: -1
     }
 
@@ -87,8 +91,8 @@ Item {
 
     onHoverChanged: {
         if (hover)
-            gammaEffect.gamma = 1.2
+            gammaEffect.opacity = 0.1
         else
-            gammaEffect.gamma = 1.0
+            gammaEffect.opacity = 0.0
     }
 }
