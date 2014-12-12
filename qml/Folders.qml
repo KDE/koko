@@ -29,11 +29,14 @@ FocusScope {
     id: root
     signal imagesSelected(var files)
 
-    AlbumView {
-        id: view
+    ScrollView {
         anchors.fill: parent
+        AlbumView {
+            id: view
+            anchors.fill: parent
 
-        model: Koko.ImageFolderModel {}
+            model: Koko.ImageFolderModel {}
+        }
     }
 
     MouseArea {

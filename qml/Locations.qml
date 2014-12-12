@@ -34,13 +34,16 @@ FocusScope {
     property alias distance: imageLocationsModel.distance
 
 
-    AlbumView {
-        id: view
+    ScrollView {
         anchors.fill: parent
-        focus: true
+        AlbumView {
+            id: view
+            anchors.fill: parent
+            focus: true
 
-        model: Koko.ImageLocationModel {
-            id: imageLocationsModel
+            model: Koko.ImageLocationModel {
+                id: imageLocationsModel
+            }
         }
     }
 

@@ -30,12 +30,15 @@ FocusScope {
     signal imagesSelected(var files)
     property alias hours: imageTimeModel.hours
 
-    AlbumView {
-        id: view
+    ScrollView {
         anchors.fill: parent
+        AlbumView {
+            id: view
+            anchors.fill: parent
 
-        model: Koko.ImageTimeModel {
-            id: imageTimeModel
+            model: Koko.ImageTimeModel {
+                id: imageTimeModel
+            }
         }
     }
 
