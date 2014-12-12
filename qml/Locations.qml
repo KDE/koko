@@ -59,6 +59,9 @@ FocusScope {
     MouseArea {
         anchors.fill: parent
         propagateComposedEvents: true
-        onClicked: root.focus = true
+        onClicked: {
+            root.focus = true
+            mouse.accepted = false
+        }
     }
 }
