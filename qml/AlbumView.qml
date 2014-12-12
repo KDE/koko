@@ -61,6 +61,7 @@ GridView {
             Album {
                 id: album
                 imageSource: model.files[1]
+                isCurrentItem: gridView.currentIndex == model.index
 
                 Layout.maximumWidth: 300
                 Layout.maximumHeight: 300
@@ -86,11 +87,12 @@ GridView {
 
                 onClicked: root.imagesSelected(model.files)
 
-                onEntered: album.hover = true
+                onEntered: {
+                    album.hover = true
+                    gridView.currentIndex = index
+                }
                 onExited: album.hover = false
             }
         }
     }
-
-    highlight: Highlight {}
 }

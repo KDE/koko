@@ -28,6 +28,7 @@ import QtGraphicalEffects 1.0
 Item {
     property alias imageSource: img.source
     property bool hover: false
+    property bool isCurrentItem: false
 
     Image {
         id: img
@@ -78,6 +79,7 @@ Item {
         z: -1
     }
 
+    SystemPalette { id: sysPal; }
     Rectangle {
         id: borderRect
         anchors.fill: parent
@@ -85,8 +87,8 @@ Item {
         radius: img.width / 7
 
         antialiasing: true
-        border.color: "#CCCCCC"
-        border.width: 1
+        border.color: isCurrentItem ? sysPal.highlight : "#CCCCCC"
+        border.width: isCurrentItem ? 5 : 1
     }
 
     onHoverChanged: {
