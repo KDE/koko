@@ -44,9 +44,10 @@ AutomaticSpacingGrid {
                 Layout.minimumHeight: 300
             }
 
+            SystemPalette { id: sysPal; }
             Label {
                 text: model.display
-                color: "white"
+                color: sysPal.light
 
                 font.bold: true
                 horizontalAlignment: Qt.AlignHCenter
