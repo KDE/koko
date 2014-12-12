@@ -65,7 +65,7 @@ Item {
         anchors.fill: parent
         color: "white"
         radius: borderRect.radius
-        opacity: 0.0
+        opacity: hover ? 0.1 : 0.0
     }
 
     DropShadow {
@@ -89,12 +89,5 @@ Item {
         antialiasing: true
         border.color: isCurrentItem ? sysPal.highlight : "#CCCCCC"
         border.width: isCurrentItem ? 5 : 1
-    }
-
-    onHoverChanged: {
-        if (hover)
-            gammaEffect.opacity = 0.1
-        else
-            gammaEffect.opacity = 0.0
     }
 }
