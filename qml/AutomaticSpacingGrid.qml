@@ -39,7 +39,7 @@ GridView {
     {
         var minItemWidth = cellActualWidth + minColumnSpacing
         var numCol = Math.min(count, Math.floor(gridView.width / minItemWidth))
-        if (numCol <= 1) {
+        if (numCol <= 0) {
             columnSpacing = minColumnSpacing
             return
         }
