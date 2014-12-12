@@ -33,17 +33,16 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
-//QtControls.ApplicationWindow {
     id: root
+    clip: true
 
-//    color: "#192629"
     Rectangle {
         color: "#192629"
         anchors.fill: parent
         z: -1
     }
 
-    property string filePath: "/home/vishesh/Images/danbo.jpeg"
+    property string filePath
 
     ColumnLayout {
         anchors.fill: parent
