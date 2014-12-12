@@ -35,6 +35,8 @@ FocusScope {
         AlbumView {
             id: view
             anchors.fill: parent
+            anchors.topMargin: 20
+            focus: true
 
             model: Koko.ImageTimeModel {
                 id: imageTimeModel
