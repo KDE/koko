@@ -44,7 +44,7 @@ MainWindow {
     }
 
     leftSidebar: ColumnLayout {
-        width: 400
+        width: 350
 
         PlasmaExtras.Heading {
             text: "Navigation"
