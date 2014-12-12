@@ -19,11 +19,6 @@
  *
  */
 
-//
-// The file is just for testing a different user interface for
-// viewing an application
-//
-
 import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0 as QtControls
@@ -91,9 +86,25 @@ Item {
                 Item {
                     Layout.fillWidth: true
                 }
+
+                // Zoom
+                QtControls.Button {
+                    text: "Fit"
+                    // FIXME: Automatically detect the best zoom level!!
+                    onClicked: slider.value = 1.0
+                }
+                QtControls.Button {
+                    text: "100%"
+                    onClicked: slider.value = 1.0
+                }
+                QtControls.ToolButton {
+                    iconName: "file-zoom-out"
+                    onClicked: slider.value = slider.value - 1.0
+                }
                 QtControls.Slider {
-                    minimumValue: 0.0
-                    maximumValue: 5.0
+                    id: slider
+                    minimumValue: 1.0
+                    maximumValue: 9.99
                     value: 1.0
 
                     Layout.alignment: Qt.AlignRight
@@ -101,6 +112,13 @@ Item {
                     onValueChanged: {
                         img.scale = value
                     }
+                }
+                QtControls.ToolButton {
+                    iconName: "file-zoom-in"
+                    onClicked: slider.value = slider.value + 1.0
+                }
+                QtControls.Label {
+                    text: Math.floor(img.scale * 100) + "%"
                 }
             }
         }
