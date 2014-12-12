@@ -33,24 +33,14 @@ FocusScope {
     signal imagesSelected(var files)
     property alias distance: imageLocationsModel.distance
 
-    ColumnLayout {
+
+    AlbumView {
+        id: view
         anchors.fill: parent
+        focus: true
 
-        PlasmaExtras.Heading {
-            text: "Locations"
-            font.bold: true
-            Layout.alignment: Qt.AlignHCenter
-        }
-
-        AlbumView {
-            id: view
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            focus: true
-
-            model: Koko.ImageLocationModel {
-                id: imageLocationsModel
-            }
+        model: Koko.ImageLocationModel {
+            id: imageLocationsModel
         }
     }
 

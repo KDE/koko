@@ -23,33 +23,25 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.koko 0.1 as Koko
 
-ColumnLayout {
+FocusScope {
     id: root
     signal imagesSelected(var files)
 
-    PlasmaExtras.Heading {
-        text: "Folders"
-        font.bold: true
-        Layout.alignment: Qt.AlignHCenter
-    }
-
     AlbumView {
         id: view
-        Layout.fillWidth: true
-        Layout.fillHeight: true
+        anchors.fill: parent
 
         model: Koko.ImageFolderModel {}
     }
 
-    Rectangle {
-        SystemPalette { id: myPalette }
-        color: myPalette.window
+    MouseArea {
         anchors.fill: parent
-        z: -1
+        propagateComposedEvents: true
+        onClicked: {
+            root.focus = true
+            mouse.accepted = false
+        }
     }
 }
