@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Koko
+GenericName=Image Gallery
+Comment=An Image gallery application
+Exec=koko %U
+Terminal=false
+Type=Application
+Categories=Qt;KDE;Graphics;Viewer;
+Icon=nepomuk

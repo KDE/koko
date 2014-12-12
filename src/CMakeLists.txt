@@ -62,3 +62,5 @@ target_link_libraries (kokoqmlplugin
 
 install (TARGETS kokoqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
 install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
+install(FILES org.kde.koko.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+
