@@ -185,17 +185,27 @@ MainWindow {
             }
         }
 
-        PlasmaComponents.ToolButton {
-            text: "By Folder"
-            iconName: "system-search"
+        ColumnLayout {
             Layout.fillWidth: true
-            onClicked: {
-                if (view.currentItem != folderImages) {
-                    view.push(folderImages)
-                }
+
+            PlasmaExtras.Heading {
+                text: "Path"
+                font.bold: true
+                Layout.fillWidth: true
+                level: 4
             }
-            checkable: true
-            exclusiveGroup: group
+            PlasmaComponents.ToolButton {
+                text: "By Folder"
+                iconName: "system-search"
+                Layout.fillWidth: true
+                onClicked: {
+                    if (view.currentItem != folderImages) {
+                        view.push(folderImages)
+                    }
+                }
+                checkable: true
+                exclusiveGroup: group
+            }
         }
     }
 
