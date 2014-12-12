@@ -47,7 +47,6 @@ install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
 set (qml_plugin_SRCS
     qmlplugins.cpp
     tagmodel.cpp
-    imagesmodel.cpp
     imagelocationmodel.cpp
     imagetimemodel.cpp
     imagefoldermodel.cpp
@@ -58,12 +57,7 @@ add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
 target_link_libraries (kokoqmlplugin
     Qt5::Qml
-    Qt5::Positioning
-    KF5::ConfigCore
-    KF5::Baloo
-    KF5::FileMetaData
     kokocommon
-    KVariantStore
 )
 
 install (TARGETS kokoqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)

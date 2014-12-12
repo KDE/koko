@@ -22,7 +22,6 @@
 #include "qmlplugins.h"
 
 #include "tagmodel.h"
-#include "imagesmodel.h"
 #include "imagelocationmodel.h"
 #include "imagetimemodel.h"
 #include "imagefoldermodel.h"
@@ -36,7 +35,6 @@ void QmlPlugins::initializeEngine(QQmlEngine *, const char *)
 void QmlPlugins::registerTypes(const char *uri)
 {
     qmlRegisterType<TagModel> (uri, 0, 1, "TagModel");
-    qmlRegisterType<ImagesModel> (uri, 0, 1, "ImagesModel");
     qmlRegisterType<ImageLocationModel> (uri, 0, 1, "ImageLocationModel");
     qmlRegisterType<ImageTimeModel> (uri, 0, 1, "ImageTimeModel");
     qmlRegisterType<ImageFolderModel> (uri, 0, 1, "ImageFolderModel");
