@@ -23,40 +23,31 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-import org.kde.koko 0.1 as Koko
+GridView {
+    id: gridView
+    cellWidth: cellActualWidth + columnSpacing
+    cellHeight: cellActualHeight + minRowSpacing
 
-ScrollView {
-    id: root
-    property alias model: view.model
-    signal imageSelected(string filePath)
+    property int minColumnSpacing : 50
+    property int minRowSpacing : 100
 
-    AutomaticSpacingGrid {
-        id: view
-        anchors.fill: parent
+    property int columnSpacing : minColumnSpacing
+    property int cellActualWidth: 300
+    property int cellActualHeight: 300
 
-        minRowSpacing: 5
-        minColumnSpacing: 5
-
-        delegate: Item {
-            width: view.cellWidth
-            height: view.cellHeight
-
-            Image {
-                source: model.modelData
-                asynchronous: true
-                fillMode: Image.PreserveAspectCrop
-
-                width: 300
-                height: 300
-                anchors.centerIn: parent
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: root.imageSelected(model.modelData)
-                }
-            }
+    function calculateSpacing()
+    {
+        var minItemWidth = cellActualWidth + minColumnSpacing
+        var numCol = Math.min(count, Math.floor(gridView.width / minItemWidth))
+        if (numCol <= 1) {
+            columnSpacing = minColumnSpacing
+            return
         }
 
-        highlight: Highlight {}
+        var minSpaceConsumed = numCol * minItemWidth;
+        var extraSpace = gridView.width - minSpaceConsumed;
+        columnSpacing = minColumnSpacing + (extraSpace / numCol);
     }
+
+    onWidthChanged: calculateSpacing()
 }

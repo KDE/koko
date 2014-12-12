@@ -23,33 +23,8 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
-GridView {
+AutomaticSpacingGrid {
     id: gridView
-    cellWidth: cellActualWidth + columnSpacing
-    cellHeight: cellActualHeight + minRowSpacing
-
-    property int minColumnSpacing : 50
-    property int minRowSpacing : 100
-
-    property int columnSpacing : minColumnSpacing
-    property int cellActualWidth: 300
-    property int cellActualHeight: 300
-
-    function calculateSpacing()
-    {
-        var minItemWidth = cellActualWidth + minColumnSpacing
-        var numCol = Math.min(count, Math.floor(gridView.width / minItemWidth))
-        if (numCol <= 1) {
-            columnSpacing = minColumnSpacing
-            return
-        }
-
-        var minSpaceConsumed = numCol * minItemWidth;
-        var extraSpace = gridView.width - minSpaceConsumed;
-        columnSpacing = minColumnSpacing + (extraSpace / numCol);
-    }
-
-    onWidthChanged: calculateSpacing()
 
     delegate: Item {
         width: cellWidth
