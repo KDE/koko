@@ -52,6 +52,8 @@ MainWindow {
             level: 2
         }
 
+        ExclusiveGroup { id: group; }
+
         ColumnLayout {
             Layout.fillWidth: true
 
@@ -73,6 +75,8 @@ MainWindow {
                         view.push(locationView)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
             }
             PlasmaComponents.ToolButton {
                 text: "By State"
@@ -86,6 +90,8 @@ MainWindow {
                         view.push(locationView)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
             }
             PlasmaComponents.ToolButton {
                 text: "By City"
@@ -100,6 +106,9 @@ MainWindow {
                         view.push(locationView)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
+                checked: true
             }
         }
 
@@ -124,6 +133,8 @@ MainWindow {
                         view.push(timeImages)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
             }
             PlasmaComponents.ToolButton {
                 text: "By Month"
@@ -137,6 +148,8 @@ MainWindow {
                         view.push(timeImages)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
             }
             PlasmaComponents.ToolButton {
                 text: "By Week"
@@ -151,6 +164,8 @@ MainWindow {
                         view.push(timeImages)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
             }
             PlasmaComponents.ToolButton {
                 text: "By Day"
@@ -165,6 +180,8 @@ MainWindow {
                         view.push(timeImages)
                     }
                 }
+                checkable: true
+                exclusiveGroup: group
             }
         }
 
@@ -177,6 +194,8 @@ MainWindow {
                     view.push(folderImages)
                 }
             }
+            checkable: true
+            exclusiveGroup: group
         }
     }
 
