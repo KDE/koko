@@ -28,7 +28,8 @@ import org.kde.koko 0.1 as Koko
 ScrollView {
     id: root
     property alias model: view.model
-    signal imageSelected(string filePath)
+    property alias index: view.currentIndex
+    signal imageSelected(string filePath, int index)
 
     AutomaticSpacingGrid {
         id: view
@@ -52,7 +53,7 @@ ScrollView {
 
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: root.imageSelected(model.modelData)
+                    onClicked: root.imageSelected(model.modelData, model.index)
                 }
             }
         }

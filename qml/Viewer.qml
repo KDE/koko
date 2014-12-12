@@ -31,6 +31,13 @@ Item {
     id: root
     clip: true
 
+    /**
+     * An optional model which contains all the Images. This is used
+     * to change the index during Key Navigation
+     */
+    property var model
+    property int currentIndex
+
     Rectangle {
         color: "#192629"
         anchors.fill: parent
@@ -122,5 +129,14 @@ Item {
                 }
             }
         }
+    }
+
+    Keys.onRightPressed: {
+        currentIndex = Math.min(model.length - 1, currentIndex + 1)
+        filePath = model[currentIndex]
+    }
+    Keys.onLeftPressed: {
+        currentIndex = Math.max(0, currentIndex - 1)
+        filePath = model[currentIndex]
     }
 }

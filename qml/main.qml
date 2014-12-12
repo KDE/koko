@@ -235,6 +235,10 @@ MainWindow {
             visible: false
             onImageSelected: {
                 imageViewer.filePath = filePath
+                imageViewer.currentIndex = index
+                imageViewer.model = model
+                imageViewer.focus = true
+
                 view.push(imageViewer)
             }
         }
@@ -242,6 +246,8 @@ MainWindow {
         Viewer {
             id: imageViewer
             visible: false
+
+            onCurrentIndexChanged: imageGrid.index = currentIndex
         }
 
         TimeImages {
