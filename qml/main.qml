@@ -238,6 +238,7 @@ MainWindow {
                 imageGrid.model = files
                 view.push(imageGrid)
             }
+            group: Koko.ImageLocationModel.City
             focus: true
         }
 
