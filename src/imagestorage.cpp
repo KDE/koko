@@ -26,6 +26,7 @@
 
 #include <QStandardPaths>
 #include <QDir>
+#include <QUrl>
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -74,42 +75,6 @@ ImageStorage* ImageStorage::instance()
     return &storage;
 }
 
-QList<ImageInfo> ImageStorage::images()
-{
-    QList<ImageInfo> list;
-
-    /*
-    auto query = m_coll.find(QVariantMap());
-    while (query.next()) {
-        QVariantMap map = query.result();
-
-        ImageInfo ii;
-        ii.path = map.value("path").toString();
-        ii.date = map.value("dt").toDateTime();
-
-        ii.location.coordinate().setLatitude(map.value("lat").toDouble());
-        ii.location.coordinate().setLongitude(map.value("lon").toDouble());
-        ii.location.coordinate().setAltitude(map.value("alt").toDouble());
-
-        QGeoAddress addr;
-        addr.setCity(map.value("city").toString());
-        addr.setCountry(map.value("country").toString());
-        addr.setCountryCode(map.value("countryCode").toString());
-        addr.setDistrict(map.value("district").toString());
-        addr.setPostalCode(map.value("postalCode").toString());
-        addr.setState(map.value("state").toString());
-        addr.setStreet(map.value("street").toString());
-        addr.setText(map.value("text").toString());
-
-        ii.location.setAddress(addr);
-
-        list << ii;
-    }
-    */
-
-    return list;
-}
-
 void ImageStorage::addImage(const ImageInfo& ii)
 {
     QGeoAddress addr = ii.location.address();
@@ -147,12 +112,82 @@ void ImageStorage::addImage(const ImageInfo& ii)
 
 QStringList ImageStorage::locations(ImageStorage::LocationGroup loca)
 {
+    if (loca == Country) {
+        QSqlQuery query;
+        query.prepare("SELECT DISTINCT country from locations");
+
+        if (!query.exec()) {
+            qDebug() << loca << query.lastError();
+            return QStringList();
+        }
+
+        QStringList groups;
+        while (query.next()) {
+            groups << query.value(0).toString();
+        }
+        return groups;
+    }
+    else if (loca == State) {
+        QSqlQuery query;
+        query.prepare("SELECT DISTINCT country, state from locations");
+
+        if (!query.exec()) {
+            qDebug() << loca << query.lastError();
+            return QStringList();
+        }
+
+        QStringList groups;
+        while (query.next()) {
+            QString country = query.value(0).toString();
+            QString state = query.value(1).toString();
+            groups << state + ", " + country;
+        }
+        return groups;
+    }
+    else if (loca == City) {
+        QSqlQuery query;
+        query.prepare("SELECT DISTINCT country, state, city from locations");
+
+        if (!query.exec()) {
+            qDebug() << loca << query.lastError();
+            return QStringList();
+        }
+
+        QStringList groups;
+        while (query.next()) {
+            QString country = query.value(0).toString();
+            QString state = query.value(1).toString();
+            QString city = query.value(2).toString();
+            if (!city.isEmpty()) {
+                groups << city + ", " + state + ", " + country;
+            } else {
+                groups << state + ", " + country;
+            }
+        }
+        return groups;
+    }
 
     return QStringList();
 }
 
 QStringList ImageStorage::imagesForLocation(const QString& name, ImageStorage::LocationGroup loc)
 {
+    if (loc == Country) {
+        QSqlQuery query;
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
+        query.addBindValue(name);
+
+        if (!query.exec()) {
+            qDebug() << loc << query.lastError();
+            return QStringList();
+        }
+
+        QStringList files;
+        while (query.next()) {
+            files << query.value(0).toString();
+        }
+        return files;
+    }
 
     return QStringList();
 }
@@ -247,7 +282,6 @@ QStringList ImageStorage::imagesForTime(const QString& name, ImageStorage::TimeG
     else if (group == Month) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%m', dateTime) = ?");
 
-        QTextStream stream(&name);
         query.addBindValue(name);
         if (!query.exec()) {
             qDebug() << group << query.lastError();
@@ -270,8 +304,18 @@ QStringList ImageStorage::imagesForTime(const QString& name, ImageStorage::TimeG
 
 QStringList ImageStorage::folders() const
 {
+    QSqlQuery query;
+    query.prepare("select url from files");
 
-    return QStringList();
+    QStringList urls;
+    while (query.next()) {
+        QUrl url = QUrl::fromLocalFile(query.value(0).toString());
+        url = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
+
+        urls << url.fileName();
+    }
+
+    return urls;
 }
 
 QStringList ImageStorage::imagesForFolders(const QString& folder) const
