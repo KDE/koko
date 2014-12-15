@@ -10,8 +10,8 @@ add_library(kokocommon SHARED ${LIB_SRCS})
 target_link_libraries(kokocommon
     Qt5::Core
     Qt5::Positioning
+    Qt5::Sql
     KF5::Baloo
-    KVariantStore
 )
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
@@ -50,7 +50,6 @@ set (qml_plugin_SRCS
     imagelocationmodel.cpp
     imagetimemodel.cpp
     imagefoldermodel.cpp
-    imagelocationcategorizer.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})

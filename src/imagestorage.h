@@ -1,6 +1,5 @@
 /*
- * <one line to give the library's name and an idea of what it does.>
- * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
+ * Copyright (C) 2014  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -27,9 +26,6 @@
 #include <QDateTime>
 #include <QDataStream>
 
-#include <KVariantStore/KVariantStore>
-#include <KVariantStore/KVariantCollection>
-
 #include "koko_export.h"
 
 struct ImageInfo {
@@ -50,9 +46,27 @@ public:
 
     static ImageStorage* instance();
 
+    enum LocationGroup {
+        Country,
+        State,
+        City
+    };
+    QStringList locations(LocationGroup loca);
+    QStringList imagesForLocation(const QString& name, LocationGroup loc);
+
+    enum TimeGroup {
+        Year,
+        Month,
+        Week,
+        Day
+    };
+    QStringList timeGroups(TimeGroup group);
+    QStringList imagesForTime(const QString& name, TimeGroup& group);
+
+    QStringList folders() const;
+    QStringList imagesForFolders(const QString& folder) const;
+
 private:
-    KVariantStore m_db;
-    KVariantCollection m_coll;
 };
 
 

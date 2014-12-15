@@ -24,12 +24,10 @@
 #include <QAbstractListModel>
 #include <QStringList>
 
-#include "imagelocationcategorizer.h"
-
 class ImageTimeModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(int hours READ hours WRITE setHours)
+    Q_PROPERTY(TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageTimeModel(QObject* parent = 0);
 
@@ -41,14 +39,23 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
-    int hours() const;
-    void setHours(int hours);
+    enum TimeGroup {
+        Year,
+        Month,
+        Week,
+        Day
+    };
+    Q_ENUMS(TimeGroup);
+
+    TimeGroup group() const;
+    void setGroup(TimeGroup group);
+
+signals:
+    void groupChanged();
 
 private:
-    ImageLocationCategorizer m_categorizer;
-    int m_hours;
-
-    QStringList m_images;
+    TimeGroup m_group;
+    QStringList m_times;
 };
 
 #endif

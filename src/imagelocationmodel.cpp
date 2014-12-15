@@ -22,13 +22,8 @@
 
 ImageLocationModel::ImageLocationModel(QObject* parent)
     : QAbstractListModel(parent)
-    , m_distance(0)
+    , m_group(ImageLocationModel::City)
 {
-    QList<ImageInfo> list = ImageStorage::instance()->images();
-
-    for (const ImageInfo& ii : list) {
-        m_categorizer.addImage(ii);
-    }
 }
 
 QHash<int, QByteArray> ImageLocationModel::roleNames() const
@@ -45,22 +40,15 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    QString key = fetchKeyList().at(index.row());
+    QString key = m_locations.at(index.row());
 
     switch (role) {
         case Qt::DisplayRole:
             return key;
 
         case FilesRole: {
-            if (m_distance >= 1000) {
-                return m_categorizer.imagesForCountry(key);
-            }
-
-            if (m_distance >= 100) {
-                return m_categorizer.imagesForState(key);
-            }
-
-            return m_categorizer.imagesForCities(key);
+            auto group = static_cast<ImageStorage::LocationGroup>(m_group);
+            return ImageStorage::instance()->imagesForLocation(key, group);
         }
     }
 
@@ -74,32 +62,20 @@ int ImageLocationModel::rowCount(const QModelIndex& parent) const
         return 0;
     }
 
-    return fetchKeyList().size();
+    return m_locations.size();
 }
 
-int ImageLocationModel::distance() const
-{
-    return m_distance;
-}
-
-void ImageLocationModel::setDistance(int kms)
+void ImageLocationModel::setGroup(ImageLocationModel::LocationGroup group)
 {
     beginResetModel();
-    m_distance = kms;
+    m_group = group;
+    m_locations = ImageStorage::instance()->locations(static_cast<ImageStorage::LocationGroup>(group));
     endResetModel();
 
-    emit distanceChanged();
+    emit groupChanged();
 }
 
-QStringList ImageLocationModel::fetchKeyList() const
+ImageLocationModel::LocationGroup ImageLocationModel::group() const
 {
-    if (m_distance >= 1000) {
-        return m_categorizer.countries();
-    }
-
-    if (m_distance >= 100) {
-        return m_categorizer.states();
-    }
-
-    return m_categorizer.cities();
+    return m_group;
 }

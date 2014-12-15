@@ -22,13 +22,8 @@
 
 ImageTimeModel::ImageTimeModel(QObject* parent)
     : QAbstractListModel(parent)
-    , m_hours(24)
+    , m_group(ImageTimeModel::Day)
 {
-    QList<ImageInfo> list = ImageStorage::instance()->images();
-
-    for (const ImageInfo& ii : list) {
-        m_categorizer.addImage(ii);
-    }
 }
 
 QHash<int, QByteArray> ImageTimeModel::roleNames() const
@@ -45,14 +40,15 @@ QVariant ImageTimeModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    QString key = m_images.at(index.row());
+    QString key = m_times.at(index.row());
 
     switch (role) {
         case Qt::DisplayRole:
             return key;
 
         case FilesRole: {
-            return m_categorizer.imagesForHours(m_hours, key);
+            auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+            return ImageStorage::instance()->imagesForTime(key, tg);
         }
     }
 
@@ -66,18 +62,22 @@ int ImageTimeModel::rowCount(const QModelIndex& parent) const
         return 0;
     }
 
-    return m_images.size();
+    return m_times.size();
 }
 
-int ImageTimeModel::hours() const
+ImageTimeModel::TimeGroup ImageTimeModel::group() const
 {
-    return m_hours;
+    return m_group;
 }
 
-void ImageTimeModel::setHours(int hours)
+void ImageTimeModel::setGroup(ImageTimeModel::TimeGroup group)
 {
     beginResetModel();
-    m_hours = hours;
-    m_images = m_categorizer.groupByHours(m_hours);
+    m_group = group;
+
+    auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+    m_times = ImageStorage::instance()->timeGroups(tg);
     endResetModel();
+
+    emit groupChanged();
 }

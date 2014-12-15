@@ -23,13 +23,7 @@
 ImageFolderModel::ImageFolderModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    QList<ImageInfo> list = ImageStorage::instance()->images();
-
-    for (const ImageInfo& ii : list) {
-        m_categorizer.addImage(ii);
-    }
-
-    m_folders = m_categorizer.folders();
+    m_folders = ImageStorage::instance()->folders();
 }
 
 QHash<int, QByteArray> ImageFolderModel::roleNames() const
@@ -53,7 +47,7 @@ QVariant ImageFolderModel::data(const QModelIndex& index, int role) const
             return key;
 
         case FilesRole: {
-            return m_categorizer.imagesForFolders(key);
+            return ImageStorage::instance()->imagesForFolders(key);
         }
     }
 

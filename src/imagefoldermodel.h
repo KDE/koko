@@ -24,8 +24,6 @@
 #include <QAbstractListModel>
 #include <QStringList>
 
-#include "imagelocationcategorizer.h"
-
 class ImageFolderModel : public QAbstractListModel
 {
     Q_OBJECT
@@ -41,7 +39,6 @@ public:
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
 private:
-    ImageLocationCategorizer m_categorizer;
     QStringList m_folders;
 };
 

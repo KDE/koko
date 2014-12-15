@@ -31,7 +31,7 @@ import org.kde.koko 0.1 as Koko
 FocusScope {
     id: root
     signal imagesSelected(var files)
-    property alias distance: imageLocationsModel.distance
+    property alias group: imageLocationsModel.group
 
 
     ScrollView {
@@ -48,7 +48,7 @@ FocusScope {
         }
     }
 
-    onDistanceChanged: view.calculateSpacing()
+    onGroupChanged: view.calculateSpacing()
 
     MouseArea {
         anchors.fill: parent

@@ -28,7 +28,7 @@ import org.kde.koko 0.1 as Koko
 FocusScope {
     id: root
     signal imagesSelected(var files)
-    property alias hours: imageTimeModel.hours
+    property alias group: imageTimeModel.group
 
     ScrollView {
         anchors.fill: parent
@@ -44,7 +44,7 @@ FocusScope {
         }
     }
 
-    onHoursChanged: view.calculateSpacing()
+    onGroupChanged: view.calculateSpacing()
 
     MouseArea {
         anchors.fill: parent

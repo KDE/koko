@@ -1,6 +1,5 @@
 /*
- * <one line to give the library's name and an idea of what it does.>
- * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
+ * Copyright (C) 2014  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -25,12 +24,10 @@
 #include <QStringList>
 #include <QGeoLocation>
 
-#include "imagelocationcategorizer.h"
-
 class ImageLocationModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(int distance READ distance WRITE setDistance NOTIFY distanceChanged)
+    Q_PROPERTY(LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageLocationModel(QObject* parent = 0);
 
@@ -42,17 +39,22 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
-    int distance() const;
-    void setDistance(int kms);
+    enum LocationGroup {
+        Country,
+        State,
+        City
+    };
+    Q_ENUMS(LocationGroup);
+
+    LocationGroup group() const;
+    void setGroup(LocationGroup group);
 
 signals:
-    void distanceChanged();
+    void groupChanged();
 
 private:
-    ImageLocationCategorizer m_categorizer;
-    int m_distance;
-
-    QStringList fetchKeyList() const;
+    LocationGroup m_group;
+    QStringList m_locations;
 };
 
 #endif // IMAGELOCATIONMODEL_H

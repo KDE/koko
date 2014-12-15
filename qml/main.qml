@@ -26,6 +26,7 @@ import QtQuick.Window 2.1
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.koko 0.1 as Koko
 
 MainWindow {
     id: window
@@ -68,7 +69,7 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    locationView.distance = 1000
+                    locationView.group = Koko.ImageLocationModel.Country
                     if (locationView.Stack.index != -1) {
                         view.pop(locationView)
                     } else {
@@ -83,7 +84,7 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    locationView.distance = 100
+                    locationView.group = Koko.ImageLocationModel.State
                     if (locationView.Stack.index != -1) {
                         view.pop(locationView)
                     } else {
@@ -99,7 +100,7 @@ MainWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    locationView.distance = 10
+                    locationView.group = Koko.ImageLocationModel.City
                     if (locationView.Stack.index != -1) {
                         view.pop(locationView)
                     } else {
@@ -126,7 +127,7 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    timeImages.hours = 24 * 365;
+                    timeImages.group = Koko.ImageTimeModel.Year
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -141,7 +142,7 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    timeImages.hours = 24 * 30;
+                    timeImages.group = Koko.ImageTimeModel.Month
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -157,7 +158,7 @@ MainWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    timeImages.hours = 24 * 7;
+                    timeImages.group = Koko.ImageTimeModel.Week
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -173,7 +174,7 @@ MainWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    timeImages.hours = 24;
+                    timeImages.group = Koko.ImageTimeModel.Day
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
