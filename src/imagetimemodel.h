@@ -55,7 +55,7 @@ signals:
 
 private:
     TimeGroup m_group;
-    QStringList m_times;
+    QList< QPair<QByteArray, QString> > m_times;
 };
 
 #endif

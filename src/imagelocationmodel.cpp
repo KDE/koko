@@ -40,11 +40,12 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    QString key = m_locations.at(index.row());
+    QByteArray key = m_locations.at(index.row()).first;
+    QString display = m_locations.at(index.row()).second;
 
     switch (role) {
         case Qt::DisplayRole:
-            return key;
+            return display;
 
         case FilesRole: {
             auto group = static_cast<ImageStorage::LocationGroup>(m_group);

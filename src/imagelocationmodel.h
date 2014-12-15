@@ -54,7 +54,7 @@ signals:
 
 private:
     LocationGroup m_group;
-    QStringList m_locations;
+    QList<QPair<QByteArray, QString> > m_locations;
 };
 
 #endif // IMAGELOCATIONMODEL_H

@@ -83,7 +83,7 @@ void ImageStorage::addImage(const ImageInfo& ii)
 
     if (!addr.country().isEmpty()) {
         QSqlQuery query;
-        query.prepare("INSERT OR IGNORE INTO LOCATIONS(country, state, city) VALUES (?, ?, ?)");
+        query.prepare("INSERT INTO LOCATIONS(country, state, city) VALUES (?, ?, ?)");
         query.addBindValue(addr.country());
         query.addBindValue(addr.state());
         query.addBindValue(addr.city());
@@ -112,22 +112,24 @@ void ImageStorage::addImage(const ImageInfo& ii)
     }
 }
 
-QStringList ImageStorage::locations(ImageStorage::LocationGroup loca)
+QList<QPair<QByteArray, QString> > ImageStorage::locations(ImageStorage::LocationGroup loca)
 {
+    QList< QPair<QByteArray, QString> > list;
+
     if (loca == Country) {
         QSqlQuery query;
         query.prepare("SELECT DISTINCT country from locations");
 
         if (!query.exec()) {
             qDebug() << loca << query.lastError();
-            return QStringList();
+            return list;
         }
 
-        QStringList groups;
         while (query.next()) {
-            groups << query.value(0).toString();
+            QString val = query.value(0).toString();
+            list << qMakePair(val.toUtf8(), val);
         }
-        return groups;
+        return list;
     }
     else if (loca == State) {
         QSqlQuery query;
@@ -135,16 +137,22 @@ QStringList ImageStorage::locations(ImageStorage::LocationGroup loca)
 
         if (!query.exec()) {
             qDebug() << loca << query.lastError();
-            return QStringList();
+            return list;
         }
 
         QStringList groups;
         while (query.next()) {
             QString country = query.value(0).toString();
             QString state = query.value(1).toString();
-            groups << state + ", " + country;
+            QString display = state + ", " + country;
+
+            QByteArray key;
+            QDataStream stream(&key, QIODevice::WriteOnly);
+            stream << country << state;
+
+            list << qMakePair(key, display);
         }
-        return groups;
+        return list;
     }
     else if (loca == City) {
         QSqlQuery query;
@@ -152,175 +160,233 @@ QStringList ImageStorage::locations(ImageStorage::LocationGroup loca)
 
         if (!query.exec()) {
             qDebug() << loca << query.lastError();
-            return QStringList();
+            return list;
         }
 
-        QStringList groups;
         while (query.next()) {
             QString country = query.value(0).toString();
             QString state = query.value(1).toString();
             QString city = query.value(2).toString();
+
+            QString display;
             if (!city.isEmpty()) {
-                groups << city + ", " + state + ", " + country;
+                display = city + ", " + state + ", " + country;
             } else {
-                groups << state + ", " + country;
+                display = state + ", " + country;
             }
+
+            QByteArray key;
+            QDataStream stream(&key, QIODevice::WriteOnly);
+            stream << country << state << city;
+
+            list << qMakePair(key, display);
         }
-        return groups;
+        return list;
     }
 
-    return QStringList();
+    return list;
 }
 
-QStringList ImageStorage::imagesForLocation(const QString& name, ImageStorage::LocationGroup loc)
+QStringList ImageStorage::imagesForLocation(const QByteArray& name, ImageStorage::LocationGroup loc)
 {
+    QSqlQuery query;
     if (loc == Country) {
-        QSqlQuery query;
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
-        query.addBindValue(name);
+        query.addBindValue(QString::fromUtf8(name));
+    }
+    else if (loc == State) {
+        QDataStream st(name);
 
-        if (!query.exec()) {
-            qDebug() << loc << query.lastError();
-            return QStringList();
-        }
+        QString country;
+        QString state;
+        st >> country >> state;
 
-        QStringList files;
-        while (query.next()) {
-            files << query.value(0).toString();
-        }
-        return files;
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
+        query.addBindValue(country);
+        query.addBindValue(state);
+        qDebug() << country << state;
+    }
+    else if (loc == City) {
+        QDataStream st(name);
+
+        QString country;
+        QString state;
+        QString city;
+        st >> country >> state >> city;
+
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
+        query.addBindValue(country);
+        query.addBindValue(state);
     }
 
-    return QStringList();
+    if (!query.exec()) {
+        qDebug() << loc << query.lastError();
+        return QStringList();
+    }
+
+    QStringList files;
+    while (query.next()) {
+        files << query.value(0).toString();
+    }
+    return files;
 }
 
-QStringList ImageStorage::timeGroups(ImageStorage::TimeGroup group)
+QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGroup group)
 {
+    QList< QPair<QByteArray, QString> > list;
+
     QSqlQuery query;
     if (group == Year) {
         query.prepare("SELECT DISTINCT strftime('%Y', dateTime) from files");
         if (!query.exec()) {
             qDebug() << group << query.lastError();
-            return QStringList();
+            return list;
         }
 
-        QStringList groups;
         while (query.next()) {
-            groups << query.value(0).toString();
+            QString val = query.value(0).toString();
+            list << qMakePair(val.toUtf8(), val);
         }
-        return groups;
+        return list;
     }
     else if (group == Month) {
         query.prepare("SELECT DISTINCT strftime('%Y', dateTime), strftime('%m', dateTime) from files");
         if (!query.exec()) {
             qDebug() << group << query.lastError();
-            return QStringList();
+            return list;
         }
 
         QStringList groups;
         while (query.next()) {
-            QString year = query.value(0).toString();
+            int year = query.value(0).toInt();
             int month = query.value(1).toInt();
 
-            qDebug() << year << month;
-            groups << QDate::longMonthName(month) + ", " + year;
+            QString display = QDate::longMonthName(month) + ", " + QString::number(year);
+
+            QByteArray key;
+            QDataStream stream(&key, QIODevice::WriteOnly);
+            stream << year << month;
+
+            list << qMakePair(key, display);
         }
-        return groups;
+        return list;
     }
     else if (group == Week) {
         query.prepare("SELECT DISTINCT strftime('%Y', dateTime), strftime('%m', dateTime), strftime('%W', dateTime) from files");
         if (!query.exec()) {
             qDebug() << group << query.lastError();
-            return QStringList();
+            return list;
         }
 
-        QStringList groups;
         while (query.next()) {
-            QString year = query.value(0).toString();
+            int year = query.value(0).toInt();
             int month = query.value(1).toInt();
             int week = query.value(1).toInt();
 
-            groups << "Week " + QString::number(week) + ", " + QDate::longMonthName(month) + ", " + year;
+            QString display =  "Week " + QString::number(week) + ", " + QDate::longMonthName(month) + ", " + QString::number(year);
+
+            QByteArray key;
+            QDataStream stream(&key, QIODevice::WriteOnly);
+            stream << year << week;
+
+            list << qMakePair(key, display);
         }
-        return groups;
+        return list;
     }
     else if (group == Day) {
         query.prepare("SELECT DISTINCT date(dateTime) from files");
         if (!query.exec()) {
             qDebug() << group << query.lastError();
-            return QStringList();
+            return list;
         }
 
-        QStringList groups;
         while (query.next()) {
             QDate date = query.value(0).toDate();
 
-            groups << date.toString(Qt::SystemLocaleLongDate);
+            QString display = date.toString(Qt::SystemLocaleLongDate);
+            QByteArray key = date.toString(Qt::ISODate).toUtf8();
+
+            list << qMakePair(key, display);
         }
-        return groups;
+        return list;
     }
 
     Q_ASSERT(0);
-    return QStringList();
+    return list;
 }
 
-QStringList ImageStorage::imagesForTime(const QString& name, ImageStorage::TimeGroup& group)
+QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
 {
     QSqlQuery query;
     if (group == Year) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ?");
-        query.addBindValue(name);
-        if (!query.exec()) {
-            qDebug() << group << query.lastError();
-            return QStringList();
-        }
-
-        QStringList files;
-        while (query.next()) {
-            files << query.value(0).toString();
-        }
-        return files;
+        query.addBindValue(QString::fromUtf8(name));
     }
     else if (group == Month) {
+        QDataStream stream(name);
+        int year;
+        int month;
+        stream >> year >> month;
+
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%m', dateTime) = ?");
-
-        query.addBindValue(name);
-        if (!query.exec()) {
-            qDebug() << group << query.lastError();
-            return QStringList();
-        }
-
-        QStringList files;
-        while (query.next()) {
-            files << query.value(0).toString();
-        }
-        return files;
+        query.addBindValue(QString::number(year));
+        query.addBindValue(QString::number(month));
     }
     else if (group == Week) {
+        QDataStream stream(name);
+        int year;
+        int week;
+        stream >> year >> week;
+
+        query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%W', dateTime) = ?");
+        query.addBindValue(QString::number(year));
+        query.addBindValue(QString::number(week));
     }
     else if (group == Day) {
+        QDate date = QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
+
+        query.prepare("SELECT DISTINCT url from files where date(dateTime) = ?");
+        query.addBindValue(date);
     }
 
-    return QStringList();
+    if (!query.exec()) {
+        qDebug() << group << query.lastError();
+        return QStringList();
+    }
+
+    QStringList files;
+    while (query.next()) {
+        files << query.value(0).toString();
+    }
+    return files;
 }
 
-QStringList ImageStorage::folders() const
+QList<QPair<QByteArray, QString> > ImageStorage::folders() const
 {
     QSqlQuery query;
     query.prepare("select url from files");
 
-    QStringList urls;
+    QList< QPair<QByteArray, QString> > list;
     while (query.next()) {
-        QUrl url = QUrl::fromLocalFile(query.value(0).toString());
+        QString path = query.value(0).toString();
+        QUrl url = QUrl::fromLocalFile(path);
         url = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
 
-        urls << url.fileName();
+        list << qMakePair(path.toUtf8(), url.fileName());
     }
 
-    return urls;
+    return list;
 }
 
-QStringList ImageStorage::imagesForFolders(const QString& folder) const
+QStringList ImageStorage::imagesForFolders(const QByteArray& key) const
 {
-    return QStringList();
+    QSqlQuery query;
+    query.prepare("select url from files where url like '?%'");
+    query.addBindValue(QString::fromUtf8(key));
+
+    QStringList files;
+    while (query.next()) {
+        files << query.value(0).toString();
+    }
+    return files;
 }

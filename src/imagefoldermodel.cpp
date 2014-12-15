@@ -40,11 +40,12 @@ QVariant ImageFolderModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    QString key = m_folders.at(index.row());
+    QByteArray key = m_folders.at(index.row()).first;
+    QString display = m_folders.at(index.row()).second;
 
     switch (role) {
         case Qt::DisplayRole:
-            return key;
+            return display;
 
         case FilesRole: {
             return ImageStorage::instance()->imagesForFolders(key);

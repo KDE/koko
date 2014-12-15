@@ -39,7 +39,7 @@ public:
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
 private:
-    QStringList m_folders;
+    QList<QPair<QByteArray, QString> > m_folders;
 };
 
 #endif

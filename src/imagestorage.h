@@ -50,8 +50,8 @@ public:
         State,
         City
     };
-    QStringList locations(LocationGroup loca);
-    QStringList imagesForLocation(const QString& name, LocationGroup loc);
+    QList< QPair<QByteArray, QString> > locations(LocationGroup loca);
+    QStringList imagesForLocation(const QByteArray& name, LocationGroup loc);
 
     enum TimeGroup {
         Year,
@@ -59,11 +59,11 @@ public:
         Week,
         Day
     };
-    QStringList timeGroups(TimeGroup group);
-    QStringList imagesForTime(const QString& name, TimeGroup& group);
+    QList< QPair<QByteArray, QString> > timeGroups(TimeGroup group);
+    QStringList imagesForTime(const QByteArray& name, TimeGroup& group);
 
-    QStringList folders() const;
-    QStringList imagesForFolders(const QString& folder) const;
+    QList< QPair<QByteArray, QString> > folders() const;
+    QStringList imagesForFolders(const QByteArray& key) const;
 
 private:
 };

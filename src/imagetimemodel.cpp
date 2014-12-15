@@ -40,11 +40,12 @@ QVariant ImageTimeModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    QString key = m_times.at(index.row());
+    QByteArray key = m_times.at(index.row()).first;
+    QString display = m_times.at(index.row()).second;
 
     switch (role) {
         case Qt::DisplayRole:
-            return key;
+            return display;
 
         case FilesRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
