@@ -51,7 +51,9 @@ ImageStorage::ImageStorage(QObject* parent)
     }
 
     QSqlQuery query(db);
-    query.exec("CREATE TABLE locations (id INTEGER PRIMARY KEY, country TEXT, state TEXT, city TEXT)");
+    query.exec("CREATE TABLE locations (id INTEGER PRIMARY KEY, country TEXT, state TEXT, city TEXT"
+               "                        , UNIQUE(country, state, city) ON CONFLICT REPLACE"
+               ")");
     query.exec("CREATE TABLE files (url TEXT NOT NULL UNIQUE PRIMARY KEY,"
                "                    location INTEGER,"
                "                    dateTime STRING,"
@@ -81,7 +83,7 @@ void ImageStorage::addImage(const ImageInfo& ii)
 
     if (!addr.country().isEmpty()) {
         QSqlQuery query;
-        query.prepare("INSERT INTO LOCATIONS(country, state, city) VALUES (?, ?, ?)");
+        query.prepare("INSERT OR IGNORE INTO LOCATIONS(country, state, city) VALUES (?, ?, ?)");
         query.addBindValue(addr.country());
         query.addBindValue(addr.state());
         query.addBindValue(addr.city());
