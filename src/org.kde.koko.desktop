@@ -6,4 +6,4 @@ Exec=koko %U
 Terminal=false
 Type=Application
 Categories=Qt;KDE;Graphics;Viewer;
-Icon=nepomuk
+Icon=koko

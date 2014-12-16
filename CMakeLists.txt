@@ -14,6 +14,7 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(GenerateExportHeader)
+include(ECMInstallIcons)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
@@ -24,5 +25,6 @@ include_directories(
 add_subdirectory(src)
 add_subdirectory(autotests)
 add_subdirectory(qml)
+add_subdirectory(icons)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
