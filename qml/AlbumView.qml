@@ -35,7 +35,7 @@ AutomaticSpacingGrid {
         ColumnLayout {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            Album {
+            AlbumCover {
                 id: album
                 imageSource: model.cover
                 isCurrentItem: gridView.currentIndex == model.index
