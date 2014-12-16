@@ -26,6 +26,9 @@
 #include <QDateTime>
 #include <QDataStream>
 
+#include <QMutex>
+#include <QMutexLocker>
+
 #include "koko_export.h"
 
 struct ImageInfo {
@@ -70,6 +73,7 @@ public:
     QString imageForFolders(const QByteArray& key) const;
 
 private:
+    mutable QMutex m_mutex;
 };
 
 

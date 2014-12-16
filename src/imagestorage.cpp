@@ -79,6 +79,7 @@ ImageStorage* ImageStorage::instance()
 
 void ImageStorage::addImage(const ImageInfo& ii)
 {
+    QMutexLocker lock(&m_mutex);
     QGeoAddress addr = ii.location.address();
 
     if (!addr.country().isEmpty()) {
@@ -114,6 +115,7 @@ void ImageStorage::addImage(const ImageInfo& ii)
 
 QList<QPair<QByteArray, QString> > ImageStorage::locations(ImageStorage::LocationGroup loca)
 {
+    QMutexLocker lock(&m_mutex);
     QList< QPair<QByteArray, QString> > list;
 
     if (loca == Country) {
@@ -189,6 +191,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::locations(ImageStorage::Locatio
 
 QStringList ImageStorage::imagesForLocation(const QByteArray& name, ImageStorage::LocationGroup loc)
 {
+    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == Country) {
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
@@ -233,6 +236,7 @@ QStringList ImageStorage::imagesForLocation(const QByteArray& name, ImageStorage
 
 QString ImageStorage::imageForLocation(const QByteArray& name, ImageStorage::LocationGroup loc)
 {
+    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == Country) {
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
@@ -276,6 +280,7 @@ QString ImageStorage::imageForLocation(const QByteArray& name, ImageStorage::Loc
 
 QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGroup group)
 {
+    QMutexLocker lock(&m_mutex);
     QList< QPair<QByteArray, QString> > list;
 
     QSqlQuery query;
@@ -360,6 +365,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGr
 
 QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
 {
+    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (group == Year) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ?");
@@ -408,6 +414,7 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
 
 QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
 {
+    QMutexLocker lock(&m_mutex);
     Q_ASSERT(!name.isEmpty());
 
     QSqlQuery query;
@@ -458,6 +465,7 @@ QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGro
 
 QList<QPair<QByteArray, QString> > ImageStorage::folders() const
 {
+    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     query.prepare("select distinct url from files");
     query.exec();
@@ -485,6 +493,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::folders() const
 
 QStringList ImageStorage::imagesForFolders(const QByteArray& key) const
 {
+    QMutexLocker lock(&m_mutex);
     QString strUrl = QString::fromUtf8(key);
 
     QString queryStr("select url from files where url like '");
@@ -508,6 +517,7 @@ QStringList ImageStorage::imagesForFolders(const QByteArray& key) const
 
 QString ImageStorage::imageForFolders(const QByteArray& key) const
 {
+    QMutexLocker lock(&m_mutex);
     QString strUrl = QString::fromUtf8(key);
 
     QString queryStr("select url from files where url like '");
