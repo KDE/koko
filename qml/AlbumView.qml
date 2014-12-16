@@ -28,13 +28,15 @@ AutomaticSpacingGrid {
 
     signal albumSelected(var files)
 
-    delegate: Item {
+    delegate: FocusScope {
         width: cellWidth
         height: cellHeight
 
         ColumnLayout {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
+            focus: true
+
             AlbumCover {
                 id: album
                 imageSource: model.cover
@@ -71,6 +73,9 @@ AutomaticSpacingGrid {
                 }
                 onExited: album.hover = false
             }
+
+            Keys.onEnterPressed: gridView.albumSelected(model.files)
+            Keys.onReturnPressed: gridView.albumSelected(model.files)
         }
     }
 }
