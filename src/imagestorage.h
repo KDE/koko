@@ -34,7 +34,7 @@
 struct ImageInfo {
     QString path;
     QGeoLocation location;
-    QDateTime date;
+    QDateTime dateTime;
 };
 
 class KOKO_EXPORT ImageStorage : public QObject

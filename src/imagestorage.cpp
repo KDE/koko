@@ -97,7 +97,7 @@ void ImageStorage::addImage(const ImageInfo& ii)
         query.prepare("INSERT INTO FILES(url, location, dateTime) VALUES(?, ?, ?)");
         query.addBindValue(ii.path);
         query.addBindValue(locId);
-        query.addBindValue(ii.date.toString(Qt::ISODate));
+        query.addBindValue(ii.dateTime.toString(Qt::ISODate));
         if (!query.exec()) {
             qDebug() << "FILE LOC INSERT" << query.lastError();
         }
@@ -106,7 +106,7 @@ void ImageStorage::addImage(const ImageInfo& ii)
         QSqlQuery query;
         query.prepare("INSERT INTO FILES(url, dateTime) VALUES(?, ?)");
         query.addBindValue(ii.path);
-        query.addBindValue(ii.date.toString(Qt::ISODate));
+        query.addBindValue(ii.dateTime.toString(Qt::ISODate));
         if (!query.exec()) {
             qDebug() << "FILE INSERT" << query.lastError();
         }

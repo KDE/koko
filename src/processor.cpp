@@ -91,15 +91,15 @@ void Processor::process()
         loop.exec();
     }
 
-    ii.date = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDateTime();
-    if (ii.date.isNull()) {
-        ii.date = result.properties().value(KFileMetaData::Property::ImageDateTime).toDateTime();
+    ii.dateTime = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDateTime();
+    if (ii.dateTime.isNull()) {
+        ii.dateTime = result.properties().value(KFileMetaData::Property::ImageDateTime).toDateTime();
     }
-    if (ii.date.isNull()) {
-        ii.date = QFileInfo(path).created();
+    if (ii.dateTime.isNull()) {
+        ii.dateTime = QFileInfo(path).created();
     }
 
-    qDebug() << path << ii.date;
+    qDebug() << path << ii.dateTime;
 
     ImageStorage::instance()->addImage(ii);
 
