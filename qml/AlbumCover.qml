@@ -35,6 +35,7 @@ Item {
         asynchronous: true
         width: 300
         height: 300
+        sourceSize: Qt.size(300, 300)
 
         fillMode: Image.PreserveAspectCrop
         anchors.fill: parent
