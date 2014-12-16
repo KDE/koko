@@ -45,6 +45,10 @@ Item {
     }
 
     property string filePath
+    onFilePathChanged: {
+        slider.value = 1.0
+        img.rotation = 0
+    }
 
     ColumnLayout {
         anchors.fill: parent
