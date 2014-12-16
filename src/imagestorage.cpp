@@ -301,10 +301,10 @@ QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGr
 
         QStringList groups;
         while (query.next()) {
-            int year = query.value(0).toInt();
-            int month = query.value(1).toInt();
+            QString year = query.value(0).toString();
+            QString month = query.value(1).toString();
 
-            QString display = QDate::longMonthName(month) + ", " + QString::number(year);
+            QString display = QDate::longMonthName(month.toInt()) + ", " + year;
 
             QByteArray key;
             QDataStream stream(&key, QIODevice::WriteOnly);
@@ -322,11 +322,11 @@ QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGr
         }
 
         while (query.next()) {
-            int year = query.value(0).toInt();
-            int month = query.value(1).toInt();
-            int week = query.value(1).toInt();
+            QString year = query.value(0).toString();
+            QString month = query.value(1).toString();
+            QString week = query.value(2).toString();
 
-            QString display =  "Week " + QString::number(week) + ", " + QDate::longMonthName(month) + ", " + QString::number(year);
+            QString display =  "Week " + week + ", " + QDate::longMonthName(month.toInt()) + ", " + year;
 
             QByteArray key;
             QDataStream stream(&key, QIODevice::WriteOnly);
@@ -367,23 +367,23 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
     }
     else if (group == Month) {
         QDataStream stream(name);
-        int year;
-        int month;
+        QString year;
+        QString month;
         stream >> year >> month;
 
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%m', dateTime) = ?");
-        query.addBindValue(QString::number(year));
-        query.addBindValue(QString::number(month));
+        query.addBindValue(year);
+        query.addBindValue(month);
     }
     else if (group == Week) {
         QDataStream stream(name);
-        int year;
-        int week;
+        QString year;
+        QString week;
         stream >> year >> week;
 
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%W', dateTime) = ?");
-        query.addBindValue(QString::number(year));
-        query.addBindValue(QString::number(week));
+        query.addBindValue(year);
+        query.addBindValue(week);
     }
     else if (group == Day) {
         QDate date = QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
@@ -401,11 +401,15 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
     while (query.next()) {
         files << query.value(0).toString();
     }
+
+    Q_ASSERT(!files.isEmpty());
     return files;
 }
 
 QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
 {
+    Q_ASSERT(!name.isEmpty());
+
     QSqlQuery query;
     if (group == Year) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? LIMIT 1");
@@ -413,23 +417,23 @@ QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGro
     }
     else if (group == Month) {
         QDataStream stream(name);
-        int year;
-        int month;
+        QString year;
+        QString month;
         stream >> year >> month;
 
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%m', dateTime) = ? LIMIT 1");
-        query.addBindValue(QString::number(year));
-        query.addBindValue(QString::number(month));
+        query.addBindValue(year);
+        query.addBindValue(month);
     }
     else if (group == Week) {
         QDataStream stream(name);
-        int year;
-        int week;
+        QString year;
+        QString week;
         stream >> year >> week;
 
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%W', dateTime) = ? LIMIT 1");
-        query.addBindValue(QString::number(year));
-        query.addBindValue(QString::number(week));
+        query.addBindValue(year);
+        query.addBindValue(week);
     }
     else if (group == Day) {
         QDate date = QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
@@ -447,6 +451,7 @@ QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGro
         return query.value(0).toString();
     }
 
+    Q_ASSERT(0);
     return QString();
 }
 
