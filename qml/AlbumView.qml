@@ -35,7 +35,7 @@ AutomaticSpacingGrid {
             anchors.top: parent.top
             Album {
                 id: album
-                imageSource: model.files[1]
+                imageSource: model.cover
                 isCurrentItem: gridView.currentIndex == model.index
 
                 Layout.maximumWidth: 300

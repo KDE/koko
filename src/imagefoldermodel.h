@@ -31,7 +31,8 @@ public:
     explicit ImageFolderModel(QObject* parent = 0);
 
     enum Roles {
-        FilesRole = Qt::UserRole + 1
+        FilesRole = Qt::UserRole + 1,
+        CoverRole
     };
 
     virtual QHash< int, QByteArray > roleNames() const;

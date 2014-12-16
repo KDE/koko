@@ -42,6 +42,7 @@ public:
     virtual ~ImageStorage();
 
     void addImage(const ImageInfo& ii);
+    void commit();
 
     static ImageStorage* instance();
 
@@ -52,6 +53,7 @@ public:
     };
     QList< QPair<QByteArray, QString> > locations(LocationGroup loca);
     QStringList imagesForLocation(const QByteArray& name, LocationGroup loc);
+    QString imageForLocation(const QByteArray& name, LocationGroup loc);
 
     enum TimeGroup {
         Year,
@@ -61,9 +63,11 @@ public:
     };
     QList< QPair<QByteArray, QString> > timeGroups(TimeGroup group);
     QStringList imagesForTime(const QByteArray& name, TimeGroup& group);
+    QString imageForTime(const QByteArray& name, TimeGroup& group);
 
     QList< QPair<QByteArray, QString> > folders() const;
     QStringList imagesForFolders(const QByteArray& key) const;
+    QString imageForFolders(const QByteArray& key) const;
 
 private:
 };

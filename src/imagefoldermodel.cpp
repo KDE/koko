@@ -30,6 +30,7 @@ QHash<int, QByteArray> ImageFolderModel::roleNames() const
 {
     auto hash = QAbstractItemModel::roleNames();
     hash.insert(FilesRole, "files");
+    hash.insert(CoverRole, "cover");
 
     return hash;
 }
@@ -47,9 +48,11 @@ QVariant ImageFolderModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             return display;
 
-        case FilesRole: {
+        case FilesRole:
             return ImageStorage::instance()->imagesForFolders(key);
-        }
+
+        case CoverRole:
+            return ImageStorage::instance()->imageForFolders(key);
     }
 
     return QVariant();

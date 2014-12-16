@@ -30,6 +30,7 @@ QHash<int, QByteArray> ImageLocationModel::roleNames() const
 {
     auto hash = QAbstractItemModel::roleNames();
     hash.insert(FilesRole, "files");
+    hash.insert(CoverRole, "cover");
 
     return hash;
 }
@@ -50,6 +51,11 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         case FilesRole: {
             auto group = static_cast<ImageStorage::LocationGroup>(m_group);
             return ImageStorage::instance()->imagesForLocation(key, group);
+        }
+
+        case CoverRole: {
+            auto group = static_cast<ImageStorage::LocationGroup>(m_group);
+            return ImageStorage::instance()->imageForLocation(key, group);
         }
     }
 

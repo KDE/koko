@@ -231,6 +231,49 @@ QStringList ImageStorage::imagesForLocation(const QByteArray& name, ImageStorage
     return files;
 }
 
+QString ImageStorage::imageForLocation(const QByteArray& name, ImageStorage::LocationGroup loc)
+{
+    QSqlQuery query;
+    if (loc == Country) {
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
+        query.addBindValue(QString::fromUtf8(name));
+    }
+    else if (loc == State) {
+        QDataStream st(name);
+
+        QString country;
+        QString state;
+        st >> country >> state;
+
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
+        query.addBindValue(country);
+        query.addBindValue(state);
+    }
+    else if (loc == City) {
+        QDataStream st(name);
+
+        QString country;
+        QString state;
+        QString city;
+        st >> country >> state >> city;
+
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
+        query.addBindValue(country);
+        query.addBindValue(state);
+    }
+
+    if (!query.exec()) {
+        qDebug() << loc << query.lastError();
+        return QString();
+    }
+
+    if (query.next()) {
+        return query.value(0).toString();
+    }
+    return QString();
+}
+
+
 QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGroup group)
 {
     QList< QPair<QByteArray, QString> > list;
@@ -361,6 +404,53 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
     return files;
 }
 
+QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
+{
+    QSqlQuery query;
+    if (group == Year) {
+        query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? LIMIT 1");
+        query.addBindValue(QString::fromUtf8(name));
+    }
+    else if (group == Month) {
+        QDataStream stream(name);
+        int year;
+        int month;
+        stream >> year >> month;
+
+        query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%m', dateTime) = ? LIMIT 1");
+        query.addBindValue(QString::number(year));
+        query.addBindValue(QString::number(month));
+    }
+    else if (group == Week) {
+        QDataStream stream(name);
+        int year;
+        int week;
+        stream >> year >> week;
+
+        query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? AND strftime('%W', dateTime) = ? LIMIT 1");
+        query.addBindValue(QString::number(year));
+        query.addBindValue(QString::number(week));
+    }
+    else if (group == Day) {
+        QDate date = QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
+
+        query.prepare("SELECT DISTINCT url from files where date(dateTime) = ? LIMIT 1");
+        query.addBindValue(date);
+    }
+
+    if (!query.exec()) {
+        qDebug() << group << query.lastError();
+        return QString();
+    }
+
+    if (query.next()) {
+        return query.value(0).toString();
+    }
+
+    return QString();
+}
+
+
 QList<QPair<QByteArray, QString> > ImageStorage::folders() const
 {
     QSqlQuery query;
@@ -409,4 +499,26 @@ QStringList ImageStorage::imagesForFolders(const QByteArray& key) const
         files << query.value(0).toString();
     }
     return files;
+}
+
+QString ImageStorage::imageForFolders(const QByteArray& key) const
+{
+    QString strUrl = QString::fromUtf8(key);
+
+    QString queryStr("select url from files where url like '");
+    queryStr += strUrl;
+    queryStr += "/%' LIMIT 1";
+
+    QSqlQuery query;
+    query.prepare(queryStr);
+
+    if (!query.exec()) {
+        qDebug() << key << query.lastError();
+        return QString();
+    }
+
+    if (query.next())
+        return query.value(0).toString();
+
+    return QString();
 }
