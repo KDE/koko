@@ -21,7 +21,6 @@
 #include "reversegeocodelookupjob.h"
 #include "imagestorage.h"
 
-#include <QTimer>
 #include <QFileInfo>
 #include <QEventLoop>
 
@@ -33,7 +32,14 @@ Processor::Processor(QObject* parent)
     , m_processing(false)
 {
     m_imageExtractor = m_extractors.fetchExtractors("image/jpeg").first();
+
+    m_commitTimer.setInterval(10000);
+    connect(&m_commitTimer, &QTimer::timeout, [&]() {
+        ImageStorage::instance()->commit();
+    });
+    m_commitTimer.start();
 }
+
 
 Processor::~Processor()
 {

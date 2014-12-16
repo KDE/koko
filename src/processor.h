@@ -22,6 +22,7 @@
 
 #include <QObject>
 #include <QStringList>
+#include <QTimer>
 
 #include <KFileMetaData/Extractor>
 #include <KFileMetaData/ExtractorCollection>
@@ -53,6 +54,8 @@ private:
 
     KFileMetaData::ExtractorCollection m_extractors;
     KFileMetaData::Extractor* m_imageExtractor;
+
+    QTimer m_commitTimer;
 };
 
 #endif // PROCESSOR_H

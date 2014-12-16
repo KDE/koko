@@ -47,6 +47,7 @@ ImageStorage::ImageStorage(QObject* parent)
     }
 
     if (db.tables().contains("files")) {
+        db.transaction();
         return;
     }
 
@@ -59,6 +60,8 @@ ImageStorage::ImageStorage(QObject* parent)
                "                    dateTime STRING,"
                "                    FOREIGN KEY(location) REFERENCES locations(id)"
                "                    )");
+
+    db.transaction();
 }
 
 ImageStorage::~ImageStorage()
@@ -66,6 +69,7 @@ ImageStorage::~ImageStorage()
     QString name;
     {
         QSqlDatabase db = QSqlDatabase::database();
+        db.commit();
         name = db.connectionName();
     }
     QSqlDatabase::removeDatabase(name);
@@ -111,6 +115,13 @@ void ImageStorage::addImage(const ImageInfo& ii)
             qDebug() << "FILE INSERT" << query.lastError();
         }
     }
+}
+
+void ImageStorage::commit()
+{
+    QMutexLocker lock(&m_mutex);
+    QSqlDatabase db = QSqlDatabase::database();
+    db.commit();
 }
 
 QList<QPair<QByteArray, QString> > ImageStorage::locations(ImageStorage::LocationGroup loca)
