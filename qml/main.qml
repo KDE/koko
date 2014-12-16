@@ -276,8 +276,14 @@ MainWindow {
             visible: false
             onImagesSelected: {
                 imageGrid.model = files
+                imageGrid.focus = true
                 view.push(imageGrid)
             }
+        }
+
+        Keys.onEscapePressed: {
+            view.pop()
+            view.currentItem.focus = true
         }
     }
 }
