@@ -45,6 +45,8 @@ FocusScope {
             model: Koko.ImageLocationModel {
                 id: imageLocationsModel
             }
+
+            onAlbumSelected: root.imagesSelected(files)
         }
     }
 

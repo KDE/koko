@@ -38,6 +38,7 @@ FocusScope {
             focus: true
 
             model: Koko.ImageFolderModel {}
+            onAlbumSelected: root.imagesSelected(files)
         }
     }
 

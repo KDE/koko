@@ -26,6 +26,8 @@ import QtQuick.Controls 1.0
 AutomaticSpacingGrid {
     id: gridView
 
+    signal albumSelected(var files)
+
     delegate: Item {
         width: cellWidth
         height: cellHeight
@@ -61,7 +63,7 @@ AutomaticSpacingGrid {
                 anchors.fill: parent
                 hoverEnabled: true
 
-                onClicked: root.imagesSelected(model.files)
+                onClicked: gridView.albumSelected(model.files)
 
                 onEntered: {
                     album.hover = true

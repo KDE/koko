@@ -41,6 +41,7 @@ FocusScope {
             model: Koko.ImageTimeModel {
                 id: imageTimeModel
             }
+            onAlbumSelected: root.imagesSelected(files)
         }
     }
 
