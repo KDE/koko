@@ -300,8 +300,8 @@ MainWindow {
             Layout.fillHeight: true
 
             onFinished: {
-                jungleConfig.initialRun = false
-                finishInitialization();
+                kokoConfig.initialRun = false
+                view.finishInitialization();
             }
         }
 
@@ -311,7 +311,7 @@ MainWindow {
                 leftSidebar.enabled = false
                 toolBar.enabled = false
             } else {
-                finishInitialization();
+                view.finishInitialization();
             }
         }
 
