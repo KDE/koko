@@ -55,5 +55,7 @@ int main(int argc, char** argv)
     QQmlComponent component(&engine, path);
     component.create(objectContext);
 
-    return app.exec();
+    int rt = app.exec();
+    processingThread.quit();
+    return rt;
 }
