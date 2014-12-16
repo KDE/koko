@@ -81,6 +81,9 @@ int main(int argc, char** argv)
 
     FileSystemTracker tracker;
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, func);
+    // Yes, this is evil. I know.
+    tracker.moveToThread(&tracker);
+    tracker.start();
 
     qDebug() << "Starting QML";
     QQmlEngine engine;
