@@ -33,12 +33,15 @@ int main(int argc, char** argv)
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
 
-    Processor processor;
+    QThread processingThread;
     FileSystemTracker tracker;
+    Processor processor;
+
+    tracker.moveToThread(&processingThread);
+    processor.moveToThread(&processingThread);
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Processor::addFile);
-    // Yes, this is evil. I know.
-    tracker.moveToThread(&tracker);
-    tracker.start();
+
+    processingThread.start();
 
     qDebug() << "Starting QML";
     QQmlEngine engine;

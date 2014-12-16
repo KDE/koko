@@ -31,7 +31,7 @@
 #include <QEventLoop>
 
 FileSystemTracker::FileSystemTracker(QObject* parent)
-    : QThread(parent)
+    : QObject(parent)
 {
     static QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko/";
     QDir().mkpath(dir);
@@ -42,16 +42,12 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
         Q_ASSERT_X(0, "", "FileSystemTracker could not open database");
     }
     m_coll = m_db->collection("images");
+
+    QTimer::singleShot(0, this, SLOT(init()));
 }
 
 FileSystemTracker::~FileSystemTracker()
 {
-}
-
-void FileSystemTracker::run()
-{
-    init();
-    exec();
 }
 
 void FileSystemTracker::init()

@@ -27,14 +27,13 @@
 #include <KVariantStore/KVariantStore>
 #include <KVariantStore/KVariantCollection>
 
-class FileSystemTracker : public QThread
+class FileSystemTracker : public QObject
 {
     Q_OBJECT
 public:
     explicit FileSystemTracker(QObject* parent = 0);
     virtual ~FileSystemTracker();
 
-    virtual void run();
 signals:
     void imageAdded(const QString& filePath);
     void imageRemoved(const QString& filePath);
