@@ -364,15 +364,25 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
 QList<QPair<QByteArray, QString> > ImageStorage::folders() const
 {
     QSqlQuery query;
-    query.prepare("select url from files");
+    query.prepare("select distinct url from files");
+    query.exec();
 
-    QList< QPair<QByteArray, QString> > list;
+    //
+    // FIXME: Figure out how to make sqlite do this operation
+    QSet<QString> folderPaths;
     while (query.next()) {
         QString path = query.value(0).toString();
         QUrl url = QUrl::fromLocalFile(path);
         url = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
 
-        list << qMakePair(path.toUtf8(), url.fileName());
+        folderPaths << url.toLocalFile();
+    }
+
+    QList< QPair<QByteArray, QString> > list;
+    for (const QString& str : folderPaths) {
+        QUrl url = QUrl::fromLocalFile(str);
+
+        list << qMakePair(str.toUtf8(), url.fileName());
     }
 
     return list;
@@ -380,9 +390,19 @@ QList<QPair<QByteArray, QString> > ImageStorage::folders() const
 
 QStringList ImageStorage::imagesForFolders(const QByteArray& key) const
 {
+    QString strUrl = QString::fromUtf8(key);
+
+    QString queryStr("select url from files where url like '");
+    queryStr += strUrl;
+    queryStr += "/%'";
+
     QSqlQuery query;
-    query.prepare("select url from files where url like '?%'");
-    query.addBindValue(QString::fromUtf8(key));
+    query.prepare(queryStr);
+
+    if (!query.exec()) {
+        qDebug() << key << query.lastError();
+        return QStringList();
+    }
 
     QStringList files;
     while (query.next()) {
