@@ -21,66 +21,21 @@
 #include <QQmlEngine>
 #include <QQmlContext>
 #include <QQmlComponent>
-#include <QEventLoop>
 
 #include <QStandardPaths>
 #include <QDebug>
-#include <QFileInfo>
-
-#include <KFileMetaData/ExtractorCollection>
-#include <KFileMetaData/Extractor>
-#include <KFileMetaData/SimpleExtractionResult>
 
 #include "filesystemtracker.h"
-#include "reversegeocodelookupjob.h"
-#include "imagestorage.h"
+#include "processor.h"
 
 int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
 
-    KFileMetaData::ExtractorCollection extractors;
-    KFileMetaData::Extractor* imageExtractor = extractors.fetchExtractors("image/jpeg").first();
-
-    auto func = [&](const QString& path) {
-        ImageInfo ii;
-        ii.path = path;
-
-        KFileMetaData::SimpleExtractionResult result(path);
-        imageExtractor->extract(&result);
-
-        double latitude = result.properties().value(KFileMetaData::Property::PhotoGpsLatitude).toDouble();
-        double longitude = result.properties().value(KFileMetaData::Property::PhotoGpsLongitude).toDouble();
-
-        if (latitude && longitude) {
-            qDebug() << path << latitude << longitude;
-
-            ReverseGeoCodeLookupJob* job = new ReverseGeoCodeLookupJob(QGeoCoordinate(latitude, longitude));
-            QEventLoop loop;
-            QObject::connect(job, SIGNAL(result(QGeoLocation)), &loop, SLOT(quit()));
-            QObject::connect(job, &ReverseGeoCodeLookupJob::result, [&](const QGeoLocation& result) {
-                ii.location = result;
-            });
-            job->start();
-            loop.exec();
-        }
-
-        ii.date = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDateTime();
-        if (ii.date.isNull()) {
-            ii.date = result.properties().value(KFileMetaData::Property::ImageDateTime).toDateTime();
-        }
-        if (ii.date.isNull()) {
-            ii.date = QFileInfo(path).created();
-        }
-
-        qDebug() << path << ii.date;
-
-        ImageStorage::instance()->addImage(ii);
-    };
-
+    Processor processor;
     FileSystemTracker tracker;
-    QObject::connect(&tracker, &FileSystemTracker::imageAdded, func);
+    QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Processor::addFile);
     // Yes, this is evil. I know.
     tracker.moveToThread(&tracker);
     tracker.start();
