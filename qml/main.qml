@@ -327,4 +327,7 @@ MainWindow {
             toolBar.enabled = true
         }
     }
+
+    contentItem.implicitWidth: 1800
+    contentItem.implicitHeight: 1000
 }
