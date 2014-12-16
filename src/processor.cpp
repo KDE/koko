@@ -57,7 +57,7 @@ void Processor::removeFile(const QString& filePath)
 float Processor::initialProgress()
 {
     if (m_numFiles) {
-        return 1.0 - (m_files.size() / m_numFiles);
+        return 1.0 - (m_files.size() * 1.0 / m_numFiles);
     }
 
     return 0;
@@ -67,6 +67,10 @@ void Processor::process()
 {
     if (m_processing)
         return;
+
+    if (m_files.isEmpty()) {
+        return;
+    }
 
     m_processing = true;
     QString path = m_files.takeLast();
@@ -105,4 +109,6 @@ void Processor::process()
 
     m_processing = false;
     QTimer::singleShot(0, this, SLOT(process()));
+
+    emit initialProgressChanged();
 }

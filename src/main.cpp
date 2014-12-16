@@ -27,6 +27,7 @@
 
 #include "filesystemtracker.h"
 #include "processor.h"
+#include "kokoconfig.h"
 
 int main(int argc, char** argv)
 {
@@ -38,14 +39,17 @@ int main(int argc, char** argv)
     Processor processor;
 
     tracker.moveToThread(&processingThread);
-    processor.moveToThread(&processingThread);
+    //processor.moveToThread(&processingThread);
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Processor::addFile);
 
     processingThread.start();
 
-    qDebug() << "Starting QML";
+    KokoConfig config;
+
     QQmlEngine engine;
     QQmlContext* objectContext = engine.rootContext();
+    objectContext->setContextProperty("kokoProcessor", &processor);
+    objectContext->setContextProperty("kokoConfig", &config);
 
     QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
     QQmlComponent component(&engine, path);

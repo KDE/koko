@@ -241,7 +241,7 @@ MainWindow {
             }
         }
 
-        initialItem: Locations {
+        Locations {
             id: locationView
             onImagesSelected: {
                 imageGrid.model = files
@@ -249,7 +249,6 @@ MainWindow {
                 view.push(imageGrid)
             }
             group: Koko.ImageLocationModel.City
-            focus: true
         }
 
         ImageGrid {
@@ -292,9 +291,40 @@ MainWindow {
             }
         }
 
+        FirstRun {
+            id: firstRun
+            visible: false
+            progress: kokoProcessor.initialProgress
+
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            onFinished: {
+                jungleConfig.initialRun = false
+                finishInitialization();
+            }
+        }
+
+        Component.onCompleted: {
+            if (kokoConfig && kokoConfig.initialRun) {
+                push(firstRun)
+                leftSidebar.enabled = false
+                toolBar.enabled = false
+            } else {
+                finishInitialization();
+            }
+        }
+
         Keys.onEscapePressed: {
             view.pop()
             view.currentItem.focus = true
+        }
+
+        function finishInitialization() {
+            push(locationView)
+            locationView.focus = true
+            leftSidebar.enabled = true
+            toolBar.enabled = true
         }
     }
 }
