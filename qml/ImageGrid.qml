@@ -53,11 +53,24 @@ ScrollView {
 
                 MouseArea {
                     anchors.fill: parent
+                    hoverEnabled: true
+
                     onClicked: root.imageSelected(model.modelData, model.index)
+                    onEntered: view.currentIndex = index
+                }
+
+                SystemPalette { id: sysPal; }
+                Rectangle {
+                    id: borderRect
+                    anchors.fill: parent
+                    color: "#00000000"
+                    radius: 2
+
+                    antialiasing: true
+                    border.color: view.currentIndex == index ? sysPal.highlight : "grey"
+                    border.width: view.currentIndex == index ? 5 : 1
                 }
             }
         }
-
-        highlight: Highlight {}
     }
 }
