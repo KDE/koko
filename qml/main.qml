@@ -39,6 +39,7 @@ MainWindow {
 
                 onClicked: {
                     view.pop()
+                    view.currentItem.focus = true
                 }
             }
         }
@@ -70,6 +71,7 @@ MainWindow {
                 Layout.fillWidth: true
                 onClicked: {
                     locationView.group = Koko.ImageLocationModel.Country
+                    locationView.focus = true
                     if (locationView.Stack.index != -1) {
                         view.pop(locationView)
                     } else {
@@ -85,6 +87,7 @@ MainWindow {
                 Layout.fillWidth: true
                 onClicked: {
                     locationView.group = Koko.ImageLocationModel.State
+                    locationView.focus = true
                     if (locationView.Stack.index != -1) {
                         view.pop(locationView)
                     } else {
@@ -101,6 +104,7 @@ MainWindow {
 
                 onClicked: {
                     locationView.group = Koko.ImageLocationModel.City
+                    locationView.focus = true
                     if (locationView.Stack.index != -1) {
                         view.pop(locationView)
                     } else {
@@ -128,6 +132,7 @@ MainWindow {
                 Layout.fillWidth: true
                 onClicked: {
                     timeImages.group = Koko.ImageTimeModel.Year
+                    timeImages.focus = true
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -143,6 +148,7 @@ MainWindow {
                 Layout.fillWidth: true
                 onClicked: {
                     timeImages.group = Koko.ImageTimeModel.Month
+                    timeImages.focus = true
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -159,6 +165,7 @@ MainWindow {
 
                 onClicked: {
                     timeImages.group = Koko.ImageTimeModel.Week
+                    timeImages.focus = true
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -175,6 +182,7 @@ MainWindow {
 
                 onClicked: {
                     timeImages.group = Koko.ImageTimeModel.Day
+                    timeImages.focus = true
                     if (timeImages.Stack.index != -1) {
                         view.pop(timeImages)
                     } else {
@@ -201,6 +209,7 @@ MainWindow {
                 Layout.fillWidth: true
                 onClicked: {
                     if (view.currentItem != folderImages) {
+                        folderImages.focus = true
                         view.push(folderImages)
                     }
                 }
@@ -236,6 +245,7 @@ MainWindow {
             id: locationView
             onImagesSelected: {
                 imageGrid.model = files
+                imageGrid.focus = true
                 view.push(imageGrid)
             }
             group: Koko.ImageLocationModel.City
@@ -267,6 +277,7 @@ MainWindow {
             visible: false
             onImagesSelected: {
                 imageGrid.model = files
+                imageGrid.focus = true
                 view.push(imageGrid)
             }
         }
