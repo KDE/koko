@@ -39,7 +39,9 @@ ScrollView {
         anchors.topMargin: 20
         focus: true
 
-        model: Koko.ImageFolderModel {}
+        model: Koko.SortModel {
+            sourceModel: Koko.ImageFolderModel {}
+        }
         onAlbumSelected: root.imagesSelected(files)
 
         MouseArea {

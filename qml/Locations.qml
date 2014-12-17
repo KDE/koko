@@ -43,8 +43,10 @@ ScrollView {
         anchors.topMargin: 20
         focus: true
 
-        model: Koko.ImageLocationModel {
-            id: imageLocationsModel
+        model: Koko.SortModel {
+            sourceModel: Koko.ImageLocationModel {
+                id: imageLocationsModel
+            }
         }
 
         onAlbumSelected: root.imagesSelected(files)

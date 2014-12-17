@@ -40,8 +40,10 @@ ScrollView {
         anchors.topMargin: 20
         focus: true
 
-        model: Koko.ImageTimeModel {
-            id: imageTimeModel
+        model: Koko.SortModel {
+            sourceModel: Koko.ImageTimeModel {
+                id: imageTimeModel
+            }
         }
         onAlbumSelected: root.imagesSelected(files)
 
