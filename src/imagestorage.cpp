@@ -493,10 +493,24 @@ QList<QPair<QByteArray, QString> > ImageStorage::folders() const
     }
 
     QList< QPair<QByteArray, QString> > list;
-    for (const QString& str : folderPaths) {
-        QUrl url = QUrl::fromLocalFile(str);
+    for (QString str : folderPaths) {
+        QDir dir(str);
 
-        list << qMakePair(str.toUtf8(), url.fileName());
+        // If a Folder is the only file in its parents folder, then lets use the parent
+        // folder's name
+        while (1) {
+            dir.cdUp();
+            QStringList entryList = dir.entryList(QDir::NoDotAndDotDot | QDir::Files | QDir::Dirs);
+            if (entryList.size() == 1) {
+                str = dir.absolutePath();
+            } else {
+                break;
+            }
+        }
+
+        QByteArray key = str.toUtf8();
+        QUrl url = QUrl::fromLocalFile(str);
+        list << qMakePair(key, url.fileName());
     }
 
     return list;
