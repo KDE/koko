@@ -36,6 +36,7 @@ MainWindow {
             PlasmaComponents.ToolButton {
                 iconName: "draw-arrow-back"
                 text: "Back"
+                enabled: view.depth > 1
 
                 onClicked: {
                     view.pop()
