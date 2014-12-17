@@ -321,6 +321,7 @@ MainWindow {
         }
 
         function finishInitialization() {
+            clear()
             push(locationView)
             locationView.focus = true
             leftSidebar.enabled = true
