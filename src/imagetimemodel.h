@@ -33,7 +33,8 @@ public:
 
     enum Roles {
         FilesRole = Qt::UserRole + 1,
-        CoverRole
+        CoverRole,
+        DateRole
     };
 
     virtual QHash< int, QByteArray > roleNames() const;

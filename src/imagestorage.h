@@ -65,8 +65,10 @@ public:
         Day
     };
     QList< QPair<QByteArray, QString> > timeGroups(TimeGroup group);
-    QStringList imagesForTime(const QByteArray& name, TimeGroup& group);
-    QString imageForTime(const QByteArray& name, TimeGroup& group);
+    QStringList imagesForTime(const QByteArray& name, TimeGroup group);
+    QString imageForTime(const QByteArray& name, TimeGroup group);
+
+    QDate dateForKey(const QByteArray& key, TimeGroup group);
 
     QList< QPair<QByteArray, QString> > folders() const;
     QStringList imagesForFolders(const QByteArray& key) const;

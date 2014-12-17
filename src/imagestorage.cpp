@@ -374,7 +374,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::timeGroups(ImageStorage::TimeGr
     return list;
 }
 
-QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
+QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::TimeGroup group)
 {
     QMutexLocker lock(&m_mutex);
     QSqlQuery query;
@@ -423,7 +423,7 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
     return files;
 }
 
-QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGroup& group)
+QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGroup group)
 {
     QMutexLocker lock(&m_mutex);
     Q_ASSERT(!name.isEmpty());
@@ -471,6 +471,37 @@ QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGro
 
     Q_ASSERT(0);
     return QString();
+}
+
+QDate ImageStorage::dateForKey(const QByteArray& name, ImageStorage::TimeGroup group)
+{
+    if (group == Year) {
+        return QDate(name.toInt(), 1, 1);
+    }
+    else if (group == Month) {
+        QDataStream stream(name);
+        QString year;
+        QString month;
+        stream >> year >> month;
+
+        return QDate(year.toInt(), month.toInt(), 1);
+    }
+    else if (group == Week) {
+        QDataStream stream(name);
+        QString year;
+        QString week;
+        stream >> year >> week;
+
+        int month = week.toInt() / 4;
+        int day = week.toInt() % 4;
+        return QDate(year.toInt(), month, day);
+    }
+    else if (group == Day) {
+        return QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
+    }
+
+    Q_ASSERT(0);
+    return QDate();
 }
 
 

@@ -44,6 +44,7 @@ ScrollView {
             sourceModel: Koko.ImageTimeModel {
                 id: imageTimeModel
             }
+            sortRoleName: "date"
         }
         onAlbumSelected: root.imagesSelected(files)
 

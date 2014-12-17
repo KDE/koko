@@ -31,6 +31,7 @@ QHash<int, QByteArray> ImageTimeModel::roleNames() const
     auto hash = QAbstractItemModel::roleNames();
     hash.insert(FilesRole, "files");
     hash.insert(CoverRole, "cover");
+    hash.insert(DateRole, "date");
 
     return hash;
 }
@@ -56,6 +57,11 @@ QVariant ImageTimeModel::data(const QModelIndex& index, int role) const
         case CoverRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
             return ImageStorage::instance()->imageForTime(key, tg);
+        }
+
+        case DateRole: {
+            auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+            return ImageStorage::instance()->dateForKey(key, tg);
         }
     }
 
