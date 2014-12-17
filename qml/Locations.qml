@@ -28,36 +28,36 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.koko 0.1 as Koko
 
-FocusScope {
+ScrollView {
     id: root
     signal imagesSelected(var files)
     property alias group: imageLocationsModel.group
 
+    // Without this the GridView will not get focus
+    // See QTBUG-31976
+    flickableItem.interactive: true
 
-    ScrollView {
+    AlbumView {
+        id: view
         anchors.fill: parent
-        AlbumView {
-            id: view
+        anchors.topMargin: 20
+        focus: true
+
+        model: Koko.ImageLocationModel {
+            id: imageLocationsModel
+        }
+
+        onAlbumSelected: root.imagesSelected(files)
+
+        MouseArea {
             anchors.fill: parent
-            anchors.topMargin: 20
-            focus: true
-
-            model: Koko.ImageLocationModel {
-                id: imageLocationsModel
+            propagateComposedEvents: true
+            onClicked: {
+                root.focus = true
+                mouse.accepted = false
             }
-
-            onAlbumSelected: root.imagesSelected(files)
         }
     }
 
     onGroupChanged: view.calculateSpacing()
-
-    MouseArea {
-        anchors.fill: parent
-        propagateComposedEvents: true
-        onClicked: {
-            root.focus = true
-            mouse.accepted = false
-        }
-    }
 }

@@ -25,34 +25,35 @@ import QtQuick.Controls 1.0
 
 import org.kde.koko 0.1 as Koko
 
-FocusScope {
+ScrollView {
     id: root
     signal imagesSelected(var files)
     property alias group: imageTimeModel.group
 
-    ScrollView {
-        anchors.fill: parent
-        AlbumView {
-            id: view
-            anchors.fill: parent
-            anchors.topMargin: 20
-            focus: true
+    // Without this the GridView will not get focus
+    // See QTBUG-31976
+    flickableItem.interactive: true
 
-            model: Koko.ImageTimeModel {
-                id: imageTimeModel
+    AlbumView {
+        id: view
+        anchors.fill: parent
+        anchors.topMargin: 20
+        focus: true
+
+        model: Koko.ImageTimeModel {
+            id: imageTimeModel
+        }
+        onAlbumSelected: root.imagesSelected(files)
+
+        MouseArea {
+            anchors.fill: parent
+            propagateComposedEvents: true
+            onClicked: {
+                root.focus = true
+                mouse.accepted = false
             }
-            onAlbumSelected: root.imagesSelected(files)
         }
     }
 
     onGroupChanged: view.calculateSpacing()
-
-    MouseArea {
-        anchors.fill: parent
-        propagateComposedEvents: true
-        onClicked: {
-            root.focus = true
-            mouse.accepted = false
-        }
-    }
 }
