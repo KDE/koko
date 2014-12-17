@@ -265,7 +265,7 @@ MainWindow {
             }
         }
 
-        Viewer {
+        ImageViewer {
             id: imageViewer
             visible: false
 
