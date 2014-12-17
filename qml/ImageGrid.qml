@@ -31,10 +31,15 @@ ScrollView {
     property alias index: view.currentIndex
     signal imageSelected(string filePath, int index)
 
+    // Without this the GridView will not get focus
+    // See QTBUG-31976
+    flickableItem.interactive: true
+
     AutomaticSpacingGrid {
         id: view
         anchors.fill: parent
 
+        focus: true
         minRowSpacing: 5
         minColumnSpacing: 5
 
@@ -71,6 +76,9 @@ ScrollView {
                     border.width: view.currentIndex == index ? 5 : 1
                 }
             }
+
+            Keys.onEnterPressed: root.imageSelected(model.modelData, model.index)
+            Keys.onReturnPressed: root.imageSelected(model.modelData, model.index)
         }
     }
 }
