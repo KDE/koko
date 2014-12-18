@@ -37,7 +37,6 @@ target_link_libraries(koko
     KF5::ConfigCore
     KF5::Baloo
     KF5::FileMetaData
-    KVariantStore
     kokocommon
 )
 

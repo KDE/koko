@@ -20,7 +20,9 @@
 #include "filesystemtracker.h"
 #include "balooimagefetcher.h"
 
-#include <KVariantStore/KVariantQuery>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
 
 #include <QStandardPaths>
 #include <QTimer>
@@ -36,18 +38,48 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
     static QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko/";
     QDir().mkpath(dir);
 
-    m_db = new KVariantStore();
-    m_db->setPath(dir + QStringLiteral("fstracker"));
-    if (!m_db->open()) {
-        Q_ASSERT_X(0, "", "FileSystemTracker could not open database");
+    QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("fstracker"));
+    db.setDatabaseName(dir + "/fstracker.sqlite3");
+    if (!db.open()) {
+        qDebug() << "Failed to open db" << db.lastError().text();
+        return;
     }
-    m_coll = m_db->collection("images");
+
+    if (db.tables().contains("files")) {
+        return;
+    }
+
+    QSqlQuery query(db);
+    bool ret = query.exec(QLatin1String("CREATE TABLE files("
+                          "id INTEGER PRIMARY KEY, "
+                          "url TEXT NOT NULL UNIQUE)"));
+    if (!ret) {
+        qDebug() << "Could not create files table" << query.lastError().text();
+        return;
+    }
+
+    ret = query.exec(QLatin1String("CREATE INDEX fileUrl_index ON files (url)"));
+    if (!ret) {
+        qDebug() << "Could not create tags index" << query.lastError().text();
+        return;
+    }
+
+    //
+    // WAL Journaling mode has much lower io writes than the traditional journal
+    // based indexing.
+    //
+    ret = query.exec(QLatin1String("PRAGMA journal_mode = WAL"));
+    if (!ret) {
+        qDebug() << "Could not set WAL journaling mode" << query.lastError().text();
+        return;
+    }
 
     QTimer::singleShot(0, this, SLOT(init()));
 }
 
 FileSystemTracker::~FileSystemTracker()
 {
+    QSqlDatabase::removeDatabase(QStringLiteral("fstracker"));
 }
 
 void FileSystemTracker::init()
@@ -63,9 +95,22 @@ void FileSystemTracker::init()
 
 void FileSystemTracker::slotImageResult(const QString& filePath)
 {
-    QVariantMap map = {{"url", filePath}};
-    if (m_coll.count(map) == 0) {
-        m_coll.insert(map);
+    QSqlQuery query(QSqlDatabase::database("fstracker"));
+    query.prepare("SELECT id from files where url = ?");
+    query.addBindValue(filePath);
+    if (!query.exec()) {
+        qDebug() << query.lastError();
+        return;
+    }
+
+    if (!query.next()) {
+        QSqlQuery query(QSqlDatabase::database("fstracker"));
+        query.prepare("INSERT into files(url) VALUES (?)");
+        query.addBindValue(filePath);
+        if (!query.exec()) {
+            qDebug() << query.lastError();
+            return;
+        }
         emit imageAdded(filePath);
     }
 
@@ -74,10 +119,15 @@ void FileSystemTracker::slotImageResult(const QString& filePath)
 
 void FileSystemTracker::slotFetchFinished()
 {
-    KVariantQuery q = m_coll.find(QVariantMap());
-    while (q.next()) {
-        QVariantMap map = q.result();
-        QString filePath = map.value("url").toString();
+    QSqlQuery query(QSqlDatabase::database("fstracker"));
+    query.prepare("SELECT url from files");
+    if (!query.exec()) {
+        qDebug() << query.lastError();
+        return;
+    }
+
+    while (query.next()) {
+        QString filePath = query.value(0).toString();
 
         if (!m_filePaths.contains(filePath)) {
             emit imageRemoved(filePath);

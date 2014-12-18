@@ -24,6 +24,7 @@
 
 #include <QStandardPaths>
 #include <QDebug>
+#include <QThread>
 
 #include "filesystemtracker.h"
 #include "processor.h"

@@ -22,10 +22,6 @@
 
 #include <QObject>
 #include <QSet>
-#include <QThread>
-
-#include <KVariantStore/KVariantStore>
-#include <KVariantStore/KVariantCollection>
 
 class FileSystemTracker : public QObject
 {
@@ -44,9 +40,6 @@ private slots:
     void slotFetchFinished();
 
 private:
-    KVariantStore* m_db;
-    KVariantCollection m_coll;
-
     QSet<QString> m_filePaths;
 };
 
