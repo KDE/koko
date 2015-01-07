@@ -19,7 +19,7 @@
  *
  */
 
-import QtQuick 2.1
+import QtQuick 2.3
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0 as QtControls
 
@@ -52,13 +52,30 @@ Item {
 
     ColumnLayout {
         anchors.fill: parent
-        Image {
-            id: img
-            source: root.filePath
-            fillMode: Image.PreserveAspectFit
-
+        Flickable {
+            id: flick
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+            contentWidth: img.width
+            contentHeight: img.height
+            boundsBehavior: Flickable.StopAtBounds
+            Image {
+                id: img
+                source: root.filePath
+                fillMode: Image.PreserveAspectFit
+
+                width: flick.width * artificalScale
+                height: flick.height * artificalScale
+                mipmap: true
+
+                /**
+                 * We cannot use the Item.scale property as that doesn't change
+                 * the width/height of the Image since it is applied later.
+                 * Also, we don't get any of the fancy cubic scaling.
+                 */
+                property double artificalScale: 1.0
+            }
         }
 
         ClipRectangle {
@@ -121,7 +138,7 @@ Item {
                     Layout.alignment: Qt.AlignRight
 
                     onValueChanged: {
-                        img.scale = value
+                        img.artificalScale = value
                     }
                 }
                 QtControls.ToolButton {
@@ -129,7 +146,7 @@ Item {
                     onClicked: slider.value = slider.value + 1.0
                 }
                 QtControls.Label {
-                    text: Math.floor(img.scale * 100) + "%"
+                    text: Math.floor(img.artificalScale * 100) + "%"
                 }
             }
         }
