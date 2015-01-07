@@ -47,7 +47,7 @@ public:
         Week,
         Day
     };
-    Q_ENUMS(TimeGroup);
+    Q_ENUMS(TimeGroup)
 
     TimeGroup group() const;
     void setGroup(TimeGroup group);

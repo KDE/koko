@@ -45,7 +45,7 @@ public:
         State,
         City
     };
-    Q_ENUMS(LocationGroup);
+    Q_ENUMS(LocationGroup)
 
     LocationGroup group() const;
     void setGroup(LocationGroup group);
