@@ -26,6 +26,7 @@ add_executable(koko
     reversegeocodelookupjob.cpp
     filesystemtracker.cpp
     processor.cpp
+    imageprocessorrunnable.cpp
     kokoconfig.cpp
 )
 

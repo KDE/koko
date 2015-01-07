@@ -60,15 +60,14 @@ int main(int argc, char** argv)
         ImageStorage::reset();
     }
 
-    QThread processingThread;
+    QThread trackerThread;
     FileSystemTracker tracker;
-    Processor processor;
+    tracker.moveToThread(&trackerThread);
 
-    tracker.moveToThread(&processingThread);
-    //processor.moveToThread(&processingThread);
+    Processor processor;
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Processor::addFile);
 
-    processingThread.start();
+    trackerThread.start();
 
     KokoConfig config;
 
@@ -82,6 +81,6 @@ int main(int argc, char** argv)
     component.create(objectContext);
 
     int rt = app.exec();
-    processingThread.quit();
+    trackerThread.quit();
     return rt;
 }

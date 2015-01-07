@@ -18,13 +18,14 @@
  */
 
 #include "processor.h"
-#include "reversegeocodelookupjob.h"
 #include "imagestorage.h"
+#include "imageprocessorrunnable.h"
 
 #include <QFileInfo>
 #include <QEventLoop>
+#include <QThreadPool>
 
-#include <KFileMetaData/SimpleExtractionResult>
+using namespace Koko;
 
 Processor::Processor(QObject* parent)
     : QObject(parent)
@@ -81,38 +82,14 @@ void Processor::process()
     m_processing = true;
     QString path = m_files.takeLast();
 
-    ImageInfo ii;
-    ii.path = path;
+    ImageProcessorRunnable* runnable = new ImageProcessorRunnable(m_imageExtractor, path);
+    connect(runnable, SIGNAL(finished()), this, SLOT(slotFinished()));
 
-    KFileMetaData::SimpleExtractionResult result(path);
-    m_imageExtractor->extract(&result);
+    QThreadPool::globalInstance()->start(runnable);
+}
 
-    double latitude = result.properties().value(KFileMetaData::Property::PhotoGpsLatitude).toDouble();
-    double longitude = result.properties().value(KFileMetaData::Property::PhotoGpsLongitude).toDouble();
-
-    if (latitude && longitude) {
-        ReverseGeoCodeLookupJob* job = new ReverseGeoCodeLookupJob(QGeoCoordinate(latitude, longitude));
-        QEventLoop loop;
-        QObject::connect(job, SIGNAL(result(QGeoLocation)), &loop, SLOT(quit()));
-        QObject::connect(job, &ReverseGeoCodeLookupJob::result, [&](const QGeoLocation& result) {
-            ii.location = result;
-        });
-        job->start();
-        loop.exec();
-    }
-
-    ii.dateTime = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDateTime();
-    if (ii.dateTime.isNull()) {
-        ii.dateTime = result.properties().value(KFileMetaData::Property::ImageDateTime).toDateTime();
-    }
-    if (ii.dateTime.isNull()) {
-        ii.dateTime = QFileInfo(path).created();
-    }
-
-    qDebug() << path << ii.dateTime;
-
-    ImageStorage::instance()->addImage(ii);
-
+void Processor::slotFinished()
+{
     m_processing = false;
     QTimer::singleShot(0, this, SLOT(process()));
 

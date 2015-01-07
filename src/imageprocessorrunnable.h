@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
+ * <one line to give the library's name and an idea of what it does.>
+ * Copyright (C) 2015  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,46 +18,30 @@
  *
  */
 
-#ifndef PROCESSOR_H
-#define PROCESSOR_H
+#ifndef KOKO_IMAGEPROCESSORRUNNABLE_H
+#define KOKO_IMAGEPROCESSORRUNNABLE_H
 
+#include <QRunnable>
 #include <QObject>
-#include <QStringList>
-#include <QTimer>
 
 #include <KFileMetaData/Extractor>
-#include <KFileMetaData/ExtractorCollection>
 
-class Processor : public QObject
+namespace Koko {
+
+class ImageProcessorRunnable : public QObject, public QRunnable
 {
     Q_OBJECT
-    Q_PROPERTY(float initialProgress READ initialProgress NOTIFY initialProgressChanged)
 public:
-    Processor(QObject* parent = 0);
-    ~Processor();
-
-    float initialProgress();
+    ImageProcessorRunnable(KFileMetaData::Extractor* extractor, QString& filePath);
+    virtual void run();
 
 signals:
-    void initialProgressChanged();
-
-public slots:
-    void addFile(const QString& filePath);
-    void removeFile(const QString& filePath);
-
-private slots:
-    void process();
-    void slotFinished();
+    void finished();
 
 private:
-    QStringList m_files;
-    int m_numFiles;
-    bool m_processing;
-
-    KFileMetaData::ExtractorCollection m_extractors;
     KFileMetaData::Extractor* m_imageExtractor;
-
-    QTimer m_commitTimer;
+    QString m_path;
 };
+}
 
-#endif // PROCESSOR_H
+#endif // KOKO_IMAGEPROCESSORRUNNABLE_H

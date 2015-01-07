@@ -122,6 +122,7 @@ void ImageStorage::commit()
     QMutexLocker lock(&m_mutex);
     QSqlDatabase db = QSqlDatabase::database();
     db.commit();
+    db.transaction();
 }
 
 QList<QPair<QByteArray, QString> > ImageStorage::locations(ImageStorage::LocationGroup loca)
