@@ -24,8 +24,6 @@
 #include <QRunnable>
 #include <QObject>
 
-#include <KFileMetaData/Extractor>
-
 namespace Koko {
 
 class ImageProcessorRunnable : public QObject, public QRunnable
