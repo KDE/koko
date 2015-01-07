@@ -78,7 +78,8 @@ int main(int argc, char** argv)
 
     QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
     QQmlComponent component(&engine, path);
-    component.create(objectContext);
+    QObject* obj = component.create(objectContext);
+    Q_ASSERT(obj);
 
     int rt = app.exec();
     trackerThread.quit();
