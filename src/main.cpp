@@ -26,14 +26,39 @@
 #include <QDebug>
 #include <QThread>
 
+#include <KDBusService>
+#include <KLocalizedString>
+
+#include <QCommandLineParser>
+#include <QCommandLineOption>
+
 #include "filesystemtracker.h"
 #include "processor.h"
 #include "kokoconfig.h"
+#include "imagestorage.h"
 
 int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
+
+    KDBusService service(KDBusService::Unique);
+
+    QCommandLineParser parser;
+    parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
+    parser.addHelpOption();
+    parser.process(app);
+
+    if (parser.positionalArguments().size() > 1) {
+        parser.showHelp(1);
+    }
+
+    if (parser.isSet("reset")) {
+        KokoConfig config;
+        config.reset();
+
+        ImageStorage::reset();
+    }
 
     QThread processingThread;
     FileSystemTracker tracker;

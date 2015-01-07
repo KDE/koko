@@ -37,6 +37,8 @@ target_link_libraries(koko
     KF5::ConfigCore
     KF5::Baloo
     KF5::FileMetaData
+    KF5::DBusAddons
+    KF5::I18n
     kokocommon
 )
 

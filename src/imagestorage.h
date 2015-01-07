@@ -74,6 +74,7 @@ public:
     QStringList imagesForFolders(const QByteArray& key) const;
     QString imageForFolders(const QByteArray& key) const;
 
+    static void reset();
 private:
     mutable QMutex m_mutex;
 };

@@ -593,3 +593,9 @@ QString ImageStorage::imageForFolders(const QByteArray& key) const
 
     return QString();
 }
+
+void ImageStorage::reset()
+{
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
+    QDir(dir).removeRecursively();
+}
