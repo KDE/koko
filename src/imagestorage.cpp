@@ -57,7 +57,7 @@ ImageStorage::ImageStorage(QObject* parent)
                ")");
     query.exec("CREATE TABLE files (url TEXT NOT NULL UNIQUE PRIMARY KEY,"
                "                    location INTEGER,"
-               "                    dateTime STRING,"
+               "                    dateTime STRING NOT NULL,"
                "                    FOREIGN KEY(location) REFERENCES locations(id)"
                "                    )");
 
