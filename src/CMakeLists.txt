@@ -27,6 +27,7 @@ add_executable(koko
     filesystemtracker.cpp
     processor.cpp
     imageprocessorrunnable.cpp
+    exiv2extractor.cpp
     kokoconfig.cpp
 )
 
@@ -37,10 +38,10 @@ target_link_libraries(koko
     Qt5::Positioning
     KF5::ConfigCore
     KF5::Baloo
-    KF5::FileMetaData
     KF5::DBusAddons
     KF5::I18n
     kokocommon
+    ${EXIV2_LIBRARIES}
 )
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})

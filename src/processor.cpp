@@ -32,8 +32,6 @@ Processor::Processor(QObject* parent)
     , m_numFiles(0)
     , m_processing(false)
 {
-    m_imageExtractor = m_extractors.fetchExtractors("image/jpeg").first();
-
     m_commitTimer.setInterval(10000);
     connect(&m_commitTimer, &QTimer::timeout, [&]() {
         ImageStorage::instance()->commit();
@@ -82,7 +80,7 @@ void Processor::process()
     m_processing = true;
     QString path = m_files.takeLast();
 
-    ImageProcessorRunnable* runnable = new ImageProcessorRunnable(m_imageExtractor, path);
+    ImageProcessorRunnable* runnable = new ImageProcessorRunnable(path);
     connect(runnable, SIGNAL(finished()), this, SLOT(slotFinished()));
 
     QThreadPool::globalInstance()->start(runnable);

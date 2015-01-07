@@ -32,14 +32,13 @@ class ImageProcessorRunnable : public QObject, public QRunnable
 {
     Q_OBJECT
 public:
-    ImageProcessorRunnable(KFileMetaData::Extractor* extractor, QString& filePath);
+    ImageProcessorRunnable(QString& filePath);
     virtual void run();
 
 signals:
     void finished();
 
 private:
-    KFileMetaData::Extractor* m_imageExtractor;
     QString m_path;
 };
 }

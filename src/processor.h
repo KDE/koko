@@ -24,9 +24,6 @@
 #include <QStringList>
 #include <QTimer>
 
-#include <KFileMetaData/Extractor>
-#include <KFileMetaData/ExtractorCollection>
-
 class Processor : public QObject
 {
     Q_OBJECT
@@ -52,9 +49,6 @@ private:
     QStringList m_files;
     int m_numFiles;
     bool m_processing;
-
-    KFileMetaData::ExtractorCollection m_extractors;
-    KFileMetaData::Extractor* m_imageExtractor;
 
     QTimer m_commitTimer;
 };

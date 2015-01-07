@@ -22,16 +22,15 @@
 
 #include <QFileInfo>
 #include <QEventLoop>
-#include <KFileMetaData/SimpleExtractionResult>
 
 #include "reversegeocodelookupjob.h"
 #include "imagestorage.h"
+#include "exiv2extractor.h"
 
 using namespace Koko;
 
-ImageProcessorRunnable::ImageProcessorRunnable(KFileMetaData::Extractor* extractor, QString& filePath)
+ImageProcessorRunnable::ImageProcessorRunnable(QString& filePath)
     : QObject()
-    , m_imageExtractor(extractor)
     , m_path(filePath)
 {
 }
@@ -42,11 +41,11 @@ void ImageProcessorRunnable::run()
     ImageInfo ii;
     ii.path = m_path;
 
-    KFileMetaData::SimpleExtractionResult result(m_path);
-    m_imageExtractor->extract(&result);
+    Exiv2Extractor extractor;
+    extractor.extract(m_path);
 
-    double latitude = result.properties().value(KFileMetaData::Property::PhotoGpsLatitude).toDouble();
-    double longitude = result.properties().value(KFileMetaData::Property::PhotoGpsLongitude).toDouble();
+    double latitude = extractor.gpsLatitude();
+    double longitude = extractor.gpsLongitude();
 
     if (latitude && longitude) {
         ReverseGeoCodeLookupJob* job = new ReverseGeoCodeLookupJob(QGeoCoordinate(latitude, longitude));
@@ -59,10 +58,7 @@ void ImageProcessorRunnable::run()
         loop.exec(QEventLoop::ExcludeUserInputEvents);
     }
 
-    ii.dateTime = result.properties().value(KFileMetaData::Property::PhotoDateTimeOriginal).toDateTime();
-    if (ii.dateTime.isNull()) {
-        ii.dateTime = result.properties().value(KFileMetaData::Property::ImageDateTime).toDateTime();
-    }
+    ii.dateTime = extractor.dateTime();
     if (ii.dateTime.isNull()) {
         ii.dateTime = QFileInfo(m_path).created();
     }
