@@ -63,7 +63,7 @@ void Processor::removeFile(const QString& filePath)
 float Processor::initialProgress() const
 {
     if (m_numFiles) {
-        return 1.0 - (m_files.size() * 1.0 / m_numFiles);
+        return 1.0f - (m_files.size() * 1.0f / m_numFiles);
     }
 
     return 0;
