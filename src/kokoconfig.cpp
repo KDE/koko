@@ -48,7 +48,9 @@ void KokoConfig::setInitialRun(bool value)
 void KokoConfig::reset()
 {
     QString path = QStandardPaths::locate(QStandardPaths::ConfigLocation, m_config.name());
-    QFile::remove(path);
+    if (QFile::exists(path)) {
+        QFile::remove(path);
+    }
 
     m_config.reparseConfiguration();
 }
