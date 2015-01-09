@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014  Vishesh Handa <vhanda@kde.org>
+ * Copyright (C) 2014-2015  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -26,6 +26,7 @@ import org.kde.plasma.extras 2.0 as PlasmaExtras
 Item {
     signal finished()
     property alias progress: progressBar.value
+    property int numFiles: 0
 
     ColumnLayout {
         anchors.centerIn: parent
@@ -59,7 +60,8 @@ Item {
         }
 
         PlasmaComponents.Label {
-            text: "Initializing..."
+            id: statusLabel
+            text: numFiles == 0 ? "No Image Files Found" : "Initializing..."
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
     }

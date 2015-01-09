@@ -51,6 +51,7 @@ void Processor::addFile(const QString& filePath)
     m_numFiles++;
 
     QTimer::singleShot(0, this, SLOT(process()));
+    emit numFilesChanged();
 }
 
 void Processor::removeFile(const QString& filePath)
@@ -59,7 +60,7 @@ void Processor::removeFile(const QString& filePath)
     // FIXME: Implement this!
 }
 
-float Processor::initialProgress()
+float Processor::initialProgress() const
 {
     if (m_numFiles) {
         return 1.0 - (m_files.size() * 1.0 / m_numFiles);
@@ -67,6 +68,12 @@ float Processor::initialProgress()
 
     return 0;
 }
+
+int Processor::numFiles() const
+{
+    return m_numFiles;
+}
+
 
 void Processor::process()
 {

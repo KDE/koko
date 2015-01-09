@@ -28,14 +28,17 @@ class Processor : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(float initialProgress READ initialProgress NOTIFY initialProgressChanged)
+    Q_PROPERTY(int numFiles READ numFiles NOTIFY numFilesChanged)
 public:
     Processor(QObject* parent = 0);
     ~Processor();
 
-    float initialProgress();
+    float initialProgress() const;
+    int numFiles() const;
 
 signals:
     void initialProgressChanged();
+    void numFilesChanged();
 
 public slots:
     void addFile(const QString& filePath);

@@ -296,6 +296,7 @@ MainWindow {
             FirstRun {
                 visible: false
                 progress: kokoProcessor.initialProgress
+                numFiles: kokoProcessor.numFiles
 
                 Layout.fillWidth: true
                 Layout.fillHeight: true
