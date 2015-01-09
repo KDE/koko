@@ -32,6 +32,8 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
+#include <iostream>
+
 #include "filesystemtracker.h"
 #include "processor.h"
 #include "kokoconfig.h"
@@ -78,6 +80,12 @@ int main(int argc, char** argv)
 
     QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
     QQmlComponent component(&engine, path);
+    if (component.isError()) {
+        std::cout << component.errorString().toUtf8().constData() << std::endl;
+        Q_ASSERT(0);
+    }
+    Q_ASSERT(component.status() == QQmlComponent::Ready);
+
     QObject* obj = component.create(objectContext);
     Q_ASSERT(obj);
 
