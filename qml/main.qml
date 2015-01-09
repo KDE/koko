@@ -306,14 +306,32 @@ MainWindow {
             }
         }
 
+        BalooDisabled {
+            id: balooDisabled
+            visible: false
+
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+        }
+
         Component.onCompleted: {
-            if (kokoConfig && kokoConfig.initialRun) {
-                push(firstRun)
-                leftSidebar.enabled = false
-                toolBar.enabled = false
-            } else {
-                view.finishInitialization();
+            if (kokoConfig) {
+                console.log("KOKOConfig" + kokoConfig.balooEnabled)
+                if (kokoConfig.balooEnabled == false) {
+                    push(balooDisabled)
+                    leftSidebar.visible = false
+                    toolBar.visible = false
+                    return;
+                }
+                else if (kokoConfig.initialRun) {
+                    push(firstRun)
+                    leftSidebar.enabled = false
+                    toolBar.enabled = false
+                    return;
+                }
             }
+
+            view.finishInitialization();
         }
 
         Keys.onEscapePressed: {
