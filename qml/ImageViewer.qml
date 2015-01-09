@@ -39,7 +39,7 @@ Item {
     property int currentIndex
 
     Rectangle {
-        color: "#192629"
+        color: "#646464"
         anchors.fill: parent
         z: -1
     }
