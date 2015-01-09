@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Vishesh Handa <vhanda@kde.org>
+ * Copyright (C) 2014-2015 Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -71,13 +71,11 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    locationView.group = Koko.ImageLocationModel.Country
-                    locationView.focus = true
-                    if (locationView.Stack.index != -1) {
-                        view.pop(locationView)
-                    } else {
-                        view.push(locationView)
-                    }
+                    view.clear()
+                    view.push({
+                        item: locationView,
+                        properties: { focus: true, group: Koko.ImageLocationModel.Country }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -87,13 +85,11 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    locationView.group = Koko.ImageLocationModel.State
-                    locationView.focus = true
-                    if (locationView.Stack.index != -1) {
-                        view.pop(locationView)
-                    } else {
-                        view.push(locationView)
-                    }
+                    view.clear()
+                    view.push({
+                        item: locationView,
+                        properties: { focus: true, group: Koko.ImageLocationModel.State }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -104,13 +100,11 @@ MainWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    locationView.group = Koko.ImageLocationModel.City
-                    locationView.focus = true
-                    if (locationView.Stack.index != -1) {
-                        view.pop(locationView)
-                    } else {
-                        view.push(locationView)
-                    }
+                    view.clear()
+                    view.push({
+                        item: locationView,
+                        properties: { focus: true, group: Koko.ImageLocationModel.City }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -132,13 +126,11 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    timeImages.group = Koko.ImageTimeModel.Year
-                    timeImages.focus = true
-                    if (timeImages.Stack.index != -1) {
-                        view.pop(timeImages)
-                    } else {
-                        view.push(timeImages)
-                    }
+                    view.clear()
+                    view.push({
+                        item: timeImages,
+                        properties: { focus: true, group: Koko.ImageTimeModel.Year }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -148,13 +140,11 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    timeImages.group = Koko.ImageTimeModel.Month
-                    timeImages.focus = true
-                    if (timeImages.Stack.index != -1) {
-                        view.pop(timeImages)
-                    } else {
-                        view.push(timeImages)
-                    }
+                    view.clear()
+                    view.push({
+                        item: timeImages,
+                        properties: { focus: true, group: Koko.ImageTimeModel.Month }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -165,13 +155,11 @@ MainWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    timeImages.group = Koko.ImageTimeModel.Week
-                    timeImages.focus = true
-                    if (timeImages.Stack.index != -1) {
-                        view.pop(timeImages)
-                    } else {
-                        view.push(timeImages)
-                    }
+                    view.clear()
+                    view.push({
+                        item: timeImages,
+                        properties: { focus: true, group: Koko.ImageTimeModel.Week }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -182,13 +170,11 @@ MainWindow {
                 Layout.fillWidth: true
 
                 onClicked: {
-                    timeImages.group = Koko.ImageTimeModel.Day
-                    timeImages.focus = true
-                    if (timeImages.Stack.index != -1) {
-                        view.pop(timeImages)
-                    } else {
-                        view.push(timeImages)
-                    }
+                    view.clear()
+                    view.push({
+                        item: timeImages,
+                        properties: { focus: true, group: Koko.ImageTimeModel.Day }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -209,10 +195,11 @@ MainWindow {
                 iconName: "system-search"
                 Layout.fillWidth: true
                 onClicked: {
-                    if (view.currentItem != folderImages) {
-                        folderImages.focus = true
-                        view.push(folderImages)
-                    }
+                    view.clear()
+                    view.push({
+                        item: folderImages,
+                        properties: { focus: true }
+                    })
                 }
                 checkable: true
                 exclusiveGroup: group
@@ -242,89 +229,110 @@ MainWindow {
             }
         }
 
-        Locations {
+        Component {
             id: locationView
-            onImagesSelected: {
-                imageGrid.model = files
-                imageGrid.focus = true
-                view.push(imageGrid)
+            Locations {
+                onImagesSelected: {
+                    view.push({
+                        item: imageGrid,
+                        properties: { focus: true, model: files }
+                    })
+                }
+                group: Koko.ImageLocationModel.City
             }
-            group: Koko.ImageLocationModel.City
         }
 
-        ImageGrid {
+        Component {
             id: imageGrid
-            visible: false
-            onImageSelected: {
-                imageViewer.filePath = filePath
-                imageViewer.currentIndex = index
-                imageViewer.model = model
-                imageViewer.focus = true
-
-                view.push(imageViewer)
+            ImageGrid {
+                onImageSelected: {
+                    view.push({
+                        item: imageViewer,
+                        properties: { focus: true,
+                                      model: model,
+                                      filePath: filePath,
+                                      currentIndex: index }
+                    })
+                }
             }
         }
 
-        ImageViewer {
+        Component {
             id: imageViewer
-            visible: false
-
-            onCurrentIndexChanged: imageGrid.index = currentIndex
+            ImageViewer {
+                // This is done so that the current selected item is correct
+                // if the user selects another item when in the ImageView (left/right keys)
+                // FIXME: Doesn't work with components
+                // onCurrentIndexChanged: imageGrid.index = currentIndex
+            }
         }
 
-        TimeImages {
+        Component {
             id: timeImages
-            visible: false
-            onImagesSelected: {
-                imageGrid.model = files
-                imageGrid.focus = true
-                view.push(imageGrid)
+            TimeImages {
+                onImagesSelected: {
+                    view.push({
+                        item: imageGrid,
+                        properties: { focus: true, model: files }
+                    })
+                }
             }
         }
 
-        Folders {
+        Component {
             id: folderImages
-            visible: false
-            onImagesSelected: {
-                imageGrid.model = files
-                imageGrid.focus = true
-                view.push(imageGrid)
+            Folders {
+                onImagesSelected: {
+                    view.push({
+                        item: imageGrid,
+                        properties: { focus: true, model: files }
+                    })
+                }
             }
         }
 
-        FirstRun {
+        Component {
             id: firstRun
-            visible: false
-            progress: kokoProcessor.initialProgress
+            FirstRun {
+                visible: false
+                progress: kokoProcessor.initialProgress
 
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-            onFinished: {
-                kokoConfig.initialRun = false
-                view.finishInitialization();
+                onFinished: {
+                    kokoConfig.initialRun = false
+                    view.finishInitialization();
+                }
             }
         }
 
-        BalooDisabled {
+        Component {
             id: balooDisabled
-            visible: false
-
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            BalooDisabled {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+            }
         }
 
         Component.onCompleted: {
             if (kokoConfig) {
-                console.log("KOKOConfig" + kokoConfig.balooEnabled)
                 if (kokoConfig.balooEnabled == false) {
-                    push(balooDisabled)
+                    push({
+                        item: balooDisabled,
+                        immediate: true,
+                        replace: true
+                    })
                     leftSidebar.visible = false
                     toolBar.visible = false
                     return;
                 }
                 else if (kokoConfig.initialRun) {
-                    push(firstRun)
+                    push({
+                        item: firstRun,
+                        immediate: true,
+                        replace: true
+                    })
                     leftSidebar.enabled = false
                     toolBar.enabled = false
                     return;
@@ -341,10 +349,14 @@ MainWindow {
 
         function finishInitialization() {
             clear()
-            push(locationView)
-            locationView.focus = true
             leftSidebar.enabled = true
             toolBar.enabled = true
+
+            push({
+                item: locationView,
+                replace: true,
+                properties: { focus: true }
+            })
         }
     }
 
