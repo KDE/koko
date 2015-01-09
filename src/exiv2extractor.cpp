@@ -25,6 +25,7 @@
 Exiv2Extractor::Exiv2Extractor()
     : m_latitude(0)
     , m_longitude(0)
+    , m_error(true)
 {
 }
 
@@ -135,6 +136,10 @@ void Exiv2Extractor::extract(const QString& filePath)
         return;
     }
 
+    if (!image->good()) {
+        return;
+    }
+
     try {
         image->readMetadata();
     } catch (const std::exception&) {
@@ -164,6 +169,8 @@ void Exiv2Extractor::extract(const QString& filePath)
     QByteArray longRef = fetchByteArray(data, "Exif.GPSInfo.GPSLongitudeRef");
     if (!longRef.isEmpty() && longRef[0] == 'W')
         m_longitude *= -1;
+
+    m_error = false;
 }
 
 double Exiv2Extractor::fetchGpsDouble(const Exiv2::ExifData& data, const char* name)
@@ -222,3 +229,9 @@ QByteArray Exiv2Extractor::fetchByteArray(const Exiv2::ExifData& data, const cha
 
     return QByteArray();
 }
+
+bool Exiv2Extractor::error() const
+{
+    return m_error;
+}
+

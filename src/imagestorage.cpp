@@ -219,7 +219,6 @@ QStringList ImageStorage::imagesForLocation(const QByteArray& name, ImageStorage
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
         query.addBindValue(country);
         query.addBindValue(state);
-        qDebug() << country << state;
     }
     else if (loc == City) {
         QDataStream st(name);

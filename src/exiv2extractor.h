@@ -36,6 +36,8 @@ public:
     double gpsLongitude() { return m_longitude; }
     QDateTime dateTime() { return m_dateTime; }
 
+    bool error() const;
+
 private:
     double fetchGpsDouble(const Exiv2::ExifData& data, const char* name);
     QByteArray fetchByteArray(const Exiv2::ExifData& data, const char* name);
@@ -43,6 +45,8 @@ private:
     double m_latitude;
     double m_longitude;
     QDateTime m_dateTime;
+
+    bool m_error;
 };
 
 #endif // EXIV2EXTRACTOR_H
