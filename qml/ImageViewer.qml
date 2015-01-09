@@ -84,8 +84,13 @@ Item {
             visible: false
         }
 
-        QtControls.ToolBar {
+        // Tool bar
+        Rectangle {
+            SystemPalette { id: sysPal; }
+            color: sysPal.window
             Layout.fillWidth: true
+            Layout.maximumHeight: 60
+            Layout.minimumHeight: 60
 
             RowLayout {
                 anchors.fill: parent
