@@ -54,6 +54,7 @@ ScrollView {
 
                 width: 300
                 height: 300
+                sourceSize: Qt.size(300, 300)
                 anchors.centerIn: parent
 
                 MouseArea {
