@@ -141,14 +141,13 @@ Item {
                     id: slider
                     minimumValue: 1.0
                     maximumValue: 9.99
-                    value: img.width / img.sourceSize.width
+                    value: 1.0
 
                     Layout.alignment: Qt.AlignRight
 
                     onValueChanged: {
-                        // FIXME: This would result in a biding loop. Is there a better way?
-                        //img.width = img.sourceSize.width * value
-                        //img.height = img.sourceSize.height * value
+                        img.width = img.sourceSize.width * value
+                        img.height = img.sourceSize.height * value
                     }
                 }
                 QtControls.ToolButton {
