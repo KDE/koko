@@ -46,7 +46,6 @@ Item {
 
     property string filePath
     onFilePathChanged: {
-        slider.value = 1.0
         img.rotation = 0
     }
 
@@ -66,16 +65,9 @@ Item {
                 source: root.filePath
                 fillMode: Image.PreserveAspectFit
 
-                width: flick.width * artificalScale
-                height: flick.height * artificalScale
+                width: flick.width
+                height: flick.height
                 mipmap: true
-
-                /**
-                 * We cannot use the Item.scale property as that doesn't change
-                 * the width/height of the Image since it is applied later.
-                 * Also, we don't get any of the fancy cubic scaling.
-                 */
-                property double artificalScale: 1.0
             }
         }
 
@@ -124,12 +116,17 @@ Item {
                 // Zoom
                 QtControls.Button {
                     text: "Fit"
-                    // FIXME: Automatically detect the best zoom level!!
-                    onClicked: slider.value = 1.0
+                    onClicked: {
+                        img.width = flick.width
+                        img.height = flick.height
+                    }
                 }
                 QtControls.Button {
                     text: "100%"
-                    onClicked: slider.value = 1.0
+                    onClicked: {
+                        img.width = img.sourceSize.width
+                        img.height = img.sourceSize.height
+                    }
                 }
                 QtControls.ToolButton {
                     iconName: "file-zoom-out"
@@ -139,12 +136,14 @@ Item {
                     id: slider
                     minimumValue: 1.0
                     maximumValue: 9.99
-                    value: 1.0
+                    value: img.width / img.sourceSize.width
 
                     Layout.alignment: Qt.AlignRight
 
                     onValueChanged: {
-                        img.artificalScale = value
+                        // FIXME: This would result in a biding loop. Is there a better way?
+                        //img.width = img.sourceSize.width * value
+                        //img.height = img.sourceSize.height * value
                     }
                 }
                 QtControls.ToolButton {
@@ -152,7 +151,7 @@ Item {
                     onClicked: slider.value = slider.value + 1.0
                 }
                 QtControls.Label {
-                    text: Math.floor(img.artificalScale * 100) + "%"
+                    text: Math.floor(img.width/img.sourceSize.width * 100) + "%"
                 }
             }
         }
