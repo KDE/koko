@@ -20,8 +20,6 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.1 as QtControls
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-
 Item {
     signal finished()
 
@@ -41,11 +39,11 @@ Item {
         }
 
 
-        PlasmaComponents.Label {
+        QtControls.Label {
             text: "Plasma File Search (Baloo) is currently disabled."
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
-        PlasmaComponents.Label {
+        QtControls.Label {
             text: "Please enable Baloo and restart Koko."
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }

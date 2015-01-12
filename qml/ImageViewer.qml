@@ -24,7 +24,6 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0 as QtControls
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.core 2.0 as PlasmaCore
 
 Item {
     id: root

@@ -20,8 +20,6 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.1 as QtControls
 
-import org.kde.plasma.components 2.0 as PlasmaComponents
-
 Item {
     signal finished()
     property alias progress: progressBar.value
@@ -58,7 +56,7 @@ Item {
             }
         }
 
-        PlasmaComponents.Label {
+        QtControls.Label {
             id: statusLabel
             text: numFiles == 0 ? "No Image Files Found" : "Initializing..."
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
