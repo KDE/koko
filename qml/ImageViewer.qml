@@ -47,6 +47,7 @@ Item {
     property string filePath
     onFilePathChanged: {
         img.rotation = 0
+        resetImageSize()
     }
 
     ColumnLayout {
@@ -57,8 +58,8 @@ Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            contentWidth: img.width
-            contentHeight: img.height
+            contentWidth: img.width < flick.width ? flick.width : img.width
+            contentHeight: img.height < flick.height ? flick.height : img.height
             boundsBehavior: Flickable.StopAtBounds
             Image {
                 id: img
@@ -68,7 +69,11 @@ Item {
                 width: flick.width
                 height: flick.height
                 mipmap: true
+
+                anchors.centerIn: parent
             }
+
+            onWidthChanged: resetImageSize()
         }
 
         ClipRectangle {
@@ -164,5 +169,19 @@ Item {
     Keys.onLeftPressed: {
         currentIndex = Math.max(0, currentIndex - 1)
         filePath = model[currentIndex]
+    }
+
+    function resetImageSize() {
+        //
+        // This is done so that if the Image is naturally smaller, we show its
+        // original size, instead of scaling it up.
+        //
+        if (flick.width > img.sourceSize.width) {
+            img.width = img.sourceSize.width
+            img.height = img.sourceSize.height
+        } else {
+            img.width = flick.width
+            img.height = flick.height
+        }
     }
 }
