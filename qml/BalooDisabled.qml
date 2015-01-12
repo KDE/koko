@@ -21,7 +21,6 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.1 as QtControls
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 Item {
     signal finished()
@@ -29,13 +28,13 @@ Item {
     ColumnLayout {
         anchors.centerIn: parent
 
-        PlasmaExtras.Heading {
+        Heading {
             text: "Koko"
             font.bold: true
             font.pointSize: 100
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
-        PlasmaExtras.Heading {
+        Heading {
             text: "By KDE"
             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             level: 3

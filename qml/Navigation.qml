@@ -24,10 +24,9 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 ColumnLayout {
-    PlasmaExtras.Heading {
+    Heading {
         text: "Navigation"
         font.bold: true
         Layout.fillWidth: true
@@ -53,7 +52,7 @@ ColumnLayout {
     ColumnLayout {
         Layout.fillWidth: true
 
-        PlasmaExtras.Heading {
+        Heading {
             text: "Pinned Filters"
             font.bold: true
             Layout.fillWidth: true

@@ -25,7 +25,6 @@ import QtQuick.Controls 1.0
 import QtQuick.Window 2.1
 
 import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.koko 0.1 as Koko
 
 MainWindow {
@@ -49,7 +48,7 @@ MainWindow {
     leftSidebar: ColumnLayout {
         width: 350
 
-        PlasmaExtras.Heading {
+        Heading {
             text: "Navigation"
             font.bold: true
             level: 2
@@ -60,7 +59,7 @@ MainWindow {
         ColumnLayout {
             Layout.fillWidth: true
 
-            PlasmaExtras.Heading {
+            Heading {
                 text: "Locations"
                 font.bold: true
                 Layout.fillWidth: true
@@ -115,7 +114,7 @@ MainWindow {
         ColumnLayout {
             Layout.fillWidth: true
 
-            PlasmaExtras.Heading {
+            Heading {
                 text: "Time"
                 font.bold: true
                 Layout.fillWidth: true
@@ -184,7 +183,7 @@ MainWindow {
         ColumnLayout {
             Layout.fillWidth: true
 
-            PlasmaExtras.Heading {
+            Heading {
                 text: "Path"
                 font.bold: true
                 Layout.fillWidth: true
