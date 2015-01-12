@@ -37,15 +37,15 @@ AutomaticSpacingGrid {
             anchors.top: parent.top
             focus: true
 
-            AlbumCover {
+            AlbumCoverWithShadow {
                 id: album
                 imageSource: model.cover
                 isCurrentItem: gridView.currentIndex == model.index
 
-                Layout.maximumWidth: 300
-                Layout.maximumHeight: 300
-                Layout.minimumWidth: 300
-                Layout.minimumHeight: 300
+                Layout.maximumWidth: 316
+                Layout.maximumHeight: 316
+                Layout.minimumWidth: 316
+                Layout.minimumHeight: 316
             }
 
             SystemPalette { id: sysPal; }

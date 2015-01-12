@@ -69,17 +69,6 @@ Item {
         opacity: hover ? 0.1 : 0.0
     }
 
-    DropShadow {
-        anchors.fill: parent
-        radius: 18
-        samples: 16
-        fast: true
-        color: "#80000000"
-        source: maskRect
-        cached: true
-        z: -1
-    }
-
     SystemPalette { id: sysPal; }
     Rectangle {
         id: borderRect
