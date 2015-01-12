@@ -23,6 +23,8 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
+import org.kde.plasma.extras 2.0 as PlasmaExtras
+
 AutomaticSpacingGrid {
     id: gridView
 
@@ -77,5 +79,15 @@ AutomaticSpacingGrid {
             Keys.onEnterPressed: gridView.albumSelected(model.files)
             Keys.onReturnPressed: gridView.albumSelected(model.files)
         }
+    }
+
+    PlasmaExtras.Heading {
+        text: "No Images Found"
+        visible: parent.count == 0
+        level: 3
+
+        anchors.centerIn: parent
+        horizontalAlignment: Qt.AlignHCenter
+        verticalAlignment: Qt.AlignVCenter
     }
 }

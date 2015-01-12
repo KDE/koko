@@ -24,7 +24,6 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.0
 
 import org.kde.koko 0.1 as Koko
-import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 ScrollView {
     id: root
@@ -56,16 +55,6 @@ ScrollView {
                 root.focus = true
                 mouse.accepted = false
             }
-        }
-
-        PlasmaExtras.Heading {
-            text: "No Images Found"
-            visible: view.count == 0
-            level: 3
-
-            anchors.centerIn: view
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
         }
     }
 
