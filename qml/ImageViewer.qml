@@ -52,6 +52,7 @@ Item {
 
     ColumnLayout {
         anchors.fill: parent
+        spacing: 0
         Flickable {
             id: flick
             Layout.fillWidth: true
