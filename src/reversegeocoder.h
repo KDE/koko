@@ -1,5 +1,4 @@
 /*
- * <one line to give the library's name and an idea of what it does.>
  * Copyright (C) 2015  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
@@ -39,6 +38,9 @@ public:
 
 private:
     kdtree* m_tree;
+    QMap<QString, QString> m_countryMap;
+    QMap<QString, QString> m_admin1Map;
+    QMap<QString, QString> m_admin2Map;
 };
 }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014  Vishesh Handa <vhanda@kde.org>
+ * Copyright (C) 2015  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -40,22 +40,18 @@ void ReverseGeoCoderTest::testSimple()
 {
     QCoreApplication::instance()->setApplicationName("koko");
 
-    QTime timer;
-    timer.start();
-
     ReverseGeoCoder coder;
     QCOMPARE(coder.initialized(), false);
     coder.init();
-    qDebug() << timer.elapsed();
     QCOMPARE(coder.initialized(), true);
 
     double lat = 52.54877605;
     double lon = -1.81627023283164;
 
-    timer.restart();
     QVariantMap data = coder.lookup(lat, lon);
-    qDebug() << timer.elapsed();
-    qDebug() << data;
+    QCOMPARE(data.value("country").toString(), QString("United Kingdom"));
+    QCOMPARE(data.value("admin1").toString(), QString("England"));
+    QCOMPARE(data.value("admin2").toString(), QString("City and Borough of Birmingham"));
 }
 
 QTEST_MAIN(ReverseGeoCoderTest)
