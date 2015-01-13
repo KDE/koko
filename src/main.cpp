@@ -66,8 +66,8 @@ int main(int argc, char** argv)
     FileSystemTracker tracker;
     tracker.moveToThread(&trackerThread);
 
-    Processor processor;
-    QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Processor::addFile);
+    Koko::Processor processor;
+    QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Koko::Processor::addFile);
 
     trackerThread.start();
 

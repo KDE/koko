@@ -34,6 +34,12 @@ public:
     void init();
     bool initialized();
 
+    /**
+     * The ReverseGeoCoder consumes a significant amount of memory (around 100mb). It
+     * makes sense to deinit it when it is not being used.
+     */
+    void deinit();
+
     QVariantMap lookup(double lat, double lon) const;
 
 private:

@@ -25,11 +25,13 @@
 
 namespace Koko {
 
+class ReverseGeoCoder;
+
 class ImageProcessorRunnable : public QObject, public QRunnable
 {
     Q_OBJECT
 public:
-    ImageProcessorRunnable(QString& filePath);
+    ImageProcessorRunnable(QString& filePath, ReverseGeoCoder* coder);
     virtual void run();
 
 signals:
@@ -37,6 +39,7 @@ signals:
 
 private:
     QString m_path;
+    ReverseGeoCoder* m_geoCoder;
 };
 }
 

@@ -23,7 +23,6 @@ install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_A
 #
 add_executable(koko
     main.cpp
-    reversegeocodelookupjob.cpp
     reversegeocoder.cpp
     filesystemtracker.cpp
     processor.cpp

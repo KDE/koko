@@ -20,17 +20,17 @@
 #include "imageprocessorrunnable.h"
 
 #include <QFileInfo>
-#include <QEventLoop>
 
-#include "reversegeocodelookupjob.h"
+#include "reversegeocoder.h"
 #include "imagestorage.h"
 #include "exiv2extractor.h"
 
 using namespace Koko;
 
-ImageProcessorRunnable::ImageProcessorRunnable(QString& filePath)
+ImageProcessorRunnable::ImageProcessorRunnable(QString& filePath, ReverseGeoCoder* geoCoder)
     : QObject()
     , m_path(filePath)
+    , m_geoCoder(geoCoder)
 {
 }
 
@@ -51,14 +51,16 @@ void ImageProcessorRunnable::run()
     double longitude = extractor.gpsLongitude();
 
     if (latitude && longitude) {
-        ReverseGeoCodeLookupJob* job = new ReverseGeoCodeLookupJob(QGeoCoordinate(latitude, longitude));
-        QEventLoop loop;
-        QObject::connect(job, SIGNAL(result(QGeoLocation)), &loop, SLOT(quit()));
-        QObject::connect(job, &ReverseGeoCodeLookupJob::result, [&](const QGeoLocation& result) {
-            ii.location = result;
-        });
-        job->start();
-        loop.exec(QEventLoop::ExcludeUserInputEvents);
+        if (!m_geoCoder->initialized()) {
+            m_geoCoder->init();
+        }
+        QVariantMap map = m_geoCoder->lookup(latitude, longitude);
+
+        QGeoAddress addr;
+        addr.setCountry(map.value("country").toString());
+        addr.setState(map.value("admin1").toString());
+        addr.setCity(map.value("admin2").toString());
+        ii.location.setAddress(addr);
     }
 
     ii.dateTime = extractor.dateTime();

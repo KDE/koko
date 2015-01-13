@@ -34,9 +34,7 @@ ReverseGeoCoder::ReverseGeoCoder()
 
 ReverseGeoCoder::~ReverseGeoCoder()
 {
-    if (m_tree) {
-        kd_free(m_tree);
-    }
+    deinit();
 }
 
 void ReverseGeoCoder::init()
@@ -137,6 +135,18 @@ void ReverseGeoCoder::init()
         QString name = list[1];
         m_admin2Map.insert(code, name);
     }
+}
+
+void ReverseGeoCoder::deinit()
+{
+    if (m_tree) {
+        kd_free(m_tree);
+        m_tree = 0;
+    }
+
+    m_countryMap.clear();
+    m_admin1Map.clear();
+    m_admin2Map.clear();
 }
 
 bool ReverseGeoCoder::initialized()

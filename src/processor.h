@@ -24,6 +24,10 @@
 #include <QStringList>
 #include <QTimer>
 
+#include "reversegeocoder.h"
+
+namespace Koko {
+
 class Processor : public QObject
 {
     Q_OBJECT
@@ -54,6 +58,8 @@ private:
     bool m_processing;
 
     QTimer m_commitTimer;
+    ReverseGeoCoder m_geoCoder;
 };
 
+}
 #endif // PROCESSOR_H

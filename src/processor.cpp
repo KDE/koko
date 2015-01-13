@@ -35,6 +35,9 @@ Processor::Processor(QObject* parent)
     m_commitTimer.setInterval(10000);
     connect(&m_commitTimer, &QTimer::timeout, [&]() {
         ImageStorage::instance()->commit();
+        if (m_files.isEmpty()) {
+            m_geoCoder.deinit();
+        }
     });
     m_commitTimer.start();
 }
@@ -87,7 +90,7 @@ void Processor::process()
     m_processing = true;
     QString path = m_files.takeLast();
 
-    ImageProcessorRunnable* runnable = new ImageProcessorRunnable(path);
+    ImageProcessorRunnable* runnable = new ImageProcessorRunnable(path, &m_geoCoder);
     connect(runnable, SIGNAL(finished()), this, SLOT(slotFinished()));
 
     QThreadPool::globalInstance()->start(runnable);
