@@ -24,6 +24,7 @@ install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_A
 add_executable(koko
     main.cpp
     reversegeocodelookupjob.cpp
+    reversegeocoder.cpp
     filesystemtracker.cpp
     processor.cpp
     imageprocessorrunnable.cpp
@@ -42,6 +43,7 @@ target_link_libraries(koko
     KF5::I18n
     kokocommon
     ${EXIV2_LIBRARIES}
+    ${KDETREE_LIBRARIES}
 )
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
@@ -67,5 +69,20 @@ target_link_libraries (kokoqmlplugin
 
 install (TARGETS kokoqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
 install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
-install(FILES org.kde.koko.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install (FILES org.kde.koko.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
+#
+# Reverse GeoLookup Data
+#
+if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip)
+    file (DOWNLOAD "http://download.geonames.org/export/dump/cities1000.zip"
+                ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip
+        SHOW_PROGRESS
+    )
+endif()
+
+execute_process(
+    COMMAND ${CMAKE_COMMAND} -E tar -xzf ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${DATA_INSTALL_DIR}/koko)

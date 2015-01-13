@@ -7,6 +7,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Test Sql Positioning)
 find_package(KF5 5.5 REQUIRED COMPONENTS Plasma I18n Declarative Config Baloo)
 find_package(Exiv2 0.21 REQUIRED)
+find_package(KdTree REQUIRED)
 
 include(FeatureSummary)
 include(ECMAddTests)
@@ -21,6 +22,7 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/src
   ${CMAKE_BINARY_DIR}/src
   ${EXIV2_INCLUDE_DIR}
+  ${KDETREE_INCLUDE_DIR}
 )
 
 kde_enable_exceptions()
