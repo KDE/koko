@@ -37,7 +37,8 @@ Processor::Processor(QObject* parent)
         ImageStorage::instance()->commit();
         if (m_files.isEmpty()) {
             m_geoCoder.deinit();
-            emit finished();
+            if (m_numFiles)
+                emit finished();
         }
     });
     m_commitTimer.start();
