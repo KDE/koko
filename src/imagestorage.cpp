@@ -87,17 +87,49 @@ void ImageStorage::addImage(const ImageInfo& ii)
     QGeoAddress addr = ii.location.address();
 
     if (!addr.country().isEmpty()) {
-        QSqlQuery query;
-        query.prepare("INSERT INTO LOCATIONS(country, state, city) VALUES (?, ?, ?)");
-        query.addBindValue(addr.country());
-        query.addBindValue(addr.state());
-        query.addBindValue(addr.city());
-        if (!query.exec()) {
-            qDebug() << "LOC INSERT" << query.lastError();
+        int locId = -1;
+
+        if (!addr.city().isEmpty()) {
+            QSqlQuery query;
+            query.prepare("SELECT id FROM LOCATIONS WHERE country = ? AND state = ? AND city = ?");
+            query.addBindValue(addr.country());
+            query.addBindValue(addr.state());
+            query.addBindValue(addr.city());
+            if (!query.exec()) {
+                qDebug() << "LOC SELECT" << query.lastError();
+            }
+
+            if (query.next()) {
+                locId = query.value(0).toInt();
+            }
+        } else {
+            QSqlQuery query;
+            query.prepare("SELECT id FROM LOCATIONS WHERE country = ? AND state = ?");
+            query.addBindValue(addr.country());
+            query.addBindValue(addr.state());
+            if (!query.exec()) {
+                qDebug() << "LOC SELECT" << query.lastError();
+            }
+
+            if (query.next()) {
+                locId = query.value(0).toInt();
+            }
         }
 
-        int locId = query.lastInsertId().toInt();
+        if (locId == -1) {
+            QSqlQuery query;
+            query.prepare("INSERT INTO LOCATIONS(country, state, city) VALUES (?, ?, ?)");
+            query.addBindValue(addr.country());
+            query.addBindValue(addr.state());
+            query.addBindValue(addr.city());
+            if (!query.exec()) {
+                qDebug() << "LOC INSERT" << query.lastError();
+            }
 
+            locId = query.lastInsertId().toInt();
+        }
+
+        QSqlQuery query;
         query.prepare("INSERT INTO FILES(url, location, dateTime) VALUES(?, ?, ?)");
         query.addBindValue(ii.path);
         query.addBindValue(locId);
