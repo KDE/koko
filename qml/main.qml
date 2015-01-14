@@ -345,9 +345,11 @@ MainWindow {
             view.finishInitialization();
         }
 
-        Keys.onEscapePressed: {
-            view.pop()
-            view.currentItem.focus = true
+        Keys.onPressed: {
+            if (event.key == Qt.Key_Escape || event.key == Qt.Key_Backspace) {
+                view.pop()
+                view.currentItem.focus = true
+            }
         }
 
         function finishInitialization() {
