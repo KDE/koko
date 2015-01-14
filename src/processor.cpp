@@ -50,6 +50,12 @@ Processor::~Processor()
 
 void Processor::addFile(const QString& filePath)
 {
+    // Typically "photos" takes by cameras are stored as jpegs
+    if (!filePath.endsWith(".jpg", Qt::CaseInsensitive) &&
+        !filePath.endsWith(".jpeg", Qt::CaseInsensitive)) {
+        return;
+    }
+
     m_files << filePath;
     m_numFiles++;
 
