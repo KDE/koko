@@ -126,6 +126,7 @@ void Exiv2Extractor::extract(const QString& filePath)
     QByteArray arr = QFile::encodeName(filePath);
     std::string fileString(arr.data(), arr.length());
 
+    Exiv2::LogMsg::setLevel(Exiv2::LogMsg::mute);
     Exiv2::Image::AutoPtr image;
     try {
         image = Exiv2::ImageFactory::open(fileString);
