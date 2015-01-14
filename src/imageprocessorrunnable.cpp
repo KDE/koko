@@ -50,7 +50,7 @@ void ImageProcessorRunnable::run()
     double latitude = extractor.gpsLatitude();
     double longitude = extractor.gpsLongitude();
 
-    if (latitude && longitude) {
+    if (latitude != 0.0 && longitude != 0.0) {
         if (!m_geoCoder->initialized()) {
             m_geoCoder->init();
         }
