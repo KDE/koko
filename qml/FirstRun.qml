@@ -21,7 +21,6 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.1 as QtControls
 
 Item {
-    signal finished()
     property alias progress: progressBar.value
     property int numFiles: 0
 
@@ -48,17 +47,14 @@ Item {
 
             maximumValue: 1.0
             minimumValue: 0.0
-
-            onValueChanged: {
-                if (value == maximumValue) {
-                    finished()
-                }
-            }
         }
 
         QtControls.Label {
-            id: statusLabel
             text: numFiles == 0 ? "No Image Files Found" : "Initializing..."
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+        }
+        QtControls.Label {
+            text: numFiles == 0 ? "" : ("Found " + numFiles + " images.")
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
     }

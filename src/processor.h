@@ -43,6 +43,7 @@ public:
 signals:
     void initialProgressChanged();
     void numFilesChanged();
+    void finished();
 
 public slots:
     void addFile(const QString& filePath);

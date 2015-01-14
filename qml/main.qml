@@ -300,9 +300,12 @@ MainWindow {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
-                onFinished: {
-                    kokoConfig.initialRun = false
-                    view.finishInitialization();
+                Connections {
+                    target: kokoProcessor
+                    onFinished: {
+                        kokoConfig.initialRun = false
+                        view.finishInitialization();
+                    }
                 }
             }
         }
