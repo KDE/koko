@@ -38,8 +38,7 @@ MainWindow {
                 enabled: view.depth > 1
 
                 onClicked: {
-                    view.pop()
-                    view.currentItem.focus = true
+                    goBack();
                 }
             }
         }
@@ -259,10 +258,7 @@ MainWindow {
         Component {
             id: imageViewer
             ImageViewer {
-                // This is done so that the current selected item is correct
-                // if the user selects another item when in the ImageView (left/right keys)
-                // FIXME: Doesn't work with components
-                // onCurrentIndexChanged: imageGrid.index = currentIndex
+                objectName: "imageViewer"
             }
         }
 
@@ -347,8 +343,7 @@ MainWindow {
 
         Keys.onPressed: {
             if (event.key == Qt.Key_Escape || event.key == Qt.Key_Backspace) {
-                view.pop()
-                view.currentItem.focus = true
+                goBack();
             }
         }
 
@@ -362,6 +357,20 @@ MainWindow {
                 replace: true,
                 properties: { focus: true }
             })
+        }
+
+        function goBack() {
+            if (view.currentItem.objectName == "imageViewer") {
+                // This is being done so that if the user changes the image in the ImageViewer
+                // using the left/right keys, then when they go back to the ImageGrid
+                // the correct image is selected
+                var index = view.currentItem.currentIndex
+                view.pop()
+                view.currentItem.index = index
+            } else {
+                view.pop()
+            }
+            view.currentItem.focus = true
         }
     }
 
