@@ -358,21 +358,21 @@ MainWindow {
                 properties: { focus: true }
             })
         }
+    }
 
-        function goBack() {
-            if (view.currentItem.objectName == "imageViewer") {
-                // This is being done so that if the user changes the image in the ImageViewer
-                // using the left/right keys, then when they go back to the ImageGrid
-                // the correct image is selected
-                var ci = view.currentItem.currentIndex
-                view.pop()
-                view.currentItem.index = ci
-                view.currentItem.positionViewAtIndex(ci, GridView.Center)
-            } else {
-                view.pop()
-            }
-            view.currentItem.focus = true
+    function goBack() {
+        if (view.currentItem.objectName == "imageViewer") {
+            // This is being done so that if the user changes the image in the ImageViewer
+            // using the left/right keys, then when they go back to the ImageGrid
+            // the correct image is selected
+            var ci = view.currentItem.currentIndex
+            view.pop()
+            view.currentItem.index = ci
+            view.currentItem.positionViewAtIndex(ci, GridView.Center)
+        } else {
+            view.pop()
         }
+        view.currentItem.focus = true
     }
 
     contentItem.implicitWidth: 1800
