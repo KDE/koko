@@ -364,9 +364,10 @@ MainWindow {
                 // This is being done so that if the user changes the image in the ImageViewer
                 // using the left/right keys, then when they go back to the ImageGrid
                 // the correct image is selected
-                var index = view.currentItem.currentIndex
+                var ci = view.currentItem.currentIndex
                 view.pop()
-                view.currentItem.index = index
+                view.currentItem.index = ci
+                view.currentItem.positionViewAtIndex(ci, GridView.Center)
             } else {
                 view.pop()
             }

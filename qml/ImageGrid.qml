@@ -82,4 +82,8 @@ ScrollView {
             Keys.onReturnPressed: root.imageSelected(model.modelData, model.index)
         }
     }
+
+    function positionViewAtIndex(index, mode) {
+        view.positionViewAtIndex(index, mode)
+    }
 }
