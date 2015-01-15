@@ -1,19 +1,25 @@
 [Desktop Entry]
 Name=Koko
 Name[de]=Koko
+Name[nl]=Koko
 Name[pt]=Koko
+Name[sk]=Koko
 Name[sv]=Koko
 Name[uk]=Koko
 Name[x-test]=xxKokoxx
 GenericName=Image Gallery
 GenericName[de]=Bildergalerie
+GenericName[nl]=Afbeeldingsgalerij
 GenericName[pt]=Galeria de Imagens
+GenericName[sk]=Galéria obrázkov
 GenericName[sv]=Bildgalleri
 GenericName[uk]=Галерея зображень
 GenericName[x-test]=xxImage Galleryxx
 Comment=An Image gallery application
 Comment[de]=Eine Bildergalerie-Anwendung
+Comment[nl]=Toepassing voor afbeeldingsgalerij
 Comment[pt]=Uma aplicação de galeria de imagens
+Comment[sk]=Aplikácia pre galériu obrázkov
 Comment[sv]=Ett bildgalleriprogram
 Comment[uk]=Програма для роботи з галереями зображень
 Comment[x-test]=xxAn Image gallery applicationxx
