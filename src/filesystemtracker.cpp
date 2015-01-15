@@ -135,4 +135,5 @@ void FileSystemTracker::slotFetchFinished()
     }
 
     m_filePaths.clear();
+    emit initialScanComplete();
 }

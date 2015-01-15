@@ -33,6 +33,7 @@ public:
 signals:
     void imageAdded(const QString& filePath);
     void imageRemoved(const QString& filePath);
+    void initialScanComplete();
 
 private slots:
     void init();

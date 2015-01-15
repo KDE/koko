@@ -48,6 +48,7 @@ signals:
 public slots:
     void addFile(const QString& filePath);
     void removeFile(const QString& filePath);
+    void initialScanCompleted();
 
 private slots:
     void process();
@@ -60,6 +61,7 @@ private:
 
     QTimer m_commitTimer;
     ReverseGeoCoder m_geoCoder;
+    bool m_initialScanDone;
 };
 
 }

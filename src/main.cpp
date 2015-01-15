@@ -68,6 +68,7 @@ int main(int argc, char** argv)
 
     Koko::Processor processor;
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Koko::Processor::addFile);
+    QObject::connect(&tracker, &FileSystemTracker::initialScanComplete, &processor, &Koko::Processor::initialScanCompleted);
 
     trackerThread.start();
 

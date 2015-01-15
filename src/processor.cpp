@@ -31,13 +31,14 @@ Processor::Processor(QObject* parent)
     : QObject(parent)
     , m_numFiles(0)
     , m_processing(false)
+    , m_initialScanDone(false)
 {
     m_commitTimer.setInterval(10000);
     connect(&m_commitTimer, &QTimer::timeout, [&]() {
         ImageStorage::instance()->commit();
         if (m_files.isEmpty()) {
             m_geoCoder.deinit();
-            if (m_numFiles)
+            if (m_numFiles && m_initialScanDone)
                 emit finished();
         }
     });
@@ -110,4 +111,9 @@ void Processor::slotFinished()
     QTimer::singleShot(0, this, SLOT(process()));
 
     emit initialProgressChanged();
+}
+
+void Processor::initialScanCompleted()
+{
+    m_initialScanDone = true;
 }
