@@ -556,6 +556,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::folders() const
     }
 
     QList< QPair<QByteArray, QString> > list;
+    QMultiHash<QString, int> duplicates;
     for (QString str : folderPaths) {
         QDir dir(str);
 
@@ -574,6 +575,28 @@ QList<QPair<QByteArray, QString> > ImageStorage::folders() const
         QByteArray key = str.toUtf8();
         QUrl url = QUrl::fromLocalFile(str);
         list << qMakePair(key, url.fileName());
+
+        duplicates.insert(url.fileName(), list.size() - 1);
+    }
+
+    // This needs to be done multiple times
+    QStringList keys = duplicates.uniqueKeys();
+    for (const QString& key : keys) {
+        QList<int> values = duplicates.values(key);
+        if (values.size() <= 1) {
+            continue;
+        }
+
+        // Set Parent Folder + Folder name
+        for (int i : values) {
+            auto& pair = list[i];
+
+            QString strUrl = QString::fromUtf8(pair.first);
+            int slashPos = strUrl.lastIndexOf('/');
+            int nextSlashPost = strUrl.lastIndexOf('/', slashPos-1);
+
+            pair.second = strUrl.mid(nextSlashPost + 1);
+        }
     }
 
     return list;
