@@ -42,7 +42,7 @@ target_link_libraries(koko
     KF5::I18n
     kokocommon
     ${EXIV2_LIBRARIES}
-    ${KDETREE_LIBRARIES}
+    ${KDTREE_LIBRARIES}
 )
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})

@@ -26,7 +26,7 @@ include_directories(
   ${CMAKE_SOURCE_DIR}/src
   ${CMAKE_BINARY_DIR}/src
   ${EXIV2_INCLUDE_DIR}
-  ${KDETREE_INCLUDE_DIR}
+  ${KDTREE_INCLUDE_DIR}
 )
 
 kde_enable_exceptions()
