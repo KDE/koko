@@ -8,7 +8,7 @@ find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Test Sql Positioning)
 find_package(KF5 5.5 REQUIRED COMPONENTS Plasma I18n Declarative Config Baloo)
 find_package(Exiv2 0.21 REQUIRED)
 
-find_package(KdTree)
+find_package(KdTree REQUIRED)
 set_package_properties(KdTree PROPERTIES DESCRIPTION "A k-dimensional-tree"
                        URL "http://code.google.com/p/kdtree/" TYPE REQUIRED
                        PURPOSE "Used for fast offline geo-location lookups")
