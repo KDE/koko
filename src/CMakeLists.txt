@@ -73,6 +73,11 @@ install (FILES org.kde.koko.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 #
 # Reverse GeoLookup Data
 #
+# Packagers can download the file and put it in the tarball
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/cities1000.zip)
+    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/cities1000.zip DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+endif()
+
 if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip)
     file (DOWNLOAD "http://download.geonames.org/export/dump/cities1000.zip"
                 ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip
@@ -85,12 +90,21 @@ execute_process(
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt)
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/admin1Codes.txt)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/admin1Codes.txt ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt)
+endif()
+
+if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt)
     file (DOWNLOAD "http://download.geonames.org/export/dump/admin1CodesASCII.txt"
                 ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt
         SHOW_PROGRESS
     )
 endif()
+
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/admin2Codes.txt)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/admin2Codes.txt ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
+endif()
+
 if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
     file (DOWNLOAD "http://download.geonames.org/export/dump/admin2Codes.txt"
                 ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt
