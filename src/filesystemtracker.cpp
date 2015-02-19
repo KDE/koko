@@ -91,6 +91,8 @@ void FileSystemTracker::init()
             this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
 
     fetcher->fetch();
+
+    QSqlDatabase::database("fstracker").transaction();
 }
 
 void FileSystemTracker::slotImageResult(const QString& filePath)
@@ -133,6 +135,8 @@ void FileSystemTracker::slotFetchFinished()
             emit imageRemoved(filePath);
         }
     }
+
+    QSqlDatabase::database("fstracker").commit();
 
     m_filePaths.clear();
     emit initialScanComplete();
