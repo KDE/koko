@@ -23,6 +23,7 @@ import QtQuick.Controls 1.1 as QtControls
 Item {
     property alias progress: progressBar.value
     property int numFiles: 0
+    property bool finished: false
 
     ColumnLayout {
         anchors.centerIn: parent
@@ -50,7 +51,7 @@ Item {
         }
 
         QtControls.Label {
-            text: numFiles == 0 ? "No Image Files Found" : "Initializing..."
+            text: (numFiles == 0 && finished)? "No Image Files Found" : "Initializing..."
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         }
         QtControls.Label {

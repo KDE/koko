@@ -33,6 +33,7 @@ class Processor : public QObject
     Q_OBJECT
     Q_PROPERTY(float initialProgress READ initialProgress NOTIFY initialProgressChanged)
     Q_PROPERTY(int numFiles READ numFiles NOTIFY numFilesChanged)
+    Q_PROPERTY(bool finished READ finished NOTIFY finishedChanged)
 public:
     Processor(QObject* parent = 0);
     ~Processor();
@@ -40,10 +41,12 @@ public:
     float initialProgress() const;
     int numFiles() const;
 
+    bool finished() const { return m_initialScanDone; }
+
 signals:
     void initialProgressChanged();
     void numFilesChanged();
-    void finished();
+    void finishedChanged();
 
 public slots:
     void addFile(const QString& filePath);

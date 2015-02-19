@@ -292,13 +292,14 @@ MainWindow {
                 visible: false
                 progress: kokoProcessor.initialProgress
                 numFiles: kokoProcessor.numFiles
+                finished: kokoProcessor.finished
 
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
                 Connections {
                     target: kokoProcessor
-                    onFinished: {
+                    onFinishedChanged: {
                         kokoConfig.initialRun = false
                         view.finishInitialization();
                     }

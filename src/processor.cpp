@@ -39,7 +39,7 @@ Processor::Processor(QObject* parent)
         if (m_files.isEmpty()) {
             m_geoCoder.deinit();
             if (m_numFiles && m_initialScanDone)
-                emit finished();
+                emit finishedChanged();
         }
     });
     m_commitTimer.start();
