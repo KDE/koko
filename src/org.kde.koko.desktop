@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Koko
+Name[bs]=Koko
 Name[cs]=Koko
 Name[de]=Koko
 Name[es]=Koko
@@ -12,6 +13,7 @@ Name[sv]=Koko
 Name[uk]=Koko
 Name[x-test]=xxKokoxx
 GenericName=Image Gallery
+GenericName[bs]=Galerija slika
 GenericName[cs]=Galerie obrázků
 GenericName[de]=Bildergalerie
 GenericName[es]=Galería de imágenes
@@ -24,6 +26,7 @@ GenericName[sv]=Bildgalleri
 GenericName[uk]=Галерея зображень
 GenericName[x-test]=xxImage Galleryxx
 Comment=An Image gallery application
+Comment[bs]=Aplikacija galerije slika
 Comment[de]=Eine Bildergalerie-Anwendung
 Comment[es]=Una aplicación de galería de imágenes
 Comment[nl]=Toepassing voor afbeeldingsgalerij
