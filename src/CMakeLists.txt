@@ -29,6 +29,7 @@ add_executable(koko
     imageprocessorrunnable.cpp
     exiv2extractor.cpp
     kokoconfig.cpp
+    kdtree.c
 )
 
 target_link_libraries(koko
@@ -42,7 +43,6 @@ target_link_libraries(koko
     KF5::I18n
     kokocommon
     ${EXIV2_LIBRARIES}
-    ${KDTREE_LIBRARIES}
 )
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})

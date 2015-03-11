@@ -17,7 +17,6 @@
  *
  */
 
-#include <QApplication>
 #include <QQmlEngine>
 #include <QQmlContext>
 #include <QQmlComponent>
@@ -29,6 +28,7 @@
 #include <KDBusService>
 #include <KLocalizedString>
 
+#include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
