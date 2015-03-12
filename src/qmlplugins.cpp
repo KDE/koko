@@ -35,6 +35,7 @@ void QmlPlugins::initializeEngine(QQmlEngine *, const char *)
 
 void QmlPlugins::registerTypes(const char *uri)
 {
+    qmlRegisterType<QAbstractItemModel> ();
     qmlRegisterType<TagModel> (uri, 0, 1, "TagModel");
     qmlRegisterType<ImageLocationModel> (uri, 0, 1, "ImageLocationModel");
     qmlRegisterType<ImageTimeModel> (uri, 0, 1, "ImageTimeModel");
