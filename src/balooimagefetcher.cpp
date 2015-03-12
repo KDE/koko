@@ -24,8 +24,9 @@
 
 #include <QThreadPool>
 
-BalooImageFetcher::BalooImageFetcher(QObject* parent)
+BalooImageFetcher::BalooImageFetcher(const QString& folder, QObject* parent)
     : QObject(parent)
+    , m_folder(folder)
 {
 }
 
@@ -33,6 +34,7 @@ void BalooImageFetcher::fetch()
 {
     Baloo::Query query;
     query.setType("Image");
+    query.setIncludeFolder(m_folder);
 
     Baloo::QueryRunnable *runnable = new Baloo::QueryRunnable(query);
     connect(runnable, SIGNAL(queryResult(Baloo::QueryRunnable*, Baloo::Result)),

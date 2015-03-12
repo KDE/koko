@@ -30,7 +30,7 @@ class KOKO_EXPORT BalooImageFetcher : public QObject
 {
     Q_OBJECT
 public:
-    explicit BalooImageFetcher(QObject* parent = 0);
+    explicit BalooImageFetcher(const QString& folder, QObject* parent = 0);
     void fetch();
 
 signals:
@@ -39,6 +39,9 @@ signals:
 
 private slots:
     void queryResult(Baloo::QueryRunnable*, const Baloo::Result& result);
+
+private:
+    QString m_folder;
 };
 
 #endif // BALOOIMAGEFETCHER_H

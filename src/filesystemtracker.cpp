@@ -84,7 +84,7 @@ FileSystemTracker::~FileSystemTracker()
 
 void FileSystemTracker::init()
 {
-    BalooImageFetcher* fetcher = new BalooImageFetcher();
+    BalooImageFetcher* fetcher = new BalooImageFetcher(m_folder);
     connect(fetcher, &BalooImageFetcher::imageResult,
             this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
     connect(fetcher, &BalooImageFetcher::finished,
@@ -140,4 +140,14 @@ void FileSystemTracker::slotFetchFinished()
 
     m_filePaths.clear();
     emit initialScanComplete();
+}
+
+void FileSystemTracker::setFolder(const QString& folder)
+{
+    m_folder = folder;
+}
+
+QString FileSystemTracker::folder() const
+{
+    return m_folder;
 }

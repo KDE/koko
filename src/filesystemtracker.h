@@ -30,6 +30,9 @@ public:
     explicit FileSystemTracker(QObject* parent = 0);
     virtual ~FileSystemTracker();
 
+    void setFolder(const QString& folder);
+    QString folder() const;
+
 signals:
     void imageAdded(const QString& filePath);
     void imageRemoved(const QString& filePath);
@@ -41,6 +44,7 @@ private slots:
     void slotFetchFinished();
 
 private:
+    QString m_folder;
     QSet<QString> m_filePaths;
 };
 

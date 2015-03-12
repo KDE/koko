@@ -63,7 +63,13 @@ int main(int argc, char** argv)
     }
 
     QThread trackerThread;
+
+    QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+    Q_ASSERT(locations.size() >= 1);
+    qDebug() << locations;
+
     FileSystemTracker tracker;
+    tracker.setFolder(locations.first());
     tracker.moveToThread(&trackerThread);
 
     Koko::Processor processor;
