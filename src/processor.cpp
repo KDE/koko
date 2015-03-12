@@ -116,4 +116,7 @@ void Processor::slotFinished()
 void Processor::initialScanCompleted()
 {
     m_initialScanDone = true;
+    if (m_files.isEmpty()) {
+        emit finishedChanged();
+    }
 }
