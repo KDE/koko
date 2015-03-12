@@ -207,6 +207,7 @@ MainWindow {
 
     mainItem: StackView {
         id: view
+        focus: true
 
         delegate: StackViewDelegate {
             pushTransition: StackViewTransition {
