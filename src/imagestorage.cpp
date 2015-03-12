@@ -149,6 +149,16 @@ void ImageStorage::addImage(const ImageInfo& ii)
     }
 }
 
+void ImageStorage::removeImage(const QString& filePath)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM FILES WHERE URL = ?");
+    query.addBindValue(filePath);
+    if (!query.exec()) {
+        qDebug() << "FILE del" << query.lastError();
+    }
+}
+
 void ImageStorage::commit()
 {
     QMutexLocker lock(&m_mutex);

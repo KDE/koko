@@ -63,8 +63,7 @@ void Processor::addFile(const QString& filePath)
 
 void Processor::removeFile(const QString& filePath)
 {
-    Q_UNUSED(filePath);
-    // FIXME: Implement this!
+    ImageStorage::instance()->removeImage(filePath);
 }
 
 float Processor::initialProgress() const

@@ -45,6 +45,7 @@ public:
     virtual ~ImageStorage();
 
     void addImage(const ImageInfo& ii);
+    void removeImage(const QString& filePath);
     void commit();
 
     static ImageStorage* instance();
