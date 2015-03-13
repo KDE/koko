@@ -29,6 +29,7 @@ import org.kde.koko 0.1 as Koko
 
 MainWindow {
     id: window
+    property string currentFilePath: view.currentItem.filePath ? view.currentItem.filePath : ""
 
     toolBar: ToolBar {
         RowLayout {
