@@ -77,6 +77,7 @@ int main(int argc, char** argv)
     QObject::connect(&tracker, &FileSystemTracker::initialScanComplete, &processor, &Koko::Processor::initialScanCompleted);
 
     trackerThread.start();
+    tracker.init();
 
     KokoConfig config;
 

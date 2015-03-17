@@ -33,13 +33,13 @@ public:
     void setFolder(const QString& folder);
     QString folder() const;
 
+    void init();
 signals:
     void imageAdded(const QString& filePath);
     void imageRemoved(const QString& filePath);
     void initialScanComplete();
 
 private slots:
-    void init();
     void slotImageResult(const QString& filePath);
     void slotFetchFinished();
 

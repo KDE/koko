@@ -73,8 +73,6 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
         qDebug() << "Could not set WAL journaling mode" << query.lastError().text();
         return;
     }
-
-    QTimer::singleShot(0, this, SLOT(init()));
 }
 
 FileSystemTracker::~FileSystemTracker()
