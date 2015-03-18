@@ -24,17 +24,26 @@
 #include <QSqlQuery>
 #include <QSqlError>
 
+#include <QDBusConnection>
+
+#include <QMimeDatabase>
 #include <QStandardPaths>
-#include <QTimer>
-#include <QVariantMap>
 #include <QDir>
 #include <QDebug>
-#include <QTime>
-#include <QEventLoop>
 
 FileSystemTracker::FileSystemTracker(QObject* parent)
     : QObject(parent)
 {
+    //
+    // Real time updates
+    //
+    QDBusConnection con = QDBusConnection::sessionBus();
+    con.connect(QString(), QLatin1String("/files"), QLatin1String("org.kde"),
+                QLatin1String("changed"), this, SLOT(slotNewFiles(QStringList)));
+
+    //
+    // Database
+    //
     static QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko/";
     QDir().mkpath(dir);
 
@@ -147,6 +156,26 @@ void FileSystemTracker::slotFetchFinished()
     m_filePaths.clear();
     emit initialScanComplete();
 }
+
+void FileSystemTracker::slotNewFiles(const QStringList& files)
+{
+    qDebug() << "KAAAAAAAAAAAA" << files;
+    if (!m_filePaths.isEmpty()) {
+        // A scan is already going on. No point interrupting it.
+        return;
+    }
+
+    QMimeDatabase db;
+    for (const QString& file: files) {
+        QMimeType mimetype = db.mimeTypeForFile(file);
+        if (mimetype.name().startsWith("image/")) {
+            slotImageResult(file);
+        }
+    }
+
+    m_filePaths.clear();
+}
+
 
 void FileSystemTracker::setFolder(const QString& folder)
 {

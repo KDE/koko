@@ -40,6 +40,7 @@ signals:
     void initialScanComplete();
 
 private slots:
+    void slotNewFiles(const QStringList& files);
     void slotImageResult(const QString& filePath);
     void slotFetchFinished();
 
