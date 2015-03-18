@@ -90,19 +90,20 @@ execute_process(
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/admin1Codes.txt)
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/admin1Codes.txt ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt)
+if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/admin1CodesASCII.txt)
+    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/admin1CodesASCII.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 endif()
 
-if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt)
+if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt)
     file (DOWNLOAD "http://download.geonames.org/export/dump/admin1CodesASCII.txt"
-                ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt
+                ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt
         SHOW_PROGRESS
     )
 endif()
+file(RENAME ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt)
 
 if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/admin2Codes.txt)
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/admin2Codes.txt ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
+    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/admin2Codes.txt DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 endif()
 
 if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
