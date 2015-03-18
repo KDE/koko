@@ -111,6 +111,7 @@ void FileSystemTracker::slotImageResult(const QString& filePath)
             qDebug() << query.lastError();
             return;
         }
+        qDebug() << "ADDED" << filePath;
         emit imageAdded(filePath);
     }
 
@@ -130,7 +131,14 @@ void FileSystemTracker::slotFetchFinished()
         QString filePath = query.value(0).toString();
 
         if (!m_filePaths.contains(filePath)) {
+            qDebug() << "REMOVED" << filePath;
             emit imageRemoved(filePath);
+            QSqlQuery query(QSqlDatabase::database("fstracker"));
+            query.prepare("DELETE from files where url = ?");
+            query.addBindValue(filePath);
+            if (!query.exec()) {
+                qDebug() << query.lastError();
+            }
         }
     }
 
