@@ -93,6 +93,7 @@ void ReverseGeoCoder::init()
         QString name = list[1];
         m_countryMap.insert(code, name);
     }
+    Q_ASSERT_X(!m_countryMap.isEmpty(), "", "countries.csv file is empty. Packaging issue");
 
     // Admin1
     QString admin1Path = QStandardPaths::locate(QStandardPaths::DataLocation, "admin1Codes.txt");
@@ -114,6 +115,7 @@ void ReverseGeoCoder::init()
         QString name = list[1];
         m_admin1Map.insert(code, name);
     }
+    Q_ASSERT_X(!m_admin1Map.isEmpty(), "", "admin1Codes.txt file is empty. Packaging issue");
 
     // Admin2
     QString admin2Path = QStandardPaths::locate(QStandardPaths::DataLocation, "admin2Codes.txt");
@@ -135,6 +137,7 @@ void ReverseGeoCoder::init()
         QString name = list[1];
         m_admin2Map.insert(code, name);
     }
+    Q_ASSERT_X(!m_admin2Map.isEmpty(), "", "admin2Codes.txt file is empty. Packaging issue");
 }
 
 void ReverseGeoCoder::deinit()
