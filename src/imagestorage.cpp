@@ -157,6 +157,12 @@ void ImageStorage::removeImage(const QString& filePath)
     if (!query.exec()) {
         qDebug() << "FILE del" << query.lastError();
     }
+
+    QSqlQuery query2;
+    query2.prepare("DELETE FROM LOCATIONS WHERE id NOT IN (SELECT DISTINCT location FROM files WHERE location IS NOT NULL)");
+    if (!query2.exec()) {
+        qDebug() << "Loc del" << query2.lastError();
+    }
 }
 
 void ImageStorage::commit()
