@@ -24,6 +24,14 @@ ImageFolderModel::ImageFolderModel(QObject* parent)
     : QAbstractListModel(parent)
 {
     m_folders = ImageStorage::instance()->folders();
+    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+}
+
+void ImageFolderModel::slotPopulate()
+{
+    beginResetModel();
+    m_folders = ImageStorage::instance()->folders();
+    endResetModel();
 }
 
 QHash<int, QByteArray> ImageFolderModel::roleNames() const

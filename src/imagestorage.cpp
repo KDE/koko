@@ -151,6 +151,8 @@ void ImageStorage::addImage(const ImageInfo& ii)
 
 void ImageStorage::removeImage(const QString& filePath)
 {
+    QMutexLocker lock(&m_mutex);
+
     QSqlQuery query;
     query.prepare("DELETE FROM FILES WHERE URL = ?");
     query.addBindValue(filePath);
@@ -167,10 +169,14 @@ void ImageStorage::removeImage(const QString& filePath)
 
 void ImageStorage::commit()
 {
-    QMutexLocker lock(&m_mutex);
-    QSqlDatabase db = QSqlDatabase::database();
-    db.commit();
-    db.transaction();
+    {
+        QMutexLocker lock(&m_mutex);
+        QSqlDatabase db = QSqlDatabase::database();
+        db.commit();
+        db.transaction();
+    }
+
+    emit storageModified();
 }
 
 QList<QPair<QByteArray, QString> > ImageStorage::locations(ImageStorage::LocationGroup loca)

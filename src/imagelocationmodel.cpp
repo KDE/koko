@@ -24,6 +24,14 @@ ImageLocationModel::ImageLocationModel(QObject* parent)
     : QAbstractListModel(parent)
     , m_group(ImageLocationModel::City)
 {
+    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+}
+
+void ImageLocationModel::slotPopulate()
+{
+    beginResetModel();
+    m_locations = ImageStorage::instance()->locations(static_cast<ImageStorage::LocationGroup>(m_group));
+    endResetModel();
 }
 
 QHash<int, QByteArray> ImageLocationModel::roleNames() const

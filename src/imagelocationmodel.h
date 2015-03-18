@@ -53,6 +53,9 @@ public:
 signals:
     void groupChanged();
 
+private slots:
+    void slotPopulate();
+
 private:
     LocationGroup m_group;
     QList<QPair<QByteArray, QString> > m_locations;

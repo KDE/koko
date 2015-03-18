@@ -39,6 +39,9 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
+private slots:
+    void slotPopulate();
+
 private:
     QList<QPair<QByteArray, QString> > m_folders;
 };

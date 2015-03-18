@@ -55,6 +55,9 @@ public:
 signals:
     void groupChanged();
 
+private slots:
+    void slotPopulate();
+
 private:
     TimeGroup m_group;
     QList< QPair<QByteArray, QString> > m_times;

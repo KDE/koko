@@ -24,6 +24,15 @@ ImageTimeModel::ImageTimeModel(QObject* parent)
     : QAbstractListModel(parent)
     , m_group(ImageTimeModel::Day)
 {
+    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+}
+
+void ImageTimeModel::slotPopulate()
+{
+    beginResetModel();
+    auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+    m_times = ImageStorage::instance()->timeGroups(tg);
+    endResetModel();
 }
 
 QHash<int, QByteArray> ImageTimeModel::roleNames() const
