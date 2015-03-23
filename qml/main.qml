@@ -47,14 +47,14 @@ MainWindow {
             PlasmaComponents.ToolButton {
                 iconName: "draw-arrow-back"
                 text: "Previous"
-                enabled: view.currentItem.objectName == "imageViewer"
+                enabled: view.currentItem && view.currentItem.objectName == "imageViewer" && view.currentItem.hasPreviousImage()
 
                 onClicked: goBack();
             }
             PlasmaComponents.ToolButton {
                 iconName: "draw-arrow-forward"
                 text: "Next"
-                enabled: view.currentItem.objectName == "imageViewer"
+                enabled: view.currentItem && view.currentItem.objectName == "imageViewer" && view.currentItem.hasNextImage()
 
                 onClicked: goForward();
             }

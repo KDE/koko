@@ -170,6 +170,12 @@ Item {
         currentIndex = Math.max(0, currentIndex - 1)
         filePath = model[currentIndex]
     }
+    function hasNextImage() {
+        return currentIndex < model.length - 1;
+    }
+    function hasPreviousImage() {
+        return currentIndex > 0;
+    }
 
     function resetImageSize() {
         //
