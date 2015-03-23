@@ -34,12 +34,12 @@ MainWindow {
     toolBar: ToolBar {
         RowLayout {
             PlasmaComponents.ToolButton {
-                iconName: "draw-arrow-back"
-                text: "Back"
+                iconName: "draw-arrow-up"
+                text: "Up"
                 enabled: view.depth > 1
 
                 onClicked: {
-                    goBack();
+                    goUp();
                 }
             }
         }
@@ -346,7 +346,7 @@ MainWindow {
 
         Keys.onPressed: {
             if (event.key == Qt.Key_Escape || event.key == Qt.Key_Backspace) {
-                goBack();
+                goUp();
             }
         }
 
@@ -363,7 +363,7 @@ MainWindow {
         }
     }
 
-    function goBack() {
+    function goUp() {
         if (view.currentItem.objectName == "imageViewer") {
             // This is being done so that if the user changes the image in the ImageViewer
             // using the left/right keys, then when they go back to the ImageGrid
