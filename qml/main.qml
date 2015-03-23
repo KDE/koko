@@ -38,9 +38,25 @@ MainWindow {
                 text: "Up"
                 enabled: view.depth > 1
 
-                onClicked: {
-                    goUp();
-                }
+                onClicked: goUp();
+            }
+
+            //
+            // Navigation
+            //
+            PlasmaComponents.ToolButton {
+                iconName: "draw-arrow-back"
+                text: "Previous"
+                enabled: view.currentItem.objectName == "imageViewer"
+
+                onClicked: goBack();
+            }
+            PlasmaComponents.ToolButton {
+                iconName: "draw-arrow-forward"
+                text: "Next"
+                enabled: view.currentItem.objectName == "imageViewer"
+
+                onClicked: goForward();
             }
         }
     }
@@ -376,6 +392,13 @@ MainWindow {
             view.pop()
         }
         view.currentItem.focus = true
+    }
+
+    function goBack() {
+        view.currentItem.previousImage();
+    }
+    function goForward() {
+        view.currentItem.nextImage();
     }
 
     contentItem.implicitWidth: 1800

@@ -159,11 +159,14 @@ Item {
         }
     }
 
-    Keys.onRightPressed: {
+    Keys.onRightPressed: nextImage()
+    Keys.onLeftPressed: previousImage()
+
+    function nextImage() {
         currentIndex = Math.min(model.length - 1, currentIndex + 1)
         filePath = model[currentIndex]
     }
-    Keys.onLeftPressed: {
+    function previousImage() {
         currentIndex = Math.max(0, currentIndex - 1)
         filePath = model[currentIndex]
     }
