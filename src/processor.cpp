@@ -34,8 +34,7 @@ Processor::Processor(QObject* parent)
     , m_processing(false)
     , m_initialScanDone(false)
 {
-    m_commitTimer.setInterval(10000);
-    connect(&m_commitTimer, &QTimer::timeout, [&]() {
+    connect(&m_commitTimer, &CommitTimer::timeout, [&]() {
         ImageStorage::instance()->commit();
         if (m_files.isEmpty()) {
             m_geoCoder.deinit();
@@ -43,7 +42,6 @@ Processor::Processor(QObject* parent)
                 emit finishedChanged();
         }
     });
-    m_commitTimer.start();
 }
 
 
@@ -105,6 +103,7 @@ void Processor::slotFinished()
     QTimer::singleShot(0, this, SLOT(process()));
 
     emit initialProgressChanged();
+    m_commitTimer.start();
 }
 
 void Processor::initialScanCompleted()

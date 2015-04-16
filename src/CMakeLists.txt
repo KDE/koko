@@ -26,6 +26,7 @@ add_executable(koko
     reversegeocoder.cpp
     filesystemtracker.cpp
     processor.cpp
+    committimer.cpp
     imageprocessorrunnable.cpp
     exiv2extractor.cpp
     kokoconfig.cpp

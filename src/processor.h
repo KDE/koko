@@ -22,9 +22,9 @@
 
 #include <QObject>
 #include <QStringList>
-#include <QTimer>
 
 #include "reversegeocoder.h"
+#include "committimer.h"
 
 namespace Koko {
 
@@ -62,7 +62,7 @@ private:
     int m_numFiles;
     bool m_processing;
 
-    QTimer m_commitTimer;
+    CommitTimer m_commitTimer;
     ReverseGeoCoder m_geoCoder;
     bool m_initialScanDone;
 };
