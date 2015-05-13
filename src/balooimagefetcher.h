@@ -38,7 +38,7 @@ signals:
     void finished();
 
 private slots:
-    void queryResult(Baloo::QueryRunnable*, const Baloo::Result& result);
+    void queryResult(Baloo::QueryRunnable*, const QString& filePath);
 
 private:
     QString m_folder;
