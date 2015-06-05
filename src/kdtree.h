@@ -24,8 +24,8 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
 OF SUCH DAMAGE.
 */
-#ifndef _KDTREE_H_
-#define _KDTREE_H_
+#ifndef KOKO_KDTREE_H_
+#define KOKO_KDTREE_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -126,4 +126,4 @@ void *kd_res_item_data(struct kdres *set);
 }
 #endif
 
-#endif	/* _KDTREE_H_ */
+#endif	/* KOKO_KDTREE_H_ */
