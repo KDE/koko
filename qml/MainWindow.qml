@@ -43,8 +43,10 @@ ApplicationWindow {
     }
 
     onMainItemChanged: {
-        if (mainItem)
+        if (mainItem) {
             mainItem.parent = mainItemArea
+            mainItem.anchors.fill = mainItemArea
+        }
     }
 
     SystemPalette { id: sysPal; }
