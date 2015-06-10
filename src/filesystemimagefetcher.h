@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
+ * Copyright (C) 2015  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -17,36 +17,28 @@
  *
  */
 
-#ifndef FILESYSTEMTRACKER_H
-#define FILESYSTEMTRACKER_H
+#ifndef FILESYSTEMIMAGEFETCHER_H
+#define FILESYSTEMIMAGEFETCHER_H
 
 #include <QObject>
-#include <QSet>
+#include "koko_export.h"
 
-class FileSystemTracker : public QObject
+class KOKO_EXPORT FileSystemImageFetcher : public QObject
 {
     Q_OBJECT
 public:
-    explicit FileSystemTracker(QObject* parent = 0);
-    virtual ~FileSystemTracker();
+    explicit FileSystemImageFetcher(const QString& folder, QObject* parent = 0);
+    void fetch();
 
-    void setFolder(const QString& folder);
-    QString folder() const;
-
-    void init();
 signals:
-    void imageAdded(const QString& filePath);
-    void imageRemoved(const QString& filePath);
-    void initialScanComplete();
+    void imageResult(const QString& filePath);
+    void finished();
 
 private slots:
-    void slotNewFiles(const QStringList& files);
-    void slotImageResult(const QString& filePath);
-    void slotFetchFinished();
+    void slotProcess();
 
 private:
     QString m_folder;
-    QSet<QString> m_filePaths;
 };
 
-#endif
+#endif // FILESYSTEMIMAGEFETCHER_H

@@ -22,7 +22,9 @@
 #include <QStandardPaths>
 #include <QFile>
 
-#include <Baloo/IndexerConfig>
+#ifdef BALOO_FOUND
+    #include <Baloo/IndexerConfig>
+#endif
 
 KokoConfig::KokoConfig(QObject* parent)
     : QObject(parent)
@@ -57,7 +59,10 @@ void KokoConfig::reset()
 
 bool KokoConfig::balooEnabled() const
 {
+#ifdef BALOO_FOUND
     Baloo::IndexerConfig config;
     return config.fileIndexingEnabled();
+#endif
+    return true;
 }
 

@@ -18,7 +18,12 @@
  */
 
 #include "filesystemtracker.h"
-#include "balooimagefetcher.h"
+
+#ifdef BALOO_FOUND
+    #include "balooimagefetcher.h"
+#else
+    #include "filesystemimagefetcher.h"
+#endif
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -91,6 +96,7 @@ FileSystemTracker::~FileSystemTracker()
 
 void FileSystemTracker::init()
 {
+#ifdef BALOO_FOUND
     BalooImageFetcher* fetcher = new BalooImageFetcher(m_folder);
     connect(fetcher, &BalooImageFetcher::imageResult,
             this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
@@ -98,6 +104,15 @@ void FileSystemTracker::init()
             this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
 
     fetcher->fetch();
+#else
+    FileSystemImageFetcher* fetcher = new FileSystemImageFetcher(m_folder);
+    connect(fetcher, &FileSystemImageFetcher::imageResult,
+            this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
+    connect(fetcher, &FileSystemImageFetcher::finished,
+            this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
+
+    fetcher->fetch();
+#endif
 
     QSqlDatabase::database("fstracker").transaction();
 }
@@ -159,7 +174,6 @@ void FileSystemTracker::slotFetchFinished()
 
 void FileSystemTracker::slotNewFiles(const QStringList& files)
 {
-    qDebug() << "KAAAAAAAAAAAA" << files;
     if (!m_filePaths.isEmpty()) {
         // A scan is already going on. No point interrupting it.
         return;
