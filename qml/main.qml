@@ -34,6 +34,11 @@ MainWindow {
     toolBar: ToolBar {
         RowLayout {
             PlasmaComponents.ToolButton {
+                iconName: "format-justify-fill"
+                onClicked: window.toggleLeftSidebar();
+            }
+
+            PlasmaComponents.ToolButton {
                 iconName: "draw-arrow-up"
                 text: "Up"
                 enabled: view.depth > 1

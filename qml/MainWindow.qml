@@ -64,6 +64,12 @@ ApplicationWindow {
 
             implicitHeight: childrenRect.height
             implicitWidth: childrenRect.width
+
+            width: visible ? implicitWidth : 0
+
+            Behavior on width {
+                NumberAnimation { duration: 250 }
+            }
         }
 
         Item {
@@ -91,5 +97,14 @@ ApplicationWindow {
             implicitHeight: childrenRect.height
             implicitWidth: childrenRect.width
         }
+    }
+
+    function toggleLeftSidebar() {
+        leftSidebarArea.visible = !leftSidebarArea.visible
+    }
+
+    onWidthChanged: {
+        if (width < 900)
+            leftSidebarArea.visible = false
     }
 }
