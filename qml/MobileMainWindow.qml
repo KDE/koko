@@ -34,6 +34,7 @@ ApplicationWindow {
     onSidebarChanged: {
         if (sidebar) {
             sidebar.parent = sidebarArea
+            sidebar.anchors.fill = sidebarArea
         }
     }
 
@@ -53,26 +54,27 @@ ApplicationWindow {
             anchors.fill: parent
 
             implicitHeight: root.height
-            implicitWidth: childrenRect.width
+            implicitWidth: root.width
         }
 
         Item {
             id: sidebarArea
-            anchors.fill: parent
+            anchors.left: parent.left
+            anchors.top: parent.top
 
             implicitHeight: root.height
-            implicitWidth: childrenRect.width
-
-            width: visible ? childrenRect.width : 0
-            visible: true
+            implicitWidth: mainItemArea.width * 0.70
 
             Behavior on width {
-                NumberAnimation { duration: 250 }
+                NumberAnimation { duration: 150 }
             }
         }
     }
 
     function toggleSidebar() {
-        sidebarArea.visible = !sidebarArea.visible
+        if (sidebarArea.width)
+            sidebarArea.width = 0;
+        else
+            sidebarArea.width = sidebarArea.implicitWidth
     }
 }
