@@ -53,6 +53,12 @@ ApplicationWindow {
 
         implicitHeight: root.height
         implicitWidth: root.width
+
+        Rectangle {
+            color: sysPal.dark
+            anchors.fill: parent
+            z: -1
+        }
     }
 
     Item {
