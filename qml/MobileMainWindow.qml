@@ -45,6 +45,8 @@ ApplicationWindow {
         }
     }
 
+    SystemPalette { id: sysPal; }
+
     Item {
         id: mainItemArea
         anchors.fill: parent
@@ -60,9 +62,17 @@ ApplicationWindow {
 
         implicitHeight: root.height
         implicitWidth: mainItemArea.width * 0.70
+        width: 0
 
+        visible: width
         Behavior on width {
             NumberAnimation { duration: 150 }
+        }
+
+        Rectangle {
+            color: sysPal.window
+            anchors.fill: parent
+            z: -1
         }
     }
 
