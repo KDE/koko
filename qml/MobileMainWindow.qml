@@ -72,4 +72,15 @@ ApplicationWindow {
         else
             sidebarArea.width = sidebarArea.implicitWidth
     }
+
+    // The MouseArea used to hide the sidebar when clicking on the blank area
+    MouseArea {
+        anchors.left: sidebarArea.right
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+
+        enabled: sidebarArea.width
+        onClicked: toggleSidebar()
+    }
 }
