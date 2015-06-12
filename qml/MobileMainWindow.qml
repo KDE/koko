@@ -46,28 +46,23 @@ ApplicationWindow {
     }
 
     Item {
-        id: backgroundItem
+        id: mainItemArea
         anchors.fill: parent
 
-        Item {
-            id: mainItemArea
-            anchors.fill: parent
+        implicitHeight: root.height
+        implicitWidth: root.width
+    }
 
-            implicitHeight: root.height
-            implicitWidth: root.width
-        }
+    Item {
+        id: sidebarArea
+        anchors.left: parent.left
+        anchors.top: parent.top
 
-        Item {
-            id: sidebarArea
-            anchors.left: parent.left
-            anchors.top: parent.top
+        implicitHeight: root.height
+        implicitWidth: mainItemArea.width * 0.70
 
-            implicitHeight: root.height
-            implicitWidth: mainItemArea.width * 0.70
-
-            Behavior on width {
-                NumberAnimation { duration: 150 }
-            }
+        Behavior on width {
+            NumberAnimation { duration: 150 }
         }
     }
 
