@@ -68,6 +68,7 @@ MobileMainWindow {
                         item: locationView,
                         properties: { focus: true, group: Koko.ImageLocationModel.Country }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
             PlasmaComponents.ToolButton {
@@ -80,6 +81,7 @@ MobileMainWindow {
                         item: locationView,
                         properties: { focus: true, group: Koko.ImageLocationModel.State }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
             PlasmaComponents.ToolButton {
@@ -93,6 +95,7 @@ MobileMainWindow {
                         item: locationView,
                         properties: { focus: true, group: Koko.ImageLocationModel.City }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
         }
@@ -116,6 +119,7 @@ MobileMainWindow {
                         item: timeImages,
                         properties: { focus: true, group: Koko.ImageTimeModel.Year }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
             PlasmaComponents.ToolButton {
@@ -128,6 +132,7 @@ MobileMainWindow {
                         item: timeImages,
                         properties: { focus: true, group: Koko.ImageTimeModel.Month }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
             PlasmaComponents.ToolButton {
@@ -141,6 +146,7 @@ MobileMainWindow {
                         item: timeImages,
                         properties: { focus: true, group: Koko.ImageTimeModel.Week }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
             PlasmaComponents.ToolButton {
@@ -154,6 +160,7 @@ MobileMainWindow {
                         item: timeImages,
                         properties: { focus: true, group: Koko.ImageTimeModel.Day }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
         }
@@ -176,6 +183,7 @@ MobileMainWindow {
                         item: folderImages,
                         properties: { focus: true }
                     })
+                    mainWindow.toggleSidebar();
                 }
             }
         }
