@@ -275,12 +275,50 @@ MobileMainWindow {
             }
         }
 
+        Component {
+            id: firstRun
+            FirstRun {
+                visible: false
+                progress: kokoProcessor.initialProgress
+                numFiles: kokoProcessor.numFiles
+                finished: kokoProcessor.finished
+
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                Connections {
+                    target: kokoProcessor
+                    onFinishedChanged: {
+                        kokoConfig.initialRun = false
+                        view.finishInitialization();
+                    }
+                }
+            }
+        }
+
         Component.onCompleted: {
+            if (kokoConfig) {
+                if (kokoConfig.initialRun) {
+                    push({
+                        item: firstRun,
+                        immediate: true,
+                        replace: true
+                    })
+                    return;
+                }
+            }
+
+            finishInitialization();
+        }
+
+        function finishInitialization() {
+            clear();
             push({
                 item: locationView,
                 replace: true,
                 properties: { focus: true }
             })
+
         }
     }
 
