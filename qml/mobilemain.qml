@@ -234,10 +234,9 @@ MobileMainWindow {
             ImageGrid {
                 onImageSelected: {
                     view.push({
-                        item: imageViewer,
+                        item: imageBrowser,
                         properties: { focus: true,
                                       model: model,
-                                      filePath: filePath,
                                       currentIndex: index }
                     })
                 }
@@ -245,9 +244,11 @@ MobileMainWindow {
         }
 
         Component {
-            id: imageViewer
-            ImageViewer {
+            id: imageBrowser
+            ImageBrowser {
                 objectName: "imageViewer"
+                imageWidth: mainWindow.width
+                imageHeight: mainWindow.height
             }
         }
 
