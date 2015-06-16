@@ -48,6 +48,7 @@ int main(int argc, char** argv)
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
+    parser.addOption(QCommandLineOption("phone", i18n("Run the phone version of koko")));
     parser.addHelpOption();
     parser.process(app);
 
@@ -87,7 +88,12 @@ int main(int argc, char** argv)
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
 
-    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
+    QString path;
+    if (parser.isSet("phone")) {
+        path = QStandardPaths::locate(QStandardPaths::DataLocation, "mobilemain.qml");
+    } else {
+        path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
+    }
     QQmlComponent component(&engine, path);
     if (component.isError()) {
         std::cout << component.errorString().toUtf8().constData() << std::endl;
