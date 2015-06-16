@@ -67,7 +67,7 @@ ApplicationWindow {
         anchors.top: parent.top
 
         implicitHeight: root.height
-        implicitWidth: mainItemArea.width * 0.70
+        implicitWidth: mainItemArea.width * 0.6
         width: 0
 
         visible: width
