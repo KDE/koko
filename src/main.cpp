@@ -89,7 +89,7 @@ int main(int argc, char** argv)
     objectContext->setContextProperty("kokoConfig", &config);
 
     QString path;
-    if (parser.isSet("phone")) {
+    if (parser.isSet("phone") || qgetenv("PLASMA_PLATFORM") == QByteArray("phone")) {
         path = QStandardPaths::locate(QStandardPaths::DataLocation, "mobilemain.qml");
     } else {
         path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
