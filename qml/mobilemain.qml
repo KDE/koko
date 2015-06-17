@@ -38,6 +38,13 @@ MobileMainWindow {
                 iconName: "format-justify-fill"
                 onClicked: mainWindow.toggleSidebar();
             }
+            PlasmaComponents.ToolButton {
+                iconName: "draw-arrow-back"
+                text: "Back"
+                enabled: view.depth > 1
+
+                onClicked: goUp();
+            }
         }
     }
 
@@ -246,7 +253,7 @@ MobileMainWindow {
         Component {
             id: imageBrowser
             ImageBrowser {
-                objectName: "imageViewer"
+                objectName: "imageBrowser"
                 imageWidth: mainWindow.width
                 imageHeight: mainWindow.height
             }
@@ -323,5 +330,19 @@ MobileMainWindow {
         }
     }
 
+    function goUp() {
+        if (view.currentItem.objectName == "imageBrowser") {
+            // This is being done so that if the user changes the image in the ImageBrowser
+            // using the left/right keys, then when they go back to the ImageGrid
+            // the correct image is selected
+            var ci = view.currentItem.currentIndex
+            view.pop()
+            view.currentItem.index = ci
+            view.currentItem.positionViewAtIndex(ci, GridView.Center)
+        } else {
+            view.pop()
+        }
+        view.currentItem.focus = true
+    }
 }
 
