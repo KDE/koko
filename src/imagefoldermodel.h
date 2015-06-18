@@ -32,6 +32,7 @@ public:
 
     enum Roles {
         FilesRole = Qt::UserRole + 1,
+        FileCountRole,
         CoverRole
     };
 

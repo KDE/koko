@@ -60,6 +60,17 @@ AutomaticSpacingGrid {
                 Layout.maximumWidth: album.width
                 Layout.minimumWidth: album.width
             }
+            Label {
+                text: model.fileCount + " Images"
+                color: sysPal.light
+
+                font.bold: true
+                horizontalAlignment: Qt.AlignHCenter
+                wrapMode: Text.Wrap
+
+                Layout.maximumWidth: album.width
+                Layout.minimumWidth: album.width
+            }
 
             MouseArea {
                 anchors.fill: parent
