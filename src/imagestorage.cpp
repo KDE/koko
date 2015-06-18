@@ -676,3 +676,29 @@ void ImageStorage::reset()
     QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
     QDir(dir).removeRecursively();
 }
+
+QStringList ImageStorage::allImages(int size, int offset)
+{
+    QMutexLocker lock(&m_mutex);
+
+    QSqlQuery query;
+    if (size == -1) {
+        query.prepare("SELECT DISTINCT url from files ORDER BY dateTime DESC");
+    }
+    else {
+        query.prepare("SELECT DISTINCT url from files ORDER BY dateTime DESC LIMIT ? OFFSET ?");
+        query.addBindValue(size);
+        query.addBindValue(offset);
+    }
+
+    if (!query.exec()) {
+        qDebug() << query.lastError();
+        return QStringList();
+    }
+
+    QStringList imageList;
+    while (query.next())
+        imageList << query.value(0).toString();
+
+    return imageList;
+}

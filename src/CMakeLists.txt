@@ -75,6 +75,7 @@ set (qml_plugin_SRCS
     imagetimemodel.cpp
     imagefoldermodel.cpp
     sortmodel.cpp
+    allimagesmodel.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})

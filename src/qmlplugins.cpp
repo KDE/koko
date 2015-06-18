@@ -26,6 +26,7 @@
 #include "imagetimemodel.h"
 #include "imagefoldermodel.h"
 #include "sortmodel.h"
+#include "allimagesmodel.h"
 
 #include <QtQml/qqml.h>
 
@@ -40,5 +41,6 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<ImageLocationModel> (uri, 0, 1, "ImageLocationModel");
     qmlRegisterType<ImageTimeModel> (uri, 0, 1, "ImageTimeModel");
     qmlRegisterType<ImageFolderModel> (uri, 0, 1, "ImageFolderModel");
+    qmlRegisterType<AllImagesModel> (uri, 0, 1, "AllImagesModel");
     qmlRegisterType<Jungle::SortModel> (uri, 0, 1, "SortModel");
 }

@@ -58,6 +58,20 @@ MobileMainWindow {
             level: 2
         }
 
+        PlasmaComponents.ToolButton {
+            text: "All Images"
+            iconName: "system-search"
+            Layout.fillWidth: true
+            onClicked: {
+                view.clear()
+                view.push({
+                    item: allImagesView,
+                    properties: { focus: true }
+                })
+                mainWindow.toggleSidebar();
+            }
+        }
+
         ColumnLayout {
             Heading {
                 text: "Locations"
@@ -251,6 +265,21 @@ MobileMainWindow {
         }
 
         Component {
+            id: allImagesView
+            ImageGrid {
+                onImageSelected: {
+                    view.push({
+                        item: imageBrowser,
+                        properties: { focus: true,
+                                      model: model,
+                                      currentIndex: index }
+                    })
+                }
+                model: Koko.AllImagesModel {}
+            }
+        }
+
+        Component {
             id: imageBrowser
             ImageBrowser {
                 objectName: "imageBrowser"
@@ -322,7 +351,7 @@ MobileMainWindow {
         function finishInitialization() {
             clear();
             push({
-                item: locationView,
+                item: allImagesView,
                 replace: true,
                 properties: { focus: true }
             })

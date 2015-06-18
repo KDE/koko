@@ -75,6 +75,11 @@ public:
     QStringList imagesForFolders(const QByteArray& key) const;
     QString imageForFolders(const QByteArray& key) const;
 
+    /**
+     * Fetch all the images ordered by descending date time.
+     */
+    QStringList allImages(int size = -1, int offset = 0);
+
     static void reset();
 
 signals:
