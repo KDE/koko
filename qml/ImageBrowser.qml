@@ -33,11 +33,15 @@ ListView {
 
     orientation: ListView.Horizontal
     snapMode: ListView.SnapOneItem
+    cacheBuffer: 3000
 
     delegate: Image {
         width: imageWidth
         height: imageHeight
         source: model.modelData
         fillMode: Image.PreserveAspectFit
+        asynchronous: true
+        sourceSize.width: imageWidth * 2
+        sourceSize.height: imageHeight * 2
     }
 }
