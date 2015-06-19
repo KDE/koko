@@ -35,13 +35,62 @@ ListView {
     snapMode: ListView.SnapOneItem
     cacheBuffer: 3000
 
-    delegate: Image {
+    delegate: Flickable {
+        id: flick
         width: imageWidth
         height: imageHeight
-        source: model.modelData
-        fillMode: Image.PreserveAspectFit
-        asynchronous: true
-        sourceSize.width: imageWidth * 2
-        sourceSize.height: imageHeight * 2
+        contentWidth: imageWidth
+        contentHeight: imageHeight
+        interactive: contentWidth > width || contentHeight > height
+        onInteractiveChanged: root.interactive = !interactive;
+        z: interactive ? 1000 : 0
+        PinchArea {
+            width: Math.max(flick.contentWidth, flick.width)
+            height: Math.max(flick.contentHeight, flick.height)
+
+            property real initialWidth
+            property real initialHeight
+
+            onPinchStarted: {
+                initialWidth = flick.contentWidth
+                initialHeight = flick.contentHeight
+            }
+
+            onPinchUpdated: {
+                // adjust content pos due to drag
+                flick.contentX += pinch.previousCenter.x - pinch.center.x
+                flick.contentY += pinch.previousCenter.y - pinch.center.y
+
+                // resize content
+                flick.resizeContent(Math.max(imageWidth, initialWidth * pinch.scale), Math.max(imageHeight, initialHeight * pinch.scale), pinch.center)
+            }
+
+            onPinchFinished: {
+                // Move its content within bounds.
+                flick.returnToBounds();
+            }
+
+
+            Image {
+                id: image
+                width: flick.contentWidth
+                height: flick.contentHeight
+                source: model.modelData
+                fillMode: Image.PreserveAspectFit
+                asynchronous: true
+                sourceSize.width: imageWidth * 2
+                sourceSize.height: imageHeight * 2
+                MouseArea {
+                    anchors.fill: parent
+                    onDoubleClicked: {
+                        if (flick.interactive) {
+                            flick.resizeContent(imageWidth, imageHeight, {x: imageWidth/2, y: imageHeight/2});
+                        } else {
+                            flick.resizeContent(imageWidth * 2, imageHeight * 2);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
