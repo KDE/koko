@@ -42,6 +42,7 @@ ScrollView {
         focus: true
         minRowSpacing: 5
         minColumnSpacing: 5
+        cacheBuffer: 10000
 
         delegate: Item {
             width: view.cellWidth
