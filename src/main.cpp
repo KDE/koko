@@ -43,6 +43,7 @@ int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
+    app.setOrganizationDomain("kde.org");
 
     KDBusService service(KDBusService::Unique);
 
