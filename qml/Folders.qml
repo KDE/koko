@@ -53,4 +53,8 @@ ScrollView {
             }
         }
     }
+    
+    function deleteImage(filePath, index){
+        console.log(filePath + index)
+    }
 }

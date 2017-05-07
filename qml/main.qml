@@ -128,7 +128,6 @@ MainWindow {
                 }
                 checkable: true
                 exclusiveGroup: group
-                checked: true
             }
         }
 
@@ -223,6 +222,7 @@ MainWindow {
                 }
                 checkable: true
                 exclusiveGroup: group
+                checked: true
             }
         }
     }
@@ -282,6 +282,8 @@ MainWindow {
             id: imageViewer
             ImageViewer {
                 objectName: "imageViewer"
+                onDeleteImage: view.get(0).deleteImage(filePath, index)
+                onListEmpty: goUp()
             }
         }
 
@@ -377,7 +379,7 @@ MainWindow {
             toolBar.enabled = true
 
             push({
-                item: locationView,
+                item: folderImages,
                 replace: true,
                 properties: { focus: true }
             })

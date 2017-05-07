@@ -86,7 +86,7 @@ ListView {
                         if (flick.interactive) {
                             flick.resizeContent(imageWidth, imageHeight, {x: imageWidth/2, y: imageHeight/2});
                         } else {
-                            flick.resizeContent(imageWidth * 2, imageHeight * 2);
+                            flick.resizeContent(imageWidth * 2, imageHeight * 2, {x: mouseX, y: mouseY});
                         }
                     }
                 }

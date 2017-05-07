@@ -35,6 +35,8 @@ Item {
      */
     property var model
     property int currentIndex
+    signal deleteImage(string filePath, int index)
+    signal listEmpty()
 
     Rectangle {
         color: "#646464"
@@ -105,10 +107,14 @@ Item {
                         // Marking the button as in use. It's an ugly way
                         flat = !clipRect.visible
                         // Reset the clip rectangle?
+                        deleteButton.enabled = !clipRect.visible
+                        // disables the deleteButton while cropping
                     }
                 }
                 PlasmaComponents.ToolButton {
-                    iconName: "trash-empty"
+                    id: "deleteButton"
+                    iconName: "albumfolder-user-trash"
+                    onClicked: imageDelete(model[currentIndex], currentIndex)
                 }
 
                 // Spacer
@@ -188,6 +194,17 @@ Item {
         } else {
             img.width = flick.width
             img.height = flick.height
+        }
+    }
+    
+    function imageDelete(filePath, index){
+        deleteImage(filePath,index)
+        if(root.hasNextImage()){
+            root.nextImage()            
+        } else if(root.hasPreviousImage()){
+            root.previousImage();
+        } else {
+            listEmpty()
         }
     }
 }
