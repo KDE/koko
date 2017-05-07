@@ -40,7 +40,9 @@ ScrollView {
         focus: true
 
         model: Koko.SortModel {
-            sourceModel: Koko.ImageFolderModel {}
+            sourceModel: Koko.ImageFolderModel {
+                id: imageFoldersModel
+            }
         }
         onAlbumSelected: root.imagesSelected(files)
 
@@ -55,6 +57,6 @@ ScrollView {
     }
     
     function deleteImage(filePath, index){
-        console.log(filePath + index)
+        imageFoldersModel.removeImage(filePath, index)
     }
 }

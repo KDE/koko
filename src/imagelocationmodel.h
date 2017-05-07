@@ -54,6 +54,9 @@ public:
 signals:
     void groupChanged();
 
+public slots:
+    void removeImage(const QString& path, int index );
+    
 private slots:
     void slotPopulate();
 

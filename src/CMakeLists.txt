@@ -82,6 +82,9 @@ add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
 target_link_libraries (kokoqmlplugin
     Qt5::Qml
+    KF5::KIOCore
+    KF5::KIOFileWidgets
+    KF5::KIOWidgets
     kokocommon
 )
 

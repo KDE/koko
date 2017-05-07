@@ -19,6 +19,9 @@
 
 #include "imagetimemodel.h"
 #include "imagestorage.h"
+#include <kio/copyjob.h>
+#include <kurl.h>
+#include <kio/jobuidelegate.h>
 
 ImageTimeModel::ImageTimeModel(QObject* parent)
     : QAbstractListModel(parent)
@@ -108,4 +111,15 @@ void ImageTimeModel::setGroup(ImageTimeModel::TimeGroup group)
     endResetModel();
 
     emit groupChanged();
+}
+
+void ImageTimeModel::removeImage(const QString& path, int index)
+{
+    Q_UNUSED(index);
+    //Removes the file from database
+    ImageStorage::instance()->removeImage(path);
+    ImageStorage::instance()->commit();
+    
+    // Removes the file from physical storage to the trash
+    KIO::trash(QUrl::fromLocalFile(path));
 }

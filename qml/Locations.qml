@@ -61,6 +61,6 @@ ScrollView {
     onGroupChanged: view.calculateSpacing()
     
     function deleteImage(filePath, index){
-        console.log(filePath + index)
+        imageLocationsModel.removeImage(filePath, index)
     }
 }

@@ -40,9 +40,12 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
+public slots:
+    void removeImage(const QString& path, int index );
+    
 private slots:
     void slotPopulate();
-
+    
 private:
     QList<QPair<QByteArray, QString> > m_folders;
 };
