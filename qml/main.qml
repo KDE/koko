@@ -283,7 +283,10 @@ MainWindow {
             ImageViewer {
                 objectName: "imageViewer"
                 onDeleteImage: view.get(0).deleteImage(filePath, index)
-                onListEmpty: goUp()
+                onListEmpty: {
+                    goUp()
+                    goUp()
+                }
             }
         }
 

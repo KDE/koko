@@ -205,6 +205,8 @@ Item {
             root.previousImage();
         } else {
             listEmpty()
+            return 
         }
+        model.splice(index,1)
     }
 }
