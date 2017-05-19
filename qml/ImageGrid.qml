@@ -43,20 +43,29 @@ ScrollView {
         minRowSpacing: 5
         minColumnSpacing: 5
         cacheBuffer: 10000
+        
+        Koko.FileInfo { id: fileInfo }
 
         delegate: Item {
             width: view.cellWidth
             height: view.cellHeight
-
+            
             Image {
                 source: model.modelData
                 asynchronous: true
                 fillMode: Image.PreserveAspectCrop
+                visible: false
 
                 width: 300
                 height: 300
                 sourceSize: Qt.size(300, 300)
                 anchors.centerIn: parent
+                
+                Component.onCompleted: {
+                    if( fileInfo.checkExistence( model.modelData) == true){
+                        visible = true
+                    }
+                }
 
                 MouseArea {
                     anchors.fill: parent
