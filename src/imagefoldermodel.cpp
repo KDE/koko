@@ -20,7 +20,6 @@
 #include "imagefoldermodel.h"
 #include "imagestorage.h"
 #include <kio/copyjob.h>
-#include <kurl.h>
 #include <kio/jobuidelegate.h>
 
 ImageFolderModel::ImageFolderModel(QObject* parent)

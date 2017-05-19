@@ -20,7 +20,6 @@
 #include "imagelocationmodel.h"
 #include "imagestorage.h"
 #include <kio/copyjob.h>
-#include <kurl.h>
 #include <kio/jobuidelegate.h>
 
 ImageLocationModel::ImageLocationModel(QObject* parent)

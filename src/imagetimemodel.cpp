@@ -20,7 +20,6 @@
 #include "imagetimemodel.h"
 #include "imagestorage.h"
 #include <kio/copyjob.h>
-#include <kurl.h>
 #include <kio/jobuidelegate.h>
 
 ImageTimeModel::ImageTimeModel(QObject* parent)
