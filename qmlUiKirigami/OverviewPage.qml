@@ -20,18 +20,16 @@
  */
 
 import QtQuick 2.1
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.1 as Controls
+import QtQuick.Layouts 1.3
 
 import org.kde.kirigami 2.0 as Kirigami
 
-Kirigami.ApplicationWindow {
-    id: root
+Kirigami.ScrollablePage {
+    id: overview
+    focus: true
+   
+    AutomaticSpacingGrid { }
     
-    pageStack.initialPage: overviewPage
-    
-    Component {
-        id: overviewPage
-        OverviewPage {}
-    }
-    
+    keyboardNavigationEnabled: true
 }

@@ -20,18 +20,30 @@
  */
 
 import QtQuick 2.1
-import QtQuick.Controls 2.0 as Controls
-
+import QtQuick.Layouts 1.3
+import QtQuick.Controls 2.1 as Controls
 import org.kde.kirigami 2.0 as Kirigami
 
-Kirigami.ApplicationWindow {
-    id: root
+GridView {
+    id: gridView
     
-    pageStack.initialPage: overviewPage
+    model: 30
     
-    Component {
-        id: overviewPage
-        OverviewPage {}
+    property int iconSize: Kirigami.Units.iconSizes.huge
+    
+    cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
+    cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
+    
+    delegate: Image {
+        //just for testing purpose
+        source: "puppies.jpg"
+        width: gridView.cellWidth - Kirigami.Units.smallSpacing
+        height: gridView.cellHeight - Kirigami.Units.smallSpacing
+        
+        fillMode: Image.PreserveAspectCrop
+        
+        MouseArea {
+            anchors.fill: parent 
+        }
     }
-    
 }
