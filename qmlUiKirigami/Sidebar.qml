@@ -57,8 +57,13 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Day")
+        },
+        Kirigami.Action {
+            text: qsTr("Path")
+            enabled: false
+        },
+        Kirigami.Action {
+            text: qsTr("By Folder")
         }
-    ]
-            
-            
+    ]       
 }
