@@ -20,20 +20,45 @@
  */
 
 import QtQuick 2.1
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.1 as Controls
 
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.1 as Kirigami
 
-Kirigami.ApplicationWindow {
-    id: root
+Kirigami.GlobalDrawer {
+    title: qsTr("Navigation") 
+    handleVisible: true
     
-    pageStack.initialPage: overviewPage
-    
-    globalDrawer: Sidebar {}
-    
-    Component {
-        id: overviewPage
-        OverviewPage {}
-    }
-    
+    actions: [
+        Kirigami.Action {
+            text: qsTr("Locations")
+            enabled: false
+        },
+        Kirigami.Action {
+            text: qsTr("By Country")
+        },
+        Kirigami.Action {
+            text: qsTr("By State")
+        },
+        Kirigami.Action {
+            text: qsTr("By City")
+        },
+        Kirigami.Action {
+            text: qsTr("Time")
+            enabled: false
+        },
+        Kirigami.Action {
+            text: qsTr("By Year")
+        },
+        Kirigami.Action {
+            text: qsTr("By month")
+        },
+        Kirigami.Action {
+            text: qsTr("By Week")
+        },
+        Kirigami.Action {
+            text: qsTr("By Day")
+        }
+    ]
+            
+            
 }
