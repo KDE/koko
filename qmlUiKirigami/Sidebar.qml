@@ -25,6 +25,9 @@ import QtQuick.Controls 2.1 as Controls
 import org.kde.kirigami 2.1 as Kirigami
 
 Kirigami.GlobalDrawer {
+    
+    signal filterBy(string value)
+    
     title: qsTr("Navigation") 
     handleVisible: true
     
@@ -35,12 +38,15 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Country")
+            onTriggered: filterBy("country")
         },
         Kirigami.Action {
             text: qsTr("By State")
+            onTriggered: filterBy("state")
         },
         Kirigami.Action {
             text: qsTr("By City")
+            onTriggered: filterBy("city")
         },
         Kirigami.Action {
             text: qsTr("Time")
@@ -48,15 +54,19 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Year")
+            onTriggered: filterBy("year")
         },
         Kirigami.Action {
             text: qsTr("By month")
+            onTriggered: filterBy("month")
         },
         Kirigami.Action {
             text: qsTr("By Week")
+            onTriggered: filterBy("week")
         },
         Kirigami.Action {
             text: qsTr("By Day")
+            onTriggered: filterBy("day")
         },
         Kirigami.Action {
             text: qsTr("Path")
@@ -64,6 +74,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Folder")
+            onTriggered: filterBy("folder")
         }
     ]       
 }

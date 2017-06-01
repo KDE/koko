@@ -23,17 +23,98 @@ import QtQuick 2.1
 import QtQuick.Controls 2.0 as Controls
 
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.koko 0.1 as Koko
 
 Kirigami.ApplicationWindow {
     id: root
     
-    pageStack.initialPage: overviewPage
+    pageStack.initialPage: AlbumView {
+        id: albumView
+        model: imageFolderModel
+        onImageClicked: pageStack.push(overviewPage, { "model": files})
+    }
     
-    globalDrawer: Sidebar {}
+    globalDrawer: Sidebar {
+        onFilterBy: {
+            pageStack.pop(albumView)
+            switch( value){
+                case "country": { 
+                    albumView.model = imageLocationModelCountry;
+                    break;
+                }
+                case "state": { 
+                    albumView.model = imageLocationModelState;
+                    break;
+                }
+                case "city": {
+                    albumView.model = imageLocationModelCity;
+                    break;
+                }
+                case "year": {
+                    albumView.model = imageTimeModelYear; 
+                    break;
+                }
+                case "month": {
+                    albumView.model = imageTimeModelMonth;
+                    break;
+                }
+                case "week": {
+                    albumView.model = imageTimeModelWeek; 
+                    break;
+                }
+                case "day": { 
+                    albumView.model = imageTimeModelDay; 
+                    break;
+                }
+                case "folder": { 
+                    albumView.model = imageFolderModel; 
+                    break; 
+                }
+            }
+        }
+    }
+    
+    Koko.ImageFolderModel {
+        id: imageFolderModel
+    }  
+    
+    Koko.ImageTimeModel {
+        id: imageTimeModelYear
+        group: Koko.ImageTimeModel.Year
+    }
+    
+    Koko.ImageTimeModel {
+        id: imageTimeModelMonth
+        group: Koko.ImageTimeModel.Month
+    }
+    
+    Koko.ImageTimeModel {
+        id: imageTimeModelWeek
+        group: Koko.ImageTimeModel.Week
+    }
+    
+    Koko.ImageTimeModel {
+        id: imageTimeModelDay
+        group: Koko.ImageTimeModel.Day
+    }
+    
+    Koko.ImageLocationModel {
+        id: imageLocationModelCountry
+        group: Koko.ImageLocationModel.Country
+    }    
+    
+    Koko.ImageLocationModel {
+        id: imageLocationModelState
+        group: Koko.ImageLocationModel.State
+    }
+    
+    Koko.ImageLocationModel {
+        id: imageLocationModelCity
+        group: Koko.ImageLocationModel.City
+    }
     
     Component {
         id: overviewPage
         OverviewPage {}
     }
-    
 }

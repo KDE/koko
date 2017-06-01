@@ -20,27 +20,37 @@
  */
 
 import QtQuick 2.1
-import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1 as Controls
-import org.kde.kirigami 2.0 as Kirigami
 
-GridView {
-    id: gridView
+import org.kde.kirigami 2.1 as Kirigami
+
+Kirigami.ScrollablePage {
     
-    property int iconSize: Kirigami.Units.iconSizes.huge
+    property alias model: gridView.model
+    signal imageClicked(var files)
     
-    cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
-    cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
-    
-    delegate: Image {
-        source: model.modelData
-        width: gridView.cellWidth - Kirigami.Units.smallSpacing
-        height: gridView.cellHeight - Kirigami.Units.smallSpacing
+    GridView {
+        id: gridView
         
-        fillMode: Image.PreserveAspectCrop
+        property int iconSize: Kirigami.Units.iconSizes.enormous
         
-        MouseArea {
-            anchors.fill: parent 
+        cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
+        cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
+        
+        delegate: Image {
+            source: model.cover
+            width: gridView.cellWidth - Kirigami.Units.smallSpacing
+            height: gridView.cellHeight - Kirigami.Units.smallSpacing
+            
+            fillMode: Image.PreserveAspectCrop
+            
+            MouseArea {
+                anchors.fill: parent 
+                onClicked: {
+                    imageClicked(model.files)
+                }
+            }
         }
     }
+    
 }

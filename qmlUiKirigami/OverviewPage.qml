@@ -26,10 +26,13 @@ import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 
 Kirigami.ScrollablePage {
+    property alias model: automaticSpacingGrid.model
     id: overview
     focus: true
    
-    AutomaticSpacingGrid { }
+    AutomaticSpacingGrid {
+        id: automaticSpacingGrid
+    }
     
     keyboardNavigationEnabled: true
 }
