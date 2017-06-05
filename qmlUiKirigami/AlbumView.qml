@@ -37,17 +37,31 @@ Kirigami.ScrollablePage {
         cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
         cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
         
-        delegate: Image {
-            source: model.cover
-            width: gridView.cellWidth - Kirigami.Units.smallSpacing
-            height: gridView.cellHeight - Kirigami.Units.smallSpacing
+        delegate: FocusScope {
             
-            fillMode: Image.PreserveAspectCrop
+            Image {
+                source: model.cover
+                width: gridView.cellWidth - Kirigami.Units.largeSpacing
+                height: gridView.cellHeight - Kirigami.Units.largeSpacing
+                
+                fillMode: Image.PreserveAspectCrop
+                
+                MouseArea {
+                    anchors.fill: parent 
+                    onClicked: {
+                        imageClicked(model.files)
+                    }
+                }
+            }
             
-            MouseArea {
-                anchors.fill: parent 
-                onClicked: {
-                    imageClicked(model.files)
+            Kirigami.BasicListItem {
+                label: model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount);
+                reserveSpaceForIcon: false
+                width: gridView.cellWidth - Kirigami.Units.smallSpacing
+                background: Rectangle {
+                    anchors.fill: parent
+                    opacity: 0.7
+                    color: Kirigami.Theme.backgroundColor
                 }
             }
         }
