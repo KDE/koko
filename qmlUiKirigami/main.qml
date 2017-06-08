@@ -27,6 +27,7 @@ import org.kde.koko 0.1 as Koko
 
 Kirigami.ApplicationWindow {
     id: root
+    header: Kirigami.ApplicationHeader {}
     
     pageStack.initialPage: AlbumView {
         id: albumView
