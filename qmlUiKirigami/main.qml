@@ -32,42 +32,44 @@ Kirigami.ApplicationWindow {
     pageStack.initialPage: AlbumView {
         id: albumView
         model: imageFolderModel
-        onImageClicked: pageStack.push(overviewPage, { "model": files})
+        title: "Folders"
+        onImageClicked: pageStack.push(overviewPage, { "model": files, "title": cover})
     }
     
     globalDrawer: Sidebar {
         onFilterBy: {
             pageStack.pop(albumView)
+            albumView.title = value
             switch( value){
-                case "country": { 
+                case "Countries": { 
                     albumView.model = imageLocationModelCountry;
                     break;
                 }
-                case "state": { 
+                case "States": { 
                     albumView.model = imageLocationModelState;
                     break;
                 }
-                case "city": {
+                case "Cities": {
                     albumView.model = imageLocationModelCity;
                     break;
                 }
-                case "year": {
+                case "Years": {
                     albumView.model = imageTimeModelYear; 
                     break;
                 }
-                case "month": {
+                case "Months": {
                     albumView.model = imageTimeModelMonth;
                     break;
                 }
-                case "week": {
+                case "Weeks": {
                     albumView.model = imageTimeModelWeek; 
                     break;
                 }
-                case "day": { 
+                case "Days": { 
                     albumView.model = imageTimeModelDay; 
                     break;
                 }
-                case "folder": { 
+                case "Folders": { 
                     albumView.model = imageFolderModel; 
                     break; 
                 }

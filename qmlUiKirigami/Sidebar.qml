@@ -37,15 +37,15 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Country")
-            onTriggered: filterBy("country")
+            onTriggered: filterBy("Countries")
         },
         Kirigami.Action {
             text: qsTr("By State")
-            onTriggered: filterBy("state")
+            onTriggered: filterBy("States")
         },
         Kirigami.Action {
             text: qsTr("By City")
-            onTriggered: filterBy("city")
+            onTriggered: filterBy("Cities")
         },
         Kirigami.Action {
             text: qsTr("Time")
@@ -53,19 +53,19 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Year")
-            onTriggered: filterBy("year")
+            onTriggered: filterBy("Years")
         },
         Kirigami.Action {
             text: qsTr("By month")
-            onTriggered: filterBy("month")
+            onTriggered: filterBy("Months")
         },
         Kirigami.Action {
             text: qsTr("By Week")
-            onTriggered: filterBy("week")
+            onTriggered: filterBy("Weeks")
         },
         Kirigami.Action {
             text: qsTr("By Day")
-            onTriggered: filterBy("day")
+            onTriggered: filterBy("Days")
         },
         Kirigami.Action {
             text: qsTr("Path")
@@ -73,7 +73,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("By Folder")
-            onTriggered: filterBy("folder")
+            onTriggered: filterBy("Folders")
         }
     ]       
 }

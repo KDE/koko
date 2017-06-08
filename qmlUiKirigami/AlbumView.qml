@@ -27,7 +27,7 @@ import org.kde.kirigami 2.1 as Kirigami
 Kirigami.ScrollablePage {
     
     property alias model: gridView.model
-    signal imageClicked(var files)
+    signal imageClicked(var files, string cover)
     
     GridView {
         id: gridView
@@ -49,7 +49,7 @@ Kirigami.ScrollablePage {
                 MouseArea {
                     anchors.fill: parent 
                     onClicked: {
-                        imageClicked(model.files)
+                        imageClicked(model.files, model.display)
                     }
                 }
             }
