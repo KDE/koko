@@ -29,7 +29,6 @@ Kirigami.GlobalDrawer {
     signal filterBy(string value)
     
     title: qsTr("Navigation") 
-    handleVisible: true
     
     actions: [
         Kirigami.Action {
