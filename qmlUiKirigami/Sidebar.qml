@@ -27,6 +27,7 @@ import org.kde.kirigami 2.1 as Kirigami
 Kirigami.GlobalDrawer {
     
     signal filterBy(string value)
+    property string previouslySelectedAction
     
     title: qsTr("Navigation") 
     
@@ -36,44 +37,97 @@ Kirigami.GlobalDrawer {
             enabled: false
         },
         Kirigami.Action {
+            id: countryAction
             text: qsTr("By Country")
-            onTriggered: filterBy("Countries")
+            checkable: true
+            onTriggered: {
+                filterBy("Countries")
+                previouslySelectedAction = "countryAction"
+            }
         },
         Kirigami.Action {
+            id: stateAction
             text: qsTr("By State")
-            onTriggered: filterBy("States")
+            checkable: true
+            onTriggered: {
+                filterBy("States")
+                previouslySelectedAction = "stateAction"
+            }
         },
         Kirigami.Action {
+            id: cityAction
             text: qsTr("By City")
-            onTriggered: filterBy("Cities")
+            checkable: true
+            onTriggered: {
+                filterBy("Cities")
+                previouslySelectedAction = "cityAction"
+            }
         },
         Kirigami.Action {
             text: qsTr("Time")
             enabled: false
         },
         Kirigami.Action {
+            id: yearAction
             text: qsTr("By Year")
-            onTriggered: filterBy("Years")
+            checkable: true
+            onTriggered: {
+                filterBy("Years")
+                previouslySelectedAction = "yearAction"
+            }
         },
         Kirigami.Action {
+            id: monthAction
             text: qsTr("By month")
-            onTriggered: filterBy("Months")
+            checkable: true
+            onTriggered: {
+                filterBy("Months")
+                previouslySelectedAction = "monthAction"
+            }
         },
         Kirigami.Action {
+            id: weekAction
             text: qsTr("By Week")
-            onTriggered: filterBy("Weeks")
+            checkable: true
+            onTriggered: {
+                filterBy("Weeks")
+                previouslySelectedAction = "weekAction"
+            }
         },
         Kirigami.Action {
+            id: "dayAction"
             text: qsTr("By Day")
-            onTriggered: filterBy("Days")
+            checkable: true
+            onTriggered: {
+                filterBy("Days")
+                previouslySelectedAction = "dayAction"
+            }
         },
         Kirigami.Action {
             text: qsTr("Path")
             enabled: false
         },
         Kirigami.Action {
+            id: folderAction
             text: qsTr("By Folder")
-            onTriggered: filterBy("Folders")
+            checkable: true
+            onTriggered: {
+                filterBy("Folders")
+                previouslySelectedAction = "folderAction"
+            }
         }
-    ]       
+    ]      
+    
+    function findAction(value) {
+        switch(value) {
+            case "countryAction": return countryAction
+            case "stateAction": return stateAction
+            case "cityAction": return cityAction
+            case "yearAction": return yearAction
+            case "monthAction": return monthAction
+            case "weekAction": return weekAction
+            case "dayAction": return dayAction
+            case "folderAction": return folderAction
+        }
+    }
 }

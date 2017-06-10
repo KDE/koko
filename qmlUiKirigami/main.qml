@@ -37,9 +37,12 @@ Kirigami.ApplicationWindow {
     }
     
     globalDrawer: Sidebar {
+        id: sideBar
         onFilterBy: {
             pageStack.pop(albumView)
             albumView.title = value
+            sideBar.findAction(previouslySelectedAction).checked = false
+            
             switch( value){
                 case "Countries": { 
                     albumView.model = imageLocationModelCountry;
@@ -74,6 +77,11 @@ Kirigami.ApplicationWindow {
                     break; 
                 }
             }
+        }
+    
+        Component.onCompleted: {
+            sideBar.findAction("folderAction").checked = true
+            previouslySelectedAction = "folderAction"
         }
     }
     
