@@ -28,6 +28,7 @@ GridView {
     id: gridView
     
     property int iconSize: Kirigami.Units.iconSizes.huge
+    signal imageClicked(int index)
     
     cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
     cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
@@ -41,6 +42,7 @@ GridView {
         
         MouseArea {
             anchors.fill: parent 
+            onClicked: imageClicked( model.index)
         }
     }
 }

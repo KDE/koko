@@ -29,6 +29,15 @@ Kirigami.ApplicationWindow {
     id: root
     header: Kirigami.ApplicationHeader {}
     
+    QtObject {
+        id: currentImage
+        property int index
+        property var model
+        onModelChanged: {
+            sideBar.drawerOpen = model == null ? true: false
+        }
+    }
+    
     pageStack.initialPage: AlbumView {
         id: albumView
         model: imageFolderModel
@@ -42,6 +51,8 @@ Kirigami.ApplicationWindow {
             pageStack.pop(albumView)
             albumView.title = value
             previouslySelectedAction.checked = false
+            currentImage.model = null
+            drawerOpen: currentImage.model == null ? true: false
             
             switch( value){
                 case "Countries": { 
@@ -121,6 +132,22 @@ Kirigami.ApplicationWindow {
     
     Component {
         id: overviewPage
-        OverviewPage {}
+        OverviewPage {
+            onImageSelected: {
+                currentImage.model = model
+                currentImage.index = currentIndex
+            }
+        }
     }
+    
+    ImageViewer {
+        id: imageViewer
+        visible: currentImage.model == null ? false: true
+        model: currentImage.model
+        currentIndex: currentImage.index
+        focus: true
+        width: root.width
+        height: root.height
+    }
+
 }

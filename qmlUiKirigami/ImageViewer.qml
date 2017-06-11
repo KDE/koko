@@ -20,22 +20,31 @@
  */
 
 import QtQuick 2.1
-import QtQuick.Controls 2.1 as Controls
 import QtQuick.Layouts 1.3
 
 import org.kde.kirigami 2.0 as Kirigami
 
-Kirigami.ScrollablePage {
-    property alias model: automaticSpacingGrid.model
-    signal imageSelected(int currentIndex)
+Item {
+    id: root
     
-    id: overview
-    focus: true
-   
-    AutomaticSpacingGrid {
-        id: automaticSpacingGrid
-        onImageClicked: imageSelected( index)
+    property var model
+    property int currentIndex
+    
+    property string filePath: model[currentIndex]
+    
+    Flickable {
+        Image {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            source: filePath
+            sourceSize.width: root.width
+            
+            MouseArea {
+                anchors.fill: parent
+                onClicked: console.log(model)
+            }
+        }
     }
     
-    keyboardNavigationEnabled: true
+    
 }
