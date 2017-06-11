@@ -41,7 +41,7 @@ Kirigami.ApplicationWindow {
         onFilterBy: {
             pageStack.pop(albumView)
             albumView.title = value
-            sideBar.findAction(previouslySelectedAction).checked = false
+            previouslySelectedAction.checked = false
             
             switch( value){
                 case "Countries": { 
@@ -77,11 +77,6 @@ Kirigami.ApplicationWindow {
                     break; 
                 }
             }
-        }
-    
-        Component.onCompleted: {
-            sideBar.findAction("folderAction").checked = true
-            previouslySelectedAction = "folderAction"
         }
     }
     

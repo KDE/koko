@@ -27,7 +27,7 @@ import org.kde.kirigami 2.1 as Kirigami
 Kirigami.GlobalDrawer {
     
     signal filterBy(string value)
-    property string previouslySelectedAction
+    property Kirigami.Action previouslySelectedAction
     
     title: qsTr("Navigation") 
     
@@ -42,7 +42,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Countries")
-                previouslySelectedAction = "countryAction"
+                previouslySelectedAction = countryAction
             }
         },
         Kirigami.Action {
@@ -51,7 +51,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("States")
-                previouslySelectedAction = "stateAction"
+                previouslySelectedAction = stateAction
             }
         },
         Kirigami.Action {
@@ -60,7 +60,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Cities")
-                previouslySelectedAction = "cityAction"
+                previouslySelectedAction = cityAction
             }
         },
         Kirigami.Action {
@@ -73,7 +73,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Years")
-                previouslySelectedAction = "yearAction"
+                previouslySelectedAction = yearAction
             }
         },
         Kirigami.Action {
@@ -82,7 +82,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Months")
-                previouslySelectedAction = "monthAction"
+                previouslySelectedAction = monthAction
             }
         },
         Kirigami.Action {
@@ -91,7 +91,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Weeks")
-                previouslySelectedAction = "weekAction"
+                previouslySelectedAction = weekAction
             }
         },
         Kirigami.Action {
@@ -100,7 +100,7 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Days")
-                previouslySelectedAction = "dayAction"
+                previouslySelectedAction = dayAction
             }
         },
         Kirigami.Action {
@@ -113,21 +113,13 @@ Kirigami.GlobalDrawer {
             checkable: true
             onTriggered: {
                 filterBy("Folders")
-                previouslySelectedAction = "folderAction"
+                previouslySelectedAction = folderAction
             }
         }
     ]      
     
-    function findAction(value) {
-        switch(value) {
-            case "countryAction": return countryAction
-            case "stateAction": return stateAction
-            case "cityAction": return cityAction
-            case "yearAction": return yearAction
-            case "monthAction": return monthAction
-            case "weekAction": return weekAction
-            case "dayAction": return dayAction
-            case "folderAction": return folderAction
-        }
+    Component.onCompleted: {
+        folderAction.checked = true
+        previouslySelectedAction = folderAction
     }
 }
