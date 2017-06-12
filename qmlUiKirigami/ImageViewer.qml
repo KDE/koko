@@ -27,24 +27,26 @@ import org.kde.kirigami 2.0 as Kirigami
 Item {
     id: root
     
-    property var model
-    property int currentIndex
+    property alias listModel: listView.model
+    property alias currentIndex: listView.currentIndex
     
-    property string filePath: model[currentIndex]
+    property int imageWidth
     
     Flickable {
-        Image {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            source: filePath
-            sourceSize.width: root.width
-            
-            MouseArea {
-                anchors.fill: parent
-                onClicked: console.log(model)
+        
+        ListView {
+            id: listView
+            delegate: Image {
+                source: model.modelData
+                sourceSize.width: imageWidth
+                
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: console.log(model)
+                }
             }
         }
     }
-    
+    onCurrentIndexChanged: console.log("imageViewer changed currentIndex to "+ currentIndex)
     
 }

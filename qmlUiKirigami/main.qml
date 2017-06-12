@@ -143,11 +143,10 @@ Kirigami.ApplicationWindow {
     ImageViewer {
         id: imageViewer
         visible: currentImage.model == null ? false: true
-        model: currentImage.model
         currentIndex: currentImage.index
+        listModel: currentImage.model        
         focus: true
-        width: root.width
-        height: root.height
+        imageWidth: root.width        
     }
 
 }
