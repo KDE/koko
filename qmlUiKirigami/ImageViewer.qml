@@ -21,32 +21,48 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.3
-
+import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.0 as Kirigami
 
-Item {
+Rectangle {
     id: root
     
     property alias listModel: listView.model
     property alias currentIndex: listView.currentIndex
     
     property int imageWidth
-    
-    Flickable {
+
+    //NOTE: this is the only place where hardcoded black is fine
+    color: "black"
         
-        ListView {
-            id: listView
-            delegate: Image {
+    ListView {
+        id: listView
+        anchors.fill: parent
+        orientation: Qt.Horizontal
+        snapMode: ListView.SnapOneItem
+        delegate: Flickable {
+            width: root.width
+            height: root.height
+            //TODO: zooming /flicking controls here, can be partly lifted from the old implementation
+            Image {
                 source: model.modelData
                 sourceSize.width: imageWidth
                 
-                MouseArea {
+            /*   MouseArea {
                     anchors.fill: parent
                     onClicked: console.log(model)
-                }
+                }*/
             }
         }
     }
-    onCurrentIndexChanged: console.log("imageViewer changed currentIndex to "+ currentIndex)
-    
+
+    onCurrentIndexChanged: {
+        console.log("imageViewer changed currentIndex to "+ currentIndex)
+        listView.positionViewAtIndex(currentIndex, ListView.Beginning)
+    }
+    //FIXME: placeholder, will have to use the state machine
+    Controls.Button {
+        text: "Back"
+        onClicked: currentImage.model = null
+    }
 }

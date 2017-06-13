@@ -33,9 +33,6 @@ Kirigami.ApplicationWindow {
         id: currentImage
         property int index
         property var model
-        onModelChanged: {
-            sideBar.drawerOpen = model == null ? true: false
-        }
     }
     
     pageStack.initialPage: AlbumView {
@@ -52,7 +49,6 @@ Kirigami.ApplicationWindow {
             albumView.title = value
             previouslySelectedAction.checked = false
             currentImage.model = null
-            drawerOpen: currentImage.model == null ? true: false
             
             switch( value){
                 case "Countries": { 
@@ -142,6 +138,12 @@ Kirigami.ApplicationWindow {
     
     ImageViewer {
         id: imageViewer
+        //go on top of the overlay drawer
+        z: sideBar.z+1
+        parent: root.overlay
+        width: overlay.width
+        height: overlay.height
+        //TODO: use states and transitions to make the viewer appear and disappear
         visible: currentImage.model == null ? false: true
         currentIndex: currentImage.index
         listModel: currentImage.model        
