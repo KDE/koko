@@ -19,7 +19,7 @@
  *
  */
 
-import QtQuick 2.1
+import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.0 as Kirigami
@@ -32,6 +32,36 @@ Rectangle {
     
     property int imageWidth
 
+    states: [
+        State {
+            name: "open"
+            when: listModel != null
+            PropertyChanges { target: root; visible: true}
+            PropertyChanges { target: root; opacity: 1}
+        },
+        State {
+            name: "closed"
+            when: listModel == null
+            PropertyChanges { target: root; opacity: 0}
+            PropertyChanges { target: root; visible: false}
+        }
+    ]
+    
+    transitions: [
+        Transition {
+            from: "open"
+            to: "closed"
+            SequentialAnimation {
+                OpacityAnimator { target: root; duration: 1000 }
+                PropertyAnimation { target: root; property: "visible"; duration: 1000}
+            }
+        },
+        Transition {
+            from: "closed"
+            to: "open"
+            OpacityAnimator { target: root; duration: 1000}
+        }
+    ]
     //NOTE: this is the only place where hardcoded black is fine
     color: "black"
         

@@ -48,7 +48,6 @@ Kirigami.ApplicationWindow {
             pageStack.pop(albumView)
             albumView.title = value
             previouslySelectedAction.checked = false
-            currentImage.model = null
             
             switch( value){
                 case "Countries": { 
@@ -143,8 +142,6 @@ Kirigami.ApplicationWindow {
         parent: root.overlay
         width: overlay.width
         height: overlay.height
-        //TODO: use states and transitions to make the viewer appear and disappear
-        visible: currentImage.model == null ? false: true
         currentIndex: currentImage.index
         listModel: currentImage.model        
         focus: true
