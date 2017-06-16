@@ -42,7 +42,10 @@ GridView {
         
         MouseArea {
             anchors.fill: parent 
-            onClicked: imageClicked( model.index)
+            onClicked: {
+                imageClicked( model.index)
+                gridView.currentIndex = model.index
+            }
         }
     }
 }

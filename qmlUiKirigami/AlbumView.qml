@@ -50,6 +50,7 @@ Kirigami.ScrollablePage {
                     anchors.fill: parent 
                     onClicked: {
                         imageClicked(model.files, model.display)
+                        gridView.currentIndex = model.index
                     }
                 }
             }
