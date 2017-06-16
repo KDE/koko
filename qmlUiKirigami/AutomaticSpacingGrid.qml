@@ -30,21 +30,29 @@ GridView {
     property int iconSize: Kirigami.Units.iconSizes.huge
     signal imageClicked(int index)
     
-    cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
+    cellWidth: gridView.width / Math.floor(gridView.width / (iconSize + Kirigami.Units.largeSpacing*2))
     cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
     
-    delegate: Image {
-        source: model.modelData
-        width: gridView.cellWidth - Kirigami.Units.smallSpacing
-        height: gridView.cellHeight - Kirigami.Units.smallSpacing
-        
-        fillMode: Image.PreserveAspectCrop
-        
-        MouseArea {
-            anchors.fill: parent 
-            onClicked: {
-                imageClicked( model.index)
-                gridView.currentIndex = model.index
+    focus: true
+    highlight: Rectangle { color: Kirigami.Theme.highlightColor }
+    
+    delegate: Item {
+        width: gridView.cellWidth
+        height: gridView.cellHeight
+        Image {
+            source: model.modelData
+            anchors.centerIn: parent
+            width: gridView.cellWidth - Kirigami.Units.smallSpacing
+            height: gridView.cellHeight - Kirigami.Units.smallSpacing
+            
+            fillMode: Image.PreserveAspectCrop
+            
+            MouseArea {
+                anchors.fill: parent 
+                onClicked: {
+                    imageClicked( model.index)
+                    gridView.currentIndex = model.index
+                }
             }
         }
     }

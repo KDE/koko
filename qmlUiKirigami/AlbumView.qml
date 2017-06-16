@@ -37,10 +37,15 @@ Kirigami.ScrollablePage {
         cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
         cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
         
-        delegate: FocusScope {
-            
+        focus: true
+        highlight: Rectangle { color: Kirigami.Theme.highlightColor}
+        
+        delegate: Item {
+            width: gridView.cellWidth
+            height: gridView.cellHeight
             Image {
                 source: model.cover
+                anchors.centerIn: parent
                 width: gridView.cellWidth - Kirigami.Units.largeSpacing
                 height: gridView.cellHeight - Kirigami.Units.largeSpacing
                 
