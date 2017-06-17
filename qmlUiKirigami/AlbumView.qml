@@ -63,7 +63,7 @@ Kirigami.ScrollablePage {
             Kirigami.BasicListItem {
                 label: model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount);
                 reserveSpaceForIcon: false
-                width: gridView.cellWidth - Kirigami.Units.smallSpacing
+                width: gridView.cellWidth
                 background: Rectangle {
                     anchors.fill: parent
                     opacity: 0.7
