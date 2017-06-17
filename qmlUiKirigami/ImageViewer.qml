@@ -52,8 +52,8 @@ Rectangle {
             from: "open"
             to: "closed"
             SequentialAnimation {
-                OpacityAnimator { target: root; duration: 1000 }
-                PropertyAnimation { target: root; property: "visible"; duration: 1000}
+                OpacityAnimator { target: root; duration: 500 }
+                PropertyAnimation { target: root; property: "visible"; duration: 500}
             }
         },
         Transition {
