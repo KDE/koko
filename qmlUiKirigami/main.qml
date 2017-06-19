@@ -86,44 +86,59 @@ Kirigami.ApplicationWindow {
         }
     }
     
-    Koko.ImageFolderModel {
+    Koko.SortModel{
         id: imageFolderModel
-    }  
+        sourceModel: Koko.ImageFolderModel {}
+    }
     
-    Koko.ImageTimeModel {
+    Koko.SortModel {
         id: imageTimeModelYear
-        group: Koko.ImageTimeModel.Year
+        sourceModel: Koko.ImageTimeModel {
+            group: Koko.ImageTimeModel.Year
+        }
     }
     
-    Koko.ImageTimeModel {
+    Koko.SortModel {
         id: imageTimeModelMonth
-        group: Koko.ImageTimeModel.Month
+        sourceModel: Koko.ImageTimeModel {
+            group: Koko.ImageTimeModel.Month
+        }
     }
     
-    Koko.ImageTimeModel {
+    Koko.SortModel {
         id: imageTimeModelWeek
-        group: Koko.ImageTimeModel.Week
+        sourceModel: Koko.ImageTimeModel {
+            group: Koko.ImageTimeModel.Week
+        }
     }
     
-    Koko.ImageTimeModel {
+    Koko.SortModel {
         id: imageTimeModelDay
-        group: Koko.ImageTimeModel.Day
+        sourceModel: Koko.ImageTimeModel {
+            group: Koko.ImageTimeModel.Day
+        }
     }
     
-    Koko.ImageLocationModel {
+    Koko.SortModel {
         id: imageLocationModelCountry
-        group: Koko.ImageLocationModel.Country
-    }    
-    
-    Koko.ImageLocationModel {
+        sourceModel: Koko.ImageLocationModel {
+            group: Koko.ImageLocationModel.Country
+        }
+    }
+        
+    Koko.SortModel {
         id: imageLocationModelState
-        group: Koko.ImageLocationModel.State
+        sourceModel: Koko.ImageLocationModel {
+            group: Koko.ImageLocationModel.State
+        }
     }
     
-    Koko.ImageLocationModel {
+    Koko.SortModel {
         id: imageLocationModelCity
-        group: Koko.ImageLocationModel.City
-    }
+        sourceModel: Koko.ImageLocationModel {
+            group: Koko.ImageLocationModel.City
+        }
+    }    
     
     Component {
         id: overviewPage
