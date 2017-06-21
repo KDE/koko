@@ -19,28 +19,43 @@
  *
  */
 
-import QtQuick 2.1
+import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
 
 import org.kde.kirigami 2.1 as Kirigami
 
-Kirigami.ScrollablePage {
+Item {
+    width: gridView.cellWidth
+    height: gridView.cellHeight
     
-    property alias model: gridView.model
-    signal imageClicked(var files, string cover)
-    
-    GridView {
-        id: gridView
+    Image {
+        id: image
+        source: model.cover
+        anchors.centerIn: parent
+        width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
+        height: gridView.cellHeight - (Kirigami.Units.largeSpacing )
         
-        property int iconSize: Kirigami.Units.iconSizes.enormous
-        
-        cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
-        cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
-        
-        focus: true
-        highlight: Rectangle { color: Kirigami.Theme.highlightColor}
-        
-        delegate: AlbumDelegate {}
+        fillMode: Image.PreserveAspectCrop
     }
     
+    Kirigami.BasicListItem {
+        label: model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount);
+        reserveSpaceForIcon: false
+        width: image.width
+        anchors.left: image.left
+        anchors.top: image.top
+        background: Rectangle {
+            anchors.fill: parent
+            opacity: 0.7
+            color: Kirigami.Theme.backgroundColor
+        }
+    }
+    
+    MouseArea {
+        anchors.fill: parent 
+        onClicked: {
+            imageClicked(model.files, model.display)
+            gridView.currentIndex = model.index
+        }
+    }
 }
