@@ -19,25 +19,28 @@
  *
  */
 
-import QtQuick 2.1
+import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
 
 import org.kde.kirigami 2.1 as Kirigami
 
 Kirigami.ScrollablePage {
+    id: page
     
     property alias model: gridView.model
     signal imageClicked(var files, string cover)
-    
+    keyboardNavigationEnabled: true
+    focus: true
+
     GridView {
         id: gridView
         
         property int iconSize: Kirigami.Units.iconSizes.enormous
+        keyNavigationEnabled: true
         
         cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
         cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
         
-        focus: true
         highlight: Rectangle { color: Kirigami.Theme.highlightColor}
         
         delegate: AlbumDelegate {}

@@ -26,16 +26,15 @@ import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 
 Kirigami.ScrollablePage {
+    id: overview
+
     property alias model: automaticSpacingGrid.model
     signal imageSelected(int currentIndex)
-    
-    id: overview
+    keyboardNavigationEnabled: true
     focus: true
    
     AutomaticSpacingGrid {
         id: automaticSpacingGrid
         onImageClicked: imageSelected( index)
     }
-    
-    keyboardNavigationEnabled: true
 }

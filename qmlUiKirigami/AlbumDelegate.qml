@@ -58,4 +58,16 @@ Item {
             gridView.currentIndex = model.index
         }
     }
+    Keys.onPressed: {
+        switch (event.key) {
+            case Qt.Key_Enter:
+            case Qt.Key_Return:
+            case Qt.Key_Space:
+                imageClicked(model.files, model.display)
+                gridView.currentIndex = model.index
+                break;
+            default:
+                break;
+        }
+    }
 }
