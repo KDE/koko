@@ -25,8 +25,11 @@ import QtQuick.Controls 2.1 as Controls
 import org.kde.kirigami 2.1 as Kirigami
 
 Item {
+    id: albumDelegate
     width: gridView.cellWidth
     height: gridView.cellHeight
+
+    property bool selected: false
     
     Image {
         id: image
@@ -51,8 +54,20 @@ Item {
         }
     }
     
+    SelectionButton {
+        id: selectionButton
+        visible: ( selected || albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse )
+    }
+    
+    SelectionDelegateHighlight {
+        id: selectionHighlight
+        visible: selected
+    }
+    
     MouseArea {
-        anchors.fill: parent 
+        id: albumThumbnailMouseArea
+        anchors.fill: parent
+        hoverEnabled: true
         onClicked: {
             imageClicked(model.files, model.display)
             gridView.currentIndex = model.index

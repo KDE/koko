@@ -26,6 +26,7 @@ SortModel::SortModel(QObject* parent): QSortFilterProxyModel(parent)
 {
     setSortLocaleAware(true);
     sort(0);
+    m_selectionModel = new QItemSelectionModel(this);
 }
 
 SortModel::~SortModel()
@@ -63,4 +64,22 @@ void SortModel::setSourceModel(QAbstractItemModel* sourceModel)
         setSortRoleName(m_sortRoleName);
         m_sortRoleName.clear();
     }
+}
+
+void SortModel::setSelected(int indexValue)
+{
+    if( indexValue < 0)
+        return;
+
+    m_selectionModel->select( index(indexValue, 0), QItemSelectionModel::Select );
+    qDebug() << m_selectionModel->selectedIndexes();
+}
+
+void SortModel::toggleSelected(int indexValue )
+{
+    if( indexValue < 0)
+        return;
+    
+    m_selectionModel->select(index(indexValue, 0), QItemSelectionModel::Toggle);
+    qDebug() << m_selectionModel->selectedIndexes();
 }

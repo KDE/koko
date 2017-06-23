@@ -21,6 +21,7 @@
 #define JUNGLE_SORTMODEL_H
 
 #include <QSortFilterProxyModel>
+#include <QItemSelectionModel>
 
 namespace Jungle {
 
@@ -36,9 +37,13 @@ public:
     void setSortRoleName(const QByteArray& name);
 
     virtual void setSourceModel(QAbstractItemModel* sourceModel);
+    
+    Q_INVOKABLE void setSelected( int indexValue);
+    Q_INVOKABLE void toggleSelected( int indexValue);
 
 private:
     QByteArray m_sortRoleName;
+    QItemSelectionModel *m_selectionModel;
 };
 }
 
