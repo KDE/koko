@@ -33,7 +33,7 @@ Item {
     
     Image {
         id: image
-        source: model.cover
+        source: model.cover ? model.cover: model.modelData
         anchors.centerIn: parent
         width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
         height: gridView.cellHeight - (Kirigami.Units.largeSpacing )
@@ -42,6 +42,7 @@ Item {
     }
     
     Kirigami.BasicListItem {
+        visible: isCollection
         label: model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount);
         reserveSpaceForIcon: false
         width: image.width
@@ -69,7 +70,7 @@ Item {
         anchors.fill: parent
         hoverEnabled: true
         onClicked: {
-            imageClicked(model.files, model.display)
+            isCollection ? collectionSelected(model.files, model.display): imageSelected(model.index)
             gridView.currentIndex = model.index
         }
     }
@@ -78,7 +79,7 @@ Item {
             case Qt.Key_Enter:
             case Qt.Key_Return:
             case Qt.Key_Space:
-                imageClicked(model.files, model.display)
+                isCollection ? collectionSelected(model.files, model.display): imageSelected(model.index)
                 gridView.currentIndex = model.index
                 break;
             default:

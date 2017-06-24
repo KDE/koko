@@ -37,9 +37,7 @@ Kirigami.ApplicationWindow {
     
     pageStack.initialPage: AlbumView {
         id: albumView
-        model: imageFolderModel
-        title: "Folders"
-        onImageClicked: pageStack.push(overviewPage, { "model": files, "title": cover})
+        onCollectionSelected: pageStack.push(overviewPage, { "model": files, "title": cover})
     }
     
     globalDrawer: Sidebar {
@@ -142,7 +140,8 @@ Kirigami.ApplicationWindow {
     
     Component {
         id: overviewPage
-        OverviewPage {
+        AlbumView {
+            isCollection: false
             onImageSelected: {
                 currentImage.model = model
                 currentImage.index = currentIndex
@@ -163,4 +162,9 @@ Kirigami.ApplicationWindow {
         imageWidth: root.width        
     }
 
+    Component.onCompleted: {
+        albumView.model = imageFolderModel
+        albumView.title = "Folders"
+        albumView.isCollection = true
+    }
 }

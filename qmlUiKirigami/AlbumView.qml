@@ -28,7 +28,10 @@ Kirigami.ScrollablePage {
     id: page
     
     property alias model: gridView.model
-    signal imageClicked(var files, string cover)
+    property bool isCollection
+    signal collectionSelected(var files, string cover)
+    signal imageSelected(int currentIndex)
+    
     keyboardNavigationEnabled: true
     focus: true
 
