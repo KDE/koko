@@ -5,7 +5,7 @@ find_package(ECM 0.0.9 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
 find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning)
-find_package(KF5 5.5 REQUIRED COMPONENTS Plasma I18n Declarative Config DBusAddons KIO)
+find_package(KF5 5.5 REQUIRED COMPONENTS I18n Declarative Config DBusAddons KIO)
 find_package(Exiv2 0.21 REQUIRED)
 
 find_package(KF5Baloo)
