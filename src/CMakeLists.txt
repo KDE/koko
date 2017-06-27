@@ -68,6 +68,7 @@ target_link_libraries (kokoqmlplugin
     KF5::KIOCore
     KF5::KIOFileWidgets
     KF5::KIOWidgets
+    KF5::GuiAddons
     kokocommon
 )
 

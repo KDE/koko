@@ -21,7 +21,7 @@
 
 import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
-
+import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.1 as Kirigami
 
 Item {
@@ -37,6 +37,10 @@ Item {
         height: gridView.cellHeight - (Kirigami.Units.largeSpacing )
         
         fillMode: Image.PreserveAspectCrop
+    }
+    KQA.QImageItem {
+        anchors.fill: image
+        image: model.thumbnail
     }
     
     Kirigami.BasicListItem {
