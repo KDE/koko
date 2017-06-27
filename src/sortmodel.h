@@ -30,12 +30,20 @@ class SortModel : public QSortFilterProxyModel
     Q_OBJECT
     Q_PROPERTY(QByteArray sortRoleName READ sortRoleName WRITE setSortRoleName)
 public:
+    
+    enum Role {
+        SelectedRole = Qt::UserRole 
+    };
+    
     explicit SortModel(QObject* parent = 0);
     virtual ~SortModel();
 
     QByteArray sortRoleName() const;
     void setSortRoleName(const QByteArray& name);
 
+    QHash<int, QByteArray> roleNames() const;
+    QVariant data(const QModelIndex & index, int role) const;
+    
     virtual void setSourceModel(QAbstractItemModel* sourceModel);
     
     Q_INVOKABLE void setSelected( int indexValue);

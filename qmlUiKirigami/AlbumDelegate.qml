@@ -28,8 +28,6 @@ Item {
     id: albumDelegate
     width: gridView.cellWidth
     height: gridView.cellHeight
-
-    property bool selected: false
     
     Image {
         id: image
@@ -57,12 +55,12 @@ Item {
     
     SelectionButton {
         id: selectionButton
-        visible: ( selected || albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse )
+        visible: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse )
     }
     
     SelectionDelegateHighlight {
         id: selectionHighlight
-        visible: selected
+        visible: model.selected
     }
     
     MouseArea {

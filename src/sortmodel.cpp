@@ -56,6 +56,28 @@ void SortModel::setSortRoleName(const QByteArray& name)
     qDebug() << "Sort role" << name << "not found";
 }
 
+QHash<int, QByteArray> SortModel::roleNames() const
+{
+    QHash<int, QByteArray> hash = sourceModel()->roleNames();
+    hash.insert(Role::SelectedRole, "selected");
+    
+    return hash;
+}
+
+
+QVariant SortModel::data(const QModelIndex& index, int role) const
+{
+    if( !index.isValid()) {
+        return QVariant();
+    }
+    
+    if( role == Role::SelectedRole) {
+        return m_selectionModel->isSelected(index);
+    }
+    
+    return QSortFilterProxyModel::data(index, role);
+}
+
 void SortModel::setSourceModel(QAbstractItemModel* sourceModel)
 {
     QSortFilterProxyModel::setSourceModel(sourceModel);
@@ -71,8 +93,9 @@ void SortModel::setSelected(int indexValue)
     if( indexValue < 0)
         return;
 
-    m_selectionModel->select( index(indexValue, 0), QItemSelectionModel::Select );
-    qDebug() << m_selectionModel->selectedIndexes();
+    QModelIndex index = QSortFilterProxyModel::index( indexValue, 0);
+    m_selectionModel->select( index, QItemSelectionModel::Select );
+    emit dataChanged( index, index);
 }
 
 void SortModel::toggleSelected(int indexValue )
@@ -80,6 +103,7 @@ void SortModel::toggleSelected(int indexValue )
     if( indexValue < 0)
         return;
     
-    m_selectionModel->select(index(indexValue, 0), QItemSelectionModel::Toggle);
-    qDebug() << m_selectionModel->selectedIndexes();
+    QModelIndex index = QSortFilterProxyModel::index( indexValue, 0);
+    m_selectionModel->select( index, QItemSelectionModel::Toggle );
+    emit dataChanged( index, index);
 }

@@ -39,21 +39,18 @@ Kirigami.Icon {
         state: "add"
         onClicked: { 
             if(iconMouseArea.state == "add") {
-                iconMouseArea.state = "remove"
                 albumView.model.setSelected( model.index)
                 gridView.currentIndex = model.index
-                albumDelegate.selected = Qt.binding( function() { return true;})
             } else {
-                iconMouseArea.state = "add"
                 albumView.model.toggleSelected( model.index)
                 gridView.currentIndex = model.index
-                albumDelegate.selected = Qt.binding( function() { return false;})
             }
         }
         
         states: [
             State {
                 name: "add"
+                when: !model.selected
                 PropertyChanges {
                     target: iconArea
                     source: "emblem-added"
@@ -61,7 +58,7 @@ Kirigami.Icon {
             },
             State {
                 name: "remove"
-                
+                when: model.selected
                 PropertyChanges {
                     target: iconArea
                     source: "emblem-remove"
