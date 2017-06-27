@@ -8,8 +8,6 @@ find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positi
 find_package(KF5 5.5 REQUIRED COMPONENTS I18n Declarative Config DBusAddons KIO)
 find_package(Exiv2 0.21 REQUIRED)
 
-find_package(KF5Baloo)
-
 include(FeatureSummary)
 include(ECMAddTests)
 include(KDEInstallDirs)

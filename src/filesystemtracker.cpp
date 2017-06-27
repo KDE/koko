@@ -19,11 +19,7 @@
 
 #include "filesystemtracker.h"
 
-#ifdef BALOO_FOUND
-    #include "balooimagefetcher.h"
-#else
-    #include "filesystemimagefetcher.h"
-#endif
+#include "filesystemimagefetcher.h"
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -96,15 +92,6 @@ FileSystemTracker::~FileSystemTracker()
 
 void FileSystemTracker::init()
 {
-#ifdef BALOO_FOUND
-    BalooImageFetcher* fetcher = new BalooImageFetcher(m_folder);
-    connect(fetcher, &BalooImageFetcher::imageResult,
-            this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
-    connect(fetcher, &BalooImageFetcher::finished,
-            this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
-
-    fetcher->fetch();
-#else
     FileSystemImageFetcher* fetcher = new FileSystemImageFetcher(m_folder);
     connect(fetcher, &FileSystemImageFetcher::imageResult,
             this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
@@ -112,7 +99,6 @@ void FileSystemTracker::init()
             this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
 
     fetcher->fetch();
-#endif
 
     QSqlDatabase::database("fstracker").transaction();
 }

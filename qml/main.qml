@@ -335,27 +335,9 @@ MainWindow {
             }
         }
 
-        Component {
-            id: balooDisabled
-            BalooDisabled {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-            }
-        }
-
         Component.onCompleted: {
             if (kokoConfig) {
-                if (kokoConfig.balooEnabled == false) {
-                    push({
-                        item: balooDisabled,
-                        immediate: true,
-                        replace: true
-                    })
-                    leftSidebar.visible = false
-                    toolBar.visible = false
-                    return;
-                }
-                else if (kokoConfig.initialRun) {
+                if (kokoConfig.initialRun) {
                     push({
                         item: firstRun,
                         immediate: true,

@@ -3,19 +3,9 @@
 #
 set(LIB_SRCS
     imagestorage.cpp
+    filesystemimagefetcher.cpp
+    ${LIB_SRCS}
 )
-
-if (KF5Baloo_FOUND)
-    set(LIB_SRCS
-        balooimagefetcher.cpp
-        ${LIB_SRCS}
-    )
-else()
-    set(LIB_SRCS
-        filesystemimagefetcher.cpp
-        ${LIB_SRCS}
-    )
-endif()
 
 add_library(kokocommon SHARED ${LIB_SRCS})
 target_link_libraries(kokocommon
@@ -23,10 +13,6 @@ target_link_libraries(kokocommon
     Qt5::Positioning
     Qt5::Sql
 )
-
-if (KF5Baloo_FOUND)
-    target_link_libraries(kokocommon KF5::Baloo)
-endif()
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
 
@@ -46,10 +32,6 @@ add_executable(koko
     kokoconfig.cpp
     kdtree.c
 )
-
-if (KF5Baloo_FOUND)
-    target_compile_definitions(koko PRIVATE -DBALOO_FOUND="${KF5Baloo_FOUND}")
-endif()
 
 target_link_libraries(koko
     Qt5::Quick

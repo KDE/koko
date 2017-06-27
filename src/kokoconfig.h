@@ -28,7 +28,6 @@ class KokoConfig : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool initialRun READ initialRun WRITE setInitialRun)
-    Q_PROPERTY(bool balooEnabled READ balooEnabled)
 public:
     KokoConfig(QObject* parent = 0);
     virtual ~KokoConfig();
@@ -36,7 +35,6 @@ public:
     bool initialRun() const;
     void setInitialRun(bool value);
 
-    bool balooEnabled() const;
     void reset();
 private:
     KConfig m_config;
