@@ -59,6 +59,7 @@ set (qml_plugin_SRCS
     sortmodel.cpp
     allimagesmodel.cpp
     fileinfo.cpp
+    imagelistmodel.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})

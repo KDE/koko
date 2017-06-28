@@ -28,6 +28,7 @@
 #include "sortmodel.h"
 #include "allimagesmodel.h"
 #include "fileinfo.h"
+#include "imagelistmodel.h"
 
 #include <QtQml/qqml.h>
 
@@ -45,4 +46,5 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<AllImagesModel> (uri, 0, 1, "AllImagesModel");
     qmlRegisterType<Jungle::SortModel> (uri, 0, 1, "SortModel");
     qmlRegisterType<FileInfo> (uri, 0, 1, "FileInfo");
+    qmlRegisterType<ImageListModel> (uri, 0, 1, "ImageListModel");
 }
