@@ -48,6 +48,7 @@ public:
     
     Q_INVOKABLE void setSelected( int indexValue);
     Q_INVOKABLE void toggleSelected( int indexValue);
+    Q_INVOKABLE void clearSelections();
 
 private:
     QByteArray m_sortRoleName;

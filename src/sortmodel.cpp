@@ -107,3 +107,14 @@ void SortModel::toggleSelected(int indexValue )
     m_selectionModel->select( index, QItemSelectionModel::Toggle );
     emit dataChanged( index, index);
 }
+
+void SortModel::clearSelections()
+{
+    if(m_selectionModel->hasSelection()) {
+        QModelIndexList selectedIndex = m_selectionModel->selectedIndexes();
+        m_selectionModel->clear();
+        foreach(QModelIndex indexValue, selectedIndex) {
+            emit dataChanged( indexValue, indexValue);
+        }
+    }
+}

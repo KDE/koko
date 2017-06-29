@@ -87,6 +87,7 @@ Item {
     }
     
     function activate( ) {
+        gridView.model.clearSelections()
         switch( model.itemType) {
             case Koko.Types.Album: {
                 imageListModel.imageList = model.files
