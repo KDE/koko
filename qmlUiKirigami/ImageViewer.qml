@@ -105,6 +105,10 @@ Rectangle {
             interactive: contentWidth > width || contentHeight > height
             onInteractiveChanged: listView.interactive = !interactive;
             z: interactive ? 1000 : 0
+
+            Controls.ScrollBar.vertical: Controls.ScrollBar {}
+            Controls.ScrollBar.horizontal: Controls.ScrollBar {}
+
             PinchArea {
                 width: Math.max(flick.contentWidth, flick.width)
                 height: Math.max(flick.contentHeight, flick.height)
