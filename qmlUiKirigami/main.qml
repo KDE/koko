@@ -160,7 +160,8 @@ Kirigami.ApplicationWindow {
         currentIndex: currentImage.index
         model: currentImage.model        
         focus: true
-        imageWidth: root.width        
+        imageWidth: root.width
+        imageHeight: root.height
     }
 
     Component.onCompleted: {

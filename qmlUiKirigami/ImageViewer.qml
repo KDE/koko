@@ -1,5 +1,7 @@
 /*
+ * Copyright (C) 2017 Marco Martin <mart@kde.org>
  * Copyright (C) 2017 Atul Sharma <atulsharma406@gmail.com>
+ * Copyright (C) 2015 Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -31,6 +33,7 @@ Rectangle {
     property alias currentIndex: listView.currentIndex
     
     property int imageWidth
+    property int imageHeight
 
     state: "closed"
     states: [
@@ -94,17 +97,61 @@ Rectangle {
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
         delegate: Flickable {
-            width: root.width
-            height: root.height
-            //TODO: zooming /flicking controls here, can be partly lifted from the old implementation
-            Image {
-                source: model.url
-                sourceSize.width: imageWidth
-                
-            /*   MouseArea {
-                    anchors.fill: parent
-                    onClicked: console.log(model)
-                }*/
+            id: flick
+            width: imageWidth
+            height: imageHeight
+            contentWidth: imageWidth
+            contentHeight: imageHeight
+            interactive: contentWidth > width || contentHeight > height
+            onInteractiveChanged: listView.interactive = !interactive;
+            z: interactive ? 1000 : 0
+            PinchArea {
+                width: Math.max(flick.contentWidth, flick.width)
+                height: Math.max(flick.contentHeight, flick.height)
+
+                property real initialWidth
+                property real initialHeight
+
+                onPinchStarted: {
+                    initialWidth = flick.contentWidth
+                    initialHeight = flick.contentHeight
+                }
+
+                onPinchUpdated: {
+                    // adjust content pos due to drag
+                    flick.contentX += pinch.previousCenter.x - pinch.center.x
+                    flick.contentY += pinch.previousCenter.y - pinch.center.y
+
+                    // resize content
+                    flick.resizeContent(Math.max(imageWidth, initialWidth * pinch.scale), Math.max(imageHeight, initialHeight * pinch.scale), pinch.center)
+                }
+
+                onPinchFinished: {
+                    // Move its content within bounds.
+                    flick.returnToBounds();
+                }
+
+
+                Image {
+                    id: image
+                    width: flick.contentWidth
+                    height: flick.contentHeight
+                    source: model.url
+                    fillMode: Image.PreserveAspectFit
+                    asynchronous: true
+                    sourceSize.width: imageWidth * 2
+                    sourceSize.height: imageHeight * 2
+                    MouseArea {
+                        anchors.fill: parent
+                        onDoubleClicked: {
+                            if (flick.interactive) {
+                                flick.resizeContent(imageWidth, imageHeight, {x: imageWidth/2, y: imageHeight/2});
+                            } else {
+                                flick.resizeContent(imageWidth * 2, imageHeight * 2, {x: mouseX, y: mouseY});
+                            }
+                        }
+                    }
+                }
             }
         }
     }
