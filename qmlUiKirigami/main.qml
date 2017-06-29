@@ -145,6 +145,7 @@ Kirigami.ApplicationWindow {
             onImageSelected: {
                 currentImage.model = model
                 currentImage.index = currentIndex
+                imageViewer.state = "open";
             }
         }
     }
@@ -157,7 +158,7 @@ Kirigami.ApplicationWindow {
         width: overlay.width
         height: overlay.height
         currentIndex: currentImage.index
-        listModel: currentImage.model        
+        model: currentImage.model        
         focus: true
         imageWidth: root.width        
     }

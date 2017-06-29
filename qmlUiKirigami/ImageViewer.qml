@@ -27,23 +27,34 @@ import org.kde.kirigami 2.0 as Kirigami
 Rectangle {
     id: root
     
-    property alias listModel: listView.model
+    property alias model: listView.model
     property alias currentIndex: listView.currentIndex
     
     property int imageWidth
 
+    state: "closed"
     states: [
         State {
             name: "open"
-            when: listModel != null
-            PropertyChanges { target: root; visible: true}
-            PropertyChanges { target: root; opacity: 1}
+            PropertyChanges {
+                target: root
+                visible: true
+            }
+            PropertyChanges {
+                target: root
+                opacity: 1
+            }
         },
         State {
             name: "closed"
-            when: listModel == null
-            PropertyChanges { target: root; opacity: 0}
-            PropertyChanges { target: root; visible: false}
+            PropertyChanges {
+                target: root
+                opacity: 0
+            }
+            PropertyChanges {
+                target: root
+                visible: false
+            }
         }
     ]
     
@@ -52,14 +63,26 @@ Rectangle {
             from: "open"
             to: "closed"
             SequentialAnimation {
-                OpacityAnimator { target: root; duration: 500 }
-                PropertyAnimation { target: root; property: "visible"; duration: 500}
+                OpacityAnimator {
+                    target: root
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InQuad
+                }
+                PropertyAnimation {
+                    target: root
+                    property: "visible"
+                    duration: Kirigami.Units.longDuration
+                }
             }
         },
         Transition {
             from: "closed"
             to: "open"
-            OpacityAnimator { target: root; duration: 1000}
+            OpacityAnimator {
+                target: root
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.OutQuad
+            }
         }
     ]
     //NOTE: this is the only place where hardcoded black is fine
@@ -93,6 +116,6 @@ Rectangle {
     //FIXME: placeholder, will have to use the state machine
     Controls.Button {
         text: "Back"
-        onClicked: currentImage.model = null
+        onClicked: root.state = "closed"
     }
 }
