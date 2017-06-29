@@ -191,6 +191,7 @@ Rectangle {
                     source: model.url
                     fillMode: Image.PreserveAspectFit
                     asynchronous: true
+                    autoTransform: true
                     sourceSize.width: imageWidth * 2
                     sourceSize.height: imageHeight * 2
                     MouseArea {

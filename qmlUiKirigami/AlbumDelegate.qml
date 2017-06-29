@@ -33,6 +33,7 @@ Item {
     Image {
         id: image
         source: model.itemType == Koko.Types.Album ? model.cover: (model.itemType == Koko.Types.Image ? model.url: ""/*this case is for Koko.Types.Folder*/)
+        autoTransform: true
         anchors.centerIn: parent
         width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
         height: gridView.cellHeight - (Kirigami.Units.largeSpacing )
