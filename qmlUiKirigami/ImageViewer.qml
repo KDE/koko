@@ -47,6 +47,10 @@ Rectangle {
                 target: root
                 opacity: 1
             }
+            PropertyChanges {
+                target: listView
+                focus: true
+            }
         },
         State {
             name: "closed"
@@ -76,6 +80,9 @@ Rectangle {
                     property: "visible"
                     duration: Kirigami.Units.longDuration
                 }
+                ScriptAction {
+                    script: applicationWindow().pageStack.forceActiveFocus();
+                }
             }
         },
         Transition {
@@ -90,7 +97,8 @@ Rectangle {
     ]
     //NOTE: this is the only place where hardcoded black is fine
     color: "black"
-        
+
+    Keys.onEscapePressed: root.state = "closed";
     ListView {
         id: listView
         anchors.fill: parent
