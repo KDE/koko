@@ -123,14 +123,62 @@ Rectangle {
                     flick.contentY += pinch.previousCenter.y - pinch.center.y
 
                     // resize content
-                    flick.resizeContent(Math.max(imageWidth, initialWidth * pinch.scale), Math.max(imageHeight, initialHeight * pinch.scale), pinch.center)
+                    flick.resizeContent(Math.max(imageWidth*0.7, initialWidth * pinch.scale), Math.max(imageHeight*0.7, initialHeight * pinch.scale), pinch.center)
                 }
 
                 onPinchFinished: {
                     // Move its content within bounds.
-                    flick.returnToBounds();
+                    if (flick.contentWidth < root.imageWidth || 
+                        flick.contentHeight < root.imageHeight) {
+                        zoomAnim.x = 0;
+                        zoomAnim.y = 0;
+                        zoomAnim.width = root.imageWidth;
+                        zoomAnim.height = root.imageHeight;
+                        zoomAnim.running = true;
+                    } else {
+                        flick.returnToBounds();
+                    }
                 }
 
+                ParallelAnimation {
+                    id: zoomAnim
+                    property real x: 0
+                    property real y: 0
+                    property real width: root.imageWidth
+                    property real height: root.imageHeight
+                    NumberAnimation {
+                        target: flick
+                        property: "contentWidth"
+                        from: flick.contentWidth
+                        to: zoomAnim.width
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad 
+                    }
+                    NumberAnimation {
+                        target: flick
+                        property: "contentHeight"
+                        from: flick.contentHeight
+                        to: zoomAnim.height
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad 
+                    }
+                    NumberAnimation {
+                        target: flick
+                        property: "contentY"
+                        from: flick.contentY
+                        to: zoomAnim.y
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad 
+                    }
+                    NumberAnimation {
+                        target: flick
+                        property: "contentX"
+                        from: flick.contentX
+                        to: zoomAnim.x
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad 
+                    }
+                }
 
                 Image {
                     id: image
@@ -145,9 +193,17 @@ Rectangle {
                         anchors.fill: parent
                         onDoubleClicked: {
                             if (flick.interactive) {
-                                flick.resizeContent(imageWidth, imageHeight, {x: imageWidth/2, y: imageHeight/2});
+                                zoomAnim.x = 0;
+                                zoomAnim.y = 0;
+                                zoomAnim.width = root.imageWidth;
+                                zoomAnim.height = root.imageHeight;
+                                zoomAnim.running = true;
                             } else {
-                                flick.resizeContent(imageWidth * 2, imageHeight * 2, {x: mouseX, y: mouseY});
+                                zoomAnim.x = mouse.x * 2;
+                                zoomAnim.y = mouse.y *2;
+                                zoomAnim.width = root.imageWidth * 3;
+                                zoomAnim.height = root.imageHeight * 3;
+                                zoomAnim.running = true;
                             }
                         }
                     }
