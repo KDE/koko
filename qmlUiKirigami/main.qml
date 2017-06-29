@@ -141,7 +141,7 @@ Kirigami.ApplicationWindow {
     Component {
         id: overviewPage
         AlbumView {
-            isCollection: false
+            id: overviewPageAlbum
             onImageSelected: {
                 currentImage.model = model
                 currentImage.index = currentIndex
@@ -165,6 +165,5 @@ Kirigami.ApplicationWindow {
     Component.onCompleted: {
         albumView.model = imageFolderModel
         albumView.title = "Folders"
-        albumView.isCollection = true
     }
 }

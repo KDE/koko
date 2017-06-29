@@ -22,6 +22,7 @@
 import QtQuick 2.7
 
 import org.kde.kirigami 2.1 as Kirigami
+import org.kde.koko 0.1 as Koko
 
 Kirigami.Icon {
     id: iconArea
@@ -39,10 +40,10 @@ Kirigami.Icon {
         state: "add"
         onClicked: { 
             if(iconMouseArea.state == "add") {
-                albumView.model.setSelected( model.index)
+                gridView.model.setSelected(model.index)
                 gridView.currentIndex = model.index
             } else {
-                albumView.model.toggleSelected( model.index)
+                gridView.model.toggleSelected(model.index)
                 gridView.currentIndex = model.index
             }
         }

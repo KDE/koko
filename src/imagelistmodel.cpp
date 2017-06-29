@@ -81,6 +81,7 @@ QStringList ImageListModel::imageList() const
 void ImageListModel::setImageList(QStringList images)
 {
     m_images = images;
+    emit imageListChanged();
 }
 
 #include "moc_imagelistmodel.cpp"

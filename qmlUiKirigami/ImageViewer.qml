@@ -75,7 +75,7 @@ Rectangle {
             height: root.height
             //TODO: zooming /flicking controls here, can be partly lifted from the old implementation
             Image {
-                source: model.modelData
+                source: model.url
                 sourceSize.width: imageWidth
                 
             /*   MouseArea {

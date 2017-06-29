@@ -23,6 +23,7 @@ import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.1 as Kirigami
+import org.kde.koko 0.1 as Koko
 
 Item {
     id: albumDelegate
@@ -31,7 +32,7 @@ Item {
     
     Image {
         id: image
-        source: model.cover ? model.cover: model.modelData
+        source: model.itemType == Koko.Types.Album ? model.cover: (model.itemType == Koko.Types.Image ? model.url: ""/*this case is for Koko.Types.Folder*/)
         anchors.centerIn: parent
         width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
         height: gridView.cellHeight - (Kirigami.Units.largeSpacing )
@@ -44,7 +45,7 @@ Item {
     }
     
     Kirigami.BasicListItem {
-        visible: isCollection
+        visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
         label: model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount);
         reserveSpaceForIcon: false
         width: image.width
@@ -71,21 +72,41 @@ Item {
         id: albumThumbnailMouseArea
         anchors.fill: parent
         hoverEnabled: true
-        onClicked: {
-            isCollection ? collectionSelected(model.files, model.display): imageSelected(model.index)
-            gridView.currentIndex = model.index
-        }
+        onClicked: activate();
     }
     Keys.onPressed: {
         switch (event.key) {
             case Qt.Key_Enter:
             case Qt.Key_Return:
             case Qt.Key_Space:
-                isCollection ? collectionSelected(model.files, model.display): imageSelected(model.index)
-                gridView.currentIndex = model.index
+                activate();
                 break;
             default:
                 break;
         }
+    }
+    
+    function activate( ) {
+        switch( model.itemType) {
+            case Koko.Types.Album: {
+                imageListModel.imageList = model.files
+                sortedListModel.sourceModel = imageListModel
+                collectionSelected(sortedListModel, model.display)
+                break;
+            }
+            case Koko.Types.Folder: {
+                console.log("Folder")
+                break;
+            }
+            case Koko.Types.Image: {
+                imageSelected(model.index)
+                break;
+            }
+            default: {
+                console.log("Unknown")
+                break;
+            }
+        }
+        gridView.currentIndex = model.index
     }
 }

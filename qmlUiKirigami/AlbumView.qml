@@ -23,13 +23,13 @@ import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
 
 import org.kde.kirigami 2.1 as Kirigami
+import org.kde.koko 0.1 as Koko
 
 Kirigami.ScrollablePage {
     id: page
     
     property alias model: gridView.model
-    property bool isCollection
-    signal collectionSelected(var files, string cover)
+    signal collectionSelected(Koko.SortModel files, string cover)
     signal imageSelected(int currentIndex)
     
     keyboardNavigationEnabled: true
@@ -49,4 +49,11 @@ Kirigami.ScrollablePage {
         delegate: AlbumDelegate {}
     }
     
+    Koko.SortModel {
+        id: sortedListModel
+    }
+    Koko.ImageListModel {
+        id: imageListModel
+    }
+
 }
