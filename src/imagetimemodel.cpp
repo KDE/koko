@@ -19,6 +19,8 @@
 
 #include "imagetimemodel.h"
 #include "imagestorage.h"
+#include "types.h"
+
 #include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
 
@@ -44,6 +46,7 @@ QHash<int, QByteArray> ImageTimeModel::roleNames() const
     hash.insert(FileCountRole, "fileCount");
     hash.insert(CoverRole, "cover");
     hash.insert(DateRole, "date");
+    hash.insert(ItemTypeRole, "itemType");
 
     return hash;
 }
@@ -79,6 +82,10 @@ QVariant ImageTimeModel::data(const QModelIndex& index, int role) const
         case DateRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
             return ImageStorage::instance()->dateForKey(key, tg);
+        }
+        
+        case ItemTypeRole: {
+            return Types::Album;
         }
     }
 

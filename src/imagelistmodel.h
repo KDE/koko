@@ -35,7 +35,8 @@ public:
     
     enum Roles {
         UrlRole = Qt::UserRole + 1,
-        MimeTypeRole = Qt::UserRole + 2
+        MimeTypeRole = Qt::UserRole + 2,
+        ItemTypeRole = Qt::UserRole + 3
     };
     
     explicit ImageListModel(QObject* parent = 0);

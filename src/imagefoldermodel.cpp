@@ -18,6 +18,7 @@
  */
 
 #include "imagefoldermodel.h"
+#include "types.h"
 
 #include <QImage>
 #include <QPixmap>
@@ -85,7 +86,8 @@ QHash<int, QByteArray> ImageFolderModel::roleNames() const
         { UrlRole, "url" },
         { MimeTypeRole, "mimeType" },
         { Thumbnail, "thumbnail" },
-        { SelectedRole, "selected" }
+        { SelectedRole, "selected" },
+        { ItemTypeRole, "itemType"}
     };
 }
 
@@ -165,6 +167,16 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
     //TODO: implement selection
     case SelectedRole:
         return false;
+        
+    case ItemTypeRole: {
+        KFileItem item = itemForIndex(index);
+        if( item.isDir()) {
+            return Types::Folder;
+        } else {
+            return Types::Image;
+        }
+    }
+    
     default:
         return KDirModel::data(index, role);
     }

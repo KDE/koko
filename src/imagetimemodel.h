@@ -35,7 +35,8 @@ public:
         FilesRole = Qt::UserRole + 1,
         FileCountRole,
         CoverRole,
-        DateRole
+        DateRole,
+        ItemTypeRole
     };
 
     virtual QHash< int, QByteArray > roleNames() const;

@@ -19,6 +19,8 @@
 
 #include "imagelocationmodel.h"
 #include "imagestorage.h"
+#include "types.h"
+
 #include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
 
@@ -42,6 +44,7 @@ QHash<int, QByteArray> ImageLocationModel::roleNames() const
     hash.insert(FilesRole, "files");
     hash.insert(FileCountRole, "fileCount");
     hash.insert(CoverRole, "cover");
+    hash.insert(ItemTypeRole, "itemType");
 
     return hash;
 }
@@ -72,6 +75,10 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         case CoverRole: {
             auto group = static_cast<ImageStorage::LocationGroup>(m_group);
             return ImageStorage::instance()->imageForLocation(key, group);
+        }
+        
+        case ItemTypeRole: {
+            return Types::Album;
         }
     }
 
