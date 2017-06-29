@@ -49,6 +49,16 @@ Kirigami.ScrollablePage {
         delegate: AlbumDelegate {}
     }
     
+    Keys.onPressed: {
+        switch (event.key) {
+            case Qt.Key_Escape:
+                gridView.model.clearSelections()
+                break;
+            default:
+                break;
+        }
+    }
+    
     Koko.SortModel {
         id: sortedListModel
     }
