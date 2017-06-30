@@ -109,6 +109,5 @@ Item {
                 break;
             }
         }
-        gridView.currentIndex = model.index
     }
 }
