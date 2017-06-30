@@ -112,7 +112,7 @@ Rectangle {
             contentHeight: imageHeight
             interactive: contentWidth > width || contentHeight > height
             onInteractiveChanged: listView.interactive = !interactive;
-            z: interactive ? 1000 : 0
+            z: index == listView.currentIndex ? 1000 : 0
 
             Controls.ScrollBar.vertical: Controls.ScrollBar {}
             Controls.ScrollBar.horizontal: Controls.ScrollBar {}
@@ -217,6 +217,30 @@ Rectangle {
                                 zoomAnim.width = root.imageWidth * 3;
                                 zoomAnim.height = root.imageHeight * 3;
                                 zoomAnim.running = true;
+                            }
+                        }
+                        onWheel: {
+                            if (wheel.modifiers & Qt.ControlModifier) {
+                                if (wheel.angleDelta.y != 0) {
+                                    var factor = 1 + wheel.angleDelta.y / 600;
+                                    zoomAnim.running = false;
+
+                                    zoomAnim.width = Math.min(Math.max(root.imageWidth, zoomAnim.width * factor), root.imageWidth * 4);
+                                    zoomAnim.height = Math.min(Math.max(root.imageHeight, zoomAnim.height * factor), root.imageHeight * 4);
+
+                                    //actual factors, may be less than factor
+                                    var xFactor = zoomAnim.width / flick.contentWidth;
+                                    var yFactor = zoomAnim.height / flick.contentHeight;
+
+                                    zoomAnim.x = flick.contentX * xFactor + (((wheel.x - flick.contentX) * xFactor) - (wheel.x - flick.contentX))
+                                    zoomAnim.y = flick.contentY * yFactor + (((wheel.y - flick.contentY) * yFactor) - (wheel.y - flick.contentY))
+                                    zoomAnim.running = true;
+
+                                } else if (wheel.pixelDelta.y != 0) {
+                                    flick.resizeContent(Math.min(Math.max(root.imageWidth, flick.contentWidth + wheel.pixelDelta.y), root.imageWidth * 4),
+                                                        Math.min(Math.max(root.imageHeight, flick.contentHeight + wheel.pixelDelta.y), root.imageHeight * 4),
+                                                        wheel);
+                                }
                             }
                         }
                     }
