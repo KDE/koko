@@ -41,10 +41,10 @@ Kirigami.Icon {
         onClicked: { 
             if(iconMouseArea.state == "add") {
                 gridView.model.setSelected(model.index)
-                gridView.currentIndex = model.index
+                currentImage.view.currentIndex = model.index
             } else {
                 gridView.model.toggleSelected(model.index)
-                gridView.currentIndex = model.index
+                currentImage.view.currentIndex = model.index
             }
         }
         

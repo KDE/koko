@@ -33,6 +33,10 @@ Kirigami.ApplicationWindow {
         id: currentImage
         property int index
         property var model
+        property GridView view : pageStack.currentItem.flickable
+        onIndexChanged: {
+            view.currentIndex = currentImage.index
+        }
     }
     
     pageStack.initialPage: AlbumView {
