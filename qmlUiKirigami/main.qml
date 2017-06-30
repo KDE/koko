@@ -41,7 +41,6 @@ Kirigami.ApplicationWindow {
     
     pageStack.initialPage: AlbumView {
         id: albumView
-        onCollectionSelected: pageStack.push(overviewPage, { "model": files, "title": cover})
     }
     
     globalDrawer: Sidebar {
@@ -143,18 +142,6 @@ Kirigami.ApplicationWindow {
         id: imageLocationModelCity
         sourceModel: Koko.ImageLocationModel {
             group: Koko.ImageLocationModel.City
-        }
-    }    
-    
-    Component {
-        id: overviewPage
-        AlbumView {
-            id: overviewPageAlbum
-            onImageSelected: {
-                currentImage.model = model
-                currentImage.index = currentIndex
-                imageViewer.state = "open";
-            }
         }
     }
     

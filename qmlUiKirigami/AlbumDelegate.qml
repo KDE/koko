@@ -47,7 +47,8 @@ Item {
     
     Kirigami.BasicListItem {
         visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
-        label: model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount);
+        label: model.fileCount ? (model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount))
+                                                    : qsTr(" %1").arg(model.display)
         reserveSpaceForIcon: false
         width: image.width
         anchors.left: image.left
@@ -93,11 +94,13 @@ Item {
             case Koko.Types.Album: {
                 imageListModel.imageList = model.files
                 sortedListModel.sourceModel = imageListModel
-                collectionSelected(sortedListModel, model.display)
+                collectionSelected( sortedListModel, model.display)
                 break;
             }
             case Koko.Types.Folder: {
-                console.log("Folder")
+                imageFolderModel.url = model.url
+                sortedListModel.sourceModel = imageFolderModel
+                folderSelected( sortedListModel, model.display)
                 break;
             }
             case Koko.Types.Image: {

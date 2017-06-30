@@ -86,7 +86,6 @@ QHash<int, QByteArray> ImageFolderModel::roleNames() const
         { UrlRole, "url" },
         { MimeTypeRole, "mimeType" },
         { Thumbnail, "thumbnail" },
-        { SelectedRole, "selected" },
         { ItemTypeRole, "itemType"}
     };
 }
@@ -164,9 +163,6 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
         m_previewTimer->start(100);
         const_cast<ImageFolderModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
     }
-    //TODO: implement selection
-    case SelectedRole:
-        return false;
         
     case ItemTypeRole: {
         KFileItem item = itemForIndex(index);

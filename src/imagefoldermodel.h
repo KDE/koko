@@ -53,8 +53,7 @@ public:
         UrlRole = Qt::UserRole + 1,
         MimeTypeRole = Qt::UserRole + 2,
         Thumbnail  = Qt::UserRole + 3,
-        SelectedRole = Qt::UserRole + 4,
-        ItemTypeRole = Qt::UserRole + 5
+        ItemTypeRole = Qt::UserRole + 4
     };
 
     ImageFolderModel(QObject* parent=0);
