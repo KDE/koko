@@ -34,6 +34,7 @@ Kirigami.GlobalDrawer {
     actions: [
         Kirigami.Action {
             text: qsTr("Locations")
+            iconName: "tag-places"
             enabled: false
         },
         Kirigami.Action {
@@ -66,6 +67,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: qsTr("Time")
             enabled: false
+            iconName: "view-calendar"
         },
         Kirigami.Action {
             id: yearAction
@@ -106,6 +108,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: qsTr("Path")
             enabled: false
+            iconName: "folder-symbolic"
         },
         Kirigami.Action {
             id: folderAction
@@ -118,7 +121,7 @@ Kirigami.GlobalDrawer {
         }
     ]      
     
-    Controls.Button {
+    Controls.ToolButton {
         id: settingsButton
         text: qsTr("Settings")
         checkable: true

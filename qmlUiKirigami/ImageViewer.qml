@@ -104,7 +104,7 @@ Rectangle {
         anchors.fill: parent
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
-        onMovementEnded: currentIndex = indexAt(contentX+1, 1);
+        onMovementEnded: currentImage.index = indexAt(contentX+1, 1);
 
         delegate: Flickable {
             id: flick
