@@ -104,6 +104,8 @@ Rectangle {
         anchors.fill: parent
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
+        onMovementEnded: currentIndex = indexAt(contentX+1, 1);
+
         delegate: Flickable {
             id: flick
             width: imageWidth
@@ -112,6 +114,7 @@ Rectangle {
             contentHeight: imageHeight
             interactive: contentWidth > width || contentHeight > height
             onInteractiveChanged: listView.interactive = !interactive;
+            clip: true
             z: index == listView.currentIndex ? 1000 : 0
 
             Controls.ScrollBar.vertical: Controls.ScrollBar {}
