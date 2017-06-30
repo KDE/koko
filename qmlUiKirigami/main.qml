@@ -94,6 +94,7 @@ Kirigami.ApplicationWindow {
         sourceModel: Koko.ImageTimeModel {
             group: Koko.ImageTimeModel.Year
         }
+        sortRoleName: "date"
     }
     
     Koko.SortModel {
@@ -101,6 +102,7 @@ Kirigami.ApplicationWindow {
         sourceModel: Koko.ImageTimeModel {
             group: Koko.ImageTimeModel.Month
         }
+        sortRoleName: "date"
     }
     
     Koko.SortModel {
@@ -108,6 +110,7 @@ Kirigami.ApplicationWindow {
         sourceModel: Koko.ImageTimeModel {
             group: Koko.ImageTimeModel.Week
         }
+        sortRoleName: "date"
     }
     
     Koko.SortModel {
@@ -115,6 +118,7 @@ Kirigami.ApplicationWindow {
         sourceModel: Koko.ImageTimeModel {
             group: Koko.ImageTimeModel.Day
         }
+        sortRoleName: "date"
     }
     
     Koko.SortModel {
