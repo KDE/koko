@@ -1,1 +1,0 @@
-install(DIRECTORY ./ DESTINATION ${DATA_INSTALL_DIR}/koko PATTERN "*.qml")

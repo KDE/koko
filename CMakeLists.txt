@@ -27,7 +27,6 @@ kde_enable_exceptions()
 
 add_subdirectory(src)
 add_subdirectory(autotests)
-add_subdirectory(qml)
 add_subdirectory(qmlUiKirigami)
 add_subdirectory(icons)
 

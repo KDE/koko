@@ -49,8 +49,6 @@ int main(int argc, char** argv)
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
-    parser.addOption(QCommandLineOption("phone", i18n("Run the phone version of koko")));
-    parser.addOption(QCommandLineOption("kirigami", i18n("Run the kirigami version of koko")));
     parser.addHelpOption();
     parser.process(app);
 
@@ -90,14 +88,7 @@ int main(int argc, char** argv)
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
 
-    QString path;
-    if (parser.isSet("phone") || qgetenv("PLASMA_PLATFORM") == QByteArray("phone")) {
-        path = QStandardPaths::locate(QStandardPaths::DataLocation, "mobilemain.qml");
-    } else if( parser.isSet("kirigami") || qgetenv("PLASMA_PLATFORM") == QByteArray("kirigami")) {
-        path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/main.qml");
-    } else {
-        path = QStandardPaths::locate(QStandardPaths::DataLocation, "main.qml");
-    }
+    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/main.qml");
     QQmlComponent component(&engine, path);
     if (component.isError()) {
         std::cout << component.errorString().toUtf8().constData() << std::endl;
