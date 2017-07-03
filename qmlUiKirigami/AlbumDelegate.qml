@@ -61,7 +61,7 @@ Item {
     
     SelectionButton {
         id: selectionButton
-        visible: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse )
+        visible: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse ) && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
     }
     
     SelectionDelegateHighlight {

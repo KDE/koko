@@ -38,13 +38,20 @@ Kirigami.ScrollablePage {
     
     contextualActions: [
         Kirigami.Action {
-            text: "Select All"
+            text: i18n("Select All")
+            enabled: model.containImages
             onTriggered: model.selectAll()
         },
         Kirigami.Action {
-            text: "Deselect All"
+            text: i18n("Deselect All")
+            enabled: model.containImages
             onTriggered: model.clearSelections()
+        },
+        Kirigami.Action {
+            text: i18n("Delete Selection")
+            enabled: model.hasSelectedImages
         }
+        
     ]
 
     GridView {

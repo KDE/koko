@@ -18,6 +18,7 @@
  */
 
 #include "sortmodel.h"
+#include "types.h"
 #include "roles.h"
 #include <QDebug>
 #include <QTimer>
@@ -123,6 +124,25 @@ void SortModel::setSourceModel(QAbstractItemModel* sourceModel)
     }
 }
 
+bool SortModel::containImages()
+{
+    for(int row = 0; row < rowCount(); row++)
+    {
+        if( Types::Image == data( index( row, 0, QModelIndex()), Roles::ItemTypeRole))
+        {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+
+bool SortModel::hasSelectedImages() 
+{
+    return m_selectionModel->hasSelection();
+}
+
 void SortModel::setSelected(int indexValue)
 {
     if( indexValue < 0)
@@ -131,6 +151,7 @@ void SortModel::setSelected(int indexValue)
     QModelIndex index = QSortFilterProxyModel::index( indexValue, 0);
     m_selectionModel->select( index, QItemSelectionModel::Select );
     emit dataChanged( index, index);
+    emit selectedImagesChanged();
 }
 
 void SortModel::toggleSelected(int indexValue )
@@ -141,6 +162,7 @@ void SortModel::toggleSelected(int indexValue )
     QModelIndex index = QSortFilterProxyModel::index( indexValue, 0);
     m_selectionModel->select( index, QItemSelectionModel::Toggle );
     emit dataChanged( index, index);
+    emit selectedImagesChanged();
 }
 
 void SortModel::clearSelections()
@@ -152,6 +174,7 @@ void SortModel::clearSelections()
             emit dataChanged( indexValue, indexValue);
         }
     }
+    emit selectedImagesChanged();
 }
 
 void SortModel::selectAll() 
@@ -168,10 +191,11 @@ void SortModel::selectAll()
     
     foreach(QModelIndex index, indexList)
     {
-        m_selectionModel->select( index, QItemSelectionModel::Select);
+        if( Types::Image == data(index, Roles::ItemTypeRole))
+            m_selectionModel->select( index, QItemSelectionModel::Select);
     }
     emit dataChanged( index( 0, 0, QModelIndex()), index( rowCount()-1, 0, QModelIndex()) );
-    
+    emit selectedImagesChanged();
 }
 
 void SortModel::delayedPreview()

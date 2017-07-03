@@ -34,6 +34,8 @@ class SortModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QByteArray sortRoleName READ sortRoleName WRITE setSortRoleName)
+    Q_PROPERTY(bool containImages READ containImages NOTIFY containImagesChanged)
+    Q_PROPERTY(bool hasSelectedImages READ hasSelectedImages NOTIFY selectedImagesChanged)
 public:
     explicit SortModel(QObject* parent = 0);
     virtual ~SortModel();
@@ -45,6 +47,8 @@ public:
     QVariant data(const QModelIndex & index, int role) const;
     
     virtual void setSourceModel(QAbstractItemModel* sourceModel);
+    bool containImages();
+    bool hasSelectedImages();
     
     Q_INVOKABLE void setSelected( int indexValue);
     Q_INVOKABLE void toggleSelected( int indexValue);
@@ -55,6 +59,10 @@ protected Q_SLOTS:
     void showPreview(const KFileItem &item, const QPixmap &preview);
     void previewFailed(const KFileItem &item);
     void delayedPreview();
+    
+signals:
+    void containImagesChanged();
+    void selectedImagesChanged();
 
 private:
     QByteArray m_sortRoleName;
