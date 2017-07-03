@@ -23,8 +23,6 @@
 #include <QSize>
 #include <kdirmodel.h>
 #include <QVariant>
-#include <kimagecache.h>
-#include <kshareddatacache.h>
 
 class QTimer;
 
@@ -49,13 +47,6 @@ class ImageFolderModel : public KDirModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 
 public:
-    enum Roles {
-        UrlRole = Qt::UserRole + 1,
-        MimeTypeRole = Qt::UserRole + 2,
-        Thumbnail  = Qt::UserRole + 3,
-        ItemTypeRole = Qt::UserRole + 4
-    };
-
     ImageFolderModel(QObject* parent=0);
     virtual ~ImageFolderModel();
 
@@ -76,24 +67,12 @@ public:
       */
     Q_INVOKABLE void emptyTrash();
 
-protected Q_SLOTS:
-    void showPreview(const KFileItem &item, const QPixmap &preview);
-    void previewFailed(const KFileItem &item);
-    void delayedPreview();
-
 Q_SIGNALS:
     void countChanged();
     void urlChanged();
 
 private:
     QStringList m_mimeTypes;
-
-    //previews
-    QTimer *m_previewTimer;
-    QHash<QUrl, QPersistentModelIndex> m_filesToPreview;
-    QSize m_screenshotSize;
-    QHash<QUrl, QPersistentModelIndex> m_previewJobs;
-    KImageCache* m_imageCache;
 };
 
 #endif // IMAGEFOLDERMODEL_H

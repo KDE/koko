@@ -19,23 +19,20 @@
 
 #include "imagefoldermodel.h"
 #include "types.h"
+#include "roles.h"
 
 #include <QImage>
 #include <QPixmap>
-#include <QTimer>
 #include <QProcess>
 #include <QDebug>
 #include <QMimeDatabase>
 #include <QStandardPaths>
 
 #include <kdirlister.h>
-#include <kio/previewjob.h>
 #include <KIO/EmptyTrashJob>
-#include <kimagecache.h>
 
 ImageFolderModel::ImageFolderModel(QObject *parent)
-    : KDirModel(parent),
-      m_screenshotSize(256, 256)
+    : KDirModel(parent)
 {
     QMimeDatabase db;
     QList<QMimeType> mimeList = db.allMimeTypes();
@@ -48,15 +45,6 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
     }
 
     dirLister()->setMimeFilter(m_mimeTypes);
-
-
-    m_previewTimer = new QTimer(this);
-    m_previewTimer->setSingleShot(true);
-    connect(m_previewTimer, &QTimer::timeout,
-            this, &ImageFolderModel::delayedPreview);
-
-    //using the same cache of the engine, they index both by url
-    m_imageCache = new KImageCache(QStringLiteral("org.kde.koko"), 10485760);
 
     connect(this, &QAbstractItemModel::rowsInserted,
             this, &ImageFolderModel::countChanged);
@@ -75,7 +63,6 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
 
 ImageFolderModel::~ImageFolderModel()
 {
-    delete m_imageCache;
 }
 
 QHash<int, QByteArray> ImageFolderModel::roleNames() const
@@ -83,10 +70,9 @@ QHash<int, QByteArray> ImageFolderModel::roleNames() const
     return {
         { Qt::DisplayRole, "display" },
         { Qt::DecorationRole, "decoration" },
-        { UrlRole, "url" },
-        { MimeTypeRole, "mimeType" },
-        { Thumbnail, "thumbnail" },
-        { ItemTypeRole, "itemType"}
+        { Roles::ImageUrlRole, "imageurl" },
+        { Roles::MimeTypeRole, "mimeType" }, 
+        { Roles::ItemTypeRole, "itemType"}
     };
 }
 
@@ -144,89 +130,27 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
     }
 
     switch (role) {
-    case UrlRole: {
-        KFileItem item = itemForIndex(index);
-        return item.url().toString();
-    }
-    case MimeTypeRole: {
-        KFileItem item = itemForIndex(index);
-        return item.mimetype();
-    }
-    case Thumbnail: {
-        KFileItem item = itemForIndex(index);
-        QImage preview = QImage(m_screenshotSize, QImage::Format_ARGB32_Premultiplied);
-
-        if (m_imageCache->findImage(item.url().toString(), &preview)) {
-            return preview;
+        case Roles::ImageUrlRole: {
+            KFileItem item = itemForIndex(index);
+            return item.url().toString();
         }
-
-        m_previewTimer->start(100);
-        const_cast<ImageFolderModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
-    }
+        case Roles::MimeTypeRole: {
+            KFileItem item = itemForIndex(index);
+            return item.mimetype();
+        }
         
-    case ItemTypeRole: {
-        KFileItem item = itemForIndex(index);
-        if( item.isDir()) {
-            return Types::Folder;
-        } else {
-            return Types::Image;
-        }
+        case Roles::ItemTypeRole: {
+            KFileItem item = itemForIndex(index);
+            if( item.isDir()) {
+                return Types::Folder;
+            } else {
+                return Types::Image;
+            }
     }
     
     default:
         return KDirModel::data(index, role);
     }
-}
-
-void ImageFolderModel::delayedPreview()
-{
-    QHash<QUrl, QPersistentModelIndex>::const_iterator i = m_filesToPreview.constBegin();
-
-    KFileItemList list;
-
-    while (i != m_filesToPreview.constEnd()) {
-        QUrl file = i.key();
-        QPersistentModelIndex index = i.value();
-
-
-        if (!m_previewJobs.contains(file) && file.isValid()) {
-            list.append(KFileItem(file, QString(), 0));
-            m_previewJobs.insert(file, QPersistentModelIndex(index));
-        }
-
-        ++i;
-    }
-
-    if (list.size() > 0) {
-        KIO::PreviewJob* job = KIO::filePreview(list, m_screenshotSize);
-        job->setIgnoreMaximumSize(true);
-        // qDebug() << "Created job" << job;
-        connect(job, &KIO::PreviewJob::gotPreview,
-                this, &ImageFolderModel::showPreview);
-        connect(job, &KIO::PreviewJob::failed,
-                this, &ImageFolderModel::previewFailed);
-    }
-
-    m_filesToPreview.clear();
-}
-
-void ImageFolderModel::showPreview(const KFileItem &item, const QPixmap &preview)
-{
-    QPersistentModelIndex index = m_previewJobs.value(item.url());
-    m_previewJobs.remove(item.url());
-
-    if (!index.isValid()) {
-        return;
-    }
-
-    m_imageCache->insertImage(item.url().toString(), preview.toImage());
-    //qDebug() << "preview size:" << preview.size();
-    emit dataChanged(index, index);
-}
-
-void ImageFolderModel::previewFailed(const KFileItem &item)
-{
-    m_previewJobs.remove(item.url());
 }
 
 #include "moc_imagefoldermodel.cpp"

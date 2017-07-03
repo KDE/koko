@@ -294,7 +294,7 @@ QStringList ImageStorage::imagesForLocation(const QByteArray& name, ImageStorage
 
     QStringList files;
     while (query.next()) {
-        files << query.value(0).toString();
+        files << QString( "file://" + query.value(0).toString());
     }
     return files;
 }
@@ -337,7 +337,7 @@ QString ImageStorage::imageForLocation(const QByteArray& name, ImageStorage::Loc
     }
 
     if (query.next()) {
-        return query.value(0).toString();
+        return QString( "file://" + query.value(0).toString());
     }
     return QString();
 }
@@ -470,7 +470,7 @@ QStringList ImageStorage::imagesForTime(const QByteArray& name, ImageStorage::Ti
 
     QStringList files;
     while (query.next()) {
-        files << query.value(0).toString();
+        files << QString( "file://" + query.value(0).toString());
     }
 
     Q_ASSERT(!files.isEmpty());
@@ -520,7 +520,7 @@ QString ImageStorage::imageForTime(const QByteArray& name, ImageStorage::TimeGro
     }
 
     if (query.next()) {
-        return query.value(0).toString();
+        return QString( "file://" + query.value(0).toString());
     }
 
     Q_ASSERT(0);

@@ -17,36 +17,14 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef IMAGELISTMODEL_H
-#define IMAGELISTMODEL_H
+#include "roles.h"
 
-#include <QAbstractListModel>
-
-class ImageListModel : public QAbstractListModel
+Roles::Roles(QObject* parent)
 {
-    Q_OBJECT
-    
-    /*
-     * imageList property is used to store the images of a particular collection
-     */
-    Q_PROPERTY(QStringList imageList READ imageList WRITE setImageList NOTIFY imageListChanged)
-    
-public:
-    explicit ImageListModel(QObject* parent = 0);
-    ~ImageListModel();
-    
-    virtual QHash< int, QByteArray > roleNames() const;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
-    
-    QStringList imageList() const;
-    void setImageList(QStringList images);
-    
-signals:
-    void imageListChanged();
-    
-private:
-    QStringList m_images;
-};
+}
 
-#endif
+Roles::~Roles()
+{
+}
+
+#include "moc_roles.cpp"

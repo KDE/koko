@@ -20,6 +20,7 @@
 #include "imagelocationmodel.h"
 #include "imagestorage.h"
 #include "types.h"
+#include "roles.h"
 
 #include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
@@ -41,10 +42,11 @@ void ImageLocationModel::slotPopulate()
 QHash<int, QByteArray> ImageLocationModel::roleNames() const
 {
     auto hash = QAbstractItemModel::roleNames();
-    hash.insert(FilesRole, "files");
-    hash.insert(FileCountRole, "fileCount");
-    hash.insert(CoverRole, "cover");
-    hash.insert(ItemTypeRole, "itemType");
+    hash.insert( Roles::FilesRole, "files");
+    hash.insert( Roles::FileCountRole, "fileCount");
+    //the url role returns the url of the cover image of the collection
+    hash.insert( Roles::ImageUrlRole, "imageurl");
+    hash.insert( Roles::ItemTypeRole, "itemType");
 
     return hash;
 }
@@ -62,22 +64,22 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             return display;
 
-        case FilesRole: {
+        case Roles::FilesRole: {
             auto group = static_cast<ImageStorage::LocationGroup>(m_group);
             return ImageStorage::instance()->imagesForLocation(key, group);
         }
 
-        case FileCountRole: {
+        case Roles::FileCountRole: {
             auto group = static_cast<ImageStorage::LocationGroup>(m_group);
             return ImageStorage::instance()->imagesForLocation(key, group).size();
         }
 
-        case CoverRole: {
+        case Roles::ImageUrlRole: {
             auto group = static_cast<ImageStorage::LocationGroup>(m_group);
             return ImageStorage::instance()->imageForLocation(key, group);
         }
         
-        case ItemTypeRole: {
+        case Roles::ItemTypeRole: {
             return Types::Album;
         }
     }

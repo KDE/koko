@@ -199,7 +199,7 @@ Rectangle {
                     id: image
                     width: flick.contentWidth
                     height: flick.contentHeight
-                    source: model.url
+                    source: model.imageurl
                     fillMode: Image.PreserveAspectFit
                     asynchronous: true
                     autoTransform: true

@@ -31,14 +31,6 @@ class ImageTimeModel : public QAbstractListModel
 public:
     explicit ImageTimeModel(QObject* parent = 0);
 
-    enum Roles {
-        FilesRole = Qt::UserRole + 1,
-        FileCountRole,
-        CoverRole,
-        DateRole,
-        ItemTypeRole
-    };
-
     virtual QHash< int, QByteArray > roleNames() const;
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;

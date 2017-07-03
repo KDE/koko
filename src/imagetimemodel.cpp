@@ -20,6 +20,7 @@
 #include "imagetimemodel.h"
 #include "imagestorage.h"
 #include "types.h"
+#include "roles.h"
 
 #include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
@@ -42,11 +43,12 @@ void ImageTimeModel::slotPopulate()
 QHash<int, QByteArray> ImageTimeModel::roleNames() const
 {
     auto hash = QAbstractItemModel::roleNames();
-    hash.insert(FilesRole, "files");
-    hash.insert(FileCountRole, "fileCount");
-    hash.insert(CoverRole, "cover");
-    hash.insert(DateRole, "date");
-    hash.insert(ItemTypeRole, "itemType");
+    hash.insert( Roles::FilesRole, "files");
+    hash.insert( Roles::FileCountRole, "fileCount");
+    //the url role returns the url of the cover image of the collection
+    hash.insert( Roles::ImageUrlRole, "imageurl");
+    hash.insert( Roles::DateRole, "date");
+    hash.insert( Roles::ItemTypeRole, "itemType");
 
     return hash;
 }
@@ -64,27 +66,27 @@ QVariant ImageTimeModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             return display;
 
-        case FilesRole: {
+        case Roles::FilesRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
             return ImageStorage::instance()->imagesForTime(key, tg);
         }
 
-        case FileCountRole: {
+        case Roles::FileCountRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
             return ImageStorage::instance()->imagesForTime(key, tg).size();
         }
 
-        case CoverRole: {
+        case Roles::ImageUrlRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
             return ImageStorage::instance()->imageForTime(key, tg);
         }
 
-        case DateRole: {
+        case Roles::DateRole: {
             auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
             return ImageStorage::instance()->dateForKey(key, tg);
         }
         
-        case ItemTypeRole: {
+        case Roles::ItemTypeRole: {
             return Types::Album;
         }
     }

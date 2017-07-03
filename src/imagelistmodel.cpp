@@ -19,6 +19,7 @@
 
 #include "imagelistmodel.h"
 #include "types.h"
+#include "roles.h"
 
 #include <QMimeDatabase>
 #include <QDebug>
@@ -35,9 +36,9 @@ ImageListModel::~ImageListModel()
 QHash<int, QByteArray> ImageListModel::roleNames() const
 {
     QHash<int, QByteArray> hash = QAbstractListModel::roleNames();
-    hash.insert(UrlRole, "url");
-    hash.insert(MimeTypeRole, "mimeType");
-    hash.insert(ItemTypeRole, "itemType");
+    hash.insert( Roles::ImageUrlRole, "imageurl");
+    hash.insert( Roles::MimeTypeRole, "mimeType");
+    hash.insert( Roles::ItemTypeRole, "itemType");
     
     return hash;
 }
@@ -53,13 +54,13 @@ QVariant ImageListModel::data(const QModelIndex& index, int role) const
     QMimeType type = db.mimeTypeForFile(m_images.at(indexValue));
     
     switch( role) {
-        case UrlRole:
+        case Roles::ImageUrlRole:
             return m_images.at(indexValue);
             
-        case MimeTypeRole:
+        case Roles::MimeTypeRole:
             return type.name();
             
-        case ItemTypeRole:
+        case Roles::ItemTypeRole:
             return Types::Image;
             
     }

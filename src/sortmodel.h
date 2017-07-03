@@ -22,6 +22,11 @@
 
 #include <QSortFilterProxyModel>
 #include <QItemSelectionModel>
+#include <QSize>
+#include <kdirmodel.h>
+#include <QVariant>
+#include <kimagecache.h>
+#include <kshareddatacache.h>
 
 namespace Jungle {
 
@@ -30,11 +35,6 @@ class SortModel : public QSortFilterProxyModel
     Q_OBJECT
     Q_PROPERTY(QByteArray sortRoleName READ sortRoleName WRITE setSortRoleName)
 public:
-    
-    enum Role {
-        SelectedRole = Qt::UserRole 
-    };
-    
     explicit SortModel(QObject* parent = 0);
     virtual ~SortModel();
 
@@ -49,10 +49,21 @@ public:
     Q_INVOKABLE void setSelected( int indexValue);
     Q_INVOKABLE void toggleSelected( int indexValue);
     Q_INVOKABLE void clearSelections();
+    
+protected Q_SLOTS:
+    void showPreview(const KFileItem &item, const QPixmap &preview);
+    void previewFailed(const KFileItem &item);
+    void delayedPreview();
 
 private:
     QByteArray m_sortRoleName;
     QItemSelectionModel *m_selectionModel;
+    
+    QTimer *m_previewTimer;
+    QHash<QUrl, QPersistentModelIndex> m_filesToPreview;
+    QSize m_screenshotSize;
+    QHash<QUrl, QPersistentModelIndex> m_previewJobs;
+    KImageCache* m_imageCache;
 };
 }
 

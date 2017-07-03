@@ -18,19 +18,36 @@
  */
 
 #include "sortmodel.h"
+#include "roles.h"
 #include <QDebug>
+#include <QTimer>
+
+#include <kio/previewjob.h>
+#include <kimagecache.h>
 
 using namespace Jungle;
 
-SortModel::SortModel(QObject* parent): QSortFilterProxyModel(parent)
+SortModel::SortModel(QObject* parent)
+            : QSortFilterProxyModel(parent),
+              m_screenshotSize(256, 256)
 {
     setSortLocaleAware(true);
     sort(0);
     m_selectionModel = new QItemSelectionModel(this);
+    
+    m_previewTimer = new QTimer(this);
+    m_previewTimer->setSingleShot(true);
+    connect(m_previewTimer, &QTimer::timeout,
+            this, &SortModel::delayedPreview);
+    
+    //using the same cache of the engine, they index both by url
+    m_imageCache = new KImageCache(QStringLiteral("org.kde.koko"), 10485760);
+    
 }
 
 SortModel::~SortModel()
 {
+    delete m_imageCache;
 }
 
 QByteArray SortModel::sortRoleName() const
@@ -59,8 +76,8 @@ void SortModel::setSortRoleName(const QByteArray& name)
 QHash<int, QByteArray> SortModel::roleNames() const
 {
     QHash<int, QByteArray> hash = sourceModel()->roleNames();
-    hash.insert(Role::SelectedRole, "selected");
-    
+    hash.insert( Roles::SelectedRole, "selected");
+    hash.insert( Roles::Thumbnail, "thumbnail");
     return hash;
 }
 
@@ -71,8 +88,26 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
     
-    if( role == Role::SelectedRole) {
-        return m_selectionModel->isSelected(index);
+    switch( role) {
+        
+        case Roles::SelectedRole: {
+            return m_selectionModel->isSelected(index);
+        }
+        
+        case Roles::Thumbnail: {
+            QUrl thumbnailSource(QString( /*"file://" + */data( index, Roles::ImageUrlRole).toString()));
+            
+            KFileItem item( thumbnailSource, QString() );
+            QImage preview = QImage(m_screenshotSize, QImage::Format_ARGB32_Premultiplied);
+            
+            if (m_imageCache->findImage(item.url().toString(), &preview)) {
+                return preview;
+            }
+            
+            m_previewTimer->start(100);
+            const_cast<SortModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
+        }
+        
     }
     
     return QSortFilterProxyModel::data(index, role);
@@ -117,4 +152,55 @@ void SortModel::clearSelections()
             emit dataChanged( indexValue, indexValue);
         }
     }
+}
+
+void SortModel::delayedPreview()
+{
+    QHash<QUrl, QPersistentModelIndex>::const_iterator i = m_filesToPreview.constBegin();
+    
+    KFileItemList list;
+    
+    while (i != m_filesToPreview.constEnd()) {
+        QUrl file = i.key();
+        QPersistentModelIndex index = i.value();
+        
+        
+        if (!m_previewJobs.contains(file) && file.isValid()) {
+            list.append(KFileItem(file, QString(), 0));
+            m_previewJobs.insert(file, QPersistentModelIndex(index));
+        }
+        
+        ++i;
+    }
+    
+    if (list.size() > 0) {
+        KIO::PreviewJob* job = KIO::filePreview(list, m_screenshotSize);
+        job->setIgnoreMaximumSize(true);
+        // qDebug() << "Created job" << job;
+        connect(job, &KIO::PreviewJob::gotPreview,
+                this, &SortModel::showPreview);
+        connect(job, &KIO::PreviewJob::failed,
+                this, &SortModel::previewFailed);
+    }
+    
+    m_filesToPreview.clear();
+}
+
+void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
+{
+    QPersistentModelIndex index = m_previewJobs.value(item.url());
+    m_previewJobs.remove(item.url());
+    
+    if (!index.isValid()) {
+        return;
+    }
+    
+    m_imageCache->insertImage(item.url().toString(), preview.toImage());
+    //qDebug() << "preview size:" << preview.size();
+    emit dataChanged(index, index);
+}
+
+void SortModel::previewFailed(const KFileItem &item)
+{
+    m_previewJobs.remove(item.url());
 }

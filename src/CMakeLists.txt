@@ -61,6 +61,7 @@ set (qml_plugin_SRCS
     fileinfo.cpp
     imagelistmodel.cpp
     types.cpp
+    roles.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})

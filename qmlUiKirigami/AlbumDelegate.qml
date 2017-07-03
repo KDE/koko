@@ -32,7 +32,6 @@ Item {
     
     Image {
         id: image
-        source: model.itemType == Koko.Types.Album ? model.cover: (model.itemType == Koko.Types.Image ? model.url: ""/*this case is for Koko.Types.Folder*/)
         autoTransform: true
         anchors.centerIn: parent
         width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
@@ -98,7 +97,7 @@ Item {
                 break;
             }
             case Koko.Types.Folder: {
-                imageFolderModel.url = model.url
+                imageFolderModel.url = model.imageurl
                 sortedListModel.sourceModel = imageFolderModel
                 folderSelected( sortedListModel, model.display)
                 break;
