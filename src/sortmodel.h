@@ -49,6 +49,7 @@ public:
     Q_INVOKABLE void setSelected( int indexValue);
     Q_INVOKABLE void toggleSelected( int indexValue);
     Q_INVOKABLE void clearSelections();
+    Q_INVOKABLE void selectAll();
     
 protected Q_SLOTS:
     void showPreview(const KFileItem &item, const QPixmap &preview);

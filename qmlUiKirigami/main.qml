@@ -87,6 +87,8 @@ Kirigami.ApplicationWindow {
         }
     }
     
+    contextDrawer: Kirigami.ContextDrawer {}
+    
     Koko.SortModel{
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {}

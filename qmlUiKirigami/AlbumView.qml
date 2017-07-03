@@ -35,6 +35,17 @@ Kirigami.ScrollablePage {
     
     keyboardNavigationEnabled: true
     focus: true
+    
+    contextualActions: [
+        Kirigami.Action {
+            text: "Select All"
+            onTriggered: model.selectAll()
+        },
+        Kirigami.Action {
+            text: "Deselect All"
+            onTriggered: model.clearSelections()
+        }
+    ]
 
     GridView {
         id: gridView

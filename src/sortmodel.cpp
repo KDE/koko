@@ -154,6 +154,26 @@ void SortModel::clearSelections()
     }
 }
 
+void SortModel::selectAll() 
+{
+    QModelIndexList indexList;
+    for( int row=0; row<rowCount(); row++)
+    {
+        indexList.append( index( row, 0, QModelIndex()));
+    }
+    
+    if( m_selectionModel->hasSelection()) {
+        m_selectionModel->clear();
+    }
+    
+    foreach(QModelIndex index, indexList)
+    {
+        m_selectionModel->select( index, QItemSelectionModel::Select);
+    }
+    emit dataChanged( index( 0, 0, QModelIndex()), index( rowCount()-1, 0, QModelIndex()) );
+    
+}
+
 void SortModel::delayedPreview()
 {
     QHash<QUrl, QPersistentModelIndex>::const_iterator i = m_filesToPreview.constBegin();
