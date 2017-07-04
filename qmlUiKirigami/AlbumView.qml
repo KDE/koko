@@ -56,7 +56,7 @@ Kirigami.ScrollablePage {
 
     GridView {
         id: gridView
-        
+
         property int iconSize: Kirigami.Units.iconSizes.enormous
         keyNavigationEnabled: true
         

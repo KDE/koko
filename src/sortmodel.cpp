@@ -42,17 +42,29 @@ SortModel::SortModel(QObject* parent)
     connect(m_previewTimer, &QTimer::timeout,
             this, &SortModel::delayedPreview);
     
-    connect( this, &SortModel::rowsInserted, 
-             [this] (QModelIndex index,int first, int last) { 
-                 Q_UNUSED(index)
-                 for(int i=first;i<=last;i++){
-                     if( Types::Image == data( this->index( i, 0, QModelIndex()), Roles::ItemTypeRole).toInt() && m_containImages == false) {
-                         this->setContainImages(true);
-                         break;
-                    }
+    connect(this, &SortModel::rowsInserted,
+            this, [this] (const QModelIndex &parent, int first, int last) {
+                Q_UNUSED(parent)
+                for (int i = first; i <= last; i++) {
+                    if (Types::Image == data(index(i, 0, QModelIndex()), Roles::ItemTypeRole).toInt() && m_containImages == false) {
+                        setContainImages(true);
+                        break;
                 }
             }
-           );
+        });
+
+    connect(this, &SortModel::sourceModelChanged,
+            this, [this] () {
+                if (!sourceModel()) {
+                    return;
+                }
+                for (int i = 0; i <= sourceModel()->rowCount(); i++) {
+                    if (Types::Image == sourceModel()->data(sourceModel()->index(i, 0, QModelIndex()), Roles::ItemTypeRole).toInt() && m_containImages == false) {
+                        setContainImages(true);
+                        break;
+                }
+            }
+        });
     
     //using the same cache of the engine, they index both by url
     m_imageCache = new KImageCache(QStringLiteral("org.kde.koko"), 10485760);
