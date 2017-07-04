@@ -30,7 +30,8 @@ using namespace Jungle;
 
 SortModel::SortModel(QObject* parent)
             : QSortFilterProxyModel(parent),
-              m_screenshotSize(256, 256)
+              m_screenshotSize(256, 256),
+              m_containImages(false)
 {
     setSortLocaleAware(true);
     sort(0);
@@ -41,6 +42,18 @@ SortModel::SortModel(QObject* parent)
     connect(m_previewTimer, &QTimer::timeout,
             this, &SortModel::delayedPreview);
     
+    connect( this, &SortModel::rowsInserted, 
+             [this] (QModelIndex index,int first, int last) { 
+                 Q_UNUSED(index)
+                 for(int i=first;i<=last;i++){
+                     if( Types::Image == data( this->index( i, 0, QModelIndex()), Roles::ItemTypeRole).toInt() && m_containImages == false) {
+                         this->setContainImages(true);
+                         break;
+                    }
+                }
+            }
+           );
+    
     //using the same cache of the engine, they index both by url
     m_imageCache = new KImageCache(QStringLiteral("org.kde.koko"), 10485760);
     
@@ -49,6 +62,12 @@ SortModel::SortModel(QObject* parent)
 SortModel::~SortModel()
 {
     delete m_imageCache;
+}
+
+void SortModel::setContainImages(bool value)
+{
+    m_containImages = value;
+    emit containImagesChanged();
 }
 
 QByteArray SortModel::sortRoleName() const
@@ -126,15 +145,7 @@ void SortModel::setSourceModel(QAbstractItemModel* sourceModel)
 
 bool SortModel::containImages()
 {
-    for(int row = 0; row < rowCount(); row++)
-    {
-        if( Types::Image == data( index( row, 0, QModelIndex()), Roles::ItemTypeRole))
-        {
-            return true;
-        }
-    }
-    
-    return false;
+    return m_containImages;
 }
 
 
