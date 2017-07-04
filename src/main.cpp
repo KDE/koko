@@ -27,10 +27,12 @@
 
 #include <KDBusService>
 #include <KLocalizedString>
+#include <KLocalizedContext>
 
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QQuickView>
 
 #include <iostream>
 
@@ -89,6 +91,10 @@ int main(int argc, char** argv)
     objectContext->setContextProperty("kokoConfig", &config);
 
     QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/main.qml");
+    
+    QQuickView* view = new QQuickView( &engine, new QWindow());
+    view->engine()->rootContext()->setContextObject(new KLocalizedContext(view));    
+    
     QQmlComponent component(&engine, path);
     if (component.isError()) {
         std::cout << component.errorString().toUtf8().constData() << std::endl;
