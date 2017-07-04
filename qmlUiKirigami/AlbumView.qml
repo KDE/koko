@@ -59,8 +59,11 @@ Kirigami.ScrollablePage {
 
         property int iconSize: Kirigami.Units.iconSizes.enormous
         keyNavigationEnabled: true
-        
-        cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
+
+        //leave a gridUnit for the scrollbar on desktop systems
+        //TODO: automate this in kirigami somehow?
+        readonly property int effectiveWidth: Kirigami.Settings.isMobile ? width : width - Kirigami.Units.gridUnit
+        cellWidth: effectiveWidth / Math.floor(effectiveWidth / (iconSize + Kirigami.Units.largeSpacing*2))
         cellHeight: cellWidth
         
         highlight: Rectangle { color: Kirigami.Theme.highlightColor}
