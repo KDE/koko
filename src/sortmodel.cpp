@@ -261,7 +261,7 @@ void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
     if (!index.isValid()) {
         return;
     }
-    
+    qWarning()<<"AAA"<<preview;
     m_imageCache->insertImage(item.url().toString(), preview.toImage());
     //qDebug() << "preview size:" << preview.size();
     emit dataChanged(index, index);

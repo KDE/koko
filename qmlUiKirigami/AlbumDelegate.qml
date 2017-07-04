@@ -30,18 +30,14 @@ Item {
     width: gridView.cellWidth
     height: gridView.cellHeight
     
-    Image {
+    KQA.QImageItem {
         id: image
-        autoTransform: true
         anchors.centerIn: parent
         width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
-        height: gridView.cellHeight - (Kirigami.Units.largeSpacing )
-        
-        fillMode: Image.PreserveAspectCrop
-    }
-    KQA.QImageItem {
-        anchors.fill: image
+        height: width
+        smooth: true
         image: model.thumbnail
+        fillMode: KQA.QImageItem.PreserveAspectCrop
     }
     
     Kirigami.BasicListItem {

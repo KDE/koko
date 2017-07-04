@@ -61,7 +61,7 @@ Kirigami.ScrollablePage {
         keyNavigationEnabled: true
         
         cellWidth: width / Math.floor(width / (iconSize + Kirigami.Units.largeSpacing*2))
-        cellHeight: iconSize + Kirigami.Units.gridUnit + Kirigami.Units.largeSpacing*2
+        cellHeight: cellWidth
         
         highlight: Rectangle { color: Kirigami.Theme.highlightColor}
         
