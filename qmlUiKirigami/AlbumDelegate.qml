@@ -39,11 +39,12 @@ Item {
         image: model.thumbnail
         fillMode: KQA.QImageItem.PreserveAspectCrop
     }
-    
+
     Kirigami.BasicListItem {
         visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
-        label: model.fileCount ? (model.fileCount == 1 ? i18n(" %1 \n 1 Image").arg(model.display) : i18n(" %1 \n %2 Images").arg(model.display).arg(model.fileCount))
-                                                    : i18n(" %1").arg(model.display)
+        label: model.fileCount
+                ? i18np(" %2 \n 1 Image"," %2 \n %1 Images", model.fileCount, model.display)
+                : model.display
         reserveSpaceForIcon: false
         width: image.width
         anchors.left: image.left
