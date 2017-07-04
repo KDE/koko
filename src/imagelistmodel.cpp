@@ -54,6 +54,10 @@ QVariant ImageListModel::data(const QModelIndex& index, int role) const
     QMimeType type = db.mimeTypeForFile(m_images.at(indexValue));
     
     switch( role) {
+        case Qt::DisplayRole:
+            //TODO: return the filename component
+            return m_images.at(indexValue);
+           
         case Roles::ImageUrlRole:
             return m_images.at(indexValue);
             
