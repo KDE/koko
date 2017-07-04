@@ -258,7 +258,7 @@ Rectangle {
     }
     //FIXME: placeholder, will have to use the state machine
     Controls.Button {
-        text: "Back"
+        text: i18n("Back")
         onClicked: root.state = "closed"
     }
 }

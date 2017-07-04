@@ -46,8 +46,8 @@ Item {
     
     Kirigami.BasicListItem {
         visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
-        label: model.fileCount ? (model.fileCount == 1 ? qsTr(" %1 \n 1 Image").arg(model.display) : qsTr(" %1 \n %2 Images").arg(model.display).arg(model.fileCount))
-                                                    : qsTr(" %1").arg(model.display)
+        label: model.fileCount ? (model.fileCount == 1 ? i18n(" %1 \n 1 Image").arg(model.display) : i18n(" %1 \n %2 Images").arg(model.display).arg(model.fileCount))
+                                                    : i18n(" %1").arg(model.display)
         reserveSpaceForIcon: false
         width: image.width
         anchors.left: image.left

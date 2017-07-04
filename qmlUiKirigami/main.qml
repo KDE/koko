@@ -47,7 +47,7 @@ Kirigami.ApplicationWindow {
         id: sideBar
         onFilterBy: {
             pageStack.pop(albumView)
-            albumView.title = value
+            albumView.title = i18n(value)
             previouslySelectedAction.checked = false
             
             switch( value){
@@ -164,6 +164,6 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: {
         albumView.model = imageFolderModel
-        albumView.title = "Folders"
+        albumView.title = i18n("Folders")
     }
 }

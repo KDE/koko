@@ -29,17 +29,17 @@ Kirigami.GlobalDrawer {
     signal filterBy(string value)
     property Kirigami.Action previouslySelectedAction
     
-    title: qsTr("Navigation") 
+    title: i18n("Navigation") 
     
     actions: [
         Kirigami.Action {
-            text: qsTr("Locations")
+            text: i18n("Locations")
             iconName: "tag-places"
             enabled: false
         },
         Kirigami.Action {
             id: countryAction
-            text: qsTr("By Country")
+            text: i18n("By Country")
             checkable: true
             onTriggered: {
                 filterBy("Countries")
@@ -48,7 +48,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             id: stateAction
-            text: qsTr("By State")
+            text: i18n("By State")
             checkable: true
             onTriggered: {
                 filterBy("States")
@@ -57,7 +57,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             id: cityAction
-            text: qsTr("By City")
+            text: i18n("By City")
             checkable: true
             onTriggered: {
                 filterBy("Cities")
@@ -65,13 +65,13 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: qsTr("Time")
+            text: i18n("Time")
             enabled: false
             iconName: "view-calendar"
         },
         Kirigami.Action {
             id: yearAction
-            text: qsTr("By Year")
+            text: i18n("By Year")
             checkable: true
             onTriggered: {
                 filterBy("Years")
@@ -80,7 +80,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             id: monthAction
-            text: qsTr("By month")
+            text: i18n("By month")
             checkable: true
             onTriggered: {
                 filterBy("Months")
@@ -89,7 +89,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             id: weekAction
-            text: qsTr("By Week")
+            text: i18n("By Week")
             checkable: true
             onTriggered: {
                 filterBy("Weeks")
@@ -98,7 +98,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             id: "dayAction"
-            text: qsTr("By Day")
+            text: i18n("By Day")
             checkable: true
             onTriggered: {
                 filterBy("Days")
@@ -106,13 +106,13 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: qsTr("Path")
+            text: i18n("Path")
             enabled: false
             iconName: "folder-symbolic"
         },
         Kirigami.Action {
             id: folderAction
-            text: qsTr("By Folder")
+            text: i18n("By Folder")
             checkable: true
             onTriggered: {
                 filterBy("Folders")
@@ -123,7 +123,7 @@ Kirigami.GlobalDrawer {
     
     Controls.ToolButton {
         id: settingsButton
-        text: qsTr("Settings")
+        text: i18n("Settings")
         checkable: true
         anchors.fill: parent
     }
