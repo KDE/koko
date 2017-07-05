@@ -41,6 +41,9 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
     QDBusConnection con = QDBusConnection::sessionBus();
     con.connect(QString(), QLatin1String("/files"), QLatin1String("org.kde"),
                 QLatin1String("changed"), this, SLOT(slotNewFiles(QStringList)));
+    
+    connect( this, &FileSystemTracker::subFolderChanged, 
+             this, &FileSystemTracker::reindexSubFolder);
 
     //
     // Database
@@ -90,19 +93,6 @@ FileSystemTracker::~FileSystemTracker()
     QSqlDatabase::removeDatabase(QStringLiteral("fstracker"));
 }
 
-void FileSystemTracker::init()
-{
-    FileSystemImageFetcher* fetcher = new FileSystemImageFetcher(m_folder);
-    connect(fetcher, &FileSystemImageFetcher::imageResult,
-            this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
-    connect(fetcher, &FileSystemImageFetcher::finished,
-            this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
-
-    fetcher->fetch();
-
-    QSqlDatabase::database("fstracker").transaction();
-}
-
 void FileSystemTracker::slotImageResult(const QString& filePath)
 {
     QSqlQuery query(QSqlDatabase::database("fstracker"));
@@ -139,8 +129,9 @@ void FileSystemTracker::slotFetchFinished()
 
     while (query.next()) {
         QString filePath = query.value(0).toString();
+        
 
-        if (!m_filePaths.contains(filePath)) {
+        if ( filePath.contains(m_subFolder) && !m_filePaths.contains(filePath)) {
             qDebug() << "REMOVED" << filePath;
             emit imageRemoved(filePath);
             QSqlQuery query(QSqlDatabase::database("fstracker"));
@@ -185,4 +176,26 @@ void FileSystemTracker::setFolder(const QString& folder)
 QString FileSystemTracker::folder() const
 {
     return m_folder;
+}
+
+void FileSystemTracker::setSubFolder(const QString& folder)
+{
+    if(QFileInfo(folder).isDir()) {
+        m_subFolder = folder;
+        emit subFolderChanged();
+    }
+}
+
+void FileSystemTracker::reindexSubFolder()
+{
+    FileSystemImageFetcher* fetcher = new FileSystemImageFetcher(m_subFolder);
+    connect(fetcher, &FileSystemImageFetcher::imageResult,
+            this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
+    connect(fetcher, &FileSystemImageFetcher::finished,
+            this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
+    
+    fetcher->fetch();
+    
+    QSqlDatabase::database("fstracker").transaction();
+
 }

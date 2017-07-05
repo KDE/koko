@@ -12,6 +12,7 @@ target_link_libraries(kokocommon
     Qt5::Core
     Qt5::Positioning
     Qt5::Sql
+    KF5::CoreAddons
 )
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
@@ -41,6 +42,7 @@ target_link_libraries(koko
     KF5::ConfigCore
     KF5::DBusAddons
     KF5::I18n
+    KF5::CoreAddons
     kokocommon
     ${EXIV2_LIBRARIES}
 )

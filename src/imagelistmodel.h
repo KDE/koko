@@ -42,7 +42,7 @@ public:
     QStringList imageList() const;
     void setImageList(QStringList images);
     
-signals:
+Q_SIGNALS:
     void imageListChanged();
     
 private:

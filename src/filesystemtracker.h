@@ -33,11 +33,14 @@ public:
     void setFolder(const QString& folder);
     QString folder() const;
 
-    void init();
+    void setSubFolder(const QString& folder);
+    void reindexSubFolder();
+    
 signals:
     void imageAdded(const QString& filePath);
     void imageRemoved(const QString& filePath);
     void initialScanComplete();
+    void subFolderChanged();
 
 private slots:
     void slotNewFiles(const QStringList& files);
@@ -46,6 +49,7 @@ private slots:
 
 private:
     QString m_folder;
+    QString m_subFolder;
     QSet<QString> m_filePaths;
 };
 
