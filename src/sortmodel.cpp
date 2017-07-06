@@ -25,6 +25,7 @@
 
 #include <kio/previewjob.h>
 #include <kimagecache.h>
+#include <kio/copyjob.h>
 
 using namespace Jungle;
 
@@ -219,6 +220,15 @@ void SortModel::selectAll()
     }
     emit dataChanged( index( 0, 0, QModelIndex()), index( rowCount()-1, 0, QModelIndex()) );
     emit selectedImagesChanged();
+}
+
+void SortModel::deleteSelection()
+{
+    foreach(QModelIndex index, m_selectionModel->selectedIndexes()) {
+        QString path = data( index, Roles::ImageUrlRole).toString();
+        KIO::trash(QUrl(path));
+        emit dataChanged( index, index);
+    }
 }
 
 void SortModel::delayedPreview()

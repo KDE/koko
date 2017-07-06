@@ -54,6 +54,7 @@ public:
     Q_INVOKABLE void toggleSelected( int indexValue);
     Q_INVOKABLE void clearSelections();
     Q_INVOKABLE void selectAll();
+    Q_INVOKABLE void deleteSelection();
     
 protected Q_SLOTS:
     void setContainImages(bool);

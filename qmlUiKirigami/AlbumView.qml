@@ -50,6 +50,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18n("Delete Selection")
             enabled: model.hasSelectedImages
+            onTriggered: model.deleteSelection()
         }
         
     ]
