@@ -253,7 +253,7 @@ Rectangle {
     }
 
     onCurrentIndexChanged: {
-        console.log("imageViewer changed currentIndex to "+ currentIndex)
+        currentImage.index = currentIndex
         listView.positionViewAtIndex(currentIndex, ListView.Beginning)
     }
     //FIXME: placeholder, will have to use the state machine
