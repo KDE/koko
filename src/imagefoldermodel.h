@@ -1,6 +1,7 @@
 /*
  *   Copyright 2017 by Marco Martin <mart@kde.org>
-
+ * Copyright (C) 2017 Atul Sharma <atulsharma406@gmail.com>
+ * 
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
  *   published by the Free Software Foundation; either version 2, or

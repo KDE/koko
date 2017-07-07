@@ -1,5 +1,5 @@
 /*
- * <one line to give the library's name and an idea of what it does.>
+ * Copyright (C) 2017 Atul Sharma <atulsharma406@gmail.com>
  * Copyright (C) 2014  Vishesh Handa <me@vhanda.in>
  *
  * This library is free software; you can redistribute it and/or

@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2017 Atul Sharma <atulsharma406@gmail.com>
  * Copyright (C) 2014  Vishesh Handa <vhanda@kde.org>
  *
  * This library is free software; you can redistribute it and/or
