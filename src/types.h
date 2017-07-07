@@ -24,11 +24,26 @@
 class Types : public QObject {
     Q_OBJECT
     Q_ENUMS(ItemTypes)
+    Q_ENUMS(TimeGroup)
+    Q_ENUMS(LocationGroup)
 public:
     Types(QObject* parent);
     ~Types();
     
-    enum ItemTypes { Album, Folder, Image };
+    enum ItemTypes { Album = 0 , Folder, Image };
+    
+    enum TimeGroup {
+        Year = 3,
+        Month,
+        Week,
+        Day
+    };
+    
+    enum LocationGroup {
+        Country = 7,
+        State,
+        City
+    };
     
 };
 

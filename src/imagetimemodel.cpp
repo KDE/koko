@@ -20,7 +20,6 @@
 
 #include "imagetimemodel.h"
 #include "imagestorage.h"
-#include "types.h"
 #include "roles.h"
 
 #include <kio/copyjob.h>
@@ -28,7 +27,7 @@
 
 ImageTimeModel::ImageTimeModel(QObject* parent)
     : QAbstractListModel(parent)
-    , m_group(ImageTimeModel::Day)
+    , m_group(Types::TimeGroup::Day)
 {
     connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
 }
@@ -36,8 +35,8 @@ ImageTimeModel::ImageTimeModel(QObject* parent)
 void ImageTimeModel::slotPopulate()
 {
     beginResetModel();
-    auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
-    m_times = ImageStorage::instance()->timeGroups(tg);
+    auto tg = static_cast<Types::TimeGroup>(m_group);
+    m_times = ImageStorage::instance()->timeTypes(tg);
     endResetModel();
 }
 
@@ -68,22 +67,22 @@ QVariant ImageTimeModel::data(const QModelIndex& index, int role) const
             return display;
 
         case Roles::FilesRole: {
-            auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+            auto tg = static_cast<Types::TimeGroup>(m_group);
             return ImageStorage::instance()->imagesForTime(key, tg);
         }
 
         case Roles::FileCountRole: {
-            auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+            auto tg = static_cast<Types::TimeGroup>(m_group);
             return ImageStorage::instance()->imagesForTime(key, tg).size();
         }
 
         case Roles::ImageUrlRole: {
-            auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+            auto tg = static_cast<Types::TimeGroup>(m_group);
             return ImageStorage::instance()->imageForTime(key, tg);
         }
 
         case Roles::DateRole: {
-            auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
+            auto tg = static_cast<Types::TimeGroup>(m_group);
             return ImageStorage::instance()->dateForKey(key, tg);
         }
         
@@ -105,18 +104,18 @@ int ImageTimeModel::rowCount(const QModelIndex& parent) const
     return m_times.size();
 }
 
-ImageTimeModel::TimeGroup ImageTimeModel::group() const
+Types::TimeGroup ImageTimeModel::group() const
 {
     return m_group;
 }
 
-void ImageTimeModel::setGroup(ImageTimeModel::TimeGroup group)
+void ImageTimeModel::setGroup(Types::TimeGroup group)
 {
     beginResetModel();
     m_group = group;
 
-    auto tg = static_cast<ImageStorage::TimeGroup>(m_group);
-    m_times = ImageStorage::instance()->timeGroups(tg);
+    auto tg = static_cast<Types::TimeGroup>(m_group);
+    m_times = ImageStorage::instance()->timeTypes(tg);
     endResetModel();
 
     emit groupChanged();

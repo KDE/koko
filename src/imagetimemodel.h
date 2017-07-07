@@ -24,10 +24,12 @@
 #include <QAbstractListModel>
 #include <QStringList>
 
+#include "types.h"
+
 class ImageTimeModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
+    Q_PROPERTY(Types::TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageTimeModel(QObject* parent = 0);
 
@@ -35,16 +37,8 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
-    enum TimeGroup {
-        Year,
-        Month,
-        Week,
-        Day
-    };
-    Q_ENUMS(TimeGroup)
-
-    TimeGroup group() const;
-    void setGroup(TimeGroup group);
+    Types::TimeGroup group() const;
+    void setGroup(Types::TimeGroup group);
 
 signals:
     void groupChanged();
@@ -53,7 +47,7 @@ private slots:
     void slotPopulate();
 
 private:
-    TimeGroup m_group;
+    Types::TimeGroup m_group;
     QList< QPair<QByteArray, QString> > m_times;
 };
 

@@ -20,7 +20,6 @@
 
 #include "imagelocationmodel.h"
 #include "imagestorage.h"
-#include "types.h"
 #include "roles.h"
 
 #include <kio/copyjob.h>
@@ -28,7 +27,7 @@
 
 ImageLocationModel::ImageLocationModel(QObject* parent)
     : QAbstractListModel(parent)
-    , m_group(ImageLocationModel::City)
+    , m_group(Types::LocationGroup::City)
 {
     connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
 }
@@ -36,7 +35,7 @@ ImageLocationModel::ImageLocationModel(QObject* parent)
 void ImageLocationModel::slotPopulate()
 {
     beginResetModel();
-    m_locations = ImageStorage::instance()->locations(static_cast<ImageStorage::LocationGroup>(m_group));
+    m_locations = ImageStorage::instance()->locations(static_cast<Types::LocationGroup>(m_group));
     endResetModel();
 }
 
@@ -66,17 +65,17 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
             return display;
 
         case Roles::FilesRole: {
-            auto group = static_cast<ImageStorage::LocationGroup>(m_group);
+            auto group = static_cast<Types::LocationGroup>(m_group);
             return ImageStorage::instance()->imagesForLocation(key, group);
         }
 
         case Roles::FileCountRole: {
-            auto group = static_cast<ImageStorage::LocationGroup>(m_group);
+            auto group = static_cast<Types::LocationGroup>(m_group);
             return ImageStorage::instance()->imagesForLocation(key, group).size();
         }
 
         case Roles::ImageUrlRole: {
-            auto group = static_cast<ImageStorage::LocationGroup>(m_group);
+            auto group = static_cast<Types::LocationGroup>(m_group);
             return ImageStorage::instance()->imageForLocation(key, group);
         }
         
@@ -98,17 +97,17 @@ int ImageLocationModel::rowCount(const QModelIndex& parent) const
     return m_locations.size();
 }
 
-void ImageLocationModel::setGroup(ImageLocationModel::LocationGroup group)
+void ImageLocationModel::setGroup(Types::LocationGroup group)
 {
     beginResetModel();
     m_group = group;
-    m_locations = ImageStorage::instance()->locations(static_cast<ImageStorage::LocationGroup>(group));
+    m_locations = ImageStorage::instance()->locations(static_cast<Types::LocationGroup>(group));
     endResetModel();
 
     emit groupChanged();
 }
 
-ImageLocationModel::LocationGroup ImageLocationModel::group() const
+Types::LocationGroup ImageLocationModel::group() const
 {
     return m_group;
 }

@@ -97,7 +97,7 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageTimeModelYear
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.ImageTimeModel.Year
+            group: Koko.Types.Year
         }
         sortRoleName: "date"
     }
@@ -105,7 +105,7 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageTimeModelMonth
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.ImageTimeModel.Month
+            group: Koko.Types.Month
         }
         sortRoleName: "date"
     }
@@ -113,7 +113,7 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageTimeModelWeek
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.ImageTimeModel.Week
+            group: Koko.Types.Week
         }
         sortRoleName: "date"
     }
@@ -121,7 +121,7 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageTimeModelDay
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.ImageTimeModel.Day
+            group: Koko.Types.Day
         }
         sortRoleName: "date"
     }
@@ -129,21 +129,21 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageLocationModelCountry
         sourceModel: Koko.ImageLocationModel {
-            group: Koko.ImageLocationModel.Country
+            group: Koko.Types.Country
         }
     }
         
     Koko.SortModel {
         id: imageLocationModelState
         sourceModel: Koko.ImageLocationModel {
-            group: Koko.ImageLocationModel.State
+            group: Koko.Types.State
         }
     }
     
     Koko.SortModel {
         id: imageLocationModelCity
         sourceModel: Koko.ImageLocationModel {
-            group: Koko.ImageLocationModel.City
+            group: Koko.Types.City
         }
     }
     

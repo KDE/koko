@@ -29,6 +29,7 @@
 #include <QMutex>
 #include <QMutexLocker>
 
+#include "types.h"
 #include "koko_export.h"
 
 struct ImageInfo {
@@ -50,26 +51,15 @@ public:
 
     static ImageStorage* instance();
 
-    enum LocationGroup {
-        Country,
-        State,
-        City
-    };
-    QList< QPair<QByteArray, QString> > locations(LocationGroup loca);
-    QStringList imagesForLocation(const QByteArray& name, LocationGroup loc);
-    QString imageForLocation(const QByteArray& name, LocationGroup loc);
+    QList< QPair<QByteArray, QString> > locations(Types::LocationGroup loca);
+    QStringList imagesForLocation(const QByteArray& name, Types::LocationGroup loc);
+    QString imageForLocation(const QByteArray& name, Types::LocationGroup loc);
 
-    enum TimeGroup {
-        Year,
-        Month,
-        Week,
-        Day
-    };
-    QList< QPair<QByteArray, QString> > timeGroups(TimeGroup group);
-    QStringList imagesForTime(const QByteArray& name, TimeGroup group);
-    QString imageForTime(const QByteArray& name, TimeGroup group);
+    QList< QPair<QByteArray, QString> > timeTypes(Types::TimeGroup group);
+    QStringList imagesForTime(const QByteArray& name, Types::TimeGroup group);
+    QString imageForTime(const QByteArray& name, Types::TimeGroup group);
 
-    QDate dateForKey(const QByteArray& key, TimeGroup group);
+    QDate dateForKey(const QByteArray& key, Types::TimeGroup group);
 
     /**
      * Fetch all the images ordered by descending date time.

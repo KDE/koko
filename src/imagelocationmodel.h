@@ -25,10 +25,12 @@
 #include <QStringList>
 #include <QGeoLocation>
 
+#include "types.h"
+
 class ImageLocationModel : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
+    Q_PROPERTY(Types::LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageLocationModel(QObject* parent = 0);
 
@@ -36,15 +38,8 @@ public:
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
 
-    enum LocationGroup {
-        Country,
-        State,
-        City
-    };
-    Q_ENUMS(LocationGroup)
-
-    LocationGroup group() const;
-    void setGroup(LocationGroup group);
+    Types::LocationGroup group() const;
+    void setGroup(Types::LocationGroup group);
 
 signals:
     void groupChanged();
@@ -53,7 +48,7 @@ private slots:
     void slotPopulate();
 
 private:
-    LocationGroup m_group;
+    Types::LocationGroup m_group;
     QList<QPair<QByteArray, QString> > m_locations;
 };
 
