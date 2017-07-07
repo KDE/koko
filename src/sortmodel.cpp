@@ -225,11 +225,14 @@ void SortModel::selectAll()
 
 void SortModel::deleteSelection()
 {
+    QList<QUrl> filesToDelete;
+
     foreach(QModelIndex index, m_selectionModel->selectedIndexes()) {
-        QString path = data( index, Roles::ImageUrlRole).toString();
-        KIO::trash(QUrl(path));
-        emit dataChanged( index, index);
+        filesToDelete << data( index, Roles::ImageUrlRole).toUrl();
     }
+
+    auto trashJob = KIO::trash(filesToDelete);
+    trashJob->exec();
 }
 
 void SortModel::delayedPreview()

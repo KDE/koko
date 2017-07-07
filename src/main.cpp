@@ -36,7 +36,6 @@
 #include <QQuickView>
 
 #include <iostream>
-#include <kdirwatch.h>
 
 #include "filesystemtracker.h"
 #include "processor.h"
@@ -76,9 +75,6 @@ int main(int argc, char** argv)
     FileSystemTracker tracker;
     tracker.setFolder(locations.first());
     tracker.moveToThread(&trackerThread);
-    
-    KDirWatch watcher(&app);
-    watcher.self()->addDir(locations.first(), KDirWatch::WatchSubDirs);
 
     Koko::Processor processor;
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Koko::Processor::addFile);
@@ -87,9 +83,6 @@ int main(int argc, char** argv)
 
     trackerThread.start();
     tracker.setSubFolder(tracker.folder());
-    
-    QObject::connect(KDirWatch::self(), &KDirWatch::dirty, 
-                     &tracker, &FileSystemTracker::setSubFolder);
 
     KokoConfig config;
 

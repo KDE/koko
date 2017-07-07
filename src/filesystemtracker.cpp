@@ -33,9 +33,32 @@
 #include <QDir>
 #include <QDebug>
 
+#include <KDirNotify>
+#include <kdirwatch.h>
+
 FileSystemTracker::FileSystemTracker(QObject* parent)
     : QObject(parent)
 {
+    QObject::connect(KDirWatch::self(), &KDirWatch::dirty,
+                     this, &FileSystemTracker::setSubFolder);
+
+
+    org::kde::KDirNotify *kdirnotify = new org::kde::KDirNotify(QString(), QString(), QDBusConnection::sessionBus(), this);
+
+    connect(kdirnotify, &org::kde::KDirNotify::FilesRemoved,
+            this, [this](const QStringList &files) {
+                for (const QString & filePath : files) {
+                    removeFile(filePath);
+                }
+            });
+    connect(kdirnotify, &org::kde::KDirNotify::FilesAdded,
+            this, &FileSystemTracker::setSubFolder);
+    connect(kdirnotify, &org::kde::KDirNotify::FileRenamedWithLocalPath,
+            this, [this](const QString &src, const QString &dst, const QString &dstPath) {
+                removeFile(src);
+                slotNewFiles({dst});
+            });
+
     //
     // Real time updates
     //
@@ -55,7 +78,7 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
     QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("fstracker"));
     db.setDatabaseName(dir + "/fstracker.sqlite3");
     if (!db.open()) {
-        qDebug() << "Failed to open db" << db.lastError().text();
+        qWarning() << "Failed to open db" << db.lastError().text();
         return;
     }
 
@@ -68,13 +91,13 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
                           "id INTEGER PRIMARY KEY, "
                           "url TEXT NOT NULL UNIQUE)"));
     if (!ret) {
-        qDebug() << "Could not create files table" << query.lastError().text();
+        qWarning() << "Could not create files table" << query.lastError().text();
         return;
     }
 
     ret = query.exec(QLatin1String("CREATE INDEX fileUrl_index ON files (url)"));
     if (!ret) {
-        qDebug() << "Could not create tags index" << query.lastError().text();
+        qWarning() << "Could not create tags index" << query.lastError().text();
         return;
     }
 
@@ -84,7 +107,7 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
     //
     ret = query.exec(QLatin1String("PRAGMA journal_mode = WAL"));
     if (!ret) {
-        qDebug() << "Could not set WAL journaling mode" << query.lastError().text();
+        qWarning() << "Could not set WAL journaling mode" << query.lastError().text();
         return;
     }
 }
@@ -130,17 +153,9 @@ void FileSystemTracker::slotFetchFinished()
 
     while (query.next()) {
         QString filePath = query.value(0).toString();
-        
 
-        if ( filePath.contains(m_subFolder) && !m_filePaths.contains(filePath)) {
-            qDebug() << "REMOVED" << filePath;
-            emit imageRemoved(filePath);
-            QSqlQuery query(QSqlDatabase::database("fstracker"));
-            query.prepare("DELETE from files where url = ?");
-            query.addBindValue(filePath);
-            if (!query.exec()) {
-                qDebug() << query.lastError();
-            }
+        if (filePath.contains(m_subFolder) && !m_filePaths.contains(filePath)) {
+            removeFile(filePath);
         }
     }
 
@@ -148,6 +163,18 @@ void FileSystemTracker::slotFetchFinished()
 
     m_filePaths.clear();
     emit initialScanComplete();
+}
+
+void FileSystemTracker::removeFile(const QString &filePath)
+{
+    qDebug() << "REMOVED" << filePath;
+    emit imageRemoved(filePath);
+    QSqlQuery query(QSqlDatabase::database("fstracker"));
+    query.prepare("DELETE from files where url = ?");
+    query.addBindValue(filePath);
+    if (!query.exec()) {
+        qWarning() << query.lastError();
+    }
 }
 
 void FileSystemTracker::slotNewFiles(const QStringList& files)
@@ -169,9 +196,15 @@ void FileSystemTracker::slotNewFiles(const QStringList& files)
 }
 
 
-void FileSystemTracker::setFolder(const QString& folder)
+void FileSystemTracker::setFolder(const QString &folder)
 {
+    if (m_folder == folder) {
+        return;
+    }
+
+    KDirWatch::self()->removeDir(m_folder);
     m_folder = folder;
+    KDirWatch::self()->addDir(m_folder, KDirWatch::WatchSubDirs);
 }
 
 QString FileSystemTracker::folder() const

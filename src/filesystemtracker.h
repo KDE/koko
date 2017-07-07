@@ -27,6 +27,7 @@
 class FileSystemTracker : public QObject
 {
     Q_OBJECT
+
 public:
     explicit FileSystemTracker(QObject* parent = 0);
     virtual ~FileSystemTracker();
@@ -42,6 +43,9 @@ signals:
     void imageRemoved(const QString& filePath);
     void initialScanComplete();
     void subFolderChanged();
+
+protected:
+    void removeFile(const QString &filePath);
 
 private slots:
     void slotNewFiles(const QStringList& files);
