@@ -56,7 +56,7 @@ Kirigami.ScrollablePage {
     ]
 
     background: Rectangle {
-        color: Kirigami.Theme.viewBackground
+        color: Kirigami.Theme.viewBackgroundColor
     }
 
     GridView {

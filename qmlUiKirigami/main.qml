@@ -156,8 +156,7 @@ Kirigami.ApplicationWindow {
         width: overlay.width
         height: overlay.height
         currentIndex: currentImage.index
-        model: currentImage.model        
-        focus: true
+        model: currentImage.model
         imageWidth: root.width
         imageHeight: root.height
     }

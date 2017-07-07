@@ -26,7 +26,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.0 as Kirigami
 
-Rectangle {
+Kirigami.Page {
     id: root
     
     property alias model: listView.model
@@ -34,6 +34,9 @@ Rectangle {
     
     property int imageWidth
     property int imageHeight
+    
+    leftPadding: 0
+    rightPadding: 0
 
     state: "closed"
     states: [
@@ -46,6 +49,10 @@ Rectangle {
             PropertyChanges {
                 target: root
                 opacity: 1
+            }
+            PropertyChanges {
+                target: root
+                focus: true
             }
             PropertyChanges {
                 target: listView
@@ -95,8 +102,10 @@ Rectangle {
             }
         }
     ]
-    //NOTE: this is the only place where hardcoded black is fine
-    color: "black"
+    
+    background: Rectangle {
+        color: "black"
+    }
 
     Keys.onEscapePressed: root.state = "closed";
     ListView {
