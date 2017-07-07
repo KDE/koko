@@ -26,6 +26,7 @@ class Types : public QObject {
     Q_ENUMS(ItemTypes)
     Q_ENUMS(TimeGroup)
     Q_ENUMS(LocationGroup)
+    Q_ENUMS(QueryType)
 public:
     Types(QObject* parent);
     ~Types();
@@ -43,6 +44,11 @@ public:
         Country = 7,
         State,
         City
+    };
+    
+    enum QueryType {
+        LocationQuery = 10,
+        TimeQuery
     };
     
 };

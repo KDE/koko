@@ -35,7 +35,8 @@ public:
         FilesRole,
         FileCountRole,
         DateRole,
-        SelectedRole
+        SelectedRole,
+        SourceIndex
     };
     
 };

@@ -88,7 +88,7 @@ Item {
         gridView.model.clearSelections()
         switch( model.itemType) {
             case Koko.Types.Album: {
-                imageListModel.imageList = model.files
+                imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
                 sortedListModel.sourceModel = imageListModel
                 collectionSelected( sortedListModel, model.display)
                 break;

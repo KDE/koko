@@ -112,6 +112,7 @@ QHash<int, QByteArray> SortModel::roleNames() const
     QHash<int, QByteArray> hash = sourceModel()->roleNames();
     hash.insert( Roles::SelectedRole, "selected");
     hash.insert( Roles::Thumbnail, "thumbnail");
+    hash.insert( Roles::SourceIndex, "sourceIndex");
     return hash;
 }
 
@@ -142,6 +143,9 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
             const_cast<SortModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
         }
         
+        case Roles::SourceIndex: {
+            return mapToSource(index);
+        }
     }
     
     return QSortFilterProxyModel::data(index, role);

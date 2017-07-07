@@ -89,9 +89,6 @@ Kirigami.ScrollablePage {
     Koko.SortModel {
         id: sortedListModel
     }
-    Koko.ImageListModel {
-        id: imageListModel
-    }
     Koko.ImageFolderModel {
         id: imageFolderModel
     }

@@ -53,34 +53,43 @@ Kirigami.ApplicationWindow {
             switch( value){
                 case "Countries": { 
                     albumView.model = imageLocationModelCountry;
+                    imageListModel.locationGroup = Koko.Types.Country;
                     break;
                 }
                 case "States": { 
                     albumView.model = imageLocationModelState;
+                    imageListModel.locationGroup = Koko.Types.State;
                     break;
                 }
                 case "Cities": {
                     albumView.model = imageLocationModelCity;
+                    imageListModel.locationGroup = Koko.Types.City;
                     break;
                 }
                 case "Years": {
                     albumView.model = imageTimeModelYear; 
+                    imageListModel.timeGroup = Koko.Types.Year;
                     break;
                 }
                 case "Months": {
                     albumView.model = imageTimeModelMonth;
+                    imageListModel.timeGroup = Koko.Types.Month;
                     break;
                 }
                 case "Weeks": {
-                    albumView.model = imageTimeModelWeek; 
+                    albumView.model = imageTimeModelWeek;
+                    imageListModel.timeGroup = Koko.Types.Week;
                     break;
                 }
                 case "Days": { 
                     albumView.model = imageTimeModelDay; 
+                    imageListModel.timeGroup = Koko.Types.Day;
                     break;
                 }
                 case "Folders": { 
                     albumView.model = imageFolderModel; 
+                    imageListModel.locationGroup = -1;
+                    imageListModel.timeGroup = -1;
                     break; 
                 }
             }
@@ -145,6 +154,10 @@ Kirigami.ApplicationWindow {
         sourceModel: Koko.ImageLocationModel {
             group: Koko.Types.City
         }
+    }
+    
+    Koko.ImageListModel {
+        id: imageListModel
     }
     
     ImageViewer {
