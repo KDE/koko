@@ -71,10 +71,6 @@ public:
 
     QDate dateForKey(const QByteArray& key, TimeGroup group);
 
-    QList< QPair<QByteArray, QString> > folders() const;
-    QStringList imagesForFolders(const QByteArray& key) const;
-    QString imageForFolders(const QByteArray& key) const;
-
     /**
      * Fetch all the images ordered by descending date time.
      */
