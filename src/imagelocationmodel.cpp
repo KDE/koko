@@ -111,14 +111,3 @@ ImageLocationModel::LocationGroup ImageLocationModel::group() const
 {
     return m_group;
 }
-
-void ImageLocationModel::removeImage(const QString& path, int index)
-{
-    Q_UNUSED(index);
-    //Removes the file from database
-    ImageStorage::instance()->removeImage(path);
-    ImageStorage::instance()->commit();
-    
-    // Removes the file from physical storage to the trash
-    KIO::trash(QUrl::fromLocalFile(path));
-}

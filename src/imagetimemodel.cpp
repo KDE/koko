@@ -120,14 +120,3 @@ void ImageTimeModel::setGroup(ImageTimeModel::TimeGroup group)
 
     emit groupChanged();
 }
-
-void ImageTimeModel::removeImage(const QString& path, int index)
-{
-    Q_UNUSED(index);
-    //Removes the file from database
-    ImageStorage::instance()->removeImage(path);
-    ImageStorage::instance()->commit();
-    
-    // Removes the file from physical storage to the trash
-    KIO::trash(QUrl::fromLocalFile(path));
-}
