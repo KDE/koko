@@ -57,11 +57,13 @@ void Processor::addFile(const QString& filePath)
 
     QTimer::singleShot(0, this, SLOT(process()));
     emit numFilesChanged();
+    ImageStorage::instance()->commit();
 }
 
 void Processor::removeFile(const QString& filePath)
 {
     ImageStorage::instance()->removeImage(filePath);
+    ImageStorage::instance()->commit();
 }
 
 float Processor::initialProgress() const
