@@ -25,7 +25,7 @@ import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.1 as Kirigami
 import org.kde.koko 0.1 as Koko
 
-Item {
+Rectangle {
     id: albumDelegate
     width: gridView.cellWidth
     height: gridView.cellHeight
@@ -33,7 +33,7 @@ Item {
     KQA.QImageItem {
         id: image
         anchors.centerIn: parent
-        width: gridView.cellWidth - (Kirigami.Units.largeSpacing )
+        width: gridView.cellWidth - (Kirigami.Units.smallSpacing * 2 )
         height: width
         smooth: true
         image: model.thumbnail

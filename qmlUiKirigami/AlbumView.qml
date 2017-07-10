@@ -62,23 +62,6 @@ Kirigami.ScrollablePage {
         color: Kirigami.Theme.viewBackgroundColor
     }
 
-    GridView {
-        id: gridView
-
-        property int iconSize: Kirigami.Units.iconSizes.enormous
-        keyNavigationEnabled: true
-
-        //leave a gridUnit for the scrollbar on desktop systems
-        //TODO: automate this in kirigami somehow?
-        readonly property int effectiveWidth: Kirigami.Settings.isMobile ? width : width - Kirigami.Units.gridUnit
-        cellWidth: effectiveWidth / Math.floor(effectiveWidth / (iconSize + Kirigami.Units.largeSpacing*2))
-        cellHeight: cellWidth
-        
-        highlight: Rectangle { color: Kirigami.Theme.highlightColor}
-        
-        delegate: AlbumDelegate {}
-    }
-    
     Keys.onPressed: {
         switch (event.key) {
             case Qt.Key_Escape:
@@ -88,12 +71,27 @@ Kirigami.ScrollablePage {
                 break;
         }
     }
-    
-    Koko.SortModel {
-        id: sortedListModel
-    }
-    Koko.ImageFolderModel {
-        id: imageFolderModel
+
+    leftPadding: (page.width - Math.floor(page.width / gridView.cellWidth) * gridView.cellWidth)/2
+    rightPadding: leftPadding
+    GridView {
+        id: gridView
+        //FIXME: right now if those two objects are out of this, the whole page breaks
+        Koko.SortModel {
+            id: sortedListModel
+        }
+        Koko.ImageFolderModel {
+            id: imageFolderModel
+        }
+
+        keyNavigationEnabled: true
+
+        cellWidth: Kirigami.Units.iconSizes.enormous + Kirigami.Units.smallSpacing * 2
+        cellHeight: cellWidth
+        
+        highlight: Rectangle { color: Kirigami.Theme.highlightColor}
+        
+        delegate: AlbumDelegate {}
     }
 
     onCollectionSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
