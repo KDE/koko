@@ -100,7 +100,7 @@ Item {
                 break;
             }
             case Koko.Types.Image: {
-                imageSelected(model.index)
+                imageSelected( model.sourceIndex)
                 break;
             }
             default: {

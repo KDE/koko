@@ -97,7 +97,7 @@ Kirigami.ScrollablePage {
     onCollectionSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
     onFolderSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
     onImageSelected: {
-        currentImage.model = model
+        currentImage.model = model.sourceModel
         currentImage.index = currentIndex
         imageViewer.state = "open";
     }

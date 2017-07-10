@@ -24,6 +24,7 @@
 
 class Roles : public QObject {
    Q_OBJECT
+   Q_ENUMS(RoleNames)
 public:
     Roles(QObject* parent);
     ~Roles();

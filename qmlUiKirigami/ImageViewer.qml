@@ -25,12 +25,13 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.koko 0.1 as Koko
 
 Kirigami.Page {
     id: root
     
-    property alias model: listView.model
-    property alias currentIndex: listView.currentIndex
+    property alias sourceModel: imagesListModel.sourceModel
+    property int indexValue
     
     property int imageWidth
     property int imageHeight
@@ -113,7 +114,19 @@ Kirigami.Page {
         anchors.fill: parent
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
-        onMovementEnded: currentImage.index = indexAt(contentX+1, 1);
+        onMovementEnded: currentImage.index = model.sourceIndex(indexAt(contentX+1, 1))
+        
+        model: Koko.SortModel {
+            id: imagesListModel
+            filterRole: Koko.Roles.MimeTypeRole
+            filterRegExp: /image\//
+        }
+        currentIndex: model.proxyIndex( indexValue)
+        
+        onCurrentIndexChanged: {
+            currentImage.index = model.sourceIndex( currentIndex)
+            listView.positionViewAtIndex(currentIndex, ListView.Beginning)
+        }
 
         delegate: Flickable {
             id: flick
@@ -260,11 +273,7 @@ Kirigami.Page {
             }
         }
     }
-
-    onCurrentIndexChanged: {
-        currentImage.index = currentIndex
-        listView.positionViewAtIndex(currentIndex, ListView.Beginning)
-    }
+    
     //FIXME: placeholder, will have to use the state machine
     Controls.Button {
         text: i18n("Back")

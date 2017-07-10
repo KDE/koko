@@ -47,6 +47,7 @@ QHash<int, QByteArray> ImageListModel::roleNames() const
     QHash<int, QByteArray> hash = QAbstractListModel::roleNames();
     hash.insert( Roles::ImageUrlRole, "imageurl");
     hash.insert( Roles::ItemTypeRole, "itemType");
+    hash.insert( Roles::MimeTypeRole, "mimeType");
     
     return hash;
 }
@@ -70,6 +71,11 @@ QVariant ImageListModel::data(const QModelIndex& index, int role) const
         case Roles::ItemTypeRole:
             return Types::Image;
             
+        case Roles::MimeTypeRole: {
+            QMimeDatabase db;
+            QMimeType type = db.mimeTypeForFile( m_images.at(indexValue));
+            return type.name();
+        }
     }
     
     return QVariant();
@@ -150,12 +156,12 @@ void ImageListModel::setQuery(const QByteArray &statement)
     emit queryChanged();
 }
 
-QByteArray ImageListModel::queryForIndex(const QModelIndex &index)
+QByteArray ImageListModel::queryForIndex(const int& index)
 {
     if(m_queryType == Types::LocationQuery) {
-        return m_locations.at( index.row()).first;
+        return m_locations.at( index).first;
     } else if( m_queryType == Types::TimeQuery) {
-        return m_times.at( index.row()).first;
+        return m_times.at( index).first;
     }
     return QByteArray();
 }

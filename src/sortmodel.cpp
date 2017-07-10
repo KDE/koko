@@ -144,7 +144,7 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
         }
         
         case Roles::SourceIndex: {
-            return mapToSource(index);
+            return mapToSource(index).row();
         }
     }
     
@@ -165,7 +165,6 @@ bool SortModel::containImages()
 {
     return m_containImages;
 }
-
 
 bool SortModel::hasSelectedImages() 
 {
@@ -237,6 +236,19 @@ void SortModel::deleteSelection()
 
     auto trashJob = KIO::trash(filesToDelete);
     trashJob->exec();
+}
+
+int SortModel::proxyIndex(const int& indexValue)
+{
+    if( sourceModel() ) {
+        return mapFromSource( sourceModel()->index( indexValue, 0, QModelIndex())).row();
+    }
+    return -1;
+}
+
+int SortModel::sourceIndex(const int& indexValue)
+{
+    return mapToSource( index(indexValue, 0, QModelIndex())).row();
 }
 
 void SortModel::delayedPreview()

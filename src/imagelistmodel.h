@@ -53,7 +53,7 @@ public:
     QByteArray query() const;
     void setQuery(const QByteArray &statement);
     
-    Q_INVOKABLE QByteArray queryForIndex(const QModelIndex &index);
+    Q_INVOKABLE QByteArray queryForIndex(const int &index);
     
     void slotLocationGroupChanged();
     void slotTimeGroupChanged();

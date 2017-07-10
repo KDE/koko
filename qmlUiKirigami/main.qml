@@ -29,13 +29,16 @@ Kirigami.ApplicationWindow {
     id: root
     header: Kirigami.ApplicationHeader {}
     
+    /*
+     * currentImage now stores the information related to the source model
+     */
     QtObject {
         id: currentImage
         property int index
         property var model
         property GridView view : pageStack.currentItem.flickable
         onIndexChanged: {
-            view.currentIndex = currentImage.index
+            view.currentIndex = view.model.proxyIndex(currentImage.index)
         }
     }
     
@@ -101,6 +104,10 @@ Kirigami.ApplicationWindow {
     Koko.SortModel{
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {}
+        /*
+         * filterRole is an Item property exposed by the QSortFilterProxyModel
+         */
+        filterRole: Koko.Roles.MimeTypeRole
     }
     
     Koko.SortModel {
@@ -168,8 +175,8 @@ Kirigami.ApplicationWindow {
         parent: root.overlay.parent
         width: overlay.width
         height: overlay.height
-        currentIndex: currentImage.index
-        model: currentImage.model
+        indexValue: currentImage.index
+        sourceModel: currentImage.model
         imageWidth: root.width
         imageHeight: root.height
     }
