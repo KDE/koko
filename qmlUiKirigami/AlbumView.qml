@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             iconName: "edit-select-none"
             text: i18n("Deselect All")
-            enabled: model.containImages
+            enabled: model.hasSelectedImages
             onTriggered: model.clearSelections()
         },
         Kirigami.Action {
