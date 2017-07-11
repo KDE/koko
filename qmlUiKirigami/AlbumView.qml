@@ -40,18 +40,21 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             iconName: "edit-select-all"
             text: i18n("Select All")
+            tooltip: i18n("Selects all the images in the current view")
             enabled: model.containImages
             onTriggered: model.selectAll()
         },
         Kirigami.Action {
             iconName: "edit-select-none"
             text: i18n("Deselect All")
+            tooltip: i18n("De-selects all the selected images")
             enabled: model.hasSelectedImages
             onTriggered: model.clearSelections()
         },
         Kirigami.Action {
             iconName: "group-delete"
             text: i18n("Delete Selection")
+            tooltip: i18n("Move selected items to trash")
             enabled: model.hasSelectedImages
             onTriggered: model.deleteSelection()
         }
