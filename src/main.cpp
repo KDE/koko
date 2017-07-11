@@ -91,7 +91,16 @@ int main(int argc, char** argv)
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
 
-    QString path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/main.qml");
+    QString path;
+    //we want different main files on desktop or mobile
+    //very small difference as they as they are subclasses of the same thing
+    if (qEnvironmentVariableIsSet("QT_QUICK_CONTROLS_MOBILE") &&
+        (QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("1") ||
+         QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("true"))) {
+        path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/mobileMain.qml");
+    } else {
+        path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/desktopMain.qml");
+    }
     
     QQuickView* view = new QQuickView( &engine, new QWindow());
     view->engine()->rootContext()->setContextObject(new KLocalizedContext(view));    

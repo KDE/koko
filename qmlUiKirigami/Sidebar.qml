@@ -28,8 +28,7 @@ Kirigami.GlobalDrawer {
     
     signal filterBy(string value)
     property Kirigami.Action previouslySelectedAction
-    width: Kirigami.Units.gridUnit * 14
-    title: i18n("Navigation") 
+    width: Kirigami.Units.gridUnit * 10
     
     actions: [
         Kirigami.Action {
