@@ -24,8 +24,7 @@ import QtQuick 2.7
 import org.kde.kirigami 2.1 as Kirigami
 
 Rectangle { 
-    width: albumDelegate.width - Kirigami.Units.smallSpacing
-    height: albumDelegate.height - Kirigami.Units.smallSpacing
+    anchors.fill: parent
     z: gridView.z + 1
     
     color: Kirigami.Theme.highlightColor
