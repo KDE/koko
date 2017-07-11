@@ -25,7 +25,7 @@ import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.1 as Kirigami
 import org.kde.koko 0.1 as Koko
 
-Rectangle {
+Item {
     id: albumDelegate
     width: gridView.cellWidth
     height: gridView.cellHeight
