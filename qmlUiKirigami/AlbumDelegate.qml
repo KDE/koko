@@ -70,8 +70,15 @@ Item {
         id: albumThumbnailMouseArea
         anchors.fill: parent
         hoverEnabled: true
-        onClicked: activate();
+        onClicked: {
+            if ((mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
+                gridView.model.toggleSelected(model.index)
+            } else {
+                activate();
+            }
+        }
     }
+    
     Keys.onPressed: {
         switch (event.key) {
             case Qt.Key_Enter:
