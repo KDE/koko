@@ -86,6 +86,7 @@ Item {
     
     function activate( ) {
         gridView.model.clearSelections()
+        gridView.currentIndex = model.index;
         switch( model.itemType) {
             case Koko.Types.Album: {
                 imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
