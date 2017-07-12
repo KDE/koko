@@ -35,31 +35,52 @@ Kirigami.ScrollablePage {
     
     keyboardNavigationEnabled: true
     focus: true
-    
-    contextualActions: [
-        Kirigami.Action {
-            iconName: "edit-select-all"
-            text: i18n("Select All")
-            tooltip: i18n("Selects all the images in the current view")
-            enabled: model.containImages
-            onTriggered: model.selectAll()
+
+    states: [
+        State {
+            name: "browsing"
+            when: !model.hasSelectedImages
         },
-        Kirigami.Action {
-            iconName: "edit-select-none"
-            text: i18n("Deselect All")
-            tooltip: i18n("De-selects all the selected images")
-            enabled: model.hasSelectedImages
-            onTriggered: model.clearSelections()
-        },
-        Kirigami.Action {
-            iconName: "group-delete"
-            text: i18n("Delete Selection")
-            tooltip: i18n("Move selected items to trash")
-            enabled: model.hasSelectedImages
-            onTriggered: model.deleteSelection()
+        State {
+            name: "selecting"
+            when: model.hasSelectedImages && Kirigami.Settings.isMobile
         }
-        
     ]
+
+    actions {
+        main: Kirigami.Action {
+                iconName: "edit-select-none"
+                text: i18n("Deselect All")
+                tooltip: i18n("De-selects all the selected images")
+                enabled: model.hasSelectedImages
+                visible: model.hasSelectedImages && Kirigami.Settings.isMobile
+                onTriggered: model.clearSelections()
+            }
+        contextualActions: [
+            Kirigami.Action {
+                iconName: "edit-select-all"
+                text: i18n("Select All")
+                tooltip: i18n("Selects all the images in the current view")
+                enabled: model.containImages
+                onTriggered: model.selectAll()
+            },
+            Kirigami.Action {
+                iconName: "edit-select-none"
+                text: i18n("Deselect All")
+                tooltip: i18n("De-selects all the selected images")
+                enabled: model.hasSelectedImages
+                onTriggered: model.clearSelections()
+            },
+            Kirigami.Action {
+                iconName: "group-delete"
+                text: i18n("Delete Selection")
+                tooltip: i18n("Move selected items to trash")
+                enabled: model.hasSelectedImages
+                onTriggered: model.deleteSelection()
+            }
+            
+        ]
+    }
 
     background: Rectangle {
         color: Kirigami.Theme.viewBackgroundColor

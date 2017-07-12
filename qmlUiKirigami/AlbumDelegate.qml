@@ -63,20 +63,23 @@ Item {
     
     SelectionButton {
         id: selectionButton
-        visible: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse ) && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
+        visible: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse  || page.state == "selecting") && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
     }
     
     SelectionDelegateHighlight {
         id: selectionHighlight
         visible: model.selected
     }
-    
+
     MouseArea {
         id: albumThumbnailMouseArea
         anchors.fill: parent
         hoverEnabled: true
+        onPressAndHold: {
+            gridView.model.toggleSelected(model.index)
+        }
         onClicked: {
-            if ((mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
+            if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
                 gridView.model.toggleSelected(model.index)
             } else {
                 activate();
