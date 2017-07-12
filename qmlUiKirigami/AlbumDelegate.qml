@@ -40,19 +40,24 @@ Item {
         fillMode: KQA.QImageItem.PreserveAspectCrop
     }
 
-    Kirigami.BasicListItem {
+    Rectangle {
         visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
-        label: model.fileCount
-                ? i18np(" %2 \n 1 Image"," %2 \n %1 Images", model.fileCount, model.display)
-                : model.display
-        reserveSpaceForIcon: false
         width: image.width
-        anchors.left: image.left
+        height: textLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
+        color: Kirigami.Theme.viewBackgroundColor
         anchors.top: image.top
-        background: Rectangle {
+        anchors.left: image.left
+        opacity: 0.8
+        
+        Controls.Label {
+            id: textLabel
             anchors.fill: parent
-            opacity: 0.7
-            color: Kirigami.Theme.backgroundColor
+            padding: Kirigami.Units.smallSpacing
+            wrapMode: Text.WordWrap
+            color: Kirigami.Theme.textColor
+            text: model.fileCount
+                      ? i18np("%2 \n 1 Image", "%2 \n %1 Images", model.fileCount, model.display)
+                      : model.display
         }
     }
     
