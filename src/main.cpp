@@ -91,7 +91,7 @@ int main(int argc, char** argv)
     QQmlContext* objectContext = engine.rootContext();
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
-    objectContext->setContextProperty("imagePathArgument", parser.positionalArguments().first());
+    objectContext->setContextProperty("imagePathArgument", parser.positionalArguments().isEmpty() ? QString() : parser.positionalArguments().first());
 
     QString path;
     //we want different main files on desktop or mobile
