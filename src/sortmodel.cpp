@@ -116,7 +116,6 @@ QHash<int, QByteArray> SortModel::roleNames() const
     return hash;
 }
 
-
 QVariant SortModel::data(const QModelIndex& index, int role) const
 {
     if( !index.isValid()) {
@@ -149,6 +148,22 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
     }
     
     return QSortFilterProxyModel::data(index, role);
+}
+
+bool SortModel::lessThan(const QModelIndex& source_left, const QModelIndex& source_right) const
+{
+    if(sourceModel()) {
+        if( (sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder && sourceModel()-> data(source_right, Roles::ItemTypeRole) == Types::Folder )
+            || (sourceModel()->data(source_left, Roles::ItemTypeRole) != Types::Folder && sourceModel()-> data(source_right, Roles::ItemTypeRole) != Types::Folder)) {
+            return QSortFilterProxyModel::lessThan(source_left, source_right);
+        } else if( sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    return false;
 }
 
 void SortModel::setSourceModel(QAbstractItemModel* sourceModel)
