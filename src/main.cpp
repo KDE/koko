@@ -52,6 +52,7 @@ int main(int argc, char** argv)
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
+    parser.addPositionalArgument( "image", i18n("path of image you want to open"));
     parser.addHelpOption();
     parser.process(app);
 
@@ -90,6 +91,7 @@ int main(int argc, char** argv)
     QQmlContext* objectContext = engine.rootContext();
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
+    objectContext->setContextProperty("imagePathArgument", parser.positionalArguments().first());
 
     QString path;
     //we want different main files on desktop or mobile
