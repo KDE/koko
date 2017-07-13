@@ -53,7 +53,7 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    void setUrl(const QString& url);
+    void setUrl(QString& url);
     QString url() const;
 
     QVariant data(const QModelIndex &index, int role) const;
@@ -71,7 +71,7 @@ public:
 Q_SIGNALS:
     void countChanged();
     void urlChanged();
-    void showImageViewer(const QString &path);
+    void showImageViewer(int indexValue);
 
 private:
     QStringList m_mimeTypes;
