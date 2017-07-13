@@ -28,6 +28,7 @@
 #include <QDebug>
 #include <QMimeDatabase>
 #include <QStandardPaths>
+#include <QFileInfo>
 
 #include <kdirlister.h>
 #include <KIO/EmptyTrashJob>
@@ -53,13 +54,9 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
             this, &ImageFolderModel::countChanged);
     connect(this, &QAbstractItemModel::modelReset,
             this, &ImageFolderModel::countChanged);
-
-    //TODO: don't hardcode this
-    QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
-    Q_ASSERT(locations.size() >= 1);
-    qDebug() << locations;
-
-    setUrl("file://"+locations.first());
+    
+    connect(this, &ImageFolderModel::showImageViewer, 
+            this, [this] (const QString path) {qDebug() << "will show image " <<  path;});
 }
 
 ImageFolderModel::~ImageFolderModel()
@@ -87,13 +84,24 @@ void ImageFolderModel::setUrl(const QString& url)
     if (url.isEmpty()) {
         return;
     }
-    if (dirLister()->url().path() == url) {
-        dirLister()->updateDirectory(QUrl(url));
+    
+    QString directoryUrl;
+    
+    if( !QFileInfo(url).isDir()) {
+        m_imagePath = url;
+        directoryUrl = url.left(url.lastIndexOf('/'));
+        emit showImageViewer( m_imagePath);
+    } else {
+        directoryUrl = "file://" + url;
+    }
+    
+    if (dirLister()->url().path() == directoryUrl) {
+        dirLister()->updateDirectory(QUrl(directoryUrl));
         return;
     }
 
     beginResetModel();
-    dirLister()->openUrl(QUrl(url));
+    dirLister()->openUrl(QUrl(directoryUrl));
     endResetModel();
     emit urlChanged();
 }

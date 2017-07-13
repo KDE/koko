@@ -27,7 +27,4 @@ Main {
     footer: Kirigami.ToolBarApplicationHeader {
         backButtonEnabled: false
     }
-    Component.onCompleted: {
-        console.log( imagePathArgument)
-    }
 }

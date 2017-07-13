@@ -71,9 +71,11 @@ public:
 Q_SIGNALS:
     void countChanged();
     void urlChanged();
+    void showImageViewer(const QString &path);
 
 private:
     QStringList m_mimeTypes;
+    QString m_imagePath;
 };
 
 #endif // IMAGEFOLDERMODEL_H

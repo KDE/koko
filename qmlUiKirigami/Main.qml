@@ -101,7 +101,9 @@ Kirigami.ApplicationWindow {
 
     Koko.SortModel {
         id: imageFolderModel
-        sourceModel: Koko.ImageFolderModel {}
+        sourceModel: Koko.ImageFolderModel {
+            url: imagePathArgument
+        }
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel
          */

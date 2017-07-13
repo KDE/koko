@@ -25,6 +25,7 @@
 #include <QStandardPaths>
 #include <QDebug>
 #include <QThread>
+#include <QDir>
 
 #include <KDBusService>
 #include <KLocalizedString>
@@ -59,7 +60,7 @@ int main(int argc, char** argv)
     if (parser.positionalArguments().size() > 1) {
         parser.showHelp(1);
     }
-
+    
     if (parser.isSet("reset")) {
         KokoConfig config;
         config.reset();
@@ -73,6 +74,11 @@ int main(int argc, char** argv)
     Q_ASSERT(locations.size() >= 1);
     qDebug() << locations;
 
+    QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
+    QUrl resolvedImagePath = parser.positionalArguments().isEmpty() 
+                                                       ? QUrl(locations.first().append('/')) 
+                                                       : currentDirPath.resolved( parser.positionalArguments().first());
+    
     FileSystemTracker tracker;
     tracker.setFolder(locations.first());
     tracker.moveToThread(&trackerThread);
@@ -91,7 +97,7 @@ int main(int argc, char** argv)
     QQmlContext* objectContext = engine.rootContext();
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
-    objectContext->setContextProperty("imagePathArgument", parser.positionalArguments().isEmpty() ? QString() : parser.positionalArguments().first());
+    objectContext->setContextProperty("imagePathArgument", resolvedImagePath.toString());
 
     QString path;
     //we want different main files on desktop or mobile
