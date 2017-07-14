@@ -71,7 +71,6 @@ public:
 Q_SIGNALS:
     void countChanged();
     void urlChanged();
-    void showImageViewer(int indexValue);
 
 private:
     QStringList m_mimeTypes;

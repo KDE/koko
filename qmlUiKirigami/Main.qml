@@ -103,6 +103,16 @@ Kirigami.ApplicationWindow {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
             url: imagePathArgument
+            /**
+             * makes sure that operation only occurs after the model is populated
+             */
+            onRowsInserted: {
+                if( indexForUrl(imagePathArgument) != -1) {
+                    currentImage.model = this
+                    currentImage.index = indexForUrl(imagePathArgument)
+                    imageViewer.state = "open"
+                }
+            }
         }
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel

@@ -92,7 +92,6 @@ void ImageFolderModel::setUrl(QString& url)
     } else {
         m_imagePath = url;
         directoryUrl = QUrl::fromLocalFile(url.left(url.lastIndexOf('/'))).toString();
-        emit showImageViewer( indexForUrl(m_imagePath));
     }
     
     if (dirLister()->url().path() == directoryUrl) {
