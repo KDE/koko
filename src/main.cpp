@@ -76,11 +76,11 @@ int main(int argc, char** argv)
 
     QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
     QUrl resolvedImagePath = parser.positionalArguments().isEmpty() 
-                                                       ? QUrl::fromLocalFile(locations.first().append('/')) 
+                                                       ? QUrl() 
                                                        : currentDirPath.resolved( parser.positionalArguments().first());
     
     if( !resolvedImagePath.isLocalFile()) {
-        resolvedImagePath = QUrl::fromLocalFile(locations.first().append('/')) ;
+        resolvedImagePath = QUrl() ;
     }
     
     FileSystemTracker tracker;

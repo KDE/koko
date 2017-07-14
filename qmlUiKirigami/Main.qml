@@ -110,7 +110,6 @@ Kirigami.ApplicationWindow {
                 if( indexForUrl(imagePathArgument) != -1) {
                     currentImage.model = this
                     currentImage.index = indexForUrl(imagePathArgument)
-                    imageViewer.state = "open"
                 }
             }
         }
@@ -189,6 +188,7 @@ Kirigami.ApplicationWindow {
         sourceModel: currentImage.model
         imageWidth: root.width
         imageHeight: root.height
+        state: imagePathArgument == "" ? "closed" : "open"
     }
 
     Component.onCompleted: {

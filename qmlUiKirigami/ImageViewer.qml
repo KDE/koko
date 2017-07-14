@@ -39,7 +39,6 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
-    state: "closed"
     states: [
         State {
             name: "open"
