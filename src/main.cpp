@@ -83,6 +83,19 @@ int main(int argc, char** argv)
         resolvedImagePath = QUrl() ;
     }
     
+    QStringList directoryUrls;
+    if (!resolvedImagePath.isEmpty()) {
+        QString tempImagePath = resolvedImagePath.toString();
+        directoryUrls << tempImagePath;
+        
+        if (resolvedImagePath.toString().startsWith(QUrl::fromLocalFile(locations.first()).toString())) {
+            while (tempImagePath != QUrl::fromLocalFile(locations.first()).toString()) {
+                tempImagePath = tempImagePath.left( tempImagePath.lastIndexOf('/'));
+                directoryUrls.prepend(tempImagePath);
+            }
+        }
+    }
+    
     FileSystemTracker tracker;
     tracker.setFolder(locations.first());
     tracker.moveToThread(&trackerThread);
@@ -101,7 +114,7 @@ int main(int argc, char** argv)
     QQmlContext* objectContext = engine.rootContext();
     objectContext->setContextProperty("kokoProcessor", &processor);
     objectContext->setContextProperty("kokoConfig", &config);
-    objectContext->setContextProperty("imagePathArgument", resolvedImagePath.toString());
+    objectContext->setContextProperty("imagePathArgument", directoryUrls);
 
     QString path;
     //we want different main files on desktop or mobile

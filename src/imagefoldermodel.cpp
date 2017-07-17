@@ -81,19 +81,27 @@ void ImageFolderModel::setUrl(QString& url)
     Q_ASSERT( QUrl(url).isLocalFile());
     url = QUrl(url).path();
     
+    QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
     if (url.isEmpty()) {
-        QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
         Q_ASSERT(locations.size() > 1);
         url = locations.first().append("/");
     }
     
     QString directoryUrl;
     
-    if( QDir(url).exists()) {
+    if (QDir(url).exists()) {
         directoryUrl = QUrl::fromLocalFile(url).toString();
     } else {
         m_imagePath = url;
         directoryUrl = QUrl::fromLocalFile(url.left(url.lastIndexOf('/'))).toString();
+    }
+    
+    /**
+     * Sets the url to ~/Pictures if the path is ~/Pictures path
+     * and leave it as it is, if it is foreign path
+     */
+    if (directoryUrl.contains(QUrl::fromLocalFile(locations.first()).toString())) {
+        directoryUrl = QUrl::fromLocalFile(locations.first()).toString();
     }
     
     if (dirLister()->url().path() == directoryUrl) {

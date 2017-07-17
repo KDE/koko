@@ -102,14 +102,14 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
-            url: imagePathArgument
+            url: imagePathArgument == "" ? "" : imagePathArgument[imagePathArgument.length -1]
             /**
              * makes sure that operation only occurs after the model is populated
              */
             onRowsInserted: {
-                if( indexForUrl(imagePathArgument) != -1) {
+                if( indexForUrl(imagePathArgument[imagePathArgument.length -1]) != -1) {
                     currentImage.model = this
-                    currentImage.index = indexForUrl(imagePathArgument)
+                    currentImage.index = indexForUrl(imagePathArgument[imagePathArgument.length -1])
                 }
             }
         }
