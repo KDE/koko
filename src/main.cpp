@@ -93,6 +93,8 @@ int main(int argc, char** argv)
                 tempImagePath = tempImagePath.left( tempImagePath.lastIndexOf('/'));
                 directoryUrls.prepend(tempImagePath);
             }
+        } else {
+            directoryUrls.prepend(tempImagePath.left( tempImagePath.lastIndexOf('/')));
         }
     }
     

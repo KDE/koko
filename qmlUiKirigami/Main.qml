@@ -102,7 +102,10 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
-            url: imagePathArgument == "" ? "" : imagePathArgument[imagePathArgument.length -1]
+            /**
+             * imagePathArgument[0] sets the column 0 of the pageStack to reflect either a foreign path or ~/Pictures
+             */
+            url: imagePathArgument == "" ? "" : imagePathArgument[0]
             /**
              * makes sure that operation only occurs after the model is populated
              */
