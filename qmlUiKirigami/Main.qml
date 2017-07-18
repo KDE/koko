@@ -44,6 +44,8 @@ Kirigami.ApplicationWindow {
     
     pageStack.initialPage: AlbumView {
         id: albumView
+        model: imageFolderModel
+        title: i18n("Folders")
     }
     
     globalDrawer: Sidebar {
@@ -110,9 +112,16 @@ Kirigami.ApplicationWindow {
              * makes sure that operation only occurs after the model is populated
              */
             onRowsInserted: {
-                if( indexForUrl(imagePathArgument[imagePathArgument.length -1]) != -1) {
+                for( var i = 1; i < imagePathArgument.length -1 ; i++) {
+                    pageStack.push( Qt.resolvedUrl("ImageFolderAlbumView.qml"), { "sourceUrl": imagePathArgument[i] })
+                }
+                
+                /**
+                 * To set the currentImage when no folder is pushed
+                 */
+                if ( (currentImage.view.model.sourceModel == this) && (indexForUrl(imagePathArgument[imagePathArgument.length - 1]) != -1) ) {
                     currentImage.model = this
-                    currentImage.index = indexForUrl(imagePathArgument[imagePathArgument.length -1])
+                    currentImage.index = indexForUrl(imagePathArgument[imagePathArgument.length - 1])
                 }
             }
         }
@@ -193,9 +202,5 @@ Kirigami.ApplicationWindow {
         imageHeight: root.height
         state: imagePathArgument == "" ? "closed" : "open"
     }
-
-    Component.onCompleted: {
-        albumView.model = imageFolderModel
-        albumView.title = i18n("Folders")
-    }
+    
 }
