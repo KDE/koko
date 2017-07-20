@@ -22,7 +22,7 @@
  */
 
 import QtQuick 2.7
-import QtQuick.Layouts 1.3
+import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.koko 0.1 as Koko
@@ -58,6 +58,10 @@ Kirigami.Page {
                 target: listView
                 focus: true
             }
+            PropertyChanges {
+                target: applicationWindow()
+                visibility: Window.Windowed
+            }
         },
         State {
             name: "closed"
@@ -69,12 +73,27 @@ Kirigami.Page {
                 target: root
                 visible: false
             }
+        },
+        State {
+            name: "fullscreen"
+            PropertyChanges {
+                target: root
+                focus: true
+            }
+            PropertyChanges {
+                target: listView
+                focus: true
+            }
+            PropertyChanges {
+                target: applicationWindow()
+                visibility: Window.FullScreen
+            }
         }
     ]
     
     transitions: [
         Transition {
-            from: "open"
+            from: "*"
             to: "closed"
             SequentialAnimation {
                 OpacityAnimator {
@@ -107,7 +126,19 @@ Kirigami.Page {
         color: "black"
     }
 
-    Keys.onEscapePressed: root.state = "closed";
+    Keys.onPressed: {
+        switch(event.key) {
+            case Qt.Key_Escape:
+                root.state = "closed"
+                break;
+            case Qt.Key_F:
+                root.state = root.state == "open" ? "fullscreen" : "open"
+                break;
+            default:
+                break;
+        }
+    }
+    
     ListView {
         id: listView
         anchors.fill: parent
