@@ -26,6 +26,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.koko 0.1 as Koko
+import org.kde.kquickcontrolsaddons 2.0 as KQA
 
 Kirigami.Page {
     id: root
@@ -153,9 +154,17 @@ Kirigami.Page {
         }
         currentIndex: model.proxyIndex( indexValue)
         
+        Timer {
+            id: timer
+            interval: 2000
+            onTriggered: footerList.opacity = 0
+        }
+        
         onCurrentIndexChanged: {
             currentImage.index = model.sourceIndex( currentIndex)
             listView.positionViewAtIndex(currentIndex, ListView.Beginning)
+            footerList.opacity = 1.0
+            timer.restart()
         }
 
         delegate: Flickable {
@@ -300,6 +309,49 @@ Kirigami.Page {
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    PathView {
+        id: footerList
+        height: Kirigami.Units.gridUnit * 4
+        model: listView.model
+        currentIndex: listView.currentIndex
+        pathItemCount: applicationWindow().width / (Kirigami.Units.gridUnit * 5)
+        interactive: false
+        
+        preferredHighlightBegin: 0.5
+        preferredHighlightEnd: 0.5
+        highlightRangeMode: PathView.StrictlyEnforceRange
+        
+        Behavior on opacity { OpacityAnimator { duration: 500}}
+        
+        path: Path {
+            startX: 0
+            startY: applicationWindow().height - (Kirigami.Units.gridUnit * 5)
+            PathAttribute { name: "iconScale"; value: 0.5 }
+            PathLine {
+                x: applicationWindow().width / 2
+                y: applicationWindow().height - (Kirigami.Units.gridUnit * 5)
+            }
+            PathAttribute { name: "iconScale"; value: 1.5 }
+            PathLine { 
+                x: applicationWindow().width
+                y: applicationWindow().height - (Kirigami.Units.gridUnit * 5)
+            }
+            PathAttribute { name: "iconScale"; value: 0.5 }
+        }
+        
+        delegate: Item {
+            scale: PathView.iconScale
+            height: Kirigami.Units.gridUnit * 4
+            width: height
+            KQA.QImageItem {
+                height: Kirigami.Units.gridUnit * 3.8
+                width: height
+                anchors.centerIn: parent
+                image: model.thumbnail
             }
         }
     }
