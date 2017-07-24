@@ -116,8 +116,15 @@ Kirigami.ScrollablePage {
         highlight: Rectangle { color: Kirigami.Theme.highlightColor}
         
         delegate: AlbumDelegate {}
+        
+        Kirigami.Label {
+            anchors.centerIn: parent
+            text: i18n("No Images Found")
+            visible: gridView.count == 0
+            font.pointSize: Kirigami.Units.gridUnit * 1
+        }
     }
-
+    
     onCollectionSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
     onFolderSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
     onImageSelected: {
