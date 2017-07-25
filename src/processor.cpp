@@ -42,12 +42,14 @@ Processor::Processor(QObject* parent)
                 emit finishedChanged();
         }
     });
+    
+    connect(this, &Processor::numFilesChanged, 
+            &m_commitTimer, &CommitTimer::start);
 }
 
 
 Processor::~Processor()
 {
-
 }
 
 void Processor::addFile(const QString& filePath)
@@ -57,13 +59,14 @@ void Processor::addFile(const QString& filePath)
 
     QTimer::singleShot(0, this, SLOT(process()));
     emit numFilesChanged();
-    ImageStorage::instance()->commit();
 }
 
 void Processor::removeFile(const QString& filePath)
 {
     ImageStorage::instance()->removeImage(filePath);
-    ImageStorage::instance()->commit();
+    m_numFiles--;
+    
+    emit numFilesChanged();
 }
 
 float Processor::initialProgress() const
