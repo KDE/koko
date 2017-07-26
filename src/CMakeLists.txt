@@ -63,6 +63,7 @@ set (qml_plugin_SRCS
     allimagesmodel.cpp
     fileinfo.cpp
     imagelistmodel.cpp
+    notificationmanager.cpp
     types.cpp
     roles.cpp
 )
@@ -75,6 +76,7 @@ target_link_libraries (kokoqmlplugin
     KF5::KIOFileWidgets
     KF5::KIOWidgets
     KF5::GuiAddons
+    KF5::Notifications
     kokocommon
 )
 
@@ -129,3 +131,4 @@ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${DATA_INS
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt DESTINATION ${DATA_INSTALL_DIR}/koko)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt DESTINATION ${DATA_INSTALL_DIR}/koko)
 install (FILES countries.csv DESTINATION ${DATA_INSTALL_DIR}/koko)
+install (FILES koko.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})

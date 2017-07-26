@@ -192,7 +192,7 @@ Kirigami.ApplicationWindow {
         id: imageViewer
         //go on top of the overlay drawer
         //HACK on the parent and z to go on top of the handle as well
-        z: 2000002
+        z: 1999999
         parent: root.overlay.parent
         width: overlay.width
         height: overlay.height

@@ -1,0 +1,13 @@
+[Global]
+IconName=koko
+Name=Koko
+
+[Event/sharingSuccess]
+Name=Sharing success
+Comment=Image Shared Successfully
+Action=Popup
+
+[Event/sharingFailed]
+Name=Sharing failed
+Comment=Image Sharing failed
+Action=Popup

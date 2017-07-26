@@ -39,6 +39,33 @@ Kirigami.Page {
     
     leftPadding: 0
     rightPadding: 0
+    
+    KQA.MimeDatabase {
+        id: mimeDB
+    }
+    
+    actions {
+        main: Kirigami.Action {
+            iconName: "document-share"
+            tooltip: i18n("Share Image")
+            onTriggered: {
+                shareDialog.sheetOpen = true
+                shareDialog.inputData = {
+                    "urls": [ listView.currentItem.currentImageSource.toString() ],
+                    "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
+                }
+            }
+        }
+        left: Kirigami.Action {
+            iconName: "view-close"
+            tooltip: i18n("Close Image")
+            onTriggered: root.state = "closed"
+        }
+        right: Kirigami.Action {
+            iconName: "editimage"
+            tooltip: i18n("Edit Image")
+        }
+    }
 
     states: [
         State {
@@ -73,6 +100,10 @@ Kirigami.Page {
             PropertyChanges {
                 target: root
                 visible: false
+            }
+            PropertyChanges {
+                target: shareDialog
+                sheetOpen: false
             }
         },
         State {
@@ -165,10 +196,12 @@ Kirigami.Page {
             listView.positionViewAtIndex(currentIndex, ListView.Beginning)
             footerList.opacity = 1.0
             timer.restart()
+            shareDialog.sheetOpen = false
         }
 
         delegate: Flickable {
             id: flick
+            property alias currentImageSource: image.source
             width: imageWidth
             height: imageHeight
             contentWidth: imageWidth
@@ -355,10 +388,25 @@ Kirigami.Page {
             }
         }
     }
+
+    ShareDialog {
+        id: shareDialog
+        inputData: { urls: [] }
+        sheetOpen: false
+        onFinished: {
+            if (error==0 && output.url !== "") {
+                console.assert(output.url !== undefined);
+                var resultUrl = output.url;
+                console.log("Received", resultUrl)
+                //Qt.openUrlExternally(resultUrl)
+                notificationManager.showNotification( true, resultUrl);
+            } else {
+                notificationManager.showNotification( false);
+            }
+        }
+    }
     
-    //FIXME: placeholder, will have to use the state machine
-    Controls.Button {
-        text: i18n("Back")
-        onClicked: root.state = "closed"
+    Koko.NotificationManager {
+        id: notificationManager
     }
 }
