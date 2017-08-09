@@ -1,6 +1,29 @@
 [Global]
 IconName=koko
 Name=Koko
+Name[ast]=Koko
+Name[bg]=Koko
+Name[bs]=Koko
+Name[ca]=Koko
+Name[ca@valencia]=Koko
+Name[cs]=Koko
+Name[de]=Koko
+Name[el]=Koko
+Name[en_GB]=Koko
+Name[es]=Koko
+Name[gl]=Koko
+Name[hu]=Koko
+Name[nl]=Koko
+Name[pl]=Koko
+Name[pt]=Koko
+Name[pt_BR]=Koko
+Name[ru]=Koko
+Name[sk]=Koko
+Name[sv]=Koko
+Name[tr]=Koko
+Name[uk]=Koko
+Name[x-test]=xxKokoxx
+Name[zh_CN]=Koko
 
 [Event/sharingSuccess]
 Name=Sharing success
