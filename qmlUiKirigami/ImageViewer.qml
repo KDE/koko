@@ -44,28 +44,35 @@ Kirigami.Page {
         id: mimeDB
     }
     
-    actions {
-        main: Kirigami.Action {
-            iconName: "document-share"
-            tooltip: i18n("Share Image")
-            onTriggered: {
-                shareDialog.sheetOpen = true
-                shareDialog.inputData = {
-                    "urls": [ listView.currentItem.currentImageSource.toString() ],
-                    "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
-                }
+    Kirigami.Action {
+        id: backAction
+        iconName: "view-close"
+        tooltip: i18n("Close Image")
+        onTriggered: root.state = "closed"
+    }
+    
+    Kirigami.Action {
+        id: shareAction
+        iconName: "document-share"
+        tooltip: i18n("Share Image")
+        onTriggered: {
+            shareDialog.sheetOpen = true
+            shareDialog.inputData = {
+                "urls": [ listView.currentItem.currentImageSource.toString() ],
+                "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
             }
         }
-        left: Kirigami.Action {
-            iconName: "view-close"
-            tooltip: i18n("Close Image")
-            onTriggered: root.state = "closed"
-        }
-        right: Kirigami.Action {
-            iconName: "editimage"
-            tooltip: i18n("Edit Image")
-        }
     }
+    
+    Kirigami.Action {
+        id: editAction
+        iconName: "editimage"
+        tooltip: i18n("Edit Image")
+    }
+    
+    mainAction: root.state == "open" ? shareAction : null
+    leftAction: root.state == "open" ? backAction : null
+    rightAction: root.state == "open" ? editAction : null
 
     states: [
         State {
@@ -194,8 +201,10 @@ Kirigami.Page {
         onCurrentIndexChanged: {
             currentImage.index = model.sourceIndex( currentIndex)
             listView.positionViewAtIndex(currentIndex, ListView.Beginning)
-            footerList.opacity = 1.0
-            timer.restart()
+            if( footerList.visible == true) {
+                footerList.opacity = 1.0
+            }
+                timer.restart()
             shareDialog.sheetOpen = false
         }
 
@@ -348,6 +357,7 @@ Kirigami.Page {
     
     PathView {
         id: footerList
+        visible: root.state == "open" ? true : false
         height: Kirigami.Units.gridUnit * 4
         model: listView.model
         currentIndex: listView.currentIndex
