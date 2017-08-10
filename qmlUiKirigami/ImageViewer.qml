@@ -398,7 +398,6 @@ Kirigami.Page {
                 console.assert(output.url !== undefined);
                 var resultUrl = output.url;
                 console.log("Received", resultUrl)
-                //Qt.openUrlExternally(resultUrl)
                 notificationManager.showNotification( true, resultUrl);
             } else {
                 notificationManager.showNotification( false);
