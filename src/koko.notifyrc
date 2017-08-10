@@ -27,10 +27,34 @@ Name[zh_CN]=Koko
 
 [Event/sharingSuccess]
 Name=Sharing success
+Name[ca]=S'ha compartit amb èxit
+Name[ca@valencia]=S'ha compartit amb èxit
+Name[nl]=Succes delen
+Name[sv]=Delning lyckades
+Name[uk]=Успішно оприлюднено
+Name[x-test]=xxSharing successxx
 Comment=Image Shared Successfully
+Comment[ca]=S'ha compartit la imatge amb èxit
+Comment[ca@valencia]=S'ha compartit la imatge amb èxit
+Comment[nl]=Afbeelding met succes gedeeld
+Comment[sv]=Bild delades med lyckat resultat
+Comment[uk]=Зображення успішно оприлюднено
+Comment[x-test]=xxImage Shared Successfullyxx
 Action=Popup
 
 [Event/sharingFailed]
 Name=Sharing failed
+Name[ca]=Ha fallat la compartició
+Name[ca@valencia]=Ha fallat la compartició
+Name[nl]=Delen is mislukt
+Name[sv]=Delning misslyckades
+Name[uk]=Не вдалося оприлюднити
+Name[x-test]=xxSharing failedxx
 Comment=Image Sharing failed
+Comment[ca]=Ha fallat la compartició de la imatge
+Comment[ca@valencia]=Ha fallat la compartició de la imatge
+Comment[nl]=Delen van afbeelding is mislukt
+Comment[sv]=Bilddelning misslyckades
+Comment[uk]=Не вдалося оприлюднити зображення
+Comment[x-test]=xxImage Sharing failedxx
 Action=Popup
