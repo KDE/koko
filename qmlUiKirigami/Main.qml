@@ -203,4 +203,7 @@ Kirigami.ApplicationWindow {
         state: imagePathArgument == "" ? "closed" : "open"
     }
     
+    Koko.NotificationManager {
+        id: notificationManager
+    }
 }

@@ -26,6 +26,7 @@
 #include <QSize>
 #include <kdirmodel.h>
 #include <QVariant>
+#include <QJsonArray>
 #include <kimagecache.h>
 #include <kshareddatacache.h>
 
@@ -59,6 +60,7 @@ public:
     Q_INVOKABLE void deleteSelection();
     Q_INVOKABLE int proxyIndex(const int &indexValue);
     Q_INVOKABLE int sourceIndex(const int &indexValue);
+    Q_INVOKABLE QJsonArray selectedImages();
     
 protected Q_SLOTS:
     void setContainImages(bool);

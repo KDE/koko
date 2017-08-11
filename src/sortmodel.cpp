@@ -266,6 +266,18 @@ int SortModel::sourceIndex(const int& indexValue)
     return mapToSource( index(indexValue, 0, QModelIndex())).row();
 }
 
+QJsonArray SortModel::selectedImages()
+{
+    QJsonArray arr;
+    
+    foreach( QModelIndex index, m_selectionModel->selectedIndexes())
+    {
+        arr.push_back( QJsonValue (data( index, Roles::ImageUrlRole).toString()));
+    }
+    
+    return arr;
+}
+
 void SortModel::delayedPreview()
 {
     QHash<QUrl, QPersistentModelIndex>::const_iterator i = m_filesToPreview.constBegin();

@@ -414,8 +414,4 @@ Kirigami.Page {
             }
         }
     }
-    
-    Koko.NotificationManager {
-        id: notificationManager
-    }
 }

@@ -72,6 +72,19 @@ Kirigami.ScrollablePage {
                 onTriggered: model.clearSelections()
             },
             Kirigami.Action {
+                iconName: "emblem-shared-symbolic"
+                text: i18n("Share")
+                tooltip: i18n("Share the selected images")
+                enabled: model.hasSelectedImages
+                onTriggered: {
+                    shareMenu.sheetOpen = true
+                    shareMenu.inputData = {
+                        "urls": model.selectedImages(),
+                        "mimeType": "image/"
+                    }
+                }
+            },
+            Kirigami.Action {
                 iconName: "group-delete"
                 text: i18n("Delete Selection")
                 tooltip: i18n("Move selected items to trash")
@@ -133,4 +146,19 @@ Kirigami.ScrollablePage {
         imageViewer.state = "open";
     }
     
+    ShareDialog {
+        id: shareMenu
+        inputData: { urls: [] }
+        sheetOpen: false
+        onFinished: {
+            if (error==0 && output.url !== "") {
+                console.assert(output.url !== undefined);
+                var resultUrl = output.url;
+                console.log("Received", resultUrl)
+                notificationManager.showNotification( true, resultUrl);
+            } else {
+                notificationManager.showNotification( false);
+            }
+        }
+    }    
 }
