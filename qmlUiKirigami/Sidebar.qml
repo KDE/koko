@@ -118,14 +118,7 @@ Kirigami.GlobalDrawer {
                 previouslySelectedAction = folderAction
             }
         }
-    ]      
-    
-    Controls.ToolButton {
-        id: settingsButton
-        text: i18n("Settings")
-        checkable: true
-        anchors.fill: parent
-    }
+    ]
     
     Component.onCompleted: {
         folderAction.checked = true
