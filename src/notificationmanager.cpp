@@ -18,6 +18,7 @@
  */
 
 #include "notificationmanager.h"
+#include <klocalizedstring.h>
 
 NotificationManager::NotificationManager(QObject* parent)
 {
@@ -37,7 +38,7 @@ NotificationManager::~NotificationManager()
 void NotificationManager::showNotification(bool valid, QVariant url)
 {
     if (valid) {
-        m_sharingSuccess->setText("Shared url for image is " + url.toString());
+        m_sharingSuccess->setText( i18n("Shared url for image is <a href='%1'>%1</a>", url.toString()));
         m_sharingSuccess->sendEvent();
     } else {
         m_sharingFailed->sendEvent();

@@ -157,6 +157,7 @@ Kirigami.ScrollablePage {
                 var resultUrl = output.url;
                 console.log("Received", resultUrl)
                 notificationManager.showNotification( true, resultUrl);
+                clipboard.content = resultUrl;
             } else {
                 notificationManager.showNotification( false);
             }

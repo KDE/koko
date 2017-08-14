@@ -23,6 +23,7 @@ import QtQuick 2.1
 import QtQuick.Controls 2.0 as Controls
 
 import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.koko 0.1 as Koko
 
 Kirigami.ApplicationWindow {
@@ -205,6 +206,10 @@ Kirigami.ApplicationWindow {
     
     Koko.NotificationManager {
         id: notificationManager
+    }
+    
+    KQA.Clipboard {
+        id: clipboard
     }
     
 }
