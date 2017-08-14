@@ -19,34 +19,36 @@
 
 import QtQuick 2.7
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.1 as Controls
+import QtQuick.Controls 2.0 as Controls
 import org.kde.purpose 1.0 as Purpose
 import org.kde.kirigami 2.1 as Kirigami
 
-Kirigami.OverlaySheet
-{
+Controls.Popup {
     id: window
+    modal: true
+    focus: true
     property alias inputData: view.inputData
     property bool running: false
     signal finished(var output, int error, string message)
+    width: Kirigami.Units.gridUnit * 25
+    height: Kirigami.Units.gridUnit * 28
     
     Controls.BusyIndicator {
         visible: window.running
         anchors.fill: parent
     }
-    
-    contentItem: ColumnLayout {
-        height: Kirigami.Units.gridUnit * 16
-        
-        Kirigami.Heading {
-            text: window.inputData.mimeType ? i18n("Shares for '%1'", window.inputData.mimeType) : ""
-        }
+
+    Rectangle {
+        anchors.fill: parent
+        color: Kirigami.Theme.viewBackgroundColor
         Purpose.AlternativesView {
             id: view
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+            anchors.fill:parent
+            clip: true
             pluginType: "Export"
-            
+            header: Kirigami.Heading {
+                text: window.inputData.mimeType ? i18n("Shares for '%1'", window.inputData.mimeType) : ""
+            }
             delegate: Kirigami.BasicListItem {
                 label: model.display
                 icon: "arrow-right"

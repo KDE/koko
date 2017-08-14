@@ -130,7 +130,7 @@ Kirigami.ScrollablePage {
     onImageSelected: {
         currentImage.model = model.sourceModel
         currentImage.index = currentIndex
-        imageViewer.state = "open";
+        applicationWindow().pageStack.layers.push(imageViewerComponent);
     }
     
 }
