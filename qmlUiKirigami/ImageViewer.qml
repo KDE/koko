@@ -30,7 +30,8 @@ import org.kde.kquickcontrolsaddons 2.0 as KQA
 
 Kirigami.Page {
     id: root
-    
+
+    title: i18n("Details")
     property alias sourceModel: imagesListModel.sourceModel
     property int indexValue
     
@@ -43,123 +44,54 @@ Kirigami.Page {
     KQA.MimeDatabase {
         id: mimeDB
     }
-    
-    Kirigami.Action {
-        id: backAction
-        iconName: "view-close"
-        tooltip: i18n("Close Image")
-        onTriggered: root.state = "closed"
-    }
-    
-    Kirigami.Action {
-        id: shareAction
-        iconName: "document-share"
-        tooltip: i18n("Share Image")
-        onTriggered: {
-            shareDialog.sheetOpen = true
-            shareDialog.inputData = {
-                "urls": [ listView.currentItem.currentImageSource.toString() ],
-                "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
-            }
-        }
-    }
-    
-    Kirigami.Action {
-        id: editAction
-        iconName: "editimage"
-        tooltip: i18n("Edit Image")
-    }
-    
-    mainAction: root.state == "open" ? shareAction : null
-    leftAction: root.state == "open" ? backAction : null
-    rightAction: root.state == "open" ? editAction : null
 
-    states: [
-        State {
-            name: "open"
-            PropertyChanges {
-                target: root
-                visible: true
-            }
-            PropertyChanges {
-                target: root
-                opacity: 1
-            }
-            PropertyChanges {
-                target: root
-                focus: true
-            }
-            PropertyChanges {
-                target: listView
-                focus: true
-            }
-            PropertyChanges {
-                target: applicationWindow()
-                visibility: Window.Windowed
-            }
-        },
-        State {
-            name: "closed"
-            PropertyChanges {
-                target: root
-                opacity: 0
-            }
-            PropertyChanges {
-                target: root
-                visible: false
-            }
-            PropertyChanges {
-                target: shareDialog
-                sheetOpen: false
-            }
-        },
-        State {
-            name: "fullscreen"
-            PropertyChanges {
-                target: root
-                focus: true
-            }
-            PropertyChanges {
-                target: listView
-                focus: true
-            }
-            PropertyChanges {
-                target: applicationWindow()
-                visibility: Window.FullScreen
+    actions {
+        left: Kirigami.Action {
+            id: backAction
+            iconName: "view-close"
+            tooltip: i18n("Close Image")
+            onTriggered: root.close();
+        }
+        main: Kirigami.Action {
+            id: shareAction
+            iconName: "document-share"
+            tooltip: i18n("Share Image")
+            onTriggered: {
+                shareDialog.open();
+                shareDialog.inputData = {
+                    "urls": [ listView.currentItem.currentImageSource.toString() ],
+                    "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
+                }
             }
         }
-    ]
-    
-    transitions: [
-        Transition {
-            from: "*"
-            to: "closed"
-            SequentialAnimation {
-                OpacityAnimator {
-                    target: root
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InQuad
-                }
-                PropertyAnimation {
-                    target: root
-                    property: "visible"
-                    duration: Kirigami.Units.longDuration
-                }
-                ScriptAction {
-                    script: applicationWindow().pageStack.forceActiveFocus();
-                }
-            }
-        },
-        Transition {
-            from: "closed"
-            to: "open"
-            OpacityAnimator {
-                target: root
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.OutQuad
-            }
+        right: Kirigami.Action {
+            id: editAction
+            iconName: "editimage"
+            tooltip: i18n("Edit Image")
         }
-    ]
+    }
+
+    //FIXME: HACK
+    property bool wasDrawerOpen
+    Component.onCompleted: {
+        applicationWindow().controlsVisible = false;
+        listView.forceActiveFocus();
+        applicationWindow().header.visible = false;
+        applicationWindow().footer.visible = false;
+        wasDrawerOpen = applicationWindow().globalDrawer.visible;
+        applicationWindow().globalDrawer.visible = false;
+        applicationWindow().globalDrawer.enabled = false;
+    }
+    function close() {
+        applicationWindow().controlsVisible = true;
+        applicationWindow().header.visible = true;
+        applicationWindow().footer.visible = true;
+        applicationWindow().globalDrawer.visible = wasDrawerOpen;
+        applicationWindow().globalDrawer.enabled = true;
+        applicationWindow().visibility = Window.Windowed;
+        applicationWindow().pageStack.layers.pop();
+    }
+
     
     background: Rectangle {
         color: "black"
@@ -168,10 +100,10 @@ Kirigami.Page {
     Keys.onPressed: {
         switch(event.key) {
             case Qt.Key_Escape:
-                root.state = "closed"
+                root.close();
                 break;
             case Qt.Key_F:
-                root.state = root.state == "open" ? "fullscreen" : "open"
+                applicationWindow().visibility = applicationWindow().visibility == Window.FullScreen ? Window.Windowed : Window.FullScreen
                 break;
             default:
                 break;
@@ -192,20 +124,11 @@ Kirigami.Page {
         }
         currentIndex: model.proxyIndex( indexValue)
         
-        Timer {
-            id: timer
-            interval: 2000
-            onTriggered: footerList.opacity = 0
-        }
-        
         onCurrentIndexChanged: {
             currentImage.index = model.sourceIndex( currentIndex)
             listView.positionViewAtIndex(currentIndex, ListView.Beginning)
-            if( footerList.visible == true) {
-                footerList.opacity = 1.0
-            }
-                timer.restart()
-            shareDialog.sheetOpen = false
+
+            shareDialog.close();
         }
 
         delegate: Flickable {
@@ -308,9 +231,19 @@ Kirigami.Page {
                     autoTransform: true
                     sourceSize.width: imageWidth * 2
                     sourceSize.height: imageHeight * 2
+                    Timer {
+                        id: doubleClickTimer
+                        interval: 150
+                        onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
+                    }
                     MouseArea {
                         anchors.fill: parent
+                        onClicked: {
+                            doubleClickTimer.restart();
+                        }
                         onDoubleClicked: {
+                            doubleClickTimer.running = false;
+                            applicationWindow().controlsVisible = false;
                             if (flick.interactive) {
                                 zoomAnim.x = 0;
                                 zoomAnim.y = 0;
@@ -355,54 +288,11 @@ Kirigami.Page {
         }
     }
     
-    PathView {
-        id: footerList
-        visible: root.state == "open" ? true : false
-        height: Kirigami.Units.gridUnit * 4
-        model: listView.model
-        currentIndex: listView.currentIndex
-        pathItemCount: applicationWindow().width / (Kirigami.Units.gridUnit * 5)
-        interactive: false
-        
-        preferredHighlightBegin: 0.5
-        preferredHighlightEnd: 0.5
-        highlightRangeMode: PathView.StrictlyEnforceRange
-        
-        Behavior on opacity { OpacityAnimator { duration: 500}}
-        
-        path: Path {
-            startX: 0
-            startY: applicationWindow().height - (Kirigami.Units.gridUnit * 5)
-            PathAttribute { name: "iconScale"; value: 0.5 }
-            PathLine {
-                x: applicationWindow().width / 2
-                y: applicationWindow().height - (Kirigami.Units.gridUnit * 5)
-            }
-            PathAttribute { name: "iconScale"; value: 1.5 }
-            PathLine { 
-                x: applicationWindow().width
-                y: applicationWindow().height - (Kirigami.Units.gridUnit * 5)
-            }
-            PathAttribute { name: "iconScale"; value: 0.5 }
-        }
-        
-        delegate: Item {
-            scale: PathView.iconScale
-            height: Kirigami.Units.gridUnit * 4
-            width: height
-            KQA.QImageItem {
-                height: Kirigami.Units.gridUnit * 3.8
-                width: height
-                anchors.centerIn: parent
-                image: model.thumbnail
-            }
-        }
-    }
-
     ShareDialog {
         id: shareDialog
+        x: (root.width - width) / 2
+        y: root.height - height - Kirigami.Units.gridUnit * 3
         inputData: { urls: [] }
-        sheetOpen: false
         onFinished: {
             if (error==0 && output.url !== "") {
                 console.assert(output.url !== undefined);

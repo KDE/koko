@@ -187,23 +187,24 @@ Kirigami.ApplicationWindow {
     Koko.ImageListModel {
         id: imageListModel
     }
-    
-    ImageViewer {
-        id: imageViewer
-        //go on top of the overlay drawer
-        //HACK on the parent and z to go on top of the handle as well
-        z: 1999999
-        parent: root.overlay.parent
-        width: overlay.width
-        height: overlay.height
-        indexValue: currentImage.index
-        sourceModel: currentImage.model
-        imageWidth: root.width
-        imageHeight: root.height
-        state: imagePathArgument == "" ? "closed" : "open"
+    Component {
+        id: imageViewerComponent
+        ImageViewer {
+            id: imageViewer
+            indexValue: currentImage.index
+            sourceModel: currentImage.model
+            imageWidth: root.width
+            imageHeight: root.height
+        }
+    }
+    Component.onCompleted: {
+        if (imagePathArgument != "") {
+            pageStack.layers.push(imageViewerComponent);
+        }
     }
     
     Koko.NotificationManager {
         id: notificationManager
     }
+    
 }

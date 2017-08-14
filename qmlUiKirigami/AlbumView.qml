@@ -77,7 +77,7 @@ Kirigami.ScrollablePage {
                 tooltip: i18n("Share the selected images")
                 enabled: model.hasSelectedImages
                 onTriggered: {
-                    shareMenu.sheetOpen = true
+                    shareMenu.open();
                     shareMenu.inputData = {
                         "urls": model.selectedImages(),
                         "mimeType": "image/"
@@ -143,13 +143,14 @@ Kirigami.ScrollablePage {
     onImageSelected: {
         currentImage.model = model.sourceModel
         currentImage.index = currentIndex
-        imageViewer.state = "open";
+        applicationWindow().pageStack.layers.push(imageViewerComponent);
     }
     
     ShareDialog {
         id: shareMenu
+        x: ( page.width - width) / 2
+        y: page.height - height - ( Kirigami.Units.gridUnit * 3)
         inputData: { urls: [] }
-        sheetOpen: false
         onFinished: {
             if (error==0 && output.url !== "") {
                 console.assert(output.url !== undefined);
