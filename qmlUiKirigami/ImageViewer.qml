@@ -44,6 +44,12 @@ Kirigami.Page {
     KQA.MimeDatabase {
         id: mimeDB
     }
+    
+    Kirigami.ContextDrawer {
+        id: contextDrawer
+        title: i18n("Edit image")
+        handleVisible: true
+    }
 
     actions {
         left: Kirigami.Action {
@@ -64,11 +70,24 @@ Kirigami.Page {
                 }
             }
         }
-        right: Kirigami.Action {
-            id: editAction
-            iconName: "editimage"
-            tooltip: i18n("Edit Image")
-        }
+        contextualActions: [
+            Kirigami.Action {
+                iconName: "image-rotate-left-symbolic"
+                text: i18n("Rotate left")
+                tooltip: i18n("Rotate the image to the left")
+                onTriggered: {
+                    listView.currentItem.image.rotation -= 90
+                }
+            },
+            Kirigami.Action {
+                iconName: "image-rotate-right-symbolic"
+                text: i18n("Rotate right")
+                tooltip: i18n("Rotate the image to the right")
+                onTriggered: {
+                    listView.currentItem.image.rotation += 90
+                }
+            }
+        ]
     }
 
     //FIXME: HACK
@@ -134,6 +153,7 @@ Kirigami.Page {
         delegate: Flickable {
             id: flick
             property alias currentImageSource: image.source
+            property alias image: image
             width: imageWidth
             height: imageHeight
             contentWidth: imageWidth
