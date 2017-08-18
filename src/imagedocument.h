@@ -36,6 +36,8 @@ public:
     
     QImage visualImage();
     
+    Q_INVOKABLE void rotate( int angle);
+    
 signals:
     void pathChanged(const QString &url);
     void visualImageChanged();

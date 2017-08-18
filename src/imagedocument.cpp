@@ -18,7 +18,7 @@
  */
 
 #include "imagedocument.h"
-#include <QDebug>
+#include <QMatrix>
 #include <QUrl>
 
 ImageDocument::ImageDocument()
@@ -53,6 +53,14 @@ void ImageDocument::setPath(QString& url)
 QImage ImageDocument::visualImage()
 {
     return *m_image;
+}
+
+void ImageDocument::rotate(int angle)
+{
+    QMatrix matrix;
+    matrix.rotate( angle);
+    *m_image = m_image->transformed( matrix);
+    emit visualImageChanged();
 }
 
 #include "moc_imagedocument.cpp"

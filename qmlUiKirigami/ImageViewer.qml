@@ -81,7 +81,7 @@ Kirigami.Page {
                 text: i18n("Rotate left")
                 tooltip: i18n("Rotate the image to the left")
                 onTriggered: {
-                    listView.currentItem.image.rotation -= 90
+                    imageDoc.rotate(270)
                 }
             },
             Kirigami.Action {
@@ -89,7 +89,7 @@ Kirigami.Page {
                 text: i18n("Rotate right")
                 tooltip: i18n("Rotate the image to the right")
                 onTriggered: {
-                    listView.currentItem.image.rotation += 90
+                    imageDoc.rotate(90)
                 }
             }
         ]
