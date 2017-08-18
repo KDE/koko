@@ -20,16 +20,16 @@
 #include "imagedocument.h"
 #include <QMatrix>
 #include <QUrl>
+#include <QFileInfo>
 
 ImageDocument::ImageDocument()
 {
     m_image = new QImage();
     connect( this, &ImageDocument::pathChanged, 
              this, [this] (const QString &url) { 
-                 delete m_image;
                  /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
                  QString location = QUrl( url).path();
-                 m_image = new QImage( location);
+                 m_image->load( location);
                  emit visualImageChanged();
             });
 }
@@ -60,6 +60,11 @@ void ImageDocument::rotate(int angle)
     QMatrix matrix;
     matrix.rotate( angle);
     *m_image = m_image->transformed( matrix);
+    QString location = QUrl( m_path).path();
+    if (QFileInfo( location).isWritable()) {
+        m_image->save( location);
+    }
+    
     emit visualImageChanged();
 }
 
