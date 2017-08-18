@@ -66,6 +66,7 @@ set (qml_plugin_SRCS
     notificationmanager.cpp
     types.cpp
     roles.cpp
+    imagedocument.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})

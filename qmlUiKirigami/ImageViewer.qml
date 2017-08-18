@@ -45,6 +45,11 @@ Kirigami.Page {
         id: mimeDB
     }
     
+    Koko.ImageDocument {
+        id: imageDoc
+        path: listView.currentItem.currentImageSource
+    }
+    
     Kirigami.ContextDrawer {
         id: contextDrawer
         title: i18n("Edit image")
@@ -152,7 +157,7 @@ Kirigami.Page {
 
         delegate: Flickable {
             id: flick
-            property alias currentImageSource: image.source
+            property string currentImageSource: model.imageurl
             property alias image: image
             width: imageWidth
             height: imageHeight
@@ -241,16 +246,12 @@ Kirigami.Page {
                     }
                 }
 
-                Image {
+                KQA.QImageItem {
                     id: image
                     width: flick.contentWidth
                     height: flick.contentHeight
-                    source: model.imageurl
                     fillMode: Image.PreserveAspectFit
-                    asynchronous: true
-                    autoTransform: true
-                    sourceSize.width: imageWidth * 2
-                    sourceSize.height: imageHeight * 2
+                    image: imageDoc.visualImage
                     Timer {
                         id: doubleClickTimer
                         interval: 150

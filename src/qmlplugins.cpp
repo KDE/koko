@@ -32,6 +32,7 @@
 #include "notificationmanager.h"
 #include "types.h"
 #include "roles.h"
+#include "imagedocument.h"
 
 #include <QtQml/qqml.h>
 
@@ -50,6 +51,7 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<Jungle::SortModel> (uri, 0, 1, "SortModel");
     qmlRegisterType<FileInfo> (uri, 0, 1, "FileInfo");
     qmlRegisterType<ImageListModel> (uri, 0, 1, "ImageListModel");
+    qmlRegisterType<ImageDocument> (uri, 0, 1, "ImageDocument");
     qmlRegisterType<NotificationManager> (uri, 0, 1, "NotificationManager");
     qmlRegisterUncreatableType<Types>(uri, 0, 1, "Types", "Cannot instantiate the Types class");
     qmlRegisterUncreatableType<Roles>(uri, 0, 1, "Roles", "Cannot instantiate the Roles class");
