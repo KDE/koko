@@ -26,10 +26,14 @@ ImageDocument::ImageDocument()
 {
     m_image = new QImage();
     connect( this, &ImageDocument::pathChanged, 
-             this, [this] (const QString &url) { 
+             this, [this] (const QString &url) {
+                 emit resetHandle();
                  /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
                  QString location = QUrl( url).path();
                  m_image->load( location);
+                 m_originalImage = *m_image;
+                 m_edited = false;
+                 emit editedChanged();
                  emit visualImageChanged();
             });
 }
@@ -55,6 +59,11 @@ QImage ImageDocument::visualImage()
     return *m_image;
 }
 
+bool ImageDocument::edited()
+{
+    return m_edited;
+}
+
 void ImageDocument::rotate(int angle)
 {
     QMatrix matrix;
@@ -64,7 +73,48 @@ void ImageDocument::rotate(int angle)
     if (QFileInfo( location).isWritable()) {
         m_image->save( location);
     }
-    
+    emit visualImageChanged();
+}
+
+void ImageDocument::changeBrightness( bool isIncrease)
+{
+    if( isIncrease) {
+        for( int i = 0; i < m_image->rect().width() ; i++ ) 
+        {
+            for( int j = 0; j < m_image->rect().height(); j++ )
+            {
+                m_image->setPixelColor(i, j , m_image->pixelColor( i , j).lighter( 120));
+            }
+        }
+    } else {
+        for( int i = 0; i < m_image->rect().width() ; i++ ) 
+        {
+            for( int j = 0; j < m_image->rect().height(); j++ )
+            {
+                m_image->setPixelColor(i, j , m_image->pixelColor( i , j).darker( 120));
+            }
+        }
+    }
+    m_edited = true;
+    emit editedChanged();
+    emit visualImageChanged();
+}
+
+void ImageDocument::save()
+{
+    QString location = QUrl( m_path).path();
+    if( QFileInfo( location).isWritable()) {
+        m_image->save( location);
+        m_edited = false;
+        emit editedChanged();
+    }
+}
+
+void ImageDocument::cancel()
+{
+    m_image = &m_originalImage;
+    m_edited = false;
+    emit editedChanged();
     emit visualImageChanged();
 }
 

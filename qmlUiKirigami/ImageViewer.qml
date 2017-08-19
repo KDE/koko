@@ -24,6 +24,7 @@
 import QtQuick 2.7
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
+import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
@@ -48,6 +49,7 @@ Kirigami.Page {
     Koko.ImageDocument {
         id: imageDoc
         path: listView.currentItem.currentImageSource
+        onResetHandle: brightnessSlider.value = 0.5
     }
     
     Kirigami.ContextDrawer {
@@ -95,6 +97,55 @@ Kirigami.Page {
         ]
     }
 
+    ColumnLayout {
+        anchors.top: root.top
+        width: root.width
+        z: listView.z + 1
+        
+        Controls.Slider {
+            id: brightnessSlider
+            property real previousValue: 0.5
+            Layout.fillWidth: true
+            visible: applicationWindow().controlsVisible
+            from: 0
+            to: 1.0
+            value: 0.5
+            stepSize: 0.1
+            z: listView.z + 1
+            snapMode: Controls.Slider.SnapAlways
+            hoverEnabled: true
+            Controls.ToolTip {
+                parent: brightnessSlider
+                visible: brightnessSlider.hovered
+                text: i18n("Brightness Controller")
+            }
+            onValueChanged: {
+                if( value > previousValue) {
+                    imageDoc.changeBrightness( true)
+                } else if( value < previousValue) {
+                    imageDoc.changeBrightness( false)
+                } 
+                previousValue = value
+                listView.forceActiveFocus()
+            }
+        }
+        
+        RowLayout {
+            Layout.fillWidth: true
+            visible: imageDoc.edited
+            Controls.Button {
+                Layout.fillWidth: true
+                text: i18n("Save")
+                onClicked: imageDoc.save()
+            }
+            Controls.Button {
+                Layout.fillWidth: true
+                text: i18n("Cancel")
+                onClicked: imageDoc.cancel()
+            }
+        }
+    }
+    
     //FIXME: HACK
     property bool wasDrawerOpen
     Component.onCompleted: {
@@ -260,6 +311,7 @@ Kirigami.Page {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
+                            contextDrawer.drawerOpen = false
                             doubleClickTimer.restart();
                         }
                         onDoubleClicked: {
