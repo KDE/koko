@@ -40,7 +40,6 @@ ImageDocument::ImageDocument()
 
 ImageDocument::~ImageDocument()
 {
-    delete m_image;
 }
 
 QString ImageDocument::path()
@@ -112,6 +111,7 @@ void ImageDocument::save()
 
 void ImageDocument::cancel()
 {
+    emit resetHandle();
     m_image = &m_originalImage;
     m_edited = false;
     emit editedChanged();
