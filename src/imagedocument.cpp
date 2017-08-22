@@ -31,7 +31,6 @@ ImageDocument::ImageDocument()
                  /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
                  QString location = QUrl( url).path();
                  m_image->load( location);
-                 m_originalImage = *m_image;
                  m_edited = false;
                  emit editedChanged();
                  emit visualImageChanged();
@@ -63,6 +62,12 @@ bool ImageDocument::edited()
     return m_edited;
 }
 
+void ImageDocument::setEdited(bool value)
+{
+    m_edited = value;
+    emit editedChanged();
+}
+
 void ImageDocument::rotate(int angle)
 {
     QMatrix matrix;
@@ -75,47 +80,24 @@ void ImageDocument::rotate(int angle)
     emit visualImageChanged();
 }
 
-void ImageDocument::changeBrightness( bool isIncrease)
-{
-    if( isIncrease) {
-        for( int i = 0; i < m_image->rect().width() ; i++ ) 
-        {
-            for( int j = 0; j < m_image->rect().height(); j++ )
-            {
-                m_image->setPixelColor(i, j , m_image->pixelColor( i , j).lighter( 120));
-            }
-        }
-    } else {
-        for( int i = 0; i < m_image->rect().width() ; i++ ) 
-        {
-            for( int j = 0; j < m_image->rect().height(); j++ )
-            {
-                m_image->setPixelColor(i, j , m_image->pixelColor( i , j).darker( 120));
-            }
-        }
-    }
-    m_edited = true;
-    emit editedChanged();
-    emit visualImageChanged();
-}
-
-void ImageDocument::save()
+void ImageDocument::save( QImage image)
 {
     QString location = QUrl( m_path).path();
+    *m_image = image;
     if( QFileInfo( location).isWritable()) {
         m_image->save( location);
+        emit resetHandle();
         m_edited = false;
         emit editedChanged();
     }
+    m_image->load( location);
+    emit visualImageChanged();
 }
 
 void ImageDocument::cancel()
 {
     emit resetHandle();
-    m_image = &m_originalImage;
     m_edited = false;
-    emit editedChanged();
-    emit visualImageChanged();
 }
 
 #include "moc_imagedocument.cpp"

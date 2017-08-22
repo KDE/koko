@@ -24,6 +24,7 @@
 import QtQuick 2.7
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
+import QtGraphicalEffects 1.0 as Effects
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.0 as Kirigami
 import org.kde.koko 0.1 as Koko
@@ -120,13 +121,7 @@ Kirigami.Page {
                 text: i18n("Brightness Controller")
             }
             onValueChanged: {
-                if( value > previousValue) {
-                    imageDoc.changeBrightness( true)
-                } else if( value < previousValue) {
-                    imageDoc.changeBrightness( false)
-                } 
-                previousValue = value
-                listView.forceActiveFocus()
+                imageDoc.edited = true
             }
         }
         
@@ -136,7 +131,9 @@ Kirigami.Page {
             Controls.Button {
                 Layout.fillWidth: true
                 text: i18n("Save")
-                onClicked: imageDoc.save()
+                onClicked: {
+                    listView.currentItem.image.modifiedImage.grabToImage( function( result) { imageDoc.save( result.image)})
+                }
             }
             Controls.Button {
                 Layout.fillWidth: true
@@ -299,6 +296,7 @@ Kirigami.Page {
 
                 KQA.QImageItem {
                     id: image
+                    property alias modifiedImage: brightnessContrast
                     width: flick.contentWidth
                     height: flick.contentHeight
                     fillMode: Image.PreserveAspectFit
@@ -356,6 +354,14 @@ Kirigami.Page {
                             }
                         }
                     }
+                    
+                    Effects.GammaAdjust {
+                        id: brightnessContrast
+                        source: image
+                        anchors.fill: image
+                        gamma: brightnessSlider.value + 0.5
+                    }
+                    
                 }
             }
         }

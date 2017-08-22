@@ -27,7 +27,7 @@ class ImageDocument : public QObject
     Q_OBJECT
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
     Q_PROPERTY(QImage visualImage READ visualImage NOTIFY visualImageChanged)
-    Q_PROPERTY(bool edited READ edited NOTIFY editedChanged)
+    Q_PROPERTY(bool edited READ edited WRITE setEdited NOTIFY editedChanged)
 public:
     ImageDocument();
     ~ImageDocument();
@@ -38,10 +38,10 @@ public:
     QImage visualImage();
     
     bool edited();
+    void setEdited( bool value);
     
     Q_INVOKABLE void rotate( int angle);
-    Q_INVOKABLE void changeBrightness( bool isIncrease);
-    Q_INVOKABLE void save();
+    Q_INVOKABLE void save( QImage image);
     Q_INVOKABLE void cancel();
     
 signals:
@@ -53,7 +53,6 @@ signals:
 private:
     QString m_path;
     QImage *m_image;
-    QImage m_originalImage;
     bool m_edited;
 };
 
