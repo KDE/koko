@@ -98,6 +98,7 @@ void ImageDocument::cancel()
 {
     emit resetHandle();
     m_edited = false;
+    emit editedChanged();
 }
 
 #include "moc_imagedocument.cpp"
