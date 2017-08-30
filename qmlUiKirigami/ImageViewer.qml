@@ -50,7 +50,10 @@ Kirigami.Page {
     Koko.ImageDocument {
         id: imageDoc
         path: listView.currentItem.currentImageSource
-        onResetHandle: brightnessSlider.value = 0.5
+        onResetHandle: {
+            brightnessSlider.value = 0.5
+            listView.forceActiveFocus();
+        }
     }
     
     Kirigami.ContextDrawer {
