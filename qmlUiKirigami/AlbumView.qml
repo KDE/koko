@@ -150,7 +150,10 @@ Kirigami.ScrollablePage {
         id: shareMenu
         x: ( page.width - width) / 2
         y: page.height - height - ( Kirigami.Units.gridUnit * 3)
-        inputData: { urls: [] }
+        inputData: {
+            "urls": [],
+            "mimeType": ["image/"]
+        }
         onFinished: {
             if (error==0 && output.url !== "") {
                 console.assert(output.url !== undefined);
