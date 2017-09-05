@@ -27,6 +27,7 @@ Name[zh_CN]=Koko
 
 [Event/sharingSuccess]
 Name=Sharing success
+Name[ast]=Compartición esitosa
 Name[ca]=S'ha compartit amb èxit
 Name[ca@valencia]=S'ha compartit amb èxit
 Name[cs]=Sdílení bylo úspěšné
@@ -36,6 +37,7 @@ Name[sv]=Delning lyckades
 Name[uk]=Успішно оприлюднено
 Name[x-test]=xxSharing successxx
 Comment=Image Shared Successfully
+Comment[ast]=La imaxe compartióse con ésitu
 Comment[ca]=S'ha compartit la imatge amb èxit
 Comment[ca@valencia]=S'ha compartit la imatge amb èxit
 Comment[cs]=Obrázek byl úspěšně sdílen
@@ -48,6 +50,7 @@ Action=Popup
 
 [Event/sharingFailed]
 Name=Sharing failed
+Name[ast]=Compartición fallida
 Name[ca]=Ha fallat la compartició
 Name[ca@valencia]=Ha fallat la compartició
 Name[cs]=Sdílení selhalo
@@ -57,6 +60,7 @@ Name[sv]=Delning misslyckades
 Name[uk]=Не вдалося оприлюднити
 Name[x-test]=xxSharing failedxx
 Comment=Image Sharing failed
+Comment[ast]=Falló la compartición d'imáxenes
 Comment[ca]=Ha fallat la compartició de la imatge
 Comment[ca@valencia]=Ha fallat la compartició de la imatge
 Comment[cs]=Sdílení obrázku selhalo
