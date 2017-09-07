@@ -61,7 +61,6 @@ set (qml_plugin_SRCS
     imagefoldermodel.cpp
     sortmodel.cpp
     allimagesmodel.cpp
-    fileinfo.cpp
     imagelistmodel.cpp
     notificationmanager.cpp
     types.cpp
