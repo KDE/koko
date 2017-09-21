@@ -23,6 +23,7 @@
 #define _QML_PLUGINS_H
 
 #include <QQmlExtensionPlugin>
+#include <QQmlEngine>
 
 class QmlPlugins : public QQmlExtensionPlugin
 {

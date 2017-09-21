@@ -32,11 +32,13 @@
 #include "types.h"
 #include "roles.h"
 #include "imagedocument.h"
+#include "imageprovider.h"
 
 #include <QtQml/qqml.h>
 
-void QmlPlugins::initializeEngine(QQmlEngine *, const char *)
+void QmlPlugins::initializeEngine(QQmlEngine *engine, const char *)
 {
+    engine->addImageProvider("imageprovider", new ImageProvider());
 }
 
 void QmlPlugins::registerTypes(const char *uri)

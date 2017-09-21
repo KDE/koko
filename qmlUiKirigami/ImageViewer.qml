@@ -297,13 +297,14 @@ Kirigami.Page {
                     }
                 }
 
-                KQA.QImageItem {
+                Image {
                     id: image
                     property alias modifiedImage: brightnessContrast
+                    property string imageObject: "image://imageprovider/"+ (model.imageurl).slice(7)
                     width: flick.contentWidth
                     height: flick.contentHeight
                     fillMode: Image.PreserveAspectFit
-                    image: imageDoc.visualImage
+                    source: imageObject
                     Timer {
                         id: doubleClickTimer
                         interval: 150
