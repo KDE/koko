@@ -111,6 +111,10 @@ Kirigami.ScrollablePage {
 
     leftPadding: (page.width - Math.floor(page.width / gridView.cellWidth) * gridView.cellWidth)/2
     rightPadding: leftPadding
+    Text {
+        z:999
+        text: gridView.Controls.ScrollBar.size
+    }
     GridView {
         id: gridView
         //FIXME: right now if those two objects are out of this, the whole page breaks
@@ -123,7 +127,10 @@ Kirigami.ScrollablePage {
 
         keyNavigationEnabled: true
 
-        cellWidth: Kirigami.Units.iconSizes.enormous + Kirigami.Units.smallSpacing * 2
+        property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit : 0)
+
+        cellWidth: widthToApproximate/Math.round(widthToApproximate/Kirigami.Units.iconSizes.huge)
+
         cellHeight: cellWidth
         
         highlight: Rectangle { color: Kirigami.Theme.highlightColor}

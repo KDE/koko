@@ -160,7 +160,9 @@ Kirigami.Page {
     function close() {
         applicationWindow().controlsVisible = true;
         applicationWindow().header.visible = true;
-        applicationWindow().footer.visible = true;
+        if (applicationWindow().footer) {
+            applicationWindow().footer.visible = true;
+        }
         applicationWindow().globalDrawer.visible = wasDrawerOpen;
         applicationWindow().globalDrawer.enabled = true;
         applicationWindow().visibility = Window.Windowed;
