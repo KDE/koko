@@ -78,16 +78,16 @@ QString ImageFolderModel::url() const
 
 void ImageFolderModel::setUrl(QString& url)
 {
-    Q_ASSERT( QUrl(url).isLocalFile());
     url = QUrl(url).path();
     
     if (url.isEmpty()) {
         QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
-        Q_ASSERT(locations.size() > 1);
+        Q_ASSERT(locations.size() >= 1);
         url = locations.first().append("/");
     }
     
     url = QUrl::fromLocalFile(url).toString();
+    Q_ASSERT( QUrl(url).isLocalFile());
     
     if (dirLister()->url().path() == QUrl(url).path()) {
         dirLister()->updateDirectory(QUrl(url));
