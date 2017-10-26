@@ -141,7 +141,7 @@ Kirigami.ScrollablePage {
             anchors.centerIn: parent
             text: i18n("No Images Found")
             visible: gridView.count == 0
-            font.pointSize: Kirigami.Units.gridUnit * 1
+            font.pixelSize: Kirigami.Units.gridUnit * 1
         }
     }
     
