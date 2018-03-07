@@ -137,7 +137,7 @@ Kirigami.ScrollablePage {
         
         delegate: AlbumDelegate {}
         
-        Kirigami.Label {
+        Controls.Label {
             anchors.centerIn: parent
             text: i18n("No Images Found")
             visible: gridView.count == 0
