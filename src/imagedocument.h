@@ -26,7 +26,7 @@ class ImageDocument : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
-    Q_PROPERTY(QImage visualImage READ visualImage WRITE setVisualImage NOTIFY visualImageChanged)
+    Q_PROPERTY(QImage visualImage READ visualImage NOTIFY visualImageChanged)
     Q_PROPERTY(bool edited READ edited WRITE setEdited NOTIFY editedChanged)
 public:
     ImageDocument();
@@ -36,7 +36,6 @@ public:
     void setPath( QString &url);
     
     QImage visualImage();
-    void setVisualImage( QImage& image);
     
     bool edited();
     void setEdited( bool value);

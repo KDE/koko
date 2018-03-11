@@ -17,18 +17,34 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include "imageprovider.h"
+import QtQuick 2.7
+import QtQuick.Controls 2.1 as Controls
+import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kquickcontrolsaddons 2.0 as KQA
+import org.kde.koko 0.1 as Koko
 
-ImageProvider::ImageProvider()
-                    : QQuickImageProvider(QQuickImageProvider::Image)
-{
+Kirigami.Page {
+    id: rootEditorView
+    title: i18n("Edit")
+    leftPadding: 0
+    rightPadding: 0
+    
+    property string imagePath
+    
+    Koko.ImageDocument {
+        id: imageDoc
+        path: imagePath
+    }
+    
+    contentItem: Flickable {
+        width: rootEditorView.width
+        height: rootEditorView.height
+        KQA.QImageItem {
+            id: editImage
+            width: rootEditorView.width
+            height: rootEditorView.height
+            image: imageDoc.visualImage
+        }
+    }
+    
 }
-
-QImage ImageProvider::requestImage(const QString &id, QSize *size, const QSize &requestedSize)
-{
-    Q_UNUSED(size)
-    Q_UNUSED(requestedSize)
-    return QImage(id);
-}
-
-#include "moc_imageprovider.cpp"

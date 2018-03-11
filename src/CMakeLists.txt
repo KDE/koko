@@ -66,14 +66,12 @@ set (qml_plugin_SRCS
     types.cpp
     roles.cpp
     imagedocument.cpp
-    imageprovider.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
 target_link_libraries (kokoqmlplugin
     Qt5::Qml
-    Qt5::Quick
     KF5::KIOCore
     KF5::KIOFileWidgets
     KF5::KIOWidgets

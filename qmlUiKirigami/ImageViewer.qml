@@ -47,21 +47,12 @@ Kirigami.Page {
         id: mimeDB
     }
     
-    Koko.ImageDocument {
-        id: imageDoc
-        path: listView.currentItem.currentImageSource
-        onResetHandle: {
-            brightnessSlider.value = 0.5
-            listView.forceActiveFocus();
-        }
-    }
-    
     Kirigami.ContextDrawer {
         id: contextDrawer
         title: i18n("Edit image")
         handleVisible: true
     }
-
+    
     actions {
         left: Kirigami.Action {
             id: backAction
@@ -81,67 +72,12 @@ Kirigami.Page {
                 }
             }
         }
-        contextualActions: [
-            Kirigami.Action {
-                iconName: "image-rotate-left-symbolic"
-                text: i18n("Rotate left")
-                tooltip: i18n("Rotate the image to the left")
-                onTriggered: {
-                    imageDoc.rotate(270)
-                }
-            },
-            Kirigami.Action {
-                iconName: "image-rotate-right-symbolic"
-                text: i18n("Rotate right")
-                tooltip: i18n("Rotate the image to the right")
-                onTriggered: {
-                    imageDoc.rotate(90)
-                }
-            }
-        ]
-    }
-
-    ColumnLayout {
-        anchors.top: root.top
-        width: root.width
-        z: listView.z + 1
-        
-        Controls.Slider {
-            id: brightnessSlider
-            property real previousValue: 0.5
-            Layout.fillWidth: true
-            visible: applicationWindow().controlsVisible
-            from: 0
-            to: 1.0
-            value: 0.5
-            stepSize: 0.1
-            z: listView.z + 1
-            snapMode: Controls.Slider.SnapAlways
-            hoverEnabled: true
-            Controls.ToolTip {
-                parent: brightnessSlider
-                visible: brightnessSlider.hovered
-                text: i18n("Brightness Controller")
-            }
-            onValueChanged: {
-                imageDoc.edited = true
-            }
-        }
-        
-        RowLayout {
-            Layout.fillWidth: true
-            visible: imageDoc.edited
-            Controls.Button {
-                Layout.fillWidth: true
-                text: i18n("Save")
-                onClicked: {
-                    listView.currentItem.image.modifiedImage.grabToImage( function( result) { imageDoc.save( result.image)})
-                }
-            }
-            Controls.Button {
-                Layout.fillWidth: true
-                text: i18n("Cancel")
-                onClicked: imageDoc.cancel()
+        right: Kirigami.Action {
+            id: editingAction
+            iconName: "edit-entry"
+            tooltip: i18n("Edit Image")
+            onTriggered: {
+                applicationWindow().pageStack.layers.push(editorComponent)
             }
         }
     }
@@ -301,12 +237,10 @@ Kirigami.Page {
 
                 Image {
                     id: image
-                    property alias modifiedImage: brightnessContrast
-                    property string imageObject: "image://imageprovider/"+ (model.imageurl).slice(7)
                     width: flick.contentWidth
                     height: flick.contentHeight
                     fillMode: Image.PreserveAspectFit
-                    source: imageObject
+                    source: currentImageSource
                     Timer {
                         id: doubleClickTimer
                         interval: 150
@@ -360,14 +294,6 @@ Kirigami.Page {
                             }
                         }
                     }
-                    
-                    Effects.GammaAdjust {
-                        id: brightnessContrast
-                        source: image
-                        anchors.fill: image
-                        gamma: brightnessSlider.value + 0.5
-                    }
-                    
                 }
             }
         }
@@ -393,4 +319,14 @@ Kirigami.Page {
             }
         }
     }
+    
+    Component {
+        id: editorComponent
+        EditorView {
+            width: root.imageWidth
+            height: root.imageHeight
+            imagePath: listView.currentItem.currentImageSource
+        }
+    }
+    
 }

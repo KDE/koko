@@ -57,12 +57,6 @@ QImage ImageDocument::visualImage()
     return *m_image;
 }
 
-void ImageDocument::setVisualImage(QImage& image)
-{
-    m_image = &image;
-    emit visualImageChanged();
-}
-
 bool ImageDocument::edited()
 {
     return m_edited;
