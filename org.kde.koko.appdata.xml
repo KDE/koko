@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+  <id>org.kde.koko.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <name>Koko</name>
+  <summary>Image Gallery</summary>
+  <description>
+    <p>An Image gallery application</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://userbase.kde.org/images.userbase/thumb/6/69/Koko-normal.png/380px-Koko-normal.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://userbase.kde.org/Koko</url>
+  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=koko</url>
+  <url type="help">https://docs.kde.org/?application=koko</url>
+  <url type="donation">https://www.kde.org/donate.php?app=org.kde.koko</url>
+  <project_group>KDE</project_group>
+  <provides>
+    <binary>koko</binary>
+  </provides>
+</component>
