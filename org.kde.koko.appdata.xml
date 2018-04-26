@@ -4,9 +4,24 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Koko</name>
+  <name xml:lang="ca">Koko</name>
+  <name xml:lang="nl">Koko</name>
+  <name xml:lang="pt">Koko</name>
+  <name xml:lang="uk">Koko</name>
+  <name xml:lang="x-test">xxKokoxx</name>
   <summary>Image Gallery</summary>
+  <summary xml:lang="ca">Galeria d'imatges</summary>
+  <summary xml:lang="nl">Galerij van afbeeldingen</summary>
+  <summary xml:lang="pt">Galeria de Imagens</summary>
+  <summary xml:lang="uk">Галерея зображень</summary>
+  <summary xml:lang="x-test">xxImage Galleryxx</summary>
   <description>
     <p>An Image gallery application</p>
+    <p xml:lang="ca">Una aplicació de galeria d'imatges</p>
+    <p xml:lang="nl">Toepassing voor afbeeldingsgalerij</p>
+    <p xml:lang="pt">Uma aplicação de galeria de imagens</p>
+    <p xml:lang="uk">Програма для роботи з галереями зображень</p>
+    <p xml:lang="x-test">xxAn Image gallery applicationxx</p>
   </description>
   <screenshots>
     <screenshot type="default">
