@@ -10,6 +10,7 @@
   <name xml:lang="cs">Koko</name>
   <name xml:lang="en-GB">Koko</name>
   <name xml:lang="es">Koko</name>
+  <name xml:lang="fr">Koko</name>
   <name xml:lang="gl">Koko</name>
   <name xml:lang="it">Koko</name>
   <name xml:lang="nl">Koko</name>
@@ -26,7 +27,7 @@
   <summary xml:lang="cs">Galerie obrázků</summary>
   <summary xml:lang="en-GB">Image Gallery</summary>
   <summary xml:lang="es">Galería de imágenes</summary>
-  <summary xml:lang="fr">Galerie </summary>
+  <summary xml:lang="fr">Galerie d'images</summary>
   <summary xml:lang="gl">Galería de imaxes</summary>
   <summary xml:lang="it">Galleria di immagini</summary>
   <summary xml:lang="nl">Galerij van afbeeldingen</summary>
@@ -44,6 +45,7 @@
     <p xml:lang="cs">Aplikace s galerií obrázků</p>
     <p xml:lang="en-GB">An Image gallery application</p>
     <p xml:lang="es">Aplicación para galerías de imágenes</p>
+    <p xml:lang="fr">Une application de galerie d'images</p>
     <p xml:lang="gl">Aplicativo de galería de imaxes.</p>
     <p xml:lang="it">Un'applicazione per gallerie di immagini</p>
     <p xml:lang="nl">Toepassing voor afbeeldingsgalerij</p>
