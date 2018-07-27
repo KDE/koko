@@ -27,6 +27,7 @@ Name[tr]=Koko
 Name[uk]=Koko
 Name[x-test]=xxKokoxx
 Name[zh_CN]=Koko
+Name[zh_TW]=Koko
 
 [Event/sharingSuccess]
 Name=Sharing success
@@ -48,6 +49,7 @@ Name[sv]=Delning lyckades
 Name[tr]=Paylaşım başarılı
 Name[uk]=Успішно оприлюднено
 Name[x-test]=xxSharing successxx
+Name[zh_TW]=分享成功
 Comment=Image Shared Successfully
 Comment[ast]=La imaxe compartióse con ésitu
 Comment[ca]=S'ha compartit la imatge amb èxit
@@ -67,6 +69,7 @@ Comment[sv]=Bild delades med lyckat resultat
 Comment[tr]=Resim Başarıyla Paylaşıldı
 Comment[uk]=Зображення успішно оприлюднено
 Comment[x-test]=xxImage Shared Successfullyxx
+Comment[zh_TW]=圖片分享成功
 Action=Popup
 
 [Event/sharingFailed]
@@ -89,6 +92,7 @@ Name[sv]=Delning misslyckades
 Name[tr]=Paylaşım başarısız oldu
 Name[uk]=Не вдалося оприлюднити
 Name[x-test]=xxSharing failedxx
+Name[zh_TW]=分享失敗
 Comment=Image Sharing failed
 Comment[ast]=Falló la compartición d'imáxenes
 Comment[ca]=Ha fallat la compartició de la imatge
@@ -108,4 +112,5 @@ Comment[sv]=Bilddelning misslyckades
 Comment[tr]=Resim paylaşımı başarısız oldu
 Comment[uk]=Не вдалося оприлюднити зображення
 Comment[x-test]=xxImage Sharing failedxx
+Comment[zh_TW]=圖片分享失敗
 Action=Popup
