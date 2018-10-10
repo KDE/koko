@@ -4,7 +4,6 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <name>Koko</name>
-  <name xml:lang="ast">Koko</name>
   <name xml:lang="ca">Koko</name>
   <name xml:lang="ca-valencia">Koko</name>
   <name xml:lang="cs">Koko</name>
@@ -23,7 +22,6 @@
   <name xml:lang="x-test">xxKokoxx</name>
   <name xml:lang="zh-CN">Koko</name>
   <summary>Image Gallery</summary>
-  <summary xml:lang="ast">Galería d'imáxenes</summary>
   <summary xml:lang="ca">Galeria d'imatges</summary>
   <summary xml:lang="ca-valencia">Galeria d'imatges</summary>
   <summary xml:lang="cs">Galerie obrázků</summary>
@@ -43,7 +41,6 @@
   <summary xml:lang="zh-CN">图片库</summary>
   <description>
     <p>An Image gallery application</p>
-    <p xml:lang="ast">Una aplicación de galería d'imáxenes</p>
     <p xml:lang="ca">Una aplicació de galeria d'imatges</p>
     <p xml:lang="ca-valencia">Una aplicació de galeria d'imatges</p>
     <p xml:lang="cs">Aplikace s galerií obrázků</p>
