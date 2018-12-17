@@ -114,8 +114,7 @@ Kirigami.ScrollablePage {
 
     ShareDialog {
         id: shareMenu
-        x: ( page.width - width) / 2
-        y: page.height - height - ( Kirigami.Units.gridUnit * 3)
+
         inputData: {
             "urls": [],
             "mimeType": ["image/"]

@@ -122,7 +122,27 @@ Kirigami.Page {
                 break;
         }
     }
-    
+
+    ShareDialog {
+        id: shareDialog
+
+        inputData: {
+            "urls": [],
+            "mimeType": ["image/"]
+        }
+        onFinished: {
+            if (error==0 && output.url !== "") {
+                console.assert(output.url !== undefined);
+                var resultUrl = output.url;
+                console.log("Received", resultUrl)
+                notificationManager.showNotification( true, resultUrl);
+                clipboard.content = resultUrl;
+            } else {
+                notificationManager.showNotification( false);
+            }
+        }
+    }
+
     ListView {
         id: listView
         anchors.fill: parent
@@ -295,27 +315,6 @@ Kirigami.Page {
                         }
                     }
                 }
-            }
-        }
-    }
-    
-    ShareDialog {
-        id: shareDialog
-        x: (root.width - width) / 2
-        y: root.height - height - Kirigami.Units.gridUnit * 3
-        inputData: {
-            "urls": [],
-            "mimeType": ["image/"]
-        }
-        onFinished: {
-            if (error==0 && output.url !== "") {
-                console.assert(output.url !== undefined);
-                var resultUrl = output.url;
-                console.log("Received", resultUrl)
-                notificationManager.showNotification( true, resultUrl);
-                clipboard.content = resultUrl;
-            } else {
-                notificationManager.showNotification( false);
             }
         }
     }

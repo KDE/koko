@@ -23,42 +23,41 @@ import QtQuick.Controls 2.0 as Controls
 import org.kde.purpose 1.0 as Purpose
 import org.kde.kirigami 2.1 as Kirigami
 
-Controls.Popup {
+Kirigami.OverlaySheet {
     id: window
-    modal: true
-    focus: true
+   // focus: true
     property alias inputData: view.inputData
     property bool running: false
     signal finished(var output, int error, string message)
-    width: Kirigami.Units.gridUnit * 25
-    height: Kirigami.Units.gridUnit * 28
+    leftPadding: 0
+    rightPadding: 0
     
     Controls.BusyIndicator {
         visible: window.running
         anchors.fill: parent
     }
 
-    Rectangle {
-        anchors.fill: parent
-        color: Kirigami.Theme.viewBackgroundColor
-        Purpose.AlternativesView {
-            id: view
-            anchors.fill:parent
-            clip: true
-            pluginType: "Export"
-            
-            delegate: Kirigami.BasicListItem {
-                label: model.display
-                icon: "arrow-right"
-                onClicked: view.createJob (model.index)
-                Keys.onReturnPressed: view.createJob (model.index)
-                Keys.onEnterPressed: view.createJob (model.index)
-            }
-            
-            onRunningChanged: window.running = running
-            onFinished: {
-                window.finished(output, error, message)
-            }
+    header: Kirigami.Heading {
+        text: i18n("Share")
+    }
+    Purpose.AlternativesView {
+        id: view
+        clip: true
+        pluginType: "Export"
+        implicitWidth: Kirigami.Units.gridUnit * 20
+        implicitHeight: Math.max(Kirigami.Units.gridUnit * 10, initialItem.contentHeight)
+        
+        delegate: Kirigami.BasicListItem {
+            label: model.display
+            icon: "arrow-right"
+            onClicked: view.createJob (model.index)
+            Keys.onReturnPressed: view.createJob (model.index)
+            Keys.onEnterPressed: view.createJob (model.index)
+        }
+        
+        onRunningChanged: window.running = running
+        onFinished: {
+            window.finished(output, error, message)
         }
     }
 }
