@@ -22,7 +22,7 @@
 import QtQuick 2.1
 import QtQuick.Controls 2.0 as Controls
 
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.koko 0.1 as Koko
 
@@ -41,16 +41,19 @@ Kirigami.ApplicationWindow {
             view.currentIndex = view.model.proxyIndex(currentImage.index)
         }
     }
-    
+
     pageStack.initialPage: AlbumView {
         id: albumView
         model: imageFolderModel
         title: i18n("Folders")
     }
-    
+
+    pageStack.layers.onDepthChanged: sideBar.drawerOpen = sideBar.enabled = pageStack.layers.depth < 2;
+
     globalDrawer: Sidebar {
         id: sideBar
         modal: false
+
         onFilterBy: {
             pageStack.pop(albumView)
             albumView.title = i18n(value)

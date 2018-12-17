@@ -106,7 +106,13 @@ Item {
     
     SelectionButton {
         id: selectionButton
-        visible: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse  || page.state == "selecting") && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
+        opacity: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse  || page.state == "selecting") && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
     }
     
     SelectionDelegateHighlight {

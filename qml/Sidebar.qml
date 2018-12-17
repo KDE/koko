@@ -23,7 +23,7 @@ import QtQuick 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1 as Controls
 
-import org.kde.kirigami 2.1 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
 
 Kirigami.GlobalDrawer {
     
@@ -121,6 +121,9 @@ Kirigami.GlobalDrawer {
         }
     ]
 
+    Controls.Label {
+        text: i18n("Thumbnails size:")
+    }
     Controls.Slider {
         Layout.fillWidth: true
         from: Kirigami.Units.iconSizes.medium

@@ -32,7 +32,7 @@ Kirigami.Icon {
     z: gridView.z + 2
     
     anchors.top: image.top
-    anchors.right: image.right
+    anchors.left: image.left
     
     MouseArea {
         id: iconMouseArea

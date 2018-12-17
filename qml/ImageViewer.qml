@@ -33,7 +33,7 @@ import org.kde.kquickcontrolsaddons 2.0 as KQA
 Kirigami.Page {
     id: root
 
-    title: i18n("Details")
+    title: listView.currentItem.display
     property alias sourceModel: imagesListModel.sourceModel
     property int indexValue
     
@@ -54,12 +54,6 @@ Kirigami.Page {
     }
     
     actions {
-        left: Kirigami.Action {
-            id: backAction
-            iconName: "view-close"
-            tooltip: i18n("Close Image")
-            onTriggered: root.close();
-        }
         main: Kirigami.Action {
             id: shareAction
             iconName: "document-share"
@@ -95,7 +89,6 @@ Kirigami.Page {
     }
     function close() {
         applicationWindow().controlsVisible = true;
-        applicationWindow().header.visible = true;
         if (applicationWindow().footer) {
             applicationWindow().footer.visible = true;
         }
@@ -144,6 +137,55 @@ Kirigami.Page {
     }
 
     ListView {
+        id: thumbnailView
+        z: 100
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: applicationWindow().controlsVisible ? 0 : -thumbnailView.height/2
+            Behavior on bottomMargin {
+                NumberAnimation {
+                    duration: Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
+            }
+        }
+        opacity: applicationWindow().controlsVisible
+        height: kokoConfig.iconSize
+        orientation: Qt.Horizontal
+        snapMode: ListView.SnapOneItem
+        currentIndex: listView.currentIndex
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+        
+        model: Koko.SortModel {
+            sourceModel: root.sourceModel
+            filterRole: Koko.Roles.MimeTypeRole
+            filterRegExp: /image\//
+        }
+        delegate: AlbumDelegate {
+            width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
+            height: width
+        }
+        highlightMoveDuration: 0
+        highlight: Item {
+            Rectangle {
+                anchors.centerIn: parent
+                width: Math.min(parent.width, parent.height)
+                height: width
+                color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
+                border.color: Kirigami.Theme.highlightColor
+                radius: 2
+            }
+        }
+    }
+    ListView {
         id: listView
         anchors.fill: parent
         orientation: Qt.Horizontal
@@ -166,7 +208,8 @@ Kirigami.Page {
 
         delegate: Flickable {
             id: flick
-            property string currentImageSource: model.imageurl
+            readonly property string currentImageSource: model.imageurl
+            readonly property string display: model.display
             property alias image: image
             width: imageWidth
             height: imageHeight
@@ -261,6 +304,8 @@ Kirigami.Page {
                     height: flick.contentHeight
                     fillMode: Image.PreserveAspectFit
                     source: currentImageSource
+                    autoTransform: true
+                    asynchronous: true
                     Timer {
                         id: doubleClickTimer
                         interval: 150
