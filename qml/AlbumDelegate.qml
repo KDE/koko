@@ -31,15 +31,19 @@ Item {
     height: gridView.cellHeight
     
     Rectangle {
-        anchors.fill: image
+        anchors {
+            fill: image
+            margins: -1
+        }
+        radius: 2
         color: Kirigami.Theme.textColor
         opacity: 0.2
-        visible: model.itemType != Koko.Types.Folder && model.itemType != Koko.Types.Album
+        visible: model.itemType != Koko.Types.Folder
     }
     KQA.QImageItem {
         id: image
         anchors.centerIn: parent
-        width: gridView.cellWidth - (Kirigami.Units.smallSpacing * 2 )
+        width: kokoConfig.iconSize
         height: width
         smooth: true
         image: model.thumbnail

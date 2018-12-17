@@ -22,6 +22,8 @@
 #include <QStandardPaths>
 #include <QFile>
 
+#include <KIconLoader>
+
 KokoConfig::KokoConfig(QObject* parent)
     : QObject(parent)
     , m_config("kokorc")
@@ -34,13 +36,25 @@ KokoConfig::~KokoConfig()
 
 bool KokoConfig::initialRun() const
 {
-    return m_config.group("general").readEntry("initial run", true);
+    return m_config.group("general").readEntry("InitialRun", true);
 }
 
 void KokoConfig::setInitialRun(bool value)
 {
-    m_config.group("general").writeEntry("initial run", value);
+    m_config.group("general").writeEntry("InitialRun", value);
     m_config.sync();
+}
+
+int KokoConfig::iconSize() const
+{
+    return m_config.group("general").readEntry("IconSize", (int)KIconLoader::SizeHuge);
+}
+
+void KokoConfig::setIconSize(int size)
+{
+    m_config.group("general").writeEntry("IconSize", size);
+    m_config.sync();
+    emit iconSizeChanged();
 }
 
 void KokoConfig::reset()

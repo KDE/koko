@@ -20,6 +20,7 @@
  */
 
 import QtQuick 2.1
+import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.1 as Controls
 
 import org.kde.kirigami 2.1 as Kirigami
@@ -119,7 +120,15 @@ Kirigami.GlobalDrawer {
             }
         }
     ]
-    
+
+    Controls.Slider {
+        Layout.fillWidth: true
+        from: Kirigami.Units.iconSizes.medium
+        to: Kirigami.Units.iconSizes.enormous
+        value: kokoConfig.iconSize
+        onMoved: kokoConfig.iconSize = value;
+    }
+
     Component.onCompleted: {
         folderAction.checked = true
         previouslySelectedAction = folderAction

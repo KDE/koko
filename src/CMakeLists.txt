@@ -44,6 +44,7 @@ target_link_libraries(koko
     KF5::I18n
     KF5::CoreAddons
     KF5::KIOCore
+    KF5::IconThemes
     kokocommon
     ${EXIV2_LIBRARIES}
 )

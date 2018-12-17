@@ -28,6 +28,7 @@ class KokoConfig : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool initialRun READ initialRun WRITE setInitialRun)
+    Q_PROPERTY(int iconSize READ iconSize WRITE setIconSize NOTIFY iconSizeChanged)
 public:
     KokoConfig(QObject* parent = 0);
     virtual ~KokoConfig();
@@ -35,7 +36,13 @@ public:
     bool initialRun() const;
     void setInitialRun(bool value);
 
+    int iconSize() const;
+    void setIconSize(int size);
+
     void reset();
+Q_SIGNALS:
+    void iconSizeChanged();
+
 private:
     KConfig m_config;
 };

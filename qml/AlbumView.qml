@@ -109,9 +109,6 @@ Kirigami.ScrollablePage {
         }
     }
 
-    leftPadding: (page.width - Math.floor(page.width / gridView.cellWidth) * gridView.cellWidth)/2
-    rightPadding: leftPadding
-
     ShareDialog {
         id: shareMenu
 
@@ -144,13 +141,23 @@ Kirigami.ScrollablePage {
 
         keyNavigationEnabled: true
 
-        property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit : 0)
+        property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit : 0)
 
-        cellWidth: widthToApproximate/Math.round(widthToApproximate/Kirigami.Units.iconSizes.huge)
+        cellWidth: Math.floor(width/Math.floor(width/(kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2)))
 
-        cellHeight: cellWidth
-        
-        highlight: Rectangle { color: Kirigami.Theme.highlightColor}
+        cellHeight: kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2
+
+        highlightMoveDuration: 0
+        highlight: Item {
+            Rectangle {
+                anchors.centerIn: parent
+                width: Math.min(parent.width, parent.height)
+                height: width
+                color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
+                border.color: Kirigami.Theme.highlightColor
+                radius: 2
+            }
+        }
         
         delegate: AlbumDelegate {}
         
