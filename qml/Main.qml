@@ -28,7 +28,6 @@ import org.kde.koko 0.1 as Koko
 
 Kirigami.ApplicationWindow {
     id: root
-    header: Kirigami.ApplicationHeader {}
 
     /*
      * currentImage now stores the information related to the source model

@@ -27,7 +27,7 @@ kde_enable_exceptions()
 
 add_subdirectory(src)
 add_subdirectory(autotests)
-add_subdirectory(qmlUiKirigami)
+add_subdirectory(qml)
 add_subdirectory(icons)
 
 install(FILES org.kde.koko.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
