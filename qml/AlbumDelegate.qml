@@ -30,6 +30,12 @@ Item {
     width: gridView.cellWidth
     height: gridView.cellHeight
     
+    Rectangle {
+        anchors.fill: image
+        color: Kirigami.Theme.textColor
+        opacity: 0.2
+        visible: model.itemType != Koko.Types.Folder && model.itemType != Koko.Types.Album
+    }
     KQA.QImageItem {
         id: image
         anchors.centerIn: parent
@@ -41,23 +47,56 @@ Item {
     }
 
     Rectangle {
-        visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
+        anchors {
+            top: image.top
+            left: image.left
+            right: image.right
+        }
+        visible: textLabel.visible
         width: image.width
         height: textLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
         color: Kirigami.Theme.viewBackgroundColor
-        anchors.top: image.top
-        anchors.left: image.left
         opacity: 0.8
+    }
         
+    Controls.Label {
+        id: textLabel
+        anchors {
+            left: image.left
+            right: image.right
+            top: image.top
+            bottom: countRect.visible ? countRect.top : image.bottom
+        }
+        visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
+        verticalAlignment: Text.AlignTop
+        padding: Kirigami.Units.smallSpacing
+        elide: Text.ElideRight
+        maximumLineCount: 4
+        wrapMode: Text.WordWrap
+        color: Kirigami.Theme.textColor
+        text: model.display
+    }
+
+    Rectangle {
+        id: countRect
+        anchors {
+            bottom: image.bottom
+            left: image.left
+            right: image.right
+        }
+        visible: model.fileCount && model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
+        height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
+        color: Kirigami.Theme.viewBackgroundColor
+        opacity: 0.8
+
         Controls.Label {
-            id: textLabel
-            anchors.fill: parent
+            id: countLabel
             padding: Kirigami.Units.smallSpacing
+            elide: Text.ElideRight
+            maximumLineCount: 4
             wrapMode: Text.WordWrap
             color: Kirigami.Theme.textColor
-            text: model.fileCount
-                      ? i18np("%2 \n 1 Image", "%2 \n %1 Images", model.fileCount, model.display)
-                      : model.display
+            text: i18np("1 Image", "%1 Images", model.fileCount)
         }
     }
     
