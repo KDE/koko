@@ -42,7 +42,9 @@ Kirigami.Page {
     
     leftPadding: 0
     rightPadding: 0
-    
+
+    flickable: listView
+
     KQA.MimeDatabase {
         id: mimeDB
     }

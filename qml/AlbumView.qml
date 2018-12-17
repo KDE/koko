@@ -43,7 +43,7 @@ Kirigami.ScrollablePage {
         },
         State {
             name: "selecting"
-            when: model.hasSelectedImages && Kirigami.Settings.isMobile
+            when: model.hasSelectedImages && Kirigami.Settings.tabletMode
         }
     ]
 
@@ -53,7 +53,7 @@ Kirigami.ScrollablePage {
             text: i18n("Deselect All")
             tooltip: i18n("De-selects all the selected images")
             enabled: model.hasSelectedImages
-            visible: model.hasSelectedImages && Kirigami.Settings.isMobile
+            visible: model.hasSelectedImages && Kirigami.Settings.tabletMode
             onTriggered: model.clearSelections()
         }
         contextualActions: [
@@ -141,7 +141,7 @@ Kirigami.ScrollablePage {
 
         keyNavigationEnabled: true
 
-        property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.isMobile ? Kirigami.Units.gridUnit : 0)
+        property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
 
         cellWidth: Math.floor(width/Math.floor(width/(kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2)))
 
