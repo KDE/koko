@@ -49,13 +49,13 @@ Kirigami.ScrollablePage {
 
     actions {
         main: Kirigami.Action {
-                iconName: "edit-select-none"
-                text: i18n("Deselect All")
-                tooltip: i18n("De-selects all the selected images")
-                enabled: model.hasSelectedImages
-                visible: model.hasSelectedImages && Kirigami.Settings.isMobile
-                onTriggered: model.clearSelections()
-            }
+            iconName: "edit-select-none"
+            text: i18n("Deselect All")
+            tooltip: i18n("De-selects all the selected images")
+            enabled: model.hasSelectedImages
+            visible: model.hasSelectedImages && Kirigami.Settings.isMobile
+            onTriggered: model.clearSelections()
+        }
         contextualActions: [
             Kirigami.Action {
                 iconName: "edit-select-all"
@@ -111,10 +111,28 @@ Kirigami.ScrollablePage {
 
     leftPadding: (page.width - Math.floor(page.width / gridView.cellWidth) * gridView.cellWidth)/2
     rightPadding: leftPadding
-    Text {
-        z:999
-        text: gridView.Controls.ScrollBar.size
-    }
+
+    ShareDialog {
+        id: shareMenu
+        x: ( page.width - width) / 2
+        y: page.height - height - ( Kirigami.Units.gridUnit * 3)
+        inputData: {
+            "urls": [],
+            "mimeType": ["image/"]
+        }
+        onFinished: {
+            if (error==0 && output.url !== "") {
+                console.assert(output.url !== undefined);
+                var resultUrl = output.url;
+                console.log("Received", resultUrl)
+                notificationManager.showNotification( true, resultUrl);
+                clipboard.content = resultUrl;
+            } else {
+                notificationManager.showNotification( false);
+            }
+        }
+    }  
+
     GridView {
         id: gridView
         //FIXME: right now if those two objects are out of this, the whole page breaks
@@ -152,25 +170,4 @@ Kirigami.ScrollablePage {
         currentImage.index = currentIndex
         applicationWindow().pageStack.layers.push(imageViewerComponent);
     }
-    
-    ShareDialog {
-        id: shareMenu
-        x: ( page.width - width) / 2
-        y: page.height - height - ( Kirigami.Units.gridUnit * 3)
-        inputData: {
-            "urls": [],
-            "mimeType": ["image/"]
-        }
-        onFinished: {
-            if (error==0 && output.url !== "") {
-                console.assert(output.url !== undefined);
-                var resultUrl = output.url;
-                console.log("Received", resultUrl)
-                notificationManager.showNotification( true, resultUrl);
-                clipboard.content = resultUrl;
-            } else {
-                notificationManager.showNotification( false);
-            }
-        }
-    }    
 }

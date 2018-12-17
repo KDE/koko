@@ -50,6 +50,7 @@ Kirigami.ApplicationWindow {
     
     globalDrawer: Sidebar {
         id: sideBar
+        modal: false
         onFilterBy: {
             pageStack.pop(albumView)
             albumView.title = i18n(value)
