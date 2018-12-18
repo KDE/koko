@@ -29,94 +29,99 @@ Kirigami.GlobalDrawer {
     
     signal filterBy(string value)
     property Kirigami.Action previouslySelectedAction
-    width: Kirigami.Units.gridUnit * 10
-    
+    contentItem.implicitWidth: Kirigami.Units.gridUnit * 10
+
+    modal: Kirigami.Settings.isMobile
+    collapsible: true
+    collapsed: true
+
     actions: [
         Kirigami.Action {
             text: i18n("Locations")
             iconName: "tag-places"
-            enabled: false
-        },
-        Kirigami.Action {
-            id: countryAction
-            text: i18n("By Country")
-            checkable: true
-            onTriggered: {
-                filterBy("Countries")
-                previouslySelectedAction = countryAction
+            expandible: true
+
+            Kirigami.Action {
+                id: countryAction
+                text: i18n("By Country")
+                checkable: true
+                onTriggered: {
+                    filterBy("Countries")
+                    previouslySelectedAction = countryAction
+                }
             }
-        },
-        Kirigami.Action {
-            id: stateAction
-            text: i18n("By State")
-            checkable: true
-            onTriggered: {
-                filterBy("States")
-                previouslySelectedAction = stateAction
+            Kirigami.Action {
+                id: stateAction
+                text: i18n("By State")
+                checkable: true
+                onTriggered: {
+                    filterBy("States")
+                    previouslySelectedAction = stateAction
+                }
             }
-        },
-        Kirigami.Action {
-            id: cityAction
-            text: i18n("By City")
-            checkable: true
-            onTriggered: {
-                filterBy("Cities")
-                previouslySelectedAction = cityAction
+            Kirigami.Action {
+                id: cityAction
+                text: i18n("By City")
+                checkable: true
+                onTriggered: {
+                    filterBy("Cities")
+                    previouslySelectedAction = cityAction
+                }
             }
         },
         Kirigami.Action {
             text: i18n("Time")
-            enabled: false
+            expandible: true
             iconName: "view-calendar"
-        },
-        Kirigami.Action {
-            id: yearAction
-            text: i18n("By Year")
-            checkable: true
-            onTriggered: {
-                filterBy("Years")
-                previouslySelectedAction = yearAction
+            Kirigami.Action {
+                id: yearAction
+                text: i18n("By Year")
+                checkable: true
+                onTriggered: {
+                    filterBy("Years")
+                    previouslySelectedAction = yearAction
+                }
             }
-        },
-        Kirigami.Action {
-            id: monthAction
-            text: i18n("By month")
-            checkable: true
-            onTriggered: {
-                filterBy("Months")
-                previouslySelectedAction = monthAction
+            Kirigami.Action {
+                id: monthAction
+                text: i18n("By month")
+                checkable: true
+                onTriggered: {
+                    filterBy("Months")
+                    previouslySelectedAction = monthAction
+                }
             }
-        },
-        Kirigami.Action {
-            id: weekAction
-            text: i18n("By Week")
-            checkable: true
-            onTriggered: {
-                filterBy("Weeks")
-                previouslySelectedAction = weekAction
+            Kirigami.Action {
+                id: weekAction
+                text: i18n("By Week")
+                checkable: true
+                onTriggered: {
+                    filterBy("Weeks")
+                    previouslySelectedAction = weekAction
+                }
             }
-        },
-        Kirigami.Action {
-            id: "dayAction"
-            text: i18n("By Day")
-            checkable: true
-            onTriggered: {
-                filterBy("Days")
-                previouslySelectedAction = dayAction
+            Kirigami.Action {
+                id: "dayAction"
+                text: i18n("By Day")
+                checkable: true
+                onTriggered: {
+                    filterBy("Days")
+                    previouslySelectedAction = dayAction
+                }
             }
         },
         Kirigami.Action {
             text: i18n("Path")
-            enabled: false
+            expandible: true
             iconName: "folder-symbolic"
-        },
-        Kirigami.Action {
-            id: folderAction
-            text: i18n("By Folder")
-            checkable: true
-            onTriggered: {
-                filterBy("Folders")
-                previouslySelectedAction = folderAction
+            Kirigami.Action {
+                id: folderAction
+                text: i18n("By Folder")
+                checkable: true
+                onTriggered: {
+                    filterBy("Folders")
+                    previouslySelectedAction = folderAction
+                }
             }
         }
     ]

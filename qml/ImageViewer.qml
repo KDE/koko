@@ -26,7 +26,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
 import QtGraphicalEffects 1.0 as Effects
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.0 as Kirigami
+import org.kde.kirigami 2.5 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 
@@ -42,8 +42,6 @@ Kirigami.Page {
     
     leftPadding: 0
     rightPadding: 0
-
-    flickable: listView
 
     KQA.MimeDatabase {
         id: mimeDB
@@ -78,14 +76,12 @@ Kirigami.Page {
         }
     }
     
-    //FIXME: HACK
-    property bool wasDrawerOpen
+
     Component.onCompleted: {
         applicationWindow().controlsVisible = false;
         listView.forceActiveFocus();
         applicationWindow().header.visible = false;
         applicationWindow().footer.visible = false;
-        wasDrawerOpen = applicationWindow().globalDrawer.visible;
         applicationWindow().globalDrawer.visible = false;
         applicationWindow().globalDrawer.enabled = false;
     }
@@ -94,7 +90,6 @@ Kirigami.Page {
         if (applicationWindow().footer) {
             applicationWindow().footer.visible = true;
         }
-        applicationWindow().globalDrawer.visible = wasDrawerOpen;
         applicationWindow().globalDrawer.enabled = true;
         applicationWindow().visibility = Window.Windowed;
         applicationWindow().pageStack.layers.pop();
@@ -148,7 +143,7 @@ Kirigami.Page {
             bottomMargin: applicationWindow().controlsVisible ? 0 : -thumbnailView.height/2
             Behavior on bottomMargin {
                 NumberAnimation {
-                    duration: Units.longDuration
+                    duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
                 }
             }
@@ -161,7 +156,7 @@ Kirigami.Page {
 
         Behavior on opacity {
             OpacityAnimator {
-                duration: Units.longDuration
+                duration: Kirigami.Units.longDuration
                 easing.type: Easing.InOutQuad
             }
         }
@@ -193,6 +188,7 @@ Kirigami.Page {
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
         onMovementEnded: currentImage.index = model.sourceIndex(indexAt(contentX+1, 1))
+        interactive: true
         
         model: Koko.SortModel {
             id: imagesListModel

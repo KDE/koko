@@ -48,11 +48,13 @@ Kirigami.ApplicationWindow {
         title: i18n("Folders")
     }
 
-    pageStack.layers.onDepthChanged: sideBar.drawerOpen = sideBar.enabled = pageStack.layers.depth < 2;
+    pageStack.layers.onDepthChanged: {
+        sideBar.enabled = pageStack.layers.depth < 2;
+        sideBar.drawerOpen = !Kirigami.Settings.isMobile && pageStack.layers.depth < 2;
+    }
 
     globalDrawer: Sidebar {
         id: sideBar
-        modal: false
 
         onFilterBy: {
             pageStack.pop(albumView)
