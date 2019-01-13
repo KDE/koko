@@ -22,6 +22,7 @@
   <name xml:lang="uk">Koko</name>
   <name xml:lang="x-test">xxKokoxx</name>
   <name xml:lang="zh-CN">Koko</name>
+  <name xml:lang="zh-TW">Koko</name>
   <summary>Image Gallery</summary>
   <summary xml:lang="ca">Galeria d'imatges</summary>
   <summary xml:lang="ca-valencia">Galeria d'imatges</summary>
@@ -41,6 +42,7 @@
   <summary xml:lang="uk">Галерея зображень</summary>
   <summary xml:lang="x-test">xxImage Galleryxx</summary>
   <summary xml:lang="zh-CN">图片库</summary>
+  <summary xml:lang="zh-TW">圖片庫</summary>
   <description>
     <p>An Image gallery application</p>
     <p xml:lang="ca">Una aplicació de galeria d'imatges</p>
@@ -61,6 +63,7 @@
     <p xml:lang="uk">Програма для роботи з галереями зображень</p>
     <p xml:lang="x-test">xxAn Image gallery applicationxx</p>
     <p xml:lang="zh-CN">一个图片库应用程序</p>
+    <p xml:lang="zh-TW">提供圖片庫功能的應用程式</p>
   </description>
   <screenshots>
     <screenshot type="default">
