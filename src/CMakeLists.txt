@@ -16,6 +16,10 @@ target_link_libraries(kokocommon
 )
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
+set_target_properties(kokocommon PROPERTIES
+    VERSION 0.0.1
+    SOVERSION 0.0.1
+)
 
 install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
 
