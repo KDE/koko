@@ -50,7 +50,7 @@ target_link_libraries(koko
     KF5::KIOCore
     KF5::IconThemes
     kokocommon
-    ${EXIV2_LIBRARIES}
+    LibExiv2::LibExiv2
 )
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
