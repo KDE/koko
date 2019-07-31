@@ -37,7 +37,7 @@
   <summary xml:lang="fi">Kuvagalleria</summary>
   <summary xml:lang="fr">Galerie d'images</summary>
   <summary xml:lang="gl">Galería de imaxes</summary>
-  <summary xml:lang="id">Galeri Image</summary>
+  <summary xml:lang="id">Galeri Citra</summary>
   <summary xml:lang="it">Galleria di immagini</summary>
   <summary xml:lang="ko">이미지 갤러리</summary>
   <summary xml:lang="nl">Galerij van afbeeldingen</summary>
@@ -61,7 +61,7 @@
     <p xml:lang="fi">Kuvagalleriasovellus</p>
     <p xml:lang="fr">Une application de galerie d'images</p>
     <p xml:lang="gl">Aplicativo de galería de imaxes.</p>
-    <p xml:lang="id">Sebuah aplikasi galeri Image</p>
+    <p xml:lang="id">Sebuah aplikasi galeri Citra</p>
     <p xml:lang="it">Un'applicazione per gallerie di immagini</p>
     <p xml:lang="ko">이미지 갤러리 프로그램</p>
     <p xml:lang="nl">Toepassing voor afbeeldingsgalerij</p>
