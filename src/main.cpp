@@ -18,7 +18,7 @@
  *
  */
 
-#include <QQmlEngine>
+#include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQmlComponent>
 
@@ -112,11 +112,12 @@ int main(int argc, char** argv)
 
     KokoConfig config;
 
-    QQmlEngine engine;
-    QQmlContext* objectContext = engine.rootContext();
-    objectContext->setContextProperty("kokoProcessor", &processor);
-    objectContext->setContextProperty("kokoConfig", &config);
-    objectContext->setContextProperty("imagePathArgument", directoryUrls);
+    QQmlApplicationEngine engine;
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+    engine.rootContext()->setContextProperty("kokoProcessor", &processor);
+    engine.rootContext()->setContextProperty("kokoConfig", &config);
+    engine.rootContext()->setContextProperty("imagePathArgument", directoryUrls);
 
     QString path;
     //we want different main files on desktop or mobile
@@ -124,25 +125,11 @@ int main(int argc, char** argv)
     if (qEnvironmentVariableIsSet("QT_QUICK_CONTROLS_MOBILE") &&
         (QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("1") ||
          QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("true"))) {
-        path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/mobileMain.qml");
+        engine.load(QUrl(QStringLiteral("qrc:/qml/mobileMain.qml")));
     } else {
-        path = QStandardPaths::locate(QStandardPaths::DataLocation, "ui/desktopMain.qml");
+        engine.load(QUrl(QStringLiteral("qrc:/qml/desktopMain.qml")));
     }
-    
-    QQuickView* view = new QQuickView( &engine, new QWindow());
-    view->engine()->rootContext()->setContextObject(new KLocalizedContext(view));    
-    
-    QQmlComponent component(&engine, path);
-    if (component.isError()) {
-        std::cout << component.errorString().toUtf8().constData() << std::endl;
-        Q_ASSERT(0);
-    }
-    Q_ASSERT(component.status() == QQmlComponent::Ready);
-
-    QObject* obj = component.create(objectContext);
-    Q_ASSERT(obj);
 
     int rt = app.exec();
-    trackerThread.quit();
     return rt;
 }

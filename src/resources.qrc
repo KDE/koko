@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/AlbumDelegate.qml</file>
+        <file>qml/AlbumView.qml</file>
+        <file>qml/desktopMain.qml</file>
+        <file>qml/EditorView.qml</file>
+        <file>qml/ImageFolderAlbumView.qml</file>
+        <file>qml/ImageViewer.qml</file>
+        <file>qml/Main.qml</file>
+        <file>qml/mobileMain.qml</file>
+        <file>qml/SelectionButton.qml</file>
+        <file>qml/SelectionDelegateHighlight.qml</file>
+        <file>qml/ShareDialog.qml</file>
+        <file>qml/Sidebar.qml</file>
+    </qresource>
+</RCC>
+

@@ -36,6 +36,7 @@ add_executable(koko
     exiv2extractor.cpp
     kokoconfig.cpp
     kdtree.c
+    resources.qrc
 )
 
 target_link_libraries(koko
