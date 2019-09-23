@@ -127,8 +127,12 @@ void Exiv2Extractor::extract(const QString& filePath)
     std::string fileString(arr.data(), arr.length());
 
     Exiv2::LogMsg::setLevel(Exiv2::LogMsg::mute);
-    Exiv2::Image::AutoPtr image;
-    try {
+#if EXIV2_TEST_VERSION(0, 28, 0)
+    Exiv2::Image::UniquePtr image;
+#else
+     Exiv2::Image::AutoPtr image;
+#endif
+     try {
         image = Exiv2::ImageFactory::open(fileString);
     } catch (const std::exception&) {
         return;
