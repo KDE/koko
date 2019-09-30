@@ -5,6 +5,11 @@ find_package(ECM 5.53.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
 find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning)
+
+if(ANDROID)
+    find_package(Qt5 REQUIRED NO_MODULE COMPONENTS AndroidExtras)
+endif()
+
 find_package(KF5 5.5 REQUIRED COMPONENTS I18n Declarative Config DBusAddons KIO GuiAddons CoreAddons Notifications IconThemes)
 find_package(LibExiv2 0.21 REQUIRED)
 

@@ -54,6 +54,10 @@ target_link_libraries(koko
     LibExiv2::LibExiv2
 )
 
+if(ANDROID)
+    target_link_libraries(koko Qt5::AndroidExtras)
+endif()
+
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 #
