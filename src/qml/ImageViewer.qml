@@ -21,7 +21,7 @@
  *
  */
 
-import QtQuick 2.7
+import QtQuick 2.12
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
 import QtGraphicalEffects 1.0 as Effects
@@ -215,8 +215,10 @@ Kirigami.Page {
             height: imageHeight
             contentWidth: imageWidth
             contentHeight: imageHeight
+            boundsBehavior: Flickable.StopAtBounds
+            boundsMovement: Flickable.StopAtBounds
             interactive: contentWidth > width || contentHeight > height
-            onInteractiveChanged: listView.interactive = !interactive;
+            //onInteractiveChanged: listView.interactive = !interactive;
             clip: true
             z: index == listView.currentIndex ? 1000 : 0
 
