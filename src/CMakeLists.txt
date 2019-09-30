@@ -45,7 +45,6 @@ target_link_libraries(koko
     Qt5::Qml
     Qt5::Positioning
     KF5::ConfigCore
-    KF5::DBusAddons
     KF5::I18n
     KF5::CoreAddons
     KF5::KIOCore
@@ -56,6 +55,8 @@ target_link_libraries(koko
 
 if(ANDROID)
     target_link_libraries(koko Qt5::AndroidExtras)
+else()
+    target_link_libraries(koko KF5::DBusAddons)
 endif()
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
