@@ -169,6 +169,8 @@ Kirigami.Page {
         delegate: AlbumDelegate {
             width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
             height: width
+            onClicked: activated()
+            onActivated: listView.currentIndex = index
         }
         highlightMoveDuration: 0
         highlight: Item {

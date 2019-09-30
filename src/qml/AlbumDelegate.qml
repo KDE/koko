@@ -29,7 +29,12 @@ Item {
     id: albumDelegate
     width: gridView.cellWidth
     height: gridView.cellHeight
-    
+
+    signal clicked(var mouse)
+    signal pressAndHold(var mouse)
+    signal activated
+    property alias containsMouse: albumThumbnailMouseArea.containsMouse
+
     Rectangle {
         anchors {
             fill: image
@@ -104,17 +109,6 @@ Item {
         }
     }
     
-    SelectionButton {
-        id: selectionButton
-        opacity: ( albumThumbnailMouseArea.containsMouse || iconMouseArea.containsMouse  || page.state == "selecting") && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-    }
-    
     SelectionDelegateHighlight {
         id: selectionHighlight
         visible: model.selected
@@ -124,16 +118,8 @@ Item {
         id: albumThumbnailMouseArea
         anchors.fill: parent
         hoverEnabled: true
-        onPressAndHold: {
-            gridView.model.toggleSelected(model.index)
-        }
-        onClicked: {
-            if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
-                gridView.model.toggleSelected(model.index)
-            } else {
-                activate();
-            }
-        }
+        onPressAndHold: albumDelegate.pressAndHold(mouse)
+        onClicked: albumDelegate.clicked(mouse)
     }
     
     Keys.onPressed: {
@@ -141,37 +127,11 @@ Item {
             case Qt.Key_Enter:
             case Qt.Key_Return:
             case Qt.Key_Space:
-                activate();
+                activated();
                 break;
             default:
                 break;
         }
     }
     
-    function activate( ) {
-        gridView.model.clearSelections()
-        gridView.currentIndex = model.index;
-        switch( model.itemType) {
-            case Koko.Types.Album: {
-                imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
-                sortedListModel.sourceModel = imageListModel
-                collectionSelected( sortedListModel, model.display)
-                break;
-            }
-            case Koko.Types.Folder: {
-                imageFolderModel.url = model.imageurl
-                sortedListModel.sourceModel = imageFolderModel
-                folderSelected( sortedListModel, model.display)
-                break;
-            }
-            case Koko.Types.Image: {
-                imageSelected( model.sourceIndex)
-                break;
-            }
-            default: {
-                console.log("Unknown")
-                break;
-            }
-        }
-    }
 }

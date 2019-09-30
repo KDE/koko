@@ -159,7 +159,55 @@ Kirigami.ScrollablePage {
             }
         }
         
-        delegate: AlbumDelegate {}
+        delegate: AlbumDelegate {
+            id: delegate
+            onClicked: {
+                if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
+                    gridView.model.toggleSelected(model.index)
+                } else {
+                    activated();
+                }
+            }
+            onPressAndHold: {
+                gridView.model.toggleSelected(model.index)
+            }
+            onActivated: {
+                gridView.model.clearSelections()
+                gridView.currentIndex = model.index;
+                switch( model.itemType) {
+                    case Koko.Types.Album: {
+                        imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
+                        sortedListModel.sourceModel = imageListModel
+                        collectionSelected( sortedListModel, model.display)
+                        break;
+                    }
+                    case Koko.Types.Folder: {
+                        imageFolderModel.url = model.imageurl
+                        sortedListModel.sourceModel = imageFolderModel
+                        folderSelected( sortedListModel, model.display)
+                        break;
+                    }
+                    case Koko.Types.Image: {
+                        imageSelected( model.sourceIndex)
+                        break;
+                    }
+                    default: {
+                        console.log("Unknown")
+                        break;
+                    }
+                }
+            }
+            SelectionButton {
+                id: selectionButton
+                opacity: ( delegate.containsMouse || page.state == "selecting") && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
+                Behavior on opacity {
+                    OpacityAnimator {
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad
+                    }
+                }
+            }
+        }
         
         Controls.Label {
             anchors.centerIn: parent
