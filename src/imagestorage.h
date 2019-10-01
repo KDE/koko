@@ -45,7 +45,7 @@ public:
     ImageStorage(QObject* parent = 0);
     virtual ~ImageStorage();
 
-    void addImage(const ImageInfo& ii);
+    Q_INVOKABLE void addImage(const ImageInfo& ii);
     void removeImage(const QString& filePath);
     void commit();
 

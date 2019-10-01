@@ -68,7 +68,7 @@ void ImageProcessorRunnable::run()
         ii.dateTime = QFileInfo(m_path).created();
     }
 
-    ImageStorage::instance()->addImage(ii);
+    QMetaObject::invokeMethod(ImageStorage::instance(), "addImage", Qt::AutoConnection, Q_ARG(const ImageInfo&, ii));
 
     emit finished();
 }
