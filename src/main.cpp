@@ -119,6 +119,8 @@ int main(int argc, char** argv)
     QObject::connect(&tracker, &FileSystemTracker::imageRemoved, &processor, &Koko::Processor::removeFile);
     QObject::connect(&tracker, &FileSystemTracker::initialScanComplete, &processor, &Koko::Processor::initialScanCompleted);
 
+    QObject::connect(&trackerThread, &QThread::started, &tracker, &FileSystemTracker::setupDb);
+
     trackerThread.start();
     tracker.setSubFolder(tracker.folder());
 

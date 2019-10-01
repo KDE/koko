@@ -68,10 +68,10 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
     
     connect( this, &FileSystemTracker::subFolderChanged, 
              this, &FileSystemTracker::reindexSubFolder);
+}
 
-    //
-    // Database
-    //
+void FileSystemTracker::setupDb()
+{
     static QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko/";
     QDir().mkpath(dir);
 

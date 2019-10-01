@@ -37,6 +37,8 @@ public:
 
     void setSubFolder(const QString& folder);
     void reindexSubFolder();
+
+    void setupDb();
     
 signals:
     void imageAdded(const QString& filePath);
