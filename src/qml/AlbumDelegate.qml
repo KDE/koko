@@ -34,6 +34,7 @@ Item {
     signal pressAndHold(var mouse)
     signal activated
     property alias containsMouse: albumThumbnailMouseArea.containsMouse
+    property QtObject modelData
 
     Rectangle {
         anchors {
@@ -43,7 +44,7 @@ Item {
         radius: 2
         color: Kirigami.Theme.textColor
         opacity: 0.2
-        visible: model.itemType != Koko.Types.Folder
+        visible: modelData.itemType != Koko.Types.Folder
     }
     KQA.QImageItem {
         id: image
@@ -51,7 +52,7 @@ Item {
         width: kokoConfig.iconSize
         height: width
         smooth: true
-        image: model.thumbnail
+        image: modelData.thumbnail
         fillMode: KQA.QImageItem.PreserveAspectCrop
     }
 
@@ -76,14 +77,14 @@ Item {
             top: image.top
             bottom: countRect.visible ? countRect.top : image.bottom
         }
-        visible: model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
+        visible: modelData.itemType == Koko.Types.Folder || modelData.itemType == Koko.Types.Album
         verticalAlignment: Text.AlignTop
         padding: Kirigami.Units.smallSpacing
         elide: Text.ElideRight
         maximumLineCount: 4
         wrapMode: Text.WordWrap
         color: Kirigami.Theme.textColor
-        text: model.display
+        text: modelData.display
     }
 
     Rectangle {
@@ -93,7 +94,7 @@ Item {
             left: image.left
             right: image.right
         }
-        visible: model.fileCount && model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album
+        visible: modelData.fileCount && modelData.itemType == Koko.Types.Folder || modelData.itemType == Koko.Types.Album
         height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
         color: Kirigami.Theme.viewBackgroundColor
         opacity: 0.8
@@ -105,13 +106,13 @@ Item {
             maximumLineCount: 4
             wrapMode: Text.WordWrap
             color: Kirigami.Theme.textColor
-            text: i18np("1 Image", "%1 Images", model.fileCount)
+            text: i18np("1 Image", "%1 Images", modelData.fileCount)
         }
     }
     
     SelectionDelegateHighlight {
         id: selectionHighlight
-        visible: model.selected
+        visible: modelData.selected
     }
 
     MouseArea {

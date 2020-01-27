@@ -161,6 +161,7 @@ Kirigami.ScrollablePage {
         
         delegate: AlbumDelegate {
             id: delegate
+            modelData: model
             onClicked: {
                 if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
                     gridView.model.toggleSelected(model.index)

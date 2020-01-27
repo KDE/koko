@@ -171,6 +171,7 @@ Kirigami.Page {
             height: width
             onClicked: activated()
             onActivated: listView.currentIndex = index
+            modelData: model
         }
         highlightMoveDuration: 0
         highlight: Item {
