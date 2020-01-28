@@ -32,7 +32,7 @@ class ImageProcessorRunnable : public QObject, public QRunnable
     Q_OBJECT
 public:
     ImageProcessorRunnable(QString& filePath, ReverseGeoCoder* coder);
-    virtual void run();
+    void run() override;
 
 signals:
     void finished();

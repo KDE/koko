@@ -56,7 +56,7 @@ public:
     void setUrl(QString& url);
     QString url() const;
 
-    QVariant data(const QModelIndex &index, int role) const;
+    QVariant data(const QModelIndex &index, int role) const override;
     int count() const {return rowCount();}
 
     Q_INVOKABLE int indexForUrl(const QString &url) const;

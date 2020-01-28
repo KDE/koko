@@ -54,7 +54,7 @@ FileSystemTracker::FileSystemTracker(QObject* parent)
     connect(kdirnotify, &org::kde::KDirNotify::FilesAdded,
             this, &FileSystemTracker::setSubFolder);
     connect(kdirnotify, &org::kde::KDirNotify::FileRenamedWithLocalPath,
-            this, [this](const QString &src, const QString &dst, const QString &dstPath) {
+            this, [this](const QString &src, const QString &dst, const QString &) {
                 removeFile(src);
                 slotNewFiles({dst});
             });

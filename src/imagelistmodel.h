@@ -37,9 +37,9 @@ public:
     explicit ImageListModel(QObject* parent = 0);
     ~ImageListModel();
     
-    virtual QHash< int, QByteArray > roleNames() const;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    QHash< int, QByteArray > roleNames() const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     
     Types::LocationGroup locationGroup() const;
     void setLocationGroup(const Types::LocationGroup &group);

@@ -374,7 +374,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::timeTypes(Types::TimeGroup grou
             QString year = query.value(0).toString();
             QString month = query.value(1).toString();
 
-            QString display = QDate::longMonthName(month.toInt()) + ", " + year;
+            QString display = QLocale().monthName(month.toInt(), QLocale::LongFormat) + ", " + year;
 
             QByteArray key;
             QDataStream stream(&key, QIODevice::WriteOnly);
@@ -396,7 +396,7 @@ QList<QPair<QByteArray, QString> > ImageStorage::timeTypes(Types::TimeGroup grou
             QString month = query.value(1).toString();
             QString week = query.value(2).toString();
 
-            QString display =  "Week " + week + ", " + QDate::longMonthName(month.toInt()) + ", " + year;
+            QString display =  "Week " + week + ", " + QLocale().monthName(month.toInt(), QLocale::LongFormat) + ", " + year;
 
             QByteArray key;
             QDataStream stream(&key, QIODevice::WriteOnly);

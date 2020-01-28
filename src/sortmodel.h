@@ -45,11 +45,11 @@ public:
     QByteArray sortRoleName() const;
     void setSortRoleName(const QByteArray& name);
 
-    QHash<int, QByteArray> roleNames() const;
-    QVariant data(const QModelIndex & index, int role) const;
+    QHash<int, QByteArray> roleNames() const override;
+    QVariant data(const QModelIndex & index, int role) const override;
     bool lessThan(const QModelIndex & source_left, const QModelIndex & source_right) const override;
     
-    virtual void setSourceModel(QAbstractItemModel* sourceModel);
+    void setSourceModel(QAbstractItemModel* sourceModel) override;
     bool containImages();
     bool hasSelectedImages();
     

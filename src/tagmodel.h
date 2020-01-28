@@ -35,16 +35,16 @@ public:
         ColorRole = Qt::UserRole + 1
     };
 
-    virtual QHash<int, QByteArray> roleNames() const;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
+    QHash<int, QByteArray> roleNames() const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
 
 signals:
     void tagsChanged();
     void colorsChanged();
 
 public slots:
-    virtual bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex());
+    bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex()) override;
 
     QStringList tags() const;
     void setTags(const QStringList& tags);

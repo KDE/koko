@@ -65,7 +65,7 @@ void ImageProcessorRunnable::run()
 
     ii.dateTime = extractor.dateTime();
     if (ii.dateTime.isNull()) {
-        ii.dateTime = QFileInfo(m_path).created();
+        ii.dateTime = QFileInfo(m_path).birthTime();
     }
 
     QMetaObject::invokeMethod(ImageStorage::instance(), "addImage", Qt::AutoConnection, Q_ARG(const ImageInfo&, ii));

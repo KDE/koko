@@ -127,7 +127,7 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
         case Roles::SelectedRole: {
             return m_selectionModel->isSelected(index);
         }
-        
+
         case Roles::Thumbnail: {
             QUrl thumbnailSource(QString( /*"file://" + */data( index, Roles::ImageUrlRole).toString()));
             
@@ -141,7 +141,7 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
             m_previewTimer->start(100);
             const_cast<SortModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
         }
-        
+
         case Roles::SourceIndex: {
             return mapToSource(index).row();
         }

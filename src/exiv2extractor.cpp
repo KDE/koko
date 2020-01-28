@@ -113,7 +113,7 @@ static QDateTime toDateTime(const Exiv2::Value& value)
         QDateTime val = dateTimeFromString(value.toString().c_str());
         if (val.isValid()) {
             // Datetime is stored in exif as local time.
-            val.setUtcOffset(0);
+            val.setOffsetFromUtc(0);
             return val;
         }
     }
