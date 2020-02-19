@@ -201,6 +201,10 @@ Kirigami.ScrollablePage {
             SelectionButton {
                 id: selectionButton
                 opacity: ( delegate.containsMouse || page.state == "selecting") && !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
+
+                anchors.top: delegate.top
+                anchors.left: delegate.left
+
                 Behavior on opacity {
                     OpacityAnimator {
                         duration: Kirigami.Units.longDuration

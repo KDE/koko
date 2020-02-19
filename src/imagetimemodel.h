@@ -34,7 +34,7 @@ public:
     explicit ImageTimeModel(QObject* parent = 0);
 
     QHash< int, QByteArray > roleNames() const override;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)     const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
 
     Types::TimeGroup group() const;

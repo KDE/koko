@@ -30,10 +30,7 @@ Kirigami.Icon {
     width: Kirigami.Units.iconSizes.smallMedium
     height: width
     z: gridView.z + 2
-    
-    anchors.top: image.top
-    anchors.left: image.left
-    
+
     MouseArea {
         id: iconMouseArea
         anchors.fill: parent
