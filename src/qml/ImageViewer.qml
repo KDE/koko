@@ -26,7 +26,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.0 as Controls
 import QtGraphicalEffects 1.0 as Effects
 import QtQuick.Layouts 1.3
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.13 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 
@@ -42,6 +42,17 @@ Kirigami.Page {
     
     leftPadding: 0
     rightPadding: 0
+
+    Kirigami.Theme.inherit: false
+    Kirigami.Theme.textColor: imgColors.foreground
+    Kirigami.Theme.backgroundColor: imgColors.background
+    Kirigami.Theme.highlightColor: imgColors.highlight
+    Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
+
+    Kirigami.ImageColors {
+        id: imgColors
+        source: listView.currentItem
+    }
 
     KQA.MimeDatabase {
         id: mimeDB
@@ -309,6 +320,11 @@ Kirigami.Page {
                     source: currentImageSource
                     autoTransform: true
                     asynchronous: true
+                    onStatusChanged: {
+                        if (status === Image.Ready && listView.currentIndex === index) {
+                            imgColors.update();
+                        }
+                    }
                     Timer {
                         id: doubleClickTimer
                         interval: 150
