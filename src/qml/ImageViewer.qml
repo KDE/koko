@@ -165,6 +165,13 @@ Kirigami.Page {
         snapMode: ListView.SnapOneItem
         currentIndex: listView.currentIndex
 
+        highlightRangeMode: ListView.ApplyRange
+        highlightFollowsCurrentItem: true
+        preferredHighlightBegin: height
+        preferredHighlightEnd: width - height
+        highlightMoveVelocity: -1
+        highlightMoveDuration: Kirigami.Units.longDuration
+
         Behavior on opacity {
             OpacityAnimator {
                 duration: Kirigami.Units.longDuration
@@ -183,16 +190,22 @@ Kirigami.Page {
             onClicked: activated()
             onActivated: listView.currentIndex = index
             modelData: model
-        }
-        highlightMoveDuration: 0
-        highlight: Item {
+
             Rectangle {
+                z: -1
                 anchors.centerIn: parent
                 width: Math.min(parent.width, parent.height)
                 height: width
                 color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
                 border.color: Kirigami.Theme.highlightColor
                 radius: 2
+                opacity: thumbnailView.currentIndex === index ? 1 : 0
+                Behavior on opacity {
+                    OpacityAnimator {
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad
+                    }
+                }
             }
         }
     }
@@ -203,13 +216,18 @@ Kirigami.Page {
         snapMode: ListView.SnapOneItem
         onMovementEnded: currentImage.index = model.sourceIndex(indexAt(contentX+1, 1))
         interactive: true
-        
+
         model: Koko.SortModel {
             id: imagesListModel
             filterRole: Koko.Roles.MimeTypeRole
             filterRegExp: /image\//
         }
-        currentIndex: model.proxyIndex( indexValue)
+
+        Binding {
+            target: listView
+            property: "currentIndex"
+            value: listView.model.proxyIndex( indexValue)
+        }
         
         onCurrentIndexChanged: {
             currentImage.index = model.sourceIndex( currentIndex)
