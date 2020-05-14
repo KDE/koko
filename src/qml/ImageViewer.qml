@@ -42,6 +42,7 @@ Kirigami.Page {
     
     leftPadding: 0
     rightPadding: 0
+    topPadding: 0
 
     Kirigami.Theme.inherit: false
     Kirigami.Theme.textColor: imgColors.foreground
@@ -209,6 +210,7 @@ Kirigami.Page {
             }
         }
     }
+
     ListView {
         id: listView
         anchors.fill: parent
