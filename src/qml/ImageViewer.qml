@@ -45,7 +45,7 @@ Kirigami.Page {
     topPadding: 0
 
     Kirigami.Theme.inherit: false
-    Kirigami.Theme.textColor: imgColors.foreground
+    Kirigami.Theme.textColor: applicationWindow().controlsVisible ? parent.Kirigami.Theme.textColor : imgColors.foreground
     Kirigami.Theme.backgroundColor: imgColors.background
     Kirigami.Theme.highlightColor: imgColors.highlight
     Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
