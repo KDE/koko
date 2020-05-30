@@ -70,6 +70,7 @@ Kirigami.Page {
             id: shareAction
             iconName: "document-share"
             tooltip: i18n("Share Image")
+            text: i18nc("verb, share an image", "Share")
             onTriggered: {
                 shareDialog.open();
                 shareDialog.inputData = {
@@ -81,7 +82,7 @@ Kirigami.Page {
         right: Kirigami.Action {
             id: editingAction
             iconName: "edit-entry"
-            tooltip: i18n("Edit Image")
+            text: i18nc("verb, edit an image", "Edit")
             onTriggered: {
                 applicationWindow().pageStack.layers.push(editorComponent)
             }
