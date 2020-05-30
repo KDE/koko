@@ -41,6 +41,7 @@ public:
     void setEdited( bool value);
     
     Q_INVOKABLE void rotate( int angle);
+    Q_INVOKABLE void crop(int x, int y, int width, int height);
     Q_INVOKABLE void save( QImage image);
     Q_INVOKABLE void cancel();
     

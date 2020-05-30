@@ -36,6 +36,8 @@ add_executable(koko
     exiv2extractor.cpp
     kokoconfig.cpp
     kdtree.c
+    resizehandle.cpp
+    resizerectangle.cpp
     resources.qrc
 )
 

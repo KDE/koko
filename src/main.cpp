@@ -44,6 +44,8 @@
 #include "processor.h"
 #include "kokoconfig.h"
 #include "imagestorage.h"
+#include "resizehandle.h"
+#include "resizerectangle.h"
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
@@ -132,6 +134,9 @@ int main(int argc, char** argv)
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
     engine.rootContext()->setContextProperty("imagePathArgument", directoryUrls);
+
+    qmlRegisterType<ResizeHandle>("org.kde.koko.private", 1, 0, "ResizeHandle");
+    qmlRegisterType<ResizeRectangle>("org.kde.koko.private", 1, 0, "ResizeRectangle");
 
     QString path;
     //we want different main files on desktop or mobile
