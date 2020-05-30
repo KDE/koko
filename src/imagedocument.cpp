@@ -84,7 +84,7 @@ void ImageDocument::rotate(int angle)
 void ImageDocument::crop(int x, int y, int width, int height)
 {
     qDebug() << x << y << width << height;
-    QRect rect(x, y, width, height);
+    const QRect rect(x, y, width, height);
     *m_image = m_image->copy(rect);
     QString location = QUrl( m_path).path();
     /*if (QFileInfo( location).isWritable()) {
