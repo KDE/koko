@@ -48,9 +48,7 @@ Kirigami.Page {
                 Kirigami.Action {
                     iconName: rootEditorView.resizing ? "dialog-cancel" : "transform-crop"
                     text: rootEditorView.resizing ? i18n("Cancel") : i18nc("@action:button Crop an image", "Crop");
-                    onTriggered: {
-                        rootEditorView.resizing = !rootEditorView.resizing;
-                    }
+                    onTriggered: rootEditorView.resizing = !rootEditorView.resizing;
                 },
                 Kirigami.Action {
                     iconName: "dialog-ok"
@@ -61,16 +59,12 @@ Kirigami.Page {
                 Kirigami.Action {
                     iconName: "object-rotate-left"
                     text: i18nc("@action:button Rotate an image to the left", "Rotate left");
-                    onTriggered: {
-                        imageDoc.rotate(-90);
-                    }
+                    onTriggered: imageDoc.rotate(-90);
                 },
                 Kirigami.Action {
                     iconName: "object-rotate-right"
                     text: i18nc("@action:button Rotate an image to the right", "Rotate right");
-                    onTriggered: {
-                        imageDoc.rotate(90);
-                    }
+                    onTriggered: imageDoc.rotate(90);
                 }
             ]
         }
