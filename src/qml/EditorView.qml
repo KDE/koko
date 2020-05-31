@@ -72,7 +72,7 @@ Kirigami.Page {
 
     FileDialog {
         id: fileDialog
-        title: "Please choose a file"
+        title: i18n("Save As")
         folder: shortcuts.home
         selectMultiple: false
         selectExisting: false
