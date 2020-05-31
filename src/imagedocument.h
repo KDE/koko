@@ -38,13 +38,43 @@ public:
     QImage visualImage();
     
     bool edited();
-    void setEdited( bool value);
-    
-    Q_INVOKABLE void rotate( int angle);
+    void setEdited(bool value);
+
+    /**
+     * Rotate the image.
+     * @param angle The angle of the rotation in degree.
+     */
+    Q_INVOKABLE void rotate(int angle);
+
+    /**
+     * Crop the image.
+     * @param x The x coordinate of the new image in the old image.
+     * @param y The y coordinate of the new image in the old image.
+     * @param width The width of the new image.
+     * @param height The height of the new image.
+     */
     Q_INVOKABLE void crop(int x, int y, int width, int height);
-    Q_INVOKABLE void save( QImage image);
+
+    /**
+     * Undo the last edit on the images.
+     */
+    Q_INVOKABLE void undo();
+
+    /**
+     * Cancel all the edit.
+     */
     Q_INVOKABLE void cancel();
-    
+
+    /**
+     * Save current edited image in place. This is a destructive operation and can't be reverted.
+     */
+    Q_INVOKABLE void save();
+
+    /**
+     * Save current edited image as a new image.
+     */
+    Q_INVOKABLE void saveAs();
+
 signals:
     void pathChanged(const QString &url);
     void visualImageChanged();
@@ -53,7 +83,7 @@ signals:
     
 private:
     QString m_path;
-    QImage *m_image;
+    QVector<QImage> m_undoImages;
     bool m_edited;
 };
 

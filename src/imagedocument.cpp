@@ -25,16 +25,15 @@
 
 ImageDocument::ImageDocument()
 {
-    m_image = new QImage();
-    connect( this, &ImageDocument::pathChanged, 
-             this, [this] (const QString &url) {
-                 emit resetHandle();
-                 /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
-                 QString location = QUrl( url).path();
-                 m_image->load( location);
-                 m_edited = false;
-                 emit editedChanged();
-                 emit visualImageChanged();
+    connect(this, &ImageDocument::pathChanged,
+            this, [this] (const QString &url) {
+                Q_EMIT resetHandle();
+                /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
+                const QString location = QUrl(url).path();
+                m_undoImages.append(QImage(location));
+                m_edited = false;
+                Q_EMIT editedChanged();
+                Q_EMIT visualImageChanged();
             });
 }
 
@@ -50,12 +49,12 @@ QString ImageDocument::path()
 void ImageDocument::setPath(QString& url)
 {
     m_path = url;
-    emit pathChanged( url);
+    emit pathChanged(url);
 }
 
 QImage ImageDocument::visualImage()
 {
-    return *m_image;
+    return m_undoImages.last();
 }
 
 bool ImageDocument::edited()
@@ -71,47 +70,61 @@ void ImageDocument::setEdited(bool value)
 
 void ImageDocument::rotate(int angle)
 {
-    QMatrix matrix;
-    matrix.rotate( angle);
-    *m_image = m_image->transformed( matrix);
-    QString location = QUrl( m_path).path();
-    if (QFileInfo( location).isWritable()) {
-        m_image->save( location);
-    }
-    emit visualImageChanged();
+    QTransform tranform;
+    tranform.rotate(angle);
+    setEdited(true);
+    m_undoImages.append(m_undoImages.last().transformed(tranform,  Qt::FastTransformation));
+    Q_EMIT visualImageChanged();
 }
 
 void ImageDocument::crop(int x, int y, int width, int height)
 {
-    qDebug() << x << y << width << height;
     const QRect rect(x, y, width, height);
-    *m_image = m_image->copy(rect);
-    const QString location = QUrl( m_path).path();
-    /*if (QFileInfo( location).isWritable()) {
-        m_image->save( location);
-    }*/
-    emit visualImageChanged();
+    setEdited(true);
+    m_undoImages.append(m_undoImages.last().copy(rect));
+    Q_EMIT visualImageChanged();
 }
 
-void ImageDocument::save( QImage image)
+void ImageDocument::save()
 {
-    QString location = QUrl( m_path).path();
-    *m_image = image;
-    if( QFileInfo( location).isWritable()) {
-        m_image->save( location);
-        emit resetHandle();
-        m_edited = false;
-        emit editedChanged();
+    QString location = QUrl(m_path).path();
+
+    if(QFileInfo(location).isWritable()) {
+        m_undoImages.last().save(location);
+        Q_EMIT resetHandle();
+        setEdited(false);
+        Q_EMIT visualImageChanged();
+    } else {
+        // TODO add user warning so that they can save the image in another location.
     }
-    m_image->load( location);
-    emit visualImageChanged();
+}
+
+void ImageDocument::saveAs()
+{
+    // TODO
+}
+
+
+void ImageDocument::undo()
+{
+    Q_ASSERT(m_undoImages.count() > 1);
+    m_undoImages.pop_back();
+
+    if (m_undoImages.count() == 1) {
+        setEdited(false);
+    }
+
+    Q_EMIT visualImageChanged();
 }
 
 void ImageDocument::cancel()
 {
-    emit resetHandle();
+    while (m_undoImages.count() > 1) {
+        m_undoImages.pop_back();
+    }
+    Q_EMIT resetHandle();
     m_edited = false;
-    emit editedChanged();
+    Q_EMIT editedChanged();
 }
 
 #include "moc_imagedocument.cpp"

@@ -20,7 +20,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.1 as QQC2
 import org.kde.kquickcontrolsaddons 2.0 as KQA
-import org.kde.kirigami 2.10 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.koko.private 1.0 as KokoComponent
 
@@ -29,18 +29,64 @@ Kirigami.Page {
     title: i18n("Edit")
     leftPadding: 0
     rightPadding: 0
-    
+
     property bool resizing: false;
-    
+
     function crop() {
         console.log(resizeRectangle.x, resizeRectangle.y, resizeRectangle.width, resizeRectangle.height);
         console.log(editImage.paintedWidth, rootEditorView.contentItem.width, editImage.paintedHeight, rootEditorView.contentItem.height);
         rootEditorView.resizing = false
-        const ratio = editImage.paintedWidth / editImage.nativeWidth;
-        imageDoc.crop((rootEditorView.contentItem.width - editImage.paintedWidth + resizeRectangle.x) / ratio, (rootEditorView.contentItem.height - editImage.paintedHeight + resizeRectangle.y) / ratio, resizeRectangle.width / ratio, resizeRectangle.height / ratio);
+        const ratioX = editImage.paintedWidth / editImage.nativeWidth;
+        const ratioY = editImage.paintedHeight / editImage.nativeHeight;
+        imageDoc.crop((rootEditorView.contentItem.width - editImage.paintedWidth + resizeRectangle.x) / ratioX, (rootEditorView.contentItem.height - editImage.paintedHeight + resizeRectangle.y) / ratioY, resizeRectangle.width / ratioX, resizeRectangle.height / ratioY);
     }
 
-    header: QQC2.ToolBar {
+    actions {
+        right: Kirigami.Action {
+            text: i18nc("@action:button Undo modification", "Undo")
+            iconName: "edit-undo"
+            onTriggered: imageDoc.undo();
+            visible: imageDoc.edited
+        }
+        contextualActions: [
+            Kirigami.Action {
+                text: i18nc("@action:button Save the image as a new image", "Save As")
+                iconName: "document-save-as"
+                onTriggered: imageDoc.saveAs();
+            },
+            Kirigami.Action {
+                text: i18nc("@action:button Save the image", "Save")
+                iconName: "document-save"
+                onTriggered: imageDoc.save();
+                visible: imageDoc.edited
+            }
+        ]
+    }
+
+    property string imagePath
+
+    Koko.ImageDocument {
+        id: imageDoc
+        path: imagePath
+    }
+
+    contentItem: Item {
+        id: content
+        Flickable {
+            id: flickable
+            width: rootEditorView.width
+            height: rootEditorView.height
+            KQA.QImageItem {
+                id: editImage
+                fillMode: KQA.QImageItem.PreserveAspectFit
+                width: rootEditorView.width
+                height: rootEditorView.height
+                image: imageDoc.visualImage
+            }
+        }
+    }
+
+    footer: QQC2.ToolBar {
         contentItem: Kirigami.ActionToolBar {
             id: actionToolBar
             display: QQC2.Button.TextBesideIcon
@@ -60,46 +106,28 @@ Kirigami.Page {
                     iconName: "object-rotate-left"
                     text: i18nc("@action:button Rotate an image to the left", "Rotate left");
                     onTriggered: imageDoc.rotate(-90);
+                    visible: !rootEditorView.resizing
                 },
                 Kirigami.Action {
                     iconName: "object-rotate-right"
                     text: i18nc("@action:button Rotate an image to the right", "Rotate right");
                     onTriggered: imageDoc.rotate(90);
+                    visible: !rootEditorView.resizing
                 }
             ]
         }
     }
 
-    
-    property string imagePath
-    
-    Koko.ImageDocument {
-        id: imageDoc
-        path: imagePath
-    }
-    
-    contentItem: Flickable {
-        width: rootEditorView.width
-        height: rootEditorView.height
-        KQA.QImageItem {
-            id: editImage
-            fillMode: KQA.QImageItem.PreserveAspectFit
-            width: rootEditorView.width
-            height: rootEditorView.height
-            image: imageDoc.visualImage
-        }
-    }
-
     KokoComponent.ResizeRectangle {
         id: resizeRectangle
-        
+
         visible: rootEditorView.resizing
-        
+
         width: 300
         height: 300
         x: 200
         y: 200
-        
+
         onAcceptSize: crop();
 
         Rectangle {
@@ -107,7 +135,7 @@ Kirigami.Page {
             opacity: 0.6
             anchors.fill: parent
         }
-        
+
         BasicResizeHandle {
             rectangle: resizeRectangle
             resizeCorner: KokoComponent.ResizeHandle.TopLeft
