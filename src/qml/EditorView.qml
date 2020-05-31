@@ -23,6 +23,7 @@ import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.koko.private 1.0 as KokoComponent
+import QtQuick.Dialogs 1.0
 
 Kirigami.Page {
     id: rootEditorView
@@ -33,12 +34,10 @@ Kirigami.Page {
     property bool resizing: false;
 
     function crop() {
-        console.log(resizeRectangle.x, resizeRectangle.y, resizeRectangle.width, resizeRectangle.height);
-        console.log(editImage.paintedWidth, rootEditorView.contentItem.width, editImage.paintedHeight, rootEditorView.contentItem.height);
-        rootEditorView.resizing = false
         const ratioX = editImage.paintedWidth / editImage.nativeWidth;
         const ratioY = editImage.paintedHeight / editImage.nativeHeight;
-        imageDoc.crop((rootEditorView.contentItem.width - editImage.paintedWidth + resizeRectangle.x) / ratioX, (rootEditorView.contentItem.height - editImage.paintedHeight + resizeRectangle.y) / ratioY, resizeRectangle.width / ratioX, resizeRectangle.height / ratioY);
+        rootEditorView.resizing = false
+        imageDoc.crop((resizeRectangle.x - rootEditorView.contentItem.width + editImage.paintedWidth) / ratioX, (resizeRectangle.y - rootEditorView.contentItem.height + editImage.paintedHeight) / ratioY, resizeRectangle.width / ratioX, resizeRectangle.height / ratioY);
     }
 
     actions {
@@ -52,18 +51,49 @@ Kirigami.Page {
             Kirigami.Action {
                 text: i18nc("@action:button Save the image as a new image", "Save As")
                 iconName: "document-save-as"
-                onTriggered: imageDoc.saveAs();
+                onTriggered: fileDialog.visible = true;
             },
             Kirigami.Action {
                 text: i18nc("@action:button Save the image", "Save")
                 iconName: "document-save"
-                onTriggered: imageDoc.save();
+                onTriggered: {
+                    if (!imageDoc.save()) {
+                        msg.type = Kirigami.MessageType.Error
+                        msg.text = i18n("Unable to save file. Check if you have the correct permission to edit this file.")
+                        msg.visible = true;
+                    }
+                }
                 visible: imageDoc.edited
             }
         ]
     }
 
     property string imagePath
+
+    FileDialog {
+        id: fileDialog
+        title: "Please choose a file"
+        folder: shortcuts.home
+        selectMultiple: false
+        selectExisting: false
+        onAccepted: {
+            if (imageDoc.saveAs(fileDialog.fileUrl)) {;
+                imagePath = fileDialog.fileUrl;
+                msg.type = Kirigami.MessageType.Information
+                msg.text = i18n("You are now editing a new file.")
+                msg.visible = true;
+            } else {
+                msg.type = Kirigami.MessageType.Error
+                msg.text = i18n("Unable to save file. Check if you have the correct permission to edit this file.")
+                msg.visible = true;
+            }
+            fileDialog.close()
+        }
+        onRejected: {
+            fileDialog.close()
+        }
+        Component.onCompleted: visible = false
+    }
 
     Koko.ImageDocument {
         id: imageDoc
@@ -86,7 +116,7 @@ Kirigami.Page {
         }
     }
 
-    footer: QQC2.ToolBar {
+    header: QQC2.ToolBar {
         contentItem: Kirigami.ActionToolBar {
             id: actionToolBar
             display: QQC2.Button.TextBesideIcon
@@ -113,9 +143,28 @@ Kirigami.Page {
                     text: i18nc("@action:button Rotate an image to the right", "Rotate right");
                     onTriggered: imageDoc.rotate(90);
                     visible: !rootEditorView.resizing
+                },
+                Kirigami.Action {
+                    iconName: "object-flip-vertical"
+                    text: i18nc("@action:button Mirror an image vertically", "Flip");
+                    onTriggered: imageDoc.mirror(false, true);
+                    visible: !rootEditorView.resizing
+                },
+                Kirigami.Action {
+                    iconName: "object-flip-horizontal"
+                    text: i18nc("@action:button Mirror an image horizontally", "Mirror");
+                    onTriggered: imageDoc.mirror(true, false);
+                    visible: !rootEditorView.resizing
                 }
             ]
         }
+    }
+    
+    footer: Kirigami.InlineMessage {
+        id: msg
+        type: Kirigami.MessageType.Error
+        showCloseButton: true
+        visible: false
     }
 
     KokoComponent.ResizeRectangle {

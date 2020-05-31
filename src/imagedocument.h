@@ -1,5 +1,6 @@
 /*
  *   Copyright 2017 by Atul Sharma <atulsharma406@gmail.com>
+ *   Copyright 2020 by Carl Schwan <carl@carlschwan.eu>
  * 
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Library General Public License as
@@ -28,16 +29,17 @@ class ImageDocument : public QObject
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
     Q_PROPERTY(QImage visualImage READ visualImage NOTIFY visualImageChanged)
     Q_PROPERTY(bool edited READ edited WRITE setEdited NOTIFY editedChanged)
+    
 public:
     ImageDocument();
     ~ImageDocument();
     
-    QString path();
-    void setPath( QString &url);
+    QString path() const;
+    void setPath(const QString &url);
     
-    QImage visualImage();
+    QImage visualImage() const;
     
-    bool edited();
+    bool edited() const;
     void setEdited(bool value);
 
     /**
@@ -46,6 +48,13 @@ public:
      */
     Q_INVOKABLE void rotate(int angle);
 
+    /**
+     * Mirrror the image.
+     * @param horizonal Mirror the image horizontally.
+     * @param vertical Mirror the image vertically.
+     */
+    Q_INVOKABLE void mirror(bool horizontal, bool vertical);
+    
     /**
      * Crop the image.
      * @param x The x coordinate of the new image in the old image.
@@ -67,13 +76,16 @@ public:
 
     /**
      * Save current edited image in place. This is a destructive operation and can't be reverted.
+     * @return true iff the file saving operattion was successful.
      */
-    Q_INVOKABLE void save();
+    Q_INVOKABLE bool save();
 
     /**
      * Save current edited image as a new image.
+     * @param location The location where to save the new image.
+     * @return true iff the file saving operattion was successful.
      */
-    Q_INVOKABLE void saveAs();
+    Q_INVOKABLE bool saveAs(const QUrl &location);
 
 signals:
     void pathChanged(const QString &url);

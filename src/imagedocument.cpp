@@ -41,23 +41,23 @@ ImageDocument::~ImageDocument()
 {
 }
 
-QString ImageDocument::path()
+QString ImageDocument::path() const
 {
     return m_path;
 }
 
-void ImageDocument::setPath(QString& url)
+void ImageDocument::setPath(const QString& url)
 {
     m_path = url;
     emit pathChanged(url);
 }
 
-QImage ImageDocument::visualImage()
+QImage ImageDocument::visualImage() const
 {
     return m_undoImages.last();
 }
 
-bool ImageDocument::edited()
+bool ImageDocument::edited() const
 {
     return m_edited;
 }
@@ -77,6 +77,14 @@ void ImageDocument::rotate(int angle)
     Q_EMIT visualImageChanged();
 }
 
+void ImageDocument::mirror(bool horizontal, bool vertical)
+{
+    setEdited(true);
+    m_undoImages.append(m_undoImages.last().mirrored(horizontal, vertical));
+    Q_EMIT visualImageChanged();
+}
+
+
 void ImageDocument::crop(int x, int y, int width, int height)
 {
     const QRect rect(x, y, width, height);
@@ -85,23 +93,36 @@ void ImageDocument::crop(int x, int y, int width, int height)
     Q_EMIT visualImageChanged();
 }
 
-void ImageDocument::save()
+bool ImageDocument::save()
 {
     QString location = QUrl(m_path).path();
 
-    if(QFileInfo(location).isWritable()) {
-        m_undoImages.last().save(location);
-        Q_EMIT resetHandle();
-        setEdited(false);
-        Q_EMIT visualImageChanged();
-    } else {
-        // TODO add user warning so that they can save the image in another location.
+    if (!QFileInfo(location).isWritable()) {
+        return false;
     }
+    m_undoImages.last().save(location);
+    while (m_undoImages.count() > 1) {
+        m_undoImages.pop_front();
+    }
+    Q_EMIT resetHandle();
+    setEdited(false);
+    Q_EMIT visualImageChanged();
+    return true;
 }
 
-void ImageDocument::saveAs()
+bool ImageDocument::saveAs(const QUrl &location)
 {
-    // TODO
+    const QString filename = location.path();
+    if (!QFileInfo(filename).isWritable()) {
+        return false;
+    }
+    
+    m_undoImages.last().save(filename);
+    Q_EMIT resetHandle();
+    setEdited(false);
+    setPath(filename);
+    Q_EMIT visualImageChanged();
+    return true;
 }
 
 
