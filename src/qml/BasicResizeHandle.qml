@@ -19,16 +19,21 @@
 
 import QtQuick 2.12
 
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko.private 1.0 as KokoComponent
 
 KokoComponent.ResizeHandle {
-    width: 10
+    width: Kirigami.Settings.isMobile ? 20 : 10
     height: width
-    Rectangle {
-        color: "grey"
+    Kirigami.ShadowedRectangle {
+        color: Kirigami.Theme.viewBackgroundColor
+        shadow {
+            size: 4
+            color: Kirigami.Theme.textColor
+        }
         anchors.fill: parent
         radius: width
-        opacity: 0.6
+        opacity: 0.8
     }
     scale: 1 
 }
