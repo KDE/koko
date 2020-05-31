@@ -21,7 +21,6 @@
 #include <QMatrix>
 #include <QUrl>
 #include <QFileInfo>
-#include <QDebug>
 
 ImageDocument::ImageDocument()
 {
