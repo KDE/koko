@@ -86,6 +86,21 @@ void ImageDocument::mirror(bool horizontal, bool vertical)
 
 void ImageDocument::crop(int x, int y, int width, int height)
 {
+    if (x < 0) {
+        width += x;
+        x = 0;
+    }
+    if (y < 0) {
+        height += y;
+        y = 0;
+    }
+    if (m_undoImages.last().width() < width + x) {
+        width = m_undoImages.last().width() - x;
+    }
+    if (m_undoImages.last().height() < height + y) {
+        height = m_undoImages.last().height() - y;
+    }
+
     const QRect rect(x, y, width, height);
     setEdited(true);
     m_undoImages.append(m_undoImages.last().copy(rect));

@@ -26,7 +26,8 @@ KokoComponent.ResizeHandle {
     width: Kirigami.Settings.isMobile ? 20 : 10
     height: width
     Kirigami.ShadowedRectangle {
-        color: Kirigami.Theme.viewBackgroundColor
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        color: Kirigami.Theme.backgroundColor
         shadow {
             size: 4
             color: Kirigami.Theme.textColor
