@@ -121,7 +121,7 @@ void ResizeHandle::mouseMoveEvent(QMouseEvent *event)
 
     const QPointF difference = m_mouseDownPosition - event->windowPos();
     
-    QSizeF minimumSize = QSize(20, 20);
+    const QSizeF minimumSize = QSize(20, 20);
     
     // Horizontal resize
     if (resizeLeft()) {
