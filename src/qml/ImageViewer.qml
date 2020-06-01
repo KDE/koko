@@ -23,7 +23,7 @@
 
 import QtQuick 2.12
 import QtQuick.Window 2.2
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.13 as Kirigami
@@ -401,6 +401,38 @@ Kirigami.Page {
                     }
                 }
             }
+        }
+    }
+
+    Controls.RoundButton {
+        anchors {
+          left: parent.left
+          leftMargin: Kirigami.Units.largeSpacing
+          verticalCenter: parent.verticalCenter
+        }
+        width: Kirigami.Units.gridUnit * 2
+        height: width
+        icon.name: "arrow-left"
+        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible
+        Keys.forwardTo: [listView]
+        onClicked: {
+            listView.currentIndex -= 1
+        }
+    }
+
+    Controls.RoundButton {
+        anchors {
+          right: parent.right
+          leftMargin: Kirigami.Units.largeSpacing
+          verticalCenter: parent.verticalCenter
+        }
+        width: Kirigami.Units.gridUnit * 2
+        height: width
+        icon.name: "arrow-right"
+        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible
+        Keys.forwardTo: [listView]
+        onClicked: {
+            listView.currentIndex += 1
         }
     }
     
