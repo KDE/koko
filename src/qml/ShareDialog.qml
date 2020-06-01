@@ -39,6 +39,7 @@ Kirigami.OverlaySheet {
 
     header: Kirigami.Heading {
         text: i18n("Share")
+        leftPadding: Kirigami.Units.largeSpacing
     }
     Purpose.AlternativesView {
         id: view
