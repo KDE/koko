@@ -21,7 +21,7 @@
 
 import QtQuick 2.1
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.1 as Controls
+import QtQuick.Controls 2.1 as QQC2
 
 import org.kde.kirigami 2.5 as Kirigami
 
@@ -33,7 +33,19 @@ Kirigami.GlobalDrawer {
 
     modal: Kirigami.Settings.isMobile
     collapsible: true
-    collapsed: true
+    collapsed: Kirigami.Settings.isMobile
+    bannerVisible: true
+
+    header: Kirigami.AbstractApplicationHeader {
+        Kirigami.Heading {
+            anchors.fill: parent
+            anchors.leftMargin: Kirigami.Units.smallSpacing * 2
+            anchors.rightMargin: Kirigami.Units.smallSpacing * 2
+            level: 2
+            text: i18n("Sort by")
+        }
+    }
+
 
     actions: [
         Kirigami.Action {
@@ -126,11 +138,15 @@ Kirigami.GlobalDrawer {
         }
     ]
 
-    Controls.Label {
+    QQC2.Label {
         text: i18n("Thumbnails size:")
+        Layout.leftMargin: Kirigami.Units.smallSpacing
+        Layout.rightMargin: Kirigami.Units.smallSpacing
     }
-    Controls.Slider {
+    QQC2.Slider {
         Layout.fillWidth: true
+        Layout.leftMargin: Kirigami.Units.smallSpacing
+        Layout.rightMargin: Kirigami.Units.smallSpacing
         from: Kirigami.Units.iconSizes.medium
         to: Kirigami.Units.iconSizes.enormous
         value: kokoConfig.iconSize
