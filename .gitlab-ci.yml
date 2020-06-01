@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: (C) 2020 Carl Schwan
+#
+# SPDX-License-Identifier: LGPL-2.1-or-later
+
+include:
+  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-before.yml
+  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-applications-linux.yml
