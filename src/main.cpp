@@ -145,5 +145,6 @@ int main(int argc, char** argv)
     }
 
     int rt = app.exec();
+    trackerThread.quit();
     return rt;
 }
