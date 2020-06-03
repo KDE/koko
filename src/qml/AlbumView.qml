@@ -147,6 +147,8 @@ Kirigami.ScrollablePage {
 
         cellHeight: kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2
 
+        topMargin: Kirigami.Units.gridUnit
+
         highlightMoveDuration: 0
         highlight: Item {
             Rectangle {
