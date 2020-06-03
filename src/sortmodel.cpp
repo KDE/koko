@@ -23,6 +23,7 @@
 #include "roles.h"
 #include <QDebug>
 #include <QTimer>
+#include <QIcon>
 
 #include <kio/previewjob.h>
 #include <kimagecache.h>
@@ -326,5 +327,14 @@ void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
 
 void SortModel::previewFailed(const KFileItem &item)
 {
+    // Use folder image instead of displaying nothing then thumbnail generation fails
+    QPersistentModelIndex index = m_previewJobs.value(item.url());
     m_previewJobs.remove(item.url());
+
+    if (!index.isValid()) {
+        return;
+    }
+
+    m_imageCache->insertImage(item.url().toString(), QIcon::fromTheme("folder").pixmap(m_screenshotSize).toImage());
+    Q_EMIT dataChanged(index, index);
 }
