@@ -423,7 +423,7 @@ Kirigami.Page {
     Controls.RoundButton {
         anchors {
           right: parent.right
-          leftMargin: Kirigami.Units.largeSpacing
+          rightMargin: Kirigami.Units.largeSpacing
           verticalCenter: parent.verticalCenter
         }
         width: Kirigami.Units.gridUnit * 2
