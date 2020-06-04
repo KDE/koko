@@ -153,15 +153,58 @@ Kirigami.Page {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            bottomMargin: applicationWindow().controlsVisible ? 0 : -thumbnailView.height/2
-            Behavior on bottomMargin {
-                NumberAnimation {
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
+        }
+
+        state: applicationWindow().controlsVisible ? "show" : "hidden"
+
+        states: [
+            State {
+                name: "show"
+                PropertyChanges { target: thumbnailView; opacity: 1.0 }
+                PropertyChanges { target: thumbnailView; anchors.bottomMargin: 0 }
+            },
+            State {
+                name: "hidden"
+                PropertyChanges { target: thumbnailView; opacity: 0.0 }
+                PropertyChanges { target: thumbnailView; anchors.bottomMargin: -thumbnailView.height  }
+            }
+        ]
+
+        transitions: [
+            Transition {
+                from: "*"
+                to: "hidden"
+                SequentialAnimation {
+                    PropertyAnimation {
+                        properties: "opacity,anchors.bottomMargin";
+                        easing.type: Easing.InCubic
+                        duration: Kirigami.Units.longDuration
+                    }
+                    PropertyAction {
+                        target: thumbnailView
+                        property: "visible"
+                        value: false
+                    }
+                }
+            },
+            Transition {
+                from: "*"
+                to: "show"
+                SequentialAnimation {
+                    PropertyAction {
+                        target: thumbnailView
+                        property: "visible"
+                        value: true
+                    }
+                    PropertyAnimation {
+                        properties: "opacity,anchors.bottomMargin";
+                        easing.type: Easing.OutCubic
+                        duration: Kirigami.Units.longDuration * 0.75
+                    }
                 }
             }
-        }
-        opacity: applicationWindow().controlsVisible
+        ]
+
         height: kokoConfig.iconSize
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
@@ -174,13 +217,6 @@ Kirigami.Page {
         highlightMoveVelocity: -1
         highlightMoveDuration: Kirigami.Units.longDuration
 
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-        
         model: Koko.SortModel {
             sourceModel: root.sourceModel
             filterRole: Koko.Roles.MimeTypeRole
