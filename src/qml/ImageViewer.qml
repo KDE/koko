@@ -432,6 +432,9 @@ Kirigami.Page {
                                                         Math.min(Math.max(root.imageHeight, flick.contentHeight + wheel.pixelDelta.y), root.imageHeight * 4),
                                                         wheel);
                                 }
+                            } else {
+                                flick.contentX += wheel.pixelDelta.x;
+                                flick.contentY += wheel.pixelDelta.y;
                             }
                         }
                     }
