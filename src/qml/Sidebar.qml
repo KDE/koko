@@ -96,7 +96,7 @@ Kirigami.GlobalDrawer {
             }
             Kirigami.Action {
                 id: monthAction
-                text: i18n("By month")
+                text: i18n("By Month")
                 checkable: true
                 onTriggered: {
                     filterBy("Months")
