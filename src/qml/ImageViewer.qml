@@ -291,8 +291,12 @@ Kirigami.Page {
             clip: true
             z: index == listView.currentIndex ? 1000 : 0
 
-            Controls.ScrollBar.vertical: Controls.ScrollBar {}
-            Controls.ScrollBar.horizontal: Controls.ScrollBar {}
+            Controls.ScrollBar.vertical: Controls.ScrollBar {
+                visible: !applicationWindow().controlsVisible 
+            }
+            Controls.ScrollBar.horizontal: Controls.ScrollBar {
+                visible: !applicationWindow().controlsVisible 
+            }
 
             PinchArea {
                 width: Math.max(flick.contentWidth, flick.width)
