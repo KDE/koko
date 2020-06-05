@@ -24,6 +24,7 @@
   <name xml:lang="pt-BR">Koko</name>
   <name xml:lang="ru">Koko</name>
   <name xml:lang="sk">Koko</name>
+  <name xml:lang="sl">Koko</name>
   <name xml:lang="sv">Koko</name>
   <name xml:lang="uk">Koko</name>
   <name xml:lang="x-test">xxKokoxx</name>
@@ -49,6 +50,7 @@
   <summary xml:lang="pt">Galeria de Imagens</summary>
   <summary xml:lang="pt-BR">Galeria de imagens</summary>
   <summary xml:lang="sk">Galéria obrázkov</summary>
+  <summary xml:lang="sl">Galerija slik</summary>
   <summary xml:lang="sv">Bildgalleri</summary>
   <summary xml:lang="uk">Галерея зображень</summary>
   <summary xml:lang="x-test">xxImage Galleryxx</summary>
@@ -75,6 +77,7 @@
     <p xml:lang="pt">Uma aplicação de galeria de imagens</p>
     <p xml:lang="pt-BR">Aplicativo de galeria de imagens</p>
     <p xml:lang="sk">Aplikácia na galériu obrázkov</p>
+    <p xml:lang="sl">Program galerije slik</p>
     <p xml:lang="sv">Ett bildgalleriprogram</p>
     <p xml:lang="uk">Програма для роботи з галереями зображень</p>
     <p xml:lang="x-test">xxAn Image gallery applicationxx</p>
