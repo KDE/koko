@@ -36,10 +36,6 @@ Kirigami.ApplicationWindow {
         id: currentImage
         property int index
         property var model
-        property GridView view : pageStack.currentItem.flickable
-        onIndexChanged: {
-            view.currentIndex = view.model.proxyIndex(currentImage.index)
-        }
     }
 
     pageStack.initialPage: AlbumView {
@@ -174,16 +170,6 @@ Kirigami.ApplicationWindow {
     Koko.ImageListModel {
         id: imageListModel
     }
-    Component {
-        id: imageViewerComponent
-        ImageViewer {
-            id: imageViewer
-            indexValue: currentImage.index
-            sourceModel: currentImage.model
-            imageWidth: root.width
-            imageHeight: root.height
-        }
-    }
     
     Koko.NotificationManager {
         id: notificationManager
@@ -192,5 +178,4 @@ Kirigami.ApplicationWindow {
     KQA.Clipboard {
         id: clipboard
     }
-    
 }
