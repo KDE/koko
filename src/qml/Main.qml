@@ -110,26 +110,7 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
-            /**
-             * imagePathArgument[0] sets the column 0 of the pageStack to reflect either a foreign path or ~/Pictures
-             */
-            url: imagePathArgument == "" ? "" : imagePathArgument[0]
-            /**
-             * makes sure that operation only occurs after the model is populated
-             */
-            onRowsInserted: {
-                for( var i = 1; i < imagePathArgument.length -1 ; i++) {
-                    pageStack.push( Qt.resolvedUrl("ImageFolderAlbumView.qml"), { "sourceUrl": imagePathArgument[i] })
-                }
-                
-                /**
-                 * To set the currentImage when no folder is pushed
-                 */
-                if ( (currentImage.view.model.sourceModel == this) && (indexForUrl(imagePathArgument[imagePathArgument.length - 1]) != -1) ) {
-                    currentImage.model = this
-                    currentImage.index = indexForUrl(imagePathArgument[imagePathArgument.length - 1])
-                }
-            }
+            url: ""
         }
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel
@@ -201,11 +182,6 @@ Kirigami.ApplicationWindow {
             sourceModel: currentImage.model
             imageWidth: root.width
             imageHeight: root.height
-        }
-    }
-    Component.onCompleted: {
-        if (imagePathArgument != "") {
-            pageStack.layers.push(imageViewerComponent);
         }
     }
     

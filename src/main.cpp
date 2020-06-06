@@ -82,30 +82,6 @@ int main(int argc, char** argv)
     Q_ASSERT(locations.size() >= 1);
     qDebug() << locations;
 
-    QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
-    QUrl resolvedImagePath = parser.positionalArguments().isEmpty()
-                                                       ? QUrl()
-                                                       : currentDirPath.resolved( parser.positionalArguments().first());
-
-    if( !resolvedImagePath.isLocalFile()) {
-        resolvedImagePath = QUrl() ;
-    }
-
-    QStringList directoryUrls;
-    if (!resolvedImagePath.isEmpty()) {
-        QString tempImagePath = resolvedImagePath.toString();
-        directoryUrls << tempImagePath;
-
-        if (resolvedImagePath.toString().startsWith(QUrl::fromLocalFile(locations.first()).toString())) {
-            while (tempImagePath != QUrl::fromLocalFile(locations.first()).toString()) {
-                tempImagePath = tempImagePath.left( tempImagePath.lastIndexOf('/'));
-                directoryUrls.prepend(tempImagePath);
-            }
-        } else {
-            directoryUrls.prepend(tempImagePath.left( tempImagePath.lastIndexOf('/')));
-        }
-    }
-
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
 #endif
@@ -131,7 +107,6 @@ int main(int argc, char** argv)
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
-    engine.rootContext()->setContextProperty("imagePathArgument", directoryUrls);
 
     QString path;
     //we want different main files on desktop or mobile

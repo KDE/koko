@@ -4,7 +4,6 @@
         <file>qml/AlbumView.qml</file>
         <file>qml/desktopMain.qml</file>
         <file>qml/EditorView.qml</file>
-        <file>qml/ImageFolderAlbumView.qml</file>
         <file>qml/ImageViewer.qml</file>
         <file>qml/Main.qml</file>
         <file>qml/mobileMain.qml</file>
