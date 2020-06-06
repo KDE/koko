@@ -34,11 +34,9 @@ Kirigami.Page {
     id: root
 
     title: listView.currentItem.display
-    property alias sourceModel: imagesListModel.sourceModel
-    property int indexValue
     
-    property int imageWidth
-    property int imageHeight
+    property int startIndex: 0
+    property var imagesModel
     
     leftPadding: 0
     rightPadding: 0
@@ -217,11 +215,13 @@ Kirigami.Page {
         highlightMoveVelocity: -1
         highlightMoveDuration: Kirigami.Units.longDuration
 
+        // Filter out directories
         model: Koko.SortModel {
-            sourceModel: root.sourceModel
+            sourceModel: imagesModel
             filterRole: Koko.Roles.MimeTypeRole
             filterRegExp: /image\//
         }
+
         delegate: AlbumDelegate {
             width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
             height: width
@@ -253,37 +253,27 @@ Kirigami.Page {
         anchors.fill: parent
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
-        onMovementEnded: currentImage.index = model.sourceIndex(indexAt(contentX+1, 1))
+        highlightMoveDuration: 0
         interactive: true
 
+        // Filter out directories
         model: Koko.SortModel {
-            id: imagesListModel
+            sourceModel: imagesModel
             filterRole: Koko.Roles.MimeTypeRole
             filterRegExp: /image\//
         }
 
-        Binding {
-            target: listView
-            property: "currentIndex"
-            value: listView.model.proxyIndex( indexValue)
-        }
-        
-        onCurrentIndexChanged: {
-            currentImage.index = model.sourceIndex( currentIndex)
-            listView.positionViewAtIndex(currentIndex, ListView.Beginning)
-
-            shareDialog.close();
-        }
+        currentIndex: model.proxyIndex(root.startIndex)
 
         delegate: Flickable {
             id: flick
             readonly property string currentImageSource: model.imageurl
             readonly property string display: model.display
             property alias image: image
-            width: imageWidth
-            height: imageHeight
-            contentWidth: imageWidth
-            contentHeight: imageHeight
+            width: root.width
+            height: root.height
+            contentWidth: root.width
+            contentHeight: root.height
             boundsBehavior: Flickable.StopAtBounds
             boundsMovement: Flickable.StopAtBounds
             interactive: contentWidth > width || contentHeight > height
@@ -316,17 +306,17 @@ Kirigami.Page {
                     flick.contentY += pinch.previousCenter.y - pinch.center.y
 
                     // resize content
-                    flick.resizeContent(Math.max(imageWidth*0.7, initialWidth * pinch.scale), Math.max(imageHeight*0.7, initialHeight * pinch.scale), pinch.center)
+                    flick.resizeContent(Math.max(root.width*0.7, initialWidth * pinch.scale), Math.max(root.height*0.7, initialHeight * pinch.scale), pinch.center)
                 }
 
                 onPinchFinished: {
                     // Move its content within bounds.
-                    if (flick.contentWidth < root.imageWidth || 
-                        flick.contentHeight < root.imageHeight) {
+                    if (flick.contentWidth < root.width ||
+                        flick.contentHeight < root.height) {
                         zoomAnim.x = 0;
                         zoomAnim.y = 0;
-                        zoomAnim.width = root.imageWidth;
-                        zoomAnim.height = root.imageHeight;
+                        zoomAnim.width = root.width;
+                        zoomAnim.height = root.height;
                         zoomAnim.running = true;
                     } else {
                         flick.returnToBounds();
@@ -337,8 +327,8 @@ Kirigami.Page {
                     id: zoomAnim
                     property real x: 0
                     property real y: 0
-                    property real width: root.imageWidth
-                    property real height: root.imageHeight
+                    property real width: root.width
+                    property real height: root.height
                     NumberAnimation {
                         target: flick
                         property: "contentWidth"
@@ -403,14 +393,14 @@ Kirigami.Page {
                             if (flick.interactive) {
                                 zoomAnim.x = 0;
                                 zoomAnim.y = 0;
-                                zoomAnim.width = root.imageWidth;
-                                zoomAnim.height = root.imageHeight;
+                                zoomAnim.width = root.width;
+                                zoomAnim.height = root.height;
                                 zoomAnim.running = true;
                             } else {
                                 zoomAnim.x = mouse.x * 2;
                                 zoomAnim.y = mouse.y *2;
-                                zoomAnim.width = root.imageWidth * 3;
-                                zoomAnim.height = root.imageHeight * 3;
+                                zoomAnim.width = root.width * 3;
+                                zoomAnim.height = root.height * 3;
                                 zoomAnim.running = true;
                             }
                         }
@@ -420,8 +410,8 @@ Kirigami.Page {
                                     var factor = 1 + wheel.angleDelta.y / 600;
                                     zoomAnim.running = false;
 
-                                    zoomAnim.width = Math.min(Math.max(root.imageWidth, zoomAnim.width * factor), root.imageWidth * 4);
-                                    zoomAnim.height = Math.min(Math.max(root.imageHeight, zoomAnim.height * factor), root.imageHeight * 4);
+                                    zoomAnim.width = Math.min(Math.max(root.width, zoomAnim.width * factor), root.width * 4);
+                                    zoomAnim.height = Math.min(Math.max(root.height, zoomAnim.height * factor), root.height * 4);
 
                                     //actual factors, may be less than factor
                                     var xFactor = zoomAnim.width / flick.contentWidth;
@@ -432,8 +422,8 @@ Kirigami.Page {
                                     zoomAnim.running = true;
 
                                 } else if (wheel.pixelDelta.y != 0) {
-                                    flick.resizeContent(Math.min(Math.max(root.imageWidth, flick.contentWidth + wheel.pixelDelta.y), root.imageWidth * 4),
-                                                        Math.min(Math.max(root.imageHeight, flick.contentHeight + wheel.pixelDelta.y), root.imageHeight * 4),
+                                    flick.resizeContent(Math.min(Math.max(root.width, flick.contentWidth + wheel.pixelDelta.y), root.width * 4),
+                                                        Math.min(Math.max(root.height, flick.contentHeight + wheel.pixelDelta.y), root.height * 4),
                                                         wheel);
                                 }
                             } else {
@@ -482,10 +472,9 @@ Kirigami.Page {
     Component {
         id: editorComponent
         EditorView {
-            width: root.imageWidth
-            height: root.imageHeight
+            width: root.width
+            height: root.height
             imagePath: listView.currentItem.currentImageSource
         }
     }
-    
 }

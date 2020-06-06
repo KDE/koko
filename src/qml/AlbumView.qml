@@ -30,7 +30,6 @@ Kirigami.ScrollablePage {
     
     property alias model: gridView.model
     signal collectionSelected(QtObject selectedModel, string cover)
-    signal imageSelected(int currentIndex)
     signal folderSelected(QtObject selectedModel, string cover)
     
     keyboardNavigationEnabled: true
@@ -191,7 +190,12 @@ Kirigami.ScrollablePage {
                         break;
                     }
                     case Koko.Types.Image: {
-                        imageSelected( model.sourceIndex)
+                        currentImage.model = page.model.sourceModel
+                        currentImage.index = model.index
+                        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+                            startIndex: model.index,
+                            imagesModel: page.model
+                        })
                         break;
                     }
                     default: {
@@ -226,9 +230,4 @@ Kirigami.ScrollablePage {
     
     onCollectionSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
     onFolderSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
-    onImageSelected: {
-        currentImage.model = model.sourceModel
-        currentImage.index = currentIndex
-        applicationWindow().pageStack.layers.push(imageViewerComponent);
-    }
 }
