@@ -446,7 +446,7 @@ Kirigami.Page {
         width: Kirigami.Units.gridUnit * 2
         height: width
         icon.name: "arrow-left"
-        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible
+        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0
         Keys.forwardTo: [listView]
         onClicked: {
             listView.currentIndex -= 1
@@ -462,7 +462,7 @@ Kirigami.Page {
         width: Kirigami.Units.gridUnit * 2
         height: width
         icon.name: "arrow-right"
-        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible
+        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1
         Keys.forwardTo: [listView]
         onClicked: {
             listView.currentIndex += 1
