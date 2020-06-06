@@ -26,7 +26,8 @@ install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_A
 #
 # Application
 #
-add_executable(koko
+
+set(koko_SRCS
     main.cpp
     reversegeocoder.cpp
     filesystemtracker.cpp
@@ -34,10 +35,13 @@ add_executable(koko
     committimer.cpp
     imageprocessorrunnable.cpp
     exiv2extractor.cpp
-    kokoconfig.cpp
     kdtree.c
     resources.qrc
 )
+
+kconfig_add_kcfg_files(koko_SRCS kokoconfig.kcfgc GENERATE_MOC)
+
+add_executable(koko ${koko_SRCS})
 
 target_link_libraries(koko
     Qt5::Quick
@@ -48,7 +52,7 @@ target_link_libraries(koko
     KF5::I18n
     KF5::CoreAddons
     KF5::KIOCore
-    KF5::IconThemes
+    KF5::ConfigGui
     kokocommon
     LibExiv2::LibExiv2
 )

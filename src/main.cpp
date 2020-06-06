@@ -63,9 +63,6 @@ int main(int argc, char** argv)
     }
 
     if (parser.isSet("reset")) {
-        KokoConfig config;
-        config.reset();
-
         ImageStorage::reset();
     }
 
@@ -94,6 +91,7 @@ int main(int argc, char** argv)
     tracker.setSubFolder(tracker.folder());
 
     KokoConfig config;
+    QObject::connect(&config, &KokoConfig::IconSizeChanged, &config, &KokoConfig::save);
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

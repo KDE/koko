@@ -1,0 +1,6 @@
+File=kokoconfig.kcfg
+ClassName=KokoConfig
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
