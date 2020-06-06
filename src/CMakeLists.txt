@@ -55,8 +55,6 @@ target_link_libraries(koko
 
 if(ANDROID)
     target_link_libraries(koko Qt5::AndroidExtras)
-else()
-    target_link_libraries(koko KF5::DBusAddons)
 endif()
 
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})

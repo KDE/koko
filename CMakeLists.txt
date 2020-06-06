@@ -10,7 +10,7 @@ if(ANDROID)
     find_package(Qt5 REQUIRED NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF5 5.5 REQUIRED COMPONENTS I18n Declarative Config DBusAddons KIO GuiAddons CoreAddons Notifications IconThemes)
+find_package(KF5 5.5 REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications IconThemes)
 find_package(LibExiv2 0.21 REQUIRED)
 
 include(FeatureSummary)

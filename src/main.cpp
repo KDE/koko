@@ -27,9 +27,6 @@
 #include <QThread>
 #include <QDir>
 
-#ifndef Q_OS_ANDROID
-#include <KDBusService>
-#endif
 #include <KLocalizedString>
 #include <KLocalizedContext>
 
@@ -54,10 +51,6 @@ int main(int argc, char** argv)
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
     app.setOrganizationDomain("kde.org");
-
-#ifndef Q_OS_ANDROID
-    KDBusService service(KDBusService::Unique);
-#endif
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
