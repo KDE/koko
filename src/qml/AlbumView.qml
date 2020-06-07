@@ -22,7 +22,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
 
-import org.kde.kirigami 2.1 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
 
 Kirigami.ScrollablePage {
@@ -220,11 +220,11 @@ Kirigami.ScrollablePage {
             }
         }
         
-        Controls.Label {
+        Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No Images Found")
             visible: gridView.count == 0
-            font.pixelSize: Kirigami.Units.gridUnit * 1
+            width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
     }
     
