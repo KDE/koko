@@ -95,7 +95,8 @@ Kirigami.ScrollablePage {
     }
 
     background: Rectangle {
-        color: Kirigami.Theme.viewBackgroundColor
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        color: Kirigami.Theme.backgroundColor
     }
 
     Keys.onPressed: {

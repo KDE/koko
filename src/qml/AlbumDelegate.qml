@@ -22,7 +22,7 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.1 as Controls
 import org.kde.kquickcontrolsaddons 2.0 as KQA
-import org.kde.kirigami 2.1 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
 
 Item {
@@ -65,7 +65,8 @@ Item {
         visible: textLabel.visible
         width: image.width
         height: textLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
-        color: Kirigami.Theme.viewBackgroundColor
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        color: Kirigami.Theme.backgroundColor
         opacity: 0.8
     }
         
@@ -96,7 +97,8 @@ Item {
         }
         visible: modelData.fileCount && modelData.itemType == Koko.Types.Folder || modelData.itemType == Koko.Types.Album
         height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
-        color: Kirigami.Theme.viewBackgroundColor
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        color: Kirigami.Theme.backgroundColor
         opacity: 0.8
 
         Controls.Label {
