@@ -263,8 +263,6 @@ Kirigami.Page {
             filterRegExp: /image\//
         }
 
-        currentIndex: model.proxyIndex(root.startIndex)
-
         delegate: Flickable {
             id: flick
             readonly property string currentImageSource: model.imageurl
