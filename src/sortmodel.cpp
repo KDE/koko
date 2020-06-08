@@ -141,6 +141,7 @@ QVariant SortModel::data(const QModelIndex& index, int role) const
             
             m_previewTimer->start(100);
             const_cast<SortModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
+            return {};
         }
 
         case Roles::SourceIndex: {
