@@ -191,11 +191,11 @@ Kirigami.ScrollablePage {
                         break;
                     }
                     case Koko.Types.Image: {
-                        currentImage.model = page.model.sourceModel
-                        currentImage.index = model.index
+                        currentImage.model = gridView.model.sourceModel
+                        currentImage.index = model.index - gridView.model.sourceModel.countFolder
                         applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
-                            startIndex: model.index,
-                            imagesModel: page.model
+                            startIndex: currentImage.index,
+                            imagesModel: currentImage.model
                         })
                         break;
                     }

@@ -156,4 +156,19 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
     }
 }
 
+int ImageFolderModel::countFolder() const
+{
+    int countFolder = 0;
+    for (int i = 0; i < rowCount(); i++) {
+        QModelIndex modelIndex = index(i, 0);
+
+        KFileItem item = itemForIndex(modelIndex);
+        if(item.isDir()) {
+            countFolder++;
+        }
+    }
+    qDebug() << "count: " << countFolder;
+    return countFolder;
+}
+
 #include "moc_imagefoldermodel.cpp"

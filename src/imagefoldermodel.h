@@ -38,14 +38,19 @@ class ImageFolderModel : public KDirModel
     Q_OBJECT
 
     /**
-     * @property string The url we want to browse. it may be an absolute path or a correct url of any protocol KIO supports
+     * @property string The url we want to browse. it may be an absolute path or a correct url of any protocol KIO supports.
      */
     Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
 
     /**
-     * @property count Total number of rows
+     * @property count Total number of rows.
      */
     Q_PROPERTY(int count READ count NOTIFY countChanged)
+
+    /**
+     * @property countFolder Total number of subdirectories.
+     */
+    Q_PROPERTY(int countFolder READ countFolder NOTIFY countChanged)
 
 public:
     ImageFolderModel(QObject* parent=0);
@@ -58,6 +63,7 @@ public:
 
     QVariant data(const QModelIndex &index, int role) const override;
     int count() const {return rowCount();}
+    int countFolder() const;
 
     Q_INVOKABLE int indexForUrl(const QString &url) const;
 

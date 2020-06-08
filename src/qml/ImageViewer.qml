@@ -35,7 +35,7 @@ Kirigami.Page {
 
     title: listView.currentItem.display
     
-    property int startIndex: 0
+    property alias startIndex: listView.currentIndex
     property var imagesModel
     
     leftPadding: 0
