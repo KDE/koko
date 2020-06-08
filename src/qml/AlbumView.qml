@@ -194,8 +194,9 @@ Kirigami.ScrollablePage {
                         currentImage.model = gridView.model.sourceModel
                         if (gridView.model.sourceModel.countFolder) {
                             currentImage.index = model.index - gridView.model.sourceModel.countFolder
+                        } else {
+                            currentImage.index = model.index
                         }
-                        currentImage.index = model.index
                         applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
                             startIndex: currentImage.index,
                             imagesModel: currentImage.model
