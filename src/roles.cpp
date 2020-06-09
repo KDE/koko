@@ -6,7 +6,7 @@
 
 #include "roles.h"
 
-Roles::Roles(QObject *parent)
+Roles::Roles(QObject *)
 {
 }
 

@@ -6,7 +6,7 @@
 
 #include "types.h"
 
-Types::Types(QObject *parent)
+Types::Types(QObject *)
 {
 }
 
