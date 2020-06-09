@@ -35,7 +35,7 @@ Kirigami.Page {
 
     title: listView.currentItem.display
     
-    property int startIndex: 0
+    property var startIndex
     property var imagesModel
     
     leftPadding: 0
@@ -263,7 +263,7 @@ Kirigami.Page {
             filterRegExp: /image\//
         }
 
-        currentIndex: model.proxyIndex(root.startIndex)
+        Component.onCompleted: listView.currentIndex = model.mapFromSource(root.startIndex).row
 
         delegate: Flickable {
             id: flick

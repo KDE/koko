@@ -194,7 +194,7 @@ Kirigami.ScrollablePage {
                         currentImage.model = page.model.sourceModel
                         currentImage.index = model.index
                         applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
-                            startIndex: model.index,
+                            startIndex: page.model.index(gridView.currentIndex, 0),
                             imagesModel: page.model
                         })
                         break;
