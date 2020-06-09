@@ -10,11 +10,11 @@
 #include <QObject>
 #include <QStringList>
 
-#include "reversegeocoder.h"
 #include "committimer.h"
+#include "reversegeocoder.h"
 
-namespace Koko {
-
+namespace Koko
+{
 class Processor : public QObject
 {
     Q_OBJECT
@@ -22,13 +22,16 @@ class Processor : public QObject
     Q_PROPERTY(int numFiles READ numFiles NOTIFY numFilesChanged)
     Q_PROPERTY(bool finished READ finished NOTIFY finishedChanged)
 public:
-    Processor(QObject* parent = 0);
+    Processor(QObject *parent = 0);
     ~Processor();
 
     float initialProgress() const;
     int numFiles() const;
 
-    bool finished() const { return m_initialScanDone; }
+    bool finished() const
+    {
+        return m_initialScanDone;
+    }
 
 signals:
     void initialProgressChanged();
@@ -36,8 +39,8 @@ signals:
     void finishedChanged();
 
 public slots:
-    void addFile(const QString& filePath);
-    void removeFile(const QString& filePath);
+    void addFile(const QString &filePath);
+    void removeFile(const QString &filePath);
     void initialScanCompleted();
 
 private slots:

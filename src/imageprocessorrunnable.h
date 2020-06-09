@@ -7,18 +7,18 @@
 #ifndef KOKO_IMAGEPROCESSORRUNNABLE_H
 #define KOKO_IMAGEPROCESSORRUNNABLE_H
 
-#include <QRunnable>
 #include <QObject>
+#include <QRunnable>
 
-namespace Koko {
-
+namespace Koko
+{
 class ReverseGeoCoder;
 
 class ImageProcessorRunnable : public QObject, public QRunnable
 {
     Q_OBJECT
 public:
-    ImageProcessorRunnable(QString& filePath, ReverseGeoCoder* coder);
+    ImageProcessorRunnable(QString &filePath, ReverseGeoCoder *coder);
     void run() override;
 
 signals:
@@ -26,7 +26,7 @@ signals:
 
 private:
     QString m_path;
-    ReverseGeoCoder* m_geoCoder;
+    ReverseGeoCoder *m_geoCoder;
 };
 }
 

@@ -6,34 +6,34 @@
  */
 
 #include <QQmlApplicationEngine>
-#include <QQmlContext>
 #include <QQmlComponent>
+#include <QQmlContext>
 
-#include <QStandardPaths>
 #include <QDebug>
-#include <QThread>
 #include <QDir>
+#include <QStandardPaths>
+#include <QThread>
 
-#include <KLocalizedString>
 #include <KLocalizedContext>
+#include <KLocalizedString>
 
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QQuickView>
 
 #include <iostream>
 
 #include "filesystemtracker.h"
-#include "processor.h"
-#include "kokoconfig.h"
 #include "imagestorage.h"
+#include "kokoconfig.h"
+#include "processor.h"
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #endif
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
@@ -41,7 +41,7 @@ int main(int argc, char** argv)
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
-    parser.addPositionalArgument( "image", i18n("path of image you want to open"));
+    parser.addPositionalArgument("image", i18n("path of image you want to open"));
     parser.addHelpOption();
     parser.process(app);
 
@@ -87,11 +87,9 @@ int main(int argc, char** argv)
     engine.rootContext()->setContextProperty("kokoConfig", &config);
 
     QString path;
-    //we want different main files on desktop or mobile
-    //very small difference as they as they are subclasses of the same thing
-    if (qEnvironmentVariableIsSet("QT_QUICK_CONTROLS_MOBILE") &&
-        (QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("1") ||
-         QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("true"))) {
+    // we want different main files on desktop or mobile
+    // very small difference as they as they are subclasses of the same thing
+    if (qEnvironmentVariableIsSet("QT_QUICK_CONTROLS_MOBILE") && (QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("1") || QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("true"))) {
         engine.load(QUrl(QStringLiteral("qrc:/qml/mobileMain.qml")));
     } else {
         engine.load(QUrl(QStringLiteral("qrc:/qml/desktopMain.qml")));

@@ -5,17 +5,17 @@
  */
 
 #include "processor.h"
-#include "imagestorage.h"
 #include "imageprocessorrunnable.h"
+#include "imagestorage.h"
 
-#include <QFileInfo>
-#include <QEventLoop>
-#include <QThreadPool>
 #include <QDebug>
+#include <QEventLoop>
+#include <QFileInfo>
+#include <QThreadPool>
 
 using namespace Koko;
 
-Processor::Processor(QObject* parent)
+Processor::Processor(QObject *parent)
     : QObject(parent)
     , m_numFiles(0)
     , m_processing(false)
@@ -29,17 +29,15 @@ Processor::Processor(QObject* parent)
                 emit finishedChanged();
         }
     });
-    
-    connect(this, &Processor::numFilesChanged, 
-            &m_commitTimer, &CommitTimer::start);
-}
 
+    connect(this, &Processor::numFilesChanged, &m_commitTimer, &CommitTimer::start);
+}
 
 Processor::~Processor()
 {
 }
 
-void Processor::addFile(const QString& filePath)
+void Processor::addFile(const QString &filePath)
 {
     m_files << filePath;
     m_numFiles++;
@@ -48,11 +46,11 @@ void Processor::addFile(const QString& filePath)
     emit numFilesChanged();
 }
 
-void Processor::removeFile(const QString& filePath)
+void Processor::removeFile(const QString &filePath)
 {
     ImageStorage::instance()->removeImage(filePath);
     m_numFiles--;
-    
+
     emit numFilesChanged();
 }
 
@@ -70,7 +68,6 @@ int Processor::numFiles() const
     return m_numFiles;
 }
 
-
 void Processor::process()
 {
     if (m_processing)
@@ -83,7 +80,7 @@ void Processor::process()
     m_processing = true;
     QString path = m_files.takeLast();
 
-    ImageProcessorRunnable* runnable = new ImageProcessorRunnable(path, &m_geoCoder);
+    ImageProcessorRunnable *runnable = new ImageProcessorRunnable(path, &m_geoCoder);
     connect(runnable, SIGNAL(finished()), this, SLOT(slotFinished()));
 
     QThreadPool::globalInstance()->start(runnable);

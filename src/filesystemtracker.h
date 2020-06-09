@@ -16,20 +16,20 @@ class FileSystemTracker : public QObject
     Q_OBJECT
 
 public:
-    explicit FileSystemTracker(QObject* parent = 0);
+    explicit FileSystemTracker(QObject *parent = 0);
     virtual ~FileSystemTracker();
 
-    void setFolder(const QString& folder);
+    void setFolder(const QString &folder);
     QString folder() const;
 
-    void setSubFolder(const QString& folder);
+    void setSubFolder(const QString &folder);
     void reindexSubFolder();
 
     void setupDb();
-    
+
 signals:
-    void imageAdded(const QString& filePath);
-    void imageRemoved(const QString& filePath);
+    void imageAdded(const QString &filePath);
+    void imageRemoved(const QString &filePath);
     void initialScanComplete();
     void subFolderChanged();
 
@@ -37,8 +37,8 @@ protected:
     void removeFile(const QString &filePath);
 
 private slots:
-    void slotNewFiles(const QStringList& files);
-    void slotImageResult(const QString& filePath);
+    void slotNewFiles(const QStringList &files);
+    void slotImageResult(const QString &filePath);
     void slotFetchFinished();
 
 private:

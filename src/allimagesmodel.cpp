@@ -7,7 +7,7 @@
 #include "allimagesmodel.h"
 #include "imagestorage.h"
 
-AllImagesModel::AllImagesModel(QObject* parent)
+AllImagesModel::AllImagesModel(QObject *parent)
     : QAbstractListModel(parent)
 {
     m_images = ImageStorage::instance()->allImages();
@@ -30,7 +30,7 @@ QHash<int, QByteArray> AllImagesModel::roleNames() const
     return hash;
 }
 
-QVariant AllImagesModel::data(const QModelIndex& index, int role) const
+QVariant AllImagesModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
         return QVariant();
@@ -39,19 +39,19 @@ QVariant AllImagesModel::data(const QModelIndex& index, int role) const
     QString filePath = m_images.at(index.row());
 
     switch (role) {
-        case Qt::DisplayRole: {
-            QString fileName = filePath.mid(filePath.lastIndexOf('/') + 1);
-            return fileName;
-        }
+    case Qt::DisplayRole: {
+        QString fileName = filePath.mid(filePath.lastIndexOf('/') + 1);
+        return fileName;
+    }
 
-        case FilePathRole:
-            return filePath;
+    case FilePathRole:
+        return filePath;
     }
 
     return QVariant();
 }
 
-int AllImagesModel::rowCount(const QModelIndex& parent) const
+int AllImagesModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;

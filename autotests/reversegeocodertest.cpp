@@ -4,9 +4,9 @@
  * SPDX-LicenseIdentifier: LGPL-2.1-or-later
  */
 
-#include <QTest>
-#include <QSignalSpy>
 #include <QDebug>
+#include <QSignalSpy>
+#include <QTest>
 
 #include <QCoreApplication>
 #include <QTime>

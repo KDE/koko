@@ -7,18 +7,18 @@
 #ifndef FILESYSTEMIMAGEFETCHER_H
 #define FILESYSTEMIMAGEFETCHER_H
 
-#include <QObject>
 #include "koko_export.h"
+#include <QObject>
 
 class KOKO_EXPORT FileSystemImageFetcher : public QObject
 {
     Q_OBJECT
 public:
-    explicit FileSystemImageFetcher(const QString& folder, QObject* parent = 0);
+    explicit FileSystemImageFetcher(const QString &folder, QObject *parent = 0);
     void fetch();
 
 signals:
-    void imageResult(const QString& filePath);
+    void imageResult(const QString &filePath);
     void finished();
 
 private slots:

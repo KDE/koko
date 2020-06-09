@@ -7,11 +7,11 @@
 #ifndef KOKO_REVERSEGEOCODER_H
 #define KOKO_REVERSEGEOCODER_H
 
-#include <kdtree.h>
 #include <QVariantMap>
+#include <kdtree.h>
 
-namespace Koko {
-
+namespace Koko
+{
 class ReverseGeoCoder
 {
 public:
@@ -30,7 +30,7 @@ public:
     QVariantMap lookup(double lat, double lon) const;
 
 private:
-    kdtree* m_tree;
+    kdtree *m_tree;
     QMap<QString, QString> m_countryMap;
     QMap<QString, QString> m_admin1Map;
     QMap<QString, QString> m_admin2Map;

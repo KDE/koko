@@ -10,51 +10,44 @@
 #include "filesystemimagefetcher.h"
 
 #include <QSqlDatabase>
-#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlQuery>
 
 #include <QDBusConnection>
 
+#include <QDebug>
+#include <QDir>
 #include <QMimeDatabase>
 #include <QStandardPaths>
-#include <QDir>
-#include <QDebug>
 
 #include <KDirNotify>
 #include <kdirwatch.h>
 
-FileSystemTracker::FileSystemTracker(QObject* parent)
+FileSystemTracker::FileSystemTracker(QObject *parent)
     : QObject(parent)
 {
-    QObject::connect(KDirWatch::self(), &KDirWatch::dirty,
-                     this, &FileSystemTracker::setSubFolder);
-
+    QObject::connect(KDirWatch::self(), &KDirWatch::dirty, this, &FileSystemTracker::setSubFolder);
 
     org::kde::KDirNotify *kdirnotify = new org::kde::KDirNotify(QString(), QString(), QDBusConnection::sessionBus(), this);
 
-    connect(kdirnotify, &org::kde::KDirNotify::FilesRemoved,
-            this, [this](const QStringList &files) {
-                for (const QString & filePath : files) {
-                    removeFile(filePath);
-                }
-            });
-    connect(kdirnotify, &org::kde::KDirNotify::FilesAdded,
-            this, &FileSystemTracker::setSubFolder);
-    connect(kdirnotify, &org::kde::KDirNotify::FileRenamedWithLocalPath,
-            this, [this](const QString &src, const QString &dst, const QString &) {
-                removeFile(src);
-                slotNewFiles({dst});
-            });
+    connect(kdirnotify, &org::kde::KDirNotify::FilesRemoved, this, [this](const QStringList &files) {
+        for (const QString &filePath : files) {
+            removeFile(filePath);
+        }
+    });
+    connect(kdirnotify, &org::kde::KDirNotify::FilesAdded, this, &FileSystemTracker::setSubFolder);
+    connect(kdirnotify, &org::kde::KDirNotify::FileRenamedWithLocalPath, this, [this](const QString &src, const QString &dst, const QString &) {
+        removeFile(src);
+        slotNewFiles({dst});
+    });
 
     //
     // Real time updates
     //
     QDBusConnection con = QDBusConnection::sessionBus();
-    con.connect(QString(), QLatin1String("/files"), QLatin1String("org.kde"),
-                QLatin1String("changed"), this, SLOT(slotNewFiles(QStringList)));
-    
-    connect( this, &FileSystemTracker::subFolderChanged, 
-             this, &FileSystemTracker::reindexSubFolder);
+    con.connect(QString(), QLatin1String("/files"), QLatin1String("org.kde"), QLatin1String("changed"), this, SLOT(slotNewFiles(QStringList)));
+
+    connect(this, &FileSystemTracker::subFolderChanged, this, &FileSystemTracker::reindexSubFolder);
 }
 
 void FileSystemTracker::setupDb()
@@ -74,9 +67,10 @@ void FileSystemTracker::setupDb()
     }
 
     QSqlQuery query(db);
-    bool ret = query.exec(QLatin1String("CREATE TABLE files("
-                          "id INTEGER PRIMARY KEY, "
-                          "url TEXT NOT NULL UNIQUE)"));
+    bool ret =
+        query.exec(QLatin1String("CREATE TABLE files("
+                                 "id INTEGER PRIMARY KEY, "
+                                 "url TEXT NOT NULL UNIQUE)"));
     if (!ret) {
         qWarning() << "Could not create files table" << query.lastError().text();
         return;
@@ -104,7 +98,7 @@ FileSystemTracker::~FileSystemTracker()
     QSqlDatabase::removeDatabase(QStringLiteral("fstracker"));
 }
 
-void FileSystemTracker::slotImageResult(const QString& filePath)
+void FileSystemTracker::slotImageResult(const QString &filePath)
 {
     QSqlQuery query(QSqlDatabase::database("fstracker"));
     query.prepare("SELECT id from files where url = ?");
@@ -164,7 +158,7 @@ void FileSystemTracker::removeFile(const QString &filePath)
     }
 }
 
-void FileSystemTracker::slotNewFiles(const QStringList& files)
+void FileSystemTracker::slotNewFiles(const QStringList &files)
 {
     if (!m_filePaths.isEmpty()) {
         // A scan is already going on. No point interrupting it.
@@ -172,7 +166,7 @@ void FileSystemTracker::slotNewFiles(const QStringList& files)
     }
 
     QMimeDatabase db;
-    for (const QString& file: files) {
+    for (const QString &file : files) {
         QMimeType mimetype = db.mimeTypeForFile(file);
         if (mimetype.name().startsWith("image/")) {
             slotImageResult(file);
@@ -181,7 +175,6 @@ void FileSystemTracker::slotNewFiles(const QStringList& files)
 
     m_filePaths.clear();
 }
-
 
 void FileSystemTracker::setFolder(const QString &folder)
 {
@@ -199,9 +192,9 @@ QString FileSystemTracker::folder() const
     return m_folder;
 }
 
-void FileSystemTracker::setSubFolder(const QString& folder)
+void FileSystemTracker::setSubFolder(const QString &folder)
 {
-    if(QFileInfo(folder).isDir()) {
+    if (QFileInfo(folder).isDir()) {
         m_subFolder = folder;
         emit subFolderChanged();
     }
@@ -209,14 +202,11 @@ void FileSystemTracker::setSubFolder(const QString& folder)
 
 void FileSystemTracker::reindexSubFolder()
 {
-    FileSystemImageFetcher* fetcher = new FileSystemImageFetcher(m_subFolder);
-    connect(fetcher, &FileSystemImageFetcher::imageResult,
-            this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
-    connect(fetcher, &FileSystemImageFetcher::finished,
-            this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
-    
-    fetcher->fetch();
-    
-    QSqlDatabase::database("fstracker").transaction();
+    FileSystemImageFetcher *fetcher = new FileSystemImageFetcher(m_subFolder);
+    connect(fetcher, &FileSystemImageFetcher::imageResult, this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
+    connect(fetcher, &FileSystemImageFetcher::finished, this, &FileSystemTracker::slotFetchFinished, Qt::QueuedConnection);
 
+    fetcher->fetch();
+
+    QSqlDatabase::database("fstracker").transaction();
 }

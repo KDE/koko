@@ -13,15 +13,13 @@ class AllImagesModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit AllImagesModel(QObject* parent = 0);
+    explicit AllImagesModel(QObject *parent = 0);
 
-    enum Roles {
-        FilePathRole = Qt::UserRole + 1
-    };
+    enum Roles { FilePathRole = Qt::UserRole + 1 };
 
     QHash<int, QByteArray> roleNames() const override;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
 private Q_SLOTS:
     void slotPopulate();

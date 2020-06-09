@@ -8,7 +8,7 @@
 
 using namespace Koko;
 
-CommitTimer::CommitTimer(QObject* parent)
+CommitTimer::CommitTimer(QObject *parent)
     : QObject(parent)
 {
     m_smallTimer.setInterval(200);
@@ -35,5 +35,3 @@ void CommitTimer::slotTimeout()
 
     Q_EMIT timeout();
 }
-
-

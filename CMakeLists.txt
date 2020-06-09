@@ -20,6 +20,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings)
 include(GenerateExportHeader)
 include(ECMInstallIcons)
+include(KDEClangFormat)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
@@ -34,5 +35,9 @@ add_subdirectory(autotests)
 add_subdirectory(icons)
 
 install(FILES org.kde.koko.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+
+# add clang-format target for all our real source files
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

@@ -6,11 +6,11 @@
 
 #include "filesystemimagefetcher.h"
 
-#include <QTimer>
 #include <QDirIterator>
 #include <QMimeDatabase>
+#include <QTimer>
 
-FileSystemImageFetcher::FileSystemImageFetcher(const QString& folder, QObject* parent)
+FileSystemImageFetcher::FileSystemImageFetcher(const QString &folder, QObject *parent)
     : QObject(parent)
     , m_folder(folder)
 {

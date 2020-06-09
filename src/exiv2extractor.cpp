@@ -16,7 +16,7 @@ Exiv2Extractor::Exiv2Extractor()
 {
 }
 
-static QDateTime dateTimeFromString(const QString& dateString)
+static QDateTime dateTimeFromString(const QString &dateString)
 {
     QDateTime dateTime;
 
@@ -94,7 +94,7 @@ static QDateTime dateTimeFromString(const QString& dateString)
 
     return dateTime;
 }
-static QDateTime toDateTime(const Exiv2::Value& value)
+static QDateTime toDateTime(const Exiv2::Value &value)
 {
     if (value.typeId() == Exiv2::asciiString) {
         QDateTime val = dateTimeFromString(value.toString().c_str());
@@ -108,7 +108,7 @@ static QDateTime toDateTime(const Exiv2::Value& value)
     return QDateTime();
 }
 
-void Exiv2Extractor::extract(const QString& filePath)
+void Exiv2Extractor::extract(const QString &filePath)
 {
     QByteArray arr = QFile::encodeName(filePath);
     std::string fileString(arr.data(), arr.length());
@@ -117,11 +117,11 @@ void Exiv2Extractor::extract(const QString& filePath)
 #if EXIV2_TEST_VERSION(0, 27, 99)
     Exiv2::Image::UniquePtr image;
 #else
-     Exiv2::Image::AutoPtr image;
+    Exiv2::Image::AutoPtr image;
 #endif
-     try {
+    try {
         image = Exiv2::ImageFactory::open(fileString);
-    } catch (const std::exception&) {
+    } catch (const std::exception &) {
         return;
     }
     if (!image.get()) {
@@ -134,11 +134,11 @@ void Exiv2Extractor::extract(const QString& filePath)
 
     try {
         image->readMetadata();
-    } catch (const std::exception&) {
+    } catch (const std::exception &) {
         return;
     }
 
-    const Exiv2::ExifData& data = image->exifData();
+    const Exiv2::ExifData &data = image->exifData();
 
     Exiv2::ExifData::const_iterator it = data.findKey(Exiv2::ExifKey("Exif.Photo.DateTimeOriginal"));
     if (it != data.end()) {
@@ -165,7 +165,7 @@ void Exiv2Extractor::extract(const QString& filePath)
     m_error = false;
 }
 
-double Exiv2Extractor::fetchGpsDouble(const Exiv2::ExifData& data, const char* name)
+double Exiv2Extractor::fetchGpsDouble(const Exiv2::ExifData &data, const char *name)
 {
     Exiv2::ExifData::const_iterator it = data.findKey(Exiv2::ExifKey(name));
     if (it != data.end() && it->count() == 3) {
@@ -211,7 +211,7 @@ double Exiv2Extractor::fetchGpsDouble(const Exiv2::ExifData& data, const char* n
     return 0.0;
 }
 
-QByteArray Exiv2Extractor::fetchByteArray(const Exiv2::ExifData& data, const char* name)
+QByteArray Exiv2Extractor::fetchByteArray(const Exiv2::ExifData &data, const char *name)
 {
     Exiv2::ExifData::const_iterator it = data.findKey(Exiv2::ExifKey(name));
     if (it != data.end()) {
@@ -226,4 +226,3 @@ bool Exiv2Extractor::error() const
 {
     return m_error;
 }
-

@@ -12,7 +12,7 @@
 #include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
 
-ImageLocationModel::ImageLocationModel(QObject* parent)
+ImageLocationModel::ImageLocationModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_group(Types::LocationGroup::City)
 {
@@ -29,16 +29,16 @@ void ImageLocationModel::slotPopulate()
 QHash<int, QByteArray> ImageLocationModel::roleNames() const
 {
     auto hash = QAbstractItemModel::roleNames();
-    hash.insert( Roles::FilesRole, "files");
-    hash.insert( Roles::FileCountRole, "fileCount");
-    //the url role returns the url of the cover image of the collection
-    hash.insert( Roles::ImageUrlRole, "imageurl");
-    hash.insert( Roles::ItemTypeRole, "itemType");
+    hash.insert(Roles::FilesRole, "files");
+    hash.insert(Roles::FileCountRole, "fileCount");
+    // the url role returns the url of the cover image of the collection
+    hash.insert(Roles::ImageUrlRole, "imageurl");
+    hash.insert(Roles::ItemTypeRole, "itemType");
 
     return hash;
 }
 
-QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
+QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
         return QVariant();
@@ -48,34 +48,33 @@ QVariant ImageLocationModel::data(const QModelIndex& index, int role) const
     QString display = m_locations.at(index.row()).second;
 
     switch (role) {
-        case Qt::DisplayRole:
-            return display;
+    case Qt::DisplayRole:
+        return display;
 
-        case Roles::FilesRole: {
-            auto group = static_cast<Types::LocationGroup>(m_group);
-            return ImageStorage::instance()->imagesForLocation(key, group);
-        }
+    case Roles::FilesRole: {
+        auto group = static_cast<Types::LocationGroup>(m_group);
+        return ImageStorage::instance()->imagesForLocation(key, group);
+    }
 
-        case Roles::FileCountRole: {
-            auto group = static_cast<Types::LocationGroup>(m_group);
-            return ImageStorage::instance()->imagesForLocation(key, group).size();
-        }
+    case Roles::FileCountRole: {
+        auto group = static_cast<Types::LocationGroup>(m_group);
+        return ImageStorage::instance()->imagesForLocation(key, group).size();
+    }
 
-        case Roles::ImageUrlRole: {
-            auto group = static_cast<Types::LocationGroup>(m_group);
-            return ImageStorage::instance()->imageForLocation(key, group);
-        }
-        
-        case Roles::ItemTypeRole: {
-            return Types::Album;
-        }
+    case Roles::ImageUrlRole: {
+        auto group = static_cast<Types::LocationGroup>(m_group);
+        return ImageStorage::instance()->imageForLocation(key, group);
+    }
+
+    case Roles::ItemTypeRole: {
+        return Types::Album;
+    }
     }
 
     return QVariant();
-
 }
 
-int ImageLocationModel::rowCount(const QModelIndex& parent) const
+int ImageLocationModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;

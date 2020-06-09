@@ -5,23 +5,22 @@
  */
 
 #include "imagedocument.h"
+#include <QFileInfo>
 #include <QMatrix>
 #include <QUrl>
-#include <QFileInfo>
 
 ImageDocument::ImageDocument()
 {
     m_image = new QImage();
-    connect( this, &ImageDocument::pathChanged, 
-             this, [this] (const QString &url) {
-                 emit resetHandle();
-                 /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
-                 QString location = QUrl( url).path();
-                 m_image->load( location);
-                 m_edited = false;
-                 emit editedChanged();
-                 emit visualImageChanged();
-            });
+    connect(this, &ImageDocument::pathChanged, this, [this](const QString &url) {
+        emit resetHandle();
+        /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
+        QString location = QUrl(url).path();
+        m_image->load(location);
+        m_edited = false;
+        emit editedChanged();
+        emit visualImageChanged();
+    });
 }
 
 ImageDocument::~ImageDocument()
@@ -33,10 +32,10 @@ QString ImageDocument::path()
     return m_path;
 }
 
-void ImageDocument::setPath(QString& url)
+void ImageDocument::setPath(QString &url)
 {
     m_path = url;
-    emit pathChanged( url);
+    emit pathChanged(url);
 }
 
 QImage ImageDocument::visualImage()
@@ -58,26 +57,26 @@ void ImageDocument::setEdited(bool value)
 void ImageDocument::rotate(int angle)
 {
     QMatrix matrix;
-    matrix.rotate( angle);
-    *m_image = m_image->transformed( matrix);
-    QString location = QUrl( m_path).path();
-    if (QFileInfo( location).isWritable()) {
-        m_image->save( location);
+    matrix.rotate(angle);
+    *m_image = m_image->transformed(matrix);
+    QString location = QUrl(m_path).path();
+    if (QFileInfo(location).isWritable()) {
+        m_image->save(location);
     }
     emit visualImageChanged();
 }
 
-void ImageDocument::save( QImage image)
+void ImageDocument::save(QImage image)
 {
-    QString location = QUrl( m_path).path();
+    QString location = QUrl(m_path).path();
     *m_image = image;
-    if( QFileInfo( location).isWritable()) {
-        m_image->save( location);
+    if (QFileInfo(location).isWritable()) {
+        m_image->save(location);
         emit resetHandle();
         m_edited = false;
         emit editedChanged();
     }
-    m_image->load( location);
+    m_image->load(location);
     emit visualImageChanged();
 }
 

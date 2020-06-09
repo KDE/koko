@@ -9,25 +9,34 @@
 
 #include <exiv2/exiv2.hpp>
 
-#include <QString>
 #include <QDateTime>
+#include <QString>
 
 class Exiv2Extractor
 {
 public:
     Exiv2Extractor();
 
-    void extract(const QString& filePath);
+    void extract(const QString &filePath);
 
-    double gpsLatitude() { return m_latitude; }
-    double gpsLongitude() { return m_longitude; }
-    QDateTime dateTime() { return m_dateTime; }
+    double gpsLatitude()
+    {
+        return m_latitude;
+    }
+    double gpsLongitude()
+    {
+        return m_longitude;
+    }
+    QDateTime dateTime()
+    {
+        return m_dateTime;
+    }
 
     bool error() const;
 
 private:
-    double fetchGpsDouble(const Exiv2::ExifData& data, const char* name);
-    QByteArray fetchByteArray(const Exiv2::ExifData& data, const char* name);
+    double fetchGpsDouble(const Exiv2::ExifData &data, const char *name);
+    QByteArray fetchByteArray(const Exiv2::ExifData &data, const char *name);
 
     double m_latitude;
     double m_longitude;

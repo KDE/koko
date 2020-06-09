@@ -9,24 +9,14 @@
 
 #include <QObject>
 
-class Roles : public QObject {
-   Q_OBJECT
-   Q_ENUMS(RoleNames)
+class Roles : public QObject
+{
+    Q_OBJECT
+    Q_ENUMS(RoleNames)
 public:
-    Roles(QObject* parent);
+    Roles(QObject *parent);
     ~Roles();
-    enum RoleNames {
-        ImageUrlRole = Qt::UserRole + 1,
-        MimeTypeRole,
-        Thumbnail,
-        ItemTypeRole,
-        FilesRole,
-        FileCountRole,
-        DateRole,
-        SelectedRole,
-        SourceIndex
-    };
-    
+    enum RoleNames { ImageUrlRole = Qt::UserRole + 1, MimeTypeRole, Thumbnail, ItemTypeRole, FilesRole, FileCountRole, DateRole, SelectedRole, SourceIndex };
 };
 
 #endif

@@ -20,17 +20,17 @@
 #ifndef IMAGESTORAGE_H
 #define IMAGESTORAGE_H
 
-#include <QObject>
-#include <QGeoLocation>
-#include <QGeoAddress>
-#include <QDateTime>
 #include <QDataStream>
+#include <QDateTime>
+#include <QGeoAddress>
+#include <QGeoLocation>
+#include <QObject>
 
 #include <QMutex>
 #include <QMutexLocker>
 
-#include "types.h"
 #include "koko_export.h"
+#include "types.h"
 
 struct ImageInfo {
     QString path;
@@ -42,24 +42,24 @@ class KOKO_EXPORT ImageStorage : public QObject
 {
     Q_OBJECT
 public:
-    ImageStorage(QObject* parent = 0);
+    ImageStorage(QObject *parent = 0);
     virtual ~ImageStorage();
 
-    Q_INVOKABLE void addImage(const ImageInfo& ii);
-    void removeImage(const QString& filePath);
+    Q_INVOKABLE void addImage(const ImageInfo &ii);
+    void removeImage(const QString &filePath);
     void commit();
 
-    static ImageStorage* instance();
+    static ImageStorage *instance();
 
-    QList< QPair<QByteArray, QString> > locations(Types::LocationGroup loca);
-    QStringList imagesForLocation(const QByteArray& name, Types::LocationGroup loc);
-    QString imageForLocation(const QByteArray& name, Types::LocationGroup loc);
+    QList<QPair<QByteArray, QString>> locations(Types::LocationGroup loca);
+    QStringList imagesForLocation(const QByteArray &name, Types::LocationGroup loc);
+    QString imageForLocation(const QByteArray &name, Types::LocationGroup loc);
 
-    QList< QPair<QByteArray, QString> > timeTypes(Types::TimeGroup group);
-    QStringList imagesForTime(const QByteArray& name, Types::TimeGroup group);
-    QString imageForTime(const QByteArray& name, Types::TimeGroup group);
+    QList<QPair<QByteArray, QString>> timeTypes(Types::TimeGroup group);
+    QStringList imagesForTime(const QByteArray &name, Types::TimeGroup group);
+    QString imageForTime(const QByteArray &name, Types::TimeGroup group);
 
-    QDate dateForKey(const QByteArray& key, Types::TimeGroup group);
+    QDate dateForKey(const QByteArray &key, Types::TimeGroup group);
 
     /**
      * Fetch all the images ordered by descending date time.
@@ -74,7 +74,6 @@ signals:
 private:
     mutable QMutex m_mutex;
 };
-
 
 Q_DECLARE_METATYPE(ImageInfo);
 

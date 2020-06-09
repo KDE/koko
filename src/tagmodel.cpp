@@ -8,7 +8,7 @@
 
 static QStringList s_tags = {"green", "blue", "red", "black", "orange", "purple", "yellow", "cyan", "brown"};
 
-TagModel::TagModel(QObject* parent)
+TagModel::TagModel(QObject *parent)
     : QAbstractListModel(parent)
 {
 }
@@ -21,7 +21,7 @@ QHash<int, QByteArray> TagModel::roleNames() const
     return hash;
 }
 
-QVariant TagModel::data(const QModelIndex& index, int role) const
+QVariant TagModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid() || index.row() >= m_tags.size()) {
         return QVariant();
@@ -44,7 +44,7 @@ QVariant TagModel::data(const QModelIndex& index, int role) const
     return QVariant();
 }
 
-int TagModel::rowCount(const QModelIndex& parent) const
+int TagModel::rowCount(const QModelIndex &parent) const
 {
     if (parent.isValid()) {
         return 0;
@@ -53,7 +53,7 @@ int TagModel::rowCount(const QModelIndex& parent) const
     return m_tags.size();
 }
 
-void TagModel::setTags(const QStringList& tags)
+void TagModel::setTags(const QStringList &tags)
 {
     beginResetModel();
     m_tags = tags;
@@ -68,7 +68,7 @@ QStringList TagModel::tags() const
     return m_tags;
 }
 
-void TagModel::addTag(const QString& tag)
+void TagModel::addTag(const QString &tag)
 {
     if (m_tags.contains(tag)) {
         return;
@@ -82,7 +82,7 @@ void TagModel::addTag(const QString& tag)
     emit colorsChanged();
 }
 
-bool TagModel::removeRows(int row, int count, const QModelIndex& parent)
+bool TagModel::removeRows(int row, int count, const QModelIndex &parent)
 {
     if (parent.isValid()) {
         return false;

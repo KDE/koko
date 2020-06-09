@@ -8,19 +8,18 @@
 
 #include <QFileInfo>
 
-#include "reversegeocoder.h"
-#include "imagestorage.h"
 #include "exiv2extractor.h"
+#include "imagestorage.h"
+#include "reversegeocoder.h"
 
 using namespace Koko;
 
-ImageProcessorRunnable::ImageProcessorRunnable(QString& filePath, ReverseGeoCoder* geoCoder)
+ImageProcessorRunnable::ImageProcessorRunnable(QString &filePath, ReverseGeoCoder *geoCoder)
     : QObject()
     , m_path(filePath)
     , m_geoCoder(geoCoder)
 {
 }
-
 
 void ImageProcessorRunnable::run()
 {
@@ -55,7 +54,7 @@ void ImageProcessorRunnable::run()
         ii.dateTime = QFileInfo(m_path).birthTime();
     }
 
-    QMetaObject::invokeMethod(ImageStorage::instance(), "addImage", Qt::AutoConnection, Q_ARG(const ImageInfo&, ii));
+    QMetaObject::invokeMethod(ImageStorage::instance(), "addImage", Qt::AutoConnection, Q_ARG(const ImageInfo &, ii));
 
     emit finished();
 }

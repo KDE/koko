@@ -9,8 +9,8 @@
 #define IMAGEFOLDERMODEL_H
 
 #include <QSize>
-#include <kdirmodel.h>
 #include <QVariant>
+#include <kdirmodel.h>
 
 class QTimer;
 
@@ -35,24 +35,27 @@ class ImageFolderModel : public KDirModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 
 public:
-    ImageFolderModel(QObject* parent=0);
+    ImageFolderModel(QObject *parent = 0);
     virtual ~ImageFolderModel();
 
     QHash<int, QByteArray> roleNames() const override;
 
-    void setUrl(QString& url);
+    void setUrl(QString &url);
     QString url() const;
 
     QVariant data(const QModelIndex &index, int role) const override;
-    int count() const {return rowCount();}
+    int count() const
+    {
+        return rowCount();
+    }
 
     Q_INVOKABLE int indexForUrl(const QString &url) const;
 
     Q_INVOKABLE QVariantMap get(int index) const;
 
     /**
-      * Helper method to empty the trash
-      */
+     * Helper method to empty the trash
+     */
     Q_INVOKABLE void emptyTrash();
 
 Q_SIGNALS:

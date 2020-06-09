@@ -16,26 +16,24 @@ class TagModel : public QAbstractListModel
     Q_PROPERTY(QStringList colors READ colors NOTIFY colorsChanged)
 
 public:
-    explicit TagModel(QObject* parent = 0);
+    explicit TagModel(QObject *parent = 0);
 
-    enum Roles {
-        ColorRole = Qt::UserRole + 1
-    };
+    enum Roles { ColorRole = Qt::UserRole + 1 };
 
     QHash<int, QByteArray> roleNames() const override;
-    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
 signals:
     void tagsChanged();
     void colorsChanged();
 
 public slots:
-    bool removeRows(int row, int count, const QModelIndex& parent = QModelIndex()) override;
+    bool removeRows(int row, int count, const QModelIndex &parent = QModelIndex()) override;
 
     QStringList tags() const;
-    void setTags(const QStringList& tags);
-    void addTag(const QString& tag);
+    void setTags(const QStringList &tags);
+    void addTag(const QString &tag);
 
     /**
      * Return the colors of all the tags

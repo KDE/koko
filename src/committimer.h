@@ -7,16 +7,16 @@
 #ifndef KOKO_COMMITTIMER_H
 #define KOKO_COMMITTIMER_H
 
-#include <QTimer>
 #include <QObject>
+#include <QTimer>
 
-namespace Koko {
-
+namespace Koko
+{
 class CommitTimer : public QObject
 {
     Q_OBJECT
 public:
-    explicit CommitTimer(QObject* parent = 0);
+    explicit CommitTimer(QObject *parent = 0);
 
 public slots:
     void start();
