@@ -14,15 +14,6 @@ import org.kde.koko 0.1 as Koko
 Kirigami.ApplicationWindow {
     id: root
 
-    /*
-     * currentImage now stores the information related to the source model
-     */
-    QtObject {
-        id: currentImage
-        property int index
-        property var model
-    }
-
     pageStack.initialPage: AlbumView {
         id: albumView
         model: imageFolderModel

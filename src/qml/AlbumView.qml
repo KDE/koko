@@ -176,8 +176,6 @@ Kirigami.ScrollablePage {
                         break;
                     }
                     case Koko.Types.Image: {
-                        currentImage.model = page.model.sourceModel
-                        currentImage.index = model.index
                         applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
                             startIndex: page.model.index(gridView.currentIndex, 0),
                             imagesModel: page.model
