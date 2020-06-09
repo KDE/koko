@@ -2,7 +2,7 @@
 <component type="desktop">
   <id>org.kde.koko.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-2.0+</project_license>
+  <project_license>LGPL-2.1</project_license>
   <name>Koko</name>
   <name xml:lang="ca">Koko</name>
   <name xml:lang="ca-valencia">Koko</name>
