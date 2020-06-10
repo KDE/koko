@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: (C) 2014 Vishesh Handa <vhanda@kde.org>
  * SPDX-FileCopyrightText: (C) 2017 Atul Sharma <atulsharma406@gmail.com>
  *
- * SPDX-LicenseIdentifier: LGPL-2.1-or-later
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
 #ifndef JUNGLE_SORTMODEL_H

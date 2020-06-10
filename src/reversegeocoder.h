@@ -1,7 +1,7 @@
 /*
  * SPDX-FileCopyrightText: (C) 2015 Vishesh Handa <me@vhanda.in>
  *
- * SPDX-LicenseIdentifier: LGPL-2.1-or-later
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
 #ifndef KOKO_REVERSEGEOCODER_H

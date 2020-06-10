@@ -2,7 +2,7 @@
  * SPDX-FileCopyrightText: (C) 2017 Atul Sharma <atulsharma406@gmail.com>
  * SPDX-FileCopyrightText: (C) 2017 by Marco Martin <mart@kde.org>
  *
- * SPDX-LicenseIdentifier: LGPL-2.0-or-later
+ * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
 #include "imagefoldermodel.h"

@@ -1,7 +1,7 @@
 /*
  * SPDX-FileCopyrightText: (C) 2007-2011 John Tsiombikas <nuclear@member.fsf.org>
  *
- * SPDX-LicenseIdentifier: BSD-3-Clause
+ * SPDX-License-Identifier: BSD-3-Clause
  */
 #ifndef KOKO_KDTREE_H_
 #define KOKO_KDTREE_H_

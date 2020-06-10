@@ -1,7 +1,7 @@
 /*
  * SPDX-FileCopyrightText: (C) 2012-2015 Vishesh Handa <vhanda@kde.org>
  *
- * SPDX-LicenseIdentifier: LGPL-2.1-or-later
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
 #ifndef FILESYSTEMIMAGEFETCHER_H
