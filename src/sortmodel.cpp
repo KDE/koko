@@ -110,11 +110,16 @@ void SortModel::setSortRoleName(const QByteArray& name)
 
 QHash<int, QByteArray> SortModel::roleNames() const
 {
-    QHash<int, QByteArray> hash = sourceModel()->roleNames();
-    hash.insert( Roles::SelectedRole, "selected");
-    hash.insert( Roles::Thumbnail, "thumbnail");
-    hash.insert( Roles::SourceIndex, "sourceIndex");
-    return hash;
+    if (sourceModel()) {
+        QHash<int, QByteArray> hash = sourceModel()->roleNames();
+        hash.insert( Roles::SelectedRole, "selected");
+        hash.insert( Roles::Thumbnail, "thumbnail");
+        hash.insert( Roles::SourceIndex, "sourceIndex");
+        return hash;
+    } else {
+        QHash<int, QByteArray> hash;
+        return hash;
+    }
 }
 
 QVariant SortModel::data(const QModelIndex& index, int role) const
