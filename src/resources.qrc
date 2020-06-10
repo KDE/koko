@@ -11,6 +11,7 @@
         <file>qml/SelectionDelegateHighlight.qml</file>
         <file>qml/ShareDialog.qml</file>
         <file>qml/Sidebar.qml</file>
+        <file>qml/ThumbnailStrip.qml</file>
     </qresource>
 </RCC>
 

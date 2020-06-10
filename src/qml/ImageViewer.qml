@@ -129,108 +129,19 @@ Kirigami.Page {
         }
     }
 
-    ListView {
+    ThumbnailStrip {
         id: thumbnailView
         z: 100
+
         anchors {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
         }
 
-        state: applicationWindow().controlsVisible ? "show" : "hidden"
-
-        states: [
-            State {
-                name: "show"
-                PropertyChanges { target: thumbnailView; opacity: 1.0 }
-                PropertyChanges { target: thumbnailView; anchors.bottomMargin: 0 }
-            },
-            State {
-                name: "hidden"
-                PropertyChanges { target: thumbnailView; opacity: 0.0 }
-                PropertyChanges { target: thumbnailView; anchors.bottomMargin: -thumbnailView.height  }
-            }
-        ]
-
-        transitions: [
-            Transition {
-                from: "*"
-                to: "hidden"
-                SequentialAnimation {
-                    PropertyAnimation {
-                        properties: "opacity,anchors.bottomMargin";
-                        easing.type: Easing.InCubic
-                        duration: Kirigami.Units.longDuration
-                    }
-                    PropertyAction {
-                        target: thumbnailView
-                        property: "visible"
-                        value: false
-                    }
-                }
-            },
-            Transition {
-                from: "*"
-                to: "show"
-                SequentialAnimation {
-                    PropertyAction {
-                        target: thumbnailView
-                        property: "visible"
-                        value: true
-                    }
-                    PropertyAnimation {
-                        properties: "opacity,anchors.bottomMargin";
-                        easing.type: Easing.OutCubic
-                        duration: Kirigami.Units.longDuration * 0.75
-                    }
-                }
-            }
-        ]
-
-        height: kokoConfig.iconSize
-        orientation: Qt.Horizontal
-        snapMode: ListView.SnapOneItem
+        model: listView.model
         currentIndex: listView.currentIndex
-
-        highlightRangeMode: ListView.ApplyRange
-        highlightFollowsCurrentItem: true
-        preferredHighlightBegin: height
-        preferredHighlightEnd: width - height
-        highlightMoveVelocity: -1
-        highlightMoveDuration: Kirigami.Units.longDuration
-
-        // Filter out directories
-        model: Koko.SortModel {
-            sourceModel: imagesModel
-            filterRole: Koko.Roles.MimeTypeRole
-            filterRegExp: /image\//
-        }
-
-        delegate: AlbumDelegate {
-            width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
-            height: width
-            onClicked: activated()
-            onActivated: listView.currentIndex = index
-            modelData: model
-
-            Rectangle {
-                z: -1
-                anchors.centerIn: parent
-                width: Math.min(parent.width, parent.height)
-                height: width
-                color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
-                border.color: Kirigami.Theme.highlightColor
-                radius: 2
-                opacity: thumbnailView.currentIndex === index ? 1 : 0
-                Behavior on opacity {
-                    OpacityAnimator {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InOutQuad
-                    }
-                }
-            }
-        }
+        onActivated: index => listView.currentIndex = index
     }
 
     ListView {
