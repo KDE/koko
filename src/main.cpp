@@ -35,7 +35,6 @@
 #endif
 
 static const char description[] = I18N_NOOP("Koko is a image viewer for your image collection.");
-static const char version[] = "0.1";
 
 int main(int argc, char **argv)
 {
