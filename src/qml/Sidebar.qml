@@ -14,7 +14,9 @@ Kirigami.GlobalDrawer {
     
     signal filterBy(string value)
     property Kirigami.Action previouslySelectedAction
-    contentItem.implicitWidth: Kirigami.Units.gridUnit * 10
+
+    // FIXME: Dirty workaround for 385992
+    contentItem.implicitWidth: Kirigami.Units.gridUnit * 14
 
     modal: Kirigami.Settings.isMobile
     collapsible: true
