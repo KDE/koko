@@ -7,12 +7,22 @@
 import QtQuick 2.1
 import QtQuick.Controls 2.0 as Controls
 
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.12 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.koko 0.1 as Koko
 
 Kirigami.ApplicationWindow {
     id: root
+
+    function switchApplicationPage(page) {
+        if (!page || pageStack.currentItem == page) {
+            return;
+        }
+
+        pageStack.pop(albumView);
+        pageStack.push(page);
+        page.forceActiveFocus();
+    }
 
     pageStack.initialPage: AlbumView {
         id: albumView
@@ -76,6 +86,10 @@ Kirigami.ApplicationWindow {
                     break; 
                 }
             }
+        }
+        Kirigami.BasicListItem {
+            text: i18n("About")
+            onClicked: switchApplicationPage(aboutPage)
         }
     }
 
@@ -153,5 +167,10 @@ Kirigami.ApplicationWindow {
     
     KQA.Clipboard {
         id: clipboard
+    }
+
+    Kirigami.AboutPage {
+        id: aboutPage
+        aboutData: kokoAboutData
     }
 }

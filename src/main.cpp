@@ -16,6 +16,7 @@
 
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KAboutData>
 
 #include <QApplication>
 #include <QCommandLineOption>
@@ -33,8 +34,45 @@
 #include <QtAndroid>
 #endif
 
+static const char description[] = I18N_NOOP("Koko is a image viewer for your image collection.");
+static const char version[] = "0.1";
+
 int main(int argc, char **argv)
 {
+    KLocalizedString::setApplicationDomain("koko");
+
+    KAboutData aboutData(QStringLiteral("koko"),
+                         xi18nc("@title", "<application>Koko</application>"),
+                         QStringLiteral("0.1-dev"),
+                         xi18nc("@title", "Koko is a image viewer for your image collection."),
+                         KAboutLicense::LGPL,
+                         xi18nc("@info:credit", "(c) 2013-2020 KDE Contributors"));
+
+    aboutData.setOrganizationDomain(QByteArray("kde.org"));
+    aboutData.setProductName(QByteArray("koko"));
+
+    aboutData.addAuthor(xi18nc("@info:credit", "Vishesh Handa"),
+            xi18nc("@info:credit","Developer"),
+            "vhanda@kde.org");
+
+    aboutData.addAuthor(xi18nc("@info:credit", "Atul Sharma"),
+            xi18nc("@info:credit", "Developer"),
+            "atulsharma406@gmail.com");
+
+    aboutData.addAuthor(xi18nc("@info:credit", "Marco Martin"),
+            xi18nc("@info:credit", "Developer"),
+            "mart@kde.org");
+
+    aboutData.addAuthor(xi18nc("@info:credit", "Nicolas Fella"),
+            xi18nc("@info:credit", "Developer"),
+            "nicolas.fella@gmx.de");
+
+    aboutData.addAuthor(xi18nc("@info:credit", "Carl Schwan"),
+            xi18nc("@info:credit", "Developer"),
+            "carl@carlschwan.eu");
+
+    KAboutData::setApplicationData(aboutData);
+
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
     app.setOrganizationDomain("kde.org");
@@ -43,7 +81,17 @@ int main(int argc, char **argv)
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
     parser.addPositionalArgument("image", i18n("path of image you want to open"));
     parser.addHelpOption();
+    parser.addVersionOption();
+
+    aboutData.setupCommandLine(&parser);
     parser.process(app);
+    aboutData.processCommandLine(&parser);
+
+    QApplication::setApplicationName(aboutData.componentName());
+    QApplication::setApplicationDisplayName(aboutData.displayName());
+    QApplication::setOrganizationDomain(aboutData.organizationDomain());
+    QApplication::setApplicationVersion(aboutData.version());
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
 
     if (parser.positionalArguments().size() > 1) {
         parser.showHelp(1);
@@ -85,6 +133,7 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
+    engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
 
     QString path;
     // we want different main files on desktop or mobile
