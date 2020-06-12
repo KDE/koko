@@ -34,8 +34,6 @@
 #include <QtAndroid>
 #endif
 
-static const char description[] = I18N_NOOP("Koko is a image viewer for your image collection.");
-
 int main(int argc, char **argv)
 {
     KLocalizedString::setApplicationDomain("koko");
