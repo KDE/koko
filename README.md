@@ -1,6 +1,6 @@
 # Koko
 
-Koko is a image viewer designed for desktop and touch devices.
+Koko is an image viewer designed for desktop and touch devices.
 
 ## Contributing
 
