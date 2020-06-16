@@ -110,7 +110,12 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip)
     file (DOWNLOAD "http://download.geonames.org/export/dump/cities1000.zip"
                 ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip
         SHOW_PROGRESS
+        STATUS status
     )
+    list(GET status 0 status_code) 
+    if(NOT status_code EQUAL 0)
+        message(FATAL_ERROR "You need to download packag separately. See packaging section in the readme.")
+    endif()
 endif()
 
 execute_process(
@@ -126,7 +131,12 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt)
     file (DOWNLOAD "http://download.geonames.org/export/dump/admin1CodesASCII.txt"
                 ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt
         SHOW_PROGRESS
+        STATUS status
     )
+    list(GET status 0 status_code) 
+    if(NOT status_code EQUAL 0)
+        message(FATAL_ERROR "You need to download packag separately. See packaging section in the readme.")
+    endif()
 endif()
 file(RENAME ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt)
 
@@ -138,7 +148,12 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
     file (DOWNLOAD "http://download.geonames.org/export/dump/admin2Codes.txt"
                 ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt
         SHOW_PROGRESS
+        STATUS status
     )
+    list(GET status 0 status_code) 
+    if(NOT status_code EQUAL 0)
+        message(FATAL_ERROR "You need to download packag separately. See packaging section in the readme.")
+    endif()
 endif()
 
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${DATA_INSTALL_DIR}/koko)
