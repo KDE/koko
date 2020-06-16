@@ -114,7 +114,7 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip)
     )
     list(GET status 0 status_code) 
     if(NOT status_code EQUAL 0)
-        message(FATAL_ERROR "You need to download packag separately. See packaging section in the readme.")
+        message(FATAL_ERROR "You need to download some files separately. See the packaging section of README.md.")
     endif()
 endif()
 
