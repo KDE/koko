@@ -1,6 +1,7 @@
 /*
  * SPDX-FileCopyrightText: (C) 2014 Vishesh Handa <vhanda@kde.org>
  * SPDX-FileCopyrightText: (C) 2017 Atul Sharma <atulsharma406@gmail.com>
+ * SPDX-FileCopyrightText: (C) 2020 Carl Schwan <carl@carlschwan.eu>
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
@@ -176,19 +177,54 @@ void FileSystemTracker::slotNewFiles(const QStringList &files)
     m_filePaths.clear();
 }
 
+void FileSystemTracker::slotFolderRemoved(const QString &folder)
+{
+    QSqlQuery query(QSqlDatabase::database("fstracker"));
+    query.prepare("SELECT url from files");
+    if (!query.exec()) {
+        qDebug() << query.lastError();
+        return;
+    }
+    while (query.next()) {
+        QString filePath = query.value(0).toString();
+        bool deletePath = true;
+        if (QFileInfo::exists(filePath)) {
+            if (filePath.startsWith(folder)) {
+                deletePath = false;
+                break;
+            }
+        }
+        if (deletePath) {
+            qDebug() << "delete " << filePath;
+            QSqlQuery query(QSqlDatabase::database("fstracker"));
+            query.prepare("DELETE from files where url = ?");
+            query.addBindValue(filePath);
+            if (!query.exec()) {
+                qWarning() << query.lastError();
+            }
+            Q_EMIT imageRemoved(filePath);
+        }
+    }
+}
+
 void FileSystemTracker::setFolders(const QStringList &folders)
 {
     if (m_folders == folders) {
         return;
     }
 
-    for (const auto folder : folders) {
-        KDirWatch::self()->removeDir(folder);
+    for (const auto &folder : qAsConst(m_folders)) {
+        if (!folders.contains(folder)) {
+            KDirWatch::self()->removeDir(folder);
+            Q_EMIT slotFolderRemoved(folder);
+        }
+    }
+    for (const auto &folder : folders) {
+        if (!m_folders.contains(folder)) {
+            KDirWatch::self()->addDir(folder, KDirWatch::WatchSubDirs);
+        }
     }
     m_folders = folders;
-    for (const auto folder : m_folders) {
-        KDirWatch::self()->addDir(folder, KDirWatch::WatchSubDirs);
-    }
 }
 
 QStringList FileSystemTracker::folders() const
