@@ -29,6 +29,8 @@
 #include "imagestorage.h"
 #include "kokoconfig.h"
 #include "processor.h"
+#include "kokoconfig.h"
+#include "configurationhelper.h"
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
@@ -100,16 +102,24 @@ int main(int argc, char **argv)
 
     QThread trackerThread;
 
-    QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
-    Q_ASSERT(locations.size() >= 1);
-    qDebug() << locations;
+    KokoConfig *config = KokoConfig::self();
+    QObject::connect(config, &KokoConfig::IconSizeChanged, config, &KokoConfig::save);
+
+    QStringList locations;
+    if (config->useDefaultPictureDirectory()) {
+        locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+    } else {
+        locations << config->customPictureDirectory();
+    }
+    Q_ASSERT(!locations.empty());
+    //qDebug() << locations;
 
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
 #endif
 
     FileSystemTracker tracker;
-    tracker.setFolder(locations.first());
+    tracker.setFolders(locations);
     tracker.moveToThread(&trackerThread);
 
     Koko::Processor processor;
@@ -120,17 +130,19 @@ int main(int argc, char **argv)
     QObject::connect(&trackerThread, &QThread::started, &tracker, &FileSystemTracker::setupDb);
 
     trackerThread.start();
-    tracker.setSubFolder(tracker.folder());
-
-    KokoConfig config;
-    QObject::connect(&config, &KokoConfig::IconSizeChanged, &config, &KokoConfig::save);
+    for (const auto &folder : tracker.folders()) {
+        tracker.setSubFolder(folder);
+    }
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
-    engine.rootContext()->setContextProperty("kokoConfig", &config);
+    engine.rootContext()->setContextProperty("kokoConfig", config);
     engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
+
+    ConfigurationHelper configHelper;
+    engine.rootContext()->setContextProperty(QStringLiteral("configHelper"), &configHelper);
 
     QString path;
     // we want different main files on desktop or mobile

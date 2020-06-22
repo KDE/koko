@@ -19,8 +19,8 @@ public:
     explicit FileSystemTracker(QObject *parent = 0);
     virtual ~FileSystemTracker();
 
-    void setFolder(const QString &folder);
-    QString folder() const;
+    void setFolders(const QStringList &folder);
+    QStringList folders() const;
 
     void setSubFolder(const QString &folder);
     void reindexSubFolder();
@@ -42,7 +42,7 @@ private slots:
     void slotFetchFinished();
 
 private:
-    QString m_folder;
+    QStringList m_folders;
     QString m_subFolder;
     QSet<QString> m_filePaths;
 };

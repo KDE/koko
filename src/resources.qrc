@@ -13,6 +13,8 @@
         <file>qml/ShareDialog.qml</file>
         <file>qml/Sidebar.qml</file>
         <file>qml/ThumbnailStrip.qml</file>
+        <file>qml/SettingsPage.qml</file>
+        <file>qml/FileScanningConfiguration.qml</file>
     </qresource>
 </RCC>
 

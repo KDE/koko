@@ -8,6 +8,7 @@
 #include "imagefoldermodel.h"
 #include "roles.h"
 #include "types.h"
+#include "kokoconfig.h"
 
 #include <QDebug>
 #include <QDir>
@@ -59,7 +60,12 @@ void ImageFolderModel::setUrl(QString &url)
     url = QUrl(url).path();
 
     if (url.isEmpty()) {
-        QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+        QStringList locations;
+        if (KokoConfig::self()->useDefaultPictureDirectory()) {
+            locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+        } else {
+            locations << KokoConfig::self()->customPictureDirectory();
+        }
         Q_ASSERT(locations.size() >= 1);
         url = locations.first().append("/");
     }

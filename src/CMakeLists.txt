@@ -13,6 +13,8 @@ target_link_libraries(kokocommon
     Qt5::Positioning
     Qt5::Sql
     KF5::CoreAddons
+    KF5::ConfigCore
+    KF5::ConfigGui
 )
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
@@ -36,6 +38,7 @@ set(koko_SRCS
     imageprocessorrunnable.cpp
     exiv2extractor.cpp
     kdtree.c
+    configurationhelper.cpp
     resources.qrc
 )
 
@@ -48,11 +51,9 @@ target_link_libraries(koko
     Qt5::Widgets
     Qt5::Qml
     Qt5::Positioning
-    KF5::ConfigCore
     KF5::I18n
     KF5::CoreAddons
     KF5::KIOCore
-    KF5::ConfigGui
     kokocommon
     LibExiv2::LibExiv2
 )
@@ -80,6 +81,8 @@ set (qml_plugin_SRCS
     roles.cpp
     imagedocument.cpp
 )
+
+kconfig_add_kcfg_files(qml_plugin_SRCS kokoconfig.kcfgc GENERATE_MOC)
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 

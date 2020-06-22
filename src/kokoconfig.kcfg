@@ -14,6 +14,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
       <label>Initial Run</label>
       <default>true</default>
     </entry>
+    <entry name="UseDefaultPictureDirectory" type="Bool">
+      <label>Use you standard picture directory.</label>
+      <default>true</default>
+    </entry>
+    <entry name="CustomPictureDirectory" type="PathList">
+      <label>Defines a custom picture directory.</label>
+      <default code="true">QStandardPaths::standardLocations(QStandardPaths::PicturesLocation)</default>
+    </entry>
   </group>
   <group name="Backends">
     <entry name="IconSize" type="Int">

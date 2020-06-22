@@ -88,8 +88,12 @@ Kirigami.ApplicationWindow {
             }
         }
         Kirigami.BasicListItem {
+            text: i18n("Settings")
+            onClicked: root.pageStack.layers.push(settingsPage)
+        }
+        Kirigami.BasicListItem {
             text: i18n("About")
-            onClicked: switchApplicationPage(aboutPage)
+            onClicked: root.pageStack.layers.push(aboutPage)
         }
     }
 
@@ -172,5 +176,11 @@ Kirigami.ApplicationWindow {
     Kirigami.AboutPage {
         id: aboutPage
         aboutData: kokoAboutData
+    }
+
+    Component {
+        id: settingsPage
+        SettingsPage {
+        }
     }
 }

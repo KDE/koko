@@ -176,20 +176,24 @@ void FileSystemTracker::slotNewFiles(const QStringList &files)
     m_filePaths.clear();
 }
 
-void FileSystemTracker::setFolder(const QString &folder)
+void FileSystemTracker::setFolders(const QStringList &folders)
 {
-    if (m_folder == folder) {
+    if (m_folders == folders) {
         return;
     }
 
-    KDirWatch::self()->removeDir(m_folder);
-    m_folder = folder;
-    KDirWatch::self()->addDir(m_folder, KDirWatch::WatchSubDirs);
+    for (const auto folder : folders) {
+        KDirWatch::self()->removeDir(folder);
+    }
+    m_folders = folders;
+    for (const auto folder : m_folders) {
+        KDirWatch::self()->addDir(folder, KDirWatch::WatchSubDirs);
+    }
 }
 
-QString FileSystemTracker::folder() const
+QStringList FileSystemTracker::folders() const
 {
-    return m_folder;
+    return m_folders;
 }
 
 void FileSystemTracker::setSubFolder(const QString &folder)
