@@ -26,7 +26,7 @@ QStringList ConfigurationHelper::processPaths(const QStringList &paths) const
             workPath = urlPath.toLocalFile();
         }
 
-        QFileInfo pathFileInfo(workPath);
+        const QFileInfo pathFileInfo(workPath);
         auto directoryPath = pathFileInfo.canonicalFilePath();
         if (!directoryPath.isEmpty()) {
             value.append(directoryPath);
