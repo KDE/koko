@@ -27,7 +27,7 @@ QStringList ConfigurationHelper::processPaths(const QStringList &paths) const
         }
 
         const QFileInfo pathFileInfo(workPath);
-        auto directoryPath = pathFileInfo.canonicalFilePath();
+        const auto directoryPath = pathFileInfo.canonicalFilePath();
         if (!directoryPath.isEmpty()) {
             value.append(directoryPath);
         }
