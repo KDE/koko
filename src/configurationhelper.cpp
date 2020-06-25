@@ -34,7 +34,7 @@ QStringList ConfigurationHelper::processPaths(const QStringList &paths) const
     }
 
     if (value.isEmpty()) {
-        auto systemPicturesPaths = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+        const auto systemPicturesPaths = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
         for (const auto &picturePath : qAsConst(systemPicturesPaths)) {
             value.append(picturePath);
         }
