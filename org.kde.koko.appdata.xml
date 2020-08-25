@@ -9,6 +9,7 @@
   <name xml:lang="cs">Koko</name>
   <name xml:lang="da">Koko</name>
   <name xml:lang="de">Koko</name>
+  <name xml:lang="el">Koko</name>
   <name xml:lang="en-GB">Koko</name>
   <name xml:lang="es">Koko</name>
   <name xml:lang="et">Koko</name>
@@ -37,6 +38,7 @@
   <summary xml:lang="cs">Galerie obrázků</summary>
   <summary xml:lang="da">Billedgalleri</summary>
   <summary xml:lang="de">Bildergalerie</summary>
+  <summary xml:lang="el">Συλλογή εικόνων</summary>
   <summary xml:lang="en-GB">Image Gallery</summary>
   <summary xml:lang="es">Galería de imágenes</summary>
   <summary xml:lang="et">Pildigalerii</summary>
@@ -65,6 +67,7 @@
     <p xml:lang="cs">Aplikace s galerií obrázků</p>
     <p xml:lang="da">Et program til billedgalleri</p>
     <p xml:lang="de">Ein Bildergalerie-Programm</p>
+    <p xml:lang="el">Μια εφαρμογή συλλογής εικόνων</p>
     <p xml:lang="en-GB">An Image gallery application</p>
     <p xml:lang="es">Aplicación para galerías de imágenes</p>
     <p xml:lang="et">Pildigalerii rakendus</p>
