@@ -19,6 +19,12 @@ Kirigami.OverlaySheet {
     leftPadding: 0
     rightPadding: 0
     
+    onSheetOpenChanged: {
+        if(!sheetOpen) {
+            view.reset()
+        }
+    }
+
     Controls.BusyIndicator {
         visible: window.running
         anchors.fill: parent
