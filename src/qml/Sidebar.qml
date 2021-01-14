@@ -24,15 +24,15 @@ Kirigami.GlobalDrawer {
     bannerVisible: true
 
     header: Kirigami.AbstractApplicationHeader {
+        topPadding: Kirigami.Units.smallSpacing;
+        bottomPadding: Kirigami.Units.smallSpacing;
+        leftPadding: Kirigami.Units.smallSpacing
+        rightPadding: Kirigami.Units.smallSpacing
         Kirigami.Heading {
-            anchors.fill: parent
-            anchors.leftMargin: Kirigami.Units.smallSpacing * 2
-            anchors.rightMargin: Kirigami.Units.smallSpacing * 2
-            level: 2
+            level: 1
             text: i18n("Sort by")
         }
     }
-
 
     actions: [
         Kirigami.Action {
