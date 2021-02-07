@@ -55,6 +55,7 @@
   <summary xml:lang="pl">Galeria obrazów</summary>
   <summary xml:lang="pt">Galeria de Imagens</summary>
   <summary xml:lang="pt-BR">Galeria de imagens</summary>
+  <summary xml:lang="ru">Галерея изображений</summary>
   <summary xml:lang="sk">Galéria obrázkov</summary>
   <summary xml:lang="sl">Galerija slik</summary>
   <summary xml:lang="sv">Bildgalleri</summary>
@@ -85,6 +86,7 @@
     <p xml:lang="pl">Aplikacja galerii obrazów</p>
     <p xml:lang="pt">Uma aplicação de galeria de imagens</p>
     <p xml:lang="pt-BR">Aplicativo de galeria de imagens</p>
+    <p xml:lang="ru">Работа с галереей изображений</p>
     <p xml:lang="sk">Aplikácia na galériu obrázkov</p>
     <p xml:lang="sl">Program galerije slik</p>
     <p xml:lang="sv">Ett bildgalleriprogram</p>
