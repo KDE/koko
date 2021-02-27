@@ -166,8 +166,8 @@ Kirigami.GlobalDrawer {
         Layout.fillWidth: true
         Layout.leftMargin: Kirigami.Units.smallSpacing
         Layout.rightMargin: Kirigami.Units.smallSpacing
-        from: Kirigami.Units.iconSizes.medium
-        to: Kirigami.Units.iconSizes.enormous
+        from: Kirigami.Units.gridUnit * 4
+        to: Kirigami.Units.gridUnit * 8
         value: kokoConfig.iconSize
         onMoved: kokoConfig.iconSize = value;
     }
