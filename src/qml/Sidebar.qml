@@ -4,126 +4,158 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.1
+import QtQuick 2.15
 import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.1 as QQC2
+import QtQuick.Controls 2.15 as QQC2
 
 import org.kde.kirigami 2.5 as Kirigami
 
 Kirigami.GlobalDrawer {
-    
     signal filterBy(string value)
-    property Kirigami.Action previouslySelectedAction
+    property var previouslySelectedAction
 
     // FIXME: Dirty workaround for 385992
     contentItem.implicitWidth: Kirigami.Units.gridUnit * 14
 
-    modal: Kirigami.Settings.isMobile
-    collapsible: true
-    collapsed: Kirigami.Settings.isMobile
-    bannerVisible: true
+    // Autohiding behavior
+    modal: !root.wideScreen
+    onEnabledChanged: drawerOpen = enabled && !modal
+    onModalChanged: drawerOpen = !modal
+
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
 
     header: Kirigami.AbstractApplicationHeader {
         topPadding: Kirigami.Units.smallSpacing;
         bottomPadding: Kirigami.Units.smallSpacing;
-        leftPadding: Kirigami.Units.smallSpacing
-        rightPadding: Kirigami.Units.smallSpacing
+        leftPadding: Kirigami.Units.largeSpacing
+        rightPadding: Kirigami.Units.largeSpacing
         Kirigami.Heading {
             level: 1
             text: i18n("Sort by")
         }
     }
 
-    actions: [
-        Kirigami.Action {
-            text: i18n("Locations")
-            iconName: "tag-places"
-            expandible: true
+    // Place
+    QQC2.ScrollView {
+        id: scrollView
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        component PlaceHeading : Kirigami.Heading {
+            topPadding: Kirigami.Units.largeSpacing
+            leftPadding: Kirigami.Units.largeSpacing
+            Layout.fillWidth: true
+            level: 6
+            opacity: 0.7
+        }
 
-            Kirigami.Action {
+        component PlaceItem : Kirigami.AbstractListItem {
+            id: item
+            property string icon
+            checkable: true
+            separatorVisible: false
+            Layout.fillWidth: true
+            contentItem: Row {
+                Kirigami.Icon {
+                    source: item.icon
+                    width: height
+                    height: Kirigami.Units.iconSizes.small
+                }
+                QQC2.Label {
+                    leftPadding: Kirigami.Units.smallSpacing
+                    text: item.text
+                }
+            }
+        }
+
+        ColumnLayout {
+            spacing: 1
+            width: scrollView.width
+            PlaceHeading {
+                text: i18n("Locations")
+            }
+            PlaceItem {
                 id: countryAction
                 text: i18n("By Country")
-                checkable: true
-                onTriggered: {
-                    filterBy("Countries")
-                    previouslySelectedAction = countryAction
+                icon: "tag-places"
+                onClicked: {
+                    filterBy("Countries");
+                    previouslySelectedAction = countryAction;
                 }
             }
-            Kirigami.Action {
+            PlaceItem {
                 id: stateAction
                 text: i18n("By State")
-                checkable: true
-                onTriggered: {
-                    filterBy("States")
-                    previouslySelectedAction = stateAction
+                icon: "tag-places"
+                onClicked: {
+                    filterBy("States");
+                    previouslySelectedAction = stateAction;
                 }
             }
-            Kirigami.Action {
+            PlaceItem {
                 id: cityAction
                 text: i18n("By City")
-                checkable: true
-                onTriggered: {
-                    filterBy("Cities")
-                    previouslySelectedAction = cityAction
+                icon: "tag-places"
+                onClicked: {
+                    filterBy("Cities");
+                    previouslySelectedAction = cityAction;
                 }
             }
-        },
-        Kirigami.Action {
-            text: i18n("Time")
-            expandible: true
-            iconName: "view-calendar"
-            Kirigami.Action {
+            PlaceHeading {
+                text: i18n("Time")
+            }
+            PlaceItem {
                 id: yearAction
                 text: i18n("By Year")
-                checkable: true
-                onTriggered: {
-                    filterBy("Years")
-                    previouslySelectedAction = yearAction
+                icon: "view-calendar"
+                onClicked: {
+                    filterBy("Years");
+                    previouslySelectedAction = yearAction;
                 }
             }
-            Kirigami.Action {
+            PlaceItem {
                 id: monthAction
                 text: i18n("By Month")
-                checkable: true
-                onTriggered: {
-                    filterBy("Months")
-                    previouslySelectedAction = monthAction
+                icon: "view-calendar"
+                onClicked: {
+                    filterBy("Months");
+                    previouslySelectedAction = monthAction;
                 }
             }
-            Kirigami.Action {
+            PlaceItem {
                 id: weekAction
                 text: i18n("By Week")
-                checkable: true
-                onTriggered: {
+                icon: "view-calendar"
+                onClicked: {
                     filterBy("Weeks")
                     previouslySelectedAction = weekAction
                 }
             }
-            Kirigami.Action {
-                id: "dayAction"
+            PlaceItem {
+                id: dayAction
                 text: i18n("By Day")
-                checkable: true
-                onTriggered: {
+                icon: "view-calendar"
+                onClicked: {
                     filterBy("Days")
                     previouslySelectedAction = dayAction
                 }
             }
-        },
-        Kirigami.Action {
-            text: i18n("Path")
-            expandible: true
-            iconName: "folder-symbolic"
-            Kirigami.Action {
+            PlaceHeading {
+                text: i18n("Path")
+            }
+            PlaceItem {
                 id: folderAction
+                icon: "folder-symbolic"
                 text: i18n("By Folder")
-                checkable: true
-                onTriggered: {
+                onClicked: {
                     filterBy("Folders")
                     previouslySelectedAction = folderAction
                 }
             }
         }
-    ]
+    }
 
     QQC2.Label {
         text: i18n("Thumbnails size:")
