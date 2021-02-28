@@ -20,6 +20,12 @@ Item {
     signal activated
     property alias containsMouse: albumThumbnailMouseArea.containsMouse
     property QtObject modelData
+    function refresh() {
+        // HACK: force refresh image after it was edited.
+        const old = image.image;
+        image.image = undefined;
+        image.image = old;
+    }
 
     Rectangle {
         anchors {

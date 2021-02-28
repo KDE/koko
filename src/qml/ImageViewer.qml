@@ -127,7 +127,13 @@ Kirigami.Page {
             iconName: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
             onTriggered: {
-                applicationWindow().pageStack.layers.push(editorComponent)
+                const page = applicationWindow().pageStack.layers.push(editorComponent)
+                page.imageEdited.connect(function() {
+                    const oldPath = listView.currentItem.currentImageSource;
+                    listView.currentItem.currentImageSource = "";
+                    listView.currentItem.currentImageSource = oldPath;
+                    thumbnailView.currentItem.refresh();
+                });
             }
         }
     }
@@ -209,6 +215,7 @@ Kirigami.Page {
         snapMode: ListView.SnapOneItem
         highlightMoveDuration: 0
         interactive: true
+        highlightRangeMode: ListView.StrictlyEnforceRange
 
         // Filter out directories
         model: Koko.SortModel {
