@@ -3,6 +3,7 @@
 #
 set(LIB_SRCS
     imagestorage.cpp
+    exiv2extractor.cpp
     filesystemimagefetcher.cpp
     ${LIB_SRCS}
 )
@@ -13,6 +14,7 @@ target_link_libraries(kokocommon
     Qt5::Positioning
     Qt5::Sql
     KF5::CoreAddons
+    LibExiv2::LibExiv2
 )
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
@@ -34,7 +36,6 @@ set(koko_SRCS
     processor.cpp
     committimer.cpp
     imageprocessorrunnable.cpp
-    exiv2extractor.cpp
     kdtree.c
     resources.qrc
 )
@@ -54,7 +55,6 @@ target_link_libraries(koko
     KF5::KIOCore
     KF5::ConfigGui
     kokocommon
-    LibExiv2::LibExiv2
 )
 
 if(ANDROID)

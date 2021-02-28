@@ -1,7 +1,8 @@
 /*
- * SPDX-FileCopyrightText: (C) 2015 Vishesh Handa <vhanda@kde.org>
- * SPDX-FileCopyrightText: (C) 2017 Atul Sharma <atulsharma406@gmail.com>
- * SPDX-FileCopyrightText: (C) 2017 Marco Martin <mart@kde.org>
+ * SPDX-FileCopyrightText: 2015 Vishesh Handa <vhanda@kde.org>
+ * SPDX-FileCopyrightText: 2017 Atul Sharma <atulsharma406@gmail.com>
+ * SPDX-FileCopyrightText: 2017 Marco Martin <mart@kde.org>
+ * SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
  *
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
@@ -10,7 +11,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
-import QtQuick.Layouts 1.3
+import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
@@ -41,15 +42,74 @@ Kirigami.Page {
     KQA.MimeDatabase {
         id: mimeDB
     }
-    
     Kirigami.ContextDrawer {
         id: contextDrawer
         title: i18n("Edit image")
         handleVisible: true
     }
-    
+
+
+    Kirigami.OverlayDrawer {
+        id: infoDrawer
+        drawerOpen: false
+        property alias imageUrl: extractor.filePath
+        edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
+
+        Koko.Exiv2Extractor {
+            id: extractor
+        }
+
+        contentItem: Column {
+            Kirigami.Heading {
+                level: 2
+                text: i18n("Metadata")
+            }
+            Kirigami.Heading {
+                level: 4
+                topPadding: Kirigami.Units.smallSpacing
+                text: i18n("File Name")
+            }
+            Controls.Label {
+                text: extractor.simplifiedPath
+                wrapMode: Text.WordWrap
+                width: Kirigami.Units.gridUnit * 15
+            }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Lattitude")
+                topPadding: Kirigami.Units.smallSpacing
+            }
+            Controls.Label {
+                text: extractor.gpsLatitude
+                visible: extractor.gpsLatitude !== 0
+            }
+            Kirigami.Heading {
+                level: 64
+                text: i18n("Longitude")
+                topPadding: Kirigami.Units.smallSpacing
+            }
+            Controls.Label {
+                text: extractor.gpsLongitude
+                visible: extractor.gpsLongitude !== 0
+            }
+        }
+    }
+
     actions {
-        main: Kirigami.Action {
+        left: Kirigami.Action {
+            icon.name: "kdocumentinfo"
+            text: i18n("Info")
+            tooltip: i18n("See information about image")
+            onTriggered: {
+                if (infoDrawer.drawerOpen) {
+                    infoDrawer.close();
+                } else {
+                    infoDrawer.imageUrl = listView.currentItem.currentImageSource;
+                    infoDrawer.open();
+                }
+            }
+        }
+        right: Kirigami.Action {
             id: shareAction
             iconName: "document-share"
             tooltip: i18n("Share Image")
@@ -62,7 +122,7 @@ Kirigami.Page {
                 }
             }
         }
-        right: Kirigami.Action {
+        main: Kirigami.Action {
             id: editingAction
             iconName: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
@@ -71,7 +131,6 @@ Kirigami.Page {
             }
         }
     }
-    
 
     Component.onCompleted: {
         applicationWindow().controlsVisible = false;
@@ -91,7 +150,6 @@ Kirigami.Page {
         applicationWindow().pageStack.layers.pop();
     }
 
-    
     background: Rectangle {
         color: "black"
     }

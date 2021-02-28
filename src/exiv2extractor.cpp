@@ -8,12 +8,34 @@
 
 #include <QDebug>
 #include <QFile>
+#include <QStandardPaths>
 
-Exiv2Extractor::Exiv2Extractor()
-    : m_latitude(0)
+Exiv2Extractor::Exiv2Extractor(QObject *parent)
+    : QObject(parent)
+    , m_filePath(QString())
+    , m_latitude(0)
     , m_longitude(0)
     , m_error(true)
 {
+}
+
+Exiv2Extractor::~Exiv2Extractor()
+{
+}
+
+QUrl Exiv2Extractor::filePath() const
+{
+    return QUrl::fromLocalFile(m_filePath);
+}
+
+QString Exiv2Extractor::simplifiedPath() const
+{
+    auto url = filePath();
+    QString home = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+    if (QUrl::fromLocalFile(home).isParentOf(url)) {
+        return QStringLiteral("~") + url.toLocalFile().remove(0, home.length());
+    }
+    return url.toLocalFile();
 }
 
 static QDateTime dateTimeFromString(const QString &dateString)
@@ -110,6 +132,17 @@ static QDateTime toDateTime(const Exiv2::Value &value)
 
 void Exiv2Extractor::extract(const QString &filePath)
 {
+    if (filePath == m_filePath) {
+        return;
+    }
+
+    // init values
+    m_error = true;
+    m_latitude = 0.0;
+    m_longitude = 0.0;
+    m_dateTime = QDateTime();
+    m_filePath = filePath;
+
     QByteArray arr = QFile::encodeName(filePath);
     std::string fileString(arr.data(), arr.length());
 
@@ -162,6 +195,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     if (!longRef.isEmpty() && longRef[0] == 'W')
         m_longitude *= -1;
 
+    Q_EMIT filePathChanged();
     m_error = false;
 }
 
