@@ -44,7 +44,6 @@ Kirigami.ApplicationWindow {
             pageStack.pop(albumView)
             albumView.title = i18n(value)
             previouslySelectedAction.checked = false
-            
             switch( value){
                 case "Countries": { 
                     albumView.model = imageLocationModelCountry;
@@ -88,6 +87,7 @@ Kirigami.ApplicationWindow {
                     break; 
                 }
             }
+            albumView.forceActiveFocus();
         }
         Kirigami.BasicListItem {
             text: i18n("About")
