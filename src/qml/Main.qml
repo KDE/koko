@@ -35,6 +35,8 @@ Kirigami.ApplicationWindow {
         sideBar.drawerOpen = !Kirigami.Settings.isMobile && pageStack.layers.depth < 2;
     }
 
+    contextDrawer: Kirigami.ContextDrawer {}
+
     globalDrawer: Sidebar {
         id: sideBar
 

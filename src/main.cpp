@@ -135,11 +135,7 @@ int main(int argc, char **argv)
     QString path;
     // we want different main files on desktop or mobile
     // very small difference as they as they are subclasses of the same thing
-    if (qEnvironmentVariableIsSet("QT_QUICK_CONTROLS_MOBILE") && (QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("1") || QString::fromLatin1(qgetenv("QT_QUICK_CONTROLS_MOBILE")) == QStringLiteral("true"))) {
-        engine.load(QUrl(QStringLiteral("qrc:/qml/mobileMain.qml")));
-    } else {
-        engine.load(QUrl(QStringLiteral("qrc:/qml/desktopMain.qml")));
-    }
+    engine.load(QUrl(QStringLiteral("qrc:/qml/Main.qml")));
 
     int rt = app.exec();
     trackerThread.quit();
