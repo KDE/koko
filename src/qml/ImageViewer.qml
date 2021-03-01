@@ -76,7 +76,7 @@ Kirigami.Page {
             }
             Kirigami.Heading {
                 level: 4
-                text: i18n("Lattitude")
+                text: i18n("Latitude")
                 topPadding: Kirigami.Units.smallSpacing
             }
             Controls.Label {
