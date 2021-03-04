@@ -130,6 +130,23 @@ Kirigami.Page {
                 });
             }
         }
+        contextualActions: [
+            Kirigami.Action {
+                property bool windowed: applicationWindow().visibility == Window.Windowed
+                icon.name: windowed ? "view-fullscreen" : "view-restore"
+                text: windowed ? i18n("Fullscreen") : i18n("Exit Fullscreen")
+                tooltip: windowed ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
+                shortcut: "F"
+                visible: !Kirigami.Settings.isMobile
+                onTriggered: {
+                    if (applicationWindow().visibility == Window.FullScreen) {
+                        applicationWindow().visibility = Window.Windowed
+                    } else {
+                        applicationWindow().visibility = Window.FullScreen
+                    }
+                }
+            }
+        ]
     }
 
     Component.onCompleted: {
@@ -158,9 +175,6 @@ Kirigami.Page {
         switch(event.key) {
             case Qt.Key_Escape:
                 root.close();
-                break;
-            case Qt.Key_F:
-                applicationWindow().visibility = applicationWindow().visibility == Window.FullScreen ? Window.Windowed : Window.FullScreen
                 break;
             default:
                 break;
