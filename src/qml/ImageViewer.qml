@@ -133,7 +133,7 @@ Kirigami.Page {
     }
 
     Component.onCompleted: {
-        applicationWindow().controlsVisible = false;
+        applicationWindow().controlsVisible = true;
         listView.forceActiveFocus();
         applicationWindow().header.visible = false;
         applicationWindow().footer.visible = false;
