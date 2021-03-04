@@ -28,12 +28,6 @@ Kirigami.Page {
     rightPadding: 0
     topPadding: 0
 
-    Kirigami.Theme.inherit: false
-    Kirigami.Theme.textColor: imgColors.foreground
-    Kirigami.Theme.backgroundColor: imgColors.background
-    Kirigami.Theme.highlightColor: imgColors.highlight
-    Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
-
     Kirigami.ImageColors {
         id: imgColors
         source: listView.currentItem
@@ -223,6 +217,12 @@ Kirigami.Page {
             filterRole: Koko.Roles.MimeTypeRole
             filterRegExp: /image\//
         }
+
+        Kirigami.Theme.inherit: false
+        Kirigami.Theme.textColor: imgColors.foreground
+        Kirigami.Theme.backgroundColor: imgColors.background
+        Kirigami.Theme.highlightColor: imgColors.highlight
+        Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
 
         Component.onCompleted: listView.currentIndex = model.mapFromSource(root.startIndex).row
 
