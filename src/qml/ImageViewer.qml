@@ -132,6 +132,21 @@ Kirigami.Page {
         }
         contextualActions: [
             Kirigami.Action {
+                iconName: slideshowTimer.running ? "media-playback-stop" : "view-presentation"
+                tooltip: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Start Slideshow")
+                text: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Slideshow")
+                onTriggered: {
+                    if (slideshowTimer.running) {
+                        slideshowTimer.stop()
+                        applicationWindow().visibility = Window.Windowed
+                    } else {
+                        slideshowTimer.start()
+                        applicationWindow().visibility = Window.FullScreen
+                        applicationWindow().controlsVisible = false
+                    }
+                }
+            },
+            Kirigami.Action {
                 property bool windowed: applicationWindow().visibility == Window.Windowed
                 icon.name: windowed ? "view-fullscreen" : "view-restore"
                 text: windowed ? i18n("Fullscreen") : i18n("Exit Fullscreen")
@@ -147,6 +162,21 @@ Kirigami.Page {
                 }
             }
         ]
+    }
+
+    Timer {
+        id: slideshowTimer
+        interval: 5000
+        repeat: true
+        onTriggered: {
+            if (listView.currentIndex < listView.count - 1) {
+                listView.currentItem.resetZoom()
+                listView.currentIndex++
+            } else {
+                listView.currentItem.resetZoom()
+                listView.currentIndex = 0
+            }
+        }
     }
 
     Component.onCompleted: {
@@ -174,7 +204,13 @@ Kirigami.Page {
     Keys.onPressed: {
         switch(event.key) {
             case Qt.Key_Escape:
-                root.close();
+                if (applicationWindow().visibility == Window.FullScreen) {
+                    applicationWindow().visibility = Window.Windowed
+                    applicationWindow().controlsVisible = true
+                    slideshowTimer.stop()
+                } else {
+                    root.close();
+                }
                 break;
             default:
                 break;
