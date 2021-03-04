@@ -20,7 +20,7 @@ Kirigami.GlobalDrawer {
     // Autohiding behavior
     modal: !root.wideScreen
     onEnabledChanged: drawerOpen = enabled && !modal
-    onModalChanged: drawerOpen = !modal
+    onModalChanged: drawerOpen = !modal && pageStack.layers.depth < 2
 
     leftPadding: 0
     rightPadding: 0

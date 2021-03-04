@@ -32,7 +32,7 @@ Kirigami.ApplicationWindow {
 
     pageStack.layers.onDepthChanged: {
         sideBar.enabled = pageStack.layers.depth < 2;
-        sideBar.drawerOpen = !Kirigami.Settings.isMobile && pageStack.layers.depth < 2;
+        sideBar.drawerOpen = !Kirigami.Settings.isMobile && !sideBar.modal && pageStack.layers.depth < 2;
     }
 
     contextDrawer: Kirigami.ContextDrawer {}
