@@ -48,6 +48,7 @@ Kirigami.Page {
         drawerOpen: false
         property alias imageUrl: extractor.filePath
         edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
+        handleVisible: false
 
         Koko.Exiv2Extractor {
             id: extractor
