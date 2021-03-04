@@ -43,7 +43,7 @@ Kirigami.OverlaySheet {
         
         delegate: Kirigami.BasicListItem {
             label: model.display
-            icon: "arrow-right"
+            icon: model.iconName
             onClicked: view.createJob (model.index)
             Keys.onReturnPressed: view.createJob (model.index)
             Keys.onEnterPressed: view.createJob (model.index)
