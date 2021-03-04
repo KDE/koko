@@ -10,6 +10,7 @@ import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.koko 0.1 as Koko
+import org.kde.koko.private 0.1 as KokoPrivate
 
 Kirigami.ApplicationWindow {
     id: root
@@ -24,27 +25,59 @@ Kirigami.ApplicationWindow {
         page.forceActiveFocus();
     }
 
-    pageStack.initialPage: AlbumView {
-        id: albumView
-        model: imageFolderModel
-        title: i18n("Folders")
-    }
+    property bool imageFromParameter: false
+    property var albumView: null
 
     pageStack.layers.onDepthChanged: {
         sideBar.enabled = pageStack.layers.depth < 2;
         sideBar.drawerOpen = !Kirigami.Settings.isMobile && !sideBar.modal && pageStack.layers.depth < 2;
     }
 
+    Component {
+        id: openFileComponent
+        AlbumView {
+            title: i18n("Images")
+            model: Koko.SortModel {
+                id: imageLocationModelCity
+                sourceModel: KokoPrivate.OpenFileModel
+            }
+        }
+    }
+
+    Component {
+        id: albumViewComponent
+        AlbumView {
+            model: imageFolderModel
+            title: i18n("Folders")
+        }
+    }
+
     contextDrawer: Kirigami.ContextDrawer {}
+
+    Component.onCompleted: {
+        if (KokoPrivate.OpenFileModel.rowCount() > 0) {
+            pageStack.initialPage = openFileComponent;
+            imageFromParameter = true;
+        } else {
+            pageStack.initialPage = albumViewComponent;
+        }
+        albumView = pageStack.currentItem;
+    }
 
     globalDrawer: Sidebar {
         id: sideBar
 
         onFilterBy: {
-            pageStack.pop(albumView)
+            if (imageFromParameter) {
+                pageStack.pop(albumView);
+                albumView = pageStack.replace(albumViewComponent);
+                imageFromParameter = false;
+            } else {
+                pageStack.pop(albumView)
+            }
             albumView.title = i18n(value)
             previouslySelectedAction.checked = false
-            switch( value){
+            switch(value) {
                 case "Countries": { 
                     albumView.model = imageLocationModelCountry;
                     imageListModel.locationGroup = Koko.Types.Country;

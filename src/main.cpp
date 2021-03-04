@@ -28,6 +28,7 @@
 #include "filesystemtracker.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
+#include "openfilemodel.h"
 #include "processor.h"
 
 #ifdef Q_OS_ANDROID
@@ -90,10 +91,6 @@ int main(int argc, char **argv)
     QApplication::setApplicationVersion(aboutData.version());
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
 
-    if (parser.positionalArguments().size() > 1) {
-        parser.showHelp(1);
-    }
-
     if (parser.isSet("reset")) {
         ImageStorage::reset();
     }
@@ -103,6 +100,15 @@ int main(int argc, char **argv)
     QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
     Q_ASSERT(locations.size() >= 1);
     qDebug() << locations;
+
+    QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
+
+    QStringList directoryUrls;
+    for (const auto &path: parser.positionalArguments()) {
+        directoryUrls << currentDirPath.resolved(path).toString();
+    }
+
+    OpenFileModel openFileModel(directoryUrls);
 
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
@@ -128,6 +134,8 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+    qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);

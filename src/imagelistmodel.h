@@ -9,9 +9,9 @@
 
 #include <QAbstractListModel>
 
-#include "types.h"
+#include "openfilemodel.h"
 
-class ImageListModel : public QAbstractListModel
+class ImageListModel : public OpenFileModel
 {
     Q_OBJECT
 
@@ -21,12 +21,8 @@ class ImageListModel : public QAbstractListModel
     Q_PROPERTY(QByteArray query READ query WRITE setQuery NOTIFY queryChanged)
 
 public:
-    explicit ImageListModel(QObject *parent = 0);
+    explicit ImageListModel(QObject *parent = nullptr);
     ~ImageListModel();
-
-    QHash<int, QByteArray> roleNames() const override;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
     Types::LocationGroup locationGroup() const;
     void setLocationGroup(const Types::LocationGroup &group);
@@ -53,7 +49,6 @@ Q_SIGNALS:
     void queryChanged();
 
 private:
-    QStringList m_images;
     Types::LocationGroup m_locationGroup;
     Types::TimeGroup m_timeGroup;
     Types::QueryType m_queryType;

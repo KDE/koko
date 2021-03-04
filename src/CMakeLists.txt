@@ -31,6 +31,7 @@ install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_A
 
 set(koko_SRCS
     main.cpp
+    openfilemodel.cpp
     reversegeocoder.cpp
     filesystemtracker.cpp
     processor.cpp
@@ -69,6 +70,7 @@ install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
 set (qml_plugin_SRCS
     qmlplugins.cpp
     tagmodel.cpp
+    openfilemodel.cpp
     imagelocationmodel.cpp
     imagetimemodel.cpp
     imagefoldermodel.cpp

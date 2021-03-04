@@ -12,7 +12,7 @@
 #include <QMimeDatabase>
 
 ImageListModel::ImageListModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : OpenFileModel({}, parent)
 {
     connect(this, &ImageListModel::locationGroupChanged, this, &ImageListModel::slotLocationGroupChanged);
     connect(this, &ImageListModel::timeGroupChanged, this, &ImageListModel::slotTimeGroupChanged);
@@ -23,51 +23,6 @@ ImageListModel::ImageListModel(QObject *parent)
 
 ImageListModel::~ImageListModel()
 {
-}
-
-QHash<int, QByteArray> ImageListModel::roleNames() const
-{
-    QHash<int, QByteArray> hash = QAbstractListModel::roleNames();
-    hash.insert(Roles::ImageUrlRole, "imageurl");
-    hash.insert(Roles::ItemTypeRole, "itemType");
-    hash.insert(Roles::MimeTypeRole, "mimeType");
-
-    return hash;
-}
-
-QVariant ImageListModel::data(const QModelIndex &index, int role) const
-{
-    if (!index.isValid()) {
-        return QVariant();
-    }
-
-    int indexValue = index.row();
-
-    switch (role) {
-    case Qt::DisplayRole:
-        // TODO: return the filename component
-        return m_images.at(indexValue);
-
-    case Roles::ImageUrlRole:
-        return m_images.at(indexValue);
-
-    case Roles::ItemTypeRole:
-        return Types::Image;
-
-    case Roles::MimeTypeRole: {
-        QMimeDatabase db;
-        QMimeType type = db.mimeTypeForFile(m_images.at(indexValue));
-        return type.name();
-    }
-    }
-
-    return QVariant();
-}
-
-int ImageListModel::rowCount(const QModelIndex &parent) const
-{
-    Q_UNUSED(parent)
-    return m_images.size();
 }
 
 void ImageListModel::slotLocationGroupChanged()
