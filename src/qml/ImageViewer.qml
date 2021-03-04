@@ -202,6 +202,28 @@ Kirigami.Page {
         onActivated: index => listView.currentIndex = index
     }
 
+    MouseArea {
+        z: 1
+        anchors.fill: parent
+        acceptedButtons: Qt.BackButton | Qt.ForwardButton
+
+        onClicked: {
+            if (mouse.button == Qt.BackButton) {
+                if (listView.currentIndex > 0) {
+                    listView.currentItem.resetZoom()
+                    listView.currentIndex--
+                }
+                mouse.accepted = true
+            } else if (mouse.button == Qt.ForwardButton) {
+                if (listView.currentIndex < listView.count - 1) {
+                    listView.currentItem.resetZoom()
+                    listView.currentIndex++
+                }
+                mouse.accepted = true
+            }
+        }
+    }
+
     ListView {
         id: listView
         anchors.fill: parent
@@ -246,6 +268,7 @@ Kirigami.Page {
         visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0
         Keys.forwardTo: [listView]
         onClicked: {
+            listView.currentItem.resetZoom()
             listView.currentIndex -= 1
         }
     }
@@ -262,6 +285,7 @@ Kirigami.Page {
         visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1
         Keys.forwardTo: [listView]
         onClicked: {
+            listView.currentItem.resetZoom()
             listView.currentIndex += 1
         }
     }

@@ -32,6 +32,15 @@ Flickable {
         visible: !applicationWindow().controlsVisible
     }
 
+    function resetZoom() {
+        if (flick.interactive) {
+            flick.contentWidth = root.width;
+            flick.contentHeight = root.height;
+            flick.contentX = 0;
+            flick.contentY = 0;
+        }
+    }
+
     PinchArea {
         width: Math.max(flick.contentWidth, flick.width)
         height: Math.max(flick.contentHeight, flick.height)
