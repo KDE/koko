@@ -180,8 +180,13 @@ Flickable {
                                                 wheel);
                         }
                     } else {
-                        flick.contentX += wheel.pixelDelta.x;
-                        flick.contentY += wheel.pixelDelta.y;
+                        if (wheel.pixelDelta.y != 0) {
+                            flick.contentX += wheel.pixelDelta.x;
+                            flick.contentY += wheel.pixelDelta.y;
+                        } else {
+                            flick.contentX -= wheel.angleDelta.x;
+                            flick.contentY -= wheel.angleDelta.y;
+                        };
                     }
                 }
             }
