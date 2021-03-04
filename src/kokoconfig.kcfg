@@ -5,21 +5,27 @@ SPDX-FileCopyrightText: (C) 2020 Nicolas Fella <nicolas.fella@gmx.de>
 SPDX-License-Identifier: LGPL-2.1-or-later
 -->
 <kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
-      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
-  <kcfgfile name="kokorc" />
-  <group name="General">
-    <entry name="InitialRun" type="Bool">
-      <label>Initial Run</label>
-      <default>true</default>
-    </entry>
-  </group>
-  <group name="Backends">
-    <entry name="IconSize" type="Int">
-      <label>Thumbnail Size</label>
-      <default>64</default>
-    </entry>
-  </group>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+    http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+    <kcfgfile name="kokorc" />
+    <group name="General">
+        <entry name="InitialRun" type="Bool">
+            <label>Initial Run</label>
+            <default>true</default>
+        </entry>
+    </group>
+    <group name="Backends">
+        <entry name="IconSize" type="Int">
+            <label>Thumbnail Size</label>
+            <default>64</default>
+        </entry>
+    </group>
+    <group name="SlideShow">
+        <entry name="NextImageInterval" type="Int">
+            <label>Interval until next image</label>
+            <default>5</default>
+        </entry>
+    </group>
 </kcfg>
 

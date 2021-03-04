@@ -90,6 +90,10 @@ Kirigami.ApplicationWindow {
             albumView.forceActiveFocus();
         }
         Kirigami.BasicListItem {
+            text: i18n("Settings")
+            onClicked: switchApplicationPage(settingsPage)
+        }
+        Kirigami.BasicListItem {
             text: i18n("About")
             onClicked: switchApplicationPage(aboutPage)
         }
@@ -174,5 +178,9 @@ Kirigami.ApplicationWindow {
     Kirigami.AboutPage {
         id: aboutPage
         aboutData: kokoAboutData
+    }
+
+    SettingsPage {
+        id: settingsPage
     }
 }

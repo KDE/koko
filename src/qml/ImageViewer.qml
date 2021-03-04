@@ -167,7 +167,7 @@ Kirigami.Page {
 
     Timer {
         id: slideshowTimer
-        interval: 5000
+        interval: kokoConfig.nextImageInterval * 1000
         repeat: true
         onTriggered: {
             if (listView.currentIndex < listView.count - 1) {
