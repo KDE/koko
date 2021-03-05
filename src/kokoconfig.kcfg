@@ -9,22 +9,34 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
     http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="kokorc" />
-    <group name="General">
+    <group name="Backend">
         <entry name="InitialRun" type="Bool">
             <label>Initial Run</label>
             <default>true</default>
         </entry>
     </group>
-    <group name="Backends">
+    <group name="General">
         <entry name="IconSize" type="Int">
             <label>Thumbnail Size</label>
             <default>64</default>
         </entry>
+        <entry name="ImageViewPreview" type="Bool">
+            <label>Show a thumbnail carousel in image view</label>
+            <default>true</default>
+        </entry>
     </group>
-    <group name="SlideShow">
+    <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">
             <label>Interval until next image</label>
             <default>5</default>
+        </entry>
+        <entry name="LoopImages" type="Bool">
+            <label>Loop Slideshow</label>
+            <default>true</default>
+        </entry>
+        <entry name="RandomizeImages" type="Bool">
+            <label>Randomize Slideshow</label>
+            <default>false</default>
         </entry>
     </group>
 </kcfg>

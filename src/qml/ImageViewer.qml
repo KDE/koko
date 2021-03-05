@@ -136,6 +136,7 @@ Kirigami.Page {
                 iconName: slideshowTimer.running ? "media-playback-stop" : "view-presentation"
                 tooltip: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Start Slideshow")
                 text: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Slideshow")
+                visible: listView.count > 1
                 onTriggered: {
                     if (slideshowTimer.running) {
                         slideshowTimer.stop()
@@ -165,17 +166,40 @@ Kirigami.Page {
         ]
     }
 
+    // ensure we don't land on the same image
+    function nextSlide() {
+        if (listView.count < 2) { // stop if there's only 1 image
+            slideshowTimer.stop()
+            return 0;
+        }
+        var roll = Math.floor(Math.random() * Math.floor(listView.count))
+        if (roll != listView.currentIndex) {
+            return roll
+        } else {
+            return nextSlide()
+        }
+    }
+
     Timer {
         id: slideshowTimer
         interval: kokoConfig.nextImageInterval * 1000
         repeat: true
         onTriggered: {
+            if (kokoConfig.randomizeImages) {
+                listView.currentItem.resetZoom()
+                listView.currentIndex = root.nextSlide()
+                return
+            }
             if (listView.currentIndex < listView.count - 1) {
                 listView.currentItem.resetZoom()
                 listView.currentIndex++
             } else {
                 listView.currentItem.resetZoom()
-                listView.currentIndex = 0
+                if (kokoConfig.loopImages) {
+                    listView.currentIndex = 0
+                } else {
+                    slideshowTimer.stop()
+                }
             }
         }
     }

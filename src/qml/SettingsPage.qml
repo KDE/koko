@@ -8,6 +8,15 @@ import org.kde.kirigami 2.12 as Kirigami
 KCM.SimpleKCM {
     title: i18n("Settings")
     Kirigami.FormLayout {
+        QQC2.CheckBox {
+            Kirigami.FormData.label: i18n("General:")
+            text: i18n("Show preview carousel in image view")
+            checked: kokoConfig.imageViewPreview
+            onCheckedChanged: kokoConfig.imageViewPreview = checked
+        }
+        Item {
+            Kirigami.FormData.isSection: true
+        }
         QQC2.Slider {
             Kirigami.FormData.label: i18n("Slideshow interval:")
             from: 1
@@ -17,6 +26,18 @@ KCM.SimpleKCM {
         }
         QQC2.Label {
             text: i18np("1 second", "%1 seconds", kokoConfig.nextImageInterval)
+        }
+        QQC2.CheckBox {
+            text: i18n("Loop")
+            checked: kokoConfig.loopImages
+            onCheckedChanged: kokoConfig.loopImages = checked
+            enabled: !randomizeImagesCheckbox.checked
+        }
+        QQC2.CheckBox {
+            id: randomizeImagesCheckbox
+            text: i18n("Random")
+            checked: kokoConfig.randomizeImages
+            onCheckedChanged: kokoConfig.randomizeImages = checked
         }
     }
 }

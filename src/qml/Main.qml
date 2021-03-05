@@ -125,10 +125,12 @@ Kirigami.ApplicationWindow {
         Kirigami.BasicListItem {
             text: i18n("Settings")
             onClicked: switchApplicationPage(settingsPage)
+            icon: "settings-configure"
         }
         Kirigami.BasicListItem {
             text: i18n("About")
             onClicked: switchApplicationPage(aboutPage)
+            icon: "help-about"
         }
     }
 

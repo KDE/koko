@@ -20,7 +20,7 @@ ListView {
 
     signal activated(var index)
 
-    state: applicationWindow().controlsVisible ? "show" : "hidden"
+    state: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? "show" : "hidden"
 
     states: [
         State {
