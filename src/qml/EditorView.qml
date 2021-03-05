@@ -38,7 +38,11 @@ Kirigami.Page {
             id: undoAction
             text: i18nc("@action:button Undo modification", "Undo")
             iconName: "edit-undo"
-            onTriggered: imageDoc.undo();
+            onTriggered: {
+                if (imageDoc.edited) {
+                    imageDoc.undo();
+                }
+            }
             visible: imageDoc.edited
         }
         main: Kirigami.Action {
