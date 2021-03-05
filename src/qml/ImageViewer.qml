@@ -79,13 +79,21 @@ Kirigami.Page {
                 visible: extractor.gpsLatitude !== 0
             }
             Kirigami.Heading {
-                level: 64
+                level: 4
                 text: i18n("Longitude")
                 topPadding: Kirigami.Units.smallSpacing
             }
             Controls.Label {
                 text: extractor.gpsLongitude
                 visible: extractor.gpsLongitude !== 0
+            }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Dimension")
+                topPadding: Kirigami.Units.smallSpacing
+            }
+            Controls.Label {
+                text: i18nc("dimensions", "%1 x %2", extractor.width, extractor.height)
             }
         }
     }

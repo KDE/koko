@@ -15,6 +15,8 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_filePath(QString())
     , m_latitude(0)
     , m_longitude(0)
+    , m_height(0)
+    , m_width(0)
     , m_error(true)
 {
 }
@@ -186,6 +188,9 @@ void Exiv2Extractor::extract(const QString &filePath)
 
     m_latitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLatitude");
     m_longitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLongitude");
+
+    m_height =  image->pixelHeight();
+    m_width = image->pixelWidth();
 
     QByteArray latRef = fetchByteArray(data, "Exif.GPSInfo.GPSLatitudeRef");
     if (!latRef.isEmpty() && latRef[0] == 'S')

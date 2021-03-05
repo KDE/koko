@@ -25,6 +25,8 @@ class KOKO_EXPORT Exiv2Extractor : public QObject
     Q_PROPERTY(double gpsLongitude READ gpsLongitude NOTIFY filePathChanged)
     Q_PROPERTY(QDateTime dateTime READ dateTime NOTIFY filePathChanged)
     Q_PROPERTY(QString simplifiedPath READ simplifiedPath NOTIFY filePathChanged)
+    Q_PROPERTY(int height READ height NOTIFY filePathChanged)
+    Q_PROPERTY(int width READ width NOTIFY filePathChanged)
 
 public:
     explicit Exiv2Extractor(QObject *parent = nullptr);
@@ -45,11 +47,22 @@ public:
     {
         return m_longitude;
     }
+
     QDateTime dateTime() const
     {
         return m_dateTime;
     }
+
     QString simplifiedPath() const;
+
+    int height() const
+    {
+        return m_height;
+    }
+    int width() const
+    {
+        return m_width;
+    }
 
     bool error() const;
 
@@ -64,6 +77,8 @@ private:
     double m_latitude;
     double m_longitude;
     QDateTime m_dateTime;
+    int m_height;
+    int m_width;
 
     bool m_error;
 };
