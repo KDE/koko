@@ -134,6 +134,7 @@ int main(int argc, char **argv)
     QObject::connect(&config, &KokoConfig::LoopImagesChanged, &config, &KokoConfig::save);
     QObject::connect(&config, &KokoConfig::RandomizeImagesChanged, &config, &KokoConfig::save);
     QObject::connect(&config, &KokoConfig::ImageViewPreviewChanged, &config, &KokoConfig::save);
+    QObject::connect(&config, &KokoConfig::SavedFoldersChanged, &config, &KokoConfig::save);
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));

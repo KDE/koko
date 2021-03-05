@@ -12,11 +12,14 @@ import org.kde.koko 0.1 as Koko
 
 Kirigami.ScrollablePage {
     id: page
-    
+
     property alias model: gridView.model
     signal collectionSelected(QtObject selectedModel, string cover)
-    signal folderSelected(QtObject selectedModel, string cover)
-    
+    signal folderSelected(QtObject selectedModel, string cover, string path)
+
+    property string url: ""
+    property bool bookmarked: kokoConfig.savedFolders.includes(page.url)
+
     keyboardNavigationEnabled: true
     focus: true
 
@@ -33,12 +36,22 @@ Kirigami.ScrollablePage {
 
     actions {
         main: Kirigami.Action {
-            iconName: "edit-select-none"
-            text: i18n("Deselect All")
-            tooltip: i18n("De-selects all the selected images")
-            enabled: model.hasSelectedImages
-            visible: model.hasSelectedImages && Kirigami.Settings.tabletMode
-            onTriggered: model.clearSelections()
+            iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+            text: page.bookmarked ? i18n("Remove Bookmark") : i18n("Bookmark Folder")
+            visible: page.url !== ""
+            onTriggered: {
+                if (page.url == "") {
+                    return
+                }
+                if (page.bookmarked) {
+                    const index = kokoConfig.savedFolders.indexOf(page.url);
+                    if (index !== -1) {
+                        kokoConfig.savedFolders.splice(index, 1);
+                    }
+                } else {
+                    kokoConfig.savedFolders.push(page.url)
+                }
+            }
         }
         contextualActions: [
             Kirigami.Action {
@@ -172,7 +185,7 @@ Kirigami.ScrollablePage {
                     case Koko.Types.Folder: {
                         imageFolderModel.url = model.imageurl
                         sortedListModel.sourceModel = imageFolderModel
-                        folderSelected( sortedListModel, model.display)
+                        folderSelected( sortedListModel, model.display, model.imageurl)
                         break;
                     }
                     case Koko.Types.Image: {
@@ -213,5 +226,5 @@ Kirigami.ScrollablePage {
     }
     
     onCollectionSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
-    onFolderSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
+    onFolderSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover), "url": path })
 }

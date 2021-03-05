@@ -11,7 +11,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.5 as Kirigami
 
 Kirigami.GlobalDrawer {
-    signal filterBy(string value)
+    signal filterBy(string value, string path)
     property var previouslySelectedAction
 
     // FIXME: Dirty workaround for 385992
@@ -74,6 +74,36 @@ Kirigami.GlobalDrawer {
             spacing: 1
             width: scrollView.width
             PlaceHeading {
+                text: i18n("Folders")
+            }
+            PlaceItem {
+                id: folderAction
+                icon: "folder-pictures"
+                text: i18n("Pictures")
+                onClicked: {
+                    filterBy("Folders", "")
+                    previouslySelectedAction = folderAction
+                }
+            }
+            Repeater {
+                model: kokoConfig.savedFolders
+                PlaceItem {
+                    id: pinnedFolderAction
+                    icon: "folder-symbolic"
+                    text: {
+                        var str = modelData
+                        if (str.endsWith("/")) {
+                            str = str.slice(0, -1)
+                        }
+                        return str.split("/")[str.split("/").length-1]
+                    }
+                    onClicked: {
+                        filterBy("Folders", modelData)
+                        previouslySelectedAction = pinnedFolderAction
+                    }
+                }
+            }
+            PlaceHeading {
                 text: i18n("Locations")
             }
             PlaceItem {
@@ -81,7 +111,7 @@ Kirigami.GlobalDrawer {
                 text: i18n("By Country")
                 icon: "tag-places"
                 onClicked: {
-                    filterBy("Countries");
+                    filterBy("Countries", "");
                     previouslySelectedAction = countryAction;
                 }
             }
@@ -90,7 +120,7 @@ Kirigami.GlobalDrawer {
                 text: i18n("By State")
                 icon: "tag-places"
                 onClicked: {
-                    filterBy("States");
+                    filterBy("States", "");
                     previouslySelectedAction = stateAction;
                 }
             }
@@ -99,7 +129,7 @@ Kirigami.GlobalDrawer {
                 text: i18n("By City")
                 icon: "tag-places"
                 onClicked: {
-                    filterBy("Cities");
+                    filterBy("Cities", "");
                     previouslySelectedAction = cityAction;
                 }
             }
@@ -111,7 +141,7 @@ Kirigami.GlobalDrawer {
                 text: i18n("By Year")
                 icon: "view-calendar"
                 onClicked: {
-                    filterBy("Years");
+                    filterBy("Years", "");
                     previouslySelectedAction = yearAction;
                 }
             }
@@ -120,7 +150,7 @@ Kirigami.GlobalDrawer {
                 text: i18n("By Month")
                 icon: "view-calendar"
                 onClicked: {
-                    filterBy("Months");
+                    filterBy("Months", "");
                     previouslySelectedAction = monthAction;
                 }
             }
@@ -129,7 +159,7 @@ Kirigami.GlobalDrawer {
                 text: i18n("By Week")
                 icon: "view-calendar"
                 onClicked: {
-                    filterBy("Weeks")
+                    filterBy("Weeks", "")
                     previouslySelectedAction = weekAction
                 }
             }
@@ -138,20 +168,8 @@ Kirigami.GlobalDrawer {
                 text: i18n("By Day")
                 icon: "view-calendar"
                 onClicked: {
-                    filterBy("Days")
+                    filterBy("Days", "")
                     previouslySelectedAction = dayAction
-                }
-            }
-            PlaceHeading {
-                text: i18n("Path")
-            }
-            PlaceItem {
-                id: folderAction
-                icon: "folder-symbolic"
-                text: i18n("By Folder")
-                onClicked: {
-                    filterBy("Folders")
-                    previouslySelectedAction = folderAction
                 }
             }
         }

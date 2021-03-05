@@ -75,8 +75,18 @@ Kirigami.ApplicationWindow {
             } else {
                 pageStack.pop(albumView)
             }
-            albumView.title = i18n(value)
-            previouslySelectedAction.checked = false
+            if (value === "Folders" && path.length > 0) {
+                let str = path
+                if (str.endsWith("/")) {
+                    str = str.slice(0, -1)
+                }
+                albumView.title = str.split("/")[str.split("/").length-1]
+            } else {
+                albumView.title = i18n(value)
+            }
+            if (previouslySelectedAction) {
+                previouslySelectedAction.checked = false
+            }
             switch(value) {
                 case "Countries": { 
                     albumView.model = imageLocationModelCountry;
@@ -113,10 +123,12 @@ Kirigami.ApplicationWindow {
                     imageListModel.timeGroup = Koko.Types.Day;
                     break;
                 }
-                case "Folders": { 
+                case "Folders": {
                     albumView.model = imageFolderModel; 
+                    albumView.url = path
                     imageListModel.locationGroup = -1;
                     imageListModel.timeGroup = -1;
+                    imageFolderModel.sourceModel.url = path
                     break; 
                 }
             }

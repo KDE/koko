@@ -24,6 +24,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <label>Show a thumbnail carousel in image view</label>
             <default>true</default>
         </entry>
+        <entry name="SavedFolders" type="PathList">
+            <label>List of saved folders.</label>
+        </entry>
     </group>
     <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">
