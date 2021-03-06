@@ -175,11 +175,10 @@ Kirigami.GlobalDrawer {
         }
     }
 
-    QQC2.Label {
+    PlaceHeading {
         text: i18n("Thumbnails size:")
-        Layout.leftMargin: Kirigami.Units.smallSpacing
-        Layout.rightMargin: Kirigami.Units.smallSpacing
     }
+
     QQC2.Slider {
         Layout.fillWidth: true
         Layout.leftMargin: Kirigami.Units.smallSpacing
