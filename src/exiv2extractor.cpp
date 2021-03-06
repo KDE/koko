@@ -8,6 +8,7 @@
 
 #include <QDebug>
 #include <QFile>
+#include <QFileInfo>
 #include <QStandardPaths>
 
 Exiv2Extractor::Exiv2Extractor(QObject *parent)
@@ -17,6 +18,9 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_longitude(0)
     , m_height(0)
     , m_width(0)
+    , m_size(0)
+    , m_model("")
+    , m_time("")
     , m_error(true)
 {
 }
@@ -142,6 +146,11 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_error = true;
     m_latitude = 0.0;
     m_longitude = 0.0;
+    m_width = 0;
+    m_height = 0;
+    m_size = 0;
+    m_model = "";
+    m_time = "";
     m_dateTime = QDateTime();
     m_filePath = filePath;
 
@@ -154,22 +163,36 @@ void Exiv2Extractor::extract(const QString &filePath)
 #else
     Exiv2::Image::AutoPtr image;
 #endif
+
+    QFileInfo file_info(m_filePath);
+
+    if (!QFileInfo::exists(m_filePath)) {
+        Q_EMIT filePathChanged();
+        return;
+    }
+
+    m_size = file_info.size();
+
     try {
         image = Exiv2::ImageFactory::open(fileString);
     } catch (const std::exception &) {
+        Q_EMIT filePathChanged();
         return;
     }
     if (!image.get()) {
+        Q_EMIT filePathChanged();
         return;
     }
 
     if (!image->good()) {
+        Q_EMIT filePathChanged();
         return;
     }
 
     try {
         image->readMetadata();
     } catch (const std::exception &) {
+        Q_EMIT filePathChanged();
         return;
     }
 
@@ -178,12 +201,18 @@ void Exiv2Extractor::extract(const QString &filePath)
     Exiv2::ExifData::const_iterator it = data.findKey(Exiv2::ExifKey("Exif.Photo.DateTimeOriginal"));
     if (it != data.end()) {
         m_dateTime = toDateTime(it->value());
+        m_time = QString::fromStdString(it->toString());
     }
     if (m_dateTime.isNull()) {
         it = data.findKey(Exiv2::ExifKey("Exif.Image.DateTime"));
         if (it != data.end()) {
             m_dateTime = toDateTime(it->value());
         }
+    }
+
+    it = data.findKey(Exiv2::ExifKey("Exif.Image.Model"));
+    if (it != data.end()) {
+        m_model = QString::fromStdString(it->toString());
     }
 
     m_latitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLatitude");

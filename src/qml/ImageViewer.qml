@@ -15,6 +15,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
+import org.kde.kcoreaddons 1.0 as KCA
 
 Kirigami.Page {
     id: root
@@ -71,8 +72,49 @@ Kirigami.Page {
             }
             Kirigami.Heading {
                 level: 4
+                text: i18n("Dimension")
+                topPadding: Kirigami.Units.smallSpacing
+                visible: extractor.width > 0 && extractor.height > 0
+            }
+            Controls.Label {
+                text: i18nc("dimensions", "%1 x %2", extractor.width, extractor.height)
+                visible: extractor.width > 0 && extractor.height > 0
+            }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Size")
+                topPadding: Kirigami.Units.smallSpacing
+                visible: extractor.size !== 0
+            }
+            Controls.Label {
+                text: KCA.Format.formatByteSize(extractor.size, 2)
+                visible: extractor.size !== 0
+            }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Created")
+                topPadding: Kirigami.Units.smallSpacing
+                visible: extractor.time.length > 0
+            }
+            Controls.Label {
+                text: extractor.time
+                visible: extractor.time.length > 0
+            }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Model")
+                topPadding: Kirigami.Units.smallSpacing
+                visible: extractor.model.length > 0
+            }
+            Controls.Label {
+                text: extractor.model
+                visible: extractor.model.length > 0
+            }
+            Kirigami.Heading {
+                level: 4
                 text: i18n("Latitude")
                 topPadding: Kirigami.Units.smallSpacing
+                visible: extractor.gpsLatitude !== 0
             }
             Controls.Label {
                 text: extractor.gpsLatitude
@@ -82,18 +124,11 @@ Kirigami.Page {
                 level: 4
                 text: i18n("Longitude")
                 topPadding: Kirigami.Units.smallSpacing
+                visible: extractor.gpsLongitude !== 0
             }
             Controls.Label {
                 text: extractor.gpsLongitude
                 visible: extractor.gpsLongitude !== 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Dimension")
-                topPadding: Kirigami.Units.smallSpacing
-            }
-            Controls.Label {
-                text: i18nc("dimensions", "%1 x %2", extractor.width, extractor.height)
             }
         }
     }

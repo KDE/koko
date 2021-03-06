@@ -27,6 +27,9 @@ class KOKO_EXPORT Exiv2Extractor : public QObject
     Q_PROPERTY(QString simplifiedPath READ simplifiedPath NOTIFY filePathChanged)
     Q_PROPERTY(int height READ height NOTIFY filePathChanged)
     Q_PROPERTY(int width READ width NOTIFY filePathChanged)
+    Q_PROPERTY(int size READ size NOTIFY filePathChanged)
+    Q_PROPERTY(QString model READ model NOTIFY filePathChanged)
+    Q_PROPERTY(QString time READ time NOTIFY filePathChanged)
 
 public:
     explicit Exiv2Extractor(QObject *parent = nullptr);
@@ -64,6 +67,21 @@ public:
         return m_width;
     }
 
+    int size() const
+    {
+        return m_size;
+    }
+
+    QString model() const
+    {
+        return m_model;
+    }
+
+    QString time() const
+    {
+        return m_time;
+    }
+
     bool error() const;
 
 Q_SIGNALS:
@@ -79,6 +97,9 @@ private:
     QDateTime m_dateTime;
     int m_height;
     int m_width;
+    int m_size;
+    QString m_model;
+    QString m_time;
 
     bool m_error;
 };
