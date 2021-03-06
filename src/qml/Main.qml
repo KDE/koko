@@ -55,6 +55,7 @@ Kirigami.ApplicationWindow {
     contextDrawer: Kirigami.ContextDrawer {}
 
     Component.onCompleted: {
+        pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
         if (KokoPrivate.OpenFileModel.rowCount() > 0) {
             pageStack.initialPage = openFileComponent;
             imageFromParameter = true;
