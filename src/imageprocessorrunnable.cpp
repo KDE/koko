@@ -49,6 +49,10 @@ void ImageProcessorRunnable::run()
         ii.location.setAddress(addr);
     }
 
+    if (extractor.favorite()) {
+        ii.favorite = true;
+    }
+
     ii.dateTime = extractor.dateTime();
     if (ii.dateTime.isNull()) {
         ii.dateTime = QFileInfo(m_path).birthTime();

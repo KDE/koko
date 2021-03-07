@@ -30,12 +30,15 @@ class KOKO_EXPORT Exiv2Extractor : public QObject
     Q_PROPERTY(int size READ size NOTIFY filePathChanged)
     Q_PROPERTY(QString model READ model NOTIFY filePathChanged)
     Q_PROPERTY(QString time READ time NOTIFY filePathChanged)
+    Q_PROPERTY(bool favorite READ favorite NOTIFY favoriteChanged)
 
 public:
     explicit Exiv2Extractor(QObject *parent = nullptr);
     ~Exiv2Extractor();
 
     void extract(const QString &filePath);
+    Q_INVOKABLE void updateFavorite(const QString &filePath);
+    Q_INVOKABLE void toggleFavorite(const QString &filePath);
 
     QUrl filePath() const;
     void setFilePath(const QUrl &filePath) {
@@ -82,10 +85,16 @@ public:
         return m_time;
     }
 
+    bool favorite() const
+    {
+        return m_favorite;
+    }
+
     bool error() const;
 
 Q_SIGNALS:
     void filePathChanged();
+    void favoriteChanged();
 
 private:
     double fetchGpsDouble(const Exiv2::ExifData &data, const char *name);
@@ -100,6 +109,7 @@ private:
     int m_size;
     QString m_model;
     QString m_time;
+    bool m_favorite;
 
     bool m_error;
 };

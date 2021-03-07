@@ -36,6 +36,7 @@ struct ImageInfo {
     QString path;
     QGeoLocation location;
     QDateTime dateTime;
+    bool favorite;
 };
 
 class KOKO_EXPORT ImageStorage : public QObject
@@ -58,6 +59,8 @@ public:
     QList<QPair<QByteArray, QString>> timeTypes(Types::TimeGroup group);
     QStringList imagesForTime(const QByteArray &name, Types::TimeGroup group);
     QString imageForTime(const QByteArray &name, Types::TimeGroup group);
+
+    QStringList imagesForFavorites();
 
     QDate dateForKey(const QByteArray &key, Types::TimeGroup group);
 

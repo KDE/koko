@@ -10,6 +10,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QStandardPaths>
+#include <KFileMetaData/UserMetaData>
 
 Exiv2Extractor::Exiv2Extractor(QObject *parent)
     : QObject(parent)
@@ -21,7 +22,8 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_size(0)
     , m_model("")
     , m_time("")
-    , m_error(true)
+    , m_favorite(false)
+    , m_error(false)
 {
 }
 
@@ -136,6 +138,37 @@ static QDateTime toDateTime(const Exiv2::Value &value)
     return QDateTime();
 }
 
+void Exiv2Extractor::updateFavorite(const QString &filePath) {
+    if (!QFileInfo::exists(filePath)) {
+        return;
+    }
+
+    auto fileMetaData = KFileMetaData::UserMetaData(filePath);
+
+    m_favorite = fileMetaData.hasAttribute("koko.favorite");
+
+    Q_EMIT favoriteChanged();
+}
+
+void Exiv2Extractor::toggleFavorite(const QString &filePath) {
+    if (!QFileInfo::exists(filePath)) {
+        return;
+    }
+
+    auto fileMetaData = KFileMetaData::UserMetaData(filePath);
+
+    fileMetaData.setRating(5);
+    if (fileMetaData.hasAttribute("koko.favorite")) {
+        fileMetaData.setAttribute("koko.favorite", "");
+    } else {
+        fileMetaData.setAttribute("koko.favorite", "true");
+    }
+
+    m_favorite = fileMetaData.hasAttribute("koko.favorite");
+
+    Q_EMIT favoriteChanged();
+}
+
 void Exiv2Extractor::extract(const QString &filePath)
 {
     if (filePath == m_filePath) {
@@ -143,7 +176,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     }
 
     // init values
-    m_error = true;
+    m_error = false;
     m_latitude = 0.0;
     m_longitude = 0.0;
     m_width = 0;
@@ -151,6 +184,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_size = 0;
     m_model = "";
     m_time = "";
+    m_favorite = false;
     m_dateTime = QDateTime();
     m_filePath = filePath;
 
@@ -167,11 +201,18 @@ void Exiv2Extractor::extract(const QString &filePath)
     QFileInfo file_info(m_filePath);
 
     if (!QFileInfo::exists(m_filePath)) {
+        m_error = true; // only critical error (don't prevent indexing stuff without Exif metadata)
         Q_EMIT filePathChanged();
+        Q_EMIT favoriteChanged();
         return;
     }
 
     m_size = file_info.size();
+
+    auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
+
+    m_favorite = fileMetaData.hasAttribute("koko.favorite");
+    Q_EMIT favoriteChanged();
 
     try {
         image = Exiv2::ImageFactory::open(fileString);
@@ -230,7 +271,6 @@ void Exiv2Extractor::extract(const QString &filePath)
         m_longitude *= -1;
 
     Q_EMIT filePathChanged();
-    m_error = false;
 }
 
 double Exiv2Extractor::fetchGpsDouble(const Exiv2::ExifData &data, const char *name)

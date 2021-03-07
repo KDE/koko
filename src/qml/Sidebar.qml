@@ -74,7 +74,7 @@ Kirigami.GlobalDrawer {
             spacing: 1
             width: scrollView.width
             PlaceHeading {
-                text: i18n("Folders")
+                text: i18n("Places")
             }
             PlaceItem {
                 id: folderAction
@@ -83,6 +83,15 @@ Kirigami.GlobalDrawer {
                 onClicked: {
                     filterBy("Folders", "")
                     previouslySelectedAction = folderAction
+                }
+            }
+            PlaceItem {
+                id: favoritesAction
+                text: i18n("Favorites")
+                icon: "starred-symbolic"
+                onClicked: {
+                    filterBy("Favorites", "");
+                    previouslySelectedAction = favoritesAction;
                 }
             }
             Repeater {

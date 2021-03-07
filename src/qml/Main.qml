@@ -76,6 +76,9 @@ Kirigami.ApplicationWindow {
             } else {
                 pageStack.pop(albumView)
             }
+            if (value !== "Folders") {
+                albumView.url = ""
+            }
             if (value === "Folders" && path.length > 0) {
                 let str = path
                 if (str.endsWith("/")) {
@@ -122,6 +125,12 @@ Kirigami.ApplicationWindow {
                 case "Days": { 
                     albumView.model = imageTimeModelDay; 
                     imageListModel.timeGroup = Koko.Types.Day;
+                    break;
+                }
+                case "Favorites": {
+                    albumView.model = imageFavoritesModel;
+                    imageListModel.locationGroup = -1;
+                    imageListModel.timeGroup = -1;
                     break;
                 }
                 case "Folders": {
@@ -189,7 +198,12 @@ Kirigami.ApplicationWindow {
         }
         sortRoleName: "date"
     }
-    
+
+    Koko.SortModel {
+        id: imageFavoritesModel
+        sourceModel: Koko.ImageFavoritesModel {}
+    }
+
     Koko.SortModel {
         id: imageLocationModelCountry
         sourceModel: Koko.ImageLocationModel {

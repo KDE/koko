@@ -48,6 +48,22 @@ ImageStorage::ImageStorage(QObject *parent)
     }
 
     if (db.tables().contains("files")) {
+        QSqlQuery query;
+        query.prepare("PRAGMA table_info(files)");
+        bool favorites_present = false;
+        if (!query.exec()) {
+            qDebug() << "Failed to read db" << query.lastError();
+            return;
+        }
+        while (query.next()) {
+            if (query.value(1).toString() == "favorite") {
+                favorites_present = true;
+            }
+        }
+        if (!favorites_present) {
+            // migrate to new table
+            query.exec("ALTER TABLE files ADD COLUMN favorite INTEGER");
+        }
         db.transaction();
         return;
     }
@@ -59,6 +75,7 @@ ImageStorage::ImageStorage(QObject *parent)
         ")");
     query.exec(
         "CREATE TABLE files (url TEXT NOT NULL UNIQUE PRIMARY KEY,"
+        "                    favorite INTEGER,"
         "                    location INTEGER,"
         "                    dateTime STRING NOT NULL,"
         "                    FOREIGN KEY(location) REFERENCES locations(id)"
@@ -133,8 +150,9 @@ void ImageStorage::addImage(const ImageInfo &ii)
         }
 
         QSqlQuery query;
-        query.prepare("INSERT INTO FILES(url, location, dateTime) VALUES(?, ?, ?)");
+        query.prepare("INSERT INTO FILES(url, favorite, location, dateTime) VALUES(?, ?, ?, ?)");
         query.addBindValue(ii.path);
+        query.addBindValue(int(ii.favorite));
         query.addBindValue(locId);
         query.addBindValue(ii.dateTime.toString(Qt::ISODate));
         if (!query.exec()) {
@@ -142,8 +160,9 @@ void ImageStorage::addImage(const ImageInfo &ii)
         }
     } else {
         QSqlQuery query;
-        query.prepare("INSERT INTO FILES(url, dateTime) VALUES(?, ?)");
+        query.prepare("INSERT INTO FILES(url, favorite, dateTime) VALUES(?, ?, ?)");
         query.addBindValue(ii.path);
+        query.addBindValue(int(ii.favorite));
         query.addBindValue(ii.dateTime.toString(Qt::ISODate));
         if (!query.exec()) {
             qDebug() << "FILE INSERT" << query.lastError();
@@ -255,6 +274,26 @@ QList<QPair<QByteArray, QString>> ImageStorage::locations(Types::LocationGroup l
     return list;
 }
 
+QStringList ImageStorage::imagesForFavorites()
+{
+    QMutexLocker lock(&m_mutex);
+    QSqlQuery query;
+
+    query.prepare("SELECT DISTINCT url from files where favorite = 1");
+
+    if (!query.exec()) {
+        qDebug() << "imagesForFavorites: " << query.lastError();
+        return QStringList();
+    }
+
+    QStringList files;
+    while (query.next()) {
+        files << QString("file://" + query.value(0).toString());
+    }
+
+    return files;
+}
+
 QStringList ImageStorage::imagesForLocation(const QByteArray &name, Types::LocationGroup loc)
 {
     QMutexLocker lock(&m_mutex);
@@ -286,7 +325,7 @@ QStringList ImageStorage::imagesForLocation(const QByteArray &name, Types::Locat
     }
 
     if (!query.exec()) {
-        qDebug() << loc << query.lastError();
+        qDebug() << "imagesForLocation: " << loc << query.lastError();
         return QStringList();
     }
 
@@ -328,7 +367,7 @@ QString ImageStorage::imageForLocation(const QByteArray &name, Types::LocationGr
     }
 
     if (!query.exec()) {
-        qDebug() << loc << query.lastError();
+        qDebug() << "imageForLocation: " << loc << query.lastError();
         return QString();
     }
 

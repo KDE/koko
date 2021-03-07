@@ -14,6 +14,7 @@ target_link_libraries(kokocommon
     Qt5::Positioning
     Qt5::Sql
     KF5::CoreAddons
+    KF5::FileMetaData
     LibExiv2::LibExiv2
 )
 
@@ -72,6 +73,7 @@ set (qml_plugin_SRCS
     tagmodel.cpp
     openfilemodel.cpp
     imagelocationmodel.cpp
+    imagefavoritesmodel.cpp
     imagetimemodel.cpp
     imagefoldermodel.cpp
     sortmodel.cpp

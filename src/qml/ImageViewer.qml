@@ -20,11 +20,9 @@ import org.kde.kcoreaddons 1.0 as KCA
 Kirigami.Page {
     id: root
 
-    title: listView.currentItem.display
-    
     property var startIndex
     property var imagesModel
-    
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
@@ -37,12 +35,12 @@ Kirigami.Page {
     KQA.MimeDatabase {
         id: mimeDB
     }
+
     Kirigami.ContextDrawer {
         id: contextDrawer
         title: i18n("Edit image")
         handleVisible: true
     }
-
 
     Kirigami.OverlayDrawer {
         id: infoDrawer
@@ -134,7 +132,7 @@ Kirigami.Page {
     }
 
     actions {
-        left: Kirigami.Action {
+        right: Kirigami.Action {
             icon.name: "kdocumentinfo"
             text: i18n("Info")
             tooltip: i18n("See information about image")
@@ -147,20 +145,17 @@ Kirigami.Page {
                 }
             }
         }
-        right: Kirigami.Action {
-            id: shareAction
-            iconName: "document-share"
-            tooltip: i18n("Share Image")
-            text: i18nc("verb, share an image", "Share")
+        main: Kirigami.Action {
+            iconName: extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
+            text: extractor.favorite ? i18n("Remove") : i18n("Favorite")
+            tooltip: extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
-                shareDialog.open();
-                shareDialog.inputData = {
-                    "urls": [ listView.currentItem.currentImageSource.toString() ],
-                    "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
-                }
+                extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""))
+                kokoProcessor.removeFile(listView.currentItem.currentImageSource.replace("file://", ""))
+                kokoProcessor.addFile(listView.currentItem.currentImageSource.replace("file://", ""))
             }
         }
-        main: Kirigami.Action {
+        left: Kirigami.Action {
             id: editingAction
             iconName: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
@@ -175,6 +170,19 @@ Kirigami.Page {
             }
         }
         contextualActions: [
+            Kirigami.Action {
+                id: shareAction
+                iconName: "document-share"
+                tooltip: i18n("Share Image")
+                text: i18nc("verb, share an image", "Share")
+                onTriggered: {
+                    shareDialog.open();
+                    shareDialog.inputData = {
+                        "urls": [ listView.currentItem.currentImageSource.toString() ],
+                        "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
+                    }
+                }
+            },
             Kirigami.Action {
                 iconName: slideshowTimer.running ? "media-playback-stop" : "view-presentation"
                 tooltip: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Start Slideshow")
@@ -365,6 +373,24 @@ Kirigami.Page {
         Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
 
         Component.onCompleted: listView.currentIndex = model.mapFromSource(root.startIndex).row
+
+        onCountChanged: {
+            if (count === 0) {
+                root.close();
+            }
+        }
+
+        onCurrentItemChanged: {
+            if (currentItem) {
+                extractor.updateFavorite(currentItem.currentImageSource.replace("file://", ""))
+                const title = currentItem.display
+                if (title.includes("/")) {
+                    root.title = title.split("/")[title.split("/").length-1]
+                } else {
+                    root.title = title
+                }
+            }
+        }
 
         delegate: ImageDelegate {
             readonly property string display: model.display

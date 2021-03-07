@@ -39,8 +39,8 @@ signals:
     void finishedChanged();
 
 public slots:
-    void addFile(const QString &filePath);
-    void removeFile(const QString &filePath);
+    Q_INVOKABLE void addFile(const QString &filePath);
+    Q_INVOKABLE void removeFile(const QString &filePath);
     void initialScanCompleted();
 
 private slots:

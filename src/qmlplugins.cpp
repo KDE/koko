@@ -11,6 +11,7 @@
 #include "imagefoldermodel.h"
 #include "imagelistmodel.h"
 #include "imagelocationmodel.h"
+#include "imagefavoritesmodel.h"
 #include "imagetimemodel.h"
 #include "notificationmanager.h"
 #include "exiv2extractor.h"
@@ -35,6 +36,7 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<TagModel>(uri, 0, 1, "TagModel");
     qmlRegisterType<ImageLocationModel>(uri, 0, 1, "ImageLocationModel");
     qmlRegisterType<ImageTimeModel>(uri, 0, 1, "ImageTimeModel");
+    qmlRegisterType<ImageFavoritesModel>(uri, 0, 1, "ImageFavoritesModel");
     qmlRegisterType<ImageFolderModel>(uri, 0, 1, "ImageFolderModel");
     qmlRegisterType<Exiv2Extractor>(uri, 0, 1, "Exiv2Extractor");
     qmlRegisterType<AllImagesModel>(uri, 0, 1, "AllImagesModel");
