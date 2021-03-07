@@ -157,7 +157,6 @@ void Exiv2Extractor::toggleFavorite(const QString &filePath) {
 
     auto fileMetaData = KFileMetaData::UserMetaData(filePath);
 
-    fileMetaData.setRating(5);
     if (fileMetaData.hasAttribute("koko.favorite")) {
         fileMetaData.setAttribute("koko.favorite", "");
     } else {
