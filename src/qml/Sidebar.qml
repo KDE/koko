@@ -189,6 +189,9 @@ Kirigami.GlobalDrawer {
     }
 
     QQC2.Slider {
+        QQC2.ToolTip.text: i18n("%1 px", kokoConfig.iconSize)
+        QQC2.ToolTip.visible: hovered
+        QQC2.ToolTip.delay: Kirigami.Units.longDuration
         Layout.fillWidth: true
         Layout.leftMargin: Kirigami.Units.smallSpacing
         Layout.rightMargin: Kirigami.Units.smallSpacing
