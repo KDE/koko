@@ -4,8 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.7
-import QtQuick.Controls 2.1 as Controls
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as Controls
+import QtQuick.Layouts 1.15
 
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
@@ -14,14 +15,120 @@ Kirigami.ScrollablePage {
     id: page
 
     property alias model: gridView.model
+    property bool isFolderView: false
     signal collectionSelected(QtObject selectedModel, string cover)
     signal folderSelected(QtObject selectedModel, string cover, string path)
 
-    property string url: ""
-    property bool bookmarked: kokoConfig.savedFolders.includes(page.url)
+    property bool bookmarked: isFolderView && kokoConfig.savedFolders.includes(model.sourceModel.url.toString().replace("file:///", "file:/"))
+    property var backUrls: [];
+    property var backUrlsPosition: 0;
 
     keyboardNavigationEnabled: true
     focus: true
+
+    titleDelegate: page.isFolderView ? folderTitle : normalTitle
+    globalToolBarStyle: page.isFolderView ? Kirigami.ApplicationHeaderStyle.ToolBar : Kirigami.ApplicationHeaderStyle.Tiles
+
+    Component {
+        id: normalTitle
+        Kirigami.Heading {
+             level: 1
+             Layout.fillWidth: true
+             Layout.maximumWidth: implicitWidth + 1 // The +1 is to make sure we do not trigger eliding at max width
+             Layout.minimumWidth: 0
+             opacity: page.isCurrentPage ? 1 : 0.4
+             maximumLineCount: 1
+             elide: Text.ElideRight
+             text: page.title
+         }
+     }
+
+    Component {
+        id: folderTitle
+
+        RowLayout {
+            id: folderLayout
+            visible: page.isFolderView
+            Layout.fillWidth: true
+            Layout.rightMargin: Kirigami.Settings.isMobile ? -Kirigami.Units.gridUnit * 2: 0
+            Controls.ToolButton {
+                id: backButton
+                icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
+                enabled: page.backUrlsPosition > 0
+                onClicked: {
+                    page.backUrlsPosition--;
+                    model.sourceModel.url = page.backUrls[page.backUrlsPosition];
+                }
+            }
+
+            Controls.ToolButton {
+                icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
+                enabled: page.backUrls.length < page.backUrlsPosition
+                onClicked: {
+                    page.backUrlsPosition++;
+                    model.sourceModel.url = page.backUrls[page.backUrlsPosition];
+                }
+            }
+
+            Controls.ToolSeparator { }
+
+            Controls.ScrollView {
+                clip: true
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Layout.maximumWidth: folderRow.implicitWidth + 1
+                Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
+                Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
+                RowLayout {
+                    id: folderRow
+                    Controls.ToolButton {
+                        property bool canBeSimplified: Koko.DirModelUtils.canBeSimplified(page.model.sourceModel.url)
+                        icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
+                        height: parent.height
+                        width: height
+                        onClicked: {
+                            const tmp = page.backUrls;
+                            while (page.backUrlsPosition < page.backUrls.length) {
+                                tmp.pop();
+                            }
+                            tmp.push(page.model.sourceModel.url);
+                            page.backUrlsPosition++;
+                            page.backUrls = tmp;
+                            if (canBeSimplified) {
+                                model.sourceModel.url = Koko.DirModelUtils.home;
+                            } else {
+                                model.sourceModel.url = "file:///";
+                            }
+                        }
+                    }
+                    Repeater {
+                        model: Koko.DirModelUtils.getUrlParts(page.model.sourceModel.url)
+
+                        Controls.ToolButton {
+                            icon.name: "arrow-right"
+                            text: modelData
+                            onClicked: {
+                                console.log(page.backUrlsPosition, page.backUrls)
+                                const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index);
+
+                                if (nextUrl == page.model.sourceModel.url) {
+                                    return;
+                                }
+                                const tmp = page.backUrls;
+                                while (page.backUrlsPosition < page.backUrls.length) {
+                                    tmp.pop();
+                                }
+                                page.backUrlsPosition++;
+                                tmp.push(page.model.sourceModel.url);
+                                page.backUrls = tmp;
+                                page.model.sourceModel.url = nextUrl;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     states: [
         State {
@@ -38,18 +145,18 @@ Kirigami.ScrollablePage {
         main: Kirigami.Action {
             iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
             text: page.bookmarked ? i18n("Remove Bookmark") : i18n("Bookmark Folder")
-            visible: page.url !== ""
+            visible: page.isFolderView && !model.hasSelectedImages
             onTriggered: {
-                if (page.url == "") {
+                if (page.model.sourceModel.url == undefined) {
                     return
                 }
                 if (page.bookmarked) {
-                    const index = kokoConfig.savedFolders.indexOf(page.url);
+                    const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                     if (index !== -1) {
                         kokoConfig.savedFolders.splice(index, 1);
                     }
                 } else {
-                    kokoConfig.savedFolders.push(page.url)
+                    kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
                 }
             }
         }
@@ -58,21 +165,21 @@ Kirigami.ScrollablePage {
                 iconName: "edit-select-all"
                 text: i18n("Select All")
                 tooltip: i18n("Selects all the images in the current view")
-                enabled: model.containImages
+                visible: model.containImages
                 onTriggered: model.selectAll()
             },
             Kirigami.Action {
                 iconName: "edit-select-none"
                 text: i18n("Deselect All")
                 tooltip: i18n("De-selects all the selected images")
-                enabled: model.hasSelectedImages
                 onTriggered: model.clearSelections()
+                visible: model.hasSelectedImages
             },
             Kirigami.Action {
                 iconName: "emblem-shared-symbolic"
                 text: i18n("Share")
                 tooltip: i18n("Share the selected images")
-                enabled: model.hasSelectedImages
+                visible: model.hasSelectedImages
                 onTriggered: {
                     shareMenu.open();
                     shareMenu.inputData = {
@@ -85,10 +192,9 @@ Kirigami.ScrollablePage {
                 iconName: "group-delete"
                 text: i18n("Delete Selection")
                 tooltip: i18n("Move selected items to trash")
-                enabled: model.hasSelectedImages
+                visible: model.hasSelectedImages
                 onTriggered: model.deleteSelection()
             }
-            
         ]
     }
 
@@ -183,9 +289,14 @@ Kirigami.ScrollablePage {
                         break;
                     }
                     case Koko.Types.Folder: {
-                        imageFolderModel.url = model.imageurl
-                        sortedListModel.sourceModel = imageFolderModel
-                        folderSelected( sortedListModel, model.display, model.imageurl)
+                        const tmp = page.backUrls;
+                        while (page.backUrlsPosition < page.backUrls.length) {
+                            tmp.pop();
+                        }
+                        tmp.push(page.model.sourceModel.url);
+                        page.backUrls = tmp;
+                        page.backUrlsPosition++;
+                        page.model.sourceModel.url = model.imageurl
                         break;
                     }
                     case Koko.Types.Image: {

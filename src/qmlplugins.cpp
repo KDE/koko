@@ -13,6 +13,7 @@
 #include "imagelocationmodel.h"
 #include "imagefavoritesmodel.h"
 #include "imagetimemodel.h"
+#include "dirmodelutils.h"
 #include "notificationmanager.h"
 #include "exiv2extractor.h"
 #include "roles.h"
@@ -46,4 +47,8 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<NotificationManager>(uri, 0, 1, "NotificationManager");
     qmlRegisterUncreatableType<Types>(uri, 0, 1, "Types", "Cannot instantiate the Types class");
     qmlRegisterUncreatableType<Roles>(uri, 0, 1, "Roles", "Cannot instantiate the Roles class");
+    qmlRegisterSingletonType<DirModelUtils>(uri, 0, 1, "DirModelUtils", [=](QQmlEngine *, QJSEngine *) {
+        return new DirModelUtils;
+    });
+
 }

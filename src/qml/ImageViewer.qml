@@ -306,10 +306,10 @@ Kirigami.Page {
                 console.assert(output.url !== undefined);
                 var resultUrl = output.url;
                 console.log("Received", resultUrl)
-                notificationManager.showNotification( true, resultUrl);
+                notificationManager.showNotification(true, resultUrl);
                 clipboard.content = resultUrl;
             } else {
-                notificationManager.showNotification( false);
+                notificationManager.showNotification(false);
             }
         }
     }

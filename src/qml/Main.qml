@@ -63,6 +63,9 @@ Kirigami.ApplicationWindow {
             pageStack.initialPage = albumViewComponent;
         }
         albumView = pageStack.currentItem;
+        if (KokoPrivate.OpenFileModel.rowCount() === 0) {
+            albumView.isFolderView = true;
+        }
     }
 
     globalDrawer: Sidebar {
@@ -76,9 +79,6 @@ Kirigami.ApplicationWindow {
             } else {
                 pageStack.pop(albumView)
             }
-            if (value !== "Folders") {
-                albumView.url = ""
-            }
             if (value === "Folders" && path.length > 0) {
                 let str = path
                 if (str.endsWith("/")) {
@@ -91,6 +91,7 @@ Kirigami.ApplicationWindow {
             if (previouslySelectedAction) {
                 previouslySelectedAction.checked = false
             }
+            albumView.isFolderView = false;
             switch(value) {
                 case "Countries": { 
                     albumView.model = imageLocationModelCountry;
@@ -135,11 +136,11 @@ Kirigami.ApplicationWindow {
                 }
                 case "Folders": {
                     albumView.model = imageFolderModel; 
-                    albumView.url = path
+                    albumView.model.sourceModel.url = path
+                    albumView.isFolderView = true;
                     imageListModel.locationGroup = -1;
                     imageListModel.timeGroup = -1;
-                    imageFolderModel.sourceModel.url = path
-                    break; 
+                    break;
                 }
             }
             albumView.forceActiveFocus();
