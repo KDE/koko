@@ -37,7 +37,9 @@
 
 int main(int argc, char **argv)
 {
-    KLocalizedString::setApplicationDomain("koko");
+    QApplication app(argc, argv);
+    app.setApplicationDisplayName("Koko");
+    app.setOrganizationDomain("kde.org");
 
     KAboutData aboutData(QStringLiteral("koko"),
                          xi18nc("@title", "<application>Koko</application>"),
@@ -71,9 +73,7 @@ int main(int argc, char **argv)
 
     KAboutData::setApplicationData(aboutData);
 
-    QApplication app(argc, argv);
-    app.setApplicationDisplayName("Koko");
-    app.setOrganizationDomain("kde.org");
+    KLocalizedString::setApplicationDomain("koko");
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
