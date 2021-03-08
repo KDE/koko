@@ -278,9 +278,9 @@ void SortModel::delayedPreview()
     }
 
     if (list.size() > 0) {
-        KIO::PreviewJob *job = KIO::filePreview(list, m_screenshotSize);
+        const auto pluginLists = KIO::PreviewJob::availablePlugins();
+        KIO::PreviewJob *job = KIO::filePreview(list, m_screenshotSize, &pluginLists);
         job->setIgnoreMaximumSize(true);
-        // qDebug() << "Created job" << job;
         connect(job, &KIO::PreviewJob::gotPreview, this, &SortModel::showPreview);
         connect(job, &KIO::PreviewJob::failed, this, &SortModel::previewFailed);
     }
