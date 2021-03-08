@@ -314,9 +314,11 @@ Kirigami.Page {
         }
     }
 
-    ThumbnailStrip {
-        id: thumbnailView
+    Controls.ScrollView {
         z: 100
+        height: kokoConfig.iconSize
+        Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
+        Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
 
         anchors {
             left: parent.left
@@ -324,9 +326,13 @@ Kirigami.Page {
             bottom: parent.bottom
         }
 
-        model: listView.model
-        currentIndex: listView.currentIndex
-        onActivated: index => listView.currentIndex = index
+        ThumbnailStrip {
+            id: thumbnailView
+
+            model: listView.model
+            currentIndex: listView.currentIndex
+            onActivated: index => listView.currentIndex = index
+        }
     }
 
     MouseArea {

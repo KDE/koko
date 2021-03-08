@@ -70,7 +70,6 @@ ListView {
         }
     ]
 
-    height: kokoConfig.iconSize
     orientation: Qt.Horizontal
     snapMode: ListView.SnapOneItem
 
