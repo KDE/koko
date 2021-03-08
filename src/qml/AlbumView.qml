@@ -254,20 +254,13 @@ Kirigami.ScrollablePage {
         topMargin: Kirigami.Units.gridUnit
 
         highlightMoveDuration: 0
-        highlight: Item {
-            Rectangle {
-                anchors.centerIn: parent
-                width: Math.min(parent.width, parent.height)
-                height: width
-                color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
-                border.color: Kirigami.Theme.highlightColor
-                radius: 2
-            }
-        }
-        
+
         delegate: AlbumDelegate {
             id: delegate
             modelData: model
+            Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
+            Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
+            Controls.ToolTip.delay: Kirigami.Units.longDuration * 2
             onClicked: {
                 if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
                     gridView.model.toggleSelected(model.index)

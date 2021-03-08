@@ -5,12 +5,12 @@
  */
 
 import QtQuick 2.7
-import QtQuick.Controls 2.1 as Controls
+import QtQuick.Controls 2.14 as Controls
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
 
-Item {
+Controls.ItemDelegate {
     id: albumDelegate
     width: gridView.cellWidth
     height: gridView.cellHeight
