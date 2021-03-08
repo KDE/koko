@@ -3,6 +3,7 @@
         <file>qml/AlbumDelegate.qml</file>
         <file>qml/AlbumView.qml</file>
         <file>qml/EditorView.qml</file>
+        <file>qml/FileContextMenu.qml</file>
         <file>qml/ImageDelegate.qml</file>
         <file>qml/ImageViewer.qml</file>
         <file>qml/Main.qml</file>
