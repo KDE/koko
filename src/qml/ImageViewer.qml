@@ -151,6 +151,7 @@ Kirigami.Page {
             tooltip: extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
                 extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""))
+                // makes change immediate
                 kokoProcessor.removeFile(listView.currentItem.currentImageSource.replace("file://", ""))
                 kokoProcessor.addFile(listView.currentItem.currentImageSource.replace("file://", ""))
             }

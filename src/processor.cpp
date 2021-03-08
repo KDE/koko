@@ -78,7 +78,7 @@ void Processor::process()
     }
 
     m_processing = true;
-    QString path = m_files.takeLast();
+    QString path = m_files.takeLast().replace("file://", "");
 
     ImageProcessorRunnable *runnable = new ImageProcessorRunnable(path, &m_geoCoder);
     connect(runnable, SIGNAL(finished()), this, SLOT(slotFinished()));

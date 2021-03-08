@@ -48,6 +48,7 @@ public:
 
     Q_INVOKABLE void addImage(const ImageInfo &ii);
     void removeImage(const QString &filePath);
+    bool imageExists(const QString &filePath);
     void commit();
 
     static ImageStorage *instance();

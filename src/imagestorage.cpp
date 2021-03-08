@@ -48,7 +48,7 @@ ImageStorage::ImageStorage(QObject *parent)
     }
 
     if (db.tables().contains("files")) {
-        QSqlQuery query;
+        QSqlQuery query(db);
         query.prepare("PRAGMA table_info(files)");
         bool favorites_present = false;
         if (!query.exec()) {
@@ -103,6 +103,9 @@ ImageStorage *ImageStorage::instance()
 
 void ImageStorage::addImage(const ImageInfo &ii)
 {
+    if (imageExists(ii.path)) {
+        removeImage(ii.path);
+    }
     QMutexLocker lock(&m_mutex);
     QGeoAddress addr = ii.location.address();
 
@@ -168,6 +171,22 @@ void ImageStorage::addImage(const ImageInfo &ii)
             qDebug() << "FILE INSERT" << query.lastError();
         }
     }
+}
+
+bool ImageStorage::imageExists(const QString &filePath)
+{
+    QMutexLocker lock(&m_mutex);
+
+    QSqlQuery query;
+    query.prepare("SELECT EXISTS(SELECT 1 FROM files WHERE url = ?)");
+    query.addBindValue(filePath);
+
+    if (!query.exec()) {
+        qDebug() << query.lastError();
+        return false;
+    }
+
+    return query.next();
 }
 
 void ImageStorage::removeImage(const QString &filePath)
@@ -501,7 +520,6 @@ QStringList ImageStorage::imagesForTime(const QByteArray &name, Types::TimeGroup
         files << QString("file://" + query.value(0).toString());
     }
 
-    Q_ASSERT(!files.isEmpty());
     return files;
 }
 

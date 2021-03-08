@@ -40,12 +40,12 @@ FileSystemTracker::FileSystemTracker(QObject *parent)
         removeFile(src);
         slotNewFiles({dst});
     });
-
-    //
-    // Real time updates
-    //
-    QDBusConnection con = QDBusConnection::sessionBus();
-    con.connect(QString(), QLatin1String("/files"), QLatin1String("org.kde"), QLatin1String("changed"), this, SLOT(slotNewFiles(QStringList)));
+    connect(kdirnotify, &org::kde::KDirNotify::FilesChanged, this, [this](const QStringList &files) {
+        for (const QString &filePath : files) {
+            removeFile(filePath);
+        }
+        slotNewFiles(files);
+    });
 
     connect(this, &FileSystemTracker::subFolderChanged, this, &FileSystemTracker::reindexSubFolder);
 }
@@ -63,13 +63,32 @@ void FileSystemTracker::setupDb()
     }
 
     if (db.tables().contains("files")) {
-        return;
+        QSqlQuery query(db);
+        query.prepare("PRAGMA table_info(files)");
+        bool metadataChangeTime_present = false;
+        if (!query.exec()) {
+            qDebug() << "Failed to read db" << query.lastError();
+            return;
+        }
+        while (query.next()) {
+            if (query.value(1).toString() == "metadataChangeTime") {
+                metadataChangeTime_present = true;
+            }
+        }
+        if (metadataChangeTime_present) {
+            return;
+        } else {
+            // reindex everything
+            qDebug() << "REINDEXING files";
+            query.exec("DROP TABLE files");
+        }
     }
 
     QSqlQuery query(db);
     bool ret =
         query.exec(QLatin1String("CREATE TABLE files("
                                  "id INTEGER PRIMARY KEY, "
+                                 "metadataChangeTime STRING NOT NULL,"
                                  "url TEXT NOT NULL UNIQUE)"));
     if (!ret) {
         qWarning() << "Could not create files table" << query.lastError().text();
@@ -98,22 +117,34 @@ FileSystemTracker::~FileSystemTracker()
     QSqlDatabase::removeDatabase(QStringLiteral("fstracker"));
 }
 
-void FileSystemTracker::slotImageResult(const QString &filePath)
+void FileSystemTracker::slotImageResult(const QString &file)
 {
+    QString filePath = file;
+    filePath.replace("file://", "");
     QSqlQuery query(QSqlDatabase::database("fstracker"));
-    query.prepare("SELECT id from files where url = ?");
+    query.prepare("SELECT id, metadataChangeTime from files where url = ?");
     query.addBindValue(filePath);
     if (!query.exec()) {
         qDebug() << query.lastError();
         return;
     }
 
-    if (!query.next()) {
+    bool indexed = query.next();
+
+    if (indexed && query.value(1).toString() != QFileInfo(filePath).metadataChangeTime().toString(Qt::ISODate)) {
+        // reindex if metadata has changed
+        removeFile(filePath);
+        indexed = false;
+        qDebug() << "REINDEXING" << filePath;
+    }
+
+    if (!indexed) {
         QSqlQuery query(QSqlDatabase::database("fstracker"));
-        query.prepare("INSERT into files(url) VALUES (?)");
+        query.prepare("INSERT into files(url, metadataChangeTime) VALUES (?, ?)");
         query.addBindValue(filePath);
+        query.addBindValue(QFileInfo(filePath).metadataChangeTime().toString(Qt::ISODate));
         if (!query.exec()) {
-            qDebug() << query.lastError();
+            qDebug() << "slotImageResult: " << query.lastError();
             return;
         }
         qDebug() << "ADDED" << filePath;
@@ -146,8 +177,10 @@ void FileSystemTracker::slotFetchFinished()
     emit initialScanComplete();
 }
 
-void FileSystemTracker::removeFile(const QString &filePath)
+void FileSystemTracker::removeFile(const QString &file)
 {
+    QString filePath = file;
+    filePath.replace("file://", "");
     qDebug() << "REMOVED" << filePath;
     emit imageRemoved(filePath);
     QSqlQuery query(QSqlDatabase::database("fstracker"));
