@@ -27,7 +27,7 @@ class ImageFolderModel : public KDirModel
     /**
      * @property string The url we want to browse. it may be an absolute path or a correct url of any protocol KIO supports
      */
-    Q_PROPERTY(QString url READ url WRITE setUrl NOTIFY urlChanged)
+    Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
 
     /**
      * @property count Total number of rows
@@ -40,8 +40,8 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    void setUrl(QString &url);
-    QString url() const;
+    void setUrl(QUrl &url);
+    QUrl url() const;
 
     QVariant data(const QModelIndex &index, int role) const override;
     int count() const

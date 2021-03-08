@@ -49,25 +49,20 @@ QHash<int, QByteArray> ImageFolderModel::roleNames() const
     return {{Qt::DisplayRole, "display"}, {Qt::DecorationRole, "decoration"}, {Roles::ImageUrlRole, "imageurl"}, {Roles::MimeTypeRole, "mimeType"}, {Roles::ItemTypeRole, "itemType"}};
 }
 
-QString ImageFolderModel::url() const
+QUrl ImageFolderModel::url() const
 {
-    return dirLister()->url().toString();
+    return dirLister()->url();
 }
 
-void ImageFolderModel::setUrl(QString &url)
+void ImageFolderModel::setUrl(QUrl &url)
 {
-    url = QUrl(url).path();
-
     if (url.isEmpty()) {
         QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
         Q_ASSERT(locations.size() >= 1);
-        url = locations.first().append("/");
+        url = QUrl::fromLocalFile(locations.first().append("/"));
     }
 
-    url = QUrl::fromLocalFile(url).toString();
-    Q_ASSERT(QUrl(url).isLocalFile());
-
-    if (dirLister()->url().path() == QUrl(url).path()) {
+    if (dirLister()->url() == url) {
         dirLister()->updateDirectory(QUrl(url));
         return;
     }
