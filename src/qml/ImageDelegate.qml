@@ -114,15 +114,13 @@ Flickable {
                 easing.type: Easing.InOutQuad
             }
         }
-        Image {
+
+        AnimatedImage {
             id: image
             width: flick.contentWidth
             height: flick.contentHeight
             fillMode: Image.PreserveAspectFit
-            // we need to set this otherwise complex svgs will eat a bunch of memory
-            sourceSize.width: width
-            sourceSize.height: height
-            source: currentImageSource.endsWith(".gif") ? "" : currentImageSource
+            source: currentImageSource
             autoTransform: true
             asynchronous: true
             onStatusChanged: {
@@ -130,80 +128,65 @@ Flickable {
                     imgColors.update();
                 }
             }
-        }
-        // sadly sourceSize is read only in AnimatedImage, so we keep it separate
-        AnimatedImage {
-            id: imageAnimated
-            width: flick.contentWidth
-            height: flick.contentHeight
-            fillMode: Image.PreserveAspectFit
-            source: currentImageSource.endsWith(".gif") ? currentImageSource : ""
-            autoTransform: true
-            asynchronous: true
-            onStatusChanged: {
-                if (status === Image.Ready && listView.currentIndex === index) {
-                    imgColors.update();
+            Timer {
+                id: doubleClickTimer
+                interval: 150
+                onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    contextDrawer.drawerOpen = false
+                    doubleClickTimer.restart();
                 }
-            }
-        }
-        Timer {
-            id: doubleClickTimer
-            interval: 150
-            onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
-        }
-        MouseArea {
-            anchors.fill: image
-            onClicked: {
-                contextDrawer.drawerOpen = false
-                doubleClickTimer.restart();
-            }
-            onDoubleClicked: {
-                doubleClickTimer.running = false;
-                applicationWindow().controlsVisible = false;
-                if (flick.interactive) {
-                    zoomAnim.x = 0;
-                    zoomAnim.y = 0;
-                    zoomAnim.width = root.width;
-                    zoomAnim.height = root.height;
-                    zoomAnim.running = true;
-                } else {
-                    zoomAnim.x = mouse.x * 2;
-                    zoomAnim.y = mouse.y *2;
-                    zoomAnim.width = root.width * 3;
-                    zoomAnim.height = root.height * 3;
-                    zoomAnim.running = true;
-                }
-            }
-            onWheel: {
-                if (wheel.modifiers & Qt.ControlModifier) {
-                    if (wheel.angleDelta.y != 0) {
-                        var factor = 1 + wheel.angleDelta.y / 600;
-                        zoomAnim.running = false;
-
-                        zoomAnim.width = Math.min(Math.max(root.width, zoomAnim.width * factor), root.width * 4);
-                        zoomAnim.height = Math.min(Math.max(root.height, zoomAnim.height * factor), root.height * 4);
-
-                        //actual factors, may be less than factor
-                        var xFactor = zoomAnim.width / flick.contentWidth;
-                        var yFactor = zoomAnim.height / flick.contentHeight;
-
-                        zoomAnim.x = flick.contentX * xFactor + (((wheel.x - flick.contentX) * xFactor) - (wheel.x - flick.contentX))
-                        zoomAnim.y = flick.contentY * yFactor + (((wheel.y - flick.contentY) * yFactor) - (wheel.y - flick.contentY))
+                onDoubleClicked: {
+                    doubleClickTimer.running = false;
+                    applicationWindow().controlsVisible = false;
+                    if (flick.interactive) {
+                        zoomAnim.x = 0;
+                        zoomAnim.y = 0;
+                        zoomAnim.width = root.width;
+                        zoomAnim.height = root.height;
                         zoomAnim.running = true;
-
-                    } else if (wheel.pixelDelta.y != 0) {
-                        flick.resizeContent(Math.min(Math.max(root.width, flick.contentWidth + wheel.pixelDelta.y), root.width * 4),
-                                            Math.min(Math.max(root.height, flick.contentHeight + wheel.pixelDelta.y), root.height * 4),
-                                            wheel);
-                    }
-                } else {
-                    if (wheel.pixelDelta.y != 0) {
-                        flick.contentX += wheel.pixelDelta.x;
-                        flick.contentY += wheel.pixelDelta.y;
                     } else {
-                        flick.contentX -= wheel.angleDelta.x;
-                        flick.contentY -= wheel.angleDelta.y;
-                    };
+                        zoomAnim.x = mouse.x * 2;
+                        zoomAnim.y = mouse.y *2;
+                        zoomAnim.width = root.width * 3;
+                        zoomAnim.height = root.height * 3;
+                        zoomAnim.running = true;
+                    }
+                }
+                onWheel: {
+                    if (wheel.modifiers & Qt.ControlModifier) {
+                        if (wheel.angleDelta.y != 0) {
+                            var factor = 1 + wheel.angleDelta.y / 600;
+                            zoomAnim.running = false;
+
+                            zoomAnim.width = Math.min(Math.max(root.width, zoomAnim.width * factor), root.width * 4);
+                            zoomAnim.height = Math.min(Math.max(root.height, zoomAnim.height * factor), root.height * 4);
+
+                            //actual factors, may be less than factor
+                            var xFactor = zoomAnim.width / flick.contentWidth;
+                            var yFactor = zoomAnim.height / flick.contentHeight;
+
+                            zoomAnim.x = flick.contentX * xFactor + (((wheel.x - flick.contentX) * xFactor) - (wheel.x - flick.contentX))
+                            zoomAnim.y = flick.contentY * yFactor + (((wheel.y - flick.contentY) * yFactor) - (wheel.y - flick.contentY))
+                            zoomAnim.running = true;
+
+                        } else if (wheel.pixelDelta.y != 0) {
+                            flick.resizeContent(Math.min(Math.max(root.width, flick.contentWidth + wheel.pixelDelta.y), root.width * 4),
+                                                Math.min(Math.max(root.height, flick.contentHeight + wheel.pixelDelta.y), root.height * 4),
+                                                wheel);
+                        }
+                    } else {
+                        if (wheel.pixelDelta.y != 0) {
+                            flick.contentX += wheel.pixelDelta.x;
+                            flick.contentY += wheel.pixelDelta.y;
+                        } else {
+                            flick.contentX -= wheel.angleDelta.x;
+                            flick.contentY -= wheel.angleDelta.y;
+                        };
+                    }
                 }
             }
         }
