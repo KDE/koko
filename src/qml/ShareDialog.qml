@@ -39,7 +39,7 @@ Kirigami.OverlaySheet {
         clip: true
         pluginType: "Export"
         implicitWidth: Kirigami.Units.gridUnit * 20
-        implicitHeight: Math.max(Kirigami.Units.gridUnit * 10, initialItem.contentHeight)
+        implicitHeight: Kirigami.Units.gridUnit * 10
         
         delegate: Kirigami.BasicListItem {
             label: model.display
