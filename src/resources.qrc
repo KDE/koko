@@ -13,6 +13,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/InfoDrawer.qml</file>
         <file>qml/InfoDrawerSidebarBase.qml</file>
         <file>qml/InfoSidebar.qml</file>
+        <file>qml/FileContextMenu.qml</file>
         <file>qml/Main.qml</file>
         <file>qml/OverviewControl.qml</file>
         <file>qml/PlacesPage.qml</file>

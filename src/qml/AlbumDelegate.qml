@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-import QtQuick 2.7
+import QtQuick 2.15
 import QtQuick.Controls 2.14 as Controls
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kirigami 2.12 as Kirigami
@@ -25,6 +25,20 @@ Controls.ItemDelegate {
         const old = image.image;
         image.image = undefined;
         image.image = old;
+    }
+
+    TapHandler {
+        acceptedButtons: Qt.RightButton
+        onTapped: {
+            const component = Qt.createComponent(Qt.resolvedUrl('./FileContextMenu.qml'));
+            if (component.status !== Component.Ready) {
+                console.error("Error loading component:", component.errorString());
+            }
+            const item = component.createObject(albumDelegate, {
+                fileUrl: model.imageurl
+            });
+            item.popup();
+        }
     }
 
     KQA.QImageItem {
