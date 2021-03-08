@@ -320,6 +320,8 @@ Kirigami.Page {
         Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
         Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
 
+        clip: false
+
         anchors {
             left: parent.left
             right: parent.right
