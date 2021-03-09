@@ -45,8 +45,17 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
+        id: albumViewComponentMobile
+        AlbumView {
+            model: imageFolderModel
+            title: i18n("Folders")
+        }
+    }
+
+    Component {
         id: albumViewComponent
         AlbumView {
+            titleDelegate: isFolderView ? folderTitle : normalTitle
             model: imageFolderModel
             title: i18n("Folders")
         }
@@ -60,7 +69,7 @@ Kirigami.ApplicationWindow {
             pageStack.initialPage = openFileComponent;
             imageFromParameter = true;
         } else {
-            pageStack.initialPage = albumViewComponent;
+            pageStack.initialPage = Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent;
         }
         albumView = pageStack.currentItem;
         if (KokoPrivate.OpenFileModel.rowCount() === 0) {
@@ -74,7 +83,7 @@ Kirigami.ApplicationWindow {
         onFilterBy: {
             if (imageFromParameter) {
                 pageStack.pop(albumView);
-                albumView = pageStack.replace(albumViewComponent);
+                albumView = pageStack.replace(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
                 imageFromParameter = false;
             } else {
                 pageStack.pop(albumView)
@@ -134,10 +143,11 @@ Kirigami.ApplicationWindow {
                     imageListModel.timeGroup = -1;
                     break;
                 }
+                case "Remote":
                 case "Folders": {
                     albumView.model = imageFolderModel; 
                     albumView.model.sourceModel.url = path
-                    albumView.isFolderView = true;
+                    albumView.isFolderView = (value === "Folders");
                     imageListModel.locationGroup = -1;
                     imageListModel.timeGroup = -1;
                     break;

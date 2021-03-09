@@ -94,15 +94,6 @@ Kirigami.GlobalDrawer {
                     previouslySelectedAction = favoritesAction;
                 }
             }
-            PlaceItem {
-                id: remoteFolderAction
-                icon: "folder-cloud"
-                text: i18nc("Remote network locations", "Remote")
-                onClicked: {
-                    filterBy("Folders", "remote:/")
-                    previouslySelectedAction = remoteFolderAction
-                }
-            }
             Repeater {
                 model: kokoConfig.savedFolders
                 PlaceItem {
@@ -119,6 +110,18 @@ Kirigami.GlobalDrawer {
                         filterBy("Folders", modelData)
                         previouslySelectedAction = pinnedFolderAction
                     }
+                }
+            }
+            PlaceHeading {
+                text: i18nc("Remote network locations", "Remote")
+            }
+            PlaceItem {
+                id: remoteFolderAction
+                icon: "folder-cloud"
+                text: i18n("Network")
+                onClicked: {
+                    filterBy("Remote", "remote:/")
+                    previouslySelectedAction = remoteFolderAction
                 }
             }
             PlaceHeading {
