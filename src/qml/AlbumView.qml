@@ -95,7 +95,7 @@ Kirigami.ScrollablePage {
                             page.backUrlsPosition++;
                             page.backUrls = tmp;
                             if (canBeSimplified) {
-                                model.sourceModel.url = Koko.DirModelUtils.home;
+                                model.sourceModel.url = "file:///" + Koko.DirModelUtils.home;
                             } else {
                                 model.sourceModel.url = "file:///";
                             }
