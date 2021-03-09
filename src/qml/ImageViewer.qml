@@ -387,6 +387,9 @@ Kirigami.Page {
             if (count === 0) {
                 root.close();
             }
+            if (currentIndex >= count) {
+                currentIndex = count - 1
+            }
         }
 
         onCurrentItemChanged: {
