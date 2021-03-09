@@ -17,6 +17,8 @@
 #include <kimagecache.h>
 #include <kshareddatacache.h>
 
+class KFileItemActions;
+
 namespace Jungle
 {
 class SortModel : public QSortFilterProxyModel
@@ -46,6 +48,7 @@ public:
     Q_INVOKABLE void selectAll();
     Q_INVOKABLE void deleteSelection();
     Q_INVOKABLE void restoreSelection();
+    Q_INVOKABLE void openSelection();
     Q_INVOKABLE int proxyIndex(const int &indexValue);
     Q_INVOKABLE int sourceIndex(const int &indexValue);
     Q_INVOKABLE QJsonArray selectedImages();
@@ -63,7 +66,11 @@ signals:
     void selectedImagesChanged();
 
 private:
+    KFileItemList selectedFiles() const;
+    QList<QUrl> selectedUrls() const;
+
     QByteArray m_sortRoleName;
+    KFileItemActions *m_fileItemActions = nullptr;
     QItemSelectionModel *m_selectionModel;
 
     QTimer *m_previewTimer;

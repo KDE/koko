@@ -12,10 +12,13 @@
 #include <QIcon>
 #include <QTimer>
 
-#include <KIO/RestoreJob>
 #include <kimagecache.h>
-#include <kio/copyjob.h>
-#include <kio/previewjob.h>
+
+#include <KFileItemActions>
+#include <KIO/CopyJob>
+#include <KIO/FileUndoManager>
+#include <KIO/PreviewJob>
+#include <KIO/RestoreJob>
 
 using namespace Jungle;
 
@@ -27,6 +30,7 @@ SortModel::SortModel(QObject *parent)
     setSortLocaleAware(true);
     sort(0);
     m_selectionModel = new QItemSelectionModel(this);
+    m_fileItemActions = new KFileItemActions(this);
 
     m_previewTimer = new QTimer(this);
     m_previewTimer->setSingleShot(true);
@@ -222,32 +226,65 @@ void SortModel::selectAll()
         if (Types::Image == data(index, Roles::ItemTypeRole))
             m_selectionModel->select(index, QItemSelectionModel::Select);
     }
-    emit dataChanged(index(0, 0, QModelIndex()), index(rowCount() - 1, 0, QModelIndex()));
-    emit selectedImagesChanged();
+    Q_EMIT dataChanged(index(0, 0, {}), index(rowCount() - 1, 0, {}));
+    Q_EMIT selectedImagesChanged();
 }
 
 void SortModel::deleteSelection()
 {
-    QList<QUrl> filesToDelete;
-
-    for (auto index : m_selectionModel->selectedIndexes()) {
-        filesToDelete << data(index, Roles::ImageUrlRole).toUrl();
+    const auto files = selectedUrls();
+    if (files.isEmpty()) {
+        return;
     }
 
-    auto trashJob = KIO::trash(filesToDelete);
-    trashJob->exec();
+    auto job = KIO::trash(files);
+    if (job) {
+        KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, files, QUrl("trash:/"), job);
+    }
 }
 
 void SortModel::restoreSelection()
 {
-    QList<QUrl> filesToRestore;
-
-    foreach (QModelIndex index, m_selectionModel->selectedIndexes()) {
-        filesToRestore << data(index, Roles::ImageUrlRole).toUrl();
+    const auto files = selectedUrls();
+    if (files.isEmpty()) {
+        return;
     }
 
-    auto restoreJob = KIO::restoreFromTrash(filesToRestore);
+    auto restoreJob = KIO::restoreFromTrash(files);
     restoreJob->exec();
+}
+
+void SortModel::openSelection()
+{
+    const auto files = selectedFiles();
+    if (files.isEmpty()) {
+        return;
+    }
+    m_fileItemActions->runPreferredApplications(files);
+}
+
+KFileItemList SortModel::selectedFiles() const
+{
+    auto indexes = m_selectionModel->selectedIndexes();
+    KFileItemList items;
+    items.reserve(indexes.size());
+
+    for (QModelIndex index : indexes) {
+        items << KFileItem{data(index, Roles::ImageUrlRole).toUrl(), data(index, Roles::MimeTypeRole).toString()};
+    }
+    return items;
+}
+
+QList<QUrl> SortModel::selectedUrls() const
+{
+    auto indexes = m_selectionModel->selectedIndexes();
+    QList<QUrl> files;
+    files.reserve(indexes.size());
+
+    for (auto index : indexes) {
+        files << data(index, Roles::ImageUrlRole).toUrl();
+    }
+    return files;
 }
 
 int SortModel::proxyIndex(const int &indexValue)
