@@ -126,7 +126,7 @@ Kirigami.ScrollablePage {
                             Kirigami.Icon {
                                 anchors.verticalCenter: parent.verticalCenter
                                 visible: index != repeater.model.length - 1
-                                source: "arrow-right"
+                                source: LayoutMirroring.enabled ? "arrow-left" : "arrow-right"
                                 width: height
                                 height: visible ? Kirigami.Units.iconSizes.small : 0
                             }
