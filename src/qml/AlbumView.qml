@@ -362,7 +362,7 @@ Kirigami.ScrollablePage {
             SelectionButton {
                 id: selectionButton
                 opacity: ( delegate.containsMouse || page.state == "selecting")
-+               visible: !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
+                visible: !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
 
                 anchors.top: delegate.top
                 anchors.left: delegate.left
