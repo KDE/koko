@@ -62,9 +62,9 @@ Kirigami.ScrollablePage {
             id: folderLayout
             visible: page.isFolderView
             Layout.fillWidth: true
-            Layout.rightMargin: Kirigami.Settings.isMobile ? -Kirigami.Units.gridUnit * 2: 0
             Controls.ToolButton {
                 id: backButton
+                Layout.leftMargin: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
                 onClicked: {
