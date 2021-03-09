@@ -73,6 +73,7 @@ Kirigami.ScrollablePage {
             Controls.ToolSeparator { }
 
             Controls.ScrollView {
+                id: scrollView
                 clip: true
                 Layout.fillWidth: true
                 Layout.fillHeight: true
@@ -107,6 +108,11 @@ Kirigami.ScrollablePage {
                         Controls.ToolButton {
                             icon.name: "arrow-right"
                             text: modelData
+                            DragHandler {
+                                enabled: scrollView.contentWidth > scrollView.width
+                                yAxis.enabled: false
+                                xAxis.enabled: false
+                            }
                             onClicked: {
                                 console.log(page.backUrlsPosition, page.backUrls)
                                 const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index);
