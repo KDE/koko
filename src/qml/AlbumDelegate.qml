@@ -27,10 +27,20 @@ Controls.ItemDelegate {
         image.image = old;
     }
 
+    Component {
+        id: fileContextMenu
+        FileContextMenu {
+            fileUrl: modelData.imageurl
+        }
+    }
+
     TapHandler {
         acceptedButtons: Qt.RightButton
         onTapped: {
-            
+            const menu = fileContextMenu.createObject(albumDelegate);
+            menu.open();
+            menu.x = eventPoint.position.x;
+            menu.y = eventPoint.position.y;
         }
     }
 

@@ -3,26 +3,60 @@
 
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.12 as Kirigami
+import org.kde.koko 0.1 as Koko
 
 Menu {
-    required property url: fileUrl
+    required property url fileUrl
     Component {
+        id: createFolderSheetComponent
         Kirigami.OverlaySheet {
             id: createFolderSheet
-            title: i18n("New Folder")
-            ColumnLayout {
+            header: Kirigami.Heading {
+                level: 2
+                text: i18n("New Folder")
+            }
+            contentItem: ColumnLayout {
                 Label {
-                    text: i18n("Create new folder in %1:", folderUrl)
+                    text: i18n("Create new folder in %1:", Koko.DirModelUtils.directoryOfUrl(fileUrl.toString().replace("file:/", "")).toString().replace("file:/", ""))
+                    wrapMode: Text.WordWrap
+                    Layout.fillWidth: true
                 }
                 TextField {
+                    id: createFolderSheetField
                     text: i18nc("Default name for the new folder", "New Folder")
+                    Layout.fillWidth: true
+                }
+            }
+            footer: RowLayout {
+                Item {
+                    Layout.fillWidth: true
+                }
+                Button {
+                    icon.name: "dialog-ok"
+                    text: i18n("Ok")
+                    Layout.alignment: Qt.AlignRight
+                    onClicked: {
+                        Koko.DirModelUtils.mkdir(Koko.DirModelUtils.directoryOfUrl(fileUrl.toString().replace("file://", "")) + "/" + createFolderSheetField.text);
+                        createFolderSheet.close();
+                    }
+                }
+                Button {
+                    Layout.alignment: Qt.AlignRight
+                    icon.name: "dialog-cancel"
+                    text: i18n("Cancel")
+                    onClicked: createFolderSheet.close()
                 }
             }
         }
     }
     MenuItem {
         text: i18n("Create Folder")
+        onTriggered: {
+            const sheet = createFolderSheetComponent.createObject(applicationWindow());
+            sheet.open();
+        }
     }
     MenuSeparator { }
     MenuItem {
