@@ -12,10 +12,12 @@ class DirModelUtils : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QUrl home READ home CONSTANT)
+    Q_PROPERTY(QUrl pictures READ pictures CONSTANT)
 public:
     explicit DirModelUtils(QObject *parent = nullptr);
 
     QUrl home() const;
+    QUrl pictures() const;
 
     Q_INVOKABLE QStringList getUrlParts(const QUrl &url) const;
     Q_INVOKABLE QUrl partialUrlForIndex(QUrl url, int index) const;

@@ -152,7 +152,7 @@ Kirigami.ScrollablePage {
         main: Kirigami.Action {
             iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
             text: page.bookmarked ? i18n("Remove Bookmark") : i18n("Bookmark Folder")
-            visible: page.isFolderView && !model.hasSelectedImages
+            visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
             onTriggered: {
                 if (page.model.sourceModel.url == undefined) {
                     return
