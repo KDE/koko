@@ -6,7 +6,7 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
@@ -86,6 +86,13 @@ ListView {
         onClicked: activated()
         onActivated: thumbnailView.activated(model.index)
         modelData: model
+
+        DragHandler {
+            xAxis.enabled: false
+            yAxis.enabled: false
+        }
+
+        background: Item {}
 
         Rectangle {
             z: -1
