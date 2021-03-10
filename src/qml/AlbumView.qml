@@ -325,7 +325,7 @@ Kirigami.ScrollablePage {
 
         cellWidth: Math.floor(width/Math.floor(width/(kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2)))
 
-        cellHeight: cellWidth
+        cellHeight: kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2
 
         topMargin: Kirigami.Units.gridUnit
 
