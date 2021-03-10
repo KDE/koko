@@ -39,8 +39,9 @@ Controls.ItemDelegate {
     }
     KQA.QImageItem {
         id: image
-        anchors.fill: parent
-        anchors.margins: Kirigami.Units.largeSpacing
+        anchors.centerIn: parent
+        width: kokoConfig.iconSize
+        height: width
         smooth: true
         image: modelData.thumbnail
         fillMode: KQA.QImageItem.PreserveAspectCrop
