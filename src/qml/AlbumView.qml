@@ -118,8 +118,6 @@ Kirigami.ScrollablePage {
                         }
                     }
                     Kirigami.Icon {
-                        anchors.verticalCenter: parent.verticalCenter
-                        visible: index != repeater.model.length - 1
                         source: LayoutMirroring.enabled ? "arrow-left" : "arrow-right"
                         width: height
                         Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
@@ -220,9 +218,9 @@ Kirigami.ScrollablePage {
         }
         contextualActions: [
             Kirigami.Action {
-                visible: page.isFolderView && Kirigami.Units.isMobile
+                visible: page.isFolderView && Kirigami.Settings.isMobile
                 property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.canBeSimplified(page.model.sourceModel.url)
-                iconName: canBeSimplified ? "go-home" : "folder-root-symbolic"
+                icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
                 text: canBeSimplified ? i18n("Home") : i18n("Root")
                 onTriggered: {
                     const tmp = page.backUrls;
