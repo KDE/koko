@@ -19,6 +19,7 @@ public:
     QUrl home() const;
     QUrl pictures() const;
 
+    Q_INVOKABLE bool inHome(const QUrl &url) const;
     Q_INVOKABLE QStringList getUrlParts(const QUrl &url) const;
     Q_INVOKABLE QUrl partialUrlForIndex(QUrl url, int index) const;
     Q_INVOKABLE bool canBeSimplified(QUrl url) const;

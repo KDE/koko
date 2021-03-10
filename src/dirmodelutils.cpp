@@ -14,6 +14,16 @@ DirModelUtils::DirModelUtils(QObject *parent) : QObject(parent)
 {
 }
 
+bool DirModelUtils::inHome(const QUrl &url) const
+{
+    const auto homes = QStandardPaths::standardLocations(QStandardPaths::HomeLocation);
+    QString home;
+    if (homes.count() > 0) {
+        home = homes[0];
+    }
+    return !home.isEmpty() && url.path().startsWith(home) && url.path() != home;
+}
+
 QUrl DirModelUtils::home() const
 {
     const auto homes = QStandardPaths::standardLocations(QStandardPaths::HomeLocation);
@@ -67,15 +77,15 @@ QUrl DirModelUtils::partialUrlForIndex(QUrl url, int index) const
     }
     QStringList urlParts;
     bool inHome = false;
-    if (!home.isEmpty() && url.path() != home) {
+    if (!home.isEmpty() && url.path().startsWith(home) && url.path() != home) {
         urlParts = url.path().replace(home, "/").split(QStringLiteral("/")).mid(1);
         inHome = true;
     } else {
         urlParts = url.path().split(QStringLiteral("/")).mid(1);
     }
     QString path = QStringLiteral("/");
-    for (int i = 0; i < index + 1; i++) {
-        path += urlParts.at(i + 1);
+    for (int i = 0; i < index; i++) {
+        path += urlParts.at(i);
         path += QStringLiteral("/");
     }
     if (inHome) {

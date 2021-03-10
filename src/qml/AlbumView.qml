@@ -93,6 +93,37 @@ Kirigami.ScrollablePage {
                 RowLayout {
                     id: folderRow
                     spacing: 0
+
+                    Controls.ToolButton {
+                        property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.inHome(page.model.sourceModel.url)
+                        icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
+                        DragHandler {
+                            enabled: scrollView.contentWidth > scrollView.width
+                            yAxis.enabled: false
+                            xAxis.enabled: false
+                        }
+                        onClicked: {
+                            const tmp = page.backUrls;
+                            while (page.backUrlsPosition < page.backUrls.length) {
+                                tmp.pop();
+                            }
+                            tmp.push(page.model.sourceModel.url);
+                            page.backUrlsPosition++;
+                            page.backUrls = tmp;
+                            if (canBeSimplified) {
+                                model.sourceModel.url = "file:///" + Koko.DirModelUtils.home;
+                            } else {
+                                model.sourceModel.url = "file:///";
+                            }
+                        }
+                    }
+                    Kirigami.Icon {
+                        anchors.verticalCenter: parent.verticalCenter
+                        visible: index != repeater.model.length - 1
+                        source: LayoutMirroring.enabled ? "arrow-left" : "arrow-right"
+                        width: height
+                        Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
+                    }
                     Repeater {
                         id: repeater
                         model: page.isFolderView ? Koko.DirModelUtils.getUrlParts(page.model.sourceModel.url) : 0
@@ -107,8 +138,7 @@ Kirigami.ScrollablePage {
                                 height: backButton.height
                                 text: modelData
                                 onClicked: {
-                                    console.log(page.backUrlsPosition, page.backUrls)
-                                    const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index);
+                                    const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index + 1);
 
                                     if (nextUrl == page.model.sourceModel.url) {
                                         return;
@@ -190,7 +220,7 @@ Kirigami.ScrollablePage {
         }
         contextualActions: [
             Kirigami.Action {
-                visible: page.isFolderView
+                visible: page.isFolderView && Kirigami.Units.isMobile
                 property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.canBeSimplified(page.model.sourceModel.url)
                 iconName: canBeSimplified ? "go-home" : "folder-root-symbolic"
                 text: canBeSimplified ? i18n("Home") : i18n("Root")
