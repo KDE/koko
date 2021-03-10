@@ -248,12 +248,16 @@ Kirigami.ApplicationWindow {
         id: clipboard
     }
 
-    Kirigami.AboutPage {
+    Component {
         id: aboutPage
-        aboutData: kokoAboutData
+        Kirigami.AboutPage {
+            aboutData: kokoAboutData
+        }
     }
 
-    SettingsPage {
+    Component {
         id: settingsPage
+        SettingsPage {
+        }
     }
 }

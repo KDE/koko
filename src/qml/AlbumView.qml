@@ -23,7 +23,6 @@ Kirigami.ScrollablePage {
     property var backUrls: [];
     property var backUrlsPosition: 0;
 
-    keyboardNavigationEnabled: true
     focus: true
 
     Component {
@@ -290,28 +289,28 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ShareDialog {
-        id: shareMenu
-
-        inputData: {
-            "urls": [],
-            "mimeType": ["image/"]
-        }
-        onFinished: {
-            if (error==0 && output.url !== "") {
-                console.assert(output.url !== undefined);
-                var resultUrl = output.url;
-                console.log("Received", resultUrl)
-                notificationManager.showNotification( true, resultUrl);
-                clipboard.content = resultUrl;
-            } else {
-                notificationManager.showNotification( false);
-            }
-        }
-    }  
-
     GridView {
         id: gridView
+
+        ShareDialog {
+            id: shareMenu
+
+            inputData: {
+                "urls": [],
+                "mimeType": ["image/"]
+            }
+            onFinished: {
+                if (error==0 && output.url !== "") {
+                    console.assert(output.url !== undefined);
+                    var resultUrl = output.url;
+                    console.log("Received", resultUrl)
+                    notificationManager.showNotification( true, resultUrl);
+                    clipboard.content = resultUrl;
+                } else {
+                    notificationManager.showNotification( false);
+                }
+            }
+        }
         //FIXME: right now if those two objects are out of this, the whole page breaks
         Koko.SortModel {
             id: sortedListModel
@@ -331,6 +330,7 @@ Kirigami.ScrollablePage {
         topMargin: Kirigami.Units.gridUnit
 
         highlightMoveDuration: 0
+        focus: true
 
         delegate: AlbumDelegate {
             id: delegate
