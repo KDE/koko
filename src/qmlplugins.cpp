@@ -12,13 +12,13 @@
 #include "imagelistmodel.h"
 #include "imagelocationmodel.h"
 #include "imagefavoritesmodel.h"
+#include "imagetagsmodel.h"
 #include "imagetimemodel.h"
 #include "dirmodelutils.h"
 #include "notificationmanager.h"
 #include "exiv2extractor.h"
 #include "roles.h"
 #include "sortmodel.h"
-#include "tagmodel.h"
 #include "types.h"
 
 #include <QtQml/qqml.h>
@@ -34,10 +34,10 @@ void QmlPlugins::registerTypes(const char *uri)
 #else
     qmlRegisterAnonymousType<QAbstractItemModel>(uri, 0);
 #endif
-    qmlRegisterType<TagModel>(uri, 0, 1, "TagModel");
     qmlRegisterType<ImageLocationModel>(uri, 0, 1, "ImageLocationModel");
     qmlRegisterType<ImageTimeModel>(uri, 0, 1, "ImageTimeModel");
     qmlRegisterType<ImageFavoritesModel>(uri, 0, 1, "ImageFavoritesModel");
+    qmlRegisterType<ImageTagsModel>(uri, 0, 1, "ImageTagsModel");
     qmlRegisterType<ImageFolderModel>(uri, 0, 1, "ImageFolderModel");
     qmlRegisterType<Exiv2Extractor>(uri, 0, 1, "Exiv2Extractor");
     qmlRegisterType<AllImagesModel>(uri, 0, 1, "AllImagesModel");

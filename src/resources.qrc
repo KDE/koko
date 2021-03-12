@@ -12,6 +12,7 @@
         <file>qml/Sidebar.qml</file>
         <file>qml/ThumbnailStrip.qml</file>
         <file>qml/SettingsPage.qml</file>
+        <file>qml/Tag.qml</file>
     </qresource>
 </RCC>
 

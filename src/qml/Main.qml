@@ -80,6 +80,8 @@ Kirigami.ApplicationWindow {
     globalDrawer: Sidebar {
         id: sideBar
 
+        tags: imageTagsModel.sourceModel.tags
+
         onFilterBy: {
             if (imageFromParameter) {
                 pageStack.pop(albumView);
@@ -88,12 +90,14 @@ Kirigami.ApplicationWindow {
             } else {
                 pageStack.pop(albumView)
             }
-            if (value === "Folders" && path.length > 0) {
-                let str = path
+            if (value === "Folders" && query.length > 0) {
+                let str = query
                 if (str.endsWith("/")) {
                     str = str.slice(0, -1)
                 }
                 albumView.title = str.split("/")[str.split("/").length-1]
+            } else if (value === "Tags") {
+                albumView.title = query
             } else {
                 albumView.title = i18n(value)
             }
@@ -143,10 +147,17 @@ Kirigami.ApplicationWindow {
                     imageListModel.timeGroup = -1;
                     break;
                 }
+                case "Tags": {
+                    albumView.model = imageTagsModel;
+                    imageTagsModel.sourceModel.tag = query
+                    imageListModel.locationGroup = -1;
+                    imageListModel.timeGroup = -1;
+                    break;
+                }
                 case "Remote":
                 case "Folders": {
                     albumView.model = imageFolderModel; 
-                    albumView.model.sourceModel.url = path
+                    albumView.model.sourceModel.url = query
                     albumView.isFolderView = (value === "Folders");
                     imageListModel.locationGroup = -1;
                     imageListModel.timeGroup = -1;
@@ -213,6 +224,11 @@ Kirigami.ApplicationWindow {
     Koko.SortModel {
         id: imageFavoritesModel
         sourceModel: Koko.ImageFavoritesModel {}
+    }
+
+    Koko.SortModel {
+        id: imageTagsModel
+        sourceModel: Koko.ImageTagsModel {}
     }
 
     Koko.SortModel {

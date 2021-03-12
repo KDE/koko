@@ -23,6 +23,7 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_model("")
     , m_time("")
     , m_favorite(false)
+    , m_tags(QStringList())
     , m_error(false)
 {
 }
@@ -168,6 +169,25 @@ void Exiv2Extractor::toggleFavorite(const QString &filePath) {
     Q_EMIT favoriteChanged();
 }
 
+void Exiv2Extractor::setTags(const QStringList &tags)
+{
+    if (tags == m_tags) {
+        return;
+    }
+
+    if (!QFileInfo::exists(m_filePath)) {
+        return;
+    }
+
+    auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
+
+    fileMetaData.setTags(tags);
+
+    m_tags = tags;
+
+    Q_EMIT filePathChanged();
+}
+
 void Exiv2Extractor::extract(const QString &filePath)
 {
     if (filePath == m_filePath) {
@@ -185,6 +205,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_time = "";
     m_favorite = false;
     m_dateTime = QDateTime();
+    m_tags = QStringList();
     m_filePath = filePath;
 
     QByteArray arr = QFile::encodeName(filePath);
@@ -212,6 +233,8 @@ void Exiv2Extractor::extract(const QString &filePath)
 
     m_favorite = fileMetaData.hasAttribute("koko.favorite");
     Q_EMIT favoriteChanged();
+
+    m_tags = fileMetaData.tags();
 
     try {
         image = Exiv2::ImageFactory::open(fileString);

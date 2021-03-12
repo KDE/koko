@@ -36,6 +36,7 @@ struct ImageInfo {
     QString path;
     QGeoLocation location;
     QDateTime dateTime;
+    QStringList tags;
     bool favorite;
 };
 
@@ -63,6 +64,9 @@ public:
 
     QStringList imagesForFavorites();
 
+    QStringList tags();
+    QStringList imagesForTag(const QString &tag);
+
     QDate dateForKey(const QByteArray &key, Types::TimeGroup group);
 
     /**
@@ -71,6 +75,7 @@ public:
     QStringList allImages(int size = -1, int offset = 0);
 
     static void reset();
+    static bool shouldReset();
 
 signals:
     void storageModified();

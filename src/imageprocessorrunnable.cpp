@@ -53,6 +53,8 @@ void ImageProcessorRunnable::run()
         ii.favorite = true;
     }
 
+    ii.tags = extractor.tags();
+
     ii.dateTime = extractor.dateTime();
     if (ii.dateTime.isNull()) {
         ii.dateTime = QFileInfo(m_path).birthTime();

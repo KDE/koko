@@ -71,10 +71,10 @@ install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
 set (qml_plugin_SRCS
     qmlplugins.cpp
     dirmodelutils.cpp
-    tagmodel.cpp
     openfilemodel.cpp
     imagelocationmodel.cpp
     imagefavoritesmodel.cpp
+    imagetagsmodel.cpp
     imagetimemodel.cpp
     imagefoldermodel.cpp
     sortmodel.cpp

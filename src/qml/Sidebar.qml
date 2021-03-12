@@ -11,8 +11,9 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.5 as Kirigami
 
 Kirigami.GlobalDrawer {
-    signal filterBy(string value, string path)
+    signal filterBy(string value, string query)
     property var previouslySelectedAction
+    property var tags
 
     // FIXME: Dirty workaround for 385992
     contentItem.implicitWidth: Kirigami.Units.gridUnit * 14
@@ -129,7 +130,7 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: countryAction
-                text: i18n("By Country")
+                text: i18n("Countries")
                 icon: "tag-places"
                 onClicked: {
                     filterBy("Countries", "");
@@ -138,7 +139,7 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: stateAction
-                text: i18n("By State")
+                text: i18n("States")
                 icon: "tag-places"
                 onClicked: {
                     filterBy("States", "");
@@ -147,7 +148,7 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: cityAction
-                text: i18n("By City")
+                text: i18n("Cities")
                 icon: "tag-places"
                 onClicked: {
                     filterBy("Cities", "");
@@ -159,7 +160,7 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: yearAction
-                text: i18n("By Year")
+                text: i18n("Years")
                 icon: "view-calendar"
                 onClicked: {
                     filterBy("Years", "");
@@ -168,7 +169,7 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: monthAction
-                text: i18n("By Month")
+                text: i18n("Months")
                 icon: "view-calendar"
                 onClicked: {
                     filterBy("Months", "");
@@ -177,7 +178,7 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: weekAction
-                text: i18n("By Week")
+                text: i18n("Weeks")
                 icon: "view-calendar"
                 onClicked: {
                     filterBy("Weeks", "")
@@ -186,11 +187,27 @@ Kirigami.GlobalDrawer {
             }
             PlaceItem {
                 id: dayAction
-                text: i18n("By Day")
+                text: i18n("Days")
                 icon: "view-calendar"
                 onClicked: {
                     filterBy("Days", "")
                     previouslySelectedAction = dayAction
+                }
+            }
+            PlaceHeading {
+                text: i18n("Tags")
+                visible: tags.length > 0
+            }
+            Repeater {
+                model: tags
+                PlaceItem {
+                    id: tagAction
+                    icon: "tag"
+                    text: modelData
+                    onClicked: {
+                        filterBy("Tags", modelData)
+                        previouslySelectedAction = tagAction
+                    }
                 }
             }
         }

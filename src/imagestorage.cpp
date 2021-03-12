@@ -64,7 +64,9 @@ ImageStorage::ImageStorage(QObject *parent)
             // migrate to new table
             query.exec("ALTER TABLE files ADD COLUMN favorite INTEGER");
         }
+
         db.transaction();
+
         return;
     }
 
@@ -73,12 +75,14 @@ ImageStorage::ImageStorage(QObject *parent)
         "CREATE TABLE locations (id INTEGER PRIMARY KEY, country TEXT, state TEXT, city TEXT"
         "                        , UNIQUE(country, state, city) ON CONFLICT REPLACE"
         ")");
+    query.exec("CREATE TABLE tags (url TEXT NOT NULL, tag TEXT)");
     query.exec(
         "CREATE TABLE files (url TEXT NOT NULL UNIQUE PRIMARY KEY,"
         "                    favorite INTEGER,"
         "                    location INTEGER,"
         "                    dateTime STRING NOT NULL,"
         "                    FOREIGN KEY(location) REFERENCES locations(id)"
+        "                    FOREIGN KEY(url) REFERENCES tags(url)"
         "                    )");
 
     db.transaction();
@@ -171,6 +175,27 @@ void ImageStorage::addImage(const ImageInfo &ii)
             qDebug() << "FILE INSERT" << query.lastError();
         }
     }
+
+    for (auto tag : qAsConst(ii.tags)) {
+        QSqlQuery query;
+        query.prepare("SELECT url FROM TAGS WHERE url = ? AND tag = ?");
+        query.addBindValue(ii.path);
+        query.addBindValue(tag);
+
+        if (!query.exec()) {
+            qDebug() << "tag select" << query.lastError();
+        }
+
+        if (!query.next()) {
+            QSqlQuery query;
+            query.prepare("INSERT INTO TAGS(url, tag) VALUES (?, ?)");
+            query.addBindValue(ii.path);
+            query.addBindValue(tag);
+            if (!query.exec()) {
+                qDebug() << "tag insert" << query.lastError();
+            }
+        }
+    }
 }
 
 bool ImageStorage::imageExists(const QString &filePath)
@@ -204,6 +229,12 @@ void ImageStorage::removeImage(const QString &filePath)
     query2.prepare("DELETE FROM LOCATIONS WHERE id NOT IN (SELECT DISTINCT location FROM files WHERE location IS NOT NULL)");
     if (!query2.exec()) {
         qDebug() << "Loc del" << query2.lastError();
+    }
+
+    QSqlQuery query3;
+    query3.prepare("DELETE FROM TAGS WHERE url NOT IN (SELECT DISTINCT url FROM files)");
+    if (!query3.exec()) {
+        qDebug() << "tag delete" << query3.lastError();
     }
 }
 
@@ -302,6 +333,47 @@ QStringList ImageStorage::imagesForFavorites()
 
     if (!query.exec()) {
         qDebug() << "imagesForFavorites: " << query.lastError();
+        return QStringList();
+    }
+
+    QStringList files;
+    while (query.next()) {
+        files << QString("file://" + query.value(0).toString());
+    }
+
+    return files;
+}
+
+QStringList ImageStorage::tags()
+{
+    QMutexLocker lock(&m_mutex);
+    QSqlQuery query;
+
+    query.prepare("SELECT DISTINCT tag from tags");
+
+    if (!query.exec()) {
+        qDebug() << "tags: " << query.lastError();
+        return QStringList();
+    }
+
+    QStringList tags;
+    while (query.next()) {
+        tags << query.value(0).toString();
+    }
+
+    return tags;
+}
+
+QStringList ImageStorage::imagesForTag(const QString &tag)
+{
+    QMutexLocker lock(&m_mutex);
+    QSqlQuery query;
+
+    query.prepare("SELECT DISTINCT url from tags where tag = ?");
+    query.addBindValue(tag);
+
+    if (!query.exec()) {
+        qDebug() << "imagesForTag: " << query.lastError();
         return QStringList();
     }
 
@@ -600,8 +672,31 @@ QDate ImageStorage::dateForKey(const QByteArray &key, Types::TimeGroup group)
 
 void ImageStorage::reset()
 {
+    qDebug() << "Reseting database";
     QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
     QDir(dir).removeRecursively();
+}
+
+bool ImageStorage::shouldReset()
+{
+    bool shouldReset = false;
+    {
+        QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
+        QDir().mkpath(dir);
+
+        QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("resetChecker"));
+        db.setDatabaseName(dir + "/imageData.sqlite3");
+
+        if (!db.open()) {
+            qDebug() << "Failed to open db" << db.lastError().text();
+            shouldReset = true;
+        } else if (db.tables().contains("files") == true && db.tables().contains("tags") == false) {
+            shouldReset = true;
+        }
+        db.close();
+    }
+    QSqlDatabase::removeDatabase(QStringLiteral("resetChecker"));
+    return shouldReset;
 }
 
 QStringList ImageStorage::allImages(int size, int offset)

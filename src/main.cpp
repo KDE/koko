@@ -91,7 +91,7 @@ int main(int argc, char **argv)
     QApplication::setApplicationVersion(aboutData.version());
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
 
-    if (parser.isSet("reset")) {
+    if (parser.isSet("reset") || ImageStorage::shouldReset()) {
         ImageStorage::reset();
     }
 

@@ -53,6 +53,10 @@ Kirigami.Page {
             id: extractor
         }
 
+        Koko.ImageTagsModel {
+            id: tagList
+        }
+
         contentItem: Column {
             Kirigami.Heading {
                 level: 2
@@ -128,6 +132,90 @@ Kirigami.Page {
                 text: extractor.gpsLongitude
                 visible: extractor.gpsLongitude !== 0
             }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Tags")
+            }
+            Flow {
+                width: parent.width
+                spacing: Kirigami.Units.smallSpacing * 2
+                topPadding: Kirigami.Units.smallSpacing
+                Repeater {
+                    model: extractor.tags
+                    Tag {
+                        text: modelData
+                        icon.name: "edit-delete-remove"
+                        actionText: i18n("Remove %1 tag", modelData)
+                        reverse: true
+                        onClicked: {
+                            const index = extractor.tags.indexOf(modelData);
+                            if (index > -1) {
+                                extractor.tags.splice(index, 1);
+                            }
+                        }
+                    }
+                }
+            }
+            Flow {
+                width: parent.width
+                spacing: Kirigami.Units.smallSpacing * 2
+                topPadding: Kirigami.Units.smallSpacing
+                bottomPadding: Kirigami.Units.smallSpacing
+                Repeater {
+                    model: tagList.tags
+                    Tag {
+                        text: modelData
+                        icon.name: "list-add"
+                        actionText: i18n("Add %1 tag", modelData)
+                        visible: !extractor.tags.includes(modelData)
+                        onClicked: {
+                            extractor.tags.push(modelData)
+                        }
+                    }
+                }
+                Controls.ToolButton {
+                    // there's no size smaller than small unfortunately
+                    icon.width: Kirigami.Settings.isMobile ? Kirigami.Units.iconSizes.small : 16
+                    icon.height: Kirigami.Settings.isMobile ? Kirigami.Units.iconSizes.small : 16
+                    display: Controls.AbstractButton.IconOnly
+                    icon.name: "list-add"
+                    text: i18n("Add new tag")
+                    onClicked: newTagField.visible = true
+                }
+            }
+            RowLayout {
+                width: parent.width
+                Controls.TextField {
+                    id: newTagField
+                    visible: false
+                    placeholderText: i18n("New tag...")
+                    Layout.fillWidth: true
+                }
+                Controls.ToolButton {
+                    display: Controls.AbstractButton.IconOnly
+                    icon.name: "checkbox"
+                    text: i18n("Finished")
+                    visible: newTagField.visible
+                    onClicked: {
+                        if (newTagField.text.trim().length > 0) {
+                            extractor.tags.push(newTagField.text.trim())
+                            newTagField.text = ""
+                            newTagField.visible = false
+                        }
+                    }
+                }
+                Controls.ToolButton {
+                    // there's no size smaller than small unfortunately
+                    display: Controls.AbstractButton.IconOnly
+                    icon.name: "dialog-cancel"
+                    text: i18n("Cancel")
+                    visible: newTagField.visible
+                    onClicked: {
+                        newTagField.text = ""
+                        newTagField.visible = false
+                    }
+                }
+            }
         }
     }
 
@@ -141,6 +229,8 @@ Kirigami.Page {
                     infoDrawer.close();
                 } else {
                     infoDrawer.imageUrl = listView.currentItem.currentImageSource;
+                    newTagField.text = ""
+                    newTagField.visible = false
                     infoDrawer.open();
                 }
             }
