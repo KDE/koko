@@ -49,6 +49,7 @@ public:
     Q_INVOKABLE int proxyIndex(const int &indexValue);
     Q_INVOKABLE int sourceIndex(const int &indexValue);
     Q_INVOKABLE QJsonArray selectedImages();
+    Q_INVOKABLE int indexForUrl(const QString &url);
 
 protected Q_SLOTS:
     void setContainImages(bool);

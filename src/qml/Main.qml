@@ -26,6 +26,7 @@ Kirigami.ApplicationWindow {
     }
 
     property bool imageFromParameter: false
+    property bool loadRequestedFolder: false
     property var albumView: null
 
     pageStack.layers.onDepthChanged: {
@@ -38,7 +39,6 @@ Kirigami.ApplicationWindow {
         AlbumView {
             title: i18n("Images")
             model: Koko.SortModel {
-                id: imageLocationModelCity
                 sourceModel: KokoPrivate.OpenFileModel
             }
         }
@@ -65,15 +65,22 @@ Kirigami.ApplicationWindow {
 
     Component.onCompleted: {
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
-        if (KokoPrivate.OpenFileModel.rowCount() > 0) {
+        if (KokoPrivate.OpenFileModel.rowCount() > 1) {
             pageStack.initialPage = openFileComponent;
             imageFromParameter = true;
         } else {
             pageStack.initialPage = Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent;
+
         }
         albumView = pageStack.currentItem;
-        if (KokoPrivate.OpenFileModel.rowCount() === 0) {
+        if (KokoPrivate.OpenFileModel.rowCount() <= 1) {
             albumView.isFolderView = true;
+        }
+        if (KokoPrivate.OpenFileModel.rowCount() === 1) {
+            const url = String(Koko.DirModelUtils.directoryOfUrl(kokoUrlToOpen)).replace("file:", "");
+            console.log(url)
+            albumView.model.sourceModel.url = url;
+            loadRequestedFolder = true
         }
     }
 
@@ -183,13 +190,32 @@ Kirigami.ApplicationWindow {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
             url: ""
+            onCountChanged: {
+                loadImageTimer.restart()
+            }
         }
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel
          */
         filterRole: Koko.Roles.MimeTypeRole
     }
-    
+
+    Timer {
+        id: loadImageTimer
+        interval: 100
+        repeat: false
+        onTriggered: {
+            if (!loadRequestedFolder) {
+                return
+            }
+            loadRequestedFolder = false
+            pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+                startIndex: albumView.model.index(albumView.model.indexForUrl(kokoUrlToOpen), 0),
+                imagesModel: albumView.model
+            })
+        }
+    }
+
     Koko.SortModel {
         id: imageTimeModelYear
         sourceModel: Koko.ImageTimeModel {

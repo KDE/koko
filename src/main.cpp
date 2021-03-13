@@ -110,6 +110,12 @@ int main(int argc, char **argv)
 
     OpenFileModel openFileModel(directoryUrls);
 
+    QString urlToOpen;
+
+    if (directoryUrls.length() == 1) {
+        urlToOpen = directoryUrls.value(0);
+    }
+
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
 #endif
@@ -143,6 +149,7 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
+    engine.rootContext()->setContextProperty("kokoUrlToOpen", QVariant::fromValue(urlToOpen));
     engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
 
     QString path;

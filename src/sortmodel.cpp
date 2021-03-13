@@ -198,7 +198,7 @@ void SortModel::clearSelections()
     if (m_selectionModel->hasSelection()) {
         QModelIndexList selectedIndex = m_selectionModel->selectedIndexes();
         m_selectionModel->clear();
-        foreach (QModelIndex indexValue, selectedIndex) {
+        for (auto indexValue : selectedIndex) {
             emit dataChanged(indexValue, indexValue);
         }
     }
@@ -216,7 +216,7 @@ void SortModel::selectAll()
         m_selectionModel->clear();
     }
 
-    foreach (QModelIndex index, indexList) {
+    for (auto index : indexList) {
         if (Types::Image == data(index, Roles::ItemTypeRole))
             m_selectionModel->select(index, QItemSelectionModel::Select);
     }
@@ -228,7 +228,7 @@ void SortModel::deleteSelection()
 {
     QList<QUrl> filesToDelete;
 
-    foreach (QModelIndex index, m_selectionModel->selectedIndexes()) {
+    for (auto index : m_selectionModel->selectedIndexes()) {
         filesToDelete << data(index, Roles::ImageUrlRole).toUrl();
     }
 
@@ -265,11 +265,25 @@ QJsonArray SortModel::selectedImages()
 {
     QJsonArray arr;
 
-    foreach (QModelIndex index, m_selectionModel->selectedIndexes()) {
+    for (auto index : m_selectionModel->selectedIndexes()) {
         arr.push_back(QJsonValue(data(index, Roles::ImageUrlRole).toString()));
     }
 
     return arr;
+}
+
+int SortModel::indexForUrl(const QString &url)
+{
+    QModelIndexList indexList;
+    for (int row = 0; row < rowCount(); row++) {
+        indexList.append(index(row, 0, QModelIndex()));
+    }
+    for (auto index : indexList) {
+        if (url == data(index, Roles::ImageUrlRole).toString()) {
+            return index.row();
+        }
+    }
+    return -1;
 }
 
 void SortModel::delayedPreview()

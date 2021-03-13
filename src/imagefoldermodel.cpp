@@ -27,7 +27,7 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
     QList<QMimeType> mimeList = db.allMimeTypes();
 
     m_mimeTypes << "inode/directory";
-    foreach (const QMimeType &mime, mimeList) {
+    for (auto &mime : qAsConst(mimeList)) {
         if (mime.name().startsWith(QStringLiteral("image/"))) {
             m_mimeTypes << mime.name();
         }
