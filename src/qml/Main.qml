@@ -154,6 +154,7 @@ Kirigami.ApplicationWindow {
                     imageListModel.timeGroup = -1;
                     break;
                 }
+                case "Trash":
                 case "Remote":
                 case "Folders": {
                     albumView.model = imageFolderModel; 

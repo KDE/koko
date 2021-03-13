@@ -113,6 +113,15 @@ Kirigami.GlobalDrawer {
                     }
                 }
             }
+            PlaceItem {
+                id: trashFolderAction
+                icon: "user-trash-symbolic"
+                text: i18n("Trash")
+                onClicked: {
+                    filterBy("Trash", "trash:/")
+                    previouslySelectedAction = trashFolderAction
+                }
+            }
             PlaceHeading {
                 text: i18nc("Remote network locations", "Remote")
             }
