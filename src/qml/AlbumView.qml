@@ -138,7 +138,7 @@ Kirigami.ScrollablePage {
                                 onClicked: {
                                     const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index + 1);
 
-                                    if (nextUrl == page.model.sourceModel.url) {
+                                    if (String(nextUrl) === page.model.sourceModel.url + "/") {
                                         return;
                                     }
                                     const tmp = page.backUrls;

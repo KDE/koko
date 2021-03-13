@@ -84,9 +84,11 @@ QUrl DirModelUtils::partialUrlForIndex(QUrl url, int index) const
         urlParts = url.path().split(QStringLiteral("/")).mid(1);
     }
     QString path = QStringLiteral("/");
-    for (int i = 0; i < index; i++) {
-        path += urlParts.at(i);
-        path += QStringLiteral("/");
+    for (int i = 0; i < index + int(inHome); i++) {
+        if (urlParts.at(i) != "") {
+            path += urlParts.at(i);
+            path += QStringLiteral("/");
+        }
     }
     if (inHome) {
         url.setPath(home + path);
