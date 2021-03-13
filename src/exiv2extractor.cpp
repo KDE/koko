@@ -23,6 +23,8 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_model("")
     , m_time("")
     , m_favorite(false)
+    , m_rating(0)
+    , m_description("")
     , m_tags(QStringList())
     , m_error(false)
 {
@@ -169,6 +171,44 @@ void Exiv2Extractor::toggleFavorite(const QString &filePath) {
     Q_EMIT favoriteChanged();
 }
 
+void Exiv2Extractor::setRating(const int &rating)
+{
+    if (rating == m_rating) {
+        return;
+    }
+
+    if (!QFileInfo::exists(m_filePath)) {
+        return;
+    }
+
+    auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
+
+    fileMetaData.setRating(rating);
+
+    m_rating = rating;
+
+    Q_EMIT filePathChanged();
+}
+
+void Exiv2Extractor::setDescription(const QString &description)
+{
+    if (description == m_description) {
+        return;
+    }
+
+    if (!QFileInfo::exists(m_filePath)) {
+        return;
+    }
+
+    auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
+
+    fileMetaData.setUserComment(description);
+
+    m_description = description;
+
+    Q_EMIT filePathChanged();
+}
+
 void Exiv2Extractor::setTags(const QStringList &tags)
 {
     if (tags == m_tags) {
@@ -205,6 +245,8 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_time = "";
     m_favorite = false;
     m_dateTime = QDateTime();
+    m_rating = 0;
+    m_description = "";
     m_tags = QStringList();
     m_filePath = filePath;
 
@@ -234,6 +276,8 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_favorite = fileMetaData.hasAttribute("koko.favorite");
     Q_EMIT favoriteChanged();
 
+    m_rating = fileMetaData.rating();
+    m_description = fileMetaData.userComment();
     m_tags = fileMetaData.tags();
 
     try {

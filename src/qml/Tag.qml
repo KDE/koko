@@ -11,9 +11,10 @@ import org.kde.kirigami 2.13 as Kirigami
 
 Rectangle {
     id: tagRoot
-    property alias text: toolButton.text
+    property string text
     property alias icon: toolButton.icon
-    property string actionText: toolButton.text
+    property alias actionText: toolButton.text
+
     property bool reverse: false
     width: tag.width
     height: tag.height
@@ -27,7 +28,7 @@ Rectangle {
         Controls.Label {
             visible: tagRoot.reverse
             Layout.leftMargin: Kirigami.Units.smallSpacing * 3
-            text: modelData
+            text: tagRoot.text
         }
         Controls.ToolButton {
             id: toolButton
@@ -42,7 +43,7 @@ Rectangle {
         Controls.Label {
             visible: !tagRoot.reverse
             Layout.rightMargin: Kirigami.Units.smallSpacing * 3
-            text: modelData
+            text: tagRoot.text
         }
     }
 }

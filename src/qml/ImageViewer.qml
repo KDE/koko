@@ -57,7 +57,19 @@ Kirigami.Page {
             id: tagList
         }
 
-        contentItem: Column {
+        leftPadding: 0
+        rightPadding: 0
+        topPadding: 0
+        bottomPadding: 0
+
+        contentItem: Controls.ScrollView {
+        Column {
+            spacing: Kirigami.Units.smallSpacing
+            padding: Kirigami.Units.smallSpacing * 2
+            focus: true
+
+            property real contentWidth: width - padding * 2
+
             Kirigami.Heading {
                 level: 2
                 text: i18n("Metadata")
@@ -69,7 +81,7 @@ Kirigami.Page {
             }
             Controls.Label {
                 text: extractor.simplifiedPath
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 width: Kirigami.Units.gridUnit * 15
             }
             Kirigami.Heading {
@@ -134,12 +146,67 @@ Kirigami.Page {
             }
             Kirigami.Heading {
                 level: 4
+                text: i18n("Rating")
+                topPadding: Kirigami.Units.smallSpacing
+            }
+            Row {
+                // stars look disconnected with higher spacing
+                spacing: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 4)
+                Accessible.role: Accessible.List
+                Accessible.name: i18n("Current rating %1", extractor.rating)
+                Repeater {
+                    model: [ 1, 3, 5, 7, 9 ]
+                    Controls.AbstractButton {
+                        activeFocusOnTab: true
+                        width: height
+                        height: Kirigami.Units.iconSizes.smallMedium
+                        text: i18n("Set rating to %1", ratingTo)
+                        property int ratingTo: {
+                            if (extractor.rating == modelData + 1) {
+                                return modelData
+                            } else if (extractor.rating == modelData) {
+                                return modelData - 1
+                            } else {
+                                return modelData + 1
+                            }
+                        }
+                        contentItem: Kirigami.Icon {
+                            source: extractor.rating > modelData ? "rating" :
+                                    extractor.rating < modelData ? "rating-unrated" : "rating-half"
+                            width: parent.width
+                            height: parent.height
+                            color: (parent.focusReason == Qt.TabFocusReason || parent.focusReason == Qt.BacktabFocusReason) && parent.activeFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        }
+                        onClicked: {
+                            extractor.rating = ratingTo
+                        }
+                    }
+                }
+            }
+            Kirigami.Heading {
+                level: 4
+                text: i18n("Description")
+                topPadding: Kirigami.Units.smallSpacing
+            }
+            Controls.TextArea {
+                id: imageDescription
+                text: extractor.description
+                width: parent.contentWidth
+                placeholderText: i18n("Image description...")
+                KeyNavigation.priority: KeyNavigation.BeforeItem
+                Keys.onTabPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
+                onEditingFinished: {
+                    extractor.description = text
+                }
+            }
+            Kirigami.Heading {
+                level: 4
                 text: i18n("Tags")
+                topPadding: Kirigami.Units.smallSpacing
             }
             Flow {
-                width: parent.width
+                width: parent.contentWidth
                 spacing: Kirigami.Units.smallSpacing * 2
-                topPadding: Kirigami.Units.smallSpacing
                 Repeater {
                     model: extractor.tags
                     Tag {
@@ -157,7 +224,7 @@ Kirigami.Page {
                 }
             }
             Flow {
-                width: parent.width
+                width: parent.contentWidth
                 spacing: Kirigami.Units.smallSpacing * 2
                 topPadding: Kirigami.Units.smallSpacing
                 bottomPadding: Kirigami.Units.smallSpacing
@@ -184,7 +251,7 @@ Kirigami.Page {
                 }
             }
             RowLayout {
-                width: parent.width
+                width: parent.contentWidth
                 Controls.TextField {
                     id: newTagField
                     visible: false
@@ -217,6 +284,7 @@ Kirigami.Page {
                 }
             }
         }
+        }
     }
 
     actions {
@@ -232,6 +300,7 @@ Kirigami.Page {
                     newTagField.text = ""
                     newTagField.visible = false
                     infoDrawer.open();
+                    infoDrawer.forceActiveFocus();
                 }
             }
         }
@@ -475,6 +544,7 @@ Kirigami.Page {
 
         onCountChanged: {
             if (count === 0) {
+                infoDrawer.close();
                 root.close();
             }
             if (currentIndex >= count) {
@@ -513,6 +583,7 @@ Kirigami.Page {
         icon.name: "arrow-left"
         visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0
         Keys.forwardTo: [listView]
+        Accessible.name: i18n("Previous image")
         onClicked: {
             listView.currentItem.resetZoom()
             listView.currentIndex -= 1
@@ -530,6 +601,7 @@ Kirigami.Page {
         icon.name: "arrow-right"
         visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1
         Keys.forwardTo: [listView]
+        Accessible.name: i18n("Next image")
         onClicked: {
             listView.currentItem.resetZoom()
             listView.currentIndex += 1

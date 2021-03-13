@@ -31,6 +31,8 @@ class KOKO_EXPORT Exiv2Extractor : public QObject
     Q_PROPERTY(QString model READ model NOTIFY filePathChanged)
     Q_PROPERTY(QString time READ time NOTIFY filePathChanged)
     Q_PROPERTY(bool favorite READ favorite NOTIFY favoriteChanged)
+    Q_PROPERTY(int rating READ rating WRITE setRating NOTIFY filePathChanged)
+    Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY filePathChanged)
     Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY filePathChanged)
 
 public:
@@ -91,11 +93,23 @@ public:
         return m_favorite;
     }
 
+    int rating() const
+    {
+        return m_rating;
+    }
+
+    QString description() const
+    {
+        return m_description;
+    }
+
     QStringList tags() const
     {
         return m_tags;
     }
 
+    void setRating(const int &rating);
+    void setDescription(const QString &description);
     void setTags(const QStringList &tags);
 
     bool error() const;
@@ -118,6 +132,8 @@ private:
     QString m_model;
     QString m_time;
     bool m_favorite;
+    int m_rating;
+    QString m_description;
     QStringList m_tags;
 
     bool m_error;
