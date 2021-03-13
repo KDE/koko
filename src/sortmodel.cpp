@@ -15,6 +15,7 @@
 #include <kimagecache.h>
 #include <kio/copyjob.h>
 #include <kio/previewjob.h>
+#include <KIO/RestoreJob>
 
 using namespace Jungle;
 
@@ -233,6 +234,18 @@ void SortModel::deleteSelection()
 
     auto trashJob = KIO::trash(filesToDelete);
     trashJob->exec();
+}
+
+void SortModel::restoreSelection()
+{
+    QList<QUrl> filesToRestore;
+
+    foreach (QModelIndex index, m_selectionModel->selectedIndexes()) {
+        filesToRestore << data(index, Roles::ImageUrlRole).toUrl();
+    }
+
+    auto restoreJob = KIO::restoreFromTrash(filesToRestore);
+    restoreJob->exec();
 }
 
 int SortModel::proxyIndex(const int &indexValue)

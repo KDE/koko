@@ -16,6 +16,7 @@ Kirigami.ScrollablePage {
 
     property alias model: gridView.model
     property bool isFolderView: false
+    property bool isTrashView: gridView.url.toString().startsWith("trash:")
     signal collectionSelected(QtObject selectedModel, string cover)
     signal folderSelected(QtObject selectedModel, string cover, string path)
 
@@ -268,8 +269,15 @@ Kirigami.ScrollablePage {
                 iconName: "group-delete"
                 text: i18n("Delete Selection")
                 tooltip: i18n("Move selected items to trash")
-                visible: model.hasSelectedImages
+                visible: model.hasSelectedImages && !page.isTrashView
                 onTriggered: model.deleteSelection()
+            },
+            Kirigami.Action {
+                iconName: "restoration"
+                text: i18n("Restore Selection")
+                tooltip: i18n("Restore selected items from trash")
+                visible: model.hasSelectedImages && page.isTrashView
+                onTriggered: model.restoreSelection()
             }
         ]
     }

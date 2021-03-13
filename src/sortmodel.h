@@ -45,6 +45,7 @@ public:
     Q_INVOKABLE void clearSelections();
     Q_INVOKABLE void selectAll();
     Q_INVOKABLE void deleteSelection();
+    Q_INVOKABLE void restoreSelection();
     Q_INVOKABLE int proxyIndex(const int &indexValue);
     Q_INVOKABLE int sourceIndex(const int &indexValue);
     Q_INVOKABLE QJsonArray selectedImages();
