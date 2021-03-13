@@ -10,8 +10,7 @@ import org.kde.kirigami 2.1 as Kirigami
 
 Rectangle { 
     anchors.fill: parent
-    z: gridView.z + 1
-    
+
     color: Kirigami.Theme.highlightColor
-    opacity: 0.5    
+    opacity: 0.5
 }

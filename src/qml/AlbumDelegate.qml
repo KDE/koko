@@ -106,6 +106,7 @@ Controls.ItemDelegate {
     SelectionDelegateHighlight {
         id: selectionHighlight
         visible: modelData.selected
+        z: parent.z + 1
     }
 
     MouseArea {
