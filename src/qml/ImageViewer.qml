@@ -372,6 +372,7 @@ Kirigami.Page {
                     } else {
                         applicationWindow().visibility = Window.FullScreen
                     }
+                    listView.forceActiveFocus();
                 }
             }
         ]
