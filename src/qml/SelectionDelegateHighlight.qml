@@ -6,7 +6,7 @@
 
 import QtQuick 2.7
 
-import org.kde.kirigami 2.1 as Kirigami
+import org.kde.kirigami 2.14 as Kirigami
 
 Rectangle { 
     anchors.fill: parent

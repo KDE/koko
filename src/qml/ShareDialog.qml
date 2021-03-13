@@ -8,7 +8,7 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.0 as Controls
 import org.kde.purpose 1.0 as Purpose
-import org.kde.kirigami 2.1 as Kirigami
+import org.kde.kirigami 2.14 as Kirigami
 
 Kirigami.OverlaySheet {
     id: window
