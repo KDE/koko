@@ -71,6 +71,10 @@ int main(int argc, char **argv)
             xi18nc("@info:credit", "Developer"),
             "carl@carlschwan.eu");
 
+    aboutData.addAuthor(xi18nc("@info:credit", "Mikel Johnson"),
+            xi18nc("@info:credit", "Developer"),
+            "mikel5764@gmail.com");
+
     KAboutData::setApplicationData(aboutData);
 
     KLocalizedString::setApplicationDomain("koko");
