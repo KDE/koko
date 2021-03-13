@@ -37,6 +37,7 @@
 
 int main(int argc, char **argv)
 {
+    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
     app.setApplicationDisplayName("Koko");
     app.setOrganizationDomain("kde.org");
@@ -80,10 +81,9 @@ int main(int argc, char **argv)
     KLocalizedString::setApplicationDomain("koko");
 
     QCommandLineParser parser;
+    parser.setApplicationDescription(i18n("Image viewer"));
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
     parser.addPositionalArgument("image", i18n("path of image you want to open"));
-    parser.addHelpOption();
-    parser.addVersionOption();
 
     aboutData.setupCommandLine(&parser);
     parser.process(app);
