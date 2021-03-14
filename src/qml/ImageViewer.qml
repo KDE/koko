@@ -257,19 +257,20 @@ Kirigami.Page {
                     visible: false
                     placeholderText: i18n("New tag...")
                     Layout.fillWidth: true
+                    onAccepted: {
+                        if (text.trim().length > 0) {
+                            extractor.tags.push(text.trim())
+                            text = ""
+                            visible = false
+                        }
+                    }
                 }
                 Controls.ToolButton {
                     display: Controls.AbstractButton.IconOnly
                     icon.name: "checkbox"
                     text: i18n("Finished")
                     visible: newTagField.visible
-                    onClicked: {
-                        if (newTagField.text.trim().length > 0) {
-                            extractor.tags.push(newTagField.text.trim())
-                            newTagField.text = ""
-                            newTagField.visible = false
-                        }
-                    }
+                    onClicked: newTagField.accepted()
                 }
                 Controls.ToolButton {
                     // there's no size smaller than small unfortunately
