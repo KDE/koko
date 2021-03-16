@@ -129,6 +129,7 @@ void ReverseGeoCoder::init()
 
 void ReverseGeoCoder::deinit()
 {
+    m_mutex.lock();
     if (m_tree) {
         kd_free(m_tree);
         m_tree = 0;
@@ -137,6 +138,7 @@ void ReverseGeoCoder::deinit()
     m_countryMap.clear();
     m_admin1Map.clear();
     m_admin2Map.clear();
+    m_mutex.unlock();
 }
 
 bool ReverseGeoCoder::initialized()
@@ -168,4 +170,13 @@ QVariantMap ReverseGeoCoder::lookup(double lat, double lon) const
     vMap.insert("admin2", m_admin2Map.value(admin2));
 
     return vMap;
+}
+
+void ReverseGeoCoder::tryInitialization()
+{
+    m_mutex.lock();
+    if (!initialized()) {
+        init();
+    }
+    m_mutex.unlock();
 }
