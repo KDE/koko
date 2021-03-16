@@ -100,9 +100,9 @@
       <image>https://cdn.kde.org/screenshots/koko/koko.png</image>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://userbase.kde.org/Koko</url>
-  <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=koko</url>
-  <url type="donation">https://www.kde.org/donate.php?app=org.kde.koko</url>
+  <url type="homepage">https://apps.kde.org/en/koko</url>
+  <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
+  <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
   <project_group>KDE</project_group>
   <provides>
     <binary>koko</binary>
