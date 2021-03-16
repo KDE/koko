@@ -24,7 +24,6 @@ Processor::Processor(QObject *parent)
     connect(&m_commitTimer, &CommitTimer::timeout, [&]() {
         ImageStorage::instance()->commit();
         if (m_files.isEmpty()) {
-            m_geoCoder.deinit();
             if (m_numFiles && m_initialScanDone)
                 emit finishedChanged();
         }
