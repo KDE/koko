@@ -18,6 +18,7 @@ public:
 
 Q_SIGNALS:
     void filePathChanged();
+
 private:
     QString m_filePath;
     Exiv2::ExifData m_data;

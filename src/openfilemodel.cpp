@@ -9,7 +9,8 @@
 OpenFileModel::OpenFileModel(const QStringList &images, QObject *parent)
     : QAbstractListModel(parent)
     , m_images(images)
-{}
+{
+}
 
 QHash<int, QByteArray> OpenFileModel::roleNames() const
 {

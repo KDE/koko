@@ -14,9 +14,9 @@
 #include <QStandardPaths>
 #include <QThread>
 
+#include <KAboutData>
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <KAboutData>
 
 #include <QApplication>
 #include <QCommandLineOption>
@@ -52,29 +52,17 @@ int main(int argc, char **argv)
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("koko"));
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Vishesh Handa"),
-            xi18nc("@info:credit","Developer"),
-            "vhanda@kde.org");
+    aboutData.addAuthor(xi18nc("@info:credit", "Vishesh Handa"), xi18nc("@info:credit", "Developer"), "vhanda@kde.org");
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Atul Sharma"),
-            xi18nc("@info:credit", "Developer"),
-            "atulsharma406@gmail.com");
+    aboutData.addAuthor(xi18nc("@info:credit", "Atul Sharma"), xi18nc("@info:credit", "Developer"), "atulsharma406@gmail.com");
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Marco Martin"),
-            xi18nc("@info:credit", "Developer"),
-            "mart@kde.org");
+    aboutData.addAuthor(xi18nc("@info:credit", "Marco Martin"), xi18nc("@info:credit", "Developer"), "mart@kde.org");
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Nicolas Fella"),
-            xi18nc("@info:credit", "Developer"),
-            "nicolas.fella@gmx.de");
+    aboutData.addAuthor(xi18nc("@info:credit", "Nicolas Fella"), xi18nc("@info:credit", "Developer"), "nicolas.fella@gmx.de");
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Carl Schwan"),
-            xi18nc("@info:credit", "Developer"),
-            "carl@carlschwan.eu");
+    aboutData.addAuthor(xi18nc("@info:credit", "Carl Schwan"), xi18nc("@info:credit", "Developer"), "carl@carlschwan.eu");
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Mikel Johnson"),
-            xi18nc("@info:credit", "Developer"),
-            "mikel5764@gmail.com");
+    aboutData.addAuthor(xi18nc("@info:credit", "Mikel Johnson"), xi18nc("@info:credit", "Developer"), "mikel5764@gmail.com");
 
     KAboutData::setApplicationData(aboutData);
 
@@ -108,7 +96,7 @@ int main(int argc, char **argv)
     QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
 
     QStringList directoryUrls;
-    for (const auto &path: parser.positionalArguments()) {
+    for (const auto &path : parser.positionalArguments()) {
         directoryUrls << currentDirPath.resolved(path).toString();
     }
 

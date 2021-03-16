@@ -12,10 +12,10 @@
 #include <QIcon>
 #include <QTimer>
 
+#include <KIO/RestoreJob>
 #include <kimagecache.h>
 #include <kio/copyjob.h>
 #include <kio/previewjob.h>
-#include <KIO/RestoreJob>
 
 using namespace Jungle;
 
@@ -138,10 +138,12 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
 bool SortModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
 {
     if (sourceModel()) {
-        if ((sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder && sourceModel()->data(source_right, Roles::ItemTypeRole) == Types::Folder) ||
-            (sourceModel()->data(source_left, Roles::ItemTypeRole) != Types::Folder && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder)) {
+        if ((sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder && sourceModel()->data(source_right, Roles::ItemTypeRole) == Types::Folder)
+            || (sourceModel()->data(source_left, Roles::ItemTypeRole) != Types::Folder
+                && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder)) {
             return QSortFilterProxyModel::lessThan(source_left, source_right);
-        } else if (sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder) {
+        } else if (sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder
+                   && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder) {
             return true;
         } else {
             return false;

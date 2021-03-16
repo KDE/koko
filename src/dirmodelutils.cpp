@@ -10,7 +10,8 @@
 #include <QDir>
 #include <QStandardPaths>
 
-DirModelUtils::DirModelUtils(QObject *parent) : QObject(parent)
+DirModelUtils::DirModelUtils(QObject *parent)
+    : QObject(parent)
 {
 }
 

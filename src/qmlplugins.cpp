@@ -7,16 +7,16 @@
 #include "qmlplugins.h"
 
 #include "allimagesmodel.h"
+#include "dirmodelutils.h"
+#include "exiv2extractor.h"
 #include "imagedocument.h"
+#include "imagefavoritesmodel.h"
 #include "imagefoldermodel.h"
 #include "imagelistmodel.h"
 #include "imagelocationmodel.h"
-#include "imagefavoritesmodel.h"
 #include "imagetagsmodel.h"
 #include "imagetimemodel.h"
-#include "dirmodelutils.h"
 #include "notificationmanager.h"
-#include "exiv2extractor.h"
 #include "roles.h"
 #include "sortmodel.h"
 #include "types.h"
@@ -50,5 +50,4 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterSingletonType<DirModelUtils>(uri, 0, 1, "DirModelUtils", [=](QQmlEngine *, QJSEngine *) {
         return new DirModelUtils;
     });
-
 }

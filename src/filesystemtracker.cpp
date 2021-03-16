@@ -237,10 +237,15 @@ void FileSystemTracker::reindexSubFolder()
 {
     FileSystemImageFetcher *fetcher = new FileSystemImageFetcher(m_subFolder);
     connect(fetcher, &FileSystemImageFetcher::imageResult, this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
-    connect(fetcher, &FileSystemImageFetcher::finished, this, [this, fetcher] {
-        slotFetchFinished();
-        fetcher->deleteLater();
-    }, Qt::QueuedConnection);
+    connect(
+        fetcher,
+        &FileSystemImageFetcher::finished,
+        this,
+        [this, fetcher] {
+            slotFetchFinished();
+            fetcher->deleteLater();
+        },
+        Qt::QueuedConnection);
 
     fetcher->fetch();
 

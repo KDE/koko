@@ -46,7 +46,11 @@ ImageFolderModel::~ImageFolderModel()
 
 QHash<int, QByteArray> ImageFolderModel::roleNames() const
 {
-    return {{Qt::DisplayRole, "display"}, {Qt::DecorationRole, "decoration"}, {Roles::ImageUrlRole, "imageurl"}, {Roles::MimeTypeRole, "mimeType"}, {Roles::ItemTypeRole, "itemType"}};
+    return {{Qt::DisplayRole, "display"},
+            {Qt::DecorationRole, "decoration"},
+            {Roles::ImageUrlRole, "imageurl"},
+            {Roles::MimeTypeRole, "mimeType"},
+            {Roles::ItemTypeRole, "itemType"}};
 }
 
 QUrl ImageFolderModel::url() const

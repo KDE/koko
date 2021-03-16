@@ -6,11 +6,11 @@
 
 #include "exiv2extractor.h"
 
+#include <KFileMetaData/UserMetaData>
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
 #include <QStandardPaths>
-#include <KFileMetaData/UserMetaData>
 
 Exiv2Extractor::Exiv2Extractor(QObject *parent)
     : QObject(parent)
@@ -141,7 +141,8 @@ static QDateTime toDateTime(const Exiv2::Value &value)
     return QDateTime();
 }
 
-void Exiv2Extractor::updateFavorite(const QString &filePath) {
+void Exiv2Extractor::updateFavorite(const QString &filePath)
+{
     if (!QFileInfo::exists(filePath)) {
         return;
     }
@@ -153,7 +154,8 @@ void Exiv2Extractor::updateFavorite(const QString &filePath) {
     Q_EMIT favoriteChanged();
 }
 
-void Exiv2Extractor::toggleFavorite(const QString &filePath) {
+void Exiv2Extractor::toggleFavorite(const QString &filePath)
+{
     if (!QFileInfo::exists(filePath)) {
         return;
     }
@@ -325,7 +327,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_latitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLatitude");
     m_longitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLongitude");
 
-    m_height =  image->pixelHeight();
+    m_height = image->pixelHeight();
     m_width = image->pixelWidth();
 
     QByteArray latRef = fetchByteArray(data, "Exif.GPSInfo.GPSLatitudeRef");

@@ -12,9 +12,9 @@
 
 #include "koko_export.h"
 #include <QDateTime>
+#include <QObject>
 #include <QString>
 #include <QUrl>
-#include <QObject>
 
 class KOKO_EXPORT Exiv2Extractor : public QObject
 {
@@ -44,7 +44,8 @@ public:
     Q_INVOKABLE void toggleFavorite(const QString &filePath);
 
     QUrl filePath() const;
-    void setFilePath(const QUrl &filePath) {
+    void setFilePath(const QUrl &filePath)
+    {
         extract(filePath.toLocalFile());
     }
 
