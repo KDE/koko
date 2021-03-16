@@ -129,7 +129,7 @@ void ReverseGeoCoder::init()
 
 void ReverseGeoCoder::deinit()
 {
-    m_mutex.lock();
+    QWriteLocker locker(&m_mutex);
     if (m_tree) {
         kd_free(m_tree);
         m_tree = 0;
@@ -138,7 +138,6 @@ void ReverseGeoCoder::deinit()
     m_countryMap.clear();
     m_admin1Map.clear();
     m_admin2Map.clear();
-    m_mutex.unlock();
 }
 
 bool ReverseGeoCoder::initialized()
@@ -146,8 +145,9 @@ bool ReverseGeoCoder::initialized()
     return m_tree;
 }
 
-QVariantMap ReverseGeoCoder::lookup(double lat, double lon) const
+QVariantMap ReverseGeoCoder::lookup(double lat, double lon)
 {
+    QReadLocker locker(&m_mutex);
     Q_ASSERT(m_tree);
 
     kdres *res = kd_nearest3(m_tree, lat, lon, 0.0);
@@ -174,9 +174,8 @@ QVariantMap ReverseGeoCoder::lookup(double lat, double lon) const
 
 void ReverseGeoCoder::tryInitialization()
 {
-    m_mutex.lock();
+    QWriteLocker locker(&m_mutex);
     if (!initialized()) {
         init();
     }
-    m_mutex.unlock();
 }

@@ -8,7 +8,6 @@
 #include "imageprocessorrunnable.h"
 #include "imagestorage.h"
 
-#include <QDebug>
 #include <QEventLoop>
 #include <QFileInfo>
 #include <QThreadPool>
@@ -77,7 +76,7 @@ void Processor::process()
     QString path = m_files.takeLast().replace("file://", "");
 
     ImageProcessorRunnable *runnable = new ImageProcessorRunnable(path, &m_geoCoder);
-    connect(runnable, SIGNAL(finished()), this, SLOT(slotFinished()));
+    connect(runnable, &ImageProcessorRunnable::finished, this, &Processor::slotFinished);
 
     QThreadPool::globalInstance()->start(runnable);
 }
