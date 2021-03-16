@@ -37,6 +37,9 @@ void ImageProcessorRunnable::run()
     double longitude = extractor.gpsLongitude();
 
     if (latitude != 0.0 && longitude != 0.0) {
+        if (!m_geoCoder->initialized()) {
+            m_geoCoder->init();
+        }
         QVariantMap map = m_geoCoder->lookup(latitude, longitude);
 
         QGeoAddress addr;
