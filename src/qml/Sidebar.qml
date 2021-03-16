@@ -63,8 +63,6 @@ Kirigami.GlobalDrawer {
             Layout.fillWidth: true
             Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
             Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
-            Accessible.increaseAction: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
-            Accessible.decreaseAction: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
             Accessible.role: Accessible.MenuItem
             contentItem: Row {
                 Kirigami.Icon {
