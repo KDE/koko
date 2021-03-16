@@ -16,7 +16,7 @@ class ImageFavoritesModel : public OpenFileModel
     Q_OBJECT
 
 public:
-    explicit ImageFavoritesModel(QObject *parent = 0);
+    explicit ImageFavoritesModel(QObject *parent = nullptr);
 
 private slots:
     void slotPopulate();

@@ -16,7 +16,7 @@ class CommitTimer : public QObject
 {
     Q_OBJECT
 public:
-    explicit CommitTimer(QObject *parent = 0);
+    explicit CommitTimer(QObject *parent = nullptr);
 
 public slots:
     void start();

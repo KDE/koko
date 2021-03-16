@@ -14,7 +14,7 @@ class NotificationManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit NotificationManager(QObject *parent = 0);
+    explicit NotificationManager(QObject *parent = nullptr);
     ~NotificationManager();
 
     /**

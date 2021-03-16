@@ -19,7 +19,7 @@ class ImageLocationModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(Types::LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
-    explicit ImageLocationModel(QObject *parent = 0);
+    explicit ImageLocationModel(QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

@@ -13,7 +13,7 @@ class AllImagesModel : public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit AllImagesModel(QObject *parent = 0);
+    explicit AllImagesModel(QObject *parent = nullptr);
 
     enum Roles { FilePathRole = Qt::UserRole + 1 };
 

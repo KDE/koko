@@ -44,7 +44,7 @@ class KOKO_EXPORT ImageStorage : public QObject
 {
     Q_OBJECT
 public:
-    ImageStorage(QObject *parent = 0);
+    ImageStorage(QObject *parent = nullptr);
     virtual ~ImageStorage();
 
     Q_INVOKABLE void addImage(const ImageInfo &ii);

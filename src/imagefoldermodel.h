@@ -35,7 +35,7 @@ class ImageFolderModel : public KDirModel
     Q_PROPERTY(int count READ count NOTIFY countChanged)
 
 public:
-    ImageFolderModel(QObject *parent = 0);
+    ImageFolderModel(QObject *parent = nullptr);
     virtual ~ImageFolderModel();
 
     QHash<int, QByteArray> roleNames() const override;

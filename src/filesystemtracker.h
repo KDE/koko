@@ -16,7 +16,7 @@ class FileSystemTracker : public QObject
     Q_OBJECT
 
 public:
-    explicit FileSystemTracker(QObject *parent = 0);
+    explicit FileSystemTracker(QObject *parent = nullptr);
     virtual ~FileSystemTracker();
 
     void setFolder(const QString &folder);

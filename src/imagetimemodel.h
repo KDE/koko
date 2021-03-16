@@ -18,7 +18,7 @@ class ImageTimeModel : public QAbstractListModel
     Q_OBJECT
     Q_PROPERTY(Types::TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
-    explicit ImageTimeModel(QObject *parent = 0);
+    explicit ImageTimeModel(QObject *parent = nullptr);
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

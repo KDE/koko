@@ -14,7 +14,7 @@ class KOKO_EXPORT FileSystemImageFetcher : public QObject
 {
     Q_OBJECT
 public:
-    explicit FileSystemImageFetcher(const QString &folder, QObject *parent = 0);
+    explicit FileSystemImageFetcher(const QString &folder, QObject *parent = nullptr);
     void fetch();
 
 signals:

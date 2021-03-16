@@ -26,7 +26,7 @@ class SortModel : public QSortFilterProxyModel
     Q_PROPERTY(bool containImages READ containImages WRITE setContainImages NOTIFY containImagesChanged)
     Q_PROPERTY(bool hasSelectedImages READ hasSelectedImages NOTIFY selectedImagesChanged)
 public:
-    explicit SortModel(QObject *parent = 0);
+    explicit SortModel(QObject *parent = nullptr);
     virtual ~SortModel();
 
     QByteArray sortRoleName() const;
