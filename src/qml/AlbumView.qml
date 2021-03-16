@@ -24,6 +24,8 @@ Kirigami.ScrollablePage {
     property var backUrls: [];
     property var backUrlsPosition: 0;
 
+    property alias gridViewItem: gridView
+
     focus: true
 
     Component {
@@ -343,6 +345,7 @@ Kirigami.ScrollablePage {
         delegate: AlbumDelegate {
             id: delegate
             modelData: model
+            highlighted: gridView.currentIndex == index
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
             Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
             Controls.ToolTip.delay: Kirigami.Units.longDuration * 2

@@ -44,6 +44,9 @@ Kirigami.GlobalDrawer {
         id: scrollView
         Layout.fillHeight: true
         Layout.fillWidth: true
+
+        Accessible.role: Accessible.MenuBar
+
         component PlaceHeading : Kirigami.Heading {
             topPadding: Kirigami.Units.largeSpacing
             leftPadding: Kirigami.Units.largeSpacing
@@ -58,6 +61,11 @@ Kirigami.GlobalDrawer {
             checkable: true
             separatorVisible: false
             Layout.fillWidth: true
+            Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
+            Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
+            Accessible.increaseAction: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
+            Accessible.decreaseAction: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
+            Accessible.role: Accessible.MenuItem
             contentItem: Row {
                 Kirigami.Icon {
                     source: item.icon

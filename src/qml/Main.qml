@@ -172,7 +172,7 @@ Kirigami.ApplicationWindow {
                     break;
                 }
             }
-            albumView.forceActiveFocus();
+            albumView.gridViewItem.forceActiveFocus();
         }
         Kirigami.BasicListItem {
             text: i18n("Settings")
