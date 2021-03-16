@@ -102,7 +102,6 @@
   </screenshots>
   <url type="homepage">https://userbase.kde.org/Koko</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=koko</url>
-  <url type="help">https://docs.kde.org/?application=koko</url>
   <url type="donation">https://www.kde.org/donate.php?app=org.kde.koko</url>
   <project_group>KDE</project_group>
   <provides>
