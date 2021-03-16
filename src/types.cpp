@@ -5,13 +5,3 @@
  */
 
 #include "types.h"
-
-Types::Types(QObject *)
-{
-}
-
-Types::~Types()
-{
-}
-
-#include "moc_types.cpp"

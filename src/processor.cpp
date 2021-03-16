@@ -33,10 +33,6 @@ Processor::Processor(QObject *parent)
     connect(this, &Processor::numFilesChanged, &m_commitTimer, &CommitTimer::start);
 }
 
-Processor::~Processor()
-{
-}
-
 void Processor::addFile(const QString &filePath)
 {
     m_files << filePath;

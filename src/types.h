@@ -16,8 +16,8 @@ class Types : public QObject
     Q_ENUMS(LocationGroup)
     Q_ENUMS(QueryType)
 public:
-    Types(QObject *parent);
-    ~Types();
+    using QObject::QObject;
+    ~Types() = default;
 
     enum ItemTypes { Album = 0, Folder, Image };
 

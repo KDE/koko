@@ -4,7 +4,10 @@
 project(Koko)
 cmake_minimum_required(VERSION 3.16)
 
-find_package(ECM 5.70.0 REQUIRED NO_MODULE)
+set(QT5_MIN_VERSION 5.15)
+set(KF5_MIN_VERSION 5.79)
+
+find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
 include(FeatureSummary)
@@ -16,14 +19,15 @@ include(KDECompilerSettings)
 include(GenerateExportHeader)
 include(ECMInstallIcons)
 include(KDEClangFormat)
+include(KDEGitCommitHooks)
 
-find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning)
+find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning)
 
 if(ANDROID)
-    find_package(Qt5 REQUIRED NO_MODULE COMPONENTS AndroidExtras)
+    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF5 5.70 REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData)
 find_package(LibExiv2 0.21 REQUIRED)
 
 ecm_find_qmlmodule(org.kde.kquickimageeditor 1.0)
@@ -52,5 +56,6 @@ install(FILES org.kde.koko.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 # add clang-format target for all our real source files
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

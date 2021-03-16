@@ -32,7 +32,7 @@ QString ImageDocument::path()
     return m_path;
 }
 
-void ImageDocument::setPath(QString &url)
+void ImageDocument::setPath(const QString &url)
 {
     m_path = url;
     emit pathChanged(url);

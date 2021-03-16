@@ -5,13 +5,3 @@
  */
 
 #include "roles.h"
-
-Roles::Roles(QObject *)
-{
-}
-
-Roles::~Roles()
-{
-}
-
-#include "moc_roles.cpp"

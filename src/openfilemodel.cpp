@@ -11,10 +11,6 @@ OpenFileModel::OpenFileModel(const QStringList &images, QObject *parent)
     , m_images(images)
 {}
 
-OpenFileModel::~OpenFileModel()
-{}
-
-
 QHash<int, QByteArray> OpenFileModel::roleNames() const
 {
     QHash<int, QByteArray> hash = QAbstractListModel::roleNames();

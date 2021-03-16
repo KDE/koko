@@ -20,7 +20,7 @@ public:
     ~ImageDocument();
 
     QString path();
-    void setPath(QString &url);
+    void setPath(const QString &url);
 
     QImage visualImage();
 

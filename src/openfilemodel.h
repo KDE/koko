@@ -13,7 +13,7 @@ class OpenFileModel : public QAbstractListModel
 
 public:
     explicit OpenFileModel(const QStringList &images, QObject *parent = nullptr);
-    ~OpenFileModel();
+    ~OpenFileModel() = default;
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

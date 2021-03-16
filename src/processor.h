@@ -22,8 +22,8 @@ class Processor : public QObject
     Q_PROPERTY(int numFiles READ numFiles NOTIFY numFilesChanged)
     Q_PROPERTY(bool finished READ finished NOTIFY finishedChanged)
 public:
-    Processor(QObject *parent = 0);
-    ~Processor();
+    explicit Processor(QObject *parent = nullptr);
+    ~Processor() = default;
 
     float initialProgress() const;
     int numFiles() const;

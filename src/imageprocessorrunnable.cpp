@@ -14,7 +14,7 @@
 
 using namespace Koko;
 
-ImageProcessorRunnable::ImageProcessorRunnable(QString &filePath, ReverseGeoCoder *geoCoder)
+ImageProcessorRunnable::ImageProcessorRunnable(const QString &filePath, ReverseGeoCoder *geoCoder)
     : QObject()
     , m_path(filePath)
     , m_geoCoder(geoCoder)

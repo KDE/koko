@@ -18,7 +18,7 @@ class ImageProcessorRunnable : public QObject, public QRunnable
 {
     Q_OBJECT
 public:
-    ImageProcessorRunnable(QString &filePath, ReverseGeoCoder *coder);
+    ImageProcessorRunnable(const QString &filePath, ReverseGeoCoder *coder);
     void run() override;
 
 signals:

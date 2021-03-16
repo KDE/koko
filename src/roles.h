@@ -14,8 +14,8 @@ class Roles : public QObject
     Q_OBJECT
     Q_ENUMS(RoleNames)
 public:
-    Roles(QObject *parent);
-    ~Roles();
+    using QObject::QObject;
+    ~Roles() = default;
     enum RoleNames { ImageUrlRole = Qt::UserRole + 1, MimeTypeRole, Thumbnail, ItemTypeRole, FilesRole, FileCountRole, DateRole, SelectedRole, SourceIndex };
 };
 
