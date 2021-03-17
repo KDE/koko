@@ -111,6 +111,7 @@ Kirigami.ApplicationWindow {
             if (previouslySelectedAction) {
                 previouslySelectedAction.checked = false
             }
+            currentlySelectedAction.checked = true;
             albumView.isFolderView = false;
             switch(value) {
                 case "Countries": { 

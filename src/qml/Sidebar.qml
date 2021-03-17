@@ -12,6 +12,7 @@ import org.kde.kirigami 2.5 as Kirigami
 
 Kirigami.GlobalDrawer {
     signal filterBy(string value, string query)
+    property var currentlySelectedAction
     property var previouslySelectedAction
     property var tags
 
@@ -42,6 +43,8 @@ Kirigami.GlobalDrawer {
     // Place
     QQC2.ScrollView {
         id: scrollView
+        Layout.topMargin: -Kirigami.Units.smallSpacing;
+        Layout.bottomMargin: -Kirigami.Units.smallSpacing;
         Layout.fillHeight: true
         Layout.fillWidth: true
 
@@ -58,6 +61,8 @@ Kirigami.GlobalDrawer {
         component PlaceItem : Kirigami.AbstractListItem {
             id: item
             property string icon
+            property string filter
+            property string query
             checkable: true
             separatorVisible: false
             Layout.fillWidth: true
@@ -75,6 +80,11 @@ Kirigami.GlobalDrawer {
                     text: item.text
                 }
             }
+            onClicked: {
+                currentlySelectedAction = item
+                filterBy(filter, query)
+                previouslySelectedAction = item
+            }
         }
 
         ColumnLayout {
@@ -84,27 +94,19 @@ Kirigami.GlobalDrawer {
                 text: i18n("Places")
             }
             PlaceItem {
-                id: folderAction
+                id: picturesAction
                 icon: "folder-pictures"
                 text: i18n("Pictures")
-                onClicked: {
-                    filterBy("Folders", "")
-                    previouslySelectedAction = folderAction
-                }
+                filter: "Folders"
             }
             PlaceItem {
-                id: favoritesAction
                 text: i18n("Favorites")
                 icon: "starred-symbolic"
-                onClicked: {
-                    filterBy("Favorites", "");
-                    previouslySelectedAction = favoritesAction;
-                }
+                filter: "Favorites"
             }
             Repeater {
                 model: kokoConfig.savedFolders
                 PlaceItem {
-                    id: pinnedFolderAction
                     icon: "folder-symbolic"
                     text: {
                         var str = modelData
@@ -113,101 +115,65 @@ Kirigami.GlobalDrawer {
                         }
                         return str.split("/")[str.split("/").length-1]
                     }
-                    onClicked: {
-                        filterBy("Folders", modelData)
-                        previouslySelectedAction = pinnedFolderAction
-                    }
+                    filter: "Folders"
+                    query: modelData
                 }
             }
             PlaceItem {
-                id: trashFolderAction
                 icon: "user-trash-symbolic"
                 text: i18n("Trash")
-                onClicked: {
-                    filterBy("Trash", "trash:/")
-                    previouslySelectedAction = trashFolderAction
-                }
+                filter: "Trash"
+                query: "trash:/"
             }
             PlaceHeading {
                 text: i18nc("Remote network locations", "Remote")
             }
             PlaceItem {
-                id: remoteFolderAction
                 icon: "folder-cloud"
                 text: i18n("Network")
-                onClicked: {
-                    filterBy("Remote", "remote:/")
-                    previouslySelectedAction = remoteFolderAction
-                }
+                filter: "Remote"
+                query: "remote:/"
             }
             PlaceHeading {
                 text: i18n("Locations")
             }
             PlaceItem {
-                id: countryAction
                 text: i18n("Countries")
                 icon: "tag-places"
-                onClicked: {
-                    filterBy("Countries", "");
-                    previouslySelectedAction = countryAction;
-                }
+                filter: "Countries"
             }
             PlaceItem {
-                id: stateAction
                 text: i18n("States")
                 icon: "tag-places"
-                onClicked: {
-                    filterBy("States", "");
-                    previouslySelectedAction = stateAction;
-                }
+                filter: "States"
             }
             PlaceItem {
-                id: cityAction
                 text: i18n("Cities")
                 icon: "tag-places"
-                onClicked: {
-                    filterBy("Cities", "");
-                    previouslySelectedAction = cityAction;
-                }
+                filter: "Cities"
             }
             PlaceHeading {
                 text: i18n("Time")
             }
             PlaceItem {
-                id: yearAction
                 text: i18n("Years")
                 icon: "view-calendar"
-                onClicked: {
-                    filterBy("Years", "");
-                    previouslySelectedAction = yearAction;
-                }
+                filter: "Years"
             }
             PlaceItem {
-                id: monthAction
                 text: i18n("Months")
                 icon: "view-calendar"
-                onClicked: {
-                    filterBy("Months", "");
-                    previouslySelectedAction = monthAction;
-                }
+                filter: "Months"
             }
             PlaceItem {
-                id: weekAction
                 text: i18n("Weeks")
                 icon: "view-calendar"
-                onClicked: {
-                    filterBy("Weeks", "")
-                    previouslySelectedAction = weekAction
-                }
+                filter: "Weeks"
             }
             PlaceItem {
-                id: dayAction
                 text: i18n("Days")
                 icon: "view-calendar"
-                onClicked: {
-                    filterBy("Days", "")
-                    previouslySelectedAction = dayAction
-                }
+                filter: "Days"
             }
             PlaceHeading {
                 text: i18n("Tags")
@@ -216,13 +182,10 @@ Kirigami.GlobalDrawer {
             Repeater {
                 model: tags
                 PlaceItem {
-                    id: tagAction
                     icon: "tag"
                     text: modelData
-                    onClicked: {
-                        filterBy("Tags", modelData)
-                        previouslySelectedAction = tagAction
-                    }
+                    filter: "Tags"
+                    query: modelData
                 }
             }
         }
@@ -246,7 +209,8 @@ Kirigami.GlobalDrawer {
     }
 
     Component.onCompleted: {
-        folderAction.checked = true
-        previouslySelectedAction = folderAction
+        picturesAction.checked = true
+        currentlySelectedAction = picturesAction
+        previouslySelectedAction = picturesAction
     }
 }
