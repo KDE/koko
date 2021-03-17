@@ -191,7 +191,15 @@ Kirigami.GlobalDrawer {
         }
     }
 
+    QQC2.ToolSeparator {
+        Layout.topMargin: -1;
+        Layout.fillWidth: true
+        orientation: Qt.Horizontal
+        visible: scrollView.contentHeight > scrollView.height
+    }
+
     PlaceHeading {
+        Layout.topMargin: -Kirigami.Units.smallSpacing;
         text: i18n("Thumbnails size:")
     }
 
