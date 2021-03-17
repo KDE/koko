@@ -122,8 +122,10 @@ Kirigami.ScrollablePage {
                     Kirigami.Icon {
                         visible: page.model.sourceModel.url.toString() !== "file:///"
                         source: LayoutMirroring.enabled ? "arrow-left" : "arrow-right"
-                        width: height
-                        Layout.preferredHeight: visible ? Kirigami.Units.iconSizes.small : 0
+                        // adds visual balance
+                        Layout.leftMargin: Kirigami.Units.smallSpacing
+                        Layout.preferredWidth: visible ? Kirigami.Units.iconSizes.small : 0
+                        height: width
                     }
                     Repeater {
                         id: repeater
