@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2014 Vishesh Handa <vhanda@kde.org>
+# SPDX-FileCopyrightText: 2019 Nicolas Fella <nicolas.fella@gmx.de>
+# SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
+# SPDX-License-Identifier: LGPL-2.1-or-later
 #
 # Common Library
 #

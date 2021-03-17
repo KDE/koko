@@ -1,4 +1,2 @@
 # SPDX-FileCopyrightText: 2014  Vishesh Handa <vhanda@kde.org>
 # SPDX-License-Identifier: LGPL-2.1-or-later
-
-ecm_install_icons(ICONS hi128-apps-koko.png DESTINATION ${ICON_INSTALL_DIR})
