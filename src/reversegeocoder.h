@@ -7,7 +7,7 @@
 #ifndef KOKO_REVERSEGEOCODER_H
 #define KOKO_REVERSEGEOCODER_H
 
-#include <QReadWriteLock>
+#include <QMutexLocker>
 #include <QVariantMap>
 #include <kdtree.h>
 
@@ -38,7 +38,7 @@ private:
     QMap<QString, QString> m_countryMap;
     QMap<QString, QString> m_admin1Map;
     QMap<QString, QString> m_admin2Map;
-    QReadWriteLock m_mutex;
+    QMutex m_mutex;
 };
 }
 

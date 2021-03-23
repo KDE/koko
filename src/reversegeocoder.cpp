@@ -11,6 +11,7 @@
 #include <QTextStream>
 
 #include <QDebug>
+#include <QMutexLocker>
 
 using namespace Koko;
 
@@ -129,7 +130,7 @@ void ReverseGeoCoder::init()
 
 void ReverseGeoCoder::deinit()
 {
-    QWriteLocker locker(&m_mutex);
+    QMutexLocker locker(&m_mutex);
     if (m_tree) {
         kd_free(m_tree);
         m_tree = 0;
@@ -147,7 +148,10 @@ bool ReverseGeoCoder::initialized()
 
 QVariantMap ReverseGeoCoder::lookup(double lat, double lon)
 {
-    QReadLocker locker(&m_mutex);
+    QMutexLocker locker(&m_mutex);
+    if (!initialized()) {
+        init();
+    }
     Q_ASSERT(m_tree);
 
     kdres *res = kd_nearest3(m_tree, lat, lon, 0.0);
@@ -170,12 +174,4 @@ QVariantMap ReverseGeoCoder::lookup(double lat, double lon)
     vMap.insert("admin2", m_admin2Map.value(admin2));
 
     return vMap;
-}
-
-void ReverseGeoCoder::tryInitialization()
-{
-    QWriteLocker locker(&m_mutex);
-    if (!initialized()) {
-        init();
-    }
 }
