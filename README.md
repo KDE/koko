@@ -1,3 +1,7 @@
+<!--
+SPDX-FileCopyrightText: 2020 Carl Schwan <carlschwan@kde.org>
+SPDX-License-Identifier: CC0-1.0
+-->
 # Koko
 
 Koko is an image viewer designed for desktop and touch devices.

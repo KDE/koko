@@ -1,4 +1,8 @@
 <RCC>
+<!--
+SPDX-FileCopyrightText: Nicolas Fella <nicolas.fella@gmx.de>
+SPDX-License-Identifier: LGPL-2.0-or-later
+-->
     <qresource prefix="/">
         <file>qml/AlbumDelegate.qml</file>
         <file>qml/AlbumView.qml</file>
