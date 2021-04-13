@@ -103,9 +103,9 @@ target_link_libraries (kokoqmlplugin
     kokocommon
 )
 
-install (TARGETS kokoqmlplugin DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
-install (FILES qmldir DESTINATION ${QML_INSTALL_DIR}/org/kde/koko)
-install (FILES org.kde.koko.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install (TARGETS kokoqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
+install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
+install (FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 #
 # Reverse GeoLookup Data
@@ -165,8 +165,8 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
     endif()
 endif()
 
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${DATA_INSTALL_DIR}/koko)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt DESTINATION ${DATA_INSTALL_DIR}/koko)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt DESTINATION ${DATA_INSTALL_DIR}/koko)
-install (FILES countries.csv DESTINATION ${DATA_INSTALL_DIR}/koko)
-install (FILES koko.notifyrc DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install (FILES countries.csv DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install (FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})
