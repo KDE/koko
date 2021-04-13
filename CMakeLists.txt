@@ -39,6 +39,21 @@ set_package_properties(KQuickImageEditor PROPERTIES
     PURPOSE "Add image editing capability to image attachments"
 )
 
+ecm_find_qmlmodule(QtGraphicalEffects 1.0)
+
+find_package(Qt5QuickControls2 ${QT5_MIN_VER})
+set_package_properties(Qt5QuickControls2 PROPERTIES
+    DESCRIPTION "User interface controls based on Qt Quick"
+    PURPOSE "Required at runtime to run Koko"
+    TYPE RUNTIME
+)
+
+find_package(KF5Kirigami2)
+set_package_properties(KF5Kirigami2 PROPERTIES
+    DESCRIPTION "A QtQuick based components set"
+    PURPOSE "Required at runtime to run Koko"
+    TYPE RUNTIME
+)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
