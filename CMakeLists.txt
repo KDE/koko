@@ -27,7 +27,7 @@ if(ANDROID)
     find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
 find_package(LibExiv2 0.21 REQUIRED)
 
 ecm_find_qmlmodule(org.kde.kquickimageeditor 1.0)

@@ -63,6 +63,29 @@ Kirigami.ApplicationWindow {
 
     contextDrawer: Kirigami.ContextDrawer {}
 
+    Connections {
+        target: KokoPrivate.OpenFileModel
+        onUpdatedImages: {
+            if (KokoPrivate.OpenFileModel.rowCount() > 1) {
+                imageFromParameter = true;
+                pageStack.clear();
+                pageStack.layers.clear();
+                pageStack.push(openFileComponent);
+            } else if (KokoPrivate.OpenFileModel.rowCount() === 1) {
+                pageStack.clear();
+                pageStack.layers.clear();
+                loadRequestedFolder = false
+                pageStack.push(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
+                albumView = pageStack.currentItem;
+                albumView.isFolderView = true;
+                const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
+                albumView.model.sourceModel.url = url;
+                loadRequestedFolder = true
+                loadImageTimer.restart();
+            }
+        }
+    }
+
     Component.onCompleted: {
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
         if (KokoPrivate.OpenFileModel.rowCount() > 1) {
@@ -77,7 +100,7 @@ Kirigami.ApplicationWindow {
             albumView.isFolderView = true;
         }
         if (KokoPrivate.OpenFileModel.rowCount() === 1) {
-            const url = String(Koko.DirModelUtils.directoryOfUrl(kokoUrlToOpen)).replace("file:", "");
+            const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
             console.log(url)
             albumView.model.sourceModel.url = url;
             loadRequestedFolder = true
@@ -211,7 +234,7 @@ Kirigami.ApplicationWindow {
             }
             loadRequestedFolder = false
             pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
-                startIndex: albumView.model.index(albumView.model.indexForUrl(kokoUrlToOpen), 0),
+                startIndex: albumView.model.index(albumView.model.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen), 0),
                 imagesModel: albumView.model
             })
         }

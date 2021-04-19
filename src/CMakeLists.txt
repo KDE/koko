@@ -18,6 +18,7 @@ target_link_libraries(kokocommon
     Qt5::Positioning
     Qt5::Sql
     KF5::CoreAddons
+    KF5::DBusAddons
     KF5::FileMetaData
     LibExiv2::LibExiv2
 )

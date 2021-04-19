@@ -15,6 +15,7 @@
 #include <QThread>
 
 #include <KAboutData>
+#include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
@@ -87,6 +88,8 @@ int main(int argc, char **argv)
         ImageStorage::reset();
     }
 
+    KDBusService service(KDBusService::Unique);
+
     QThread trackerThread;
 
     QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
@@ -101,12 +104,20 @@ int main(int argc, char **argv)
     }
 
     OpenFileModel openFileModel(directoryUrls);
+    service.connect(&service,
+                    &KDBusService::activateRequested,
+                    &openFileModel,
+                    [&openFileModel](const QStringList &arguments, const QString &workingDirectory) {
+                        QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
 
-    QString urlToOpen;
-
-    if (directoryUrls.length() == 1) {
-        urlToOpen = directoryUrls.value(0);
-    }
+                        QStringList directoryUrls;
+                        auto args = arguments;
+                        args.removeFirst();
+                        for (const auto &path : args) {
+                            directoryUrls << currentDirPath.resolved(path).toString();
+                        }
+                        openFileModel.updateOpenFiles(directoryUrls);
+                    });
 
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
@@ -141,7 +152,6 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
-    engine.rootContext()->setContextProperty("kokoUrlToOpen", QVariant::fromValue(urlToOpen));
     engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
 
     QString path;

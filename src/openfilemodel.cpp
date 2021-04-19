@@ -56,3 +56,22 @@ int OpenFileModel::rowCount(const QModelIndex &parent) const
     Q_UNUSED(parent)
     return m_images.size();
 }
+
+void OpenFileModel::updateOpenFiles(const QStringList &images)
+{
+    if (!images.isEmpty()) {
+        beginResetModel();
+        m_images = images;
+        endResetModel();
+        Q_EMIT urlToOpenChanged();
+        Q_EMIT updatedImages();
+    }
+}
+
+QString OpenFileModel::urlToOpen() const
+{
+    if (m_images.length() == 1) {
+        return m_images.value(0);
+    }
+    return QString();
+}
