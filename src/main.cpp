@@ -31,6 +31,7 @@
 #include "kokoconfig.h"
 #include "openfilemodel.h"
 #include "processor.h"
+#include "version.h"
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
@@ -45,7 +46,7 @@ int main(int argc, char **argv)
 
     KAboutData aboutData(QStringLiteral("koko"),
                          xi18nc("@title", "<application>Koko</application>"),
-                         QStringLiteral("0.1-dev"),
+                         QStringLiteral(KOKO_VERSION_STRING),
                          xi18nc("@title", "Koko is an image viewer for your image collection."),
                          KAboutLicense::LGPL,
                          xi18nc("@info:credit", "(c) 2013-2020 KDE Contributors"));

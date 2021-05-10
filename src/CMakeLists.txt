@@ -64,6 +64,8 @@ target_link_libraries(koko
     kokocommon
 )
 
+target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
+
 if(ANDROID)
     target_link_libraries(koko Qt5::AndroidExtras)
 endif()

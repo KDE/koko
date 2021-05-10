@@ -7,6 +7,8 @@ cmake_minimum_required(VERSION 3.16)
 set(QT5_MIN_VERSION 5.15)
 set(KF5_MIN_VERSION 5.79)
 
+set(PROJECT_VERSION "21.05")
+
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
@@ -20,7 +22,12 @@ include(GenerateExportHeader)
 include(ECMInstallIcons)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
+include(ECMSetupVersion)
 
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX KOKO
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
+)
 find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning)
 
 if(ANDROID)
