@@ -56,6 +56,7 @@ Kirigami.OverlayDrawer {
             Layout.fillWidth: true
 
             Accessible.role: Accessible.MenuBar
+            contentWidth: availableWidth
 
             component PlaceHeading : Kirigami.Heading {
                 topPadding: Kirigami.Units.largeSpacing
