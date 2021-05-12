@@ -77,15 +77,18 @@ Kirigami.OverlayDrawer {
                 Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
                 Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
                 Accessible.role: Accessible.MenuItem
+                leftPadding: Kirigami.Units.largeSpacing
                 contentItem: Row {
                     Kirigami.Icon {
                         source: item.icon
                         width: height
                         height: Kirigami.Units.iconSizes.small
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                     QQC2.Label {
                         leftPadding: Kirigami.Units.smallSpacing
                         text: item.text
+                        anchors.verticalCenter: parent.verticalCenter
                     }
                 }
                 onClicked: {
