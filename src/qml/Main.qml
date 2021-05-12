@@ -198,16 +198,18 @@ Kirigami.ApplicationWindow {
             }
             albumView.gridViewItem.forceActiveFocus();
         }
-        Kirigami.BasicListItem {
-            text: i18n("Settings")
-            onClicked: root.pageStack.layers.push(settingsPage)
-            icon: "settings-configure"
-        }
-        Kirigami.BasicListItem {
-            text: i18n("About")
-            onClicked: root.pageStack.layers.push(aboutPage)
-            icon: "help-about"
-        }
+        contentObject: [
+            Kirigami.BasicListItem {
+                text: i18n("Settings")
+                onClicked: root.pageStack.layers.push(settingsPage)
+                icon: "settings-configure"
+            },
+            Kirigami.BasicListItem {
+                text: i18n("About")
+                onClicked: root.pageStack.layers.push(aboutPage)
+                icon: "help-about"
+            }
+        ]
     }
 
     Koko.SortModel {
