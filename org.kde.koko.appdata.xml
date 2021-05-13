@@ -108,6 +108,14 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <url type="homepage">https://apps.kde.org/en/koko</url>
   <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
+  <releases>
+    <release version="21.05">
+      <url>https://www.plasma-mobile.org/2021/05/10/plasma-mobile-gear-may-2021/</url>
+      <description>
+        <p>Initial release of Koko, an convergent image viewer for Plasma Mobile and desktop</p>
+      </description>
+    </release>
+  </releases>
   <project_group>KDE</project_group>
   <provides>
     <binary>koko</binary>
