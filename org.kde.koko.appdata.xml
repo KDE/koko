@@ -104,7 +104,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <image>https://cdn.kde.org/screenshots/koko/koko.png</image>
     </screenshot>
   </screenshots>
-  <content_rating type="oars-1.0" />
+  <content_rating type="oars-1.0"/>
   <url type="homepage">https://apps.kde.org/en/koko</url>
   <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
