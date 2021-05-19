@@ -6,6 +6,8 @@ SPDX-License-Identifier: CC0-1.0
 
 Koko is an image viewer designed for desktop and touch devices.
 
+<a href='https://flathub.org/apps/details/org.kde.koko'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
+
 ## Contributing
 
 Contributions are welcome. We use https://invent.kde.org/graphics/koko/.
