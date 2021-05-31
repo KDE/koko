@@ -50,7 +50,7 @@ Kirigami.OverlayDrawer {
         }
         QQC2.ScrollView {
             id: scrollView
-            Layout.topMargin: -Kirigami.Units.smallSpacing;
+            Layout.topMargin: -Kirigami.Units.smallSpacing - 1;
             Layout.bottomMargin: -Kirigami.Units.smallSpacing;
             Layout.fillHeight: true
             Layout.fillWidth: true
