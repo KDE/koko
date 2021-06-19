@@ -26,6 +26,7 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
+    bottomPadding: 0
 
     Kirigami.ImageColors {
         id: imgColors
@@ -292,7 +293,8 @@ Kirigami.Page {
         right: Kirigami.Action {
             icon.name: "kdocumentinfo"
             text: i18n("Info")
-            tooltip: i18n("See information about image")
+            tooltip: listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("See information about video") :
+                                                                                      i18n("See information about image")
             onTriggered: {
                 if (infoDrawer.drawerOpen) {
                     infoDrawer.close();
@@ -310,16 +312,19 @@ Kirigami.Page {
             text: extractor.favorite ? i18n("Remove") : i18n("Favorite")
             tooltip: extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
-                extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""))
+                extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""));
                 // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.currentImageSource.replace("file://", ""))
-                kokoProcessor.addFile(listView.currentItem.currentImageSource.replace("file://", ""))
+                kokoProcessor.removeFile(listView.currentItem.currentImageSource.replace("file://", ""));
+                kokoProcessor.addFile(listView.currentItem.currentImageSource.replace("file://", ""));
             }
         }
         left: Kirigami.Action {
             id: editingAction
             iconName: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
+            visible: !listView.currentItem.currentImageMimeType.startsWith("video/")
+                     && listView.currentItem.currentImageMimeType !== "image/gif"
+                     && listView.currentItem.currentImageMimeType !== "image/svg+xml"
             onTriggered: {
                 const page = applicationWindow().pageStack.layers.push(editorComponent)
                 page.imageEdited.connect(function() {
@@ -334,8 +339,8 @@ Kirigami.Page {
             Kirigami.Action {
                 id: shareAction
                 iconName: "document-share"
-                tooltip: i18n("Share Image")
-                text: i18nc("verb, share an image", "Share")
+                tooltip: listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("Share Video") : i18n("Share Image")
+                text: i18nc("verb, share an image/video", "Share")
                 onTriggered: {
                     shareDialog.open();
                     shareDialog.inputData = {
@@ -345,18 +350,34 @@ Kirigami.Page {
                 }
             },
             Kirigami.Action {
-                iconName: slideshowTimer.running ? "media-playback-stop" : "view-presentation"
-                tooltip: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Start Slideshow")
-                text: slideshowTimer.running ? i18n("Stop Slideshow") : i18n("Slideshow")
+                iconName: slideshowManager.running ? "media-playback-stop" : "view-presentation"
+                tooltip: slideshowManager.running ? i18n("Stop Slideshow") : i18n("Start Slideshow")
+                text: slideshowManager.running ? i18n("Stop Slideshow") : i18n("Slideshow")
                 visible: listView.count > 1
                 onTriggered: {
-                    if (slideshowTimer.running) {
-                        slideshowTimer.stop()
-                        applicationWindow().visibility = Window.Windowed
+                    if (slideshowManager.running) {
+                        slideshowManager.stop();
+                        applicationWindow().visibility = Window.Windowed;
                     } else {
-                        slideshowTimer.start()
-                        applicationWindow().visibility = Window.FullScreen
-                        applicationWindow().controlsVisible = false
+                        slideshowManager.start();
+                        applicationWindow().visibility = Window.FullScreen;
+                        applicationWindow().controlsVisible = false;
+                    }
+                }
+            },
+            Kirigami.Action {
+                icon.name: "view-preview"
+                // be more descriptive on mobile, since we're less constrained there
+                text: !Kirigami.Settings.isMobile ? i18n("Thumbnail Bar") :
+                       kokoConfig.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
+                tooltip: i18n("Toggle Thumbnail Bar")
+                shortcut: "T"
+                onTriggered: {
+                    // you can't do imageViewPreview != imageViewPreview for some reason
+                    if (kokoConfig.imageViewPreview) {
+                        kokoConfig.imageViewPreview = false;
+                    } else {
+                        kokoConfig.imageViewPreview = true;
                     }
                 }
             },
@@ -369,9 +390,9 @@ Kirigami.Page {
                 visible: !Kirigami.Settings.isMobile
                 onTriggered: {
                     if (applicationWindow().visibility == Window.FullScreen) {
-                        applicationWindow().visibility = Window.Windowed
+                        applicationWindow().visibility = Window.Windowed;
                     } else {
-                        applicationWindow().visibility = Window.FullScreen
+                        applicationWindow().visibility = Window.FullScreen;
                     }
                     listView.forceActiveFocus();
                 }
@@ -379,40 +400,37 @@ Kirigami.Page {
         ]
     }
 
-    // ensure we don't land on the same image
-    function nextSlide() {
-        if (listView.count < 2) { // stop if there's only 1 image
-            slideshowTimer.stop()
-            return 0;
-        }
-        var roll = Math.floor(Math.random() * Math.floor(listView.count))
-        if (roll != listView.currentIndex) {
-            return roll
-        } else {
-            return nextSlide()
-        }
-    }
+    SlideshowManager {
+        id: slideshowManager
 
-    Timer {
-        id: slideshowTimer
-        interval: kokoConfig.nextImageInterval * 1000
-        repeat: true
+        // next slide
         onTriggered: {
             if (kokoConfig.randomizeImages) {
-                listView.currentItem.resetZoom()
-                listView.currentIndex = root.nextSlide()
-                return
+                listView.currentIndex = getNextSlide();
+                return;
             }
             if (listView.currentIndex < listView.count - 1) {
-                listView.currentItem.resetZoom()
-                listView.currentIndex++
+                listView.currentIndex++;
             } else {
-                listView.currentItem.resetZoom()
                 if (kokoConfig.loopImages) {
-                    listView.currentIndex = 0
+                    listView.currentIndex = 0;
                 } else {
-                    slideshowTimer.stop()
+                    slideshowTimer.stop();
                 }
+            }
+        }
+        // function that gets the next slide
+        // ensures we don't land on the same image
+        function getNextSlide() {
+            if (listView.count < 2) { // stop if there's only 1 image
+                slideshowTimer.stop();
+                return 0;
+            }
+            const roll = Math.floor(Math.random() * Math.floor(listView.count));
+            if (roll != listView.currentIndex) {
+                return roll;
+            } else {
+                return getNextSlide();
             }
         }
     }
@@ -443,9 +461,9 @@ Kirigami.Page {
         switch(event.key) {
             case Qt.Key_Escape:
                 if (applicationWindow().visibility == Window.FullScreen) {
-                    applicationWindow().visibility = Window.Windowed
-                    applicationWindow().controlsVisible = true
-                    slideshowTimer.stop()
+                    applicationWindow().visibility = Window.Windowed;
+                    applicationWindow().controlsVisible = true;
+                    slideshowManager.stop();
                 } else {
                     root.close();
                 }
@@ -460,7 +478,7 @@ Kirigami.Page {
 
         inputData: {
             "urls": [],
-            "mimeType": ["image/"]
+            "mimeType": [listView.currentItem.currentImageMimeType]
         }
         onFinished: {
             if (error==0 && output.url !== "") {
@@ -476,17 +494,39 @@ Kirigami.Page {
     }
 
     Controls.ScrollView {
+        id: thumbnailScrollView
         z: 100
-        height: kokoConfig.iconSize
+        height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
         Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
         Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
+        property real mobileFABHeight: (applicationWindow().controlsVisible && Kirigami.Settings.isMobile) * Kirigami.Units.gridUnit * 4
 
-        clip: false
+        leftPadding: Kirigami.Units.smallSpacing
+        rightPadding: Kirigami.Units.smallSpacing
 
         anchors {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
+            bottomMargin: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ?
+                            Kirigami.Units.smallSpacing + mobileFABHeight :
+                           -height + mobileFABHeight
+        }
+
+        opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
+
+        Behavior on anchors.bottomMargin {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
         }
 
         ThumbnailStrip {
@@ -506,13 +546,11 @@ Kirigami.Page {
         onClicked: {
             if (mouse.button == Qt.BackButton) {
                 if (listView.currentIndex > 0) {
-                    listView.currentItem.resetZoom()
                     listView.currentIndex--
                 }
                 mouse.accepted = true
             } else if (mouse.button == Qt.ForwardButton) {
                 if (listView.currentIndex < listView.count - 1) {
-                    listView.currentItem.resetZoom()
                     listView.currentIndex++
                 }
                 mouse.accepted = true
@@ -522,7 +560,10 @@ Kirigami.Page {
 
     ListView {
         id: listView
-        anchors.fill: parent
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: thumbnailScrollView.top
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
         highlightMoveDuration: 0
@@ -533,7 +574,7 @@ Kirigami.Page {
         model: Koko.SortModel {
             sourceModel: imagesModel
             filterRole: Koko.Roles.MimeTypeRole
-            filterRegExp: /image\//
+            filterRegExp: /image\/|video\//
         }
 
         Kirigami.Theme.inherit: false
@@ -543,6 +584,8 @@ Kirigami.Page {
         Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
 
         Component.onCompleted: listView.currentIndex = model.mapFromSource(root.startIndex).row
+
+        property alias slideshow: slideshowManager
 
         onCountChanged: {
             if (count === 0) {
@@ -569,10 +612,10 @@ Kirigami.Page {
         delegate: ImageDelegate {
             readonly property string display: model.display
             currentImageSource: model.imageurl
-            width: root.width
-            height: root.height
+            currentImageMimeType: model.mimeType
+            width: listView.width
+            height: listView.height
         }
-    }
 
     Controls.RoundButton {
         anchors {
@@ -583,12 +626,20 @@ Kirigami.Page {
         width: Kirigami.Units.gridUnit * 2
         height: width
         icon.name: "arrow-left"
-        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0
         Keys.forwardTo: [listView]
         Accessible.name: i18n("Previous image")
         onClicked: {
-            listView.currentItem.resetZoom()
-            listView.currentIndex -= 1
+            if (opacity === 0) return; // the best we can do without flicker unfortunately
+            listView.currentIndex -= 1;
+        }
+
+        opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0 ? 1 : 0
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
         }
     }
 
@@ -601,15 +652,24 @@ Kirigami.Page {
         width: Kirigami.Units.gridUnit * 2
         height: width
         icon.name: "arrow-right"
-        visible: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1
         Keys.forwardTo: [listView]
         Accessible.name: i18n("Next image")
         onClicked: {
-            listView.currentItem.resetZoom()
-            listView.currentIndex += 1
+            if (opacity === 0) return;
+            listView.currentIndex += 1;
+        }
+
+        opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1 ? 1 : 0
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
         }
     }
-    
+    }
+
     Component {
         id: editorComponent
         EditorView {

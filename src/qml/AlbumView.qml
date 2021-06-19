@@ -186,6 +186,7 @@ Kirigami.ScrollablePage {
             iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
             text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
             visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
+                                                                   && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
             onTriggered: {
                 if (page.model.sourceModel.url == undefined) {
                     return
@@ -245,27 +246,27 @@ Kirigami.ScrollablePage {
             Kirigami.Action {
                 iconName: "edit-select-all"
                 text: i18n("Select All")
-                tooltip: i18n("Selects all the images in the current view")
+                tooltip: i18n("Selects all the media in the current view")
                 visible: model.containImages
                 onTriggered: model.selectAll()
             },
             Kirigami.Action {
                 iconName: "edit-select-none"
                 text: i18n("Deselect All")
-                tooltip: i18n("De-selects all the selected images")
+                tooltip: i18n("De-selects all the selected media")
                 onTriggered: model.clearSelections()
                 visible: model.hasSelectedImages
             },
             Kirigami.Action {
                 iconName: "emblem-shared-symbolic"
                 text: i18n("Share")
-                tooltip: i18n("Share the selected images")
+                tooltip: i18n("Share the selected media")
                 visible: model.hasSelectedImages
                 onTriggered: {
                     shareMenu.open();
                     shareMenu.inputData = {
                         "urls": model.selectedImages(),
-                        "mimeType": "image/"
+                        "mimeType": model.selectedImagesMimeTypes()
                     }
                 }
             },
@@ -309,7 +310,7 @@ Kirigami.ScrollablePage {
 
             inputData: {
                 "urls": [],
-                "mimeType": ["image/"]
+                "mimeType": ["image/", "video/"]
             }
             onFinished: {
                 if (error==0 && output.url !== "") {
@@ -430,7 +431,7 @@ Kirigami.ScrollablePage {
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
-            text: i18n("No Images Found")
+            text: i18n("No Media Found")
             visible: gridView.count == 0
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }

@@ -20,56 +20,6 @@ ListView {
 
     signal activated(var index)
 
-    state: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? "show" : "hidden"
-
-    states: [
-        State {
-            name: "show"
-            PropertyChanges { target: thumbnailView; opacity: 1.0 }
-            PropertyChanges { target: thumbnailView; anchors.bottomMargin: 0 }
-        },
-        State {
-            name: "hidden"
-            PropertyChanges { target: thumbnailView; opacity: 0.0 }
-            PropertyChanges { target: thumbnailView; anchors.bottomMargin: -thumbnailView.height  }
-        }
-    ]
-
-    transitions: [
-        Transition {
-            from: "*"
-            to: "hidden"
-            SequentialAnimation {
-                PropertyAnimation {
-                    properties: "opacity,anchors.bottomMargin";
-                    easing.type: Easing.InCubic
-                    duration: Kirigami.Units.longDuration
-                }
-                PropertyAction {
-                    target: thumbnailView
-                    property: "visible"
-                    value: false
-                }
-            }
-        },
-        Transition {
-            from: "*"
-            to: "show"
-            SequentialAnimation {
-                PropertyAction {
-                    target: thumbnailView
-                    property: "visible"
-                    value: true
-                }
-                PropertyAnimation {
-                    properties: "opacity,anchors.bottomMargin";
-                    easing.type: Easing.OutCubic
-                    duration: Kirigami.Units.longDuration * 0.75
-                }
-            }
-        }
-    ]
-
     orientation: Qt.Horizontal
     snapMode: ListView.SnapOneItem
 
@@ -80,9 +30,14 @@ ListView {
     highlightMoveVelocity: -1
     highlightMoveDuration: Kirigami.Units.longDuration
 
+    // same spacing as padding in thumbnailScrollView, so that delegates don't pop out of existence
+    // we don't do margins as that cause a host of issues, including a crash in rtl
+    displayMarginBeginning: Kirigami.Units.smallSpacing
+    displayMarginEnd: Kirigami.Units.smallSpacing
+
     delegate: AlbumDelegate {
         width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
-        height: width
+        height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
         onClicked: activated()
         onActivated: thumbnailView.activated(model.index)
         modelData: model

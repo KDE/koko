@@ -7,6 +7,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.15 as QQC2
+import org.kde.koko 0.1 as Koko
 
 import org.kde.kirigami 2.5 as Kirigami
 
@@ -116,6 +117,12 @@ Kirigami.OverlayDrawer {
                     text: i18n("Favorites")
                     icon: "starred-symbolic"
                     filter: "Favorites"
+                }
+                PlaceItem {
+                    icon: "folder-videos"
+                    text: i18n("Videos")
+                    filter: "Folders"
+                    query: "file://" + Koko.DirModelUtils.videos
                 }
                 Repeater {
                     model: kokoConfig.savedFolders

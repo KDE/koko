@@ -201,7 +201,7 @@ void FileSystemTracker::slotNewFiles(const QStringList &files)
     QMimeDatabase db;
     for (const QString &file : files) {
         QMimeType mimetype = db.mimeTypeForFile(file);
-        if (mimetype.name().startsWith("image/")) {
+        if (mimetype.name().startsWith("image/") || mimetype.name().startsWith("video/")) {
             slotImageResult(file);
         }
     }

@@ -43,6 +43,15 @@ QUrl DirModelUtils::pictures() const
     return {};
 }
 
+QUrl DirModelUtils::videos() const
+{
+    const auto videos = QStandardPaths::standardLocations(QStandardPaths::MoviesLocation);
+    if (videos.count() > 0) {
+        return videos[0];
+    }
+    return {};
+}
+
 bool DirModelUtils::canBeSimplified(QUrl url) const
 {
     const auto homes = QStandardPaths::standardLocations(QStandardPaths::HomeLocation);

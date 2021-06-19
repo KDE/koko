@@ -17,6 +17,7 @@ import org.kde.koko 0.1 as Koko
 Flickable {
     id: flick
     property string currentImageSource
+    property string currentImageMimeType
     contentWidth: width
     contentHeight: height
     boundsBehavior: Flickable.StopAtBounds
@@ -25,18 +26,91 @@ Flickable {
     clip: true
 
     Controls.ScrollBar.vertical: Controls.ScrollBar {
-        visible: !applicationWindow().controlsVisible
+        visible: !applicationWindow().controlsVisible && flick.interactive
     }
     Controls.ScrollBar.horizontal: Controls.ScrollBar {
-        visible: !applicationWindow().controlsVisible
+        visible: !applicationWindow().controlsVisible && flick.interactive
     }
 
-    function resetZoom() {
+    property bool isCurrentImage: ListView.isCurrentItem
+    onIsCurrentImageChanged: {
+        if (isCurrentImage) {
+            if (listView.slideshow.running) {
+                if (videoLoader.status == Loader.Ready) { // play video automatically if slideshow is running
+                    videoLoader.item.play();
+                } else if (listView.slideshow.externalMediaRunning) {
+                    // indicate playback being finished if delegate that started it was unloaded (i.e. by using thumbnail bar)
+                    listView.slideshow.externalPlaybackUnloaded();
+                }
+            }
+            return
+        }
+        // stop video/zoom out if image is no longer current
+        if (videoLoader.status == Loader.Ready) {
+            videoLoader.item.player.stop();
+        }
         if (flick.interactive) {
             flick.contentWidth = root.width;
             flick.contentHeight = root.height;
             flick.contentX = 0;
             flick.contentY = 0;
+        }
+    }
+
+    Component {
+        id: videoPlayer
+        VideoPlayer {
+            width: Math.max(flick.contentWidth, flick.width)
+            height: Math.max(flick.contentHeight, flick.height)
+            source: currentImageSource
+        }
+    }
+
+    Loader {
+        id: videoLoader
+        active: currentImageMimeType.startsWith("video/")
+        sourceComponent: videoPlayer
+        onLoaded: {
+            // in case loader takes it's sweet time to load
+            if (listView.slideshow.running && flick.isCurrentImage) {
+                videoLoader.item.play();
+            }
+        }
+    }
+
+    Connections {
+        target: listView.slideshow
+        function onRunningChanged() {
+            // start playback if slideshow is running
+            if (listView.slideshow.running && flick.isCurrentImage) {
+                if (videoLoader.item.playing) { // indicate that video is already playing
+                    listView.slideshow.externalPlaybackStarted();
+                } else {
+                    videoLoader.item.play();
+                }
+            }
+        }
+    }
+
+    Connections {
+        target: videoLoader.item
+        function onPlaybackStarted() {
+            if (!flick.isCurrentImage) {
+                return;
+            }
+            // indicate that we're running a video
+            if (listView.slideshow.running) {
+                listView.slideshow.externalPlaybackStarted();
+            }
+        }
+        function onPlaybackFinished() {
+            if (!flick.isCurrentImage) {
+                return;
+            }
+            // indicate that we stopped playing the video
+            if (listView.slideshow.externalMediaRunning) {
+                listView.slideshow.externalPlaybackFinished();
+            }
         }
     }
 
@@ -119,7 +193,7 @@ Flickable {
             width: flick.contentWidth
             height: flick.contentHeight
             fillMode: Image.PreserveAspectFit
-            source: currentImageSource.endsWith(".gif") ? "" : currentImageSource
+            source: !currentImageMimeType.startsWith("video/") && !currentImageSource.endsWith(".gif") ? currentImageSource : ""
             autoTransform: true
             asynchronous: true
             onStatusChanged: {
@@ -134,7 +208,7 @@ Flickable {
             width: flick.contentWidth
             height: flick.contentHeight
             fillMode: Image.PreserveAspectFit
-            source: currentImageSource.endsWith(".gif") ? currentImageSource : ""
+            source: !currentImageMimeType.startsWith("video/") && currentImageSource.endsWith(".gif") ? currentImageSource : ""
             autoTransform: true
             asynchronous: true
             onStatusChanged: {
@@ -150,6 +224,7 @@ Flickable {
         }
         MouseArea {
             anchors.fill: image
+            enabled: !currentImageMimeType.startsWith("video/")
             onClicked: {
                 contextDrawer.drawerOpen = false
                 doubleClickTimer.restart();

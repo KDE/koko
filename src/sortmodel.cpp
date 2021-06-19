@@ -274,6 +274,19 @@ QJsonArray SortModel::selectedImages()
     return arr;
 }
 
+QJsonArray SortModel::selectedImagesMimeTypes()
+{
+    QJsonArray arr;
+
+    for (auto index : m_selectionModel->selectedIndexes()) {
+        if (!arr.contains(QJsonValue(data(index, Roles::MimeTypeRole).toString()))) {
+            arr.push_back(QJsonValue(data(index, Roles::MimeTypeRole).toString()));
+        }
+    }
+
+    return arr;
+}
+
 int SortModel::indexForUrl(const QString &url)
 {
     QModelIndexList indexList;

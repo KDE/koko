@@ -30,7 +30,7 @@ void FileSystemImageFetcher::slotProcess()
         QString filePath = it.next();
 
         QString mimetype = mimeDb.mimeTypeForFile(filePath, QMimeDatabase::MatchExtension).name();
-        if (!mimetype.startsWith("image/"))
+        if (!mimetype.startsWith("image/") && !mimetype.startsWith("video/"))
             continue;
 
         Q_EMIT imageResult(filePath);
