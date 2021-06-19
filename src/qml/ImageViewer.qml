@@ -617,57 +617,57 @@ Kirigami.Page {
             height: listView.height
         }
 
-    Controls.RoundButton {
-        anchors {
-          left: parent.left
-          leftMargin: Kirigami.Units.largeSpacing
-          verticalCenter: parent.verticalCenter
-        }
-        width: Kirigami.Units.gridUnit * 2
-        height: width
-        icon.name: "arrow-left"
-        Keys.forwardTo: [listView]
-        Accessible.name: i18n("Previous image")
-        onClicked: {
-            if (opacity === 0) return; // the best we can do without flicker unfortunately
-            listView.currentIndex -= 1;
-        }
+        Controls.RoundButton {
+            anchors {
+                left: parent.left
+                leftMargin: Kirigami.Units.largeSpacing
+                verticalCenter: parent.verticalCenter
+            }
+            width: Kirigami.Units.gridUnit * 2
+            height: width
+            icon.name: "arrow-left"
+            Keys.forwardTo: [listView]
+            Accessible.name: i18n("Previous image")
+            onClicked: {
+                if (opacity === 0) return; // the best we can do without flicker unfortunately
+                listView.currentIndex -= 1;
+            }
 
-        opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0 ? 1 : 0
+            opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0 ? 1 : 0
 
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
             }
         }
-    }
 
-    Controls.RoundButton {
-        anchors {
-          right: parent.right
-          rightMargin: Kirigami.Units.largeSpacing
-          verticalCenter: parent.verticalCenter
-        }
-        width: Kirigami.Units.gridUnit * 2
-        height: width
-        icon.name: "arrow-right"
-        Keys.forwardTo: [listView]
-        Accessible.name: i18n("Next image")
-        onClicked: {
-            if (opacity === 0) return;
-            listView.currentIndex += 1;
-        }
+        Controls.RoundButton {
+            anchors {
+                right: parent.right
+                rightMargin: Kirigami.Units.largeSpacing
+                verticalCenter: parent.verticalCenter
+            }
+            width: Kirigami.Units.gridUnit * 2
+            height: width
+            icon.name: "arrow-right"
+            Keys.forwardTo: [listView]
+            Accessible.name: i18n("Next image")
+            onClicked: {
+                if (opacity === 0) return;
+                listView.currentIndex += 1;
+            }
 
-        opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1 ? 1 : 0
+            opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1 ? 1 : 0
 
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
             }
         }
-    }
     }
 
     Component {
