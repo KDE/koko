@@ -110,3 +110,8 @@ Categories=Qt;KDE;Graphics;Viewer;
 Icon=koko
 MimeType=image/gif;image/jpeg;image/png;image/bmp;image/x-eps;image/x-ico;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/tiff;image/x-psd;image/x-webp;image/webp;image/svg+xml;video/x-matroska;video/x-vp8;video/x-vp9;video/webm;video/x-h264;video/mp4;video/x-m4v;video/x-av1;video/mpeg;video/mpegts;video/x-dirac;video/x-flash-video;video/flv;video/x-flv;video/x-h263;video/x-msvideocodec;video/x-msvideo;video/quicktime;video/3gpp;video/x-ms-asf;video/x-theora;video/ogg;video/x-vp10;video/x-mkv;video/x-fli;video/x-divx;video/x-msmpeg;video/x-jpeg;video/x-svq;video/x-pn-realvideo;video/x-dv;video/x-wmv;video/x-xvid;video/x-3ivx;video/x-tarkin;video/x-vp3;video/x-huffyuv;video/x-ffv;video/x-indeo;video/x-png;video/x-cinepak;
 X-Purism-FormFactor=Workstation;Mobile;
+# InitialPreference should be greater than Okular so that Koko is the
+# primary application associated with images, but less than Konqueror or Dolphin
+# so that Koko is not the primary applications for folders.
+# This is intionally the same value Gwenview uses as Koko is about en par.
+InitialPreference=8
