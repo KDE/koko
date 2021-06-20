@@ -372,6 +372,7 @@ Kirigami.Page {
                        kokoConfig.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
                 tooltip: i18n("Toggle Thumbnail Bar")
                 shortcut: "T"
+                visible: thumbnailView.count > 1
                 onTriggered: {
                     // you can't do imageViewPreview != imageViewPreview for some reason
                     if (kokoConfig.imageViewPreview) {
@@ -495,6 +496,7 @@ Kirigami.Page {
 
     Controls.ScrollView {
         id: thumbnailScrollView
+        visible: thumbnailView.count > 1
         z: 100
         height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
         Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
@@ -508,7 +510,7 @@ Kirigami.Page {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            bottomMargin: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ?
+            bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && kokoConfig.imageViewPreview ?
                             Kirigami.Units.smallSpacing + mobileFABHeight :
                            -height + mobileFABHeight
         }
