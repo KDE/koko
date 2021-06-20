@@ -15,7 +15,7 @@ class NotificationManager : public QObject
     Q_OBJECT
 public:
     explicit NotificationManager(QObject *parent = nullptr);
-    ~NotificationManager();
+    ~NotificationManager() = default;
 
     /**
      * @argument valid: to check whether the returned url after sharing is valid or not
