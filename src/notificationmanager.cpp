@@ -8,21 +8,15 @@
 #include <klocalizedstring.h>
 
 NotificationManager::NotificationManager(QObject *parent)
+    : QObject(parent)
 {
-    Q_UNUSED(parent)
-    m_sharingSuccess = new KNotification("sharingSuccess", KNotification::Persistent);
+    m_sharingSuccess = new KNotification("sharingSuccess", KNotification::Persistent, this);
 
-    m_sharingFailed = new KNotification("sharingFailed", KNotification::CloseOnTimeout);
-    m_sharingFailed->setText("Sharing failed");
+    m_sharingFailed = new KNotification("sharingFailed", KNotification::CloseOnTimeout, this);
+    m_sharingFailed->setText(i18n("Sharing failed"));
 }
 
-NotificationManager::~NotificationManager()
-{
-    delete m_sharingFailed;
-    delete m_sharingSuccess;
-}
-
-void NotificationManager::showNotification(bool valid, QVariant url)
+void NotificationManager::showNotification(bool valid, const QVariant &url)
 {
     if (valid) {
         m_sharingSuccess->setText(i18n("Shared url for image is <a href='%1'>%1</a>", url.toString()));
@@ -31,5 +25,3 @@ void NotificationManager::showNotification(bool valid, QVariant url)
         m_sharingFailed->sendEvent();
     }
 }
-
-#include "moc_notificationmanager.cpp"
