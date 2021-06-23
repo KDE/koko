@@ -42,6 +42,10 @@ ListView {
         onActivated: thumbnailView.activated(model.index)
         modelData: model
 
+        Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
+        Controls.ToolTip.visible: hovered
+        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
         DragHandler {
             xAxis.enabled: false
             yAxis.enabled: false

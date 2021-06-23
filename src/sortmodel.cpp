@@ -354,6 +354,6 @@ void SortModel::previewFailed(const KFileItem &item)
         return;
     }
 
-    m_imageCache->insertImage(item.url().toString(), QIcon::fromTheme("folder").pixmap(m_screenshotSize).toImage());
+    m_imageCache->insertImage(item.url().toString(), QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage());
     Q_EMIT dataChanged(index, index);
 }

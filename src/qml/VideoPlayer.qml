@@ -235,7 +235,7 @@ Item {
                 Accessible.name: videoPlayer.loops == MediaPlayer.Infinite ? i18n("Repeat current video") : i18n("Don't repeat current video")
                 Controls.ToolTip.text: Accessible.name
                 Controls.ToolTip.visible: hovered
-                Controls.ToolTip.delay: Kirigami.Units.longDuration * 3
+                Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
                 icon.name: videoPlayer.loops == MediaPlayer.Infinite ? "media-repeat-single" : "media-repeat-none"
                 onClicked: {
                     if (videoPlayer.loops == MediaPlayer.Infinite) {

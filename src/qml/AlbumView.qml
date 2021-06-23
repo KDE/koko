@@ -351,7 +351,7 @@ Kirigami.ScrollablePage {
             highlighted: gridView.currentIndex == index
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
             Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
-            Controls.ToolTip.delay: Kirigami.Units.longDuration * 2
+            Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
             onClicked: {
                 if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
                     gridView.model.toggleSelected(model.index)
