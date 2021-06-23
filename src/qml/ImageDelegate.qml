@@ -18,6 +18,7 @@ Flickable {
     id: flick
     property string currentImageSource
     property string currentImageMimeType
+
     contentWidth: width
     contentHeight: height
     boundsBehavior: Flickable.StopAtBounds
@@ -30,6 +31,14 @@ Flickable {
     }
     Controls.ScrollBar.horizontal: Controls.ScrollBar {
         visible: !applicationWindow().controlsVisible && flick.interactive
+    }
+
+    property bool autoplay: false
+    onAutoplayChanged: {
+        if (autoplay && videoLoader.status == Loader.Ready) { // play video automatically if started with "open with..."
+            videoLoader.item.play();
+            autoplay = false;
+        }
     }
 
     property bool isCurrentImage: ListView.isCurrentItem
@@ -72,8 +81,9 @@ Flickable {
         sourceComponent: videoPlayer
         onLoaded: {
             // in case loader takes it's sweet time to load
-            if (listView.slideshow.running && flick.isCurrentImage) {
+            if (flick.autoplay || (listView.slideshow.running && flick.isCurrentImage)) {
                 videoLoader.item.play();
+                flick.autoplay = false;
             }
         }
     }

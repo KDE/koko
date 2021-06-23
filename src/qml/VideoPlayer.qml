@@ -17,7 +17,7 @@ Item {
     // `required` here breaks stuff
     property string source
     readonly property alias player: videoPlayer
-    readonly property bool playing: videoPlayer.playbackState == MediaPlayer.PlayingState
+    readonly property bool playing: videoPlayer.playbackState === MediaPlayer.PlayingState
 
     // signals when playback starts and finishes
     signal playbackStarted()

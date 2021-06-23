@@ -52,6 +52,10 @@ Kirigami.Page {
             // still causes crashes
             // timer mostly remedies it, but it still may *rarely* crash
             listView.currentIndex = startIndex;
+
+            if (listView.currentItem.currentImageMimeType.startsWith("video/")) {
+                listView.currentItem.autoplay = true
+            }
         }
     }
 
