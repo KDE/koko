@@ -38,6 +38,15 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
     connect(this, &QAbstractItemModel::rowsInserted, this, &ImageFolderModel::countChanged);
     connect(this, &QAbstractItemModel::rowsRemoved, this, &ImageFolderModel::countChanged);
     connect(this, &QAbstractItemModel::modelReset, this, &ImageFolderModel::countChanged);
+    // we need the complete one, not the qurl one
+    connect(dirLister(), QOverload<>::of(&KCoreDirLister::completed), this, &ImageFolderModel::jobFinished);
+}
+
+void ImageFolderModel::jobFinished()
+{
+    if (dirLister()->isFinished()) {
+        Q_EMIT finishedLoading();
+    }
 }
 
 ImageFolderModel::~ImageFolderModel()

@@ -16,12 +16,44 @@ import org.kde.kirigami 2.13 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kcoreaddons 1.0 as KCA
+import org.kde.koko.private 0.1 as KokoPrivate
 
 Kirigami.Page {
     id: root
 
     property var startIndex
     property var imagesModel
+
+    Connections {
+        target: listView.model.sourceModel
+        function onFinishedLoading() {
+            if (!applicationWindow().fetchImageToOpen || listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen) === -1) {
+                return;
+            }
+            stopLoadingImages.restart();
+            startIndex = listView.model.mapFromSource(listView.model.sourceModel.index(listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen), 0)).row;
+        }
+    }
+
+    // sometimes when loading a folder KCoreDirLister "completes" all the jobs before starting another one
+    // which means onFinishedLoading sometimes gets called preemptively
+    // one easy way to repro this behavior is to open image from one folder and then open one from another
+    // so we wait a bit before guarding fetch
+    Timer {
+        id: stopLoadingImages
+        interval: 100
+        repeat: false
+        onTriggered: {
+            applicationWindow().fetchImageToOpen = false;
+            // NOTE: for setting index this early on may cause a crash
+            // it's definitely has something to do with listview interaction
+            // with *potentially* not fully loaded model as setting
+            // listView.currentIndex = Math.floor(Math.random() * listView.count)
+            // still causes crashes
+            // timer mostly remedies it, but it still may *rarely* crash
+            listView.currentIndex = startIndex;
+        }
+    }
 
     leftPadding: 0
     rightPadding: 0
@@ -293,8 +325,10 @@ Kirigami.Page {
         right: Kirigami.Action {
             icon.name: "kdocumentinfo"
             text: i18n("Info")
-            tooltip: listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("See information about video") :
-                                                                                      i18n("See information about image")
+            tooltip: listView.currentItem ?
+                     (listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("See information about video") :
+                                                                                       i18n("See information about image")) :
+                                                                                       ""
             onTriggered: {
                 if (infoDrawer.drawerOpen) {
                     infoDrawer.close();
@@ -322,7 +356,8 @@ Kirigami.Page {
             id: editingAction
             iconName: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
-            visible: !listView.currentItem.currentImageMimeType.startsWith("video/")
+            visible: listView.currentItem
+                     && !listView.currentItem.currentImageMimeType.startsWith("video/")
                      && listView.currentItem.currentImageMimeType !== "image/gif"
                      && listView.currentItem.currentImageMimeType !== "image/svg+xml"
             onTriggered: {
@@ -339,7 +374,9 @@ Kirigami.Page {
             Kirigami.Action {
                 id: shareAction
                 iconName: "document-share"
-                tooltip: listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("Share Video") : i18n("Share Image")
+                tooltip: listView.currentItem ?
+                                (listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("Share Video") : i18n("Share Image")) :
+                                ""
                 text: i18nc("verb, share an image/video", "Share")
                 onTriggered: {
                     shareDialog.open();
@@ -439,10 +476,6 @@ Kirigami.Page {
     Component.onCompleted: {
         applicationWindow().controlsVisible = true;
         listView.forceActiveFocus();
-        applicationWindow().header.visible = false;
-        applicationWindow().footer.visible = false;
-        applicationWindow().globalDrawer.visible = false;
-        applicationWindow().globalDrawer.enabled = false;
     }
     function close() {
         applicationWindow().controlsVisible = true;
@@ -479,7 +512,7 @@ Kirigami.Page {
 
         inputData: {
             "urls": [],
-            "mimeType": [listView.currentItem.currentImageMimeType]
+            "mimeType": [(listView.currentItem ? listView.currentItem.currentImageMimeType : "")]
         }
         onFinished: {
             if (error==0 && output.url !== "") {
@@ -585,7 +618,17 @@ Kirigami.Page {
         Kirigami.Theme.highlightColor: imgColors.highlight
         Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
 
-        Component.onCompleted: listView.currentIndex = model.mapFromSource(root.startIndex).row
+        // we start with this index, so we don't flash initial image
+        currentIndex: -1
+
+        // don't show initial image if index is not set yet
+        visible: currentIndex !== -1
+
+        Component.onCompleted: { // fun fact: without null guard this function will crash the app after a certain number of calls (I think)
+            if (root.startIndex) {
+                listView.currentIndex = model.mapFromSource(root.startIndex).row;
+            }
+        }
 
         property alias slideshow: slideshowManager
 

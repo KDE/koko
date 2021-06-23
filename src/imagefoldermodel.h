@@ -58,9 +58,12 @@ public:
      */
     Q_INVOKABLE void emptyTrash();
 
+    void jobFinished();
+
 Q_SIGNALS:
     void countChanged();
     void urlChanged();
+    void finishedLoading();
 
 private:
     QStringList m_mimeTypes;

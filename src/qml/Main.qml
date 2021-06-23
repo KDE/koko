@@ -26,12 +26,16 @@ Kirigami.ApplicationWindow {
     }
 
     property bool imageFromParameter: false
-    property bool loadRequestedFolder: false
     property var albumView: null
+    // fetch guard, so we don't needlessly check for image to open when it's not needed
+    // this is a temporary binding that's supposed to be broken
+    property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
 
     pageStack.layers.onDepthChanged: {
-        sideBar.enabled = pageStack.layers.depth < 2;
-        sideBar.drawerOpen = !Kirigami.Settings.isMobile && !sideBar.modal && pageStack.layers.depth < 2;
+        if (!fetchImageToOpen) {
+            sideBar.enabled = pageStack.layers.depth < 2;
+            sideBar.drawerOpen = !Kirigami.Settings.isMobile && !sideBar.modal && pageStack.layers.depth < 2;
+        }
     }
 
     Component {
@@ -65,7 +69,7 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: KokoPrivate.OpenFileModel
-        onUpdatedImages: {
+        function onUpdatedImages() { // this gets called if we use "open with", while app is already open
             if (KokoPrivate.OpenFileModel.rowCount() > 1) {
                 imageFromParameter = true;
                 pageStack.clear();
@@ -74,14 +78,15 @@ Kirigami.ApplicationWindow {
             } else if (KokoPrivate.OpenFileModel.rowCount() === 1) {
                 pageStack.clear();
                 pageStack.layers.clear();
-                loadRequestedFolder = false
                 pageStack.push(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
                 albumView = pageStack.currentItem;
                 albumView.isFolderView = true;
                 const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
                 albumView.model.sourceModel.url = url;
-                loadRequestedFolder = true
-                loadImageTimer.restart();
+                fetchImageToOpen = true;
+                pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+                    imagesModel: imageFolderModel.sourceModel
+                });
             }
         }
     }
@@ -103,13 +108,15 @@ Kirigami.ApplicationWindow {
             const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
             console.log(url)
             albumView.model.sourceModel.url = url;
-            loadRequestedFolder = true
+            fetchImageToOpen = true;
+            pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+                imagesModel: imageFolderModel.sourceModel
+            });
         }
     }
 
     globalDrawer: Sidebar {
         id: sideBar
-
         tags: imageTagsModel.sourceModel.tags
 
         onFilterBy: {
@@ -216,30 +223,11 @@ Kirigami.ApplicationWindow {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
             url: ""
-            onCountChanged: {
-                loadImageTimer.restart()
-            }
         }
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel
          */
         filterRole: Koko.Roles.MimeTypeRole
-    }
-
-    Timer {
-        id: loadImageTimer
-        interval: 100
-        repeat: false
-        onTriggered: {
-            if (!loadRequestedFolder) {
-                return
-            }
-            loadRequestedFolder = false
-            pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
-                startIndex: albumView.model.index(albumView.model.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen), 0),
-                imagesModel: albumView.model
-            })
-        }
     }
 
     Koko.SortModel {
