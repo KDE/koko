@@ -78,6 +78,22 @@ Item {
         }
     }
 
+    Controls.ToolButton {
+        anchors.centerIn: parent
+
+        icon.name: "media-playback-start"
+        icon.color: "white"
+
+        icon.width: Kirigami.Units.gridUnit * 3
+        icon.height: Kirigami.Units.gridUnit * 3
+
+        visible: videoPlayer.playbackState === MediaPlayer.StoppedState
+
+        onClicked: {
+            videoPlayer.play();
+        }
+    }
+
     Item {
         id: playerToolbar
 
