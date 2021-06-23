@@ -54,7 +54,7 @@ Kirigami.Page {
             listView.currentIndex = startIndex;
 
             if (listView.currentItem.currentImageMimeType.startsWith("video/")) {
-                listView.currentItem.autoplay = true
+                listView.currentItem.autoplay = true;
             }
         }
     }
