@@ -25,7 +25,7 @@ QHash<int, QByteArray> OpenFileModel::roleNames() const
 QVariant OpenFileModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     const int indexValue = index.row();
@@ -48,7 +48,7 @@ QVariant OpenFileModel::data(const QModelIndex &index, int role) const
     }
     }
 
-    return QVariant();
+    return {};
 }
 
 int OpenFileModel::rowCount(const QModelIndex &parent) const

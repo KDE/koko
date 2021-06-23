@@ -106,7 +106,7 @@ void ImageFolderModel::emptyTrash()
 QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     switch (role) {
@@ -132,5 +132,3 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
         return KDirModel::data(index, role);
     }
 }
-
-#include "moc_imagefoldermodel.cpp"

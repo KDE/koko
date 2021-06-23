@@ -33,7 +33,7 @@ QHash<int, QByteArray> AllImagesModel::roleNames() const
 QVariant AllImagesModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     QString filePath = m_images.at(index.row());
@@ -48,7 +48,7 @@ QVariant AllImagesModel::data(const QModelIndex &index, int role) const
         return filePath;
     }
 
-    return QVariant();
+    return {};
 }
 
 int AllImagesModel::rowCount(const QModelIndex &parent) const

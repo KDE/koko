@@ -41,7 +41,7 @@ QHash<int, QByteArray> ImageLocationModel::roleNames() const
 QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     QByteArray key = m_locations.at(index.row()).first;
@@ -71,7 +71,7 @@ QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
     }
     }
 
-    return QVariant();
+    return {};
 }
 
 int ImageLocationModel::rowCount(const QModelIndex &parent) const

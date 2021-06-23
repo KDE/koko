@@ -104,7 +104,7 @@ QHash<int, QByteArray> SortModel::roleNames() const
 QVariant SortModel::data(const QModelIndex &index, int role) const
 {
     if (!index.isValid()) {
-        return QVariant();
+        return {};
     }
 
     switch (role) {
