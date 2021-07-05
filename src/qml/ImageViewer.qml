@@ -486,7 +486,6 @@ Kirigami.Page {
         if (applicationWindow().footer) {
             applicationWindow().footer.visible = true;
         }
-        applicationWindow().globalDrawer.enabled = true;
         applicationWindow().visibility = Window.Windowed;
         applicationWindow().pageStack.layers.pop();
     }
