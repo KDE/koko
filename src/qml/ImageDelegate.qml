@@ -290,4 +290,38 @@ Flickable {
             }
         }
     }
+    Controls.BusyIndicator {
+        id: busyIndicator
+        parent: flick
+        anchors.centerIn: parent
+        visible: running
+        running: image.status === Image.Loading || imageAnimated.status === Image.Loading
+        background: Rectangle {
+            radius: height/2
+            color: busyIndicator.palette.base
+        }
+        SequentialAnimation {
+            running: busyIndicator.running
+            PropertyAction {
+                target: busyIndicator
+                property: "opacity"
+                value: 0
+            }
+            // Don't show if the waiting time is pretty short.
+            // If we had some way to predict how long it might take,
+            // it would be better to use that to decide whether or not
+            // to show the BusyIndicator.
+            PauseAnimation {
+                duration: 200
+            }
+            NumberAnimation {
+                target: busyIndicator
+                property: "opacity"
+                from: 0
+                to: 1
+                duration: Kirigami.Units.veryLongDuration
+                easing.type: Easing.OutCubic
+            }
+        }
+    }
 }
