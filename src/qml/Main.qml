@@ -27,12 +27,16 @@ Kirigami.ApplicationWindow {
 
     property bool imageFromParameter: false
     property var albumView: null
-
     // fetch guard, so we don't needlessly check for image to open when it's not needed
     // this is a temporary binding that's supposed to be broken
     property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
 
-    pageStack.leftSidebar: globalDrawer
+    pageStack.layers.onDepthChanged: {
+        if (!fetchImageToOpen) {
+            sideBar.enabled = pageStack.layers.depth < 2;
+            sideBar.drawerOpen = !Kirigami.Settings.isMobile && !sideBar.modal && pageStack.layers.depth < 2;
+        }
+    }
 
     Component {
         id: openFileComponent
@@ -113,9 +117,6 @@ Kirigami.ApplicationWindow {
 
     globalDrawer: Sidebar {
         id: sideBar
-
-        //parent: root.pageStack
-
         tags: imageTagsModel.sourceModel.tags
 
         onFilterBy: {
