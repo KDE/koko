@@ -578,7 +578,6 @@ Kirigami.Page {
     }
 
     MouseArea {
-        z: 1
         anchors.fill: parent
         acceptedButtons: Qt.BackButton | Qt.ForwardButton
 
@@ -594,6 +593,7 @@ Kirigami.Page {
                 }
                 mouse.accepted = true
             }
+            listView.positionViewAtIndex(listView.currentIndex, ListView.SnapPosition)
         }
     }
 
@@ -664,6 +664,8 @@ Kirigami.Page {
             currentImageMimeType: model.mimeType
             width: listView.width
             height: listView.height
+
+            listView: ListView.view
         }
 
         Controls.RoundButton {

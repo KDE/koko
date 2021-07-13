@@ -19,6 +19,8 @@ Flickable {
     property string currentImageSource
     property string currentImageMimeType
 
+    property Item listView
+
     contentWidth: width
     contentHeight: height
     boundsBehavior: Flickable.StopAtBounds
@@ -233,8 +235,13 @@ Flickable {
             onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
         }
         MouseArea {
+            id: mouse
+
             anchors.fill: image
             enabled: !currentImageMimeType.startsWith("video/")
+
+            cursorShape: pressed || flick.dragging || flick.listView.dragging ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+
             onClicked: {
                 contextDrawer.drawerOpen = false
                 doubleClickTimer.restart();
