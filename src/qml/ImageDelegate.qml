@@ -258,7 +258,15 @@ Flickable {
             }
             onWheel: {
                 if (wheel.modifiers & Qt.ControlModifier) {
-                    if (wheel.angleDelta.y != 0) {
+                    if (wheel.pixelDelta.y !== 0) {
+                        flick.contentX += wheel.pixelDelta.x;
+                        flick.contentY += wheel.pixelDelta.y;
+                    } else {
+                        flick.contentX -= wheel.angleDelta.x;
+                        flick.contentY -= wheel.angleDelta.y;
+                    }
+                } else {
+                    if (wheel.angleDelta.y !== 0) {
                         var factor = 1 + wheel.angleDelta.y / 600;
                         zoomAnim.running = false;
 
@@ -273,19 +281,11 @@ Flickable {
                         zoomAnim.y = flick.contentY * yFactor + (((wheel.y - flick.contentY) * yFactor) - (wheel.y - flick.contentY))
                         zoomAnim.running = true;
 
-                    } else if (wheel.pixelDelta.y != 0) {
+                    } else if (wheel.pixelDelta.y !== 0) {
                         flick.resizeContent(Math.min(Math.max(root.width, flick.contentWidth + wheel.pixelDelta.y), root.width * 4),
                                             Math.min(Math.max(root.height, flick.contentHeight + wheel.pixelDelta.y), root.height * 4),
                                             wheel);
                     }
-                } else {
-                    if (wheel.pixelDelta.y != 0) {
-                        flick.contentX += wheel.pixelDelta.x;
-                        flick.contentY += wheel.pixelDelta.y;
-                    } else {
-                        flick.contentX -= wheel.angleDelta.x;
-                        flick.contentY -= wheel.angleDelta.y;
-                    };
                 }
             }
         }
