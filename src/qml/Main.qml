@@ -210,11 +210,6 @@ Kirigami.ApplicationWindow {
                 text: i18n("Settings")
                 onClicked: root.pageStack.layers.push(settingsPage)
                 icon: "settings-configure"
-            },
-            Kirigami.BasicListItem {
-                text: i18n("About")
-                onClicked: root.pageStack.layers.push(aboutPage)
-                icon: "help-about"
             }
         ]
     }
@@ -303,13 +298,6 @@ Kirigami.ApplicationWindow {
     
     KQA.Clipboard {
         id: clipboard
-    }
-
-    Component {
-        id: aboutPage
-        Kirigami.AboutPage {
-            aboutData: kokoAboutData
-        }
     }
 
     Component {
