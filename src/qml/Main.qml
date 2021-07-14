@@ -208,7 +208,12 @@ Kirigami.ApplicationWindow {
         contentObject: [
             Kirigami.BasicListItem {
                 text: i18n("Settings")
-                onClicked: root.pageStack.layers.push(settingsPage)
+                onClicked: root.pageStack.pushDialogLayer(settingsPage, {
+                    width: root.width
+                }, {
+                    width: root.width - (Kirigami.Units.gridUnit * 4),
+                    height: root.height - (Kirigami.Units.gridUnit * 4)
+                })
                 icon: "settings-configure"
             }
         ]
