@@ -7,6 +7,7 @@
  */
 
 import QtQuick 2.15
+import QtQml 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
@@ -25,13 +26,6 @@ Flickable {
     boundsMovement: Flickable.StopAtBounds
     interactive: contentWidth > width || contentHeight > height
     clip: true
-
-    Controls.ScrollBar.vertical: Controls.ScrollBar {
-        visible: !applicationWindow().controlsVisible && flick.interactive
-    }
-    Controls.ScrollBar.horizontal: Controls.ScrollBar {
-        visible: !applicationWindow().controlsVisible && flick.interactive
-    }
 
     property bool autoplay: false
     onAutoplayChanged: {
@@ -290,6 +284,7 @@ Flickable {
             }
         }
     }
+
     Controls.BusyIndicator {
         id: busyIndicator
         parent: flick
