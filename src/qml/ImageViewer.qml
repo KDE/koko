@@ -8,6 +8,7 @@
  */
 
 import QtQuick 2.12
+import QtQml 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
@@ -715,6 +716,40 @@ Kirigami.Page {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
                 }
+            }
+        }
+
+        OverviewControl {
+            id: overviewControl
+            target: listView.currentItem
+            visible: overviewControl.target
+                && overviewControl.target.interactive
+                && applicationWindow().controlsVisible
+                && !Kirigami.Settings.tabletMode
+            parent: listView
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.margins: Kirigami.Units.gridUnit
+            width: Math.min(parent.width / 2 - anchors.margins, preferredWidth)
+            height: Math.min(parent.height / 2 - anchors.margins, preferredHeight)
+            z: 1
+            Binding {
+                target: overviewControl.target
+                property: "contentX"
+                value: overviewControl.target ?
+                    overviewControl.normalizedX * (overviewControl.target.contentWidth - overviewControl.target.width)
+                    : 0
+                when: overviewControl.pressed
+                restoreMode: Binding.RestoreNone
+            }
+            Binding {
+                target: overviewControl.target
+                property: "contentY"
+                value: overviewControl.target ?
+                    overviewControl.normalizedY * (overviewControl.target.contentHeight - overviewControl.target.height)
+                    : 0
+                when: overviewControl.pressed
+                restoreMode: Binding.RestoreNone
             }
         }
     }
