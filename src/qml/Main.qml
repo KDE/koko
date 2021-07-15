@@ -211,6 +211,7 @@ Kirigami.ApplicationWindow {
                 onClicked: root.pageStack.pushDialogLayer(settingsPage, {
                     width: root.width
                 }, {
+                    title: i18n("Settings"),
                     width: root.width - (Kirigami.Units.gridUnit * 4),
                     height: root.height - (Kirigami.Units.gridUnit * 4)
                 })
