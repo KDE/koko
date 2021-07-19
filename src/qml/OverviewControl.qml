@@ -7,7 +7,7 @@ import QtQml 2.15
 
 Rectangle {
     id: root
-    property Flickable target: null
+    property Item target: null
     property alias pressed: mouseArea.pressed
     property real contentAspectRatio: target ? target.contentWidth / target.contentHeight : 1
     property real widthRatio: target ? target.visibleArea.widthRatio : 1

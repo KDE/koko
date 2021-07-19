@@ -610,6 +610,7 @@ Kirigami.Page {
         highlightMoveDuration: 0
         interactive: currentItem && !currentItem.interactive
         highlightRangeMode: ListView.StrictlyEnforceRange
+        pixelAligned: true
 
         // Filter out directories
         model: Koko.SortModel {
@@ -666,8 +667,8 @@ Kirigami.Page {
             currentImageMimeType: model.mimeType
             width: listView.width
             height: listView.height
-            mediaSourceWidth: extractor.width
-            mediaSourceHeight: extractor.height
+            mediaSourceWidth: videoPlayer ? videoPlayer.implicitWidth : extractor.width
+            mediaSourceHeight: videoPlayer ? videoPlayer.implicitHeight : extractor.height
 
             listView: ListView.view
         }
