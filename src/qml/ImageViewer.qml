@@ -74,6 +74,11 @@ Kirigami.Page {
         id: mimeDB
     }
 
+    Koko.Exiv2Extractor {
+        id: extractor
+        filePath: listView.currentItem ? listView.currentItem.currentImageSource : ""
+    }
+
     Kirigami.ContextDrawer {
         id: contextDrawer
         title: i18n("Edit image")
@@ -86,10 +91,6 @@ Kirigami.Page {
         property alias imageUrl: extractor.filePath
         edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
         handleVisible: false
-
-        Koko.Exiv2Extractor {
-            id: extractor
-        }
 
         Koko.ImageTagsModel {
             id: tagList
@@ -607,7 +608,7 @@ Kirigami.Page {
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
         highlightMoveDuration: 0
-        interactive: true
+        interactive: currentItem && !currentItem.interactive
         highlightRangeMode: ListView.StrictlyEnforceRange
 
         // Filter out directories
@@ -665,6 +666,8 @@ Kirigami.Page {
             currentImageMimeType: model.mimeType
             width: listView.width
             height: listView.height
+            mediaSourceWidth: extractor.width
+            mediaSourceHeight: extractor.height
 
             listView: ListView.view
         }

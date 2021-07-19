@@ -11,13 +11,14 @@ import org.kde.kirigami 2.15 as Kirigami
 import QtMultimedia 5.15
 import org.kde.kcoreaddons 1.0 as KCA
 
-Item {
+FocusScope {
     id: videoPlayerRoot
 
     // `required` here breaks stuff
     property string source
     readonly property alias player: videoPlayer
     readonly property bool playing: videoPlayer.playbackState === MediaPlayer.PlayingState
+    readonly property alias status: videoPlayer.status
 
     // signals when playback starts and finishes
     signal playbackStarted()
@@ -27,6 +28,9 @@ Item {
     function play() {
         videoPlayer.play();
     }
+
+    implicitWidth: videoPlayer.implicitWidth
+    implicitHeight: videoPlayer.implicitHeight
 
     Timer {
         id: doubleClickTimer
@@ -54,6 +58,8 @@ Item {
 
     Video {
         id: videoPlayer
+        implicitWidth: videoPlayer.metaData.resolution.width
+        implicitHeight: videoPlayer.metaData.resolution.height
         anchors.fill: parent
         loops: videoPlayer.duration >= 5000 ? 0 : MediaPlayer.Infinite // loop short videos
         // See https://doc.qt.io/qt-5/qml-qtmultimedia-qtmultimedia.html#convertVolume-method
@@ -94,7 +100,7 @@ Item {
         }
     }
 
-    Item {
+    FocusScope {
         id: playerToolbar
 
         anchors.left: parent.left
