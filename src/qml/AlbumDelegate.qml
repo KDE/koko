@@ -33,8 +33,9 @@ Controls.ItemDelegate {
             margins: -1
         }
         radius: 2
-        color: Kirigami.Theme.textColor
-        opacity: 0.2
+        Kirigami.Theme.inherit: false
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        color: Kirigami.Theme.backgroundColor
         visible: modelData.itemType != Koko.Types.Folder
     }
     KQA.QImageItem {
@@ -44,7 +45,7 @@ Controls.ItemDelegate {
         height: width
         smooth: true
         image: modelData.thumbnail
-        fillMode: KQA.QImageItem.PreserveAspectCrop
+        fillMode: KQA.QImageItem.PreserveAspectFit
     }
 
     Rectangle {
