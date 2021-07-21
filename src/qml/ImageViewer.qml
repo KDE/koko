@@ -677,7 +677,6 @@ Kirigami.Page {
             width: Kirigami.Units.gridUnit * 2
             height: width
             icon.name: "arrow-left"
-            Keys.forwardTo: [listView]
             Accessible.name: i18n("Previous image")
             onClicked: {
                 if (opacity === 0) return; // the best we can do without flicker unfortunately
@@ -703,7 +702,6 @@ Kirigami.Page {
             width: Kirigami.Units.gridUnit * 2
             height: width
             icon.name: "arrow-right"
-            Keys.forwardTo: [listView]
             Accessible.name: i18n("Next image")
             onClicked: {
                 if (opacity === 0) return;
@@ -727,6 +725,25 @@ Kirigami.Page {
             width: root.width
             height: root.height
             imagePath: listView.currentItem.currentImageSource
+        }
+    }
+
+    Shortcut {
+        sequence: "Left"
+        onActivated: listView.decrementCurrentIndex()
+    }
+
+    Shortcut {
+        sequence: "Right"
+        onActivated: listView.incrementCurrentIndex()
+    }
+
+    Shortcut {
+        sequence: "Space"
+        onActivated: {
+            if (slideshowManager.running) {
+                slideshowManager.stop()
+            }
         }
     }
 }
