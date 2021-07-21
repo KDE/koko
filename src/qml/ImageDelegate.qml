@@ -9,15 +9,10 @@
 import QtQuick 2.15
 import QtQml 2.15
 import QtQuick.Window 2.15
-import QtQuick.Templates 2.15 as T
-import QtQuick.Controls 2.15 as Controls
-import QtGraphicalEffects 1.15 as Effects
-import QtQuick.Layouts 1.15
-import QtMultimedia 5.15
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.koko 0.1
 
-T.ScrollView {
+Item {
     id: root
     property string currentImageSource
     property string currentImageMimeType
@@ -28,287 +23,271 @@ T.ScrollView {
     property AnimatedImage animatedImage: null
     property Image image: null
     readonly property Item media: videoPlayer || animatedImage || image
+    readonly property int status: media ? media.status : 0
     // get info from Exiv2Extractor if not video
     property real mediaSourceWidth: 0
     property real mediaSourceHeight: 0
-    property real zoomFactor: contentWidth / mediaSourceWidth
-    property alias interactive: flick.interactive
-    property alias contentX: flick.contentX
-    property alias contentY: flick.contentY
-    property alias visibleArea: flick.visibleArea
+    readonly property alias contentItem: contentItem
+    property alias contentX: contentItem.x
+    property alias contentY: contentItem.y
+    property alias contentWidth: contentItem.width
+    property alias contentHeight: contentItem.height
+    readonly property real zoomFactor: root.contentWidth / mediaSourceWidth
+    readonly property bool interactive: root.contentWidth > root.width || root.contentHeight > root.height
+    readonly property alias dragging: mouseArea.drag.active
 
-    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-                            contentWidth + leftPadding + rightPadding)
-    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                            contentHeight + topPadding + bottomPadding)
+    function defaultContentWidth() {
+        return Math.min(root.mediaSourceWidth, root.width)
+    }
 
-    contentItem: Flickable {
-        id: flick
-        function defaultContentWidth() {
-            return media ? Math.min(mediaSourceWidth, width) : width
-        }
-        function defaultContentHeight() {
-            return media ? Math.min(mediaSourceHeight, height) : height
-        }
-        // contentItem.x and contentItem.y work like normal item x and y values
-        // while contentX and contentY are the same, but with flipped signs.
-        // contentX == -contentItem.x and contentY == -contentItem.y
-        function centerContentX() {
-            return -(flick.width - flick.contentWidth) / 2
-        }
-        function centerContentY() {
-            return -(flick.height - flick.contentHeight) / 2
-        }
-        function test(centerX, contentWidth, oldContentWidth) {
-            const newX = centerX * contentWidth / oldContentWidth;
-            flick.contentX = (contentX + newX - centerX);
-        }
+    function defaultContentHeight() {
+        return Math.min(root.mediaSourceHeight, root.height)
+    }
 
-        contentWidth: defaultContentWidth()
-        contentHeight: defaultContentHeight()
-        contentX: 0//centerContentX()
-        contentY: 0//centerContentY()
-        boundsBehavior: Flickable.StopAtBounds
-        boundsMovement: Flickable.StopAtBounds
-        interactive: contentWidth > width || contentHeight > height
-        clip: true
-        pixelAligned: true
-        maximumFlickVelocity: 0
+    function centerContentX(cWidth = root.contentWidth) {
+        return (root.width - root.contentWidth) / 2
+    }
 
-        ParallelAnimation {
-            id: zoomAnim
-            property real x: flick.contentX
-            property real y: flick.contentY
-            property real width: flick.contentWidth
-            property real height: flick.contentHeight
+    function centerContentY(cHeight = root.contentHeight) {
+        return (root.height - root.contentHeight) / 2
+    }
+
+    function bound(min, value, max) {
+        return Math.min(Math.max(min, value), max)
+    }
+
+    function boundedContentWidth(newWidth) {
+        return bound(root.defaultContentWidth(), newWidth, mediaSourceWidth * 16)
+    }
+
+    function boundedContentHeight(newHeight) {
+        return bound(root.defaultContentHeight(), newHeight, mediaSourceHeight * 16)
+    }
+
+    function boundedContentX(newX, cWidth = root.contentWidth) {
+        return bound(root.width - cWidth, newX, 0)
+    }
+
+    function boundedContentY(newY, cHeight = root.contentHeight) {
+        return bound(root.height - cHeight, newY, 0)
+    }
+
+    function resizeContent(
+        newWidth = Math.min(root.mediaSourceWidth, root.width),
+        newHeight = Math.min(root.mediaSourceHeight, root.height),
+        newX = (root.width - newWidth) / 2,
+        newY = (root.height - newHeight) / 2
+    ) {
+        //root.contentX + (centerX * newWidth / root.contentWidth) - centerX
+        //root.contentY + (centerY * newHeight / root.contentHeight) - centerY
+        root.contentWidth = newWidth
+        root.contentHeight = newHeight
+        root.contentX = newX
+        root.contentY = newY
+    }
+
+    clip: true
+
+    Item {
+        id: contentItem
+        property bool animationsEnabled: false
+        property int animationDuration: Kirigami.Units.longDuration
+        property int animationVelocity: 800
+        implicitWidth: root.mediaSourceWidth
+        implicitHeight: root.mediaSourceHeight
+        width: root.defaultContentWidth()
+        height: root.defaultContentHeight()
+        x: root.centerContentX()
+        y: root.centerContentY()
+        Behavior on width {
+            enabled: contentItem.animationsEnabled
             SmoothedAnimation {
-                target: flick
-                property: "contentWidth"
-                from: flick.contentWidth
-                to: zoomAnim.width
-                duration: Kirigami.Units.longDuration
-            }
-            SmoothedAnimation {
-                target: flick
-                property: "contentHeight"
-                from: flick.contentHeight
-                to: zoomAnim.height
-                duration: Kirigami.Units.longDuration
-            }
-            SmoothedAnimation {
-                target: flick.contentItem
-                property: "y"
-                from: flick.contentY
-                to: zoomAnim.y
-                duration: Kirigami.Units.longDuration
-            }
-            SmoothedAnimation {
-                target: flick.contentItem
-                property: "x"
-                from: flick.contentX
-                to: zoomAnim.x
-                duration: Kirigami.Units.longDuration
+                duration: contentItem.animationDuration
+                velocity: contentItem.animationVelocity
             }
         }
-
-        PinchArea {
-            anchors.fill: parent
-            parent: flick
-            //width: Math.max(flick.contentWidth, flick.width)
-            //height: Math.max(flick.contentHeight, flick.height)
-
-            property real initialWidth
-            property real initialHeight
-            onPinchStarted: {
-                initialWidth = flick.contentWidth
-                initialHeight = flick.contentHeight
+        Behavior on height {
+            enabled: contentItem.animationsEnabled
+            SmoothedAnimation {
+                duration: contentItem.animationDuration
+                velocity: contentItem.animationVelocity
             }
-
-            onPinchUpdated: {
-                // adjust content pos due to drag
-                flick.contentX += pinch.previousCenter.x - pinch.center.x
-                flick.contentY += pinch.previousCenter.y - pinch.center.y
-
-                // resize content
-                flick.resizeContent(Math.max(flick.width*0.7, initialWidth * pinch.scale),
-                                    Math.max(flick.height*0.7, initialHeight * pinch.scale),
-                                    pinch.center)
+        }
+        Behavior on x {
+            enabled: contentItem.animationsEnabled
+            SmoothedAnimation {
+                duration: contentItem.animationDuration
+                velocity: contentItem.animationVelocity
             }
+        }
+        Behavior on y {
+            enabled: contentItem.animationsEnabled
+            SmoothedAnimation {
+                duration: contentItem.animationDuration
+                velocity: contentItem.animationVelocity
+            }
+        }
+    }
 
-            onPinchFinished: {
-                // Move its content within bounds.
-                if (flick.contentWidth < flick.width
-                    || flick.contentHeight < flick.height) {
-                    if (flick.contentWidth < root.mediaSourceWidth
-                        || flick.contentHeight < root.mediaSourceHeight) {
-                        flick.contentWidth = mediaSourceWidth
-                        flick.contentHeight = mediaSourceHeight
-                    }
-                    flick.contentX = -(flick.width - flick.contentWidth) / 2;
-                    flick.contentY = -(flick.height - flick.contentHeight) / 2;
+    //Binding {
+        //target: root; when: contentWidth <= width
+        //property: "contentX"; value: (root.width - root.contentWidth) / 2
+        //restoreMode: Binding.RestoreBinding
+    //}
+    //Binding {
+        //target: root; when: contentHeight <= height
+        //property: "contentY"; value: (root.height - root.contentHeight) / 2
+        //restoreMode: Binding.RestoreBinding
+    //}
+
+    PinchArea {
+        id: pinchArea
+        anchors.fill: root
+        enabled: !root.videoPlayer
+        //x: root.contentWidth > root.width ? root.contentX : 0
+        //y: root.contentHeight > root.height ? root.contentY : 0
+        //width: Math.max(root.contentWidth, root.width)
+        //height: Math.max(root.contentHeight, root.height)
+
+        property real initialWidth
+        property real initialHeight
+        onPinchStarted: {
+            initialWidth = root.contentWidth
+            initialHeight = root.contentHeight
+        }
+
+        onPinchUpdated: {
+            contentItem.animationsEnabled = false
+            // adjust content pos due to drag
+            root.contentX = pinch.previousCenter.x - pinch.center.x + root.contentX
+            root.contentY = pinch.previousCenter.y - pinch.center.y + root.contentY
+
+            // resize content
+            root.contentWidth = Math.max(root.width*0.7, initialWidth * pinch.scale)
+            root.contentHeight = Math.max(root.height*0.7, initialHeight * pinch.scale)
+            root.contentX = pinch.center.x + root.contentX
+            root.contentY = pinch.center.y + root.contentY
+        }
+
+        onPinchFinished: {
+            contentItem.animationsEnabled = false
+            // Move its content within bounds.
+            if (root.contentWidth < root.width
+                || root.contentHeight < root.height) {
+                if (root.contentWidth < root.mediaSourceWidth
+                    || root.contentHeight < root.mediaSourceHeight) {
+                    root.contentWidth = mediaSourceWidth
+                    root.contentHeight = mediaSourceHeight
+                }
+                root.contentX = root.centerContentX()
+                root.contentY = root.centerContentY()
+            }/* else {
+                flick.returnToBounds();
+            }*/
+        }
+    }
+
+    Timer {
+        id: doubleClickTimer
+        interval: Qt.styleHints.mouseDoubleClickInterval + 1
+        onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
+    }
+
+    MouseArea {
+        id: mouseArea
+        function angleDeltaToPixels(delta) {
+            // 120 units == 1 step; steps * line height * lines per step
+            return delta / 120 * Kirigami.Units.gridUnit * Qt.styleHints.wheelScrollLines
+        }
+        anchors.fill: root
+        enabled: !root.videoPlayer
+        cursorShape: if (drag.target) {
+            return drag.active/* || root.listView.dragging*/ ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+        } else {
+            return undefined
+        }
+        drag {
+            axis: Drag.XAndYAxis
+            target: contentItem
+            minimumX: root.width - root.contentWidth
+            maximumX: 0
+            minimumY: root.height - root.contentHeight
+            maximumY: 0
+        }
+        onClicked: {
+            contextDrawer.drawerOpen = false
+            doubleClickTimer.restart()
+        }
+        onDoubleClicked: {
+            doubleClickTimer.stop()
+            if (Kirigami.Settings.isMobile) { applicationWindow().controlsVisible = false }
+            contentItem.animationsEnabled = true
+            if (root.interactive) {
+                root.resizeContent()
+                //contentWidth: Qt.binding(root.defaultContentWidth)
+                //contentHeight: Qt.binding(root.defaultContentHeight)
+            } else {
+                const newWidth = root.contentWidth * 2
+                const newHeight = root.contentHeight * 2
+                root.resizeContent(newWidth,
+                                   newHeight,
+                                   root.contentX - mouseX - root.centerContentX(newWidth),
+                                   root.contentY - mouseY - root.centerContentY(newHeight))
+            }
+        }
+        onWheel: {
+            contentItem.animationsEnabled = wheel.pixelDelta.x === 0 && wheel.pixelDelta.y === 0
+
+            const pixelDeltaY = wheel.pixelDelta.y !== 0 ?
+                wheel.pixelDelta.y : angleDeltaToPixels(wheel.angleDelta.y)
+
+            if (wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier) {
+                const pixelDeltaX = wheel.pixelDelta.x !== 0 ?
+                    wheel.pixelDelta.x : angleDeltaToPixels(wheel.angleDelta.x)
+                if (pixelDeltaX !== 0 && pixelDeltaY !== 0) {
+                    root.contentX = root.bound(root.width - root.contentWidth,
+                                               pixelDeltaX + root.contentX,
+                                               0)
+                    root.contentY = root.bound(root.height - root.contentHeight,
+                                               pixelDeltaY + root.contentY,
+                                               0)
+                } else if (pixelDeltaX !== 0 && pixelDeltaY === 0) {
+                    root.contentX = root.bound(root.width - root.contentWidth,
+                                               pixelDeltaX + root.contentX,
+                                               0)
+                } else if (pixelDeltaX === 0 && pixelDeltaY !== 0 && wheel.modifiers & Qt.ShiftModifier) {
+                    root.contentX = root.bound(root.width - root.contentWidth,
+                                               pixelDeltaY + root.contentX,
+                                               0)
                 } else {
-                    flick.returnToBounds();
+                    root.contentY = root.bound(root.height - root.contentHeight,
+                                               pixelDeltaY + root.contentY,
+                                               0)
                 }
-            }
-        }
-
-        Timer {
-            id: doubleClickTimer
-            interval: Qt.styleHints.mouseDoubleClickInterval + 1
-            onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
-        }
-
-        MouseArea {
-            id: mouseArea
-            property real totalPixelDelta: 0
-            property bool zoomed: false
-            parent: flick
-            cursorShape: pressed || flick.dragging || root.listView.dragging ? Qt.ClosedHandCursor : Qt.OpenHandCursor
-            anchors.fill: parent
-            enabled: !root.videoPlayer
-
-            function angleDeltaToPixels(delta) {
-                // 120 units == 1 step; steps * line height * lines per step
-                return delta / 120 * Kirigami.Units.gridUnit * Qt.styleHints.wheelScrollLines
-            }
-            function contentWidthForPixelDelta(delta) {
-                return Math.min(Math.max(Math.min(root.mediaSourceWidth, flick.width), // min
-                                        contentWidth + delta),
-                                        root.mediaSourceWidth * 16) // max
-            }
-            function contentHeightForPixelDelta(delta) {
-                return Math.min(Math.max(Math.min(root.mediaSourceHeight, flick.height), // min
-                                        contentHeight + delta),
-                                        root.mediaSourceHeight * 16) // max
-            }
-
-            onClicked: {
-                contextDrawer.drawerOpen = false
-                doubleClickTimer.restart();
-            }
-
-            onDoubleClicked: {
-                doubleClickTimer.running = false;
-                if (Kirigami.Settings.isMobile) { applicationWindow().controlsVisible = false }
-                if (zoomed || flick.interactive) {
-                    zoomed = false
-                    flick.contentWidth = defaultContentWidth()
-                    flick.contentHeight = defaultContentHeight()
-                    flick.contentX = -(flick.width - flick.contentWidth) / 2
-                    flick.contentY = -(flick.height - flick.contentHeight) / 2
-                } else if (!zoomed) {
-                    zoomed = true
-                    flick.contentWidth *= 2
-                    flick.contentHeight *= 2
-                    flick.resizeContent(flick.contentWidth,
-                                        flick.contentHeight,
-                                        Qt.point(0,0))
-                    //const mousePos = mapToItem(flick.contentItem, mouseX, mouseY)
-                    //flick.contentItem.x = mousePos.x / 2
-                    //flick.contentItem.y = mousePos.y / 2
-                    //flick.returnToBounds()
-                }
-            }
-
-        onWheel: {/*
-                        var factor = 1 + wheel.angleDelta.y / 600;
-                        zoomAnim.running = false;
-
-                        zoomAnim.width = Math.min(Math.max(root.width, zoomAnim.width * factor), root.width * 4);
-                        zoomAnim.height = Math.min(Math.max(root.height, zoomAnim.height * factor), root.height * 4);
-
-                        //actual factors, may be less than factor
-                        var xFactor = zoomAnim.width / flick.contentWidth;
-                        var yFactor = zoomAnim.height / flick.contentHeight;
-                    } else if (wheel.pixelDelta.y != 0) {
-                        flick.resizeContent(Math.min(Math.max(root.width, flick.contentWidth + wheel.pixelDelta.y), root.width * 4),
-                                            Math.min(Math.max(root.height, flick.contentHeight + wheel.pixelDelta.y), root.height * 4),
-                                            wheel);
-                    }*/
-                if (wheel.modifiers & Qt.ControlModifier) {
-                    if (wheel.pixelDelta.y !== 0) {
-                        flick.contentX -= wheel.pixelDelta.x;
-                        flick.contentY -= wheel.pixelDelta.y;
-                    } else {
-                        flick.contentX -= angleDeltaToPixels(wheel.angleDelta.x)
-                        flick.contentY -= angleDeltaToPixels(wheel.angleDelta.y)
-                    }
+            } else {
+                const pixelDelta = pixelDeltaY * root.zoomFactor
+                const contentAspectRatio = root.contentWidth / root.contentHeight
+                if (contentAspectRatio >= 1) {
+                    const newWidth = boundedContentWidth(root.contentWidth + pixelDelta)
+                    const newHeight = boundedContentHeight(newWidth / contentAspectRatio)
+                    const newX = boundedContentX(root.centerContentX(newWidth) - mouseX + root.contenX)
+                    const newY = boundedContentY(root.centerContentY(newHeight) - mouseY + root.contenY)
+                    root.resizeContent(newWidth, newHeight, newX, newY)
                 } else {
-                    const pixelDelta = wheel.pixelDelta.y !== 0 ? wheel.pixelDelta.y
-                        : angleDeltaToPixels(wheel.angleDelta.y)
-                    totalPixelDelta += pixelDelta
-
-                    const contentAspectRatio = flick.contentWidth / flick.contentHeight
-
-                    if (contentAspectRatio >= 1) {
-                        flick.contentWidth = contentWidthForPixelDelta(wheel.pixelDelta.y)
-                        flick.contentHeight = contentWidth / contentAspectRatio
-                    } else {
-                        flick.contentHeight = contentHeightForPixelDelta(wheel.pixelDelta.y)
-                        flick.contentWidth = contentHeight * (1 / contentAspectRatio)
-                    }
-
-                    flick.contentX = mouseX + flick.contentX
-                    flick.contentY = mouseY + flick.contentY
-                }
-            }
-        }
-
-        Controls.BusyIndicator {
-            id: busyIndicator
-            parent: flick
-            anchors.centerIn: parent
-            visible: running
-            z: 1
-            running: root.videoPlayer ?
-                root.videoPlayer.status === MediaPlayer.Loading
-                : root.media && root.media.status === Image.Loading
-            background: Rectangle {
-                radius: height/2
-                color: busyIndicator.palette.base
-            }
-            SequentialAnimation {
-                running: busyIndicator.running
-                PropertyAction {
-                    target: busyIndicator
-                    property: "opacity"
-                    value: 0
-                }
-                // Don't show if the waiting time is pretty short.
-                // If we had some way to predict how long it might take,
-                // it would be better to use that to decide whether or not
-                // to show the BusyIndicator.
-                PauseAnimation {
-                    duration: 200
-                }
-                NumberAnimation {
-                    target: busyIndicator
-                    property: "opacity"
-                    from: 0
-                    to: 1
-                    duration: Kirigami.Units.veryLongDuration
-                    easing.type: Easing.OutCubic
+                    const newHeight = boundedContentHeight(root.contentHeight + pixelDelta)
+                    const newWidth = boundedContentWidth(newHeight * (1 / contentAspectRatio))
+                    const newX = boundedContentX(root.centerContentX(newWidth) - mouseX + root.contenX)
+                    const newY = boundedContentY(root.centerContentY(newHeight) - mouseY + root.contenY)
+                    root.resizeContent(newWidth, newHeight, newX, newY)
                 }
             }
         }
     }
 
-    Controls.ScrollIndicator.vertical: Controls.ScrollIndicator {
-        id: vScrollIndicator
-        visible: !applicationWindow().controlsVisible && flick.interactive
-        parent: control
-        x: root.mirrored ? 0 : root.width - width
-        y: root.topPadding
-        height: root.availableHeight
-        active: hScrollIndicator.active
-    }
-    Controls.ScrollIndicator.horizontal: Controls.ScrollIndicator {
-        id: hScrollIndicator
-        visible: !applicationWindow().controlsVisible && flick.interactive
-        x: root.leftPadding
-        y: root.height - height
-        width: root.availableWidth
-        active: vScrollIndicator.active
+    Binding {
+        target: contentItem; when: root.dragging
+        property: "animationsEnabled"; value: !root.dragging
+        restoreMode: Binding.RestoreBindingOrValue
     }
 
     Component {
@@ -379,17 +358,17 @@ T.ScrollView {
     onCurrentImageMimeTypeChanged: if (
         currentImageMimeType.startsWith("video/") && videoPlayer === null
     ) {
-        videoPlayer = videoPlayerComponent.createObject(flick.contentItem)
+        videoPlayer = videoPlayerComponent.createObject(contentItem)
         animatedImage = null
         image = null
     } else if (currentImageSource.endsWith(".gif") && animatedImage === null) {
         videoPlayer = null
-        animatedImage = animatedImageComponent.createObject(flick.contentItem)
+        animatedImage = animatedImageComponent.createObject(contentItem)
         image = null
     } else if (image === null) {
         videoPlayer = null
         animatedImage = null
-        image = imageComponent.createObject(flick.contentItem)
+        image = imageComponent.createObject(contentItem)
     }
 
     onAutoplayChanged: {

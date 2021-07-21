@@ -10,15 +10,15 @@ Rectangle {
     property Item target: null
     property alias pressed: mouseArea.pressed
     property real contentAspectRatio: target ? target.contentWidth / target.contentHeight : 1
-    property real widthRatio: target ? target.visibleArea.widthRatio : 1
-    property real heightRatio: target ? target.visibleArea.heightRatio : 1
+    property real widthRatio: target ? target.width / target.contentWidth : 1
+    property real heightRatio: target ? target.height / target.contentHeight : 1
     // Don't use Flickable::visibleArea.xPosition or Flickable::visibleArea.yPosition. They won't give the correct values.
-    property real normalizedX: target ? target.contentX / (target.contentWidth - target.width) : 0
-    property real normalizedY: target ? target.contentY / (target.contentHeight - target.height) : 0
+    property real normalizedX: target ? -target.contentX / (target.contentWidth - target.width) : 0
+    property real normalizedY: target ? -target.contentY / (target.contentHeight - target.height) : 0
     readonly property real preferredWidth: contentAspectRatio >= 1 || contentAspectRatio <= 0 ?
-        implicitWidth : height * (1 / contentAspectRatio)
+        implicitWidth : implicitHeight * (1 / contentAspectRatio)
     readonly property real preferredHeight: contentAspectRatio <= 1 ?
-        implicitHeight : width / contentAspectRatio
+        implicitHeight : implicitWidth / contentAspectRatio
     implicitWidth: 100
     implicitHeight: 100
     width: preferredWidth
@@ -37,22 +37,20 @@ Rectangle {
         color: Qt.rgba(1,1,1,0.25)
         border.color: Qt.rgba(1,1,1,0.5)
         border.width: 1
-        Rectangle {
-            id: dot // For improved visibility
-            visible: {
-                const w = implicitWidth - border.width * 2
-                const h = implicitHeight - border.width * 2
-                return parent.width - w >= w && parent.height - h >= h
-            }
-            radius: height / 2
-            anchors.centerIn: parent
-            implicitWidth: 6
-            implicitHeight: 6
-            color: "white"
-            // shadow outline for slightly better contrast
-            border.color: Qt.rgba(0,0,0,0.125)
-            border.width: 1
-        }
+    }
+    Rectangle {
+        id: dot // For improved visibility
+        radius: height / 2
+        anchors.centerIn: handleRect
+        implicitWidth: 6
+        implicitHeight: 6
+        color: "white"
+        // shadow outline for slightly better contrast
+        border.color: Qt.rgba(0, 0, 0,
+            handleRect.width < dot.implicitWidth - 2
+            || handleRect.height < dot.implicitHeight - 2 ?
+                0.4 : 0.2)
+        border.width: 1
     }
     MouseArea {
         id: mouseArea
@@ -64,9 +62,9 @@ Rectangle {
         target: root
         property: "normalizedX"
         value: {
-            const newX = Math.max(0, // min value
-                Math.min(mouseArea.mouseX - handleRect.width / 2, // value
-                    root.width - handleRect.width)) // max value
+            const newX = Math.max(0, // min
+                Math.min(mouseArea.mouseX - handleRect.width / 2,
+                    root.width - handleRect.width)) // max
             return newX / (root.width - handleRect.width)
         }
         when: mouseArea.pressed
@@ -76,9 +74,9 @@ Rectangle {
         target: root
         property: "normalizedY"
         value: {
-            const newY = Math.max(0, // min value
-                Math.min(mouseArea.mouseY - handleRect.height / 2, // value
-                    root.height - handleRect.height)) // max value
+            const newY = Math.max(0, // min
+                Math.min(mouseArea.mouseY - handleRect.height / 2,
+                    root.height - handleRect.height)) // max
             return newY / (root.height - handleRect.height)
         }
         when: mouseArea.pressed

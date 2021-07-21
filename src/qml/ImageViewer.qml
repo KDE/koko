@@ -13,6 +13,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
 import QtQuick.Layouts 1.15
+import QtMultimedia 5.15
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
@@ -601,6 +602,7 @@ Kirigami.Page {
 
     ListView {
         id: listView
+        property bool isCurrentItemDragging: currentItem && currentItem.dragging
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -688,12 +690,16 @@ Kirigami.Page {
                 listView.currentIndex -= 1;
             }
 
-            opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0 ? 1 : 0
+            visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes reappearing to be delayed
+            opacity: applicationWindow().controlsVisible
+                && listView.currentIndex > 0
+                && !listView.isCurrentItemDragging
+                && !overviewControl.pressed
 
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
+                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
         }
@@ -713,12 +719,16 @@ Kirigami.Page {
                 listView.currentIndex += 1;
             }
 
-            opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1 ? 1 : 0
+            visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes flickering
+            opacity: applicationWindow().controlsVisible
+                && listView.currentIndex < listView.count - 1
+                && !listView.isCurrentItemDragging
+                && !overviewControl.pressed
 
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
+                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
         }
@@ -726,10 +736,11 @@ Kirigami.Page {
         OverviewControl {
             id: overviewControl
             target: listView.currentItem
-            visible: overviewControl.target
-                && overviewControl.target.interactive
+            visible: !Kirigami.Settings.tabletMode && opacity > 0
+            opacity: overviewControl.target
+                && target.interactive
+                && !target.dragging
                 && applicationWindow().controlsVisible
-                && !Kirigami.Settings.tabletMode
             parent: listView
             anchors.right: parent.right
             anchors.bottom: parent.bottom
@@ -737,11 +748,17 @@ Kirigami.Page {
             width: Math.min(parent.width / 2 - anchors.margins, preferredWidth)
             height: Math.min(parent.height / 2 - anchors.margins, preferredHeight)
             z: 1
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                }
+            }
             Binding {
                 target: overviewControl.target
                 property: "contentX"
                 value: overviewControl.target ?
-                    overviewControl.normalizedX * (overviewControl.target.contentWidth - overviewControl.target.width)
+                    -overviewControl.normalizedX * (overviewControl.target.contentWidth - overviewControl.target.width)
                     : 0
                 when: overviewControl.pressed
                 restoreMode: Binding.RestoreNone
@@ -750,10 +767,49 @@ Kirigami.Page {
                 target: overviewControl.target
                 property: "contentY"
                 value: overviewControl.target ?
-                    overviewControl.normalizedY * (overviewControl.target.contentHeight - overviewControl.target.height)
+                    -overviewControl.normalizedY * (overviewControl.target.contentHeight - overviewControl.target.height)
                     : 0
                 when: overviewControl.pressed
                 restoreMode: Binding.RestoreNone
+            }
+        }
+
+        Controls.BusyIndicator {
+            id: busyIndicator
+            property Item target: listView.currentItem
+            anchors.centerIn: parent
+            parent: listView
+            visible: running
+            z: 1
+            running: target && (target.videoPlayer ?
+                target.status === MediaPlayer.Loading
+                : target.status === Image.Loading)
+            background: Rectangle {
+                radius: height/2
+                color: busyIndicator.palette.base
+            }
+            SequentialAnimation {
+                running: busyIndicator.visible
+                PropertyAction {
+                    target: busyIndicator
+                    property: "opacity"
+                    value: 0
+                }
+                // Don't show if the waiting time is pretty short.
+                // If we had some way to predict how long it might take,
+                // it would be better to use that to decide whether or not
+                // to show the BusyIndicator.
+                PauseAnimation {
+                    duration: 200
+                }
+                NumberAnimation {
+                    target: busyIndicator
+                    property: "opacity"
+                    from: 0
+                    to: 1
+                    duration: Kirigami.Units.veryLongDuration
+                    easing.type: Easing.OutCubic
+                }
             }
         }
     }
