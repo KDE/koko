@@ -29,14 +29,38 @@ Rectangle {
     antialiasing: false // no need for rounding now
     Rectangle {
         id: handleRect
+        property bool mouseInside: mouseArea.mouseX >= handleRect.x
+            && mouseArea.mouseX <= handleRect.x + handleRect.width
+            && mouseArea.mouseY >= handleRect.y
+            && mouseArea.mouseY <= handleRect.y + handleRect.height
         antialiasing: false
-        x: root.normalizedX * (root.width - handleRect.width)
-        y: root.normalizedY * (root.height - handleRect.height)
-        width: root.width * root.widthRatio
-        height: root.height * root.heightRatio
+        width: Math.min(root.width * root.widthRatio, root.width)
+        height: Math.min(root.height * root.heightRatio, root.height)
+//         x: root.normalizedX * (root.width - handleRect.width)
+        //y: root.normalizedY * (root.height - handleRect.height)
         color: Qt.rgba(1,1,1,0.25)
         border.color: Qt.rgba(1,1,1,0.5)
         border.width: 1
+        Binding {
+            target: handleRect
+            property: "x"
+            value: root.normalizedX * (root.width - handleRect.width)
+            when: !mouseArea.pressed
+            restoreMode: Binding.RestoreBinding
+        }
+        Binding {
+            target: handleRect
+            property: "y"
+            value: root.normalizedY * (root.height - handleRect.height)
+            when: !mouseArea.pressed
+            restoreMode: Binding.RestoreBinding
+        }
+        //{
+            //const newY = Math.max(0, // min
+                //Math.min(handleRect.y,
+                    //root.height - handleRect.height)) // max
+            //return 
+        //}
     }
     Rectangle {
         id: dot // For improved visibility
@@ -55,30 +79,44 @@ Rectangle {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-        cursorShape: pressed ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+        hoverEnabled: true
+        cursorShape: if (pressed) {
+            return Qt.ClosedHandCursor
+        } else if (handleRect.mouseInside) {
+            return Qt.OpenHandCursor
+        } else {
+            return Qt.ArrowCursor
+        }
         preventStealing: true
+        drag {
+            axis: Drag.XAndYAxis
+            target: handleRect
+            minimumX: 0
+            maximumX: root.width - handleRect.width
+            minimumY: 0
+            maximumY: root.height - handleRect.height
+            threshold: 0
+        }
+        onPressed: if (!handleRect.mouseInside && !mouseArea.drag.active) {
+            handleRect.x = Math.max(drag.minimumX, // min
+                           Math.min(mouseArea.mouseX - handleRect.width / 2,
+                                    drag.maximumX)) // max
+            handleRect.y = Math.max(drag.minimumY, // min
+                           Math.min(mouseArea.mouseY - handleRect.height / 2,
+                                    drag.maximumY)) // max
+        }
     }
     Binding {
         target: root
         property: "normalizedX"
-        value: {
-            const newX = Math.max(0, // min
-                Math.min(mouseArea.mouseX - handleRect.width / 2,
-                    root.width - handleRect.width)) // max
-            return newX / (root.width - handleRect.width)
-        }
+        value: handleRect.x / (root.width - handleRect.width)
         when: mouseArea.pressed
         restoreMode: Binding.RestoreBinding
     }
     Binding {
         target: root
         property: "normalizedY"
-        value: {
-            const newY = Math.max(0, // min
-                Math.min(mouseArea.mouseY - handleRect.height / 2,
-                    root.height - handleRect.height)) // max
-            return newY / (root.height - handleRect.height)
-        }
+        value: handleRect.y / (root.height - handleRect.height)
         when: mouseArea.pressed
         restoreMode: Binding.RestoreBinding
     }

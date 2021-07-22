@@ -28,62 +28,75 @@ Item {
     property real mediaSourceWidth: 0
     property real mediaSourceHeight: 0
     readonly property alias contentItem: contentItem
-    property alias contentX: contentItem.x
-    property alias contentY: contentItem.y
+    property alias contentX: contentItem.x // Can be NaN/undefined sometimes even when contentItem.x isn't.
+    property alias contentY: contentItem.y // Can be NaN/undefined sometimes even when contentItem.y isn't.
     property alias contentWidth: contentItem.width
     property alias contentHeight: contentItem.height
-    readonly property real zoomFactor: root.contentWidth / mediaSourceWidth
-    readonly property bool interactive: root.contentWidth > root.width || root.contentHeight > root.height
-    readonly property alias dragging: mouseArea.drag.active
+    readonly property rect defaultContentRect: {
+        const size = fittedContentSize(root.mediaSourceWidth, root.mediaSourceHeight)
+        return Qt.rect(centerContentX(size.width), centerContentY(size.height), size.width, size.height)
+    }
+    readonly property real viewAspectRatio: root.width / root.height
+    readonly property real mediaAspectRatio: root.mediaSourceWidth / root.mediaSourceHeight
+    readonly property real widthZoomFactor: (videoPlayer ? contentItem.width : media.paintedWidth) / mediaSourceWidth
+    readonly property real heightZoomFactor: (videoPlayer ? contentItem.height : media.paintedHeight) / mediaSourceHeight
+    readonly property bool interactive: contentItem.width > root.width || contentItem.height > root.height
+    readonly property bool dragging: mouseArea.drag.active || pinchArea.pinch.active
 
-    function defaultContentWidth() {
-        return Math.min(root.mediaSourceWidth, root.width)
+    // Returning sizes instead of separate widths and heights since they both need to be calculated together.
+
+    function fittedContentSize(w, h) {
+        const factor = root.mediaAspectRatio >= root.viewAspectRatio ? root.width / w : root.height / h
+        if (w > root.width || h > root.height) {
+            w = w * factor
+            h = h * factor
+        }
+        return Qt.size(w, h)//new RectF(newLeft, newTop, newWidth + newLeft, newHeight + newTop)
     }
 
-    function defaultContentHeight() {
-        return Math.min(root.mediaSourceHeight, root.height)
+    function defaultContentSize() {
+        return fittedContentSize(root.mediaSourceWidth, root.mediaSourceHeight)
     }
 
-    function centerContentX(cWidth = root.contentWidth) {
-        return (root.width - root.contentWidth) / 2
+    function centerContentX(cWidth = contentItem.width) {
+        return (root.width - cWidth) / 2
     }
 
-    function centerContentY(cHeight = root.contentHeight) {
-        return (root.height - root.contentHeight) / 2
+    function centerContentY(cHeight = contentItem.height) {
+        return (root.height - cHeight) / 2
     }
 
     function bound(min, value, max) {
         return Math.min(Math.max(min, value), max)
     }
 
+    function boundedContentSize(w, h) {
+        w = bound(root.defaultContentRect.width, w, mediaSourceWidth * 16)
+        h = bound(root.defaultContentRect.height, h, mediaSourceHeight * 16)
+        const factor = root.mediaAspectRatio >= root.viewAspectRatio ? root.width / w : root.height / h
+        if (w > root.width || h > root.height) {
+            w = w * factor
+            h = h * factor
+        }
+        return Qt.size(w,h)
+    }
+
     function boundedContentWidth(newWidth) {
-        return bound(root.defaultContentWidth(), newWidth, mediaSourceWidth * 16)
+        // sourceSize * 16 is arbitrary. Gwenview used 16 as its max zoom factor.
+        return bound(root.defaultContentRect.width, newWidth, mediaSourceWidth * 16)
     }
 
     function boundedContentHeight(newHeight) {
-        return bound(root.defaultContentHeight(), newHeight, mediaSourceHeight * 16)
+        // sourceSize * 16 is arbitrary. Gwenview used 16 as its max zoom factor.
+        return bound(root.defaultContentRect.height, newHeight, mediaSourceHeight * 16)
     }
 
-    function boundedContentX(newX, cWidth = root.contentWidth) {
+    function boundedContentX(newX, cWidth = contentItem.width) {
         return bound(root.width - cWidth, newX, 0)
     }
 
-    function boundedContentY(newY, cHeight = root.contentHeight) {
+    function boundedContentY(newY, cHeight = contentItem.height) {
         return bound(root.height - cHeight, newY, 0)
-    }
-
-    function resizeContent(
-        newWidth = Math.min(root.mediaSourceWidth, root.width),
-        newHeight = Math.min(root.mediaSourceHeight, root.height),
-        newX = (root.width - newWidth) / 2,
-        newY = (root.height - newHeight) / 2
-    ) {
-        //root.contentX + (centerX * newWidth / root.contentWidth) - centerX
-        //root.contentY + (centerY * newHeight / root.contentHeight) - centerY
-        root.contentWidth = newWidth
-        root.contentHeight = newHeight
-        root.contentX = newX
-        root.contentY = newY
     }
 
     clip: true
@@ -95,95 +108,62 @@ Item {
         property int animationVelocity: 800
         implicitWidth: root.mediaSourceWidth
         implicitHeight: root.mediaSourceHeight
-        width: root.defaultContentWidth()
-        height: root.defaultContentHeight()
-        x: root.centerContentX()
-        y: root.centerContentY()
-        Behavior on width {
-            enabled: contentItem.animationsEnabled
-            SmoothedAnimation {
-                duration: contentItem.animationDuration
-                velocity: contentItem.animationVelocity
-            }
+        width: root.defaultContentRect.width
+        height: root.defaultContentRect.height
+        x: root.defaultContentRect.x
+        y: root.defaultContentRect.y
+        //Behavior on width {
+            //enabled: contentItem.animationsEnabled
+            //SmoothedAnimation {
+                //duration: contentItem.animationDuration
+                //velocity: contentItem.animationVelocity
+            //}
+        //}
+        //Behavior on height {
+            //enabled: contentItem.animationsEnabled
+            //SmoothedAnimation {
+                //duration: contentItem.animationDuration
+                //velocity: contentItem.animationVelocity
+            //}
+        //}
+        //Behavior on x {
+            //enabled: contentItem.animationsEnabled
+            //SmoothedAnimation {
+                //duration: contentItem.animationDuration
+                //velocity: contentItem.animationVelocity
+            //}
+        //}
+        //Behavior on y {
+            //enabled: contentItem.animationsEnabled
+            //SmoothedAnimation {
+                //duration: contentItem.animationDuration
+                //velocity: contentItem.animationVelocity
+            //}
+        //}
+        //Binding {
+            //target: contentItem; when: root.mediaAspectRatio < 1
+            //property: "width"; value: contentItem.height * (1 / root.mediaAspectRatio)
+            //restoreMode: Binding.RestoreNone
+        //}
+        //Binding {
+            //target: contentItem; when: root.mediaAspectRatio >= 1
+            //property: "height"; value: contentItem.width / root.mediaAspectRatio
+            //restoreMode: Binding.RestoreNone
+        //}
+        Binding {
+            target: contentItem; when: contentItem.width <= root.width && !root.dragging
+            property: "x"; value: (root.width - contentItem.width) / 2
+            restoreMode: Binding.RestoreNone
         }
-        Behavior on height {
-            enabled: contentItem.animationsEnabled
-            SmoothedAnimation {
-                duration: contentItem.animationDuration
-                velocity: contentItem.animationVelocity
-            }
+        Binding {
+            target: contentItem; when: contentItem.height <= root.height && !root.dragging
+            property: "y"; value: (root.height - contentItem.height) / 2
+            restoreMode: Binding.RestoreNone
         }
-        Behavior on x {
-            enabled: contentItem.animationsEnabled
-            SmoothedAnimation {
-                duration: contentItem.animationDuration
-                velocity: contentItem.animationVelocity
-            }
-        }
-        Behavior on y {
-            enabled: contentItem.animationsEnabled
-            SmoothedAnimation {
-                duration: contentItem.animationDuration
-                velocity: contentItem.animationVelocity
-            }
-        }
-    }
-
-    //Binding {
-        //target: root; when: contentWidth <= width
-        //property: "contentX"; value: (root.width - root.contentWidth) / 2
-        //restoreMode: Binding.RestoreBinding
-    //}
-    //Binding {
-        //target: root; when: contentHeight <= height
-        //property: "contentY"; value: (root.height - root.contentHeight) / 2
-        //restoreMode: Binding.RestoreBinding
-    //}
-
-    PinchArea {
-        id: pinchArea
-        anchors.fill: root
-        enabled: !root.videoPlayer
-        //x: root.contentWidth > root.width ? root.contentX : 0
-        //y: root.contentHeight > root.height ? root.contentY : 0
-        //width: Math.max(root.contentWidth, root.width)
-        //height: Math.max(root.contentHeight, root.height)
-
-        property real initialWidth
-        property real initialHeight
-        onPinchStarted: {
-            initialWidth = root.contentWidth
-            initialHeight = root.contentHeight
-        }
-
-        onPinchUpdated: {
-            contentItem.animationsEnabled = false
-            // adjust content pos due to drag
-            root.contentX = pinch.previousCenter.x - pinch.center.x + root.contentX
-            root.contentY = pinch.previousCenter.y - pinch.center.y + root.contentY
-
-            // resize content
-            root.contentWidth = Math.max(root.width*0.7, initialWidth * pinch.scale)
-            root.contentHeight = Math.max(root.height*0.7, initialHeight * pinch.scale)
-            root.contentX = pinch.center.x + root.contentX
-            root.contentY = pinch.center.y + root.contentY
-        }
-
-        onPinchFinished: {
-            contentItem.animationsEnabled = false
-            // Move its content within bounds.
-            if (root.contentWidth < root.width
-                || root.contentHeight < root.height) {
-                if (root.contentWidth < root.mediaSourceWidth
-                    || root.contentHeight < root.mediaSourceHeight) {
-                    root.contentWidth = mediaSourceWidth
-                    root.contentHeight = mediaSourceHeight
-                }
-                root.contentX = root.centerContentX()
-                root.contentY = root.centerContentY()
-            }/* else {
-                flick.returnToBounds();
-            }*/
+        Binding {
+            target: contentItem; when: root.dragging
+            property: "animationsEnabled"; value: false
+            restoreMode: Binding.RestoreBindingOrValue
         }
     }
 
@@ -193,25 +173,32 @@ Item {
         onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
     }
 
+//     DragHandler {
+//         id: dragHandler
+//     }
+//     WheelHandler {
+//         id: wheelHandler
+//     }
     MouseArea {
         id: mouseArea
+        property bool zoomDoubleClickToggled: false
         function angleDeltaToPixels(delta) {
-            // 120 units == 1 step; steps * line height * lines per step
+            // 120 units == 1 step; (qreal) steps * line height * lines per step
             return delta / 120 * Kirigami.Units.gridUnit * Qt.styleHints.wheelScrollLines
         }
         anchors.fill: root
         enabled: !root.videoPlayer
-        cursorShape: if (drag.target) {
-            return drag.active/* || root.listView.dragging*/ ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+        cursorShape: if (root.interactive) {
+            return drag.active || pressed/* || root.listView.dragging*/ ? Qt.ClosedHandCursor : Qt.OpenHandCursor
         } else {
-            return undefined
+            return Qt.ArrowCursor
         }
         drag {
             axis: Drag.XAndYAxis
             target: contentItem
-            minimumX: root.width - root.contentWidth
+            minimumX: root.width - contentItem.width
             maximumX: 0
-            minimumY: root.height - root.contentHeight
+            minimumY: root.height - contentItem.height
             maximumY: 0
         }
         onClicked: {
@@ -222,21 +209,27 @@ Item {
             doubleClickTimer.stop()
             if (Kirigami.Settings.isMobile) { applicationWindow().controlsVisible = false }
             contentItem.animationsEnabled = true
-            if (root.interactive) {
-                root.resizeContent()
-                //contentWidth: Qt.binding(root.defaultContentWidth)
-                //contentHeight: Qt.binding(root.defaultContentHeight)
+            if (root.interactive || zoomDoubleClickToggled) {
+                zoomDoubleClickToggled = false
+                contentItem.x = root.defaultContentRect.x
+                contentItem.y = root.defaultContentRect.y
+                contentItem.width = root.defaultContentRect.width
+                contentItem.height = root.defaultContentRect.height
+//                 root.resizeContent()
             } else {
-                const newWidth = root.contentWidth * 2
-                const newHeight = root.contentHeight * 2
-                root.resizeContent(newWidth,
-                                   newHeight,
-                                   root.contentX - mouseX - root.centerContentX(newWidth),
-                                   root.contentY - mouseY - root.centerContentY(newHeight))
+                zoomDoubleClickToggled = true
+                const newWidth = contentItem.width * 2
+                const newHeight = contentItem.height * 2
+                const mousePos = mapToItem(contentItem, mouse.x, mouse.y)
+                contentItem.x = -mousePos.x - root.centerContentX(newWidth)
+                contentItem.y = -mousePos.y - root.centerContentY(newHeight)
+                contentItem.width = newWidth
+                contentItem.height = newHeight
             }
         }
         onWheel: {
-            contentItem.animationsEnabled = wheel.pixelDelta.x === 0 && wheel.pixelDelta.y === 0
+            zoomDoubleClickToggled = false
+            contentItem.animationsEnabled = wheel.pixelDelta.x === 0 && wheel.pixelDelta.y === 0 && !(wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier)
 
             const pixelDeltaY = wheel.pixelDelta.y !== 0 ?
                 wheel.pixelDelta.y : angleDeltaToPixels(wheel.angleDelta.y)
@@ -245,49 +238,92 @@ Item {
                 const pixelDeltaX = wheel.pixelDelta.x !== 0 ?
                     wheel.pixelDelta.x : angleDeltaToPixels(wheel.angleDelta.x)
                 if (pixelDeltaX !== 0 && pixelDeltaY !== 0) {
-                    root.contentX = root.bound(root.width - root.contentWidth,
-                                               pixelDeltaX + root.contentX,
-                                               0)
-                    root.contentY = root.bound(root.height - root.contentHeight,
-                                               pixelDeltaY + root.contentY,
-                                               0)
+                    contentItem.x = root.boundedContentX(pixelDeltaX + contentItem.x)
+                    contentItem.y = root.boundedContentY(pixelDeltaY + contentItem.y)
                 } else if (pixelDeltaX !== 0 && pixelDeltaY === 0) {
-                    root.contentX = root.bound(root.width - root.contentWidth,
-                                               pixelDeltaX + root.contentX,
-                                               0)
+                    contentItem.x = root.boundedContentX(pixelDeltaX + contentItem.x)
                 } else if (pixelDeltaX === 0 && pixelDeltaY !== 0 && wheel.modifiers & Qt.ShiftModifier) {
-                    root.contentX = root.bound(root.width - root.contentWidth,
-                                               pixelDeltaY + root.contentX,
-                                               0)
+                    contentItem.x = root.boundedContentX(pixelDeltaY + contentItem.x)
                 } else {
-                    root.contentY = root.bound(root.height - root.contentHeight,
-                                               pixelDeltaY + root.contentY,
-                                               0)
+                    contentItem.y = root.boundedContentY(pixelDeltaY + contentItem.y)
                 }
             } else {
-                const pixelDelta = pixelDeltaY * root.zoomFactor
-                const contentAspectRatio = root.contentWidth / root.contentHeight
-                if (contentAspectRatio >= 1) {
-                    const newWidth = boundedContentWidth(root.contentWidth + pixelDelta)
-                    const newHeight = boundedContentHeight(newWidth / contentAspectRatio)
-                    const newX = boundedContentX(root.centerContentX(newWidth) - mouseX + root.contenX)
-                    const newY = boundedContentY(root.centerContentY(newHeight) - mouseY + root.contenY)
-                    root.resizeContent(newWidth, newHeight, newX, newY)
+                const mousePos = mapToItem(contentItem, wheel.x, wheel.y)
+                if (root.mediaAspectRatio >= 1) {
+                    const newWidth = root.boundedContentWidth(contentItem.width + pixelDeltaY * root.widthZoomFactor)
+                    const newHeight = root.boundedContentHeight(newWidth / root.mediaAspectRatio)
+                    const newX = root.boundedContentX(-mousePos.x, newWidth)
+                    const newY = root.boundedContentY(-mousePos.y, newHeight)
+                    console.log(
+                        "old", contentItem.x, contentItem.y,
+                        "new", newX, newY,
+                        "wheel", wheel.x, wheel.y
+                    )
+                    contentItem.x = newX
+                    contentItem.y = newY
+                    contentItem.width = newWidth
+                    contentItem.height = newHeight
                 } else {
-                    const newHeight = boundedContentHeight(root.contentHeight + pixelDelta)
-                    const newWidth = boundedContentWidth(newHeight * (1 / contentAspectRatio))
-                    const newX = boundedContentX(root.centerContentX(newWidth) - mouseX + root.contenX)
-                    const newY = boundedContentY(root.centerContentY(newHeight) - mouseY + root.contenY)
-                    root.resizeContent(newWidth, newHeight, newX, newY)
+                    const newHeight = boundedContentHeight(contentItem.height + pixelDeltaY * root.heightZoomFactor)
+                    const newWidth = boundedContentWidth(newHeight * (1 / root.mediaAspectRatio))
+                    const newX = boundedContentX(-mousePos.x + root.centerContentX(newWidth), newWidth)
+                    const newY = boundedContentY(-mousePos.y + root.centerContentY(newHeight), newHeight)
+                    console.log("old", contentItem.x, contentItem.y,"new", newX, newY, "wheel", wheel)
+                    contentItem.x = newX
+                    contentItem.y = newY
+                    contentItem.width = newWidth
+                    contentItem.height = newHeight
                 }
             }
         }
     }
 
-    Binding {
-        target: contentItem; when: root.dragging
-        property: "animationsEnabled"; value: !root.dragging
-        restoreMode: Binding.RestoreBindingOrValue
+    // TODO: test this with a device capable of generating pinch events
+    PinchArea {
+        id: pinchArea
+        property real initialWidth: contentItem.width
+        property real initialHeight: contentItem.height
+        anchors.fill: root
+        enabled: !root.videoPlayer
+        pinch {
+            dragAxis: Pinch.XAndYAxis
+            target: contentItem
+            minimumX: root.width - contentItem.width
+            maximumX: 0
+            minimumY: root.height - contentItem.height
+            maximumY: 0
+            minimumScale: 1
+            maximumScale: 1
+            minimumRotation: 0
+            maximumRotation: 0
+        }
+
+        onPinchStarted: {
+            mouseArea.zoomDoubleClickToggled = false
+            initialWidth = contentItem.width
+            initialHeight = contentItem.height
+        }
+
+        onPinchUpdated: {
+            // adjust content pos due to drag
+            //contentItem.x = pinch.previousCenter.x - pinch.center.x + contentItem.x
+            //contentItem.y = pinch.previousCenter.y - pinch.center.y + contentItem.y
+
+            // resize content
+            contentItem.width = boundedContentWidth(initialWidth * pinch.scale)
+            contentItem.height = boundedContentHeight(initialHeight * pinch.scale)
+//             contentItem.x = boundedContentX(contentItem.x - pinch.center.x)
+//             contentItem.y = boundedContentY(contentItem.y - pinch.center.y)
+        }
+
+        onPinchFinished: {
+            // Move its content within bounds.
+            if (contentItem.width < root.width
+                || contentItem.height < root.height) {
+                contentItem.x = root.centerContentX()
+                contentItem.y = root.centerContentY()
+            }
+        }
     }
 
     Component {

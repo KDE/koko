@@ -695,6 +695,7 @@ Kirigami.Page {
                 && listView.currentIndex > 0
                 && !listView.isCurrentItemDragging
                 && !overviewControl.pressed
+                ? 1 : 0
 
             Behavior on opacity {
                 OpacityAnimator {
@@ -724,6 +725,7 @@ Kirigami.Page {
                 && listView.currentIndex < listView.count - 1
                 && !listView.isCurrentItemDragging
                 && !overviewControl.pressed
+                ? 1 : 0
 
             Behavior on opacity {
                 OpacityAnimator {
@@ -738,9 +740,10 @@ Kirigami.Page {
             target: listView.currentItem
             visible: !Kirigami.Settings.tabletMode && opacity > 0
             opacity: overviewControl.target
-                && target.interactive
-                && !target.dragging
+                && overviewControl.target.interactive
+                && !overviewControl.target.dragging
                 && applicationWindow().controlsVisible
+                ? 1 : 0
             parent: listView
             anchors.right: parent.right
             anchors.bottom: parent.bottom
