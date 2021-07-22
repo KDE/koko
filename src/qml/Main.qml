@@ -15,6 +15,9 @@ import org.kde.koko.private 0.1 as KokoPrivate
 Kirigami.ApplicationWindow {
     id: root
 
+    minimumWidth: Kirigami.Units.gridUnit * 15
+    minimumHeight: Kirigami.Units.gridUnit * 20
+
     function switchApplicationPage(page) {
         if (!page || pageStack.currentItem == page) {
             return;
