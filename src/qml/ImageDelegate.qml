@@ -36,17 +36,23 @@ Item {
         const size = fittedContentSize(root.mediaSourceWidth, root.mediaSourceHeight)
         return Qt.rect(centerContentX(size.width), centerContentY(size.height), size.width, size.height)
     }
-    readonly property real viewAspectRatio: root.width / root.height
+    readonly property real rootAspectRatio: root.width / root.height
     readonly property real mediaAspectRatio: root.mediaSourceWidth / root.mediaSourceHeight
     readonly property real widthZoomFactor: (videoPlayer ? contentItem.width : media.paintedWidth) / mediaSourceWidth
     readonly property real heightZoomFactor: (videoPlayer ? contentItem.height : media.paintedHeight) / mediaSourceHeight
-    readonly property bool interactive: contentItem.width > root.width || contentItem.height > root.height
-    readonly property bool dragging: mouseArea.drag.active || pinchArea.pinch.active
+    readonly property bool interactive: Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height
+    property MouseArea mouseArea: null
+    property PinchArea pinchArea: null
+    property bool dragging: mouseArea && pinchArea && (mouseArea.drag.active || pinchArea.pinch.active)
+    property bool animationsEnabled: false
+    property int animationDuration: Kirigami.Units.longDuration
+    property int animationVelocity: 800
 
     // Returning sizes instead of separate widths and heights since they both need to be calculated together.
 
+    // Fit to root
     function fittedContentSize(w, h) {
-        const factor = root.mediaAspectRatio >= root.viewAspectRatio ? root.width / w : root.height / h
+        const factor = root.mediaAspectRatio >= root.rootAspectRatio ? root.width / w : root.height / h
         if (w > root.width || h > root.height) {
             w = w * factor
             h = h * factor
@@ -73,7 +79,7 @@ Item {
     function boundedContentSize(w, h) {
         w = bound(root.defaultContentRect.width, w, mediaSourceWidth * 16)
         h = bound(root.defaultContentRect.height, h, mediaSourceHeight * 16)
-        const factor = root.mediaAspectRatio >= root.viewAspectRatio ? root.width / w : root.height / h
+        const factor = root.mediaAspectRatio >= root.rootAspectRatio ? root.width / w : root.height / h
         if (w > root.width || h > root.height) {
             w = w * factor
             h = h * factor
@@ -103,227 +109,67 @@ Item {
 
     Item {
         id: contentItem
-        property bool animationsEnabled: false
-        property int animationDuration: Kirigami.Units.longDuration
-        property int animationVelocity: 800
         implicitWidth: root.mediaSourceWidth
         implicitHeight: root.mediaSourceHeight
         width: root.defaultContentRect.width
         height: root.defaultContentRect.height
         x: root.defaultContentRect.x
         y: root.defaultContentRect.y
-        //Behavior on width {
-            //enabled: contentItem.animationsEnabled
-            //SmoothedAnimation {
-                //duration: contentItem.animationDuration
-                //velocity: contentItem.animationVelocity
-            //}
-        //}
-        //Behavior on height {
-            //enabled: contentItem.animationsEnabled
-            //SmoothedAnimation {
-                //duration: contentItem.animationDuration
-                //velocity: contentItem.animationVelocity
-            //}
-        //}
-        //Behavior on x {
-            //enabled: contentItem.animationsEnabled
-            //SmoothedAnimation {
-                //duration: contentItem.animationDuration
-                //velocity: contentItem.animationVelocity
-            //}
-        //}
-        //Behavior on y {
-            //enabled: contentItem.animationsEnabled
-            //SmoothedAnimation {
-                //duration: contentItem.animationDuration
-                //velocity: contentItem.animationVelocity
-            //}
-        //}
-        //Binding {
-            //target: contentItem; when: root.mediaAspectRatio < 1
-            //property: "width"; value: contentItem.height * (1 / root.mediaAspectRatio)
-            //restoreMode: Binding.RestoreNone
-        //}
-        //Binding {
-            //target: contentItem; when: root.mediaAspectRatio >= 1
-            //property: "height"; value: contentItem.width / root.mediaAspectRatio
-            //restoreMode: Binding.RestoreNone
-        //}
-        Binding {
-            target: contentItem; when: contentItem.width <= root.width && !root.dragging
-            property: "x"; value: (root.width - contentItem.width) / 2
-            restoreMode: Binding.RestoreNone
-        }
-        Binding {
-            target: contentItem; when: contentItem.height <= root.height && !root.dragging
-            property: "y"; value: (root.height - contentItem.height) / 2
-            restoreMode: Binding.RestoreNone
-        }
-        Binding {
-            target: contentItem; when: root.dragging
-            property: "animationsEnabled"; value: false
-            restoreMode: Binding.RestoreBindingOrValue
-        }
     }
 
-    Timer {
-        id: doubleClickTimer
-        interval: Qt.styleHints.mouseDoubleClickInterval + 1
-        onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
+    //Behavior on contentItem.width {
+        //enabled: contentItem.animationsEnabled
+        //SmoothedAnimation {
+            //duration: contentItem.animationDuration
+            //velocity: contentItem.animationVelocity
+        //}
+    //}
+    //Behavior on contentItem.height {
+        //enabled: contentItem.animationsEnabled
+        //SmoothedAnimation {
+            //duration: contentItem.animationDuration
+            //velocity: contentItem.animationVelocity
+        //}
+    //}
+    //Behavior on contentItem.x {
+        //enabled: contentItem.animationsEnabled
+        //SmoothedAnimation {
+            //duration: contentItem.animationDuration
+            //velocity: contentItem.animationVelocity
+        //}
+    //}
+    //Behavior on contentItem.y {
+        //enabled: contentItem.animationsEnabled
+        //SmoothedAnimation {
+            //duration: contentItem.animationDuration
+            //velocity: contentItem.animationVelocity
+        //}
+    //}
+
+    //Binding {
+        //target: contentItem; when: root.mediaAspectRatio < 1
+        //property: "width"; value: contentItem.height * (1 / root.mediaAspectRatio)
+        //restoreMode: Binding.RestoreNone
+    //}
+    //Binding {
+        //target: contentItem; when: root.mediaAspectRatio >= 1
+        //property: "height"; value: contentItem.width / root.mediaAspectRatio
+        //restoreMode: Binding.RestoreNone
+    //}
+    Binding {
+        target: contentItem; when: contentItem.width <= root.width && !root.dragging
+        property: "x"; value: (root.width - contentItem.width) / 2
+        restoreMode: Binding.RestoreNone
     }
-
-//     DragHandler {
-//         id: dragHandler
-//     }
-//     WheelHandler {
-//         id: wheelHandler
-//     }
-    MouseArea {
-        id: mouseArea
-        property bool zoomDoubleClickToggled: false
-        function angleDeltaToPixels(delta) {
-            // 120 units == 1 step; (qreal) steps * line height * lines per step
-            return delta / 120 * Kirigami.Units.gridUnit * Qt.styleHints.wheelScrollLines
-        }
-        anchors.fill: root
-        enabled: !root.videoPlayer
-        cursorShape: if (root.interactive) {
-            return drag.active || pressed/* || root.listView.dragging*/ ? Qt.ClosedHandCursor : Qt.OpenHandCursor
-        } else {
-            return Qt.ArrowCursor
-        }
-        drag {
-            axis: Drag.XAndYAxis
-            target: contentItem
-            minimumX: root.width - contentItem.width
-            maximumX: 0
-            minimumY: root.height - contentItem.height
-            maximumY: 0
-        }
-        onClicked: {
-            contextDrawer.drawerOpen = false
-            doubleClickTimer.restart()
-        }
-        onDoubleClicked: {
-            doubleClickTimer.stop()
-            if (Kirigami.Settings.isMobile) { applicationWindow().controlsVisible = false }
-            contentItem.animationsEnabled = true
-            if (root.interactive || zoomDoubleClickToggled) {
-                zoomDoubleClickToggled = false
-                contentItem.x = root.defaultContentRect.x
-                contentItem.y = root.defaultContentRect.y
-                contentItem.width = root.defaultContentRect.width
-                contentItem.height = root.defaultContentRect.height
-//                 root.resizeContent()
-            } else {
-                zoomDoubleClickToggled = true
-                const newWidth = contentItem.width * 2
-                const newHeight = contentItem.height * 2
-                const mousePos = mapToItem(contentItem, mouse.x, mouse.y)
-                contentItem.x = -mousePos.x - root.centerContentX(newWidth)
-                contentItem.y = -mousePos.y - root.centerContentY(newHeight)
-                contentItem.width = newWidth
-                contentItem.height = newHeight
-            }
-        }
-        onWheel: {
-            zoomDoubleClickToggled = false
-            contentItem.animationsEnabled = wheel.pixelDelta.x === 0 && wheel.pixelDelta.y === 0 && !(wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier)
-
-            const pixelDeltaY = wheel.pixelDelta.y !== 0 ?
-                wheel.pixelDelta.y : angleDeltaToPixels(wheel.angleDelta.y)
-
-            if (wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier) {
-                const pixelDeltaX = wheel.pixelDelta.x !== 0 ?
-                    wheel.pixelDelta.x : angleDeltaToPixels(wheel.angleDelta.x)
-                if (pixelDeltaX !== 0 && pixelDeltaY !== 0) {
-                    contentItem.x = root.boundedContentX(pixelDeltaX + contentItem.x)
-                    contentItem.y = root.boundedContentY(pixelDeltaY + contentItem.y)
-                } else if (pixelDeltaX !== 0 && pixelDeltaY === 0) {
-                    contentItem.x = root.boundedContentX(pixelDeltaX + contentItem.x)
-                } else if (pixelDeltaX === 0 && pixelDeltaY !== 0 && wheel.modifiers & Qt.ShiftModifier) {
-                    contentItem.x = root.boundedContentX(pixelDeltaY + contentItem.x)
-                } else {
-                    contentItem.y = root.boundedContentY(pixelDeltaY + contentItem.y)
-                }
-            } else {
-                const mousePos = mapToItem(contentItem, wheel.x, wheel.y)
-                if (root.mediaAspectRatio >= 1) {
-                    const newWidth = root.boundedContentWidth(contentItem.width + pixelDeltaY * root.widthZoomFactor)
-                    const newHeight = root.boundedContentHeight(newWidth / root.mediaAspectRatio)
-                    const newX = root.boundedContentX(-mousePos.x, newWidth)
-                    const newY = root.boundedContentY(-mousePos.y, newHeight)
-                    console.log(
-                        "old", contentItem.x, contentItem.y,
-                        "new", newX, newY,
-                        "wheel", wheel.x, wheel.y
-                    )
-                    contentItem.x = newX
-                    contentItem.y = newY
-                    contentItem.width = newWidth
-                    contentItem.height = newHeight
-                } else {
-                    const newHeight = boundedContentHeight(contentItem.height + pixelDeltaY * root.heightZoomFactor)
-                    const newWidth = boundedContentWidth(newHeight * (1 / root.mediaAspectRatio))
-                    const newX = boundedContentX(-mousePos.x + root.centerContentX(newWidth), newWidth)
-                    const newY = boundedContentY(-mousePos.y + root.centerContentY(newHeight), newHeight)
-                    console.log("old", contentItem.x, contentItem.y,"new", newX, newY, "wheel", wheel)
-                    contentItem.x = newX
-                    contentItem.y = newY
-                    contentItem.width = newWidth
-                    contentItem.height = newHeight
-                }
-            }
-        }
+    Binding {
+        target: contentItem; when: contentItem.height <= root.height && !root.dragging
+        property: "y"; value: (root.height - contentItem.height) / 2
+        restoreMode: Binding.RestoreNone
     }
-
-    // TODO: test this with a device capable of generating pinch events
-    PinchArea {
-        id: pinchArea
-        property real initialWidth: contentItem.width
-        property real initialHeight: contentItem.height
-        anchors.fill: root
-        enabled: !root.videoPlayer
-        pinch {
-            dragAxis: Pinch.XAndYAxis
-            target: contentItem
-            minimumX: root.width - contentItem.width
-            maximumX: 0
-            minimumY: root.height - contentItem.height
-            maximumY: 0
-            minimumScale: 1
-            maximumScale: 1
-            minimumRotation: 0
-            maximumRotation: 0
-        }
-
-        onPinchStarted: {
-            mouseArea.zoomDoubleClickToggled = false
-            initialWidth = contentItem.width
-            initialHeight = contentItem.height
-        }
-
-        onPinchUpdated: {
-            // adjust content pos due to drag
-            //contentItem.x = pinch.previousCenter.x - pinch.center.x + contentItem.x
-            //contentItem.y = pinch.previousCenter.y - pinch.center.y + contentItem.y
-
-            // resize content
-            contentItem.width = boundedContentWidth(initialWidth * pinch.scale)
-            contentItem.height = boundedContentHeight(initialHeight * pinch.scale)
-//             contentItem.x = boundedContentX(contentItem.x - pinch.center.x)
-//             contentItem.y = boundedContentY(contentItem.y - pinch.center.y)
-        }
-
-        onPinchFinished: {
-            // Move its content within bounds.
-            if (contentItem.width < root.width
-                || contentItem.height < root.height) {
-                contentItem.x = root.centerContentX()
-                contentItem.y = root.centerContentY()
-            }
-        }
+    Binding {
+        target: root; when: root.dragging
+        property: "animationsEnabled"; value: false
+        restoreMode: Binding.RestoreBindingOrValue
     }
 
     Component {
@@ -365,6 +211,7 @@ Item {
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
             source: currentImageSource
+            smooth: false
             autoTransform: true
             asynchronous: true
             onStatusChanged: {
@@ -381,6 +228,7 @@ Item {
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
             source: currentImageSource
+            smooth: false
             autoTransform: true
             asynchronous: true
             onStatusChanged: {
@@ -432,6 +280,8 @@ Item {
             videoPlayer.player.stop();
         }
     }
+    
+    onInteractiveChanged: console.debug("root", root.width, root.height, "contentItem", contentItem.width, contentItem.height)
 
     Connections {
         target: listView.slideshow

@@ -602,7 +602,10 @@ Kirigami.Page {
 
     ListView {
         id: listView
-        property bool isCurrentItemDragging: currentItem && currentItem.dragging
+        readonly property bool hasCurrentItem: currentItem !== null
+        readonly property bool isCurrentItemVideoPlayer: hasCurrentItem && currentItem.videoPlayer !== null
+        readonly property bool isCurrentItemDragging: hasCurrentItem && (listMouseArea.drag.active || listPinchArea.pinch.active)
+        readonly property bool isCurrentItemInteractive: hasCurrentItem && currentItem.interactive
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -671,8 +674,151 @@ Kirigami.Page {
             height: listView.height
             mediaSourceWidth: videoPlayer ? videoPlayer.implicitWidth : extractor.width
             mediaSourceHeight: videoPlayer ? videoPlayer.implicitHeight : extractor.height
+            mouseArea: listMouseArea
+            pinchArea: listPinchArea
 
             listView: ListView.view
+        }
+
+        MouseArea {
+            id: listMouseArea
+            property bool zoomDoubleClickToggled: false
+            readonly property alias item: listView.currentItem
+            readonly property Item contentItem: listView.hasCurrentItem ? item.contentItem : null
+            function angleDeltaToPixels(delta, dimension = -1) {
+                // 120 units == 1 step; (qreal) steps * line height * lines per step
+                // Qt Widgets uses 20 as the line height rather than the actual line height
+                // Using the QGraphicsView singleStep formula
+                const singleStep = dimension >= 0 ? dimension / 20 : 20
+                return delta / 120 * singleStep * Qt.styleHints.wheelScrollLines
+            }
+            anchors.fill: listView
+            enabled: !listView.isCurrentItemVideoPlayer
+            acceptedButtons: listView.isCurrentItemInteractive ? Qt.LeftButton | Qt.MiddleButton : Qt.LeftButton
+            cursorShape: if (listView.interactive || listView.isCurrentItemInteractive) {
+                return pressed || listView.dragging ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+            } else {
+                return Qt.ArrowCursor
+            }
+            drag {
+                axis: Drag.XAndYAxis
+                target: listView.isCurrentItemInteractive ? contentItem : undefined
+                minimumX: listView.hasCurrentItem && contentItem ? item.width - contentItem.width : 0
+                maximumX: 0
+                minimumY: listView.hasCurrentItem && contentItem ? item.height - contentItem.height : 0
+                maximumY: 0
+            }
+            Timer {
+                id: doubleClickTimer
+                interval: Qt.styleHints.mouseDoubleClickInterval + 1
+                onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
+            }
+            onClicked: {
+                contextDrawer.drawerOpen = false
+                doubleClickTimer.restart()
+            }
+            onDoubleClicked: {
+                doubleClickTimer.stop()
+                if (Kirigami.Settings.isMobile) { applicationWindow().controlsVisible = false }
+                if (listView.isCurrentItemInteractive || zoomDoubleClickToggled) {
+                    zoomDoubleClickToggled = false
+                    contentItem.width = item.defaultContentRect.width
+                    contentItem.height = item.defaultContentRect.height
+                } else {
+                    zoomDoubleClickToggled = true
+                    const contentPos = mapFromItem(contentItem, contentItem.x, contentItem.y)
+                    contentItem.width = item.media.paintedWidth * 2
+                    contentItem.height = item.media.paintedHeight * 2
+                    contentItem.x = item.boundedContentX(contentPos.x - mouse.x, contentItem.width)
+                    contentItem.y = item.boundedContentY(contentPos.y - mouse.y, contentItem.height)
+                }
+            }
+            onWheel: {
+                zoomDoubleClickToggled = false
+    //             contentItem.animationsEnabled = wheel.pixelDelta.x === 0 && wheel.pixelDelta.y === 0 && !(wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier)
+
+                const pixelDeltaY = wheel.pixelDelta.y !== 0 ?
+                    wheel.pixelDelta.y : angleDeltaToPixels(wheel.angleDelta.y, item.height)
+
+                const contentPos = mapFromItem(contentItem, contentItem.x, contentItem.y)
+                if (wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier) {
+                    const pixelDeltaX = wheel.pixelDelta.x !== 0 ?
+                        wheel.pixelDelta.x : angleDeltaToPixels(wheel.angleDelta.x, item.width)
+                    if (pixelDeltaX !== 0 && pixelDeltaY !== 0) {
+                        contentItem.x = item.boundedContentX(pixelDeltaX + contentItem.x)
+                        contentItem.y = item.boundedContentY(pixelDeltaY + contentItem.y)
+                    } else if (pixelDeltaX !== 0 && pixelDeltaY === 0) {
+                        contentItem.x = item.boundedContentX(pixelDeltaX + contentItem.x)
+                    } else if (pixelDeltaX === 0 && pixelDeltaY !== 0 && wheel.modifiers & Qt.ShiftModifier) {
+                        contentItem.x = item.boundedContentX(pixelDeltaY + contentItem.x)
+                    } else {
+                        contentItem.y = item.boundedContentY(pixelDeltaY + contentItem.y)
+                    }
+                } else {
+                    if (item.mediaAspectRatio >= 1) {
+                        contentItem.width = item.boundedContentWidth(contentItem.width + pixelDeltaY * item.widthZoomFactor)
+                        contentItem.height = item.boundedContentHeight(contentItem.width / item.mediaAspectRatio)
+                        contentItem.x = item.boundedContentX(contentPos.x - wheel.x, contentItem.width)
+                        contentItem.y = item.boundedContentY(contentPos.x - wheel.y, contentItem.height)
+                    } else {
+                        contentItem.height = item.boundedContentHeight(contentItem.height + pixelDeltaY * item.heightZoomFactor)
+                        contentItem.width = item.boundedContentWidth(contentItem.height * (1 / item.mediaAspectRatio))
+                        contentItem.x = item.boundedContentX(contentPos.x - wheel.x, contentItem.width)
+                        contentItem.y = item.boundedContentY(contentPos.x - wheel.y, contentItem.height)
+                    }
+                }
+            }
+        }
+
+        // TODO: test this with a device capable of generating pinch events
+        PinchArea {
+            id: listPinchArea
+            readonly property alias item: listView.currentItem
+            readonly property Item contentItem: listView.hasCurrentItem ? item.contentItem : null
+            property real initialWidth: 0
+            property real initialHeight: 0
+            anchors.fill: listView
+            enabled: !listView.isCurrentItemVideoPlayer
+            pinch {
+                dragAxis: Pinch.XAndYAxis
+                target: contentItem
+                minimumX: listView.hasCurrentItem ? item.width - contentItem.width : 0
+                maximumX: 0
+                minimumY: listView.hasCurrentItem ? item.height - contentItem.height : 0
+                maximumY: 0
+                minimumScale: 1
+                maximumScale: 1
+                minimumRotation: 0
+                maximumRotation: 0
+            }
+
+            onPinchStarted: {
+                mouseArea.zoomDoubleClickToggled = false
+                initialWidth = contentItem.width
+                initialHeight = contentItem.height
+            }
+
+            onPinchUpdated: {
+                // adjust content pos due to drag
+                //contentItem.x = pinch.previousCenter.x - pinch.center.x + contentItem.x
+                //contentItem.y = pinch.previousCenter.y - pinch.center.y + contentItem.y
+
+                // resize content
+                contentItem.width = item.boundedContentWidth(initialWidth * pinch.scale)
+                contentItem.height = item.boundedContentHeight(initialHeight * pinch.scale)
+    //             contentItem.x = boundedContentX(contentItem.x - pinch.center.x)
+    //             contentItem.y = boundedContentY(contentItem.y - pinch.center.y)
+            }
+
+            onPinchFinished: {
+                // Move its content within bounds.
+                if (contentItem.width < item.width
+                    || contentItem.height < item.height) {
+                    const contentPos = mapFromItem(contentItem, contentItem.x, contentItem.y)
+                    contentItem.x = item.boundedContentX(contentPos.x - pinch.center.x)
+                    contentItem.y = item.boundedContentY(contentPos.y - pinch.center.y)
+                }
+            }
         }
 
         Controls.RoundButton {
@@ -739,9 +885,9 @@ Kirigami.Page {
             id: overviewControl
             target: listView.currentItem
             visible: !Kirigami.Settings.tabletMode && opacity > 0
-            opacity: overviewControl.target
-                && overviewControl.target.interactive
-                && !overviewControl.target.dragging
+            opacity: listView.hasCurrentItem
+                && listView.isCurrentItemInteractive
+                && !listView.isCurrentItemDragging
                 && applicationWindow().controlsVisible
                 ? 1 : 0
             parent: listView
