@@ -689,7 +689,7 @@ Kirigami.Page {
             Accessible.name: i18n("Previous image")
             onClicked: {
                 if (opacity === 0) return; // the best we can do without flicker unfortunately
-                listView.currentIndex -= 1;
+                listView.decrementCurrentIndex()
             }
 
             visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes reappearing to be delayed
@@ -719,7 +719,7 @@ Kirigami.Page {
             Accessible.name: i18n("Next image")
             onClicked: {
                 if (opacity === 0) return;
-                listView.currentIndex += 1;
+                listView.incrementCurrentIndex()
             }
 
             visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes flickering
