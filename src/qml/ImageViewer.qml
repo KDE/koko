@@ -578,26 +578,6 @@ Kirigami.Page {
         }
     }
 
-    MouseArea {
-        anchors.fill: parent
-        acceptedButtons: Qt.BackButton | Qt.ForwardButton
-
-        onClicked: {
-            if (mouse.button == Qt.BackButton) {
-                if (listView.currentIndex > 0) {
-                    listView.currentIndex--
-                }
-                mouse.accepted = true
-            } else if (mouse.button == Qt.ForwardButton) {
-                if (listView.currentIndex < listView.count - 1) {
-                    listView.currentIndex++
-                }
-                mouse.accepted = true
-            }
-            listView.positionViewAtIndex(listView.currentIndex, ListView.SnapPosition)
-        }
-    }
-
     ListView {
         id: listView
         readonly property bool isCurrentItemDragging: currentItem !== null && currentItem.dragging
@@ -816,6 +796,24 @@ Kirigami.Page {
             }
         }
     }
+
+    // For some reason having MouseArea under ListView on the z axis
+    // causes decrementCurrentIndex to change index but not snap to the current item
+    // which causes weird desync issues
+    // so we place it above instead
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.BackButton | Qt.ForwardButton
+        // don't override cursor shape
+        cursorShape: undefined
+
+        onClicked: {
+            if (mouse.button == Qt.BackButton) {
+                listView.decrementCurrentIndex()
+            } else if (mouse.button == Qt.ForwardButton) {
+                listView.incrementCurrentIndex()
+            }
+        }
     }
 
     Component {
