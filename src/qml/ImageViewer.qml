@@ -611,6 +611,7 @@ Kirigami.Page {
         highlightMoveDuration: 0
         interactive: !isCurrentItemInteractive
         highlightRangeMode: ListView.StrictlyEnforceRange
+        pixelAligned: true
 
         // Filter out directories
         model: Koko.SortModel {
