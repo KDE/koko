@@ -8,6 +8,7 @@
  */
 
 import QtQuick 2.12
+import QtQml 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
 import QtGraphicalEffects 1.0 as Effects
@@ -599,6 +600,8 @@ Kirigami.Page {
 
     ListView {
         id: listView
+        readonly property bool isCurrentItemDragging: currentItem !== null && currentItem.dragging
+        readonly property bool isCurrentItemInteractive: currentItem !== null && currentItem.interactive
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
@@ -715,6 +718,48 @@ Kirigami.Page {
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
                 }
+            }
+        }
+
+        OverviewControl {
+            id: overviewControl
+            target: listView.currentItem
+            visible: !Kirigami.Settings.tabletMode && opacity > 0
+            opacity: listView.currentItem !== null
+                && listView.isCurrentItemInteractive
+                && !listView.isCurrentItemDragging
+                && applicationWindow().controlsVisible
+                ? 1 : 0
+            parent: listView
+            // NOTE: The x and y values will often not be integers.
+            // Not a problem unless you want to use them to position other elements.
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.margins: Kirigami.Units.gridUnit
+            z: 1
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                }
+            }
+            Binding {
+                target: overviewControl.target
+                property: "contentX"
+                value: overviewControl.target ?
+                    -overviewControl.normalizedX * (overviewControl.target.contentWidth - overviewControl.target.width)
+                    : 0
+                when: overviewControl.pressed
+                restoreMode: Binding.RestoreNone
+            }
+            Binding {
+                target: overviewControl.target
+                property: "contentY"
+                value: overviewControl.target ?
+                    -overviewControl.normalizedY * (overviewControl.target.contentHeight - overviewControl.target.height)
+                    : 0
+                when: overviewControl.pressed
+                restoreMode: Binding.RestoreNone
             }
         }
 
