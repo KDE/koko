@@ -663,6 +663,11 @@ Kirigami.Page {
         }
 
         delegate: ImageDelegate {
+            // Don't show other images when resizing the view
+            visible: ListView.isCurrentItem
+                || ((listView.moving || listView.dragging)
+                    && (index === listView.currentIndex - 1
+                        || index === listView.currentIndex + 1))
             readonly property string display: model.display
             currentImageSource: model.imageurl
             currentImageMimeType: model.mimeType
