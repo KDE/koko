@@ -18,6 +18,7 @@ Item {
     property string source
     readonly property alias player: videoPlayer
     readonly property bool playing: videoPlayer.playbackState === MediaPlayer.PlayingState
+    readonly property alias status: videoPlayer.status
 
     // signals when playback starts and finishes
     signal playbackStarted()
@@ -27,6 +28,9 @@ Item {
     function play() {
         videoPlayer.play();
     }
+
+    implicitWidth: videoPlayer.implicitWidth
+    implicitHeight: videoPlayer.implicitHeight
 
     Timer {
         id: doubleClickTimer
@@ -54,6 +58,8 @@ Item {
 
     Video {
         id: videoPlayer
+        implicitWidth: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.width : 0
+        implicitHeight: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.height : 0
         anchors.fill: parent
         loops: videoPlayer.duration >= 5000 ? 0 : MediaPlayer.Infinite // loop short videos
         // See https://doc.qt.io/qt-5/qml-qtmultimedia-qtmultimedia.html#convertVolume-method
