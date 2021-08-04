@@ -609,7 +609,7 @@ Kirigami.Page {
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
         highlightMoveDuration: 0
-        interactive: true
+        interactive: !isCurrentItemInteractive
         highlightRangeMode: ListView.StrictlyEnforceRange
 
         // Filter out directories
