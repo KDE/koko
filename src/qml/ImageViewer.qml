@@ -686,12 +686,17 @@ Kirigami.Page {
                 listView.currentIndex -= 1;
             }
 
-            opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex > 0 ? 1 : 0
+            visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes reappearing to be delayed
+            opacity: applicationWindow().controlsVisible
+                && listView.currentIndex > 0
+                && !listView.isCurrentItemDragging
+                && !overviewControl.pressed
+                ? 1 : 0
 
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
+                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
         }
@@ -711,12 +716,17 @@ Kirigami.Page {
                 listView.currentIndex += 1;
             }
 
-            opacity: !Kirigami.Settings.isMobile && applicationWindow().controlsVisible && listView.currentIndex < listView.count - 1 ? 1 : 0
+            visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes flickering
+            opacity: applicationWindow().controlsVisible
+                && listView.currentIndex < listView.count - 1
+                && !listView.isCurrentItemDragging
+                && !overviewControl.pressed
+                ? 1 : 0
 
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
+                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
         }
