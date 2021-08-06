@@ -29,7 +29,7 @@ MouseArea {
      */
     property VideoPlayer videoPlayer: null
     property AnimatedImage animatedImage: null
-    property Image image: null
+    property Item image: null
     readonly property Item media: videoPlayer || animatedImage || image
 
     /**
@@ -394,18 +394,18 @@ MouseArea {
 
     Component {
         id: imageComponent
-        Image {
+
+        DoubleImage {
             anchors.fill: contentItem
-            fillMode: Image.PreserveAspectFit
             source: currentImageSource
-            smooth: root.zoomFactor < 1
-            autoTransform: true
-            asynchronous: true
-            onStatusChanged: {
-                if (status === Image.Ready && listView.currentIndex === index) {
-                    imgColors.update();
-                }
+            viewportRect: {
+                // Unused, but it ensures that we bind to content properties
+                let targetRect = Qt.rect(root.contentX, root.contentY, contentItem.width, contentItem.height)
+                let rect = root.mapToItem(contentItem, 0, 0, root.width, root.height)
+                return rect
             }
+            targetSize: Qt.size(contentItem.width, contentItem.height)
+            smooth: root.zoomFactor < 1
         }
     }
 
