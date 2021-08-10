@@ -4,6 +4,7 @@
 project(Koko)
 cmake_minimum_required(VERSION 3.16)
 
+set(CMAKE_CXX_STANDARD 17)
 set(QT5_MIN_VERSION 5.15)
 set(KF5_MIN_VERSION 5.79)
 
@@ -28,7 +29,7 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KOKO
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
-find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning)
+find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
 
 if(ANDROID)
     find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)

@@ -12,6 +12,7 @@ import QtQml 2.15
 import QtMultimedia 5.15
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.koko 0.1
+import org.kde.koko.image 0.1
 
 MouseArea {
     id: root
@@ -28,16 +29,23 @@ MouseArea {
      * to check for a specific type of media viewer or not.
      */
     property VideoPlayer videoPlayer: null
+    property VectorImage vectorImage: null
     property AnimatedImage animatedImage: null
     property Image image: null
-    readonly property Item media: videoPlayer || animatedImage || image
+    readonly property Item media: videoPlayer || vectorImage || animatedImage || image
 
     /**
      * Properties for info about the media and media viewer.
      */
     readonly property int status: media ? media.status : 0 // 0 is equal to MediaPlayer.UnknownStatus and Image.Null
-    readonly property bool loaded: videoPlayer ? status === MediaPlayer.Loaded : status === Image.Ready
-    readonly property bool loading: videoPlayer ? status === MediaPlayer.Loading : status === Image.Loading
+    readonly property bool loaded: videoPlayer ? status === MediaPlayer.Loaded
+                                               : vectorImage ? media.status === VectorImage.Ready
+                                               : media.status === Image.Ready
+
+    readonly property bool loading: videoPlayer ? status === MediaPlayer.Loading
+                                                : vectorImage ? media.status === VectorImage.Loading
+                                                : media.status === Image.Loading
+
     property real mediaSourceWidth: videoPlayer ? videoPlayer.implicitWidth : media.sourceSize.width
     property real mediaSourceHeight: videoPlayer ? videoPlayer.implicitHeight : media.sourceSize.height
     readonly property real mediaAspectRatio: root.mediaSourceWidth / root.mediaSourceHeight
@@ -59,7 +67,7 @@ MouseArea {
     }
     readonly property real viewAspectRatio: root.width / root.height
     // Should be the same for both width and height
-    readonly property real zoomFactor: (videoPlayer ? contentItem.width : media.paintedWidth) / mediaSourceWidth
+    readonly property real zoomFactor: (videoPlayer || vectorImage ? contentItem.width : media.paintedWidth) / mediaSourceWidth
 
     // Fit to root unless arguments are smaller than the size of root.
     // Returning size instead of using separate width and height functions
@@ -375,6 +383,15 @@ MouseArea {
     }
 
     Component {
+        id: vectorImageComponent
+        VectorImage {
+            anchors.fill: root
+            source: currentImageSource
+            sourceClipRect: Qt.rect(-root.contentX, -root.contentY, root.contentWidth, root.contentHeight)
+        }
+    }
+
+    Component {
         id: animatedImageComponent
         // sadly sourceSize is read only in AnimatedImage, so we keep it separate
         AnimatedImage {
@@ -413,14 +430,22 @@ MouseArea {
         currentImageMimeType.startsWith("video/") && videoPlayer === null
     ) {
         videoPlayer = videoPlayerComponent.createObject(root)
+        vectorImage = null
+        animatedImage = null
+        image = null
+    } else if ((currentImageSource.endsWith(".svg") || currentImageSource.endsWith(".svgz")) && vectorImage === null) {
+        videoPlayer = null
+        vectorImage = vectorImageComponent.createObject(root)
         animatedImage = null
         image = null
     } else if (currentImageSource.endsWith(".gif") && animatedImage === null) {
         videoPlayer = null
+        vectorImage = null
         animatedImage = animatedImageComponent.createObject(contentItem)
         image = null
     } else if (image === null) {
         videoPlayer = null
+        vectorImage = null
         animatedImage = null
         image = imageComponent.createObject(contentItem)
     }

@@ -32,6 +32,7 @@
 #include "openfilemodel.h"
 #include "processor.h"
 #include "version.h"
+#include "vectorimage.h"
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
@@ -150,6 +151,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
+    qmlRegisterType<VectorImage>("org.kde.koko.image", 0, 1, "VectorImage");
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);

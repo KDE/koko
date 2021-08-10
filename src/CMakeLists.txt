@@ -17,6 +17,7 @@ target_link_libraries(kokocommon
     Qt5::Core
     Qt5::Positioning
     Qt5::Sql
+    Qt5::Svg
     KF5::CoreAddons
     KF5::DBusAddons
     KF5::FileMetaData
@@ -43,6 +44,7 @@ set(koko_SRCS
     processor.cpp
     committimer.cpp
     imageprocessorrunnable.cpp
+    vectorimage.cpp
     kdtree.c
     resources.qrc
 )
