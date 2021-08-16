@@ -4,46 +4,86 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.10 as Controls
-import org.kde.kirigami 2.13 as Kirigami
+import QtQuick.Controls 2.15 as QQC2
+import org.kde.kirigami 2.15 as Kirigami
 
-Rectangle {
+Item {
     id: tagRoot
     property string text
     property alias icon: toolButton.icon
     property alias actionText: toolButton.text
-
-    property bool reverse: false
-    width: tag.width
-    height: tag.height
-    color: Kirigami.Theme.alternateBackgroundColor
-    border.width: 1
-    radius: height / 2
-    border.color: Kirigami.Theme.disabledTextColor
     signal clicked()
+
+    implicitWidth: layout.implicitWidth
+    implicitHeight: layout.implicitHeight
+
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
+
+    Rectangle {
+        id: mainBg
+        anchors.fill: parent
+        anchors.leftMargin: pointyBit.anchors.leftMargin + pointyBit.width / 2 - radius / 2
+        radius: 3
+        color: Kirigami.Theme.backgroundColor
+        border.color: Kirigami.ColorUtils.tintWithAlpha(Kirigami.Theme.backgroundColor,
+                                                        Kirigami.Theme.textColor,
+                                                        0.3)
+        border.width: 1
+    }
+    Rectangle {
+        id: pointyBit
+        antialiasing: true
+        rotation: 45
+        y: (parent.height - height) / 2
+        anchors.left: parent.left
+        anchors.leftMargin: y + radius / 2
+        // `parent.height * Math.cos(radians)` fits a rotated square inside the parent.
+        // `rotation * (Math.PI / 180)` is rotation in radians instead of degrees.
+        // `Math.PI / 4` is 45 degrees. 180 / 4 is 45.
+        // `height + radius / 2` accounts for the rounded corners reducing visual size.
+        height: parent.height * Math.cos(Math.PI / 4) + radius / 2
+        width: height
+        color: mainBg.color
+        border.width: 1
+        border.color: mainBg.border.color
+        radius: 3
+    }
+    Rectangle {
+        id: borderCover
+        antialiasing: true
+        anchors {
+            left: parent.left
+            top: parent.top
+            bottom: parent.bottom
+            leftMargin: pointyBit.anchors.leftMargin + pointyBit.width / 2
+            margins: mainBg.border.width
+        }
+        width: height
+        color: mainBg.color
+        radius: mainBg.radius - mainBg.border.width
+    }
+
     RowLayout {
-        id: tag
-        Controls.Label {
-            visible: tagRoot.reverse
-            Layout.leftMargin: Kirigami.Units.smallSpacing * 3
+        id: layout
+        spacing: Math.round(label.Layout.leftMargin - (toolButton.implicitWidth - toolButton.icon.width))
+        anchors.fill: parent
+        QQC2.Label {
+            id: label
+            horizontalAlignment: Qt.AlignLeft
+            verticalAlignment: Qt.AlignVCenter
+            Layout.leftMargin: borderCover.anchors.leftMargin
             text: tagRoot.text
         }
-        Controls.ToolButton {
+        QQC2.ToolButton {
             id: toolButton
-            // there's no size smaller than small unfortunately
-            icon.width: Kirigami.Settings.isMobile ? Kirigami.Units.iconSizes.small : 16 * Kirigami.Units.devicePixelRatio
-            icon.height: Kirigami.Settings.isMobile ? Kirigami.Units.iconSizes.small : 16 * Kirigami.Units.devicePixelRatio
-            display: Controls.AbstractButton.IconOnly
-            Layout.leftMargin: tagRoot.reverse ? 0 : Kirigami.Units.smallSpacing
-            Layout.rightMargin: tagRoot.reverse ? Kirigami.Units.smallSpacing : 0
+            icon.width: Kirigami.Units.iconSizes.sizeForLabels
+            icon.height: Kirigami.Units.iconSizes.sizeForLabels
+            text: i18n("Remove Tag")
+            display: QQC2.AbstractButton.IconOnly
             onClicked: tagRoot.clicked()
-        }
-        Controls.Label {
-            visible: !tagRoot.reverse
-            Layout.rightMargin: Kirigami.Units.smallSpacing * 3
-            text: tagRoot.text
         }
     }
 }
