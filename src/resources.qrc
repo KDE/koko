@@ -9,6 +9,9 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/EditorView.qml</file>
         <file>qml/ImageDelegate.qml</file>
         <file>qml/ImageViewPage.qml</file>
+        <file>qml/InfoDrawer.qml</file>
+        <file>qml/InfoDrawerSidebarBase.qml</file>
+        <file>qml/InfoSidebar.qml</file>
         <file>qml/Main.qml</file>
         <file>qml/OverviewControl.qml</file>
         <file>qml/SelectionButton.qml</file>
@@ -18,6 +21,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/Sidebar.qml</file>
         <file>qml/SlideshowManager.qml</file>
         <file>qml/Tag.qml</file>
+        <file>qml/TagInput.qml</file>
         <file>qml/ThumbnailStrip.qml</file>
         <file>qml/VideoPlayer.qml</file>
     </qresource>

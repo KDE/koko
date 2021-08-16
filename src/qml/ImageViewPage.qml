@@ -7,13 +7,13 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.12
+import QtQuick 2.15
 import QtQml 2.15
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.10 as Controls
-import QtGraphicalEffects 1.0 as Effects
+import QtQuick.Window 2.15
+import QtQuick.Templates 2.15 as T
+import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.13 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.kcoreaddons 1.0 as KCA
@@ -26,7 +26,7 @@ Kirigami.Page {
     property var imagesModel
 
     Connections {
-        target: listView.model.sourceModel
+        target: imagesModel
         function onFinishedLoading() {
             if (!applicationWindow().fetchImageToOpen || listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen) === -1) {
                 return;
@@ -74,284 +74,38 @@ Kirigami.Page {
         id: mimeDB
     }
 
+    Koko.Exiv2Extractor {
+        id: exiv2Extractor
+        filePath: listView.currentItem ? listView.currentItem.currentImageSource : ""
+    }
+
     Kirigami.ContextDrawer {
         id: contextDrawer
         title: i18n("Edit image")
         handleVisible: true
     }
 
-    Kirigami.OverlayDrawer {
-        id: infoDrawer
-        drawerOpen: false
-        property alias imageUrl: extractor.filePath
-        edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
-        handleVisible: false
-
-        Koko.Exiv2Extractor {
-            id: extractor
-        }
-
-        Koko.ImageTagsModel {
-            id: tagList
-        }
-
-        leftPadding: 0
-        rightPadding: 0
-        topPadding: 0
-        bottomPadding: 0
-
-        contentItem: Controls.ScrollView {
-        Column {
-            spacing: Kirigami.Units.smallSpacing
-            padding: Kirigami.Units.smallSpacing * 2
-            focus: true
-
-            property real contentWidth: width - padding * 2
-
-            Kirigami.Heading {
-                level: 2
-                text: i18n("Metadata")
-            }
-            Kirigami.Heading {
-                level: 4
-                topPadding: Kirigami.Units.smallSpacing
-                text: i18n("File Name")
-            }
-            Controls.Label {
-                text: extractor.simplifiedPath
-                wrapMode: Text.Wrap
-                width: Kirigami.Units.gridUnit * 15
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Dimension")
-                topPadding: Kirigami.Units.smallSpacing
-                visible: extractor.width > 0 && extractor.height > 0
-            }
-            Controls.Label {
-                text: i18nc("dimensions", "%1 x %2", extractor.width, extractor.height)
-                visible: extractor.width > 0 && extractor.height > 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Size")
-                topPadding: Kirigami.Units.smallSpacing
-                visible: extractor.size !== 0
-            }
-            Controls.Label {
-                text: KCA.Format.formatByteSize(extractor.size, 2)
-                visible: extractor.size !== 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Created")
-                topPadding: Kirigami.Units.smallSpacing
-                visible: extractor.time.length > 0
-            }
-            Controls.Label {
-                text: extractor.time
-                visible: extractor.time.length > 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Model")
-                topPadding: Kirigami.Units.smallSpacing
-                visible: extractor.model.length > 0
-            }
-            Controls.Label {
-                text: extractor.model
-                visible: extractor.model.length > 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Latitude")
-                topPadding: Kirigami.Units.smallSpacing
-                visible: extractor.gpsLatitude !== 0
-            }
-            Controls.Label {
-                text: extractor.gpsLatitude
-                visible: extractor.gpsLatitude !== 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Longitude")
-                topPadding: Kirigami.Units.smallSpacing
-                visible: extractor.gpsLongitude !== 0
-            }
-            Controls.Label {
-                text: extractor.gpsLongitude
-                visible: extractor.gpsLongitude !== 0
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Rating")
-                topPadding: Kirigami.Units.smallSpacing
-            }
-            Row {
-                // stars look disconnected with higher spacing
-                spacing: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 4)
-                Accessible.role: Accessible.List
-                Accessible.name: i18n("Current rating %1", extractor.rating)
-                Repeater {
-                    model: [ 1, 3, 5, 7, 9 ]
-                    Controls.AbstractButton {
-                        activeFocusOnTab: true
-                        width: height
-                        height: Kirigami.Units.iconSizes.smallMedium
-                        text: i18n("Set rating to %1", ratingTo)
-                        property int ratingTo: {
-                            if (extractor.rating == modelData + 1) {
-                                return modelData
-                            } else if (extractor.rating == modelData) {
-                                return modelData - 1
-                            } else {
-                                return modelData + 1
-                            }
-                        }
-                        contentItem: Kirigami.Icon {
-                            source: extractor.rating > modelData ? "rating" :
-                                    extractor.rating < modelData ? "rating-unrated" : "rating-half"
-                            width: parent.width
-                            height: parent.height
-                            color: (parent.focusReason == Qt.TabFocusReason || parent.focusReason == Qt.BacktabFocusReason) && parent.activeFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                        }
-                        onClicked: {
-                            extractor.rating = ratingTo
-                        }
-                    }
-                }
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Description")
-                topPadding: Kirigami.Units.smallSpacing
-            }
-            Controls.TextArea {
-                id: imageDescription
-                text: extractor.description
-                width: parent.contentWidth
-                placeholderText: i18n("Image description...")
-                KeyNavigation.priority: KeyNavigation.BeforeItem
-                Keys.onTabPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
-                onEditingFinished: {
-                    extractor.description = text
-                }
-            }
-            Kirigami.Heading {
-                level: 4
-                text: i18n("Tags")
-                topPadding: Kirigami.Units.smallSpacing
-            }
-            Flow {
-                width: parent.contentWidth
-                spacing: Kirigami.Units.smallSpacing * 2
-                Repeater {
-                    model: extractor.tags
-                    Tag {
-                        text: modelData
-                        icon.name: "edit-delete-remove"
-                        actionText: i18n("Remove %1 tag", modelData)
-                        reverse: true
-                        onClicked: {
-                            const index = extractor.tags.indexOf(modelData);
-                            if (index > -1) {
-                                extractor.tags.splice(index, 1);
-                            }
-                        }
-                    }
-                }
-            }
-            Flow {
-                width: parent.contentWidth
-                spacing: Kirigami.Units.smallSpacing * 2
-                topPadding: Kirigami.Units.smallSpacing
-                bottomPadding: Kirigami.Units.smallSpacing
-                Repeater {
-                    model: tagList.tags
-                    Tag {
-                        text: modelData
-                        icon.name: "list-add"
-                        actionText: i18n("Add %1 tag", modelData)
-                        visible: !extractor.tags.includes(modelData)
-                        onClicked: {
-                            extractor.tags.push(modelData)
-                        }
-                    }
-                }
-                Controls.ToolButton {
-                    // there's no size smaller than small unfortunately
-                    icon.width: Kirigami.Settings.isMobile ? Kirigami.Units.iconSizes.small : 16
-                    icon.height: Kirigami.Settings.isMobile ? Kirigami.Units.iconSizes.small : 16
-                    display: Controls.AbstractButton.IconOnly
-                    icon.name: "list-add"
-                    text: i18n("Add new tag")
-                    onClicked: newTagField.visible = true
-                }
-            }
-            RowLayout {
-                width: parent.contentWidth
-                Controls.TextField {
-                    id: newTagField
-                    visible: false
-                    placeholderText: i18n("New tag...")
-                    Layout.fillWidth: true
-                    onAccepted: {
-                        if (text.trim().length > 0) {
-                            extractor.tags.push(text.trim())
-                            text = ""
-                            visible = false
-                        }
-                    }
-                }
-                Controls.ToolButton {
-                    display: Controls.AbstractButton.IconOnly
-                    icon.name: "checkbox"
-                    text: i18n("Finished")
-                    visible: newTagField.visible
-                    onClicked: newTagField.accepted()
-                }
-                Controls.ToolButton {
-                    // there's no size smaller than small unfortunately
-                    display: Controls.AbstractButton.IconOnly
-                    icon.name: "dialog-cancel"
-                    text: i18n("Cancel")
-                    visible: newTagField.visible
-                    onClicked: {
-                        newTagField.text = ""
-                        newTagField.visible = false
-                    }
-                }
-            }
-        }
-        }
-    }
-
     actions {
         right: Kirigami.Action {
+            id: infoAction
             icon.name: "kdocumentinfo"
             text: i18n("Info")
             tooltip: listView.currentItem ?
                      (listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("See information about video") :
                                                                                        i18n("See information about image")) :
                                                                                        ""
-            onTriggered: {
-                if (infoDrawer.drawerOpen) {
-                    infoDrawer.close();
-                } else {
-                    infoDrawer.imageUrl = listView.currentItem.currentImageSource;
-                    newTagField.text = ""
-                    newTagField.visible = false
-                    infoDrawer.open();
-                    infoDrawer.forceActiveFocus();
-                }
+            checkable: true
+            checked: false
+            onToggled: if (checked) {
+                infoSidebarLoader.forceActiveFocus();
             }
         }
         main: Kirigami.Action {
-            iconName: extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
-            text: extractor.favorite ? i18n("Remove") : i18n("Favorite")
-            tooltip: extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
+            iconName: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
+            text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
+            tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
-                extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""));
+                exiv2Extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""));
                 // makes change immediate
                 kokoProcessor.removeFile(listView.currentItem.currentImageSource.replace("file://", ""));
                 kokoProcessor.addFile(listView.currentItem.currentImageSource.replace("file://", ""));
@@ -453,7 +207,7 @@ Kirigami.Page {
                 return;
             }
             if (listView.currentIndex < listView.count - 1) {
-                listView.currentIndex++;
+                listView.incrementCurrentIndex();
             } else {
                 if (kokoConfig.loopImages) {
                     listView.currentIndex = 0;
@@ -478,10 +232,6 @@ Kirigami.Page {
         }
     }
 
-    Component.onCompleted: {
-        applicationWindow().controlsVisible = true;
-        listView.forceActiveFocus();
-    }
     function close() {
         applicationWindow().controlsVisible = true;
         if (applicationWindow().footer) {
@@ -532,52 +282,6 @@ Kirigami.Page {
         }
     }
 
-    Controls.ScrollView {
-        id: thumbnailScrollView
-        visible: thumbnailView.count > 1
-        z: 100
-        height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
-        Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
-        Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
-        property real mobileFABHeight: (applicationWindow().controlsVisible && Kirigami.Settings.isMobile) * Kirigami.Units.gridUnit * 4
-
-        leftPadding: Kirigami.Units.smallSpacing
-        rightPadding: Kirigami.Units.smallSpacing
-
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-            bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && kokoConfig.imageViewPreview ?
-                            Kirigami.Units.smallSpacing + mobileFABHeight :
-                           -height + mobileFABHeight
-        }
-
-        opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
-
-        Behavior on anchors.bottomMargin {
-            NumberAnimation {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
-
-        ThumbnailStrip {
-            id: thumbnailView
-
-            model: listView.model
-            currentIndex: listView.currentIndex
-            onActivated: index => listView.currentIndex = index
-        }
-    }
-
     ListView {
         id: listView
         readonly property bool isCurrentItemDragging: currentItem !== null && currentItem.dragging
@@ -622,7 +326,7 @@ Kirigami.Page {
 
         onCountChanged: {
             if (count === 0) {
-                infoDrawer.close();
+                infoAction.checked = false
                 root.close();
             }
             if (currentIndex >= count) {
@@ -632,7 +336,7 @@ Kirigami.Page {
 
         onCurrentItemChanged: {
             if (currentItem) {
-                extractor.updateFavorite(currentItem.currentImageSource.replace("file://", ""))
+                exiv2Extractor.updateFavorite(currentItem.currentImageSource.replace("file://", ""))
                 const title = currentItem.display
                 if (title.includes("/")) {
                     root.title = title.split("/")[title.split("/").length-1]
@@ -657,7 +361,7 @@ Kirigami.Page {
             listView: ListView.view
         }
 
-        Controls.RoundButton {
+        QQC2.RoundButton {
             anchors {
                 left: parent.left
                 leftMargin: Kirigami.Units.largeSpacing
@@ -687,7 +391,7 @@ Kirigami.Page {
             }
         }
 
-        Controls.RoundButton {
+        QQC2.RoundButton {
             anchors {
                 right: parent.right
                 rightMargin: Kirigami.Units.largeSpacing
@@ -759,7 +463,7 @@ Kirigami.Page {
             }
         }
 
-        Controls.BusyIndicator {
+        QQC2.BusyIndicator {
             id: busyIndicator
             property Item target: listView.currentItem
             anchors.centerIn: parent
@@ -797,6 +501,51 @@ Kirigami.Page {
         }
     }
 
+    QQC2.ScrollView {
+        id: thumbnailScrollView
+        visible: thumbnailView.count > 1
+        height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
+        QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+        QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+        property real mobileFABHeight: (applicationWindow().controlsVisible && Kirigami.Settings.isMobile) * Kirigami.Units.gridUnit * 4
+
+        leftPadding: Kirigami.Units.smallSpacing
+        rightPadding: Kirigami.Units.smallSpacing
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && kokoConfig.imageViewPreview ?
+                            Kirigami.Units.smallSpacing + mobileFABHeight :
+                           -height + mobileFABHeight
+        }
+
+        opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
+
+        Behavior on anchors.bottomMargin {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        ThumbnailStrip {
+            id: thumbnailView
+
+            model: listView.model
+            currentIndex: listView.currentIndex
+            onActivated: index => listView.currentIndex = index
+        }
+    }
+
     // For some reason having MouseArea under ListView on the z axis
     // causes decrementCurrentIndex to change index but not snap to the current item
     // which causes weird desync issues
@@ -812,6 +561,103 @@ Kirigami.Page {
                 listView.decrementCurrentIndex()
             } else if (mouse.button == Qt.ForwardButton) {
                 listView.incrementCurrentIndex()
+            }
+        }
+    }
+
+    Kirigami.Separator {
+        id: splitter
+        z: 1
+        x: root.mirrored ? 0 : root.width
+        visible: infoSidebarLoader.active
+        height: parent.height
+        width: visible ? implicitWidth : 0
+        MouseArea {
+            cursorShape: Qt.SplitHCursor
+            drag {
+                axis: Drag.XAxis
+                target: splitter
+                minimumX: root.mirrored ? 0 : root.width - splitter.width - infoSidebarLoader.implicitWidth
+                maximumX: root.mirrored ? infoSidebarLoader.implicitWidth : root.width - splitter.width
+                threshold: 0
+            }
+            anchors.fill: parent
+            anchors.margins: -Kirigami.Units.largeSpacing
+        }
+        states: [
+            State { name: "opened"; when: splitter.visible
+                PropertyChanges {
+                    explicit: true
+                    target: splitter
+                    x: root.mirrored ? infoSidebarLoader.implicitWidth : root.width - splitter.implicitWidth - infoSidebarLoader.implicitWidth
+                }
+            },
+            State { name: "closed"; when: !splitter.visible
+                PropertyChanges {
+                    explicit: true
+                    target: splitter
+                    x: root.mirrored ? 0 : root.width
+                }
+            }
+        ]
+        transitions: [
+            Transition {
+                from: "*"; to: "closed"
+                SequentialAnimation {
+                    NumberAnimation { property: "x"; duration: Kirigami.Units.longDuration; easing.type: Easing.OutCubic }
+                    PropertyAction {
+                        target: listView
+                        property: "anchors.right"
+                        value: listView.parent.right
+                    }
+                }
+            },
+            Transition {
+                from: "*"; to: "opened"
+                SequentialAnimation {
+                    PropertyAction {
+                        target: listView
+                        property: "anchors.right"
+                        value: splitter.left
+                    }
+                    NumberAnimation { property: "x"; duration: Kirigami.Units.longDuration; easing.type: Easing.OutCubic }
+                }
+            }
+        ]
+    }
+
+    Loader {
+        id: infoSidebarLoader
+        active: !Kirigami.Settings.isMobile && infoAction.checked
+        visible: active
+        sourceComponent: InfoSidebar {
+            extractor: exiv2Extractor
+            anchors.fill: parent
+        }
+        anchors.left: splitter.right
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        Connections {
+            target: infoSidebarLoader.item
+            function onClosed() {
+                infoAction.checked = false
+            }
+        }
+    }
+
+    Loader {
+        id: infoDrawerLoader
+        active: Kirigami.Settings.isMobile && infoAction.checked
+        visible: active
+        anchors.fill: parent
+        sourceComponent: InfoDrawer {
+            extractor: exiv2Extractor
+        }
+        Connections {
+            target: infoDrawerLoader.item
+            function onClosed() {
+                infoAction.checked = false
             }
         }
     }
@@ -842,5 +688,10 @@ Kirigami.Page {
                 slideshowManager.stop()
             }
         }
+    }
+
+    Component.onCompleted: {
+        applicationWindow().controlsVisible = true;
+        listView.forceActiveFocus();
     }
 }
