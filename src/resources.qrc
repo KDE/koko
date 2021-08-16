@@ -8,7 +8,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/AlbumView.qml</file>
         <file>qml/EditorView.qml</file>
         <file>qml/ImageDelegate.qml</file>
-        <file>qml/ImageViewer.qml</file>
+        <file>qml/ImageViewPage.qml</file>
         <file>qml/Main.qml</file>
         <file>qml/OverviewControl.qml</file>
         <file>qml/SelectionButton.qml</file>

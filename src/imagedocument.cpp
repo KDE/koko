@@ -14,7 +14,7 @@ ImageDocument::ImageDocument()
     m_image = new QImage();
     connect(this, &ImageDocument::pathChanged, this, [this](const QString &url) {
         emit resetHandle();
-        /** Since the url passed by the model in the ImageViewer.qml contains 'file://' prefix */
+        /** Since the url passed by the model in the ImageViewPage.qml contains 'file://' prefix */
         QString location = QUrl(url).path();
         m_image->load(location);
         m_edited = false;

@@ -87,7 +87,7 @@ Kirigami.ApplicationWindow {
                 const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
                 albumView.model.sourceModel.url = url;
                 fetchImageToOpen = true;
-                pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+                pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                     imagesModel: imageFolderModel.sourceModel
                 });
             }
@@ -112,7 +112,7 @@ Kirigami.ApplicationWindow {
             console.log(url)
             albumView.model.sourceModel.url = url;
             fetchImageToOpen = true;
-            pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+            pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                 imagesModel: imageFolderModel.sourceModel
             });
         }

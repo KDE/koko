@@ -393,7 +393,7 @@ Kirigami.ScrollablePage {
                         if (gridView.url.toString().startsWith("trash:")) {
                             break
                         }
-                        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewer.qml"), {
+                        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                             startIndex: page.model.index(gridView.currentIndex, 0),
                             imagesModel: page.model
                         })
