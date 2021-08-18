@@ -9,6 +9,7 @@
 #include "allimagesmodel.h"
 #include "dirmodelutils.h"
 #include "exiv2extractor.h"
+#include "fileinfo.h"
 #include "imagedocument.h"
 #include "imagefavoritesmodel.h"
 #include "imagefoldermodel.h"
@@ -50,4 +51,5 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterSingletonType<DirModelUtils>(uri, 0, 1, "DirModelUtils", [=](QQmlEngine *, QJSEngine *) {
         return new DirModelUtils;
     });
+    qmlRegisterType<FileInfo>(uri, 0, 1, "FileInfo");
 }

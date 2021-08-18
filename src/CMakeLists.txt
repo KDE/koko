@@ -93,6 +93,7 @@ set (qml_plugin_SRCS
     types.cpp
     roles.cpp
     imagedocument.cpp
+    fileinfo.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
