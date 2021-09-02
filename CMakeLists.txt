@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD 17)
 set(QT5_MIN_VERSION 5.15)
-set(KF5_MIN_VERSION 5.79)
+set(KF5_MIN_VERSION 5.86)
 
 set(PROJECT_VERSION "21.08")
 
