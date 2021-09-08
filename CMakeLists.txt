@@ -49,6 +49,20 @@ set_package_properties(KQuickImageEditor PROPERTIES
 
 ecm_find_qmlmodule(QtGraphicalEffects 1.0)
 
+find_package(Qt5X11Extras ${QT5_MIN_VERSION})
+set_package_properties(Qt5X11Extras PROPERTIES
+    DESCRIPTION "Qt extras for the X11 platform"
+    PURPOSE "Required for getting display color profile on X11"
+    TYPE OPTIONAL
+)
+
+find_package(X11)
+set_package_properties(X11 PROPERTIES
+    DESCRIPTION "Libraries for working with the X11 window system"
+    PURPOSE "Required for getting display color profile on X11"
+    TYPE OPTIONAL
+)
+
 find_package(Qt5QuickControls2 ${QT5_MIN_VER})
 set_package_properties(Qt5QuickControls2 PROPERTIES
     DESCRIPTION "User interface controls based on Qt Quick"

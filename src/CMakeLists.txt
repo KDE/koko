@@ -94,6 +94,7 @@ set (qml_plugin_SRCS
     roles.cpp
     imagedocument.cpp
     fileinfo.cpp
+    displaycolorspace.cpp
 )
 
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
@@ -112,6 +113,11 @@ target_link_libraries (kokoqmlplugin
 install (TARGETS kokoqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+
+if (TARGET Qt5::X11Extras)
+    target_compile_definitions(kokoqmlplugin PRIVATE HAVE_X11)
+    target_link_libraries(kokoqmlplugin Qt5::X11Extras X11::xcb)
+endif()
 
 #
 # Reverse GeoLookup Data

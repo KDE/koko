@@ -418,6 +418,7 @@ MouseArea {
             smooth: root.zoomFactor < 1
             autoTransform: true
             asynchronous: true
+            colorSpace: DisplayColorSpace.colorSpace
             onStatusChanged: {
                 if (status === Image.Ready && listView.currentIndex === index) {
                     imgColors.update();

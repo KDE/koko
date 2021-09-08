@@ -8,6 +8,7 @@
 
 #include "allimagesmodel.h"
 #include "dirmodelutils.h"
+#include "displaycolorspace.h"
 #include "exiv2extractor.h"
 #include "fileinfo.h"
 #include "imagedocument.h"
@@ -52,4 +53,7 @@ void QmlPlugins::registerTypes(const char *uri)
         return new DirModelUtils;
     });
     qmlRegisterType<FileInfo>(uri, 0, 1, "FileInfo");
+    qmlRegisterSingletonType<DisplayColorSpace>(uri, 0, 1, "DisplayColorSpace", [](QQmlEngine *, QJSEngine *) {
+        return new DisplayColorSpace{};
+    });
 }
