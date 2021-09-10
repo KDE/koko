@@ -10,7 +10,7 @@ Rectangle {
     id: root
     property Item target: null
     property alias pressed: mouseArea.pressed
-    property real contentAspectRatio: target ? target.mediaAspectRatio : 1
+    property real contentAspectRatio: target ? target.contentAspectRatio : 1
     property real widthRatio: target ? target.width / target.contentWidth : 1
     property real heightRatio: target ? target.height / target.contentHeight : 1
     // Don't use Flickable::visibleArea.xPosition or Flickable::visibleArea.yPosition. They won't give the correct values.

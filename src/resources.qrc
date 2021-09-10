@@ -24,6 +24,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/TagInput.qml</file>
         <file>qml/ThumbnailStrip.qml</file>
         <file>qml/VideoPlayer.qml</file>
+        <file>qml/ZoomArea.qml</file>
     </qresource>
 </RCC>
 
