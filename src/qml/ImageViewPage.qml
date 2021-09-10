@@ -146,20 +146,11 @@ Kirigami.Page {
                 }
             },
             Kirigami.Action {
-                iconName: slideshowManager.running ? "media-playback-stop" : "view-presentation"
-                tooltip: slideshowManager.running ? i18n("Stop Slideshow") : i18n("Start Slideshow")
-                text: slideshowManager.running ? i18n("Stop Slideshow") : i18n("Slideshow")
-                visible: listView.count > 1
-                onTriggered: {
-                    if (slideshowManager.running) {
-                        slideshowManager.stop();
-                        applicationWindow().visibility = Window.Windowed;
-                    } else {
-                        slideshowManager.start();
-                        applicationWindow().visibility = Window.FullScreen;
-                        applicationWindow().controlsVisible = false;
-                    }
-                }
+                iconName: "view-presentation"
+                tooltip: i18n("Start Slideshow")
+                text: i18n("Slideshow")
+                visible: listView.count > 1 && !slideshowManager.running
+                onTriggered: slideshowManager.start()
             },
             Kirigami.Action {
                 icon.name: "view-preview"
@@ -565,6 +556,169 @@ Kirigami.Page {
         }
     }
 
+    // Not a QQC2 ToolBar because those block mouse input
+    FocusScope {
+        id: hoverToolBar
+        z: 1
+        visible: !Kirigami.Settings.isMobile && (slideshowManager.running || !applicationWindow().controlsVisible)
+        width: parent.width
+        implicitWidth: background.implicitWidth
+        implicitHeight: background.implicitHeight
+        Kirigami.Theme.colorSet: applicationWindow().controlsVisible ?
+            Kirigami.Theme.Window : Kirigami.Theme.Header
+        Kirigami.Theme.inherit: false
+        Kirigami.ShadowedRectangle {
+            id: background
+            visible: applicationWindow().controlsVisible || hoverHandler.hovered || y > -height
+            y: if (applicationWindow().controlsVisible || hoverHandler.hovered) {
+                -implicitHeight
+            } else {
+                -height
+            }
+            Behavior on y {
+                enabled: !applicationWindow().controlsVisible || hoverHandler.hovered
+                NumberAnimation {
+                    property: "y"
+                    duration: Kirigami.Units.shortDuration
+                    easing.type: Easing.OutCubic
+                }
+            }
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: Math.min(implicitWidth, parent.width)
+            height: implicitHeight * 2
+            implicitWidth: row.implicitWidth + Kirigami.Units.smallSpacing * 2
+            implicitHeight: row.implicitHeight
+            radius: 3
+            color: Kirigami.Theme.backgroundColor
+            shadow.color: Qt.rgba(0,0,0,0.2)
+            shadow.size: 9
+            shadow.yOffset: 2
+            // Prevent non-hover mouse events from passing through
+            TapHandler {}
+            WheelHandler {}
+            RowLayout {
+                id: row
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.bottom: parent.bottom
+                anchors.leftMargin: Kirigami.Units.smallSpacing
+                anchors.rightMargin: Kirigami.Units.smallSpacing
+                spacing: Kirigami.Units.smallSpacing
+                QQC2.Label {
+                    visible: slideshowManager.running
+                    text: i18nc("@label:spinbox Slideshow image changing interval", "Slideshow interval:")
+                    Layout.leftMargin: Kirigami.Units.largeSpacing
+                }
+                // Reset the spinbox whenever visibility changes.
+                // QQC2 SpinBox doesn't have a good way to reset the displayText.
+                Loader {
+                    visible: slideshowManager.running
+                    active: visible
+                    sourceComponent: QQC2.SpinBox {
+                        id: intervalSpinBox
+                        from: 1
+                        // limited to hundreds for now because I don't want
+                        // to deal with regexing for locale formatted numbers
+                        to: 999
+                        value: kokoConfig.nextImageInterval
+                        editable: true
+                        textFromValue: (value) => i18ncp("Slideshow image changing interval",
+                                                         "1 second", "%1 seconds", value)
+                        valueFromText: (text) => {
+                            const match = text.match(/\d{1,3}/)
+                            return match !== null ? match[0] : intervalSpinBox.value
+                        }
+                        TextMetrics {
+                            id: intervalMetrics
+                            text: intervalSpinBox.textFromValue(intervalSpinBox.to)
+                        }
+                        wheelEnabled: true
+                        contentItem: QQC2.TextField {
+                            property int oldCursorPosition: cursorPosition
+                            implicitWidth: intervalMetrics.width + leftPadding + rightPadding
+                            implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
+                            palette: parent.palette
+                            leftPadding: parent.spacing
+                            rightPadding: parent.spacing
+                            topPadding: 0
+                            bottomPadding: 0
+                            font: parent.font
+                            color: palette.text
+                            selectionColor: palette.highlight
+                            selectedTextColor: palette.highlightedText
+                            horizontalAlignment: Qt.AlignHCenter
+                            verticalAlignment: Qt.AlignVCenter
+                            readOnly: !parent.editable
+                            validator: parent.validator
+                            inputMethodHints: parent.inputMethodHints
+                            selectByMouse: true
+                            background: null
+                            // Trying to mimic some of QSpinBox's behavior with suffixes
+                            onTextChanged: if (!inputMethodComposing) {
+                                const valueText = parent.valueFromText(text).toString()
+                                const valueIndex = parent.displayText.indexOf(valueText)
+                                if (valueIndex >= 0) {
+                                    console.log(valueIndex, cursorPosition)
+                                    cursorPosition = Math.min(Math.max(valueIndex, oldCursorPosition), valueIndex + valueText.length)
+                                }
+                            }
+                            Component.onCompleted: oldCursorPosition = cursorPosition
+                        }
+                        // Can't just use a binding because modifying the text
+                        // elsewhere will break bindings.
+                        onValueChanged: {
+                            contentItem.oldCursorPosition = contentItem.cursorPosition
+                            contentItem.text = displayText
+                        }
+                        onValueModified: kokoConfig.nextImageInterval = value
+                        Layout.rightMargin: Kirigami.Units.largeSpacing
+                    }
+                }
+                QQC2.CheckBox {
+                    visible: slideshowManager.running
+                    text: i18nc("@option:check", "Loop")
+                    checked: kokoConfig.loopImages
+                    onCheckedChanged: kokoConfig.loopImages = checked
+                }
+                QQC2.CheckBox {
+                    visible: slideshowManager.running
+                    text: i18nc("@option:check", "Randomize")
+                    checked: kokoConfig.randomizeImages
+                    onCheckedChanged: kokoConfig.randomizeImages = checked
+                }
+                QQC2.ToolButton {
+                    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
+                                             implicitContentHeight + topPadding + bottomPadding)
+                    visible: slideshowManager.running
+                    icon.name: "media-playback-stop"
+                    text: i18n("Stop Slideshow")
+                    onClicked: slideshowManager.stop()
+                    topInset: Kirigami.Units.smallSpacing
+                    bottomInset: Kirigami.Units.smallSpacing
+                    Layout.fillHeight: true
+                }
+                QQC2.ToolSeparator {
+                    visible: slideshowManager.running && !applicationWindow().controlsVisible
+                }
+                QQC2.ToolButton {
+                    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
+                                             implicitContentHeight + topPadding + bottomPadding)
+                    visible: !applicationWindow().controlsVisible
+                    icon.name: "visibility"
+                    text: i18n("Show All Controls")
+                    onClicked: applicationWindow().controlsVisible = true
+                    topInset: Kirigami.Units.smallSpacing
+                    bottomInset: Kirigami.Units.smallSpacing
+                    Layout.fillHeight: true
+                }
+            }
+        }
+        HoverHandler {
+            id: hoverHandler
+            margin: parent.implicitHeight/2
+        }
+    }
+
     Kirigami.Separator {
         id: splitter
         z: 1
@@ -688,6 +842,12 @@ Kirigami.Page {
                 slideshowManager.stop()
             }
         }
+    }
+
+    Binding {
+        target: root.globalToolBarItem
+        property: "visible"
+        value: applicationWindow().controlsVisible
     }
 
     Component.onCompleted: {
