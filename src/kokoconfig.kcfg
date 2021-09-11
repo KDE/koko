@@ -9,6 +9,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
     http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="kokorc" />
+    <include>qwindow.h</include>
     <group name="Backend">
         <entry name="InitialRun" type="Bool">
             <label>Initial Run</label>
@@ -40,6 +41,34 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <entry name="RandomizeImages" type="Bool">
             <label>Randomize Slideshow</label>
             <default>false</default>
+        </entry>
+    </group>
+    <group name="WindowState">
+        <entry name="Width" type="Int">
+            <label>Last saved state for QWindow::width</label>
+            <!-- will be set on first run based on Main.qml -->
+            <default>-1</default>
+        </entry>
+        <entry name="Height" type="Int">
+            <label>Last saved state for QWindow::height</label>
+            <!-- will be set on first run based on Main.qml -->
+            <default>-1</default>
+        </entry>
+        <entry name="Visibility" type="Enum">
+            <label>Last saved state for QWindow::visibility</label>
+            <choices name="QWindow::Visibility">
+                <choice name="Hidden"/>
+                <choice name="AutomaticVisibility"/>
+                <choice name="Windowed"/>
+                <choice name="Minimized"/>
+                <choice name="Maximized"/>
+                <choice name="FullScreen"/>
+            </choices>
+            <default>AutomaticVisibility</default>
+        </entry>
+        <entry name="ControlsVisible" type="Bool">
+            <label>Last saved state for Kirigami AbstractApplicationWindow::controlsVisible</label>
+            <default>true</default>
         </entry>
     </group>
 </kcfg>

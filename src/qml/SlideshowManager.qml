@@ -5,6 +5,7 @@
  */
 
 import QtQuick 2.15
+import QtQuick.Window 2.15
 
 // This object manages slideshows.
 // It abstract the implementation with a clean and simple API,
@@ -20,12 +21,21 @@ Item {
     // *read only*
     property bool externalMediaRunning: false
 
+    // save last window state before running slideshow
+    property int lastWindowVisibility: applicationWindow().visibility
+    property bool lastControlsVisible: applicationWindow().controlsVisible
+
     // start the slideshow
     // don't use these function for anything else
     // besides actually starting and stopping the presentation
     // since this is reflected in UI unlike functions below these
     function start() {
         running = true;
+        lastWindowVisibility = applicationWindow().visibility
+        lastControlsVisible = applicationWindow().controlsVisible
+        applicationWindow().saveWindowState()
+        applicationWindow().visibility = Window.FullScreen;
+        applicationWindow().controlsVisible = false;
         slideshowTimer.restart();
     }
 
@@ -33,6 +43,8 @@ Item {
     function stop() {
         running = false;
         externalMediaRunning = false;
+        applicationWindow().visibility = lastWindowVisibility
+        applicationWindow().controlsVisible = lastControlsVisible
         slideshowTimer.stop();
     }
 

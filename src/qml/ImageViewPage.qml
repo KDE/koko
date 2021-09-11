@@ -170,16 +170,17 @@ Kirigami.Page {
                 }
             },
             Kirigami.Action {
-                property bool windowed: applicationWindow().visibility == Window.Windowed
-                icon.name: windowed ? "view-fullscreen" : "view-restore"
-                text: windowed ? i18n("Fullscreen") : i18n("Exit Fullscreen")
-                tooltip: windowed ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
+                property bool fullscreen: applicationWindow().visibility === Window.FullScreen
+                icon.name: !fullscreen ? "view-fullscreen" : "view-restore"
+                text: !fullscreen ? i18n("Fullscreen") : i18n("Exit Fullscreen")
+                tooltip: !fullscreen ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
                 shortcut: "F"
                 visible: !Kirigami.Settings.isMobile
                 onTriggered: {
                     if (applicationWindow().visibility == Window.FullScreen) {
-                        applicationWindow().visibility = Window.Windowed;
+                        applicationWindow().restoreWindowState()
                     } else {
+                        applicationWindow().saveWindowState()
                         applicationWindow().visibility = Window.FullScreen;
                     }
                     listView.forceActiveFocus();
@@ -224,12 +225,11 @@ Kirigami.Page {
     }
 
     function close() {
-        applicationWindow().controlsVisible = true;
+        applicationWindow().restoreWindowState()
         if (applicationWindow().footer) {
             applicationWindow().footer.visible = true;
         }
         applicationWindow().globalDrawer.enabled = true;
-        applicationWindow().visibility = Window.Windowed;
         applicationWindow().pageStack.layers.pop();
     }
 
@@ -240,10 +240,10 @@ Kirigami.Page {
     Keys.onPressed: {
         switch(event.key) {
             case Qt.Key_Escape:
-                if (applicationWindow().visibility == Window.FullScreen) {
-                    applicationWindow().visibility = Window.Windowed;
-                    applicationWindow().controlsVisible = true;
+                if (slideshowManager.running) {
                     slideshowManager.stop();
+                } else if (applicationWindow().visibility == Window.FullScreen) {
+                    applicationWindow().restoreWindowState()
                 } else {
                     root.close();
                 }

@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.1
+import QtQuick 2.15
+import QtQuick.Window 2.15
 import QtQuick.Controls 2.0 as Controls
 
 import org.kde.kirigami 2.12 as Kirigami
@@ -26,6 +27,27 @@ Kirigami.ApplicationWindow {
         pageStack.pop(albumView);
         pageStack.push(page);
         page.forceActiveFocus();
+    }
+
+    function saveWindowState() {
+        kokoConfig.controlsVisible = controlsVisible
+        if (root.visibility === Window.Windowed) {
+            kokoConfig.width = root.width
+            kokoConfig.height = root.height
+            kokoConfig.visibility = root.visibility
+        } else if (root.visibility === Window.Maximized) {
+            kokoConfig.visibility = root.visibility
+        }
+    }
+    function restoreWindowState() {
+        controlsVisible = kokoConfig.controlsVisible
+        if (kokoConfig.visibility === Window.Windowed) {
+            // NOTE: width and height must be set before setting visibility
+            // or else the window will not be positioned correctly.
+            root.width = kokoConfig.width
+            root.height = kokoConfig.height
+        }
+        root.visibility = kokoConfig.visibility
     }
 
     property bool imageFromParameter: false
@@ -91,30 +113,6 @@ Kirigami.ApplicationWindow {
                     imagesModel: imageFolderModel.sourceModel
                 });
             }
-        }
-    }
-
-    Component.onCompleted: {
-        pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
-        if (KokoPrivate.OpenFileModel.rowCount() > 1) {
-            pageStack.initialPage = openFileComponent;
-            imageFromParameter = true;
-        } else {
-            pageStack.initialPage = Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent;
-
-        }
-        albumView = pageStack.currentItem;
-        if (KokoPrivate.OpenFileModel.rowCount() <= 1) {
-            albumView.isFolderView = true;
-        }
-        if (KokoPrivate.OpenFileModel.rowCount() === 1) {
-            const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
-            console.log(url)
-            albumView.model.sourceModel.url = url;
-            fetchImageToOpen = true;
-            pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                imagesModel: imageFolderModel.sourceModel
-            });
         }
     }
 
@@ -319,6 +317,47 @@ Kirigami.ApplicationWindow {
     Component {
         id: settingsPage
         SettingsPage {
+        }
+    }
+
+    // NOTE: It's impossible to use QQuickWindow::closing() in C++ connections without using SIGNAL() and SLOT() macros.
+    onClosing: {
+        saveWindowState()
+    }
+    Component.onCompleted: {
+        // Initialize window or config
+        if (kokoConfig.width < root.minimumWidth) {
+            kokoConfig.width = root.width
+        } else if (kokoConfig.width <= Screen.width) {
+            root.width = Math.min(kokoConfig.width, Screen.desktopAvailableWidth)
+        }
+        if (kokoConfig.height < root.minimumHeight) {
+            kokoConfig.height = root.height
+        } else {
+            root.height = Math.min(kokoConfig.height, Screen.desktopAvailableHeight)
+        }
+        root.visibility = kokoConfig.visibility
+        root.controlsVisible = kokoConfig.controlsVisible
+        pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
+        if (KokoPrivate.OpenFileModel.rowCount() > 1) {
+            pageStack.initialPage = openFileComponent;
+            imageFromParameter = true;
+        } else {
+            pageStack.initialPage = Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent;
+
+        }
+        albumView = pageStack.currentItem;
+        if (KokoPrivate.OpenFileModel.rowCount() <= 1) {
+            albumView.isFolderView = true;
+        }
+        if (KokoPrivate.OpenFileModel.rowCount() === 1) {
+            const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
+            console.log(url)
+            albumView.model.sourceModel.url = url;
+            fetchImageToOpen = true;
+            pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                imagesModel: imageFolderModel.sourceModel
+            });
         }
     }
 }
