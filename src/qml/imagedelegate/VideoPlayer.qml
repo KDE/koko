@@ -51,7 +51,9 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            contextDrawer.drawerOpen = false;
+            if (applicationWindow().contextDrawer) {
+                applicationWindow().contextDrawer.drawerOpen = false;
+            }
             doubleClickTimer.restart();
         }
         onDoubleClicked: {

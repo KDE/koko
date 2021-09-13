@@ -64,7 +64,9 @@ ZoomArea {
         onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
     }
     onClicked: if (mouse.button === Qt.LeftButton) {
-        contextDrawer.drawerOpen = false
+        if (applicationWindow().contextDrawer) {
+            applicationWindow().contextDrawer.drawerOpen = false
+        }
         doubleClickTimer.restart()
     }
     onDoubleClicked: if (mouse.button === Qt.LeftButton) {

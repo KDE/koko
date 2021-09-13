@@ -238,7 +238,13 @@ Kirigami.ApplicationWindow {
         filterChanged(value, query)
     }
 
-    contextDrawer: Kirigami.ContextDrawer {}
+    contextDrawer: Kirigami.Settings.isMobile ? contextDrawerComponent.createObject(root) : null
+
+    Component {
+        id: contextDrawerComponent
+
+        Kirigami.ContextDrawer { }
+    }
 
     globalDrawer: sideBar.item
 

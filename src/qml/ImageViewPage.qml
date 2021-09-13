@@ -67,12 +67,6 @@ Kirigami.Page {
         filePath: listView.currentItem ? listView.currentItem.sourceUrl : ""
     }
 
-    Kirigami.ContextDrawer {
-        id: contextDrawer
-        title: i18n("Edit image")
-        handleVisible: true
-    }
-
     actions {
         right: Kirigami.Action {
             id: infoAction
