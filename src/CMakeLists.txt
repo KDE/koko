@@ -114,9 +114,9 @@ install (TARGETS kokoqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
-if (TARGET Qt5::X11Extras)
+if (TARGET Qt5::X11Extras AND TARGET XCB::XCB)
     target_compile_definitions(kokoqmlplugin PRIVATE HAVE_X11)
-    target_link_libraries(kokoqmlplugin Qt5::X11Extras X11::xcb)
+    target_link_libraries(kokoqmlplugin Qt5::X11Extras XCB::XCB)
 endif()
 
 #

@@ -57,9 +57,8 @@ set_package_properties(Qt5X11Extras PROPERTIES
     TYPE OPTIONAL
 )
 
-find_package(X11)
-set_package_properties(X11 PROPERTIES
-    DESCRIPTION "Libraries for working with the X11 window system"
+find_package(XCB COMPONENTS XCB)
+set_package_properties(XCB PROPERTIES
     PURPOSE "Required for getting display color profile on X11"
     TYPE OPTIONAL
 )
