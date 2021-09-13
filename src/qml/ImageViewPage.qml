@@ -105,7 +105,12 @@ Kirigami.Page {
             visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
 
             onTriggered: {
-                const page = applicationWindow().pageStack.layers.push(editorComponent)
+                const page = applicationWindow().pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
+                    imagePath: listView.currentItem.sourceUrl,
+                    // Without this, there's an odd glitch where the page will show for a brief moment
+                    // before the show animation runs.
+                    visible: false
+                })
                 page.imageEdited.connect(function() {
                     thumbnailView.currentItem.refresh();
                 });
@@ -861,15 +866,6 @@ Kirigami.Page {
             function onClosed() {
                 infoAction.checked = false
             }
-        }
-    }
-
-    Component {
-        id: editorComponent
-        EditorView {
-            width: root.width
-            height: root.height
-            imagePath: listView.currentItem.sourceUrl
         }
     }
 

@@ -19,7 +19,7 @@ Kirigami.Page {
 
     property bool cropping: false;
     property bool resizing: false;
-    required property string imagePath
+    property string imagePath
 
     signal imageEdited();
 
