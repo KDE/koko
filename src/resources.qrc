@@ -8,7 +8,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/AlbumView.qml</file>
         <file>qml/BottomNavBar.qml</file>
         <file>qml/EditorView.qml</file>
-        <file>qml/ImageDelegate.qml</file>
         <file>qml/ImageViewPage.qml</file>
         <file>qml/InfoDrawer.qml</file>
         <file>qml/InfoDrawerSidebarBase.qml</file>
@@ -25,8 +24,14 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/Tag.qml</file>
         <file>qml/TagInput.qml</file>
         <file>qml/ThumbnailStrip.qml</file>
-        <file>qml/VideoPlayer.qml</file>
         <file>qml/ZoomArea.qml</file>
+
+        <file>qml/imagedelegate/BaseImageDelegate.qml</file>
+        <file>qml/imagedelegate/AnimatedImageDelegate.qml</file>
+        <file>qml/imagedelegate/RasterImageDelegate.qml</file>
+        <file>qml/imagedelegate/VectorImageDelegate.qml</file>
+        <file>qml/imagedelegate/VideoDelegate.qml</file>
+        <file>qml/imagedelegate/VideoPlayer.qml</file>
     </qresource>
 </RCC>
 

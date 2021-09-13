@@ -54,10 +54,6 @@ Kirigami.Page {
             // still causes crashes
             // timer mostly remedies it, but it still may *rarely* crash
             listView.currentIndex = startIndex;
-
-            if (listView.currentItem.currentImageMimeType.startsWith("video/")) {
-                listView.currentItem.autoplay = true;
-            }
         }
     }
 
@@ -66,18 +62,9 @@ Kirigami.Page {
     topPadding: 0
     bottomPadding: 0
 
-    Kirigami.ImageColors {
-        id: imgColors
-        source: listView.currentItem
-    }
-
-    KQA.MimeDatabase {
-        id: mimeDB
-    }
-
     Koko.Exiv2Extractor {
         id: exiv2Extractor
-        filePath: listView.currentItem ? listView.currentItem.currentImageSource : ""
+        filePath: listView.currentItem ? listView.currentItem.sourceUrl : ""
     }
 
     Kirigami.ContextDrawer {
@@ -91,10 +78,9 @@ Kirigami.Page {
             id: infoAction
             icon.name: "kdocumentinfo"
             text: i18n("Info")
-            tooltip: listView.currentItem ?
-                     (listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("See information about video") :
-                                                                                       i18n("See information about image")) :
-                                                                                       ""
+            tooltip: !listView.currentItem ? "" :
+                      (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("See information about video") :
+                                                                              i18n("See information about image"))
             checkable: true
             checked: false
             onToggled: if (checked) {
@@ -106,26 +92,24 @@ Kirigami.Page {
             text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
             tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
-                exiv2Extractor.toggleFavorite(listView.currentItem.currentImageSource.replace("file://", ""));
+                exiv2Extractor.toggleFavorite(listView.currentItem.sourceUrl.replace("file://", ""));
                 // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.currentImageSource.replace("file://", ""));
-                kokoProcessor.addFile(listView.currentItem.currentImageSource.replace("file://", ""));
+                kokoProcessor.removeFile(listView.currentItem.sourceUrl.replace("file://", ""));
+                kokoProcessor.addFile(listView.currentItem.sourceUrl.replace("file://", ""));
             }
         }
         left: Kirigami.Action {
             id: editingAction
             iconName: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
-            visible: listView.currentItem
-                     && !listView.currentItem.currentImageMimeType.startsWith("video/")
-                     && listView.currentItem.currentImageMimeType !== "image/gif"
-                     && listView.currentItem.currentImageMimeType !== "image/svg+xml"
+            visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
+
             onTriggered: {
                 const page = applicationWindow().pageStack.layers.push(editorComponent)
                 page.imageEdited.connect(function() {
-                    const oldPath = listView.currentItem.currentImageSource;
-                    listView.currentItem.currentImageSource = "";
-                    listView.currentItem.currentImageSource = oldPath;
+                    const oldPath = listView.currentItem.sourceUrl;
+                    listView.currentItem.sourceUrl = "";
+                    listView.currentItem.sourceUrl = oldPath;
                     thumbnailView.currentItem.refresh();
                 });
             }
@@ -134,15 +118,14 @@ Kirigami.Page {
             Kirigami.Action {
                 id: shareAction
                 iconName: "document-share"
-                tooltip: listView.currentItem ?
-                                (listView.currentItem.currentImageMimeType.startsWith("video/") ? i18n("Share Video") : i18n("Share Image")) :
-                                ""
+                tooltip: !listView.currentItem ? "" :
+                         (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("Share Video") : i18n("Share Image"))
                 text: i18nc("verb, share an image/video", "Share")
                 onTriggered: {
                     shareDialog.open();
                     shareDialog.inputData = {
-                        "urls": [ listView.currentItem.currentImageSource.toString() ],
-                        "mimeType": mimeDB.mimeTypeForUrl( listView.currentItem.currentImageSource).name
+                        "urls": [ listView.currentItem.sourceUrl.toString() ],
+                        "mimeType": [listView.currentItem.mimeType]
                     }
                 }
             },
@@ -259,7 +242,7 @@ Kirigami.Page {
 
         inputData: {
             "urls": [],
-            "mimeType": [(listView.currentItem ? listView.currentItem.currentImageMimeType : "")]
+            "mimeType": [(listView.currentItem ? listView.currentItem.mimeType : "")]
         }
         onFinished: {
             if (error==0 && output.url !== "") {
@@ -296,12 +279,6 @@ Kirigami.Page {
             filterRegExp: /image\/|video\//
         }
 
-        Kirigami.Theme.inherit: false
-        Kirigami.Theme.textColor: imgColors.foreground
-        Kirigami.Theme.backgroundColor: imgColors.background
-        Kirigami.Theme.highlightColor: imgColors.highlight
-        Kirigami.Theme.highlightedTextColor: Kirigami.ColorUtils.brightnessForColor(imgColors.highlight) === Kirigami.ColorUtils.Dark ? imgColors.closestToWhite : imgColors.closestToBlack
-
         // we start with this index, so we don't flash initial image
         currentIndex: -1
 
@@ -328,7 +305,7 @@ Kirigami.Page {
 
         onCurrentItemChanged: {
             if (currentItem) {
-                exiv2Extractor.updateFavorite(currentItem.currentImageSource.replace("file://", ""))
+                exiv2Extractor.updateFavorite(currentItem.sourceUrl.toString().replace("file://", ""))
                 const title = currentItem.display
                 if (title.includes("/")) {
                     root.title = title.split("/")[title.split("/").length-1]
@@ -338,19 +315,110 @@ Kirigami.Page {
             }
         }
 
-        delegate: ImageDelegate {
-            // Don't show other images when resizing the view
-            visible: ListView.isCurrentItem
-                || ((listView.moving || listView.dragging)
-                    && (index === listView.currentIndex - 1
-                        || index === listView.currentIndex + 1))
-            readonly property string display: model.display
-            currentImageSource: model.imageurl
-            currentImageMimeType: model.mimeType
-            width: listView.width
-            height: listView.height
+        delegate: Loader {
+            id: loader
 
-            listView: ListView.view
+            readonly property url sourceUrl: model.imageurl
+            readonly property alias type: info.type
+            readonly property alias mimeType: info.mimeType
+            readonly property string display: model.display
+
+            readonly property bool dragging: item && item.dragging
+            readonly property bool interactive: item && item.interactive
+
+            width: ListView.view.width
+            height: ListView.view.height
+
+            // Don't show other images when resizing the view
+            visible: {
+                if (ListView.isCurrentItem) {
+                    return true
+                }
+
+                if (!listView.moving && !listView.dragging) {
+                    return false
+                }
+
+                if (index === listView.currentIndex - 1 || index === listView.currentIndex + 1) {
+                    return true
+                }
+
+                return false
+            }
+
+            // Don't load images that are not going to be visible.
+            active: visible
+            onActiveChanged: {
+                if (active && info.delegateSource && info.initialProperties) {
+                    setSource(info.delegateSource, info.initialProperties)
+                }
+            }
+
+            asynchronous: true
+
+            Koko.FileInfo {
+                id: info
+
+                source: model.imageurl
+
+                // Unfortunately, just binding active to visible above and using
+                // setSource in the onStatusChanged handler leads to occasional
+                // invisible images due to a slight race condition. Therefore,
+                // we need to store them separately and update whenever either
+                // delegateSource changes or the loader's active property changes.
+                property var initialProperties
+                property url delegateSource
+
+                onDelegateSourceChanged: {
+                    if (loader.active && delegateSource && initialProperties) {
+                        loader.setSource(delegateSource, initialProperties)
+                    }
+                }
+
+                onStatusChanged: {
+                    if (status != Koko.FileInfo.Ready) {
+                        return
+                    }
+
+                    let delegate = ""
+                    let properties = {}
+                    properties.source = model.imageurl
+                    properties.isCurrent = Qt.binding(() => loader.ListView.isCurrentItem)
+
+                    switch (type) {
+                    case Koko.FileInfo.VideoType:
+                        properties.autoplay = index == root.startIndex
+                        properties.slideShow = slideshowManager
+                        delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml")
+                        break
+                    case Koko.FileInfo.VectorImageType:
+                        delegate = Qt.resolvedUrl("imagedelegate/VectorImageDelegate.qml")
+                        break
+                    case Koko.FileInfo.AnimatedImageType:
+                        delegate = Qt.resolvedUrl("imagedelegate/AnimatedImageDelegate.qml")
+                        break
+                    case Koko.FileInfo.RasterImageType:
+                        delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml")
+                        break
+                    default:
+                        console.warn("Unknown file type for URL", model.imageurl)
+                        break
+                    }
+
+                    if (delegate) {
+                        // Important: Since the signal handler responsible for
+                        // loading is attached to the onDelegateSourceChanged,
+                        // this needs to make sure initialProperties is changed
+                        // before delegateSource, as otherwise the code will
+                        // ignore the new initialProperties.
+                        initialProperties = properties
+                        delegateSource = delegate
+                    } else {
+                        initialProperties = {}
+                        delegateSource = ""
+                    }
+                }
+            }
         }
 
         QQC2.RoundButton {
@@ -415,7 +483,7 @@ Kirigami.Page {
 
         OverviewControl {
             id: overviewControl
-            target: listView.currentItem
+            target: listView.currentItem ? listView.currentItem.item : null
             visible: !Kirigami.Settings.tabletMode && opacity > 0
             opacity: listView.currentItem !== null
                 && listView.isCurrentItemInteractive
@@ -462,7 +530,7 @@ Kirigami.Page {
             parent: listView
             visible: running
             z: 1
-            running: target && target.loading
+            running: target && (target.status == Loader.Loading || target.item && target.item.loading)
             background: Rectangle {
                 radius: height/2
                 color: busyIndicator.palette.base

@@ -26,7 +26,15 @@ Item {
 
     // convenience function
     function play() {
-        videoPlayer.play();
+        if (videoPlayer.status != MediaPlayer.Loaded) {
+            videoPlayer.autoPlay = true
+        } else {
+            videoPlayer.play();
+        }
+    }
+
+    function stop() {
+        videoPlayer.stop();
     }
 
     implicitWidth: videoPlayer.implicitWidth
