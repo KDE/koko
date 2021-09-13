@@ -53,7 +53,7 @@ Kirigami.ApplicationWindow {
 
     function openPlacesPage() {
         if (placesView === null) {
-            placesView = switchApplicationPage(placesPage);
+            placesView = switchApplicationPage(Qt.resolvedUrl("PlacesPage.qml"));
             placesView.title = i18n("Places");
         } else {
             switchApplicationPage(placesView);
@@ -63,7 +63,7 @@ Kirigami.ApplicationWindow {
 
     function openSettingsView() {
         if (settingsView === null) {
-            settingsView = switchApplicationPage(settingsPage);
+            settingsView = switchApplicationPage(Qt.resolvedUrl("SettingsPage.qml"));
         } else {
             switchApplicationPage(settingsView);
         }
@@ -71,12 +71,12 @@ Kirigami.ApplicationWindow {
     }
 
     function openSettingsPage() {
-        pageStack.layers.push(settingsPage);
+        pageStack.layers.push(Qt.resolvedUrl("SettingsPage.qml"))
         settingsOpened(false); //isPage
     }
 
     function openAboutPage() {
-        pageStack.layers.push(aboutPage);
+        pageStack.layers.push(Qt.resolvedUrl("AboutPage.qml"));
     }
 
     function updateGlobalDrawer() {
@@ -341,25 +341,6 @@ Kirigami.ApplicationWindow {
     
     KQA.Clipboard {
         id: clipboard
-    }
-
-    Component {
-        id: placesPage
-        PlacesPage {
-        }
-    }
-
-    Component {
-        id: aboutPage
-        Kirigami.AboutPage {
-            aboutData: kokoAboutData
-        }
-    }
-
-    Component {
-        id: settingsPage
-        SettingsPage {
-        }
     }
 
     // NOTE: It's impossible to use QQuickWindow::closing() in C++ connections without using SIGNAL() and SLOT() macros.
