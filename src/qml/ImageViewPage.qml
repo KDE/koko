@@ -27,6 +27,7 @@ Kirigami.Page {
 
     Connections {
         target: imagesModel
+        ignoreUnknownSignals: true
         function onFinishedLoading() {
             if (!applicationWindow().fetchImageToOpen || listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen) === -1) {
                 return;
