@@ -120,92 +120,7 @@ Kirigami.ApplicationWindow {
         id: sideBar
         tags: imageTagsModel.sourceModel.tags
 
-        onFilterBy: {
-            if (imageFromParameter) {
-                pageStack.pop(albumView);
-                albumView = pageStack.replace(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
-                imageFromParameter = false;
-            } else {
-                pageStack.pop(albumView)
-            }
-            if (value === "Folders" && query.length > 0) {
-                let str = query
-                if (str.endsWith("/")) {
-                    str = str.slice(0, -1)
-                }
-                albumView.title = str.split("/")[str.split("/").length-1]
-            } else if (value === "Tags") {
-                albumView.title = query
-            } else {
-                albumView.title = i18n(value)
-            }
-            if (previouslySelectedAction) {
-                previouslySelectedAction.checked = false
-            }
-            currentlySelectedAction.checked = true;
-            albumView.isFolderView = false;
-            switch(value) {
-                case "Countries": { 
-                    albumView.model = imageLocationModelCountry;
-                    imageListModel.locationGroup = Koko.Types.Country;
-                    break;
-                }
-                case "States": { 
-                    albumView.model = imageLocationModelState;
-                    imageListModel.locationGroup = Koko.Types.State;
-                    break;
-                }
-                case "Cities": {
-                    albumView.model = imageLocationModelCity;
-                    imageListModel.locationGroup = Koko.Types.City;
-                    break;
-                }
-                case "Years": {
-                    albumView.model = imageTimeModelYear; 
-                    imageListModel.timeGroup = Koko.Types.Year;
-                    break;
-                }
-                case "Months": {
-                    albumView.model = imageTimeModelMonth;
-                    imageListModel.timeGroup = Koko.Types.Month;
-                    break;
-                }
-                case "Weeks": {
-                    albumView.model = imageTimeModelWeek;
-                    imageListModel.timeGroup = Koko.Types.Week;
-                    break;
-                }
-                case "Days": { 
-                    albumView.model = imageTimeModelDay; 
-                    imageListModel.timeGroup = Koko.Types.Day;
-                    break;
-                }
-                case "Favorites": {
-                    albumView.model = imageFavoritesModel;
-                    imageListModel.locationGroup = -1;
-                    imageListModel.timeGroup = -1;
-                    break;
-                }
-                case "Tags": {
-                    albumView.model = imageTagsModel;
-                    imageTagsModel.sourceModel.tag = query
-                    imageListModel.locationGroup = -1;
-                    imageListModel.timeGroup = -1;
-                    break;
-                }
-                case "Trash":
-                case "Remote":
-                case "Folders": {
-                    albumView.model = imageFolderModel; 
-                    albumView.model.sourceModel.url = query
-                    albumView.isFolderView = (value === "Folders");
-                    imageListModel.locationGroup = -1;
-                    imageListModel.timeGroup = -1;
-                    break;
-                }
-            }
-            albumView.gridViewItem.forceActiveFocus();
-        }
+        onFilterBy: root.filterView(value, query)
         contentObject: [
             Kirigami.BasicListItem {
                 text: i18n("Settings")
@@ -219,6 +134,95 @@ Kirigami.ApplicationWindow {
                 icon: "settings-configure"
             }
         ]
+    }
+
+    property string currentFilter: "Folders"
+    function filterView(value, query) {
+        currentFilter = value;
+        if (imageFromParameter) {
+            pageStack.pop(albumView);
+            albumView = pageStack.replace(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
+            imageFromParameter = false;
+        } else {
+            pageStack.pop(albumView)
+        }
+        if (value === "Folders" && query.length > 0) {
+            let str = query
+            if (str.endsWith("/")) {
+                str = str.slice(0, -1)
+            }
+            albumView.title = str.split("/")[str.split("/").length-1]
+        } else if (value === "Tags") {
+            albumView.title = query
+        } else {
+            albumView.title = i18n(value)
+        }
+        if (sideBar.previouslySelectedAction) {
+            sideBar.previouslySelectedAction.checked = false
+        }
+        sideBar.currentlySelectedAction.checked = true;
+        albumView.isFolderView = false;
+        switch(value) {
+            case "Countries": { 
+                albumView.model = imageLocationModelCountry;
+                imageListModel.locationGroup = Koko.Types.Country;
+                break;
+            }
+            case "States": { 
+                albumView.model = imageLocationModelState;
+                imageListModel.locationGroup = Koko.Types.State;
+                break;
+            }
+            case "Cities": {
+                albumView.model = imageLocationModelCity;
+                imageListModel.locationGroup = Koko.Types.City;
+                break;
+            }
+            case "Years": {
+                albumView.model = imageTimeModelYear; 
+                imageListModel.timeGroup = Koko.Types.Year;
+                break;
+            }
+            case "Months": {
+                albumView.model = imageTimeModelMonth;
+                imageListModel.timeGroup = Koko.Types.Month;
+                break;
+            }
+            case "Weeks": {
+                albumView.model = imageTimeModelWeek;
+                imageListModel.timeGroup = Koko.Types.Week;
+                break;
+            }
+            case "Days": { 
+                albumView.model = imageTimeModelDay; 
+                imageListModel.timeGroup = Koko.Types.Day;
+                break;
+            }
+            case "Favorites": {
+                albumView.model = imageFavoritesModel;
+                imageListModel.locationGroup = -1;
+                imageListModel.timeGroup = -1;
+                break;
+            }
+            case "Tags": {
+                albumView.model = imageTagsModel;
+                imageTagsModel.sourceModel.tag = query
+                imageListModel.locationGroup = -1;
+                imageListModel.timeGroup = -1;
+                break;
+            }
+            case "Trash":
+            case "Remote":
+            case "Folders": {
+                albumView.model = imageFolderModel; 
+                albumView.model.sourceModel.url = query
+                albumView.isFolderView = (value === "Folders");
+                imageListModel.locationGroup = -1;
+                imageListModel.timeGroup = -1;
+                break;
+            }
+        }
+        albumView.gridViewItem.forceActiveFocus();
     }
 
     Koko.SortModel {

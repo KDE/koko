@@ -40,35 +40,63 @@ Kirigami.ScrollablePage {
              elide: Text.ElideRight
              text: page.title
          }
-     }
+    }
 
-    // doesn't work without loader
-    header: Loader { sourceComponent: mobileHeader }
+    footer: Loader {
+        active: Kirigami.Settings.isMobile
+        sourceComponent: ColumnLayout {
+            spacing: 0
+            Kirigami.Separator { 
+                visible: folderViewBar.visible
+                Layout.fillWidth: true
+                height: 1
+            }
+            // doesn't work without loader
+            Loader {
+                id: folderViewBar
+                Layout.fillWidth: true
+                visible: Kirigami.Settings.isMobile && page.isFolderView
+                sourceComponent: mobileHeader 
+            }
+            Kirigami.Separator { 
+                Layout.fillWidth: true 
+                height: 1 
+            }
+            BottomToolbar {
+                Layout.fillWidth: true
+                onFilterBy: root.filterView(value, query)
+            }
+        }
+    }
 
     Component {
         id: mobileHeader
-        Kirigami.AbstractApplicationHeader {
+        Controls.ToolBar {
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
+            background: Rectangle { color: Kirigami.Theme.backgroundColor }
             visible: Kirigami.Settings.isMobile && page.isFolderView;
-            height: Kirigami.Settings.isMobile && page.isFolderView ? implicitHeight : 0
             Loader { active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitle }
         }
     }
 
     property alias folderTitle: folderTitleComponent
     property alias normalTitle: normalTitleComponent
-
+    
     Component {
         id: folderTitleComponent
 
         RowLayout {
             id: folderLayout
             visible: page.isFolderView
-            Layout.fillWidth: true
+            width: page.width
+
             Controls.ToolButton {
                 id: backButton
                 Layout.leftMargin: (Kirigami.Settings.isMobile || !root.wideScreen) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
+                visible: !Kirigami.Settings.isMobile
                 onClicked: {
                     page.backUrlsPosition--;
                     model.sourceModel.url = page.backUrls[page.backUrlsPosition];
@@ -78,6 +106,7 @@ Kirigami.ScrollablePage {
             Controls.ToolButton {
                 icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
                 enabled: page.backUrls.length < page.backUrlsPosition
+                visible: !Kirigami.Settings.isMobile
                 onClicked: {
                     page.backUrlsPosition++;
                     model.sourceModel.url = page.backUrls[page.backUrlsPosition];
@@ -87,8 +116,8 @@ Kirigami.ScrollablePage {
             Controls.ScrollView {
                 id: scrollView
                 clip: true
-                Layout.fillWidth: true
                 Layout.fillHeight: true
+                Layout.fillWidth: true
                 Layout.maximumWidth: folderRow.implicitWidth + 1
                 Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
                 Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
@@ -167,6 +196,29 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
+            
+            Item { Layout.fillWidth: true }
+            
+            Controls.ToolButton {
+                Layout.rightMargin: Kirigami.Units.largeSpacing
+                display: root.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
+                icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+                text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
+                visible: Kirigami.Settings.isMobile && bookmarkActionVisible
+                onClicked: {
+                    if (page.model.sourceModel.url == undefined) {
+                        return
+                    }
+                    if (page.bookmarked) {
+                        const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                        if (index !== -1) {
+                            kokoConfig.savedFolders.splice(index, 1);
+                        }
+                    } else {
+                        kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                    }
+                }
+            }
         }
     }
 
@@ -181,12 +233,14 @@ Kirigami.ScrollablePage {
         }
     ]
     
+    property bool bookmarkActionVisible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
+                                                                                       && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
+    
     Kirigami.Action {
         id: bookmarkAction
         iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
         text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-        visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
-                                                                && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
+        visible: !Kirigami.Settings.isMobile && bookmarkActionVisible
         onTriggered: {
             if (page.model.sourceModel.url == undefined) {
                 return
@@ -202,35 +256,8 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Kirigami.Action {
-        id: goUpAction
-        iconName: "go-up"
-        text: i18n("Go Up")
-        visible: page.isFolderView && Kirigami.Settings.isMobile
-        onTriggered: {
-            const tmp = page.backUrls;
-            while (page.backUrlsPosition < page.backUrls.length) {
-                tmp.pop();
-            }
-            tmp.push(page.model.sourceModel.url);
-            page.backUrlsPosition++;
-            page.backUrls = tmp;
-            var str = String(model.sourceModel.url).split("/")
-            str.pop()
-            if (str.join("/") == "file://") {
-                model.sourceModel.url = "file:///"
-            } else {
-                model.sourceModel.url = str.join("/")
-            }
-        }
-    }
-    
-    property bool bookmarkActionVisible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
-                                                                                       && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
-
     actions {
-        main: bookmarkActionVisible ? bookmarkAction : goUpAction
-        left: bookmarkActionVisible ? goUpAction : null
+        main: bookmarkAction
         contextualActions: [
             Kirigami.Action {
                 visible: page.isFolderView && Kirigami.Settings.isMobile
