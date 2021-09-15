@@ -180,48 +180,57 @@ Kirigami.ScrollablePage {
             when: model.hasSelectedImages && Kirigami.Settings.tabletMode
         }
     ]
+    
+    Kirigami.Action {
+        id: bookmarkAction
+        iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+        text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
+        visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
+                                                                && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
+        onTriggered: {
+            if (page.model.sourceModel.url == undefined) {
+                return
+            }
+            if (page.bookmarked) {
+                const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                if (index !== -1) {
+                    kokoConfig.savedFolders.splice(index, 1);
+                }
+            } else {
+                kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
+            }
+        }
+    }
+
+    Kirigami.Action {
+        id: goUpAction
+        iconName: "go-up"
+        text: i18n("Go Up")
+        visible: page.isFolderView && Kirigami.Settings.isMobile
+        onTriggered: {
+            const tmp = page.backUrls;
+            while (page.backUrlsPosition < page.backUrls.length) {
+                tmp.pop();
+            }
+            tmp.push(page.model.sourceModel.url);
+            page.backUrlsPosition++;
+            page.backUrls = tmp;
+            var str = String(model.sourceModel.url).split("/")
+            str.pop()
+            if (str.join("/") == "file://") {
+                model.sourceModel.url = "file:///"
+            } else {
+                model.sourceModel.url = str.join("/")
+            }
+        }
+    }
+    
+    property bool bookmarkActionVisible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
+                                                                                       && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
 
     actions {
-        main: Kirigami.Action {
-            iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
-            text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-            visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
-                                                                   && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
-            onTriggered: {
-                if (page.model.sourceModel.url == undefined) {
-                    return
-                }
-                if (page.bookmarked) {
-                    const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
-                    if (index !== -1) {
-                        kokoConfig.savedFolders.splice(index, 1);
-                    }
-                } else {
-                    kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
-                }
-            }
-        }
-        left: Kirigami.Action {
-            iconName: "go-up"
-            text: i18n("Go Up")
-            visible: page.isFolderView && Kirigami.Settings.isMobile
-            onTriggered: {
-                const tmp = page.backUrls;
-                while (page.backUrlsPosition < page.backUrls.length) {
-                    tmp.pop();
-                }
-                tmp.push(page.model.sourceModel.url);
-                page.backUrlsPosition++;
-                page.backUrls = tmp;
-                var str = String(model.sourceModel.url).split("/")
-                str.pop()
-                if (str.join("/") == "file://") {
-                    model.sourceModel.url = "file:///"
-                } else {
-                    model.sourceModel.url = str.join("/")
-                }
-            }
-        }
+        main: bookmarkActionVisible ? bookmarkAction : goUpAction
+        left: bookmarkActionVisible ? goUpAction : null
         contextualActions: [
             Kirigami.Action {
                 visible: page.isFolderView && Kirigami.Settings.isMobile
