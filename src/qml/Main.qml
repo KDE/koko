@@ -359,5 +359,8 @@ Kirigami.ApplicationWindow {
                 imagesModel: imageFolderModel.sourceModel
             });
         }
+        
+        // move mobile handles to toolbar
+        pageStack.globalToolBar.canContainHandles = true;
     }
 }
