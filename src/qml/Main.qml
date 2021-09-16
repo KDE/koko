@@ -209,14 +209,13 @@ Kirigami.ApplicationWindow {
         contentObject: [
             Kirigami.BasicListItem {
                 text: i18n("Settings")
-                onClicked: root.pageStack.pushDialogLayer("qrc:/qml/SettingsPage.qml", {
-                    width: root.width
-                }, {
-                    title: i18n("Settings"),
-                    width: root.width - (Kirigami.Units.gridUnit * 4),
-                    height: root.height - (Kirigami.Units.gridUnit * 3)
-                })
+                onClicked: root.pageStack.layers.push(settingsPage)
                 icon: "settings-configure"
+            },
+            Kirigami.BasicListItem {
+                text: i18n("About")
+                onClicked: root.pageStack.layers.push(aboutPage)
+                icon: "help-about"
             }
         ]
     }
