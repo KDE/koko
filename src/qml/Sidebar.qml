@@ -12,12 +12,6 @@ import org.kde.koko 0.1 as Koko
 import org.kde.kirigami 2.5 as Kirigami
 
 Kirigami.OverlayDrawer {
-    signal filterBy(string value, string query)
-    property var currentlySelectedAction
-    property var previouslySelectedAction
-    property var tags
-    property alias contentObject: column.children
-
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     handleClosedIcon.source: null
     handleOpenIcon.source: null
@@ -51,6 +45,9 @@ Kirigami.OverlayDrawer {
         }
         QQC2.ScrollView {
             id: scrollView
+            property var currentlySelectedAction
+            property var previouslySelectedAction
+
             Layout.topMargin: -Kirigami.Units.smallSpacing - 1;
             Layout.bottomMargin: -Kirigami.Units.smallSpacing;
             Layout.fillHeight: true
@@ -95,9 +92,17 @@ Kirigami.OverlayDrawer {
                     }
                 }
                 onClicked: {
-                    currentlySelectedAction = item
-                    filterBy(filter, query)
-                    previouslySelectedAction = item
+                    scrollView.currentlySelectedAction = item;
+
+                    if (scrollView.previouslySelectedAction) {
+                        scrollView.previouslySelectedAction.checked = false;
+                    }
+
+                    scrollView.currentlySelectedAction.checked = true;
+
+                    applicationWindow().filterBy(filter, query)
+
+                    scrollView.previouslySelectedAction = item;
                 }
             }
 
@@ -197,10 +202,10 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceHeading {
                     text: i18n("Tags")
-                    visible: tags.length > 0
+                    visible: applicationWindow().tags.length > 0
                 }
                 Repeater {
-                    model: tags
+                    model: applicationWindow().tags
                     PlaceItem {
                         icon: "tag"
                         text: modelData
@@ -234,12 +239,30 @@ Kirigami.OverlayDrawer {
             value: kokoConfig.iconSize
             onMoved: kokoConfig.iconSize = value;
         }
+
+        Kirigami.BasicListItem {
+            text: i18n("Places")
+            onClicked: applicationWindow().openPlacesPage()
+            icon: "compass"
+        }
+
+        Kirigami.BasicListItem {
+            text: i18n("Settings")
+            onClicked: applicationWindow().openSettingsPage()
+            icon: "settings-configure"
+        }
+
+        Kirigami.BasicListItem {
+            text: i18n("About")
+            onClicked: applicationWindow().openAboutPage()
+            icon: "help-about"
+        }
     }
 
 
     Component.onCompleted: {
         picturesAction.checked = true
-        currentlySelectedAction = picturesAction
-        previouslySelectedAction = picturesAction
+        scrollView.currentlySelectedAction = picturesAction
+        scrollView.previouslySelectedAction = picturesAction
     }
 }
