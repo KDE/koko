@@ -60,7 +60,7 @@ Kirigami.ScrollablePage {
     Component {
         id: mobileHeader
         Rectangle {
-            Kirigami.Theme.colorSet: page.wideMode ? Kirigami.Theme.Header : Kirigami.Theme.View
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
             Kirigami.Theme.inherit: false
             color: Kirigami.Theme.backgroundColor
             

@@ -60,40 +60,45 @@ Loader {
 
     Component {
         id: bottomNavBar
-        Kirigami.NavigationTabBar {
-            shadow: false
-            actions: [
-                Kirigami.Action {
-                    iconName: "photo"
-                    text: i18n("Pictures")
-                    checked: root.lastCategoryRequested === BottomNavBar.Category.Pictures
-                    onTriggered: applicationWindow().filterBy("Pictures", "")
-                },
-                Kirigami.Action {
-                    iconName: "folder-videos-symbolic"
-                    text: i18n("Videos")
-                    checked: root.lastCategoryRequested === BottomNavBar.Category.Videos
-                    onTriggered: applicationWindow().filterBy("Videos", "file://" + Koko.DirModelUtils.videos)
-                },
-                Kirigami.Action {
-                    iconName: "emblem-favorite"
-                    text: i18n("Favorites")
-                    checked: root.lastCategoryRequested === BottomNavBar.Category.Favorites
-                    onTriggered: applicationWindow().filterBy("Favorites", "");
-                },
-                Kirigami.Action {
-                    iconName: "compass"
-                    text: i18n("Places")
-                    checked: root.lastCategoryRequested === BottomNavBar.Category.Places
-                    onTriggered: applicationWindow().openPlacesPage();
-                },
-                Kirigami.Action {
-                    iconName: "configure"
-                    text: i18n("Settings")
-                    checked: root.lastCategoryRequested === BottomNavBar.Category.Settings
-                    onTriggered: applicationWindow().openSettingsView();
-                }
-            ]
+        ColumnLayout {
+            spacing: 0
+            Kirigami.Separator { Layout.fillWidth: true }
+            Kirigami.NavigationTabBar {
+                Layout.fillWidth: true
+                shadow: false
+                actions: [
+                    Kirigami.Action {
+                        iconName: "photo"
+                        text: i18n("Pictures")
+                        checked: root.lastCategoryRequested === BottomNavBar.Category.Pictures
+                        onTriggered: applicationWindow().filterBy("Pictures", "")
+                    },
+                    Kirigami.Action {
+                        iconName: "folder-videos-symbolic"
+                        text: i18n("Videos")
+                        checked: root.lastCategoryRequested === BottomNavBar.Category.Videos
+                        onTriggered: applicationWindow().filterBy("Videos", "file://" + Koko.DirModelUtils.videos)
+                    },
+                    Kirigami.Action {
+                        iconName: "emblem-favorite"
+                        text: i18n("Favorites")
+                        checked: root.lastCategoryRequested === BottomNavBar.Category.Favorites
+                        onTriggered: applicationWindow().filterBy("Favorites", "");
+                    },
+                    Kirigami.Action {
+                        iconName: "compass"
+                        text: i18n("Places")
+                        checked: root.lastCategoryRequested === BottomNavBar.Category.Places
+                        onTriggered: applicationWindow().openPlacesPage();
+                    },
+                    Kirigami.Action {
+                        iconName: "configure"
+                        text: i18n("Settings")
+                        checked: root.lastCategoryRequested === BottomNavBar.Category.Settings
+                        onTriggered: applicationWindow().openSettingsView();
+                    }
+                ]
+            }
         }
     }
 }
