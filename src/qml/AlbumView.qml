@@ -42,15 +42,53 @@ Kirigami.ScrollablePage {
          }
      }
 
+     
+    property bool wideMode: Controls.ApplicationWindow.window.width > applicationWindow().wideScreenWidth
+     
     // doesn't work without loader
-    header: Loader { sourceComponent: mobileHeader }
-
+    header: Loader {
+        height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
+        active: page.wideMode
+        sourceComponent: mobileHeader
+    }
+    footer: Loader {
+        height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
+        active: !page.wideMode
+        sourceComponent: mobileHeader 
+    }
+    
     Component {
         id: mobileHeader
-        Kirigami.AbstractApplicationHeader {
+        Rectangle {
+            Kirigami.Theme.colorSet: page.wideMode ? Kirigami.Theme.Header : Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
+            color: Kirigami.Theme.backgroundColor
+            
             visible: Kirigami.Settings.isMobile && page.isFolderView;
             height: Kirigami.Settings.isMobile && page.isFolderView ? implicitHeight : 0
-            Loader { active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitle }
+            
+            implicitHeight: column.implicitHeight
+            
+            ColumnLayout {
+                id: column
+                spacing: 0
+                anchors.left: parent.left
+                anchors.right: parent.right
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                    visible: !page.wideMode
+                }
+                Loader { 
+                    active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitle 
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+                    Layout.margins: page.wideMode ? 0 : Kirigami.Units.smallSpacing
+                }
+                Kirigami.Separator {
+                    Layout.fillWidth: true
+                    visible: page.wideMode
+                }
+            }
         }
     }
 
@@ -63,10 +101,12 @@ Kirigami.ScrollablePage {
         RowLayout {
             id: folderLayout
             visible: page.isFolderView
-            Layout.fillWidth: true
             Controls.ToolButton {
                 id: backButton
-                Layout.leftMargin: (Kirigami.Settings.isMobile || !root.wideScreen && applicationWindow().globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
+                visible: page.wideMode
+                Layout.maximumWidth: height
+                Layout.leftMargin: (Kirigami.Settings.isMobile || !page.wideMode && applicationWindow().globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
+                
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
                 onClicked: {
@@ -76,6 +116,9 @@ Kirigami.ScrollablePage {
             }
 
             Controls.ToolButton {
+                implicitHeight: Kirigami.Units.gridUnit * 2
+                implicitWidth: Kirigami.Units.gridUnit * 2
+                visible: page.wideMode
                 icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
                 enabled: page.backUrls.length < page.backUrlsPosition
                 onClicked: {
@@ -89,14 +132,17 @@ Kirigami.ScrollablePage {
                 clip: true
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.maximumWidth: folderRow.implicitWidth + 1
+                Layout.maximumWidth: Kirigami.Settings.isMobile ? -1 : folderRow.implicitWidth + 1
                 Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
                 Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
+                
                 RowLayout {
                     id: folderRow
                     spacing: 0
 
                     Controls.ToolButton {
+                        implicitHeight: Kirigami.Units.gridUnit * 2
+                        implicitWidth: Kirigami.Units.gridUnit * 2
                         property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.inHome(page.model.sourceModel.url)
                         icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
                         DragHandler {
@@ -137,8 +183,8 @@ Kirigami.ScrollablePage {
                                 xAxis.enabled: false
                             }
                             Controls.ToolButton {
+                                height: Kirigami.Units.gridUnit * 2
                                 anchors.verticalCenter: parent.verticalCenter
-                                height: backButton.height
                                 text: modelData
                                 onClicked: {
                                     const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index + 1);
@@ -164,6 +210,28 @@ Kirigami.ScrollablePage {
                                 height: visible ? Kirigami.Units.iconSizes.small : 0
                             }
                         }
+                    }
+                }
+            }
+            
+            // bookmark button for footer
+            Controls.ToolButton {
+                implicitHeight: Kirigami.Units.gridUnit * 2
+                display: page.wideMode ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
+                icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+                text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
+                visible: Kirigami.Settings.isMobile && bookmarkActionVisible
+                onClicked: {
+                    if (page.model.sourceModel.url == undefined) {
+                        return
+                    }
+                    if (page.bookmarked) {
+                        const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                        if (index !== -1) {
+                            kokoConfig.savedFolders.splice(index, 1);
+                        }
+                    } else {
+                        kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
                     }
                 }
             }
@@ -229,8 +297,8 @@ Kirigami.ScrollablePage {
                                                                                        && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
 
     actions {
-        main: bookmarkActionVisible ? bookmarkAction : goUpAction
-        left: bookmarkActionVisible ? goUpAction : null
+        main: !Kirigami.Settings.isMobile ? bookmarkAction : null
+        left: !Kirigami.Settings.isMobile ? goUpAction : null
         contextualActions: [
             Kirigami.Action {
                 visible: page.isFolderView && Kirigami.Settings.isMobile

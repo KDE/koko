@@ -61,6 +61,7 @@ Loader {
     Component {
         id: bottomNavBar
         Kirigami.NavigationTabBar {
+            shadow: false
             actions: [
                 Kirigami.Action {
                     iconName: "photo"
