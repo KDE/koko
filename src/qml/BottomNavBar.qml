@@ -1,0 +1,98 @@
+/*
+ * SPDX-FileCopyrightText: Copyright 2021 Devin Lin <espidev@gmail.com>
+ * SPDX-FileCopyrightText: Copyright 2021 Mikel Johnson <mikel5764@gmail.com>
+ *
+ * SPDX-License-Identifier: LGPL-2.0-or-later
+ */
+
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Layouts 1.15
+import org.kde.kirigami 2.19 as Kirigami
+import org.kde.koko 0.1 as Koko
+
+Loader {
+    id: root
+
+    enum Category {
+        Pictures,
+        Videos,
+        Favorites,
+        Places,
+        Settings
+    }
+
+    property int lastCategoryRequested: BottomNavBar.Category.Pictures // tracks last page selected
+
+    height: active ? implicitHeight : 0
+    active: Kirigami.Settings.isMobile && QQC2.ApplicationWindow.window.width <= applicationWindow().wideScreenWidth && applicationWindow().pageStack.layers.depth < 2;
+    sourceComponent: bottomNavBar
+
+    Connections {
+        target: applicationWindow()
+        function onFilterChanged(value, query) {
+            switch (value) {
+                case "Pictures": {
+                    root.lastCategoryRequested = BottomNavBar.Category.Pictures
+                    break;
+                }
+                case "Videos": {
+                    root.lastCategoryRequested = BottomNavBar.Category.Videos
+                    break;
+                }
+                case "Favorites": {
+                    root.lastCategoryRequested = BottomNavBar.Category.Favorites
+                    break;
+                }
+                default: {
+                    root.lastCategoryRequested = BottomNavBar.Category.Places
+                }
+            }
+        }
+        function onSettingsOpened(isPage) {
+            if (isPage)
+                root.lastCategoryRequested = BottomNavBar.Category.Settings
+        }
+        function onPlacesOpened() {
+            root.lastCategoryRequested = BottomNavBar.Category.Places
+        }
+    }
+
+    Component {
+        id: bottomNavBar
+        Kirigami.NavigationTabBar {
+            actions: [
+                Kirigami.Action {
+                    iconName: "photo"
+                    text: i18n("Pictures")
+                    checked: root.lastCategoryRequested === BottomNavBar.Category.Pictures
+                    onTriggered: applicationWindow().filterBy("Pictures", "")
+                },
+                Kirigami.Action {
+                    iconName: "folder-videos-symbolic"
+                    text: i18n("Videos")
+                    checked: root.lastCategoryRequested === BottomNavBar.Category.Videos
+                    onTriggered: applicationWindow().filterBy("Videos", "file://" + Koko.DirModelUtils.videos)
+                },
+                Kirigami.Action {
+                    iconName: "emblem-favorite"
+                    text: i18n("Favorites")
+                    checked: root.lastCategoryRequested === BottomNavBar.Category.Favorites
+                    onTriggered: applicationWindow().filterBy("Favorites", "");
+                },
+                Kirigami.Action {
+                    iconName: "compass"
+                    text: i18n("Places")
+                    checked: root.lastCategoryRequested === BottomNavBar.Category.Places
+                    onTriggered: applicationWindow().openPlacesPage();
+                },
+                Kirigami.Action {
+                    iconName: "configure"
+                    text: i18n("Settings")
+                    checked: root.lastCategoryRequested === BottomNavBar.Category.Settings
+                    onTriggered: applicationWindow().openSettingsView();
+                }
+            ]
+        }
+    }
+}

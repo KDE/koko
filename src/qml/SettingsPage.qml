@@ -20,6 +20,19 @@ KCM.SimpleKCM {
             checked: kokoConfig.imageViewPreview
             onCheckedChanged: kokoConfig.imageViewPreview = checked
         }
+        QQC2.Slider {
+            Kirigami.FormData.label: i18n("Thumbnails size:")
+            QQC2.ToolTip.text: i18n("%1 px", kokoConfig.iconSize)
+            QQC2.ToolTip.visible: hovered
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            Layout.fillWidth: true
+            Layout.leftMargin: Kirigami.Units.smallSpacing
+            Layout.rightMargin: Kirigami.Units.smallSpacing
+            from: Kirigami.Units.gridUnit * 4
+            to: Kirigami.Units.gridUnit * 8
+            value: kokoConfig.iconSize
+            onMoved: kokoConfig.iconSize = value;
+        }
         Item {
             Kirigami.FormData.isSection: true
         }
@@ -94,6 +107,14 @@ KCM.SimpleKCM {
                 contentItem.text = displayText
             }
             onValueModified: kokoConfig.nextImageInterval = value
+        }
+        Item {
+            Kirigami.FormData.isSection: true
+        }
+        QQC2.Button {
+            text: i18n("Open About Page")
+            icon.name: "documentinfo"
+            onClicked: applicationWindow().openAboutPage()
         }
     }
 }

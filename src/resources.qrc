@@ -6,6 +6,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
     <qresource prefix="/">
         <file>qml/AlbumDelegate.qml</file>
         <file>qml/AlbumView.qml</file>
+        <file>qml/BottomNavBar.qml</file>
         <file>qml/EditorView.qml</file>
         <file>qml/ImageDelegate.qml</file>
         <file>qml/ImageViewPage.qml</file>
@@ -14,6 +15,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/InfoSidebar.qml</file>
         <file>qml/Main.qml</file>
         <file>qml/OverviewControl.qml</file>
+        <file>qml/PlacesPage.qml</file>
         <file>qml/SelectionButton.qml</file>
         <file>qml/SelectionDelegateHighlight.qml</file>
         <file>qml/SettingsPage.qml</file>

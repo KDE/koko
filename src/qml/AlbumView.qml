@@ -66,7 +66,7 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             Controls.ToolButton {
                 id: backButton
-                Layout.leftMargin: (Kirigami.Settings.isMobile || !root.wideScreen) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
+                Layout.leftMargin: (Kirigami.Settings.isMobile || !root.wideScreen && applicationWindow().globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
                 onClicked: {

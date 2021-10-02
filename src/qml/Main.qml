@@ -6,9 +6,9 @@
 
 import QtQuick 2.15
 import QtQuick.Window 2.15
-import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls 2.15 as QQC2
 
-import org.kde.kirigami 2.12 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kquickcontrolsaddons 2.0 as KQA
 import org.kde.koko 0.1 as Koko
 import org.kde.koko.private 0.1 as KokoPrivate
@@ -20,13 +20,14 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 20
 
     function switchApplicationPage(page) {
-        if (!page || pageStack.currentItem == page) {
-            return;
+        if (!page || pageStack.currentItem === page) {
+            return page;
         }
 
-        pageStack.pop(albumView);
+        pageStack.clear();
         pageStack.push(page);
-        page.forceActiveFocus();
+
+        return pageStack.currentItem;
     }
 
     function saveWindowState() {
@@ -50,18 +51,58 @@ Kirigami.ApplicationWindow {
         root.visibility = kokoConfig.visibility
     }
 
-    property bool imageFromParameter: false
+    function openPlacesPage() {
+        if (placesView === null) {
+            placesView = switchApplicationPage(placesPage);
+            placesView.title = i18n("Places");
+        } else {
+            switchApplicationPage(placesView);
+        }
+        placesOpened();
+    }
+
+    function openSettingsView() {
+        if (settingsView === null) {
+            settingsView = switchApplicationPage(settingsPage);
+        } else {
+            switchApplicationPage(settingsView);
+        }
+        settingsOpened(true); //isPage
+    }
+
+    function openSettingsPage() {
+        pageStack.layers.push(settingsPage);
+        settingsOpened(false); //isPage
+    }
+
+    function openAboutPage() {
+        pageStack.layers.push(aboutPage);
+    }
+
+    function updateGlobalDrawer() {
+        if (!fetchImageToOpen && globalDrawer) {
+            globalDrawer.enabled = pageStack.layers.depth < 2;
+            globalDrawer.drawerOpen = !globalDrawer.modal && pageStack.layers.depth < 2;
+        }
+    }
+
+    signal filterChanged(string value, string query)
+    signal settingsOpened(bool isPage)
+    signal placesOpened()
+
+    property var tags: imageTagsModel.sourceModel.tags
+    property var settingsView: null
     property var albumView: null
+    property var placesView: null
+
+    // see https://invent.kde.org/frameworks/kirigami/-/merge_requests/332/diffs
+    property real wideScreenWidth: Kirigami.Units.gridUnit * 40
+
     // fetch guard, so we don't needlessly check for image to open when it's not needed
     // this is a temporary binding that's supposed to be broken
     property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
 
-    pageStack.layers.onDepthChanged: {
-        if (!fetchImageToOpen) {
-            sideBar.enabled = pageStack.layers.depth < 2;
-            sideBar.drawerOpen = !Kirigami.Settings.isMobile && !sideBar.modal && pageStack.layers.depth < 2;
-        }
-    }
+    pageStack.layers.onDepthChanged: root.updateGlobalDrawer()
 
     Component {
         id: openFileComponent
@@ -90,13 +131,10 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    contextDrawer: Kirigami.ContextDrawer {}
-
     Connections {
         target: KokoPrivate.OpenFileModel
         function onUpdatedImages() { // this gets called if we use "open with", while app is already open
             if (KokoPrivate.OpenFileModel.rowCount() > 1) {
-                imageFromParameter = true;
                 pageStack.clear();
                 pageStack.layers.clear();
                 pageStack.push(openFileComponent);
@@ -116,109 +154,102 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    globalDrawer: Sidebar {
-        id: sideBar
-        tags: imageTagsModel.sourceModel.tags
-
-        onFilterBy: {
-            if (imageFromParameter) {
-                pageStack.pop(albumView);
-                albumView = pageStack.replace(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
-                imageFromParameter = false;
-            } else {
-                pageStack.pop(albumView)
-            }
-            if (value === "Folders" && query.length > 0) {
-                let str = query
-                if (str.endsWith("/")) {
-                    str = str.slice(0, -1)
-                }
-                albumView.title = str.split("/")[str.split("/").length-1]
-            } else if (value === "Tags") {
-                albumView.title = query
-            } else {
-                albumView.title = i18n(value)
-            }
-            if (previouslySelectedAction) {
-                previouslySelectedAction.checked = false
-            }
-            currentlySelectedAction.checked = true;
-            albumView.isFolderView = false;
-            switch(value) {
-                case "Countries": { 
-                    albumView.model = imageLocationModelCountry;
-                    imageListModel.locationGroup = Koko.Types.Country;
-                    break;
-                }
-                case "States": { 
-                    albumView.model = imageLocationModelState;
-                    imageListModel.locationGroup = Koko.Types.State;
-                    break;
-                }
-                case "Cities": {
-                    albumView.model = imageLocationModelCity;
-                    imageListModel.locationGroup = Koko.Types.City;
-                    break;
-                }
-                case "Years": {
-                    albumView.model = imageTimeModelYear; 
-                    imageListModel.timeGroup = Koko.Types.Year;
-                    break;
-                }
-                case "Months": {
-                    albumView.model = imageTimeModelMonth;
-                    imageListModel.timeGroup = Koko.Types.Month;
-                    break;
-                }
-                case "Weeks": {
-                    albumView.model = imageTimeModelWeek;
-                    imageListModel.timeGroup = Koko.Types.Week;
-                    break;
-                }
-                case "Days": { 
-                    albumView.model = imageTimeModelDay; 
-                    imageListModel.timeGroup = Koko.Types.Day;
-                    break;
-                }
-                case "Favorites": {
-                    albumView.model = imageFavoritesModel;
-                    imageListModel.locationGroup = -1;
-                    imageListModel.timeGroup = -1;
-                    break;
-                }
-                case "Tags": {
-                    albumView.model = imageTagsModel;
-                    imageTagsModel.sourceModel.tag = query
-                    imageListModel.locationGroup = -1;
-                    imageListModel.timeGroup = -1;
-                    break;
-                }
-                case "Trash":
-                case "Remote":
-                case "Folders": {
-                    albumView.model = imageFolderModel; 
-                    albumView.model.sourceModel.url = query
-                    albumView.isFolderView = (value === "Folders");
-                    imageListModel.locationGroup = -1;
-                    imageListModel.timeGroup = -1;
-                    break;
-                }
-            }
-            albumView.gridViewItem.forceActiveFocus();
+    function filterBy(value, query) {
+        if (albumView === null || albumView !== pageStack.currentItem) {
+            albumView = switchApplicationPage(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
         }
-        contentObject: [
-            Kirigami.BasicListItem {
-                text: i18n("Settings")
-                onClicked: root.pageStack.layers.push(settingsPage)
-                icon: "settings-configure"
-            },
-            Kirigami.BasicListItem {
-                text: i18n("About")
-                onClicked: root.pageStack.layers.push(aboutPage)
-                icon: "help-about"
+
+        if (value === "Folders" && query.length > 0) {
+            let str = query;
+            if (str.endsWith("/")) {
+                str = str.slice(0, -1);
             }
-        ]
+            albumView.title = str.split("/")[str.split("/").length-1]
+        } else if (value === "Tags") {
+            albumView.title = query;
+        } else {
+            albumView.title = i18n(value);
+        }
+        albumView.isFolderView = false;
+
+        switch(value) {
+            case "Countries": { 
+                albumView.model = imageLocationModelCountry;
+                imageListModel.locationGroup = Koko.Types.Country;
+                break;
+            }
+            case "States": { 
+                albumView.model = imageLocationModelState;
+                imageListModel.locationGroup = Koko.Types.State;
+                break;
+            }
+            case "Cities": {
+                albumView.model = imageLocationModelCity;
+                imageListModel.locationGroup = Koko.Types.City;
+                break;
+            }
+            case "Years": {
+                albumView.model = imageTimeModelYear; 
+                imageListModel.timeGroup = Koko.Types.Year;
+                break;
+            }
+            case "Months": {
+                albumView.model = imageTimeModelMonth;
+                imageListModel.timeGroup = Koko.Types.Month;
+                break;
+            }
+            case "Weeks": {
+                albumView.model = imageTimeModelWeek;
+                imageListModel.timeGroup = Koko.Types.Week;
+                break;
+            }
+            case "Days": { 
+                albumView.model = imageTimeModelDay; 
+                imageListModel.timeGroup = Koko.Types.Day;
+                break;
+            }
+            case "Favorites": {
+                albumView.model = imageFavoritesModel;
+                imageListModel.locationGroup = -1;
+                imageListModel.timeGroup = -1;
+                break;
+            }
+            case "Tags": {
+                albumView.model = imageTagsModel;
+                imageTagsModel.sourceModel.tag = query;
+                imageListModel.locationGroup = -1;
+                imageListModel.timeGroup = -1;
+                break;
+            }
+            case "Trash":
+            case "Remote":
+            case "Pictures":
+            case "Videos":
+            case "Folders": {
+                albumView.model = imageFolderModel; 
+                albumView.model.sourceModel.url = query;
+                albumView.isFolderView = (value === "Folders" || value === "Pictures" || value === "Videos");
+                imageListModel.locationGroup = -1;
+                imageListModel.timeGroup = -1;
+                break;
+            }
+        }
+        albumView.gridViewItem.forceActiveFocus();
+        filterChanged(value, query)
     }
+
+    contextDrawer: Kirigami.ContextDrawer {}
+
+    globalDrawer: sideBar.item
+
+    Loader {
+        id: sideBar
+        active: !Kirigami.Settings.isMobile || QQC2.ApplicationWindow.window.width > wideScreenWidth;
+        source: "Sidebar.qml"
+        onLoaded: root.updateGlobalDrawer()
+    }
+
+    footer: BottomNavBar { }
 
     Koko.SortModel {
         id: imageFolderModel
@@ -307,6 +338,12 @@ Kirigami.ApplicationWindow {
     }
 
     Component {
+        id: placesPage
+        PlacesPage {
+        }
+    }
+
+    Component {
         id: aboutPage
         Kirigami.AboutPage {
             aboutData: kokoAboutData
@@ -340,7 +377,6 @@ Kirigami.ApplicationWindow {
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
         if (KokoPrivate.OpenFileModel.rowCount() > 1) {
             pageStack.initialPage = openFileComponent;
-            imageFromParameter = true;
         } else {
             pageStack.initialPage = Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent;
 
