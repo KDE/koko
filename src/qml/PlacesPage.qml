@@ -15,6 +15,15 @@ Kirigami.ScrollablePage {
     leftPadding: 0
     rightPadding: 0
 
+    actions.contextualActions: [
+        Kirigami.Action {
+            visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
+            iconName: "configure"
+            text: i18n("Configure…")
+            onTriggered: applicationWindow().openSettingsPage();
+        }
+    ]
+    
     component PlaceHeading : Kirigami.Heading {
         topPadding: Kirigami.Units.largeSpacing
         leftPadding: Kirigami.Units.gridUnit

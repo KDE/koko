@@ -18,8 +18,7 @@ Loader {
         Pictures,
         Videos,
         Favorites,
-        Places,
-        Settings
+        Places
     }
 
     property int lastCategoryRequested: BottomNavBar.Category.Pictures // tracks last page selected
@@ -48,10 +47,6 @@ Loader {
                     root.lastCategoryRequested = BottomNavBar.Category.Places
                 }
             }
-        }
-        function onSettingsOpened(isPage) {
-            if (isPage)
-                root.lastCategoryRequested = BottomNavBar.Category.Settings
         }
         function onPlacesOpened() {
             root.lastCategoryRequested = BottomNavBar.Category.Places
@@ -90,12 +85,6 @@ Loader {
                         text: i18n("Places")
                         checked: root.lastCategoryRequested === BottomNavBar.Category.Places
                         onTriggered: applicationWindow().openPlacesPage();
-                    },
-                    Kirigami.Action {
-                        iconName: "configure"
-                        text: i18n("Settings")
-                        checked: root.lastCategoryRequested === BottomNavBar.Category.Settings
-                        onTriggered: applicationWindow().openSettingsView();
                     }
                 ]
             }

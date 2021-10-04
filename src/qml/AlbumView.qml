@@ -360,6 +360,12 @@ Kirigami.ScrollablePage {
                 tooltip: i18n("Restore selected items from trash")
                 visible: model.hasSelectedImages && page.isTrashView
                 onTriggered: model.restoreSelection()
+            },
+            Kirigami.Action {
+                visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
+                iconName: "configure"
+                text: i18n("Configure…")
+                onTriggered: applicationWindow().openSettingsPage();
             }
         ]
     }
