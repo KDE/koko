@@ -83,7 +83,8 @@ public:
         auto mimeTypeName = mimeType.name();
         entry->mimeType = mimeTypeName;
 
-        if (mimeTypeName.startsWith(QStringLiteral("video/"))) {
+        if (mimeTypeName.startsWith(QStringLiteral("video/")) || //
+            mimeTypeName == QStringLiteral("application/x-matroska")) {
             entry->type = FileInfo::VideoType;
         } else if (mimeTypeName.startsWith(QStringLiteral("image/svg"))) {
             entry->type = FileInfo::VectorImageType;
