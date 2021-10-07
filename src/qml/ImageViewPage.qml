@@ -92,10 +92,10 @@ Kirigami.Page {
             text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
             tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
-                exiv2Extractor.toggleFavorite(listView.currentItem.sourceUrl.replace("file://", ""));
+                exiv2Extractor.toggleFavorite(listView.currentItem.sourceUrl.toString().replace("file://", ""));
                 // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.sourceUrl.replace("file://", ""));
-                kokoProcessor.addFile(listView.currentItem.sourceUrl.replace("file://", ""));
+                kokoProcessor.removeFile(listView.currentItem.sourceUrl.toString().replace("file://", ""));
+                kokoProcessor.addFile(listView.currentItem.sourceUrl.toString().replace("file://", ""));
             }
         }
         left: Kirigami.Action {
@@ -107,9 +107,6 @@ Kirigami.Page {
             onTriggered: {
                 const page = applicationWindow().pageStack.layers.push(editorComponent)
                 page.imageEdited.connect(function() {
-                    const oldPath = listView.currentItem.sourceUrl;
-                    listView.currentItem.sourceUrl = "";
-                    listView.currentItem.sourceUrl = oldPath;
                     thumbnailView.currentItem.refresh();
                 });
             }
@@ -890,7 +887,7 @@ Kirigami.Page {
         EditorView {
             width: root.width
             height: root.height
-            imagePath: listView.currentItem.currentImageSource
+            imagePath: listView.currentItem.sourceUrl
         }
     }
 
