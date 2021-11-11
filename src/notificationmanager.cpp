@@ -22,6 +22,7 @@ void NotificationManager::showNotification(bool valid, const QVariant &url)
         m_sharingSuccess->setText(i18n("Shared url for image is <a href='%1'>%1</a>", url.toString()));
         m_sharingSuccess->sendEvent();
     } else {
+        m_sharingSuccess->setText(url.toString());
         m_sharingFailed->sendEvent();
     }
 }

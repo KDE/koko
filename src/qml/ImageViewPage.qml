@@ -112,17 +112,19 @@ Kirigami.Page {
             }
         }
         contextualActions: [
-            Kirigami.Action {
+            ShareAction {
                 id: shareAction
-                iconName: "document-share"
                 tooltip: !listView.currentItem ? "" :
                          (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("Share Video") : i18n("Share Image"))
                 text: i18nc("verb, share an image/video", "Share")
-                onTriggered: {
-                    shareDialog.open();
-                    shareDialog.inputData = {
-                        "urls": [ listView.currentItem.sourceUrl.toString() ],
-                        "mimeType": [listView.currentItem.mimeType]
+
+                property Connections connection: Connections {
+                    target: listView
+                    function onCurrentItemChanged() {
+                        shareAction.inputData = {
+                            urls: [listView.currentItem.sourceUrl.toString()],
+                            mimeType: [listView.currentItem.mimeType]
+                        };
                     }
                 }
             },
@@ -231,26 +233,6 @@ Kirigami.Page {
                 break;
             default:
                 break;
-        }
-    }
-
-    ShareDialog {
-        id: shareDialog
-
-        inputData: {
-            "urls": [],
-            "mimeType": [(listView.currentItem ? listView.currentItem.mimeType : "")]
-        }
-        onFinished: {
-            if (error==0 && output.url !== "") {
-                console.assert(output.url !== undefined);
-                var resultUrl = output.url;
-                console.log("Received", resultUrl)
-                notificationManager.showNotification(true, resultUrl);
-                clipboard.content = resultUrl;
-            } else {
-                notificationManager.showNotification(false);
-            }
         }
     }
 

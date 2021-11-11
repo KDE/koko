@@ -326,6 +326,7 @@ Kirigami.ScrollablePage {
                 tooltip: i18n("Selects all the media in the current view")
                 visible: model.containImages
                 onTriggered: model.selectAll()
+
             },
             Kirigami.Action {
                 iconName: "edit-select-none"
@@ -334,18 +335,20 @@ Kirigami.ScrollablePage {
                 onTriggered: model.clearSelections()
                 visible: model.hasSelectedImages
             },
-            Kirigami.Action {
-                iconName: "emblem-shared-symbolic"
-                text: i18n("Share")
-                tooltip: i18n("Share the selected media")
+            ShareAction {
+                id: shareAction
                 visible: model.hasSelectedImages
-                onTriggered: {
-                    shareMenu.open();
-                    shareMenu.inputData = {
-                        "urls": model.selectedImages(),
-                        "mimeType": model.selectedImagesMimeTypes()
+
+                property Connections connection: Connections {
+                    target: model
+                    function onSelectedImagesChanged() {
+                        shareAction.inputData = {
+                            urls: model.selectedImages(),
+                            mimeType: model.selectedImagesMimeTypes()
+                        };
                     }
                 }
+
             },
             Kirigami.Action {
                 iconName: "group-delete"
@@ -388,25 +391,6 @@ Kirigami.ScrollablePage {
     GridView {
         id: gridView
 
-        ShareDialog {
-            id: shareMenu
-
-            inputData: {
-                "urls": [],
-                "mimeType": ["image/", "video/"]
-            }
-            onFinished: {
-                if (error==0 && output.url !== "") {
-                    console.assert(output.url !== undefined);
-                    var resultUrl = output.url;
-                    console.log("Received", resultUrl)
-                    notificationManager.showNotification( true, resultUrl);
-                    clipboard.content = resultUrl;
-                } else {
-                    notificationManager.showNotification( false);
-                }
-            }
-        }
         //FIXME: right now if those two objects are out of this, the whole page breaks
         Koko.SortModel {
             id: sortedListModel
