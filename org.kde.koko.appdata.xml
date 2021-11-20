@@ -7,8 +7,8 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <id>org.kde.koko.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1</project_license>
-  <name>Koko</name>
-  <name xml:lang="ca">Gallery</name>
+  <name>Gallery</name>
+  <name xml:lang="ca">Koko</name>
   <name xml:lang="ca-valencia">Koko</name>
   <name xml:lang="cs">Koko</name>
   <name xml:lang="da">Koko</name>
