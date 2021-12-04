@@ -7,6 +7,7 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <KWindowConfig>
+#include <KWindowSystem>
 #include <QQuickWindow>
 #endif
 
@@ -18,5 +19,17 @@ void Controller::saveWindowGeometry(QQuickWindow *window)
     KWindowConfig::saveWindowPosition(window, windowGroup);
     KWindowConfig::saveWindowSize(window, windowGroup);
     dataResource.sync();
+#endif
+}
+
+void Controller::raiseWindow(QQuickWindow *window)
+{
+#ifndef Q_OS_ANDROID
+    if (KWindowSystem::isPlatformWayland()) {
+        KWindowSystem::setCurrentXdgActivationToken(qEnvironmentVariable("XDG_ACTIVATION_TOKEN"));
+        KWindowSystem::activateWindow(window->winId());
+    } else {
+        window->raise();
+    }
 #endif
 }
