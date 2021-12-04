@@ -19,6 +19,23 @@ Kirigami.ApplicationWindow {
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
 
+    onClosing: KokoPrivate.Controller.saveWindowGeometry(root)
+
+    // This timer allows to batch update the window size change to reduce
+    // the io load and also work around the fact that x/y/width/height are
+    // changed when loading the page and overwrite the saved geometry from
+    // the previous session.
+    Timer {
+        id: saveWindowGeometryTimer
+        interval: 1000
+        onTriggered: KokoPrivate.Controller.saveWindowGeometry(root)
+    }
+
+    onWidthChanged: saveWindowGeometryTimer.restart()
+    onHeightChanged: saveWindowGeometryTimer.restart()
+    onXChanged: saveWindowGeometryTimer.restart()
+    onYChanged: saveWindowGeometryTimer.restart()
+
     function switchApplicationPage(page) {
         if (!page || pageStack.currentItem === page) {
             return page;
@@ -28,27 +45,6 @@ Kirigami.ApplicationWindow {
         pageStack.push(page);
 
         return pageStack.currentItem;
-    }
-
-    function saveWindowState() {
-        kokoConfig.controlsVisible = controlsVisible
-        if (root.visibility === Window.Windowed) {
-            kokoConfig.width = root.width
-            kokoConfig.height = root.height
-            kokoConfig.visibility = root.visibility
-        } else if (root.visibility === Window.Maximized) {
-            kokoConfig.visibility = root.visibility
-        }
-    }
-    function restoreWindowState() {
-        controlsVisible = kokoConfig.controlsVisible
-        if (kokoConfig.visibility === Window.Windowed) {
-            // NOTE: width and height must be set before setting visibility
-            // or else the window will not be positioned correctly.
-            root.width = kokoConfig.width
-            root.height = kokoConfig.height
-        }
-        root.visibility = kokoConfig.visibility
     }
 
     function openPlacesPage() {
@@ -343,10 +339,6 @@ Kirigami.ApplicationWindow {
         id: clipboard
     }
 
-    // NOTE: It's impossible to use QQuickWindow::closing() in C++ connections without using SIGNAL() and SLOT() macros.
-    onClosing: {
-        saveWindowState()
-    }
     Component.onCompleted: {
         // Initialize window or config
         if (kokoConfig.width < root.minimumWidth) {

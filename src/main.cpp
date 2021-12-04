@@ -26,15 +26,21 @@
 
 #include <iostream>
 
+#include "controller.h"
 #include "filesystemtracker.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
 #include "openfilemodel.h"
 #include "processor.h"
-#include "version.h"
 #include "vectorimage.h"
+#include "version.h"
 
-#ifdef Q_OS_ANDROID
+#ifndef Q_OS_ANDROID
+#include <KConfigGroup>
+#include <KSharedConfig>
+#include <KWindowConfig>
+#include <QQuickWindow>
+#else
 #include <QtAndroid>
 #endif
 
@@ -160,6 +166,9 @@ int main(int argc, char **argv)
     qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
     qmlRegisterType<VectorImage>("org.kde.koko.image", 0, 1, "VectorImage");
 
+    Controller controller;
+    qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "Controller", &controller);
+
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
     engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
@@ -168,6 +177,20 @@ int main(int argc, char **argv)
     // we want different main files on desktop or mobile
     // very small difference as they as they are subclasses of the same thing
     engine.load(QUrl(QStringLiteral("qrc:/qml/Main.qml")));
+
+#ifndef Q_OS_ANDROID
+    const auto rootObjects = engine.rootObjects();
+    for (auto obj : rootObjects) {
+        auto view = qobject_cast<QQuickWindow *>(obj);
+        if (view) {
+            KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+            KConfigGroup windowGroup(&dataResource, "Window");
+            KWindowConfig::restoreWindowSize(view, windowGroup);
+            KWindowConfig::restoreWindowPosition(view, windowGroup);
+            break;
+        }
+    }
+#endif
 
     int rt = app.exec();
     trackerThread.quit();

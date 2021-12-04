@@ -21,6 +21,8 @@ target_link_libraries(kokocommon
     KF5::CoreAddons
     KF5::DBusAddons
     KF5::FileMetaData
+    KF5::ConfigGui
+    KF5::ConfigCore
     LibExiv2::LibExiv2
 )
 
@@ -45,6 +47,7 @@ set(koko_SRCS
     committimer.cpp
     imageprocessorrunnable.cpp
     vectorimage.cpp
+    controller.cpp
     kdtree.c
     resources.qrc
 )
@@ -62,7 +65,6 @@ target_link_libraries(koko
     KF5::I18n
     KF5::CoreAddons
     KF5::KIOCore
-    KF5::ConfigGui
     kokocommon
 )
 
