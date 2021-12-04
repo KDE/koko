@@ -71,6 +71,6 @@ Kirigami.Action {
             object.index = index;
             shareAction.children.push(object)
         }
-        onObjectRemoved: shareAction.children = Array.from(shareAction.children).filter(obj => object !== object)
+        onObjectRemoved: shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
     }
 }
