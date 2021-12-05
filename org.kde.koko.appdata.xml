@@ -117,6 +117,17 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
   <releases>
+    <release version="21.12" date="2021-12-07">
+      <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
+      <description>
+        <ul>
+          <li>User interface improvements.</li>
+          <li>Image resizing and cropping support improvements.</li>
+          <li>Improvements for SVG rendering</li>
+          <li>Support for color correction on X11</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.08" date="2021-08-31">
       <url>https://www.plasma-mobile.org/2021/08/31/plasma-mobile-gear-21-08/</url>
     </release>
