@@ -15,3 +15,4 @@ Dependencies:
     'frameworks/knotifications': '@stable'
     'frameworks/kfilemetadata': '@stable'
     'frameworks/kdbusaddons': '@stable'
+    'libraries/kquickimageeditor': '@stable'
