@@ -117,6 +117,14 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
   <releases>
+    <release version="22.02" date="2021-02-09">
+      <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
+      <description>
+        <ul>
+          <li>Raise window on activation.</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.12" date="2021-12-07">
       <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
       <description>
