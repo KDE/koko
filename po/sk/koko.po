@@ -1,19 +1,19 @@
 # translation of koko.po to Slovak
-# Roman Paholik <wizzardsk@gmail.com>, 2020, 2021.
+# Roman Paholik <wizzardsk@gmail.com>, 2020, 2021, 2022.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-12-05 00:41+0000\n"
-"PO-Revision-Date: 2021-11-20 21:41+0100\n"
+"PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "Carl Schwan"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:81
 #, kde-format
@@ -476,16 +476,16 @@ msgid "Slideshow interval:"
 msgstr "Interval prezentácie:"
 
 #: qml/ImageViewPage.qml:673 qml/SettingsPage.qml:62
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "1 sekunda"
-msgstr[1] "%1 sekúnd"
+msgstr[1] "%1 sekundy"
 msgstr[2] "%1 sekúnd"
 
 #: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Opakovať"
@@ -512,7 +512,7 @@ msgid "Metadata"
 msgstr "Metadáta"
 
 #: qml/InfoDrawerSidebarBase.qml:42
-#, fuzzy, kde-format
+#, kde-format
 msgid "File Name"
 msgstr "Meno súboru"
 
@@ -522,18 +522,18 @@ msgid "Dimension"
 msgstr "Rozmer"
 
 #: qml/InfoDrawerSidebarBase.qml:58
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
-msgstr "x"
+msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "Size"
 msgstr "Veľkosť"
 
 #: qml/InfoDrawerSidebarBase.qml:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "Created"
 msgstr "Vytvorené"
 
@@ -553,7 +553,7 @@ msgid "Longitude"
 msgstr "Zemepisná dĺžka"
 
 #: qml/InfoDrawerSidebarBase.qml:124
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rating"
 msgstr "Hodnotenie"
 
@@ -568,7 +568,7 @@ msgid "Set rating to %1"
 msgstr ""
 
 #: qml/InfoDrawerSidebarBase.qml:164
-#, fuzzy, kde-format
+#, kde-format
 msgid "Description"
 msgstr "Popis"
 
@@ -578,7 +578,7 @@ msgid "Image description…"
 msgstr ""
 
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:204
-#, fuzzy, kde-format
+#, kde-format
 msgid "Tags"
 msgstr "Značky"
 
@@ -588,9 +588,9 @@ msgid "Add Tag"
 msgstr "Pridať značku"
 
 #: qml/InfoDrawerSidebarBase.qml:211
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove %1 tag"
-msgstr "Odstrániť značku"
+msgstr "Odstrániť značku %1"
 
 #: qml/Main.qml:106
 #, kde-format
@@ -608,7 +608,7 @@ msgid "Network"
 msgstr "Sieť"
 
 #: qml/PlacesPage.qml:85 qml/Sidebar.qml:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "Trash"
 msgstr "Kôš"
 
