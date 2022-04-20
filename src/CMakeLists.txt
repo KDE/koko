@@ -14,10 +14,10 @@ set(LIB_SRCS
 
 add_library(kokocommon SHARED ${LIB_SRCS})
 target_link_libraries(kokocommon
-    Qt5::Core
-    Qt5::Positioning
-    Qt5::Sql
-    Qt5::Svg
+    Qt::Core
+    Qt::Positioning
+    Qt::Sql
+    Qt::Svg
     KF5::CoreAddons
     KF5::DBusAddons
     KF5::FileMetaData
@@ -57,10 +57,10 @@ kconfig_add_kcfg_files(koko_SRCS kokoconfig.kcfgc GENERATE_MOC)
 add_executable(koko ${koko_SRCS})
 
 target_link_libraries(koko
-    Qt5::Quick
-    Qt5::Widgets
-    Qt5::Qml
-    Qt5::Positioning
+    Qt::Quick
+    Qt::Widgets
+    Qt::Qml
+    Qt::Positioning
     KF5::ConfigCore
     KF5::I18n
     KF5::CoreAddons
@@ -71,7 +71,7 @@ target_link_libraries(koko
 target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
 
 if(ANDROID)
-    target_link_libraries(koko Qt5::AndroidExtras)
+    target_link_libraries(koko Qt::AndroidExtras)
 else()
     target_link_libraries(koko KF5::WindowSystem)
 endif()
@@ -104,7 +104,7 @@ set (qml_plugin_SRCS
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
 target_link_libraries (kokoqmlplugin
-    Qt5::Qml
+    Qt::Qml
     KF5::KIOCore
     KF5::KIOFileWidgets
     KF5::KIOWidgets
@@ -118,9 +118,10 @@ install (TARGETS kokoqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
-if (TARGET Qt5::X11Extras AND TARGET XCB::XCB)
+# FIXME this needs to be adapted for Qt6
+if (TARGET Qt::X11Extras AND TARGET XCB::XCB)
     target_compile_definitions(kokoqmlplugin PRIVATE HAVE_X11)
-    target_link_libraries(kokoqmlplugin Qt5::X11Extras XCB::XCB)
+    target_link_libraries(kokoqmlplugin Qt::X11Extras XCB::XCB)
 endif()
 
 #
@@ -185,4 +186,4 @@ install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${KDE_INST
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
 install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
 install (FILES countries.csv DESTINATION ${KDE_INSTALL_DATADIR}/koko)
-install (FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFY5RCDIR})
+install (FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

@@ -30,10 +30,10 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KOKO
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
-find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
+find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
 
 if(ANDROID)
-    find_package(Qt5 ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
+    find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
@@ -51,8 +51,8 @@ set_package_properties(KQuickImageEditor PROPERTIES
 
 ecm_find_qmlmodule(QtGraphicalEffects 1.0)
 
-find_package(Qt5X11Extras ${QT5_MIN_VERSION})
-set_package_properties(Qt5X11Extras PROPERTIES
+find_package(Qt${QT_MAJOR_VERSION}X11Extras ${QT5_MIN_VERSION})
+set_package_properties(Qt${QT_MAJOR_VERSION}X11Extras PROPERTIES
     DESCRIPTION "Qt extras for the X11 platform"
     PURPOSE "Required for getting display color profile on X11"
     TYPE OPTIONAL
@@ -64,8 +64,8 @@ set_package_properties(XCB PROPERTIES
     TYPE OPTIONAL
 )
 
-find_package(Qt5QuickControls2 ${QT5_MIN_VER})
-set_package_properties(Qt5QuickControls2 PROPERTIES
+find_package(Qt${QT_MAJOR_VERSION}QuickControls2 ${QT5_MIN_VER})
+set_package_properties(Qt${QT_MAJOR_VERSION}QuickControls2 PROPERTIES
     DESCRIPTION "User interface controls based on Qt Quick"
     PURPOSE "Required at runtime to run Koko"
     TYPE RUNTIME
