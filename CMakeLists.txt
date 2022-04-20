@@ -99,3 +99,9 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+file(GLOB_RECURSE ALL_SOURCE_FILES *.cpp *.h *.qml)
+# CI installs dependency headers to _install and _build, which break the reuse check
+# Fixes the test by excluding this directory
+list(FILTER ALL_SOURCE_FILES EXCLUDE REGEX [[_(install|build|po)/.*]])
+ecm_check_outbound_license(LICENSES LGPL-3.0-or-later FILES ${ALL_SOURCE_FILES})
