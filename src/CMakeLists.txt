@@ -96,7 +96,6 @@ set (qml_plugin_SRCS
     notificationmanager.cpp
     types.cpp
     roles.cpp
-    imagedocument.cpp
     fileinfo.cpp
     displaycolorspace.cpp
 )

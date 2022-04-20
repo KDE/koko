@@ -11,7 +11,6 @@
 #include "displaycolorspace.h"
 #include "exiv2extractor.h"
 #include "fileinfo.h"
-#include "imagedocument.h"
 #include "imagefavoritesmodel.h"
 #include "imagefoldermodel.h"
 #include "imagelistmodel.h"
@@ -45,7 +44,6 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<AllImagesModel>(uri, 0, 1, "AllImagesModel");
     qmlRegisterType<Jungle::SortModel>(uri, 0, 1, "SortModel");
     qmlRegisterType<ImageListModel>(uri, 0, 1, "ImageListModel");
-    qmlRegisterType<ImageDocument>(uri, 0, 1, "ImageDocument");
     qmlRegisterType<NotificationManager>(uri, 0, 1, "NotificationManager");
     qmlRegisterUncreatableType<Types>(uri, 0, 1, "Types", "Cannot instantiate the Types class");
     qmlRegisterUncreatableType<Roles>(uri, 0, 1, "Roles", "Cannot instantiate the Roles class");
