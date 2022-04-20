@@ -29,7 +29,7 @@ void ReverseGeoCoder::init()
 {
     m_tree = kd_create(2);
 
-    QString citiesPath = QStandardPaths::locate(QStandardPaths::DataLocation, "cities1000.txt");
+    QString citiesPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, "cities1000.txt");
     Q_ASSERT(!citiesPath.isEmpty());
 
     QFile file(citiesPath);
@@ -63,7 +63,7 @@ void ReverseGeoCoder::init()
     }
 
     // Country
-    QString countryPath = QStandardPaths::locate(QStandardPaths::DataLocation, "countries.csv");
+    QString countryPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, "countries.csv");
     Q_ASSERT(!countryPath.isEmpty());
 
     QFile cFile(countryPath);
@@ -84,7 +84,7 @@ void ReverseGeoCoder::init()
     Q_ASSERT_X(!m_countryMap.isEmpty(), "", "countries.csv file is empty. Packaging issue");
 
     // Admin1
-    QString admin1Path = QStandardPaths::locate(QStandardPaths::DataLocation, "admin1Codes.txt");
+    QString admin1Path = QStandardPaths::locate(QStandardPaths::AppDataLocation, "admin1Codes.txt");
     Q_ASSERT(!admin1Path.isEmpty());
 
     QFile admin1File(admin1Path);
@@ -106,7 +106,7 @@ void ReverseGeoCoder::init()
     Q_ASSERT_X(!m_admin1Map.isEmpty(), "", "admin1Codes.txt file is empty. Packaging issue");
 
     // Admin2
-    QString admin2Path = QStandardPaths::locate(QStandardPaths::DataLocation, "admin2Codes.txt");
+    QString admin2Path = QStandardPaths::locate(QStandardPaths::AppDataLocation, "admin2Codes.txt");
     Q_ASSERT(!admin2Path.isEmpty());
 
     QFile admin2File(admin2Path);
