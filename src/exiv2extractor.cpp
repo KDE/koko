@@ -109,15 +109,11 @@ static QDateTime dateTimeFromString(const QString &dateString)
         dateTime.setTimeSpec(Qt::LocalTime);
     }
     if (!dateTime.isValid()) {
-        dateTime = QDateTime::fromString(dateString, Qt::SystemLocaleDate);
+        dateTime = QLocale::system().toDateTime(dateString, QLocale::ShortFormat);
         dateTime.setTimeSpec(Qt::UTC);
     }
     if (!dateTime.isValid()) {
-        dateTime = QDateTime::fromString(dateString, Qt::SystemLocaleShortDate);
-        dateTime.setTimeSpec(Qt::UTC);
-    }
-    if (!dateTime.isValid()) {
-        dateTime = QDateTime::fromString(dateString, Qt::SystemLocaleLongDate);
+        dateTime = QLocale::system().toDateTime(dateString, QLocale::LongFormat);
         dateTime.setTimeSpec(Qt::UTC);
     }
     if (!dateTime.isValid()) {

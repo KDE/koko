@@ -522,7 +522,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(Types::TimeGroup group
         while (query.next()) {
             QDate date = query.value(0).toDate();
 
-            QString display = date.toString(Qt::SystemLocaleLongDate);
+            QString display = QLocale::system().toString(date, QLocale::LongFormat);
             QByteArray key = date.toString(Qt::ISODate).toUtf8();
 
             list << qMakePair(key, display);
