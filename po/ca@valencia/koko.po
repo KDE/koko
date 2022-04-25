@@ -363,12 +363,12 @@ msgstr "Informació"
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "See information about video"
-msgstr "Vegeu la informació quant al vídeo"
+msgstr "Vejau la informació quant al vídeo"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about image"
-msgstr "Vegeu la informació quant a la imatge"
+msgstr "Vejau la informació quant a la imatge"
 
 #: qml/ImageViewPage.qml:86
 #, kde-format
