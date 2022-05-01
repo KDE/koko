@@ -76,6 +76,8 @@ else()
     target_link_libraries(koko KF5::WindowSystem)
 endif()
 
+target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+
 install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 #

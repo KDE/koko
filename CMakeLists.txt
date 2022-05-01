@@ -84,10 +84,6 @@ include_directories(
   ${CMAKE_BINARY_DIR}/src
 )
 
-if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
-    add_definitions(-DQT_QML_DEBUG)
-endif()
-
 ki18n_install(po)
 
 kde_enable_exceptions()
