@@ -147,7 +147,6 @@ Kirigami.ApplicationWindow {
                     imagesModel: imageFolderModel.sourceModel
                 });
             }
-            KokoPrivate.Controller.raiseWindow(root)
         }
     }
 

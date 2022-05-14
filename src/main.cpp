@@ -18,6 +18,7 @@
 #include <KDBusService>
 #include <KLocalizedContext>
 #include <KLocalizedString>
+#include <KWindowSystem>
 
 #include <QApplication>
 #include <QCommandLineOption>
@@ -111,23 +112,6 @@ int main(int argc, char **argv)
         directoryUrls << currentDirPath.resolved(path).toString();
     }
 
-    OpenFileModel openFileModel(directoryUrls);
-    QObject::connect(&service,
-                     &KDBusService::activateRequested,
-                     &openFileModel,
-                     [&openFileModel, &parser](const QStringList &arguments, const QString &workingDirectory) {
-                         QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
-
-                         parser.parse(arguments);
-
-                         QStringList directoryUrls;
-                         for (const auto &path : parser.positionalArguments()) {
-                             directoryUrls << currentDirPath.resolved(path).toString();
-                         }
-
-                         openFileModel.updateOpenFiles(directoryUrls);
-                     });
-
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
 #endif
@@ -163,6 +147,38 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+
+    OpenFileModel openFileModel(directoryUrls);
+    QObject::connect(&service,
+                     &KDBusService::activateRequested,
+                     &openFileModel,
+                     [&openFileModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
+                         QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
+
+                         parser.parse(arguments);
+
+                         QStringList directoryUrls;
+                         for (const auto &path : parser.positionalArguments()) {
+                             directoryUrls << currentDirPath.resolved(path).toString();
+                         }
+
+                         openFileModel.updateOpenFiles(directoryUrls);
+
+                         const auto rootObjects = engine.rootObjects();
+                         for (auto obj : rootObjects) {
+                             auto window = qobject_cast<QQuickWindow *>(obj);
+                             if (window) {
+                                 if (KWindowSystem::isPlatformWayland()) {
+                                     KWindowSystem::setCurrentXdgActivationToken(qEnvironmentVariable("XDG_ACTIVATION_TOKEN"));
+                                     KWindowSystem::activateWindow(window->winId());
+                                 } else {
+                                     window->raise();
+                                 }
+
+                                 return;
+                             }
+                         }
+                     });
 
     qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
     qmlRegisterType<VectorImage>("org.kde.koko.image", 0, 1, "VectorImage");
