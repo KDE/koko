@@ -168,13 +168,8 @@ int main(int argc, char **argv)
                          for (auto obj : rootObjects) {
                              auto window = qobject_cast<QQuickWindow *>(obj);
                              if (window) {
-                                 if (KWindowSystem::isPlatformWayland()) {
-                                     KWindowSystem::setCurrentXdgActivationToken(qEnvironmentVariable("XDG_ACTIVATION_TOKEN"));
-                                     KWindowSystem::activateWindow(window->winId());
-                                 } else {
-                                     window->raise();
-                                 }
-
+                                 KWindowSystem::updateStartupId(window);
+                                 KWindowSystem::activateWindow(window);
                                  return;
                              }
                          }
