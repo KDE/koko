@@ -7,7 +7,10 @@
 #include "vectorimage.h"
 #include <QQuickWindow>
 
-VectorImage::VectorImage(QQuickItem *parent) : QQuickPaintedItem(parent), m_devicePixelRatio(0), m_status(Null)
+VectorImage::VectorImage(QQuickItem *parent)
+    : QQuickPaintedItem(parent)
+    , m_devicePixelRatio(0)
+    , m_status(Null)
 {
 }
 
@@ -99,7 +102,10 @@ void VectorImage::paint(QPainter *painter)
     auto scale_y = sourceSize().height() / height() / m_devicePixelRatio;
     auto zoom_y = sourceClipRect().height() / m_viewBoxF.height() * scale_y;
 
-    QRectF clip(sourceClipRect().x() / zoom_x * scale_x + m_viewBoxF.x(), sourceClipRect().y() / zoom_y * scale_y + m_viewBoxF.y(), sourceSize().width() / zoom_x, sourceSize().height() / zoom_y);
+    QRectF clip(sourceClipRect().x() / zoom_x * scale_x + m_viewBoxF.x(),
+                sourceClipRect().y() / zoom_y * scale_y + m_viewBoxF.y(),
+                sourceSize().width() / zoom_x,
+                sourceSize().height() / zoom_y);
 
     m_renderer->setViewBox(clip);
     m_renderer->render(painter);

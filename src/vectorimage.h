@@ -7,15 +7,15 @@
 #ifndef VECTOR_IMAGE_H
 #define VECTOR_IMAGE_H
 
-#include <QQuickItem>
 #include <QPainter>
+#include <QQuickItem>
 #include <QQuickPaintedItem>
 #include <QSvgRenderer>
 #include <memory>
 
 class VectorImage : public QQuickPaintedItem
 {
-Q_OBJECT
+    Q_OBJECT
     Q_PROPERTY(Status status READ status NOTIFY statusChanged) // read only
     Q_PROPERTY(QRectF sourceClipRect READ sourceClipRect WRITE setSourceClipRect NOTIFY sourceClipRectChanged)
     Q_PROPERTY(QUrl source READ source WRITE setSource NOTIFY sourceChanged)
@@ -71,4 +71,3 @@ private:
 };
 
 #endif // VECTOR_IMAGE_H
- 
