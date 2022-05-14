@@ -112,20 +112,20 @@ int main(int argc, char **argv)
     }
 
     OpenFileModel openFileModel(directoryUrls);
-    service.connect(&service,
-                    &KDBusService::activateRequested,
-                    &openFileModel,
-                    [&openFileModel](const QStringList &arguments, const QString &workingDirectory) {
-                        QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
+    QObject::connect(&service,
+                     &KDBusService::activateRequested,
+                     &openFileModel,
+                     [&openFileModel](const QStringList &arguments, const QString &workingDirectory) {
+                         QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
 
-                        QStringList directoryUrls;
-                        auto args = arguments;
-                        args.removeFirst();
-                        for (const auto &path : args) {
-                            directoryUrls << currentDirPath.resolved(path).toString();
-                        }
-                        openFileModel.updateOpenFiles(directoryUrls);
-                    });
+                         QStringList directoryUrls;
+                         auto args = arguments;
+                         args.removeFirst();
+                         for (const auto &path : args) {
+                             directoryUrls << currentDirPath.resolved(path).toString();
+                         }
+                         openFileModel.updateOpenFiles(directoryUrls);
+                     });
 
 #ifdef Q_OS_ANDROID
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
