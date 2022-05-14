@@ -115,15 +115,16 @@ int main(int argc, char **argv)
     QObject::connect(&service,
                      &KDBusService::activateRequested,
                      &openFileModel,
-                     [&openFileModel](const QStringList &arguments, const QString &workingDirectory) {
+                     [&openFileModel, &parser](const QStringList &arguments, const QString &workingDirectory) {
                          QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
 
+                         parser.parse(arguments);
+
                          QStringList directoryUrls;
-                         auto args = arguments;
-                         args.removeFirst();
-                         for (const auto &path : args) {
+                         for (const auto &path : parser.positionalArguments()) {
                              directoryUrls << currentDirPath.resolved(path).toString();
                          }
+
                          openFileModel.updateOpenFiles(directoryUrls);
                      });
 
