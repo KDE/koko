@@ -103,7 +103,7 @@ msgstr "Restableix la base de dades"
 #: main.cpp:83
 #, kde-format
 msgid "path of image you want to open"
-msgstr "camí de la imatge que voleu obri"
+msgstr "camí de la imatge que voleu obrir"
 
 #: notificationmanager.cpp:16
 #, kde-format
