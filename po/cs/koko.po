@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-12-05 00:41+0000\n"
+"POT-Creation-Date: 2022-05-16 00:42+0000\n"
 "PO-Revision-Date: 2021-10-08 14:32+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27,77 +27,77 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:57
+#: main.cpp:58
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "Koko je prohlížeč obrázků ve vaší sbírce."
 
-#: main.cpp:59
+#: main.cpp:60
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 Přispěvatelé do KDE"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:64 main.cpp:66 main.cpp:68 main.cpp:70 main.cpp:72 main.cpp:74
+#: main.cpp:65 main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Vývojář"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:68
+#: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:74
+#: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-format
 msgid "Image viewer"
 msgstr "Prohlížeč obrázků"
 
-#: main.cpp:82
+#: main.cpp:83
 #, kde-format
 msgid "Reset the database"
 msgstr ""
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "path of image you want to open"
 msgstr ""
