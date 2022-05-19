@@ -440,7 +440,7 @@ msgstr "Mostra la barra de miniatures"
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr "Commuta la barra de miniatures"
+msgstr "Canvia la barra de miniatures"
 
 #: qml/ImageViewPage.qml:157
 #, kde-format
