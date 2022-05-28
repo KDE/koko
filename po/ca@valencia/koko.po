@@ -40,13 +40,13 @@ msgstr "<application>Koko</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "Koko és un visor d'imatges per a la vostra col·lecció d'imatges."
+msgstr "Koko és un visor d'imatges per a la vostra colecció d'imatges."
 
 #: main.cpp:60
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr "(c) 2013-2020 Els col·laboradors de KDE"
+msgstr "(c) 2013-2020 Els colaboradors de KDE"
 
 #: main.cpp:65
 #, kde-kuit-format
@@ -171,7 +171,7 @@ msgstr "Desselecciona tots els elements multimèdia seleccionats"
 #: qml/AlbumView.qml:355
 #, kde-format
 msgid "Delete Selection"
-msgstr "Suprimeix la selecció"
+msgstr "Suprimix la selecció"
 
 #: qml/AlbumView.qml:356
 #, kde-format
@@ -248,7 +248,7 @@ msgstr "Desfés"
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Cancela"
 
 #: qml/EditorView.qml:77 qml/EditorView.qml:83
 #, kde-format
@@ -602,7 +602,7 @@ msgstr "Carpetes"
 #: qml/PlacesPage.qml:79 qml/Sidebar.qml:158
 #, kde-format
 msgid "Network"
-msgstr "Xarxa"
+msgstr "Ret"
 
 #: qml/PlacesPage.qml:85 qml/Sidebar.qml:149
 #, kde-format
