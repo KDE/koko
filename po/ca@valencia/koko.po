@@ -562,7 +562,7 @@ msgstr "Valoració actual %1"
 #: qml/InfoDrawerSidebarBase.qml:138
 #, kde-format
 msgid "Set rating to %1"
-msgstr "Estableix la valoració a %1"
+msgstr "Establix la valoració a %1"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
