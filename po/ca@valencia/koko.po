@@ -40,7 +40,7 @@ msgstr "<application>Koko</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "Koko és un visor d'imatges per a la vostra colecció d'imatges."
+msgstr "Koko és un visor d'imàgens per a la vostra colecció d'imàgens."
 
 #: main.cpp:60
 #, kde-kuit-format
@@ -93,7 +93,7 @@ msgstr "Mikel Johnson"
 #: main.cpp:82
 #, kde-format
 msgid "Image viewer"
-msgstr "Visor d'imatges"
+msgstr "Visor d'imàgens"
 
 #: main.cpp:83
 #, kde-format
@@ -103,7 +103,7 @@ msgstr "Restableix la base de dades"
 #: main.cpp:84
 #, kde-format
 msgid "path of image you want to open"
-msgstr "camí de la imatge que voleu obrir"
+msgstr "camí de la image que voleu obrir"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -113,14 +113,14 @@ msgstr "Ha fallat la compartició"
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr "L'URL compartit per a la imatge és <a href='%1'>%1</a>"
+msgstr "L'URL compartit per a la image és <a href='%1'>%1</a>"
 
 #: qml/AlbumDelegate.qml:103
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] "1 imatge"
-msgstr[1] "%1 imatges"
+msgstr[0] "1 image"
+msgstr[1] "%1 imàgens"
 
 #: qml/AlbumView.qml:222 qml/AlbumView.qml:255
 #, kde-format
@@ -201,7 +201,7 @@ msgstr "No s'ha trobat cap element multimèdia"
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:118
 #, kde-format
 msgid "Pictures"
-msgstr "Imatges"
+msgstr "Imàgens"
 
 #: qml/BottomNavBar.qml:73 qml/Sidebar.qml:128
 #, kde-format
@@ -235,8 +235,8 @@ msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
-"No es pot guardar el fitxer. Comproveu que teniu el permís correcte per a "
-"editar este fitxer."
+"No es pot guardar el ficher. Comproveu que teniu el permís correcte per a "
+"editar este ficher."
 
 #: qml/EditorView.qml:65
 #, kde-format
@@ -306,7 +306,7 @@ msgstr "Anomena i guarda"
 #: qml/EditorView.qml:238
 #, kde-format
 msgid "You are now editing a new file."
-msgstr "Ara esteu editant un fitxer nou."
+msgstr "Ara esteu editant un ficher nou."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
@@ -368,7 +368,7 @@ msgstr "Vejau la informació quant al vídeo"
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about image"
-msgstr "Vejau la informació quant a la imatge"
+msgstr "Vejau la informació quant a la image"
 
 #: qml/ImageViewPage.qml:86
 #, kde-format
@@ -399,18 +399,18 @@ msgstr "Edita"
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Video"
-msgstr "Comparteix el vídeo"
+msgstr "Compartix el vídeo"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Image"
-msgstr "Comparteix la imatge"
+msgstr "Compartix la image"
 
 #: qml/ImageViewPage.qml:118
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
-msgstr "Comparteix"
+msgstr "Compartix"
 
 #: qml/ImageViewPage.qml:132
 #, kde-format
@@ -460,12 +460,12 @@ msgstr "Entra a la pantalla completa"
 #: qml/ImageViewPage.qml:411
 #, kde-format
 msgid "Previous image"
-msgstr "Imatge anterior"
+msgstr "Image anterior"
 
 #: qml/ImageViewPage.qml:441
 #, kde-format
 msgid "Next image"
-msgstr "Imatge següent"
+msgstr "Image següent"
 
 #: qml/ImageViewPage.qml:656 qml/SettingsPage.qml:54
 #, kde-format
@@ -511,7 +511,7 @@ msgstr "Metadades"
 #: qml/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "File Name"
-msgstr "Nom del fitxer"
+msgstr "Nom del ficher"
 
 #: qml/InfoDrawerSidebarBase.qml:52
 #, kde-format
@@ -572,7 +572,7 @@ msgstr "Descripció"
 #: qml/InfoDrawerSidebarBase.qml:172
 #, kde-format
 msgid "Image description…"
-msgstr "Descripció de la imatge…"
+msgstr "Descripció de la image…"
 
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:204
 #, kde-format
@@ -592,7 +592,7 @@ msgstr "Elimina l'etiqueta %1"
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
-msgstr "Imatges"
+msgstr "Imàgens"
 
 #: qml/Main.qml:117 qml/Main.qml:126
 #, kde-format
@@ -672,7 +672,7 @@ msgstr "General:"
 #: qml/SettingsPage.qml:19
 #, kde-format
 msgid "Show preview carousel in image view"
-msgstr "Mostra la seqüència de vista prèvia a la vista d'imatges"
+msgstr "Mostra la seqüència de vista prèvia a la vista d'imàgens"
 
 #: qml/SettingsPage.qml:24 qml/Sidebar.qml:227
 #, kde-format
@@ -698,12 +698,12 @@ msgstr "Obri la pàgina «Quant a»"
 #: qml/ShareAction.qml:22
 #, kde-format
 msgid "Share"
-msgstr "Comparteix"
+msgstr "Compartix"
 
 #: qml/ShareAction.qml:23 qml/ShareDrawer.qml:22
 #, kde-format
 msgid "Share the selected media"
-msgstr "Comparteix els elements multimèdia seleccionats"
+msgstr "Compartix els elements multimèdia seleccionats"
 
 #: qml/Sidebar.qml:43
 #, kde-format
