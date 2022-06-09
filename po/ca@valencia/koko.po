@@ -235,8 +235,8 @@ msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
-"No es pot guardar el ficher. Comproveu que teniu el permís correcte per a "
-"editar este ficher."
+"No es pot guardar el fitxer. Comproveu que teniu el permís correcte per a "
+"editar este fitxer."
 
 #: qml/EditorView.qml:65
 #, kde-format
@@ -306,7 +306,7 @@ msgstr "Anomena i guarda"
 #: qml/EditorView.qml:238
 #, kde-format
 msgid "You are now editing a new file."
-msgstr "Ara esteu editant un ficher nou."
+msgstr "Ara esteu editant un fitxer nou."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
@@ -511,7 +511,7 @@ msgstr "Metadades"
 #: qml/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "File Name"
-msgstr "Nom del ficher"
+msgstr "Nom del fitxer"
 
 #: qml/InfoDrawerSidebarBase.qml:52
 #, kde-format
