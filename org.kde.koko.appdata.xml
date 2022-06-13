@@ -41,7 +41,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="zh-TW">Koko</name>
   <summary>Image Gallery</summary>
   <summary xml:lang="ca">Galeria d'imatges</summary>
-  <summary xml:lang="ca-valencia">Galeria d'imàgens</summary>
+  <summary xml:lang="ca-valencia">Galeria d'imatges</summary>
   <summary xml:lang="cs">Galerie obrázků</summary>
   <summary xml:lang="da">Billedgalleri</summary>
   <summary xml:lang="de">Bildergalerie</summary>
@@ -74,7 +74,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <description>
     <p>An Image gallery application</p>
     <p xml:lang="ca">Una aplicació de galeria d'imatges</p>
-    <p xml:lang="ca-valencia">Una aplicació de galeria d'imàgens</p>
+    <p xml:lang="ca-valencia">Una aplicació de galeria d'imatges</p>
     <p xml:lang="cs">Aplikace s galerií obrázků</p>
     <p xml:lang="da">Et program til billedgalleri</p>
     <p xml:lang="de">Eine Bildergalerie-Anwendung</p>
