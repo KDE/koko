@@ -98,7 +98,7 @@ msgstr "Visor d'imatges"
 #: main.cpp:83
 #, kde-format
 msgid "Reset the database"
-msgstr "Restableix la base de dades"
+msgstr "Restablix la base de dades"
 
 #: main.cpp:84
 #, kde-format
@@ -278,7 +278,7 @@ msgstr "Gira a la dreta"
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr "Inverteix"
+msgstr "Invertix"
 
 #: qml/EditorView.qml:119
 #, kde-format
@@ -348,7 +348,7 @@ msgstr "Control lliscant del volum"
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr "Repeteix el vídeo actual"
+msgstr "Repetix el vídeo actual"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
