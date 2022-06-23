@@ -120,6 +120,15 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
   <releases>
+    <release version="22.06" date="2022-06-24">
+      <url>https://www.plasma-mobile.org/2022/06/28/plasma-mobile-gear-22-06/</url>
+      <description>
+        <ul>
+          <li>Fixes related to window activation</li>
+          <li>Various code improvements and bugfixes</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.04" date="2022-04-26">
       <url>https://www.plasma-mobile.org/2022/04/26/plasma-mobile-gear-22-04/</url>
     </release>
