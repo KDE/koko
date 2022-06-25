@@ -363,12 +363,12 @@ msgstr "Informació"
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "See information about video"
-msgstr "Vejau la informació quant al vídeo"
+msgstr "Vegeu la informació quant al vídeo"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about image"
-msgstr "Vejau la informació quant a la imatge"
+msgstr "Vegeu la informació quant a la imatge"
 
 #: qml/ImageViewPage.qml:86
 #, kde-format
@@ -602,7 +602,7 @@ msgstr "Carpetes"
 #: qml/PlacesPage.qml:79 qml/Sidebar.qml:158
 #, kde-format
 msgid "Network"
-msgstr "Ret"
+msgstr "Xarxa"
 
 #: qml/PlacesPage.qml:85 qml/Sidebar.qml:149
 #, kde-format
