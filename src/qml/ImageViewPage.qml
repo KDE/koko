@@ -142,14 +142,7 @@ Kirigami.Page {
                 tooltip: i18n("Toggle Thumbnail Bar")
                 shortcut: "T"
                 visible: thumbnailView.count > 1
-                onTriggered: {
-                    // you can't do imageViewPreview != imageViewPreview for some reason
-                    if (kokoConfig.imageViewPreview) {
-                        kokoConfig.imageViewPreview = false;
-                    } else {
-                        kokoConfig.imageViewPreview = true;
-                    }
-                }
+                onTriggered: kokoConfig.imageViewPreview = !kokoConfig.imageViewPreview
             },
             Kirigami.Action {
                 property bool fullscreen: applicationWindow().visibility === Window.FullScreen
