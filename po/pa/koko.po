@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-16 00:42+0000\n"
+"POT-Creation-Date: 2022-07-20 00:43+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -448,39 +448,39 @@ msgstr ""
 msgid "Toggle Thumbnail Bar"
 msgstr ""
 
-#: qml/ImageViewPage.qml:157
+#: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ"
 
-#: qml/ImageViewPage.qml:157 qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਤੋਂ ਬਾਹਰ"
 
-#: qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਜਾਓ"
 
-#: qml/ImageViewPage.qml:411
+#: qml/ImageViewPage.qml:404
 #, kde-format
 msgid "Previous image"
 msgstr "ਪਿਛਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:441
+#: qml/ImageViewPage.qml:434
 #, kde-format
 msgid "Next image"
 msgstr "ਅਗਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:656 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/ImageViewPage.qml:673 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
 #, fuzzy, kde-format
 #| msgid "1 second"
 #| msgid_plural "%1 seconds"
@@ -490,26 +490,26 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 ਸਕਿੰਟ"
 msgstr[1] "%1 ਸਕਿੰਟ"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
 #, fuzzy, kde-format
 #| msgid "Loop"
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:732 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "ਰਲਵਾਂ"
 
-#: qml/ImageViewPage.qml:741
+#: qml/ImageViewPage.qml:734
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਰੋਕੋ"
 
-#: qml/ImageViewPage.qml:755
+#: qml/ImageViewPage.qml:748
 #, kde-format
 msgid "Show All Controls"
 msgstr ""

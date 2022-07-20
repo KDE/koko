@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-16 00:42+0000\n"
+"POT-Creation-Date: 2022-07-20 00:43+0000\n"
 "PO-Revision-Date: 2021-09-22 20:16+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -443,38 +443,38 @@ msgstr "Erakutsi koadro txikien barra"
 msgid "Toggle Thumbnail Bar"
 msgstr "Txandakatu koadro txikien barra"
 
-#: qml/ImageViewPage.qml:157
+#: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
 msgstr "Pantaila-betea"
 
-#: qml/ImageViewPage.qml:157 qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Irten Pantaila-betetik"
 
-#: qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Sartu pantaila-betean"
 
-#: qml/ImageViewPage.qml:411
+#: qml/ImageViewPage.qml:404
 #, kde-format
 msgid "Previous image"
 msgstr "Aurreko irudia"
 
-#: qml/ImageViewPage.qml:441
+#: qml/ImageViewPage.qml:434
 #, kde-format
 msgid "Next image"
 msgstr "Hurrengo irudia"
 
-#: qml/ImageViewPage.qml:656 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diapositiba emanaldiko bitartea:"
 
-#: qml/ImageViewPage.qml:673 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -482,24 +482,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "segundo 1"
 msgstr[1] "%1 segundo"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Begizta"
 
-#: qml/ImageViewPage.qml:732 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Ausaz"
 
-#: qml/ImageViewPage.qml:741
+#: qml/ImageViewPage.qml:734
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Gelditu diapositiba emanaldia"
 
-#: qml/ImageViewPage.qml:755
+#: qml/ImageViewPage.qml:748
 #, kde-format
 msgid "Show All Controls"
 msgstr "Erakutsi aginte guztiak"

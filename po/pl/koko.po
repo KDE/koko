@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-16 00:42+0000\n"
+"POT-Creation-Date: 2022-07-20 00:43+0000\n"
 "PO-Revision-Date: 2021-12-30 12:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -442,38 +442,38 @@ msgstr "Pokaż pasek miniatur"
 msgid "Toggle Thumbnail Bar"
 msgstr "Przełącz pasek miniatur"
 
-#: qml/ImageViewPage.qml:157
+#: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
 msgstr "Pełny ekran"
 
-#: qml/ImageViewPage.qml:157 qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Wyłącz tryb pełnoekranowy"
 
-#: qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Włącz tryb pełnoekranowy"
 
-#: qml/ImageViewPage.qml:411
+#: qml/ImageViewPage.qml:404
 #, kde-format
 msgid "Previous image"
 msgstr "Poprzedni obraz"
 
-#: qml/ImageViewPage.qml:441
+#: qml/ImageViewPage.qml:434
 #, kde-format
 msgid "Next image"
 msgstr "Następny obraz"
 
-#: qml/ImageViewPage.qml:656 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Odstęp między obrazami:"
 
-#: qml/ImageViewPage.qml:673 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -482,24 +482,24 @@ msgstr[0] "1 sekunda"
 msgstr[1] "%1 sekundy"
 msgstr[2] "%1 sekund"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Zapętlij"
 
-#: qml/ImageViewPage.qml:732 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Uczyń losowym"
 
-#: qml/ImageViewPage.qml:741
+#: qml/ImageViewPage.qml:734
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Zatrzymaj pokaz obrazów"
 
-#: qml/ImageViewPage.qml:755
+#: qml/ImageViewPage.qml:748
 #, kde-format
 msgid "Show All Controls"
 msgstr "Pokaż całe sterowanie"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-16 00:42+0000\n"
+"POT-Creation-Date: 2022-07-20 00:43+0000\n"
 "PO-Revision-Date: 2022-04-14 13:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -439,38 +439,38 @@ msgstr "Küçük Görsel Çubuğunu Göster"
 msgid "Toggle Thumbnail Bar"
 msgstr "Küçük Görsel Çubuğunu Aç/Kapat"
 
-#: qml/ImageViewPage.qml:157
+#: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
 msgstr "Tam Ekran"
 
-#: qml/ImageViewPage.qml:157 qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Tam Ekrandan Çık"
 
-#: qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Tam Ekrana Gir"
 
-#: qml/ImageViewPage.qml:411
+#: qml/ImageViewPage.qml:404
 #, kde-format
 msgid "Previous image"
 msgstr "Önceki görsel"
 
-#: qml/ImageViewPage.qml:441
+#: qml/ImageViewPage.qml:434
 #, kde-format
 msgid "Next image"
 msgstr "Sonraki görsel"
 
-#: qml/ImageViewPage.qml:656 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Slayt gösterisi aralığı:"
 
-#: qml/ImageViewPage.qml:673 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -478,24 +478,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 saniye"
 msgstr[1] "%1 saniye"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Döngü"
 
-#: qml/ImageViewPage.qml:732 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Rastgeleleştir"
 
-#: qml/ImageViewPage.qml:741
+#: qml/ImageViewPage.qml:734
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Slayt Gösterisini Durdur"
 
-#: qml/ImageViewPage.qml:755
+#: qml/ImageViewPage.qml:748
 #, kde-format
 msgid "Show All Controls"
 msgstr "Tüm Denetimleri Göster"

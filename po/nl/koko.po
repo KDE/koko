@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-16 00:42+0000\n"
+"POT-Creation-Date: 2022-07-20 00:43+0000\n"
 "PO-Revision-Date: 2021-10-05 13:13+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -439,38 +439,38 @@ msgstr "Miniaturenbalk tonen"
 msgid "Toggle Thumbnail Bar"
 msgstr "Miniaturenbalk omschakelen"
 
-#: qml/ImageViewPage.qml:157
+#: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
 msgstr "Volledig scherm"
 
-#: qml/ImageViewPage.qml:157 qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Volledig scherm verlaten"
 
-#: qml/ImageViewPage.qml:158
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Volledig scherm ingaan"
 
-#: qml/ImageViewPage.qml:411
+#: qml/ImageViewPage.qml:404
 #, kde-format
 msgid "Previous image"
 msgstr "Vorige afbeelding"
 
-#: qml/ImageViewPage.qml:441
+#: qml/ImageViewPage.qml:434
 #, kde-format
 msgid "Next image"
 msgstr "Volgende afbeelding"
 
-#: qml/ImageViewPage.qml:656 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval diavoorstelling:"
 
-#: qml/ImageViewPage.qml:673 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -478,24 +478,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 seconde"
 msgstr[1] "%1 seconden"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Lus"
 
-#: qml/ImageViewPage.qml:732 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Willekeurig maken"
 
-#: qml/ImageViewPage.qml:741
+#: qml/ImageViewPage.qml:734
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Diavoorstelling stoppen"
 
-#: qml/ImageViewPage.qml:755
+#: qml/ImageViewPage.qml:748
 #, kde-format
 msgid "Show All Controls"
 msgstr "Alle besturing tonen"
