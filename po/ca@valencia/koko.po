@@ -317,8 +317,8 @@ msgstr "Control lliscant de busca"
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] "Salta cap enrere 1 segon"
-msgstr[1] "Salta cap enrere %1 segons"
+msgstr[0] "Salta cap arrere 1 segon"
+msgstr[1] "Salta cap arrere %1 segons"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
