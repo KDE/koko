@@ -672,7 +672,7 @@ msgstr "General:"
 #: qml/SettingsPage.qml:19
 #, kde-format
 msgid "Show preview carousel in image view"
-msgstr "Mostra la seqüència de vista prèvia a la vista d'imatges"
+msgstr "Mostra la seqüència de vista prèvia en la vista d'imatges"
 
 #: qml/SettingsPage.qml:24 qml/Sidebar.qml:227
 #, kde-format
