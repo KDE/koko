@@ -32,7 +32,7 @@ set_target_properties(kokocommon PROPERTIES
     SOVERSION 0.0.1
 )
 
-install(TARGETS kokocommon EXPORT KokoLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kokocommon EXPORT KokoLibraryTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 #
 # Application
@@ -78,7 +78,7 @@ endif()
 
 target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-install(TARGETS koko ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS koko ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 #
 # QML Plugin
