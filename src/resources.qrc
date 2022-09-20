@@ -24,7 +24,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/ShareAction.qml</file>
         <file>qml/Sidebar.qml</file>
         <file>qml/SlideshowManager.qml</file>
-        <file>qml/Tag.qml</file>
         <file>qml/TagInput.qml</file>
         <file>qml/ThumbnailStrip.qml</file>
         <file>qml/ZoomArea.qml</file>
