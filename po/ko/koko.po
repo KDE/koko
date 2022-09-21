@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2021-11-12 00:23+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -578,11 +578,6 @@ msgstr "태그"
 msgid "Add Tag"
 msgstr "태그 추가"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "%1 태그 삭제"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -710,15 +705,16 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "원격"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "태그 삭제"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "새 태그 추가..."
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "%1 태그 삭제"
+
+#~ msgid "Remove Tag"
+#~ msgstr "태그 삭제"
 
 #~ msgid "Edit image"
 #~ msgstr "그림 편집"

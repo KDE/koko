@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -587,11 +587,6 @@ msgstr "Značky"
 msgid "Add Tag"
 msgstr "Pridať značku"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "Odstrániť značku %1"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -720,15 +715,16 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Vzdialené"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "Odstrániť značku"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Pridať nový štítok..."
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "Odstrániť značku %1"
+
+#~ msgid "Remove Tag"
+#~ msgstr "Odstrániť značku"
 
 #~ msgid "Edit image"
 #~ msgstr "Upraviť obrázok"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2021-10-08 08:24+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -581,11 +581,6 @@ msgstr "Ετικέτες"
 msgid "Add Tag"
 msgstr "Προσθήκη ετικέτας"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "Αφαίρεση %1 ετικέτας"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -713,15 +708,16 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Απομακρυσμένα"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "Αφαίρεση ετικέτας"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Προσθήκη νέας ετικέτας…"
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "Αφαίρεση %1 ετικέτας"
+
+#~ msgid "Remove Tag"
+#~ msgstr "Αφαίρεση ετικέτας"
 
 #~ msgid "Edit image"
 #~ msgstr "Επεξεργασία εικόνας"

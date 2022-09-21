@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -597,11 +597,6 @@ msgstr "ਟੈਗ"
 msgid "Add Tag"
 msgstr "%1 ਟੈਗ ਜੋੜੋ"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "%1 ਟੈਗ ਹਟਾਓ"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -732,17 +727,19 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "ਰਿਮੋਟ"
 
-#: qml/Tag.qml:84
-#, fuzzy, kde-format
-#| msgid "Remove %1 tag"
-msgid "Remove Tag"
-msgstr "%1 ਟੈਗ ਹਟਾਓ"
-
 #: qml/TagInput.qml:60
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgid "Add new tag…"
 msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "%1 ਟੈਗ ਹਟਾਓ"
+
+#, fuzzy
+#~| msgid "Remove %1 tag"
+#~ msgid "Remove Tag"
+#~ msgstr "%1 ਟੈਗ ਹਟਾਓ"
 
 #~ msgid "Edit image"
 #~ msgstr "ਚਿੱਤਰ ਨੂੰ ਸੋਧੋ"

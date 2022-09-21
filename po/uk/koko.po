@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2021-10-05 09:14+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -590,11 +590,6 @@ msgstr "Мітки"
 msgid "Add Tag"
 msgstr "Додати мітку"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "Вилучити мітку %1"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -722,15 +717,16 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Віддалене"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "Вилучити мітку"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Додати нову мітку…"
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "Вилучити мітку %1"
+
+#~ msgid "Remove Tag"
+#~ msgstr "Вилучити мітку"
 
 #~ msgid "Edit image"
 #~ msgstr "Редагувати зображення"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2021-11-30 18:30+0100\n"
 "Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -581,11 +581,6 @@ msgstr "Etichette"
 msgid "Add Tag"
 msgstr "Aggiungi etichetta"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "Rimuovi etichetta %1"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -713,15 +708,16 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remota"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "Rimuovi etichetta"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Aggiungi nuova etichetta…"
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "Rimuovi etichetta %1"
+
+#~ msgid "Remove Tag"
+#~ msgstr "Rimuovi etichetta"
 
 #~ msgid "Edit image"
 #~ msgstr "Modifica immagine"

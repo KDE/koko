@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2020-08-22 14:10+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -589,11 +589,6 @@ msgstr ""
 msgid "Add Tag"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr ""
-
 #: qml/Main.qml:106
 #, fuzzy, kde-format
 #| msgid "1 Image"
@@ -728,11 +723,6 @@ msgstr "Sortér efter"
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
-
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
 msgstr ""
 
 #: qml/TagInput.qml:60

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
-"PO-Revision-Date: 2022-08-20 14:17\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
+"PO-Revision-Date: 2022-09-20 01:56\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -577,11 +577,6 @@ msgstr "标签"
 msgid "Add Tag"
 msgstr "添加标签"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "移除 %1 标签"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -709,12 +704,13 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "远程位置"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "移除标签"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "移除 %1 标签"
+
+#~ msgid "Remove Tag"
+#~ msgstr "移除标签"

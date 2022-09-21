@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-07-20 00:43+0000\n"
+"POT-Creation-Date: 2022-09-21 00:43+0000\n"
 "PO-Revision-Date: 2021-12-17 10:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -588,11 +588,6 @@ msgstr "Oznake"
 msgid "Add Tag"
 msgstr "Dodaj oznako"
 
-#: qml/InfoDrawerSidebarBase.qml:211
-#, kde-format
-msgid "Remove %1 tag"
-msgstr "Odstrani oznako %1"
-
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
@@ -720,15 +715,16 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Oddaljeni"
 
-#: qml/Tag.qml:84
-#, kde-format
-msgid "Remove Tag"
-msgstr "Odstrani oznako"
-
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Dodaj novo oznako…"
+
+#~ msgid "Remove %1 tag"
+#~ msgstr "Odstrani oznako %1"
+
+#~ msgid "Remove Tag"
+#~ msgstr "Odstrani oznako"
 
 #~ msgid "Edit image"
 #~ msgstr "Uredi sliko"
