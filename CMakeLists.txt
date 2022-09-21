@@ -5,7 +5,7 @@ project(Koko)
 cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_CXX_STANDARD 17)
-set(QT5_MIN_VERSION 5.15)
+set(QT5_MIN_VERSION 5.15.2)
 set(KF5_MIN_VERSION 5.87)
 set(KDE_COMPILERSETTINGS_LEVEL 5.84)
 
