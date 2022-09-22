@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 [Desktop Entry]
 Name=Koko
+Name[ar]=كوكو
 Name[bg]=Koko
 Name[bs]=Koko
 Name[ca]=Koko
@@ -37,6 +38,7 @@ Name[x-test]=xxKokoxx
 Name[zh_CN]=Koko
 Name[zh_TW]=Koko
 GenericName=Image Gallery
+GenericName[ar]=معرض الصور
 GenericName[bg]=Галерия с изображения
 GenericName[bs]=Galerija slika
 GenericName[ca]=Galeria d'imatges
@@ -72,6 +74,7 @@ GenericName[x-test]=xxImage Galleryxx
 GenericName[zh_CN]=图像库
 GenericName[zh_TW]=圖片相簿
 Comment=An Image gallery application
+Comment[ar]=تطبيق معرض صور
 Comment[bg]=Програма за галерии с изображения
 Comment[bs]=Aplikacija galerije slika
 Comment[ca]=Una aplicació de galeria d'imatges

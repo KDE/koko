@@ -3,6 +3,7 @@
 [Global]
 IconName=koko
 Name=Koko
+Name[ar]=كوكو
 Name[bg]=Koko
 Name[bs]=Koko
 Name[ca]=Koko
@@ -40,6 +41,7 @@ Name[zh_TW]=Koko
 
 [Event/sharingSuccess]
 Name=Sharing success
+Name[ar]=نجحت المشاركة
 Name[bg]=Споделянето е успешно
 Name[ca]=S'ha compartit amb èxit
 Name[ca@valencia]=S'ha compartit amb èxit
@@ -72,6 +74,7 @@ Name[x-test]=xxSharing successxx
 Name[zh_CN]=分享成功
 Name[zh_TW]=分享成功
 Comment=Image Shared Successfully
+Comment[ar]=شُوركت الصورة بنجاح
 Comment[bg]=Изображението е споделено успешно
 Comment[ca]=S'ha compartit la imatge amb èxit
 Comment[ca@valencia]=S'ha compartit la imatge amb èxit
@@ -107,6 +110,7 @@ Action=Popup
 
 [Event/sharingFailed]
 Name=Sharing failed
+Name[ar]=فشلت المشاركة
 Name[bg]=Споделянето е неуспешно
 Name[ca]=Ha fallat la compartició
 Name[ca@valencia]=Ha fallat la compartició
@@ -139,6 +143,7 @@ Name[x-test]=xxSharing failedxx
 Name[zh_CN]=分享失败
 Name[zh_TW]=分享失敗
 Comment=Image Sharing failed
+Comment[ar]=فشلت مشاركة الصورة
 Comment[bg]=Споделянето на изображението е неуспешно
 Comment[ca]=Ha fallat la compartició de la imatge
 Comment[ca@valencia]=Ha fallat la compartició de la imatge
