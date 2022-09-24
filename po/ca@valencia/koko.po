@@ -323,7 +323,7 @@ msgstr[1] "Salta cap arrere %1 segons"
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Pause playback"
-msgstr "Fa pausa a la reproducció"
+msgstr "Fa pausa en la reproducció"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
@@ -715,9 +715,3 @@ msgstr "Remotes"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Elimina l'etiqueta %1"
-
-#~ msgid "Remove Tag"
-#~ msgstr "Elimina l'etiqueta"
