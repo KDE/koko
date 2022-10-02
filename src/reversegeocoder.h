@@ -16,7 +16,6 @@ namespace Koko
 class ReverseGeoCoder
 {
 public:
-    ReverseGeoCoder();
     ~ReverseGeoCoder();
 
     void init();
@@ -34,7 +33,7 @@ public:
     QVariantMap lookup(double lat, double lon);
 
 private:
-    kdtree *m_tree;
+    KdTree m_tree;
     QMap<QString, QString> m_countryMap;
     QMap<QString, QString> m_admin1Map;
     QMap<QString, QString> m_admin2Map;

@@ -48,7 +48,7 @@ set(koko_SRCS
     imageprocessorrunnable.cpp
     vectorimage.cpp
     controller.cpp
-    kdtree.c
+    kdtree.cpp
     resources.qrc
 )
 

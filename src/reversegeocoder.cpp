@@ -15,11 +15,6 @@
 
 using namespace Koko;
 
-ReverseGeoCoder::ReverseGeoCoder()
-    : m_tree(0)
-{
-}
-
 ReverseGeoCoder::~ReverseGeoCoder()
 {
     deinit();
@@ -27,8 +22,6 @@ ReverseGeoCoder::~ReverseGeoCoder()
 
 void ReverseGeoCoder::init()
 {
-    m_tree = kd_create(2);
-
     QString citiesPath = QStandardPaths::locate(QStandardPaths::AppDataLocation, "cities1000.txt");
     Q_ASSERT(!citiesPath.isEmpty());
 
@@ -48,18 +41,19 @@ void ReverseGeoCoder::init()
         // QString name = list[1];
         double lat = list[4].toDouble();
         double lon = list[5].toDouble();
+
         QString countryCode = list[8];
         QString admin1Code = list[10];
         QString admin2Code = list[11];
 
-        QVariantMap *map = new QVariantMap();
-        // map->insert("geoId", geoId);
-        // map->insert("name", name);
-        map->insert("countryCode", countryCode);
-        map->insert("admin1Code", admin1Code);
-        map->insert("admin2Code", admin2Code);
+        QVariantMap map = QVariantMap();
+        // map.insert("geoId", geoId);
+        // map.insert("name", name);
+        map.insert("countryCode", countryCode);
+        map.insert("admin1Code", admin1Code);
+        map.insert("admin2Code", admin2Code);
 
-        kd_insert3(m_tree, lat, lon, 0.0, static_cast<void *>(map));
+        m_tree.insert(lat, lon, map);
     }
 
     // Country
@@ -131,11 +125,8 @@ void ReverseGeoCoder::init()
 void ReverseGeoCoder::deinit()
 {
     QMutexLocker locker(&m_mutex);
-    if (m_tree) {
-        kd_free(m_tree);
-        m_tree = 0;
-    }
 
+    m_tree.clear();
     m_countryMap.clear();
     m_admin1Map.clear();
     m_admin2Map.clear();
@@ -143,7 +134,7 @@ void ReverseGeoCoder::deinit()
 
 bool ReverseGeoCoder::initialized()
 {
-    return m_tree;
+    return !m_tree.isEmpty();
 }
 
 QVariantMap ReverseGeoCoder::lookup(double lat, double lon)
@@ -152,17 +143,14 @@ QVariantMap ReverseGeoCoder::lookup(double lat, double lon)
     if (!initialized()) {
         init();
     }
-    Q_ASSERT(m_tree);
+    Q_ASSERT(!m_tree.isEmpty());
 
-    kdres *res = kd_nearest3(m_tree, lat, lon, 0.0);
-    if (!res) {
+    KdNode *res = m_tree.findNearest(lat, lon);
+    if (res == nullptr) {
         return QVariantMap();
     }
 
-    void *data = kd_res_item_data(res);
-    kd_res_free(res);
-
-    QVariantMap map = *static_cast<QVariantMap *>(data);
+    QVariantMap map = res->data;
 
     QString country = map.value("countryCode").toString();
     QString admin1 = country + '.' + map.value("admin1Code").toString();

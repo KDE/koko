@@ -1,106 +1,48 @@
 /*
- * SPDX-FileCopyrightText: (C) 2007-2011 John Tsiombikas <nuclear@member.fsf.org>
+ * SPDX-FileCopyrightText: (C) 2022 Silas Henrique <silash35@gmail.com>
  *
- * SPDX-License-Identifier: BSD-3-Clause
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  */
+
 #ifndef KOKO_KDTREE_H_
 #define KOKO_KDTREE_H_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <QPointF>
+#include <QVariantMap>
+#include <cmath>
+#include <memory>
 
-struct kdtree;
-struct kdres;
-
-/* create a kd-tree for "k"-dimensional data */
-struct kdtree *kd_create(int k);
-
-/* free the struct kdtree */
-void kd_free(struct kdtree *tree);
-
-/* remove all the elements from the tree */
-void kd_clear(struct kdtree *tree);
-
-/* if called with non-null 2nd argument, the function provided
- * will be called on data pointers (see kd_insert) when nodes
- * are to be removed from the tree.
- */
-void kd_data_destructor(struct kdtree *tree, void (*destr)(void *));
-
-/* insert a node, specifying its position, and optional data */
-int kd_insert(struct kdtree *tree, const double *pos, void *data);
-int kd_insertf(struct kdtree *tree, const float *pos, void *data);
-int kd_insert3(struct kdtree *tree, double x, double y, double z, void *data);
-int kd_insert3f(struct kdtree *tree, float x, float y, float z, void *data);
-
-/* Find the nearest node from a given point.
- *
- * This function returns a pointer to a result set with at most one element.
- */
-struct kdres *kd_nearest(struct kdtree *tree, const double *pos);
-struct kdres *kd_nearestf(struct kdtree *tree, const float *pos);
-struct kdres *kd_nearest3(struct kdtree *tree, double x, double y, double z);
-struct kdres *kd_nearest3f(struct kdtree *tree, float x, float y, float z);
-
-/* Find the N nearest nodes from a given point.
- *
- * This function returns a pointer to a result set, with at most N elements,
- * which can be manipulated with the kd_res_* functions.
- * The returned pointer can be null as an indication of an error. Otherwise
- * a valid result set is always returned which may contain 0 or more elements.
- * The result set must be deallocated with kd_res_free after use.
- */
 /*
-struct kdres *kd_nearest_n(struct kdtree *tree, const double *pos, int num);
-struct kdres *kd_nearest_nf(struct kdtree *tree, const float *pos, int num);
-struct kdres *kd_nearest_n3(struct kdtree *tree, double x, double y, double z);
-struct kdres *kd_nearest_n3f(struct kdtree *tree, float x, float y, float z);
+  Implementation of the k-dimensional tree algorithm in Qt/C++
 */
 
-/* Find any nearest nodes from a given point within a range.
- *
- * This function returns a pointer to a result set, which can be manipulated
- * by the kd_res_* functions.
- * The returned pointer can be null as an indication of an error. Otherwise
- * a valid result set is always returned which may contain 0 or more elements.
- * The result set must be deallocated with kd_res_free after use.
- */
-struct kdres *kd_nearest_range(struct kdtree *tree, const double *pos, double range);
-struct kdres *kd_nearest_rangef(struct kdtree *tree, const float *pos, float range);
-struct kdres *kd_nearest_range3(struct kdtree *tree, double x, double y, double z, double range);
-struct kdres *kd_nearest_range3f(struct kdtree *tree, float x, float y, float z, float range);
+class KdNode
+{
+private:
+    std::unique_ptr<KdNode> left;
+    std::unique_ptr<KdNode> right;
 
-/* frees a result set returned by kd_nearest_range() */
-void kd_res_free(struct kdres *set);
+public:
+    QPointF point; // X, Y coordinates
+    QVariantMap data;
 
-/* returns the size of the result set (in elements) */
-int kd_res_size(struct kdres *set);
+    KdNode(QPointF p, QVariantMap d);
 
-/* rewinds the result set iterator */
-void kd_res_rewind(struct kdres *set);
+    void insert(KdNode *newNode, unsigned int axis);
+    KdNode *findNearest(KdNode *pivot, unsigned int axis);
+};
 
-/* returns non-zero if the set iterator reached the end after the last element */
-int kd_res_end(struct kdres *set);
+class KdTree
+{
+private:
+    std::unique_ptr<KdNode> root;
 
-/* advances the result set iterator, returns non-zero on success, zero if
- * there are no more elements in the result set.
- */
-int kd_res_next(struct kdres *set);
+public:
+    void clear();
+    void insert(double x, double y, QVariantMap &data);
+    bool isEmpty() const;
 
-/* returns the data pointer (can be null) of the current result set item
- * and optionally sets its position to the pointers(s) if not null.
- */
-void *kd_res_item(struct kdres *set, double *pos);
-void *kd_res_itemf(struct kdres *set, float *pos);
-void *kd_res_item3(struct kdres *set, double *x, double *y, double *z);
-void *kd_res_item3f(struct kdres *set, float *x, float *y, float *z);
-
-/* equivalent to kd_res_item(set, 0) */
-void *kd_res_item_data(struct kdres *set);
-
-#ifdef __cplusplus
-}
-#endif
+    KdNode *findNearest(double x, double y);
+};
 
 #endif /* KOKO_KDTREE_H_ */
