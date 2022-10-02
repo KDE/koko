@@ -17,7 +17,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/OverviewControl.qml</file>
         <file>qml/PlacesPage.qml</file>
         <file>qml/SelectionButton.qml</file>
-        <file>qml/SelectionDelegateHighlight.qml</file>
         <file>qml/SettingsPage.qml</file>
         <file>qml/ShareDialog.qml</file>
         <file>qml/ShareDrawer.qml</file>

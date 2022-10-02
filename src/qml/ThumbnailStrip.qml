@@ -41,6 +41,7 @@ ListView {
         onClicked: activated()
         onActivated: thumbnailView.activated(model.index)
         modelData: model
+        isInAlbum: false
 
         Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
         Controls.ToolTip.visible: hovered

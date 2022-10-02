@@ -14,7 +14,7 @@ Kirigami.Icon {
     property QtObject iconMouseArea: iconMouseArea
     width: Kirigami.Units.iconSizes.smallMedium
     height: width
-    z: gridView.z + 2
+    z: gridView ? gridView.z + 2 : 2
 
     MouseArea {
         id: iconMouseArea

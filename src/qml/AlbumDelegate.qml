@@ -20,11 +20,47 @@ Controls.ItemDelegate {
     signal activated
     property alias containsMouse: albumThumbnailMouseArea.containsMouse
     property QtObject modelData
+    property bool isInAlbum: false
     function refresh() {
         // HACK: force refresh image after it was edited.
         const old = image.image;
         image.image = undefined;
         image.image = old;
+    }
+
+    Rectangle {
+        anchors.centerIn: image
+        width: image.paintedWidth + (albumDelegate.hovered && !albumDelegate.pressed ? Kirigami.Units.gridUnit : Math.round(Kirigami.Units.gridUnit * 0.5))
+        height: image.paintedHeight + (albumDelegate.hovered && !albumDelegate.pressed ? Kirigami.Units.gridUnit : Math.round(Kirigami.Units.gridUnit * 0.5))
+        color: albumDelegate.highlighted || (albumDelegate.pressed && !albumDelegate.checked && !albumDelegate.sectionDelegate) || modelData.selected ? Kirigami.Theme.highlightColor : Kirigami.Theme.backgroundColor
+        visible: isInAlbum && (albumDelegate.ListView.view ? albumDelegate.ListView.view.highlight === null : true)
+        Rectangle {
+            anchors.fill: parent
+            color: Kirigami.Theme.highlightColor
+            opacity: isInAlbum && albumDelegate.hovered && !albumDelegate.pressed ? 0.4 : 0
+            radius: Kirigami.Units.largeSpacing
+        }
+        radius: Kirigami.Units.largeSpacing
+    }
+
+    SelectionButton {
+        id: selectionButton
+        opacity: delegate.containsMouse || (isInAlbum && page.state === "selecting")
+        visible: isInAlbum && !(model.itemType === Koko.Types.Folder || model.itemType === Koko.Types.Album)
+
+        anchors {
+            top: image.top
+            left: image.left
+            leftMargin: Math.round((image.width - image.paintedWidth) / 2 - selectionButton.width / 2)
+            topMargin: Math.round((image.height - image.paintedHeight) / 2 - selectionButton.height / 2)
+        }
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
     }
 
     KQA.QImageItem {
@@ -50,7 +86,7 @@ Controls.ItemDelegate {
         color: Kirigami.Theme.backgroundColor
         opacity: 0.8
     }
-        
+
     Controls.Label {
         id: textLabel
         anchors {
@@ -92,12 +128,6 @@ Controls.ItemDelegate {
             text: i18np("1 Image", "%1 Images", modelData.fileCount)
         }
     }
-    
-    SelectionDelegateHighlight {
-        id: selectionHighlight
-        visible: modelData.selected
-        z: parent.z + 1
-    }
 
     MouseArea {
         id: albumThumbnailMouseArea
@@ -106,7 +136,7 @@ Controls.ItemDelegate {
         onPressAndHold: albumDelegate.pressAndHold(mouse)
         onClicked: albumDelegate.clicked(mouse)
     }
-    
+
     Keys.onPressed: {
         switch (event.key) {
             case Qt.Key_Enter:
@@ -118,5 +148,6 @@ Controls.ItemDelegate {
                 break;
         }
     }
-    
+
+    background: null
 }

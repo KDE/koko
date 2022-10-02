@@ -415,16 +415,15 @@ Kirigami.ScrollablePage {
         delegate: AlbumDelegate {
             id: delegate
             modelData: model
+            isInAlbum: true
             highlighted: gridView.currentIndex == index
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
             Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
-            onClicked: {
-                if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
-                    gridView.model.toggleSelected(model.index)
-                } else {
-                    activated();
-                }
+            onClicked: if (page.state === "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType === Koko.Types.Image)) {
+                gridView.model.toggleSelected(model.index)
+            } else {
+                activated();
             }
             onPressAndHold: {
                 gridView.model.toggleSelected(model.index)
@@ -469,21 +468,6 @@ Kirigami.ScrollablePage {
                     default: {
                         console.log("Unknown")
                         break;
-                    }
-                }
-            }
-            SelectionButton {
-                id: selectionButton
-                opacity: ( delegate.containsMouse || page.state == "selecting")
-                visible: !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
-
-                anchors.top: delegate.top
-                anchors.left: delegate.left
-
-                Behavior on opacity {
-                    OpacityAnimator {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InOutQuad
                     }
                 }
             }
