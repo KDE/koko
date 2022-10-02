@@ -320,21 +320,6 @@ Kirigami.ScrollablePage {
                     }
                 }
             },
-            Kirigami.Action {
-                iconName: "edit-select-all"
-                text: i18n("Select All")
-                tooltip: i18n("Selects all the media in the current view")
-                visible: model.containImages
-                onTriggered: model.selectAll()
-
-            },
-            Kirigami.Action {
-                iconName: "edit-select-none"
-                text: i18n("Deselect All")
-                tooltip: i18n("De-selects all the selected media")
-                onTriggered: model.clearSelections()
-                visible: model.hasSelectedImages
-            },
             ShareAction {
                 id: shareAction
                 visible: model.hasSelectedImages
@@ -369,6 +354,21 @@ Kirigami.ScrollablePage {
                 iconName: "configure"
                 text: i18n("Configure…")
                 onTriggered: applicationWindow().openSettingsPage();
+            },
+            Kirigami.Action {
+                iconName: "edit-select-all"
+                text: i18n("Select All")
+                tooltip: i18n("Selects all the media in the current view")
+                visible: model.containImages
+                onTriggered: model.selectAll()
+
+            },
+            Kirigami.Action {
+                iconName: "edit-select-none"
+                text: i18n("Deselect All")
+                tooltip: i18n("De-selects all the selected media")
+                onTriggered: model.clearSelections()
+                visible: model.hasSelectedImages
             }
         ]
     }
