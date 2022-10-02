@@ -27,17 +27,6 @@ Controls.ItemDelegate {
         image.image = old;
     }
 
-    Rectangle {
-        anchors {
-            fill: image
-            margins: -1
-        }
-        radius: 2
-        Kirigami.Theme.inherit: false
-        Kirigami.Theme.colorSet: Kirigami.Theme.Window
-        color: Kirigami.Theme.backgroundColor
-        visible: modelData.itemType != Koko.Types.Folder
-    }
     KQA.QImageItem {
         id: image
         anchors.centerIn: parent
