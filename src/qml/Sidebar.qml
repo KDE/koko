@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.15 as QQC2
 import org.kde.koko 0.1 as Koko
 
-import org.kde.kirigami 2.5 as Kirigami
+import org.kde.kirigami 2.19 as Kirigami
 
 Kirigami.OverlayDrawer {
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
@@ -59,38 +59,33 @@ Kirigami.OverlayDrawer {
             clip: true
 
             component PlaceHeading : Kirigami.Heading {
-                topPadding: Kirigami.Units.largeSpacing
+                topPadding: Kirigami.Units.largeSpacing * 1.5
+                bottomPadding: Kirigami.Units.smallSpacing
                 leftPadding: Kirigami.Units.largeSpacing
                 Layout.fillWidth: true
-                level: 6
+                level: 4
                 opacity: 0.7
             }
 
-            component PlaceItem : Kirigami.AbstractListItem {
+            component PlaceItem : Kirigami.BasicListItem {
                 id: item
                 property string icon
                 property string filter
                 property string query
+
                 checkable: true
                 separatorVisible: false
                 Layout.fillWidth: true
                 Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
                 Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
                 Accessible.role: Accessible.MenuItem
-                leftPadding: Kirigami.Units.largeSpacing
-                contentItem: Row {
-                    Kirigami.Icon {
-                        source: item.icon
-                        width: height
-                        height: Kirigami.Units.iconSizes.small
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                    QQC2.Label {
-                        leftPadding: Kirigami.Units.smallSpacing
-                        text: item.text
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
+
+                leading: Kirigami.Icon {
+                    source: item.icon
+                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
+                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
                 }
+
                 onClicked: {
                     scrollView.currentlySelectedAction = item;
 
