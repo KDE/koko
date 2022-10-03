@@ -37,7 +37,7 @@ Controls.ItemDelegate {
     TapHandler {
         acceptedButtons: Qt.RightButton
         onTapped: {
-            gridView.model.setSelected(model.index)
+            gridView.model.setSelected(model.index);
             const component = Qt.createComponent(Qt.resolvedUrl('./FileContextMenu.qml'));
             if (component.status !== Component.Ready) {
                 console.error("Error loading component:", component.errorString());
@@ -45,6 +45,7 @@ Controls.ItemDelegate {
             const item = component.createObject(albumDelegate, {
                 fileUrl: model.imageurl,
                 model: gridView.model,
+                isInTrash: isTrashView,
             });
             item.popup();
         }

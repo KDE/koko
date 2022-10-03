@@ -10,6 +10,7 @@ import org.kde.koko 0.1 as Koko
 QQC2.Menu {
     required property url fileUrl
     required property QtObject model
+    required property bool isInTrash
 
     Component {
         id: createFolderSheetComponent
@@ -66,7 +67,14 @@ QQC2.Menu {
         text: i18n("Rename")
     }
     QQC2.MenuItem {
+        text: i18n("Restore")
+        visible: isInTrash
+        onTriggered: model.restoreSelection()
+    }
+    QQC2.MenuItem {
         text: i18n("Delete")
+        visible: !isInTrash
+        onTriggered: model.deleteSelection()
     }
 
     QQC2.MenuSeparator {}
