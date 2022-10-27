@@ -62,6 +62,7 @@ int main(int argc, char **argv)
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("koko"));
+    aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=koko");
 
     aboutData.addAuthor(xi18nc("@info:credit", "Vishesh Handa"), xi18nc("@info:credit", "Developer"), "vhanda@kde.org");
 
