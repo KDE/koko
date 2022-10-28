@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-03 00:44+0000\n"
+"POT-Creation-Date: 2022-10-28 00:43+0000\n"
 "PO-Revision-Date: 2022-09-21 19:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -46,59 +46,59 @@ msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(©) 2013-2020 مساهمو كدي"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "فيشيش هاندا"
 
-#: main.cpp:66 main.cpp:68 main.cpp:70 main.cpp:72 main.cpp:74 main.cpp:76
+#: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "مطوّر"
 
-#: main.cpp:68
+#: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "أتول شارما"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "ماركو مارتن"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "نيكولاس فلا"
 
-#: main.cpp:74
+#: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "كارل شوان"
 
-#: main.cpp:76
+#: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "ميكيل جونسون"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Image viewer"
 msgstr "عارض صور"
 
-#: main.cpp:84
+#: main.cpp:85
 #, kde-format
 msgid "Reset the database"
 msgstr "صفّر قاعدة البيانات"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
 msgstr "مسار الصورة التي تود فتحها"
