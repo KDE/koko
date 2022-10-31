@@ -17,6 +17,8 @@ import org.kde.koko 0.1
 BaseImageDelegate {
     id: root
 
+    readonly property bool zoomedOut: root.zoomFactor < 1
+
     loaded: image.status == Image.Ready
     loading: image.status == Image.Loading
 
@@ -33,7 +35,10 @@ BaseImageDelegate {
         cache: false
 
         fillMode: Image.PreserveAspectFit
-        smooth: root.zoomFactor < 1
+
+        // This makes zoomed-out imaged slook better
+        smooth: root.zoomedOut
+        mipmap: root.zoomedOut
 
         autoTransform: true
     }
