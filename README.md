@@ -29,5 +29,5 @@ These files are licensed under the CC-BY-4.0 and are maintained by the GeoNames 
 * http://download.geonames.org/export/dump/admin1CodesASCII.txt
 * http://download.geonames.org/export/dump/admin2Codes.txt
 
-There is no need to copy these files to the Koko directory: CMake will take care of downloading (and
-extracting, when relevant) in the right place.
+These files need to be copied to the `src` directory. CMake will
+take care of the rest.
