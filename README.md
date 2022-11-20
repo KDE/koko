@@ -23,7 +23,7 @@ LicenseRef-KDE-Accepted-LGPL. More information can be found in the
 ## Packaging
 
 To build Koko, it is required to import a few files from outside this repository.
-These files are licensed under the CC-BY-4.0, were created and maintained by the GeoNames project.
+These files are licensed under the CC-BY-4.0 and are maintained by the GeoNames project.
 
 * http://download.geonames.org/export/dump/cities1000.zip
 * http://download.geonames.org/export/dump/admin1CodesASCII.txt
