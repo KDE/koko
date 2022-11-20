@@ -22,12 +22,12 @@ LicenseRef-KDE-Accepted-LGPL. More information can be found in the
 
 ## Packaging
 
-To build Koko, it is required to have a few files packaged with the
-application. These files are licensed under the CC-BY-SA-4.0.
+To build Koko, it is required to import a few files from outside this repository.
+These files are licensed under the CC-BY-4.0, were created and maintained by the GeoNames project.
 
 * http://download.geonames.org/export/dump/cities1000.zip
 * http://download.geonames.org/export/dump/admin1CodesASCII.txt
 * http://download.geonames.org/export/dump/admin2Codes.txt
 
-These files need to be copied to the `src` directory. CMake will
-take care of the rest.
+There is no need to copy these files to the Koko directory: CMake will take care of downloading (and
+extracting, when relevant) in the right place.
