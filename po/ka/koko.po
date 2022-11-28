@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:43+0000\n"
-"PO-Revision-Date: 2022-10-07 13:23+0200\n"
+"PO-Revision-Date: 2022-11-27 22:26+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -38,7 +38,7 @@ msgstr "<application>Koko</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr ""
+msgstr "Koko სურათების გალერეაა თქვენი კოლექციებისთვის."
 
 #: main.cpp:61
 #, kde-kuit-format
@@ -91,17 +91,17 @@ msgstr "მიკელ ჯონსონი"
 #: main.cpp:84
 #, kde-format
 msgid "Image viewer"
-msgstr ""
+msgstr "სურათების გალერეა"
 
 #: main.cpp:85
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "ბაზის გასუფთავება"
 
 #: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
-msgstr ""
+msgstr "ბილიკი გამოსახულებამდე, რომელიც გნებავთ, გახსნათ"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -164,7 +164,7 @@ msgstr "მონიშნულის აღდგენა"
 #: qml/AlbumView.qml:348
 #, kde-format
 msgid "Restore selected items from trash"
-msgstr ""
+msgstr "მონიშნული ელემენტების აღდგენა სანაგვე ყუთიდან"
 
 #: qml/AlbumView.qml:355 qml/PlacesPage.qml:22
 #, kde-format
@@ -179,7 +179,7 @@ msgstr "ყველას მონიშვნა"
 #: qml/AlbumView.qml:361
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr ""
+msgstr "მიმდინარე ხედში ყველა მედიის მონიშვნა"
 
 #: qml/AlbumView.qml:368
 #, kde-format
@@ -189,12 +189,12 @@ msgstr "მონიშვნის მოხსნა"
 #: qml/AlbumView.qml:369
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr ""
+msgstr "ყველა მონიშნულის მოხსნა"
 
 #: qml/AlbumView.qml:501
 #, kde-format
 msgid "No Media Found"
-msgstr ""
+msgstr "მედია ვერ ვიპოვე"
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:113
 #, kde-format
@@ -232,7 +232,7 @@ msgstr "შენახვა"
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
-msgstr ""
+msgstr "ფაილის შენახვის შეცდომა. შეამოწმეთ, გაქვთ თუ არა ჩაწერის უფლება."
 
 #: qml/EditorView.qml:65
 #, kde-format
@@ -302,7 +302,7 @@ msgstr "შენახვა როგორც"
 #: qml/EditorView.qml:238
 #, kde-format
 msgid "You are now editing a new file."
-msgstr ""
+msgstr "არედაქტირებთ ახალ ფაილს."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
@@ -313,8 +313,8 @@ msgstr "გადახვევის ცოცია"
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ერთი წამით უკან გადახვევაა"
+msgstr[1] "%1 წამით უკან გადახვევა"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
@@ -344,12 +344,12 @@ msgstr "ხმის ცოცია"
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "მიმდინარე ვიდეოს გამეორება"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Don't repeat current video"
-msgstr ""
+msgstr "არ გაიმეორო მიმდინარე ვიდეო"
 
 #: qml/ImageViewPage.qml:74
 #, kde-format
@@ -359,12 +359,12 @@ msgstr "ინფორმაცია"
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "See information about video"
-msgstr ""
+msgstr "ვიდეოს შესახებ ინფორმაციის ნახვა"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about image"
-msgstr ""
+msgstr "გამოსახულების ინფორმაციის ჩვენება"
 
 #: qml/ImageViewPage.qml:86
 #, kde-format
@@ -663,7 +663,7 @@ msgstr "ზოგადი:"
 #: qml/SettingsPage.qml:19
 #, kde-format
 msgid "Show preview carousel in image view"
-msgstr ""
+msgstr "გალერეის რეჟიმში მინიატურების კარუსელის ჩვენება"
 
 #: qml/SettingsPage.qml:24 qml/Sidebar.qml:222
 #, kde-format
