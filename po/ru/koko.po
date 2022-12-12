@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Alexander Yavorsky <kekcuha@gmail.com>, 2021.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:43+0000\n"
-"PO-Revision-Date: 2021-02-06 17:46+0300\n"
+"PO-Revision-Date: 2022-12-11 22:37+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -16,17 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.2\n"
+"X-Generator: Lokalize 21.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Александр Яворский"
+msgstr "Александр Яворский, Павел Чернышов"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kekcuha@gmail.com"
+msgstr "kekcuha@gmail.com, farline99@yandex.ru"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -38,7 +38,7 @@ msgstr "<application>Koko</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr ""
+msgstr "Koko — приложение для просмотра изображений."
 
 #: main.cpp:61
 #, kde-kuit-format
@@ -86,67 +86,67 @@ msgstr "Carl Schwan"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:84
 #, kde-format
 msgid "Image viewer"
-msgstr ""
+msgstr "Приложение для просмотра изображений"
 
 #: main.cpp:85
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "Сбросить базу данных"
 
 #: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
-msgstr ""
+msgstr "путь к изображению, которое вы хотите открыть"
 
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Не удалось опубликовать файл"
 
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr ""
+msgstr "Ссылка общего доступа для изображения: <a href='%1'>%1</a>"
 
 #: qml/AlbumDelegate.qml:92
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 изображение"
+msgstr[1] "%1 изображения"
+msgstr[2] "%1 изображений"
+msgstr[3] "одно изображение"
 
 #: qml/AlbumView.qml:222 qml/AlbumView.qml:255
 #, kde-format
 msgid "Remove Bookmark"
-msgstr ""
+msgstr "Удалить закладку"
 
 #: qml/AlbumView.qml:222 qml/AlbumView.qml:255
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr "По папкам"
+msgstr "Добавить папку в закладки"
 
 #: qml/AlbumView.qml:276
 #, kde-format
 msgid "Go Up"
-msgstr ""
+msgstr "Перейти вверх"
 
 #: qml/AlbumView.qml:307
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "Домашняя папка"
 
 #: qml/AlbumView.qml:307
 #, kde-format
 msgid "Root"
-msgstr ""
+msgstr "Корневая папка"
 
 #: qml/AlbumView.qml:340
 #, kde-format
@@ -159,21 +159,19 @@ msgid "Move selected items to trash"
 msgstr "Переместить выбранные объекты в корзину"
 
 #: qml/AlbumView.qml:347
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgid "Restore Selection"
-msgstr "Удалить выбранное"
+msgstr "Восстановить выделенное"
 
 #: qml/AlbumView.qml:348
-#, fuzzy, kde-format
-#| msgid "Move selected items to trash"
+#, kde-format
 msgid "Restore selected items from trash"
-msgstr "Переместить выбранные объекты в корзину"
+msgstr "Восстановить выбранные элементы из корзины"
 
 #: qml/AlbumView.qml:355 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Настроить…"
 
 #: qml/AlbumView.qml:360
 #, kde-format
@@ -183,43 +181,42 @@ msgstr "Выбрать все"
 #: qml/AlbumView.qml:361
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr ""
+msgstr "Выбрать все изображения и видео в текущем представлении"
 
 #: qml/AlbumView.qml:368
 #, kde-format
 msgid "Deselect All"
-msgstr ""
+msgstr "Отменить выбор"
 
 #: qml/AlbumView.qml:369
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr ""
+msgstr "Снять выделение с всех выбранных изображений и видео"
 
 #: qml/AlbumView.qml:501
-#, fuzzy, kde-format
-#| msgid "No Images Found"
+#, kde-format
 msgid "No Media Found"
-msgstr "Не найдено ни одного изображения"
+msgstr "Не найдено ни одного файла изображения или видео"
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:113
 #, kde-format
 msgid "Pictures"
-msgstr ""
+msgstr "Изображения"
 
 #: qml/BottomNavBar.qml:73 qml/Sidebar.qml:123
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "Видео"
 
 #: qml/BottomNavBar.qml:79 qml/Sidebar.qml:117
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "Избранное"
 
 #: qml/BottomNavBar.qml:85 qml/Main.qml:53 qml/Sidebar.qml:108
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "Места"
 
 #: qml/EditorView.qml:26
 #, kde-format
@@ -230,7 +227,7 @@ msgstr "Изменить"
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: qml/EditorView.qml:56 qml/EditorView.qml:242
 #, kde-format
@@ -238,160 +235,162 @@ msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
+"Не удалось сохранить файл. Проверьте, достаточно ли прав доступа для "
+"редактирования имеется этого файла."
 
 #: qml/EditorView.qml:65
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
-msgstr ""
+msgstr "Отменить действие"
 
 #: qml/EditorView.qml:77 qml/EditorView.qml:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: qml/EditorView.qml:77 qml/EditorView.qml:83
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
-msgstr ""
+msgstr "Кадрировать"
 
 #: qml/EditorView.qml:89 qml/EditorView.qml:95
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr ""
+msgstr "Изменить размер"
 
 #: qml/EditorView.qml:101
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr ""
+msgstr "Повернуть влево"
 
 #: qml/EditorView.qml:107
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr ""
+msgstr "Повернуть вправо"
 
 #: qml/EditorView.qml:113
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr ""
+msgstr "Перевернуть"
 
 #: qml/EditorView.qml:119
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
-msgstr ""
+msgstr "Отразить"
 
 #: qml/EditorView.qml:133
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
-msgstr ""
+msgstr "Размер:"
 
 #: qml/EditorView.qml:165
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
-msgstr ""
+msgstr "Расположение:"
 
 #: qml/EditorView.qml:230
 #, kde-format
 msgid "Save As"
-msgstr ""
+msgstr "Сохранить как"
 
 #: qml/EditorView.qml:238
 #, kde-format
 msgid "You are now editing a new file."
-msgstr ""
+msgstr "Сейчас вы редактируете новый файл."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
 msgid "Seek slider"
-msgstr ""
+msgstr "Ползунок хода воспроизведения"
 
 #: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Перемотать назад на %1 секунду"
+msgstr[1] "Перемотать назад на %1 секунды"
+msgstr[2] "Перемотать назад на %1 секунд"
+msgstr[3] "Перемотать назад на %1 секунду"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Pause playback"
-msgstr ""
+msgstr "Приостановить воспроизведение"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Continue playback"
-msgstr ""
+msgstr "Продолжить воспроизведение"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Unmute audio"
-msgstr ""
+msgstr "Включить звук"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Mute audio"
-msgstr ""
+msgstr "Выключить звук"
 
 #: qml/imagedelegate/VideoPlayer.qml:247
 #, kde-format
 msgid "Volume slider"
-msgstr ""
+msgstr "Регулятор громкости"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "Повторять текущее видео"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Don't repeat current video"
-msgstr ""
+msgstr "Не повторять текущее видео"
 
 #: qml/ImageViewPage.qml:74
 #, kde-format
 msgid "Info"
-msgstr ""
+msgstr "Сведения"
 
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "See information about video"
-msgstr ""
+msgstr "Посмотреть информацию о видео"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about image"
-msgstr ""
+msgstr "Посмотреть информацию о фото"
 
 #: qml/ImageViewPage.qml:86
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Убрать"
 
 #: qml/ImageViewPage.qml:86
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "Избранное"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Убрать из избранного"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Add to favorites"
-msgstr ""
+msgstr "Добавить в избранное"
 
 #: qml/ImageViewPage.qml:98
 #, kde-format
@@ -400,10 +399,9 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: qml/ImageViewPage.qml:117
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgid "Share Video"
-msgstr "Опубликовать изображение"
+msgstr "Опубликовать видео"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
@@ -411,8 +409,7 @@ msgid "Share Image"
 msgstr "Опубликовать изображение"
 
 #: qml/ImageViewPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
 msgstr "Опубликовать"
@@ -420,183 +417,181 @@ msgstr "Опубликовать"
 #: qml/ImageViewPage.qml:132
 #, kde-format
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Начать слайд-шоу"
 
 #: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Slideshow"
-msgstr ""
+msgstr "Слайд-шоу"
 
 #: qml/ImageViewPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgid "Thumbnail Bar"
-msgstr "Размер миниатюр:"
+msgstr "Панель миниатюр"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Hide Thumbnail Bar"
-msgstr ""
+msgstr "Скрыть панель миниатюр"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Show Thumbnail Bar"
-msgstr ""
+msgstr "Показать панель миниатюр"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr ""
+msgstr "Панель миниатюр"
 
 #: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
-msgstr ""
+msgstr "Во весь экран"
 
 #: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
-msgstr ""
+msgstr "Выйти из полноэкранного режима"
 
 #: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
-msgstr ""
+msgstr "Полноэкранный режим"
 
 #: qml/ImageViewPage.qml:404
 #, kde-format
 msgid "Previous image"
-msgstr ""
+msgstr "Предыдущее изображение"
 
 #: qml/ImageViewPage.qml:434
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgid "Next image"
-msgstr "Изменить изображение"
+msgstr "Следующее изображение"
 
 #: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr ""
+msgstr "Интервал слайд-шоу:"
 
 #: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1 секунда"
+msgstr[1] "%1 секунды"
+msgstr[2] "%1 секунд"
+msgstr[3] "%1 секунда"
 
 #: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr ""
+msgstr "Повторять бесконечно"
 
 #: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr ""
+msgstr "Случайно"
 
 #: qml/ImageViewPage.qml:734
 #, kde-format
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Остановить слайд-шоу"
 
 #: qml/ImageViewPage.qml:748
 #, kde-format
 msgid "Show All Controls"
-msgstr ""
+msgstr "Показать все элементы управления"
 
 #: qml/InfoDrawer.qml:40 qml/InfoSidebar.qml:37
 #, kde-format
 msgid "Metadata"
-msgstr ""
+msgstr "Метаданные"
 
 #: qml/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "File Name"
-msgstr ""
+msgstr "Имя файла"
 
 #: qml/InfoDrawerSidebarBase.qml:52
 #, kde-format
 msgid "Dimension"
-msgstr ""
+msgstr "Размер"
 
 #: qml/InfoDrawerSidebarBase.qml:58
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: qml/InfoDrawerSidebarBase.qml:64
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "Размер"
 
 #: qml/InfoDrawerSidebarBase.qml:76
 #, kde-format
 msgid "Created"
-msgstr ""
+msgstr "Создано"
 
 #: qml/InfoDrawerSidebarBase.qml:88
 #, kde-format
 msgid "Model"
-msgstr ""
+msgstr "Модель"
 
 #: qml/InfoDrawerSidebarBase.qml:100
 #, kde-format
 msgid "Latitude"
-msgstr ""
+msgstr "Широта"
 
 #: qml/InfoDrawerSidebarBase.qml:112
 #, kde-format
 msgid "Longitude"
-msgstr ""
+msgstr "Долгота"
 
 #: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Оценка"
 
 #: qml/InfoDrawerSidebarBase.qml:131
 #, kde-format
 msgid "Current rating %1"
-msgstr ""
+msgstr "Текущая оценка: %1"
 
 #: qml/InfoDrawerSidebarBase.qml:138
 #, kde-format
 msgid "Set rating to %1"
-msgstr ""
+msgstr "Новая оценка: %1"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: qml/InfoDrawerSidebarBase.qml:172
 #, kde-format
 msgid "Image description…"
-msgstr ""
+msgstr "Описание изображения..."
 
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:199
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Метки"
 
 #: qml/InfoDrawerSidebarBase.qml:198
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Добавить метку"
 
 #: qml/Main.qml:106
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Изображения"
 
 #: qml/Main.qml:117 qml/Main.qml:126
 #, kde-format
@@ -606,40 +601,37 @@ msgstr "Папки"
 #: qml/PlacesPage.qml:79 qml/Sidebar.qml:153
 #, kde-format
 msgid "Network"
-msgstr ""
+msgstr "Сеть"
 
 #: qml/PlacesPage.qml:85 qml/Sidebar.qml:144
 #, kde-format
 msgid "Trash"
-msgstr ""
+msgstr "Корзина"
 
 #: qml/PlacesPage.qml:91
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgid "Pinned Folders"
-msgstr "Папки"
+msgstr "Закреплённые папки"
 
 #: qml/PlacesPage.qml:111 qml/Sidebar.qml:158
 #, kde-format
 msgid "Locations"
-msgstr "Местоположение"
+msgstr "Местоположения"
 
 #: qml/PlacesPage.qml:115 qml/Sidebar.qml:161
-#, fuzzy, kde-format
-#| msgid "By Country"
+#, kde-format
 msgid "Countries"
-msgstr "По странам"
+msgstr "Страны"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:166
-#, fuzzy, kde-format
-#| msgid "By State"
+#, kde-format
 msgid "States"
-msgstr "По областям"
+msgstr "Области"
 
 #: qml/PlacesPage.qml:125 qml/Sidebar.qml:171
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "Города"
 
 #: qml/PlacesPage.qml:131 qml/Sidebar.qml:176
 #, kde-format
@@ -647,42 +639,39 @@ msgid "Time"
 msgstr "Время"
 
 #: qml/PlacesPage.qml:135 qml/Sidebar.qml:179
-#, fuzzy, kde-format
-#| msgid "By Year"
+#, kde-format
 msgid "Years"
-msgstr "По годам"
+msgstr "Годы"
 
 #: qml/PlacesPage.qml:140 qml/Sidebar.qml:184
-#, fuzzy, kde-format
-#| msgid "By Month"
+#, kde-format
 msgid "Months"
-msgstr "По месяцам"
+msgstr "Месяцы"
 
 #: qml/PlacesPage.qml:145 qml/Sidebar.qml:189
-#, fuzzy, kde-format
-#| msgid "By Week"
+#, kde-format
 msgid "Weeks"
-msgstr "По неделям"
+msgstr "Недели"
 
 #: qml/PlacesPage.qml:150 qml/Sidebar.qml:194
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "Дни"
 
 #: qml/SettingsPage.qml:15 qml/Sidebar.qml:239
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
 #: qml/SettingsPage.qml:18
 #, kde-format
 msgid "General:"
-msgstr ""
+msgstr "Основное:"
 
 #: qml/SettingsPage.qml:19
 #, kde-format
 msgid "Show preview carousel in image view"
-msgstr ""
+msgstr "Показывать ленту миниатюр в режиме просмотра изображений"
 
 #: qml/SettingsPage.qml:24 qml/Sidebar.qml:222
 #, kde-format
@@ -692,18 +681,18 @@ msgstr "Размер миниатюр:"
 #: qml/SettingsPage.qml:25 qml/Sidebar.qml:226
 #, kde-format
 msgid "%1 px"
-msgstr ""
+msgstr "%1 пикс."
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr ""
+msgstr "Параметры слайд-шоу:"
 
 #: qml/SettingsPage.qml:115
 #, kde-format
 msgid "Open About Page"
-msgstr ""
+msgstr "Открыть страницу «О программе»"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -711,10 +700,9 @@ msgid "Share"
 msgstr "Опубликовать"
 
 #: qml/ShareAction.qml:23 qml/ShareDrawer.qml:22
-#, fuzzy, kde-format
-#| msgid "Share the selected images"
+#, kde-format
 msgid "Share the selected media"
-msgstr "Опубликовать выбранные изображения"
+msgstr "Опубликовать выбранные файлы"
 
 #: qml/Sidebar.qml:43
 #, kde-format
@@ -725,12 +713,12 @@ msgstr "Критерий сортировки"
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
+msgstr "Сетевые ресурсы"
 
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
-msgstr ""
+msgstr "Создать метку…"
 
 #~ msgid "Edit image"
 #~ msgstr "Изменить изображение"
