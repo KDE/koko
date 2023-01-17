@@ -683,7 +683,7 @@ msgstr "%1 px"
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr "Configuració del passe de diapositives:"
+msgstr "Configureu el passe de diapositives:"
 
 #: qml/SettingsPage.qml:115
 #, kde-format
