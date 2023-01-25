@@ -13,21 +13,31 @@ import QtQuick.Layouts 1.15
 import QtQuick.Dialogs 1.3
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kquickimageeditor 1.0 as KQuickImageEditor
+import "./Dialog"
 
 Kirigami.Page {
     id: root
 
-    property bool cropping: false;
-    property bool resizing: false;
+    property bool cropping: false
+    property bool resizing: false
     property string imagePath
+    property bool forceDiscard: false
 
-    signal imageEdited();
+    signal imageEdited()
 
     title: i18n("Edit")
+
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
+
+    onBackRequested: (event) => {
+        if (imageDoc.edited && !root.forceDiscard) {
+            confirmDiscardingChangeDialog.visible = true;
+            event.accepted = true;
+        }
+    }
 
     function crop() {
         root.cropping = false
@@ -186,6 +196,14 @@ Kirigami.Page {
                 }
             }
         ]
+    }
+
+    ConfirmDiscardingChange {
+        id: confirmDiscardingChangeDialog
+        onDiscardChanges: {
+            root.forceDiscard = true;
+            applicationWindow().pageStack.layers.pop();
+        }
     }
 
     TextMetrics {

@@ -8,6 +8,7 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         <file>qml/AlbumDelegate.qml</file>
         <file>qml/AlbumView.qml</file>
         <file>qml/BottomNavBar.qml</file>
+        <file>qml/Dialog/ConfirmDiscardingChange.qml</file>
         <file>qml/EditorView.qml</file>
         <file>qml/ImageViewPage.qml</file>
         <file>qml/InfoDrawer.qml</file>
