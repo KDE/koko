@@ -69,12 +69,11 @@ Kirigami.ApplicationWindow {
     }
 
     function openSettingsPage() {
-        pageStack.layers.push(Qt.resolvedUrl("SettingsPage.qml"))
+        pageStack.pushDialogLayer(Qt.resolvedUrl("SettingsPage.qml"), {}, {
+            title: i18n("Configure"),
+            width: Kirigami.Units.gridUnit * 30,
+        });
         settingsOpened(false); //isPage
-    }
-
-    function openAboutPage() {
-        pageStack.layers.push(Qt.resolvedUrl("AboutPage.qml"));
     }
 
     function updateGlobalDrawer() {
