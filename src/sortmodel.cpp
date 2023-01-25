@@ -17,8 +17,6 @@
 #include <kio/copyjob.h>
 #include <kio/previewjob.h>
 
-using namespace Jungle;
-
 SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
     , m_screenshotSize(256, 256)

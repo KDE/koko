@@ -5,8 +5,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#ifndef JUNGLE_SORTMODEL_H
-#define JUNGLE_SORTMODEL_H
+#pragma once
 
 #include <QItemSelectionModel>
 #include <QJsonArray>
@@ -17,8 +16,6 @@
 #include <kimagecache.h>
 #include <kshareddatacache.h>
 
-namespace Jungle
-{
 class SortModel : public QSortFilterProxyModel
 {
     Q_OBJECT
@@ -73,6 +70,3 @@ private:
     KImageCache *m_imageCache;
     bool m_containImages;
 };
-}
-
-#endif // JUNGLE_SORTMODEL_H

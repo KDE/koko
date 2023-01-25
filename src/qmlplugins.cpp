@@ -40,7 +40,7 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<ImageTagsModel>(uri, 0, 1, "ImageTagsModel");
     qmlRegisterType<ImageFolderModel>(uri, 0, 1, "ImageFolderModel");
     qmlRegisterType<Exiv2Extractor>(uri, 0, 1, "Exiv2Extractor");
-    qmlRegisterType<Jungle::SortModel>(uri, 0, 1, "SortModel");
+    qmlRegisterType<SortModel>(uri, 0, 1, "SortModel");
     qmlRegisterType<ImageListModel>(uri, 0, 1, "ImageListModel");
     qmlRegisterType<NotificationManager>(uri, 0, 1, "NotificationManager");
     qmlRegisterUncreatableType<Types>(uri, 0, 1, "Types", "Cannot instantiate the Types class");
