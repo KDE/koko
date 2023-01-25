@@ -6,7 +6,6 @@
 
 #include "qmlplugins.h"
 
-#include "allimagesmodel.h"
 #include "dirmodelutils.h"
 #include "displaycolorspace.h"
 #include "exiv2extractor.h"
@@ -41,7 +40,6 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterType<ImageTagsModel>(uri, 0, 1, "ImageTagsModel");
     qmlRegisterType<ImageFolderModel>(uri, 0, 1, "ImageFolderModel");
     qmlRegisterType<Exiv2Extractor>(uri, 0, 1, "Exiv2Extractor");
-    qmlRegisterType<AllImagesModel>(uri, 0, 1, "AllImagesModel");
     qmlRegisterType<Jungle::SortModel>(uri, 0, 1, "SortModel");
     qmlRegisterType<ImageListModel>(uri, 0, 1, "ImageListModel");
     qmlRegisterType<NotificationManager>(uri, 0, 1, "NotificationManager");

@@ -93,7 +93,6 @@ set (qml_plugin_SRCS
     imagetimemodel.cpp
     imagefoldermodel.cpp
     sortmodel.cpp
-    allimagesmodel.cpp
     imagelistmodel.cpp
     notificationmanager.cpp
     types.cpp
