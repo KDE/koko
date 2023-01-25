@@ -28,7 +28,9 @@ Kirigami.ApplicationWindow {
     Timer {
         id: saveWindowGeometryTimer
         interval: 1000
-        onTriggered: KokoPrivate.Controller.saveWindowGeometry(root)
+        onTriggered: if (applicationWindow().visibility !== Window.FullScreen) {
+            KokoPrivate.Controller.saveWindowGeometry(root);
+        }
     }
 
     onWidthChanged: saveWindowGeometryTimer.restart()

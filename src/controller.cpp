@@ -20,3 +20,13 @@ void Controller::saveWindowGeometry(QQuickWindow *window)
     dataResource.sync();
 #endif
 }
+
+void Controller::restoreWindowGeometry(QQuickWindow *window)
+{
+#ifndef Q_OS_ANDROID
+    KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
+    KConfigGroup windowGroup(&dataResource, "Window");
+    KWindowConfig::restoreWindowSize(window, windowGroup);
+    KWindowConfig::restoreWindowPosition(window, windowGroup);
+#endif
+}

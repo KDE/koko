@@ -13,4 +13,5 @@ class Controller : public QObject
     Q_OBJECT
 public:
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
+    Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window);
 };

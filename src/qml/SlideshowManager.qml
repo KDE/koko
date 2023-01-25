@@ -6,6 +6,7 @@
 
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import org.kde.koko.private 0.1 as KokoPrivate
 
 // This object manages slideshows.
 // It abstract the implementation with a clean and simple API,
@@ -33,7 +34,7 @@ Item {
         running = true;
         lastWindowVisibility = applicationWindow().visibility
         lastControlsVisible = applicationWindow().controlsVisible
-        applicationWindow().saveWindowState()
+        KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
         applicationWindow().visibility = Window.FullScreen;
         applicationWindow().controlsVisible = false;
         slideshowTimer.restart();

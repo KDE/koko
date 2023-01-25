@@ -24,6 +24,7 @@ Kirigami.Page {
 
     property var startIndex
     property var imagesModel
+    property int lastWindowVisibility: applicationWindow().visibility
 
     Connections {
         target: imagesModel
@@ -152,10 +153,12 @@ Kirigami.Page {
                 shortcut: "F"
                 visible: !Kirigami.Settings.isMobile
                 onTriggered: {
-                    if (applicationWindow().visibility == Window.FullScreen) {
-                        applicationWindow().restoreWindowState()
+                    if (applicationWindow().visibility === Window.FullScreen) {
+                        applicationWindow().visibility = lastWindowVisibility
+                        KokoPrivate.Controller.restoreWindowGeometry(applicationWindow());
                     } else {
-                        applicationWindow().saveWindowState()
+                        KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
+                        lastWindowVisibility = applicationWindow().visibility
                         applicationWindow().visibility = Window.FullScreen;
                     }
                     listView.forceActiveFocus();
