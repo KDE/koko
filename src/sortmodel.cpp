@@ -46,8 +46,9 @@ SortModel::SortModel(QObject *parent)
         if (!sourceModel()) {
             return;
         }
-        for (int i = 0; i <= sourceModel()->rowCount(); i++) {
-            if (Types::Image == sourceModel()->data(sourceModel()->index(i, 0, QModelIndex()), Roles::ItemTypeRole).toInt() && m_containImages == false) {
+        for (int i = 0; i < sourceModel()->rowCount(); i++) {
+            const auto itemType = sourceModel()->data(sourceModel()->index(i, 0, {}), Roles::ItemTypeRole).toInt();
+            if (Types::Image == itemType && m_containImages == false) {
                 setContainImages(true);
                 break;
             }

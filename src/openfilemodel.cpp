@@ -14,24 +14,17 @@ OpenFileModel::OpenFileModel(const QStringList &images, QObject *parent)
 
 QHash<int, QByteArray> OpenFileModel::roleNames() const
 {
-    QHash<int, QByteArray> hash = QAbstractListModel::roleNames();
-    hash.insert(Roles::ImageUrlRole, "imageurl");
-    hash.insert(Roles::ItemTypeRole, "itemType");
-    hash.insert(Roles::MimeTypeRole, "mimeType");
-
-    return hash;
+    return Roles::roleNames();
 }
 
 QVariant OpenFileModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        return {};
-    }
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
     const int indexValue = index.row();
 
     switch (role) {
-    case Qt::DisplayRole:
+    case Roles::ContentRole:
         // TODO: return the filename component
         return m_images.at(indexValue);
 
@@ -46,6 +39,9 @@ QVariant OpenFileModel::data(const QModelIndex &index, int role) const
         QMimeType type = db.mimeTypeForFile(m_images.at(indexValue));
         return type.name();
     }
+
+    case Roles::SelectedRole:
+        return false;
     }
 
     return {};

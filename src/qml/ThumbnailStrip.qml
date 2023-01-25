@@ -18,7 +18,7 @@ import org.kde.kquickcontrolsaddons 2.0 as KQA
 ListView {
     id: thumbnailView
 
-    signal activated(var index)
+    signal activated(int index)
 
     orientation: Qt.Horizontal
     snapMode: ListView.SnapOneItem
@@ -36,13 +36,14 @@ ListView {
     displayMarginEnd: Kirigami.Units.smallSpacing
 
     delegate: AlbumDelegate {
+        id: delegate
+
         width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
         height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
-        onClicked: activated()
-        onActivated: thumbnailView.activated(model.index)
-        modelData: model
 
-        Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
+        onClicked: thumbnailView.activated(delegate.index)
+
+        Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)
         Controls.ToolTip.visible: hovered
         Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 

@@ -9,6 +9,7 @@
 #include <KWindowConfig>
 #include <QQuickWindow>
 #endif
+#include <QGuiApplication>
 
 void Controller::saveWindowGeometry(QQuickWindow *window)
 {
@@ -29,4 +30,9 @@ void Controller::restoreWindowGeometry(QQuickWindow *window)
     KWindowConfig::restoreWindowSize(window, windowGroup);
     KWindowConfig::restoreWindowPosition(window, windowGroup);
 #endif
+}
+
+Qt::KeyboardModifiers Controller::keyboardModifiers() const
+{
+    return QGuiApplication::keyboardModifiers();
 }

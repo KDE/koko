@@ -10,6 +10,7 @@ import QtQuick.Layouts 1.15
 
 import org.kde.kirigami 2.12 as Kirigami
 import org.kde.koko 0.1 as Koko
+import org.kde.koko.private 0.1
 
 Kirigami.ScrollablePage {
     id: page
@@ -391,59 +392,48 @@ Kirigami.ScrollablePage {
     GridView {
         id: gridView
 
-        //FIXME: right now if those two objects are out of this, the whole page breaks
-        Koko.SortModel {
-            id: sortedListModel
-        }
-        Koko.ImageFolderModel {
-            id: imageFolderModel
-        }
-
-        keyNavigationEnabled: true
-
         property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
+        property string url: model.sourceModel.url ? model.sourceModel.url : ""
 
         cellWidth: Math.floor(width/Math.floor(width/(kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2)))
-
         cellHeight: kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2
 
         topMargin: Kirigami.Units.gridUnit
 
         highlightMoveDuration: 0
+        keyNavigationEnabled: true
         focus: true
+
+        // always clean selection
+        onUrlChanged: model.clearSelections()
 
         delegate: AlbumDelegate {
             id: delegate
-            modelData: model
             highlighted: gridView.currentIndex == index
+
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
             Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
-            onClicked: {
-                if (page.state == "selecting" || (mouse.modifiers & Qt.ControlModifier ) && (model.itemType == Koko.Types.Image)) {
-                    gridView.model.toggleSelected(model.index)
-                } else {
-                    activated();
-                }
-            }
-            onPressAndHold: {
-                gridView.model.toggleSelected(model.index)
-            }
-            onActivated: {
+
+            onPressAndHold: gridView.model.toggleSelected(delegate.index)
+
+            onClicked: if (page.state === "selecting" || Controller.keyboardModifiers() & Qt.ControlModifier) {
+                gridView.model.toggleSelected(delegate.index)
+            } else {
                 gridView.model.clearSelections()
-                gridView.currentIndex = model.index;
-                switch( model.itemType) {
+                gridView.currentIndex = delegate.index;
+                switch(delegate.itemType) {
                     case Koko.Types.Album: {
                         imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
                         sortedListModel.sourceModel = imageListModel
-                        collectionSelected( sortedListModel, model.display)
+                        collectionSelected( sortedListModel, delegate.content)
                         break;
                     }
                     case Koko.Types.Folder: {
                         if (!page.isFolderView) {
-                            imageFolderModel.url = model.imageurl
+                            imageFolderModel.url = delegate.imageurl
                             sortedListModel.sourceModel = imageFolderModel
-                            folderSelected(sortedListModel, model.display, model.imageurl)
+                            folderSelected(sortedListModel, delegate.contetn, delegate.imageurl)
                             return
                         }
                         const tmp = page.backUrls;
@@ -453,7 +443,7 @@ Kirigami.ScrollablePage {
                         tmp.push(page.model.sourceModel.url);
                         page.backUrls = tmp;
                         page.backUrlsPosition++;
-                        page.model.sourceModel.url = model.imageurl
+                        page.model.sourceModel.url = delegate.imageurl;
                         break;
                     }
                     case Koko.Types.Image: {
@@ -474,36 +464,42 @@ Kirigami.ScrollablePage {
             }
             SelectionButton {
                 id: selectionButton
-                opacity: ( delegate.containsMouse || page.state == "selecting")
-                visible: !(model.itemType == Koko.Types.Folder || model.itemType == Koko.Types.Album)
 
-                anchors.top: delegate.top
-                anchors.left: delegate.left
+                selected: delegate.selected
+                index: delegate.index
+                opacity: delegate.hovered || page.state === "selecting"
+                visible: delegate.itemType !== Koko.Types.Folder && delegate.itemType !== Koko.Types.Album
 
-                Behavior on opacity {
-                    OpacityAnimator {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InOutQuad
-                    }
+                anchors {
+                    top: delegate.top
+                    left: delegate.left
                 }
             }
-        }
-
-        property string url: model.sourceModel.url ? model.sourceModel.url : ""
-
-        // always clean selection
-        onUrlChanged: {
-            model.clearSelections()
         }
 
         Kirigami.PlaceholderMessage {
             anchors.centerIn: parent
             text: i18n("No Media Found")
-            visible: gridView.count == 0
+            visible: gridView.count === 0
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
+
+        //FIXME: right now if those two objects are out of this, the whole page breaks
+        Koko.SortModel {
+            id: sortedListModel
+        }
+        Koko.ImageFolderModel {
+            id: imageFolderModel
+        }
     }
-    
-    onCollectionSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover)})
-    onFolderSelected: pageStack.push( Qt.resolvedUrl("AlbumView.qml"), { "model": selectedModel, "title": i18n(cover), "url": path })
+
+    onCollectionSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
+        model: selectedModel,
+        title: cover,
+    })
+    onFolderSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
+        model: selectedModel,
+        title: cover,
+        url: path
+    })
 }

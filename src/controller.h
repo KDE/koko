@@ -14,4 +14,5 @@ class Controller : public QObject
 public:
     Q_INVOKABLE void saveWindowGeometry(QQuickWindow *window);
     Q_INVOKABLE void restoreWindowGeometry(QQuickWindow *window);
+    Q_INVOKABLE Qt::KeyboardModifiers keyboardModifiers() const;
 };

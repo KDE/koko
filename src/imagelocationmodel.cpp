@@ -28,41 +28,32 @@ void ImageLocationModel::slotPopulate()
 
 QHash<int, QByteArray> ImageLocationModel::roleNames() const
 {
-    auto hash = QAbstractItemModel::roleNames();
-    hash.insert(Roles::FilesRole, "files");
-    hash.insert(Roles::FileCountRole, "fileCount");
-    // the url role returns the url of the cover image of the collection
-    hash.insert(Roles::ImageUrlRole, "imageurl");
-    hash.insert(Roles::ItemTypeRole, "itemType");
-
-    return hash;
+    return Roles::roleNames();
 }
 
 QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        return {};
-    }
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    QByteArray key = m_locations.at(index.row()).first;
-    QString display = m_locations.at(index.row()).second;
+    const QByteArray key = m_locations.at(index.row()).first;
+    const QString display = m_locations.at(index.row()).second;
 
     switch (role) {
-    case Qt::DisplayRole:
+    case Roles::ContentRole:
         return display;
 
     case Roles::FilesRole: {
-        auto group = static_cast<Types::LocationGroup>(m_group);
+        const auto group = static_cast<Types::LocationGroup>(m_group);
         return ImageStorage::instance()->imagesForLocation(key, group);
     }
 
     case Roles::FileCountRole: {
-        auto group = static_cast<Types::LocationGroup>(m_group);
+        const auto group = static_cast<Types::LocationGroup>(m_group);
         return ImageStorage::instance()->imagesForLocation(key, group).size();
     }
 
     case Roles::ImageUrlRole: {
-        auto group = static_cast<Types::LocationGroup>(m_group);
+        const auto group = static_cast<Types::LocationGroup>(m_group);
         return ImageStorage::instance()->imageForLocation(key, group);
     }
 

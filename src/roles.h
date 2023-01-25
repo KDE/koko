@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef ROLES_H
-#define ROLES_H
+#pragma once
 
+#include <QHash>
 #include <QObject>
 
 class Roles : public QObject
@@ -16,7 +16,31 @@ class Roles : public QObject
 public:
     using QObject::QObject;
     ~Roles() = default;
-    enum RoleNames { ImageUrlRole = Qt::UserRole + 1, MimeTypeRole, Thumbnail, ItemTypeRole, FilesRole, FileCountRole, DateRole, SelectedRole, SourceIndex };
-};
+    enum RoleNames {
+        ImageUrlRole = Qt::UserRole + 1,
+        MimeTypeRole,
+        Thumbnail,
+        ItemTypeRole,
+        FilesRole,
+        FileCountRole,
+        DateRole,
+        SelectedRole,
+        SourceIndex,
+        ContentRole,
+    };
 
-#endif
+    static QHash<int, QByteArray> roleNames()
+    {
+        return {
+            {Qt::DecorationRole, "decoration"},
+            {Roles::FilesRole, "files"},
+            {Roles::FileCountRole, "fileCount"},
+            {Roles::ImageUrlRole, "imageurl"},
+            {Roles::DateRole, "date"},
+            {Roles::MimeTypeRole, "mimeType"},
+            {Roles::ItemTypeRole, "itemType"},
+            {Roles::ContentRole, "content"},
+            {Roles::SelectedRole, "selected"},
+        };
+    }
+};

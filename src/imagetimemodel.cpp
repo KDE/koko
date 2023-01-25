@@ -29,47 +29,36 @@ void ImageTimeModel::slotPopulate()
 
 QHash<int, QByteArray> ImageTimeModel::roleNames() const
 {
-    auto hash = QAbstractItemModel::roleNames();
-    hash.insert(Roles::FilesRole, "files");
-    hash.insert(Roles::FileCountRole, "fileCount");
-    // the url role returns the url of the cover image of the collection
-    hash.insert(Roles::ImageUrlRole, "imageurl");
-    hash.insert(Roles::DateRole, "date");
-    hash.insert(Roles::ItemTypeRole, "itemType");
-
-    return hash;
+    return Roles::roleNames();
 }
 
 QVariant ImageTimeModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        return QVariant();
-    }
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    QByteArray key = m_times.at(index.row()).first;
-    QString display = m_times.at(index.row()).second;
+    const QByteArray key = m_times.at(index.row()).first;
 
     switch (role) {
-    case Qt::DisplayRole:
-        return display;
+    case Roles::ContentRole:
+        return m_times.at(index.row()).second;
 
     case Roles::FilesRole: {
-        auto tg = static_cast<Types::TimeGroup>(m_group);
+        const auto tg = static_cast<Types::TimeGroup>(m_group);
         return ImageStorage::instance()->imagesForTime(key, tg);
     }
 
     case Roles::FileCountRole: {
-        auto tg = static_cast<Types::TimeGroup>(m_group);
+        const auto tg = static_cast<Types::TimeGroup>(m_group);
         return ImageStorage::instance()->imagesForTime(key, tg).size();
     }
 
     case Roles::ImageUrlRole: {
-        auto tg = static_cast<Types::TimeGroup>(m_group);
+        const auto tg = static_cast<Types::TimeGroup>(m_group);
         return ImageStorage::instance()->imageForTime(key, tg);
     }
 
     case Roles::DateRole: {
-        auto tg = static_cast<Types::TimeGroup>(m_group);
+        const auto tg = static_cast<Types::TimeGroup>(m_group);
         return ImageStorage::instance()->dateForKey(key, tg);
     }
 
@@ -78,7 +67,7 @@ QVariant ImageTimeModel::data(const QModelIndex &index, int role) const
     }
     }
 
-    return QVariant();
+    return {};
 }
 
 int ImageTimeModel::rowCount(const QModelIndex &parent) const

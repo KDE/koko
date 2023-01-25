@@ -15,7 +15,10 @@ class AllImagesModel : public QAbstractListModel
 public:
     explicit AllImagesModel(QObject *parent = nullptr);
 
-    enum Roles { FilePathRole = Qt::UserRole + 1 };
+    enum Roles {
+        FilePathRole = Qt::UserRole + 1,
+        ContentRole,
+    };
 
     QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;

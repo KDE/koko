@@ -65,7 +65,7 @@ Kirigami.Page {
 
     Koko.Exiv2Extractor {
         id: exiv2Extractor
-        filePath: listView.currentItem ? listView.currentItem.sourceUrl : ""
+        filePath: listView.currentItem ? listView.currentItem.imageurl : ""
     }
 
     actions {
@@ -87,10 +87,10 @@ Kirigami.Page {
             text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
             tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
-                exiv2Extractor.toggleFavorite(listView.currentItem.sourceUrl.toString().replace("file://", ""));
+                exiv2Extractor.toggleFavorite(listView.currentItem.imageurl.toString().replace("file://", ""));
                 // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.sourceUrl.toString().replace("file://", ""));
-                kokoProcessor.addFile(listView.currentItem.sourceUrl.toString().replace("file://", ""));
+                kokoProcessor.removeFile(listView.currentItem.imageurl.toString().replace("file://", ""));
+                kokoProcessor.addFile(listView.currentItem.imageurl.toString().replace("file://", ""));
             }
         }
         left: Kirigami.Action {
@@ -101,7 +101,7 @@ Kirigami.Page {
 
             onTriggered: {
                 const page = applicationWindow().pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
-                    imagePath: listView.currentItem.sourceUrl,
+                    imagePath: listView.currentItem.imageurl,
                     // Without this, there's an odd glitch where the page will show for a brief moment
                     // before the show animation runs.
                     visible: false
@@ -122,7 +122,7 @@ Kirigami.Page {
                     target: listView
                     function onCurrentItemChanged() {
                         shareAction.inputData = {
-                            urls: [listView.currentItem.sourceUrl.toString()],
+                            urls: [listView.currentItem.imageurl.toString()],
                             mimeType: [listView.currentItem.mimeType]
                         };
                     }
@@ -155,7 +155,6 @@ Kirigami.Page {
                 onTriggered: {
                     if (applicationWindow().visibility === Window.FullScreen) {
                         applicationWindow().visibility = lastWindowVisibility
-                        KokoPrivate.Controller.restoreWindowGeometry(applicationWindow());
                     } else {
                         KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
                         lastWindowVisibility = applicationWindow().visibility
@@ -203,7 +202,7 @@ Kirigami.Page {
     }
 
     function close() {
-        applicationWindow().restoreWindowState()
+        KokoPrivate.Controller.restoreWindowGeometry(applicationWindow());
         if (applicationWindow().footer) {
             applicationWindow().footer.visible = true;
         }
@@ -221,7 +220,7 @@ Kirigami.Page {
                 if (slideshowManager.running) {
                     slideshowManager.stop();
                 } else if (applicationWindow().visibility == Window.FullScreen) {
-                    applicationWindow().restoreWindowState()
+                    KokoPrivate.Controller.restoreWindowGeometry(applicationWindow());
                 } else {
                     root.close();
                 }
@@ -279,8 +278,8 @@ Kirigami.Page {
 
         onCurrentItemChanged: {
             if (currentItem) {
-                exiv2Extractor.updateFavorite(currentItem.sourceUrl.toString().replace("file://", ""))
-                const title = currentItem.display
+                exiv2Extractor.updateFavorite(currentItem.imageurl.toString().replace("file://", ""))
+                const title = currentItem.content
                 if (title.includes("/")) {
                     root.title = title.split("/")[title.split("/").length-1]
                 } else {
@@ -292,10 +291,11 @@ Kirigami.Page {
         delegate: Loader {
             id: loader
 
-            readonly property url sourceUrl: model.imageurl
+            required property int index
+            required property url imageurl
+            required property string content
             readonly property alias type: info.type
             readonly property alias mimeType: info.mimeType
-            readonly property string display: model.display
 
             readonly property bool dragging: item && item.dragging
             readonly property bool interactive: item && item.interactive
@@ -333,7 +333,7 @@ Kirigami.Page {
             Koko.FileInfo {
                 id: info
 
-                source: model.imageurl
+                source: loader.imageurl
 
                 // Unfortunately, just binding active to visible above and using
                 // setSource in the onStatusChanged handler leads to occasional
@@ -356,12 +356,12 @@ Kirigami.Page {
 
                     let delegate = ""
                     let properties = {}
-                    properties.source = model.imageurl
+                    properties.source = loader.imageurl
                     properties.isCurrent = Qt.binding(() => loader.ListView.isCurrentItem)
 
                     switch (type) {
                     case Koko.FileInfo.VideoType:
-                        properties.autoplay = index == root.startIndex
+                        properties.autoplay = loader.index === root.startIndex
                         properties.slideShow = slideshowManager
                         delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml")
                         break
@@ -375,7 +375,7 @@ Kirigami.Page {
                         delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml")
                         break
                     default:
-                        console.warn("Unknown file type for URL", model.imageurl)
+                        console.warn("Unknown file type for URL", loader.imageurl)
                         break
                     }
 

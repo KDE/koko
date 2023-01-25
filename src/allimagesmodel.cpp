@@ -23,24 +23,21 @@ void AllImagesModel::slotPopulate()
 
 QHash<int, QByteArray> AllImagesModel::roleNames() const
 {
-    auto hash = QAbstractItemModel::roleNames();
-    hash.insert(FilePathRole, "filePath");
-    hash.insert(FilePathRole, "modelData");
-
-    return hash;
+    return {
+        {FilePathRole, "filePath"},
+        {ContentRole, "content"},
+    };
 }
 
 QVariant AllImagesModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        return {};
-    }
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    QString filePath = m_images.at(index.row());
+    const QString filePath = m_images.at(index.row());
 
     switch (role) {
-    case Qt::DisplayRole: {
-        QString fileName = filePath.mid(filePath.lastIndexOf('/') + 1);
+    case ContentRole: {
+        const QString fileName = filePath.mid(filePath.lastIndexOf('/') + 1);
         return fileName;
     }
 

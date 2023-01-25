@@ -49,17 +49,9 @@ void ImageFolderModel::jobFinished()
     }
 }
 
-ImageFolderModel::~ImageFolderModel()
-{
-}
-
 QHash<int, QByteArray> ImageFolderModel::roleNames() const
 {
-    return {{Qt::DisplayRole, "display"},
-            {Qt::DecorationRole, "decoration"},
-            {Roles::ImageUrlRole, "imageurl"},
-            {Roles::MimeTypeRole, "mimeType"},
-            {Roles::ItemTypeRole, "itemType"}};
+    return Roles::roleNames();
 }
 
 QUrl ImageFolderModel::url() const
@@ -83,13 +75,12 @@ void ImageFolderModel::setUrl(QUrl &url)
     beginResetModel();
     dirLister()->openUrl(QUrl(url));
     endResetModel();
-    emit urlChanged();
+    Q_EMIT urlChanged();
 }
 
 int ImageFolderModel::indexForUrl(const QString &url) const
 {
-    QModelIndex index = KDirModel::indexForUrl(QUrl(url));
-    return index.row();
+    return KDirModel::indexForUrl(QUrl(url)).row();
 }
 
 QVariantMap ImageFolderModel::get(int i) const
@@ -97,8 +88,8 @@ QVariantMap ImageFolderModel::get(int i) const
     QModelIndex modelIndex = index(i, 0);
 
     KFileItem item = itemForIndex(modelIndex);
-    QString url = item.url().toString();
-    QString mimeType = item.mimetype();
+    const QString url = item.url().toString();
+    const QString mimeType = item.mimetype();
 
     QVariantMap ret;
     ret.insert(QStringLiteral("url"), QVariant(url));
@@ -114,9 +105,7 @@ void ImageFolderModel::emptyTrash()
 
 QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid()) {
-        return {};
-    }
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
     switch (role) {
     case Roles::ImageUrlRole: {
@@ -136,6 +125,12 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
             return Types::Image;
         }
     }
+
+    case Roles::SelectedRole:
+        return false;
+
+    case Roles::ContentRole:
+        return KDirModel::data(index, Qt::DisplayRole);
 
     default:
         return KDirModel::data(index, role);
