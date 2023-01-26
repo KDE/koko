@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:43+0000\n"
+"POT-Creation-Date: 2023-01-26 00:54+0000\n"
 "PO-Revision-Date: 2021-12-17 10:43+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -113,7 +113,7 @@ msgstr "Deljenje ni uspelo"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Deljeni spletni naslov za sliko je <a href='%1'>%1</a>"
 
-#: qml/AlbumDelegate.qml:92
+#: qml/AlbumDelegate.qml:121
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -122,78 +122,78 @@ msgstr[1] "%1 sliki"
 msgstr[2] "%1 slike"
 msgstr[3] "%1 slik"
 
-#: qml/AlbumView.qml:222 qml/AlbumView.qml:255
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
 msgid "Remove Bookmark"
 msgstr "Odstrani zaznamek"
 
-#: qml/AlbumView.qml:222 qml/AlbumView.qml:255
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
 msgstr "Mapa zaznamkov"
 
-#: qml/AlbumView.qml:276
+#: qml/AlbumView.qml:277
 #, kde-format
 msgid "Go Up"
 msgstr "Pojdi gor"
 
-#: qml/AlbumView.qml:307
+#: qml/AlbumView.qml:308
 #, kde-format
 msgid "Home"
 msgstr "Domov"
 
-#: qml/AlbumView.qml:307
+#: qml/AlbumView.qml:308
 #, kde-format
 msgid "Root"
 msgstr "Koren"
 
-#: qml/AlbumView.qml:340
+#: qml/AlbumView.qml:341
 #, kde-format
 msgid "Delete Selection"
 msgstr "Izbriši izbiro"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:342
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Prenesi izbrane predmete v smeti"
 
-#: qml/AlbumView.qml:347
+#: qml/AlbumView.qml:348
 #, kde-format
 msgid "Restore Selection"
 msgstr "Obnovi izbiro"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:349
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "Obnovi izbrane predmete iz smeti"
 
-#: qml/AlbumView.qml:355 qml/PlacesPage.qml:22
+#: qml/AlbumView.qml:356 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
 msgstr "Nastavi…"
 
-#: qml/AlbumView.qml:360
+#: qml/AlbumView.qml:361
 #, kde-format
 msgid "Select All"
 msgstr "Izberi vse"
 
-#: qml/AlbumView.qml:361
+#: qml/AlbumView.qml:362
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "Izberi vse medije v trenutnem pogledu"
 
-#: qml/AlbumView.qml:368
+#: qml/AlbumView.qml:369
 #, kde-format
 msgid "Deselect All"
 msgstr "Ne izberi nič"
 
-#: qml/AlbumView.qml:369
+#: qml/AlbumView.qml:370
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "Prekliči izbiro vseh izbranih medijev"
 
-#: qml/AlbumView.qml:501
+#: qml/AlbumView.qml:482
 #, kde-format
 msgid "No Media Found"
 msgstr "Ni najdenih medijev"
@@ -213,23 +213,46 @@ msgstr "Videoposnetki"
 msgid "Favorites"
 msgstr "Priljubljeni"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:53 qml/Sidebar.qml:108
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:108
 #, kde-format
 msgid "Places"
 msgstr "Kraji"
 
-#: qml/EditorView.qml:26
+#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#, kde-format
+msgid "Discard changes"
+msgstr ""
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#, kde-format
+msgid "Are you sure you want to discard all changes?"
+msgstr ""
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Prekliči"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:36
+#, fuzzy, kde-format
+#| msgid "Years"
+msgid "Yes"
+msgstr "Leta"
+
+#: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
 
-#: qml/EditorView.qml:51
+#: qml/EditorView.qml:61
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Shrani"
 
-#: qml/EditorView.qml:56 qml/EditorView.qml:242
+#: qml/EditorView.qml:66 qml/EditorView.qml:260
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
@@ -238,72 +261,72 @@ msgstr ""
 "Ni mogoče shraniti datoteke. Preverite ali imata ustrezna dovoljenja za "
 "urejanje te datoteke."
 
-#: qml/EditorView.qml:65
+#: qml/EditorView.qml:75
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: qml/EditorView.qml:77 qml/EditorView.qml:89
+#: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: qml/EditorView.qml:77 qml/EditorView.qml:83
+#: qml/EditorView.qml:87 qml/EditorView.qml:93
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
 msgstr "Obreži"
 
-#: qml/EditorView.qml:89 qml/EditorView.qml:95
+#: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Spremeni velikost"
 
-#: qml/EditorView.qml:101
+#: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
 msgstr "Zasukaj levo"
 
-#: qml/EditorView.qml:107
+#: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
 msgstr "Zasukaj desno"
 
-#: qml/EditorView.qml:113
+#: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
 msgstr "Obrni"
 
-#: qml/EditorView.qml:119
+#: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
 msgstr "Prezrcali"
 
-#: qml/EditorView.qml:133
+#: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
 msgstr "Velikost:"
 
-#: qml/EditorView.qml:165
+#: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
 msgstr "Pozicija:"
 
-#: qml/EditorView.qml:230
+#: qml/EditorView.qml:248
 #, kde-format
 msgid "Save As"
 msgstr "Shrani kot"
 
-#: qml/EditorView.qml:238
+#: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
 msgstr "Zdaj urejate novo datoteko."
@@ -357,125 +380,125 @@ msgstr "Ponovi trenutni video"
 msgid "Don't repeat current video"
 msgstr "Ne ponavljaj trenutnega videa"
 
-#: qml/ImageViewPage.qml:74
+#: qml/ImageViewPage.qml:75
 #, kde-format
 msgid "Info"
 msgstr "Informacije"
 
-#: qml/ImageViewPage.qml:76
+#: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
 msgstr "Glej informacije o videoposnetku"
 
-#: qml/ImageViewPage.qml:77
+#: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
 msgstr "Glej informacije o sliki"
 
-#: qml/ImageViewPage.qml:86
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
 
-#: qml/ImageViewPage.qml:86
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Favorite"
 msgstr "Priljubljen"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
 msgstr "Odstrani iz priljubljenih"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
 msgstr "Dodaj k priljubljenim"
 
-#: qml/ImageViewPage.qml:98
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
 msgstr "Uredi"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgid "Share Video"
 msgstr "Deli videoposnetek"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgid "Share Image"
 msgstr "Deli sliko"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:119
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
 msgstr "Deli"
 
-#: qml/ImageViewPage.qml:132
+#: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Start Slideshow"
 msgstr "Začni predstavitev"
 
-#: qml/ImageViewPage.qml:133
+#: qml/ImageViewPage.qml:134
 #, kde-format
 msgid "Slideshow"
 msgstr "Predstavitev"
 
-#: qml/ImageViewPage.qml:140
+#: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Thumbnail Bar"
 msgstr "Vrstica predoglednih sličic"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Hide Thumbnail Bar"
 msgstr "Skrij vrstico predoglednih sličic"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Show Thumbnail Bar"
 msgstr "Prikaži vrstico predoglednih sličic"
 
-#: qml/ImageViewPage.qml:142
+#: qml/ImageViewPage.qml:143
 #, kde-format
 msgid "Toggle Thumbnail Bar"
 msgstr "Preklopi vrstico predoglednih sličic"
 
-#: qml/ImageViewPage.qml:150
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Fullscreen"
 msgstr "Celotni zaslon"
 
-#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:151 qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Izhod iz celotnega zaslona"
 
-#: qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Vstopi v celotni zaslon"
 
-#: qml/ImageViewPage.qml:404
+#: qml/ImageViewPage.qml:407
 #, kde-format
 msgid "Previous image"
 msgstr "Prejšnja slika"
 
-#: qml/ImageViewPage.qml:434
+#: qml/ImageViewPage.qml:437
 #, kde-format
 msgid "Next image"
 msgstr "Naslednja slika"
 
-#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval med prikazi predstavitve:"
 
-#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:85
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -485,24 +508,24 @@ msgstr[1] "%1 sekundi"
 msgstr[2] "%1 sekunde"
 msgstr[3] "%1 sekund"
 
-#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:722
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Zanka"
 
-#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Slučajna razvrstitev"
 
-#: qml/ImageViewPage.qml:734
+#: qml/ImageViewPage.qml:737
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Ustavi predstavitev"
 
-#: qml/ImageViewPage.qml:748
+#: qml/ImageViewPage.qml:751
 #, kde-format
 msgid "Show All Controls"
 msgstr "Prikaži vse kontrole"
@@ -588,12 +611,18 @@ msgstr "Oznake"
 msgid "Add Tag"
 msgstr "Dodaj oznako"
 
-#: qml/Main.qml:106
+#: qml/Main.qml:73
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgid "Configure"
+msgstr "Nastavi…"
+
+#: qml/Main.qml:107
 #, kde-format
 msgid "Images"
 msgstr "Slike"
 
-#: qml/Main.qml:117 qml/Main.qml:126
+#: qml/Main.qml:118 qml/Main.qml:127
 #, kde-format
 msgid "Folders"
 msgstr "Mape"
@@ -658,41 +687,33 @@ msgstr "Tedni"
 msgid "Days"
 msgstr "Dnevi"
 
-#: qml/SettingsPage.qml:15 qml/Sidebar.qml:239
-#, kde-format
+#: qml/SettingsPage.qml:17
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:window"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: qml/SettingsPage.qml:18
+#: qml/SettingsPage.qml:29
 #, kde-format
-msgid "General:"
-msgstr "Splošno:"
+msgid "General"
+msgstr "Splošno"
 
-#: qml/SettingsPage.qml:19
-#, kde-format
-msgid "Show preview carousel in image view"
-msgstr "Prikaži predogledni kolut v prikazu slike"
-
-#: qml/SettingsPage.qml:24 qml/Sidebar.qml:222
+#: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Velikost predogledne sličice:"
 
-#: qml/SettingsPage.qml:25 qml/Sidebar.qml:226
-#, kde-format
-msgid "%1 px"
-msgstr "%1 px"
-
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:56
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Nastavitve predstavitve:"
 
-#: qml/SettingsPage.qml:115
+#: qml/SettingsPage.qml:151
 #, kde-format
-msgid "Open About Page"
-msgstr "Odpri stran o programu"
+msgid "About Tokodon"
+msgstr ""
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -715,10 +736,29 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Oddaljeni"
 
+#: qml/Sidebar.qml:226
+#, kde-format
+msgid "%1 px"
+msgstr "%1 px"
+
+#: qml/Sidebar.qml:239
+#, kde-format
+msgid "Settings"
+msgstr "Nastavitve"
+
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Dodaj novo oznako…"
+
+#~ msgid "General:"
+#~ msgstr "Splošno:"
+
+#~ msgid "Show preview carousel in image view"
+#~ msgstr "Prikaži predogledni kolut v prikazu slike"
+
+#~ msgid "Open About Page"
+#~ msgstr "Odpri stran o programu"
 
 #~ msgid "Remove %1 tag"
 #~ msgstr "Odstrani oznako %1"
@@ -735,9 +775,6 @@ msgstr "Dodaj novo oznako…"
 
 #~ msgid "About"
 #~ msgstr "O programu"
-
-#~ msgid "General"
-#~ msgstr "Splošno"
 
 #~ msgid "New tag..."
 #~ msgstr "Nova oznaka..."

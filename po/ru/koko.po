@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:43+0000\n"
+"POT-Creation-Date: 2023-01-26 00:54+0000\n"
 "PO-Revision-Date: 2022-12-11 22:37+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -113,7 +113,7 @@ msgstr "Не удалось опубликовать файл"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Ссылка общего доступа для изображения: <a href='%1'>%1</a>"
 
-#: qml/AlbumDelegate.qml:92
+#: qml/AlbumDelegate.qml:121
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -122,78 +122,78 @@ msgstr[1] "%1 изображения"
 msgstr[2] "%1 изображений"
 msgstr[3] "одно изображение"
 
-#: qml/AlbumView.qml:222 qml/AlbumView.qml:255
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
 msgid "Remove Bookmark"
 msgstr "Удалить закладку"
 
-#: qml/AlbumView.qml:222 qml/AlbumView.qml:255
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
 msgstr "Добавить папку в закладки"
 
-#: qml/AlbumView.qml:276
+#: qml/AlbumView.qml:277
 #, kde-format
 msgid "Go Up"
 msgstr "Перейти вверх"
 
-#: qml/AlbumView.qml:307
+#: qml/AlbumView.qml:308
 #, kde-format
 msgid "Home"
 msgstr "Домашняя папка"
 
-#: qml/AlbumView.qml:307
+#: qml/AlbumView.qml:308
 #, kde-format
 msgid "Root"
 msgstr "Корневая папка"
 
-#: qml/AlbumView.qml:340
+#: qml/AlbumView.qml:341
 #, kde-format
 msgid "Delete Selection"
 msgstr "Удалить выбранное"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:342
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Переместить выбранные объекты в корзину"
 
-#: qml/AlbumView.qml:347
+#: qml/AlbumView.qml:348
 #, kde-format
 msgid "Restore Selection"
 msgstr "Восстановить выделенное"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:349
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "Восстановить выбранные элементы из корзины"
 
-#: qml/AlbumView.qml:355 qml/PlacesPage.qml:22
+#: qml/AlbumView.qml:356 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
 msgstr "Настроить…"
 
-#: qml/AlbumView.qml:360
+#: qml/AlbumView.qml:361
 #, kde-format
 msgid "Select All"
 msgstr "Выбрать все"
 
-#: qml/AlbumView.qml:361
+#: qml/AlbumView.qml:362
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "Выбрать все изображения и видео в текущем представлении"
 
-#: qml/AlbumView.qml:368
+#: qml/AlbumView.qml:369
 #, kde-format
 msgid "Deselect All"
 msgstr "Отменить выбор"
 
-#: qml/AlbumView.qml:369
+#: qml/AlbumView.qml:370
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "Снять выделение с всех выбранных изображений и видео"
 
-#: qml/AlbumView.qml:501
+#: qml/AlbumView.qml:482
 #, kde-format
 msgid "No Media Found"
 msgstr "Не найдено ни одного файла изображения или видео"
@@ -213,23 +213,46 @@ msgstr "Видео"
 msgid "Favorites"
 msgstr "Избранное"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:53 qml/Sidebar.qml:108
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:108
 #, kde-format
 msgid "Places"
 msgstr "Места"
 
-#: qml/EditorView.qml:26
+#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#, kde-format
+msgid "Discard changes"
+msgstr ""
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#, kde-format
+msgid "Are you sure you want to discard all changes?"
+msgstr ""
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Отмена"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:36
+#, fuzzy, kde-format
+#| msgid "Years"
+msgid "Yes"
+msgstr "Годы"
+
+#: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
 msgstr "Изменить"
 
-#: qml/EditorView.qml:51
+#: qml/EditorView.qml:61
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Сохранить"
 
-#: qml/EditorView.qml:56 qml/EditorView.qml:242
+#: qml/EditorView.qml:66 qml/EditorView.qml:260
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
@@ -238,72 +261,72 @@ msgstr ""
 "Не удалось сохранить файл. Проверьте, достаточно ли прав доступа для "
 "редактирования имеется этого файла."
 
-#: qml/EditorView.qml:65
+#: qml/EditorView.qml:75
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
 msgstr "Отменить действие"
 
-#: qml/EditorView.qml:77 qml/EditorView.qml:89
+#: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Отмена"
 
-#: qml/EditorView.qml:77 qml/EditorView.qml:83
+#: qml/EditorView.qml:87 qml/EditorView.qml:93
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
 msgstr "Кадрировать"
 
-#: qml/EditorView.qml:89 qml/EditorView.qml:95
+#: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Изменить размер"
 
-#: qml/EditorView.qml:101
+#: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
 msgstr "Повернуть влево"
 
-#: qml/EditorView.qml:107
+#: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
 msgstr "Повернуть вправо"
 
-#: qml/EditorView.qml:113
+#: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
 msgstr "Перевернуть"
 
-#: qml/EditorView.qml:119
+#: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
 msgstr "Отразить"
 
-#: qml/EditorView.qml:133
+#: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
 msgstr "Размер:"
 
-#: qml/EditorView.qml:165
+#: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
 msgstr "Расположение:"
 
-#: qml/EditorView.qml:230
+#: qml/EditorView.qml:248
 #, kde-format
 msgid "Save As"
 msgstr "Сохранить как"
 
-#: qml/EditorView.qml:238
+#: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
 msgstr "Сейчас вы редактируете новый файл."
@@ -357,125 +380,125 @@ msgstr "Повторять текущее видео"
 msgid "Don't repeat current video"
 msgstr "Не повторять текущее видео"
 
-#: qml/ImageViewPage.qml:74
+#: qml/ImageViewPage.qml:75
 #, kde-format
 msgid "Info"
 msgstr "Сведения"
 
-#: qml/ImageViewPage.qml:76
+#: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
 msgstr "Посмотреть информацию о видео"
 
-#: qml/ImageViewPage.qml:77
+#: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
 msgstr "Посмотреть информацию о фото"
 
-#: qml/ImageViewPage.qml:86
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove"
 msgstr "Убрать"
 
-#: qml/ImageViewPage.qml:86
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Favorite"
 msgstr "Избранное"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
 msgstr "Убрать из избранного"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
 msgstr "Добавить в избранное"
 
-#: qml/ImageViewPage.qml:98
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
 msgstr "Изменить"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgid "Share Video"
 msgstr "Опубликовать видео"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgid "Share Image"
 msgstr "Опубликовать изображение"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:119
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
 msgstr "Опубликовать"
 
-#: qml/ImageViewPage.qml:132
+#: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Start Slideshow"
 msgstr "Начать слайд-шоу"
 
-#: qml/ImageViewPage.qml:133
+#: qml/ImageViewPage.qml:134
 #, kde-format
 msgid "Slideshow"
 msgstr "Слайд-шоу"
 
-#: qml/ImageViewPage.qml:140
+#: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Thumbnail Bar"
 msgstr "Панель миниатюр"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Hide Thumbnail Bar"
 msgstr "Скрыть панель миниатюр"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Show Thumbnail Bar"
 msgstr "Показать панель миниатюр"
 
-#: qml/ImageViewPage.qml:142
+#: qml/ImageViewPage.qml:143
 #, kde-format
 msgid "Toggle Thumbnail Bar"
 msgstr "Панель миниатюр"
 
-#: qml/ImageViewPage.qml:150
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Fullscreen"
 msgstr "Во весь экран"
 
-#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:151 qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Выйти из полноэкранного режима"
 
-#: qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Полноэкранный режим"
 
-#: qml/ImageViewPage.qml:404
+#: qml/ImageViewPage.qml:407
 #, kde-format
 msgid "Previous image"
 msgstr "Предыдущее изображение"
 
-#: qml/ImageViewPage.qml:434
+#: qml/ImageViewPage.qml:437
 #, kde-format
 msgid "Next image"
 msgstr "Следующее изображение"
 
-#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Интервал слайд-шоу:"
 
-#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:85
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -485,24 +508,24 @@ msgstr[1] "%1 секунды"
 msgstr[2] "%1 секунд"
 msgstr[3] "%1 секунда"
 
-#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:722
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Повторять бесконечно"
 
-#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Случайно"
 
-#: qml/ImageViewPage.qml:734
+#: qml/ImageViewPage.qml:737
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Остановить слайд-шоу"
 
-#: qml/ImageViewPage.qml:748
+#: qml/ImageViewPage.qml:751
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показать все элементы управления"
@@ -588,12 +611,18 @@ msgstr "Метки"
 msgid "Add Tag"
 msgstr "Добавить метку"
 
-#: qml/Main.qml:106
+#: qml/Main.qml:73
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgid "Configure"
+msgstr "Настроить…"
+
+#: qml/Main.qml:107
 #, kde-format
 msgid "Images"
 msgstr "Изображения"
 
-#: qml/Main.qml:117 qml/Main.qml:126
+#: qml/Main.qml:118 qml/Main.qml:127
 #, kde-format
 msgid "Folders"
 msgstr "Папки"
@@ -658,41 +687,34 @@ msgstr "Недели"
 msgid "Days"
 msgstr "Дни"
 
-#: qml/SettingsPage.qml:15 qml/Sidebar.qml:239
-#, kde-format
+#: qml/SettingsPage.qml:17
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметры"
 
-#: qml/SettingsPage.qml:18
-#, kde-format
-msgid "General:"
+#: qml/SettingsPage.qml:29
+#, fuzzy, kde-format
+#| msgid "General:"
+msgid "General"
 msgstr "Основное:"
 
-#: qml/SettingsPage.qml:19
-#, kde-format
-msgid "Show preview carousel in image view"
-msgstr "Показывать ленту миниатюр в режиме просмотра изображений"
-
-#: qml/SettingsPage.qml:24 qml/Sidebar.qml:222
+#: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Размер миниатюр:"
 
-#: qml/SettingsPage.qml:25 qml/Sidebar.qml:226
-#, kde-format
-msgid "%1 px"
-msgstr "%1 пикс."
-
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:56
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Параметры слайд-шоу:"
 
-#: qml/SettingsPage.qml:115
+#: qml/SettingsPage.qml:151
 #, kde-format
-msgid "Open About Page"
-msgstr "Открыть страницу «О программе»"
+msgid "About Tokodon"
+msgstr ""
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -715,10 +737,26 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Сетевые ресурсы"
 
+#: qml/Sidebar.qml:226
+#, kde-format
+msgid "%1 px"
+msgstr "%1 пикс."
+
+#: qml/Sidebar.qml:239
+#, kde-format
+msgid "Settings"
+msgstr "Параметры"
+
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Создать метку…"
+
+#~ msgid "Show preview carousel in image view"
+#~ msgstr "Показывать ленту миниатюр в режиме просмотра изображений"
+
+#~ msgid "Open About Page"
+#~ msgstr "Открыть страницу «О программе»"
 
 #~ msgid "Edit image"
 #~ msgstr "Изменить изображение"

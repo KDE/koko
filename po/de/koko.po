@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:43+0000\n"
+"POT-Creation-Date: 2023-01-26 00:54+0000\n"
 "PO-Revision-Date: 2022-06-09 23:58+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -113,85 +113,85 @@ msgstr "Teilen fehlgeschlagen"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Geteilte URL für das Bild ist <a href='%1'>%1</a>"
 
-#: qml/AlbumDelegate.qml:92
+#: qml/AlbumDelegate.qml:121
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
 msgstr[0] "1 Bild"
 msgstr[1] "%1 Bilder"
 
-#: qml/AlbumView.qml:222 qml/AlbumView.qml:255
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
 msgid "Remove Bookmark"
 msgstr "Lesezeichen entfernen"
 
-#: qml/AlbumView.qml:222 qml/AlbumView.qml:255
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
 msgstr "Lesezeichenordner"
 
-#: qml/AlbumView.qml:276
+#: qml/AlbumView.qml:277
 #, kde-format
 msgid "Go Up"
 msgstr "Nach oben"
 
-#: qml/AlbumView.qml:307
+#: qml/AlbumView.qml:308
 #, kde-format
 msgid "Home"
 msgstr "Startseite"
 
-#: qml/AlbumView.qml:307
+#: qml/AlbumView.qml:308
 #, kde-format
 msgid "Root"
 msgstr "Basisordner"
 
-#: qml/AlbumView.qml:340
+#: qml/AlbumView.qml:341
 #, kde-format
 msgid "Delete Selection"
 msgstr "Auswahl löschen"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:342
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Ausgewählte Bilder in den Papierkorb verschieben"
 
-#: qml/AlbumView.qml:347
+#: qml/AlbumView.qml:348
 #, kde-format
 msgid "Restore Selection"
 msgstr "Auswahl wiederherstellen"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:349
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "Ausgewählte aus dem Papierkorb wiederherstellen"
 
-#: qml/AlbumView.qml:355 qml/PlacesPage.qml:22
+#: qml/AlbumView.qml:356 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
 msgstr "Einrichten ..."
 
-#: qml/AlbumView.qml:360
+#: qml/AlbumView.qml:361
 #, kde-format
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: qml/AlbumView.qml:361
+#: qml/AlbumView.qml:362
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "Wählt alle Medien in der aktuellen Ansicht aus"
 
-#: qml/AlbumView.qml:368
+#: qml/AlbumView.qml:369
 #, kde-format
 msgid "Deselect All"
 msgstr "Auswahl aufheben"
 
-#: qml/AlbumView.qml:369
+#: qml/AlbumView.qml:370
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "Auswahl aller Medien aufheben"
 
-#: qml/AlbumView.qml:501
+#: qml/AlbumView.qml:482
 #, kde-format
 msgid "No Media Found"
 msgstr "Keine Medien gefunden"
@@ -211,23 +211,46 @@ msgstr "Videos"
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:53 qml/Sidebar.qml:108
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:108
 #, kde-format
 msgid "Places"
 msgstr "Orte"
 
-#: qml/EditorView.qml:26
+#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#, kde-format
+msgid "Discard changes"
+msgstr ""
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#, kde-format
+msgid "Are you sure you want to discard all changes?"
+msgstr ""
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:30
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Cancel"
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:36
+#, fuzzy, kde-format
+#| msgid "Years"
+msgid "Yes"
+msgstr "Jahre"
+
+#: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: qml/EditorView.qml:51
+#: qml/EditorView.qml:61
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Speichern"
 
-#: qml/EditorView.qml:56 qml/EditorView.qml:242
+#: qml/EditorView.qml:66 qml/EditorView.qml:260
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
@@ -236,72 +259,72 @@ msgstr ""
 "Die Datei lässt sich nicht speichern. Bitte überprüfen Sie, ob Sie die "
 "Berechtigung zum Bearbeiten dieser Datei haben."
 
-#: qml/EditorView.qml:65
+#: qml/EditorView.qml:75
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: qml/EditorView.qml:77 qml/EditorView.qml:89
+#: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: qml/EditorView.qml:77 qml/EditorView.qml:83
+#: qml/EditorView.qml:87 qml/EditorView.qml:93
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
 msgstr "Zuschneiden"
 
-#: qml/EditorView.qml:89 qml/EditorView.qml:95
+#: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Größe ändern"
 
-#: qml/EditorView.qml:101
+#: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
 msgstr "Nach links drehen"
 
-#: qml/EditorView.qml:107
+#: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
 msgstr "Nach rechts drehen"
 
-#: qml/EditorView.qml:113
+#: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
 msgstr "Senkrecht spiegeln"
 
-#: qml/EditorView.qml:119
+#: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
 msgstr "Waagerecht spiegeln"
 
-#: qml/EditorView.qml:133
+#: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
 msgstr "Größe:"
 
-#: qml/EditorView.qml:165
+#: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
 msgstr "Position:"
 
-#: qml/EditorView.qml:230
+#: qml/EditorView.qml:248
 #, kde-format
 msgid "Save As"
 msgstr "Speichern unter"
 
-#: qml/EditorView.qml:238
+#: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
 msgstr "Sie bearbeiten eine neue Datei."
@@ -353,125 +376,125 @@ msgstr "Aktuelles Video wiederholen"
 msgid "Don't repeat current video"
 msgstr "Aktuelles Video nicht wiederholen"
 
-#: qml/ImageViewPage.qml:74
+#: qml/ImageViewPage.qml:75
 #, kde-format
 msgid "Info"
 msgstr "Information"
 
-#: qml/ImageViewPage.qml:76
+#: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
 msgstr "Informationen über das Video"
 
-#: qml/ImageViewPage.qml:77
+#: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
 msgstr "Informationen über das Bild"
 
-#: qml/ImageViewPage.qml:86
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove"
 msgstr "Entfernen"
 
-#: qml/ImageViewPage.qml:86
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Favorite"
 msgstr "Favoriten"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
 msgstr "Aus Favoriten entfernen"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
 msgstr "Zu Favoriten hinzufügen"
 
-#: qml/ImageViewPage.qml:98
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgid "Share Video"
 msgstr "Video teilen"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgid "Share Image"
 msgstr "Bild teilen"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:119
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
 msgstr "Teilen"
 
-#: qml/ImageViewPage.qml:132
+#: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Start Slideshow"
 msgstr "Diaschau starten"
 
-#: qml/ImageViewPage.qml:133
+#: qml/ImageViewPage.qml:134
 #, kde-format
 msgid "Slideshow"
 msgstr "Diaschau"
 
-#: qml/ImageViewPage.qml:140
+#: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Thumbnail Bar"
 msgstr "Vorschaubereich"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Hide Thumbnail Bar"
 msgstr "Vorschaubereich ausblenden"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Show Thumbnail Bar"
 msgstr "Vorschaubereich anzeigen"
 
-#: qml/ImageViewPage.qml:142
+#: qml/ImageViewPage.qml:143
 #, kde-format
 msgid "Toggle Thumbnail Bar"
 msgstr "Vorschaubereich umschalten"
 
-#: qml/ImageViewPage.qml:150
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:151 qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Vollbildmodus beenden"
 
-#: qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Vollbildmodus"
 
-#: qml/ImageViewPage.qml:404
+#: qml/ImageViewPage.qml:407
 #, kde-format
 msgid "Previous image"
 msgstr "Vorheriges Bild"
 
-#: qml/ImageViewPage.qml:434
+#: qml/ImageViewPage.qml:437
 #, kde-format
 msgid "Next image"
 msgstr "Nächstes Bild"
 
-#: qml/ImageViewPage.qml:649 qml/SettingsPage.qml:54
+#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diaschau-Intervall:"
 
-#: qml/ImageViewPage.qml:666 qml/SettingsPage.qml:62
+#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:85
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -479,24 +502,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 Sekunde"
 msgstr[1] "%1 Sekunden"
 
-#: qml/ImageViewPage.qml:719 qml/SettingsPage.qml:41
+#: qml/ImageViewPage.qml:722
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Wiederholen"
 
-#: qml/ImageViewPage.qml:725 qml/SettingsPage.qml:48
+#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Zufällig"
 
-#: qml/ImageViewPage.qml:734
+#: qml/ImageViewPage.qml:737
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Diaschau anhalten"
 
-#: qml/ImageViewPage.qml:748
+#: qml/ImageViewPage.qml:751
 #, kde-format
 msgid "Show All Controls"
 msgstr "Alle Regler anzeigen"
@@ -582,12 +605,18 @@ msgstr "Stichwörter"
 msgid "Add Tag"
 msgstr "Stichwort hinzufügen"
 
-#: qml/Main.qml:106
+#: qml/Main.qml:73
+#, fuzzy, kde-format
+#| msgid "Configure…"
+msgid "Configure"
+msgstr "Einrichten ..."
+
+#: qml/Main.qml:107
 #, kde-format
 msgid "Images"
 msgstr "Bilder"
 
-#: qml/Main.qml:117 qml/Main.qml:126
+#: qml/Main.qml:118 qml/Main.qml:127
 #, kde-format
 msgid "Folders"
 msgstr "Ordner"
@@ -652,41 +681,34 @@ msgstr "Wochen"
 msgid "Days"
 msgstr "Tage"
 
-#: qml/SettingsPage.qml:15 qml/Sidebar.qml:239
-#, kde-format
+#: qml/SettingsPage.qml:17
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@title:window"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: qml/SettingsPage.qml:18
-#, kde-format
-msgid "General:"
+#: qml/SettingsPage.qml:29
+#, fuzzy, kde-format
+#| msgid "General:"
+msgid "General"
 msgstr "Allgemein:"
 
-#: qml/SettingsPage.qml:19
-#, kde-format
-msgid "Show preview carousel in image view"
-msgstr "Vorschaukarussell in der Bildansicht anzeigen"
-
-#: qml/SettingsPage.qml:24 qml/Sidebar.qml:222
+#: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Vorschaubildgröße"
 
-#: qml/SettingsPage.qml:25 qml/Sidebar.qml:226
-#, kde-format
-msgid "%1 px"
-msgstr "%1 px"
-
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:56
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Einstellungen der Diaschau:"
 
-#: qml/SettingsPage.qml:115
+#: qml/SettingsPage.qml:151
 #, kde-format
-msgid "Open About Page"
-msgstr "„Über“-Seite öffnen"
+msgid "About Tokodon"
+msgstr ""
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -709,10 +731,29 @@ msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Entfernt"
 
+#: qml/Sidebar.qml:226
+#, kde-format
+msgid "%1 px"
+msgstr "%1 px"
+
+#: qml/Sidebar.qml:239
+#, kde-format
+msgid "Settings"
+msgstr "Einstellungen"
+
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
 msgstr "Neues Stichwort hinzufügen ..."
+
+#~ msgid "General:"
+#~ msgstr "Allgemein:"
+
+#~ msgid "Show preview carousel in image view"
+#~ msgstr "Vorschaukarussell in der Bildansicht anzeigen"
+
+#~ msgid "Open About Page"
+#~ msgstr "„Über“-Seite öffnen"
 
 #~ msgid "Remove %1 tag"
 #~ msgstr "Stichwort %1 entfernen"
@@ -734,11 +775,6 @@ msgstr "Neues Stichwort hinzufügen ..."
 #~| msgid "About"
 #~ msgid "About"
 #~ msgstr "Über"
-
-#, fuzzy
-#~| msgid "General:"
-#~ msgid "General"
-#~ msgstr "Allgemein:"
 
 #~ msgid "New tag..."
 #~ msgstr "Neues Stichwort ..."
