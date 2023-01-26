@@ -148,7 +148,7 @@ Kirigami.PageRow {
                         }
                     }
                     MobileForm.FormButtonDelegate {
-                        text: i18n("About Tokodon")
+                        text: i18n("About Koko")
                         onClicked: pageStack.layers.push(Qt.resolvedUrl("AboutPage.qml"));
                     }
                 }
