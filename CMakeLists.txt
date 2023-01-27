@@ -1,15 +1,14 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
 # SPDX-License-Identifier: LGPL-2.0-or-later
 
-project(Koko)
 cmake_minimum_required(VERSION 3.16)
+set(PROJECT_VERSION "23.01")
+project(Koko VERSION ${PROJECT_VERSION})
 
 set(CMAKE_CXX_STANDARD 17)
 set(QT5_MIN_VERSION 5.15.2)
 set(KF5_MIN_VERSION 5.87)
 set(KDE_COMPILERSETTINGS_LEVEL 5.84)
-
-set(PROJECT_VERSION "22.11")
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})

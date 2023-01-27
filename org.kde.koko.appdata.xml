@@ -126,6 +126,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <url type="bugtracker">https://invent.kde.org/graphics/koko/-/issues</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
   <releases>
+    <release version="23.01" date="2023-01-30">
+      <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
+      <description>
+        <p>This release modernizes the settings page, updates the style of the album page and adds a confirmation dialog before discarding image edits. This also fixes the full screen and slideshow mode.</p>
+      </description>
+    </release>
     <release version="22.11" date="2022-11-30">
       <url>https://plasma-mobile.org/2022/11/30/plasma-mobile-gear-22-11/</url>
     </release>
