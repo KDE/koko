@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
 "PO-Revision-Date: 2021-11-08 18:58+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -220,25 +220,22 @@ msgstr "Locais"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Esquecer as alterações"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Tem a certeza que deseja esquecer todas as alterações?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Anos"
+msgstr "Sim"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -607,10 +604,9 @@ msgid "Add Tag"
 msgstr "Adicionar uma Marca"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Configurar…"
+msgstr "Configurar"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -683,17 +679,15 @@ msgid "Days"
 msgstr "Dias"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuração"
 
 #: qml/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "Geral:"
+msgstr "Geral"
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
@@ -707,9 +701,10 @@ msgid "Slideshow settings:"
 msgstr "Configuração da apresentação:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About Tokodon"
+msgid "About Koko"
+msgstr "Acerca do Tokodon"
 
 #: qml/ShareAction.qml:22
 #, kde-format

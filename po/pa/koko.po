@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -721,9 +721,10 @@ msgid "Slideshow settings:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About Koko"
+msgstr "ਇਸ ਬਾਰੇ"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -783,11 +784,6 @@ msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
 #~ msgctxt "@action:button Accept crop for an image"
 #~ msgid "Accept"
 #~ msgstr "ਮਨਜ਼ੂਰ"
-
-#, fuzzy
-#~| msgid "About"
-#~ msgid "About"
-#~ msgstr "ਇਸ ਬਾਰੇ"
 
 #~ msgid "New tag..."
 #~ msgstr "ਨਵਾਂ ਟੈਗ..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
 "PO-Revision-Date: 2021-12-30 12:41+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -708,9 +708,10 @@ msgid "Slideshow settings:"
 msgstr "Ustawienia pokazu obrazów:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About Koko"
+msgid "About Koko"
+msgstr "O Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -769,11 +770,6 @@ msgstr "Dodaj nowy znacznik..."
 #~ msgctxt "@action:button Accept crop for an image"
 #~ msgid "Accept"
 #~ msgstr "Przyjmij"
-
-#, fuzzy
-#~| msgid "About Koko"
-#~ msgid "About"
-#~ msgstr "O Koko"
 
 #~ msgid "New tag..."
 #~ msgstr "Nowy znacznik..."

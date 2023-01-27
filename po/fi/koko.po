@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
 "PO-Revision-Date: 2021-11-23 16:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -705,9 +705,10 @@ msgid "Slideshow settings:"
 msgstr "Diaesitysasetukset:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About Koko"
+msgstr "Tietoa"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -769,9 +770,6 @@ msgstr "Lisää uusi luokitus…"
 #~ msgctxt "@action:button Accept crop for an image"
 #~ msgid "Accept"
 #~ msgstr "Hyväksy"
-
-#~ msgid "About"
-#~ msgstr "Tietoa"
 
 #~ msgid "New tag..."
 #~ msgstr "Uusi luokitus…"

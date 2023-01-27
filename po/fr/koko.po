@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
 "PO-Revision-Date: 2021-12-29 20:14+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -705,9 +705,10 @@ msgid "Slideshow settings:"
 msgstr "Configuration du diaporama :"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About Koko"
+msgstr "À propos"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -766,9 +767,6 @@ msgstr "Ajouter une nouvelle étiquette..."
 #~ msgctxt "@action:button Accept crop for an image"
 #~ msgid "Accept"
 #~ msgstr "Accepter"
-
-#~ msgid "About"
-#~ msgstr "À propos"
 
 #~ msgid "New tag..."
 #~ msgstr "Nouvelle étiquette..."

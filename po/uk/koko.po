@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
-"PO-Revision-Date: 2021-10-05 09:14+0300\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"PO-Revision-Date: 2023-01-26 08:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -223,25 +223,22 @@ msgstr "Місця"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Відкинути зміни"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Ви справді хочете відкинути усі зміни?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Роки"
+msgstr "Так"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -614,10 +611,9 @@ msgid "Add Tag"
 msgstr "Додати мітку"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Налаштувати…"
+msgstr "Налаштувати"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -690,8 +686,7 @@ msgid "Days"
 msgstr "Дні"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметри"
@@ -713,9 +708,10 @@ msgid "Slideshow settings:"
 msgstr "Інтервал показу слайдів:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About Tokodon"
+msgid "About Koko"
+msgstr "Про Tokodon"
 
 #: qml/ShareAction.qml:22
 #, kde-format

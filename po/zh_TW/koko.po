@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
 "PO-Revision-Date: 2022-05-16 00:42+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -699,7 +699,7 @@ msgstr ""
 
 #: qml/SettingsPage.qml:151
 #, kde-format
-msgid "About Tokodon"
+msgid "About Koko"
 msgstr ""
 
 #: qml/ShareAction.qml:22

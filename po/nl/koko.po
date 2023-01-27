@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2020, 2021.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
-"PO-Revision-Date: 2021-10-05 13:13+0200\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"PO-Revision-Date: 2023-01-26 14:29+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2020 t/m 2021"
+msgstr "Freek de Kruijf - 2020-2023"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -218,25 +218,22 @@ msgstr "Plaatsen"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Wijzigingen verwerpen"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Wilt u alle wijzigingen verwerpen?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Annuleren"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Jaren"
+msgstr "Ja"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -605,10 +602,9 @@ msgid "Add Tag"
 msgstr "Tag toevoegen"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Configureren…"
+msgstr "Configureren"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -681,8 +677,7 @@ msgid "Days"
 msgstr "Dagen"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Instellingen"
@@ -704,9 +699,10 @@ msgid "Slideshow settings:"
 msgstr "Diashow-instellingen:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About Tokodon"
+msgid "About Koko"
+msgstr "Info over Tokodon"
 
 #: qml/ShareAction.qml:22
 #, kde-format

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-26 00:54+0000\n"
-"PO-Revision-Date: 2022-04-14 13:18+0300\n"
+"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"PO-Revision-Date: 2023-01-26 18:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -218,25 +218,22 @@ msgstr "Yerler"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Değişiklikleri at"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Tüm değişiklikleri atmak istediğinizden emin misiniz?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "İptal"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Yıl"
+msgstr "Evet"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -605,10 +602,9 @@ msgid "Add Tag"
 msgstr "Etiket Ekle"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Yapılandır…"
+msgstr "Yapılandır"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -681,17 +677,15 @@ msgid "Days"
 msgstr "Gün"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ayarlar"
 
 #: qml/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "Genel:"
+msgstr "Genel"
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
@@ -705,9 +699,10 @@ msgid "Slideshow settings:"
 msgstr "Slayt gösterisi ayarları:"
 
 #: qml/SettingsPage.qml:151
-#, kde-format
-msgid "About Tokodon"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "About Tokodon"
+msgid "About Koko"
+msgstr "Tokodon Hakkında"
 
 #: qml/ShareAction.qml:22
 #, kde-format
