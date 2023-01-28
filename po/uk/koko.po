@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-26 08:41+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"PO-Revision-Date: 2023-01-27 10:54+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -708,10 +708,9 @@ msgid "Slideshow settings:"
 msgstr "Інтервал показу слайдів:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "About Koko"
-msgstr "Про Tokodon"
+msgstr "Про Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format

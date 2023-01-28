@@ -1,22 +1,22 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2021-12-17 10:43+0100\n"
+"PO-Revision-Date: 2023-01-27 07:12+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -221,25 +221,22 @@ msgstr "Kraji"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Zavrzi spremembe"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Ali ste prepričani, da želite zavreči vse spremembe?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Leta"
+msgstr "Da"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -612,10 +609,9 @@ msgid "Add Tag"
 msgstr "Dodaj oznako"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Nastavi…"
+msgstr "Konfiguriraj"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -688,8 +684,7 @@ msgid "Days"
 msgstr "Dnevi"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Nastavitve"
@@ -711,10 +706,9 @@ msgid "Slideshow settings:"
 msgstr "Nastavitve predstavitve:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About Koko"
-msgstr "O programu"
+msgstr "O programu Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format

@@ -688,10 +688,9 @@ msgid "Settings"
 msgstr "Impostazioni"
 
 #: qml/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "Generale:"
+msgstr "Generale"
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format

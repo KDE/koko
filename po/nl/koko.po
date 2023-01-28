@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-26 14:29+0100\n"
+"PO-Revision-Date: 2023-01-27 13:07+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -699,10 +699,9 @@ msgid "Slideshow settings:"
 msgstr "Diashow-instellingen:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "About Koko"
-msgstr "Info over Tokodon"
+msgstr "Info over Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
