@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-26 12:29+0400\n"
+"PO-Revision-Date: 2023-02-02 11:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -710,10 +710,9 @@ msgid "Slideshow settings:"
 msgstr "إعدادات عرض الشرائح:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "About Koko"
-msgstr "عن توكوكو"
+msgstr "عن كوكو"
 
 #: qml/ShareAction.qml:22
 #, kde-format

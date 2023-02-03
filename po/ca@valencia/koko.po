@@ -1,16 +1,16 @@
 # Translation of koko.po to Catalan (Valencian)
-# Copyright (C) 2020-2022 This_file_is_part_of_KDE
+# Copyright (C) 2020-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2022-09-07 19:12+0200\n"
+"PO-Revision-Date: 2023-01-27 10:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -221,25 +221,22 @@ msgstr "Llocs"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Descarta els canvis"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Segur que voleu descartar tots els canvis?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Cancel·la"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Anys"
+msgstr "Sí"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -608,10 +605,9 @@ msgid "Add Tag"
 msgstr "Afig una etiqueta"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Configura…"
+msgstr "Configura"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -684,17 +680,15 @@ msgid "Days"
 msgstr "Dies"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuració"
 
 #: qml/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "General:"
+msgstr "General"
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
@@ -710,7 +704,7 @@ msgstr "Configureu el passe de diapositives:"
 #: qml/SettingsPage.qml:151
 #, kde-format
 msgid "About Koko"
-msgstr ""
+msgstr "Quant a Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -747,9 +741,3 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
-
-#~ msgid "Show preview carousel in image view"
-#~ msgstr "Mostra la seqüència de vista prèvia en la vista d'imatges"
-
-#~ msgid "Open About Page"
-#~ msgstr "Obri la pàgina «Quant a»"
