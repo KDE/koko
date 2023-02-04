@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-27 13:07+0100\n"
+"PO-Revision-Date: 2023-02-03 12:17+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -90,7 +90,7 @@ msgstr "Mikel Johnson"
 #: main.cpp:84
 #, kde-format
 msgid "Image viewer"
-msgstr "Afbeeldingenviewer"
+msgstr "Afbeeldingsviewer"
 
 #: main.cpp:85
 #, kde-format
