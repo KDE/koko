@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-12 10:30\n"
+"PO-Revision-Date: 2023-02-07 11:02\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -226,17 +226,14 @@ msgid "Are you sure you want to discard all changes?"
 msgstr ""
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "年"
+msgstr ""
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -601,10 +598,9 @@ msgid "Add Tag"
 msgstr "添加标签"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "配置…"
+msgstr ""
 
 #: qml/Main.qml:107
 #, kde-format
@@ -677,17 +673,15 @@ msgid "Days"
 msgstr "日"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "设置"
+msgstr ""
 
 #: qml/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "常规："
+msgstr ""
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
@@ -740,9 +734,3 @@ msgstr "设置"
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
-
-#~ msgid "Show preview carousel in image view"
-#~ msgstr "图像视图显示滚动预览"
-
-#~ msgid "Open About Page"
-#~ msgstr "打开关于页面"
