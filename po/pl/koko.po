@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2021-12-30 12:41+0100\n"
+"PO-Revision-Date: 2023-02-12 09:22+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.03.70\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -220,25 +220,22 @@ msgstr "Miejsca"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Porzuć zmiany"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Czy na pewno porzucić wszystkie zmiany?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Anuluj"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Lata"
+msgstr "Tak"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -609,10 +606,9 @@ msgid "Add Tag"
 msgstr "Dodaj znacznik"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Ustawienia..."
+msgstr "Ustawienia"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -685,8 +681,7 @@ msgid "Days"
 msgstr "Dni"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ustawienia"
@@ -708,8 +703,7 @@ msgid "Slideshow settings:"
 msgstr "Ustawienia pokazu obrazów:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Koko"
 msgstr "O Koko"
 
