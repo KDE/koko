@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2021-11-08 18:58+0000\n"
+"PO-Revision-Date: 2023-02-15 15:24+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -701,10 +701,9 @@ msgid "Slideshow settings:"
 msgstr "Configuração da apresentação:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About Tokodon"
+#, kde-format
 msgid "About Koko"
-msgstr "Acerca do Tokodon"
+msgstr "Acerca do Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -741,18 +740,3 @@ msgstr "Configuração"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Adicionar uma marca nova…"
-
-#~ msgid "Show preview carousel in image view"
-#~ msgstr "Mostrar o carrossel de antevisões na área da imagem"
-
-#~ msgid "Open About Page"
-#~ msgstr "Abrir a Página 'Acerca'"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Remover a marca %1"
-
-#~ msgid "Remove Tag"
-#~ msgstr "Remover a Marca"
-
-#~ msgid "Edit image"
-#~ msgstr "Editar a imagem"
