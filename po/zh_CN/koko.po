@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-02-15 11:04\n"
+"PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -153,7 +153,7 @@ msgstr "删除所选项目"
 #: qml/AlbumView.qml:342
 #, kde-format
 msgid "Move selected items to trash"
-msgstr "将所选项目移至回收站"
+msgstr "将所选项目移动到回收站"
 
 #: qml/AlbumView.qml:348
 #, kde-format
