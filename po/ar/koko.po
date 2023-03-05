@@ -44,7 +44,7 @@ msgstr "كوكو هو عارض صور لمجموعة صورك."
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr "(©) 2013-2020 مساهمو كدي"
+msgstr "(©) 2013-2020 مساهمو كِيدِي"
 
 #: main.cpp:67
 #, kde-kuit-format
