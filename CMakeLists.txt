@@ -13,10 +13,10 @@ project(koko VERSION ${RELEASE_SERVICE_VERSION})
 
 set(CMAKE_CXX_STANDARD 17)
 set(QT5_MIN_VERSION 5.15.2)
-set(KF5_MIN_VERSION 5.87)
+set(KF_MIN_VERSION 5.87)
 set(KDE_COMPILERSETTINGS_LEVEL 5.84)
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
 include(FeatureSummary)
@@ -41,7 +41,7 @@ if(ANDROID)
     find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
+find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
 
 find_package(LibExiv2 0.21 REQUIRED)
 
@@ -76,8 +76,8 @@ set_package_properties(Qt${QT_MAJOR_VERSION}QuickControls2 PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(KF5Kirigami2)
-set_package_properties(KF5Kirigami2 PROPERTIES
+find_package(KF${QT_MAJOR_VERSION}Kirigami2)
+set_package_properties(KF${QT_MAJOR_VERSION}Kirigami2 PROPERTIES
     DESCRIPTION "A QtQuick based components set"
     PURPOSE "Required at runtime to run Koko"
     TYPE RUNTIME

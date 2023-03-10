@@ -18,11 +18,11 @@ target_link_libraries(kokocommon
     Qt::Positioning
     Qt::Sql
     Qt::Svg
-    KF5::CoreAddons
-    KF5::DBusAddons
-    KF5::FileMetaData
-    KF5::ConfigGui
-    KF5::ConfigCore
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::DBusAddons
+    KF${QT_MAJOR_VERSION}::FileMetaData
+    KF${QT_MAJOR_VERSION}::ConfigGui
+    KF${QT_MAJOR_VERSION}::ConfigCore
     LibExiv2::LibExiv2
 )
 
@@ -61,10 +61,10 @@ target_link_libraries(koko
     Qt::Widgets
     Qt::Qml
     Qt::Positioning
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::CoreAddons
-    KF5::KIOCore
+    KF${QT_MAJOR_VERSION}::ConfigCore
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::CoreAddons
+    KF${QT_MAJOR_VERSION}::KIOCore
     kokocommon
 )
 
@@ -73,7 +73,7 @@ target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
 if(ANDROID)
     target_link_libraries(koko Qt::AndroidExtras)
 else()
-    target_link_libraries(koko KF5::WindowSystem)
+    target_link_libraries(koko KF${QT_MAJOR_VERSION}::WindowSystem)
 endif()
 
 target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
@@ -105,12 +105,12 @@ add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
 target_link_libraries (kokoqmlplugin
     Qt::Qml
-    KF5::KIOCore
-    KF5::KIOFileWidgets
-    KF5::KIOWidgets
-    KF5::GuiAddons
-    KF5::I18n
-    KF5::Notifications
+    KF${QT_MAJOR_VERSION}::KIOCore
+    KF${QT_MAJOR_VERSION}::KIOFileWidgets
+    KF${QT_MAJOR_VERSION}::KIOWidgets
+    KF${QT_MAJOR_VERSION}::GuiAddons
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::Notifications
     kokocommon
 )
 
