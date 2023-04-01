@@ -220,7 +220,7 @@ Kirigami.Page {
                 if (slideshowManager.running) {
                     slideshowManager.stop();
                 } else if (applicationWindow().visibility == Window.FullScreen) {
-                    KokoPrivate.Controller.restoreWindowGeometry(applicationWindow());
+                    applicationWindow().visibility = lastWindowVisibility;
                 } else {
                     root.close();
                 }
