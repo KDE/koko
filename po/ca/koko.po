@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-27 10:57+0100\n"
+"PO-Revision-Date: 2023-05-02 20:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -436,12 +436,12 @@ msgstr "Comparteix"
 #: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Start Slideshow"
-msgstr "Inicia el passi de diapositives"
+msgstr "Inicia la presentació de diapositives"
 
 #: qml/ImageViewPage.qml:134
 #, kde-format
 msgid "Slideshow"
-msgstr "Passi de diapositives"
+msgstr "Presentació de diapositives"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
@@ -488,6 +488,7 @@ msgstr "Imatge anterior"
 msgid "Next image"
 msgstr "Imatge següent"
 
+# skip-rule: kct-slideshow
 #: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
@@ -517,7 +518,7 @@ msgstr "Aleatori"
 #: qml/ImageViewPage.qml:737
 #, kde-format
 msgid "Stop Slideshow"
-msgstr "Atura el passi de diapositives"
+msgstr "Atura la presentació de diapositives"
 
 #: qml/ImageViewPage.qml:751
 #, kde-format
@@ -700,7 +701,7 @@ msgstr "Mida de les miniatures:"
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr "Configuració del passi de diapositives:"
+msgstr "Configuració de la presentació de diapositives:"
 
 #: qml/SettingsPage.qml:151
 #, kde-format
