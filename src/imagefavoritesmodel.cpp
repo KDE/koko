@@ -14,7 +14,7 @@
 ImageFavoritesModel::ImageFavoritesModel(QObject *parent)
     : OpenFileModel({}, parent)
 {
-    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+    connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageFavoritesModel::slotPopulate);
     slotPopulate();
 }
 

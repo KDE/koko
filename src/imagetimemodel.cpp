@@ -16,7 +16,7 @@ ImageTimeModel::ImageTimeModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_group(Types::TimeGroup::Day)
 {
-    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+    connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTimeModel::slotPopulate);
 }
 
 void ImageTimeModel::slotPopulate()

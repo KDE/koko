@@ -15,7 +15,7 @@ ImageTagsModel::ImageTagsModel(QObject *parent)
     : OpenFileModel({}, parent)
     , m_tag(QString())
 {
-    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+    connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTagsModel::slotPopulate);
     populateTags();
 }
 

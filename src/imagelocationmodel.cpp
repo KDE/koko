@@ -16,7 +16,7 @@ ImageLocationModel::ImageLocationModel(QObject *parent)
     : QAbstractListModel(parent)
     , m_group(Types::LocationGroup::City)
 {
-    connect(ImageStorage::instance(), SIGNAL(storageModified()), this, SLOT(slotPopulate()));
+    connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageLocationModel::slotPopulate);
 }
 
 void ImageLocationModel::slotPopulate()
