@@ -40,7 +40,7 @@ Kirigami.OverlayDrawer {
             Layout.fillWidth: true
             Kirigami.Heading {
                 level: 1
-                text: i18n("Sort by")
+                text: i18n("Filter by")
             }
         }
         QQC2.ScrollView {
