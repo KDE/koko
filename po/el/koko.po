@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2021-10-08 08:24+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -722,8 +722,8 @@ msgstr "Μοιραστείτε τα επιλεγμένα πολυμέσα"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Ταξινόμηση με"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -745,6 +745,9 @@ msgstr "Ρυθμίσεις"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Προσθήκη νέας ετικέτας…"
+
+#~ msgid "Sort by"
+#~ msgstr "Ταξινόμηση με"
 
 #~ msgid "General:"
 #~ msgstr "Γενικά:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-01-27 08:14+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -714,8 +714,8 @@ msgstr "მონიშნული მედიის გაზიარებ�
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "დალაგება"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -737,6 +737,9 @@ msgstr "მორგება"
 #, kde-format
 msgid "Add new tag…"
 msgstr "ახალი ჭდის დამატება…"
+
+#~ msgid "Sort by"
+#~ msgstr "დალაგება"
 
 #~ msgid "Show preview carousel in image view"
 #~ msgstr "გალერეის რეჟიმში მინიატურების კარუსელის ჩვენება"

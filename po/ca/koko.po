@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-05-02 20:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -720,8 +720,8 @@ msgstr "Comparteix els elements multimèdia seleccionats"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Ordena per"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -743,3 +743,6 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afegeix una etiqueta nova…"
+
+#~ msgid "Sort by"
+#~ msgstr "Ordena per"

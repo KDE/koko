@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2021-10-05 17:08+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -721,8 +721,8 @@ msgstr "Dela de markerade medierna"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Sortera enligt"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -744,6 +744,9 @@ msgstr "Inställningar"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Lägg till ny etikett…"
+
+#~ msgid "Sort by"
+#~ msgstr "Sortera enligt"
 
 #~ msgid "General:"
 #~ msgstr "Allmänt:"

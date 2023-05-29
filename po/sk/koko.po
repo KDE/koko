@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -729,8 +729,8 @@ msgstr "Zdielať vybraté médiá"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Triediť podľa"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -752,6 +752,9 @@ msgstr "Nastavenia"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Pridať nový štítok..."
+
+#~ msgid "Sort by"
+#~ msgstr "Triediť podľa"
 
 #~ msgid "Remove %1 tag"
 #~ msgstr "Odstrániť značku %1"

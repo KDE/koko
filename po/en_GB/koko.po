@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-02-27 19:46+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
@@ -715,8 +715,8 @@ msgstr "Share the selected media"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Sort by"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -738,6 +738,9 @@ msgstr "Settings"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Add new tag…"
+
+#~ msgid "Sort by"
+#~ msgstr "Sort by"
 
 #~ msgid "General:"
 #~ msgstr "General:"

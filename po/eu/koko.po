@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-01-27 21:53+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -718,8 +718,8 @@ msgstr "Partekatu hautatutako euskarri"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Sailkatu honen arabera"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -741,6 +741,9 @@ msgstr "Ezarpenak"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Gehitu etiketa berria..."
+
+#~ msgid "Sort by"
+#~ msgstr "Sailkatu honen arabera"
 
 #~ msgid "General:"
 #~ msgstr "Orokorra:"

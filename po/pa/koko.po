@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -739,8 +739,8 @@ msgstr "ਚੁਣੇ ਚਿੱਤਰ ਸਾਂਝੇ ਕਰੋ"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "ਲੜੀਬੱਧ"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -763,6 +763,9 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 #| msgid "Add new tag"
 msgid "Add new tag…"
 msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
+
+#~ msgid "Sort by"
+#~ msgstr "ਲੜੀਬੱਧ"
 
 #~ msgid "General:"
 #~ msgstr "ਆਮ:"

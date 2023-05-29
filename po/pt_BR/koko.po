@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-02-07 10:55-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -715,8 +715,8 @@ msgstr "Compartilhar as mídias selecionadas"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Ordenar por"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -738,6 +738,9 @@ msgstr "Configurações"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Adicionar nova etiqueta..."
+
+#~ msgid "Sort by"
+#~ msgstr "Ordenar por"
 
 #~ msgid "General:"
 #~ msgstr "Geral:"

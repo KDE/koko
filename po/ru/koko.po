@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-04-21 15:50+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -723,8 +723,8 @@ msgstr "Опубликовать выбранные файлы"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Критерий сортировки"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -746,6 +746,9 @@ msgstr "Параметры"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Создать метку…"
+
+#~ msgid "Sort by"
+#~ msgstr "Критерий сортировки"
 
 #~ msgid "Show preview carousel in image view"
 #~ msgstr "Показывать ленту миниатюр в режиме просмотра изображений"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-02-02 11:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -726,8 +726,8 @@ msgstr "شارك الوسيط المحدد"
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "رتّب بحسب"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -749,6 +749,9 @@ msgstr "إعدادات"
 #, kde-format
 msgid "Add new tag…"
 msgstr "أضف وسمًا جديدًا…"
+
+#~ msgid "Sort by"
+#~ msgstr "رتّب بحسب"
 
 #~ msgid "Show preview carousel in image view"
 #~ msgstr "أظهر معاينة دوارة في عرض الصورة"

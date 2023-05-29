@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-27 00:55+0000\n"
+"POT-Creation-Date: 2023-05-29 00:45+0000\n"
 "PO-Revision-Date: 2023-01-27 10:54+0200\n"
 "Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -724,8 +724,8 @@ msgstr "Оприлюднити позначені мультимедійні д�
 
 #: qml/Sidebar.qml:43
 #, kde-format
-msgid "Sort by"
-msgstr "Упорядкувати за"
+msgid "Filter by"
+msgstr ""
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -747,6 +747,9 @@ msgstr "Параметри"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Додати нову мітку…"
+
+#~ msgid "Sort by"
+#~ msgstr "Упорядкувати за"
 
 #~ msgid "General:"
 #~ msgstr "Загальне:"
