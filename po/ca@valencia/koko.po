@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:45+0000\n"
-"PO-Revision-Date: 2023-05-02 20:53+0200\n"
+"PO-Revision-Date: 2023-05-29 11:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -720,7 +720,7 @@ msgstr "Compartix els elements multimèdia seleccionats"
 #: qml/Sidebar.qml:43
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "Filtra per"
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -742,6 +742,3 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
-
-#~ msgid "Sort by"
-#~ msgstr "Ordena per"
