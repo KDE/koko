@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-27 00:55+0000\n"
-"PO-Revision-Date: 2023-01-27 18:26+0300\n"
+"PO-Revision-Date: 2023-05-29 10:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -238,7 +238,7 @@ msgstr "Evet"
 #: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
-msgstr "Düzen"
+msgstr "Düzenle"
 
 #: qml/EditorView.qml:61
 #, kde-format
@@ -283,13 +283,13 @@ msgstr "Yeniden Boyutlandır"
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr "Sola döndür"
+msgstr "Sola Döndür"
 
 #: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr "Sağa döndür"
+msgstr "Sağa Döndür"
 
 #: qml/EditorView.qml:123
 #, kde-format
