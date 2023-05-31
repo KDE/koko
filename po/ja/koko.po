@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
@@ -114,7 +114,6 @@ msgstr ""
 msgid "1 Image"
 msgid_plural "%1 Images"
 msgstr[0] ""
-msgstr[1] ""
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:256
 #, kde-format
@@ -330,7 +329,6 @@ msgstr ""
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
@@ -491,7 +489,6 @@ msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] ""
-msgstr[1] ""
 
 #: qml/ImageViewPage.qml:722
 #, kde-format
