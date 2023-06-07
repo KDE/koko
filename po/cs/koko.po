@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:45+0000\n"
-"PO-Revision-Date: 2023-01-30 11:25+0100\n"
+"PO-Revision-Date: 2023-05-31 09:55+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -717,7 +717,7 @@ msgstr ""
 #: qml/Sidebar.qml:43
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrovat podle"
 
 #: qml/Sidebar.qml:149
 #, kde-format
@@ -739,6 +739,3 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
-
-#~ msgid "Sort by"
-#~ msgstr "Řadit dle"
