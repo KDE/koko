@@ -16,7 +16,7 @@ import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.koko 0.1 as Koko
 import org.kde.kquickcontrolsaddons 2.0 as KQA
-import org.kde.kcoreaddons 1.0 as KCA
+import org.kde.coreaddons as KCA
 import org.kde.koko.private 0.1 as KokoPrivate
 
 Kirigami.Page {
@@ -68,34 +68,10 @@ Kirigami.Page {
         filePath: listView.currentItem ? listView.currentItem.imageurl : ""
     }
 
-    actions {
-        right: Kirigami.Action {
-            id: infoAction
-            icon.name: "kdocumentinfo"
-            text: i18n("Info")
-            tooltip: !listView.currentItem ? "" :
-                      (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("See information about video") :
-                                                                              i18n("See information about image"))
-            checkable: true
-            checked: false
-            onToggled: if (checked) {
-                infoSidebarLoader.forceActiveFocus();
-            }
-        }
-        main: Kirigami.Action {
-            iconName: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
-            text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
-            tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
-            onTriggered: {
-                exiv2Extractor.toggleFavorite(listView.currentItem.imageurl.toString().replace("file://", ""));
-                // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.imageurl.toString().replace("file://", ""));
-                kokoProcessor.addFile(listView.currentItem.imageurl.toString().replace("file://", ""));
-            }
-        }
-        left: Kirigami.Action {
+    actions: [
+        Kirigami.Action {
             id: editingAction
-            iconName: "edit-entry"
+            icon.name: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
             visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
 
@@ -110,61 +86,83 @@ Kirigami.Page {
                     thumbnailView.currentItem.refresh();
                 });
             }
-        }
-        contextualActions: [
-            ShareAction {
-                id: shareAction
-                tooltip: !listView.currentItem ? "" :
-                         (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("Share Video") : i18n("Share Image"))
-                text: i18nc("verb, share an image/video", "Share")
+        },
+        Kirigami.Action {
+            icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
+            text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
+            tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
+            onTriggered: {
+                exiv2Extractor.toggleFavorite(listView.currentItem.imageurl.toString().replace("file://", ""));
+                // makes change immediate
+                kokoProcessor.removeFile(listView.currentItem.imageurl.toString().replace("file://", ""));
+                kokoProcessor.addFile(listView.currentItem.imageurl.toString().replace("file://", ""));
+            }
+        },
+        Kirigami.Action {
+            id: infoAction
+            icon.name: "kdocumentinfo"
+            text: i18n("Info")
+            tooltip: !listView.currentItem ? "" :
+            (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("See information about video") :
+            i18n("See information about image"))
+            checkable: true
+            checked: false
+            onToggled: if (checked) {
+                infoSidebarLoader.forceActiveFocus();
+            }
+        },
+        ShareAction {
+            id: shareAction
+            tooltip: !listView.currentItem ? "" :
+                        (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("Share Video") : i18n("Share Image"))
+            text: i18nc("verb, share an image/video", "Share")
 
-                property Connections connection: Connections {
-                    target: listView
-                    function onCurrentItemChanged() {
-                        shareAction.inputData = {
-                            urls: [listView.currentItem.imageurl.toString()],
-                            mimeType: [listView.currentItem.mimeType]
-                        };
-                    }
-                }
-            },
-            Kirigami.Action {
-                iconName: "view-presentation"
-                tooltip: i18n("Start Slideshow")
-                text: i18n("Slideshow")
-                visible: listView.count > 1 && !slideshowManager.running
-                onTriggered: slideshowManager.start()
-            },
-            Kirigami.Action {
-                icon.name: "view-preview"
-                // be more descriptive on mobile, since we're less constrained there
-                text: !Kirigami.Settings.isMobile ? i18n("Thumbnail Bar") :
-                       kokoConfig.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
-                tooltip: i18n("Toggle Thumbnail Bar")
-                shortcut: "T"
-                visible: thumbnailView.count > 1
-                onTriggered: kokoConfig.imageViewPreview = !kokoConfig.imageViewPreview
-            },
-            Kirigami.Action {
-                property bool fullscreen: applicationWindow().visibility === Window.FullScreen
-                icon.name: !fullscreen ? "view-fullscreen" : "view-restore"
-                text: !fullscreen ? i18n("Fullscreen") : i18n("Exit Fullscreen")
-                tooltip: !fullscreen ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
-                shortcut: "F"
-                visible: !Kirigami.Settings.isMobile
-                onTriggered: {
-                    if (applicationWindow().visibility === Window.FullScreen) {
-                        applicationWindow().visibility = lastWindowVisibility
-                    } else {
-                        KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
-                        lastWindowVisibility = applicationWindow().visibility
-                        applicationWindow().visibility = Window.FullScreen;
-                    }
-                    listView.forceActiveFocus();
+            property Connections connection: Connections {
+                target: listView
+                function onCurrentItemChanged() {
+                    shareAction.inputData = {
+                        urls: [listView.currentItem.imageurl.toString()],
+                        mimeType: [listView.currentItem.mimeType]
+                    };
                 }
             }
-        ]
-    }
+        },
+        Kirigami.Action {
+            icon.name: "view-presentation"
+            tooltip: i18n("Start Slideshow")
+            text: i18n("Slideshow")
+            visible: listView.count > 1 && !slideshowManager.running
+            onTriggered: slideshowManager.start()
+        },
+        Kirigami.Action {
+            icon.name: "view-preview"
+            // be more descriptive on mobile, since we're less constrained there
+            text: !Kirigami.Settings.isMobile ? i18n("Thumbnail Bar") :
+                    kokoConfig.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
+            tooltip: i18n("Toggle Thumbnail Bar")
+            shortcut: "T"
+            visible: thumbnailView.count > 1
+            onTriggered: kokoConfig.imageViewPreview = !kokoConfig.imageViewPreview
+        },
+        Kirigami.Action {
+            property bool fullscreen: applicationWindow().visibility === Window.FullScreen
+            icon.name: !fullscreen ? "view-fullscreen" : "view-restore"
+            text: !fullscreen ? i18n("Fullscreen") : i18n("Exit Fullscreen")
+            tooltip: !fullscreen ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
+            shortcut: "F"
+            visible: !Kirigami.Settings.isMobile
+            onTriggered: {
+                if (applicationWindow().visibility === Window.FullScreen) {
+                    applicationWindow().visibility = lastWindowVisibility
+                } else {
+                    KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
+                    lastWindowVisibility = applicationWindow().visibility
+                    applicationWindow().visibility = Window.FullScreen;
+                }
+                listView.forceActiveFocus();
+            }
+        }
+    ]
 
     SlideshowManager {
         id: slideshowManager
@@ -249,7 +247,7 @@ Kirigami.Page {
         model: Koko.SortModel {
             sourceModel: imagesModel
             filterRole: Koko.Roles.MimeTypeRole
-            filterRegExp: /image\/|video\//
+            filterRegularExpression: /image\/|video\//
         }
 
         // we start with this index, so we don't flash initial image

@@ -9,7 +9,7 @@
 import QtQuick 2.15
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.10 as Controls
-import QtGraphicalEffects 1.0 as Effects
+import Qt5Compat.GraphicalEffects as Effects
 import QtQuick.Layouts 1.3
 import org.kde.kirigami 2.13 as Kirigami
 import org.kde.koko 0.1 as Koko

@@ -10,7 +10,7 @@ import QtQml 2.15
 import QtQuick.Templates 2.15 as T
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.3
+import QtQuick.Dialogs
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.kquickimageeditor 1.0 as KQuickImageEditor
 import "./Dialog"
@@ -59,7 +59,7 @@ Kirigami.Page {
             id: saveAction
             visible: imageDoc.edited
             text: i18nc("@action:button Save image modification", "Save")
-            iconName: "document-save"
+            icon.name: "document-save"
             onTriggered: {
                 if (!imageDoc.save()) {
                     msg.type = Kirigami.MessageType.Error
@@ -73,7 +73,7 @@ Kirigami.Page {
         left: Kirigami.Action {
             id: undoAction
             text: i18nc("@action:button Undo modification", "Undo")
-            iconName: "edit-undo"
+            icon.name: "edit-undo"
             onTriggered: {
                 if (imageDoc.edited) {
                     imageDoc.undo();
@@ -89,43 +89,43 @@ Kirigami.Page {
                 visible: !root.resizing
             },
             Kirigami.Action {
-                iconName: "dialog-ok"
+                icon.name: "dialog-ok"
                 text: i18nc("@action:button Crop an image", "Crop");
                 onTriggered: root.crop();
                 visible: root.cropping
             },
             Kirigami.Action {
-                iconName: root.resizing ? "dialog-cancel" : "transform-scale"
+                icon.name: root.resizing ? "dialog-cancel" : "transform-scale"
                 text: root.resizing ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
                 onTriggered: root.resizing = !root.resizing;
                 visible: !root.cropping
             },
             Kirigami.Action {
-                iconName: "dialog-ok"
+                icon.name: "dialog-ok"
                 text: i18nc("@action:button Resize an image", "Resize");
                 onTriggered: root.resize();
                 visible: root.resizing
             },
             Kirigami.Action {
-                iconName: "object-rotate-left"
+                icon.name: "object-rotate-left"
                 text: i18nc("@action:button Rotate an image to the left", "Rotate left");
                 onTriggered: imageDoc.rotate(-90);
                 visible: !root.cropping && !root.resizing
             },
             Kirigami.Action {
-                iconName: "object-rotate-right"
+                icon.name: "object-rotate-right"
                 text: i18nc("@action:button Rotate an image to the right", "Rotate right");
                 onTriggered: imageDoc.rotate(90);
                 visible: !root.cropping && !root.resizing
             },
             Kirigami.Action {
-                iconName: "object-flip-vertical"
+                icon.name: "object-flip-vertical"
                 text: i18nc("@action:button Mirror an image vertically", "Flip");
                 onTriggered: imageDoc.mirror(false, true);
                 visible: !root.cropping && !root.resizing
             },
             Kirigami.Action {
-                iconName: "object-flip-horizontal"
+                icon.name: "object-flip-horizontal"
                 text: i18nc("@action:button Mirror an image horizontally", "Mirror");
                 onTriggered: imageDoc.mirror(true, false);
                 visible: !root.cropping && !root.resizing

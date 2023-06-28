@@ -18,7 +18,7 @@ Kirigami.ScrollablePage {
     actions.contextualActions: [
         Kirigami.Action {
             visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
-            iconName: "configure"
+            icon.name: "configure"
             text: i18n("Configure…")
             onTriggered: applicationWindow().openSettingsPage();
         }

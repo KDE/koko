@@ -11,7 +11,7 @@ import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.15
 import org.kde.kirigami 2.19 as Kirigami
 import org.kde.koko 0.1 as Koko
-import org.kde.kcoreaddons 1.0 as KCA
+import org.kde.coreaddons as KCA
 import org.kde.koko.private 0.1 as KokoPrivate
 
 Flickable {

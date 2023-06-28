@@ -40,7 +40,7 @@ Kirigami.OverlayDrawer {
 
             Kirigami.BasicListItem {
                 text: model.display
-                icon: model.iconName
+                icon: model.icon.name
                 onClicked: {
                     const dialog = applicationWindow().pageStack.pushDialogLayer('qrc:/qml/ShareDialog.qml', {
                         title: drawer.title,
