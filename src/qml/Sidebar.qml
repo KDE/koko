@@ -69,7 +69,6 @@ Kirigami.OverlayDrawer {
 
             component PlaceItem : Kirigami.BasicListItem {
                 id: item
-                property string icon
                 property string filter
                 property string query
 
@@ -109,17 +108,17 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     id: picturesAction
-                    icon: "folder-pictures"
+                    icon.name: "folder-pictures"
                     text: i18n("Pictures")
                     filter: "Pictures"
                 }
                 PlaceItem {
                     text: i18n("Favorites")
-                    icon: "starred-symbolic"
+                    icon.name: "starred-symbolic"
                     filter: "Favorites"
                 }
                 PlaceItem {
-                    icon: "folder-videos"
+                    icon.name: "folder-videos"
                     text: i18n("Videos")
                     filter: "Videos"
                     query: "file://" + Koko.DirModelUtils.videos
@@ -127,7 +126,7 @@ Kirigami.OverlayDrawer {
                 Repeater {
                     model: kokoConfig.savedFolders
                     PlaceItem {
-                        icon: "folder-symbolic"
+                        icon.name: "folder-symbolic"
                         text: {
                             var str = modelData
                             if (str.endsWith("/")) {
@@ -140,7 +139,7 @@ Kirigami.OverlayDrawer {
                     }
                 }
                 PlaceItem {
-                    icon: "user-trash-symbolic"
+                    icon.name: "user-trash-symbolic"
                     text: i18n("Trash")
                     filter: "Trash"
                     query: "trash:/"
@@ -149,7 +148,7 @@ Kirigami.OverlayDrawer {
                     text: i18nc("Remote network locations", "Remote")
                 }
                 PlaceItem {
-                    icon: "folder-cloud"
+                    icon.name: "folder-cloud"
                     text: i18n("Network")
                     filter: "Remote"
                     query: "remote:/"
@@ -159,17 +158,17 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18n("Countries")
-                    icon: "tag-places"
+                    icon.name: "tag-places"
                     filter: "Countries"
                 }
                 PlaceItem {
                     text: i18n("States")
-                    icon: "tag-places"
+                    icon.name: "tag-places"
                     filter: "States"
                 }
                 PlaceItem {
                     text: i18n("Cities")
-                    icon: "tag-places"
+                    icon.name: "tag-places"
                     filter: "Cities"
                 }
                 PlaceHeading {
@@ -177,22 +176,22 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18n("Years")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Years"
                 }
                 PlaceItem {
                     text: i18n("Months")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Months"
                 }
                 PlaceItem {
                     text: i18n("Weeks")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Weeks"
                 }
                 PlaceItem {
                     text: i18n("Days")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Days"
                 }
                 PlaceHeading {
@@ -202,7 +201,7 @@ Kirigami.OverlayDrawer {
                 Repeater {
                     model: applicationWindow().tags
                     PlaceItem {
-                        icon: "tag"
+                        icon.name: "tag"
                         text: modelData
                         filter: "Tags"
                         query: modelData
@@ -238,7 +237,7 @@ Kirigami.OverlayDrawer {
         Kirigami.BasicListItem {
             text: i18n("Settings")
             onClicked: applicationWindow().openSettingsPage()
-            icon: "settings-configure"
+            icon.name: "settings-configure"
         }
     }
 
