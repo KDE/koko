@@ -16,7 +16,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="de">Koko</name>
   <name xml:lang="el">Koko</name>
   <name xml:lang="en-GB">Koko</name>
-  <name xml:lang="eo">Koko</name>
   <name xml:lang="es">Koko</name>
   <name xml:lang="et">Koko</name>
   <name xml:lang="eu">Koko</name>
@@ -51,7 +50,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="de">Bildergalerie</summary>
   <summary xml:lang="el">Συλλογή εικόνων</summary>
   <summary xml:lang="en-GB">Image Gallery</summary>
-  <summary xml:lang="eo">Bildgalerio</summary>
   <summary xml:lang="es">Galería de imágenes</summary>
   <summary xml:lang="et">Pildigalerii</summary>
   <summary xml:lang="eu">Irudien galeria</summary>
@@ -87,7 +85,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <p xml:lang="de">Eine Bildergalerie-Anwendung</p>
     <p xml:lang="el">Μια εφαρμογή συλλογής εικόνων</p>
     <p xml:lang="en-GB">An Image gallery application</p>
-    <p xml:lang="eo">Bildgaleria aplikaĵo</p>
     <p xml:lang="es">Aplicación para galerías de imágenes</p>
     <p xml:lang="et">Pildigalerii rakendus</p>
     <p xml:lang="eu">Irudien galeria aplikazio bat</p>
