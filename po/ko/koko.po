@@ -440,22 +440,22 @@ msgstr "슬라이드 쇼"
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Thumbnail Bar"
-msgstr "축소판 바"
+msgstr "섬네일 바"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Hide Thumbnail Bar"
-msgstr "축소판 바 숨기기"
+msgstr "섬네일 바 숨기기"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Show Thumbnail Bar"
-msgstr "축소판 바 표시"
+msgstr "섬네일 바 표시"
 
 #: qml/ImageViewPage.qml:143
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr "축소판 바 전환"
+msgstr "섬네일 바 전환"
 
 #: qml/ImageViewPage.qml:151
 #, kde-format
@@ -687,7 +687,7 @@ msgstr "일반"
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
 msgid "Thumbnails size:"
-msgstr "축소판 크기:"
+msgstr "섬네일 크기:"
 
 #: qml/SettingsPage.qml:56
 #, kde-format
