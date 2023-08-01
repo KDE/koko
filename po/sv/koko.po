@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:45+0000\n"
-"PO-Revision-Date: 2021-10-05 17:08+0200\n"
+"PO-Revision-Date: 2023-07-25 09:09+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -218,25 +218,22 @@ msgstr "Platser"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Kasta ändringar"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Är du säker på att du vill kasta alla ändringar?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Avbryt"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "År"
+msgstr "Ja"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -605,10 +602,9 @@ msgid "Add Tag"
 msgstr "Lägg till etikett"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Anpassa…"
+msgstr "Anpassa"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -681,8 +677,7 @@ msgid "Days"
 msgstr "Dagar"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Inställningar"
@@ -704,10 +699,9 @@ msgid "Slideshow settings:"
 msgstr "Bildspelsinställningar:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About Koko"
-msgstr "Om"
+msgstr "Om Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -722,7 +716,7 @@ msgstr "Dela de markerade medierna"
 #: qml/Sidebar.qml:43
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrera enligt"
 
 #: qml/Sidebar.qml:149
 #, kde-format
