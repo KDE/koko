@@ -10,6 +10,7 @@ import QtQuick.Controls 2.15 as QQC2
 import org.kde.koko 0.1 as Koko
 
 import org.kde.kirigami 2.19 as Kirigami
+import org.kde.kirigamiaddons.delegates 1.0 as Delegates
 
 Kirigami.OverlayDrawer {
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
@@ -25,13 +26,17 @@ Kirigami.OverlayDrawer {
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
-    bottomPadding: 0
+    bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
+
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
 
     // Place
     contentItem: ColumnLayout {
         id: column
         // FIXME: Dirty workaround for 385992
         implicitWidth: Kirigami.Units.gridUnit * 14
+        spacing: 0
         Kirigami.AbstractApplicationHeader {
             topPadding: Kirigami.Units.smallSpacing;
             bottomPadding: Kirigami.Units.smallSpacing;
@@ -48,43 +53,26 @@ Kirigami.OverlayDrawer {
             property var currentlySelectedAction
             property var previouslySelectedAction
 
-            Layout.topMargin: -Kirigami.Units.smallSpacing - 1;
-            Layout.bottomMargin: -Kirigami.Units.smallSpacing;
             Layout.fillHeight: true
             Layout.fillWidth: true
 
             Accessible.role: Accessible.MenuBar
-            contentWidth: availableWidth
 
             clip: true
 
-            component PlaceHeading : Kirigami.Heading {
-                topPadding: Kirigami.Units.largeSpacing * 1.5
-                bottomPadding: Kirigami.Units.smallSpacing
-                leftPadding: Kirigami.Units.largeSpacing
+            component PlaceHeading : Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
-                level: 4
-                opacity: 0.7
             }
 
-            component PlaceItem : Kirigami.BasicListItem {
+            component PlaceItem : Delegates.RoundedItemDelegate {
                 id: item
-                property string icon
                 property string filter
                 property string query
 
-                checkable: true
-                separatorVisible: false
                 Layout.fillWidth: true
                 Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
                 Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
                 Accessible.role: Accessible.MenuItem
-
-                leading: Kirigami.Icon {
-                    source: item.icon
-                    implicitWidth: Kirigami.Units.iconSizes.smallMedium
-                    implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                }
 
                 onClicked: {
                     scrollView.currentlySelectedAction = item;
@@ -103,23 +91,23 @@ Kirigami.OverlayDrawer {
 
             ColumnLayout {
                 spacing: 1
-                width: scrollView.width
+                width: scrollView.availableWidth
                 PlaceHeading {
                     text: i18n("Places")
                 }
                 PlaceItem {
                     id: picturesAction
-                    icon: "folder-pictures"
+                    icon.name: "folder-pictures"
                     text: i18n("Pictures")
                     filter: "Pictures"
                 }
                 PlaceItem {
                     text: i18n("Favorites")
-                    icon: "starred-symbolic"
+                    icon.name: "starred-symbolic"
                     filter: "Favorites"
                 }
                 PlaceItem {
-                    icon: "folder-videos"
+                    icon.name: "folder-videos"
                     text: i18n("Videos")
                     filter: "Videos"
                     query: "file://" + Koko.DirModelUtils.videos
@@ -127,7 +115,7 @@ Kirigami.OverlayDrawer {
                 Repeater {
                     model: kokoConfig.savedFolders
                     PlaceItem {
-                        icon: "folder-symbolic"
+                        icon.name: "folder-symbolic"
                         text: {
                             var str = modelData
                             if (str.endsWith("/")) {
@@ -140,7 +128,7 @@ Kirigami.OverlayDrawer {
                     }
                 }
                 PlaceItem {
-                    icon: "user-trash-symbolic"
+                    icon.name: "user-trash-symbolic"
                     text: i18n("Trash")
                     filter: "Trash"
                     query: "trash:/"
@@ -149,7 +137,7 @@ Kirigami.OverlayDrawer {
                     text: i18nc("Remote network locations", "Remote")
                 }
                 PlaceItem {
-                    icon: "folder-cloud"
+                    icon.name: "folder-cloud"
                     text: i18n("Network")
                     filter: "Remote"
                     query: "remote:/"
@@ -159,17 +147,17 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18n("Countries")
-                    icon: "tag-places"
+                    icon.name: "tag-places"
                     filter: "Countries"
                 }
                 PlaceItem {
                     text: i18n("States")
-                    icon: "tag-places"
+                    icon.name: "tag-places"
                     filter: "States"
                 }
                 PlaceItem {
                     text: i18n("Cities")
-                    icon: "tag-places"
+                    icon.name: "tag-places"
                     filter: "Cities"
                 }
                 PlaceHeading {
@@ -177,22 +165,22 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18n("Years")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Years"
                 }
                 PlaceItem {
                     text: i18n("Months")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Months"
                 }
                 PlaceItem {
                     text: i18n("Weeks")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Weeks"
                 }
                 PlaceItem {
                     text: i18n("Days")
-                    icon: "view-calendar"
+                    icon.name: "view-calendar"
                     filter: "Days"
                 }
                 PlaceHeading {
@@ -202,7 +190,7 @@ Kirigami.OverlayDrawer {
                 Repeater {
                     model: applicationWindow().tags
                     PlaceItem {
-                        icon: "tag"
+                        icon.name: "tag"
                         text: modelData
                         filter: "Tags"
                         query: modelData
@@ -235,10 +223,11 @@ Kirigami.OverlayDrawer {
             onMoved: kokoConfig.iconSize = value;
         }
 
-        Kirigami.BasicListItem {
+        Delegates.RoundedItemDelegate {
             text: i18n("Settings")
             onClicked: applicationWindow().openSettingsPage()
-            icon: "settings-configure"
+            icon.name: "settings-configure"
+            Layout.fillWidth: true
         }
     }
 
