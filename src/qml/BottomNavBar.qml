@@ -63,25 +63,25 @@ Loader {
                 shadow: false
                 actions: [
                     Kirigami.Action {
-                        iconName: "photo"
+                        icon.name: "photo"
                         text: i18n("Pictures")
                         checked: root.lastCategoryRequested === BottomNavBar.Category.Pictures
                         onTriggered: applicationWindow().filterBy("Pictures", "")
                     },
                     Kirigami.Action {
-                        iconName: "folder-videos-symbolic"
+                        icon.name: "folder-videos-symbolic"
                         text: i18n("Videos")
                         checked: root.lastCategoryRequested === BottomNavBar.Category.Videos
                         onTriggered: applicationWindow().filterBy("Videos", "file://" + Koko.DirModelUtils.videos)
                     },
                     Kirigami.Action {
-                        iconName: "emblem-favorite"
+                        icon.name: "emblem-favorite"
                         text: i18n("Favorites")
                         checked: root.lastCategoryRequested === BottomNavBar.Category.Favorites
                         onTriggered: applicationWindow().filterBy("Favorites", "");
                     },
                     Kirigami.Action {
-                        iconName: "compass"
+                        icon.name: "compass"
                         text: i18n("Places")
                         checked: root.lastCategoryRequested === BottomNavBar.Category.Places
                         onTriggered: applicationWindow().openPlacesPage();

@@ -83,7 +83,7 @@ Kirigami.Page {
             }
         }
         main: Kirigami.Action {
-            iconName: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
+            icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
             text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
             tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
             onTriggered: {
@@ -95,7 +95,7 @@ Kirigami.Page {
         }
         left: Kirigami.Action {
             id: editingAction
-            iconName: "edit-entry"
+            icon.name: "edit-entry"
             text: i18nc("verb, edit an image", "Edit")
             visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
 
@@ -129,7 +129,7 @@ Kirigami.Page {
                 }
             },
             Kirigami.Action {
-                iconName: "view-presentation"
+                icon.name: "view-presentation"
                 tooltip: i18n("Start Slideshow")
                 text: i18n("Slideshow")
                 visible: listView.count > 1 && !slideshowManager.running

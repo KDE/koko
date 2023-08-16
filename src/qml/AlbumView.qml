@@ -252,7 +252,7 @@ Kirigami.ScrollablePage {
     
     Kirigami.Action {
         id: bookmarkAction
-        iconName: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+        icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
         text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
         visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
                                                                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
@@ -273,7 +273,7 @@ Kirigami.ScrollablePage {
 
     Kirigami.Action {
         id: goUpAction
-        iconName: "go-up"
+        icon.name: "go-up"
         text: i18n("Go Up")
         visible: page.isFolderView && Kirigami.Settings.isMobile
         onTriggered: {
@@ -337,14 +337,14 @@ Kirigami.ScrollablePage {
 
             },
             Kirigami.Action {
-                iconName: "group-delete"
+                icon.name: "group-delete"
                 text: i18n("Delete Selection")
                 tooltip: i18n("Move selected items to trash")
                 visible: model.hasSelectedImages && !page.isTrashView
                 onTriggered: model.deleteSelection()
             },
             Kirigami.Action {
-                iconName: "restoration"
+                icon.name: "restoration"
                 text: i18n("Restore Selection")
                 tooltip: i18n("Restore selected items from trash")
                 visible: model.hasSelectedImages && page.isTrashView
@@ -352,12 +352,12 @@ Kirigami.ScrollablePage {
             },
             Kirigami.Action {
                 visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
-                iconName: "configure"
+                icon.name: "configure"
                 text: i18n("Configure…")
                 onTriggered: applicationWindow().openSettingsPage();
             },
             Kirigami.Action {
-                iconName: "edit-select-all"
+                icon.name: "edit-select-all"
                 text: i18n("Select All")
                 tooltip: i18n("Selects all the media in the current view")
                 visible: model.containImages
@@ -365,7 +365,7 @@ Kirigami.ScrollablePage {
 
             },
             Kirigami.Action {
-                iconName: "edit-select-none"
+                icon.name: "edit-select-none"
                 text: i18n("Deselect All")
                 tooltip: i18n("De-selects all the selected media")
                 onTriggered: model.clearSelections()
