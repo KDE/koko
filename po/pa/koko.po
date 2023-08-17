@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-29 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:43+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -198,22 +198,22 @@ msgstr "ਚੁਣੇ ਗਏ ਸਾਰੇ ਚਿੱਤਰ ਨੂੰ ਅਣ-ਚੁ
 msgid "No Media Found"
 msgstr "ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:101
 #, kde-format
 msgid "Pictures"
 msgstr "ਤਸਵੀਰਾਂ"
 
-#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:123
+#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:111
 #, kde-format
 msgid "Videos"
 msgstr ""
 
-#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:117
+#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:105
 #, kde-format
 msgid "Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:108
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:96
 #, kde-format
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
@@ -495,14 +495,14 @@ msgstr "ਪਿਛਲਾ ਚਿੱਤਰ"
 msgid "Next image"
 msgstr "ਅਗਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
+#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:61
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:85
+#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:73
 #, fuzzy, kde-format
 #| msgid "1 second"
 #| msgid_plural "%1 seconds"
@@ -519,7 +519,7 @@ msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:61
+#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:49
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
@@ -608,7 +608,7 @@ msgstr "ਵਰਣਨ"
 msgid "Image description…"
 msgstr "ਚਿੱਤਰ ਦਾ ਵਰਣਨ..."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:199
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:187
 #, kde-format
 msgid "Tags"
 msgstr "ਟੈਗ"
@@ -634,12 +634,12 @@ msgstr "ਚਿੱਤਰ"
 msgid "Folders"
 msgstr "ਫੋਲਡਰ"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:153
+#: qml/PlacesPage.qml:79 qml/Sidebar.qml:141
 #, kde-format
 msgid "Network"
 msgstr "ਨੈੱਟਵਰਕ"
 
-#: qml/PlacesPage.qml:85 qml/Sidebar.qml:144
+#: qml/PlacesPage.qml:85 qml/Sidebar.qml:132
 #, kde-format
 msgid "Trash"
 msgstr "ਰੱਦੀ"
@@ -650,47 +650,47 @@ msgstr "ਰੱਦੀ"
 msgid "Pinned Folders"
 msgstr "ਫੋਲਡਰ"
 
-#: qml/PlacesPage.qml:111 qml/Sidebar.qml:158
+#: qml/PlacesPage.qml:111 qml/Sidebar.qml:146
 #, kde-format
 msgid "Locations"
 msgstr "ਟਿਕਾਣੇ"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:149
 #, kde-format
 msgid "Countries"
 msgstr "ਦੇਸ਼"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:154
 #, kde-format
 msgid "States"
 msgstr "ਸੂਬੇ"
 
-#: qml/PlacesPage.qml:125 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:159
 #, kde-format
 msgid "Cities"
 msgstr "ਸ਼ਹਿਰ"
 
-#: qml/PlacesPage.qml:131 qml/Sidebar.qml:176
+#: qml/PlacesPage.qml:131 qml/Sidebar.qml:164
 #, kde-format
 msgid "Time"
 msgstr "ਵੇਲਾ"
 
-#: qml/PlacesPage.qml:135 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:135 qml/Sidebar.qml:167
 #, kde-format
 msgid "Years"
 msgstr "ਸਾਲ"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:172
 #, kde-format
 msgid "Months"
 msgstr "ਮਹੀਨੇ"
 
-#: qml/PlacesPage.qml:145 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:145 qml/Sidebar.qml:177
 #, kde-format
 msgid "Weeks"
 msgstr "ਹਫ਼ਤੇ"
 
-#: qml/PlacesPage.qml:150 qml/Sidebar.qml:194
+#: qml/PlacesPage.qml:150 qml/Sidebar.qml:182
 #, kde-format
 msgid "Days"
 msgstr "ਦਿਨ"
@@ -702,25 +702,25 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: qml/SettingsPage.qml:29
+#: qml/SettingsPage.qml:20
 #, fuzzy, kde-format
 #| msgid "General:"
 msgid "General"
 msgstr "ਆਮ:"
 
-#: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:210
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "ਥੰਮਨੇਲ ਦਾ ਆਕਾਰ:"
 
-#: qml/SettingsPage.qml:56
+#: qml/SettingsPage.qml:43
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/SettingsPage.qml:151
+#: qml/SettingsPage.qml:129
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About Koko"
@@ -737,23 +737,23 @@ msgstr "ਸਾਂਝੇ ਕਰੋ"
 msgid "Share the selected media"
 msgstr "ਚੁਣੇ ਚਿੱਤਰ ਸਾਂਝੇ ਕਰੋ"
 
-#: qml/Sidebar.qml:43
+#: qml/Sidebar.qml:48
 #, kde-format
 msgid "Filter by"
 msgstr ""
 
-#: qml/Sidebar.qml:149
+#: qml/Sidebar.qml:137
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "ਰਿਮੋਟ"
 
-#: qml/Sidebar.qml:226
+#: qml/Sidebar.qml:214
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:239
+#: qml/Sidebar.qml:227
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"

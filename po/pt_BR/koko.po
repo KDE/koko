@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-29 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:43+0000\n"
 "PO-Revision-Date: 2023-05-31 14:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -195,22 +195,22 @@ msgstr "Desmarca todas as mídias selecionadas"
 msgid "No Media Found"
 msgstr "Nenhuma mídia encontrada"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:101
 #, kde-format
 msgid "Pictures"
 msgstr "Imagens"
 
-#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:123
+#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:111
 #, kde-format
 msgid "Videos"
 msgstr "Vídeos"
 
-#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:117
+#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:105
 #, kde-format
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:108
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:96
 #, kde-format
 msgid "Places"
 msgstr "Locais"
@@ -484,13 +484,13 @@ msgstr "Imagem anterior"
 msgid "Next image"
 msgstr "Próxima imagem"
 
-#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
+#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalo da apresentação de slides:"
 
-#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:85
+#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -504,7 +504,7 @@ msgctxt "@option:check"
 msgid "Loop"
 msgstr "Repetição"
 
-#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:61
+#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -591,7 +591,7 @@ msgstr "Descrição"
 msgid "Image description…"
 msgstr "Descrição da imagem..."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:199
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:187
 #, kde-format
 msgid "Tags"
 msgstr "Etiquetas"
@@ -616,12 +616,12 @@ msgstr "Imagens"
 msgid "Folders"
 msgstr "Pastas"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:153
+#: qml/PlacesPage.qml:79 qml/Sidebar.qml:141
 #, kde-format
 msgid "Network"
 msgstr "Rede"
 
-#: qml/PlacesPage.qml:85 qml/Sidebar.qml:144
+#: qml/PlacesPage.qml:85 qml/Sidebar.qml:132
 #, kde-format
 msgid "Trash"
 msgstr "Lixeira"
@@ -631,47 +631,47 @@ msgstr "Lixeira"
 msgid "Pinned Folders"
 msgstr "Pastas fixadas"
 
-#: qml/PlacesPage.qml:111 qml/Sidebar.qml:158
+#: qml/PlacesPage.qml:111 qml/Sidebar.qml:146
 #, kde-format
 msgid "Locations"
 msgstr "Localizações"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:149
 #, kde-format
 msgid "Countries"
 msgstr "Países"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:154
 #, kde-format
 msgid "States"
 msgstr "Estados"
 
-#: qml/PlacesPage.qml:125 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:159
 #, kde-format
 msgid "Cities"
 msgstr "Cidades"
 
-#: qml/PlacesPage.qml:131 qml/Sidebar.qml:176
+#: qml/PlacesPage.qml:131 qml/Sidebar.qml:164
 #, kde-format
 msgid "Time"
 msgstr "Hora"
 
-#: qml/PlacesPage.qml:135 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:135 qml/Sidebar.qml:167
 #, kde-format
 msgid "Years"
 msgstr "Anos"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:172
 #, kde-format
 msgid "Months"
 msgstr "Meses"
 
-#: qml/PlacesPage.qml:145 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:145 qml/Sidebar.qml:177
 #, kde-format
 msgid "Weeks"
 msgstr "Semanas"
 
-#: qml/PlacesPage.qml:150 qml/Sidebar.qml:194
+#: qml/PlacesPage.qml:150 qml/Sidebar.qml:182
 #, kde-format
 msgid "Days"
 msgstr "Dias"
@@ -682,23 +682,23 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configurações"
 
-#: qml/SettingsPage.qml:29
+#: qml/SettingsPage.qml:20
 #, kde-format
 msgid "General"
 msgstr "Geral"
 
-#: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:210
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Tamanho das miniaturas:"
 
-#: qml/SettingsPage.qml:56
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Configurações da apresentação de slides:"
 
-#: qml/SettingsPage.qml:151
+#: qml/SettingsPage.qml:129
 #, kde-format
 msgid "About Koko"
 msgstr "Sobre o Koko"
@@ -713,23 +713,23 @@ msgstr "Compartilhar"
 msgid "Share the selected media"
 msgstr "Compartilhar as mídias selecionadas"
 
-#: qml/Sidebar.qml:43
+#: qml/Sidebar.qml:48
 #, kde-format
 msgid "Filter by"
 msgstr "Filtrar por"
 
-#: qml/Sidebar.qml:149
+#: qml/Sidebar.qml:137
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remoto"
 
-#: qml/Sidebar.qml:226
+#: qml/Sidebar.qml:214
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:239
+#: qml/Sidebar.qml:227
 #, kde-format
 msgid "Settings"
 msgstr "Configurações"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-29 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:43+0000\n"
 "PO-Revision-Date: 2023-05-29 08:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -200,22 +200,22 @@ msgstr "Знімає позначення з усіх позначених му�
 msgid "No Media Found"
 msgstr "Мультимедійних даних не знайдено"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:101
 #, kde-format
 msgid "Pictures"
 msgstr "Зображення"
 
-#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:123
+#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:111
 #, kde-format
 msgid "Videos"
 msgstr "Відео"
 
-#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:117
+#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:105
 #, kde-format
 msgid "Favorites"
 msgstr "Улюблене"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:108
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:96
 #, kde-format
 msgid "Places"
 msgstr "Місця"
@@ -491,13 +491,13 @@ msgstr "Попереднє зображення"
 msgid "Next image"
 msgstr "Наступне зображення"
 
-#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:73
+#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Інтервал показу слайдів:"
 
-#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:85
+#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -513,7 +513,7 @@ msgctxt "@option:check"
 msgid "Loop"
 msgstr "Зациклити"
 
-#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:61
+#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -600,7 +600,7 @@ msgstr "Опис"
 msgid "Image description…"
 msgstr "Опис зображення."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:199
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:187
 #, kde-format
 msgid "Tags"
 msgstr "Мітки"
@@ -625,12 +625,12 @@ msgstr "Зображення"
 msgid "Folders"
 msgstr "Теки"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:153
+#: qml/PlacesPage.qml:79 qml/Sidebar.qml:141
 #, kde-format
 msgid "Network"
 msgstr "Мережа"
 
-#: qml/PlacesPage.qml:85 qml/Sidebar.qml:144
+#: qml/PlacesPage.qml:85 qml/Sidebar.qml:132
 #, kde-format
 msgid "Trash"
 msgstr "Смітник"
@@ -640,47 +640,47 @@ msgstr "Смітник"
 msgid "Pinned Folders"
 msgstr "Пришпилені теки"
 
-#: qml/PlacesPage.qml:111 qml/Sidebar.qml:158
+#: qml/PlacesPage.qml:111 qml/Sidebar.qml:146
 #, kde-format
 msgid "Locations"
 msgstr "Місця"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:149
 #, kde-format
 msgid "Countries"
 msgstr "Країни"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:154
 #, kde-format
 msgid "States"
 msgstr "Штати"
 
-#: qml/PlacesPage.qml:125 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:159
 #, kde-format
 msgid "Cities"
 msgstr "Міста"
 
-#: qml/PlacesPage.qml:131 qml/Sidebar.qml:176
+#: qml/PlacesPage.qml:131 qml/Sidebar.qml:164
 #, kde-format
 msgid "Time"
 msgstr "Час"
 
-#: qml/PlacesPage.qml:135 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:135 qml/Sidebar.qml:167
 #, kde-format
 msgid "Years"
 msgstr "Роки"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:172
 #, kde-format
 msgid "Months"
 msgstr "Місяці"
 
-#: qml/PlacesPage.qml:145 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:145 qml/Sidebar.qml:177
 #, kde-format
 msgid "Weeks"
 msgstr "Тижні"
 
-#: qml/PlacesPage.qml:150 qml/Sidebar.qml:194
+#: qml/PlacesPage.qml:150 qml/Sidebar.qml:182
 #, kde-format
 msgid "Days"
 msgstr "Дні"
@@ -691,23 +691,23 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Параметри"
 
-#: qml/SettingsPage.qml:29
+#: qml/SettingsPage.qml:20
 #, kde-format
 msgid "General"
 msgstr "Загальне"
 
-#: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:210
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Розмір мініатюр"
 
-#: qml/SettingsPage.qml:56
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Інтервал показу слайдів:"
 
-#: qml/SettingsPage.qml:151
+#: qml/SettingsPage.qml:129
 #, kde-format
 msgid "About Koko"
 msgstr "Про Koko"
@@ -722,23 +722,23 @@ msgstr "Оприлюднити"
 msgid "Share the selected media"
 msgstr "Оприлюднити позначені мультимедійні дані"
 
-#: qml/Sidebar.qml:43
+#: qml/Sidebar.qml:48
 #, kde-format
 msgid "Filter by"
 msgstr "Критерій фільтрування"
 
-#: qml/Sidebar.qml:149
+#: qml/Sidebar.qml:137
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Віддалене"
 
-#: qml/Sidebar.qml:226
+#: qml/Sidebar.qml:214
 #, kde-format
 msgid "%1 px"
 msgstr "%1 пк"
 
-#: qml/Sidebar.qml:239
+#: qml/Sidebar.qml:227
 #, kde-format
 msgid "Settings"
 msgstr "Параметри"
