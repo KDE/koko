@@ -243,14 +243,7 @@ Kirigami.ApplicationWindow {
         Kirigami.ContextDrawer { }
     }
 
-    globalDrawer: sideBar.item
-
-    Loader {
-        id: sideBar
-        active: !Kirigami.Settings.isMobile || QQC2.ApplicationWindow.window.width > wideScreenWidth;
-        source: "Sidebar.qml"
-        onLoaded: root.updateGlobalDrawer()
-    }
+    globalDrawer: Sidebar {}
 
     footer: BottomNavBar { }
 

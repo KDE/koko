@@ -7,7 +7,8 @@
 #include "displaycolorspace.h"
 
 #ifdef HAVE_X11
-#include <QX11Info>
+#include "private/qtx11extras_p.h"
+#include <QGuiApplication>
 #include <xcb/xcb.h>
 #include <xcb/xcb_atom.h>
 #endif
@@ -27,10 +28,10 @@ QColorSpace DisplayColorSpace::colorSpace() const
 void DisplayColorSpace::update()
 {
 #ifdef HAVE_X11
-    if (QX11Info::isPlatformX11()) {
+    if (auto *x11Application = qGuiApp->nativeInterface<QNativeInterface::QX11Application>()) {
         static const char *icc_profile = "_ICC_PROFILE";
-        auto atom_cookie = xcb_intern_atom(QX11Info::connection(), 0, sizeof(icc_profile), icc_profile);
-        auto atom_reply = xcb_intern_atom_reply(QX11Info::connection(), atom_cookie, nullptr);
+        auto atom_cookie = xcb_intern_atom(x11Application->connection(), 0, sizeof(icc_profile), icc_profile);
+        auto atom_reply = xcb_intern_atom_reply(x11Application->connection(), atom_cookie, nullptr);
         if (!atom_reply) {
             return;
         }
@@ -38,14 +39,14 @@ void DisplayColorSpace::update()
         auto icc_atom = atom_reply->atom;
         free(atom_reply);
 
-        auto cookie = xcb_get_property(QX11Info::connection(), // connection
+        auto cookie = xcb_get_property(x11Application->connection(), // connection
                                        0, // delete
                                        QX11Info::appRootWindow(), // window
                                        icc_atom, // property
                                        XCB_ATOM_CARDINAL, // type
                                        0, // offset
                                        0); // length
-        auto result = xcb_get_property_reply(QX11Info::connection(), cookie, nullptr);
+        auto result = xcb_get_property_reply(x11Application->connection(), cookie, nullptr);
         if (!result) {
             return;
         }

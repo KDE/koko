@@ -1,11 +1,12 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
-import QtQuick 2.7
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.15 as Controls
-import org.kde.purpose 1.0 as Purpose
-import org.kde.kirigami 2.14 as Kirigami
+import QtQml.Models
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls 2 as Controls
+import org.kde.purpose 1 as Purpose
+import org.kde.kirigami 2 as Kirigami
 
 /**
  * Action that allows an user to share data with other apps and service
@@ -18,7 +19,7 @@ import org.kde.kirigami 2.14 as Kirigami
  */
 Kirigami.Action {
     id: shareAction
-    iconName: "emblem-shared-symbolic"
+    icon.name: "emblem-shared-symbolic"
     text: i18n("Share")
     tooltip: i18n("Share the selected media")
 
@@ -67,10 +68,12 @@ Kirigami.Action {
                 })
             }
         }
-        onObjectAdded: {
+        onObjectAdded: (index, object) => {
             object.index = index;
             shareAction.children.push(object)
         }
-        onObjectRemoved: shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
+        onObjectRemoved: (index, object) => {
+            shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
+        }
     }
 }

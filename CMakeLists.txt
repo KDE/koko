@@ -12,8 +12,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 project(koko VERSION ${RELEASE_SERVICE_VERSION})
 
 set(CMAKE_CXX_STANDARD 17)
-set(QT5_MIN_VERSION 5.15.2)
-set(KF_MIN_VERSION 5.87)
+set(QT_MIN_VERSION 6.5)
+set(KF_MIN_VERSION 5.240)
 set(KDE_COMPILERSETTINGS_LEVEL 5.84)
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
@@ -35,13 +35,13 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KOKO
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
-find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
 
 if(ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT5_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
 
 find_package(LibExiv2 0.21 REQUIRED)
 
@@ -56,28 +56,21 @@ set_package_properties(KQuickImageEditor PROPERTIES
 
 ecm_find_qmlmodule(QtGraphicalEffects 1.0)
 
-find_package(Qt${QT_MAJOR_VERSION}X11Extras ${QT5_MIN_VERSION})
-set_package_properties(Qt${QT_MAJOR_VERSION}X11Extras PROPERTIES
-    DESCRIPTION "Qt extras for the X11 platform"
-    PURPOSE "Required for getting display color profile on X11"
-    TYPE OPTIONAL
-)
-
 find_package(XCB COMPONENTS XCB)
 set_package_properties(XCB PROPERTIES
     PURPOSE "Required for getting display color profile on X11"
     TYPE OPTIONAL
 )
 
-find_package(Qt${QT_MAJOR_VERSION}QuickControls2 ${QT5_MIN_VER})
-set_package_properties(Qt${QT_MAJOR_VERSION}QuickControls2 PROPERTIES
+find_package(Qt6QuickControls2 ${QT_MIN_VER})
+set_package_properties(Qt6QuickControls2 PROPERTIES
     DESCRIPTION "User interface controls based on Qt Quick"
     PURPOSE "Required at runtime to run Koko"
     TYPE RUNTIME
 )
 
-find_package(KF${QT_MAJOR_VERSION}Kirigami2)
-set_package_properties(KF${QT_MAJOR_VERSION}Kirigami2 PROPERTIES
+find_package(KF6Kirigami2)
+set_package_properties(KF6Kirigami2 PROPERTIES
     DESCRIPTION "A QtQuick based components set"
     PURPOSE "Required at runtime to run Koko"
     TYPE RUNTIME

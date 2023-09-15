@@ -249,130 +249,126 @@ Kirigami.ScrollablePage {
             when: model.hasSelectedImages && Kirigami.Settings.tabletMode
         }
     ]
-    
-    Kirigami.Action {
-        id: bookmarkAction
-        icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
-        text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-        visible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
-                                                                && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
-        onTriggered: {
-            if (page.model.sourceModel.url == undefined) {
-                return
-            }
-            if (page.bookmarked) {
-                const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
-                if (index !== -1) {
-                    kokoConfig.savedFolders.splice(index, 1);
-                }
-            } else {
-                kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
-            }
-        }
-    }
 
-    Kirigami.Action {
-        id: goUpAction
-        icon.name: "go-up"
-        text: i18n("Go Up")
-        visible: page.isFolderView && Kirigami.Settings.isMobile
-        onTriggered: {
-            const tmp = page.backUrls;
-            while (page.backUrlsPosition < page.backUrls.length) {
-                tmp.pop();
-            }
-            tmp.push(page.model.sourceModel.url);
-            page.backUrlsPosition++;
-            page.backUrls = tmp;
-            var str = String(model.sourceModel.url).split("/")
-            str.pop()
-            if (str.join("/") == "file://") {
-                model.sourceModel.url = "file:///"
-            } else {
-                model.sourceModel.url = str.join("/")
-            }
-        }
-    }
-    
+
     property bool bookmarkActionVisible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
                                                                                        && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
 
-    actions {
-        main: !Kirigami.Settings.isMobile ? bookmarkAction : null
-        left: !Kirigami.Settings.isMobile ? goUpAction : null
-        contextualActions: [
-            Kirigami.Action {
-                visible: page.isFolderView && Kirigami.Settings.isMobile
-                property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.canBeSimplified(page.model.sourceModel.url)
-                icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
-                text: canBeSimplified ? i18n("Home") : i18n("Root")
-                onTriggered: {
-                    const tmp = page.backUrls;
-                    while (page.backUrlsPosition < page.backUrls.length) {
-                        tmp.pop();
-                    }
-                    tmp.push(page.model.sourceModel.url);
-                    page.backUrlsPosition++;
-                    page.backUrls = tmp;
-                    if (canBeSimplified) {
-                        model.sourceModel.url = "file:///" + Koko.DirModelUtils.home;
-                    } else {
-                        model.sourceModel.url = "file:///";
-                    }
+    actions: [
+        Kirigami.Action {
+            id: bookmarkAction
+            icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+            text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
+            visible: Kirigami.Settings.isMobile && page.isFolderView && !model.hasSelectedImages
+                && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
+                && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
+            onTriggered: {
+                if (page.model.sourceModel.url == undefined) {
+                    return
                 }
-            },
-            ShareAction {
-                id: shareAction
-                visible: model.hasSelectedImages
-
-                property Connections connection: Connections {
-                    target: model
-                    function onSelectedImagesChanged() {
-                        shareAction.inputData = {
-                            urls: model.selectedImages(),
-                            mimeType: model.selectedImagesMimeTypes()
-                        };
+                if (page.bookmarked) {
+                    const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                    if (index !== -1) {
+                        kokoConfig.savedFolders.splice(index, 1);
                     }
+                } else {
+                    kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
                 }
-
-            },
-            Kirigami.Action {
-                icon.name: "group-delete"
-                text: i18n("Delete Selection")
-                tooltip: i18n("Move selected items to trash")
-                visible: model.hasSelectedImages && !page.isTrashView
-                onTriggered: model.deleteSelection()
-            },
-            Kirigami.Action {
-                icon.name: "restoration"
-                text: i18n("Restore Selection")
-                tooltip: i18n("Restore selected items from trash")
-                visible: model.hasSelectedImages && page.isTrashView
-                onTriggered: model.restoreSelection()
-            },
-            Kirigami.Action {
-                visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
-                icon.name: "configure"
-                text: i18n("Configure…")
-                onTriggered: applicationWindow().openSettingsPage();
-            },
-            Kirigami.Action {
-                icon.name: "edit-select-all"
-                text: i18n("Select All")
-                tooltip: i18n("Selects all the media in the current view")
-                visible: model.containImages
-                onTriggered: model.selectAll()
-
-            },
-            Kirigami.Action {
-                icon.name: "edit-select-none"
-                text: i18n("Deselect All")
-                tooltip: i18n("De-selects all the selected media")
-                onTriggered: model.clearSelections()
-                visible: model.hasSelectedImages
             }
-        ]
-    }
+        },
+        Kirigami.Action {
+            id: goUpAction
+            icon.name: "go-up"
+            text: i18n("Go Up")
+            visible: page.isFolderView && Kirigami.Settings.isMobile
+            onTriggered: {
+                const tmp = page.backUrls;
+                while (page.backUrlsPosition < page.backUrls.length) {
+                    tmp.pop();
+                }
+                tmp.push(page.model.sourceModel.url);
+                page.backUrlsPosition++;
+                page.backUrls = tmp;
+                var str = String(model.sourceModel.url).split("/")
+                str.pop()
+                if (str.join("/") == "file://") {
+                    model.sourceModel.url = "file:///"
+                } else {
+                    model.sourceModel.url = str.join("/")
+                }
+            }
+        },
+        Kirigami.Action {
+            visible: page.isFolderView && Kirigami.Settings.isMobile
+            property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.canBeSimplified(page.model.sourceModel.url)
+            icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
+            text: canBeSimplified ? i18n("Home") : i18n("Root")
+            onTriggered: {
+                const tmp = page.backUrls;
+                while (page.backUrlsPosition < page.backUrls.length) {
+                    tmp.pop();
+                }
+                tmp.push(page.model.sourceModel.url);
+                page.backUrlsPosition++;
+                page.backUrls = tmp;
+                if (canBeSimplified) {
+                    model.sourceModel.url = "file:///" + Koko.DirModelUtils.home;
+                } else {
+                    model.sourceModel.url = "file:///";
+                }
+            }
+        },
+        ShareAction {
+            id: shareAction
+            visible: model.hasSelectedImages
+
+            property Connections connection: Connections {
+                target: model
+                function onSelectedImagesChanged() {
+                    shareAction.inputData = {
+                        urls: model.selectedImages(),
+                        mimeType: model.selectedImagesMimeTypes()
+                    };
+                }
+            }
+
+        },
+        Kirigami.Action {
+            icon.name: "group-delete"
+            text: i18n("Delete Selection")
+            tooltip: i18n("Move selected items to trash")
+            visible: model.hasSelectedImages && !page.isTrashView
+            onTriggered: model.deleteSelection()
+        },
+        Kirigami.Action {
+            icon.name: "restoration"
+            text: i18n("Restore Selection")
+            tooltip: i18n("Restore selected items from trash")
+            visible: model.hasSelectedImages && page.isTrashView
+            onTriggered: model.restoreSelection()
+        },
+        Kirigami.Action {
+            visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
+            icon.name: "configure"
+            text: i18n("Configure…")
+            onTriggered: applicationWindow().openSettingsPage();
+        },
+        Kirigami.Action {
+            icon.name: "edit-select-all"
+            text: i18n("Select All")
+            tooltip: i18n("Selects all the media in the current view")
+            visible: model.containImages
+            onTriggered: model.selectAll()
+
+        },
+        Kirigami.Action {
+            icon.name: "edit-select-none"
+            text: i18n("Deselect All")
+            tooltip: i18n("De-selects all the selected media")
+            onTriggered: model.clearSelections()
+            visible: model.hasSelectedImages
+        }
+    ]
 
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.View

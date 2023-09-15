@@ -18,11 +18,11 @@ target_link_libraries(kokocommon
     Qt::Positioning
     Qt::Sql
     Qt::Svg
-    KF${QT_MAJOR_VERSION}::CoreAddons
-    KF${QT_MAJOR_VERSION}::DBusAddons
-    KF${QT_MAJOR_VERSION}::FileMetaData
-    KF${QT_MAJOR_VERSION}::ConfigGui
-    KF${QT_MAJOR_VERSION}::ConfigCore
+    KF6::CoreAddons
+    KF6::DBusAddons
+    KF6::FileMetaData
+    KF6::ConfigGui
+    KF6::ConfigCore
     LibExiv2::LibExiv2
 )
 
@@ -61,10 +61,10 @@ target_link_libraries(koko
     Qt::Widgets
     Qt::Qml
     Qt::Positioning
-    KF${QT_MAJOR_VERSION}::ConfigCore
-    KF${QT_MAJOR_VERSION}::I18n
-    KF${QT_MAJOR_VERSION}::CoreAddons
-    KF${QT_MAJOR_VERSION}::KIOCore
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::CoreAddons
+    KF6::KIOCore
     kokocommon
 )
 
@@ -73,7 +73,7 @@ target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
 if(ANDROID)
     target_link_libraries(koko Qt::AndroidExtras)
 else()
-    target_link_libraries(koko KF${QT_MAJOR_VERSION}::WindowSystem)
+    target_link_libraries(koko KF6::WindowSystem)
 endif()
 
 target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
@@ -104,13 +104,13 @@ set (qml_plugin_SRCS
 add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 
 target_link_libraries (kokoqmlplugin
-    Qt::Qml
-    KF${QT_MAJOR_VERSION}::KIOCore
-    KF${QT_MAJOR_VERSION}::KIOFileWidgets
-    KF${QT_MAJOR_VERSION}::KIOWidgets
-    KF${QT_MAJOR_VERSION}::GuiAddons
-    KF${QT_MAJOR_VERSION}::I18n
-    KF${QT_MAJOR_VERSION}::Notifications
+    Qt6::Qml
+    KF6::KIOCore
+    KF6::KIOFileWidgets
+    KF6::KIOWidgets
+    KF6::GuiAddons
+    KF6::I18n
+    KF6::Notifications
     kokocommon
 )
 
@@ -119,9 +119,9 @@ install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 # FIXME this needs to be adapted for Qt6
-if (TARGET Qt::X11Extras AND TARGET XCB::XCB)
+if (TARGET XCB::XCB)
     target_compile_definitions(kokoqmlplugin PRIVATE HAVE_X11)
-    target_link_libraries(kokoqmlplugin Qt::X11Extras XCB::XCB)
+    target_link_libraries(kokoqmlplugin XCB::XCB Qt6::GuiPrivate)
 endif()
 
 #

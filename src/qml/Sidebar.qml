@@ -35,7 +35,6 @@ Kirigami.OverlayDrawer {
     contentItem: ColumnLayout {
         id: column
         // FIXME: Dirty workaround for 385992
-        implicitWidth: Kirigami.Units.gridUnit * 14
         spacing: 0
         Kirigami.AbstractApplicationHeader {
             topPadding: Kirigami.Units.smallSpacing;
@@ -52,6 +51,8 @@ Kirigami.OverlayDrawer {
             id: scrollView
             property var currentlySelectedAction
             property var previouslySelectedAction
+
+            implicitWidth: Kirigami.Units.gridUnit * 14
 
             Layout.fillHeight: true
             Layout.fillWidth: true
