@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:43+0000\n"
+"POT-Creation-Date: 2023-09-16 01:55+0000\n"
 "PO-Revision-Date: 2023-05-30 18:44+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -120,98 +120,98 @@ msgid_plural "%1 Images"
 msgstr[0] "1 Bild"
 msgstr[1] "%1 Bilder"
 
-#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgid "Remove Bookmark"
 msgstr "Lesezeichen entfernen"
 
-#: qml/AlbumView.qml:223 qml/AlbumView.qml:256
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
 msgstr "Lesezeichenordner"
 
-#: qml/AlbumView.qml:277
+#: qml/AlbumView.qml:282
 #, kde-format
 msgid "Go Up"
 msgstr "Nach oben"
 
-#: qml/AlbumView.qml:308
+#: qml/AlbumView.qml:305
 #, kde-format
 msgid "Home"
 msgstr "Startseite"
 
-#: qml/AlbumView.qml:308
+#: qml/AlbumView.qml:305
 #, kde-format
 msgid "Root"
 msgstr "Basisordner"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:338
 #, kde-format
 msgid "Delete Selection"
 msgstr "Auswahl löschen"
 
-#: qml/AlbumView.qml:342
+#: qml/AlbumView.qml:339
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Ausgewählte Bilder in den Papierkorb verschieben"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:345
 #, kde-format
 msgid "Restore Selection"
 msgstr "Auswahl wiederherstellen"
 
-#: qml/AlbumView.qml:349
+#: qml/AlbumView.qml:346
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "Ausgewählte aus dem Papierkorb wiederherstellen"
 
-#: qml/AlbumView.qml:356 qml/PlacesPage.qml:22
+#: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
 msgstr "Einrichten ..."
 
-#: qml/AlbumView.qml:361
+#: qml/AlbumView.qml:358
 #, kde-format
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: qml/AlbumView.qml:362
+#: qml/AlbumView.qml:359
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "Wählt alle Medien in der aktuellen Ansicht aus"
 
-#: qml/AlbumView.qml:369
+#: qml/AlbumView.qml:366
 #, kde-format
 msgid "Deselect All"
 msgstr "Auswahl aufheben"
 
-#: qml/AlbumView.qml:370
+#: qml/AlbumView.qml:367
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "Auswahl aller Medien aufheben"
 
-#: qml/AlbumView.qml:482
+#: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
 msgstr "Keine Medien gefunden"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:101
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:102
 #, kde-format
 msgid "Pictures"
 msgstr "Bilder"
 
-#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:111
+#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:112
 #, kde-format
 msgid "Videos"
 msgstr "Videos"
 
-#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:105
+#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:106
 #, kde-format
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:96
+#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:97
 #, kde-format
 msgid "Places"
 msgstr "Orte"
@@ -414,84 +414,84 @@ msgctxt "verb, edit an image"
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Video"
 msgstr "Video teilen"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Image"
 msgstr "Bild teilen"
 
-#: qml/ImageViewPage.qml:119
+#: qml/ImageViewPage.qml:118
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
 msgstr "Teilen"
 
-#: qml/ImageViewPage.qml:133
+#: qml/ImageViewPage.qml:132
 #, kde-format
 msgid "Start Slideshow"
 msgstr "Diaschau starten"
 
-#: qml/ImageViewPage.qml:134
+#: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Slideshow"
 msgstr "Diaschau"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:140
 #, kde-format
 msgid "Thumbnail Bar"
 msgstr "Vorschaubereich"
 
-#: qml/ImageViewPage.qml:142
+#: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Hide Thumbnail Bar"
 msgstr "Vorschaubereich ausblenden"
 
-#: qml/ImageViewPage.qml:142
+#: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Show Thumbnail Bar"
 msgstr "Vorschaubereich anzeigen"
 
-#: qml/ImageViewPage.qml:143
+#: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
 msgstr "Vorschaubereich umschalten"
 
-#: qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
 msgstr "Vollbild"
 
-#: qml/ImageViewPage.qml:151 qml/ImageViewPage.qml:152
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "Vollbildmodus beenden"
 
-#: qml/ImageViewPage.qml:152
+#: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "Vollbildmodus"
 
-#: qml/ImageViewPage.qml:407
+#: qml/ImageViewPage.qml:405
 #, kde-format
 msgid "Previous image"
 msgstr "Vorheriges Bild"
 
-#: qml/ImageViewPage.qml:437
+#: qml/ImageViewPage.qml:435
 #, kde-format
 msgid "Next image"
 msgstr "Nächstes Bild"
 
-#: qml/ImageViewPage.qml:652 qml/SettingsPage.qml:61
+#: qml/ImageViewPage.qml:650 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diaschau-Intervall:"
 
-#: qml/ImageViewPage.qml:669 qml/SettingsPage.qml:73
+#: qml/ImageViewPage.qml:667 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -499,29 +499,29 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 Sekunde"
 msgstr[1] "%1 Sekunden"
 
-#: qml/ImageViewPage.qml:722
+#: qml/ImageViewPage.qml:720
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Wiederholen"
 
-#: qml/ImageViewPage.qml:728 qml/SettingsPage.qml:49
+#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Zufällig"
 
-#: qml/ImageViewPage.qml:737
+#: qml/ImageViewPage.qml:735
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Diaschau anhalten"
 
-#: qml/ImageViewPage.qml:751
+#: qml/ImageViewPage.qml:749
 #, kde-format
 msgid "Show All Controls"
 msgstr "Alle Regler anzeigen"
 
-#: qml/InfoDrawer.qml:40 qml/InfoSidebar.qml:37
+#: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
 #, kde-format
 msgid "Metadata"
 msgstr "Metadaten"
@@ -592,7 +592,7 @@ msgstr "Beschreibung"
 msgid "Image description…"
 msgstr "Bildbeschreibung ..."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:187
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:188
 #, kde-format
 msgid "Tags"
 msgstr "Stichwörter"
@@ -617,12 +617,12 @@ msgstr "Bilder"
 msgid "Folders"
 msgstr "Ordner"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:141
+#: qml/PlacesPage.qml:79 qml/Sidebar.qml:142
 #, kde-format
 msgid "Network"
 msgstr "Netzwerk"
 
-#: qml/PlacesPage.qml:85 qml/Sidebar.qml:132
+#: qml/PlacesPage.qml:85 qml/Sidebar.qml:133
 #, kde-format
 msgid "Trash"
 msgstr "Papierkorb"
@@ -632,47 +632,47 @@ msgstr "Papierkorb"
 msgid "Pinned Folders"
 msgstr "Angeheftete Ordner"
 
-#: qml/PlacesPage.qml:111 qml/Sidebar.qml:146
+#: qml/PlacesPage.qml:111 qml/Sidebar.qml:147
 #, kde-format
 msgid "Locations"
 msgstr "Orte"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:149
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:150
 #, kde-format
 msgid "Countries"
 msgstr "Länder"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:154
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:155
 #, kde-format
 msgid "States"
 msgstr "Staaten"
 
-#: qml/PlacesPage.qml:125 qml/Sidebar.qml:159
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:160
 #, kde-format
 msgid "Cities"
 msgstr "Städte"
 
-#: qml/PlacesPage.qml:131 qml/Sidebar.qml:164
+#: qml/PlacesPage.qml:131 qml/Sidebar.qml:165
 #, kde-format
 msgid "Time"
 msgstr "Zeit"
 
-#: qml/PlacesPage.qml:135 qml/Sidebar.qml:167
+#: qml/PlacesPage.qml:135 qml/Sidebar.qml:168
 #, kde-format
 msgid "Years"
 msgstr "Jahre"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:172
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:173
 #, kde-format
 msgid "Months"
 msgstr "Monate"
 
-#: qml/PlacesPage.qml:145 qml/Sidebar.qml:177
+#: qml/PlacesPage.qml:145 qml/Sidebar.qml:178
 #, kde-format
 msgid "Weeks"
 msgstr "Wochen"
 
-#: qml/PlacesPage.qml:150 qml/Sidebar.qml:182
+#: qml/PlacesPage.qml:150 qml/Sidebar.qml:183
 #, kde-format
 msgid "Days"
 msgstr "Tage"
@@ -688,7 +688,7 @@ msgstr "Einstellungen"
 msgid "General"
 msgstr "Allgemein"
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:210
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:211
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Vorschaubildgröße"
@@ -704,33 +704,33 @@ msgstr "Einstellungen der Diaschau:"
 msgid "About Koko"
 msgstr "Über Koko"
 
-#: qml/ShareAction.qml:22
+#: qml/ShareAction.qml:23
 #, kde-format
 msgid "Share"
 msgstr "Teilen"
 
-#: qml/ShareAction.qml:23 qml/ShareDrawer.qml:22
+#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:22
 #, kde-format
 msgid "Share the selected media"
 msgstr "Ausgewählte Medien teilen"
 
-#: qml/Sidebar.qml:48
+#: qml/Sidebar.qml:47
 #, kde-format
 msgid "Filter by"
 msgstr "Filtern nach"
 
-#: qml/Sidebar.qml:137
+#: qml/Sidebar.qml:138
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Entfernt"
 
-#: qml/Sidebar.qml:214
+#: qml/Sidebar.qml:215
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:227
+#: qml/Sidebar.qml:228
 #, kde-format
 msgid "Settings"
 msgstr "Einstellungen"
