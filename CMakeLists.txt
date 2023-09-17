@@ -54,8 +54,6 @@ set_package_properties(KQuickImageEditor PROPERTIES
     PURPOSE "Add image editing capability to image attachments"
 )
 
-ecm_find_qmlmodule(QtGraphicalEffects 1.0)
-
 find_package(XCB COMPONENTS XCB)
 set_package_properties(XCB PROPERTIES
     PURPOSE "Required for getting display color profile on X11"
