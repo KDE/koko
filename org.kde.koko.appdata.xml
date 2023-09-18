@@ -23,6 +23,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="fi">Koko</name>
   <name xml:lang="fr">Koko</name>
   <name xml:lang="gl">Koko</name>
+  <name xml:lang="ia">Koko</name>
   <name xml:lang="id">Koko</name>
   <name xml:lang="it">Koko</name>
   <name xml:lang="ka">Koko</name>
@@ -58,6 +59,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="fi">Kuvagalleria</summary>
   <summary xml:lang="fr">Galerie d'images</summary>
   <summary xml:lang="gl">Galería de imaxes</summary>
+  <summary xml:lang="ia">Galleria de Imagines</summary>
   <summary xml:lang="id">Galeri Citra</summary>
   <summary xml:lang="it">Galleria di immagini</summary>
   <summary xml:lang="ka">სურათების გალერეა</summary>
@@ -94,6 +96,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <p xml:lang="fi">Kuvagalleriasovellus</p>
     <p xml:lang="fr">Une application de galerie d'images</p>
     <p xml:lang="gl">Aplicación de galería de imaxes.</p>
+    <p xml:lang="ia">Un applicatin de galleria de imagines</p>
     <p xml:lang="id">Sebuah aplikasi galeri Citra</p>
     <p xml:lang="it">Un'applicazione per gallerie di immagini</p>
     <p xml:lang="ka">სურათების გალერეის აპლიკაცია</p>
