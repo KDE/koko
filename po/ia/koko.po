@@ -2,12 +2,13 @@
 # This file is distributed under the same license as the koko package.
 #
 # SPDX-FileCopyrightText: 2023 giovanni <g.sora@tiscali.it>
+# giovanni <g.sora@tiscali.it>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-16 01:55+0000\n"
-"PO-Revision-Date: 2023-09-17 22:57+0200\n"
+"PO-Revision-Date: 2023-09-18 16:01+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,19 +32,19 @@ msgstr "g.sora@tiscali.it"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr ""
+msgstr "<application>Koko</application>"
 
 #: main.cpp:59
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr ""
+msgstr "Koko es un visor de imagines per tu collection de imagines"
 
 #: main.cpp:61
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr ""
+msgstr "(c) 2013-2020, contributores de KDE"
 
 #: main.cpp:67
 #, kde-kuit-format
@@ -61,7 +62,7 @@ msgstr "Disveloppator"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr ""
+msgstr "Atul Sharma"
 
 #: main.cpp:71
 #, kde-kuit-format
@@ -95,12 +96,12 @@ msgstr "Visor de image"
 #: main.cpp:85
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "Reinitia le Base de Datos"
 
 #: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
-msgstr ""
+msgstr "percurso de imagine que tu vole aperir"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -128,7 +129,7 @@ msgstr "Remove iste marcator de libro"
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr ""
+msgstr "Dossier de marcator de libro"
 
 #: qml/AlbumView.qml:282
 #, kde-format
@@ -153,17 +154,17 @@ msgstr "Dele selection"
 #: qml/AlbumView.qml:339
 #, kde-format
 msgid "Move selected items to trash"
-msgstr ""
+msgstr "Move elementos seligite a corbe"
 
 #: qml/AlbumView.qml:345
 #, kde-format
 msgid "Restore Selection"
-msgstr ""
+msgstr "Restabili Selection"
 
 #: qml/AlbumView.qml:346
 #, kde-format
 msgid "Restore selected items from trash"
-msgstr ""
+msgstr "Restabili elementos seligite ex le corbe"
 
 #: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
@@ -178,7 +179,7 @@ msgstr "Selige toto"
 #: qml/AlbumView.qml:359
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr ""
+msgstr "Selige omne le multimedia in le vista currente"
 
 #: qml/AlbumView.qml:366
 #, kde-format
@@ -188,12 +189,12 @@ msgstr "De-selectiona toto"
 #: qml/AlbumView.qml:367
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr ""
+msgstr "De-selige omne le multimedia seligite"
 
 #: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
-msgstr ""
+msgstr "Nulle multimedia trovate"
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:102
 #, kde-format
@@ -252,6 +253,8 @@ msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
+"Incapace a salveguardar file. Verifica si tu ha le correcte permission per "
+"modificar iste file."
 
 #: qml/EditorView.qml:75
 #, kde-format
@@ -321,19 +324,19 @@ msgstr "Salveguarda como"
 #: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
-msgstr ""
+msgstr "Tu nunc es modificante un nove file."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
 msgid "Seek slider"
-msgstr ""
+msgstr "Glissator de cerca"
 
 #: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Salta retro 1 secunda"
+msgstr[1] "Salta retro %1 secundas"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
@@ -363,12 +366,12 @@ msgstr "Glissator de Volumine"
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "Repete video currente"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Don't repeat current video"
-msgstr ""
+msgstr "Non repete video currente"
 
 #: qml/ImageViewPage.qml:75
 #, kde-format
@@ -378,12 +381,12 @@ msgstr "Info"
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
-msgstr ""
+msgstr "Vide information re video"
 
 #: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
-msgstr ""
+msgstr "Vide information re imagine"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
@@ -414,7 +417,7 @@ msgstr "Modifica"
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Video"
-msgstr ""
+msgstr "Comparti video"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
@@ -445,17 +448,17 @@ msgstr "Barra de Miniatura"
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Hide Thumbnail Bar"
-msgstr ""
+msgstr "Cela Barra de Miniatura"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Show Thumbnail Bar"
-msgstr ""
+msgstr "Monstr aBarra de Miniatura"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr ""
+msgstr "Commuta barra de miniatura"
 
 #: qml/ImageViewPage.qml:150
 #, kde-format
@@ -475,18 +478,18 @@ msgstr "Passa a schermo plen"
 #: qml/ImageViewPage.qml:405
 #, kde-format
 msgid "Previous image"
-msgstr ""
+msgstr "Previe imagine"
 
 #: qml/ImageViewPage.qml:435
 #, kde-format
 msgid "Next image"
-msgstr ""
+msgstr "Proxime imagine"
 
 #: qml/ImageViewPage.qml:650 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr ""
+msgstr "Intervallo de slideshow (sequentia de diapositivas):"
 
 #: qml/ImageViewPage.qml:667 qml/SettingsPage.qml:73
 #, kde-format
@@ -506,7 +509,7 @@ msgstr "Anella"
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr ""
+msgstr "Aleatori"
 
 #: qml/ImageViewPage.qml:735
 #, kde-format
@@ -516,7 +519,7 @@ msgstr "Stoppa presentation (slideshow)"
 #: qml/ImageViewPage.qml:749
 #, kde-format
 msgid "Show All Controls"
-msgstr ""
+msgstr "Monstra omne controlos"
 
 #: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
 #, kde-format
@@ -572,12 +575,12 @@ msgstr "Evalutation"
 #: qml/InfoDrawerSidebarBase.qml:131
 #, kde-format
 msgid "Current rating %1"
-msgstr ""
+msgstr "Classification currente %1"
 
 #: qml/InfoDrawerSidebarBase.qml:138
 #, kde-format
 msgid "Set rating to %1"
-msgstr ""
+msgstr "Assigna classification a %1"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
@@ -627,7 +630,7 @@ msgstr "Corbe"
 #: qml/PlacesPage.qml:91
 #, kde-format
 msgid "Pinned Folders"
-msgstr ""
+msgstr "Dossieres con spinula"
 
 #: qml/PlacesPage.qml:111 qml/Sidebar.qml:147
 #, kde-format
@@ -647,7 +650,7 @@ msgstr "Statos"
 #: qml/PlacesPage.qml:125 qml/Sidebar.qml:160
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "Citates"
 
 #: qml/PlacesPage.qml:131 qml/Sidebar.qml:165
 #, kde-format
@@ -688,7 +691,7 @@ msgstr "General"
 #: qml/SettingsPage.qml:28 qml/Sidebar.qml:211
 #, kde-format
 msgid "Thumbnails size:"
-msgstr ""
+msgstr "Grandor de Miniatura:"
 
 #: qml/SettingsPage.qml:43
 #, kde-format
