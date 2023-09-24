@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:55+0000\n"
+"POT-Creation-Date: 2023-09-24 01:43+0000\n"
 "PO-Revision-Date: 2023-05-30 21:41+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -710,7 +710,7 @@ msgstr "À propos de Koko"
 msgid "Share"
 msgstr "Partager"
 
-#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:22
+#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
 #, kde-format
 msgid "Share the selected media"
 msgstr "Partager le média sélectionné"

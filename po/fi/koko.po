@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:55+0000\n"
+"POT-Creation-Date: 2023-09-24 01:43+0000\n"
 "PO-Revision-Date: 2023-07-04 21:31+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -708,7 +708,7 @@ msgstr "Tietoa Kokosta"
 msgid "Share"
 msgstr "Jaa"
 
-#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:22
+#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
 #, kde-format
 msgid "Share the selected media"
 msgstr "Jaa valitut mediat"
