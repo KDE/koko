@@ -738,18 +738,3 @@ msgstr "Ayarlar"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Yeni etiket ekle…"
-
-#~ msgid "Sort by"
-#~ msgstr "Sırala"
-
-#~ msgid "Show preview carousel in image view"
-#~ msgstr "Görsel görünümünde önceki atlıkarıncayı göster"
-
-#~ msgid "Open About Page"
-#~ msgstr "Hakkında Sayfasını Aç"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "%1 etiketi kaldır"
-
-#~ msgid "Remove Tag"
-#~ msgstr "Etiketi Kaldır"
