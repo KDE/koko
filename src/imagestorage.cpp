@@ -656,7 +656,7 @@ QDate ImageStorage::dateForKey(const QByteArray &key, Types::TimeGroup group)
 
 void ImageStorage::reset()
 {
-    qDebug() << "Reseting database";
+    qDebug() << "Resetting database";
     QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
     QDir(dir).removeRecursively();
 }

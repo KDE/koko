@@ -58,7 +58,7 @@ Item {
         slideshowTimer.stop();
     }
 
-    // call this when when your playback has finsihed to move immediately to the next slide
+    // call this when when your playback has finished to move immediately to the next slide
     // and resume the timer
     function externalPlaybackFinished() {
         externalMediaRunning = false;
