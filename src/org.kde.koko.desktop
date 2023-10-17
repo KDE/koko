@@ -118,6 +118,7 @@ Comment[uk]=Програма для роботи з галереями зобр�
 Comment[x-test]=xxAn Image gallery applicationxx
 Comment[zh_CN]=一款图像库应用
 Comment[zh_TW]=圖片相簿應用程式
+Keywords=Picture;Slideshow;Graphics;Gallery;
 Exec=koko %U
 Terminal=false
 Type=Application
