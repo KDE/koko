@@ -9,6 +9,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <project_license>LGPL-2.1</project_license>
   <name>Koko</name>
   <name xml:lang="ar">كوكو</name>
+  <name xml:lang="ast">Koko</name>
   <name xml:lang="ca">Koko</name>
   <name xml:lang="ca-valencia">Koko</name>
   <name xml:lang="cs">Koko</name>
@@ -45,6 +46,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="zh-TW">Koko</name>
   <summary>Image Gallery</summary>
   <summary xml:lang="ar">معرض الصور</summary>
+  <summary xml:lang="ast">Galería d'imáxenes</summary>
   <summary xml:lang="ca">Galeria d'imatges</summary>
   <summary xml:lang="ca-valencia">Galeria d'imatges</summary>
   <summary xml:lang="cs">Galerie obrázků</summary>
