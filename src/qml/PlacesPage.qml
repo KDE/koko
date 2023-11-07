@@ -31,15 +31,13 @@ Kirigami.ScrollablePage {
         level: 1
     }
 
-    component PlaceItem : Kirigami.AbstractListItem {
+    component PlaceItem : QQC2.ItemDelegate {
         id: item
         property string icon
         property string filter
         property string query
-        separatorVisible: false
         Layout.fillWidth: true
         Accessible.role: Accessible.MenuItem
-        width: implicitWidth
         height: implicitHeight
         contentItem: Column {
             Kirigami.Icon {
