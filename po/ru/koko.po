@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-24 01:43+0000\n"
+"POT-Creation-Date: 2023-11-08 08:47+0000\n"
 "PO-Revision-Date: 2023-04-21 15:50+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -599,7 +599,7 @@ msgstr "Описание"
 msgid "Image description…"
 msgstr "Описание изображения..."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:156 qml/Sidebar.qml:188
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:154 qml/Sidebar.qml:188
 #, kde-format
 msgid "Tags"
 msgstr "Метки"
@@ -624,62 +624,62 @@ msgstr "Изображения"
 msgid "Folders"
 msgstr "Папки"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:142
+#: qml/PlacesPage.qml:77 qml/Sidebar.qml:142
 #, kde-format
 msgid "Network"
 msgstr "Сеть"
 
-#: qml/PlacesPage.qml:85 qml/Sidebar.qml:133
+#: qml/PlacesPage.qml:83 qml/Sidebar.qml:133
 #, kde-format
 msgid "Trash"
 msgstr "Корзина"
 
-#: qml/PlacesPage.qml:91
+#: qml/PlacesPage.qml:89
 #, kde-format
 msgid "Pinned Folders"
 msgstr "Закреплённые папки"
 
-#: qml/PlacesPage.qml:111 qml/Sidebar.qml:147
+#: qml/PlacesPage.qml:109 qml/Sidebar.qml:147
 #, kde-format
 msgid "Locations"
 msgstr "Местоположения"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:150
 #, kde-format
 msgid "Countries"
 msgstr "Страны"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:155
+#: qml/PlacesPage.qml:118 qml/Sidebar.qml:155
 #, kde-format
 msgid "States"
 msgstr "Области"
 
-#: qml/PlacesPage.qml:125 qml/Sidebar.qml:160
+#: qml/PlacesPage.qml:123 qml/Sidebar.qml:160
 #, kde-format
 msgid "Cities"
 msgstr "Города"
 
-#: qml/PlacesPage.qml:131 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:129 qml/Sidebar.qml:165
 #, kde-format
 msgid "Time"
 msgstr "Время"
 
-#: qml/PlacesPage.qml:135 qml/Sidebar.qml:168
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:168
 #, kde-format
 msgid "Years"
 msgstr "Годы"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:173
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:173
 #, kde-format
 msgid "Months"
 msgstr "Месяцы"
 
-#: qml/PlacesPage.qml:145 qml/Sidebar.qml:178
+#: qml/PlacesPage.qml:143 qml/Sidebar.qml:178
 #, kde-format
 msgid "Weeks"
 msgstr "Недели"
 
-#: qml/PlacesPage.qml:150 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:148 qml/Sidebar.qml:183
 #, kde-format
 msgid "Days"
 msgstr "Дни"
