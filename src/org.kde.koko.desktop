@@ -1,46 +1,7 @@
 # SPDX-FileCopyrightText: 2014 Vishesh Handa <vhanda@kde.org>
 # SPDX-License-Identifier: LGPL-2.1-or-later
 [Desktop Entry]
-Name=Koko
-Name[ar]=كوكو
-Name[ast]=Koko
-Name[bg]=Koko
-Name[bs]=Koko
-Name[ca]=Koko
-Name[ca@valencia]=Koko
-Name[cs]=Koko
-Name[da]=Koko
-Name[de]=Koko
-Name[el]=Koko
-Name[en_GB]=Koko
-Name[eo]=Koko
-Name[es]=Koko
-Name[et]=Koko
-Name[eu]=Koko
-Name[fi]=Koko
-Name[fr]=Koko
-Name[gl]=Koko
-Name[hu]=Koko
-Name[ia]=Koko
-Name[it]=Koko
-Name[ka]=Koko
-Name[ko]=Koko
-Name[nl]=Koko
-Name[nn]=Koko
-Name[pa]=ਕੋਕੋ
-Name[pl]=Koko
-Name[pt]=Koko
-Name[pt_BR]=Koko
-Name[ro]=Koko
-Name[ru]=Koko
-Name[sk]=Koko
-Name[sl]=Koko
-Name[sv]=Koko
-Name[tr]=Koko
-Name[uk]=Koko
-Name[x-test]=xxKokoxx
-Name[zh_CN]=Koko
-Name[zh_TW]=Koko
+Name=Photos
 GenericName=Image Gallery
 GenericName[ar]=معرض الصور
 GenericName[bg]=Галерия с изображения
