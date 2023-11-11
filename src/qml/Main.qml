@@ -16,6 +16,17 @@ import org.kde.koko.private 0.1 as KokoPrivate
 Kirigami.ApplicationWindow {
     id: root
 
+    pageStack {
+        globalToolBar {
+            canContainHandles: true
+            style: Kirigami.ApplicationHeaderStyle.ToolBar
+            showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+        }
+        popHiddenPages: true
+
+        columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+    }
+
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
 

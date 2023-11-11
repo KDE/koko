@@ -60,7 +60,6 @@ Loader {
             Kirigami.Separator { Layout.fillWidth: true }
             Kirigami.NavigationTabBar {
                 Layout.fillWidth: true
-                shadow: false
                 actions: [
                     Kirigami.Action {
                         icon.name: "photo"

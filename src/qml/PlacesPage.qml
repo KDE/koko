@@ -15,7 +15,7 @@ Kirigami.ScrollablePage {
     leftPadding: 0
     rightPadding: 0
 
-    actions.contextualActions: [
+    actions: [
         Kirigami.Action {
             visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
             icon.name: "configure"
@@ -33,7 +33,6 @@ Kirigami.ScrollablePage {
 
     component PlaceItem : QQC2.ItemDelegate {
         id: item
-        property string icon
         property string filter
         property string query
         Layout.fillWidth: true
@@ -41,7 +40,7 @@ Kirigami.ScrollablePage {
         height: implicitHeight
         contentItem: Column {
             Kirigami.Icon {
-                source: item.icon
+                source: item.icon.name
                 width: height
                 height: Kirigami.Units.iconSizes.huge
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -73,13 +72,13 @@ Kirigami.ScrollablePage {
     ColumnLayout {
         PlaceItemContainer {
             PlaceItem {
-                icon: "folder-cloud"
+                icon.name: "folder-cloud"
                 text: i18n("Network")
                 filter: "Remote"
                 query: "remote:/"
             }
             PlaceItem {
-                icon: "user-trash"
+                icon.name: "user-trash"
                 text: i18n("Trash")
                 filter: "Trash"
                 query: "trash:/"
@@ -92,7 +91,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 model: kokoConfig.savedFolders
                 PlaceItem {
-                    icon: "folder"
+                    icon.name: "folder"
                     text: {
                         var str = modelData;
                         if (str.endsWith("/")) {
@@ -111,17 +110,17 @@ Kirigami.ScrollablePage {
         PlaceItemContainer {
             PlaceItem {
                 text: i18n("Countries")
-                icon: "applications-internet" // HACK: tag-places is not colorful :/
+                icon.name: "applications-internet" // HACK: tag-places is not colorful :/
                 filter: "Countries"
             }
             PlaceItem {
                 text: i18n("States")
-                icon: "applications-internet"
+                icon.name: "applications-internet"
                 filter: "States"
             }
             PlaceItem {
                 text: i18n("Cities")
-                icon: "applications-internet"
+                icon.name: "applications-internet"
                 filter: "Cities"
             }
         }
@@ -131,22 +130,22 @@ Kirigami.ScrollablePage {
         PlaceItemContainer {
             PlaceItem {
                 text: i18n("Years")
-                icon: "office-calendar" // view-calendar is not colorful
+                icon.name: "office-calendar" // view-calendar is not colorful
                 filter: "Years"
             }
             PlaceItem {
                 text: i18n("Months")
-                icon: "office-calendar"
+                icon.name: "office-calendar"
                 filter: "Months"
             }
             PlaceItem {
                 text: i18n("Weeks")
-                icon: "office-calendar"
+                icon.name: "office-calendar"
                 filter: "Weeks"
             }
             PlaceItem {
                 text: i18n("Days")
-                icon: "office-calendar"
+                icon.name: "office-calendar"
                 filter: "Days"
             }
         }
@@ -158,7 +157,7 @@ Kirigami.ScrollablePage {
             Repeater {
                 model: applicationWindow().tags
                 PlaceItem {
-                    icon: "tag"
+                    icon.name: "tag"
                     text: modelData
                     filter: "Tags"
                     query: modelData
