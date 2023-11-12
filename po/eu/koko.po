@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:47+0000\n"
+"POT-Creation-Date: 2023-11-12 01:37+0000\n"
 "PO-Revision-Date: 2023-07-20 23:45+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -198,22 +198,22 @@ msgstr "Hautatutako euskarri guztiak desautatzen ditu"
 msgid "No Media Found"
 msgstr "Ez da euskarririk aurkitu"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:102
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:102
 #, kde-format
 msgid "Pictures"
 msgstr "Irudiak"
 
-#: qml/BottomNavBar.qml:73 qml/Sidebar.qml:112
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:112
 #, kde-format
 msgid "Videos"
 msgstr "Bideoak"
 
-#: qml/BottomNavBar.qml:79 qml/Sidebar.qml:106
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:106
 #, kde-format
 msgid "Favorites"
 msgstr "Gogokoenak"
 
-#: qml/BottomNavBar.qml:85 qml/Main.qml:55 qml/Sidebar.qml:97
+#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:97
 #, kde-format
 msgid "Places"
 msgstr "Lekuak"
@@ -594,7 +594,7 @@ msgstr "Deskribapena"
 msgid "Image description…"
 msgstr "Irudiaren deskribapena..."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:154 qml/Sidebar.qml:188
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:188
 #, kde-format
 msgid "Tags"
 msgstr "Etiketak"
@@ -604,77 +604,77 @@ msgstr "Etiketak"
 msgid "Add Tag"
 msgstr "Gehitu etiketa"
 
-#: qml/Main.qml:73
+#: qml/Main.qml:84
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: qml/Main.qml:107
+#: qml/Main.qml:118
 #, kde-format
 msgid "Images"
 msgstr "Irudiak"
 
-#: qml/Main.qml:118 qml/Main.qml:127
+#: qml/Main.qml:129 qml/Main.qml:138
 #, kde-format
 msgid "Folders"
 msgstr "Karpetak"
 
-#: qml/PlacesPage.qml:77 qml/Sidebar.qml:142
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:142
 #, kde-format
 msgid "Network"
 msgstr "Sarea"
 
-#: qml/PlacesPage.qml:83 qml/Sidebar.qml:133
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:133
 #, kde-format
 msgid "Trash"
 msgstr "Zakarrontzia"
 
-#: qml/PlacesPage.qml:89
+#: qml/PlacesPage.qml:88
 #, kde-format
 msgid "Pinned Folders"
 msgstr "Iltzatutako karpetak"
 
-#: qml/PlacesPage.qml:109 qml/Sidebar.qml:147
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:147
 #, kde-format
 msgid "Locations"
 msgstr "Kokalekuak"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:150
 #, kde-format
 msgid "Countries"
 msgstr "Herrialdeak"
 
-#: qml/PlacesPage.qml:118 qml/Sidebar.qml:155
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:155
 #, kde-format
 msgid "States"
 msgstr "Estatuak"
 
-#: qml/PlacesPage.qml:123 qml/Sidebar.qml:160
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:160
 #, kde-format
 msgid "Cities"
 msgstr "Hiriak"
 
-#: qml/PlacesPage.qml:129 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:165
 #, kde-format
 msgid "Time"
 msgstr "Ordua"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:168
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:168
 #, kde-format
 msgid "Years"
 msgstr "Urteak"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:173
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:173
 #, kde-format
 msgid "Months"
 msgstr "Hilabeteak"
 
-#: qml/PlacesPage.qml:143 qml/Sidebar.qml:178
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:178
 #, kde-format
 msgid "Weeks"
 msgstr "asteak"
 
-#: qml/PlacesPage.qml:148 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:183
 #, kde-format
 msgid "Days"
 msgstr "Egunak"
