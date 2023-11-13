@@ -2,6 +2,15 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 [Desktop Entry]
 Name=Photos
+Name[ca]=Fotos
+Name[ca@valencia]=Fotos
+Name[eo]=Fotoj
+Name[nl]=Foto's
+Name[pl]=Zdjęcia
+Name[sl]=Fotografije
+Name[tr]=Fotoğraflar
+Name[uk]=Фотографії
+Name[x-test]=xxPhotosxx
 GenericName=Image Gallery
 GenericName[ar]=معرض الصور
 GenericName[bg]=Галерия с изображения
@@ -94,7 +103,7 @@ Keywords[nl]=Afbeeldingsgalerij;Diavoorstelling;Grafiek;Galerij;
 Keywords[pl]=Zdjęcie;Pokaz zdjęć;Grafika;Galeria;
 Keywords[pt_BR]=Imagem;Apresentação de slides;Gráficos;Galeria;
 Keywords[sl]=Slika;Predstavitev;Grafika;Galerija;
-Keywords[tr]=Resim;Slayt Gösterisi;Grafikler;Galeri;
+Keywords[tr]=Resim;Slayt Gösterisi;Grafikler;Galeri;Fotoğraf;Görsel;
 Keywords[uk]=Picture;Slideshow;Graphics;Gallery;малюнок;слайд;показ;графіка;галерея;
 Keywords[x-test]=xxPicturexx;xxSlideshowxx;xxGraphicsxx;xxGalleryxx;
 Exec=koko %U
