@@ -8,6 +8,15 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1</project_license>
   <name>Photos</name>
+  <name xml:lang="ca">Fotos</name>
+  <name xml:lang="ca-valencia">Fotos</name>
+  <name xml:lang="eo">Fotoj</name>
+  <name xml:lang="nl">Foto's</name>
+  <name xml:lang="pl">Zdjęcia</name>
+  <name xml:lang="sl">Fotografije</name>
+  <name xml:lang="tr">Fotoğraflar</name>
+  <name xml:lang="uk">Фотографії</name>
+  <name xml:lang="x-test">xxPhotosxx</name>
   <summary>Image Gallery</summary>
   <summary xml:lang="ar">معرض الصور</summary>
   <summary xml:lang="ast">Galería d'imáxenes</summary>
