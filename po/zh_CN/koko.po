@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:45+0000\n"
-"PO-Revision-Date: 2023-11-11 07:25\n"
+"PO-Revision-Date: 2023-11-19 03:44\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -281,25 +281,25 @@ msgstr "缩放"
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr "向左旋转"
+msgstr "旋转 (向左)"
 
 #: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr "向右旋转"
+msgstr "旋转 (向右)"
 
 #: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr "上下翻转"
+msgstr "翻转 (垂直)"
 
 #: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
-msgstr "左右翻转"
+msgstr "翻转 (水平)"
 
 #: qml/EditorView.qml:143
 #, kde-format
