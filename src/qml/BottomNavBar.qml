@@ -57,9 +57,9 @@ Loader {
         id: bottomNavBar
         ColumnLayout {
             spacing: 0
-            Kirigami.Separator { Layout.fillWidth: true }
             Kirigami.NavigationTabBar {
                 Layout.fillWidth: true
+                position: Kirigami.NavigationTabBar.Footer
                 actions: [
                     Kirigami.Action {
                         icon.name: "photo"
