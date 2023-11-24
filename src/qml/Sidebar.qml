@@ -52,6 +52,7 @@ Kirigami.OverlayDrawer {
             property var currentlySelectedAction
             property var previouslySelectedAction
 
+            contentWidth: -1
             implicitWidth: Kirigami.Units.gridUnit * 14
 
             Layout.fillHeight: true
