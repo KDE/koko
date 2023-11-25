@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"POT-Creation-Date: 2023-11-25 01:34+0000\n"
 "PO-Revision-Date: 2021-10-08 08:24+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -195,22 +195,22 @@ msgstr "Απο-επιλέγει όλα τα επιλεγμένα πολυμέσ�
 msgid "No Media Found"
 msgstr "Δε βρέθηκαν πολυμέσα"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:102
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
 #, kde-format
 msgid "Pictures"
 msgstr "Φωτογραφίες"
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:112
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
 #, kde-format
 msgid "Videos"
 msgstr "Βίντεο"
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:106
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
 #, kde-format
 msgid "Favorites"
 msgstr "Προτιμώμενα"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:97
+#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "Τοποθεσίες"
@@ -594,7 +594,7 @@ msgstr "ΠΕριγραφή"
 msgid "Image description…"
 msgstr "Περιγραφή εικόνας…"
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:188
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
 msgstr "Ετικέτες"
@@ -620,12 +620,12 @@ msgstr "Εικόνες"
 msgid "Folders"
 msgstr "Φάκελοι"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:142
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
 #, kde-format
 msgid "Network"
 msgstr "Δίκτυο"
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:133
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
 #, kde-format
 msgid "Trash"
 msgstr "Απορρίμματα"
@@ -635,47 +635,47 @@ msgstr "Απορρίμματα"
 msgid "Pinned Folders"
 msgstr "Καρφιτσωμένοι φάκελοι"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:147
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
 #, kde-format
 msgid "Locations"
 msgstr "Τοποθεσίες"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
 #, kde-format
 msgid "Countries"
 msgstr "Χώρες"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:155
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
 #, kde-format
 msgid "States"
 msgstr "Πολιτείες/περιφέρειες"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:160
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
 #, kde-format
 msgid "Cities"
 msgstr "Πόλεις"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
 #, kde-format
 msgid "Time"
 msgstr "Χρόνος"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:168
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
 #, kde-format
 msgid "Years"
 msgstr "Έτη"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:173
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
 #, kde-format
 msgid "Months"
 msgstr "Μήνες"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:178
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
 #, kde-format
 msgid "Weeks"
 msgstr "Εβδομάδες"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
 #, kde-format
 msgid "Days"
 msgstr "Ημέρες"
@@ -693,7 +693,7 @@ msgstr "Ρυθμίσεις"
 msgid "General"
 msgstr "Γενικά:"
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:211
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Μέγεθος προεπισκοπήσεων:"
@@ -725,18 +725,18 @@ msgstr "Μοιραστείτε τα επιλεγμένα πολυμέσα"
 msgid "Filter by"
 msgstr ""
 
-#: qml/Sidebar.qml:138
+#: qml/Sidebar.qml:139
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Απομακρυσμένα"
 
-#: qml/Sidebar.qml:215
+#: qml/Sidebar.qml:216
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:228
+#: qml/Sidebar.qml:229
 #, kde-format
 msgid "Settings"
 msgstr "Ρυθμίσεις"

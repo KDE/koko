@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-12 01:37+0000\n"
+"POT-Creation-Date: 2023-11-25 01:34+0000\n"
 "PO-Revision-Date: 2023-06-01 09:49+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -200,22 +200,22 @@ msgstr "يلغي تحديد جميع الوسائط المحددة"
 msgid "No Media Found"
 msgstr "لم يعثر على وسيط"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:102
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
 #, kde-format
 msgid "Pictures"
 msgstr "الصور"
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:112
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
 #, kde-format
 msgid "Videos"
 msgstr "الفيديوهات"
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:106
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
 #, kde-format
 msgid "Favorites"
 msgstr "المفضّلة"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:97
+#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "الأماكن"
@@ -602,7 +602,7 @@ msgstr "الوصف"
 msgid "Image description…"
 msgstr "وصف صورة…"
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:188
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
 msgstr "الوسوم"
@@ -627,12 +627,12 @@ msgstr "الصور"
 msgid "Folders"
 msgstr "المجلّدات"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:142
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
 #, kde-format
 msgid "Network"
 msgstr "الشبكة"
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:133
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
 #, kde-format
 msgid "Trash"
 msgstr "المهملات"
@@ -642,47 +642,47 @@ msgstr "المهملات"
 msgid "Pinned Folders"
 msgstr "المجلدات المثبتة"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:147
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
 #, kde-format
 msgid "Locations"
 msgstr "المواقع"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
 #, kde-format
 msgid "Countries"
 msgstr "البلدان"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:155
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
 #, kde-format
 msgid "States"
 msgstr "الولايات"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:160
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
 #, kde-format
 msgid "Cities"
 msgstr "المدن"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
 #, kde-format
 msgid "Time"
 msgstr "الوقت"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:168
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
 #, kde-format
 msgid "Years"
 msgstr "السنوات"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:173
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
 #, kde-format
 msgid "Months"
 msgstr "الأشهر"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:178
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
 #, kde-format
 msgid "Weeks"
 msgstr "الأسابيع"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
 #, kde-format
 msgid "Days"
 msgstr "الأيام"
@@ -698,7 +698,7 @@ msgstr "إعدادات"
 msgid "General"
 msgstr "عام"
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:211
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "حجم المصغّرات:"
@@ -729,18 +729,18 @@ msgstr "شارك الوسيط المحدد"
 msgid "Filter by"
 msgstr "رشح حسب"
 
-#: qml/Sidebar.qml:138
+#: qml/Sidebar.qml:139
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "البعيدة"
 
-#: qml/Sidebar.qml:215
+#: qml/Sidebar.qml:216
 #, kde-format
 msgid "%1 px"
 msgstr "%1 بكسل"
 
-#: qml/Sidebar.qml:228
+#: qml/Sidebar.qml:229
 #, kde-format
 msgid "Settings"
 msgstr "إعدادات"
