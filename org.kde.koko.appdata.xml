@@ -13,6 +13,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="cs">Fotografie</name>
   <name xml:lang="eo">Fotoj</name>
   <name xml:lang="es">Fotos</name>
+  <name xml:lang="eu">Argazkiak</name>
   <name xml:lang="fr">Photos</name>
   <name xml:lang="ia">Photos</name>
   <name xml:lang="it">Foto</name>
@@ -37,7 +38,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="eo">Bildgalerio</summary>
   <summary xml:lang="es">Galería de imágenes</summary>
   <summary xml:lang="et">Pildigalerii</summary>
-  <summary xml:lang="eu">Irudien galeria</summary>
+  <summary xml:lang="eu">Irudi-galeria</summary>
   <summary xml:lang="fi">Kuvagalleria</summary>
   <summary xml:lang="fr">Galerie d'images</summary>
   <summary xml:lang="gl">Galería de imaxes</summary>
@@ -74,7 +75,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <p xml:lang="eo">Bildgaleria aplikaĵo</p>
     <p xml:lang="es">Aplicación para galerías de imágenes</p>
     <p xml:lang="et">Pildigalerii rakendus</p>
-    <p xml:lang="eu">Irudien galeria aplikazio bat</p>
+    <p xml:lang="eu">Irudi-galeria aplikazio bat</p>
     <p xml:lang="fi">Kuvagalleriasovellus</p>
     <p xml:lang="fr">Une application de galerie d'images</p>
     <p xml:lang="gl">Aplicación de galería de imaxes.</p>
