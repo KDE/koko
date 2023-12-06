@@ -67,8 +67,8 @@ set_package_properties(Qt6QuickControls2 PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(KF6Kirigami2)
-set_package_properties(KF6Kirigami2 PROPERTIES
+find_package(KF6Kirigami)
+set_package_properties(KF6Kirigami PROPERTIES
     DESCRIPTION "A QtQuick based components set"
     PURPOSE "Required at runtime to run Koko"
     TYPE RUNTIME
