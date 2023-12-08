@@ -1,19 +1,19 @@
 # translation of koko.po to Slovak
-# Roman Paholik <wizzardsk@gmail.com>, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Roman Paholik <wizzardsk@gmail.com>
 # Matej Mrenica <matejm98mthw@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:45+0000\n"
-"PO-Revision-Date: 2022-04-18 17:59+0200\n"
+"PO-Revision-Date: 2023-12-07 17:37+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -223,25 +223,22 @@ msgstr "Miesta"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Zahodiť zmeny"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Naozaj chcete zahodiť všetky zmeny?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Zrušiť"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Yes"
-msgstr "Roky"
+msgstr "Áno"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -611,10 +608,9 @@ msgid "Add Tag"
 msgstr "Pridať značku"
 
 #: qml/Main.qml:73
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Nastaviť..."
+msgstr "Nastaviť"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -688,17 +684,15 @@ msgid "Days"
 msgstr "Dni"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Nastavenia"
 
 #: qml/SettingsPage.qml:29
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "Všeobecné:"
+msgstr "Všeobecné"
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
@@ -712,10 +706,9 @@ msgid "Slideshow settings:"
 msgstr "Nastavenia premietania:"
 
 #: qml/SettingsPage.qml:151
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About Koko"
-msgstr "O"
+msgstr "O Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -730,7 +723,7 @@ msgstr "Zdielať vybraté médiá"
 #: qml/Sidebar.qml:43
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrovať podľa"
 
 #: qml/Sidebar.qml:149
 #, kde-format
