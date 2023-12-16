@@ -117,7 +117,7 @@ Comment[tr]=Görsel Başarıyla Paylaşıldı
 Comment[uk]=Зображення успішно оприлюднено
 Comment[x-test]=xxImage Shared Successfullyxx
 Comment[zh_CN]=图像分享成功
-Comment[zh_TW]=圖片分享成功
+Comment[zh_TW]=影像分享成功
 Action=Popup
 
 [Event/sharingFailed]
@@ -194,5 +194,5 @@ Comment[tr]=Görsel Paylaşımı Başarısız
 Comment[uk]=Не вдалося оприлюднити зображення
 Comment[x-test]=xxImage Sharing failedxx
 Comment[zh_CN]=图像分享失败
-Comment[zh_TW]=圖片分享失敗
+Comment[zh_TW]=影像分享失敗
 Action=Popup
