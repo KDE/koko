@@ -2,738 +2,737 @@
 # koko 套件的正體中文翻譯.
 # Copyright (C) 2022 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# Automatically generated, 2022.
 #
+# Automatically generated, 2022.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-25 01:34+0000\n"
-"PO-Revision-Date: 2022-05-16 00:42+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-12-15 19:14+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 24.01.80\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mail@kisaragi-hiu.com"
 
 #: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr ""
+msgstr "<application>Koko</application>"
 
 #: main.cpp:59
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr ""
+msgstr "Koko 是您的影像收藏用的影像檢視器。"
 
 #: main.cpp:61
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr ""
+msgstr "(c) 2013-2020 KDE 貢獻者"
 
 #: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
-msgstr ""
+msgstr "Vishesh Handa"
 
 #: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "開發者"
 
 #: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr ""
+msgstr "Atul Sharma"
 
 #: main.cpp:71
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
-msgstr ""
+msgstr "Marco Martin"
 
 #: main.cpp:73
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
-msgstr ""
+msgstr "Nicolas Fella"
 
 #: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:84
 #, kde-format
 msgid "Image viewer"
-msgstr ""
+msgstr "影像檢視器"
 
 #: main.cpp:85
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "重設資料庫"
 
 #: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
-msgstr ""
+msgstr "要開啟的影像的路徑"
 
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "分享失敗"
 
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr ""
+msgstr "影像已分享的網址是 <a href='%1'>%1</a>"
 
 #: qml/AlbumDelegate.qml:121
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 張影像"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgid "Remove Bookmark"
-msgstr ""
+msgstr "移除書籤"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr ""
+msgstr "將資料夾加入書籤"
 
 #: qml/AlbumView.qml:282
 #, kde-format
 msgid "Go Up"
-msgstr ""
+msgstr "往上"
 
 #: qml/AlbumView.qml:305
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "首頁"
 
 #: qml/AlbumView.qml:305
 #, kde-format
 msgid "Root"
-msgstr ""
+msgstr "根"
 
 #: qml/AlbumView.qml:338
 #, kde-format
 msgid "Delete Selection"
-msgstr ""
+msgstr "刪除所選"
 
 #: qml/AlbumView.qml:339
 #, kde-format
 msgid "Move selected items to trash"
-msgstr ""
+msgstr "將已選項目移到垃圾桶"
 
 #: qml/AlbumView.qml:345
 #, kde-format
 msgid "Restore Selection"
-msgstr ""
+msgstr "還原所選"
 
 #: qml/AlbumView.qml:346
 #, kde-format
 msgid "Restore selected items from trash"
-msgstr ""
+msgstr "將已選項目從垃圾桶中還原"
 
 #: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "設定…"
 
 #: qml/AlbumView.qml:358
 #, kde-format
 msgid "Select All"
-msgstr ""
+msgstr "全部選取"
 
 #: qml/AlbumView.qml:359
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr ""
+msgstr "選取目前檢視中的所有媒體"
 
 #: qml/AlbumView.qml:366
 #, kde-format
 msgid "Deselect All"
-msgstr ""
+msgstr "全部取消選取"
 
 #: qml/AlbumView.qml:367
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr ""
+msgstr "取消選取任何已選取的媒體"
 
 #: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
-msgstr ""
+msgstr "未找到媒體"
 
 #: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
 #, kde-format
 msgid "Pictures"
-msgstr ""
+msgstr "圖片"
 
 #: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "影片"
 
 #: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "最愛"
 
 #: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "快速存取"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "丟棄變更"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "您確定要丟棄所有變更嗎？"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: qml/EditorView.qml:61
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: qml/EditorView.qml:66 qml/EditorView.qml:260
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
-msgstr ""
+msgstr "無法儲存檔案。請檢查您是否有足夠權限編輯這個檔案。"
 
 #: qml/EditorView.qml:75
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
-msgstr ""
+msgstr "復原"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:93
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
-msgstr ""
+msgstr "裁切"
 
 #: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr ""
+msgstr "調整大小"
 
 #: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr ""
+msgstr "向左旋轉"
 
 #: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr ""
+msgstr "向右旋轉"
 
 #: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr ""
+msgstr "翻轉"
 
 #: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
-msgstr ""
+msgstr "鏡射"
 
 #: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
-msgstr ""
+msgstr "大小："
 
 #: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
-msgstr ""
+msgstr "位置："
 
 #: qml/EditorView.qml:248
 #, kde-format
 msgid "Save As"
-msgstr ""
+msgstr "另存新檔"
 
 #: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
-msgstr ""
+msgstr "您現正編輯一個新檔案。"
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
 msgid "Seek slider"
-msgstr ""
+msgstr "搜尋滑動器"
 
 #: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "向後跳 %1 秒"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Pause playback"
-msgstr ""
+msgstr "暫停播放"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Continue playback"
-msgstr ""
+msgstr "繼續播放"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Unmute audio"
-msgstr ""
+msgstr "取消靜音"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Mute audio"
-msgstr ""
+msgstr "靜音"
 
 #: qml/imagedelegate/VideoPlayer.qml:247
 #, kde-format
 msgid "Volume slider"
-msgstr ""
+msgstr "音量滑動器"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "重複播放目前影片"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Don't repeat current video"
-msgstr ""
+msgstr "不要重複播放目前影片"
 
 #: qml/ImageViewPage.qml:75
 #, kde-format
 msgid "Info"
-msgstr ""
+msgstr "資訊"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
-msgstr ""
+msgstr "檢視影片資訊"
 
 #: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
-msgstr ""
+msgstr "檢視影像資訊"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "最愛"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
-msgstr ""
+msgstr "從最愛中移除"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
-msgstr ""
+msgstr "新增到最愛"
 
 #: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Video"
-msgstr ""
+msgstr "分享影片"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Image"
-msgstr ""
+msgstr "分享影像"
 
 #: qml/ImageViewPage.qml:118
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: qml/ImageViewPage.qml:132
 #, kde-format
 msgid "Start Slideshow"
-msgstr ""
+msgstr "開始投影播放"
 
 #: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Slideshow"
-msgstr ""
+msgstr "投影播放"
 
 #: qml/ImageViewPage.qml:140
 #, kde-format
 msgid "Thumbnail Bar"
-msgstr ""
+msgstr "縮圖列"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Hide Thumbnail Bar"
-msgstr ""
+msgstr "隱藏縮圖列"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Show Thumbnail Bar"
-msgstr ""
+msgstr "顯示縮圖列"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr ""
+msgstr "切換縮圖列"
 
 #: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
-msgstr ""
+msgstr "全螢幕"
 
 #: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
-msgstr ""
+msgstr "離開全螢幕"
 
 #: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
-msgstr ""
+msgstr "進入全螢幕"
 
 #: qml/ImageViewPage.qml:405
 #, kde-format
 msgid "Previous image"
-msgstr ""
+msgstr "前一張影像"
 
 #: qml/ImageViewPage.qml:435
 #, kde-format
 msgid "Next image"
-msgstr ""
+msgstr "下一張影像"
 
 #: qml/ImageViewPage.qml:650 qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr ""
+msgstr "投影播放間隔："
 
 #: qml/ImageViewPage.qml:667 qml/SettingsPage.qml:73
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 秒"
 
 #: qml/ImageViewPage.qml:720
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr ""
+msgstr "循環"
 
 #: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr ""
+msgstr "隨機"
 
 #: qml/ImageViewPage.qml:735
 #, kde-format
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "結束投影播放"
 
 #: qml/ImageViewPage.qml:749
 #, kde-format
 msgid "Show All Controls"
-msgstr ""
+msgstr "顯示所有控制"
 
 #: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
 #, kde-format
 msgid "Metadata"
-msgstr ""
+msgstr "中繼資料"
 
 #: qml/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "File Name"
-msgstr ""
+msgstr "檔案名稱"
 
 #: qml/InfoDrawerSidebarBase.qml:52
 #, kde-format
 msgid "Dimension"
-msgstr ""
+msgstr "解析度"
 
 #: qml/InfoDrawerSidebarBase.qml:58
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
-msgstr ""
+msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:64
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: qml/InfoDrawerSidebarBase.qml:76
 #, kde-format
 msgid "Created"
-msgstr ""
+msgstr "建立時間"
 
 #: qml/InfoDrawerSidebarBase.qml:88
 #, kde-format
 msgid "Model"
-msgstr ""
+msgstr "型號"
 
 #: qml/InfoDrawerSidebarBase.qml:100
 #, kde-format
 msgid "Latitude"
-msgstr ""
+msgstr "緯度"
 
 #: qml/InfoDrawerSidebarBase.qml:112
 #, kde-format
 msgid "Longitude"
-msgstr ""
+msgstr "經度"
 
 #: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "評分"
 
 #: qml/InfoDrawerSidebarBase.qml:131
 #, kde-format
 msgid "Current rating %1"
-msgstr ""
+msgstr "目前評分 %1"
 
 #: qml/InfoDrawerSidebarBase.qml:138
 #, kde-format
 msgid "Set rating to %1"
-msgstr ""
+msgstr "設定評分為 %1"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: qml/InfoDrawerSidebarBase.qml:172
 #, kde-format
 msgid "Image description…"
-msgstr ""
+msgstr "影像描述…"
 
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "標籤"
 
 #: qml/InfoDrawerSidebarBase.qml:198
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "新增標籤"
 
 #: qml/Main.qml:84
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "設定"
 
 #: qml/Main.qml:118
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "影像"
 
 #: qml/Main.qml:129 qml/Main.qml:138
 #, kde-format
 msgid "Folders"
-msgstr ""
+msgstr "資料夾"
 
 #: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
 #, kde-format
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
 #, kde-format
 msgid "Trash"
-msgstr ""
+msgstr "垃圾桶"
 
 #: qml/PlacesPage.qml:88
 #, kde-format
 msgid "Pinned Folders"
-msgstr ""
+msgstr "已釘選的資料夾"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
 #, kde-format
 msgid "Locations"
-msgstr ""
+msgstr "位置"
 
 #: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
 #, kde-format
 msgid "Countries"
-msgstr ""
+msgstr "國家"
 
 #: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
 #, kde-format
 msgid "States"
-msgstr ""
+msgstr "州/省/縣"
 
 #: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "城市"
 
 #: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
 #, kde-format
 msgid "Time"
-msgstr ""
+msgstr "時間"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "年"
 
 #: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "月"
 
 #: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "週"
 
 #: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "日"
 
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: qml/SettingsPage.qml:20
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
 msgid "Thumbnails size:"
-msgstr ""
+msgstr "縮圖大小："
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr ""
+msgstr "投影播放設定："
 
 #: qml/SettingsPage.qml:129
 #, kde-format
 msgid "About Koko"
-msgstr ""
+msgstr "關於 Koko"
 
 #: qml/ShareAction.qml:23
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "分享選取的媒體"
 
 #: qml/Sidebar.qml:47
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "過濾條件"
 
 #: qml/Sidebar.qml:139
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
+msgstr "遠端"
 
 #: qml/Sidebar.qml:216
 #, kde-format
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Sidebar.qml:229
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
-msgstr ""
+msgstr "新增標籤…"
