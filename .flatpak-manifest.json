@@ -1,8 +1,7 @@
 {
     "id": "org.kde.koko",
-    "rename-icon": "koko",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "6.6-kf6preview",
     "sdk": "org.kde.Sdk",
     "command": "koko",
     "tags": ["nightly"],
@@ -39,17 +38,11 @@
         {
             "name": "kquickimageeditor",
             "buildsystem": "cmake-ninja",
+            "config-opts": ["-DBUILD_WITH_QT6=ON"],
             "sources": [
                 {
-                    "type": "archive",
-                    "sha256": "3cfba775498e031f6963669ee0e4426d4fddd48a244b9583620de4d312ba92ca",
-                    "url": "https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.2.0.tar.xz",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 229033,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-$version.tar.xz"
-                    }
+                    "type": "git",
+                    "url": "https://invent.kde.org/libraries/kquickimageeditor"
                 }
             ]
         },
