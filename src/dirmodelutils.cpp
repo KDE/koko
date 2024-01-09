@@ -52,7 +52,7 @@ QUrl DirModelUtils::videos() const
     return {};
 }
 
-bool DirModelUtils::canBeSimplified(QUrl url) const
+bool DirModelUtils::canBeSimplified(const QUrl &url) const
 {
     const auto homes = QStandardPaths::standardLocations(QStandardPaths::HomeLocation);
     QString home;

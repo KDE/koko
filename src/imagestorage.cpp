@@ -160,7 +160,7 @@ void ImageStorage::addImage(const ImageInfo &ii)
         }
     }
 
-    for (auto tag : qAsConst(ii.tags)) {
+    for (const auto &tag : qAsConst(ii.tags)) {
         QSqlQuery query;
         query.prepare("SELECT url FROM TAGS WHERE url = ? AND tag = ?");
         query.addBindValue(ii.path);

@@ -24,7 +24,7 @@ public:
     Q_INVOKABLE bool inHome(const QUrl &url) const;
     Q_INVOKABLE QStringList getUrlParts(const QUrl &url) const;
     Q_INVOKABLE QUrl partialUrlForIndex(QUrl url, int index) const;
-    Q_INVOKABLE bool canBeSimplified(QUrl url) const;
+    Q_INVOKABLE bool canBeSimplified(const QUrl &url) const;
     Q_INVOKABLE QUrl directoryOfUrl(const QString &path) const;
     Q_INVOKABLE QString fileNameOfUrl(const QString &path) const;
     Q_INVOKABLE QUrl parentOfUrl(const QUrl &url) const;
