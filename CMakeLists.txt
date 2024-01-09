@@ -74,6 +74,13 @@ set_package_properties(KF6Kirigami PROPERTIES
     TYPE RUNTIME
 )
 
+find_package(KF6Purpose)
+set_package_properties(KF6Purpose PROPERTIES
+    DESCRIPTION "Offers available actions for a specific purpose"
+    PURPOSE "Required at runtime to run Koko and allow sharing of files"
+    TYPE RUNTIME
+)
+
 include_directories(
   ${CMAKE_SOURCE_DIR}
   ${CMAKE_SOURCE_DIR}/src
