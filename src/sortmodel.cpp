@@ -78,6 +78,7 @@ void SortModel::setSortRoleName(const QByteArray &name)
 {
     if (!sourceModel()) {
         m_sortRoleName = name;
+        emit sortRoleNameChanged();
         return;
     }
 
@@ -85,6 +86,7 @@ void SortModel::setSortRoleName(const QByteArray &name)
     for (auto it = roles.begin(); it != roles.end(); it++) {
         if (it.value() == name) {
             setSortRole(it.key());
+            emit sortRoleNameChanged();
             return;
         }
     }

@@ -30,6 +30,7 @@ void ImageListModel::slotLocationGroupChanged()
     if (m_locationGroup != -1) {
         m_locations = ImageStorage::instance()->locations(static_cast<Types::LocationGroup>(m_locationGroup));
         m_queryType = Types::LocationQuery;
+        emit queryTypeChanged();
     }
 }
 
@@ -38,6 +39,7 @@ void ImageListModel::slotTimeGroupChanged()
     if (m_timeGroup != -1) {
         m_times = ImageStorage::instance()->timeTypes(static_cast<Types::TimeGroup>(m_timeGroup));
         m_queryType = Types::TimeQuery;
+        emit queryTypeChanged();
     }
 }
 
@@ -82,6 +84,7 @@ Types::QueryType ImageListModel::queryType() const
 void ImageListModel::setQueryType(const Types::QueryType &type)
 {
     m_queryType = type;
+    emit queryTypeChanged();
 }
 
 QByteArray ImageListModel::query() const

@@ -19,7 +19,7 @@
 class SortModel : public QSortFilterProxyModel
 {
     Q_OBJECT
-    Q_PROPERTY(QByteArray sortRoleName READ sortRoleName WRITE setSortRoleName)
+    Q_PROPERTY(QByteArray sortRoleName READ sortRoleName WRITE setSortRoleName NOTIFY sortRoleNameChanged)
     Q_PROPERTY(bool containImages READ containImages WRITE setContainImages NOTIFY containImagesChanged)
     Q_PROPERTY(bool hasSelectedImages READ hasSelectedImages NOTIFY selectedImagesChanged)
 public:
@@ -56,6 +56,7 @@ protected Q_SLOTS:
     void delayedPreview();
 
 signals:
+    void sortRoleNameChanged();
     void containImagesChanged();
     void selectedImagesChanged();
 

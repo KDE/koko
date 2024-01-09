@@ -17,7 +17,7 @@ class ImageListModel : public OpenFileModel
 
     Q_PROPERTY(Types::LocationGroup locationGroup READ locationGroup WRITE setLocationGroup NOTIFY locationGroupChanged)
     Q_PROPERTY(Types::TimeGroup timeGroup READ timeGroup WRITE setTimeGroup NOTIFY timeGroupChanged)
-    Q_PROPERTY(Types::QueryType queryType READ queryType WRITE setQueryType)
+    Q_PROPERTY(Types::QueryType queryType READ queryType WRITE setQueryType NOTIFY queryTypeChanged)
     Q_PROPERTY(QByteArray query READ query WRITE setQuery NOTIFY queryChanged)
 
 public:
@@ -46,6 +46,7 @@ Q_SIGNALS:
     void imageListChanged();
     void locationGroupChanged();
     void timeGroupChanged();
+    void queryTypeChanged();
     void queryChanged();
 
 private:
