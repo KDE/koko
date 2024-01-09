@@ -262,7 +262,6 @@ QList<QPair<QByteArray, QString>> ImageStorage::locations(Types::LocationGroup l
             return list;
         }
 
-        QStringList groups;
         while (query.next()) {
             QString country = query.value(0).toString();
             QString state = query.value(1).toString();
@@ -477,7 +476,6 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(Types::TimeGroup group
             return list;
         }
 
-        QStringList groups;
         while (query.next()) {
             QString year = query.value(0).toString();
             QString month = query.value(1).toString();

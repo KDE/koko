@@ -187,7 +187,6 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextProperty("kokoConfig", &config);
     engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
 
-    QString path;
     // we want different main files on desktop or mobile
     // very small difference as they as they are subclasses of the same thing
     engine.load(QUrl(QStringLiteral("qrc:/qml/Main.qml")));
