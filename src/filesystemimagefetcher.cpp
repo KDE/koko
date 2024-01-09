@@ -18,7 +18,7 @@ FileSystemImageFetcher::FileSystemImageFetcher(const QString &folder, QObject *p
 
 void FileSystemImageFetcher::fetch()
 {
-    QTimer::singleShot(0, this, SLOT(slotProcess()));
+    QTimer::singleShot(0, this, &FileSystemImageFetcher::slotProcess);
 }
 
 void FileSystemImageFetcher::slotProcess()

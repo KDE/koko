@@ -37,7 +37,7 @@ void Processor::addFile(const QString &filePath)
     m_files << filePath;
     m_numFiles++;
 
-    QTimer::singleShot(0, this, SLOT(process()));
+    QTimer::singleShot(0, this, &Processor::process);
     emit numFilesChanged();
 }
 
@@ -84,7 +84,7 @@ void Processor::process()
 void Processor::slotFinished()
 {
     m_processing = false;
-    QTimer::singleShot(0, this, SLOT(process()));
+    QTimer::singleShot(0, this, &Processor::process);
 
     emit initialProgressChanged();
     m_commitTimer.start();
