@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-16 00:37+0000\n"
 "PO-Revision-Date: 2023-05-29 08:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -30,77 +30,99 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:56
+#: filemenu.cpp:117
+#, kde-format
+msgid "Open Containing Folder"
+msgstr ""
+
+#: filemenu.cpp:131
+#, kde-format
+msgid "&Copy"
+msgstr ""
+
+#: filemenu.cpp:139
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@action:incontextmenu"
+msgid "Copy Location"
+msgstr "Місця"
+
+#: filemenu.cpp:195
+#, kde-format
+msgid "Properties"
+msgstr ""
+
+#: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "Koko — програма для перегляду зображень з вашої збірки."
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "© Учасники розробки KDE, 2013–2020"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:66 main.cpp:68 main.cpp:70 main.cpp:72 main.cpp:74 main.cpp:76
+#: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Розробник"
 
-#: main.cpp:68
+#: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:74
+#: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:76
+#: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Image viewer"
 msgstr "Переглядач зображень"
 
-#: main.cpp:84
+#: main.cpp:85
 #, kde-format
 msgid "Reset the database"
 msgstr "Скинути до бази даних"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
 msgstr "шлях до зображення, яке ви хочете відкрити"
@@ -481,23 +503,28 @@ msgstr "Вийти з повноекранного режиму"
 msgid "Enter Fullscreen"
 msgstr "Повноекранний режим"
 
-#: qml/ImageViewPage.qml:405
+#: qml/ImageViewPage.qml:411
 #, kde-format
 msgid "Previous image"
 msgstr "Попереднє зображення"
 
-#: qml/ImageViewPage.qml:435
+#: qml/ImageViewPage.qml:441
 #, kde-format
 msgid "Next image"
 msgstr "Наступне зображення"
 
-#: qml/ImageViewPage.qml:650 qml/SettingsPage.qml:61
+#: qml/ImageViewPage.qml:658
+#, kde-format
+msgid "More"
+msgstr ""
+
+#: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Інтервал показу слайдів:"
 
-#: qml/ImageViewPage.qml:667 qml/SettingsPage.qml:73
+#: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -507,24 +534,24 @@ msgstr[1] "%1 секунди"
 msgstr[2] "%1 секунд"
 msgstr[3] "1 секунда"
 
-#: qml/ImageViewPage.qml:720
+#: qml/ImageViewPage.qml:835
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Зациклити"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:49
+#: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Випадково"
 
-#: qml/ImageViewPage.qml:735
+#: qml/ImageViewPage.qml:850
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Зупинити показ слайдів"
 
-#: qml/ImageViewPage.qml:749
+#: qml/ImageViewPage.qml:864
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показати усі засоби керування"
@@ -707,7 +734,7 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Інтервал показу слайдів:"
 
-#: qml/SettingsPage.qml:129
+#: qml/SettingsPage.qml:131
 #, kde-format
 msgid "About Koko"
 msgstr "Про Koko"
