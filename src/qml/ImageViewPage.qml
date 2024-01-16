@@ -131,7 +131,7 @@ Kirigami.Page {
             icon.name: "view-presentation"
             tooltip: i18n("Start Slideshow")
             text: i18n("Slideshow")
-            visible: listView.count > 1 && !slideshowManager.running
+            visible: listView.count > 1 && !slideshowManager.running && !Kirigami.Settings.isMobile
             onTriggered: slideshowManager.start()
         },
         Kirigami.Action {
@@ -163,6 +163,12 @@ Kirigami.Page {
             }
         }
     ]
+
+
+    KokoPrivate.FileMenu {
+        id: fileMenu
+        url: listView.currentItem.imageurl
+    }
 
     SlideshowManager {
         id: slideshowManager
@@ -535,11 +541,10 @@ Kirigami.Page {
 
     QQC2.ScrollView {
         id: thumbnailScrollView
-        visible: thumbnailView.count > 1
+        visible: !Kirigami.Settings.isMobile && thumbnailView.count > 1
         height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
         QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
         QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
-        property real mobileFABHeight: (applicationWindow().controlsVisible && Kirigami.Settings.isMobile) * Kirigami.Units.gridUnit * 4
 
         leftPadding: Kirigami.Units.smallSpacing
         rightPadding: Kirigami.Units.smallSpacing
@@ -549,8 +554,7 @@ Kirigami.Page {
             right: parent.right
             bottom: parent.bottom
             bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && kokoConfig.imageViewPreview ?
-                            Kirigami.Units.smallSpacing + mobileFABHeight :
-                           -height + mobileFABHeight
+                            Kirigami.Units.smallSpacing : -height
         }
 
         opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
@@ -572,9 +576,120 @@ Kirigami.Page {
         ThumbnailStrip {
             id: thumbnailView
 
-            model: listView.model
+            model: Kirigami.Settings.isMobile ? [] : listView.model
             currentIndex: listView.currentIndex
             onActivated: index => listView.currentIndex = index
+        }
+    }
+
+    QQC2.Pane {
+        id: mobileActionsRow
+        visible: Kirigami.Settings.isMobile
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: applicationWindow().controlsVisible ? 0 : -height
+        }
+
+        opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
+
+        Behavior on anchors.bottomMargin {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        Behavior on opacity {
+            OpacityAnimator {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        background: Rectangle {
+            color: 'black'
+            opacity: 0.7
+        }
+
+        contentItem: RowLayout {
+            Repeater {
+                model: root.actions
+
+                QQC2.AbstractButton {
+                    action: modelData
+                    visible: modelData.visible
+
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
+
+                    contentItem: ColumnLayout {
+                        spacing: 0
+
+                        Kirigami.Icon {
+                            source: modelData.icon.name
+                            color: 'white'
+                            isMask: true
+                            Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                            Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
+                            Layout.alignment: Qt.AlignHCenter
+                        }
+
+                        QQC2.Label {
+                            text: modelData.text
+                            font: Kirigami.Theme.smallFont
+                            horizontalAlignment: Text.AlignHCenter
+                            color: 'white'
+                            Layout.fillWidth: true
+                        }
+                    }
+                }
+            }
+
+            QQC2.AbstractButton {
+                id: moreButton
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
+                icon.name: "view-more-symbolic"
+                text: i18n("More")
+                checkable: true
+
+                onPressedChanged: {
+                    if (pressed) {
+                        // fake "pressed" while menu is open
+                        checked = Qt.binding(function() {
+                            return fileMenu.visible;
+                        });
+                        fileMenu.visualParent = this;
+                        fileMenu.open(pressX, pressY);
+                    }
+                }
+
+                contentItem: ColumnLayout {
+                    spacing: 0
+
+                    Kirigami.Icon {
+                        source: moreButton.icon.name
+                        color: 'white'
+                        isMask: true
+                        Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
+                        Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
+                        Layout.alignment: Qt.AlignHCenter
+                    }
+
+                    QQC2.Label {
+                        text: moreButton.text
+                        font: Kirigami.Theme.smallFont
+                        horizontalAlignment: Text.AlignHCenter
+                        color: 'white'
+                        Layout.fillWidth: true
+                    }
+                }
+            }
         }
     }
 

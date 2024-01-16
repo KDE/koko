@@ -28,6 +28,7 @@
 #include <iostream>
 
 #include "controller.h"
+#include "filemenu.h"
 #include "filesystemtracker.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
@@ -178,6 +179,7 @@ int main(int argc, char **argv)
 
     qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
     qmlRegisterType<VectorImage>("org.kde.koko.image", 0, 1, "VectorImage");
+    qmlRegisterType<FileMenu>("org.kde.koko.private", 0, 1, "FileMenu");
 
     Controller controller;
     qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "Controller", &controller);
