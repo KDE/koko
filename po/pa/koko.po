@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-10 01:34+0000\n"
+"POT-Creation-Date: 2024-01-16 02:25+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -27,77 +27,99 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: main.cpp:56
+#: filemenu.cpp:117
+#, kde-format
+msgid "Open Containing Folder"
+msgstr ""
+
+#: filemenu.cpp:131
+#, kde-format
+msgid "&Copy"
+msgstr ""
+
+#: filemenu.cpp:139
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@action:incontextmenu"
+msgid "Copy Location"
+msgstr "ਟਿਕਾਣੇ"
+
+#: filemenu.cpp:195
+#, kde-format
+msgid "Properties"
+msgstr ""
+
+#: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:58
+#: main.cpp:59
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "ਕੋਕੋ ਤੁਹਾਡੇ ਚਿੱਤਰ ਭੰਡਾਰ ਨੂੰ ਵੇਖਾਉਣ ਲਈ ਚਿੱਤਰ ਦਰਸ਼ਕ ਹੈ।"
 
-#: main.cpp:60
+#: main.cpp:61
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 KDE ਯੋਗਦਾਨੀ"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "ਵਿਸ਼ੇਸ਼ ਹਾਂਡਾ"
 
-#: main.cpp:66 main.cpp:68 main.cpp:70 main.cpp:72 main.cpp:74 main.cpp:76
+#: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "ਡਿਵੈਲਪਰ"
 
-#: main.cpp:68
+#: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "ਅਤੁਲ ਸ਼ਰਮਾ"
 
-#: main.cpp:70
+#: main.cpp:71
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "ਮਾਰਕੋ ਮਾਰਟਿਨ"
 
-#: main.cpp:72
+#: main.cpp:73
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Leclercq"
 
-#: main.cpp:74
+#: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "ਕਾਰਲ ਸਚਵਾਨ"
 
-#: main.cpp:76
+#: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr ""
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-format
 msgid "Image viewer"
 msgstr "ਚਿੱਤਰ ਦਰਸ਼ਕ"
 
-#: main.cpp:84
+#: main.cpp:85
 #, kde-format
 msgid "Reset the database"
 msgstr "ਡਾਟਾਬੇਸ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
 
-#: main.cpp:85
+#: main.cpp:86
 #, kde-format
 msgid "path of image you want to open"
 msgstr "ਤੁਹਾਡੇ ਵਲੋਂ ਖੋਲ੍ਹਣ ਜਾਣ ਵਾਲੇ ਚਿੱਤਰ ਲਈ ਮਾਰਗ"
@@ -485,24 +507,29 @@ msgstr "ਪੂਰੀ ਸਕਰੀਨ ਤੋਂ ਬਾਹਰ"
 msgid "Enter Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਜਾਓ"
 
-#: qml/ImageViewPage.qml:405
+#: qml/ImageViewPage.qml:411
 #, kde-format
 msgid "Previous image"
 msgstr "ਪਿਛਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:435
+#: qml/ImageViewPage.qml:441
 #, kde-format
 msgid "Next image"
 msgstr "ਅਗਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:650 qml/SettingsPage.qml:61
+#: qml/ImageViewPage.qml:658
+#, kde-format
+msgid "More"
+msgstr ""
+
+#: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/ImageViewPage.qml:667 qml/SettingsPage.qml:73
+#: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
 #, fuzzy, kde-format
 #| msgid "1 second"
 #| msgid_plural "%1 seconds"
@@ -512,26 +539,26 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 ਸਕਿੰਟ"
 msgstr[1] "%1 ਸਕਿੰਟ"
 
-#: qml/ImageViewPage.qml:720
+#: qml/ImageViewPage.qml:835
 #, fuzzy, kde-format
 #| msgid "Loop"
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:726 qml/SettingsPage.qml:49
+#: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "ਰਲਵਾਂ"
 
-#: qml/ImageViewPage.qml:735
+#: qml/ImageViewPage.qml:850
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਰੋਕੋ"
 
-#: qml/ImageViewPage.qml:749
+#: qml/ImageViewPage.qml:864
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
@@ -720,7 +747,7 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/SettingsPage.qml:129
+#: qml/SettingsPage.qml:131
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About Koko"
