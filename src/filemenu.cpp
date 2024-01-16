@@ -190,15 +190,6 @@ void FileMenu::open(int x, int y)
 
     actions->addActionsTo(menu);
 
-    menu->addSeparator();
-
-    QAction *propertiesAction = menu->addAction(QIcon::fromTheme(QStringLiteral("document-properties")), i18n("Properties"));
-    connect(propertiesAction, &QAction::triggered, [fileItem] {
-        KPropertiesDialog *dialog = new KPropertiesDialog(fileItem.url());
-        dialog->setAttribute(Qt::WA_DeleteOnClose);
-        dialog->show();
-    });
-
     // this is a workaround where Qt will fail to realize a mouse has been released
     // this happens if a window which does not accept focus spawns a new window that takes focus and X grab
     // whilst the mouse is depressed
