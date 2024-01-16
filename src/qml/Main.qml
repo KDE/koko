@@ -251,7 +251,9 @@ Kirigami.ApplicationWindow {
     Component {
         id: contextDrawerComponent
 
-        Kirigami.ContextDrawer { }
+        Kirigami.ContextDrawer {
+            Component.onCompleted: console.log("frjeoi")
+        }
     }
 
     globalDrawer: Sidebar {}

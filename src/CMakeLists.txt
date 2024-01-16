@@ -49,6 +49,8 @@ set(koko_SRCS
     vectorimage.cpp
     controller.cpp
     kdtree.cpp
+    filemenu.h
+    filemenu.cpp
     resources.qrc
 )
 
@@ -65,6 +67,8 @@ target_link_libraries(koko
     KF6::I18n
     KF6::CoreAddons
     KF6::KIOCore
+    KF6::KIOWidgets
+    KF6::ConfigWidgets
     kokocommon
 )
 
