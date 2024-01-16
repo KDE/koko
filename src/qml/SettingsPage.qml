@@ -41,9 +41,11 @@ Kirigami.PageRow {
 
         FormCard.FormHeader {
             title: i18nc("@title:group", "Slideshow settings:")
+            visible: !Kirigami.Settings.isMobile
         }
 
         FormCard.FormCard {
+            visible: !Kirigami.Settings.isMobile
             FormCard.FormCheckDelegate {
                 id: randomizeImagesCheckbox
                 text: i18nc("@option:check", "Randomize")
