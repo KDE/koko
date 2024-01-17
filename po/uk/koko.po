@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2023-05-29 08:38+0300\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"PO-Revision-Date: 2024-01-16 16:13+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,24 +33,18 @@ msgstr "yurchor@ukr.net"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Відкрити теку з даними"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Копіювати"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Місця"
-
-#: filemenu.cpp:195
-#, kde-format
-msgid "Properties"
-msgstr ""
+msgstr "Копіювати адресу"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -516,7 +510,7 @@ msgstr "Наступне зображення"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Докладніше"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
@@ -774,6 +768,9 @@ msgstr "Параметри"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Додати нову мітку…"
+
+#~ msgid "Properties"
+#~ msgstr "Властивості"
 
 #~ msgid "Sort by"
 #~ msgstr "Упорядкувати за"

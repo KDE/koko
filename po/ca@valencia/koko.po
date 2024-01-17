@@ -1,16 +1,16 @@
 # Translation of koko.po to Catalan (Valencian)
-# Copyright (C) 2020-2023 This_file_is_part_of_KDE
+# Copyright (C) 2020-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2023-05-29 11:11+0200\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"PO-Revision-Date: 2024-01-16 16:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,24 +33,18 @@ msgstr "antonibella5@yahoo.com"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Obri la carpeta contenidora"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Copia"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Ubicacions"
-
-#: filemenu.cpp:195
-#, kde-format
-msgid "Properties"
-msgstr ""
+msgstr "Copia la ubicació"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -512,7 +506,7 @@ msgstr "Imatge següent"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Més"
 
 # skip-rule: kct-slideshow
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
@@ -769,3 +763,6 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
+
+#~ msgid "Properties"
+#~ msgstr "Propietats"

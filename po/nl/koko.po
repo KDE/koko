@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-16 00:37+0000\n"
-"PO-Revision-Date: 2023-05-29 14:49+0200\n"
+"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"PO-Revision-Date: 2024-01-16 11:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2020-2023"
+msgstr "Freek de Kruijf - 2020-20234"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -30,24 +30,18 @@ msgstr "freekdekruijf@kde.nl"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Map openen waarin het zich bevindt"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Kopiëren"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Locaties"
-
-#: filemenu.cpp:195
-#, kde-format
-msgid "Properties"
-msgstr ""
+msgstr "Locatie kopiëren"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -509,7 +503,7 @@ msgstr "Volgende afbeelding"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Meer"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
@@ -765,6 +759,9 @@ msgstr "Instellingen"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Nieuwe tag toevoegen…"
+
+#~ msgid "Properties"
+#~ msgstr "Eigenschappen"
 
 #~ msgid "Sort by"
 #~ msgstr "Sorteren naar"
