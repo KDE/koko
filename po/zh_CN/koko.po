@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-29 00:45+0000\n"
-"PO-Revision-Date: 2024-01-13 06:05\n"
+"PO-Revision-Date: 2024-01-21 14:17\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -217,22 +217,22 @@ msgstr "位置"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "放弃更改"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "您确定要放弃所有更改吗？"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: qml/EditorView.qml:28
 #, kde-format
@@ -599,7 +599,7 @@ msgstr "添加标签"
 #: qml/Main.qml:73
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "配置"
 
 #: qml/Main.qml:107
 #, kde-format
@@ -675,12 +675,12 @@ msgstr "日"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: qml/SettingsPage.qml:29
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: qml/SettingsPage.qml:35 qml/Sidebar.qml:222
 #, kde-format
@@ -696,7 +696,7 @@ msgstr "幻灯片设置："
 #: qml/SettingsPage.qml:151
 #, kde-format
 msgid "About Koko"
-msgstr ""
+msgstr "关于 Koko"
 
 #: qml/ShareAction.qml:22
 #, kde-format
@@ -711,7 +711,7 @@ msgstr "分享所选的媒体文件"
 #: qml/Sidebar.qml:43
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "过滤条件："
 
 #: qml/Sidebar.qml:149
 #, kde-format
