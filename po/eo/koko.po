@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 02:25+0000\n"
-"PO-Revision-Date: 2023-09-16 11:33+0100\n"
+"PO-Revision-Date: 2024-01-16 21:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -30,24 +30,23 @@ msgstr "okellogg@users.sourceforge.net"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Malfermi Enhavan Dosierujon"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Kopii"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Lokoj"
+msgstr "Kopii Lokon"
 
 #: filemenu.cpp:195
 #, kde-format
 msgid "Properties"
-msgstr ""
+msgstr "Proprecoj"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -509,7 +508,7 @@ msgstr "Sekva bildo"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Pli"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
