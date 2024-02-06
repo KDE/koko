@@ -117,6 +117,7 @@ Keywords[sl]=Slika;Predstavitev;Grafika;Galerija;koko;
 Keywords[tr]=Resim;Slayt Gösterisi;Grafikler;Galeri;Fotoğraf;Görsel;koko;
 Keywords[uk]=Picture;Slideshow;Graphics;Gallery;koko;малюнок;слайд;показ;графіка;галерея;коко;
 Keywords[x-test]=xxPicturexx;xxSlideshowxx;xxGraphicsxx;xxGalleryxx;xxkokoxx;
+Keywords[zh_CN]=Picture;Slideshow;Graphics;Gallery;图片;图像;图形;幻灯片;相册;tupian;tuxiang;tuxing;huandengpian;xiangce;koko;
 Keywords[zh_TW]=Picture;Slideshow;Graphics;Gallery;影像;幻燈片;相簿;圖片;koko;
 Exec=koko %U
 Terminal=false
