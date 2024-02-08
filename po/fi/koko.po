@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
-# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2023.
+# Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 02:25+0000\n"
-"PO-Revision-Date: 2023-07-04 21:31+0300\n"
+"PO-Revision-Date: 2024-02-02 12:52+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -30,24 +30,23 @@ msgstr "translator@legisign.org"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Avaa yläkansio"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Kopioi"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Sijainnit"
+msgstr "Kopioi sijainti"
 
 #: filemenu.cpp:195
 #, kde-format
 msgid "Properties"
-msgstr ""
+msgstr "Ominaisuudet"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -509,7 +508,7 @@ msgstr "Seuraava kuva"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Lisää"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
