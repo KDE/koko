@@ -30,24 +30,23 @@ msgstr "vit@pelcak.org"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Otevřít odpovídající složku"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Kopírovat"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Umístění"
+msgstr "Kopírovat umístění"
 
 #: filemenu.cpp:195
 #, kde-format
 msgid "Properties"
-msgstr ""
+msgstr "Vlastnosti"
 
 #: main.cpp:57
 #, kde-kuit-format
@@ -509,7 +508,7 @@ msgstr "Následující obrázek"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
