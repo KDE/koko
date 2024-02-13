@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 [Desktop Entry]
 Name=Photos
+Name[ar]=الصور
 Name[ca]=Fotos
 Name[ca@valencia]=Fotos
 Name[cs]=Fotky
@@ -104,6 +105,7 @@ Comment[x-test]=xxAn Image gallery applicationxx
 Comment[zh_CN]=一款图像库应用
 Comment[zh_TW]=提供圖片庫功能的應用程式
 Keywords=Picture;Slideshow;Graphics;Gallery;koko;
+Keywords[ar]=صور;عرض;معرض;كوكو;شرائح
 Keywords[ca]=Imatge;Presentació de diapositives;Gràfics;Galeria;koko;
 Keywords[ca@valencia]=Imatge;Presentació de diapositives;Gràfics;Galeria;koko;
 Keywords[eo]=Bildo;Bildoprezento;Grafikoj;Galerio;koko;
