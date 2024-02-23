@@ -349,6 +349,7 @@ Kirigami.Page {
     footer: Kirigami.InlineMessage {
         id: msg
         type: Kirigami.MessageType.Error
+        position: Kirigami.InlineMessage.Footer
         showCloseButton: true
         visible: false
     }
