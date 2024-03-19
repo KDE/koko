@@ -77,7 +77,6 @@ int main(int argc, char **argv)
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    parser.setApplicationDescription(i18n("Image viewer"));
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
     parser.addPositionalArgument("image", i18n("path of image you want to open"));
 
