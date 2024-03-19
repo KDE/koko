@@ -3,10 +3,13 @@
 SPDX-License-Identifier: CC0-1.0
 SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
 -->
-<component type="desktop">
+<component type="desktop-application">
   <id>org.kde.koko.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1</project_license>
+  <developer id="org.kde">
+    <name translate="no">KDE</name>
+  </developer>
   <name>Photos</name>
   <name xml:lang="ar">الصور</name>
   <name xml:lang="ca">Fotos</name>
@@ -200,4 +203,5 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <provides>
     <binary>koko</binary>
   </provides>
+  <launchable type="desktop-id">org.kde.koko.desktop</launchable>
 </component>
