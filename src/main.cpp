@@ -56,7 +56,9 @@ int main(int argc, char **argv)
                          QStringLiteral(KOKO_VERSION_STRING),
                          xi18nc("@title", "Koko is an image viewer for your image collection."),
                          KAboutLicense::LGPL,
-                         xi18nc("@info:credit", "(c) 2013-2020 KDE Contributors"));
+                         xi18nc("@info:credit", "(c) 2013-2020 KDE Contributors"),
+                         QString(),
+                         QStringLiteral("https://apps.kde.org/koko"));
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("koko"));
