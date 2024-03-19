@@ -76,8 +76,6 @@ int main(int argc, char **argv)
 
     KAboutData::setApplicationData(aboutData);
 
-    KLocalizedString::setApplicationDomain("koko");
-
     QCommandLineParser parser;
     parser.setApplicationDescription(i18n("Image viewer"));
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
