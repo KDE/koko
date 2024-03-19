@@ -50,8 +50,6 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("koko");
-    app.setApplicationDisplayName("Koko");
-    app.setOrganizationDomain("kde.org");
 
     KAboutData aboutData(QStringLiteral("koko"),
                          xi18nc("@title", "<application>Koko</application>"),
@@ -89,10 +87,6 @@ int main(int argc, char **argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QApplication::setApplicationName(aboutData.componentName());
-    QApplication::setApplicationDisplayName(aboutData.displayName());
-    QApplication::setOrganizationDomain(aboutData.organizationDomain());
-    QApplication::setApplicationVersion(aboutData.version());
     QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
 
     if (parser.isSet("reset") || ImageStorage::shouldReset()) {
