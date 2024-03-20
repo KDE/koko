@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-03-20 00:37+0000\n"
 "PO-Revision-Date: 2024-01-16 16:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -46,19 +46,19 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Copia la ubicació"
 
-#: main.cpp:57
+#: main.cpp:55
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "Koko és un visor d'imatges per a la vostra col·lecció d'imatges."
 
-#: main.cpp:61
+#: main.cpp:59
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
@@ -106,17 +106,12 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:84
-#, kde-format
-msgid "Image viewer"
-msgstr "Visor d'imatges"
-
-#: main.cpp:85
+#: main.cpp:82
 #, kde-format
 msgid "Reset the database"
 msgstr "Restablix la base de dades"
 
-#: main.cpp:86
+#: main.cpp:83
 #, kde-format
 msgid "path of image you want to open"
 msgstr "camí de la imatge que voleu obrir"
@@ -763,6 +758,9 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
+
+#~ msgid "Image viewer"
+#~ msgstr "Visor d'imatges"
 
 #~ msgid "Properties"
 #~ msgstr "Propietats"

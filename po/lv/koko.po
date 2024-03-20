@@ -1,48 +1,48 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2024 Xavier Besnard <xavier.besnard@kde.org>
-# Xavier Besnard <xavier.besnard@kde.org>, 2023.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the koko package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:37+0000\n"
-"PO-Revision-Date: 2024-01-22 22:13+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2024-03-17 17:09+0200\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
-"X-Environment: kde\n"
-"X-Accelerator-Marker: &\n"
-"X-Text-Markup: kde4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Simon Depiets, Xavier Besnard"
+msgstr "Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vpinon@kde.org, xavier.besnard@kde.org"
+msgstr "toms.trasuns@posteo.net"
 
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr "Ouvrir le dossier contenant"
+msgstr "Atvērt saturošo mapi"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr "&Copier"
+msgstr "&Kopēt"
 
 #: filemenu.cpp:139
 #, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Copier un emplacement"
+msgstr "Kopēt vietu"
 
 #: main.cpp:55
 #, kde-kuit-format
@@ -54,13 +54,13 @@ msgstr "<application>Koko</application>"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "Koko est un afficheur d'images pour votre collection d'images."
+msgstr "„Koko“ ir attēlu skatītājs attēlu kolekcijai."
 
 #: main.cpp:59
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr "(c) 2015-2020, Les contributeurs de KDE"
+msgstr "(c) 2013—2020 KDE veidotāji"
 
 #: main.cpp:67
 #, kde-kuit-format
@@ -72,7 +72,7 @@ msgstr "Vishesh Handa"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr "Développeur"
+msgstr "Izstrādātājs"
 
 #: main.cpp:69
 #, kde-kuit-format
@@ -107,156 +107,157 @@ msgstr "Mikel Johnson"
 #: main.cpp:82
 #, kde-format
 msgid "Reset the database"
-msgstr "Ré-initialiser la base de données"
+msgstr "Atiestatīt datubāzi"
 
 #: main.cpp:83
 #, kde-format
 msgid "path of image you want to open"
-msgstr "Emplacement de l'image que vous voulez ouvrir"
+msgstr "ceļš uz atveramo attēlu"
 
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
-msgstr "Échec du partage"
+msgstr "Kopīgošana neizdevās"
 
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr "L'URL partagée pour l'image est <a href='%1'>%1</a>"
+msgstr "Kopīgotā attēla adrese ir <a href=„%1“>%1</a>"
 
 #: qml/AlbumDelegate.qml:121
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] "Une image"
-msgstr[1] "%1 images"
+msgstr[0] "%1 attēls"
+msgstr[1] "%1 attēli"
+msgstr[2] "%1 attēlu"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgid "Remove Bookmark"
-msgstr "Supprimer un signet"
+msgstr "Noņemt grāmatzīmi"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr "Ajouter un signet sur ce dossier"
+msgstr "Pievienot mapi grāmatzīmēm"
 
 #: qml/AlbumView.qml:282
 #, kde-format
 msgid "Go Up"
-msgstr "Remonter"
+msgstr "Augšup"
 
 #: qml/AlbumView.qml:305
 #, kde-format
 msgid "Home"
-msgstr "Accueil"
+msgstr "Mājas"
 
 #: qml/AlbumView.qml:305
 #, kde-format
 msgid "Root"
-msgstr "Racine"
+msgstr "Sakne"
 
 #: qml/AlbumView.qml:338
 #, kde-format
 msgid "Delete Selection"
-msgstr "Supprimer la sélection"
+msgstr "Dzēst atlasīto"
 
 #: qml/AlbumView.qml:339
 #, kde-format
 msgid "Move selected items to trash"
-msgstr "Déplacer les éléments sélectionnés vers la corbeille"
+msgstr "Atlasītos vienumus pārvietot uz atkritni"
 
 #: qml/AlbumView.qml:345
 #, kde-format
 msgid "Restore Selection"
-msgstr "Rétablir la sélection"
+msgstr "Atjaunot atlasi"
 
 #: qml/AlbumView.qml:346
 #, kde-format
 msgid "Restore selected items from trash"
-msgstr "Restaurer les éléments sélectionnés à partir de la corbeille"
+msgstr "Atjaunot atlasītos vienumus no atkritnes"
 
 #: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
-msgstr "Configurer"
+msgstr "Konfigurēt..."
 
 #: qml/AlbumView.qml:358
 #, kde-format
 msgid "Select All"
-msgstr "Tout sélectionner"
+msgstr "Atlasīt visu"
 
 #: qml/AlbumView.qml:359
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr "Sélectionne toutes les média de la vue actuelle"
+msgstr "Atlasīt visu multividi šajā skatā"
 
 #: qml/AlbumView.qml:366
 #, kde-format
 msgid "Deselect All"
-msgstr "Tout désélectionner"
+msgstr "Noņemt visu atlasi"
 
 #: qml/AlbumView.qml:367
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr "Dé-sélectionne toutes les média sélectionnés."
+msgstr "Noņem atlasi visai multividei"
 
 #: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
-msgstr "Aucune média trouvé."
+msgstr "Multivide nav atrasta"
 
 #: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
 #, kde-format
 msgid "Pictures"
-msgstr "Images"
+msgstr "Attēli"
 
 #: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
 #, kde-format
 msgid "Videos"
-msgstr "Vidéos"
+msgstr "Video"
 
 #: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
 #, kde-format
 msgid "Favorites"
-msgstr "Préférés"
+msgstr "Iecienītākie"
 
 #: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
-msgstr "Emplacements"
+msgstr "Vietas"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr "Abandonner les changements"
+msgstr "Noraidīt izmaiņas"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr "Voulez-vous vraiment annuler toutes les modifications ?"
+msgstr "Vai tiešām vēlaties noraidīt visas izmaiņas?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
 #, kde-format
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Atcelt"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
 #, kde-format
 msgid "Yes"
-msgstr "Oui"
+msgstr "Jā"
 
 #: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Rediģēt"
 
 #: qml/EditorView.qml:61
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Saglabāt"
 
 #: qml/EditorView.qml:66 qml/EditorView.qml:260
 #, kde-format
@@ -264,483 +265,484 @@ msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
-"Impossible d'enregistrer le fichier. Veuillez vérifier que vous avez les "
-"droits d'accès nécessaires pour modifier ce fichier."
+"Nevar saglabāt datni. Pārbaudiet, vai jums ir nepieciešamās atļaujas datnes "
+"rediģēšanai."
 
 #: qml/EditorView.qml:75
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
-msgstr "Annuler"
+msgstr "Atsaukt"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Atcelt"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:93
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
-msgstr "Rogner"
+msgstr "Apgriezt"
 
 #: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr "Redimensionner"
+msgstr "Mainīt izmēru"
 
 #: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr "Tourner vers la gauche"
+msgstr "Pagriezt pa kreisi"
 
 #: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr "Tourner vers la droite"
+msgstr "Pagriezt pa labi"
 
 #: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr "Retourner"
+msgstr "Apvērst"
 
 #: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
-msgstr "Dupliquer par reflet"
+msgstr "Spoguļot"
 
 #: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
-msgstr "Taille :"
+msgstr "Izmērs:"
 
 #: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
-msgstr "Position :"
+msgstr "Atrašanās vieta:"
 
 #: qml/EditorView.qml:248
 #, kde-format
 msgid "Save As"
-msgstr "Enregistrer sous"
+msgstr "Saglabāt kā"
 
 #: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
-msgstr "Vous êtes en cours de modification d'un nouveau document."
+msgstr "Rediģējat jaunu datni."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
 msgid "Seek slider"
-msgstr "Curseur de recherche"
+msgstr "Meklēšanas slīdnis"
 
 #: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] "Revenir en arrière de une seconde"
-msgstr[1] "Revenir en arrière de %1 secondes"
+msgstr[0] "Iet %1 sekundi atpakaļ"
+msgstr[1] "Iet %1 sekundes atpakaļ"
+msgstr[2] "Iet %1 sekunžu atpakaļ"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Pause playback"
-msgstr "Mettre la lecture en pause"
+msgstr "Pauzēt atskaņošanu"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Continue playback"
-msgstr "Poursuivre la lecture"
+msgstr "Turpināt atskaņošanu"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Unmute audio"
-msgstr "Remettre le son"
+msgstr "Atjaunot skaņu"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Mute audio"
-msgstr "Mettre le son en pause"
+msgstr "Apklusināt"
 
 #: qml/imagedelegate/VideoPlayer.qml:247
 #, kde-format
 msgid "Volume slider"
-msgstr "Curseur de volume"
+msgstr "Skaļums slīdnis"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr "Répéter la vidéo courante"
+msgstr "Atkārtot šo video"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Don't repeat current video"
-msgstr "Ne pas répéter la vidéo courante"
+msgstr "Neatkārtot šo video"
 
 #: qml/ImageViewPage.qml:75
 #, kde-format
 msgid "Info"
-msgstr "Informations"
+msgstr "Informācija"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
-msgstr "Afficher les informations sur cette vidéo."
+msgstr "Skatīt informāciju par video"
 
 #: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
-msgstr "Afficher des informations sur cette image"
+msgstr "Skatīt informāciju par attēlu"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove"
-msgstr "Supprimer"
+msgstr "Noņemt"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Favorite"
-msgstr "Préféré"
+msgstr "Izlase"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
-msgstr "Supprimer des préférés"
+msgstr "Noņemt no iecienītajiem"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
-msgstr "Ajouter aux préférés"
+msgstr "Pievienot iecienītajiem"
 
 #: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Rediģēt"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Video"
-msgstr "Partager une vidéo"
+msgstr "Kopīgot video"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Image"
-msgstr "Partager une image"
+msgstr "Kopīgot attēlu"
 
 #: qml/ImageViewPage.qml:118
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
-msgstr "Partager"
+msgstr "Kopīgot"
 
 #: qml/ImageViewPage.qml:132
 #, kde-format
 msgid "Start Slideshow"
-msgstr "Démarrer un diaporama"
+msgstr "Sākt slīdrādi"
 
 #: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Slideshow"
-msgstr "Diaporama"
+msgstr "Slīdrāde"
 
 #: qml/ImageViewPage.qml:140
 #, kde-format
 msgid "Thumbnail Bar"
-msgstr "Barre de vignettes"
+msgstr "Sīktēlu josla"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Hide Thumbnail Bar"
-msgstr "Masquer la barre de vignettes"
+msgstr "Slēpt sīktēlu joslu"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Show Thumbnail Bar"
-msgstr "Afficher la barre de vignettes"
+msgstr "Rādīt sīktēlu joslu"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr "Basculer la barre de vignettes"
+msgstr "Pārslēgt sīktēlu joslu"
 
 #: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
-msgstr "Plein écran"
+msgstr "Pilnekrāns"
 
 #: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
-msgstr "Sortir du mode « Plein écran »"
+msgstr "Iziet no pilnekrāna"
 
 #: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
-msgstr "Passer en mode « Plein écran »"
+msgstr "Ieslēgt pilnekrānu"
 
 #: qml/ImageViewPage.qml:411
 #, kde-format
 msgid "Previous image"
-msgstr "Image précédente"
+msgstr "Iepriekšējais attēls"
 
 #: qml/ImageViewPage.qml:441
 #, kde-format
 msgid "Next image"
-msgstr "Image suivante"
+msgstr "Nākamais attēls"
 
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr "Plus"
+msgstr "Vairāk"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr "Intervalle du diaporama :"
+msgstr "Slīdrādes intervāls:"
 
 #: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] "1 seconde"
-msgstr[1] "%1 secondes"
+msgstr[0] "%1 sekunde"
+msgstr[1] "%1 sekundes"
+msgstr[2] "%1 sekunžu"
 
 #: qml/ImageViewPage.qml:835
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr "En boucle"
+msgstr "Atkārtot"
 
 #: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr "Choisir au hasard"
+msgstr "Nejauša secība"
 
 #: qml/ImageViewPage.qml:850
 #, kde-format
 msgid "Stop Slideshow"
-msgstr "Arrêter le diaporama"
+msgstr "Apturēt slīdrādi"
 
 #: qml/ImageViewPage.qml:864
 #, kde-format
 msgid "Show All Controls"
-msgstr "Afficher tous les contrôles"
+msgstr "Rādīt visas vadīklas"
 
 #: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
 #, kde-format
 msgid "Metadata"
-msgstr "Métadonnées"
+msgstr "Metadati"
 
 #: qml/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "File Name"
-msgstr "Nom du fichier"
+msgstr "Datnes nosaukums"
 
 #: qml/InfoDrawerSidebarBase.qml:52
 #, kde-format
 msgid "Dimension"
-msgstr "Dimension"
+msgstr "Izmērs"
 
-# unreviewed-context
 #: qml/InfoDrawerSidebarBase.qml:58
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
-msgstr "%1 x %2"
+msgstr "%1 × %2"
 
 #: qml/InfoDrawerSidebarBase.qml:64
 #, kde-format
 msgid "Size"
-msgstr "Taille"
+msgstr "Lielums"
 
 #: qml/InfoDrawerSidebarBase.qml:76
 #, kde-format
 msgid "Created"
-msgstr "Créé"
+msgstr "Izveidots"
 
 #: qml/InfoDrawerSidebarBase.qml:88
 #, kde-format
 msgid "Model"
-msgstr "Modèle"
+msgstr "Modelis"
 
 #: qml/InfoDrawerSidebarBase.qml:100
 #, kde-format
 msgid "Latitude"
-msgstr "Latitude"
+msgstr "Platums"
 
 #: qml/InfoDrawerSidebarBase.qml:112
 #, kde-format
 msgid "Longitude"
-msgstr "Longitude"
+msgstr "Garums"
 
 #: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgid "Rating"
-msgstr "Notation"
+msgstr "Vērtējums"
 
 #: qml/InfoDrawerSidebarBase.qml:131
 #, kde-format
 msgid "Current rating %1"
-msgstr "Notation courante %1"
+msgstr "Pašreizējais vērtējums %1"
 
 #: qml/InfoDrawerSidebarBase.qml:138
 #, kde-format
 msgid "Set rating to %1"
-msgstr "Définir la notation courante à %1"
+msgstr "Novērtēt kā %1"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Description"
-msgstr "Description"
+msgstr "Apraksts"
 
 #: qml/InfoDrawerSidebarBase.qml:172
 #, kde-format
 msgid "Image description…"
-msgstr "Description de l'image..."
+msgstr "Attēla apraksts..."
 
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
-msgstr "Étiquettes"
+msgstr "Birkas"
 
 #: qml/InfoDrawerSidebarBase.qml:198
 #, kde-format
 msgid "Add Tag"
-msgstr "Ajouter une étiquette"
+msgstr "Pievienot birku"
 
 #: qml/Main.qml:84
 #, kde-format
 msgid "Configure"
-msgstr "Configurer"
+msgstr "Konfigurēt"
 
 #: qml/Main.qml:118
 #, kde-format
 msgid "Images"
-msgstr "Images"
+msgstr "Attēli"
 
 #: qml/Main.qml:129 qml/Main.qml:138
 #, kde-format
 msgid "Folders"
-msgstr "Dossiers"
+msgstr "Mapes"
 
 #: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
 #, kde-format
 msgid "Network"
-msgstr "Réseau"
+msgstr "Tīkls"
 
 #: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
 #, kde-format
 msgid "Trash"
-msgstr "Corbeille"
+msgstr "Atkritne"
 
 #: qml/PlacesPage.qml:88
 #, kde-format
 msgid "Pinned Folders"
-msgstr "Dossiers épinglés"
+msgstr "Piespraustās mapes"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
 #, kde-format
 msgid "Locations"
-msgstr "Emplacements"
+msgstr "Atrašanās vietas"
 
 #: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
 #, kde-format
 msgid "Countries"
-msgstr "Pays"
+msgstr "Valstis"
 
 #: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
 #, kde-format
 msgid "States"
-msgstr "États"
+msgstr "Štati"
 
 #: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
 #, kde-format
 msgid "Cities"
-msgstr "Villes"
+msgstr "Pilsētas"
 
 #: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
 #, kde-format
 msgid "Time"
-msgstr "Heure"
+msgstr "Laiks"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
 #, kde-format
 msgid "Years"
-msgstr "Années"
+msgstr "Gadi"
 
 #: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
 #, kde-format
 msgid "Months"
-msgstr "Mois"
+msgstr "Mēneši"
 
 #: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
 #, kde-format
 msgid "Weeks"
-msgstr "Semaines"
+msgstr "Nedēļas"
 
 #: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
 #, kde-format
 msgid "Days"
-msgstr "Jours"
+msgstr "Dienas"
 
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr "Configuration"
+msgstr "Iestatījumi"
 
 #: qml/SettingsPage.qml:20
 #, kde-format
 msgid "General"
-msgstr "Général"
+msgstr "Pamata"
 
 #: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
 msgid "Thumbnails size:"
-msgstr "Taille de la vignette :"
+msgstr "Sīktēlu izmērs:"
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr "Configuration du diaporama :"
+msgstr "Slīdrādes iestatījumi:"
 
 #: qml/SettingsPage.qml:131
 #, kde-format
 msgid "About Koko"
-msgstr "À propos de Koko"
+msgstr "Par „Koko“"
 
 #: qml/ShareAction.qml:23
 #, kde-format
 msgid "Share"
-msgstr "Partager"
+msgstr "Kopīgot"
 
 #: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
 #, kde-format
 msgid "Share the selected media"
-msgstr "Partager le média sélectionné"
+msgstr "Kopīgot atlasīto multividi"
 
 #: qml/Sidebar.qml:47
 #, kde-format
 msgid "Filter by"
-msgstr "Filtrer par"
+msgstr "Filtrēt pēc"
 
 #: qml/Sidebar.qml:139
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr "Distant"
+msgstr "Attālināti"
 
 #: qml/Sidebar.qml:216
 #, kde-format
@@ -750,56 +752,12 @@ msgstr "%1 px"
 #: qml/Sidebar.qml:229
 #, kde-format
 msgid "Settings"
-msgstr "Configuration"
+msgstr "Iestatījumi"
 
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
-msgstr "Ajouter une nouvelle étiquette..."
+msgstr "Jauna birka..."
 
 #~ msgid "Image viewer"
-#~ msgstr "Afficheur d'images"
-
-#~ msgid "Sort by"
-#~ msgstr "Trier par"
-
-#~ msgid "General:"
-#~ msgstr "Général :"
-
-#~ msgid "Show preview carousel in image view"
-#~ msgstr "Afficher un carrousel de vignettes dans l'affichage en images"
-
-#~ msgid "Open About Page"
-#~ msgstr "Ouvrir la page d'à propos"
-
-#~ msgid "Remove %1 tag"
-#~ msgstr "Supprimer %1 étiquettes"
-
-#~ msgid "Remove Tag"
-#~ msgstr "Supprimer une étiquette"
-
-#~ msgid "Edit image"
-#~ msgstr "Modifier une image"
-
-#~ msgctxt "@action:button Accept crop for an image"
-#~ msgid "Accept"
-#~ msgstr "Accepter"
-
-#~ msgid "New tag..."
-#~ msgstr "Nouvelle étiquette..."
-
-#~ msgid "Finished"
-#~ msgstr "Terminé"
-
-#~ msgctxt "verb, share an image"
-#~ msgid "Share"
-#~ msgstr "Partager"
-
-#~ msgid "By City"
-#~ msgstr "Par ville"
-
-#~ msgid "By Day"
-#~ msgstr "Par jour"
-
-#~ msgid "Path"
-#~ msgstr "Emplacement"
+#~ msgstr "Attēlu skatītājs"

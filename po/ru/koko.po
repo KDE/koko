@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
+"POT-Creation-Date: 2024-03-20 00:37+0000\n"
 "PO-Revision-Date: 2024-02-09 23:04+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -45,19 +45,19 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Копировать расположение"
 
-#: main.cpp:57
+#: main.cpp:55
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "Koko — приложение для просмотра изображений."
 
-#: main.cpp:61
+#: main.cpp:59
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
@@ -105,17 +105,12 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:84
-#, kde-format
-msgid "Image viewer"
-msgstr "Приложение для просмотра изображений"
-
-#: main.cpp:85
+#: main.cpp:82
 #, kde-format
 msgid "Reset the database"
 msgstr "Сбросить базу данных"
 
-#: main.cpp:86
+#: main.cpp:83
 #, kde-format
 msgid "path of image you want to open"
 msgstr "путь к изображению, которое вы хотите открыть"
@@ -767,6 +762,9 @@ msgstr "Параметры"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Создать метку…"
+
+#~ msgid "Image viewer"
+#~ msgstr "Приложение для просмотра изображений"
 
 #~ msgid "Sort by"
 #~ msgstr "Критерий сортировки"

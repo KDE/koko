@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-17 00:36+0000\n"
-"PO-Revision-Date: 2024-01-16 21:12+0300\n"
+"POT-Creation-Date: 2024-03-20 00:37+0000\n"
+"PO-Revision-Date: 2024-03-19 15:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.90\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -43,23 +43,23 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Konumu Kopyala"
 
-#: main.cpp:57
+#: main.cpp:55
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:59
+#: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "Koko, görsel koleksiyonunuz için bir görüntüleyicidir."
 
-#: main.cpp:61
+#: main.cpp:59
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr "(c) 2013-2020 KDE Katkıcıları"
+msgstr "(c) 2013–2020 KDE Katkıcıları"
 
 #: main.cpp:67
 #, kde-kuit-format
@@ -103,17 +103,12 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:84
-#, kde-format
-msgid "Image viewer"
-msgstr "Görsel görüntüleyicisi"
-
-#: main.cpp:85
+#: main.cpp:82
 #, kde-format
 msgid "Reset the database"
 msgstr "Veritabanını sıfırla"
 
-#: main.cpp:86
+#: main.cpp:83
 #, kde-format
 msgid "path of image you want to open"
 msgstr "açmak istediğiniz görselin yolu"
@@ -615,12 +610,12 @@ msgstr "Görsel açıklaması…"
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
-msgstr "Etiketler"
+msgstr "Künyeler"
 
 #: qml/InfoDrawerSidebarBase.qml:198
 #, kde-format
 msgid "Add Tag"
-msgstr "Etiket Ekle"
+msgstr "Künye Ekle"
 
 #: qml/Main.qml:84
 #, kde-format
@@ -758,7 +753,10 @@ msgstr "Ayarlar"
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
-msgstr "Yeni etiket ekle…"
+msgstr "Yeni künye ekle…"
+
+#~ msgid "Image viewer"
+#~ msgstr "Görsel görüntüleyicisi"
 
 #~ msgid "Properties"
 #~ msgstr "Özellikler"
