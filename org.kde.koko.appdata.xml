@@ -12,6 +12,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   </developer>
   <name>Photos</name>
   <name xml:lang="ar">الصور</name>
+  <name xml:lang="bg">Снимки</name>
   <name xml:lang="ca">Fotos</name>
   <name xml:lang="ca-valencia">Fotos</name>
   <name xml:lang="cs">Fotografie</name>
@@ -39,6 +40,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary>Image Gallery</summary>
   <summary xml:lang="ar">معرض الصور</summary>
   <summary xml:lang="ast">Galería d'imáxenes</summary>
+  <summary xml:lang="bg">Галерия с изображения</summary>
   <summary xml:lang="ca">Galeria d'imatges</summary>
   <summary xml:lang="ca-valencia">Galeria d'imatges</summary>
   <summary xml:lang="cs">Galerie obrázků</summary>
@@ -77,6 +79,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <description>
     <p>An Image gallery application</p>
     <p xml:lang="ar">تطبيق معرض صور</p>
+    <p xml:lang="bg">Програма за галерии с изображения</p>
     <p xml:lang="ca">Una aplicació de galeria d'imatges</p>
     <p xml:lang="ca-valencia">Una aplicació de galeria d'imatges</p>
     <p xml:lang="cs">Aplikace s galerií obrázků</p>
