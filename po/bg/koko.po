@@ -3,259 +3,261 @@
 # This file is distributed under the same license as the koko package.
 # Automatically generated, 2022.
 #
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:37+0000\n"
-"PO-Revision-Date: 2022-05-16 00:42+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2024-03-22 23:35+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Минчо Кондарев"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mkondarev@yahooo.de"
 
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Отваряне на съдържащата папка"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Копиране"
 
 #: filemenu.cpp:139
 #, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr ""
+msgstr "Копиране на местоположението"
 
 #: main.cpp:55
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr ""
+msgstr "<application>Koko</application>"
 
 #: main.cpp:57
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr ""
+msgstr "Koko е програма за преглед на вашата колекция от изображения."
 
 #: main.cpp:59
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr ""
+msgstr "(c) 2013-2020 Сътрудници на KDE"
 
 #: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
-msgstr ""
+msgstr "Вишеш Ханда"
 
 #: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "Разработчик"
 
 #: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr ""
+msgstr "Atul Sharma"
 
 #: main.cpp:71
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
-msgstr ""
+msgstr "Marco Martin"
 
 #: main.cpp:73
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
-msgstr ""
+msgstr "Nicolas Fella"
 
 #: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:82
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "Нулиране на базата с данни"
 
 #: main.cpp:83
 #, kde-format
 msgid "path of image you want to open"
-msgstr ""
+msgstr "път до изображението, което искате да отворите"
 
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Споделянето е неуспешно"
 
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr ""
+msgstr "Споделеният url за изображението е <a href='%1'>%1</a>"
 
 #: qml/AlbumDelegate.qml:121
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 изображение"
+msgstr[1] "%1 изображения"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgid "Remove Bookmark"
-msgstr ""
+msgstr "Премахване на отметка"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr ""
+msgstr "Папка с отметки"
 
 #: qml/AlbumView.qml:282
 #, kde-format
 msgid "Go Up"
-msgstr ""
+msgstr "Нагоре"
 
 #: qml/AlbumView.qml:305
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "Домашна"
 
 #: qml/AlbumView.qml:305
 #, kde-format
 msgid "Root"
-msgstr ""
+msgstr "Root"
 
 #: qml/AlbumView.qml:338
 #, kde-format
 msgid "Delete Selection"
-msgstr ""
+msgstr "Изтриване на избраното"
 
 #: qml/AlbumView.qml:339
 #, kde-format
 msgid "Move selected items to trash"
-msgstr ""
+msgstr "Преместване на избраните елемента в кошчето"
 
 #: qml/AlbumView.qml:345
 #, kde-format
 msgid "Restore Selection"
-msgstr ""
+msgstr "Възстановяване на избора"
 
 #: qml/AlbumView.qml:346
 #, kde-format
 msgid "Restore selected items from trash"
-msgstr ""
+msgstr "Възстановяване на избраните елементи от кошчето"
 
 #: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Настройване…"
 
 #: qml/AlbumView.qml:358
 #, kde-format
 msgid "Select All"
-msgstr ""
+msgstr "Избиране на всички"
 
 #: qml/AlbumView.qml:359
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr ""
+msgstr "Избор на всички медии в текущия изглед"
 
 #: qml/AlbumView.qml:366
 #, kde-format
 msgid "Deselect All"
-msgstr ""
+msgstr "Размаркиране на всичко"
 
 #: qml/AlbumView.qml:367
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr ""
+msgstr "Отмяна на избора на всички избрани медии"
 
 #: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
-msgstr ""
+msgstr "Не е намерена медия"
 
 #: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
 #, kde-format
 msgid "Pictures"
-msgstr ""
+msgstr "Изображения"
 
 #: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
 #, kde-format
 msgid "Videos"
-msgstr ""
+msgstr "Видеозаписи"
 
 #: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "Любими"
 
 #: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "Места"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr ""
+msgstr "Отхвърляне на промените"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr ""
+msgstr "Сигурни ли сте, че желаете да отхвърлите всички промени?"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Отказ"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:36
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: qml/EditorView.qml:28
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Редактиране"
 
 #: qml/EditorView.qml:61
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr ""
+msgstr "Запазване"
 
 #: qml/EditorView.qml:66 qml/EditorView.qml:260
 #, kde-format
@@ -263,492 +265,493 @@ msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
+"Грешка при запис на файл. Моля, проверете правата си за редактиране на файла."
 
 #: qml/EditorView.qml:75
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
-msgstr ""
+msgstr "Отмяна"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "Отказ"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:93
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
-msgstr ""
+msgstr "Изрязване"
 
 #: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr ""
+msgstr "Преоразмеряване"
 
 #: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr ""
+msgstr "Завъртане наляво"
 
 #: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr ""
+msgstr "Завъртане надясно"
 
 #: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr ""
+msgstr "Обръщане"
 
 #: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
-msgstr ""
+msgstr "Огледално"
 
 #: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
-msgstr ""
+msgstr "Големина:"
 
 #: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
-msgstr ""
+msgstr "Длъжност:"
 
 #: qml/EditorView.qml:248
 #, kde-format
 msgid "Save As"
-msgstr ""
+msgstr "Запис като"
 
 #: qml/EditorView.qml:256
 #, kde-format
 msgid "You are now editing a new file."
-msgstr ""
+msgstr "Сега редактирате нов файл."
 
 #: qml/imagedelegate/VideoPlayer.qml:161
 #, kde-format
 msgid "Seek slider"
-msgstr ""
+msgstr "Плъзгач за прогреса"
 
 #: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Пропускане 1 секунда назад"
+msgstr[1] "Пропускане %1 секунди назад"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Pause playback"
-msgstr ""
+msgstr "Спиране на изпълнението"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
 msgid "Continue playback"
-msgstr ""
+msgstr "Продължаване възпроизвеждането"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Unmute audio"
-msgstr ""
+msgstr "Включване на звука"
 
 #: qml/imagedelegate/VideoPlayer.qml:235
 #, kde-format
 msgid "Mute audio"
-msgstr ""
+msgstr "Изключване на звука"
 
 #: qml/imagedelegate/VideoPlayer.qml:247
 #, kde-format
 msgid "Volume slider"
-msgstr ""
+msgstr "Плъзгач на сила на звука"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "Повтаряне на текущото видео"
 
 #: qml/imagedelegate/VideoPlayer.qml:267
 #, kde-format
 msgid "Don't repeat current video"
-msgstr ""
+msgstr "Текущото видео да не се повтаря"
 
 #: qml/ImageViewPage.qml:75
 #, kde-format
 msgid "Info"
-msgstr ""
+msgstr "Информация"
 
 #: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about video"
-msgstr ""
+msgstr "Вижте информация за видеото"
 
 #: qml/ImageViewPage.qml:78
 #, kde-format
 msgid "See information about image"
-msgstr ""
+msgstr "Вижте информация за изображението"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Премахване"
 
 #: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Favorite"
-msgstr ""
+msgstr "Прибавяне в Любими"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Премахване от Любими"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
-msgstr ""
+msgstr "Добавяне към Любими"
 
 #: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
-msgstr ""
+msgstr "Редактиране"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Video"
-msgstr ""
+msgstr "Споделяне на видео"
 
 #: qml/ImageViewPage.qml:117
 #, kde-format
 msgid "Share Image"
-msgstr ""
+msgstr "Споделяне на изображение"
 
 #: qml/ImageViewPage.qml:118
 #, kde-format
 msgctxt "verb, share an image/video"
 msgid "Share"
-msgstr ""
+msgstr "Споделяне"
 
 #: qml/ImageViewPage.qml:132
 #, kde-format
 msgid "Start Slideshow"
-msgstr ""
+msgstr "Стартиране на прожекция"
 
 #: qml/ImageViewPage.qml:133
 #, kde-format
 msgid "Slideshow"
-msgstr ""
+msgstr "Прожекция"
 
 #: qml/ImageViewPage.qml:140
 #, kde-format
 msgid "Thumbnail Bar"
-msgstr ""
+msgstr "Лента с умалени копия"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Hide Thumbnail Bar"
-msgstr ""
+msgstr "Скриване на лентата с умалени копия"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Show Thumbnail Bar"
-msgstr ""
+msgstr "Показване на лентата с умалени копия"
 
 #: qml/ImageViewPage.qml:142
 #, kde-format
 msgid "Toggle Thumbnail Bar"
-msgstr ""
+msgstr "Превключване на лентата с умалени копия"
 
 #: qml/ImageViewPage.qml:150
 #, kde-format
 msgid "Fullscreen"
-msgstr ""
+msgstr "Цял екран"
 
 #: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
-msgstr ""
+msgstr "Изход от цял екран"
 
 #: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
-msgstr ""
+msgstr "Цял екран"
 
 #: qml/ImageViewPage.qml:411
 #, kde-format
 msgid "Previous image"
-msgstr ""
+msgstr "Предишно изображение"
 
 #: qml/ImageViewPage.qml:441
 #, kde-format
 msgid "Next image"
-msgstr ""
+msgstr "Следващо изображение"
 
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Още"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr ""
+msgstr "Пауза между изображенията:"
 
 #: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 секунда"
+msgstr[1] "%1 секунди"
 
 #: qml/ImageViewPage.qml:835
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr ""
+msgstr "Повторение"
 
 #: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr ""
+msgstr "Случаен ред"
 
 #: qml/ImageViewPage.qml:850
 #, kde-format
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Спиране на прожекцията"
 
 #: qml/ImageViewPage.qml:864
 #, kde-format
 msgid "Show All Controls"
-msgstr ""
+msgstr "Показване на всичките контроли"
 
 #: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
 #, kde-format
 msgid "Metadata"
-msgstr ""
+msgstr "Метаданни"
 
 #: qml/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "File Name"
-msgstr ""
+msgstr "Име на файл"
 
 #: qml/InfoDrawerSidebarBase.qml:52
 #, kde-format
 msgid "Dimension"
-msgstr ""
+msgstr "Измерение"
 
 #: qml/InfoDrawerSidebarBase.qml:58
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
-msgstr ""
+msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:64
 #, kde-format
 msgid "Size"
-msgstr ""
+msgstr "Големина"
 
 #: qml/InfoDrawerSidebarBase.qml:76
 #, kde-format
 msgid "Created"
-msgstr ""
+msgstr "Създаден"
 
 #: qml/InfoDrawerSidebarBase.qml:88
 #, kde-format
 msgid "Model"
-msgstr ""
+msgstr "Модел"
 
 #: qml/InfoDrawerSidebarBase.qml:100
 #, kde-format
 msgid "Latitude"
-msgstr ""
+msgstr "Географска ширина"
 
 #: qml/InfoDrawerSidebarBase.qml:112
 #, kde-format
 msgid "Longitude"
-msgstr ""
+msgstr "Географска дължина"
 
 #: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgid "Rating"
-msgstr ""
+msgstr "Оценка"
 
 #: qml/InfoDrawerSidebarBase.qml:131
 #, kde-format
 msgid "Current rating %1"
-msgstr ""
+msgstr "Текуща оценка %1"
 
 #: qml/InfoDrawerSidebarBase.qml:138
 #, kde-format
 msgid "Set rating to %1"
-msgstr ""
+msgstr "Задаване на оценката на %1"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: qml/InfoDrawerSidebarBase.qml:172
 #, kde-format
 msgid "Image description…"
-msgstr ""
+msgstr "Описание на изображение…"
 
 #: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Етикети"
 
 #: qml/InfoDrawerSidebarBase.qml:198
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Добавяне на етикет"
 
 #: qml/Main.qml:84
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Настройване"
 
 #: qml/Main.qml:118
 #, kde-format
 msgid "Images"
-msgstr ""
+msgstr "Изображения"
 
 #: qml/Main.qml:129 qml/Main.qml:138
 #, kde-format
 msgid "Folders"
-msgstr ""
+msgstr "Директории"
 
 #: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
 #, kde-format
 msgid "Network"
-msgstr ""
+msgstr "Мрежа"
 
 #: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
 #, kde-format
 msgid "Trash"
-msgstr ""
+msgstr "Кошче"
 
 #: qml/PlacesPage.qml:88
 #, kde-format
 msgid "Pinned Folders"
-msgstr ""
+msgstr "Закачени папки"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
 #, kde-format
 msgid "Locations"
-msgstr ""
+msgstr "Места"
 
 #: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
 #, kde-format
 msgid "Countries"
-msgstr ""
+msgstr "Държави"
 
 #: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
 #, kde-format
 msgid "States"
-msgstr ""
+msgstr "Състояния"
 
 #: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "Градове"
 
 #: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
 #, kde-format
 msgid "Time"
-msgstr ""
+msgstr "Време"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "Години"
 
 #: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "Месеци"
 
 #: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "Седмици"
 
 #: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "Дни"
 
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: qml/SettingsPage.qml:20
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Общи"
 
 #: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
 msgid "Thumbnails size:"
-msgstr ""
+msgstr "Размер на миниатюри:"
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr ""
+msgstr "Настройки за слайдшоу:"
 
 #: qml/SettingsPage.qml:131
 #, kde-format
 msgid "About Koko"
-msgstr ""
+msgstr "Относно Koko"
 
 #: qml/ShareAction.qml:23
 #, kde-format
 msgid "Share"
-msgstr ""
+msgstr "Споделяне"
 
 #: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
 #, kde-format
 msgid "Share the selected media"
-msgstr ""
+msgstr "Споделяне на избраната медия"
 
 #: qml/Sidebar.qml:47
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "Филтриране по"
 
 #: qml/Sidebar.qml:139
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
+msgstr "Отдалечени"
 
 #: qml/Sidebar.qml:216
 #, kde-format
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Sidebar.qml:229
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
-msgstr ""
+msgstr "Добавяне на нов етикет…"
