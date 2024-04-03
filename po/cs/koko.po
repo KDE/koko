@@ -755,6 +755,3 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
-
-#~ msgid "Image viewer"
-#~ msgstr "Prohlížeč obrázků"
