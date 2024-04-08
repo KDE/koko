@@ -1,7 +1,7 @@
 {
     "id": "org.kde.koko",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.6-kf6preview",
+    "runtime-version": "6.7",
     "sdk": "org.kde.Sdk",
     "command": "koko",
     "tags": ["nightly"],
@@ -45,6 +45,12 @@
                     "url": "https://invent.kde.org/libraries/kquickimageeditor"
                 }
             ]
+        },
+        {
+            "name": "kirigamiaddons",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
+            "buildsystem": "cmake-ninja",
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
         },
         {
             "name": "koko",
