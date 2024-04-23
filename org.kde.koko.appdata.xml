@@ -11,6 +11,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <name translate="no">KDE</name>
   </developer>
   <name>Photos</name>
+  <name xml:lang="ar">الصور</name>
   <name xml:lang="bg">Снимки</name>
   <name xml:lang="ca">Fotos</name>
   <name xml:lang="ca-valencia">Fotos</name>
@@ -25,6 +26,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="it">Foto</name>
   <name xml:lang="ka">ფოტოები</name>
   <name xml:lang="ko">사진</name>
+  <name xml:lang="lv">Fotogrāfijas</name>
   <name xml:lang="nl">Foto's</name>
   <name xml:lang="pl">Zdjęcia</name>
   <name xml:lang="pt-BR">Fotos</name>
@@ -58,6 +60,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="it">Galleria di immagini</summary>
   <summary xml:lang="ka">სურათების გალერეა</summary>
   <summary xml:lang="ko">이미지 갤러리</summary>
+  <summary xml:lang="lv">Attēlu galerija</summary>
   <summary xml:lang="nl">Galerij van afbeeldingen</summary>
   <summary xml:lang="nn">Biletgalleri</summary>
   <summary xml:lang="pa">ਚਿੱਤਰ ਗੈਲਰੀ</summary>
@@ -96,6 +99,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <p xml:lang="it">Un'applicazione per gallerie di immagini</p>
     <p xml:lang="ka">სურათების გალერეის აპლიკაცია</p>
     <p xml:lang="ko">이미지 갤러리 앱</p>
+    <p xml:lang="lv">Attēls galerijā</p>
     <p xml:lang="nl">Toepassing voor afbeeldingsgalerij</p>
     <p xml:lang="nn">Eit biletgalleriprogram</p>
     <p xml:lang="pa">ਚਿੱਤਰ ਗੈਲਰੀ ਐਪਲੀਕੇਸ਼ਨ</p>
