@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:37+0000\n"
-"PO-Revision-Date: 2024-01-22 17:06+0900\n"
+"PO-Revision-Date: 2024-05-09 06:43+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -231,12 +231,12 @@ msgstr "快速存取"
 #: qml/Dialog/ConfirmDiscardingChange.qml:21
 #, kde-format
 msgid "Discard changes"
-msgstr "丟棄變更"
+msgstr "捨棄變更"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:24
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
-msgstr "您確定要丟棄所有變更嗎？"
+msgstr "您確定要捨棄所有變更嗎？"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
 #, kde-format
