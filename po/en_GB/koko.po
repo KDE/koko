@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:37+0000\n"
-"PO-Revision-Date: 2023-06-17 12:09+0100\n"
+"PO-Revision-Date: 2024-05-30 19:50+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,19 +30,18 @@ msgstr "steve.allewell@gmail.com"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Open Containing Folder"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Copy"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Locations"
+msgstr "Copy Location"
 
 #: main.cpp:55
 #, kde-kuit-format
@@ -499,7 +498,7 @@ msgstr "Next image"
 #: qml/ImageViewPage.qml:658
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "More"
 
 #: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
 #, kde-format
