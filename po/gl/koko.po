@@ -1,0 +1,756 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the koko package.
+#
+# SPDX-FileCopyrightText: 2024 Adrián Chaves (Gallaecio)
+msgid ""
+msgstr ""
+"Project-Id-Version: koko\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-20 00:37+0000\n"
+"PO-Revision-Date: 2024-06-16 12:24+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.05.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Adrián Chaves (Gallaecio)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "adrian@chaves.io"
+
+#: filemenu.cpp:117
+#, kde-format
+msgid "Open Containing Folder"
+msgstr "Abrir o cartafol contedor"
+
+#: filemenu.cpp:131
+#, kde-format
+msgid "&Copy"
+msgstr "&Copiar"
+
+#: filemenu.cpp:139
+#, kde-format
+msgctxt "@action:incontextmenu"
+msgid "Copy Location"
+msgstr "Copiar a localización"
+
+#: main.cpp:55
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>Koko</application>"
+msgstr "<application>Koko</application>"
+
+#: main.cpp:57
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Koko is an image viewer for your image collection."
+msgstr "Koko é un visor para coleccións de imaxes."
+
+#: main.cpp:59
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "(c) 2013-2020 KDE Contributors"
+msgstr "© 2013-2020 Persoas colaboradoras de KDE"
+
+#: main.cpp:67
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Vishesh Handa"
+msgstr "Vishesh Handa"
+
+#: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr "Desenvolvemento."
+
+#: main.cpp:69
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Atul Sharma"
+msgstr "Atul Sharma"
+
+#: main.cpp:71
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Marco Martin"
+msgstr "Marco Martin"
+
+#: main.cpp:73
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Nicolas Fella"
+msgstr "Nicolas Fella"
+
+#: main.cpp:75
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr "Carl Schwan"
+
+#: main.cpp:77
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Mikel Johnson"
+msgstr "Mikel Johnson"
+
+#: main.cpp:82
+#, kde-format
+msgid "Reset the database"
+msgstr "Restabelecer a base de datos"
+
+#: main.cpp:83
+#, kde-format
+msgid "path of image you want to open"
+msgstr "ruta da imaxe para abrir"
+
+#: notificationmanager.cpp:16
+#, kde-format
+msgid "Sharing failed"
+msgstr "A compartición fallou"
+
+#: notificationmanager.cpp:22
+#, kde-format
+msgid "Shared url for image is <a href='%1'>%1</a>"
+msgstr "O URL de imaxe compartido é <a href='%1'>%1</a>"
+
+#: qml/AlbumDelegate.qml:121
+#, kde-format
+msgid "1 Image"
+msgid_plural "%1 Images"
+msgstr[0] "1 imaxe"
+msgstr[1] "%1 imaxes"
+
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
+#, kde-format
+msgid "Remove Bookmark"
+msgstr "Retirar o marcador"
+
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
+#, kde-format
+msgctxt "@action:button Bookmarks the current folder"
+msgid "Bookmark Folder"
+msgstr "Cartafol de marcadores"
+
+#: qml/AlbumView.qml:282
+#, kde-format
+msgid "Go Up"
+msgstr "Subir"
+
+#: qml/AlbumView.qml:305
+#, kde-format
+msgid "Home"
+msgstr "Inicio"
+
+#: qml/AlbumView.qml:305
+#, kde-format
+msgid "Root"
+msgstr "Raíz"
+
+#: qml/AlbumView.qml:338
+#, kde-format
+msgid "Delete Selection"
+msgstr "Eliminar a selección"
+
+#: qml/AlbumView.qml:339
+#, kde-format
+msgid "Move selected items to trash"
+msgstr "Mover os elementos seleccionados ao lixo"
+
+#: qml/AlbumView.qml:345
+#, kde-format
+msgid "Restore Selection"
+msgstr "Restaurar a selección"
+
+#: qml/AlbumView.qml:346
+#, kde-format
+msgid "Restore selected items from trash"
+msgstr "Restaurar do lixo os elementos seleccionados."
+
+#: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
+#, kde-format
+msgid "Configure…"
+msgstr "Configurar…"
+
+#: qml/AlbumView.qml:358
+#, kde-format
+msgid "Select All"
+msgstr "Seleccionalo todo"
+
+#: qml/AlbumView.qml:359
+#, kde-format
+msgid "Selects all the media in the current view"
+msgstr "Selecciona todos os ficheiros multimedia na vista actual."
+
+#: qml/AlbumView.qml:366
+#, kde-format
+msgid "Deselect All"
+msgstr "Anular a selección"
+
+#: qml/AlbumView.qml:367
+#, kde-format
+msgid "De-selects all the selected media"
+msgstr "Anular a selección de todos os ficheiros multimedia seleccionados."
+
+#: qml/AlbumView.qml:478
+#, kde-format
+msgid "No Media Found"
+msgstr "Non se atoparon ficheiros multimedia"
+
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
+#, kde-format
+msgid "Pictures"
+msgstr "Imaxes"
+
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
+#, kde-format
+msgid "Videos"
+msgstr "Vídeos"
+
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
+#, kde-format
+msgid "Favorites"
+msgstr "Favoritos"
+
+#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
+#, kde-format
+msgid "Places"
+msgstr "Lugares"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#, kde-format
+msgid "Discard changes"
+msgstr "Descartar os cambios"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#, kde-format
+msgid "Are you sure you want to discard all changes?"
+msgstr "Seguro que quere descartar os cambios?"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:30
+#, kde-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:36
+#, kde-format
+msgid "Yes"
+msgstr "Si"
+
+#: qml/EditorView.qml:28
+#, kde-format
+msgid "Edit"
+msgstr "Editar"
+
+#: qml/EditorView.qml:61
+#, kde-format
+msgctxt "@action:button Save image modification"
+msgid "Save"
+msgstr "Gardar"
+
+#: qml/EditorView.qml:66 qml/EditorView.qml:260
+#, kde-format
+msgid ""
+"Unable to save file. Check if you have the correct permission to edit this "
+"file."
+msgstr ""
+"Non é posíbel gardar o ficheiro. Comprobe se ten os permisos correctos para "
+"editar o ficheiro."
+
+#: qml/EditorView.qml:75
+#, kde-format
+msgctxt "@action:button Undo modification"
+msgid "Undo"
+msgstr "Desfacer"
+
+#: qml/EditorView.qml:87 qml/EditorView.qml:99
+#, kde-format
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: qml/EditorView.qml:87 qml/EditorView.qml:93
+#, kde-format
+msgctxt "@action:button Crop an image"
+msgid "Crop"
+msgstr "Recortar"
+
+#: qml/EditorView.qml:99 qml/EditorView.qml:105
+#, kde-format
+msgctxt "@action:button Resize an image"
+msgid "Resize"
+msgstr "Redimensionar"
+
+#: qml/EditorView.qml:111
+#, kde-format
+msgctxt "@action:button Rotate an image to the left"
+msgid "Rotate left"
+msgstr "Rotar á esquerda"
+
+#: qml/EditorView.qml:117
+#, kde-format
+msgctxt "@action:button Rotate an image to the right"
+msgid "Rotate right"
+msgstr "Rotar á dereita"
+
+#: qml/EditorView.qml:123
+#, kde-format
+msgctxt "@action:button Mirror an image vertically"
+msgid "Flip"
+msgstr "Xirar"
+
+#: qml/EditorView.qml:129
+#, kde-format
+msgctxt "@action:button Mirror an image horizontally"
+msgid "Mirror"
+msgstr "Reflectir"
+
+#: qml/EditorView.qml:143
+#, kde-format
+msgctxt "@title:group for crop area size spinboxes"
+msgid "Size:"
+msgstr "Tamaño:"
+
+#: qml/EditorView.qml:175
+#, kde-format
+msgctxt "@title:group for crop area position spinboxes"
+msgid "Position:"
+msgstr "Posición:"
+
+#: qml/EditorView.qml:248
+#, kde-format
+msgid "Save As"
+msgstr "Gardar como"
+
+#: qml/EditorView.qml:256
+#, kde-format
+msgid "You are now editing a new file."
+msgstr "Está a editar un novo ficheiro."
+
+#: qml/imagedelegate/VideoPlayer.qml:161
+#, kde-format
+msgid "Seek slider"
+msgstr "Control de desprazamento"
+
+#: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
+#, kde-format
+msgid "Skip backward 1 second"
+msgid_plural "Skip backward %1 seconds"
+msgstr[0] "Saltar cara atrás 1 segundo"
+msgstr[1] "Saltar cara atrás %1 segundos"
+
+#: qml/imagedelegate/VideoPlayer.qml:213
+#, kde-format
+msgid "Pause playback"
+msgstr "Pausar a reprodución"
+
+#: qml/imagedelegate/VideoPlayer.qml:213
+#, kde-format
+msgid "Continue playback"
+msgstr "Continuar a reprodución"
+
+#: qml/imagedelegate/VideoPlayer.qml:235
+#, kde-format
+msgid "Unmute audio"
+msgstr "Activar o son"
+
+#: qml/imagedelegate/VideoPlayer.qml:235
+#, kde-format
+msgid "Mute audio"
+msgstr "Silenciar o son"
+
+#: qml/imagedelegate/VideoPlayer.qml:247
+#, kde-format
+msgid "Volume slider"
+msgstr "Control do volume"
+
+#: qml/imagedelegate/VideoPlayer.qml:267
+#, kde-format
+msgid "Repeat current video"
+msgstr "Repetir o vídeo"
+
+#: qml/imagedelegate/VideoPlayer.qml:267
+#, kde-format
+msgid "Don't repeat current video"
+msgstr "Non repetir o vídeo"
+
+#: qml/ImageViewPage.qml:75
+#, kde-format
+msgid "Info"
+msgstr "Información"
+
+#: qml/ImageViewPage.qml:77
+#, kde-format
+msgid "See information about video"
+msgstr "Ver información sobre o vídeo"
+
+#: qml/ImageViewPage.qml:78
+#, kde-format
+msgid "See information about image"
+msgstr "Ver información sobre a imaxe"
+
+#: qml/ImageViewPage.qml:87
+#, kde-format
+msgid "Remove"
+msgstr "Retirar"
+
+#: qml/ImageViewPage.qml:87
+#, kde-format
+msgid "Favorite"
+msgstr "Favorito"
+
+#: qml/ImageViewPage.qml:88
+#, kde-format
+msgid "Remove from favorites"
+msgstr "Retirar dos favoritos"
+
+#: qml/ImageViewPage.qml:88
+#, kde-format
+msgid "Add to favorites"
+msgstr "Engadir aos favoritos"
+
+#: qml/ImageViewPage.qml:99
+#, kde-format
+msgctxt "verb, edit an image"
+msgid "Edit"
+msgstr "Editar"
+
+#: qml/ImageViewPage.qml:117
+#, kde-format
+msgid "Share Video"
+msgstr "Compartir o vídeo"
+
+#: qml/ImageViewPage.qml:117
+#, kde-format
+msgid "Share Image"
+msgstr "Compartir unha imaxe"
+
+#: qml/ImageViewPage.qml:118
+#, kde-format
+msgctxt "verb, share an image/video"
+msgid "Share"
+msgstr "Compartir"
+
+#: qml/ImageViewPage.qml:132
+#, kde-format
+msgid "Start Slideshow"
+msgstr "Iniciar unha presentación"
+
+#: qml/ImageViewPage.qml:133
+#, kde-format
+msgid "Slideshow"
+msgstr "Presentación"
+
+#: qml/ImageViewPage.qml:140
+#, kde-format
+msgid "Thumbnail Bar"
+msgstr "Barra de miniaturas"
+
+#: qml/ImageViewPage.qml:141
+#, kde-format
+msgid "Hide Thumbnail Bar"
+msgstr "Agochar a barra de miniaturas"
+
+#: qml/ImageViewPage.qml:141
+#, kde-format
+msgid "Show Thumbnail Bar"
+msgstr "Amosar a barra de miniaturas"
+
+#: qml/ImageViewPage.qml:142
+#, kde-format
+msgid "Toggle Thumbnail Bar"
+msgstr "Conmutar a barra de miniaturas"
+
+#: qml/ImageViewPage.qml:150
+#, kde-format
+msgid "Fullscreen"
+msgstr "Pantalla completa"
+
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
+#, kde-format
+msgid "Exit Fullscreen"
+msgstr "Saír da pantalla completa"
+
+#: qml/ImageViewPage.qml:151
+#, kde-format
+msgid "Enter Fullscreen"
+msgstr "Pantalla completa"
+
+#: qml/ImageViewPage.qml:411
+#, kde-format
+msgid "Previous image"
+msgstr "Imaxe anterior"
+
+#: qml/ImageViewPage.qml:441
+#, kde-format
+msgid "Next image"
+msgstr "Seguinte imaxe"
+
+#: qml/ImageViewPage.qml:658
+#, kde-format
+msgid "More"
+msgstr "Máis"
+
+#: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
+#, kde-format
+msgctxt "@label:spinbox Slideshow image changing interval"
+msgid "Slideshow interval:"
+msgstr "Intervalo da presentación:"
+
+#: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
+#, kde-format
+msgctxt "Slideshow image changing interval"
+msgid "1 second"
+msgid_plural "%1 seconds"
+msgstr[0] "1 segundo"
+msgstr[1] "%1 segundos"
+
+#: qml/ImageViewPage.qml:835
+#, kde-format
+msgctxt "@option:check"
+msgid "Loop"
+msgstr "Bucle"
+
+#: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
+#, kde-format
+msgctxt "@option:check"
+msgid "Randomize"
+msgstr "Aleatorio"
+
+#: qml/ImageViewPage.qml:850
+#, kde-format
+msgid "Stop Slideshow"
+msgstr "Parar a presentación"
+
+#: qml/ImageViewPage.qml:864
+#, kde-format
+msgid "Show All Controls"
+msgstr "Amosar os controis"
+
+#: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
+#, kde-format
+msgid "Metadata"
+msgstr "Metadatos"
+
+#: qml/InfoDrawerSidebarBase.qml:42
+#, kde-format
+msgid "File Name"
+msgstr "Nome de ficheiro"
+
+#: qml/InfoDrawerSidebarBase.qml:52
+#, kde-format
+msgid "Dimension"
+msgstr "Dimensións"
+
+#: qml/InfoDrawerSidebarBase.qml:58
+#, kde-format
+msgctxt "dimensions"
+msgid "%1 x %2"
+msgstr "%1 × %2"
+
+#: qml/InfoDrawerSidebarBase.qml:64
+#, kde-format
+msgid "Size"
+msgstr "Tamaño"
+
+#: qml/InfoDrawerSidebarBase.qml:76
+#, kde-format
+msgid "Created"
+msgstr "Creación"
+
+#: qml/InfoDrawerSidebarBase.qml:88
+#, kde-format
+msgid "Model"
+msgstr "Modelo"
+
+#: qml/InfoDrawerSidebarBase.qml:100
+#, kde-format
+msgid "Latitude"
+msgstr "Latitude"
+
+#: qml/InfoDrawerSidebarBase.qml:112
+#, kde-format
+msgid "Longitude"
+msgstr "Lonxitude"
+
+#: qml/InfoDrawerSidebarBase.qml:124
+#, kde-format
+msgid "Rating"
+msgstr "Puntuación"
+
+#: qml/InfoDrawerSidebarBase.qml:131
+#, kde-format
+msgid "Current rating %1"
+msgstr "Puntuación actual %1"
+
+#: qml/InfoDrawerSidebarBase.qml:138
+#, kde-format
+msgid "Set rating to %1"
+msgstr "Definir a puntuación como %1"
+
+#: qml/InfoDrawerSidebarBase.qml:164
+#, kde-format
+msgid "Description"
+msgstr "Descrición"
+
+#: qml/InfoDrawerSidebarBase.qml:172
+#, kde-format
+msgid "Image description…"
+msgstr "Descrición da imaxe…"
+
+#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: qml/InfoDrawerSidebarBase.qml:198
+#, kde-format
+msgid "Add Tag"
+msgstr "Engadir unha etiqueta"
+
+#: qml/Main.qml:84
+#, kde-format
+msgid "Configure"
+msgstr "Configurar"
+
+#: qml/Main.qml:118
+#, kde-format
+msgid "Images"
+msgstr "Imaxes"
+
+#: qml/Main.qml:129 qml/Main.qml:138
+#, kde-format
+msgid "Folders"
+msgstr "Cartafoles"
+
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
+#, kde-format
+msgid "Network"
+msgstr "Rede"
+
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
+#, kde-format
+msgid "Trash"
+msgstr "Lixo"
+
+#: qml/PlacesPage.qml:88
+#, kde-format
+msgid "Pinned Folders"
+msgstr "Cartafoles fixados"
+
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
+#, kde-format
+msgid "Locations"
+msgstr "Localizacións"
+
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
+#, kde-format
+msgid "Countries"
+msgstr "Países"
+
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
+#, kde-format
+msgid "States"
+msgstr "Estados"
+
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
+#, kde-format
+msgid "Cities"
+msgstr "Cidades"
+
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
+#, kde-format
+msgid "Time"
+msgstr "Hora"
+
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
+#, kde-format
+msgid "Years"
+msgstr "Anos"
+
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
+#, kde-format
+msgid "Months"
+msgstr "Meses"
+
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
+#, kde-format
+msgid "Weeks"
+msgstr "Semanas"
+
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
+#, kde-format
+msgid "Days"
+msgstr "Días"
+
+#: qml/SettingsPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Configuración"
+
+#: qml/SettingsPage.qml:20
+#, kde-format
+msgid "General"
+msgstr "Xeral"
+
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
+#, kde-format
+msgid "Thumbnails size:"
+msgstr "Tamaño das miniaturas:"
+
+#: qml/SettingsPage.qml:43
+#, kde-format
+msgctxt "@title:group"
+msgid "Slideshow settings:"
+msgstr "Configuración da presentación:"
+
+#: qml/SettingsPage.qml:131
+#, kde-format
+msgid "About Koko"
+msgstr "Sobre Koko"
+
+#: qml/ShareAction.qml:23
+#, kde-format
+msgid "Share"
+msgstr "Compartir"
+
+#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
+#, kde-format
+msgid "Share the selected media"
+msgstr "Compartir o contido seleccionado"
+
+#: qml/Sidebar.qml:47
+#, kde-format
+msgid "Filter by"
+msgstr "Filtrar por"
+
+#: qml/Sidebar.qml:139
+#, kde-format
+msgctxt "Remote network locations"
+msgid "Remote"
+msgstr "Remoto"
+
+#: qml/Sidebar.qml:216
+#, kde-format
+msgid "%1 px"
+msgstr "%1 px"
+
+#: qml/Sidebar.qml:229
+#, kde-format
+msgid "Settings"
+msgstr "Configuración"
+
+#: qml/TagInput.qml:60
+#, kde-format
+msgid "Add new tag…"
+msgstr "Engadir unha etiqueta nova…"
