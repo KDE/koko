@@ -1,12 +1,11 @@
 # Translation of koko to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-20 00:37+0000\n"
-"PO-Revision-Date: 2020-11-03 18:08+0100\n"
+"PO-Revision-Date: 2024-07-14 12:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.2\n"
+"X-Generator: Lokalize 24.07.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -479,12 +478,12 @@ msgstr ""
 #: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Exit Fullscreen"
-msgstr ""
+msgstr "Avslutt fullskjermsmodus"
 
 #: qml/ImageViewPage.qml:151
 #, kde-format
 msgid "Enter Fullscreen"
-msgstr ""
+msgstr "Gå til fullskjermsmodus"
 
 #: qml/ImageViewPage.qml:411
 #, kde-format
