@@ -45,7 +45,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config C
 
 find_package(LibExiv2 0.21 REQUIRED)
 
-ecm_find_qmlmodule(org.kde.kquickimageeditor 1.0)
+ecm_find_qmlmodule(org.kde.kquickimageeditor)
 find_package(KQuickImageEditor COMPONENTS)
 set_package_properties(KQuickImageEditor PROPERTIES
     TYPE REQUIRED
