@@ -5,14 +5,15 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.15
-import QtQml 2.15
-import QtQuick.Templates 2.15 as T
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import QtQuick.Dialogs 1.3
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.kquickimageeditor 1.0 as KQuickImageEditor
+import QtCore
+import QtQuick
+import QtQml
+import QtQuick.Templates as T
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+import QtQuick.Dialogs
+import org.kde.kirigami as Kirigami
+import org.kde.kquickimageeditor as KQuickImageEditor
 import "./Dialog"
 
 Kirigami.Page {
@@ -54,8 +55,8 @@ Kirigami.Page {
         imageDoc.resize(selectionTool.selectionWidth / ratioX, selectionTool.selectionHeight / ratioY);
     }
 
-    actions {
-        main: Kirigami.Action {
+    actions: [
+        Kirigami.Action {
             id: saveAction
             visible: imageDoc.edited
             text: i18nc("@action:button Save image modification", "Save")
@@ -69,8 +70,8 @@ Kirigami.Page {
                 root.imageEdited();
                 applicationWindow().pageStack.layers.pop();
             }
-        }
-        left: Kirigami.Action {
+        },
+        Kirigami.Action {
             id: undoAction
             text: i18nc("@action:button Undo modification", "Undo")
             icon.name: "edit-undo"
@@ -80,123 +81,121 @@ Kirigami.Page {
                 }
             }
             visible: imageDoc.edited
-        }
-        contextualActions: [
-            Kirigami.Action {
-                icon.name: root.cropping ? "dialog-cancel" : "transform-crop"
-                text: root.cropping ? i18nc("@action:button", "Cancel") : i18nc("@action:button Crop an image", "Crop");
-                onTriggered: root.cropping = !root.cropping;
-                visible: !root.resizing
-            },
-            Kirigami.Action {
-                icon.name: "dialog-ok"
-                text: i18nc("@action:button Crop an image", "Crop");
-                onTriggered: root.crop();
-                visible: root.cropping
-            },
-            Kirigami.Action {
-                icon.name: root.resizing ? "dialog-cancel" : "transform-scale"
-                text: root.resizing ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
-                onTriggered: root.resizing = !root.resizing;
-                visible: !root.cropping
-            },
-            Kirigami.Action {
-                icon.name: "dialog-ok"
-                text: i18nc("@action:button Resize an image", "Resize");
-                onTriggered: root.resize();
-                visible: root.resizing
-            },
-            Kirigami.Action {
-                icon.name: "object-rotate-left"
-                text: i18nc("@action:button Rotate an image to the left", "Rotate left");
-                onTriggered: imageDoc.rotate(-90);
-                visible: !root.cropping && !root.resizing
-            },
-            Kirigami.Action {
-                icon.name: "object-rotate-right"
-                text: i18nc("@action:button Rotate an image to the right", "Rotate right");
-                onTriggered: imageDoc.rotate(90);
-                visible: !root.cropping && !root.resizing
-            },
-            Kirigami.Action {
-                icon.name: "object-flip-vertical"
-                text: i18nc("@action:button Mirror an image vertically", "Flip");
-                onTriggered: imageDoc.mirror(false, true);
-                visible: !root.cropping && !root.resizing
-            },
-            Kirigami.Action {
-                icon.name: "object-flip-horizontal"
-                text: i18nc("@action:button Mirror an image horizontally", "Mirror");
-                onTriggered: imageDoc.mirror(true, false);
-                visible: !root.cropping && !root.resizing
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: QQC2.ToolSeparator {
-                    leftPadding: Kirigami.Units.largeSpacing
-                    rightPadding: leftPadding
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: QQC2.Label {
-                    text: i18nc("@title:group for crop area size spinboxes", "Size:")
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: EditorSpinBox {
-                    minimumContentWidth: widthTextMetrics.width
-                    from: 1
-                    to: editImage.nativeWidth
-                    value: selectionTool.selectionWidth / editImage.ratioX
-                    onValueModified: selectionTool.selectionWidth = value * editImage.ratioX
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: EditorSpinBox {
-                    minimumContentWidth: heightTextMetrics.width
-                    from: 1
-                    to: editImage.nativeHeight
-                    value: selectionTool.selectionHeight / editImage.ratioY
-                    onValueModified: selectionTool.selectionHeight = value * editImage.ratioY
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: Item {
-                    implicitWidth: Kirigami.Units.largeSpacing
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: QQC2.Label {
-                    text: i18nc("@title:group for crop area position spinboxes", "Position:")
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: EditorSpinBox {
-                    minimumContentWidth: widthTextMetrics.width
-                    from: 0
-                    to: editImage.nativeWidth - (selectionTool.selectionWidth / editImage.ratioX)
-                    value: selectionTool.selectionX / editImage.ratioX
-                    onValueModified: selectionTool.selectionX = value * editImage.ratioX
-                }
-            },
-            Kirigami.Action {
-                visible: root.resizing
-                displayComponent: EditorSpinBox {
-                    minimumContentWidth: heightTextMetrics.width
-                    from: 0
-                    to: editImage.nativeHeight - (selectionTool.selectionHeight / editImage.ratioY)
-                    value: selectionTool.selectionY / editImage.ratioY
-                    onValueModified: selectionTool.selectionY = value * editImage.ratioY
-                }
+        },
+        Kirigami.Action {
+            icon.name: root.cropping ? "dialog-cancel" : "transform-crop"
+            text: root.cropping ? i18nc("@action:button", "Cancel") : i18nc("@action:button Crop an image", "Crop");
+            onTriggered: root.cropping = !root.cropping;
+            visible: !root.resizing
+        },
+        Kirigami.Action {
+            icon.name: "dialog-ok"
+            text: i18nc("@action:button Crop an image", "Crop");
+            onTriggered: root.crop();
+            visible: root.cropping
+        },
+        Kirigami.Action {
+            icon.name: root.resizing ? "dialog-cancel" : "transform-scale"
+            text: root.resizing ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
+            onTriggered: root.resizing = !root.resizing;
+            visible: !root.cropping
+        },
+        Kirigami.Action {
+            icon.name: "dialog-ok"
+            text: i18nc("@action:button Resize an image", "Resize");
+            onTriggered: root.resize();
+            visible: root.resizing
+        },
+        Kirigami.Action {
+            icon.name: "object-rotate-left"
+            text: i18nc("@action:button Rotate an image to the left", "Rotate left");
+            onTriggered: imageDoc.rotate(-90);
+            visible: !root.cropping && !root.resizing
+        },
+        Kirigami.Action {
+            icon.name: "object-rotate-right"
+            text: i18nc("@action:button Rotate an image to the right", "Rotate right");
+            onTriggered: imageDoc.rotate(90);
+            visible: !root.cropping && !root.resizing
+        },
+        Kirigami.Action {
+            icon.name: "object-flip-vertical"
+            text: i18nc("@action:button Mirror an image vertically", "Flip");
+            onTriggered: imageDoc.mirror(false, true);
+            visible: !root.cropping && !root.resizing
+        },
+        Kirigami.Action {
+            icon.name: "object-flip-horizontal"
+            text: i18nc("@action:button Mirror an image horizontally", "Mirror");
+            onTriggered: imageDoc.mirror(true, false);
+            visible: !root.cropping && !root.resizing
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: QQC2.ToolSeparator {
+                leftPadding: Kirigami.Units.largeSpacing
+                rightPadding: leftPadding
             }
-        ]
-    }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: QQC2.Label {
+                text: i18nc("@title:group for crop area size spinboxes", "Size:")
+            }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: EditorSpinBox {
+                minimumContentWidth: widthTextMetrics.width
+                from: 1
+                to: editImage.nativeWidth
+                value: selectionTool.selectionWidth / editImage.ratioX
+                onValueModified: selectionTool.selectionWidth = value * editImage.ratioX
+            }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: EditorSpinBox {
+                minimumContentWidth: heightTextMetrics.width
+                from: 1
+                to: editImage.nativeHeight
+                value: selectionTool.selectionHeight / editImage.ratioY
+                onValueModified: selectionTool.selectionHeight = value * editImage.ratioY
+            }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: Item {
+                implicitWidth: Kirigami.Units.largeSpacing
+            }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: QQC2.Label {
+                text: i18nc("@title:group for crop area position spinboxes", "Position:")
+            }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: EditorSpinBox {
+                minimumContentWidth: widthTextMetrics.width
+                from: 0
+                to: editImage.nativeWidth - (selectionTool.selectionWidth / editImage.ratioX)
+                value: selectionTool.selectionX / editImage.ratioX
+                onValueModified: selectionTool.selectionX = value * editImage.ratioX
+            }
+        },
+        Kirigami.Action {
+            visible: root.resizing
+            displayComponent: EditorSpinBox {
+                minimumContentWidth: heightTextMetrics.width
+                from: 0
+                to: editImage.nativeHeight - (selectionTool.selectionHeight / editImage.ratioY)
+                value: selectionTool.selectionY / editImage.ratioY
+                onValueModified: selectionTool.selectionY = value * editImage.ratioY
+            }
+        }
+    ]
 
     ConfirmDiscardingChange {
         id: confirmDiscardingChangeDialog
@@ -246,12 +245,10 @@ Kirigami.Page {
     FileDialog {
         id: fileDialog
         title: i18n("Save As")
-        folder: shortcuts.home
-        selectMultiple: false
-        selectExisting: false
+        currentFolder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
         onAccepted: {
-            if (imageDoc.saveAs(fileDialog.fileUrl)) {;
-                imagePath = fileDialog.fileUrl;
+            if (imageDoc.saveAs(fileDialog.selectedFile)) {;
+                imagePath = fileDialog.selectedFile;
                 msg.type = Kirigami.MessageType.Information
                 msg.text = i18n("You are now editing a new file.")
                 msg.visible = true;
