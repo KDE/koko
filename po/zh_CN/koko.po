@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:37+0000\n"
+"POT-Creation-Date: 2024-07-31 02:29+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -245,25 +245,25 @@ msgstr "取消"
 msgid "Yes"
 msgstr "是"
 
-#: qml/EditorView.qml:28
+#: qml/EditorView.qml:29
 #, kde-format
 msgid "Edit"
 msgstr "编辑"
 
-#: qml/EditorView.qml:61
+#: qml/EditorView.qml:62
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "保存"
 
-#: qml/EditorView.qml:66 qml/EditorView.qml:260
+#: qml/EditorView.qml:67 qml/EditorView.qml:257
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr "无法保存文件，请检查您是否有权限编辑此文件。"
 
-#: qml/EditorView.qml:75
+#: qml/EditorView.qml:76
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
@@ -323,12 +323,12 @@ msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
 msgstr "位置："
 
-#: qml/EditorView.qml:248
+#: qml/EditorView.qml:247
 #, kde-format
 msgid "Save As"
 msgstr "另存为"
 
-#: qml/EditorView.qml:256
+#: qml/EditorView.qml:253
 #, kde-format
 msgid "You are now editing a new file."
 msgstr "您现在正在编辑新文件。"

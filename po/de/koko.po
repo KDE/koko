@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:37+0000\n"
+"POT-Creation-Date: 2024-07-31 02:29+0000\n"
 "PO-Revision-Date: 2023-05-30 18:44+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -248,18 +248,18 @@ msgstr "Abbrechen"
 msgid "Yes"
 msgstr "Ja"
 
-#: qml/EditorView.qml:28
+#: qml/EditorView.qml:29
 #, kde-format
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: qml/EditorView.qml:61
+#: qml/EditorView.qml:62
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Speichern"
 
-#: qml/EditorView.qml:66 qml/EditorView.qml:260
+#: qml/EditorView.qml:67 qml/EditorView.qml:257
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
@@ -268,7 +268,7 @@ msgstr ""
 "Die Datei lässt sich nicht speichern. Bitte überprüfen Sie, ob Sie die "
 "Berechtigung zum Bearbeiten dieser Datei haben."
 
-#: qml/EditorView.qml:75
+#: qml/EditorView.qml:76
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
@@ -328,12 +328,12 @@ msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
 msgstr "Position:"
 
-#: qml/EditorView.qml:248
+#: qml/EditorView.qml:247
 #, kde-format
 msgid "Save As"
 msgstr "Speichern unter"
 
-#: qml/EditorView.qml:256
+#: qml/EditorView.qml:253
 #, kde-format
 msgid "You are now editing a new file."
 msgstr "Sie bearbeiten eine neue Datei."

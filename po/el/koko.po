@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-20 00:37+0000\n"
+"POT-Creation-Date: 2024-07-31 02:29+0000\n"
 "PO-Revision-Date: 2021-10-08 08:24+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -250,18 +250,18 @@ msgstr "Ακύρωση"
 msgid "Yes"
 msgstr "Έτη"
 
-#: qml/EditorView.qml:28
+#: qml/EditorView.qml:29
 #, kde-format
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: qml/EditorView.qml:61
+#: qml/EditorView.qml:62
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: qml/EditorView.qml:66 qml/EditorView.qml:260
+#: qml/EditorView.qml:67 qml/EditorView.qml:257
 #, kde-format
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
@@ -270,7 +270,7 @@ msgstr ""
 "Αδυναμία αποθήκευσης αρχείου. Ελέγξτε αν έχετε το σωστό δικαίωμα για "
 "επεξεργασία αυτού του αρχείου."
 
-#: qml/EditorView.qml:75
+#: qml/EditorView.qml:76
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
@@ -330,12 +330,12 @@ msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
 msgstr "Θέση:"
 
-#: qml/EditorView.qml:248
+#: qml/EditorView.qml:247
 #, kde-format
 msgid "Save As"
 msgstr "Αποθήκευση ως"
 
-#: qml/EditorView.qml:256
+#: qml/EditorView.qml:253
 #, kde-format
 msgid "You are now editing a new file."
 msgstr "Τώρα επεξεργάζεστε ένα νέο αρχείο."
