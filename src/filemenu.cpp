@@ -9,7 +9,7 @@
 #include <QClipboard>
 #include <QGuiApplication>
 #include <QIcon>
-#include <QMenu>
+//#include <QMenu>
 #include <QMimeData>
 #include <QQuickWindow>
 #include <QTimer>
@@ -103,6 +103,8 @@ void FileMenu::open(int x, int y)
     }
 
     KFileItem fileItem(m_url);
+
+    /*
 
     QMenu *menu = new QMenu();
     menu->setAttribute(Qt::WA_DeleteOnClose, true);
@@ -227,4 +229,5 @@ void FileMenu::open(int x, int y)
 
     m_visible = true;
     Q_EMIT visibleChanged();
+*/
 }

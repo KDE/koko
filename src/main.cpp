@@ -43,8 +43,8 @@
 #include <KSharedConfig>
 #include <KWindowConfig>
 #include <KWindowSystem>
-#include <QQuickWindow>
 #include <QApplication>
+#include <QQuickWindow>
 #endif
 
 #ifdef Q_OS_ANDROID

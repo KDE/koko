@@ -165,10 +165,12 @@ Kirigami.Page {
     ]
 
 
+    /*
     KokoPrivate.FileMenu {
         id: fileMenu
         url: listView.currentItem.imageurl
     }
+    */
 
     SlideshowManager {
         id: slideshowManager
@@ -648,6 +650,7 @@ Kirigami.Page {
                 }
             }
 
+            /*
             QQC2.AbstractButton {
                 id: moreButton
 
@@ -690,6 +693,7 @@ Kirigami.Page {
                     }
                 }
             }
+            */
         }
     }
 
