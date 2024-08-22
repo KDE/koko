@@ -66,22 +66,22 @@ add_executable(koko ${koko_SRCS})
 
 target_link_libraries(koko
     Qt::Quick
-    Qt::Widgets
+    #Qt::Widgets
     Qt::Qml
     Qt::Positioning
     KF6::ConfigCore
     KF6::I18n
     KF6::CoreAddons
     KF6::KIOCore
-    KF6::KIOWidgets
-    KF6::ConfigWidgets
+    #KF6::KIOWidgets
+    #KF6::ConfigWidgets
     kokocommon
 )
 
 target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
 
 if(NOT ANDROID)
-    target_link_libraries(koko KF6::WindowSystem)
+    target_link_libraries(koko Qt::Widgets KF6::WindowSystem KF6::KIOWidgets KF6::ConfigWidgets)
 endif()
 
 target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)

@@ -38,12 +38,17 @@ ecm_setup_version(${PROJECT_VERSION}
 )
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
 
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO GuiAddons CoreAddons Notifications)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+    I18n Declarative Config
+    KIO
+    GuiAddons
+    CoreAddons
+    Notifications)
 
 if(ANDROID)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 else()
-    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS FileMetaData DBusAddons)
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS ConfigWidgets FileMetaData DBusAddons)
 endif()
 
 find_package(LibExiv2 0.21 REQUIRED)

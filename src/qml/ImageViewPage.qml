@@ -111,7 +111,7 @@ Kirigami.Page {
                 });
             }
         },
-        ShareAction {
+        /*ShareAction {
             id: shareAction
             tooltip: !listView.currentItem ? "" :
                      (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("Share Video") : i18n("Share Image"))
@@ -126,7 +126,7 @@ Kirigami.Page {
                     };
                 }
             }
-        },
+        },*/
         Kirigami.Action {
             icon.name: "view-presentation"
             tooltip: i18n("Start Slideshow")

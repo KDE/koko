@@ -318,7 +318,7 @@ Kirigami.ScrollablePage {
                 }
             }
         },
-        ShareAction {
+        /*ShareAction {
             id: shareAction
             visible: model.hasSelectedImages
 
@@ -332,7 +332,7 @@ Kirigami.ScrollablePage {
                 }
             }
 
-        },
+        },*/
         Kirigami.Action {
             icon.name: "group-delete"
             text: i18n("Delete Selection")

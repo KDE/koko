@@ -19,9 +19,9 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
-#include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
+#include <QGuiApplication>
 #include <QQuickStyle>
 #include <QQuickView>
 
@@ -44,6 +44,7 @@
 #include <KWindowConfig>
 #include <KWindowSystem>
 #include <QQuickWindow>
+#include <QApplication>
 #endif
 
 #ifdef Q_OS_ANDROID
@@ -98,7 +99,7 @@ int main(int argc, char **argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
+    QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
 
     if (parser.isSet("reset") || ImageStorage::shouldReset()) {
         ImageStorage::reset();

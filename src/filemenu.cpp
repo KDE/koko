@@ -6,8 +6,8 @@
 
 #include "filemenu.h"
 
-#include <QApplication>
 #include <QClipboard>
+#include <QGuiApplication>
 #include <QIcon>
 #include <QMenu>
 #include <QMimeData>
@@ -133,7 +133,7 @@ void FileMenu::open(int x, int y)
         // inspired by KDirModel::mimeData()
         QMimeData *data = new QMimeData(); // who cleans it up?
         KUrlMimeData::setUrls({fileItem.url()}, {fileItem.mostLocalUrl()}, data);
-        QApplication::clipboard()->setMimeData(data);
+        QGuiApplication::clipboard()->setMimeData(data);
     });
 
     QAction *copyPathAction = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy-path")), i18nc("@action:incontextmenu", "Copy Location"));
@@ -142,7 +142,7 @@ void FileMenu::open(int x, int y)
         if (path.isEmpty()) {
             path = fileItem.url().toDisplayString();
         }
-        QApplication::clipboard()->setText(path);
+        QGuiApplication::clipboard()->setText(path);
     });
 
     menu->addSeparator();
