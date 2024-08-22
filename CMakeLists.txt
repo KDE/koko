@@ -74,6 +74,15 @@ set_package_properties(KF6Kirigami PROPERTIES
     TYPE RUNTIME
 )
 
+ecm_find_qmlmodule(org.kde.kirigamiaddons.formcard REQUIRED)
+ecm_find_qmlmodule(org.kde.kirigamiaddons.delegates REQUIRED)
+
+find_package(KF6KirigamiAddons)
+set_package_properties(KF6KirigamiAddons PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Required runtime dependency"
+)
+
 find_package(KF6Purpose)
 set_package_properties(KF6Purpose PROPERTIES
     DESCRIPTION "Offers available actions for a specific purpose"
