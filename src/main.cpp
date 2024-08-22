@@ -23,6 +23,7 @@
 #include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
+#include <QQuickStyle>
 #include <QQuickView>
 
 #include <iostream>
