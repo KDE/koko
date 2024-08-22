@@ -15,7 +15,7 @@
 #include <QTimer>
 
 #include <KConfigGroup>
-#include <KFileItemActions>
+//#include <KFileItemActions>
 #include <KFileItemListProperties>
 #include <KLocalizedString>
 #include <KPropertiesDialog>
