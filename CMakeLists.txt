@@ -60,7 +60,7 @@ set_package_properties(XCB PROPERTIES
     TYPE OPTIONAL
 )
 
-find_package(Qt6QuickControls2 ${QT_MIN_VER})
+find_package(Qt6QuickControls2 ${QT_MIN_VER} REQUIRED)
 set_package_properties(Qt6QuickControls2 PROPERTIES
     DESCRIPTION "User interface controls based on Qt Quick"
     PURPOSE "Required at runtime to run Koko"

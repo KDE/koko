@@ -49,6 +49,12 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
+#ifndef Q_OS_ANDROID
+    // Default to org.kde.desktop style unless the user forces another style
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
+#endif
     KLocalizedString::setApplicationDomain("koko");
 
     KAboutData aboutData(QStringLiteral("koko"),

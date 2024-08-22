@@ -18,6 +18,7 @@ target_link_libraries(kokocommon
     Qt::Positioning
     Qt::Sql
     Qt::Svg
+    Qt::QuickControls2
     KF6::CoreAddons
     KF6::DBusAddons
     KF6::FileMetaData
