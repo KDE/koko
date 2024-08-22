@@ -20,12 +20,17 @@ target_link_libraries(kokocommon
     Qt::Svg
     Qt::QuickControls2
     KF6::CoreAddons
-    KF6::DBusAddons
-    KF6::FileMetaData
     KF6::ConfigGui
     KF6::ConfigCore
     LibExiv2::LibExiv2
 )
+
+if(NOT ANDROID)
+    target_link_libraries(kokocommon
+        KF6::DBusAddons
+        KF6::FileMetaData
+    )
+endif()
 
 generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
 set_target_properties(kokocommon PROPERTIES
@@ -75,13 +80,13 @@ target_link_libraries(koko
 
 target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
 
-if(ANDROID)
-    target_link_libraries(koko Qt::AndroidExtras)
-else()
+if(NOT ANDROID)
     target_link_libraries(koko KF6::WindowSystem)
 endif()
 
 target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+
+ecm_add_android_apk(koko ANDROID_DIR ${CMAKE_SOURCE_DIR}/android)
 
 install(TARGETS koko ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -111,13 +116,18 @@ add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
 target_link_libraries (kokoqmlplugin
     Qt6::Qml
     KF6::KIOCore
-    KF6::KIOFileWidgets
     KF6::KIOWidgets
     KF6::GuiAddons
     KF6::I18n
     KF6::Notifications
     kokocommon
 )
+
+if(NOT ANDROID)
+    target_link_libraries (kokoqmlplugin
+        KF6::KIOFileWidgets
+    )
+endif()
 
 install (TARGETS kokoqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
 install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)

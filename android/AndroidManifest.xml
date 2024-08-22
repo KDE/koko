@@ -5,15 +5,25 @@ SPDX-License-Identifier: LGPL-2.0-or-later
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="org.kde.koko"
-          android:versionName="0.0.1"
-          android:versionCode="1"
+          android:versionName="${versionName}"
+          android:versionCode="${versionCode}"
           android:installLocation="auto">
-    <application android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Koko">
+
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <!-- %%INSERT_PERMISSIONS -->
+    <!-- %%INSERT_FEATURES -->
+
+
+    <application android:name="org.qtproject.qt.android.bindings.QtApplication" android:label="Koko">
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation"
-                  android:name="org.qtproject.qt5.android.bindings.QtActivity"
+                  android:name="org.qtproject.qt.android.bindings.QtActivity"
                   android:label="Koko"
                   android:windowSoftInputMode="adjustResize"
-                  android:launchMode="singleTop">
+                  android:launchMode="singleTop"
+                  android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,7 +31,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
             </intent-filter>
 
             <meta-data android:name="android.app.lib_name" android:value="koko"/>
-            <meta-data android:name="android.app.qt_sources_resource_id" android:resource="@array/qt_sources"/>
             <meta-data android:name="android.app.repository" android:value="default"/>
             <meta-data android:name="android.app.qt_libs_resource_id" android:resource="@array/qt_libs"/>
             <meta-data android:name="android.app.bundled_libs_resource_id" android:resource="@array/bundled_libs"/>
@@ -37,8 +46,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
             <meta-data android:name="android.app.load_local_jars" android:value="-- %%INSERT_LOCAL_JARS%% --"/>
             <meta-data android:name="android.app.static_init_classes" android:value="-- %%INSERT_INIT_CLASSES%% --"/>
             <!--  Messages maps -->
-            <meta-data android:value="@string/ministro_not_found_msg" android:name="android.app.ministro_not_found_msg"/>
-            <meta-data android:value="@string/ministro_needed_msg" android:name="android.app.ministro_needed_msg"/>
             <meta-data android:value="@string/fatal_error_msg" android:name="android.app.fatal_error_msg"/>
 
             <!-- Splash screen -->
@@ -52,10 +59,6 @@ SPDX-License-Identifier: LGPL-2.0-or-later
         </activity>
     </application>
 
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28"/>
-    <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-    <!-- %%INSERT_FEATURES -->
 </manifest>

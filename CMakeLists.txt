@@ -24,6 +24,7 @@ include(ECMAddTests)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(ECMFindQmlModule)
+include(ECMAddAndroidApk)
 include(KDECompilerSettings)
 include(GenerateExportHeader)
 include(ECMInstallIcons)
@@ -37,11 +38,13 @@ ecm_setup_version(${PROJECT_VERSION}
 )
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
 
-if(ANDROID)
-    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
-endif()
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO GuiAddons CoreAddons Notifications)
 
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
+if(ANDROID)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
+else()
+    find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS FileMetaData DBusAddons)
+endif()
 
 find_package(LibExiv2 0.21 REQUIRED)
 

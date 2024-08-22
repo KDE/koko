@@ -6,7 +6,9 @@
 
 #include "exiv2extractor.h"
 
+#ifndef Q_OS_ANDROID
 #include <KFileMetaData/UserMetaData>
+#endif
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
@@ -143,9 +145,11 @@ void Exiv2Extractor::updateFavorite(const QString &filePath)
         return;
     }
 
+#ifndef Q_OS_ANDROID
     auto fileMetaData = KFileMetaData::UserMetaData(filePath);
 
     m_favorite = fileMetaData.hasAttribute("koko.favorite");
+#endif
 
     Q_EMIT favoriteChanged();
 }
@@ -156,6 +160,7 @@ void Exiv2Extractor::toggleFavorite(const QString &filePath)
         return;
     }
 
+#ifndef Q_OS_ANDROID
     auto fileMetaData = KFileMetaData::UserMetaData(filePath);
 
     if (fileMetaData.hasAttribute("koko.favorite")) {
@@ -165,6 +170,7 @@ void Exiv2Extractor::toggleFavorite(const QString &filePath)
     }
 
     m_favorite = fileMetaData.hasAttribute("koko.favorite");
+#endif
 
     Q_EMIT favoriteChanged();
 }
@@ -179,9 +185,11 @@ void Exiv2Extractor::setRating(const int &rating)
         return;
     }
 
+#ifndef Q_OS_ANDROID
     auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
 
     fileMetaData.setRating(rating);
+#endif
 
     m_rating = rating;
 
@@ -198,9 +206,11 @@ void Exiv2Extractor::setDescription(const QString &description)
         return;
     }
 
+#ifndef Q_OS_ANDROID
     auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
 
     fileMetaData.setUserComment(description);
+#endif
 
     m_description = description;
 
@@ -217,9 +227,11 @@ void Exiv2Extractor::setTags(const QStringList &tags)
         return;
     }
 
+#ifndef Q_OS_ANDROID
     auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
 
     fileMetaData.setTags(tags);
+#endif
 
     m_tags = tags;
 
@@ -269,6 +281,7 @@ void Exiv2Extractor::extract(const QString &filePath)
 
     m_size = file_info.size();
 
+#ifndef Q_OS_ANDROID
     auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
 
     m_favorite = fileMetaData.hasAttribute("koko.favorite");
@@ -277,6 +290,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_rating = fileMetaData.rating();
     m_description = fileMetaData.userComment();
     m_tags = fileMetaData.tags();
+#endif
 
     try {
         image = Exiv2::ImageFactory::open(fileString);

@@ -13,14 +13,16 @@
 #include <QSqlError>
 #include <QSqlQuery>
 
+#ifndef Q_OS_ANDROID
+#include <KDirNotify>
 #include <QDBusConnection>
+#endif
 
 #include <QDebug>
 #include <QDir>
 #include <QMimeDatabase>
 #include <QStandardPaths>
 
-#include <KDirNotify>
 #include <kdirwatch.h>
 
 FileSystemTracker::FileSystemTracker(QObject *parent)
@@ -28,6 +30,7 @@ FileSystemTracker::FileSystemTracker(QObject *parent)
 {
     QObject::connect(KDirWatch::self(), &KDirWatch::dirty, this, &FileSystemTracker::setSubFolder);
 
+#ifndef Q_OS_ANDROID
     org::kde::KDirNotify *kdirnotify = new org::kde::KDirNotify(QString(), QString(), QDBusConnection::sessionBus(), this);
 
     connect(kdirnotify, &org::kde::KDirNotify::FilesRemoved, this, [this](const QStringList &files) {
@@ -46,6 +49,7 @@ FileSystemTracker::FileSystemTracker(QObject *parent)
         }
         slotNewFiles(files);
     });
+#endif
 
     connect(this, &FileSystemTracker::subFolderChanged, this, &FileSystemTracker::reindexSubFolder);
 }

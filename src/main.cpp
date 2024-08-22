@@ -15,10 +15,9 @@
 #include <QThread>
 
 #include <KAboutData>
-#include <KDBusService>
+
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <KWindowSystem>
 
 #include <QApplication>
 #include <QCommandLineOption>
@@ -40,17 +39,23 @@
 
 #ifndef Q_OS_ANDROID
 #include <KConfigGroup>
+#include <KDBusService>
 #include <KSharedConfig>
 #include <KWindowConfig>
+#include <KWindowSystem>
 #include <QQuickWindow>
-#else
-#include <QtAndroid>
 #endif
 
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT
+#endif
 int main(int argc, char **argv)
 {
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+#else
     QApplication app(argc, argv);
-#ifndef Q_OS_ANDROID
     // Default to org.kde.desktop style unless the user forces another style
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
@@ -99,7 +104,9 @@ int main(int argc, char **argv)
         ImageStorage::reset();
     }
 
+#ifndef Q_OS_ANDROID
     KDBusService service(KDBusService::Unique);
+#endif
 
     QThread trackerThread;
 
@@ -114,7 +121,7 @@ int main(int argc, char **argv)
         directoryUrls << currentDirPath.resolved(path).toString();
     }
 
-#ifdef Q_OS_ANDROID
+#if 0
     QtAndroid::requestPermissionsSync({"android.permission.WRITE_EXTERNAL_STORAGE"});
 #endif
 
@@ -151,6 +158,7 @@ int main(int argc, char **argv)
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     OpenFileModel openFileModel(directoryUrls);
+#ifndef Q_OS_ANDROID
     QObject::connect(&service,
                      &KDBusService::activateRequested,
                      &openFileModel,
@@ -176,6 +184,7 @@ int main(int argc, char **argv)
                              }
                          }
                      });
+#endif
 
     qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
     qmlRegisterType<VectorImage>("org.kde.koko.image", 0, 1, "VectorImage");
