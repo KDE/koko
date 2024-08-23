@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 00:39+0000\n"
+"POT-Creation-Date: 2024-08-23 00:38+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -44,72 +44,72 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "ਟਿਕਾਣੇ"
 
-#: main.cpp:55
+#: main.cpp:62
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:57
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "ਕੋਕੋ ਤੁਹਾਡੇ ਚਿੱਤਰ ਭੰਡਾਰ ਨੂੰ ਵੇਖਾਉਣ ਲਈ ਚਿੱਤਰ ਦਰਸ਼ਕ ਹੈ।"
 
-#: main.cpp:59
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 KDE ਯੋਗਦਾਨੀ"
 
-#: main.cpp:67
+#: main.cpp:74
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "ਵਿਸ਼ੇਸ਼ ਹਾਂਡਾ"
 
-#: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
+#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "ਡਿਵੈਲਪਰ"
 
-#: main.cpp:69
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "ਅਤੁਲ ਸ਼ਰਮਾ"
 
-#: main.cpp:71
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "ਮਾਰਕੋ ਮਾਰਟਿਨ"
 
-#: main.cpp:73
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Leclercq"
 
-#: main.cpp:75
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "ਕਾਰਲ ਸਚਵਾਨ"
 
-#: main.cpp:77
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr ""
 
-#: main.cpp:82
+#: main.cpp:89
 #, kde-format
 msgid "Reset the database"
 msgstr "ਡਾਟਾਬੇਸ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
 
-#: main.cpp:83
+#: main.cpp:90
 #, kde-format
 msgid "path of image you want to open"
 msgstr "ਤੁਹਾਡੇ ਵਲੋਂ ਖੋਲ੍ਹਣ ਜਾਣ ਵਾਲੇ ਚਿੱਤਰ ਲਈ ਮਾਰਗ"

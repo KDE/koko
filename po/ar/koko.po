@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-31 00:39+0000\n"
+"POT-Creation-Date: 2024-08-23 00:38+0000\n"
 "PO-Revision-Date: 2024-02-12 12:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -43,72 +43,72 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "انسخ المكان"
 
-#: main.cpp:55
+#: main.cpp:62
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>كوكو</application>"
 
-#: main.cpp:57
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "كوكو هو عارض صور لمجموعة صورك."
 
-#: main.cpp:59
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(©) 2013-2020 مساهمو كِيدِي"
 
-#: main.cpp:67
+#: main.cpp:74
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "فيشيش هاندا"
 
-#: main.cpp:67 main.cpp:69 main.cpp:71 main.cpp:73 main.cpp:75 main.cpp:77
+#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "مطوّر"
 
-#: main.cpp:69
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "أتول شارما"
 
-#: main.cpp:71
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "ماركو مارتن"
 
-#: main.cpp:73
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "نيكولاس فلا"
 
-#: main.cpp:75
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "كارل شوان"
 
-#: main.cpp:77
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "ميكيل جونسون"
 
-#: main.cpp:82
+#: main.cpp:89
 #, kde-format
 msgid "Reset the database"
 msgstr "صفّر قاعدة البيانات"
 
-#: main.cpp:83
+#: main.cpp:90
 #, kde-format
 msgid "path of image you want to open"
 msgstr "مسار الصورة التي تود فتحها"
