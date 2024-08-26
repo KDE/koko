@@ -40,7 +40,6 @@ msgstr ""
 
 #: filemenu.cpp:139
 #, fuzzy, kde-format
-#| msgid "Locations"
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Stadar"
