@@ -385,6 +385,7 @@ Kirigami.ScrollablePage {
         }
     }
 
+    /*
     GridView {
         id: gridView
 
@@ -488,6 +489,7 @@ Kirigami.ScrollablePage {
             id: imageFolderModel
         }
     }
+    */
 
     onCollectionSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
         model: selectedModel,

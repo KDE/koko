@@ -5,31 +5,31 @@
 */
 
 #include "filemenu.h"
-
-#include <QClipboard>
-#include <QGuiApplication>
-#include <QIcon>
-//#include <QMenu>
-#include <QMimeData>
-#include <QQuickWindow>
-#include <QTimer>
-
-#include <KConfigGroup>
-//#include <KFileItemActions>
-#include <KFileItemListProperties>
-#include <KLocalizedString>
-#include <KPropertiesDialog>
-#include <KProtocolManager>
-#include <KSharedConfig>
-#include <KStandardAction>
-#include <KUrlMimeData>
-
-#include <KIO/CopyJob> // for KIO::trash
-#include <KIO/DeleteJob>
-#include <KIO/FileUndoManager>
-#include <KIO/JobUiDelegate>
-#include <KIO/OpenFileManagerWindowJob>
-#include <KIO/WidgetsAskUserActionHandler>
+//
+// #include <QClipboard>
+// #include <QGuiApplication>
+// #include <QIcon>
+// //#include <QMenu>
+// #include <QMimeData>
+// #include <QQuickWindow>
+// #include <QTimer>
+//
+// #include <KConfigGroup>
+// //#include <KFileItemActions>
+// #include <KFileItemListProperties>
+// #include <KLocalizedString>
+// // #include <KPropertiesDialog>
+// #include <KProtocolManager>
+// #include <KSharedConfig>
+// #include <KStandardAction>
+// #include <KUrlMimeData>
+//
+// #include <KIO/CopyJob> // for KIO::trash
+// #include <KIO/DeleteJob>
+// #include <KIO/FileUndoManager>
+// #include <KIO/JobUiDelegate>
+// #include <KIO/OpenFileManagerWindowJob>
+// #include <KIO/WidgetsAskUserActionHandler>
 
 using namespace Qt::StringLiterals;
 
@@ -101,10 +101,11 @@ void FileMenu::open(int x, int y)
     if (!m_url.isValid()) {
         return;
     }
+    /*
 
     KFileItem fileItem(m_url);
 
-    /*
+
 
     QMenu *menu = new QMenu();
     menu->setAttribute(Qt::WA_DeleteOnClose, true);
