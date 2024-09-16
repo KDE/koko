@@ -238,9 +238,7 @@ msgid "Are you sure you want to discard all changes?"
 msgstr ""
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
+#, kde-format
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -622,10 +620,9 @@ msgid "Add Tag"
 msgstr "Προσθήκη ετικέτας"
 
 #: qml/Main.qml:84
-#, fuzzy, kde-format
-#| msgid "Configure…"
+#, kde-format
 msgid "Configure"
-msgstr "Διαμόρφωση…"
+msgstr "Διαμόρφωση"
 
 #: qml/Main.qml:118
 #, kde-format
@@ -698,17 +695,15 @@ msgid "Days"
 msgstr "Ημέρες"
 
 #: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ρυθμίσεις"
 
 #: qml/SettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgid "General"
-msgstr "Γενικά:"
+msgstr "Γενικά"
 
 #: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
