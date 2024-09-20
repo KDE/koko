@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
 # Stelios <sstavra@gmail.com>, 2020, 2021.
+# SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-23 00:38+0000\n"
-"PO-Revision-Date: 2021-10-08 08:24+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 22:22+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -165,7 +166,7 @@ msgstr "Διαγραφή επιλογής"
 #: qml/AlbumView.qml:339
 #, kde-format
 msgid "Move selected items to trash"
-msgstr "Μεταφέρετε τα επιλεγμένα αντικειμενα στα απορρίμματα"
+msgstr "Μεταφέρετε τα επιλεγμένα αντικείμενα στα απορρίμματα"
 
 #: qml/AlbumView.qml:345
 #, kde-format
@@ -175,7 +176,7 @@ msgstr "Επαναφορά επιλογής"
 #: qml/AlbumView.qml:346
 #, kde-format
 msgid "Restore selected items from trash"
-msgstr "Επαναφορά των επιλεγμένων αντικειμνων από τα απορρίμματα"
+msgstr "Επαναφορά των επιλεγμένων αντικειμένων από τα απορρίμματα"
 
 #: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
@@ -602,7 +603,7 @@ msgstr "Ρύθμιση αξιολόγησης στο %1"
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Description"
-msgstr "ΠΕριγραφή"
+msgstr "Περιγραφή"
 
 #: qml/InfoDrawerSidebarBase.qml:172
 #, kde-format
