@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as Controls
-import org.kde.kirigami 2.15 as Kirigami
-import QtMultimedia 5.15
-import org.kde.kcoreaddons 1.0 as KCA
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
+import org.kde.kirigami as Kirigami
+import QtMultimedia
+import org.kde.kcoreaddons as KCA
 
 Item {
     id: videoPlayerRoot

@@ -4,9 +4,9 @@
 import QtQml.Models
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls 2 as Controls
-import org.kde.purpose 1 as Purpose
-import org.kde.kirigami 2 as Kirigami
+import QtQuick.Controls as Controls
+import org.kde.purpose as Purpose
+import org.kde.kirigami as Kirigami
 
 /**
  * Action that allows an user to share data with other apps and service

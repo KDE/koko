@@ -8,11 +8,11 @@
 
 import QtQuick
 import QtQuick.Window
-import QtQuick.Controls 2 as Controls
+import QtQuick.Controls as Controls
 import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
+import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
-import org.kde.kquickcontrolsaddons 2 as KQA
+import org.kde.kquickcontrolsaddons as KQA
 
 ListView {
     id: thumbnailView

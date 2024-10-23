@@ -9,11 +9,11 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
-import QtQuick 2.15
-import QtQml 2.15
-import QtMultimedia 5.15
-import org.kde.kirigami 2.15 as Kirigami
-import org.kde.koko 0.1
+import QtQuick
+import QtQml
+import QtMultimedia
+import org.kde.kirigami as Kirigami
+import org.kde.koko
 
 BaseImageDelegate {
     id: root

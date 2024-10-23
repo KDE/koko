@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as Controls
-import org.kde.kquickcontrolsaddons 2.0 as KQA
-import org.kde.kirigami 2.12 as Kirigami
-import org.kde.koko 0.1 as Koko
+import QtQuick
+import QtQuick.Controls as Controls
+import org.kde.kquickcontrolsaddons as KQA
+import org.kde.kirigami as Kirigami
+import org.kde.koko as Koko
 
 Controls.ItemDelegate {
     id: root

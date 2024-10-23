@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import org.kde.koko.private 0.1 as KokoPrivate
+import QtQuick
+import QtQuick.Window
+import org.kde.koko.private as KokoPrivate
 
 // This object manages slideshows.
 // It abstract the implementation with a clean and simple API,

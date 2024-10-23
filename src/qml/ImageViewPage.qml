@@ -10,14 +10,14 @@
 import QtQuick
 import QtQml
 import QtQuick.Window
-import QtQuick.Templates 2 as T
-import QtQuick.Controls 2 as QQC2
+import QtQuick.Templates as T
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami 2 as Kirigami
-import org.kde.koko 0.1 as Koko
-import org.kde.kquickcontrolsaddons 2 as KQA
+import org.kde.kirigami as Kirigami
+import org.kde.koko as Koko
+import org.kde.kquickcontrolsaddons as KQA
 import org.kde.coreaddons as KCA
-import org.kde.koko.private 0.1 as KokoPrivate
+import org.kde.koko.private as KokoPrivate
 
 Kirigami.Page {
     id: root

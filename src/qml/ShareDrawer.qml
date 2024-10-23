@@ -6,7 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.purpose as Purpose
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.formcard 1 as FormCard
+import org.kde.kirigamiaddons.formcard as FormCard
 
 Kirigami.OverlayDrawer {
     id: drawer

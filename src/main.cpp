@@ -179,12 +179,12 @@ int main(int argc, char **argv)
                          }
                      });
 
-    qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "OpenFileModel", &openFileModel);
-    qmlRegisterType<VectorImage>("org.kde.koko.image", 0, 1, "VectorImage");
-    qmlRegisterType<FileMenu>("org.kde.koko.private", 0, 1, "FileMenu");
+    qmlRegisterSingletonInstance("org.kde.koko.private", 1, 0, "OpenFileModel", &openFileModel);
+    qmlRegisterType<VectorImage>("org.kde.koko.image", 1, 0, "VectorImage");
+    qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
 
     Controller controller;
-    qmlRegisterSingletonInstance("org.kde.koko.private", 0, 1, "Controller", &controller);
+    qmlRegisterSingletonInstance("org.kde.koko.private", 1, 0, "Controller", &controller);
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
