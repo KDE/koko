@@ -6,10 +6,13 @@
 
 #include <QObject>
 #include <QUrl>
+#include <qqmlregistration.h>
 
 class DirModelUtils : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
     Q_PROPERTY(QUrl home READ home CONSTANT)
     Q_PROPERTY(QUrl pictures READ pictures CONSTANT)

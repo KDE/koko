@@ -10,12 +10,14 @@
 
 #include <QAbstractListModel>
 #include <QStringList>
+#include <qqmlregistration.h>
 
 #include "types.h"
 
 class ImageTimeModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(Types::TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageTimeModel(QObject *parent = nullptr);

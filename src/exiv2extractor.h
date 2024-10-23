@@ -10,15 +10,16 @@
 
 #include <exiv2/exiv2.hpp>
 
-#include "koko_export.h"
 #include <QDateTime>
 #include <QObject>
 #include <QString>
 #include <QUrl>
+#include <qqmlregistration.h>
 
-class KOKO_EXPORT Exiv2Extractor : public QObject
+class Exiv2Extractor : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
     Q_PROPERTY(double gpsLatitude READ gpsLatitude NOTIFY filePathChanged)

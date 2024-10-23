@@ -3,7 +3,7 @@
 
 ecm_add_test(fileinfotest.cpp ../src/fileinfo.cpp
     TEST_NAME "fileinfotest"
-    LINK_LIBRARIES Qt::Test Qt::Gui
+    LINK_LIBRARIES Qt::Test Qt::Gui Qt::Qml
 )
 
 ecm_add_test(kdtreetest.cpp ../src/kdtree.cpp

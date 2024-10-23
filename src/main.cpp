@@ -47,6 +47,8 @@
 #include <QtAndroid>
 #endif
 
+using namespace Qt::StringLiterals;
+
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
@@ -190,7 +192,7 @@ int main(int argc, char **argv)
 
     // we want different main files on desktop or mobile
     // very small difference as they as they are subclasses of the same thing
-    engine.load(QUrl(QStringLiteral("qrc:/qml/Main.qml")));
+    engine.loadFromModule(u"org.kde.koko"_s, u"Main"_s);
 
 #ifndef Q_OS_ANDROID
     const auto rootObjects = engine.rootObjects();

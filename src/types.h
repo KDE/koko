@@ -7,10 +7,14 @@
 #ifndef ITEMTYPES_H
 #define ITEMTYPES_H
 #include <QObject>
+#include <qqmlintegration.h>
 
 class Types : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("ENUM")
+
     Q_ENUMS(ItemTypes)
     Q_ENUMS(TimeGroup)
     Q_ENUMS(LocationGroup)

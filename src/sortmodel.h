@@ -15,10 +15,12 @@
 #include <kdirmodel.h>
 #include <kimagecache.h>
 #include <kshareddatacache.h>
+#include <qqmlregistration.h>
 
 class SortModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QByteArray sortRoleName READ sortRoleName WRITE setSortRoleName NOTIFY sortRoleNameChanged)
     Q_PROPERTY(bool containImages READ containImages WRITE setContainImages NOTIFY containImagesChanged)
     Q_PROPERTY(bool hasSelectedImages READ hasSelectedImages NOTIFY selectedImagesChanged)

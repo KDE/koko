@@ -13,7 +13,6 @@
 #include <QMutex>
 #include <QMutexLocker>
 
-#include "koko_export.h"
 #include "types.h"
 
 struct ImageInfo {
@@ -24,7 +23,7 @@ struct ImageInfo {
     bool favorite;
 };
 
-class KOKO_EXPORT ImageStorage : public QObject
+class ImageStorage : public QObject
 {
     Q_OBJECT
 public:

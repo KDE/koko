@@ -8,12 +8,14 @@
 #define IMAGEFAVORITESMODEL_H
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 #include "openfilemodel.h"
 
 class ImageFavoritesModel : public OpenFileModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     explicit ImageFavoritesModel(QObject *parent = nullptr);

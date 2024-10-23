@@ -11,6 +11,7 @@
 
 #include <QObject>
 #include <QUrl>
+#include <qqmlregistration.h>
 
 struct FileInfoCacheEntry;
 
@@ -27,6 +28,7 @@ struct FileInfoCacheEntry;
 class FileInfo : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     /**

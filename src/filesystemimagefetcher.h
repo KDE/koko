@@ -7,10 +7,9 @@
 #ifndef FILESYSTEMIMAGEFETCHER_H
 #define FILESYSTEMIMAGEFETCHER_H
 
-#include "koko_export.h"
 #include <QObject>
 
-class KOKO_EXPORT FileSystemImageFetcher : public QObject
+class FileSystemImageFetcher : public QObject
 {
     Q_OBJECT
 public:

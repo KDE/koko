@@ -11,12 +11,14 @@
 #include <QAbstractListModel>
 #include <QGeoLocation>
 #include <QStringList>
+#include <qqmlintegration.h>
 
 #include "types.h"
 
 class ImageLocationModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(Types::LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageLocationModel(QObject *parent = nullptr);

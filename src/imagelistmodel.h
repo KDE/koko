@@ -7,13 +7,14 @@
 #ifndef IMAGELISTMODEL_H
 #define IMAGELISTMODEL_H
 
-#include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 #include "openfilemodel.h"
 
 class ImageListModel : public OpenFileModel
 {
     Q_OBJECT
+    QML_ELEMENT
 
     Q_PROPERTY(Types::LocationGroup locationGroup READ locationGroup WRITE setLocationGroup NOTIFY locationGroupChanged)
     Q_PROPERTY(Types::TimeGroup timeGroup READ timeGroup WRITE setTimeGroup NOTIFY timeGroupChanged)

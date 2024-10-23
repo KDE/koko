@@ -9,6 +9,7 @@
 
 #include <QColorSpace>
 #include <QObject>
+#include <qqmlregistration.h>
 
 /**
  * Provides access to the display color space from QML.
@@ -16,6 +17,8 @@
 class DisplayColorSpace : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
 
 public:
     DisplayColorSpace(QObject *parent = nullptr);

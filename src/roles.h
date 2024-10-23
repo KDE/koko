@@ -8,10 +8,14 @@
 
 #include <QHash>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class Roles : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("ENUM")
+
     Q_ENUMS(RoleNames)
 public:
     using QObject::QObject;

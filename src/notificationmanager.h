@@ -7,12 +7,14 @@
 #ifndef NOTIFICATION_MANAGER_H
 #define NOTIFICATION_MANAGER_H
 
-#include <QVariant>
-#include <knotification.h>
+#include <KNotification>
+#include <qqmlregistration.h>
 
 class NotificationManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+
 public:
     explicit NotificationManager(QObject *parent = nullptr);
     ~NotificationManager() = default;

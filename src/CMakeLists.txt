@@ -2,18 +2,16 @@
 # SPDX-FileCopyrightText: 2019 Nicolas Fella <nicolas.fella@gmx.de>
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: LGPL-2.1-or-later
-#
-# Common Library
-#
-set(LIB_SRCS
+
+add_library(koko_static STATIC
     imagestorage.cpp
     exiv2extractor.cpp
     filesystemimagefetcher.cpp
-    ${LIB_SRCS}
 )
 
-add_library(kokocommon SHARED ${LIB_SRCS})
-target_link_libraries(kokocommon
+target_link_libraries(koko_static PUBLIC
+    Qt::Qml
+    Qt::Quick
     Qt::Core
     Qt::Positioning
     Qt::Sql
@@ -27,19 +25,10 @@ target_link_libraries(kokocommon
     LibExiv2::LibExiv2
 )
 
-generate_export_header(kokocommon BASE_NAME KOKO EXPORT_FILE_NAME koko_export.h)
-set_target_properties(kokocommon PROPERTIES
-    VERSION 0.0.1
-    SOVERSION 0.0.1
-)
+set(koko_SRCS)
+kconfig_add_kcfg_files(koko_SRCS kokoconfig.kcfgc GENERATE_MOC)
 
-install(TARGETS kokocommon EXPORT KokoLibraryTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
-#
-# Application
-#
-
-set(koko_SRCS
+add_executable(koko
     main.cpp
     openfilemodel.cpp
     reversegeocoder.cpp
@@ -52,44 +41,6 @@ set(koko_SRCS
     kdtree.cpp
     filemenu.h
     filemenu.cpp
-    resources.qrc
-)
-
-kconfig_add_kcfg_files(koko_SRCS kokoconfig.kcfgc GENERATE_MOC)
-
-add_executable(koko ${koko_SRCS})
-
-target_link_libraries(koko
-    Qt::Quick
-    Qt::Widgets
-    Qt::Qml
-    Qt::Positioning
-    KF6::ConfigCore
-    KF6::I18n
-    KF6::CoreAddons
-    KF6::KIOCore
-    KF6::KIOWidgets
-    KF6::ConfigWidgets
-    kokocommon
-)
-
-target_include_directories(koko PRIVATE ${CMAKE_BINARY_DIR})
-
-if(ANDROID)
-    target_link_libraries(koko Qt::AndroidExtras)
-else()
-    target_link_libraries(koko KF6::WindowSystem)
-endif()
-
-target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-
-install(TARGETS koko ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-
-#
-# QML Plugin
-#
-set (qml_plugin_SRCS
-    qmlplugins.cpp
     dirmodelutils.cpp
     openfilemodel.cpp
     imagelocationmodel.cpp
@@ -104,30 +55,87 @@ set (qml_plugin_SRCS
     roles.cpp
     fileinfo.cpp
     displaycolorspace.cpp
+    ${koko_SRCS}
 )
 
-add_library (kokoqmlplugin SHARED ${qml_plugin_SRCS})
-
-target_link_libraries (kokoqmlplugin
-    Qt6::Qml
+target_link_libraries(koko PRIVATE
+    koko_static
+    Qt::Qml
+    Qt::Quick
+    Qt::Widgets
     KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::KIOWidgets
     KF6::GuiAddons
     KF6::I18n
     KF6::Notifications
-    kokocommon
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::CoreAddons
+    KF6::ConfigWidgets
 )
 
-install (TARGETS kokoqmlplugin DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
-install (FILES qmldir DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/koko)
-install (FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-# FIXME this needs to be adapted for Qt6
-if (TARGET XCB::XCB)
-    target_compile_definitions(kokoqmlplugin PRIVATE HAVE_X11)
-    target_link_libraries(kokoqmlplugin XCB::XCB Qt6::GuiPrivate)
+ecm_add_qml_module(koko
+    URI "org.kde.koko"
+    GENERATE_PLUGIN_SOURCE
+)
+
+ecm_target_qml_sources(koko SOURCES
+    qml/AboutPage.qml
+    qml/AlbumDelegate.qml
+    qml/AlbumView.qml
+    qml/BottomNavBar.qml
+    qml/EditorView.qml
+    qml/ImageViewPage.qml
+    qml/InfoDrawer.qml
+    qml/InfoDrawerSidebarBase.qml
+    qml/InfoSidebar.qml
+    qml/Main.qml
+    qml/OverviewControl.qml
+    qml/PlacesPage.qml
+    qml/SelectionButton.qml
+    qml/SettingsPage.qml
+    qml/ShareAction.qml
+    qml/ShareDialog.qml
+    qml/ShareDrawer.qml
+    qml/Sidebar.qml
+    qml/SlideshowManager.qml
+    qml/TagInput.qml
+    qml/ThumbnailStrip.qml
+    qml/ZoomArea.qml
+)
+
+ecm_target_qml_sources(koko PRIVATE
+    PATH imagedelegate
+    SOURCES
+        qml/imagedelegate/AnimatedImageDelegate.qml
+        qml/imagedelegate/BaseImageDelegate.qml
+        qml/imagedelegate/RasterImageDelegate.qml
+        qml/imagedelegate/VectorImageDelegate.qml
+        qml/imagedelegate/VideoDelegate.qml
+        qml/imagedelegate/VideoPlayer.qml
+)
+
+ecm_target_qml_sources(koko PRIVATE
+    PATH Dialog
+    SOURCES
+        qml/Dialog/ConfirmDiscardingChange.qml
+)
+
+if(ANDROID)
+    target_link_libraries(koko PRIVATE Qt::AndroidExtras)
+else()
+    target_link_libraries(koko PRIVATE KF6::WindowSystem)
 endif()
+
+if (TARGET XCB::XCB)
+    target_compile_definitions(koko PRIVATE HAVE_X11)
+    target_link_libraries(koko PRIVATE XCB::XCB Qt6::GuiPrivate)
+endif()
+
+ecm_finalize_qml_module(koko DESTINATION ${KDE_INSTALL_QMLDIR})
 
 #
 # Reverse GeoLookup Data
@@ -143,7 +151,7 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/cities1000.zip)
         SHOW_PROGRESS
         STATUS status
     )
-    list(GET status 0 status_code) 
+    list(GET status 0 status_code)
     if(NOT status_code EQUAL 0)
         message(FATAL_ERROR "You need to download some files separately. See the packaging section of README.md.")
     endif()
@@ -164,7 +172,7 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin1CodesASCII.txt)
         SHOW_PROGRESS
         STATUS status
     )
-    list(GET status 0 status_code) 
+    list(GET status 0 status_code)
     if(NOT status_code EQUAL 0)
         message(FATAL_ERROR "You need to download some files separately. See the packaging section of README.md.")
     endif()
@@ -181,14 +189,16 @@ if (NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt)
         SHOW_PROGRESS
         STATUS status
     )
-    list(GET status 0 status_code) 
+    list(GET status 0 status_code)
     if(NOT status_code EQUAL 0)
         message(FATAL_ERROR "You need to download some files separately. See the packaging section of README.md.")
     endif()
 endif()
 
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
-install (FILES countries.csv DESTINATION ${KDE_INSTALL_DATADIR}/koko)
-install (FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/cities1000.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/admin1Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/admin2Codes.txt DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install(FILES countries.csv DESTINATION ${KDE_INSTALL_DATADIR}/koko)
+install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
+install(FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(TARGETS koko ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

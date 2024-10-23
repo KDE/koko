@@ -8,12 +8,14 @@
 #define IMAGETAGSMODEL_H
 
 #include <QAbstractListModel>
+#include <qqmlregistration.h>
 
 #include "openfilemodel.h"
 
 class ImageTagsModel : public OpenFileModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QString tag READ tag WRITE setTag NOTIFY tagChanged)
     Q_PROPERTY(QStringList tags READ tags NOTIFY tagsChanged)
 

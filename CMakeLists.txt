@@ -33,9 +33,11 @@ include(ECMSetupVersion)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KOKO
-    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/src/version.h
 )
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
+
+qt_policy(SET QTP0001 NEW)
 
 if(ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
