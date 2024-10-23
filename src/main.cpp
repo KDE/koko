@@ -61,9 +61,9 @@ int main(int argc, char **argv)
     KLocalizedString::setApplicationDomain("koko");
 
     KAboutData aboutData(QStringLiteral("koko"),
-                         xi18nc("@title", "<application>Koko</application>"),
+                         xi18nc("@title", "<application>Photos</application>"),
                          QStringLiteral(KOKO_VERSION_STRING),
-                         xi18nc("@title", "Koko is an image viewer for your image collection."),
+                         xi18nc("@title", "Photos is an image viewer for your image collection."),
                          KAboutLicense::LGPL,
                          xi18nc("@info:credit", "(c) 2013-2020 KDE Contributors"),
                          QString(),
@@ -95,7 +95,7 @@ int main(int argc, char **argv)
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("koko")));
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.koko")));
 
     if (parser.isSet("reset") || ImageStorage::shouldReset()) {
         ImageStorage::reset();

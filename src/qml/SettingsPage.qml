@@ -127,16 +127,19 @@ Kirigami.PageRow {
 
         FormCard.FormCard {
             Layout.topMargin: Kirigami.Units.gridUnit
-            FormCard.FormButtonDelegate {
-                text: i18n("About Koko")
-                onClicked: pageStack.layers.push(Qt.resolvedUrl("AboutPage.qml"));
 
-                Component {
-                    id: aboutPage
-                    FormCard.AboutPage {
-                        aboutData: About
-                    }
-                }
+            FormCard.FormButtonDelegate {
+                text: i18n("About Photos")
+                icon.name: 'org.kde.koko'
+                onClicked: pageStack.layers.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage"));
+            }
+
+            FormCard.FormDelegateSeparator {}
+
+            FormCard.FormButtonDelegate {
+                text: i18n("About KDE")
+                icon.name: 'kde'
+                onClicked: pageStack.layers.push(Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage"));
             }
         }
     }

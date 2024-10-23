@@ -83,7 +83,6 @@ ecm_add_qml_module(koko
 )
 
 ecm_target_qml_sources(koko SOURCES
-    qml/AboutPage.qml
     qml/AlbumDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml
