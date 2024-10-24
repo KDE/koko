@@ -188,7 +188,6 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
     engine.rootContext()->setContextProperty("kokoConfig", &config);
-    engine.rootContext()->setContextProperty(QStringLiteral("kokoAboutData"), QVariant::fromValue(aboutData));
 
     // we want different main files on desktop or mobile
     // very small difference as they as they are subclasses of the same thing
