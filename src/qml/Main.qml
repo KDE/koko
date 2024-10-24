@@ -12,6 +12,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
 import org.kde.koko.private as KokoPrivate
+import org.kde.config as KConfig
 
 Kirigami.ApplicationWindow {
     id: root
@@ -31,23 +32,6 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 20
 
     onClosing: KokoPrivate.Controller.saveWindowGeometry(root)
-
-    // This timer allows to batch update the window size change to reduce
-    // the io load and also work around the fact that x/y/width/height are
-    // changed when loading the page and overwrite the saved geometry from
-    // the previous session.
-    Timer {
-        id: saveWindowGeometryTimer
-        interval: 1000
-        onTriggered: if (applicationWindow().visibility !== Window.FullScreen) {
-            KokoPrivate.Controller.saveWindowGeometry(root);
-        }
-    }
-
-    onWidthChanged: saveWindowGeometryTimer.restart()
-    onHeightChanged: saveWindowGeometryTimer.restart()
-    onXChanged: saveWindowGeometryTimer.restart()
-    onYChanged: saveWindowGeometryTimer.restart()
 
     function switchApplicationPage(page) {
         if (!page || pageStack.currentItem === page) {
@@ -111,6 +95,11 @@ Kirigami.ApplicationWindow {
     property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
 
     pageStack.layers.onDepthChanged: root.updateGlobalDrawer()
+
+    KConfig.WindowStateSaver {
+        configGroupName: "MainWindow"
+    }
+
 
     Component {
         id: openFileComponent

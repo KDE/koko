@@ -193,20 +193,6 @@ int main(int argc, char **argv)
     // very small difference as they as they are subclasses of the same thing
     engine.loadFromModule(u"org.kde.koko"_s, u"Main"_s);
 
-#ifndef Q_OS_ANDROID
-    const auto rootObjects = engine.rootObjects();
-    for (auto obj : rootObjects) {
-        auto view = qobject_cast<QQuickWindow *>(obj);
-        if (view) {
-            KConfig dataResource(QStringLiteral("data"), KConfig::SimpleConfig, QStandardPaths::AppDataLocation);
-            KConfigGroup windowGroup(&dataResource, "Window");
-            KWindowConfig::restoreWindowSize(view, windowGroup);
-            KWindowConfig::restoreWindowPosition(view, windowGroup);
-            break;
-        }
-    }
-#endif
-
     int rt = app.exec();
     trackerThread.quit();
     return rt;
