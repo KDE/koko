@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:38+0000\n"
+"POT-Creation-Date: 2024-10-24 00:38+0000\n"
 "PO-Revision-Date: 2023-11-05 01:46+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -43,72 +43,72 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr ""
 
-#: main.cpp:62
-#, kde-kuit-format
-msgctxt "@title"
-msgid "<application>Koko</application>"
-msgstr ""
-
 #: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
-msgid "Koko is an image viewer for your image collection."
+msgid "<application>Photos</application>"
 msgstr ""
 
 #: main.cpp:66
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Photos is an image viewer for your image collection."
+msgstr ""
+
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr ""
 
-#: main.cpp:74
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr ""
 
-#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr ""
 
-#: main.cpp:76
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr ""
 
-#: main.cpp:78
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr ""
 
-#: main.cpp:80
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr ""
 
-#: main.cpp:82
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:84
+#: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr ""
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Reset the database"
 msgstr ""
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgid "path of image you want to open"
 msgstr ""
@@ -539,78 +539,88 @@ msgstr ""
 msgid "Metadata"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:42
+#: qml/InfoDrawerSidebarBase.qml:40
 #, kde-format
-msgid "File Name"
+msgctxt "@label"
+msgid "File name:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:52
+#: qml/InfoDrawerSidebarBase.qml:47
 #, kde-format
-msgid "Dimension"
+msgctxt "@label"
+msgid "Dimension:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:58
+#: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
 msgstr ""
 
+#: qml/InfoDrawerSidebarBase.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr ""
+
 #: qml/InfoDrawerSidebarBase.qml:64
 #, kde-format
-msgid "Size"
+msgctxt "@label"
+msgid "Created:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:76
+#: qml/InfoDrawerSidebarBase.qml:72
 #, kde-format
-msgid "Created"
+msgctxt "@label"
+msgid "Model:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:88
+#: qml/InfoDrawerSidebarBase.qml:79
 #, kde-format
-msgid "Model"
+msgctxt "@label"
+msgid "Latitude:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:100
+#: qml/InfoDrawerSidebarBase.qml:87
 #, kde-format
-msgid "Latitude"
+msgctxt "@label"
+msgid "Longitude:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:112
+#: qml/InfoDrawerSidebarBase.qml:97
 #, kde-format
-msgid "Longitude"
+msgctxt "@label"
+msgid "Rating:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:124
-#, kde-format
-msgid "Rating"
-msgstr ""
-
-#: qml/InfoDrawerSidebarBase.qml:131
+#: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
 msgid "Current rating %1"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:138
+#: qml/InfoDrawerSidebarBase.qml:122
 #, kde-format
 msgid "Set rating to %1"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:164
+#: qml/InfoDrawerSidebarBase.qml:153
 #, kde-format
-msgid "Description"
+msgctxt "@label"
+msgid "Description:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:172
+#: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
 msgid "Image description…"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#: qml/InfoDrawerSidebarBase.qml:166
 #, kde-format
-msgid "Tags"
+msgctxt "@label"
+msgid "Tags:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:198
+#: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
 msgid "Add Tag"
 msgstr ""
@@ -690,6 +700,11 @@ msgstr ""
 msgid "Days"
 msgstr ""
 
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr ""
+
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
@@ -712,9 +727,14 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr ""
 
-#: qml/SettingsPage.qml:131
+#: qml/SettingsPage.qml:132
 #, kde-format
-msgid "About Koko"
+msgid "About Photos"
+msgstr ""
+
+#: qml/SettingsPage.qml:140
+#, kde-format
+msgid "About KDE"
 msgstr ""
 
 #: qml/ShareAction.qml:23

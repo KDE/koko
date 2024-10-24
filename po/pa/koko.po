@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:38+0000\n"
+"POT-Creation-Date: 2024-10-24 00:38+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -44,72 +44,76 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "ਟਿਕਾਣੇ"
 
-#: main.cpp:62
-#, kde-kuit-format
+#: main.cpp:64
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "<application>Koko</application>"
 msgctxt "@title"
-msgid "<application>Koko</application>"
+msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:64
-#, kde-kuit-format
+#: main.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "Koko is an image viewer for your image collection."
 msgctxt "@title"
-msgid "Koko is an image viewer for your image collection."
+msgid "Photos is an image viewer for your image collection."
 msgstr "ਕੋਕੋ ਤੁਹਾਡੇ ਚਿੱਤਰ ਭੰਡਾਰ ਨੂੰ ਵੇਖਾਉਣ ਲਈ ਚਿੱਤਰ ਦਰਸ਼ਕ ਹੈ।"
 
-#: main.cpp:66
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 KDE ਯੋਗਦਾਨੀ"
 
-#: main.cpp:74
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "ਵਿਸ਼ੇਸ਼ ਹਾਂਡਾ"
 
-#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "ਡਿਵੈਲਪਰ"
 
-#: main.cpp:76
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "ਅਤੁਲ ਸ਼ਰਮਾ"
 
-#: main.cpp:78
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "ਮਾਰਕੋ ਮਾਰਟਿਨ"
 
-#: main.cpp:80
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Leclercq"
 
-#: main.cpp:82
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "ਕਾਰਲ ਸਚਵਾਨ"
 
-#: main.cpp:84
+#: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr ""
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Reset the database"
 msgstr "ਡਾਟਾਬੇਸ ਮੁੜ-ਸੈੱਟ ਕਰੋ"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgid "path of image you want to open"
 msgstr "ਤੁਹਾਡੇ ਵਲੋਂ ਖੋਲ੍ਹਣ ਜਾਣ ਵਾਲੇ ਚਿੱਤਰ ਲਈ ਮਾਰਗ"
@@ -558,79 +562,99 @@ msgstr ""
 msgid "Metadata"
 msgstr "ਮੇਟਾ-ਡਾਟਾ"
 
-#: qml/InfoDrawerSidebarBase.qml:42
-#, kde-format
-msgid "File Name"
+#: qml/InfoDrawerSidebarBase.qml:40
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgctxt "@label"
+msgid "File name:"
 msgstr "ਫਾਇਲ ਨਾਂ"
 
-#: qml/InfoDrawerSidebarBase.qml:52
-#, kde-format
-msgid "Dimension"
+#: qml/InfoDrawerSidebarBase.qml:47
+#, fuzzy, kde-format
+#| msgid "Dimension"
+msgctxt "@label"
+msgid "Dimension:"
 msgstr "ਮਾਪ"
 
-#: qml/InfoDrawerSidebarBase.qml:58
+#: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
 msgstr "%1 x %2"
 
-#: qml/InfoDrawerSidebarBase.qml:64
-#, kde-format
-msgid "Size"
+#: qml/InfoDrawerSidebarBase.qml:55
+#, fuzzy, kde-format
+#| msgid "Size"
+msgctxt "@label"
+msgid "Size:"
 msgstr "ਆਕਾਰ"
 
-#: qml/InfoDrawerSidebarBase.qml:76
-#, kde-format
-msgid "Created"
+#: qml/InfoDrawerSidebarBase.qml:64
+#, fuzzy, kde-format
+#| msgid "Created"
+msgctxt "@label"
+msgid "Created:"
 msgstr "ਬਣਾਇਆ"
 
-#: qml/InfoDrawerSidebarBase.qml:88
-#, kde-format
-msgid "Model"
+#: qml/InfoDrawerSidebarBase.qml:72
+#, fuzzy, kde-format
+#| msgid "Model"
+msgctxt "@label"
+msgid "Model:"
 msgstr "ਮਾਡਲ"
 
-#: qml/InfoDrawerSidebarBase.qml:100
-#, kde-format
-msgid "Latitude"
+#: qml/InfoDrawerSidebarBase.qml:79
+#, fuzzy, kde-format
+#| msgid "Latitude"
+msgctxt "@label"
+msgid "Latitude:"
 msgstr "ਵਿਥਕਾਰ"
 
-#: qml/InfoDrawerSidebarBase.qml:112
-#, kde-format
-msgid "Longitude"
+#: qml/InfoDrawerSidebarBase.qml:87
+#, fuzzy, kde-format
+#| msgid "Longitude"
+msgctxt "@label"
+msgid "Longitude:"
 msgstr "ਲੰਬਕਾਰ"
 
-#: qml/InfoDrawerSidebarBase.qml:124
-#, kde-format
-msgid "Rating"
+#: qml/InfoDrawerSidebarBase.qml:97
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@label"
+msgid "Rating:"
 msgstr "ਰੇਟਿੰਗ"
 
-#: qml/InfoDrawerSidebarBase.qml:131
+#: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
 msgid "Current rating %1"
 msgstr "ਮੌਜੂਦਾ ਰੇਟਿੰਗ %1"
 
-#: qml/InfoDrawerSidebarBase.qml:138
+#: qml/InfoDrawerSidebarBase.qml:122
 #, kde-format
 msgid "Set rating to %1"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:164
-#, kde-format
-msgid "Description"
+#: qml/InfoDrawerSidebarBase.qml:153
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@label"
+msgid "Description:"
 msgstr "ਵਰਣਨ"
 
-#: qml/InfoDrawerSidebarBase.qml:172
+#: qml/InfoDrawerSidebarBase.qml:155
 #, fuzzy, kde-format
 #| msgid "Image description..."
 msgid "Image description…"
 msgstr "ਚਿੱਤਰ ਦਾ ਵਰਣਨ..."
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
-#, kde-format
-msgid "Tags"
+#: qml/InfoDrawerSidebarBase.qml:166
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@label"
+msgid "Tags:"
 msgstr "ਟੈਗ"
 
-#: qml/InfoDrawerSidebarBase.qml:198
+#: qml/InfoDrawerSidebarBase.qml:192
 #, fuzzy, kde-format
 #| msgid "Add %1 tag"
 msgid "Add Tag"
@@ -712,6 +736,11 @@ msgstr "ਹਫ਼ਤੇ"
 msgid "Days"
 msgstr "ਦਿਨ"
 
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr "ਟੈਗ"
+
 #: qml/SettingsPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Settings"
@@ -737,10 +766,16 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/SettingsPage.qml:131
+#: qml/SettingsPage.qml:132
 #, fuzzy, kde-format
 #| msgid "About"
-msgid "About Koko"
+msgid "About Photos"
+msgstr "ਇਸ ਬਾਰੇ"
+
+#: qml/SettingsPage.qml:140
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About KDE"
 msgstr "ਇਸ ਬਾਰੇ"
 
 #: qml/ShareAction.qml:23
@@ -780,6 +815,9 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 #| msgid "Add new tag"
 msgid "Add new tag…"
 msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
+
+#~ msgid "Size"
+#~ msgstr "ਆਕਾਰ"
 
 #~ msgid "Image viewer"
 #~ msgstr "ਚਿੱਤਰ ਦਰਸ਼ਕ"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:38+0000\n"
+"POT-Creation-Date: 2024-10-24 00:38+0000\n"
 "PO-Revision-Date: 2024-09-19 22:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -45,72 +45,76 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Τοποθεσίες"
 
-#: main.cpp:62
-#, kde-kuit-format
+#: main.cpp:64
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "<application>Koko</application>"
 msgctxt "@title"
-msgid "<application>Koko</application>"
+msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:64
-#, kde-kuit-format
+#: main.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "Koko is an image viewer for your image collection."
 msgctxt "@title"
-msgid "Koko is an image viewer for your image collection."
+msgid "Photos is an image viewer for your image collection."
 msgstr "Η Koko είναι ένας προβολέας εικόνων για τη συλλογή σας."
 
-#: main.cpp:66
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 KDE Contributors"
 
-#: main.cpp:74
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Προγραμματιστής"
 
-#: main.cpp:76
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:78
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:80
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:82
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:84
+#: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Reset the database"
 msgstr "Επαναφορά της βάσης δεδομένων"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgid "path of image you want to open"
 msgstr "διαδρομή της εικόνας που θέλετε να ανοίξετε"
@@ -544,78 +548,99 @@ msgstr "Εμφάνιση όλων των κουμπιών ελέγχου"
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
-#: qml/InfoDrawerSidebarBase.qml:42
-#, kde-format
-msgid "File Name"
+#: qml/InfoDrawerSidebarBase.qml:40
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgctxt "@label"
+msgid "File name:"
 msgstr "Όνομα αρχείου"
 
-#: qml/InfoDrawerSidebarBase.qml:52
-#, kde-format
-msgid "Dimension"
+#: qml/InfoDrawerSidebarBase.qml:47
+#, fuzzy, kde-format
+#| msgid "Dimension"
+msgctxt "@label"
+msgid "Dimension:"
 msgstr "Διάσταση"
 
-#: qml/InfoDrawerSidebarBase.qml:58
+#: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
 msgstr "%1 x %2"
 
-#: qml/InfoDrawerSidebarBase.qml:64
-#, kde-format
-msgid "Size"
-msgstr "Μέγεθος"
+#: qml/InfoDrawerSidebarBase.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area size spinboxes"
+#| msgid "Size:"
+msgctxt "@label"
+msgid "Size:"
+msgstr "Μέγεθος:"
 
-#: qml/InfoDrawerSidebarBase.qml:76
-#, kde-format
-msgid "Created"
+#: qml/InfoDrawerSidebarBase.qml:64
+#, fuzzy, kde-format
+#| msgid "Created"
+msgctxt "@label"
+msgid "Created:"
 msgstr "Δημιουργήθηκε"
 
-#: qml/InfoDrawerSidebarBase.qml:88
-#, kde-format
-msgid "Model"
+#: qml/InfoDrawerSidebarBase.qml:72
+#, fuzzy, kde-format
+#| msgid "Model"
+msgctxt "@label"
+msgid "Model:"
 msgstr "Μοντέλο"
 
-#: qml/InfoDrawerSidebarBase.qml:100
-#, kde-format
-msgid "Latitude"
+#: qml/InfoDrawerSidebarBase.qml:79
+#, fuzzy, kde-format
+#| msgid "Latitude"
+msgctxt "@label"
+msgid "Latitude:"
 msgstr "Γεωγραφικό πλάτος"
 
-#: qml/InfoDrawerSidebarBase.qml:112
-#, kde-format
-msgid "Longitude"
+#: qml/InfoDrawerSidebarBase.qml:87
+#, fuzzy, kde-format
+#| msgid "Longitude"
+msgctxt "@label"
+msgid "Longitude:"
 msgstr "Γεωγραφικό μήκος"
 
-#: qml/InfoDrawerSidebarBase.qml:124
-#, kde-format
-msgid "Rating"
+#: qml/InfoDrawerSidebarBase.qml:97
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@label"
+msgid "Rating:"
 msgstr "Αξιολόγηση"
 
-#: qml/InfoDrawerSidebarBase.qml:131
+#: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
 msgid "Current rating %1"
 msgstr "Τρέχουσα αξιολόγηση %1"
 
-#: qml/InfoDrawerSidebarBase.qml:138
+#: qml/InfoDrawerSidebarBase.qml:122
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Ρύθμιση αξιολόγησης στο %1"
 
-#: qml/InfoDrawerSidebarBase.qml:164
-#, kde-format
-msgid "Description"
+#: qml/InfoDrawerSidebarBase.qml:153
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@label"
+msgid "Description:"
 msgstr "Περιγραφή"
 
-#: qml/InfoDrawerSidebarBase.qml:172
+#: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
 msgid "Image description…"
 msgstr "Περιγραφή εικόνας…"
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
-#, kde-format
-msgid "Tags"
+#: qml/InfoDrawerSidebarBase.qml:166
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@label"
+msgid "Tags:"
 msgstr "Ετικέτες"
 
-#: qml/InfoDrawerSidebarBase.qml:198
+#: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
 msgid "Add Tag"
 msgstr "Προσθήκη ετικέτας"
@@ -695,6 +720,11 @@ msgstr "Εβδομάδες"
 msgid "Days"
 msgstr "Ημέρες"
 
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr "Ετικέτες"
+
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
@@ -717,10 +747,16 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Ρυθμίσεις παρουσίασης διαφανειών:"
 
-#: qml/SettingsPage.qml:131
+#: qml/SettingsPage.qml:132
 #, fuzzy, kde-format
 #| msgid "About"
-msgid "About Koko"
+msgid "About Photos"
+msgstr "Σχετικά"
+
+#: qml/SettingsPage.qml:140
+#, fuzzy, kde-format
+#| msgid "About"
+msgid "About KDE"
 msgstr "Σχετικά"
 
 #: qml/ShareAction.qml:23
@@ -758,6 +794,9 @@ msgstr "Ρυθμίσεις"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Προσθήκη νέας ετικέτας…"
+
+#~ msgid "Size"
+#~ msgstr "Μέγεθος"
 
 #~ msgid "Image viewer"
 #~ msgstr "Πρόγραμμα προβολής εικόνων"

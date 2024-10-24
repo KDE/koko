@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:38+0000\n"
+"POT-Creation-Date: 2024-10-24 00:38+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -43,72 +43,76 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Kopírovat umístění"
 
-#: main.cpp:62
-#, kde-kuit-format
+#: main.cpp:64
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "<application>Koko</application>"
 msgctxt "@title"
-msgid "<application>Koko</application>"
+msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:64
-#, kde-kuit-format
+#: main.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "Koko is an image viewer for your image collection."
 msgctxt "@title"
-msgid "Koko is an image viewer for your image collection."
+msgid "Photos is an image viewer for your image collection."
 msgstr "Koko je prohlížeč obrázků ve vaší sbírce."
 
-#: main.cpp:66
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 Přispěvatelé do KDE"
 
-#: main.cpp:74
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Vývojář"
 
-#: main.cpp:76
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:78
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:80
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:82
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:84
+#: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Reset the database"
 msgstr ""
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgid "path of image you want to open"
 msgstr ""
@@ -542,78 +546,99 @@ msgstr "Zobrazit všechna ovládání"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: qml/InfoDrawerSidebarBase.qml:42
-#, kde-format
-msgid "File Name"
+#: qml/InfoDrawerSidebarBase.qml:40
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgctxt "@label"
+msgid "File name:"
 msgstr "Název souboru"
 
-#: qml/InfoDrawerSidebarBase.qml:52
-#, kde-format
-msgid "Dimension"
+#: qml/InfoDrawerSidebarBase.qml:47
+#, fuzzy, kde-format
+#| msgid "Dimension"
+msgctxt "@label"
+msgid "Dimension:"
 msgstr "Rozměr"
 
-#: qml/InfoDrawerSidebarBase.qml:58
+#: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
 msgstr "%1 x %2"
 
-#: qml/InfoDrawerSidebarBase.qml:64
-#, kde-format
-msgid "Size"
-msgstr "Velikost"
+#: qml/InfoDrawerSidebarBase.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area size spinboxes"
+#| msgid "Size:"
+msgctxt "@label"
+msgid "Size:"
+msgstr "Velikost:"
 
-#: qml/InfoDrawerSidebarBase.qml:76
-#, kde-format
-msgid "Created"
+#: qml/InfoDrawerSidebarBase.qml:64
+#, fuzzy, kde-format
+#| msgid "Created"
+msgctxt "@label"
+msgid "Created:"
 msgstr "Vytvořeno"
 
-#: qml/InfoDrawerSidebarBase.qml:88
-#, kde-format
-msgid "Model"
+#: qml/InfoDrawerSidebarBase.qml:72
+#, fuzzy, kde-format
+#| msgid "Model"
+msgctxt "@label"
+msgid "Model:"
 msgstr "Model"
 
-#: qml/InfoDrawerSidebarBase.qml:100
-#, kde-format
-msgid "Latitude"
+#: qml/InfoDrawerSidebarBase.qml:79
+#, fuzzy, kde-format
+#| msgid "Latitude"
+msgctxt "@label"
+msgid "Latitude:"
 msgstr "Zem. šířka"
 
-#: qml/InfoDrawerSidebarBase.qml:112
-#, kde-format
-msgid "Longitude"
+#: qml/InfoDrawerSidebarBase.qml:87
+#, fuzzy, kde-format
+#| msgid "Longitude"
+msgctxt "@label"
+msgid "Longitude:"
 msgstr "Zem. délka"
 
-#: qml/InfoDrawerSidebarBase.qml:124
-#, kde-format
-msgid "Rating"
+#: qml/InfoDrawerSidebarBase.qml:97
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@label"
+msgid "Rating:"
 msgstr "Hodnocení"
 
-#: qml/InfoDrawerSidebarBase.qml:131
+#: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
 msgid "Current rating %1"
 msgstr "Současné hodnocení %1"
 
-#: qml/InfoDrawerSidebarBase.qml:138
+#: qml/InfoDrawerSidebarBase.qml:122
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Nastavit hodnocení na %1"
 
-#: qml/InfoDrawerSidebarBase.qml:164
-#, kde-format
-msgid "Description"
+#: qml/InfoDrawerSidebarBase.qml:153
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@label"
+msgid "Description:"
 msgstr "Popis"
 
-#: qml/InfoDrawerSidebarBase.qml:172
+#: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
 msgid "Image description…"
 msgstr "Popis obrázku…"
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
-#, kde-format
-msgid "Tags"
+#: qml/InfoDrawerSidebarBase.qml:166
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@label"
+msgid "Tags:"
 msgstr "Značky"
 
-#: qml/InfoDrawerSidebarBase.qml:198
+#: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
 msgid "Add Tag"
 msgstr "Přidat značku"
@@ -693,6 +718,11 @@ msgstr "Týdnů"
 msgid "Days"
 msgstr "Dnů"
 
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr "Značky"
+
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
@@ -715,9 +745,16 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "Nastavení prezentace:"
 
-#: qml/SettingsPage.qml:131
-#, kde-format
-msgid "About Koko"
+#: qml/SettingsPage.qml:132
+#, fuzzy, kde-format
+#| msgid "About Koko"
+msgid "About Photos"
+msgstr "O aplikaci Koko"
+
+#: qml/SettingsPage.qml:140
+#, fuzzy, kde-format
+#| msgid "About Koko"
+msgid "About KDE"
 msgstr "O aplikaci Koko"
 
 #: qml/ShareAction.qml:23
@@ -755,3 +792,6 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
+
+#~ msgid "Size"
+#~ msgstr "Velikost"

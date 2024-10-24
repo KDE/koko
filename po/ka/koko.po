@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-23 00:38+0000\n"
+"POT-Creation-Date: 2024-10-24 00:38+0000\n"
 "PO-Revision-Date: 2024-01-16 02:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -44,72 +44,76 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "მდებარეობის კოპირება"
 
-#: main.cpp:62
-#, kde-kuit-format
+#: main.cpp:64
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "<application>Koko</application>"
 msgctxt "@title"
-msgid "<application>Koko</application>"
+msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:64
-#, kde-kuit-format
+#: main.cpp:66
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "Koko is an image viewer for your image collection."
 msgctxt "@title"
-msgid "Koko is an image viewer for your image collection."
+msgid "Photos is an image viewer for your image collection."
 msgstr "Koko სურათების გალერეაა თქვენი კოლექციებისთვის."
 
-#: main.cpp:66
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
 msgstr "(c) 2013-2020 KDE Contributors"
 
-#: main.cpp:74
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:74 main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "პროგრამისტი"
 
-#: main.cpp:76
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:78
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "მაკრო მარტინი"
 
-#: main.cpp:80
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "ნიკოლას ფელა"
 
-#: main.cpp:82
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:84
+#: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "მიკელ ჯონსონი"
 
-#: main.cpp:89
+#: main.cpp:91
 #, kde-format
 msgid "Reset the database"
 msgstr "ბაზის გასუფთავება"
 
-#: main.cpp:90
+#: main.cpp:92
 #, kde-format
 msgid "path of image you want to open"
 msgstr "ბილიკი გამოსახულებამდე, რომელიც გნებავთ, გახსნათ"
@@ -540,78 +544,99 @@ msgstr "ყველა კონტროლის ჩვენება"
 msgid "Metadata"
 msgstr "მეტამონაცემები"
 
-#: qml/InfoDrawerSidebarBase.qml:42
-#, kde-format
-msgid "File Name"
+#: qml/InfoDrawerSidebarBase.qml:40
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgctxt "@label"
+msgid "File name:"
 msgstr "ფაილის სახელი"
 
-#: qml/InfoDrawerSidebarBase.qml:52
-#, kde-format
-msgid "Dimension"
+#: qml/InfoDrawerSidebarBase.qml:47
+#, fuzzy, kde-format
+#| msgid "Dimension"
+msgctxt "@label"
+msgid "Dimension:"
 msgstr "განზომილება"
 
-#: qml/InfoDrawerSidebarBase.qml:58
+#: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
 msgstr "%1 x %2"
 
-#: qml/InfoDrawerSidebarBase.qml:64
-#, kde-format
-msgid "Size"
-msgstr "ზომა"
+#: qml/InfoDrawerSidebarBase.qml:55
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area size spinboxes"
+#| msgid "Size:"
+msgctxt "@label"
+msgid "Size:"
+msgstr "ზომა:"
 
-#: qml/InfoDrawerSidebarBase.qml:76
-#, kde-format
-msgid "Created"
+#: qml/InfoDrawerSidebarBase.qml:64
+#, fuzzy, kde-format
+#| msgid "Created"
+msgctxt "@label"
+msgid "Created:"
 msgstr "შექმნილია"
 
-#: qml/InfoDrawerSidebarBase.qml:88
-#, kde-format
-msgid "Model"
+#: qml/InfoDrawerSidebarBase.qml:72
+#, fuzzy, kde-format
+#| msgid "Model"
+msgctxt "@label"
+msgid "Model:"
 msgstr "მოდელი"
 
-#: qml/InfoDrawerSidebarBase.qml:100
-#, kde-format
-msgid "Latitude"
+#: qml/InfoDrawerSidebarBase.qml:79
+#, fuzzy, kde-format
+#| msgid "Latitude"
+msgctxt "@label"
+msgid "Latitude:"
 msgstr "განედი"
 
-#: qml/InfoDrawerSidebarBase.qml:112
-#, kde-format
-msgid "Longitude"
+#: qml/InfoDrawerSidebarBase.qml:87
+#, fuzzy, kde-format
+#| msgid "Longitude"
+msgctxt "@label"
+msgid "Longitude:"
 msgstr "გრძედი"
 
-#: qml/InfoDrawerSidebarBase.qml:124
-#, kde-format
-msgid "Rating"
+#: qml/InfoDrawerSidebarBase.qml:97
+#, fuzzy, kde-format
+#| msgid "Rating"
+msgctxt "@label"
+msgid "Rating:"
 msgstr "ხმის მიცემა"
 
-#: qml/InfoDrawerSidebarBase.qml:131
+#: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
 msgid "Current rating %1"
 msgstr "მიმდინარე შეფასება %1"
 
-#: qml/InfoDrawerSidebarBase.qml:138
+#: qml/InfoDrawerSidebarBase.qml:122
 #, kde-format
 msgid "Set rating to %1"
 msgstr "შეფასების დაყენება %1"
 
-#: qml/InfoDrawerSidebarBase.qml:164
-#, kde-format
-msgid "Description"
+#: qml/InfoDrawerSidebarBase.qml:153
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@label"
+msgid "Description:"
 msgstr "აღწერა"
 
-#: qml/InfoDrawerSidebarBase.qml:172
+#: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
 msgid "Image description…"
 msgstr "გამოსახულების აღწერა…"
 
-#: qml/InfoDrawerSidebarBase.qml:182 qml/PlacesPage.qml:153 qml/Sidebar.qml:189
-#, kde-format
-msgid "Tags"
+#: qml/InfoDrawerSidebarBase.qml:166
+#, fuzzy, kde-format
+#| msgid "Tags"
+msgctxt "@label"
+msgid "Tags:"
 msgstr "ჭდეები"
 
-#: qml/InfoDrawerSidebarBase.qml:198
+#: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
 msgid "Add Tag"
 msgstr "ჭდის დამატება"
@@ -691,6 +716,11 @@ msgstr "კვირა"
 msgid "Days"
 msgstr "დღე"
 
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr "ჭდეები"
+
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
@@ -713,9 +743,16 @@ msgctxt "@title:group"
 msgid "Slideshow settings:"
 msgstr "სლაიდშოუს მორგება:"
 
-#: qml/SettingsPage.qml:131
-#, kde-format
-msgid "About Koko"
+#: qml/SettingsPage.qml:132
+#, fuzzy, kde-format
+#| msgid "About Koko"
+msgid "About Photos"
+msgstr "Koko-ის შესახებ"
+
+#: qml/SettingsPage.qml:140
+#, fuzzy, kde-format
+#| msgid "About Koko"
+msgid "About KDE"
 msgstr "Koko-ის შესახებ"
 
 #: qml/ShareAction.qml:23
@@ -753,6 +790,9 @@ msgstr "მორგება"
 #, kde-format
 msgid "Add new tag…"
 msgstr "ახალი ჭდის დამატება…"
+
+#~ msgid "Size"
+#~ msgstr "ზომა"
 
 #~ msgid "Image viewer"
 #~ msgstr "სურათების გალერეა"
