@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-24 00:38+0000\n"
-"PO-Revision-Date: 2024-09-23 15:20+0300\n"
+"PO-Revision-Date: 2024-10-24 13:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -44,20 +44,16 @@ msgid "Copy Location"
 msgstr "Konumu Kopyala"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Fotoğraflar</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko, görsel koleksiyonunuz için bir görüntüleyicidir."
+msgstr "Fotoğraflar, görsel koleksiyonunuz için bir görüntüleyicidir."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -125,7 +121,7 @@ msgstr "Paylaşma başarısız"
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr "Görselin paylaşılan URL'si <a href='%1'>%1</a>"
+msgstr "Görselin paylaşılan URL’si <a href='%1'>%1</a>"
 
 #: qml/AlbumDelegate.qml:121
 #, kde-format
@@ -546,18 +542,16 @@ msgid "Metadata"
 msgstr "Üstveri"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Dosya Adı"
+msgstr "Dosya adı:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Ölçü"
+msgstr "Ölçü:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -566,47 +560,40 @@ msgid "%1 x %2"
 msgstr "%1 × %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Boyut:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Oluşturma"
+msgstr "Oluşturma:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Model"
+msgstr "Model:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Enlem"
+msgstr "Enlem:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Boylam"
+msgstr "Boylam:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Derecelendirme"
+msgstr "Derecelendirme:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -619,11 +606,10 @@ msgid "Set rating to %1"
 msgstr "Derecelendirmeyi %1 olarak ayarla"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Açıklama"
+msgstr "Açıklama:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -631,11 +617,10 @@ msgid "Image description…"
 msgstr "Görsel açıklaması…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Künyeler"
+msgstr "Künyeler:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -745,16 +730,14 @@ msgid "Slideshow settings:"
 msgstr "Slayt gösterisi ayarları:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "Koko Hakkında"
+msgstr "Fotoğraflar Hakkında"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "Koko Hakkında"
+msgstr "KDE Hakkında"
 
 #: qml/ShareAction.qml:23
 #, kde-format
