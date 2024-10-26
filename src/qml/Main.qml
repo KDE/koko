@@ -26,6 +26,7 @@ Kirigami.ApplicationWindow {
         popHiddenPages: true
 
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
+        layers.onDepthChanged: root.updateGlobalDrawer()
     }
 
     minimumWidth: Kirigami.Units.gridUnit * 15
@@ -33,7 +34,7 @@ Kirigami.ApplicationWindow {
 
     onClosing: KokoPrivate.Controller.saveWindowGeometry(root)
 
-    function switchApplicationPage(page) {
+    function switchApplicationPage(page: Kirigami.Page): Kirigami.Page {
         if (!page || pageStack.currentItem === page) {
             return page;
         }
@@ -44,7 +45,7 @@ Kirigami.ApplicationWindow {
         return pageStack.currentItem;
     }
 
-    function openPlacesPage() {
+    function openPlacesPage(): void {
         if (placesView === null) {
             placesView = switchApplicationPage(Qt.resolvedUrl("PlacesPage.qml"));
             placesView.title = i18n("Places");
@@ -54,7 +55,7 @@ Kirigami.ApplicationWindow {
         placesOpened();
     }
 
-    function openSettingsView() {
+    function openSettingsView(): void {
         if (settingsView === null) {
             settingsView = switchApplicationPage(Qt.resolvedUrl("SettingsPage.qml"));
         } else {
@@ -63,7 +64,7 @@ Kirigami.ApplicationWindow {
         settingsOpened(true); //isPage
     }
 
-    function openSettingsPage() {
+    function openSettingsPage(): void {
         pageStack.pushDialogLayer(Qt.resolvedUrl("SettingsPage.qml"), {}, {
             title: i18n("Configure"),
             width: Kirigami.Units.gridUnit * 30,
@@ -71,7 +72,7 @@ Kirigami.ApplicationWindow {
         settingsOpened(false); //isPage
     }
 
-    function updateGlobalDrawer() {
+    function updateGlobalDrawer(): void {
         if (!fetchImageToOpen && globalDrawer) {
             globalDrawer.enabled = pageStack.layers.depth < 2;
             globalDrawer.drawerOpen = !globalDrawer.modal && pageStack.layers.depth < 2;
@@ -94,12 +95,9 @@ Kirigami.ApplicationWindow {
     // this is a temporary binding that's supposed to be broken
     property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
 
-    pageStack.layers.onDepthChanged: root.updateGlobalDrawer()
-
     KConfig.WindowStateSaver {
         configGroupName: "MainWindow"
     }
-
 
     Component {
         id: openFileComponent
@@ -130,7 +128,7 @@ Kirigami.ApplicationWindow {
 
     Connections {
         target: KokoPrivate.OpenFileModel
-        function onUpdatedImages() { // this gets called if we use "open with", while app is already open
+        function onUpdatedImages(): void { // this gets called if we use "open with", while app is already open
             if (KokoPrivate.OpenFileModel.rowCount() > 1) {
                 pageStack.clear();
                 pageStack.layers.clear();
@@ -151,7 +149,7 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    function filterBy(value, query) {
+    function filterBy(value: string, query: string): void {
         if (albumView === null || albumView !== pageStack.currentItem) {
             albumView = switchApplicationPage(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
         }
