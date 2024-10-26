@@ -6,6 +6,7 @@
 
 #ifndef ITEMTYPES_H
 #define ITEMTYPES_H
+#include "exiv2extractor.h"
 #include <QObject>
 #include <qqmlintegration.h>
 
@@ -30,6 +31,13 @@ public:
     enum LocationGroup { Country = 7, State, City };
 
     enum QueryType { LocationQuery = 10, TimeQuery };
+};
+
+class Exiv2ExtractorForeign
+{
+    Q_GADGET
+    QML_NAMED_ELEMENT(Exiv2Extractor)
+    QML_FOREIGN(Exiv2Extractor)
 };
 
 #endif
