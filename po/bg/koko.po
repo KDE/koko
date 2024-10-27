@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:38+0000\n"
-"PO-Revision-Date: 2024-05-13 22:48+0200\n"
+"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"PO-Revision-Date: 2024-10-26 19:21+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -46,20 +46,16 @@ msgid "Copy Location"
 msgstr "Копиране на местоположението"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Снимки</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko е програма за преглед на вашата колекция от изображения."
+msgstr "Снимки е програма за преглед на вашата колекция от изображения."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -227,7 +223,7 @@ msgstr "Видеозаписи"
 msgid "Favorites"
 msgstr "Любими"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "Места"
@@ -547,18 +543,16 @@ msgid "Metadata"
 msgstr "Метаданни"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Име на файл"
+msgstr "Име на файл:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Измерение"
+msgstr "Измерение:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -567,47 +561,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Големина:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Създаден"
+msgstr "Създаден:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Модел"
+msgstr "Модел:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Географска ширина"
+msgstr "Географска ширина:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Географска дължина"
+msgstr "Географска дължина:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Оценка"
+msgstr "Оценка:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -620,11 +607,10 @@ msgid "Set rating to %1"
 msgstr "Задаване на оценката на %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Описание"
+msgstr "Описание:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -632,28 +618,27 @@ msgid "Image description…"
 msgstr "Описание на изображение…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Етикети"
+msgstr "Етикети:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
 msgid "Add Tag"
 msgstr "Добавяне на етикет"
 
-#: qml/Main.qml:84
+#: qml/Main.qml:69
 #, kde-format
 msgid "Configure"
 msgstr "Настройване"
 
-#: qml/Main.qml:118
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Изображения"
 
-#: qml/Main.qml:129 qml/Main.qml:138
+#: qml/Main.qml:116 qml/Main.qml:125
 #, kde-format
 msgid "Folders"
 msgstr "Директории"
@@ -746,16 +731,14 @@ msgid "Slideshow settings:"
 msgstr "Настройки за слайдшоу:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "Относно Koko"
+msgstr "Относно Снимки"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "Относно Koko"
+msgstr "Относно KDE"
 
 #: qml/ShareAction.qml:23
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:38+0000\n"
+"POT-Creation-Date: 2024-10-27 00:38+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -229,7 +229,7 @@ msgstr ""
 msgid "Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
@@ -660,17 +660,17 @@ msgstr "ਟੈਗ"
 msgid "Add Tag"
 msgstr "%1 ਟੈਗ ਜੋੜੋ"
 
-#: qml/Main.qml:84
+#: qml/Main.qml:69
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: qml/Main.qml:118
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "ਚਿੱਤਰ"
 
-#: qml/Main.qml:129 qml/Main.qml:138
+#: qml/Main.qml:116 qml/Main.qml:125
 #, kde-format
 msgid "Folders"
 msgstr "ਫੋਲਡਰ"

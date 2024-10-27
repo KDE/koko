@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:38+0000\n"
+"POT-Creation-Date: 2024-10-27 00:38+0000\n"
 "PO-Revision-Date: 2024-01-17 00:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -228,7 +228,7 @@ msgstr "Bideoak"
 msgid "Favorites"
 msgstr "Gogokoenak"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "Lekuak"
@@ -645,17 +645,17 @@ msgstr "Etiketak"
 msgid "Add Tag"
 msgstr "Gehitu etiketa"
 
-#: qml/Main.qml:84
+#: qml/Main.qml:69
 #, kde-format
 msgid "Configure"
 msgstr "Konfiguratu"
 
-#: qml/Main.qml:118
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Irudiak"
 
-#: qml/Main.qml:129 qml/Main.qml:138
+#: qml/Main.qml:116 qml/Main.qml:125
 #, kde-format
 msgid "Folders"
 msgstr "Karpetak"

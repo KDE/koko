@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:38+0000\n"
+"POT-Creation-Date: 2024-10-27 00:38+0000\n"
 "PO-Revision-Date: 2024-10-25 22:11+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -224,7 +224,7 @@ msgstr "סרטונים"
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "מקומות"
@@ -634,17 +634,17 @@ msgstr "תגיות:"
 msgid "Add Tag"
 msgstr "הוספת תגית"
 
-#: qml/Main.qml:84
+#: qml/Main.qml:69
 #, kde-format
 msgid "Configure"
 msgstr "הגדרה"
 
-#: qml/Main.qml:118
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "תמונות"
 
-#: qml/Main.qml:129 qml/Main.qml:138
+#: qml/Main.qml:116 qml/Main.qml:125
 #, kde-format
 msgid "Folders"
 msgstr "תיקיות"

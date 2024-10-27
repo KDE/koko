@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-24 00:38+0000\n"
-"PO-Revision-Date: 2024-01-22 22:13+0100\n"
+"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"PO-Revision-Date: 2024-10-25 08:09+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -45,20 +45,16 @@ msgid "Copy Location"
 msgstr "Copier un emplacement"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Photos</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko est un afficheur d'images pour votre collection d'images."
+msgstr "Photos est un afficheur d'images pour votre collection de photos."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -226,7 +222,7 @@ msgstr "Vidéos"
 msgid "Favorites"
 msgstr "Préférés"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:66 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
 #, kde-format
 msgid "Places"
 msgstr "Emplacements"
@@ -547,18 +543,16 @@ msgid "Metadata"
 msgstr "Métadonnées"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Nom du fichier"
+msgstr "Nom du fichier :"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Dimension"
+msgstr "Dimension :"
 
 # unreviewed-context
 #: qml/InfoDrawerSidebarBase.qml:48
@@ -568,47 +562,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Taille :"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Créé"
+msgstr "Créé :"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Modèle"
+msgstr "Modèle :"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Latitude"
+msgstr "Latitude :"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Longitude"
+msgstr "Longitude :"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Notation"
+msgstr "Notation :"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -621,11 +608,10 @@ msgid "Set rating to %1"
 msgstr "Définir la notation courante à %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Description"
+msgstr "Description :"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -633,28 +619,27 @@ msgid "Image description…"
 msgstr "Description de l'image..."
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Étiquettes"
+msgstr "Étiquettes :"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
 msgid "Add Tag"
 msgstr "Ajouter une étiquette"
 
-#: qml/Main.qml:84
+#: qml/Main.qml:69
 #, kde-format
 msgid "Configure"
 msgstr "Configurer"
 
-#: qml/Main.qml:118
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Images"
 
-#: qml/Main.qml:129 qml/Main.qml:138
+#: qml/Main.qml:116 qml/Main.qml:125
 #, kde-format
 msgid "Folders"
 msgstr "Dossiers"
@@ -747,16 +732,14 @@ msgid "Slideshow settings:"
 msgstr "Configuration du diaporama :"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "À propos de Koko"
+msgstr "À propos de Photos"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "À propos de Koko"
+msgstr "À propos de KDE"
 
 #: qml/ShareAction.qml:23
 #, kde-format
