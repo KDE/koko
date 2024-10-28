@@ -549,18 +549,16 @@ msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Όνομα αρχείου"
+msgstr "Όνομα αρχείου:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Διάσταση"
+msgstr "Διάσταση:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -569,47 +567,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Μέγεθος:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Δημιουργήθηκε"
+msgstr "Δημιουργήθηκε:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Μοντέλο"
+msgstr "Μοντέλο:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Γεωγραφικό πλάτος"
+msgstr "Γεωγραφικό πλάτος:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Γεωγραφικό μήκος"
+msgstr "Γεωγραφικό μήκος:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Αξιολόγηση"
+msgstr "Αξιολόγηση:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -622,11 +613,10 @@ msgid "Set rating to %1"
 msgstr "Ρύθμιση αξιολόγησης στο %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Περιγραφή"
+msgstr "Περιγραφή:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -634,11 +624,10 @@ msgid "Image description…"
 msgstr "Περιγραφή εικόνας…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Ετικέτες"
+msgstr "Ετικέτες:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format

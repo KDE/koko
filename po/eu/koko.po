@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-01-17 00:34+0100\n"
+"PO-Revision-Date: 2024-10-27 15:48+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,20 +47,16 @@ msgid "Copy Location"
 msgstr "Kopiatu kokalekua"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Photos</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko zure irudi-bilduma ikusteko irudi erakusle bat da."
+msgstr "Photos, zure irudi-bilduma ikusteko irudi erakusle bat da."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -549,18 +545,16 @@ msgid "Metadata"
 msgstr "Metadatuak"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Fitxategi-izena"
+msgstr "Fitxategi-izena:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Dimentsioa"
+msgstr "Dimentsioa:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -569,47 +563,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Neurria:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Sortua"
+msgstr "Sorrera:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Eredua"
+msgstr "Eredua:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Latitudea"
+msgstr "Latitudea:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Longitudea"
+msgstr "Longitudea:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Balorazioa"
+msgstr "Puntuazioa:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -622,11 +609,10 @@ msgid "Set rating to %1"
 msgstr "Ezarri balorazioa %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Deskribapena"
+msgstr "Deskribapena:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -634,11 +620,10 @@ msgid "Image description…"
 msgstr "Irudiaren deskribapena..."
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Etiketak"
+msgstr "Etiketak:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -748,16 +733,14 @@ msgid "Slideshow settings:"
 msgstr "Diapositiba emanaldiaren ezarpenak:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "«Koko»ri buruz"
+msgstr "«Photos»eri buruz"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "«Koko»ri buruz"
+msgstr "KDEri buruz"
 
 #: qml/ShareAction.qml:23
 #, kde-format
