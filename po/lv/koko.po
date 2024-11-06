@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-03-23 09:53+0200\n"
+"PO-Revision-Date: 2024-11-04 16:07+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -45,20 +45,16 @@ msgid "Copy Location"
 msgstr "Kopēt vietu"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Fotogrāfijas</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "„Koko“ ir attēlu skatītājs attēlu kolekcijai."
+msgstr "Fotogrāfijas ir attēlu skatītājs attēlu kolekcijai."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -550,18 +546,16 @@ msgid "Metadata"
 msgstr "Metadati"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Datnes nosaukums"
+msgstr "Datnes nosaukums:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Izmērs"
+msgstr "Izmērs:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -570,47 +564,40 @@ msgid "%1 x %2"
 msgstr "%1 × %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
-msgstr "Izmērs:"
+msgstr "Lielums:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Izveidots"
+msgstr "Izveidots:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Modelis"
+msgstr "Modelis:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Platums"
+msgstr "Platums:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Garums"
+msgstr "Garums:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Vērtējums"
+msgstr "Vērtējums:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -623,11 +610,10 @@ msgid "Set rating to %1"
 msgstr "Novērtēt kā %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Apraksts"
+msgstr "Apraksts:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -635,11 +621,10 @@ msgid "Image description…"
 msgstr "Attēla apraksts..."
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Birkas"
+msgstr "Birkas:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -749,16 +734,14 @@ msgid "Slideshow settings:"
 msgstr "Slīdrādes iestatījumi:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "Par „Koko“"
+msgstr "Par „Fotogrāfijas“"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "Par „Koko“"
+msgstr "Par KDE"
 
 #: qml/ShareAction.qml:23
 #, kde-format
