@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-11-04 16:07+0200\n"
+"PO-Revision-Date: 2024-11-06 20:57+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -221,7 +221,7 @@ msgstr "Video"
 #: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
 #, kde-format
 msgid "Favorites"
-msgstr "Iecienītākie"
+msgstr "Iecienītākās"
 
 #: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
 #, kde-format
@@ -414,12 +414,12 @@ msgstr "Izlase"
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Remove from favorites"
-msgstr "Noņemt no iecienītajiem"
+msgstr "Noņemt no iecienītajām"
 
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Add to favorites"
-msgstr "Pievienot iecienītajiem"
+msgstr "Pievienot iecienītajām"
 
 #: qml/ImageViewPage.qml:99
 #, kde-format
