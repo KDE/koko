@@ -38,7 +38,7 @@ void ReverseGeoCoderTest::testSimple()
     QVariantMap data = coder.lookup(lat, lon);
     QCOMPARE(data.value("country").toString(), QString("United Kingdom"));
     QCOMPARE(data.value("admin1").toString(), QString("England"));
-    QCOMPARE(data.value("admin2").toString(), QString("City and Borough of Birmingham"));
+    QCOMPARE(data.value("admin2").toString(), QString("Warwickshire"));
 }
 
 QTEST_MAIN(ReverseGeoCoderTest)
