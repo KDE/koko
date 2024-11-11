@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-10-26 19:21+0200\n"
+"PO-Revision-Date: 2024-11-10 20:12+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -123,7 +123,7 @@ msgstr "Споделянето е неуспешно"
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr "Споделеният url за изображението е <a href='%1'>%1</a>"
+msgstr "Споделеният url за изображението е <a href=„%1“>%1</a>"
 
 #: qml/AlbumDelegate.qml:121
 #, kde-format
