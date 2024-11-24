@@ -13,7 +13,6 @@ QQC2.AbstractButton {
 
     required property bool selected
     required property int index
-    property QtObject iconMouseArea: iconMouseArea
 
     width: Kirigami.Units.iconSizes.smallMedium
     height: width
