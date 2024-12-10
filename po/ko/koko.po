@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-02-09 23:48+0100\n"
+"PO-Revision-Date: 2024-12-10 01:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -44,20 +44,16 @@ msgid "Copy Location"
 msgstr "위치 복사"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>사진</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko는 그림 모음집 뷰어입니다."
+msgstr "그림 모음집 뷰어입니다."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -543,18 +539,16 @@ msgid "Metadata"
 msgstr "메타데이터"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "파일 이름"
+msgstr "파일 이름:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "크기"
+msgstr "그림 크기:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -563,47 +557,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "크기:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "생성됨"
+msgstr "생성됨:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "모델"
+msgstr "모델:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "위도"
+msgstr "위도:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "경도"
+msgstr "경도:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "별점"
+msgstr "별점:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -616,11 +603,10 @@ msgid "Set rating to %1"
 msgstr "별점을 %1(으)로 설정"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "설명"
+msgstr "설명:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -628,11 +614,10 @@ msgid "Image description…"
 msgstr "그림 설명..."
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "태그"
+msgstr "태그:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -742,16 +727,14 @@ msgid "Slideshow settings:"
 msgstr "슬라이드 쇼 설정:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "Koko 정보"
+msgstr "정보"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "Koko 정보"
+msgstr "KDE 정보"
 
 #: qml/ShareAction.qml:23
 #, kde-format
