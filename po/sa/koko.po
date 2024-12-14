@@ -1,0 +1,776 @@
+# Sanskrit translations for koko package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the koko package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: koko\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"PO-Revision-Date: 2024-12-13 19:09+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: filemenu.cpp:117
+#, kde-format
+msgid "Open Containing Folder"
+msgstr "Containing Folder उद्घाटयन्तु"
+
+#: filemenu.cpp:131
+#, kde-format
+msgid "&Copy"
+msgstr "&प्रतिलिपि"
+
+#: filemenu.cpp:139
+#, kde-format
+msgctxt "@action:incontextmenu"
+msgid "Copy Location"
+msgstr ""
+
+#: main.cpp:64
+#, kde-kuit-format
+msgctxt "@title"
+msgid "<application>Photos</application>"
+msgstr ""
+
+#: main.cpp:66
+#, kde-kuit-format
+msgctxt "@title"
+msgid "Photos is an image viewer for your image collection."
+msgstr ""
+
+#: main.cpp:68
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "(c) 2013-2020 KDE Contributors"
+msgstr ""
+
+#: main.cpp:76
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Vishesh Handa"
+msgstr ""
+
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Developer"
+msgstr ""
+
+#: main.cpp:78
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Atul Sharma"
+msgstr ""
+
+#: main.cpp:80
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Marco Martin"
+msgstr ""
+
+#: main.cpp:82
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Nicolas Fella"
+msgstr ""
+
+#: main.cpp:84
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Carl Schwan"
+msgstr ""
+
+#: main.cpp:86
+#, kde-kuit-format
+msgctxt "@info:credit"
+msgid "Mikel Johnson"
+msgstr ""
+
+#: main.cpp:91
+#, kde-format
+msgid "Reset the database"
+msgstr "दत्तांशकोशं पुनः सेट् कुर्वन्तु"
+
+#: main.cpp:92
+#, kde-format
+msgid "path of image you want to open"
+msgstr "भवन्तः उद्घाटयितुम् इच्छन्ति तस्य प्रतिबिम्बस्य मार्गः"
+
+#: notificationmanager.cpp:16
+#, kde-format
+msgid "Sharing failed"
+msgstr "साझेदारी असफलम् अभवत्"
+
+#: notificationmanager.cpp:22
+#, kde-format
+msgid "Shared url for image is <a href='%1'>%1</a>"
+msgstr "चित्रस्य कृते साझाकृतं url <a href='%1'>%1</a> अस्ति"
+
+#: qml/AlbumDelegate.qml:121
+#, kde-format
+msgid "1 Image"
+msgid_plural "%1 Images"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
+#, kde-format
+msgid "Remove Bookmark"
+msgstr "बुकमार्कं निष्कासयन्तु"
+
+#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
+#, kde-format
+msgctxt "@action:button Bookmarks the current folder"
+msgid "Bookmark Folder"
+msgstr ""
+
+#: qml/AlbumView.qml:282
+#, kde-format
+msgid "Go Up"
+msgstr "उपरि गच्छतु"
+
+#: qml/AlbumView.qml:305
+#, kde-format
+msgid "Home"
+msgstr "गृहम्‌"
+
+#: qml/AlbumView.qml:305
+#, kde-format
+msgid "Root"
+msgstr "मूलं"
+
+#: qml/AlbumView.qml:338
+#, kde-format
+msgid "Delete Selection"
+msgstr "चयनं विलोपयन्तु"
+
+#: qml/AlbumView.qml:339
+#, kde-format
+msgid "Move selected items to trash"
+msgstr "चयनितवस्तूनि कचरे स्थानान्तरयन्तु"
+
+#: qml/AlbumView.qml:345
+#, kde-format
+msgid "Restore Selection"
+msgstr "चयनं पुनः स्थापयतु"
+
+#: qml/AlbumView.qml:346
+#, kde-format
+msgid "Restore selected items from trash"
+msgstr "कचरातः चयनितवस्तूनि पुनः स्थापयन्तु"
+
+#: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
+#, kde-format
+msgid "Configure…"
+msgstr "विन्यस्तं कुर्वन्तु..."
+
+#: qml/AlbumView.qml:358
+#, kde-format
+msgid "Select All"
+msgstr "सर्वं चिनोतु"
+
+#: qml/AlbumView.qml:359
+#, kde-format
+msgid "Selects all the media in the current view"
+msgstr "वर्तमानदृश्ये सर्वाणि माध्यमानि चिनोति"
+
+#: qml/AlbumView.qml:366
+#, kde-format
+msgid "Deselect All"
+msgstr "सर्वाणि अचयनं कुर्वन्तु"
+
+#: qml/AlbumView.qml:367
+#, kde-format
+msgid "De-selects all the selected media"
+msgstr "सर्वाणि चयनितमाध्यमानि विचयनं करोति"
+
+#: qml/AlbumView.qml:478
+#, kde-format
+msgid "No Media Found"
+msgstr "कोऽपि मीडिया न प्राप्तः"
+
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
+#, kde-format
+msgid "Pictures"
+msgstr "चित्रम्"
+
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
+#, kde-format
+msgid "Videos"
+msgstr "विडियो"
+
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
+#, kde-format
+msgid "Favorites"
+msgstr "प्रियाः"
+
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
+#, kde-format
+msgid "Places"
+msgstr "स्थानाः"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#, kde-format
+msgid "Discard changes"
+msgstr "परिवर्तनं परित्यजन्तु"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#, kde-format
+msgid "Are you sure you want to discard all changes?"
+msgstr "किं भवान् निश्चयेन सर्वान् परिवर्तनान् परित्यक्तुं इच्छति?"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:30
+#, kde-format
+msgid "Cancel"
+msgstr "निरसयतु"
+
+#: qml/Dialog/ConfirmDiscardingChange.qml:36
+#, kde-format
+msgid "Yes"
+msgstr "आम्‌"
+
+#: qml/EditorView.qml:29
+#, kde-format
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: qml/EditorView.qml:62
+#, kde-format
+msgctxt "@action:button Save image modification"
+msgid "Save"
+msgstr ""
+
+#: qml/EditorView.qml:67 qml/EditorView.qml:257
+#, kde-format
+msgid ""
+"Unable to save file. Check if you have the correct permission to edit this "
+"file."
+msgstr ""
+"सञ्चिकां रक्षितुं असमर्थः। एतां सञ्चिकां सम्पादयितुं भवतः समीचीना अनुमतिः अस्ति वा इति "
+"पश्यन्तु ।"
+
+#: qml/EditorView.qml:76
+#, kde-format
+msgctxt "@action:button Undo modification"
+msgid "Undo"
+msgstr ""
+
+#: qml/EditorView.qml:87 qml/EditorView.qml:99
+#, kde-format
+msgctxt "@action:button"
+msgid "Cancel"
+msgstr "निरसयतु"
+
+#: qml/EditorView.qml:87 qml/EditorView.qml:93
+#, kde-format
+msgctxt "@action:button Crop an image"
+msgid "Crop"
+msgstr ""
+
+#: qml/EditorView.qml:99 qml/EditorView.qml:105
+#, kde-format
+msgctxt "@action:button Resize an image"
+msgid "Resize"
+msgstr ""
+
+#: qml/EditorView.qml:111
+#, kde-format
+msgctxt "@action:button Rotate an image to the left"
+msgid "Rotate left"
+msgstr ""
+
+#: qml/EditorView.qml:117
+#, kde-format
+msgctxt "@action:button Rotate an image to the right"
+msgid "Rotate right"
+msgstr ""
+
+#: qml/EditorView.qml:123
+#, kde-format
+msgctxt "@action:button Mirror an image vertically"
+msgid "Flip"
+msgstr ""
+
+#: qml/EditorView.qml:129
+#, kde-format
+msgctxt "@action:button Mirror an image horizontally"
+msgid "Mirror"
+msgstr ""
+
+#: qml/EditorView.qml:143
+#, kde-format
+msgctxt "@title:group for crop area size spinboxes"
+msgid "Size:"
+msgstr ""
+
+#: qml/EditorView.qml:175
+#, kde-format
+msgctxt "@title:group for crop area position spinboxes"
+msgid "Position:"
+msgstr ""
+
+#: qml/EditorView.qml:247
+#, kde-format
+msgid "Save As"
+msgstr "As Save As इति"
+
+#: qml/EditorView.qml:253
+#, kde-format
+msgid "You are now editing a new file."
+msgstr "इदानीं भवान् नूतनां सञ्चिकां सम्पादयति ।"
+
+#: qml/imagedelegate/VideoPlayer.qml:161
+#, kde-format
+msgid "Seek slider"
+msgstr "स्लाइडरं अन्वेष्टुम्"
+
+#: qml/imagedelegate/VideoPlayer.qml:203 qml/imagedelegate/VideoPlayer.qml:225
+#, kde-format
+msgid "Skip backward 1 second"
+msgid_plural "Skip backward %1 seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qml/imagedelegate/VideoPlayer.qml:213
+#, kde-format
+msgid "Pause playback"
+msgstr "प्लेबैकं विरामयतु"
+
+#: qml/imagedelegate/VideoPlayer.qml:213
+#, kde-format
+msgid "Continue playback"
+msgstr "प्लेबैकं निरन्तरं कुर्वन्तु"
+
+#: qml/imagedelegate/VideoPlayer.qml:235
+#, kde-format
+msgid "Unmute audio"
+msgstr "श्रव्यं अनम्यूट् कुर्वन्तु"
+
+#: qml/imagedelegate/VideoPlayer.qml:235
+#, kde-format
+msgid "Mute audio"
+msgstr "श्रव्यं निःशब्दं कुर्वन्तु"
+
+#: qml/imagedelegate/VideoPlayer.qml:247
+#, kde-format
+msgid "Volume slider"
+msgstr "वॉल्यूम स्लाइडर"
+
+#: qml/imagedelegate/VideoPlayer.qml:267
+#, kde-format
+msgid "Repeat current video"
+msgstr "वर्तमान विडियो पुनरावृत्ति"
+
+#: qml/imagedelegate/VideoPlayer.qml:267
+#, kde-format
+msgid "Don't repeat current video"
+msgstr "वर्तमानं विडियो पुनः न कुर्वन्तु"
+
+#: qml/ImageViewPage.qml:75
+#, kde-format
+msgid "Info"
+msgstr "Info"
+
+#: qml/ImageViewPage.qml:77
+#, kde-format
+msgid "See information about video"
+msgstr "विडियो विषये सूचनां पश्यन्तु"
+
+#: qml/ImageViewPage.qml:78
+#, kde-format
+msgid "See information about image"
+msgstr "चित्रस्य विषये सूचनां पश्यन्तु"
+
+#: qml/ImageViewPage.qml:87
+#, kde-format
+msgid "Remove"
+msgstr "अपाकरोति"
+
+#: qml/ImageViewPage.qml:87
+#, kde-format
+msgid "Favorite"
+msgstr "प्रिय"
+
+#: qml/ImageViewPage.qml:88
+#, kde-format
+msgid "Remove from favorites"
+msgstr "प्रियतः निष्कासयन्तु"
+
+#: qml/ImageViewPage.qml:88
+#, kde-format
+msgid "Add to favorites"
+msgstr "प्रियं योजयन्तु"
+
+#: qml/ImageViewPage.qml:99
+#, kde-format
+msgctxt "verb, edit an image"
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: qml/ImageViewPage.qml:117
+#, kde-format
+msgid "Share Video"
+msgstr "Share Video"
+
+#: qml/ImageViewPage.qml:117
+#, kde-format
+msgid "Share Image"
+msgstr "Share Image"
+
+#: qml/ImageViewPage.qml:118
+#, kde-format
+msgctxt "verb, share an image/video"
+msgid "Share"
+msgstr "संविभागः"
+
+#: qml/ImageViewPage.qml:132
+#, kde-format
+msgid "Start Slideshow"
+msgstr "स्लाइड शो आरभत"
+
+#: qml/ImageViewPage.qml:133
+#, kde-format
+msgid "Slideshow"
+msgstr "स्लाइड शो"
+
+#: qml/ImageViewPage.qml:140
+#, kde-format
+msgid "Thumbnail Bar"
+msgstr "लघुचित्र बार"
+
+#: qml/ImageViewPage.qml:141
+#, kde-format
+msgid "Hide Thumbnail Bar"
+msgstr "लघुचित्रपट्टिकां गोपयन्तु"
+
+#: qml/ImageViewPage.qml:141
+#, kde-format
+msgid "Show Thumbnail Bar"
+msgstr "लघुचित्रपट्टिकां दर्शयतु"
+
+#: qml/ImageViewPage.qml:142
+#, kde-format
+msgid "Toggle Thumbnail Bar"
+msgstr "लघुचित्र बार टॉगल करें"
+
+#: qml/ImageViewPage.qml:150
+#, kde-format
+msgid "Fullscreen"
+msgstr "पूर्णपर्दे"
+
+#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
+#, kde-format
+msgid "Exit Fullscreen"
+msgstr "Fullscreen इत्यस्मात् निर्गच्छन्तु"
+
+#: qml/ImageViewPage.qml:151
+#, kde-format
+msgid "Enter Fullscreen"
+msgstr "Fullscreen इति प्रविष्टं कुर्वन्तु"
+
+#: qml/ImageViewPage.qml:411
+#, kde-format
+msgid "Previous image"
+msgstr "पूर्वप्रतिबिम्बम्"
+
+#: qml/ImageViewPage.qml:441
+#, kde-format
+msgid "Next image"
+msgstr "अग्रिमः चित्रः"
+
+#: qml/ImageViewPage.qml:658
+#, kde-format
+msgid "More"
+msgstr "अधिकः"
+
+#: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
+#, kde-format
+msgctxt "@label:spinbox Slideshow image changing interval"
+msgid "Slideshow interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
+#, kde-format
+msgctxt "Slideshow image changing interval"
+msgid "1 second"
+msgid_plural "%1 seconds"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qml/ImageViewPage.qml:835
+#, kde-format
+msgctxt "@option:check"
+msgid "Loop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
+#, kde-format
+msgctxt "@option:check"
+msgid "Randomize"
+msgstr ""
+
+#: qml/ImageViewPage.qml:850
+#, kde-format
+msgid "Stop Slideshow"
+msgstr "स्लाइड शो स्थगयन्तु"
+
+#: qml/ImageViewPage.qml:864
+#, kde-format
+msgid "Show All Controls"
+msgstr "सर्वाणि नियन्त्रणानि दर्शयतु"
+
+#: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:37
+#, kde-format
+msgid "Metadata"
+msgstr "मेटाडाटा"
+
+#: qml/InfoDrawerSidebarBase.qml:40
+#, kde-format
+msgctxt "@label"
+msgid "File name:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:47
+#, kde-format
+msgctxt "@label"
+msgid "Dimension:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:48
+#, kde-format
+msgctxt "dimensions"
+msgid "%1 x %2"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:55
+#, kde-format
+msgctxt "@label"
+msgid "Size:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:64
+#, kde-format
+msgctxt "@label"
+msgid "Created:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:72
+#, kde-format
+msgctxt "@label"
+msgid "Model:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:79
+#, kde-format
+msgctxt "@label"
+msgid "Latitude:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:87
+#, kde-format
+msgctxt "@label"
+msgid "Longitude:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:97
+#, kde-format
+msgctxt "@label"
+msgid "Rating:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:114
+#, kde-format
+msgid "Current rating %1"
+msgstr "वर्तमान रेटिंग् %1"
+
+#: qml/InfoDrawerSidebarBase.qml:122
+#, kde-format
+msgid "Set rating to %1"
+msgstr "रेटिंग् %1 इति सेट् कुर्वन्तु"
+
+#: qml/InfoDrawerSidebarBase.qml:153
+#, kde-format
+msgctxt "@label"
+msgid "Description:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:155
+#, kde-format
+msgid "Image description…"
+msgstr "चित्रविवरणम्..."
+
+#: qml/InfoDrawerSidebarBase.qml:166
+#, kde-format
+msgctxt "@label"
+msgid "Tags:"
+msgstr ""
+
+#: qml/InfoDrawerSidebarBase.qml:192
+#, kde-format
+msgid "Add Tag"
+msgstr "Add Tag"
+
+#: qml/Main.qml:69
+#, kde-format
+msgid "Configure"
+msgstr "विन्यस्तं कुर्वन्तु"
+
+#: qml/Main.qml:105
+#, kde-format
+msgid "Images"
+msgstr "बिम्बाः"
+
+#: qml/Main.qml:116 qml/Main.qml:125
+#, kde-format
+msgid "Folders"
+msgstr "पुटम्"
+
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
+#, kde-format
+msgid "Network"
+msgstr "जाल"
+
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
+#, kde-format
+msgid "Trash"
+msgstr "तुच्छद्रव्य"
+
+#: qml/PlacesPage.qml:88
+#, kde-format
+msgid "Pinned Folders"
+msgstr "पिन कृतानि पुटानि"
+
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
+#, kde-format
+msgid "Locations"
+msgstr "स्थानानि"
+
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
+#, kde-format
+msgid "Countries"
+msgstr "देशाः"
+
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
+#, kde-format
+msgid "States"
+msgstr "राज्यानि"
+
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
+#, kde-format
+msgid "Cities"
+msgstr "नगराणि"
+
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
+#, kde-format
+msgid "Time"
+msgstr "कालः"
+
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
+#, kde-format
+msgid "Years"
+msgstr "वर्षाः"
+
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
+#, kde-format
+msgid "Months"
+msgstr "मासाः"
+
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
+#, kde-format
+msgid "Weeks"
+msgstr "सप्ताहाः"
+
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
+#, kde-format
+msgid "Days"
+msgstr "दिवसाः"
+
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#, kde-format
+msgid "Tags"
+msgstr "टैग्स"
+
+#: qml/SettingsPage.qml:17
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "सेटिंग्स्"
+
+#: qml/SettingsPage.qml:20
+#, kde-format
+msgid "General"
+msgstr "सामान्य"
+
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
+#, kde-format
+msgid "Thumbnails size:"
+msgstr "लघुचित्रस्य आकारः : १."
+
+#: qml/SettingsPage.qml:43
+#, kde-format
+msgctxt "@title:group"
+msgid "Slideshow settings:"
+msgstr ""
+
+#: qml/SettingsPage.qml:132
+#, kde-format
+msgid "About Photos"
+msgstr "About Photos"
+
+#: qml/SettingsPage.qml:140
+#, kde-format
+msgid "About KDE"
+msgstr "KDE विषये"
+
+#: qml/ShareAction.qml:23
+#, kde-format
+msgid "Share"
+msgstr "संविभागः"
+
+#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
+#, kde-format
+msgid "Share the selected media"
+msgstr "चयनितं माध्यमं साझां कुर्वन्तु"
+
+#: qml/Sidebar.qml:47
+#, kde-format
+msgid "Filter by"
+msgstr "द्वारा छानयतु"
+
+#: qml/Sidebar.qml:139
+#, kde-format
+msgctxt "Remote network locations"
+msgid "Remote"
+msgstr ""
+
+#: qml/Sidebar.qml:216
+#, kde-format
+msgid "%1 px"
+msgstr "%1 px"
+
+#: qml/Sidebar.qml:229
+#, kde-format
+msgid "Settings"
+msgstr "सेटिंग्स्"
+
+#: qml/TagInput.qml:60
+#, kde-format
+msgid "Add new tag…"
+msgstr "नूतनं टैगं योजयन्तु..."
