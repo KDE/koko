@@ -3,29 +3,31 @@
 # This file is distributed under the same license as the koko package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-14 01:48+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -41,67 +43,67 @@ msgstr "&प्रतिलिपि"
 #, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr ""
+msgstr "प्रतिलिपि स्थानम्"
 
 #: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr ""
+msgstr "<application>फोटो</application> इति"
 
 #: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr ""
+msgstr "फोटो भवतः चित्रसङ्ग्रहाय चित्रदर्शकः अस्ति ।"
 
 #: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-2020 KDE Contributors"
-msgstr ""
+msgstr "(ग) 2013-2020 केडीई योगदानकर्ता"
 
 #: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
-msgstr ""
+msgstr "विशेस हण्डा"
 
 #: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:84 main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "विकासकः"
 
 #: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr ""
+msgstr "अतुल शर्मा"
 
 #: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
-msgstr ""
+msgstr "मार्को मार्टिन्"
 
 #: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
-msgstr ""
+msgstr "निकोलस फेला"
 
 #: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "कार्ल स्वान्"
 
 #: main.cpp:86
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "माइकेल् जॉन्सन्"
 
 #: main.cpp:91
 #, kde-format
@@ -127,8 +129,8 @@ msgstr "चित्रस्य कृते साझाकृतं url <a hr
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ बिम्बः"
+msgstr[1] "%1 चित्राणि"
 
 #: qml/AlbumView.qml:223 qml/AlbumView.qml:261
 #, kde-format
@@ -139,7 +141,7 @@ msgstr "बुकमार्कं निष्कासयन्तु"
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr ""
+msgstr "बुकमार्क फोल्डर"
 
 #: qml/AlbumView.qml:282
 #, kde-format
@@ -179,7 +181,7 @@ msgstr "कचरातः चयनितवस्तूनि पुनः स
 #: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
 #, kde-format
 msgid "Configure…"
-msgstr "विन्यस्तं कुर्वन्तु..."
+msgstr "विन्यस्तं कुर्वन्तु…"
 
 #: qml/AlbumView.qml:358
 #, kde-format
@@ -255,7 +257,7 @@ msgstr "सम्पादन"
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr ""
+msgstr "रक्ष्"
 
 #: qml/EditorView.qml:67 qml/EditorView.qml:257
 #, kde-format
@@ -270,7 +272,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Undo modification"
 msgid "Undo"
-msgstr ""
+msgstr "पूर्ववत"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
@@ -282,49 +284,49 @@ msgstr "निरसयतु"
 #, kde-format
 msgctxt "@action:button Crop an image"
 msgid "Crop"
-msgstr ""
+msgstr "अन्नग्रह"
 
 #: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr ""
+msgstr "आकारं परिवर्तयतु"
 
 #: qml/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr ""
+msgstr "वामभागे परिभ्रमन्तु"
 
 #: qml/EditorView.qml:117
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr ""
+msgstr "दक्षिणतः परिभ्रमन्तु"
 
 #: qml/EditorView.qml:123
 #, kde-format
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr ""
+msgstr "पर्यस्"
 
 #: qml/EditorView.qml:129
 #, kde-format
 msgctxt "@action:button Mirror an image horizontally"
 msgid "Mirror"
-msgstr ""
+msgstr "दर्पण"
 
 #: qml/EditorView.qml:143
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
-msgstr ""
+msgstr "आकृति:"
 
 #: qml/EditorView.qml:175
 #, kde-format
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
-msgstr ""
+msgstr "स्थितिः:"
 
 #: qml/EditorView.qml:247
 #, kde-format
@@ -345,8 +347,8 @@ msgstr "स्लाइडरं अन्वेष्टुम्"
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "पश्चात् १ सेकण्ड् लङ्घयन्तु"
+msgstr[1] "पश्चात् %1 सेकण्ड् लङ्घयन्तु"
 
 #: qml/imagedelegate/VideoPlayer.qml:213
 #, kde-format
@@ -504,27 +506,27 @@ msgstr "अधिकः"
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr ""
+msgstr "स्लाइड शो अन्तरालः : १."
 
 #: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ द्वितीयः"
+msgstr[1] "%1 सेकण्ड्"
 
 #: qml/ImageViewPage.qml:835
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr ""
+msgstr "परिक्रम"
 
 #: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr ""
+msgstr "यादृच्छिकं कुरुत"
 
 #: qml/ImageViewPage.qml:850
 #, kde-format
@@ -545,55 +547,55 @@ msgstr "मेटाडाटा"
 #, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr ""
+msgstr "सञ्चिकानाम : १."
 
 #: qml/InfoDrawerSidebarBase.qml:47
 #, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr ""
+msgstr "आयामः १."
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
 msgctxt "dimensions"
 msgid "%1 x %2"
-msgstr ""
+msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
 #, kde-format
 msgctxt "@label"
 msgid "Size:"
-msgstr ""
+msgstr "आकृति:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
 #, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr ""
+msgstr "निर्मितः : १."
 
 #: qml/InfoDrawerSidebarBase.qml:72
 #, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr ""
+msgstr "प्रतिकृति:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
 #, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr ""
+msgstr "अक्षांशः : १."
 
 #: qml/InfoDrawerSidebarBase.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr ""
+msgstr "देशान्तर : १."
 
 #: qml/InfoDrawerSidebarBase.qml:97
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr ""
+msgstr "रेटिंग् : १."
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -609,18 +611,18 @@ msgstr "रेटिंग् %1 इति सेट् कुर्वन्त
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr ""
+msgstr "वर्णनम्‌:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
 msgid "Image description…"
-msgstr "चित्रविवरणम्..."
+msgstr "चित्रविवरणम्…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr ""
+msgstr "टैग्स:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -727,7 +729,7 @@ msgstr "लघुचित्रस्य आकारः : १."
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr ""
+msgstr "स्लाइडशो सेटिंग्स् : १."
 
 #: qml/SettingsPage.qml:132
 #, kde-format
@@ -758,7 +760,7 @@ msgstr "द्वारा छानयतु"
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
+msgstr "दूरस्थ"
 
 #: qml/Sidebar.qml:216
 #, kde-format
@@ -773,4 +775,4 @@ msgstr "सेटिंग्स्"
 #: qml/TagInput.qml:60
 #, kde-format
 msgid "Add new tag…"
-msgstr "नूतनं टैगं योजयन्तु..."
+msgstr "नूतनं टैगं योजयन्तु…"
