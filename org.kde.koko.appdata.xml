@@ -25,6 +25,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="fr">Photos</name>
   <name xml:lang="gl">Fotos</name>
   <name xml:lang="he">תמונות</name>
+  <name xml:lang="hi">तस्वीरें</name>
   <name xml:lang="hu">Fényképek</name>
   <name xml:lang="ia">Photos</name>
   <name xml:lang="it">Foto</name>
@@ -62,6 +63,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="fr">Galerie d'images</summary>
   <summary xml:lang="gl">Galería de imaxes</summary>
   <summary xml:lang="he">גלריית תמונות</summary>
+  <summary xml:lang="hi">छवि गैलरी</summary>
   <summary xml:lang="hu">Képgaléria</summary>
   <summary xml:lang="ia">Galeria de Imagines</summary>
   <summary xml:lang="id">Galeri Citra</summary>
@@ -104,6 +106,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <p xml:lang="fr">Une application de galerie d'images</p>
     <p xml:lang="gl">Aplicación de galería de imaxes.</p>
     <p xml:lang="he">יישום גלריית תמונות</p>
+    <p xml:lang="hi">एक छवि गैलरी अनुप्रयोग</p>
     <p xml:lang="hu">Képgaléria alkalmazás</p>
     <p xml:lang="ia">Un application de galeria de imagines</p>
     <p xml:lang="id">Sebuah aplikasi galeri Citra</p>
