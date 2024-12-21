@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-12-14 01:48+0530\n"
+"PO-Revision-Date: 2024-12-20 21:52+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -506,7 +506,7 @@ msgstr "अधिकः"
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr "स्लाइड शो अन्तरालः : १."
+msgstr "स्लाइड शो अन्तरालः :"
 
 #: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
 #, kde-format
@@ -547,13 +547,13 @@ msgstr "मेटाडाटा"
 #, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "सञ्चिकानाम : १."
+msgstr "सञ्चिकानाम :"
 
 #: qml/InfoDrawerSidebarBase.qml:47
 #, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "आयामः १."
+msgstr "आयामः"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -571,7 +571,7 @@ msgstr "आकृति:"
 #, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "निर्मितः : १."
+msgstr "निर्मितः :"
 
 #: qml/InfoDrawerSidebarBase.qml:72
 #, kde-format
@@ -583,19 +583,19 @@ msgstr "प्रतिकृति:"
 #, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "अक्षांशः : १."
+msgstr "अक्षांशः :"
 
 #: qml/InfoDrawerSidebarBase.qml:87
 #, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "देशान्तर : १."
+msgstr "देशान्तर :"
 
 #: qml/InfoDrawerSidebarBase.qml:97
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "रेटिंग् : १."
+msgstr "रेटिंग् :"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -723,13 +723,13 @@ msgstr "सामान्य"
 #: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
 #, kde-format
 msgid "Thumbnails size:"
-msgstr "लघुचित्रस्य आकारः : १."
+msgstr "लघुचित्रस्य आकारः :"
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow settings:"
-msgstr "स्लाइडशो सेटिंग्स् : १."
+msgstr "स्लाइडशो सेटिंग्स् :"
 
 #: qml/SettingsPage.qml:132
 #, kde-format
