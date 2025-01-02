@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-01-16 21:56+0100\n"
+"PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -44,20 +44,16 @@ msgid "Copy Location"
 msgstr "Kopii Lokon"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Fotoj</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko estas bildrigardilo por via bildkolekto."
+msgstr "Fotoj estas bildrigardilo por via bildkolekto."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -546,18 +542,16 @@ msgid "Metadata"
 msgstr "Metadatenoj"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Dosiernomo"
+msgstr "Dosiernomo:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Dimensio"
+msgstr "Dimensio:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -566,47 +560,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Grandeco:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Kreita"
+msgstr "Kreita:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Modelo"
+msgstr "Modelo:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Latitudo"
+msgstr "Latitudo:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Longitudo"
+msgstr "Longitudo:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Taksado"
+msgstr "Taksado:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -619,11 +606,10 @@ msgid "Set rating to %1"
 msgstr "Agordi takson al %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Priskribo"
+msgstr "Priskribo:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -631,11 +617,10 @@ msgid "Image description…"
 msgstr "Bilda priskribo…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Etikedoj"
+msgstr "Etikedoj:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -745,16 +730,14 @@ msgid "Slideshow settings:"
 msgstr "Agordoj de bildoprezento:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "Pri Koko"
+msgstr "Pri Fotoj"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "Pri Koko"
+msgstr "Pri KDE"
 
 #: qml/ShareAction.qml:23
 #, kde-format
@@ -791,12 +774,3 @@ msgstr "Agordoj"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Aldoni novan etikedon…"
-
-#~ msgid "Size"
-#~ msgstr "Grandeco"
-
-#~ msgid "Image viewer"
-#~ msgstr "Bildrigardilo"
-
-#~ msgid "Properties"
-#~ msgstr "Proprecoj"
