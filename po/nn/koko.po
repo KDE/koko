@@ -46,16 +46,12 @@ msgstr "Stadar"
 
 #: main.cpp:64
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
 #: main.cpp:66
 #, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Koko er ein biletvisar for biletsamlinga di."
