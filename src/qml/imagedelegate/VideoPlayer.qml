@@ -9,7 +9,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import QtMultimedia
-import org.kde.kcoreaddons as KCA
+import org.kde.coreaddons as KCA
 
 Item {
     id: videoPlayerRoot
