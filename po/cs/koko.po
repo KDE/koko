@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -567,9 +567,7 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Velikost:"
@@ -589,25 +587,22 @@ msgid "Model:"
 msgstr "Model"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Zem. šířka"
+msgstr "Zeměpisná šířka:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Zem. délka"
+msgstr "Zeměpisná délka:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Hodnocení"
+msgstr "Hodnocení:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -620,11 +615,10 @@ msgid "Set rating to %1"
 msgstr "Nastavit hodnocení na %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Popis"
+msgstr "Popis:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -632,11 +626,10 @@ msgid "Image description…"
 msgstr "Popis obrázku…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Značky"
+msgstr "Značky:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -752,10 +745,9 @@ msgid "About Photos"
 msgstr "O aplikaci Koko"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "O aplikaci Koko"
+msgstr "O prostředí KDE"
 
 #: qml/ShareAction.qml:23
 #, kde-format
