@@ -14,8 +14,6 @@ apps:
     common-id: org.kde.koko.desktop
     desktop: usr/share/applications/org.kde.koko.desktop
     command: usr/bin/koko
-    plugs:
-      - audio-record
 slots:
   session-dbus-interface:
     interface: dbus
