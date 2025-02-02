@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+# SPDX-FileCopyrightText: 2024, 2025 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:38+0000\n"
-"PO-Revision-Date: 2024-07-01 13:46+0200\n"
+"PO-Revision-Date: 2025-02-01 22:15+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -44,20 +44,16 @@ msgid "Copy Location"
 msgstr "Hely másolása"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Photos</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "A Koko egy képmegjelenítő a képgyűjteményéhez."
+msgstr "A Photos egy képmegjelenítő a képgyűjteményéhez."
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -546,18 +542,16 @@ msgid "Metadata"
 msgstr "Metaadat"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Fájlnév"
+msgstr "Fájlnév:"
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Dimenzió"
+msgstr "Dimenzió:"
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -566,47 +560,40 @@ msgid "%1 x %2"
 msgstr "%1 x %2"
 
 #: qml/InfoDrawerSidebarBase.qml:55
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label"
 msgid "Size:"
 msgstr "Méret:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Létrehozva"
+msgstr "Létrehozva:"
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Modell"
+msgstr "Modell:"
 
 #: qml/InfoDrawerSidebarBase.qml:79
-#, fuzzy, kde-format
-#| msgid "Latitude"
+#, kde-format
 msgctxt "@label"
 msgid "Latitude:"
-msgstr "Szélesség"
+msgstr "Szélesség:"
 
 #: qml/InfoDrawerSidebarBase.qml:87
-#, fuzzy, kde-format
-#| msgid "Longitude"
+#, kde-format
 msgctxt "@label"
 msgid "Longitude:"
-msgstr "Hosszúság"
+msgstr "Hosszúság:"
 
 #: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Értékelés"
+msgstr "Értékelés:"
 
 #: qml/InfoDrawerSidebarBase.qml:114
 #, kde-format
@@ -619,11 +606,10 @@ msgid "Set rating to %1"
 msgstr "Értékelés beállítása erre: %1"
 
 #: qml/InfoDrawerSidebarBase.qml:153
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Leírás"
+msgstr "Leírás:"
 
 #: qml/InfoDrawerSidebarBase.qml:155
 #, kde-format
@@ -631,11 +617,10 @@ msgid "Image description…"
 msgstr "Képleírás…"
 
 #: qml/InfoDrawerSidebarBase.qml:166
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Címkék"
+msgstr "Címkék:"
 
 #: qml/InfoDrawerSidebarBase.qml:192
 #, kde-format
@@ -745,16 +730,14 @@ msgid "Slideshow settings:"
 msgstr "Diavetítés beállításai:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "A Koko névjegye"
+msgstr "A Photos névjegye"
 
 #: qml/SettingsPage.qml:140
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "A Koko névjegye"
+msgstr "A KDE névjegye"
 
 #: qml/ShareAction.qml:23
 #, kde-format
