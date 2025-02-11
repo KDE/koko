@@ -44,20 +44,16 @@ msgid "Copy Location"
 msgstr "Kopírovat umístění"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr ""
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko je prohlížeč obrázků ve vaší sbírce."
+msgstr ""
 
 #: main.cpp:68
 #, kde-kuit-format
@@ -547,18 +543,16 @@ msgid "Metadata"
 msgstr "Metadata"
 
 #: qml/InfoDrawerSidebarBase.qml:40
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@label"
 msgid "File name:"
-msgstr "Název souboru"
+msgstr ""
 
 #: qml/InfoDrawerSidebarBase.qml:47
-#, fuzzy, kde-format
-#| msgid "Dimension"
+#, kde-format
 msgctxt "@label"
 msgid "Dimension:"
-msgstr "Rozměr"
+msgstr ""
 
 #: qml/InfoDrawerSidebarBase.qml:48
 #, kde-format
@@ -573,18 +567,16 @@ msgid "Size:"
 msgstr "Velikost:"
 
 #: qml/InfoDrawerSidebarBase.qml:64
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@label"
 msgid "Created:"
-msgstr "Vytvořeno"
+msgstr ""
 
 #: qml/InfoDrawerSidebarBase.qml:72
-#, fuzzy, kde-format
-#| msgid "Model"
+#, kde-format
 msgctxt "@label"
 msgid "Model:"
-msgstr "Model"
+msgstr ""
 
 #: qml/InfoDrawerSidebarBase.qml:79
 #, kde-format
@@ -739,10 +731,9 @@ msgid "Slideshow settings:"
 msgstr "Nastavení prezentace:"
 
 #: qml/SettingsPage.qml:132
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "O aplikaci Koko"
+msgstr ""
 
 #: qml/SettingsPage.qml:140
 #, kde-format
@@ -784,6 +775,3 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
-
-#~ msgid "Size"
-#~ msgstr "Velikost"
