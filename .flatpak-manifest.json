@@ -15,8 +15,6 @@
         "--filesystem=home",
         "--env=XDG_DATA_DIRS=/usr/share:/app/share/"
     ],
-    "separate-locales": false,
-
     "modules": [
         {
             "name": "exiv2",
