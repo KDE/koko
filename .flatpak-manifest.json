@@ -39,6 +39,7 @@
             "name": "kquickimageeditor",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+                "-DBUILD_TESTING=OFF",
                 "-DBUILD_WITH_QT6=ON"
             ],
             "sources": [
@@ -65,6 +66,9 @@
         {
             "name": "koko",
             "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_TESTING=OFF"
+            ],
             "sources": [
                 {
                     "type": "dir",
