@@ -7,13 +7,13 @@
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
+        "--device=dri",
+        "--env=XDG_DATA_DIRS=/usr/share:/app/share/",
+        "--filesystem=home",
         "--share=ipc",
         "--share=network",
-        "--socket=x11",
         "--socket=wayland",
-        "--device=dri",
-        "--filesystem=home",
-        "--env=XDG_DATA_DIRS=/usr/share:/app/share/"
+        "--socket=x11"
     ],
     "modules": [
         {
