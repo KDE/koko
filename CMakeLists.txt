@@ -36,6 +36,9 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/src/version.h
 )
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
+if(Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.9.0")
+    find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED GuiPrivate)
+endif()
 
 qt_policy(SET QTP0001 NEW)
 
