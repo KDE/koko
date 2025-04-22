@@ -28,9 +28,6 @@ Kirigami.OverlayDrawer {
     topPadding: 0
     bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.View
-    Kirigami.Theme.inherit: false
-
     // Place
     contentItem: ColumnLayout {
         id: column
