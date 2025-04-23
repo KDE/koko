@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"POT-Creation-Date: 2025-04-23 00:40+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -206,22 +206,22 @@ msgstr "सभी चयनित मीडिया का चयन रद्�
 msgid "No Media Found"
 msgstr "कोई मीडिया नहीं मिला"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:100
 #, kde-format
 msgid "Pictures"
 msgstr "चित्र"
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:110
 #, kde-format
 msgid "Videos"
 msgstr "वीडियो"
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:104
 #, kde-format
 msgid "Favorites"
 msgstr "पसंदीदा"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:95
 #, kde-format
 msgid "Places"
 msgstr "स्थानों"
@@ -641,12 +641,12 @@ msgstr "इमेजिस"
 msgid "Folders"
 msgstr "फ़ोल्डर"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:140
 #, kde-format
 msgid "Network"
 msgstr "नेटवर्क"
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:131
 #, kde-format
 msgid "Trash"
 msgstr "कचरा"
@@ -656,52 +656,52 @@ msgstr "कचरा"
 msgid "Pinned Folders"
 msgstr "पिन किए गए फ़ोल्डर"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:145
 #, kde-format
 msgid "Locations"
 msgstr "स्थानों"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:148
 #, kde-format
 msgid "Countries"
 msgstr "देशों"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:153
 #, kde-format
 msgid "States"
 msgstr "राज्य अमेरिका"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:158
 #, kde-format
 msgid "Cities"
 msgstr "शहर"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:163
 #, kde-format
 msgid "Time"
 msgstr "समय"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:166
 #, kde-format
 msgid "Years"
 msgstr "साल"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:171
 #, kde-format
 msgid "Months"
 msgstr "महीने"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:176
 #, kde-format
 msgid "Weeks"
 msgstr "हफ्तों"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:181
 #, kde-format
 msgid "Days"
 msgstr "दिन"
 
-#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:186
 #, kde-format
 msgid "Tags"
 msgstr "टैग"
@@ -717,7 +717,7 @@ msgstr "सेटिंग्स"
 msgid "General"
 msgstr "सामान्य"
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:209
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "थंबनेल का आकार:"
@@ -748,23 +748,23 @@ msgstr "शेयर करना"
 msgid "Share the selected media"
 msgstr "चयनित मीडिया साझा करें"
 
-#: qml/Sidebar.qml:47
+#: qml/Sidebar.qml:44
 #, kde-format
 msgid "Filter by"
 msgstr "फिल्टर के द्वारा"
 
-#: qml/Sidebar.qml:139
+#: qml/Sidebar.qml:136
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "दूर"
 
-#: qml/Sidebar.qml:216
+#: qml/Sidebar.qml:213
 #, kde-format
 msgid "%1 px"
 msgstr "%1 पिक्सेल"
 
-#: qml/Sidebar.qml:229
+#: qml/Sidebar.qml:226
 #, kde-format
 msgid "Settings"
 msgstr "सेटिंग्स"

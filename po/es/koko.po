@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"POT-Creation-Date: 2025-04-23 00:40+0000\n"
 "PO-Revision-Date: 2024-10-24 17:02+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -208,22 +208,22 @@ msgstr "Deselecciona todos los archivos multimedia seleccionados"
 msgid "No Media Found"
 msgstr "No se han encontrado archivos multimedia"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:100
 #, kde-format
 msgid "Pictures"
 msgstr "Imágenes"
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:110
 #, kde-format
 msgid "Videos"
 msgstr "Vídeos"
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:104
 #, kde-format
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:95
 #, kde-format
 msgid "Places"
 msgstr "Lugares"
@@ -644,12 +644,12 @@ msgstr "Imágenes"
 msgid "Folders"
 msgstr "Carpetas"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:140
 #, kde-format
 msgid "Network"
 msgstr "Red"
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:131
 #, kde-format
 msgid "Trash"
 msgstr "Papelera"
@@ -659,52 +659,52 @@ msgstr "Papelera"
 msgid "Pinned Folders"
 msgstr "Carpetas fijadas"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:145
 #, kde-format
 msgid "Locations"
 msgstr "Lugares"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:148
 #, kde-format
 msgid "Countries"
 msgstr "Países"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:153
 #, kde-format
 msgid "States"
 msgstr "Estados"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:158
 #, kde-format
 msgid "Cities"
 msgstr "Ciudades"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:163
 #, kde-format
 msgid "Time"
 msgstr "Tiempo"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:166
 #, kde-format
 msgid "Years"
 msgstr "Años"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:171
 #, kde-format
 msgid "Months"
 msgstr "Meses"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:176
 #, kde-format
 msgid "Weeks"
 msgstr "Semanas"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:181
 #, kde-format
 msgid "Days"
 msgstr "Días"
 
-#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:186
 #, kde-format
 msgid "Tags"
 msgstr "Etiquetas"
@@ -720,7 +720,7 @@ msgstr "Preferencias"
 msgid "General"
 msgstr "General"
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:209
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Tamaño de las miniaturas:"
@@ -751,23 +751,23 @@ msgstr "Compartir"
 msgid "Share the selected media"
 msgstr "Compartir los archivos multimedia seleccionados"
 
-#: qml/Sidebar.qml:47
+#: qml/Sidebar.qml:44
 #, kde-format
 msgid "Filter by"
 msgstr "Filtrar por"
 
-#: qml/Sidebar.qml:139
+#: qml/Sidebar.qml:136
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remoto"
 
-#: qml/Sidebar.qml:216
+#: qml/Sidebar.qml:213
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:229
+#: qml/Sidebar.qml:226
 #, kde-format
 msgid "Settings"
 msgstr "Preferencias"

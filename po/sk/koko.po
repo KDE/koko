@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"POT-Creation-Date: 2025-04-23 00:40+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -216,22 +216,22 @@ msgstr "Zruší výber všetkých vybratých obrázkov"
 msgid "No Media Found"
 msgstr "Žiadne obrázky nenájdené"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:100
 #, kde-format
 msgid "Pictures"
 msgstr "Obrázky"
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:110
 #, kde-format
 msgid "Videos"
 msgstr "Videá"
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:104
 #, kde-format
 msgid "Favorites"
 msgstr "Obľúbené"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:95
 #, kde-format
 msgid "Places"
 msgstr "Miesta"
@@ -668,12 +668,12 @@ msgstr "Obrázky"
 msgid "Folders"
 msgstr "Priečinky"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:140
 #, kde-format
 msgid "Network"
 msgstr "Sieť"
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:131
 #, kde-format
 msgid "Trash"
 msgstr "Kôš"
@@ -684,52 +684,52 @@ msgstr "Kôš"
 msgid "Pinned Folders"
 msgstr "Priečinky"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:145
 #, kde-format
 msgid "Locations"
 msgstr "Miesta"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:148
 #, kde-format
 msgid "Countries"
 msgstr "Krajiny"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:153
 #, kde-format
 msgid "States"
 msgstr "Štáty"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:158
 #, kde-format
 msgid "Cities"
 msgstr ""
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:163
 #, kde-format
 msgid "Time"
 msgstr "Čas"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:166
 #, kde-format
 msgid "Years"
 msgstr "Roky"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:171
 #, kde-format
 msgid "Months"
 msgstr "Mesiace"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:176
 #, kde-format
 msgid "Weeks"
 msgstr "Týždne"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:181
 #, kde-format
 msgid "Days"
 msgstr "Dni"
 
-#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:186
 #, kde-format
 msgid "Tags"
 msgstr "Značky"
@@ -747,7 +747,7 @@ msgstr "Nastavenia"
 msgid "General"
 msgstr "Všeobecné:"
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:209
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Veľkosť miniatúr:"
@@ -780,23 +780,23 @@ msgstr "Zdieľať"
 msgid "Share the selected media"
 msgstr "Zdielať vybraté médiá"
 
-#: qml/Sidebar.qml:47
+#: qml/Sidebar.qml:44
 #, kde-format
 msgid "Filter by"
 msgstr ""
 
-#: qml/Sidebar.qml:139
+#: qml/Sidebar.qml:136
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Vzdialené"
 
-#: qml/Sidebar.qml:216
+#: qml/Sidebar.qml:213
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:229
+#: qml/Sidebar.qml:226
 #, kde-format
 msgid "Settings"
 msgstr "Nastavenia"

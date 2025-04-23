@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:38+0000\n"
+"POT-Creation-Date: 2025-04-23 00:40+0000\n"
 "PO-Revision-Date: 2020-08-22 14:10+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -217,22 +217,22 @@ msgstr "Fravælger alle de valgte billeder"
 msgid "No Media Found"
 msgstr "Ingen billeder fundet"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:103
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:100
 #, kde-format
 msgid "Pictures"
 msgstr ""
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:113
+#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:110
 #, kde-format
 msgid "Videos"
 msgstr ""
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:107
+#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:104
 #, kde-format
 msgid "Favorites"
 msgstr ""
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:98
+#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:95
 #, kde-format
 msgid "Places"
 msgstr ""
@@ -658,12 +658,12 @@ msgstr "1 billede"
 msgid "Folders"
 msgstr "Mapper"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:143
+#: qml/PlacesPage.qml:76 qml/Sidebar.qml:140
 #, kde-format
 msgid "Network"
 msgstr ""
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:134
+#: qml/PlacesPage.qml:82 qml/Sidebar.qml:131
 #, kde-format
 msgid "Trash"
 msgstr ""
@@ -674,57 +674,57 @@ msgstr ""
 msgid "Pinned Folders"
 msgstr "Mapper"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:148
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:145
 #, kde-format
 msgid "Locations"
 msgstr "Placeringer"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:151
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:148
 #, fuzzy, kde-format
 #| msgid "By Country"
 msgid "Countries"
 msgstr "Efter land"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:117 qml/Sidebar.qml:153
 #, fuzzy, kde-format
 #| msgid "By State"
 msgid "States"
 msgstr "Efter delstat"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:122 qml/Sidebar.qml:158
 #, kde-format
 msgid "Cities"
 msgstr ""
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:166
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:163
 #, kde-format
 msgid "Time"
 msgstr "Tid"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:169
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:166
 #, fuzzy, kde-format
 #| msgid "By Year"
 msgid "Years"
 msgstr "Efter år"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:174
+#: qml/PlacesPage.qml:137 qml/Sidebar.qml:171
 #, fuzzy, kde-format
 #| msgid "By Month"
 msgid "Months"
 msgstr "Efter måned"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:179
+#: qml/PlacesPage.qml:142 qml/Sidebar.qml:176
 #, fuzzy, kde-format
 #| msgid "By Week"
 msgid "Weeks"
 msgstr "Efter uge"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:184
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:181
 #, kde-format
 msgid "Days"
 msgstr ""
 
-#: qml/PlacesPage.qml:153 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:153 qml/Sidebar.qml:186
 #, kde-format
 msgid "Tags"
 msgstr ""
@@ -740,7 +740,7 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:212
+#: qml/SettingsPage.qml:28 qml/Sidebar.qml:209
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Str. på miniaturer:"
@@ -774,23 +774,23 @@ msgstr "Del"
 msgid "Share the selected media"
 msgstr "Del de valgte billeder"
 
-#: qml/Sidebar.qml:47
+#: qml/Sidebar.qml:44
 #, kde-format
 msgid "Filter by"
 msgstr ""
 
-#: qml/Sidebar.qml:139
+#: qml/Sidebar.qml:136
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr ""
 
-#: qml/Sidebar.qml:216
+#: qml/Sidebar.qml:213
 #, kde-format
 msgid "%1 px"
 msgstr ""
 
-#: qml/Sidebar.qml:229
+#: qml/Sidebar.qml:226
 #, kde-format
 msgid "Settings"
 msgstr ""
