@@ -4,60 +4,28 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 
-QQC2.Dialog {
+Components.MessageDialog {
     id: root
 
     signal discardChanges()
 
-    x: Math.round((parent.width - width) / 2)
-    y: Math.round((parent.height - height) / 2)
+    title: i18n("Discard changes")
 
-    modal: true
+    dialogType: Components.MessageDialog.Warning
 
-    ColumnLayout {
-        Kirigami.Heading {
-            text: i18n("Discard changes")
-        }
-        QQC2.Label {
-            text: i18n("Are you sure you want to discard all changes?")
-        }
+    QQC2.Label {
+        text: i18n("Are you sure you want to discard all changes?")
+        wrapMode: Text.WordWrap
+        Layout.fillWidth: true
     }
 
-    footer: QQC2.DialogButtonBox {
-        QQC2.Button {
-            text: i18n("Cancel")
-            QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
-            onClicked: root.close()
-        }
+    standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
 
-        QQC2.Button {
-            text: i18n("Yes")
-            QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
-            onClicked: {
-                root.discardChanges();
-                root.close();
-            }
-        }
-    }
-
-    background: Kirigami.ShadowedRectangle {
-        radius: 7
-        color: Kirigami.Theme.backgroundColor
-
-        border {
-            width: 1
-            color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.3);
-        }
-
-        shadow {
-            size: Kirigami.Units.gridUnit
-            yOffset: 4
-            color: Qt.rgba(0, 0, 0, 0.2)
-        }
-
-        Kirigami.Theme.inherit: false
-        Kirigami.Theme.colorSet: Kirigami.Theme.View
+    onRejected: close();
+    onAccepted: {
+        discardChanges();
+        close();
     }
 }
