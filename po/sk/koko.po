@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -236,28 +236,15 @@ msgstr "Obľúbené"
 msgid "Places"
 msgstr "Miesta"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr ""
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr ""
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Cancel"
-msgid "Cancel"
-msgstr "Zrušiť"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
-msgid "Yes"
-msgstr "Roky"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -805,6 +792,17 @@ msgstr "Nastavenia"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Pridať nový štítok..."
+
+#, fuzzy
+#~| msgctxt "@action:button"
+#~| msgid "Cancel"
+#~ msgid "Cancel"
+#~ msgstr "Zrušiť"
+
+#, fuzzy
+#~| msgid "Years"
+#~ msgid "Yes"
+#~ msgstr "Roky"
 
 #~ msgid "Size"
 #~ msgstr "Veľkosť"

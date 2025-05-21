@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2024-10-24 09:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -231,25 +231,15 @@ msgstr "Улюблене"
 msgid "Places"
 msgstr "Місця"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr "Відкинути зміни"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr "Ви справді хочете відкинути усі зміни?"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, kde-format
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, kde-format
-msgid "Yes"
-msgstr "Так"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -783,6 +773,12 @@ msgstr "Параметри"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Додати нову мітку…"
+
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
+
+#~ msgid "Yes"
+#~ msgstr "Так"
 
 #~ msgid "Size"
 #~ msgstr "Розмір"

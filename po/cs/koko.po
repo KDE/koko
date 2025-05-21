@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -227,25 +227,15 @@ msgstr "Oblíbené"
 msgid "Places"
 msgstr "Místa"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr "Zahodit změny"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr "Opravdu si přejete zahodit všechny změny?"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, kde-format
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, kde-format
-msgid "Yes"
-msgstr "Ano"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -775,3 +765,9 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
+
+#~ msgid "Cancel"
+#~ msgstr "Zrušit"
+
+#~ msgid "Yes"
+#~ msgstr "Ano"

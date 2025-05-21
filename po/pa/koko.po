@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -234,27 +234,15 @@ msgstr "ਮਨਪਸੰਦ"
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr ""
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr ""
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, fuzzy, kde-format
-#| msgid "Cancel"
-msgid "Cancel"
-msgstr "ਰੱਦ ਕਰੋ"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, fuzzy, kde-format
-#| msgid "Years"
-msgid "Yes"
-msgstr "ਸਾਲ"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -815,6 +803,16 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 #| msgid "Add new tag"
 msgid "Add new tag…"
 msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
+
+#, fuzzy
+#~| msgid "Cancel"
+#~ msgid "Cancel"
+#~ msgstr "ਰੱਦ ਕਰੋ"
+
+#, fuzzy
+#~| msgid "Years"
+#~ msgid "Yes"
+#~ msgstr "ਸਾਲ"
 
 #~ msgid "Size"
 #~ msgstr "ਆਕਾਰ"

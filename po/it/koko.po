@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2024-10-31 15:10+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -227,25 +227,15 @@ msgstr "Preferiti"
 msgid "Places"
 msgstr "Risorse"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr "Scarta le modifiche"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr "Sei sicuro di voler scartare tutte le modifiche?"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, kde-format
-msgid "Cancel"
-msgstr "Annulla"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, kde-format
-msgid "Yes"
-msgstr "Sì"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -775,6 +765,12 @@ msgstr "Impostazioni"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Aggiungi nuova etichetta…"
+
+#~ msgid "Cancel"
+#~ msgstr "Annulla"
+
+#~ msgid "Yes"
+#~ msgstr "Sì"
 
 #~ msgid "Size"
 #~ msgstr "Dimensione"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2025-03-05 16:41+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -230,25 +230,15 @@ msgstr "Избранное"
 msgid "Places"
 msgstr "Места"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr "Отменить изменения"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr "Действительно отменить все изменения?"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, kde-format
-msgid "Cancel"
-msgstr "Отмена"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, kde-format
-msgid "Yes"
-msgstr "Да"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -782,6 +772,12 @@ msgstr "Параметры"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Создать метку…"
+
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
 
 #~ msgid "Size"
 #~ msgstr "Размер"

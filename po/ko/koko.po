@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-23 00:40+0000\n"
+"POT-Creation-Date: 2025-05-21 00:41+0000\n"
 "PO-Revision-Date: 2024-12-10 01:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -225,25 +225,15 @@ msgstr "책갈피"
 msgid "Places"
 msgstr "위치"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:21
+#: qml/Dialog/ConfirmDiscardingChange.qml:14
 #, kde-format
 msgid "Discard changes"
 msgstr "변경 사항 무시"
 
-#: qml/Dialog/ConfirmDiscardingChange.qml:24
+#: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
 msgid "Are you sure you want to discard all changes?"
 msgstr "변경 사항을 무시하시겠습니까?"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:30
-#, kde-format
-msgid "Cancel"
-msgstr "취소"
-
-#: qml/Dialog/ConfirmDiscardingChange.qml:36
-#, kde-format
-msgid "Yes"
-msgstr "예"
 
 #: qml/EditorView.qml:29
 #, kde-format
@@ -771,6 +761,12 @@ msgstr "설정"
 #, kde-format
 msgid "Add new tag…"
 msgstr "새 태그 추가..."
+
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgid "Yes"
+#~ msgstr "예"
 
 #~ msgid "Size"
 #~ msgstr "크기"
