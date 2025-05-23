@@ -759,9 +759,3 @@ msgstr "设置"
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgid "Yes"
-#~ msgstr "是"
