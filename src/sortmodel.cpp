@@ -335,6 +335,8 @@ void SortModel::delayedPreview()
 
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
 void SortModel::showPreview(const KFileItem &item, const QImage &preview)
+#else
+void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
 #endif
 {
     QPersistentModelIndex index = m_previewJobs.value(item.url());
