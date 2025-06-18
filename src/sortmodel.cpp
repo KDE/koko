@@ -55,6 +55,10 @@ SortModel::SortModel(QObject *parent)
 
     // using the same cache of the engine, they index both by url
     m_imageCache = new KImageCache(QStringLiteral("org.kde.koko"), 10485760);
+
+    mScheduledThumbnailGenerationTimer.setSingleShot(true);
+    mScheduledThumbnailGenerationTimer.setInterval(500);
+    connect(&mScheduledThumbnailGenerationTimer, &QTimer::timeout, this, &SortModel::generateThumbnailsForItems);
 }
 
 SortModel::~SortModel()
@@ -117,9 +121,9 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
     }
 
     case Roles::Thumbnail: {
-        QUrl thumbnailSource(QString(/*"file://" + */ data(index, Roles::ImageUrlRole).toString()));
+        const QUrl thumbnailSource(data(index, Roles::ImageUrlRole).toString());
 
-        KFileItem item(thumbnailSource, QString());
+        const KFileItem item(thumbnailSource, QString());
         QImage preview = QImage(m_screenshotSize, QImage::Format_ARGB32_Premultiplied);
 
         if (m_imageCache->findImage(item.url().toString(), &preview)) {
@@ -360,4 +364,14 @@ void SortModel::previewFailed(const KFileItem &item)
 
     m_imageCache->insertImage(item.url().toString(), QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage());
     Q_EMIT dataChanged(index, index);
+}
+
+void SortModel::scheduleThumbnailGeneration()
+{
+    if (mThumbnailProvider) {
+        mThumbnailProvider->removePendingItems();
+    }
+    if (!mScheduledThumbnailGenerationTimer.isActive()) {
+        mScheduledThumbnailGenerationTimer.start();
+    }
 }

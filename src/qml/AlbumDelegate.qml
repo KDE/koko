@@ -62,7 +62,7 @@ Controls.ItemDelegate {
             width: kokoConfig.iconSize
             height: width
             smooth: true
-            image: root.thumbnail
+            image: root.thumbgail
             fillMode: KQA.QImageItem.PreserveAspectFit
         }
 

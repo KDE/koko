@@ -25,6 +25,28 @@ target_link_libraries(koko_static PUBLIC
     LibExiv2::LibExiv2
 )
 
+if (${JPEG_VERSION} LESS 80)
+    set(GV_JPEG_DIR libjpeg-62)
+endif()
+
+if (${JPEG_VERSION} EQUAL 80)
+    set(GV_JPEG_DIR libjpeg-80)
+endif()
+
+if (${JPEG_VERSION} EQUAL 90)
+    set(GV_JPEG_DIR libjpeg-90)
+endif()
+
+if ("${GV_JPEG_DIR}" STREQUAL "")
+    message(FATAL_ERROR "Unknown libjpeg version: ${jpeglib_version}")
+endif()
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thumbnail/${GV_JPEG_DIR})
+
+message(STATUS "libjpeg version: ${JPEG_VERSION}")
+
+add_definitions(-Dlibjpeg_EXPORTS)
+
 set(koko_SRCS)
 kconfig_add_kcfg_files(koko_SRCS kokoconfig.kcfgc GENERATE_MOC)
 
@@ -55,6 +77,28 @@ add_executable(koko
     roles.cpp
     fileinfo.cpp
     displaycolorspace.cpp
+    thumbnail/thumbnailprovider.cpp
+    thumbnail/thumbnailprovider.h
+    thumbnail/thumbnailgroup.h
+    thumbnail/thumbnailgenerator.cpp
+    thumbnail/thumbnailgenerator.h
+    thumbnail/thumbnailwriter.cpp
+    thumbnail/thumbnailwriter.h
+    thumbnail/jpegcontent.cpp
+    thumbnail/jpegcontent.h
+    thumbnail/exiv2imageloader.cpp
+    thumbnail/exiv2imageloader.h
+    thumbnail/imageutils.cpp
+    thumbnail/imageutils.h
+    thumbnail/urlutils.h
+    thumbnail/urlutils.cpp
+    thumbnail/archiveutils.cpp
+    thumbnail/mimetypeutils.cpp
+    thumbnail/imageutils.cpp
+    thumbnail/iodevicejpegsourcemanager.cpp
+    thumbnail/iodevicejpegsourcemanager.h
+    thumbnail/jpegerrormanager.h
+    thumbnail/${GV_JPEG_DIR}/transupp.c
     ${koko_SRCS}
 )
 
@@ -73,6 +117,7 @@ target_link_libraries(koko PRIVATE
     KF6::I18n
     KF6::CoreAddons
     KF6::ConfigWidgets
+    JPEG::JPEG
 )
 
 target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)

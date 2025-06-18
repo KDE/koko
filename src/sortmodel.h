@@ -11,11 +11,113 @@
 #include <QJsonArray>
 #include <QSize>
 #include <QSortFilterProxyModel>
+#include <QTimer>
 #include <QVariant>
+
+#include "thumbnail/thumbnailprovider.h"
 #include <kdirmodel.h>
 #include <kimagecache.h>
 #include <kshareddatacache.h>
 #include <qqmlregistration.h>
+
+const int SMOOTH_DELAY = 500;
+
+const int WHEEL_ZOOM_MULTIPLIER = 4;
+
+static KFileItem fileItemForIndex(const QModelIndex &index)
+{
+    if (!index.isValid()) {
+        return {};
+    }
+    QVariant data = index.data(KDirModel::FileItemRole);
+    return qvariant_cast<KFileItem>(data);
+}
+
+static QUrl urlForIndex(const QModelIndex &index)
+{
+    KFileItem item = fileItemForIndex(index);
+    return item.isNull() ? QUrl() : item.url();
+}
+
+struct Thumbnail {
+    Thumbnail(const QPersistentModelIndex &index_, const QDateTime &mtime)
+        : mIndex(index_)
+        , mModificationTime(mtime)
+        , mFileSize(0)
+        , mRough(true)
+        , mWaitingForThumbnail(true)
+    {
+    }
+
+    Thumbnail()
+        : mFileSize(0)
+        , mRough(true)
+        , mWaitingForThumbnail(true)
+    {
+    }
+
+    /**
+     * Init the thumbnail based on a icon
+     */
+    void initAsIcon(const QPixmap &pix)
+    {
+        mGroupPix = pix;
+        int largeGroupSize = pixelSize(ThumbnailGroup::Large);
+        mFullSize = QSize(largeGroupSize, largeGroupSize);
+    }
+
+    bool isGroupPixAdaptedForSize(int size) const
+    {
+        if (mWaitingForThumbnail) {
+            return false;
+        }
+        if (mGroupPix.isNull()) {
+            return false;
+        }
+        const int groupSize = qMax(mGroupPix.width(), mGroupPix.height());
+        if (groupSize >= size) {
+            return true;
+        }
+
+        // groupSize is less than size, but this may be because the full image
+        // is the same size as groupSize
+        return groupSize == qMax(mFullSize.width(), mFullSize.height());
+    }
+
+    void prepareForRefresh(const QDateTime &mtime)
+    {
+        mModificationTime = mtime;
+        mFileSize = 0;
+        mGroupPix = QPixmap();
+        mAdjustedPix = QPixmap();
+        mFullSize = QSize();
+        mRealFullSize = QSize();
+        mRough = true;
+        mWaitingForThumbnail = true;
+    }
+
+    QPersistentModelIndex mIndex;
+    QDateTime mModificationTime;
+    /// The pix loaded from .thumbnails/{large,normal}
+    QPixmap mGroupPix;
+    /// Scaled version of mGroupPix, adjusted to ThumbnailView::thumbnailSize
+    QPixmap mAdjustedPix;
+    /// Size of the full image
+    QSize mFullSize;
+    /// Real size of the full image, invalid unless the thumbnail
+    /// represents a raster image (not an icon)
+    QSize mRealFullSize;
+    /// File size of the full image
+    KIO::filesize_t mFileSize;
+    /// Whether mAdjustedPix represents has been scaled using fast or smooth
+    /// transformation
+    bool mRough;
+    /// Set to true if mGroupPix should be replaced with a real thumbnail
+    bool mWaitingForThumbnail;
+};
+
+using ThumbnailForUrl = QHash<QUrl, Thumbnail>;
+using UrlQueue = QQueue<QUrl>;
 
 class SortModel : public QSortFilterProxyModel
 {
@@ -63,13 +165,22 @@ signals:
     void selectedImagesChanged();
 
 private:
+    void scheduleThumbnailGeneration();
+    void generateThumbnailsForItems();
+
     QByteArray m_sortRoleName;
     QItemSelectionModel *m_selectionModel;
+    ThumbnailForUrl mThumbnailForUrl;
 
     QTimer *m_previewTimer;
     QHash<QUrl, QPersistentModelIndex> m_filesToPreview;
+
     QSize m_screenshotSize;
     QHash<QUrl, QPersistentModelIndex> m_previewJobs;
+    QTimer mScheduledThumbnailGenerationTimer;
     KImageCache *m_imageCache;
     bool m_containImages;
+
+    QPixmap mWaitingThumbnail;
+    QPointer<ThumbnailProvider> mThumbnailProvider;
 };
