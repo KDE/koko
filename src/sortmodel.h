@@ -16,6 +16,7 @@
 #include <KDirModel>
 #include <KImageCache>
 #include <KSharedDataCache>
+#include <kio_version.h>
 #include <qqmlregistration.h>
 
 class QTimer;
@@ -56,7 +57,11 @@ public:
 
 protected Q_SLOTS:
     void setContainImages(bool);
+#if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
+    void showPreview(const KFileItem &item, const QImage &preview);
+#else
     void showPreview(const KFileItem &item, const QPixmap &preview);
+#endif
     void previewFailed(const KFileItem &item);
     void delayedPreview();
 

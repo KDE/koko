@@ -322,14 +322,20 @@ void SortModel::delayedPreview()
         const auto pluginLists = KIO::PreviewJob::availablePlugins();
         KIO::PreviewJob *job = KIO::filePreview(list, m_screenshotSize, &pluginLists);
         job->setIgnoreMaximumSize(true);
+#if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
+        connect(job, &KIO::PreviewJob::generated, this, &SortModel::showPreview);
+#else
         connect(job, &KIO::PreviewJob::gotPreview, this, &SortModel::showPreview);
+#endif
         connect(job, &KIO::PreviewJob::failed, this, &SortModel::previewFailed);
     }
 
     m_filesToPreview.clear();
 }
 
-void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
+#if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
+void SortModel::showPreview(const KFileItem &item, const QImage &preview)
+#endif
 {
     QPersistentModelIndex index = m_previewJobs.value(item.url());
     m_previewJobs.remove(item.url());
@@ -338,7 +344,11 @@ void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
         return;
     }
 
+#if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
+    m_imageCache->insertImage(item.url().toString(), preview);
+#else
     m_imageCache->insertImage(item.url().toString(), preview.toImage());
+#endif
     // qDebug() << "preview size:" << preview.size();
     emit dataChanged(index, index);
 }
