@@ -16,6 +16,8 @@
 #include <KIO/PreviewJob>
 #include <KIO/RestoreJob>
 
+using namespace Qt::StringLiterals;
+
 SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
     , m_screenshotSize(256, 256)
@@ -112,9 +114,9 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
     }
 
     case Roles::Thumbnail: {
-        QUrl thumbnailSource(QString(/*"file://" + */ data(index, Roles::ImageUrlRole).toString()));
+        const QUrl thumbnailSource(data(index, Roles::ImageUrlRole).toString());
 
-        KFileItem item(thumbnailSource, QString());
+        const KFileItem item(thumbnailSource, QString());
         QImage preview = QImage(m_screenshotSize, QImage::Format_ARGB32_Premultiplied);
 
         if (m_imageCache->findImage(item.url().toString(), &preview)) {
@@ -123,7 +125,7 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
 
         m_previewTimer->start(100);
         const_cast<SortModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
-        return {};
+        return false;
     }
 
     case Roles::SourceIndex: {
