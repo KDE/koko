@@ -12,10 +12,13 @@
 #include <QSize>
 #include <QSortFilterProxyModel>
 #include <QVariant>
-#include <kdirmodel.h>
-#include <kimagecache.h>
-#include <kshareddatacache.h>
+
+#include <KDirModel>
+#include <KImageCache>
+#include <KSharedDataCache>
 #include <qqmlregistration.h>
+
+class QTimer;
 
 class SortModel : public QSortFilterProxyModel
 {
@@ -70,6 +73,6 @@ private:
     QHash<QUrl, QPersistentModelIndex> m_filesToPreview;
     QSize m_screenshotSize;
     QHash<QUrl, QPersistentModelIndex> m_previewJobs;
-    KImageCache *m_imageCache;
     bool m_containImages;
+    std::unique_ptr<KImageCache> m_imageCache;
 };

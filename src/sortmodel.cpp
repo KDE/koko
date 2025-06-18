@@ -12,15 +12,16 @@
 #include <QIcon>
 #include <QTimer>
 
+#include <KIO/CopyJob>
+#include <KIO/PreviewJob>
 #include <KIO/RestoreJob>
-#include <kimagecache.h>
-#include <kio/copyjob.h>
-#include <kio/previewjob.h>
 
 SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
     , m_screenshotSize(256, 256)
     , m_containImages(false)
+    // using the same cache of the engine, they index both by url
+    , m_imageCache(std::make_unique<KImageCache>(QStringLiteral("org.kde.koko"), 10485760))
 {
     setSortLocaleAware(true);
     sort(0);
@@ -52,15 +53,9 @@ SortModel::SortModel(QObject *parent)
             }
         }
     });
-
-    // using the same cache of the engine, they index both by url
-    m_imageCache = new KImageCache(QStringLiteral("org.kde.koko"), 10485760);
 }
 
-SortModel::~SortModel()
-{
-    delete m_imageCache;
-}
+SortModel::~SortModel() = default;
 
 void SortModel::setContainImages(bool value)
 {
