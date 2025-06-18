@@ -20,11 +20,8 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_height(0)
     , m_width(0)
     , m_size(0)
-    , m_model("")
-    , m_time("")
     , m_favorite(false)
     , m_rating(0)
-    , m_description("")
     , m_tags(QStringList())
     , m_error(false)
 {
@@ -55,66 +52,66 @@ static QDateTime dateTimeFromString(const QString &dateString)
 
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yyyy-MM-dd"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("dd-MM-yyyy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yyyy-MM"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("MM-yyyy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yyyy.MM.dd"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("dd.MM.yyyy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("dd MMMM yyyy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("MM.yyyy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yyyy.MM"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yyyy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yy"));
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, Qt::ISODate);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("dddd d MMM yyyy h':'mm':'ss AP"));
-        dateTime.setTimeSpec(Qt::LocalTime);
+        dateTime.setTimeZone(QTimeZone::LocalTime);
     }
     if (!dateTime.isValid()) {
         dateTime = QDateTime::fromString(dateString, QStringLiteral("yyyy:MM:dd hh:mm:ss"));
-        dateTime.setTimeSpec(Qt::LocalTime);
+        dateTime.setTimeZone(QTimeZone::LocalTime);
     }
     if (!dateTime.isValid()) {
         dateTime = QLocale::system().toDateTime(dateString, QLocale::ShortFormat);
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         dateTime = QLocale::system().toDateTime(dateString, QLocale::LongFormat);
-        dateTime.setTimeSpec(Qt::UTC);
+        dateTime.setTimeZone(QTimeZone::UTC);
     }
     if (!dateTime.isValid()) {
         qWarning() << "Could not determine correct datetime format from:" << dateString;
@@ -129,7 +126,7 @@ static QDateTime toDateTime(const Exiv2::Value &value)
         QDateTime val = dateTimeFromString(value.toString().c_str());
         if (val.isValid()) {
             // Datetime is stored in exif as local time.
-            val.setOffsetFromUtc(0);
+            val.setTimeZone(QTimeZone::UTC);
             return val;
         }
     }
