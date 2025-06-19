@@ -19,6 +19,10 @@ StatefulApp.StatefulWindow {
     id: root
 
     application: Koko.PhotosApplication {
+        configurationView: Koko.PhotosConfigurationView {
+            window: root
+            application: root.application
+        }
     }
 
     windowName: "MainWindow"
@@ -69,23 +73,6 @@ StatefulApp.StatefulWindow {
             switchApplicationPage(placesView);
         }
         placesOpened();
-    }
-
-    function openSettingsView(): void {
-        if (settingsView === null) {
-            settingsView = switchApplicationPage(Qt.resolvedUrl("SettingsPage.qml"));
-        } else {
-            switchApplicationPage(settingsView);
-        }
-        settingsOpened(true); //isPage
-    }
-
-    function openSettingsPage(): void {
-        pageStack.pushDialogLayer(Qt.resolvedUrl("SettingsPage.qml"), {}, {
-            title: i18n("Configure"),
-            width: Kirigami.Units.gridUnit * 30,
-        });
-        settingsOpened(false); //isPage
     }
 
     function updateGlobalDrawer(): void {
@@ -159,7 +146,7 @@ StatefulApp.StatefulWindow {
             } else if (KokoPrivate.OpenFileModel.rowCount() === 1) {
                 pageStack.clear();
                 pageStack.layers.clear();
-                pageStack.push(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
+                pageStack.push(albumViewComponent);
                 albumView = pageStack.currentItem;
                 albumView.isFolderView = true;
                 const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
@@ -174,7 +161,17 @@ StatefulApp.StatefulWindow {
 
     function filterBy(value: string, query: string): void {
         if (albumView === null || albumView !== pageStack.currentItem) {
-            albumView = switchApplicationPage(Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent);
+            const component = Qt.createComponent("org.kde.koko", "AlbumView");
+            if (component.status === Component.Error) {
+                console.error(component.errorString());
+                return;
+            }
+
+            albumView = component.createObject(root, {
+                model: imageFolderModel,
+            });
+
+            albumView = switchApplicationPage(albumView);
         }
 
         if (value === "Folders" && query.length > 0) {

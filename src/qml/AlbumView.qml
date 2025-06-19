@@ -28,6 +28,8 @@ Kirigami.ScrollablePage {
     property alias gridViewItem: gridView
 
     focus: true
+    titleDelegate: !Kirigami.Settings.isMobile && isFolderView ? folderTitle : normalTitle
+    title: i18nc("@title", "Folders")
 
     Component {
         id: normalTitleComponent
@@ -352,12 +354,6 @@ Kirigami.ScrollablePage {
             tooltip: i18n("Restore selected items from trash")
             visible: model.hasSelectedImages && page.isTrashView
             onTriggered: model.restoreSelection()
-        },
-        Kirigami.Action {
-            visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
-            icon.name: "configure"
-            text: i18n("Configure…")
-            onTriggered: applicationWindow().openSettingsPage();
         },
         Kirigami.Action {
             icon.name: "edit-select-all"

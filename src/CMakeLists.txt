@@ -106,7 +106,6 @@ ecm_target_qml_sources(koko SOURCES
     qml/OverviewControl.qml
     qml/PlacesPage.qml
     qml/SelectionButton.qml
-    qml/SettingsPage.qml
     qml/ShareAction.qml
     qml/ShareDialog.qml
     qml/ShareDrawer.qml
@@ -115,6 +114,8 @@ ecm_target_qml_sources(koko SOURCES
     qml/TagInput.qml
     qml/ThumbnailStrip.qml
     qml/ZoomArea.qml
+    qml/Settings/PhotosConfigurationView.qml
+    qml/Settings/GeneralConfigPage.qml
 )
 
 ecm_target_qml_sources(koko PRIVATE

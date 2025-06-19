@@ -229,8 +229,11 @@ Kirigami.OverlayDrawer {
 
         Delegates.RoundedItemDelegate {
             text: i18n("Settings")
-            onClicked: mainWindow.openSettingsPage()
-            icon.name: "settings-configure"
+            action: Kirigami.Action {
+                text: i18nc("@action:button Open settings dialog", "Settings")
+                fromQAction: root.application.action('options_configure')
+            }
+
             Layout.fillWidth: true
         }
     }

@@ -18,10 +18,8 @@ FormCard.FormCardPage {
 
     actions: [
         Kirigami.Action {
-            visible: Kirigami.Settings.isMobile && root.width <= applicationWindow().wideScreenWidth
-            icon.name: "configure"
-            text: i18n("Configure…")
-            onTriggered: applicationWindow().openSettingsPage();
+            text: i18nc("@action:button Open settings dialog", "Settings")
+            fromQAction: root.application.action('options_configure')
         }
     ]
 
