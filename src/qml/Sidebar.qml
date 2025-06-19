@@ -104,8 +104,13 @@ Kirigami.OverlayDrawer {
                 Repeater {
                     model: root.application.savedFolders
                     PlaceItem {
+                        id: delegate
+
                         required property var modelData
-                        action: modelData
+
+                        action: Kirigami.Action {
+                            fromQAction: delegate.modelData
+                        }
                     }
                 }
                 PlaceItem {
