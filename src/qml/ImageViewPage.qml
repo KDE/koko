@@ -550,7 +550,7 @@ Kirigami.Page {
 
         anchors {
             left: parent.left
-            right: parent.right
+            right: splitter.left
             bottom: parent.bottom
             bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && kokoConfig.imageViewPreview ?
                             Kirigami.Units.smallSpacing : -height

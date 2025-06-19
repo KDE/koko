@@ -23,8 +23,8 @@ ListView {
 
     highlightRangeMode: ListView.ApplyRange
     highlightFollowsCurrentItem: true
-    preferredHighlightBegin: height
-    preferredHighlightEnd: width - height
+    preferredHighlightBegin: (width - (kokoConfig.iconSize + Kirigami.Units.largeSpacing)) / 2
+    preferredHighlightEnd: (width - (kokoConfig.iconSize + Kirigami.Units.largeSpacing)) / 2
     highlightMoveVelocity: -1
     highlightMoveDuration: Kirigami.Units.longDuration
 
@@ -32,6 +32,9 @@ ListView {
     // we don't do margins as that cause a host of issues, including a crash in rtl
     displayMarginBeginning: Kirigami.Units.smallSpacing
     displayMarginEnd: Kirigami.Units.smallSpacing
+
+    // The highlight is not made visible during width changes, so we have to ensure it ourselves
+    onWidthChanged: positionViewAtIndex(currentIndex, ListView.Center)
 
     delegate: AlbumDelegate {
         id: delegate
