@@ -175,18 +175,18 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceHeading {
                     text: i18n("Tags")
-                    visible: applicationWindow().tags.length > 0
+                    visible: tagRepeater.count > 0
                 }
-                /*
                 Repeater {
-                    model: applicationWindow().tags
+                    id: tagRepeater
+                    model: root.application.tags
                     PlaceItem {
-                        icon.name: "tag"
-                        text: modelData
-                        filter: "Tags"
-                        query: modelData
+                        required property var modelData
+                        action: Kirigami.Action {
+                            fromQAction: modelData
+                        }
                     }
-                }*/
+                }
             }
         }
         QQC2.ToolSeparator {

@@ -6,27 +6,17 @@
 
 #include "imagetagsmodel.h"
 #include "imagestorage.h"
-#include "roles.h"
-
-#include <kio/copyjob.h>
-#include <kio/jobuidelegate.h>
 
 ImageTagsModel::ImageTagsModel(QObject *parent)
     : OpenFileModel({}, parent)
     , m_tag(QString())
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTagsModel::slotPopulate);
-    populateTags();
 }
 
 QString ImageTagsModel::tag() const
 {
     return m_tag;
-}
-
-QStringList ImageTagsModel::tags() const
-{
-    return m_tags;
 }
 
 void ImageTagsModel::setTag(const QString &tag)
@@ -36,32 +26,18 @@ void ImageTagsModel::setTag(const QString &tag)
     }
 
     m_tag = tag;
-
-    emit tagChanged();
+    Q_EMIT tagChanged();
 
     slotPopulate();
 }
 
 void ImageTagsModel::slotPopulate()
 {
-    populateTags();
-
-    if (m_tag == "") {
+    if (m_tag.isEmpty()) {
         return;
     }
 
     beginResetModel();
     m_images = ImageStorage::instance()->imagesForTag(m_tag);
     endResetModel();
-}
-
-void ImageTagsModel::populateTags()
-{
-    const QStringList tags = ImageStorage::instance()->tags();
-    if (m_tags == tags) {
-        return;
-    }
-
-    m_tags = tags;
-    emit tagsChanged();
 }

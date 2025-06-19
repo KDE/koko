@@ -89,7 +89,6 @@ StatefulApp.StatefulWindow {
     signal settingsOpened(bool isPage)
     signal placesOpened()
 
-    property var tags: imageTagsModel.sourceModel.tags
     property var settingsView: null
     property var albumView: null
     property var placesView: null

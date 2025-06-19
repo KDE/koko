@@ -4,6 +4,7 @@
 #include "photosapplication.h"
 
 #include "dirmodelutils.h"
+#include "imagestorage.h"
 #include "kokoconfig.h"
 
 #include <KLocalizedString>
@@ -21,6 +22,7 @@ PhotosApplication::PhotosApplication(QObject *parent)
 
     auto config = Config::self();
     connect(config, &Config::SavedFoldersChanged, this, &PhotosApplication::updateSavedFolders);
+    connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &PhotosApplication::updateTags);
 }
 
 PhotosApplication::~PhotosApplication() = default;
@@ -137,11 +139,17 @@ void PhotosApplication::setupActions()
     }
 
     updateSavedFolders();
+    updateTags();
 }
 
 QList<QAction *> PhotosApplication::savedFolders() const
 {
     return m_savedFolders;
+}
+
+QList<QAction *> PhotosApplication::tags() const
+{
+    return m_tags;
 }
 
 void PhotosApplication::updateSavedFolders()
@@ -158,7 +166,7 @@ void PhotosApplication::updateSavedFolders()
         }
         text = text.split(u'/').constLast();
 
-        auto action = new QAction(QIcon::fromTheme(u"folder-symbolic"_s), text);
+        auto action = new QAction(QIcon::fromTheme(u"folder-symbolic"_s), text, this);
         connect(action, &QAction::triggered, this, [this, folder] {
             Q_EMIT filterBy(u"Folders"_s, folder);
         });
@@ -168,4 +176,28 @@ void PhotosApplication::updateSavedFolders()
     }
 
     Q_EMIT savedFoldersChanged();
+}
+
+void PhotosApplication::updateTags()
+{
+    const QStringList tags = ImageStorage::instance()->tags();
+
+    if (m_tagNames == tags) {
+        return;
+    }
+
+    m_tagNames = tags;
+
+    qDeleteAll(m_tags);
+    for (const auto &tag : std::as_const(m_tagNames)) {
+        auto action = new QAction(QIcon::fromTheme(u"tag-symbolic"_s), tag, this);
+        connect(action, &QAction::triggered, this, [this, tag] {
+            Q_EMIT filterBy(u"Tags"_s, tag);
+        });
+        action->setCheckable(true);
+        action->setActionGroup(m_pagesGroup);
+        m_tags << action;
+    }
+
+    Q_EMIT tagsChanged();
 }

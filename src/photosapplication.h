@@ -13,12 +13,14 @@ class PhotosApplication : public AbstractKirigamiApplication
     QML_ELEMENT
 
     Q_PROPERTY(QList<QAction *> savedFolders READ savedFolders NOTIFY savedFoldersChanged)
+    Q_PROPERTY(QList<QAction *> tags READ tags NOTIFY tagsChanged)
 
 public:
     explicit PhotosApplication(QObject *parent = nullptr);
     ~PhotosApplication() override;
 
     QList<QAction *> savedFolders() const;
+    QList<QAction *> tags() const;
 
 Q_SIGNALS:
     void savedFoldersChanged();
@@ -28,7 +30,10 @@ Q_SIGNALS:
 private:
     void setupActions() override;
     void updateSavedFolders();
+    void updateTags();
 
     QList<QAction *> m_savedFolders;
+    QList<QAction *> m_tags;
+    QStringList m_tagNames;
     QActionGroup *const m_pagesGroup;
 };

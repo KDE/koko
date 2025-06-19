@@ -12,12 +12,13 @@
 
 #include "openfilemodel.h"
 
+class QAction;
+
 class ImageTagsModel : public OpenFileModel
 {
     Q_OBJECT
     QML_ELEMENT
     Q_PROPERTY(QString tag READ tag WRITE setTag NOTIFY tagChanged)
-    Q_PROPERTY(QStringList tags READ tags NOTIFY tagsChanged)
 
 public:
     explicit ImageTagsModel(QObject *parent = nullptr);
@@ -25,20 +26,14 @@ public:
     QString tag() const;
     void setTag(const QString &tag);
 
-    QStringList tags() const;
-
 Q_SIGNALS:
     void tagChanged();
-    void tagsChanged();
 
 private Q_SLOTS:
     void slotPopulate();
 
 private:
-    void populateTags();
-
     QString m_tag;
-    QStringList m_tags;
 };
 
 #endif // IMAGETAGSMODEL_H
