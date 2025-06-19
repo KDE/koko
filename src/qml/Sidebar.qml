@@ -101,22 +101,13 @@ Kirigami.OverlayDrawer {
                         fromQAction: root.application.action('place_favorites')
                     }
                 }
-                /*
                 Repeater {
-                    model: Koko.Config.savedFolders
+                    model: root.application.savedFolders
                     PlaceItem {
-                        icon.name: "folder-symbolic"
-                        text: {
-                            var str = modelData
-                            if (str.endsWith("/")) {
-                                str = str.slice(0, -1)
-                            }
-                            return str.split("/")[str.split("/").length-1]
-                        }
-                        filter: "Folders"
-                        query: modelData
+                        required property var modelData
+                        action: modelData
                     }
-                }*/
+                }
                 PlaceItem {
                     icon.name: "user-trash-symbolic"
                     text: i18nc("@action:button Navigation entry in sidebar", "Trash")

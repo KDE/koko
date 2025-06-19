@@ -4,17 +4,23 @@
 #include "photosapplication.h"
 
 #include "dirmodelutils.h"
+#include "kokoconfig.h"
 
 #include <KLocalizedString>
 #include <QActionGroup>
 #include <QStandardPaths>
 
-    using namespace Qt::StringLiterals;
+using namespace Qt::StringLiterals;
 
 PhotosApplication::PhotosApplication(QObject *parent)
     : AbstractKirigamiApplication(parent)
+    , m_pagesGroup(new QActionGroup(this))
 {
+    m_pagesGroup->setExclusive(true);
     setupActions();
+
+    auto config = Config::self();
+    connect(config, &Config::SavedFoldersChanged, this, &PhotosApplication::updateSavedFolders);
 }
 
 PhotosApplication::~PhotosApplication() = default;
@@ -120,16 +126,46 @@ void PhotosApplication::setupActions()
         },
     };
 
-    auto pagesGroup = new QActionGroup(this);
-    pagesGroup->setExclusive(true);
-
     for (const auto &place : places) {
         auto placeAction = mainCollection()->addAction(place.id, this, [this, filter = place.filter, query = place.query] {
             Q_EMIT filterBy(filter, query);
         });
         placeAction->setCheckable(true);
-        placeAction->setActionGroup(pagesGroup);
+        placeAction->setActionGroup(m_pagesGroup);
         placeAction->setText(place.text);
         placeAction->setIcon(place.icon);
     }
+
+    updateSavedFolders();
+}
+
+QList<QAction *> PhotosApplication::savedFolders() const
+{
+    return m_savedFolders;
+}
+
+void PhotosApplication::updateSavedFolders()
+{
+    auto config = Config::self();
+    const auto savedFolders = config->savedFolders();
+    qDeleteAll(m_savedFolders);
+
+    for (const auto &folder : savedFolders) {
+        // Not added to the managed actions
+        QString text = folder;
+        if (text.endsWith(u'/')) {
+            text.chop(1);
+        }
+        text = text.split(u'/').constLast();
+
+        auto action = new QAction(QIcon::fromTheme(u"folder-symbolic"_s), text);
+        connect(action, &QAction::triggered, this, [this, folder] {
+            Q_EMIT filterBy(u"Folders"_s, folder);
+        });
+        action->setCheckable(true);
+        action->setActionGroup(m_pagesGroup);
+        m_savedFolders << action;
+    }
+
+    Q_EMIT savedFoldersChanged();
 }
