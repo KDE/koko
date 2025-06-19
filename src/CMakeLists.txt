@@ -22,6 +22,7 @@ target_link_libraries(koko_static PUBLIC
     KF6::FileMetaData
     KF6::ConfigGui
     KF6::ConfigCore
+    KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
 )
 
@@ -55,6 +56,8 @@ add_executable(koko
     roles.cpp
     fileinfo.cpp
     displaycolorspace.cpp
+    photosapplication.cpp
+    photosapplication.h
     ${koko_SRCS}
 )
 

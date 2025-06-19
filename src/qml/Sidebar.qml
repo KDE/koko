@@ -13,13 +13,18 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.OverlayDrawer {
+    id: root
+
+    required property QQC2.ApplicationWindow mainWindow
+    required property Koko.PhotosApplication application
+
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     handleClosedIcon.source: null
     handleOpenIcon.source: null
-    handleVisible: !applicationWindow().fetchImageToOpen && modal && pageStack.layers.depth < 2
+    handleVisible: !mainWindow.fetchImageToOpen && modal && pageStack.layers.depth < 2
 
     // Autohiding behavior
-    modal: applicationWindow().fetchImageToOpen || !root.wideScreen
+    modal: mainWindow.fetchImageToOpen || !mainWindow.wideScreen
     onEnabledChanged: drawerOpen = enabled && !modal
     onModalChanged: drawerOpen = !modal && pageStack.layers.depth < 2
 
@@ -65,27 +70,11 @@ Kirigami.OverlayDrawer {
 
             component PlaceItem : Delegates.RoundedItemDelegate {
                 id: item
-                property string filter
-                property string query
 
                 Layout.fillWidth: true
                 Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
                 Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
                 Accessible.role: Accessible.MenuItem
-
-                onClicked: {
-                    scrollView.currentlySelectedAction = item;
-
-                    if (scrollView.previouslySelectedAction) {
-                        scrollView.previouslySelectedAction.checked = false;
-                    }
-
-                    scrollView.currentlySelectedAction.checked = true;
-
-                    applicationWindow().filterBy(filter, query);
-
-                    scrollView.previouslySelectedAction = item;
-                }
             }
 
             ColumnLayout {
@@ -95,22 +84,24 @@ Kirigami.OverlayDrawer {
                     text: i18n("Places")
                 }
                 PlaceItem {
-                    id: picturesAction
-                    icon.name: "folder-pictures"
-                    text: i18n("Pictures")
-                    filter: "Pictures"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_pictures')
+                    }
                 }
                 PlaceItem {
-                    text: i18n("Favorites")
-                    icon.name: "starred-symbolic"
-                    filter: "Favorites"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Videos")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_videos')
+                    }
                 }
                 PlaceItem {
-                    icon.name: "folder-videos"
-                    text: i18n("Videos")
-                    filter: "Videos"
-                    query: "file://" + Koko.DirModelUtils.videos
+                    text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_favorites')
+                    }
                 }
+                /*
                 Repeater {
                     model: kokoConfig.savedFolders
                     PlaceItem {
@@ -125,67 +116,77 @@ Kirigami.OverlayDrawer {
                         filter: "Folders"
                         query: modelData
                     }
-                }
+                }*/
                 PlaceItem {
                     icon.name: "user-trash-symbolic"
-                    text: i18n("Trash")
-                    filter: "Trash"
-                    query: "trash:/"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Trash")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_trash')
+                    }
                 }
                 PlaceHeading {
                     text: i18nc("Remote network locations", "Remote")
                 }
                 PlaceItem {
                     icon.name: "folder-cloud"
-                    text: i18n("Network")
-                    filter: "Remote"
-                    query: "remote:/"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Network")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_remote')
+                    }
                 }
                 PlaceHeading {
                     text: i18n("Locations")
                 }
                 PlaceItem {
-                    text: i18n("Countries")
-                    icon.name: "tag-places"
-                    filter: "Countries"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Countries")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_countries')
+                    }
                 }
                 PlaceItem {
-                    text: i18n("States")
-                    icon.name: "tag-places"
-                    filter: "States"
+                    text: i18nc("@action:button Navigation entry in sidebar", "States")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_states')
+                    }
                 }
                 PlaceItem {
-                    text: i18n("Cities")
-                    icon.name: "tag-places"
-                    filter: "Cities"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Cities")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_cities')
+                    }
                 }
                 PlaceHeading {
                     text: i18n("Time")
                 }
                 PlaceItem {
-                    text: i18n("Years")
-                    icon.name: "view-calendar"
-                    filter: "Years"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Years")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_years')
+                    }
                 }
                 PlaceItem {
-                    text: i18n("Months")
-                    icon.name: "view-calendar"
-                    filter: "Months"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Months")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_months')
+                    }
                 }
                 PlaceItem {
-                    text: i18n("Weeks")
-                    icon.name: "view-calendar"
-                    filter: "Weeks"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_weeks')
+                    }
                 }
                 PlaceItem {
-                    text: i18n("Days")
-                    icon.name: "view-calendar"
-                    filter: "Days"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Days")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_days')
+                    }
                 }
                 PlaceHeading {
                     text: i18n("Tags")
                     visible: applicationWindow().tags.length > 0
                 }
+                /*
                 Repeater {
                     model: applicationWindow().tags
                     PlaceItem {
@@ -194,7 +195,7 @@ Kirigami.OverlayDrawer {
                         filter: "Tags"
                         query: modelData
                     }
-                }
+                }*/
             }
         }
         QQC2.ToolSeparator {
@@ -224,16 +225,9 @@ Kirigami.OverlayDrawer {
 
         Delegates.RoundedItemDelegate {
             text: i18n("Settings")
-            onClicked: applicationWindow().openSettingsPage()
+            onClicked: mainWindow.openSettingsPage()
             icon.name: "settings-configure"
             Layout.fillWidth: true
         }
-    }
-
-
-    Component.onCompleted: {
-        picturesAction.checked = true;
-        scrollView.currentlySelectedAction = picturesAction;
-        scrollView.previouslySelectedAction = picturesAction;
     }
 }

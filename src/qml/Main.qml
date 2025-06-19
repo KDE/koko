@@ -9,13 +9,19 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
 import org.kde.koko.private as KokoPrivate
 import org.kde.config as KConfig
 
-Kirigami.ApplicationWindow {
+StatefulApp.StatefulWindow {
     id: root
+
+    application: Koko.PhotosApplication {
+    }
+
+    windowName: "MainWindow"
 
     pageStack {
         globalToolBar {
@@ -95,8 +101,8 @@ Kirigami.ApplicationWindow {
     // this is a temporary binding that's supposed to be broken
     property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
 
-    KConfig.WindowStateSaver {
-        configGroupName: "MainWindow"
+    Kirigami.Action {
+        fromQAction: root.application.action('open_kcommand_bar')
     }
 
     Component {
@@ -123,6 +129,14 @@ Kirigami.ApplicationWindow {
             titleDelegate: isFolderView ? folderTitle : normalTitle
             model: imageFolderModel
             title: i18n("Folders")
+        }
+    }
+
+    Connections {
+        target: root.application
+
+        function onFilterBy(filter: string, query: string): void {
+            root.filterBy(filter, query);
         }
     }
 
@@ -241,7 +255,10 @@ Kirigami.ApplicationWindow {
         Kirigami.ContextDrawer {}
     }
 
-    globalDrawer: Sidebar {}
+    globalDrawer: Sidebar {
+        mainWindow: root
+        application: root.application
+    }
 
     footer: BottomNavBar { }
 
