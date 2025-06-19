@@ -8,12 +8,13 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.koko as Koko
 
-Kirigami.ScrollablePage {
-    id: page
+FormCard.FormCardPage {
+    id: root
 
-    leftPadding: 0
-    rightPadding: 0
+    required property Koko.PhotosApplication application
 
     actions: [
         Kirigami.Action {
@@ -24,143 +25,145 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    component PlaceHeading : Kirigami.Heading {
-        topPadding: Kirigami.Units.largeSpacing
-        leftPadding: Kirigami.Units.gridUnit
-        Layout.fillWidth: true
-        level: 1
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "General")
     }
 
-    component PlaceItem : QQC2.ItemDelegate {
-        id: item
-        property string filter
-        property string query
-        Layout.fillWidth: true
-        Accessible.role: Accessible.MenuItem
-        height: implicitHeight
-        contentItem: Column {
-            Kirigami.Icon {
-                source: item.icon.name
-                width: height
-                height: Kirigami.Units.iconSizes.huge
-                anchors.horizontalCenter: parent.horizontalCenter
-            }
-            QQC2.Label {
-                text: item.text
-                anchors.horizontalCenter: parent.horizontalCenter
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
+            action: Kirigami.Action {
+                fromQAction: root.application?.action('place_pictures') ?? null
             }
         }
-        onClicked: {
-            applicationWindow().filterBy(filter, query);
-        }
-    }
 
-    component PlaceItemContainer : QQC2.ScrollView {
-        default property alias rowChildren: row.data
-        QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
-        Layout.fillWidth: true
-        leftPadding: Kirigami.Units.gridUnit
-
-        Row {
-            id: row
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Videos")
+            action: Kirigami.Action {
+                fromQAction: root.application?.action('place_videos') ?? null
+            }
         }
-        DragHandler {
-            yAxis.enabled: false
+
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_favorites')
+            }
+        }
+
+        FormCard.FormButtonDelegate {
+            icon.name: "user-trash-symbolic"
+            text: i18nc("@action:button Navigation entry in sidebar", "Trash")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_trash')
+            }
+        }
+        FormCard.FormButtonDelegate {
+            icon.name: "folder-cloud"
+            text: i18nc("@action:button Navigation entry in sidebar", "Network")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_remote')
+            }
         }
     }
 
-    ColumnLayout {
-        PlaceItemContainer {
-            PlaceItem {
-                icon.name: "folder-cloud"
-                text: i18n("Network")
-                filter: "Remote"
-                query: "remote:/"
-            }
-            PlaceItem {
-                icon.name: "user-trash"
-                text: i18n("Trash")
-                filter: "Trash"
-                query: "trash:/"
-            }
-        }
-        PlaceHeading {
-            text: i18n("Pinned Folders")
-        }
-        PlaceItemContainer {
-            Repeater {
-                model: Koko.Config.savedFolders
-                PlaceItem {
-                    icon.name: "folder"
-                    text: {
-                        var str = modelData;
-                        if (str.endsWith("/")) {
-                            str = str.slice(0, -1);
-                        }
-                        return str.split("/")[str.split("/").length-1];
-                    }
-                    filter: "Folders"
-                    query: modelData
+    FormCard.FormHeader {
+        title: i18n("Pinned Folders")
+        visible: folderRepeater.count > 0
+    }
+
+    FormCard.FormCard {
+        visible: folderRepeater.count > 0
+        Repeater {
+            id: folderRepeater
+            model: root.application.savedFolders
+            FormCard.FormButtonDelegate {
+                id: delegate
+
+                required property var modelData
+
+                action: Kirigami.Action {
+                    fromQAction: delegate.modelData
                 }
             }
         }
-        PlaceHeading {
-            text: i18n("Locations")
-        }
-        PlaceItemContainer {
-            PlaceItem {
-                text: i18n("Countries")
-                icon.name: "applications-internet" // HACK: tag-places is not colorful :/
-                filter: "Countries"
-            }
-            PlaceItem {
-                text: i18n("States")
-                icon.name: "applications-internet"
-                filter: "States"
-            }
-            PlaceItem {
-                text: i18n("Cities")
-                icon.name: "applications-internet"
-                filter: "Cities"
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Locations")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Countries")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_countries')
             }
         }
-        PlaceHeading {
-            text: i18n("Time")
-        }
-        PlaceItemContainer {
-            PlaceItem {
-                text: i18n("Years")
-                icon.name: "office-calendar" // view-calendar is not colorful
-                filter: "Years"
-            }
-            PlaceItem {
-                text: i18n("Months")
-                icon.name: "office-calendar"
-                filter: "Months"
-            }
-            PlaceItem {
-                text: i18n("Weeks")
-                icon.name: "office-calendar"
-                filter: "Weeks"
-            }
-            PlaceItem {
-                text: i18n("Days")
-                icon.name: "office-calendar"
-                filter: "Days"
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "States")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_states')
             }
         }
-        PlaceHeading {
-            text: i18n("Tags")
-            visible: applicationWindow().tags.length > 0
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Cities")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_cities')
+            }
         }
-        PlaceItemContainer {
-            Repeater {
-                model: applicationWindow().tags
-                PlaceItem {
-                    icon.name: "tag"
-                    text: modelData
-                    filter: "Tags"
-                    query: modelData
+    }
+    FormCard.FormHeader {
+        title: i18n("Time")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Years")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_years')
+            }
+        }
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Months")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_months')
+            }
+        }
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_weeks')
+            }
+        }
+        FormCard.FormButtonDelegate {
+            text: i18nc("@action:button Navigation entry in sidebar", "Days")
+            action: Kirigami.Action {
+                fromQAction: root.application.action('place_days')
+            }
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18n("Tags")
+        visible: tagRepeater.count > 0
+    }
+
+    FormCard.FormCard {
+        visible: tagRepeater.count > 0
+
+        Repeater {
+            id: tagRepeater
+
+            model: root.application.tags
+
+            FormCard.FormButtonDelegate {
+                id: delegate
+
+                required property var modelData
+
+                action: Kirigami.Action {
+                    fromQAction: delegate.modelData
                 }
             }
         }

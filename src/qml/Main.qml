@@ -53,8 +53,18 @@ StatefulApp.StatefulWindow {
 
     function openPlacesPage(): void {
         if (placesView === null) {
-            placesView = switchApplicationPage(Qt.resolvedUrl("PlacesPage.qml"));
-            placesView.title = i18n("Places");
+            const component = Qt.createComponent("org.kde.koko", "PlacesPage");
+            if (component.status === Component.Error) {
+                console.error(component.errorString());
+                return;
+            }
+
+            const page = component.createObject(root, {
+                title: i18nc("@title", "Places"),
+                application: root.application,
+            });
+
+            placesView = switchApplicationPage(page);
         } else {
             switchApplicationPage(placesView);
         }
