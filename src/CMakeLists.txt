@@ -26,9 +26,6 @@ target_link_libraries(koko_static PUBLIC
     LibExiv2::LibExiv2
 )
 
-set(koko_SRCS)
-kconfig_add_kcfg_files(koko_SRCS kokoconfig.kcfgc GENERATE_MOC)
-
 add_executable(koko
     main.cpp
     openfilemodel.cpp
@@ -59,6 +56,17 @@ add_executable(koko
     photosapplication.cpp
     photosapplication.h
     ${koko_SRCS}
+)
+
+kconfig_target_kcfg_file(koko
+    FILE kokoconfig.kcfg
+    CLASS_NAME Config
+    MUTATORS
+    GENERATE_PROPERTIES
+    GENERATE_MOC
+    DEFAULT_VALUE_GETTERS
+    SINGLETON
+    QML_REGISTRATION
 )
 
 target_link_libraries(koko PRIVATE

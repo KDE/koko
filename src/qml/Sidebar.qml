@@ -103,7 +103,7 @@ Kirigami.OverlayDrawer {
                 }
                 /*
                 Repeater {
-                    model: kokoConfig.savedFolders
+                    model: Koko.Config.savedFolders
                     PlaceItem {
                         icon.name: "folder-symbolic"
                         text: {
@@ -211,7 +211,7 @@ Kirigami.OverlayDrawer {
         }
 
         QQC2.Slider {
-            QQC2.ToolTip.text: i18n("%1 px", kokoConfig.iconSize)
+            QQC2.ToolTip.text: i18n("%1 px", Koko.Config.iconSize)
             QQC2.ToolTip.visible: hovered
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             Layout.fillWidth: true
@@ -219,8 +219,11 @@ Kirigami.OverlayDrawer {
             Layout.rightMargin: Kirigami.Units.smallSpacing
             from: Kirigami.Units.gridUnit * 4
             to: Kirigami.Units.gridUnit * 8
-            value: kokoConfig.iconSize
-            onMoved: kokoConfig.iconSize = value;
+            value: Koko.Config.iconSize
+            onMoved: {
+                Koko.Config.iconSize = value;
+                Koko.Config.save();
+            }
         }
 
         Delegates.RoundedItemDelegate {

@@ -7,6 +7,7 @@
 import QtQuick
 import QtQuick.Window
 import org.kde.koko.private as KokoPrivate
+import org.kde.koko as Koko
 
 // This object manages slideshows.
 // It abstract the implementation with a clean and simple API,
@@ -79,7 +80,7 @@ Item {
     // internal object, do *not* call from outside
     Timer {
         id: slideshowTimer
-        interval: kokoConfig.nextImageInterval * 1000
+        interval: Koko.Config.nextImageInterval * 1000
         repeat: true
         onTriggered: {
             if (parent.externalMediaRunning) {

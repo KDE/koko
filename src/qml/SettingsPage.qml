@@ -7,6 +7,7 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import QtQuick.Layouts
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.koko as Koko
 
 Kirigami.PageRow {
     id: settingsPage
@@ -32,8 +33,11 @@ Kirigami.PageRow {
                         Layout.fillWidth: true
                         from: Kirigami.Units.gridUnit * 4
                         to: Kirigami.Units.gridUnit * 8
-                        value: kokoConfig.iconSize
-                        onMoved: kokoConfig.iconSize = value;
+                        value: Koko.Config.iconSize
+                        onMoved: {
+                            Koko.Config.iconSize = value;
+                            Koko.Config.save();
+                        }
                     }
                 }
             }
@@ -49,8 +53,11 @@ Kirigami.PageRow {
             FormCard.FormCheckDelegate {
                 id: randomizeImagesCheckbox
                 text: i18nc("@option:check", "Randomize")
-                checked: kokoConfig.randomizeImages
-                onCheckedChanged: kokoConfig.randomizeImages = checked
+                checked: Koko.Config.randomizeImages
+                onCheckedChanged: {
+                    Koko.Config.randomizeImages = checked
+                    Koko.Config.save();
+                }
             }
 
             FormCard.FormDelegateSeparator { above: randomizeImagesCheckbox}
@@ -69,7 +76,7 @@ Kirigami.PageRow {
                         // limited to hundreds for now because I don't want
                         // to deal with regexing for locale formatted numbers
                         to: 999
-                        value: kokoConfig.nextImageInterval
+                        value: Koko.Config.nextImageInterval
                         editable: true
                         textFromValue: (value) => i18ncp("Slideshow image changing interval",
                                                             "1 second", "%1 seconds", value)
@@ -119,7 +126,10 @@ Kirigami.PageRow {
                             contentItem.oldCursorPosition = contentItem.cursorPosition
                             contentItem.text = displayText
                         }
-                        onValueModified: kokoConfig.nextImageInterval = value
+                        onValueModified: {
+                            Koko.Config.nextImageInterval = value
+                            Koko.Config.save();
+                        }
                     }
                 }
             }

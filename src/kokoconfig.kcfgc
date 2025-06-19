@@ -1,8 +1,0 @@
-# SPDX-FileCopyrightText: (C) 2020 Nicolas Fella <nicolas.fella@gmx.de>
-# SPDX-License-Identifier: LGPL-2.1-or-later
-File=kokoconfig.kcfg
-ClassName=KokoConfig
-Mutators=true
-DefaultValueGetters=true
-GenerateProperties=true
-ParentInConstructor=true

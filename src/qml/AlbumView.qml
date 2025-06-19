@@ -21,7 +21,7 @@ Kirigami.ScrollablePage {
     signal collectionSelected(QtObject selectedModel, string cover)
     signal folderSelected(QtObject selectedModel, string cover, string path)
 
-    property bool bookmarked: isFolderView && kokoConfig.savedFolders.includes(model.sourceModel.url.toString().replace("file:///", "file:/"))
+    property bool bookmarked: isFolderView && Koko.Config.savedFolders.includes(model.sourceModel.url.toString().replace("file:///", "file:/"))
     property var backUrls: [];
     property var backUrlsPosition: 0;
 
@@ -227,12 +227,12 @@ Kirigami.ScrollablePage {
                         return
                     }
                     if (page.bookmarked) {
-                        const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                        const index = Koko.Config.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                         if (index !== -1) {
-                            kokoConfig.savedFolders.splice(index, 1);
+                            Koko.Config.savedFolders.splice(index, 1);
                         }
                     } else {
-                        kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                        Koko.Config.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
                     }
                 }
             }
@@ -267,12 +267,12 @@ Kirigami.ScrollablePage {
                     return
                 }
                 if (page.bookmarked) {
-                    const index = kokoConfig.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                    const index = Koko.Config.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                     if (index !== -1) {
-                        kokoConfig.savedFolders.splice(index, 1);
+                        Koko.Config.savedFolders.splice(index, 1);
                     }
                 } else {
-                    kokoConfig.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                    Koko.Config.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
                 }
             }
         },
@@ -391,8 +391,8 @@ Kirigami.ScrollablePage {
         property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
         property string url: model.sourceModel.url ? model.sourceModel.url : ""
 
-        cellWidth: Math.floor(width/Math.floor(width/(kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2)))
-        cellHeight: kokoConfig.iconSize + Kirigami.Units.largeSpacing * 2
+        cellWidth: Math.floor(width/Math.floor(width/(Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2)))
+        cellHeight: Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2
 
         topMargin: Kirigami.Units.gridUnit
 

@@ -137,11 +137,14 @@ Kirigami.Page {
             icon.name: "view-preview"
             // be more descriptive on mobile, since we're less constrained there
             text: !Kirigami.Settings.isMobile ? i18n("Thumbnail Bar") :
-                   kokoConfig.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
+                   Koko.Config.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
             tooltip: i18n("Toggle Thumbnail Bar")
             shortcut: "T"
             visible: thumbnailView.count > 1
-            onTriggered: kokoConfig.imageViewPreview = !kokoConfig.imageViewPreview
+            onTriggered: {
+                Koko.Config.imageViewPreview = !Koko.Config.imageViewPreview;
+                Koko.Config.save();
+            }
         },
         Kirigami.Action {
             property bool fullscreen: applicationWindow().visibility === Window.FullScreen
@@ -174,14 +177,14 @@ Kirigami.Page {
 
         // next slide
         onTriggered: {
-            if (kokoConfig.randomizeImages) {
+            if (Koko.Config.randomizeImages) {
                 listView.currentIndex = getNextSlide();
                 return;
             }
             if (listView.currentIndex < listView.count - 1) {
                 listView.incrementCurrentIndex();
             } else {
-                if (kokoConfig.loopImages) {
+                if (Koko.Config.loopImages) {
                     listView.currentIndex = 0;
                 } else {
                     slideshowTimer.stop();
@@ -541,7 +544,7 @@ Kirigami.Page {
     QQC2.ScrollView {
         id: thumbnailScrollView
         visible: !Kirigami.Settings.isMobile && thumbnailView.count > 1
-        height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
+        height: Koko.Config.iconSize + Kirigami.Units.largeSpacing
         QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
         QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
 
@@ -552,11 +555,11 @@ Kirigami.Page {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && kokoConfig.imageViewPreview ?
+            bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && Koko.Config.imageViewPreview ?
                             Kirigami.Units.smallSpacing : -height
         }
 
-        opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
+        opacity: applicationWindow().controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
 
         Behavior on anchors.bottomMargin {
             NumberAnimation {
@@ -592,7 +595,7 @@ Kirigami.Page {
             bottomMargin: applicationWindow().controlsVisible ? 0 : -height
         }
 
-        opacity: applicationWindow().controlsVisible && kokoConfig.imageViewPreview ? 1 : 0
+        opacity: applicationWindow().controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
 
         Behavior on anchors.bottomMargin {
             NumberAnimation {
@@ -775,7 +778,7 @@ Kirigami.Page {
                         // limited to hundreds for now because I don't want
                         // to deal with regexing for locale formatted numbers
                         to: 999
-                        value: kokoConfig.nextImageInterval
+                        value: Koko.Config.nextImageInterval
                         editable: true
                         textFromValue: (value) => i18ncp("Slideshow image changing interval",
                                                          "1 second", "%1 seconds", value)
@@ -825,21 +828,30 @@ Kirigami.Page {
                             contentItem.oldCursorPosition = contentItem.cursorPosition
                             contentItem.text = displayText
                         }
-                        onValueModified: kokoConfig.nextImageInterval = value
+                        onValueModified: {
+                            Koko.Config.nextImageInterval = value;
+                            Koko.Config.save();
+                        }
                         Layout.rightMargin: Kirigami.Units.largeSpacing
                     }
                 }
                 QQC2.CheckBox {
                     visible: slideshowManager.running
                     text: i18nc("@option:check", "Loop")
-                    checked: kokoConfig.loopImages
-                    onCheckedChanged: kokoConfig.loopImages = checked
+                    checked: Koko.Config.loopImages
+                    onToggled: {
+                        Koko.Config.loopImages = checked;
+                        Koko.Config.save();
+                    }
                 }
                 QQC2.CheckBox {
                     visible: slideshowManager.running
                     text: i18nc("@option:check", "Randomize")
-                    checked: kokoConfig.randomizeImages
-                    onCheckedChanged: kokoConfig.randomizeImages = checked
+                    checked: Koko.Config.randomizeImages
+                    onToggled: {
+                        Koko.Config.randomizeImages = checked;
+                        Koko.Config.save();
+                    }
                 }
                 QQC2.ToolButton {
                     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,

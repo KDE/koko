@@ -4,7 +4,6 @@
 #include "photosapplication.h"
 
 #include "dirmodelutils.h"
-"
 
 #include <KLocalizedString>
 #include <QActionGroup>

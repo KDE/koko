@@ -89,7 +89,7 @@ Kirigami.ScrollablePage {
         }
         PlaceItemContainer {
             Repeater {
-                model: kokoConfig.savedFolders
+                model: Koko.Config.savedFolders
                 PlaceItem {
                     icon.name: "folder"
                     text: {

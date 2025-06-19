@@ -134,21 +134,6 @@ int main(int argc, char **argv)
     trackerThread.start();
     tracker.setSubFolder(tracker.folder());
 
-    KokoConfig config;
-    // General group
-    QObject::connect(&config, &KokoConfig::IconSizeChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::ImageViewPreviewChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::SavedFoldersChanged, &config, &KokoConfig::save);
-    // Slideshow group
-    QObject::connect(&config, &KokoConfig::NextImageIntervalChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::LoopImagesChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::RandomizeImagesChanged, &config, &KokoConfig::save);
-    // KokoConfig WindowState group
-    QObject::connect(&config, &KokoConfig::WidthChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::HeightChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::VisibilityChanged, &config, &KokoConfig::save);
-    QObject::connect(&config, &KokoConfig::ControlsVisibleChanged, &config, &KokoConfig::save);
-
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
@@ -187,7 +172,6 @@ int main(int argc, char **argv)
     qmlRegisterSingletonInstance("org.kde.koko.private", 1, 0, "Controller", &controller);
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
-    engine.rootContext()->setContextProperty("kokoConfig", &config);
 
     // we want different main files on desktop or mobile
     // very small difference as they as they are subclasses of the same thing

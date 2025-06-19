@@ -350,18 +350,8 @@ StatefulApp.StatefulWindow {
 
     Component.onCompleted: {
         // Initialize window or config
-        if (kokoConfig.width < root.minimumWidth) {
-            kokoConfig.width = root.width
-        } else if (kokoConfig.width <= Screen.width) {
-            root.width = Math.min(kokoConfig.width, Screen.desktopAvailableWidth)
-        }
-        if (kokoConfig.height < root.minimumHeight) {
-            kokoConfig.height = root.height
-        } else {
-            root.height = Math.min(kokoConfig.height, Screen.desktopAvailableHeight)
-        }
-        root.visibility = kokoConfig.visibility
-        root.controlsVisible = kokoConfig.controlsVisible
+        root.visibility = Koko.Config.visibility
+        root.controlsVisible = Koko.Config.controlsVisible
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
         if (KokoPrivate.OpenFileModel.rowCount() > 1) {
             pageStack.initialPage = openFileComponent;

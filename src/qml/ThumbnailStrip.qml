@@ -36,8 +36,8 @@ ListView {
     delegate: AlbumDelegate {
         id: delegate
 
-        width: kokoConfig.iconSize + Kirigami.Units.largeSpacing
-        height: kokoConfig.iconSize + Kirigami.Units.largeSpacing
+        width: Koko.Config.iconSize + Kirigami.Units.largeSpacing
+        height: Koko.Config.iconSize + Kirigami.Units.largeSpacing
 
         onClicked: thumbnailView.activated(delegate.index)
 

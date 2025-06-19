@@ -59,7 +59,7 @@ Controls.ItemDelegate {
             id: image
             anchors.centerIn: parent
             source: root.thumbnail === false ? "chronometer-symbolic" : root.thumbnail
-            width: root.thumbnail === false ? Kirigami.Units.iconSizes.large : kokoConfig.iconSize
+            width: root.thumbnail === false ? Kirigami.Units.iconSizes.large : Koko.Config.iconSize
             height: width
         }
 
