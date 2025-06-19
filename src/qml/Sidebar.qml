@@ -101,7 +101,19 @@ Kirigami.OverlayDrawer {
                         fromQAction: root.application.action('place_favorites')
                     }
                 }
+                PlaceItem {
+                    icon.name: "user-trash-symbolic"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Trash")
+                    action: Kirigami.Action {
+                        fromQAction: root.application.action('place_trash')
+                    }
+                }
+                PlaceHeading {
+                    visible: savedFoldersRepeater.count > 0
+                    text: i18nc("@title:group", "Pinned Folders")
+                }
                 Repeater {
+                    id: savedFoldersRepeater
                     model: root.application.savedFolders
                     PlaceItem {
                         id: delegate
@@ -111,13 +123,6 @@ Kirigami.OverlayDrawer {
                         action: Kirigami.Action {
                             fromQAction: delegate.modelData
                         }
-                    }
-                }
-                PlaceItem {
-                    icon.name: "user-trash-symbolic"
-                    text: i18nc("@action:button Navigation entry in sidebar", "Trash")
-                    action: Kirigami.Action {
-                        fromQAction: root.application.action('place_trash')
                     }
                 }
                 PlaceHeading {

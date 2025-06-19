@@ -68,7 +68,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18n("Pinned Folders")
+        title: i18nc("@title:group", "Pinned Folders")
         visible: folderRepeater.count > 0
     }
 

@@ -230,9 +230,11 @@ Kirigami.ScrollablePage {
                         const index = Koko.Config.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                         if (index !== -1) {
                             Koko.Config.savedFolders.splice(index, 1);
+                            Koko.Config.save();
                         }
                     } else {
                         Koko.Config.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                        Koko.Config.save();
                     }
                 }
             }
@@ -259,9 +261,10 @@ Kirigami.ScrollablePage {
             id: bookmarkAction
             icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
             text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-            visible: Kirigami.Settings.isMobile && page.isFolderView && !model.hasSelectedImages
+            visible: page.isFolderView && !model.hasSelectedImages
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
+            displayHint: Kirigami.DisplayHint.IconOnly
             onTriggered: {
                 if (page.model.sourceModel.url == undefined) {
                     return
@@ -270,11 +273,14 @@ Kirigami.ScrollablePage {
                     const index = Koko.Config.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                     if (index !== -1) {
                         Koko.Config.savedFolders.splice(index, 1);
+                        Koko.Config.save();
                     }
                 } else {
                     Koko.Config.savedFolders.push(model.sourceModel.url.toString().replace("file:///", "file:/"));
+                    Koko.Config.save();
                 }
             }
+
         },
         Kirigami.Action {
             id: goUpAction
