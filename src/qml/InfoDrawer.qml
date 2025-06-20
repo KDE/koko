@@ -30,16 +30,20 @@ Kirigami.OverlayDrawer {
 
     Kirigami.Heading {
         id: header
+
         parent: content.parent
         z: 1
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.leftMargin: Kirigami.Units.largeSpacing
-        anchors.topMargin: Kirigami.Units.largeSpacing
         horizontalAlignment: Qt.AlignLeft
         verticalAlignment: Qt.AlignVCenter
         level: 2
         text: i18n("Metadata")
+
+        anchors {
+            top: parent.top
+            left: parent.left
+            leftMargin: Kirigami.Units.largeSpacing
+            topMargin: Kirigami.Units.largeSpacing
+        }
     }
 
     // QQC2 ScrollView makes it surprisingly difficult to control the
@@ -55,10 +59,14 @@ Kirigami.OverlayDrawer {
         topMargin: 0
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
             id: vScrollBar
+
             parent: content.parent
-            anchors.left: parent.contentItem.right
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
+
+            anchors {
+                left: parent.contentItem.right
+                top: parent.top
+                bottom: parent.bottom
+            }
         }
     }
     Component.onCompleted: root.open()

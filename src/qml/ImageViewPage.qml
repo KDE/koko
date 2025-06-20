@@ -239,12 +239,17 @@ Kirigami.Page {
 
     ListView {
         id: listView
+
         readonly property bool isCurrentItemDragging: currentItem !== null && currentItem.dragging
         readonly property bool isCurrentItemInteractive: currentItem !== null && currentItem.interactive
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: thumbnailScrollView.top
+
+        anchors {
+            top: parent.top
+            left: parent.left
+            right: parent.right
+            bottom: thumbnailScrollView.top
+        }
+
         orientation: Qt.Horizontal
         snapMode: ListView.SnapOneItem
         highlightMoveDuration: 0
@@ -474,9 +479,11 @@ Kirigami.Page {
             parent: listView
             // NOTE: The x and y values will often not be integers.
             // Not a problem unless you want to use them to position other elements.
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            anchors.margins: Kirigami.Units.gridUnit
+            anchors {
+                right: parent.right
+                bottom: parent.bottom
+                margins: Kirigami.Units.gridUnit
+            }
             z: 1
             Behavior on opacity {
                 OpacityAnimator {
@@ -957,13 +964,16 @@ Kirigami.Page {
             application: root.application
             anchors.fill: parent
         }
-        anchors.left: splitter.right
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
+        anchors {
+            left: splitter.right
+            right: parent.right
+            top: parent.top
+            bottom: parent.bottom
+        }
+
         Connections {
             target: infoSidebarLoader.item
-            function onClosed() {
+            function onClosed(): void {
                 infoAction.checked = false
             }
         }

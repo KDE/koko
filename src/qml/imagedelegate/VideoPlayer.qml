@@ -113,10 +113,12 @@ Item {
     Item {
         id: playerToolbar
 
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: Kirigami.Units.smallSpacing
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: Kirigami.Units.smallSpacing
+        }
 
         height: Kirigami.Units.gridUnit * 2
         opacity: applicationWindow().controlsVisible ? 1 : 0
@@ -134,9 +136,11 @@ Item {
 
         // Pretty gradient ftw
         Rectangle {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+            }
             height: Kirigami.Units.gridUnit * 4
             opacity: 0.6
             gradient: Gradient {
@@ -146,9 +150,11 @@ Item {
         }
 
         Rectangle {
-            anchors.left:parent.left
-            anchors.right:parent.right
-            anchors.top: parent.bottom
+            anchors {
+                left: parent.left
+                right: parent.right
+                top: parent.bottom
+            }
             height: parent.anchors.bottomMargin
             opacity: 0.6
             color: "black"
@@ -160,11 +166,13 @@ Item {
             // NOTE: Screen reader reports raw numbers, not sure if there's any way around it
             Accessible.name: i18n("Seek slider")
 
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.top
-            anchors.leftMargin: Kirigami.Units.smallSpacing
-            anchors.rightMargin: Kirigami.Units.smallSpacing
+            anchors {
+                left: parent.left
+                right: parent.right
+                bottom: parent.top
+                leftMargin: Kirigami.Units.smallSpacing
+                rightMargin: Kirigami.Units.smallSpacing
+            }
 
             value: pressed ? 0 : videoPlayer.position // don't change value while we drag
             to: videoPlayer.duration
@@ -192,11 +200,14 @@ Item {
         }
 
         RowLayout {
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.leftMargin: Kirigami.Units.smallSpacing
-            anchors.rightMargin: Kirigami.Units.smallSpacing
-            anchors.verticalCenter: parent.verticalCenter
+            anchors {
+                left: parent.left
+                right: parent.right
+                leftMargin: Kirigami.Units.smallSpacing
+                rightMargin: Kirigami.Units.smallSpacing
+                verticalCenter: parent.verticalCenter
+            }
+
             spacing: Kirigami.Units.smallSpacing
 
             Controls.ToolButton {
