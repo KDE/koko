@@ -9,6 +9,7 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.koko as Koko
 
 Loader {
@@ -23,7 +24,7 @@ Loader {
 
     property int lastCategoryRequested: BottomNavBar.Category.Pictures // tracks last page selected
 
-    required property Kirigami.ApplicationWindow mainWindow
+    required property StatefulApp.StatefulWindow mainWindow
 
     height: active ? implicitHeight : 0
     active: Kirigami.Settings.isMobile && !mainWindow.wideScreen && mainWindow.pageStack.layers.depth < 2;
@@ -31,64 +32,43 @@ Loader {
 
     Connections {
         target: mainWindow
-        function onFilterChanged(value: string, query: string) {
-            switch (value) {
-                case "Pictures": {
-                    root.lastCategoryRequested = BottomNavBar.Category.Pictures
-                    break;
-                }
-                case "Videos": {
-                    root.lastCategoryRequested = BottomNavBar.Category.Videos
-                    break;
-                }
-                case "Favorites": {
-                    root.lastCategoryRequested = BottomNavBar.Category.Favorites
-                    break;
-                }
-                default: {
-                    root.lastCategoryRequested = BottomNavBar.Category.Places
-                }
-            }
-        }
-        function onPlacesOpened() {
+
+        function onPlacesOpened(): void {
             root.lastCategoryRequested = BottomNavBar.Category.Places
         }
     }
 
     Component {
         id: bottomNavBar
-        ColumnLayout {
-            spacing: 0
-            Kirigami.NavigationTabBar {
-                Layout.fillWidth: true
-                position: Kirigami.NavigationTabBar.Footer
-                actions: [
-                    Kirigami.Action {
-                        icon.name: "photo"
-                        text: i18n("Pictures")
-                        checked: root.lastCategoryRequested === BottomNavBar.Category.Pictures
-                        onTriggered: applicationWindow().filterBy("Pictures", "")
-                    },
-                    Kirigami.Action {
-                        icon.name: "folder-videos-symbolic"
-                        text: i18n("Videos")
-                        checked: root.lastCategoryRequested === BottomNavBar.Category.Videos
-                        onTriggered: applicationWindow().filterBy("Videos", "file://" + Koko.DirModelUtils.videos)
-                    },
-                    Kirigami.Action {
-                        icon.name: "emblem-favorite"
-                        text: i18n("Favorites")
-                        checked: root.lastCategoryRequested === BottomNavBar.Category.Favorites
-                        onTriggered: applicationWindow().filterBy("Favorites", "");
-                    },
-                    Kirigami.Action {
-                        icon.name: "compass"
-                        text: i18n("Places")
-                        checked: root.lastCategoryRequested === BottomNavBar.Category.Places
-                        onTriggered: applicationWindow().openPlacesPage();
-                    }
-                ]
-            }
+
+        Kirigami.NavigationTabBar {
+            position: Kirigami.NavigationTabBar.Footer
+            actions: [
+                Kirigami.Action {
+                    id: picturesAction
+
+                    text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
+                    fromQAction: root.mainWindow.application.action("place_pictures")
+                },
+                Kirigami.Action {
+                    id: videosAction
+
+                    text: i18nc("@action:button Navigation entry in sidebar", "Videos")
+                    fromQAction: root.mainWindow.application.action("place_videos")
+                },
+                Kirigami.Action {
+                    id: favoritesAction
+
+                    text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
+                    fromQAction: root.mainWindow.application.action("place_favorites")
+                },
+                Kirigami.Action {
+                    icon.name: "compass-symbolic"
+                    text: i18n("Places")
+                    checked: !picturesAction.checked && !videosAction.checked && !favoritesAction.checked
+                    onTriggered: applicationWindow().openPlacesPage();
+                }
+            ]
         }
     }
 }

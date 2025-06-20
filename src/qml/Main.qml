@@ -159,6 +159,8 @@ StatefulApp.StatefulWindow {
 
             albumView = component.createObject(root, {
                 model: imageFolderModel,
+                application: root.application,
+                mainWindow: root,
             });
 
             albumView = switchApplicationPage(albumView);
