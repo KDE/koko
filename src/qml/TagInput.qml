@@ -19,6 +19,8 @@ QQC2.ComboBox {
     model: tagsListModel
 
     Connections {
+        target: root.application
+
         function onTagsChanged(): void {
             if (tagsListModel.count > 0) {
                 tagsListModel.clear();

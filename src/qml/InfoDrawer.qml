@@ -14,7 +14,7 @@ import org.kde.koko as Koko
 import org.kde.koko.private as KokoPrivate
 
 Kirigami.OverlayDrawer {
-    id: rootextractor
+    id: root
 
     required property Koko.Exiv2Extractor extractor
     required property Koko.PhotosApplication application
