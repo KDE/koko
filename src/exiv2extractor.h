@@ -10,13 +10,31 @@
 
 #include <exiv2/exiv2.hpp>
 
+#include <QAbstractListModel>
 #include <QDateTime>
 #include <QObject>
 #include <QString>
 #include <QUrl>
+
+#include <KFileItem>
+
 #include <qqmlregistration.h>
 
-class Exiv2Extractor : public QObject
+enum class GroupRow {
+    GeneralGroup,
+    ExifGroup,
+    IptcGroup,
+    XmpGroup,
+};
+
+struct MetaInfoEntry {
+    GroupRow group;
+    QString key;
+    QString label;
+    QString value;
+};
+
+class Exiv2Extractor : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -37,12 +55,22 @@ class Exiv2Extractor : public QObject
     Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY filePathChanged)
 
 public:
+    enum ExtraRoles {
+        LabelRole = Qt::UserRole + 1,
+        KeyRole,
+        GroupRole,
+    };
+
     explicit Exiv2Extractor(QObject *parent = nullptr);
     ~Exiv2Extractor();
 
     void extract(const QString &filePath);
     Q_INVOKABLE void updateFavorite(const QString &filePath);
     Q_INVOKABLE void toggleFavorite(const QString &filePath);
+
+    QHash<int, QByteArray> roleNames() const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
     QUrl filePath() const;
     void setFilePath(const QUrl &filePath)
@@ -125,6 +153,7 @@ private:
     QByteArray fetchByteArray(const Exiv2::ExifData &data, const char *name);
 
     QString m_filePath;
+    KFileItem m_item;
     double m_latitude;
     double m_longitude;
     QDateTime m_dateTime;
@@ -139,6 +168,11 @@ private:
     QStringList m_tags;
 
     bool m_error;
+
+    void initGeneralGroup(const KFileItem &item);
+    void initExiv2Image(const Exiv2::Image *image);
+
+    QList<MetaInfoEntry> m_entries;
 };
 
 #endif // EXIV2EXTRACTOR_H

@@ -6,14 +6,21 @@
 
 #include "exiv2extractor.h"
 
+#include <KFileItem>
 #include <KFileMetaData/UserMetaData>
+
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
+#include <QSize>
 #include <QStandardPaths>
 
+#include <KLocalizedString>
+
+using namespace Qt::StringLiterals;
+
 Exiv2Extractor::Exiv2Extractor(QObject *parent)
-    : QObject(parent)
+    : QAbstractListModel(parent)
     , m_filePath(QString())
     , m_latitude(0)
     , m_longitude(0)
@@ -27,8 +34,47 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
 {
 }
 
-Exiv2Extractor::~Exiv2Extractor()
+Exiv2Extractor::~Exiv2Extractor() = default;
+
+QHash<int, QByteArray> Exiv2Extractor::roleNames() const
 {
+    return {
+        {Qt::DisplayRole, "displayName"},
+        {LabelRole, "label"},
+        {KeyRole, "key"},
+        {GroupRole, "group"},
+    };
+}
+
+int Exiv2Extractor::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : m_entries.count();
+}
+
+QVariant Exiv2Extractor::data(const QModelIndex &index, int role) const
+{
+    const auto &entry = m_entries.at(index.row());
+
+    switch (role) {
+    case Qt::DisplayRole:
+        return entry.value;
+    case LabelRole:
+        return entry.label;
+    case KeyRole:
+        return entry.key;
+    case GroupRole:
+        switch (entry.group) {
+        case GroupRow::GeneralGroup:
+            return i18nc("@title:group", "General");
+        case GroupRow::ExifGroup:
+            return i18nc("@title:group", "EXIF");
+        case GroupRow::IptcGroup:
+            return i18nc("@title:group", "IPTC");
+        case GroupRow::XmpGroup:
+            return i18nc("@title:group", "XMPP");
+        }
+    }
+    return {};
 }
 
 QUrl Exiv2Extractor::filePath() const
@@ -244,6 +290,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_description = "";
     m_tags = QStringList();
     m_filePath = filePath;
+    m_item = KFileItem(QUrl::fromLocalFile(m_filePath));
 
     QByteArray arr = QFile::encodeName(filePath);
     std::string fileString(arr.data(), arr.length());
@@ -327,6 +374,13 @@ void Exiv2Extractor::extract(const QString &filePath)
     if (!longRef.isEmpty() && longRef[0] == 'W')
         m_longitude *= -1;
 
+    beginResetModel();
+    m_entries.clear();
+    initGeneralGroup(m_item);
+    initExiv2Image(image.get());
+
+    endResetModel();
+
     Q_EMIT filePathChanged();
 }
 
@@ -390,4 +444,114 @@ QByteArray Exiv2Extractor::fetchByteArray(const Exiv2::ExifData &data, const cha
 bool Exiv2Extractor::error() const
 {
     return m_error;
+}
+
+static QString formatFileTime(const KFileItem &item, const KFileItem::FileTimes timeType)
+{
+    return QLocale().toString(item.time(timeType), QLocale::ShortFormat);
+}
+
+template<class Container, class Iterator>
+QList<MetaInfoEntry> fillExivGroup(GroupRow groupRow, const Container &container, const Exiv2::ExifData &exifData)
+{
+    // key aren't always unique (for example, "Iptc.Application2.Keywords"
+    // may appear multiple times) so we can't know how many rows we will
+    // insert before going through them. That's why we create a hash
+    // before.
+    using EntryHash = QHash<QString, MetaInfoEntry>;
+    EntryHash hash;
+
+    Iterator it = container.begin(), end = container.end();
+
+    for (; it != end; ++it) {
+        try {
+            // Skip metadatum if its tag is an hex number
+            if (it->tagName().substr(0, 2) == "0x") {
+                continue;
+            }
+            const QString key = QString::fromUtf8(it->key().c_str());
+            const QString label = QString::fromLocal8Bit(it->tagLabel().c_str());
+            std::ostringstream stream;
+            it->write(stream, &exifData);
+            const QString value = QString::fromLocal8Bit(stream.str().c_str());
+
+            EntryHash::iterator hashIt = hash.find(key);
+            if (hashIt != hash.end()) {
+                hashIt->value += value;
+            } else {
+                hash.insert(key, MetaInfoEntry(groupRow, key, label, value));
+            }
+        } catch (const std::out_of_range &error) {
+            // Workaround for https://bugs.launchpad.net/ubuntu/+source/exiv2/+bug/1942799
+            // which was fixed with https://github.com/Exiv2/exiv2/pull/1918/commits/8a1e949bff482f74599f60b8ab518442036b1834
+            qWarning() << "Failed to read some meta info:" << error.what();
+        } catch (const Exiv2::Error &error) {
+            qWarning() << "Failed to read some meta info:" << error.what();
+        }
+    }
+
+    if (hash.isEmpty()) {
+        return {};
+    }
+
+    const QList<MetaInfoEntry> entries(hash.cbegin(), hash.cend());
+    return entries;
+}
+
+void Exiv2Extractor::initGeneralGroup(const KFileItem &item)
+{
+    const QString modifiedString = formatFileTime(item, KFileItem::ModificationTime);
+    const QString accessString = formatFileTime(item, KFileItem::AccessTime);
+    const QString createdString = formatFileTime(item, KFileItem::CreationTime);
+
+    const QSize size(m_width, m_height);
+    QString imageSize;
+    if (size.isValid()) {
+        imageSize = i18nc("@item:intable %1 is image width, %2 is image height", "%1x%2", QString::number(size.width()), QString::number(size.height()));
+
+        double megaPixels = size.width() * size.height() / 1000000.;
+        if (megaPixels > 0.1) {
+            const QString megaPixelsString = QString::number(megaPixels, 'f', 1);
+            imageSize += u' ';
+            imageSize += i18nc("@item:intable %1 is number of millions of pixels in image", "(%1MP)", megaPixelsString);
+        }
+    } else {
+        imageSize = QLatin1Char('-');
+    }
+
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Name"_s, i18nc("@item:intable Image file name", "Name"), item.name()};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Size"_s, i18nc("@item:intable", "File Size"), KIO::convertSize(item.size())};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Created"_s, i18nc("@item:intable", "Date Created"), createdString};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Modified"_s, i18nc("@item:intable", "Date Modified"), modifiedString};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Accessed"_s, i18nc("@item:intable", "Date Accessed"), accessString};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.LocalPath"_s, i18nc("@item:intable", "Path"), item.localPath()};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.ImageSize"_s, i18nc("@item:intable", "Image Size"), imageSize};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.MimeType"_s, i18nc("@item:intable", "File Type"), item.mimetype()};
+}
+
+void Exiv2Extractor::initExiv2Image(const Exiv2::Image *image)
+{
+    if (!image) {
+        return;
+    }
+
+    const auto comment = QString::fromUtf8(image->comment().c_str());
+    if (!comment.isEmpty()) {
+        m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Comment"_s, i18nc("@item:intable", "Comment"), comment};
+    }
+
+    const Exiv2::ExifData &exifData = image->exifData();
+    if (image->checkMode(Exiv2::mdExif) & Exiv2::amRead) {
+        m_entries.append(fillExivGroup<Exiv2::ExifData, Exiv2::ExifData::const_iterator>(GroupRow::ExifGroup, exifData, exifData));
+    }
+
+    if (image->checkMode(Exiv2::mdIptc) & Exiv2::amRead) {
+        const Exiv2::IptcData &iptcData = image->iptcData();
+        m_entries.append(fillExivGroup<Exiv2::IptcData, Exiv2::IptcData::const_iterator>(GroupRow::IptcGroup, iptcData, exifData));
+    }
+
+    if (image->checkMode(Exiv2::mdXmp) & Exiv2::amRead) {
+        const Exiv2::XmpData &xmpData = image->xmpData();
+        m_entries.append(fillExivGroup<Exiv2::XmpData, Exiv2::XmpData::const_iterator>(GroupRow::XmpGroup, xmpData, exifData));
+    }
 }

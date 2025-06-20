@@ -224,5 +224,15 @@ Flickable {
                 }
             }
         }
+
+        QQC2.Button {
+            icon.name: 'view-list-details-symbolic'
+            text: i18nc("@action:button", "Show more details…")
+            onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.resolvedUrl("ImageMetadataPage.qml"), {
+                extractor: flickable.extractor,
+            }, {
+                width: Kirigami.Units.gridUnit * 20
+            });
+        }
     }
 }
