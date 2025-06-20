@@ -64,7 +64,7 @@ int main(int argc, char **argv)
                          QStringLiteral(KOKO_VERSION_STRING),
                          xi18nc("@title", "Photos is an image viewer for your image collection."),
                          KAboutLicense::LGPL,
-                         xi18nc("@info:credit", "(c) 2013-2020 KDE Contributors"),
+                         xi18nc("@info:credit", "(c) 2013-%1 KDE Contributors", QString::number(QDate::currentDate().year())),
                          QString(),
                          QStringLiteral("https://apps.kde.org/koko"));
 
