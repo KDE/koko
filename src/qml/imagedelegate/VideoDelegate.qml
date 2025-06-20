@@ -21,8 +21,8 @@ BaseImageDelegate {
     required property bool autoplay
     required property Item slideShow
 
-    loaded: player.status == MediaPlayer.Loaded
-    loading: player.status == MediaPlayer.Loading
+    loaded: player.mediaStatus === MediaPlayer.Loaded
+    loading: player.mediaStatus === MediaPlayer.Loading
 
     sourceWidth: player.implicitWidth
     sourceHeight: player.implicitHeight
@@ -32,6 +32,7 @@ BaseImageDelegate {
     data: VideoPlayer {
         id: player
 
+        mainWindow: root.mainWindow
         anchors.fill: parent
 
         source: root.source

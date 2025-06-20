@@ -31,6 +31,8 @@ ZoomArea {
 
     required property bool isCurrent
 
+    required property Kirigami.ApplicationWindow mainWindow
+
     implicitContentWidth: sourceWidth
     implicitContentHeight: sourceHeight
 

@@ -14,18 +14,20 @@ import org.kde.coreaddons as KCA
 Item {
     id: videoPlayerRoot
 
+    required property Kirigami.ApplicationWindow mainWindow
+
     // `required` here breaks stuff
     property string source
     readonly property alias player: videoPlayer
     readonly property bool playing: videoPlayer.playbackState === MediaPlayer.PlayingState
-    readonly property alias status: videoPlayer.status
+    readonly property alias mediaStatus: videoPlayer.mediaStatus
 
     // signals when playback starts and finishes
     signal playbackStarted()
     signal playbackFinished()
 
     // convenience function
-    function play() {
+    function play(): void {
         if (videoPlayer.status != MediaPlayer.Loaded) {
             videoPlayer.autoPlay = true
         } else {
@@ -33,26 +35,26 @@ Item {
         }
     }
 
-    function stop() {
+    function stop(): void {
         videoPlayer.stop();
     }
 
-    implicitWidth: videoPlayer.implicitWidth
-    implicitHeight: videoPlayer.implicitHeight
+    implicitWidth: videoOutput.implicitWidth
+    implicitHeight: videoOutput.implicitHeight
 
     Timer {
         id: doubleClickTimer
         interval: 150
         onTriggered: {
-            applicationWindow().controlsVisible = !applicationWindow().controlsVisible;
+            root.mainWindow.controlsVisible = !root.mainWindow.controlsVisible;
         }
     }
 
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            if (applicationWindow().contextDrawer) {
-                applicationWindow().contextDrawer.drawerOpen = false;
+            if (root.mainWindow.contextDrawer) {
+                root.mainWindow.contextDrawer.drawerOpen = false;
             }
             doubleClickTimer.restart();
         }
@@ -66,21 +68,26 @@ Item {
         }
     }
 
-    Video {
+    MediaPlayer {
         id: videoPlayer
-        implicitWidth: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.width : 0
-        implicitHeight: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.height : 0
-        anchors.fill: parent
-        loops: videoPlayer.duration >= 5000 ? 0 : MediaPlayer.Infinite // loop short videos
-        // See https://doc.qt.io/qt-5/qml-qtmultimedia-qtmultimedia.html#convertVolume-method
-        volume: QtMultimedia.convertVolume(volumeSlider.value,
-                            QtMultimedia.LogarithmicVolumeScale,
-                            QtMultimedia.LinearVolumeScale)
-        source: videoPlayerRoot.source
-        onPlaying: videoPlayerRoot.playbackStarted()
-        onStopped: videoPlayerRoot.playbackFinished()
 
-        function seekForward() {
+        source: videoPlayerRoot.source
+
+        onPlaybackStateChanged: if (playbackState === MediaPlayer.StoppedState) {
+            videoPlayerRoot.playbackFinished();
+        } else if (playbackState === MediaPlayer.PlayingState) {
+            videoPlayerRoot.playbackStarted();
+        }
+
+        audioOutput: AudioOutput {
+            volume: volumeSlider.value
+        }
+
+        videoOutput: videoOutput
+
+        loops: videoPlayer.duration >= 5000 ? 0 : MediaPlayer.Infinite // loop short videos
+
+        function seekForward(): void {
             if (videoPlayer.position + 5000 < videoPlayer.duration) {
                 videoPlayer.seek(videoPlayer.position + 5000);
             } else {
@@ -89,9 +96,18 @@ Item {
             }
         }
 
-        function seekBackward() {
+        function seekBackward(): void {
             videoPlayer.seek(videoPlayer.position - 5000);
         }
+    }
+
+    VideoOutput {
+        id: videoOutput
+
+        implicitWidth: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.width : 0
+        implicitHeight: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.height : 0
+
+        anchors.fill: parent
     }
 
     Controls.ToolButton {
@@ -121,7 +137,7 @@ Item {
         }
 
         height: Kirigami.Units.gridUnit * 2
-        opacity: applicationWindow().controlsVisible ? 1 : 0
+        opacity: root.mainWindow.controlsVisible ? 1 : 0
         visible: opacity !== 0
 
         Kirigami.Theme.inherit: false
@@ -256,7 +272,9 @@ Item {
             Controls.Slider {
                 id: volumeSlider
                 Accessible.name: i18n("Volume slider")
-                value: 1
+                from: 0
+                to: 1
+                value: 0.5
                 visible: videoPlayer.hasAudio
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 5
                 onPressedChanged: videoPlayer.muted = false

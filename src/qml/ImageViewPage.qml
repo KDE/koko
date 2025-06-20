@@ -368,9 +368,11 @@ Kirigami.Page {
                     }
 
                     let delegate = ""
-                    let properties = {}
-                    properties.source = loader.imageurl
-                    properties.isCurrent = Qt.binding(() => loader.ListView.isCurrentItem)
+                    let properties = {
+                        source: loader.imageurl,
+                        isCurrent: Qt.binding(() => loader.ListView.isCurrentItem),
+                        mainWindow: root.mainWindow,
+                    }
 
                     switch (type) {
                     case Koko.FileInfo.VideoType:
