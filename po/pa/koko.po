@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-21 00:41+0000\n"
+"POT-Creation-Date: 2025-06-20 00:40+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -128,108 +128,183 @@ msgstr ""
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "ਚਿੱਤਰ ਲਈ ਸਾਂਝਾ ਕੀਤਾ URL <a href='%1'>%1</a> ਹੈ"
 
-#: qml/AlbumDelegate.qml:121
+#: photosapplication.cpp:49
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures"
+msgstr ""
+
+#: photosapplication.cpp:56
+#, fuzzy, kde-format
+#| msgid "Add to favorites"
+msgctxt "@action:button Navigation button"
+msgid "Navigate to favorites"
+msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚ ਜੋੜੋ"
+
+#: photosapplication.cpp:63
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to videos"
+msgstr ""
+
+#: photosapplication.cpp:70
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to the trash"
+msgstr ""
+
+#: photosapplication.cpp:77
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to the remote folders"
+msgstr ""
+
+#: photosapplication.cpp:84
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by countries"
+msgstr ""
+
+#: photosapplication.cpp:91
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by states"
+msgstr ""
+
+#: photosapplication.cpp:98
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by cities"
+msgstr ""
+
+#: photosapplication.cpp:105
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by years"
+msgstr ""
+
+#: photosapplication.cpp:112
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by months"
+msgstr ""
+
+#: photosapplication.cpp:119
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by weeks"
+msgstr ""
+
+#: photosapplication.cpp:126
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures sorted by days"
+msgstr ""
+
+#: qml/AlbumDelegate.qml:118
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
 msgstr[0] "1 ਚਿੱਤਰ"
 msgstr[1] "%1 ਚਿੱਤਰ"
 
-#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
+#: qml/AlbumView.qml:32
+#, fuzzy, kde-format
+#| msgid "Folders"
+msgctxt "@title"
+msgid "Folders"
+msgstr "ਫੋਲਡਰ"
+
+#: qml/AlbumView.qml:225 qml/AlbumView.qml:265
 #, kde-format
 msgid "Remove Bookmark"
 msgstr "ਬੁੱਕਮਾਰਕ ਹਟਾਓ"
 
-#: qml/AlbumView.qml:223 qml/AlbumView.qml:261
+#: qml/AlbumView.qml:225 qml/AlbumView.qml:265
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
 msgstr "ਫੋਲਡਰ ਨੂੰ ਬੁੱਕਮਾਰਕ ਕਰੋ"
 
-#: qml/AlbumView.qml:282
+#: qml/AlbumView.qml:290
 #, kde-format
 msgid "Go Up"
 msgstr "ਉੱਤੇ ਜਾਓ"
 
-#: qml/AlbumView.qml:305
+#: qml/AlbumView.qml:313
 #, kde-format
 msgid "Home"
 msgstr "ਮੁੱਖ-ਸਫ਼ਾ"
 
-#: qml/AlbumView.qml:305
+#: qml/AlbumView.qml:313
 #, kde-format
 msgid "Root"
 msgstr "ਮੁੱਢ"
 
-#: qml/AlbumView.qml:338
+#: qml/AlbumView.qml:346
 #, kde-format
 msgid "Delete Selection"
 msgstr "ਚੋਣ ਨੂੰ ਹਟਾਓ"
 
-#: qml/AlbumView.qml:339
+#: qml/AlbumView.qml:347
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "ਚੁਣੀਆਂ ਚੀਜ਼ਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜੋ"
 
-#: qml/AlbumView.qml:345
+#: qml/AlbumView.qml:353
 #, kde-format
 msgid "Restore Selection"
 msgstr "ਚੋਣ ਨੂੰ ਬਹਾਲ ਕਰੋ"
 
-#: qml/AlbumView.qml:346
+#: qml/AlbumView.qml:354
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "ਰੱਦੀ ਵਿੱਚੋਂ ਚੁਣੀਆਂ ਆਈਟਮਾਂ ਨੂੰ ਬਹਾਲ ਕਰੋ"
 
-#: qml/AlbumView.qml:353 qml/PlacesPage.qml:22
-#, kde-format
-msgid "Configure…"
-msgstr ""
-
-#: qml/AlbumView.qml:358
+#: qml/AlbumView.qml:360
 #, kde-format
 msgid "Select All"
 msgstr "ਸਭ ਚੁਣੋ"
 
-#: qml/AlbumView.qml:359
+#: qml/AlbumView.qml:361
 #, fuzzy, kde-format
 #| msgid "Selects all the images in the current view"
 msgid "Selects all the media in the current view"
 msgstr "ਮੌਜੂਦਾ ਝਲਕ ਵਿੱਚ ਸਾਰੇ ਚਿੱਤਰਾਂ ਨੂੰ ਚੁਣੋ"
 
-#: qml/AlbumView.qml:366
+#: qml/AlbumView.qml:368
 #, kde-format
 msgid "Deselect All"
 msgstr "ਸਭ ਅਣ-ਚੁਣੇ"
 
-#: qml/AlbumView.qml:367
+#: qml/AlbumView.qml:369
 #, fuzzy, kde-format
 #| msgid "De-selects all the selected images"
 msgid "De-selects all the selected media"
 msgstr "ਚੁਣੇ ਗਏ ਸਾਰੇ ਚਿੱਤਰ ਨੂੰ ਅਣ-ਚੁਣਿਆ ਬਣਾਓ"
 
-#: qml/AlbumView.qml:478
+#: qml/AlbumView.qml:480
 #, fuzzy, kde-format
 #| msgid "No Images Found"
 msgid "No Media Found"
 msgstr "ਕੋਈ ਚਿੱਤਰ ਨਹੀਂ ਲੱਭਿਆ"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:100
+#: qml/BottomNavBar.qml:66
 #, kde-format
 msgid "Pictures"
 msgstr "ਤਸਵੀਰਾਂ"
 
-#: qml/BottomNavBar.qml:72 qml/Sidebar.qml:110
+#: qml/BottomNavBar.qml:72
 #, kde-format
 msgid "Videos"
 msgstr ""
 
-#: qml/BottomNavBar.qml:78 qml/Sidebar.qml:104
+#: qml/BottomNavBar.qml:78
 #, kde-format
 msgid "Favorites"
 msgstr "ਮਨਪਸੰਦ"
 
-#: qml/BottomNavBar.qml:84 qml/Main.qml:51 qml/Sidebar.qml:95
+#: qml/BottomNavBar.qml:84 qml/Sidebar.qml:84
 #, kde-format
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
@@ -383,135 +458,135 @@ msgstr ""
 msgid "Don't repeat current video"
 msgstr ""
 
-#: qml/ImageViewPage.qml:75
+#: qml/ImageViewPage.qml:74
 #, kde-format
 msgid "Info"
 msgstr "ਜਾਣਕਾਰੀ"
 
-#: qml/ImageViewPage.qml:77
+#: qml/ImageViewPage.qml:76
 #, fuzzy, kde-format
 #| msgid "See information about image"
 msgid "See information about video"
 msgstr "ਚਿੱਤਰ ਬਾਰੇ ਜਾਣਕਾਰੀ ਵੇਖੋ।"
 
-#: qml/ImageViewPage.qml:78
+#: qml/ImageViewPage.qml:77
 #, kde-format
 msgid "See information about image"
 msgstr "ਚਿੱਤਰ ਬਾਰੇ ਜਾਣਕਾਰੀ ਵੇਖੋ।"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:86
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
 
-#: qml/ImageViewPage.qml:87
+#: qml/ImageViewPage.qml:86
 #, kde-format
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: qml/ImageViewPage.qml:88
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Remove from favorites"
 msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚੋਂ ਹਟਾਓ"
 
-#: qml/ImageViewPage.qml:88
+#: qml/ImageViewPage.qml:87
 #, kde-format
 msgid "Add to favorites"
 msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚ ਜੋੜੋ"
 
-#: qml/ImageViewPage.qml:99
+#: qml/ImageViewPage.qml:98
 #, kde-format
 msgctxt "verb, edit an image"
 msgid "Edit"
 msgstr "ਸੋਧੋ"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:116
 #, fuzzy, kde-format
 #| msgid "Share Image"
 msgid "Share Video"
 msgstr "ਚਿੱਤਰ ਸਾਂਝਾ ਕਰੋ"
 
-#: qml/ImageViewPage.qml:117
+#: qml/ImageViewPage.qml:116
 #, kde-format
 msgid "Share Image"
 msgstr "ਚਿੱਤਰ ਸਾਂਝਾ ਕਰੋ"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:117
 #, fuzzy, kde-format
 #| msgid "Share"
 msgctxt "verb, share an image/video"
 msgid "Share"
 msgstr "ਸਾਂਝੇ ਕਰੋ"
 
-#: qml/ImageViewPage.qml:132
+#: qml/ImageViewPage.qml:131
 #, kde-format
 msgid "Start Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਸ਼ੁਰੂ ਕਰੋ"
 
-#: qml/ImageViewPage.qml:133
+#: qml/ImageViewPage.qml:132
 #, kde-format
 msgid "Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ"
 
-#: qml/ImageViewPage.qml:140
+#: qml/ImageViewPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Thumbnails size:"
 msgid "Thumbnail Bar"
 msgstr "ਥੰਮਨੇਲ ਦਾ ਆਕਾਰ:"
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:140
 #, kde-format
 msgid "Hide Thumbnail Bar"
 msgstr ""
 
-#: qml/ImageViewPage.qml:141
+#: qml/ImageViewPage.qml:140
 #, kde-format
 msgid "Show Thumbnail Bar"
 msgstr ""
 
-#: qml/ImageViewPage.qml:142
+#: qml/ImageViewPage.qml:141
 #, kde-format
 msgid "Toggle Thumbnail Bar"
 msgstr ""
 
-#: qml/ImageViewPage.qml:150
+#: qml/ImageViewPage.qml:152
 #, kde-format
 msgid "Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ"
 
-#: qml/ImageViewPage.qml:150 qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:152 qml/ImageViewPage.qml:153
 #, kde-format
 msgid "Exit Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਤੋਂ ਬਾਹਰ"
 
-#: qml/ImageViewPage.qml:151
+#: qml/ImageViewPage.qml:153
 #, kde-format
 msgid "Enter Fullscreen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਜਾਓ"
 
-#: qml/ImageViewPage.qml:411
+#: qml/ImageViewPage.qml:413
 #, kde-format
 msgid "Previous image"
 msgstr "ਪਿਛਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:441
+#: qml/ImageViewPage.qml:443
 #, kde-format
 msgid "Next image"
 msgstr "ਅਗਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:658
+#: qml/ImageViewPage.qml:660
 #, kde-format
 msgid "More"
 msgstr ""
 
-#: qml/ImageViewPage.qml:765 qml/SettingsPage.qml:63
+#: qml/ImageViewPage.qml:767 qml/Settings/GeneralConfigPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/ImageViewPage.qml:782 qml/SettingsPage.qml:75
+#: qml/ImageViewPage.qml:784 qml/Settings/GeneralConfigPage.qml:72
 #, fuzzy, kde-format
 #| msgid "1 second"
 #| msgid_plural "%1 seconds"
@@ -521,26 +596,26 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 ਸਕਿੰਟ"
 msgstr[1] "%1 ਸਕਿੰਟ"
 
-#: qml/ImageViewPage.qml:835
+#: qml/ImageViewPage.qml:840
 #, fuzzy, kde-format
 #| msgid "Loop"
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:841 qml/SettingsPage.qml:51
+#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "ਰਲਵਾਂ"
 
-#: qml/ImageViewPage.qml:850
+#: qml/ImageViewPage.qml:861
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਰੋਕੋ"
 
-#: qml/ImageViewPage.qml:864
+#: qml/ImageViewPage.qml:875
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
@@ -648,119 +723,176 @@ msgstr "ਟੈਗ"
 msgid "Add Tag"
 msgstr "%1 ਟੈਗ ਜੋੜੋ"
 
-#: qml/Main.qml:69
-#, kde-format
-msgid "Configure"
-msgstr ""
+#: qml/Main.qml:67
+#, fuzzy, kde-format
+#| msgid "Places"
+msgctxt "@title"
+msgid "Places"
+msgstr "ਥਾਵਾਂ"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:107
 #, kde-format
 msgid "Images"
 msgstr "ਚਿੱਤਰ"
 
-#: qml/Main.qml:116 qml/Main.qml:125
+#: qml/Main.qml:118 qml/Main.qml:127
 #, kde-format
 msgid "Folders"
 msgstr "ਫੋਲਡਰ"
 
-#: qml/PlacesPage.qml:76 qml/Sidebar.qml:140
-#, kde-format
-msgid "Network"
-msgstr "ਨੈੱਟਵਰਕ"
+#: qml/PlacesPage.qml:21 qml/Sidebar.qml:233
+#, fuzzy, kde-format
+#| msgid "Settings"
+msgctxt "@action:button Open settings dialog"
+msgid "Settings"
+msgstr "ਸੈਟਿੰਗਾਂ"
 
-#: qml/PlacesPage.qml:82 qml/Sidebar.qml:131
+#: qml/PlacesPage.qml:27
+#, fuzzy, kde-format
+#| msgid "General:"
+msgctxt "@title:group"
+msgid "General"
+msgstr "ਆਮ:"
+
+#: qml/PlacesPage.qml:32 qml/Sidebar.qml:87
+#, fuzzy, kde-format
+#| msgid "Pictures"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "Pictures"
+msgstr "ਤਸਵੀਰਾਂ"
+
+#: qml/PlacesPage.qml:39 qml/Sidebar.qml:93
 #, kde-format
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "Videos"
+msgstr ""
+
+#: qml/PlacesPage.qml:46 qml/Sidebar.qml:99
+#, fuzzy, kde-format
+#| msgid "Favorites"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "Favorites"
+msgstr "ਮਨਪਸੰਦ"
+
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:106
+#, fuzzy, kde-format
+#| msgid "Trash"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "ਰੱਦੀ"
 
-#: qml/PlacesPage.qml:88
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:133
+#, fuzzy, kde-format
+#| msgid "Network"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "Network"
+msgstr "ਨੈੱਟਵਰਕ"
+
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:113
 #, fuzzy, kde-format
 #| msgid "Folders"
+msgctxt "@title:group"
 msgid "Pinned Folders"
 msgstr "ਫੋਲਡਰ"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:145
+#: qml/PlacesPage.qml:91 qml/Sidebar.qml:139
 #, kde-format
 msgid "Locations"
 msgstr "ਟਿਕਾਣੇ"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:148
-#, kde-format
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:142
+#, fuzzy, kde-format
+#| msgid "Countries"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "ਦੇਸ਼"
 
-#: qml/PlacesPage.qml:117 qml/Sidebar.qml:153
-#, kde-format
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:148
+#, fuzzy, kde-format
+#| msgid "States"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "ਸੂਬੇ"
 
-#: qml/PlacesPage.qml:122 qml/Sidebar.qml:158
-#, kde-format
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:154
+#, fuzzy, kde-format
+#| msgid "Cities"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "ਸ਼ਹਿਰ"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:163
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:160
 #, kde-format
 msgid "Time"
 msgstr "ਵੇਲਾ"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:166
-#, kde-format
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:163
+#, fuzzy, kde-format
+#| msgid "Years"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "ਸਾਲ"
 
-#: qml/PlacesPage.qml:137 qml/Sidebar.qml:171
-#, kde-format
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:169
+#, fuzzy, kde-format
+#| msgid "Months"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "ਮਹੀਨੇ"
 
-#: qml/PlacesPage.qml:142 qml/Sidebar.qml:176
-#, kde-format
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:175
+#, fuzzy, kde-format
+#| msgid "Weeks"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "ਹਫ਼ਤੇ"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:181
-#, kde-format
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:181
+#, fuzzy, kde-format
+#| msgid "Days"
+msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "ਦਿਨ"
 
-#: qml/PlacesPage.qml:153 qml/Sidebar.qml:186
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:187
 #, kde-format
 msgid "Tags"
 msgstr "ਟੈਗ"
 
-#: qml/SettingsPage.qml:17
-#, fuzzy, kde-format
-#| msgid "Settings"
-msgctxt "@title:window"
-msgid "Settings"
-msgstr "ਸੈਟਿੰਗਾਂ"
-
-#: qml/SettingsPage.qml:20
-#, fuzzy, kde-format
-#| msgid "General:"
-msgid "General"
-msgstr "ਆਮ:"
-
-#: qml/SettingsPage.qml:28 qml/Sidebar.qml:209
+#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:211
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "ਥੰਮਨੇਲ ਦਾ ਆਕਾਰ:"
 
-#: qml/SettingsPage.qml:43
+#: qml/Settings/GeneralConfigPage.qml:38
 #, fuzzy, kde-format
-#| msgid "Slideshow interval:"
+#| msgid "Slideshow"
 msgctxt "@title:group"
-msgid "Slideshow settings:"
-msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
+msgid "Slideshow:"
+msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ"
 
-#: qml/SettingsPage.qml:132
+#: qml/Settings/PhotosConfigurationView.qml:17
+#, fuzzy, kde-format
+#| msgid "General:"
+msgctxt "@action:button"
+msgid "General"
+msgstr "ਆਮ:"
+
+#: qml/Settings/PhotosConfigurationView.qml:26
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About Photos"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: qml/SettingsPage.qml:140
+#: qml/Settings/PhotosConfigurationView.qml:29
+#: qml/Settings/PhotosConfigurationView.qml:36
+#, fuzzy, kde-format
+#| msgid "About"
+msgctxt "@title:group"
+msgid "About"
+msgstr "ਇਸ ਬਾਰੇ"
+
+#: qml/Settings/PhotosConfigurationView.qml:33
 #, fuzzy, kde-format
 #| msgid "About"
 msgid "About KDE"
@@ -777,23 +909,23 @@ msgstr "ਸਾਂਝੇ ਕਰੋ"
 msgid "Share the selected media"
 msgstr "ਚੁਣੇ ਚਿੱਤਰ ਸਾਂਝੇ ਕਰੋ"
 
-#: qml/Sidebar.qml:44
+#: qml/Sidebar.qml:49
 #, kde-format
 msgid "Filter by"
 msgstr ""
 
-#: qml/Sidebar.qml:136
+#: qml/Sidebar.qml:129
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "ਰਿਮੋਟ"
 
-#: qml/Sidebar.qml:213
+#: qml/Sidebar.qml:215
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:226
+#: qml/Sidebar.qml:231
 #, kde-format
 msgid "Settings"
 msgstr "ਸੈਟਿੰਗਾਂ"
@@ -803,6 +935,18 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 #| msgid "Add new tag"
 msgid "Add new tag…"
 msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgctxt "@title:window"
+#~ msgid "Settings"
+#~ msgstr "ਸੈਟਿੰਗਾਂ"
+
+#, fuzzy
+#~| msgid "Slideshow interval:"
+#~ msgctxt "@title:group"
+#~ msgid "Slideshow settings:"
+#~ msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
 #, fuzzy
 #~| msgid "Cancel"
