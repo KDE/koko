@@ -218,7 +218,7 @@ Kirigami.ScrollablePage {
                 display: page.mainWindow.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
                 icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
                 text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-                visible: bookmarkActionVisible
+                visible: Kirigami.Settings.isMobile && bookmarkActionVisible
                 onClicked: {
                     if (page.model.sourceModel.url == undefined) {
                         return

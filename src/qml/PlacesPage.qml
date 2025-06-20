@@ -66,7 +66,7 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Pinned Folders")
+        title: i18nc("@title:group", "Bookmarks")
         visible: folderRepeater.count > 0
     }
 

@@ -112,7 +112,7 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceHeading {
                     visible: savedFoldersRepeater.count > 0
-                    text: i18nc("@title:group", "Pinned Folders")
+                    text: i18nc("@title:group", "Bookmarks")
                 }
                 Repeater {
                     id: savedFoldersRepeater
