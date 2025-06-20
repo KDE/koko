@@ -11,6 +11,11 @@
 #endif
 #include <QGuiApplication>
 
+Controller::Controller(QObject *parent)
+    : QObject(parent)
+{
+}
+
 void Controller::saveWindowGeometry(QQuickWindow *window)
 {
 #ifndef Q_OS_ANDROID

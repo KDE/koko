@@ -157,7 +157,7 @@ Kirigami.Page {
                 if (applicationWindow().visibility === Window.FullScreen) {
                     applicationWindow().visibility = lastWindowVisibility
                 } else {
-                    KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
+                    Koko.Controller.saveWindowGeometry(applicationWindow());
                     lastWindowVisibility = applicationWindow().visibility
                     applicationWindow().visibility = Window.FullScreen;
                 }
@@ -208,7 +208,7 @@ Kirigami.Page {
     }
 
     function close() {
-        KokoPrivate.Controller.restoreWindowGeometry(applicationWindow());
+        Koko.Controller.restoreWindowGeometry(applicationWindow());
         if (applicationWindow().footer) {
             applicationWindow().footer.visible = true;
         }

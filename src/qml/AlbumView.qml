@@ -415,7 +415,7 @@ Kirigami.ScrollablePage {
 
             onPressAndHold: gridView.model.toggleSelected(delegate.index)
 
-            onClicked: if (page.state === "selecting" || Controller.keyboardModifiers() & Qt.ControlModifier) {
+            onClicked: if (page.state === "selecting" || Koko.Controller.keyboardModifiers() & Qt.ControlModifier) {
                 gridView.model.toggleSelected(delegate.index)
             } else {
                 gridView.model.clearSelections()

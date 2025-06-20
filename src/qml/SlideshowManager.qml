@@ -6,7 +6,6 @@
 
 import QtQuick
 import QtQuick.Window
-import org.kde.koko.private as KokoPrivate
 import org.kde.koko as Koko
 
 // This object manages slideshows.
@@ -35,7 +34,7 @@ Item {
         running = true;
         lastWindowVisibility = applicationWindow().visibility
         lastControlsVisible = applicationWindow().controlsVisible
-        KokoPrivate.Controller.saveWindowGeometry(applicationWindow());
+        Koko.Controller.saveWindowGeometry(applicationWindow());
         applicationWindow().visibility = Window.FullScreen;
         applicationWindow().controlsVisible = false;
         slideshowTimer.restart();

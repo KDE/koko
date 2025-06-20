@@ -42,8 +42,6 @@ StatefulApp.StatefulWindow {
     minimumWidth: Kirigami.Units.gridUnit * 15
     minimumHeight: Kirigami.Units.gridUnit * 20
 
-    onClosing: KokoPrivate.Controller.saveWindowGeometry(root)
-
     function switchApplicationPage(page: Kirigami.Page): Kirigami.Page {
         if (!page || pageStack.currentItem === page) {
             return page;
