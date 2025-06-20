@@ -15,12 +15,17 @@ import org.kde.coreaddons as KCA
 
 QQC2.Page {
     id: root
+
     required property Koko.Exiv2Extractor extractor
+    required property Koko.PhotosApplication application
+
     signal closed()
+
     leftPadding: root.mirrored && vScrollBar.visible ? vScrollBar.width : 0
     rightPadding: !root.mirrored && vScrollBar.visible ? vScrollBar.width : 0
     topPadding: 0
     bottomPadding: 0
+
     header: QQC2.ToolBar {
         implicitHeight: closeButton.implicitHeight
         leftPadding: 0; rightPadding: 0; topPadding: 0; bottomPadding: 0
@@ -51,7 +56,10 @@ QQC2.Page {
     // Using plain Flickable with ScrollBar instead.
     contentItem: InfoDrawerSidebarBase {
         id: content
+
         extractor: root.extractor
+        application: root.application
+
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
             id: vScrollBar
             parent: content.parent

@@ -103,6 +103,7 @@ StatefulApp.StatefulWindow {
         id: openFileComponent
         AlbumView {
             title: i18n("Images")
+            application: root.application
             model: Koko.SortModel {
                 sourceModel: KokoPrivate.OpenFileModel
             }
@@ -110,17 +111,10 @@ StatefulApp.StatefulWindow {
     }
 
     Component {
-        id: albumViewComponentMobile
-        AlbumView {
-            model: imageFolderModel
-            title: i18n("Folders")
-        }
-    }
-
-    Component {
         id: albumViewComponent
         AlbumView {
             titleDelegate: isFolderView ? folderTitle : normalTitle
+            application: root.application
             model: imageFolderModel
             title: i18n("Folders")
         }
@@ -151,7 +145,8 @@ StatefulApp.StatefulWindow {
                 albumView.model.sourceModel.url = url;
                 fetchImageToOpen = true;
                 pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                    imagesModel: imageFolderModel.sourceModel
+                    imagesModel: imageFolderModel.sourceModel,
+                    application: root.application,
                 });
             }
         }
@@ -360,7 +355,7 @@ StatefulApp.StatefulWindow {
         if (KokoPrivate.OpenFileModel.rowCount() > 1) {
             pageStack.initialPage = openFileComponent;
         } else {
-            pageStack.initialPage = Kirigami.Settings.isMobile ? albumViewComponentMobile : albumViewComponent;
+            pageStack.initialPage = albumViewComponent;
 
         }
         albumView = pageStack.currentItem;
@@ -373,7 +368,8 @@ StatefulApp.StatefulWindow {
             albumView.model.sourceModel.url = url;
             fetchImageToOpen = true;
             pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                imagesModel: imageFolderModel.sourceModel
+                imagesModel: imageFolderModel.sourceModel,
+                application: root.application,
             });
         }
         

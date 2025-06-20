@@ -17,22 +17,32 @@ import org.kde.koko.private as KokoPrivate
 
 Flickable {
     id: flickable
+
     required property Koko.Exiv2Extractor extractor
+    required property Koko.PhotosApplication application
+
     implicitWidth: column.implicitWidth + leftMargin + rightMargin
     implicitHeight: contentHeight + topMargin + bottomMargin
+
     contentWidth: width - leftMargin - rightMargin
     contentHeight: column.implicitHeight
+
     leftMargin: Kirigami.Units.largeSpacing
     rightMargin: Kirigami.Units.largeSpacing
     topMargin: Kirigami.Units.largeSpacing
     bottomMargin: Kirigami.Units.largeSpacing
+
     clip: true
     boundsBehavior: Flickable.StopAtBounds
     pixelAligned: true
+
     Kirigami.WheelHandler { target: flickable }
+
     ColumnLayout {
         id: column
+
         property real availableWidth: width - leftPadding - rightPadding
+
         spacing: Kirigami.Units.smallSpacing
         width: parent.width
 
@@ -184,6 +194,7 @@ Flickable {
                         id: tagInput
                         Layout.fillWidth: true
                         extractor: flickable.extractor
+                        application: flickable.application
                     }
                     QQC2.Button {
                         enabled: tagInput.editText

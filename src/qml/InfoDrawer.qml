@@ -14,8 +14,11 @@ import org.kde.koko as Koko
 import org.kde.koko.private as KokoPrivate
 
 Kirigami.OverlayDrawer {
-    id: root
-    property Koko.Exiv2Extractor extractor
+    id: rootextractor
+
+    required property Koko.Exiv2Extractor extractor
+    required property Koko.PhotosApplication application
+
     drawerOpen: false
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
     handleVisible: false
@@ -45,7 +48,10 @@ Kirigami.OverlayDrawer {
     // Using plain Flickable with ScrollBar instead.
     contentItem: InfoDrawerSidebarBase {
         id: content
+
         extractor: root.extractor
+        application: root.application
+
         topMargin: 0
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
             id: vScrollBar

@@ -11,20 +11,23 @@ import org.kde.koko as Koko
 
 QQC2.ComboBox {
     id: comboBox
+
     required property Koko.Exiv2Extractor extractor
+    required property Koko.PhotosApplication application
 
     editable: true
     model: tagsListModel
 
-    Koko.ImageTagsModel {
-        id: imageTagsModel
-        onTagsChanged: if (tagsListModel.count > 0) {
-            tagsListModel.clear()
-            imageTagsModel.tags.forEach((element) => {
-                if (!comboBox.extractor.tags.includes(element)) {
-                    tagsListModel.append({ tag: element })
-                }
-            })
+    Connections {
+        function onTagsChanged(): void {
+            if (tagsListModel.count > 0) {
+                tagsListModel.clear();
+                comboBox.application.tags.forEach((element) => {
+                    if (!comboBox.extractor.tags.includes(element.text)) {
+                        tagsListModel.append({ tag: element.text });
+                    }
+                });
+            }
         }
     }
 
@@ -32,22 +35,22 @@ QQC2.ComboBox {
     // contentItem to show the first item when created instead of being blank.
     ListModel {
         id: tagsListModel
-        Component.onCompleted: imageTagsModel.tags.forEach((element) => {
-            if (!comboBox.extractor.tags.includes(element)) {
-                tagsListModel.append({ tag: element })
+        Component.onCompleted: comboBox.application.tags.forEach((element) => {
+            if (!comboBox.extractor.tags.includes(element.text)) {
+                tagsListModel.append({ tag: element.text })
             }
         })
     }
 
     Connections {
         target: comboBox.extractor
-        function onTagsChanged() {
+        function onTagsChanged(): void {
             tagsListModel.clear()
-            imageTagsModel.tags.forEach((element) => {
-                if (!comboBox.extractor.tags.includes(element)) {
-                    tagsListModel.append({ tag: element })
+            comboBox.application.tags.forEach((element) => {
+                if (!comboBox.extractor.tags.includes(element.text)) {
+                    tagsListModel.append({ tag: element.text });
                 }
-            })
+            });
         }
     }
 

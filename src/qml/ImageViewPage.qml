@@ -23,6 +23,7 @@ Kirigami.Page {
 
     property var startIndex
     required property var imagesModel
+    required property Koko.PhotosApplication application
     property int lastWindowVisibility: applicationWindow().visibility
 
     Connections {
@@ -953,6 +954,7 @@ Kirigami.Page {
         visible: active
         sourceComponent: InfoSidebar {
             extractor: exiv2Extractor
+            application: root.application
             anchors.fill: parent
         }
         anchors.left: splitter.right
@@ -974,6 +976,7 @@ Kirigami.Page {
         anchors.fill: parent
         sourceComponent: InfoDrawer {
             extractor: exiv2Extractor
+            application: root.application
         }
         Connections {
             target: infoDrawerLoader.item

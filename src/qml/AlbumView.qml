@@ -18,14 +18,16 @@ Kirigami.ScrollablePage {
     property alias model: gridView.model
     property bool isFolderView: false
     property bool isTrashView: gridView.url.toString().startsWith("trash:")
-    signal collectionSelected(QtObject selectedModel, string cover)
-    signal folderSelected(QtObject selectedModel, string cover, string path)
+    required property Koko.PhotosApplication application
 
     property bool bookmarked: isFolderView && Koko.Config.savedFolders.includes(model.sourceModel.url.toString().replace("file:///", "file:/"))
     property var backUrls: [];
     property var backUrlsPosition: 0;
 
     property alias gridViewItem: gridView
+
+    signal collectionSelected(QtObject selectedModel, string cover)
+    signal folderSelected(QtObject selectedModel, string cover, string path)
 
     focus: true
     titleDelegate: !Kirigami.Settings.isMobile && isFolderView ? folderTitle : normalTitle
@@ -450,7 +452,8 @@ Kirigami.ScrollablePage {
                         }
                         applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                             startIndex: page.model.index(gridView.currentIndex, 0),
-                            imagesModel: page.model
+                            imagesModel: page.model,
+                            application: page.application,
                         })
                         break;
                     }
