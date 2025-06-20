@@ -85,8 +85,6 @@ public:
         return m_dateTime;
     }
 
-    QString simplifiedPath() const;
-
     bool favorite() const
     {
         return m_favorite;
@@ -128,9 +126,6 @@ private:
     QDateTime m_dateTime;
     int m_height;
     int m_width;
-    int m_size;
-    QString m_model;
-    QString m_time;
     bool m_favorite;
     int m_rating;
     QString m_description;
@@ -150,7 +145,7 @@ class ExivFilterModel : public QSortFilterProxyModel
     QML_ELEMENT
 
 public:
-    ExivFilterModel() = default;
+    ExivFilterModel();
 
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override
     {
