@@ -41,7 +41,7 @@ Kirigami.Action {
         if (!Kirigami.Settings.isMobile) {
             return;
         }
-        const shareDrawerComponent = Qt.createComponent('qrc:/qml/ShareDrawer.qml');
+        const shareDrawerComponent = Qt.createComponent("org.kde.koko", "ShareDrawer");
         const drawer = shareDrawerComponent.createObject(applicationWindow().overlay, {
             inputData: shareAction.inputData,
             title: shareAction.text
@@ -61,7 +61,8 @@ Kirigami.Action {
             text: model.display
             icon.name: model.iconName
             onTriggered: {
-                applicationWindow().pageStack.pushDialogLayer('qrc:/qml/ShareDialog.qml', {
+                const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
+                applicationWindow().pageStack.pushDialogLayer(shareDialogComponent, {
                     title: shareAction.tooltip,
                     index: index,
                     model: shareAction._instantiator.model

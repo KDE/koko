@@ -45,7 +45,8 @@ Kirigami.OverlayDrawer {
                 text: model.display
                 icon.name: model.iconName
                 onClicked: {
-                    const dialog = applicationWindow().pageStack.pushDialogLayer('qrc:/qml/ShareDialog.qml', {
+                    const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
+                    const dialog = applicationWindow().pageStack.pushDialogLayer(shareDialogComponent, {
                         title: drawer.title,
                         index: index,
                         model: listViewAction.model
