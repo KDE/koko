@@ -105,11 +105,11 @@ int main(int argc, char **argv)
 
     QThread trackerThread;
 
-    QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+    const QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
     Q_ASSERT(locations.size() >= 1);
     qDebug() << locations;
 
-    QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
+    const QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
 
     QStringList directoryUrls;
     for (const auto &path : parser.positionalArguments()) {
