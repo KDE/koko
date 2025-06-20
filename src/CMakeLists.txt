@@ -18,10 +18,12 @@ target_link_libraries(koko_static PUBLIC
     Qt::Svg
     Qt::QuickControls2
     KF6::CoreAddons
+    KF6::KIOCore
     KF6::DBusAddons
     KF6::FileMetaData
     KF6::ConfigGui
     KF6::ConfigCore
+    KF6::I18n
     KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
 )
@@ -74,7 +76,6 @@ target_link_libraries(koko PRIVATE
     Qt::Qml
     Qt::Quick
     Qt::Widgets
-    KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::KIOWidgets
     KF6::GuiAddons
@@ -98,6 +99,7 @@ ecm_target_qml_sources(koko SOURCES
     qml/AlbumView.qml
     qml/BottomNavBar.qml
     qml/EditorView.qml
+    qml/ImageMetadataPage.qml
     qml/ImageViewPage.qml
     qml/InfoDrawer.qml
     qml/InfoDrawerSidebarBase.qml
