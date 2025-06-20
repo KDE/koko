@@ -57,6 +57,7 @@ Kirigami.OverlayDrawer {
 
             contentWidth: -1
             implicitWidth: root.sidebarWidth
+            bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
 
             Layout.fillHeight: true
             Layout.fillWidth: true
