@@ -391,8 +391,6 @@ Kirigami.ScrollablePage {
         cellWidth: Math.floor(width/Math.floor(width/(Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2)))
         cellHeight: Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2
 
-        topMargin: Kirigami.Units.gridUnit
-
         highlightMoveDuration: 0
         keyNavigationEnabled: true
         focus: true
