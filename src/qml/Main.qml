@@ -146,6 +146,7 @@ StatefulApp.StatefulWindow {
                 pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                     imagesModel: imageFolderModel.sourceModel,
                     application: root.application,
+                    mainWindow: root,
                 });
             }
         }
@@ -387,6 +388,7 @@ StatefulApp.StatefulWindow {
             pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                 imagesModel: imageFolderModel.sourceModel,
                 application: root.application,
+                mainWindow: root,
             });
         }
         

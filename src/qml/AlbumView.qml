@@ -15,11 +15,11 @@ import org.kde.koko.private
 Kirigami.ScrollablePage {
     id: page
 
-    required property Controls.ApplicationWindow mainWindow
     property alias model: gridView.model
     property bool isFolderView: false
     property bool isTrashView: gridView.url.toString().startsWith("trash:")
     required property Koko.PhotosApplication application
+    required property Kirigami.ApplicationWindow mainWindow
 
     property bool bookmarked: isFolderView && Koko.Config.savedFolders.includes(model.sourceModel.url.toString().replace("file:///", "file:/"))
     property var backUrls: [];
@@ -48,13 +48,13 @@ Kirigami.ScrollablePage {
     // doesn't work without loader
     header: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: mainWindow.wideScreen && Kirigami.Settings.isMobile
+        active: page.mainWindow.wideScreen && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader
     }
 
     footer: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: !mainWindow.wideScreen && Kirigami.Settings.isMobile
+        active: !page.mainWindow.wideScreen && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader 
     }
 
@@ -77,17 +77,17 @@ Kirigami.ScrollablePage {
                 anchors.right: parent.right
                 Kirigami.Separator {
                     Layout.fillWidth: true
-                    visible: !mainWindow.wideScreen
+                    visible: !page.mainWindow.wideScreen
                 }
                 Loader { 
                     active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitleComponent
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    Layout.margins: mainWindow.wideScreen ? 0 : Kirigami.Units.smallSpacing
+                    Layout.margins: page.mainWindow.wideScreen ? 0 : Kirigami.Units.smallSpacing
                 }
                 Kirigami.Separator {
                     Layout.fillWidth: true
-                    visible: mainWindow.wideScreen
+                    visible: page.mainWindow.wideScreen
                 }
             }
         }
@@ -101,9 +101,9 @@ Kirigami.ScrollablePage {
             visible: page.isFolderView
             Controls.ToolButton {
                 id: backButton
-                visible: mainWindow.wideScreen
+                visible: page.mainWindow.wideScreen
                 Layout.maximumWidth: height
-                Layout.leftMargin: (Kirigami.Settings.isMobile || !mainWindow.wideScreen && applicationWindow().globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
+                Layout.leftMargin: (Kirigami.Settings.isMobile || !page.mainWindow.wideScreen && page.mainWindow.globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
                 
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
@@ -116,7 +116,7 @@ Kirigami.ScrollablePage {
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 2
-                visible: mainWindow.wideScreen
+                visible: page.mainWindow.wideScreen
                 icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
                 enabled: page.backUrls.length < page.backUrlsPosition
                 onClicked: {
@@ -215,7 +215,7 @@ Kirigami.ScrollablePage {
             // bookmark button for footer
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
-                display: mainWindow.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
+                display: page.mainWindow.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
                 icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
                 text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
                 visible: bookmarkActionVisible
@@ -385,7 +385,7 @@ Kirigami.ScrollablePage {
     GridView {
         id: gridView
 
-        property real widthToApproximate: (applicationWindow().wideScreen ? applicationWindow().pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
+        property real widthToApproximate: (page.mainWindow.wideScreen ? page.mainWindow.pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
         property string url: model.sourceModel.url ? model.sourceModel.url : ""
 
         cellWidth: Math.floor(width/Math.floor(width/(Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2)))
@@ -443,10 +443,11 @@ Kirigami.ScrollablePage {
                         if (gridView.url.toString().startsWith("trash:")) {
                             break
                         }
-                        applicationWindow().pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                        page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                             startIndex: page.model.index(gridView.currentIndex, 0),
                             imagesModel: page.model,
                             application: page.application,
+                            mainWindow: page.mainWindow,
                         })
                         break;
                     }

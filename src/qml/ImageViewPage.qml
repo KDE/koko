@@ -24,13 +24,14 @@ Kirigami.Page {
     property var startIndex
     required property var imagesModel
     required property Koko.PhotosApplication application
-    property int lastWindowVisibility: applicationWindow().visibility
+    required property Kirigami.ApplicationWindow mainWindow
+    property int lastWindowVisibility: mainWindow.visibility
 
     Connections {
         target: imagesModel
         ignoreUnknownSignals: true
         function onFinishedLoading() {
-            if (!applicationWindow().fetchImageToOpen || listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen) === -1) {
+            if (!root.mainWindow.fetchImageToOpen || listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen) === -1) {
                 return;
             }
             stopLoadingImages.restart();
@@ -47,7 +48,7 @@ Kirigami.Page {
         interval: 100
         repeat: false
         onTriggered: {
-            applicationWindow().fetchImageToOpen = false;
+            root.mainWindow.fetchImageToOpen = false;
             // NOTE: for setting index this early on may cause a crash
             // it's definitely has something to do with listview interaction
             // with *potentially* not fully loaded model as setting
@@ -100,7 +101,7 @@ Kirigami.Page {
             visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
 
             onTriggered: {
-                const page = applicationWindow().pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
+                const page = root.mainWindow.pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
                     imagePath: listView.currentItem.imageurl,
                     // Without this, there's an odd glitch where the page will show for a brief moment
                     // before the show animation runs.
@@ -148,19 +149,19 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
-            property bool fullscreen: applicationWindow().visibility === Window.FullScreen
+            property bool fullscreen: root.mainWindow.visibility === Window.FullScreen
             icon.name: !fullscreen ? "view-fullscreen" : "view-restore"
             text: !fullscreen ? i18n("Fullscreen") : i18n("Exit Fullscreen")
             tooltip: !fullscreen ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
             shortcut: "F"
             visible: !Kirigami.Settings.isMobile
             onTriggered: {
-                if (applicationWindow().visibility === Window.FullScreen) {
-                    applicationWindow().visibility = lastWindowVisibility
+                if (root.mainWindow.visibility === Window.FullScreen) {
+                    root.mainWindow.visibility = lastWindowVisibility
                 } else {
-                    Koko.Controller.saveWindowGeometry(applicationWindow());
-                    lastWindowVisibility = applicationWindow().visibility
-                    applicationWindow().visibility = Window.FullScreen;
+                    Koko.Controller.saveWindowGeometry(root.mainWindow);
+                    lastWindowVisibility = root.mainWindow.visibility
+                    root.mainWindow.visibility = Window.FullScreen;
                 }
                 listView.forceActiveFocus();
             }
@@ -209,12 +210,12 @@ Kirigami.Page {
     }
 
     function close() {
-        Koko.Controller.restoreWindowGeometry(applicationWindow());
-        if (applicationWindow().footer) {
-            applicationWindow().footer.visible = true;
+        Koko.Controller.restoreWindowGeometry(root.mainWindow);
+        if (root.mainWindow.footer) {
+            root.mainWindow.footer.visible = true;
         }
-        applicationWindow().globalDrawer.enabled = true;
-        applicationWindow().pageStack.layers.pop();
+        root.mainWindow.globalDrawer.enabled = true;
+        root.mainWindow.pageStack.layers.pop();
     }
 
     background: Rectangle {
@@ -226,8 +227,8 @@ Kirigami.Page {
             case Qt.Key_Escape:
                 if (slideshowManager.running) {
                     slideshowManager.stop();
-                } else if (applicationWindow().visibility == Window.FullScreen) {
-                    applicationWindow().visibility = lastWindowVisibility;
+                } else if (root.mainWindow.visibility == Window.FullScreen) {
+                    root.mainWindow.visibility = lastWindowVisibility;
                 } else {
                     root.close();
                 }
@@ -423,7 +424,7 @@ Kirigami.Page {
             }
 
             visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes reappearing to be delayed
-            opacity: applicationWindow().controlsVisible
+            opacity: root.mainWindow.controlsVisible
                 && listView.currentIndex > 0
                 && !listView.isCurrentItemDragging
                 && !overviewControl.pressed
@@ -432,7 +433,7 @@ Kirigami.Page {
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
         }
@@ -453,7 +454,7 @@ Kirigami.Page {
             }
 
             visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes flickering
-            opacity: applicationWindow().controlsVisible
+            opacity: root.mainWindow.controlsVisible
                 && listView.currentIndex < listView.count - 1
                 && !listView.isCurrentItemDragging
                 && !overviewControl.pressed
@@ -462,7 +463,7 @@ Kirigami.Page {
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
         }
@@ -474,7 +475,7 @@ Kirigami.Page {
             opacity: listView.currentItem !== null
                 && listView.isCurrentItemInteractive
                 && !listView.isCurrentItemDragging
-                && applicationWindow().controlsVisible
+                && root.mainWindow.controlsVisible
                 ? 1 : 0
             parent: listView
             // NOTE: The x and y values will often not be integers.
@@ -488,7 +489,7 @@ Kirigami.Page {
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
-                    easing.type: !applicationWindow().controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
                 }
             }
             Binding {
@@ -563,11 +564,11 @@ Kirigami.Page {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            bottomMargin: applicationWindow().controlsVisible && thumbnailScrollView.visible && Koko.Config.imageViewPreview ?
+            bottomMargin: root.mainWindow.controlsVisible && thumbnailScrollView.visible && Koko.Config.imageViewPreview ?
                             Kirigami.Units.smallSpacing : -height
         }
 
-        opacity: applicationWindow().controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
+        opacity: root.mainWindow.controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
 
         Behavior on anchors.bottomMargin {
             NumberAnimation {
@@ -600,10 +601,10 @@ Kirigami.Page {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            bottomMargin: applicationWindow().controlsVisible ? 0 : -height
+            bottomMargin: root.mainWindow.controlsVisible ? 0 : -height
         }
 
-        opacity: applicationWindow().controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
+        opacity: root.mainWindow.controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
 
         Behavior on anchors.bottomMargin {
             NumberAnimation {
@@ -726,23 +727,23 @@ Kirigami.Page {
     FocusScope {
         id: hoverToolBar
         z: 1
-        visible: !Kirigami.Settings.isMobile && (slideshowManager.running || !applicationWindow().controlsVisible)
+        visible: !Kirigami.Settings.isMobile && (slideshowManager.running || !root.mainWindow.controlsVisible)
         width: parent.width
         implicitWidth: background.implicitWidth
         implicitHeight: background.implicitHeight
-        Kirigami.Theme.colorSet: applicationWindow().controlsVisible ?
+        Kirigami.Theme.colorSet: root.mainWindow.controlsVisible ?
             Kirigami.Theme.Window : Kirigami.Theme.Header
         Kirigami.Theme.inherit: false
         Kirigami.ShadowedRectangle {
             id: background
-            visible: applicationWindow().controlsVisible || hoverHandler.hovered || y > -height
-            y: if (applicationWindow().controlsVisible || hoverHandler.hovered) {
+            visible: root.mainWindow.controlsVisible || hoverHandler.hovered || y > -height
+            y: if (root.mainWindow.controlsVisible || hoverHandler.hovered) {
                 -implicitHeight
             } else {
                 -height
             }
             Behavior on y {
-                enabled: !applicationWindow().controlsVisible || hoverHandler.hovered
+                enabled: !root.mainWindow.controlsVisible || hoverHandler.hovered
                 NumberAnimation {
                     property: "y"
                     duration: Kirigami.Units.shortDuration
@@ -873,15 +874,15 @@ Kirigami.Page {
                     Layout.fillHeight: true
                 }
                 QQC2.ToolSeparator {
-                    visible: slideshowManager.running && !applicationWindow().controlsVisible
+                    visible: slideshowManager.running && !root.mainWindow.controlsVisible
                 }
                 QQC2.ToolButton {
                     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
                                              implicitContentHeight + topPadding + bottomPadding)
-                    visible: !applicationWindow().controlsVisible
+                    visible: !root.mainWindow.controlsVisible
                     icon.name: "visibility"
                     text: i18n("Show All Controls")
-                    onClicked: applicationWindow().controlsVisible = true
+                    onClicked: root.mainWindow.controlsVisible = true
                     topInset: Kirigami.Units.smallSpacing
                     bottomInset: Kirigami.Units.smallSpacing
                     Layout.fillHeight: true
@@ -1018,11 +1019,11 @@ Kirigami.Page {
     Binding {
         target: root.globalToolBarItem
         property: "visible"
-        value: applicationWindow().controlsVisible
+        value: root.mainWindow.controlsVisible
     }
 
     Component.onCompleted: {
-        applicationWindow().controlsVisible = true;
+        root.mainWindow.controlsVisible = true;
         listView.forceActiveFocus();
     }
 }

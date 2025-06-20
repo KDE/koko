@@ -66,7 +66,7 @@ Loader {
                     icon.name: "compass-symbolic"
                     text: i18n("Places")
                     checked: !picturesAction.checked && !videosAction.checked && !favoritesAction.checked
-                    onTriggered: applicationWindow().openPlacesPage();
+                    onTriggered: root.mainWindow.openPlacesPage();
                 }
             ]
         }
