@@ -17,6 +17,7 @@ Kirigami.OverlayDrawer {
 
     required property QQC2.ApplicationWindow mainWindow
     required property Koko.PhotosApplication application
+    required property int sidebarWidth
 
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     handleClosedIcon.source: null
@@ -55,7 +56,7 @@ Kirigami.OverlayDrawer {
             property var previouslySelectedAction
 
             contentWidth: -1
-            implicitWidth: Kirigami.Units.gridUnit * 14
+            implicitWidth: root.sidebarWidth
 
             Layout.fillHeight: true
             Layout.fillWidth: true

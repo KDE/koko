@@ -18,6 +18,8 @@ import org.kde.config as KConfig
 StatefulApp.StatefulWindow {
     id: root
 
+    readonly property int sidebarWidth: Kirigami.Units.gridUnit * 14
+
     application: Koko.PhotosApplication {
         configurationView: Koko.PhotosConfigurationView {
             window: root
@@ -246,6 +248,7 @@ StatefulApp.StatefulWindow {
     }
 
     contextDrawer: Kirigami.Settings.isMobile ? contextDrawerComponent.createObject(root) : null
+    wideScreen: width >= root.pageStack.defaultColumnWidth + root.sidebarWidth
 
     Component {
         id: contextDrawerComponent
@@ -253,9 +256,15 @@ StatefulApp.StatefulWindow {
         Kirigami.ContextDrawer {}
     }
 
-    globalDrawer: Sidebar {
-        mainWindow: root
-        application: root.application
+    Loader {
+        asynchronous: true
+        onItemChanged: root.globalDrawer = item
+        active: !Kirigami.Settings.isMobile || root.wideScreen
+        sourceComponent: Sidebar {
+            mainWindow: root
+            application: root.application
+            sidebarWidth: root.sidebarWidth
+        }
     }
 
     footer: BottomNavBar {
