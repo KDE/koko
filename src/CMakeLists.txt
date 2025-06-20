@@ -7,29 +7,6 @@ add_library(koko_static STATIC
     imagestorage.cpp
     exiv2extractor.cpp
     filesystemimagefetcher.cpp
-)
-
-target_link_libraries(koko_static PUBLIC
-    Qt::Qml
-    Qt::Quick
-    Qt::Core
-    Qt::Positioning
-    Qt::Sql
-    Qt::Svg
-    Qt::QuickControls2
-    KF6::CoreAddons
-    KF6::KIOCore
-    KF6::DBusAddons
-    KF6::FileMetaData
-    KF6::ConfigGui
-    KF6::ConfigCore
-    KF6::I18n
-    KirigamiAddonsStatefulApp
-    LibExiv2::LibExiv2
-)
-
-add_executable(koko
-    main.cpp
     openfilemodel.cpp
     reversegeocoder.cpp
     filesystemtracker.cpp
@@ -57,10 +34,9 @@ add_executable(koko
     displaycolorspace.cpp
     photosapplication.cpp
     photosapplication.h
-    ${koko_SRCS}
 )
 
-kconfig_target_kcfg_file(koko
+kconfig_target_kcfg_file(koko_static
     FILE kokoconfig.kcfg
     CLASS_NAME Config
     MUTATORS
@@ -71,30 +47,38 @@ kconfig_target_kcfg_file(koko
     QML_REGISTRATION
 )
 
-target_link_libraries(koko PRIVATE
-    koko_static
+target_link_libraries(koko_static PUBLIC
     Qt::Qml
     Qt::Quick
     Qt::Widgets
+    Qt::Core
+    Qt::Positioning
+    Qt::Sql
+    Qt::Svg
+    Qt::QuickControls2
+    KF6::CoreAddons
+    KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::KIOWidgets
+    KF6::DBusAddons
     KF6::GuiAddons
+    KF6::FileMetaData
+    KF6::ConfigGui
+    KF6::ConfigCore
+    KF6::ConfigWidgets
     KF6::I18n
     KF6::I18nQml
     KF6::Notifications
-    KF6::ConfigCore
-    KF6::CoreAddons
-    KF6::ConfigWidgets
+    KirigamiAddonsStatefulApp
+    LibExiv2::LibExiv2
 )
 
-target_compile_definitions(koko PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-
-ecm_add_qml_module(koko
+ecm_add_qml_module(koko_static
     URI "org.kde.koko"
     GENERATE_PLUGIN_SOURCE
 )
 
-ecm_target_qml_sources(koko SOURCES
+ecm_target_qml_sources(koko_static SOURCES
     qml/AlbumDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml
@@ -120,7 +104,7 @@ ecm_target_qml_sources(koko SOURCES
     qml/Settings/GeneralConfigPage.qml
 )
 
-ecm_target_qml_sources(koko PRIVATE
+ecm_target_qml_sources(koko_static PRIVATE
     PATH imagedelegate
     SOURCES
         qml/imagedelegate/AnimatedImageDelegate.qml
@@ -131,26 +115,33 @@ ecm_target_qml_sources(koko PRIVATE
         qml/imagedelegate/VideoPlayer.qml
 )
 
-ecm_target_qml_sources(koko PRIVATE
+ecm_target_qml_sources(koko_static PRIVATE
     PATH Dialog
     SOURCES
         qml/Dialog/ConfirmDiscardingChange.qml
 )
 
 if(ANDROID)
-    target_link_libraries(koko PRIVATE Qt::AndroidExtras)
+    target_link_libraries(koko_static PUBLIC Qt::AndroidExtras)
 else()
-    target_link_libraries(koko PRIVATE KF6::WindowSystem)
+    target_link_libraries(koko_static PUBLIC KF6::WindowSystem)
 endif()
 
 if (TARGET XCB::XCB)
-    target_compile_definitions(koko PRIVATE HAVE_X11)
-    target_link_libraries(koko PRIVATE XCB::XCB Qt6::GuiPrivate)
+    target_compile_definitions(koko_static PUBLIC HAVE_X11)
+    target_link_libraries(koko_static PUBLIC XCB::XCB Qt6::GuiPrivate)
 endif()
 
-ecm_finalize_qml_module(koko DESTINATION ${KDE_INSTALL_QMLDIR})
-
 add_subdirectory(resources)
+
+add_executable(koko
+    main.cpp
+)
+
+target_link_libraries(koko PRIVATE
+    koko_static
+    koko_staticplugin
+)
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
 install(FILES org.kde.koko.desktop DESTINATION ${KDE_INSTALL_APPDIR})

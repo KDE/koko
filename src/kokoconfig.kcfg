@@ -71,5 +71,11 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <default>true</default>
         </entry>
     </group>
+    <group name="Metadata">
+        <entry name="MetadataToDisplay" type="StringList">
+            <label>List of metadata to display</label>
+            <default>General.Name,General.Size,General.ImageSize,General.Created,Exif.Image.Model,General.Location</default>
+        </entry>
+    </group>
 </kcfg>
 
