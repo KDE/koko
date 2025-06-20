@@ -16,7 +16,7 @@
 
 #include <KAboutData>
 #include <KDBusService>
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KWindowSystem>
 
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
     tracker.setSubFolder(tracker.folder());
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
 
     OpenFileModel openFileModel(directoryUrls);
     QObject::connect(&service,

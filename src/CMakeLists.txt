@@ -79,9 +79,9 @@ target_link_libraries(koko PRIVATE
     KF6::KIOWidgets
     KF6::GuiAddons
     KF6::I18n
+    KF6::I18nQml
     KF6::Notifications
     KF6::ConfigCore
-    KF6::I18n
     KF6::CoreAddons
     KF6::ConfigWidgets
 )
