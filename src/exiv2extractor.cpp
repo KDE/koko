@@ -166,7 +166,7 @@ static QDateTime dateTimeFromString(const QString &dateString)
 static QDateTime toDateTime(const Exiv2::Value &value)
 {
     if (value.typeId() == Exiv2::asciiString) {
-        QDateTime val = dateTimeFromString(value.toString().c_str());
+        QDateTime val = dateTimeFromString(QString::fromStdString(value.toString()));
         if (val.isValid()) {
             // Datetime is stored in exif as local time.
             val.setTimeZone(QTimeZone::UTC);
@@ -472,11 +472,11 @@ QList<MetaInfoEntry> fillExivGroup(GroupRow groupRow, const Container &container
             if (it->tagName().substr(0, 2) == "0x") {
                 continue;
             }
-            const QString key = QString::fromUtf8(it->key().c_str());
-            const QString label = QString::fromLocal8Bit(it->tagLabel().c_str());
+            const QString key = QString::fromStdString(it->key());
+            const QString label = QString::fromStdString(it->tagLabel());
             std::ostringstream stream;
             it->write(stream, &exifData);
-            const QString value = QString::fromLocal8Bit(stream.str().c_str());
+            const QString value = QString::fromStdString(stream.str());
 
             EntryHash::iterator hashIt = hash.find(key);
             if (hashIt != hash.end()) {
