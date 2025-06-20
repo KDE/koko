@@ -88,9 +88,6 @@ StatefulApp.StatefulWindow {
     property var albumView: null
     property var placesView: null
 
-    // see https://invent.kde.org/frameworks/kirigami/-/merge_requests/332/diffs
-    property real wideScreenWidth: Kirigami.Units.gridUnit * 40
-
     // fetch guard, so we don't needlessly check for image to open when it's not needed
     // this is a temporary binding that's supposed to be broken
     property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
@@ -104,6 +101,7 @@ StatefulApp.StatefulWindow {
         AlbumView {
             title: i18n("Images")
             application: root.application
+            mainWindow: root
             model: Koko.SortModel {
                 sourceModel: KokoPrivate.OpenFileModel
             }
@@ -115,6 +113,7 @@ StatefulApp.StatefulWindow {
         AlbumView {
             application: root.application
             model: imageFolderModel
+            mainWindow: root
         }
     }
 
@@ -257,7 +256,9 @@ StatefulApp.StatefulWindow {
         application: root.application
     }
 
-    footer: BottomNavBar { }
+    footer: BottomNavBar {
+        mainWindow: root
+    }
 
     Koko.SortModel {
         id: imageFolderModel

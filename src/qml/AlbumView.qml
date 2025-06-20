@@ -15,6 +15,7 @@ import org.kde.koko.private
 Kirigami.ScrollablePage {
     id: page
 
+    required property Controls.ApplicationWindow mainWindow
     property alias model: gridView.model
     property bool isFolderView: false
     property bool isTrashView: gridView.url.toString().startsWith("trash:")
@@ -25,7 +26,6 @@ Kirigami.ScrollablePage {
     property var backUrlsPosition: 0;
 
     property alias gridViewItem: gridView
-    readonly property bool wideMode: Controls.ApplicationWindow.window.width > applicationWindow().wideScreenWidth
 
     signal collectionSelected(QtObject selectedModel, string cover)
     signal folderSelected(QtObject selectedModel, string cover, string path)
@@ -48,13 +48,13 @@ Kirigami.ScrollablePage {
     // doesn't work without loader
     header: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: page.wideMode && Kirigami.Settings.isMobile
+        active: mainWindow.wideScreen && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader
     }
 
     footer: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: !page.wideMode && Kirigami.Settings.isMobile
+        active: !mainWindow.wideScreen && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader 
     }
 
@@ -77,17 +77,17 @@ Kirigami.ScrollablePage {
                 anchors.right: parent.right
                 Kirigami.Separator {
                     Layout.fillWidth: true
-                    visible: !page.wideMode
+                    visible: !mainWindow.wideScreen
                 }
                 Loader { 
                     active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitleComponent
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    Layout.margins: page.wideMode ? 0 : Kirigami.Units.smallSpacing
+                    Layout.margins: mainWindow.wideScreen ? 0 : Kirigami.Units.smallSpacing
                 }
                 Kirigami.Separator {
                     Layout.fillWidth: true
-                    visible: page.wideMode
+                    visible: mainWindow.wideScreen
                 }
             }
         }
@@ -101,9 +101,9 @@ Kirigami.ScrollablePage {
             visible: page.isFolderView
             Controls.ToolButton {
                 id: backButton
-                visible: page.wideMode
+                visible: mainWindow.wideScreen
                 Layout.maximumWidth: height
-                Layout.leftMargin: (Kirigami.Settings.isMobile || !page.wideMode && applicationWindow().globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
+                Layout.leftMargin: (Kirigami.Settings.isMobile || !mainWindow.wideScreen && applicationWindow().globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
                 
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
@@ -116,7 +116,7 @@ Kirigami.ScrollablePage {
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 2
-                visible: page.wideMode
+                visible: mainWindow.wideScreen
                 icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
                 enabled: page.backUrls.length < page.backUrlsPosition
                 onClicked: {
@@ -215,7 +215,7 @@ Kirigami.ScrollablePage {
             // bookmark button for footer
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
-                display: page.wideMode ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
+                display: mainWindow.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
                 icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
                 text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
                 visible: bookmarkActionVisible

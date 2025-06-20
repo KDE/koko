@@ -23,13 +23,15 @@ Loader {
 
     property int lastCategoryRequested: BottomNavBar.Category.Pictures // tracks last page selected
 
+    required property Kirigami.ApplicationWindow mainWindow
+
     height: active ? implicitHeight : 0
-    active: Kirigami.Settings.isMobile && QQC2.ApplicationWindow.window.width <= applicationWindow().wideScreenWidth && applicationWindow().pageStack.layers.depth < 2;
+    active: Kirigami.Settings.isMobile && !mainWindow.wideScreen && mainWindow.pageStack.layers.depth < 2;
     sourceComponent: bottomNavBar
 
     Connections {
-        target: applicationWindow()
-        function onFilterChanged(value, query) {
+        target: mainWindow
+        function onFilterChanged(value: string, query: string) {
             switch (value) {
                 case "Pictures": {
                     root.lastCategoryRequested = BottomNavBar.Category.Pictures
