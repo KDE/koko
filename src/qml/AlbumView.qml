@@ -490,10 +490,15 @@ Kirigami.ScrollablePage {
     onCollectionSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
         model: selectedModel,
         title: cover,
+        mainWindow: page.mainWindow,
+        application: page.application,
     })
+
     onFolderSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
         model: selectedModel,
         title: cover,
-        url: path
+        url: path,
+        mainWindow: page.mainWindow,
+        application: page.application,
     })
 }
