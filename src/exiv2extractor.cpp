@@ -6,6 +6,8 @@
 
 #include "exiv2extractor.h"
 
+#include "kokoconfig.h"
+
 #include <KFileItem>
 #include <KFileMetaData/UserMetaData>
 
@@ -43,6 +45,7 @@ QHash<int, QByteArray> Exiv2Extractor::roleNames() const
         {LabelRole, "label"},
         {KeyRole, "key"},
         {GroupRole, "group"},
+        {EnabledRole, "enabled"},
     };
 }
 
@@ -72,9 +75,14 @@ QVariant Exiv2Extractor::data(const QModelIndex &index, int role) const
             return i18nc("@title:group", "IPTC");
         case GroupRow::XmpGroup:
             return i18nc("@title:group", "XMPP");
+        default:
+            return {};
         }
+    case EnabledRole:
+        return Config::self()->metadataToDisplay().contains(entry.key);
+    default:
+        return {};
     }
-    return {};
 }
 
 QUrl Exiv2Extractor::filePath() const
@@ -169,7 +177,7 @@ static QDateTime dateTimeFromString(const QString &dateString)
 static QDateTime toDateTime(const Exiv2::Value &value)
 {
     if (value.typeId() == Exiv2::asciiString) {
-        QDateTime val = dateTimeFromString(value.toString().c_str());
+        QDateTime val = dateTimeFromString(QString::fromStdString(value.toString()));
         if (val.isValid()) {
             // Datetime is stored in exif as local time.
             val.setTimeZone(QTimeZone::UTC);
@@ -360,11 +368,20 @@ void Exiv2Extractor::extract(const QString &filePath)
         m_model = QString::fromStdString(it->toString());
     }
 
+    {
+        QImage img(m_filePath);
+        if (!img.isNull()) {
+            m_height = img.size().height();
+            m_width = img.size().width();
+        }
+    }
+
+    beginResetModel();
+    m_entries.clear();
+    initGeneralGroup(m_item);
+
     m_latitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLatitude");
     m_longitude = fetchGpsDouble(data, "Exif.GPSInfo.GPSLongitude");
-
-    m_height = image->pixelHeight();
-    m_width = image->pixelWidth();
 
     QByteArray latRef = fetchByteArray(data, "Exif.GPSInfo.GPSLatitudeRef");
     if (!latRef.isEmpty() && latRef[0] == 'S')
@@ -374,9 +391,13 @@ void Exiv2Extractor::extract(const QString &filePath)
     if (!longRef.isEmpty() && longRef[0] == 'W')
         m_longitude *= -1;
 
-    beginResetModel();
-    m_entries.clear();
-    initGeneralGroup(m_item);
+    if (m_latitude != 0.0 && m_longitude != 0.0) { // Hopefulyl no one took a real photo on the null inland
+        m_entries << MetaInfoEntry{GroupRow::GeneralGroup,
+                                   u"General.Location"_s,
+                                   i18nc("@item:intable", "Location"),
+                                   QString::number(m_latitude) + u'x' + QString::number(m_longitude)};
+    }
+
     initExiv2Image(image.get());
 
     endResetModel();
@@ -469,11 +490,11 @@ QList<MetaInfoEntry> fillExivGroup(GroupRow groupRow, const Container &container
             if (it->tagName().substr(0, 2) == "0x") {
                 continue;
             }
-            const QString key = QString::fromUtf8(it->key().c_str());
-            const QString label = QString::fromLocal8Bit(it->tagLabel().c_str());
+            const QString key = QString::fromStdString(it->key());
+            const QString label = QString::fromStdString(it->tagLabel());
             std::ostringstream stream;
             it->write(stream, &exifData);
-            const QString value = QString::fromLocal8Bit(stream.str().c_str());
+            const QString value = QString::fromStdString(stream.str());
 
             EntryHash::iterator hashIt = hash.find(key);
             if (hashIt != hash.end()) {

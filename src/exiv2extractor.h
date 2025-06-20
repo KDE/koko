@@ -13,6 +13,7 @@
 #include <QAbstractListModel>
 #include <QDateTime>
 #include <QObject>
+#include <QSortFilterProxyModel>
 #include <QString>
 #include <QUrl>
 
@@ -40,15 +41,6 @@ class Exiv2Extractor : public QAbstractListModel
     QML_ELEMENT
 
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
-    Q_PROPERTY(double gpsLatitude READ gpsLatitude NOTIFY filePathChanged)
-    Q_PROPERTY(double gpsLongitude READ gpsLongitude NOTIFY filePathChanged)
-    Q_PROPERTY(QDateTime dateTime READ dateTime NOTIFY filePathChanged)
-    Q_PROPERTY(QString simplifiedPath READ simplifiedPath NOTIFY filePathChanged)
-    Q_PROPERTY(int height READ height NOTIFY filePathChanged)
-    Q_PROPERTY(int width READ width NOTIFY filePathChanged)
-    Q_PROPERTY(int size READ size NOTIFY filePathChanged)
-    Q_PROPERTY(QString model READ model NOTIFY filePathChanged)
-    Q_PROPERTY(QString time READ time NOTIFY filePathChanged)
     Q_PROPERTY(bool favorite READ favorite NOTIFY favoriteChanged)
     Q_PROPERTY(int rating READ rating WRITE setRating NOTIFY filePathChanged)
     Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY filePathChanged)
@@ -59,6 +51,7 @@ public:
         LabelRole = Qt::UserRole + 1,
         KeyRole,
         GroupRole,
+        EnabledRole,
     };
 
     explicit Exiv2Extractor(QObject *parent = nullptr);
@@ -93,30 +86,6 @@ public:
     }
 
     QString simplifiedPath() const;
-
-    int height() const
-    {
-        return m_height;
-    }
-    int width() const
-    {
-        return m_width;
-    }
-
-    int size() const
-    {
-        return m_size;
-    }
-
-    QString model() const
-    {
-        return m_model;
-    }
-
-    QString time() const
-    {
-        return m_time;
-    }
 
     bool favorite() const
     {
@@ -173,6 +142,22 @@ private:
     void initExiv2Image(const Exiv2::Image *image);
 
     QList<MetaInfoEntry> m_entries;
+};
+
+class ExivFilterModel : public QSortFilterProxyModel
+{
+    Q_OBJECT
+    QML_ELEMENT
+
+public:
+    ExivFilterModel() = default;
+
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override
+    {
+        const QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+        const auto enabled = sourceModel()->data(index, Exiv2Extractor::EnabledRole).toBool();
+        return enabled;
+    }
 };
 
 #endif // EXIV2EXTRACTOR_H

@@ -46,59 +46,20 @@ Flickable {
         spacing: Kirigami.Units.smallSpacing
         width: parent.width
 
-        FormCard.FormTextDelegate {
-            text: i18nc("@label", "File name:")
-            description: flickable.extractor.simplifiedPath
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
-        }
+        Repeater {
+            model: ExivFilterModel {
+                sourceModel: flickable.extractor
+            }
 
-        FormCard.FormTextDelegate {
-            text: i18nc("@label", "Dimension:")
-            description: i18nc("dimensions", "%1 x %2", flickable.extractor.width, flickable.extractor.height)
-            visible: flickable.extractor.width > 0 && flickable.extractor.height > 0
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
-        }
+            delegate: FormCard.FormTextDelegate {
+                required property string label
+                required property string displayName
 
-        FormCard.FormTextDelegate {
-            text: i18nc("@label", "Size:")
-            visible: flickable.extractor.size !== 0
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
-            description: KCA.Format.formatByteSize(flickable.extractor.size, 2)
-        }
-
-        FormCard.FormTextDelegate {
-            visible: flickable.extractor.time.length > 0
-            text: i18nc("@label", "Created:")
-            description: flickable.extractor.time
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
-        }
-
-        FormCard.FormTextDelegate {
-            visible: flickable.extractor.model.length > 0
-            text: i18nc("@label", "Model:")
-            description: flickable.extractor.model
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
-        }
-
-        FormCard.FormTextDelegate {
-            text: i18nc("@label", "Latitude:")
-            visible: flickable.extractor.gpsLatitude !== 0
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
-            description: flickable.extractor.gpsLatitude
-        }
-
-        FormCard.FormTextDelegate {
-            text: i18nc("@label", "Longitude:")
-            visible: flickable.extractor.gpsLongitude !== 0
-            description: flickable.extractor.gpsLongitude
-            horizontalPadding: Kirigami.Units.smallSpacing
-            verticalPadding: Kirigami.Units.smallSpacing
+                text: label
+                description: displayName
+                horizontalPadding: Kirigami.Units.smallSpacing
+                verticalPadding: Kirigami.Units.smallSpacing
+            }
         }
 
         FormCard.AbstractFormDelegate {
