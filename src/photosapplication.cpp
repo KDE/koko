@@ -192,6 +192,7 @@ void PhotosApplication::updateTags()
     m_tagNames = tags;
 
     qDeleteAll(m_tags);
+    m_tags.clear();
     for (const auto &tag : std::as_const(m_tagNames)) {
         auto action = new QAction(QIcon::fromTheme(u"tag-symbolic"_s), tag, this);
         connect(action, &QAction::triggered, this, [this, tag] {
