@@ -221,7 +221,7 @@ Kirigami.Page {
         color: "black"
     }
 
-    Keys.onPressed: {
+    Keys.onPressed: (event) => {
         switch(event.key) {
             case Qt.Key_Escape:
                 if (slideshowManager.running) {
@@ -713,7 +713,7 @@ Kirigami.Page {
         // don't override cursor shape
         cursorShape: undefined
 
-        onClicked: {
+        onClicked: (mouse) => {
             if (mouse.button == Qt.BackButton) {
                 listView.decrementCurrentIndex()
             } else if (mouse.button == Qt.ForwardButton) {

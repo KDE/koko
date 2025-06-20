@@ -63,14 +63,19 @@ ZoomArea {
         interval: Qt.styleHints.mouseDoubleClickInterval + 1
         onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
     }
-    onClicked: if (mouse.button === Qt.LeftButton) {
-        if (applicationWindow().contextDrawer) {
-            applicationWindow().contextDrawer.drawerOpen = false
+
+    onClicked: (mouse) => {
+        if (mouse.button === Qt.LeftButton) {
+            if (applicationWindow().contextDrawer) {
+                applicationWindow().contextDrawer.drawerOpen = false
+            }
+            doubleClickTimer.restart()
         }
-        doubleClickTimer.restart()
     }
-    onDoubleClicked: if (mouse.button === Qt.LeftButton) {
-        doubleClickTimer.stop()
+    onDoubleClicked: (mouse) => {
+        if (mouse.button === Qt.LeftButton) {
+            doubleClickTimer.stop()
+        }
     }
 
     onIsCurrentChanged: {

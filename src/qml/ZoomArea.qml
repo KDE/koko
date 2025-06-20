@@ -246,21 +246,25 @@ MouseArea {
         }
     }
 
-    onDoubleClicked: if (mouse.button === Qt.LeftButton) {
-        if (Kirigami.Settings.isMobile) { applicationWindow().controlsVisible = false }
-        if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
-            contentItem.width = Qt.binding(() => root.defaultContentRect.width)
-            contentItem.height = Qt.binding(() => root.defaultContentRect.height)
-        } else {
-            const cX = contentItem.x, cY = contentItem.y
-            contentItem.width = root.defaultContentRect.width * 2
-            contentItem.height = root.defaultContentRect.height * 2
-            // content position * factor - mouse position
-            contentItem.x = root.boundedContentX(cX * 2 - mouse.x, contentItem.width)
-            contentItem.y = root.boundedContentY(cY * 2 - mouse.y, contentItem.height)
+    onDoubleClicked: (mouse) => {
+        if (mouse.button === Qt.LeftButton) {
+            if (Kirigami.Settings.isMobile) {
+                applicationWindow().controlsVisible = false
+            }
+            if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
+                contentItem.width = Qt.binding(() => root.defaultContentRect.width)
+                contentItem.height = Qt.binding(() => root.defaultContentRect.height)
+            } else {
+                const cX = contentItem.x, cY = contentItem.y
+                contentItem.width = root.defaultContentRect.width * 2
+                contentItem.height = root.defaultContentRect.height * 2
+                // content position * factor - mouse position
+                contentItem.x = root.boundedContentX(cX * 2 - mouse.x, contentItem.width)
+                contentItem.y = root.boundedContentY(cY * 2 - mouse.y, contentItem.height)
+            }
         }
     }
-    onWheel: {
+    onWheel: (wheel) => {
         if (wheel.modifiers & Qt.ControlModifier || wheel.modifiers & Qt.ShiftModifier) {
             const pixelDeltaX = wheel.pixelDelta.x !== 0 ?
                 wheel.pixelDelta.x : angleDeltaToPixels(wheel.angleDelta.x, root.width)

@@ -372,7 +372,7 @@ Kirigami.ScrollablePage {
         color: Kirigami.Theme.backgroundColor
     }
 
-    Keys.onPressed: {
+    Keys.onPressed: (event) => {
         switch (event.key) {
             case Qt.Key_Escape:
                 gridView.model.clearSelections()
