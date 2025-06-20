@@ -28,7 +28,6 @@ Exiv2Extractor::Exiv2Extractor(QObject *parent)
     , m_longitude(0)
     , m_height(0)
     , m_width(0)
-    , m_size(0)
     , m_favorite(false)
     , m_rating(0)
     , m_tags(QStringList())
@@ -45,7 +44,7 @@ QHash<int, QByteArray> Exiv2Extractor::roleNames() const
         {LabelRole, "label"},
         {KeyRole, "key"},
         {GroupRole, "group"},
-        {EnabledRole, "enabled"},
+        {EnabledRole, "enabledRole"},
     };
 }
 
@@ -88,16 +87,6 @@ QVariant Exiv2Extractor::data(const QModelIndex &index, int role) const
 QUrl Exiv2Extractor::filePath() const
 {
     return QUrl::fromLocalFile(m_filePath);
-}
-
-QString Exiv2Extractor::simplifiedPath() const
-{
-    auto url = filePath();
-    QString home = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-    if (QUrl::fromLocalFile(home).isParentOf(url)) {
-        return QStringLiteral("~") + url.toLocalFile().remove(0, home.length());
-    }
-    return url.toLocalFile();
 }
 
 static QDateTime dateTimeFromString(const QString &dateString)
@@ -289,14 +278,11 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_longitude = 0.0;
     m_width = 0;
     m_height = 0;
-    m_size = 0;
-    m_model = "";
-    m_time = "";
     m_favorite = false;
     m_dateTime = QDateTime();
     m_rating = 0;
-    m_description = "";
-    m_tags = QStringList();
+    m_description = {};
+    m_tags = {};
     m_filePath = filePath;
     m_item = KFileItem(QUrl::fromLocalFile(m_filePath));
 
@@ -314,8 +300,6 @@ void Exiv2Extractor::extract(const QString &filePath)
         Q_EMIT favoriteChanged();
         return;
     }
-
-    m_size = file_info.size();
 
     auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
 
@@ -354,18 +338,12 @@ void Exiv2Extractor::extract(const QString &filePath)
     Exiv2::ExifData::const_iterator it = data.findKey(Exiv2::ExifKey("Exif.Photo.DateTimeOriginal"));
     if (it != data.end()) {
         m_dateTime = toDateTime(it->value());
-        m_time = QString::fromStdString(it->toString());
     }
     if (m_dateTime.isNull()) {
         it = data.findKey(Exiv2::ExifKey("Exif.Image.DateTime"));
         if (it != data.end()) {
             m_dateTime = toDateTime(it->value());
         }
-    }
-
-    it = data.findKey(Exiv2::ExifKey("Exif.Image.Model"));
-    if (it != data.end()) {
-        m_model = QString::fromStdString(it->toString());
     }
 
     {
@@ -523,7 +501,6 @@ void Exiv2Extractor::initGeneralGroup(const KFileItem &item)
 {
     const QString modifiedString = formatFileTime(item, KFileItem::ModificationTime);
     const QString accessString = formatFileTime(item, KFileItem::AccessTime);
-    const QString createdString = formatFileTime(item, KFileItem::CreationTime);
 
     const QSize size(m_width, m_height);
     QString imageSize;
@@ -542,7 +519,10 @@ void Exiv2Extractor::initGeneralGroup(const KFileItem &item)
 
     m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Name"_s, i18nc("@item:intable Image file name", "Name"), item.name()};
     m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Size"_s, i18nc("@item:intable", "File Size"), KIO::convertSize(item.size())};
-    m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Created"_s, i18nc("@item:intable", "Date Created"), createdString};
+    m_entries << MetaInfoEntry{GroupRow::GeneralGroup,
+                               u"General.Created"_s,
+                               i18nc("@item:intable", "Date Created"),
+                               QLocale().toString(m_dateTime, QLocale::ShortFormat)};
     m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Modified"_s, i18nc("@item:intable", "Date Modified"), modifiedString};
     m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Accessed"_s, i18nc("@item:intable", "Date Accessed"), accessString};
     m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.LocalPath"_s, i18nc("@item:intable", "Path"), item.localPath()};
@@ -575,4 +555,9 @@ void Exiv2Extractor::initExiv2Image(const Exiv2::Image *image)
         const Exiv2::XmpData &xmpData = image->xmpData();
         m_entries.append(fillExivGroup<Exiv2::XmpData, Exiv2::XmpData::const_iterator>(GroupRow::XmpGroup, xmpData, exifData));
     }
+}
+
+ExivFilterModel::ExivFilterModel()
+{
+    connect(Config::self(), &Config::MetadataToDisplayChanged, this, &ExivFilterModel::invalidate);
 }
