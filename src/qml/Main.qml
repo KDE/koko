@@ -113,10 +113,8 @@ StatefulApp.StatefulWindow {
     Component {
         id: albumViewComponent
         AlbumView {
-            titleDelegate: isFolderView ? folderTitle : normalTitle
             application: root.application
             model: imageFolderModel
-            title: i18n("Folders")
         }
     }
 

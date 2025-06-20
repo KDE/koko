@@ -25,55 +25,51 @@ Kirigami.ScrollablePage {
     property var backUrlsPosition: 0;
 
     property alias gridViewItem: gridView
+    readonly property bool wideMode: Controls.ApplicationWindow.window.width > applicationWindow().wideScreenWidth
 
     signal collectionSelected(QtObject selectedModel, string cover)
     signal folderSelected(QtObject selectedModel, string cover, string path)
 
-    focus: true
-    titleDelegate: !Kirigami.Settings.isMobile && isFolderView ? folderTitle : normalTitle
-    title: i18nc("@title", "Folders")
+    readonly property Component normalTitleComponent: Kirigami.Heading {
+         Layout.fillWidth: true
+         Layout.maximumWidth: implicitWidth + 1 // The +1 is to make sure we do not trigger eliding at max width
+         Layout.minimumWidth: 0
 
-    Component {
-        id: normalTitleComponent
-        Kirigami.Heading {
-             level: 1
-             Layout.fillWidth: true
-             Layout.maximumWidth: implicitWidth + 1 // The +1 is to make sure we do not trigger eliding at max width
-             Layout.minimumWidth: 0
-             opacity: page.isCurrentPage ? 1 : 0.4
-             maximumLineCount: 1
-             elide: Text.ElideRight
-             text: page.title
-         }
+         opacity: page.isCurrentPage ? 1 : 0.4
+         maximumLineCount: 1
+         elide: Text.ElideRight
+         text: page.title
      }
 
-     
-    property bool wideMode: Controls.ApplicationWindow.window.width > applicationWindow().wideScreenWidth
-     
+    focus: true
+    titleDelegate: !Kirigami.Settings.isMobile && isFolderView ? folderTitleComponent : normalTitleComponent
+    title: i18nc("@title", "Folders")
+ 
     // doesn't work without loader
     header: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: page.wideMode
+        active: page.wideMode && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader
     }
+
     footer: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: !page.wideMode
+        active: !page.wideMode && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader 
     }
-    
+
     Component {
         id: mobileHeader
         Rectangle {
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             Kirigami.Theme.inherit: false
             color: Kirigami.Theme.backgroundColor
-            
-            visible: Kirigami.Settings.isMobile && page.isFolderView;
-            height: Kirigami.Settings.isMobile && page.isFolderView ? implicitHeight : 0
-            
+
+            visible: page.isFolderView
+            height: visible ? implicitHeight : 0
+
             implicitHeight: column.implicitHeight
-            
+
             ColumnLayout {
                 id: column
                 spacing: 0
@@ -84,7 +80,7 @@ Kirigami.ScrollablePage {
                     visible: !page.wideMode
                 }
                 Loader { 
-                    active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitle 
+                    active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitleComponent
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Layout.margins: page.wideMode ? 0 : Kirigami.Units.smallSpacing
@@ -96,9 +92,6 @@ Kirigami.ScrollablePage {
             }
         }
     }
-
-    property alias folderTitle: folderTitleComponent
-    property alias normalTitle: normalTitleComponent
 
     Component {
         id: folderTitleComponent
@@ -225,7 +218,7 @@ Kirigami.ScrollablePage {
                 display: page.wideMode ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
                 icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
                 text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-                visible: Kirigami.Settings.isMobile && bookmarkActionVisible
+                visible: bookmarkActionVisible
                 onClicked: {
                     if (page.model.sourceModel.url == undefined) {
                         return
@@ -265,7 +258,7 @@ Kirigami.ScrollablePage {
             id: bookmarkAction
             icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
             text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-            visible: page.isFolderView && !model.hasSelectedImages
+            visible: !Kirigami.Settings.isMobile && page.isFolderView && !model.hasSelectedImages
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
             displayHint: Kirigami.DisplayHint.IconOnly
