@@ -7,6 +7,7 @@
 #include "imagestorage.h"
 #include "kokoconfig.h"
 
+#include <KIO/Global>
 #include <KLocalizedString>
 #include <QActionGroup>
 #include <QStandardPaths>
@@ -168,7 +169,7 @@ void PhotosApplication::updateSavedFolders()
         }
         text = text.split(u'/').constLast();
 
-        auto action = new QAction(QIcon::fromTheme(u"folder-symbolic"_s), text, this);
+        auto action = new QAction(QIcon::fromTheme(KIO::iconNameForUrl(folder)), text, this);
         connect(action, &QAction::triggered, this, [this, folder] {
             Q_EMIT filterBy(u"Folders"_s, folder);
         });
