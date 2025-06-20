@@ -115,6 +115,12 @@ QUrl DirModelUtils::directoryOfUrl(const QString &path) const
     return QUrl::fromLocalFile(path.mid(0, index));
 }
 
+bool DirModelUtils::isDirectory(const QUrl &path) const
+{
+    QFileInfo fileInfo(path.toLocalFile());
+    return fileInfo.isDir();
+}
+
 QString DirModelUtils::fileNameOfUrl(const QString &path) const
 {
     const int index = path.lastIndexOf(QLatin1Char('/'));

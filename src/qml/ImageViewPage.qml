@@ -170,7 +170,7 @@ Kirigami.Page {
 
     KokoPrivate.FileMenu {
         id: fileMenu
-        url: listView.currentItem.imageurl
+        url: listView.currentItem?.imageurl ?? ''
     }
 
     SlideshowManager {

@@ -29,6 +29,7 @@ public:
     Q_INVOKABLE QUrl partialUrlForIndex(QUrl url, int index) const;
     Q_INVOKABLE bool canBeSimplified(const QUrl &url) const;
     Q_INVOKABLE QUrl directoryOfUrl(const QString &path) const;
+    Q_INVOKABLE bool isDirectory(const QUrl &path) const;
     Q_INVOKABLE QString fileNameOfUrl(const QString &path) const;
     Q_INVOKABLE QUrl parentOfUrl(const QUrl &url) const;
 

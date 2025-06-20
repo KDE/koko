@@ -353,19 +353,26 @@ StatefulApp.StatefulWindow {
         root.visibility = Koko.Config.visibility
         root.controlsVisible = Koko.Config.controlsVisible
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
+
+        if (KokoPrivate.OpenFileModel.rowCount() === 0) {
+            root.application.action("place_pictures").trigger();
+            return;
+        }
+
         if (KokoPrivate.OpenFileModel.rowCount() > 1) {
             pageStack.initialPage = openFileComponent;
         } else {
-            pageStack.initialPage = albumViewComponent;
-
-        }
-        albumView = pageStack.currentItem;
-        if (KokoPrivate.OpenFileModel.rowCount() <= 1) {
+            root.application.action("place_pictures").trigger();
             albumView.isFolderView = true;
         }
+
         if (KokoPrivate.OpenFileModel.rowCount() === 1) {
+            if (Koko.DirModelUtils.isDirectory(KokoPrivate.OpenFileModel.urlToOpen)) {
+                albumView.model.sourceModel.url = KokoPrivate.OpenFileModel.urlToOpen
+                return;
+            }
+
             const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
-            console.log(url)
             albumView.model.sourceModel.url = url;
             fetchImageToOpen = true;
             pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
