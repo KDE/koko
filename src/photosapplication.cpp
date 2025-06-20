@@ -156,7 +156,9 @@ void PhotosApplication::updateSavedFolders()
 {
     auto config = Config::self();
     const auto savedFolders = config->savedFolders();
+
     qDeleteAll(m_savedFolders);
+    m_savedFolders.clear();
 
     for (const auto &folder : savedFolders) {
         // Not added to the managed actions
