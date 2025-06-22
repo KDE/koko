@@ -775,6 +775,3 @@ msgstr "Настройки"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Добавяне на нов етикет…"
-
-#~ msgid "Size"
-#~ msgstr "Големина"
