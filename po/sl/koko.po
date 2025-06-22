@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-21 00:40+0000\n"
-"PO-Revision-Date: 2025-06-20 07:13+0200\n"
+"PO-Revision-Date: 2025-06-21 06:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -57,12 +57,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "Photos je pregledovalnik slik za vašo zbirko slik."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013-2020 sodelavci KDE"
+msgstr "(c) 2013-%1 sodelavci KDE"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -738,11 +736,10 @@ msgid "Network"
 msgstr "Omrežje"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Odstrani zaznamek"
+msgstr "Zaznamki"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format

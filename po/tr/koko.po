@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-21 00:40+0000\n"
-"PO-Revision-Date: 2025-06-20 22:37+0300\n"
+"PO-Revision-Date: 2025-06-21 08:03+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -56,12 +56,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "Fotoğraflar, görsel koleksiyonunuz için bir görüntüleyicidir."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "© 2013–2020 KDE Katkıcıları"
+msgstr "© 2013–%1 KDE Katkıcıları"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -731,11 +729,10 @@ msgid "Network"
 msgstr "Ağ"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Yer İmini Kaldır"
+msgstr "Yer İmleri"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format

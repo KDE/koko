@@ -862,12 +862,3 @@ msgstr ""
 #, kde-format
 msgid "Add new tag…"
 msgstr ""
-
-#~ msgid "Folders"
-#~ msgstr "Mapper"
-
-#, fuzzy
-#~| msgid "Folders"
-#~ msgctxt "@title:group"
-#~ msgid "Pinned Folders"
-#~ msgstr "Mapper"

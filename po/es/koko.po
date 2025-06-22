@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-21 00:40+0000\n"
-"PO-Revision-Date: 2025-06-20 20:41+0100\n"
+"PO-Revision-Date: 2025-06-21 14:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -58,12 +58,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "Photos es un visor de imágenes para su colección de imágenes."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "© 2013-2020 los colaboradores de KDE"
+msgstr "© 2013-%1 los colaboradores de KDE"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -733,11 +731,10 @@ msgid "Network"
 msgstr "Red"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Eliminar marcador"
+msgstr "Marcadores"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -865,20 +862,3 @@ msgstr "Preferencias"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Añadir nueva etiqueta…"
-
-#~ msgid "Pictures"
-#~ msgstr "Imágenes"
-
-#~ msgid "Videos"
-#~ msgstr "Vídeos"
-
-#~ msgid "Favorites"
-#~ msgstr "Favoritos"
-
-#~ msgid "Folders"
-#~ msgstr "Carpetas"
-
-#~| msgid "Pinned Folders"
-#~ msgctxt "@title:group"
-#~ msgid "Pinned Folders"
-#~ msgstr "Carpetas fijadas"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-21 00:40+0000\n"
-"PO-Revision-Date: 2025-06-20 11:08+0300\n"
+"PO-Revision-Date: 2025-06-21 19:07+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -59,12 +59,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "«Фотографії» — програма для перегляду зображень з вашої збірки."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "© Учасники розробки KDE, 2013–2020"
+msgstr "© Учасники розробки KDE, 2013–%1"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -740,11 +738,10 @@ msgid "Network"
 msgstr "Мережа"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Вилучити закладку"
+msgstr "Закладки"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
