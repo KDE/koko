@@ -100,8 +100,6 @@ int main(int argc, char **argv)
         ImageStorage::reset();
     }
 
-    KDBusService service(KDBusService::Unique);
-
     QThread trackerThread;
 
     const QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
@@ -137,6 +135,9 @@ int main(int argc, char **argv)
     KLocalization::setupLocalizedContext(&engine);
 
     OpenFileModel openFileModel(directoryUrls);
+
+    // Single-instance when mobile only
+    KDBusService service(qEnvironmentVariableIsSet("QT_QUICK_CONTROLS_MOBILE") ? KDBusService::Unique : KDBusService::Multiple);
     QObject::connect(&service,
                      &KDBusService::activateRequested,
                      &openFileModel,
