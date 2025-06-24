@@ -16,28 +16,46 @@ import org.kde.koko as Koko
 ListView {
     id: thumbnailView
 
+    required property int containerPadding
+
+    readonly property int delegateSize: Koko.Config.iconSize + Kirigami.Units.largeSpacing
+
+    readonly property int remainingWidth: Math.max(0, thumbnailView.width
+                                                      - (thumbnailView.count * thumbnailView.delegateSize)
+                                                      - ((thumbnailView.count - 1) * thumbnailView.spacing))
+
     signal activated(int index)
 
     orientation: Qt.Horizontal
-    snapMode: ListView.SnapOneItem
+
+    spacing: thumbnailView.containerPadding
 
     highlightRangeMode: ListView.ApplyRange
     highlightFollowsCurrentItem: true
-    preferredHighlightBegin: height
-    preferredHighlightEnd: width - height
+    preferredHighlightBegin: (width - thumbnailView.delegateSize) / 2
+    preferredHighlightEnd: (width + thumbnailView.delegateSize) / 2
     highlightMoveVelocity: -1
     highlightMoveDuration: Kirigami.Units.longDuration
+    displayMarginBeginning: thumbnailView.containerPadding
+    displayMarginEnd: thumbnailView.containerPadding
 
-    // same spacing as padding in thumbnailScrollView, so that delegates don't pop out of existence
-    // we don't do margins as that cause a host of issues, including a crash in rtl
-    displayMarginBeginning: Kirigami.Units.smallSpacing
-    displayMarginEnd: Kirigami.Units.smallSpacing
+    // Center content when there aren't enough items to fill the width
+    header: Item {
+        width: Math.max(0, thumbnailView.remainingWidth / 2)
+    }
+
+    footer: Item {
+        width: Math.max(0, thumbnailView.remainingWidth / 2)
+    }
+
+    // Center when width changes (e.g. due to window resizing or animations)
+    onWidthChanged: positionViewAtIndex(currentIndex, ListView.Center)
 
     delegate: AlbumDelegate {
         id: delegate
 
-        width: Koko.Config.iconSize + Kirigami.Units.largeSpacing
-        height: Koko.Config.iconSize + Kirigami.Units.largeSpacing
+        width: thumbnailView.delegateSize
+        height: thumbnailView.delegateSize
 
         onClicked: thumbnailView.activated(delegate.index)
 

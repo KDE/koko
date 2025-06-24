@@ -142,7 +142,7 @@ Kirigami.Page {
                    Koko.Config.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
             tooltip: i18n("Toggle Thumbnail Bar")
             shortcut: "T"
-            visible: thumbnailView.count > 1
+            visible: listView.count > 1
             onTriggered: {
                 Koko.Config.imageViewPreview = !Koko.Config.imageViewPreview;
                 Koko.Config.save();
@@ -248,7 +248,7 @@ Kirigami.Page {
             top: parent.top
             left: parent.left
             right: parent.right
-            bottom: thumbnailScrollView.top
+            bottom: thumbnailToolBar.top
         }
 
         orientation: Qt.Horizontal
@@ -552,26 +552,21 @@ Kirigami.Page {
         }
     }
 
-    QQC2.ScrollView {
-        id: thumbnailScrollView
-        visible: !Kirigami.Settings.isMobile && thumbnailView.count > 1
-        height: Koko.Config.iconSize + Kirigami.Units.largeSpacing
-        QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
-        QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+    QQC2.ToolBar {
+        id: thumbnailToolBar
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
 
-        leftPadding: Kirigami.Units.smallSpacing
-        rightPadding: Kirigami.Units.smallSpacing
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
 
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-            bottomMargin: root.mainWindow.controlsVisible && thumbnailScrollView.visible && Koko.Config.imageViewPreview ?
-                            Kirigami.Units.smallSpacing : -height
-        }
+        readonly property bool shouldShow: !Kirigami.Settings.isMobile
+                                        && root.mainWindow.controlsVisible
+                                        && Koko.Config.imageViewPreview
+                                        && listView.count > 1
 
-        opacity: root.mainWindow.controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
-
+        anchors.bottomMargin: thumbnailToolBar.shouldShow ? 0 : -height
         Behavior on anchors.bottomMargin {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
@@ -579,19 +574,39 @@ Kirigami.Page {
             }
         }
 
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
+        visible: anchors.bottomMargin > -height
+
+        position: QQC2.ToolBar.Footer
+
+        implicitHeight: thumbnailView.delegateSize + (padding * 2)
+
+        padding: Kirigami.Units.largeSpacing
+
+        contentItem: QQC2.ScrollView {
+            id: thumbnailScrollView
+
+            implicitWidth: -1 // Prevents binding loop, is unused due to anchors
+
+            opacity: thumbnailToolBar.shouldShow ? 1 : 0
+
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
+                }
             }
-        }
 
-        ThumbnailStrip {
-            id: thumbnailView
+            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+            QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
 
-            model: Kirigami.Settings.isMobile ? [] : listView.model
-            currentIndex: listView.currentIndex
-            onActivated: index => listView.currentIndex = index
+            ThumbnailStrip {
+                id: thumbnailView
+                // Don't unload the model until we're off-screen
+                model: (thumbnailToolBar.shouldShow || thumbnailToolBar.visible) ? listView.model : []
+                currentIndex: listView.currentIndex
+                onActivated: (index) => { listView.currentIndex = index; }
+                containerPadding: thumbnailToolBar.padding
+            }
         }
     }
 
