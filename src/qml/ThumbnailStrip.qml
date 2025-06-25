@@ -21,13 +21,6 @@ ListView {
     orientation: Qt.Horizontal
     snapMode: ListView.SnapOneItem
 
-    highlightRangeMode: ListView.ApplyRange
-    highlightFollowsCurrentItem: true
-    preferredHighlightBegin: height
-    preferredHighlightEnd: width - height
-    highlightMoveVelocity: -1
-    highlightMoveDuration: Kirigami.Units.longDuration
-
     // same spacing as padding in thumbnailScrollView, so that delegates don't pop out of existence
     // we don't do margins as that cause a host of issues, including a crash in rtl
     displayMarginBeginning: Kirigami.Units.smallSpacing
