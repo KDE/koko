@@ -1,16 +1,16 @@
 # Translation for koko.po to Euskara/Basque (eu).
-# Copyright (C) 2021-2024 This file is copyright:
+# Copyright (C) 2021-2025 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-10-27 15:48+0100\n"
+"PO-Revision-Date: 2025-06-24 18:57+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -59,12 +59,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "Photos, zure irudi-bilduma ikusteko irudi erakusle bat da."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013-2020 KDE kolaboratzaileak"
+msgstr "(c) 2013-%1 KDE Kolaboratzaileak"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -132,74 +130,73 @@ msgstr "Irudia partekatzeko URL <a href='%1'>%1</a> da"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "Nabigatu irudietara"
 
 #: photosapplication.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "Gehitu gogokoenetara"
+msgstr "Nabigatu gogokoetara"
 
 #: photosapplication.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "Nabigatu bideoetara"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "Nabigatu zakarrontzira"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "Nabigatu urruneko karpetetara"
 
 #: photosapplication.cpp:85
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "Nabigatu herrialdeen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:92
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by states"
-msgstr ""
+msgstr "Nabigatu estatuen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "Nabigatu hirien arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "Nabigatu urteen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "Nabigatu hilabeteen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "Nabigatu asteen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "Nabigatu egunen arabera sailkatutako irudietara"
 
 #: qml/AlbumDelegate.qml:118
 #, kde-format
@@ -209,8 +206,7 @@ msgstr[0] "Irudi 1"
 msgstr[1] "%1 irudi"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "Karpetak"
@@ -287,25 +283,22 @@ msgid "No Media Found"
 msgstr "Ez da euskarririk aurkitu"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Irudiak"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Bideoak"
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
-msgstr "Gogokoenak"
+msgstr "Gogokoak"
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:86
 #, kde-format
@@ -482,17 +475,17 @@ msgstr "Kendu"
 #: qml/ImageViewPage.qml:88
 #, kde-format
 msgid "Favorite"
-msgstr "Gogokoena"
+msgstr "Gogokoa"
 
 #: qml/ImageViewPage.qml:89
 #, kde-format
 msgid "Remove from favorites"
-msgstr "Kendu gogokoenetatik"
+msgstr "Kendu gogokoetatik"
 
 #: qml/ImageViewPage.qml:89
 #, kde-format
 msgid "Add to favorites"
-msgstr "Gehitu gogokoenetara"
+msgstr "Gehitu gogokoetara"
 
 #: qml/ImageViewPage.qml:100
 #, kde-format
@@ -704,8 +697,7 @@ msgid "Add Tag"
 msgstr "Gehitu etiketa"
 
 #: qml/Main.qml:67
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Lekuak"
@@ -716,39 +708,34 @@ msgid "Images"
 msgstr "Irudiak"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Ezarpenak"
 
 #: qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Orokorra"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Zakarrontzia"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Sarea"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Kendu laster-marka"
+msgstr "Laster-markak"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -756,22 +743,19 @@ msgid "Locations"
 msgstr "Kokalekuak"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Herrialdeak"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Estatuak"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Hiriak"
@@ -782,29 +766,25 @@ msgid "Time"
 msgstr "Ordua"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Urteak"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Hilabeteak"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
-msgstr "asteak"
+msgstr "Asteak"
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Egunak"
@@ -820,15 +800,13 @@ msgid "Thumbnails size:"
 msgstr "Koadro txikien neurria:"
 
 #: qml/Settings/GeneralConfigPage.qml:38
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow:"
-msgstr "Diapositiba emanaldia"
+msgstr "Diapositiba emanaldia:"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Orokorra"
@@ -840,11 +818,10 @@ msgstr "«Photos»eri buruz"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "KDEri buruz"
+msgstr "Honi buruz"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
