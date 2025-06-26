@@ -71,23 +71,13 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
-            id: infoAction
-            icon.name: "kdocumentinfo"
-            text: i18n("Info")
-            tooltip: !listView.currentItem ? "" :
-                      (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("See information about video") :
-                                                                              i18n("See information about image"))
-            checkable: true
-            checked: false
-            onToggled: if (checked) {
-                infoSidebarLoader.forceActiveFocus();
-            }
-        },
-        Kirigami.Action {
+            text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
-            text: exiv2Extractor.favorite ? i18n("Remove") : i18n("Favorite")
-            tooltip: exiv2Extractor.favorite ? i18n("Remove from favorites") : i18n("Add to favorites")
-            onTriggered: {
+            tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
+
+            checkable: true
+            checked: exiv2Extractor.favorite
+            onToggled: {
                 exiv2Extractor.toggleFavorite(listView.currentItem.imageurl.toString().replace("file://", ""));
                 // makes change immediate
                 kokoProcessor.removeFile(listView.currentItem.imageurl.toString().replace("file://", ""));
@@ -95,11 +85,11 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
-            id: editingAction
+            text: i18nc("@action:intoolbar Edit an image", "&Edit")
             icon.name: "edit-entry"
-            text: i18nc("verb, edit an image", "Edit")
-            visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
+            tooltip: i18nc("@info:tooltip", "Edit this image")
 
+            visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
             onTriggered: {
                 const page = root.mainWindow.pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
                     imagePath: listView.currentItem.imageurl,
@@ -114,9 +104,17 @@ Kirigami.Page {
         },
         ShareAction {
             id: shareAction
-            tooltip: !listView.currentItem ? "" :
-                     (listView.currentItem.type == Koko.FileInfo.VideoType ? i18n("Share Video") : i18n("Share Image"))
-            text: i18nc("verb, share an image/video", "Share")
+
+            text: i18nc("@action:intoolbar Share an image/video", "&Share")
+            tooltip: {
+                if (!listView.currentItem) {
+                    return "";
+                }
+                if (listView.currentItem.type === Koko.FileInfo.VideoType) {
+                    return i18nc("@info:tooltip", "Share this video");
+                }
+                return i18nc("@info:tooltip", "Share this image");
+            }
 
             property Connections connection: Connections {
                 target: listView
@@ -129,40 +127,107 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
-            icon.name: "view-presentation"
-            tooltip: i18n("Start Slideshow")
-            text: i18n("Slideshow")
+            id: infoAction
+
+            displayHint: Kirigami.DisplayHint.KeepVisible
+
+            text: i18nc("@action:intoolbar Show information about an image/video", "&Info")
+            icon.name: "info-symbolic"
+            tooltip: {
+                if (!listView.currentItem) {
+                    return "";
+                }
+                if (listView.currentItem.type === Koko.FileInfo.VideoType) {
+                    return i18nc("@info:tooltip", "See information about this video");
+                }
+                return i18nc("@info:tooltip", "See information about this image");
+            }
+
+            shortcut: "I"
+            checkable: true
+            checked: false
+            onToggled: if (checked) {
+                // TODO: Should probably do this in infoSidebarLoader
+                infoSidebarLoader.forceActiveFocus();
+            }
+        },
+        /* Hidden actions */
+        Kirigami.Action {
+            id: slideshowAction
+
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+
+            // TODO: Checkable would be best, then toggle slideshow with changed i18n hint in text and dynamic tooltip text
+            text: i18nc("@action:intoolbar Start a slideshow", "&Slideshow")
+            icon.name: "view-presentation-symbolic"
+            tooltip: i18nc("@info:tooltip", "Start slideshow")
+
             visible: listView.count > 1 && !slideshowManager.running && !Kirigami.Settings.isMobile
             onTriggered: slideshowManager.start()
         },
         Kirigami.Action {
-            icon.name: "view-preview"
-            // be more descriptive on mobile, since we're less constrained there
-            text: !Kirigami.Settings.isMobile ? i18n("Thumbnail Bar") :
-                   Koko.Config.imageViewPreview ? i18n("Hide Thumbnail Bar") : i18n("Show Thumbnail Bar")
-            tooltip: i18n("Toggle Thumbnail Bar")
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+            visible: slideshowAction.visible
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+
+            text: i18nc("@action:intoolbar Toggle visibility of toolbars and other UI elements", "Show &Controls")
+            tooltip: root.mainWindow.controlsVisible ? i18nc("@info:tooltip", "Enter immersive viewing mode")
+                                                     : i18nc("@info:tooltip", "Exit immersive viewing mode")
+
+            visible: !Kirigami.Settings.isMobile
+            checkable: true
+            checked: root.mainWindow.controlsVisible
+            onToggled: root.mainWindow.controlsVisible = !root.mainWindow.controlsVisible
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+
+            text: i18nc("@action:intoolbar Toggle visibility of toolbar", "Show &Thumbnail Toolbar")
+            tooltip: !Koko.Config.imageViewPreview ? i18nc("@info:tooltip", "Show the thumbnail toolbar")
+                                                   : i18nc("@info:tooltip", "Hide the thumbnail toolbar")
+
+            visible: !Kirigami.Settings.isMobile
+            enabled: root.mainWindow.controlsVisible
             shortcut: "T"
-            visible: listView.count > 1
-            onTriggered: {
+            checkable: true
+            checked: Koko.Config.imageViewPreview
+            onToggled: {
                 Koko.Config.imageViewPreview = !Koko.Config.imageViewPreview;
                 Koko.Config.save();
             }
         },
         Kirigami.Action {
-            property bool fullscreen: root.mainWindow.visibility === Window.FullScreen
-            icon.name: !fullscreen ? "view-fullscreen" : "view-restore"
-            text: !fullscreen ? i18n("Fullscreen") : i18n("Exit Fullscreen")
-            tooltip: !fullscreen ? i18n("Enter Fullscreen") : i18n("Exit Fullscreen")
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+            visible: fullscreenAction.visible
+        },
+        Kirigami.Action {
+            id: fullscreenAction
+
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+
+            text: i18nc("@action:intoolbar", "&Full Screen")
+            icon.name: !checked ? "view-fullscreen-symbolic" : "view-restore-symbolic"
+            tooltip: !checked ? i18nc("@info:tooltip", "Enter Full Screen") : i18nc("@info:tooltip", "Exit Full Screen")
+
+            visible: !Kirigami.Settings.isMobile && !slideshowManager.running
             shortcut: "F"
-            visible: !Kirigami.Settings.isMobile
-            onTriggered: {
-                if (root.mainWindow.visibility === Window.FullScreen) {
-                    root.mainWindow.visibility = lastWindowVisibility
-                } else {
+            checkable: true
+            checked: root.mainWindow.visibility === Window.FullScreen
+            onToggled: {
+                if (checked) {
+                    // Enter full screen
                     Koko.Controller.saveWindowGeometry(root.mainWindow);
                     lastWindowVisibility = root.mainWindow.visibility
                     root.mainWindow.visibility = Window.FullScreen;
+                } else {
+                    // Exit full screen
+                    root.mainWindow.visibility = lastWindowVisibility
                 }
+
                 listView.forceActiveFocus();
             }
         }

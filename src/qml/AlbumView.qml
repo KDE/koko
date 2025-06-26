@@ -325,6 +325,8 @@ Kirigami.ScrollablePage {
             id: shareAction
             visible: model.hasSelectedImages
 
+            tooltip: i18nc("@info:tooltip", "Share the selected media")
+
             property Connections connection: Connections {
                 target: model
                 function onSelectedImagesChanged() {
