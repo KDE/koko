@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
+import org.kde.kquickcontrolsaddons
 
 Controls.ItemDelegate {
     id: root
@@ -56,11 +57,24 @@ Controls.ItemDelegate {
 
     contentItem: Item {
         Kirigami.Icon {
-            id: image
+            id: placeholderImage
+
             anchors.centerIn: parent
-            source: root.thumbnail === false ? "chronometer-symbolic" : root.thumbnail
-            width: root.thumbnail === false ? Kirigami.Units.iconSizes.large : Koko.Config.iconSize
+            source: root.thumbnail === false ? "chronometer-symbolic" : ''
+            width: Kirigami.Units.iconSizes.large
             height: width
+            visible: root.thumbnail === false
+        }
+
+        QImageItem {
+            id: image
+
+            anchors.centerIn: parent
+            image: root.thumbnail ? root.thumbnail : undefined
+            width: Koko.Config.iconSize
+            height: width
+            visible: root.thumbnail !== false
+            fillMode: QImageItem.PreserveAspectCrop
         }
 
         Rectangle {
