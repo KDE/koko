@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 06:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -27,6 +27,110 @@ msgstr "Temuri Doghonadze"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
+
+#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#, kde-format
+msgctxt "@title:group"
+msgid "General"
+msgstr "ზოგადი"
+
+#: exiv2extractor.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "EXIF"
+msgstr ""
+
+#: exiv2extractor.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "IPTC"
+msgstr ""
+
+#: exiv2extractor.cpp:76
+#, kde-format
+msgctxt "@title:group"
+msgid "XMPP"
+msgstr ""
+
+#: exiv2extractor.cpp:375
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@item:intable"
+msgid "Location"
+msgstr "მდებარეობები"
+
+#: exiv2extractor.cpp:508
+#, kde-format
+msgctxt "@item:intable %1 is image width, %2 is image height"
+msgid "%1x%2"
+msgstr ""
+
+#: exiv2extractor.cpp:514
+#, kde-format
+msgctxt "@item:intable %1 is number of millions of pixels in image"
+msgid "(%1MP)"
+msgstr ""
+
+#: exiv2extractor.cpp:520
+#, kde-format
+msgctxt "@item:intable Image file name"
+msgid "Name"
+msgstr ""
+
+#: exiv2extractor.cpp:521
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Size"
+msgstr "ფაილის სახელი:"
+
+#: exiv2extractor.cpp:524
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Created:"
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr "შექმნილია:"
+
+#: exiv2extractor.cpp:526
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Modified"
+msgstr ""
+
+#: exiv2extractor.cpp:527
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Accessed"
+msgstr ""
+
+#: exiv2extractor.cpp:528
+#, kde-format
+msgctxt "@item:intable"
+msgid "Path"
+msgstr ""
+
+#: exiv2extractor.cpp:529
+#, fuzzy, kde-format
+#| msgid "Image viewer"
+msgctxt "@item:intable"
+msgid "Image Size"
+msgstr "სურათების გალერეა"
+
+#: exiv2extractor.cpp:530
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Type"
+msgstr "ფაილის სახელი:"
+
+#: exiv2extractor.cpp:541
+#, kde-format
+msgctxt "@item:intable"
+msgid "Comment"
+msgstr ""
 
 #: filemenu.cpp:117
 #, kde-format
@@ -448,6 +552,12 @@ msgstr "მიმდინარე ვიდეოს გამეორებ�
 msgid "Don't repeat current video"
 msgstr "არ გაიმეორო მიმდინარე ვიდეო"
 
+#: qml/ImageMetadataPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Configure Metadata Display"
+msgstr ""
+
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "Info"
@@ -560,18 +670,18 @@ msgstr "წინა გამოსახულება"
 msgid "Next image"
 msgstr "შემდეგი გამოსახულება"
 
-#: qml/ImageViewPage.qml:671
+#: qml/ImageViewPage.qml:686
 #, kde-format
 msgid "More"
 msgstr "მეტი"
 
-#: qml/ImageViewPage.qml:778 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "სლაიდშოუს ინტერვალი:"
 
-#: qml/ImageViewPage.qml:795 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -579,24 +689,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 წამი"
 msgstr[1] "%1 წამი"
 
-#: qml/ImageViewPage.qml:851
+#: qml/ImageViewPage.qml:866
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "მარყუჟი"
 
-#: qml/ImageViewPage.qml:860 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "შემთხვევით"
 
-#: qml/ImageViewPage.qml:872
+#: qml/ImageViewPage.qml:887
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "სლაიდშოუს შეჩერება"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:901
 #, kde-format
 msgid "Show All Controls"
 msgstr "ყველა კონტროლის ჩვენება"
@@ -606,91 +716,49 @@ msgstr "ყველა კონტროლის ჩვენება"
 msgid "Metadata"
 msgstr "მეტამონაცემები"
 
-#: qml/InfoDrawerSidebarBase.qml:50
-#, kde-format
-msgctxt "@label"
-msgid "File name:"
-msgstr "ფაილის სახელი:"
-
-#: qml/InfoDrawerSidebarBase.qml:57
-#, kde-format
-msgctxt "@label"
-msgid "Dimension:"
-msgstr "განზომილება:"
-
-#: qml/InfoDrawerSidebarBase.qml:58
-#, kde-format
-msgctxt "dimensions"
-msgid "%1 x %2"
-msgstr "%1 x %2"
-
-#: qml/InfoDrawerSidebarBase.qml:65
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "ზომა:"
-
-#: qml/InfoDrawerSidebarBase.qml:74
-#, kde-format
-msgctxt "@label"
-msgid "Created:"
-msgstr "შექმნილია:"
-
-#: qml/InfoDrawerSidebarBase.qml:82
-#, kde-format
-msgctxt "@label"
-msgid "Model:"
-msgstr "მოდელი:"
-
-#: qml/InfoDrawerSidebarBase.qml:89
-#, kde-format
-msgctxt "@label"
-msgid "Latitude:"
-msgstr "განედი:"
-
-#: qml/InfoDrawerSidebarBase.qml:97
-#, kde-format
-msgctxt "@label"
-msgid "Longitude:"
-msgstr "გრძედი:"
-
-#: qml/InfoDrawerSidebarBase.qml:107
+#: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "რეიტინგი:"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
 msgstr "მიმდინარე შეფასება %1"
 
-#: qml/InfoDrawerSidebarBase.qml:132
+#: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
 msgstr "შეფასების დაყენება %1"
 
-#: qml/InfoDrawerSidebarBase.qml:163
+#: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "აღწერა:"
 
-#: qml/InfoDrawerSidebarBase.qml:165
+#: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
 msgstr "გამოსახულების აღწერა…"
 
-#: qml/InfoDrawerSidebarBase.qml:176
+#: qml/InfoDrawerSidebarBase.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "ჭდე:"
 
-#: qml/InfoDrawerSidebarBase.qml:203
+#: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
 msgstr "ჭდის დამატება"
+
+#: qml/InfoDrawerSidebarBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr ""
 
 #: qml/Main.qml:67
 #, kde-format
@@ -708,12 +776,6 @@ msgstr "ასლები"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "მორგება"
-
-#: qml/PlacesPage.qml:27
-#, kde-format
-msgctxt "@title:group"
-msgid "General"
-msgstr "ზოგადი"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, kde-format
@@ -860,6 +922,30 @@ msgstr "მორგება"
 msgid "Add new tag…"
 msgstr "ახალი ჭდის დამატება…"
 
+#~ msgctxt "@label"
+#~ msgid "Dimension:"
+#~ msgstr "განზომილება:"
+
+#~ msgctxt "dimensions"
+#~ msgid "%1 x %2"
+#~ msgstr "%1 x %2"
+
+#~ msgctxt "@label"
+#~ msgid "Size:"
+#~ msgstr "ზომა:"
+
+#~ msgctxt "@label"
+#~ msgid "Model:"
+#~ msgstr "მოდელი:"
+
+#~ msgctxt "@label"
+#~ msgid "Latitude:"
+#~ msgstr "განედი:"
+
+#~ msgctxt "@label"
+#~ msgid "Longitude:"
+#~ msgstr "გრძედი:"
+
 #~ msgid "Pictures"
 #~ msgstr "სურათები"
 
@@ -898,9 +984,6 @@ msgstr "ახალი ჭდის დამატება…"
 
 #~ msgid "Size"
 #~ msgstr "ზომა"
-
-#~ msgid "Image viewer"
-#~ msgstr "სურათების გალერეა"
 
 #~ msgid "Properties"
 #~ msgstr "თვისებები"

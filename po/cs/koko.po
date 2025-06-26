@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -26,6 +26,105 @@ msgstr "Vít Pelčák"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
+
+#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:group"
+msgid "General"
+msgstr "Obecné"
+
+#: exiv2extractor.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "EXIF"
+msgstr ""
+
+#: exiv2extractor.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "IPTC"
+msgstr ""
+
+#: exiv2extractor.cpp:76
+#, kde-format
+msgctxt "@title:group"
+msgid "XMPP"
+msgstr ""
+
+#: exiv2extractor.cpp:375
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@item:intable"
+msgid "Location"
+msgstr "Umístění"
+
+#: exiv2extractor.cpp:508
+#, kde-format
+msgctxt "@item:intable %1 is image width, %2 is image height"
+msgid "%1x%2"
+msgstr ""
+
+#: exiv2extractor.cpp:514
+#, kde-format
+msgctxt "@item:intable %1 is number of millions of pixels in image"
+msgid "(%1MP)"
+msgstr ""
+
+#: exiv2extractor.cpp:520
+#, kde-format
+msgctxt "@item:intable Image file name"
+msgid "Name"
+msgstr ""
+
+#: exiv2extractor.cpp:521
+#, kde-format
+msgctxt "@item:intable"
+msgid "File Size"
+msgstr ""
+
+#: exiv2extractor.cpp:524
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr ""
+
+#: exiv2extractor.cpp:526
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Modified"
+msgstr ""
+
+#: exiv2extractor.cpp:527
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Accessed"
+msgstr ""
+
+#: exiv2extractor.cpp:528
+#, kde-format
+msgctxt "@item:intable"
+msgid "Path"
+msgstr ""
+
+#: exiv2extractor.cpp:529
+#, fuzzy, kde-format
+#| msgid "Images"
+msgctxt "@item:intable"
+msgid "Image Size"
+msgstr "Obrázky"
+
+#: exiv2extractor.cpp:530
+#, kde-format
+msgctxt "@item:intable"
+msgid "File Type"
+msgstr ""
+
+#: exiv2extractor.cpp:541
+#, kde-format
+msgctxt "@item:intable"
+msgid "Comment"
+msgstr ""
 
 #: filemenu.cpp:117
 #, kde-format
@@ -456,6 +555,12 @@ msgstr "Opakovat aktuální video"
 msgid "Don't repeat current video"
 msgstr "Neopakovat aktuální video"
 
+#: qml/ImageMetadataPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Configure Metadata Display"
+msgstr ""
+
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "Info"
@@ -568,18 +673,18 @@ msgstr "Předchozí obrázek"
 msgid "Next image"
 msgstr "Následující obrázek"
 
-#: qml/ImageViewPage.qml:671
+#: qml/ImageViewPage.qml:686
 #, kde-format
 msgid "More"
 msgstr "Více"
 
-#: qml/ImageViewPage.qml:778 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval prezentace:"
 
-#: qml/ImageViewPage.qml:795 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -588,24 +693,24 @@ msgstr[0] "1 sekunda"
 msgstr[1] "%1 sekundy"
 msgstr[2] "%1 sekund"
 
-#: qml/ImageViewPage.qml:851
+#: qml/ImageViewPage.qml:866
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Smyčka"
 
-#: qml/ImageViewPage.qml:860 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Náhodně"
 
-#: qml/ImageViewPage.qml:872
+#: qml/ImageViewPage.qml:887
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Zastavit promítání"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:901
 #, kde-format
 msgid "Show All Controls"
 msgstr "Zobrazit všechna ovládání"
@@ -615,91 +720,49 @@ msgstr "Zobrazit všechna ovládání"
 msgid "Metadata"
 msgstr "Metadata"
 
-#: qml/InfoDrawerSidebarBase.qml:50
-#, kde-format
-msgctxt "@label"
-msgid "File name:"
-msgstr ""
-
-#: qml/InfoDrawerSidebarBase.qml:57
-#, kde-format
-msgctxt "@label"
-msgid "Dimension:"
-msgstr ""
-
-#: qml/InfoDrawerSidebarBase.qml:58
-#, kde-format
-msgctxt "dimensions"
-msgid "%1 x %2"
-msgstr "%1 x %2"
-
-#: qml/InfoDrawerSidebarBase.qml:65
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "Velikost:"
-
-#: qml/InfoDrawerSidebarBase.qml:74
-#, kde-format
-msgctxt "@label"
-msgid "Created:"
-msgstr ""
-
-#: qml/InfoDrawerSidebarBase.qml:82
-#, kde-format
-msgctxt "@label"
-msgid "Model:"
-msgstr ""
-
-#: qml/InfoDrawerSidebarBase.qml:89
-#, kde-format
-msgctxt "@label"
-msgid "Latitude:"
-msgstr "Zeměpisná šířka:"
-
-#: qml/InfoDrawerSidebarBase.qml:97
-#, kde-format
-msgctxt "@label"
-msgid "Longitude:"
-msgstr "Zeměpisná délka:"
-
-#: qml/InfoDrawerSidebarBase.qml:107
+#: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Hodnocení:"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
 msgstr "Současné hodnocení %1"
 
-#: qml/InfoDrawerSidebarBase.qml:132
+#: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Nastavit hodnocení na %1"
 
-#: qml/InfoDrawerSidebarBase.qml:163
+#: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "Popis:"
 
-#: qml/InfoDrawerSidebarBase.qml:165
+#: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
 msgstr "Popis obrázku…"
 
-#: qml/InfoDrawerSidebarBase.qml:176
+#: qml/InfoDrawerSidebarBase.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Značky:"
 
-#: qml/InfoDrawerSidebarBase.qml:203
+#: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
 msgstr "Přidat značku"
+
+#: qml/InfoDrawerSidebarBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr ""
 
 #: qml/Main.qml:67
 #, fuzzy, kde-format
@@ -719,13 +782,6 @@ msgstr "Obrázky"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavení"
-
-#: qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
-msgctxt "@title:group"
-msgid "General"
-msgstr "Obecné"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, fuzzy, kde-format
@@ -884,6 +940,22 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
+
+#~ msgctxt "dimensions"
+#~ msgid "%1 x %2"
+#~ msgstr "%1 x %2"
+
+#~ msgctxt "@label"
+#~ msgid "Size:"
+#~ msgstr "Velikost:"
+
+#~ msgctxt "@label"
+#~ msgid "Latitude:"
+#~ msgstr "Zeměpisná šířka:"
+
+#~ msgctxt "@label"
+#~ msgid "Longitude:"
+#~ msgstr "Zeměpisná délka:"
 
 #~ msgid "Pictures"
 #~ msgstr "Obrázky"

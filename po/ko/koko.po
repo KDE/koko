@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2024-12-10 01:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -26,6 +26,112 @@ msgstr "박신조"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
+
+#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:group"
+msgid "General"
+msgstr "일반"
+
+#: exiv2extractor.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "EXIF"
+msgstr ""
+
+#: exiv2extractor.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "IPTC"
+msgstr ""
+
+#: exiv2extractor.cpp:76
+#, kde-format
+msgctxt "@title:group"
+msgid "XMPP"
+msgstr ""
+
+#: exiv2extractor.cpp:375
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@item:intable"
+msgid "Location"
+msgstr "위치"
+
+#: exiv2extractor.cpp:508
+#, kde-format
+msgctxt "@item:intable %1 is image width, %2 is image height"
+msgid "%1x%2"
+msgstr ""
+
+#: exiv2extractor.cpp:514
+#, kde-format
+msgctxt "@item:intable %1 is number of millions of pixels in image"
+msgid "(%1MP)"
+msgstr ""
+
+#: exiv2extractor.cpp:520
+#, kde-format
+msgctxt "@item:intable Image file name"
+msgid "Name"
+msgstr ""
+
+#: exiv2extractor.cpp:521
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Size"
+msgstr "파일 이름:"
+
+#: exiv2extractor.cpp:524
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Created:"
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr "생성됨:"
+
+#: exiv2extractor.cpp:526
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Modified"
+msgstr ""
+
+#: exiv2extractor.cpp:527
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Accessed"
+msgstr ""
+
+#: exiv2extractor.cpp:528
+#, fuzzy, kde-format
+#| msgid "Path"
+msgctxt "@item:intable"
+msgid "Path"
+msgstr "경로"
+
+#: exiv2extractor.cpp:529
+#, fuzzy, kde-format
+#| msgid "Image viewer"
+msgctxt "@item:intable"
+msgid "Image Size"
+msgstr "그림 뷰어"
+
+#: exiv2extractor.cpp:530
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Type"
+msgstr "파일 이름:"
+
+#: exiv2extractor.cpp:541
+#, kde-format
+msgctxt "@item:intable"
+msgid "Comment"
+msgstr ""
 
 #: filemenu.cpp:117
 #, kde-format
@@ -454,6 +560,12 @@ msgstr "현재 동영상 반복"
 msgid "Don't repeat current video"
 msgstr "현재 동영상 반복하지 않음"
 
+#: qml/ImageMetadataPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Configure Metadata Display"
+msgstr ""
+
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "Info"
@@ -566,42 +678,42 @@ msgstr "이전 그림"
 msgid "Next image"
 msgstr "다음 그림"
 
-#: qml/ImageViewPage.qml:671
+#: qml/ImageViewPage.qml:686
 #, kde-format
 msgid "More"
 msgstr "더 보기"
 
-#: qml/ImageViewPage.qml:778 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "슬라이드 쇼 간격:"
 
-#: qml/ImageViewPage.qml:795 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/ImageViewPage.qml:851
+#: qml/ImageViewPage.qml:866
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "반복"
 
-#: qml/ImageViewPage.qml:860 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "무작위"
 
-#: qml/ImageViewPage.qml:872
+#: qml/ImageViewPage.qml:887
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "슬라이드 쇼 정지"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:901
 #, kde-format
 msgid "Show All Controls"
 msgstr "모든 컨트롤 표시"
@@ -611,91 +723,49 @@ msgstr "모든 컨트롤 표시"
 msgid "Metadata"
 msgstr "메타데이터"
 
-#: qml/InfoDrawerSidebarBase.qml:50
-#, kde-format
-msgctxt "@label"
-msgid "File name:"
-msgstr "파일 이름:"
-
-#: qml/InfoDrawerSidebarBase.qml:57
-#, kde-format
-msgctxt "@label"
-msgid "Dimension:"
-msgstr "그림 크기:"
-
-#: qml/InfoDrawerSidebarBase.qml:58
-#, kde-format
-msgctxt "dimensions"
-msgid "%1 x %2"
-msgstr "%1 x %2"
-
-#: qml/InfoDrawerSidebarBase.qml:65
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "크기:"
-
-#: qml/InfoDrawerSidebarBase.qml:74
-#, kde-format
-msgctxt "@label"
-msgid "Created:"
-msgstr "생성됨:"
-
-#: qml/InfoDrawerSidebarBase.qml:82
-#, kde-format
-msgctxt "@label"
-msgid "Model:"
-msgstr "모델:"
-
-#: qml/InfoDrawerSidebarBase.qml:89
-#, kde-format
-msgctxt "@label"
-msgid "Latitude:"
-msgstr "위도:"
-
-#: qml/InfoDrawerSidebarBase.qml:97
-#, kde-format
-msgctxt "@label"
-msgid "Longitude:"
-msgstr "경도:"
-
-#: qml/InfoDrawerSidebarBase.qml:107
+#: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "별점:"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
 msgstr "현재 별점: %1"
 
-#: qml/InfoDrawerSidebarBase.qml:132
+#: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
 msgstr "별점을 %1(으)로 설정"
 
-#: qml/InfoDrawerSidebarBase.qml:163
+#: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "설명:"
 
-#: qml/InfoDrawerSidebarBase.qml:165
+#: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
 msgstr "그림 설명..."
 
-#: qml/InfoDrawerSidebarBase.qml:176
+#: qml/InfoDrawerSidebarBase.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "태그:"
 
-#: qml/InfoDrawerSidebarBase.qml:203
+#: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
 msgstr "태그 추가"
+
+#: qml/InfoDrawerSidebarBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr ""
 
 #: qml/Main.qml:67
 #, fuzzy, kde-format
@@ -715,13 +785,6 @@ msgstr "그림"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "설정"
-
-#: qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
-msgctxt "@title:group"
-msgid "General"
-msgstr "일반"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, fuzzy, kde-format
@@ -881,6 +944,30 @@ msgstr "설정"
 msgid "Add new tag…"
 msgstr "새 태그 추가..."
 
+#~ msgctxt "@label"
+#~ msgid "Dimension:"
+#~ msgstr "그림 크기:"
+
+#~ msgctxt "dimensions"
+#~ msgid "%1 x %2"
+#~ msgstr "%1 x %2"
+
+#~ msgctxt "@label"
+#~ msgid "Size:"
+#~ msgstr "크기:"
+
+#~ msgctxt "@label"
+#~ msgid "Model:"
+#~ msgstr "모델:"
+
+#~ msgctxt "@label"
+#~ msgid "Latitude:"
+#~ msgstr "위도:"
+
+#~ msgctxt "@label"
+#~ msgid "Longitude:"
+#~ msgstr "경도:"
+
 #~ msgid "Pictures"
 #~ msgstr "그림"
 
@@ -921,9 +1008,6 @@ msgstr "새 태그 추가..."
 
 #~ msgid "Size"
 #~ msgstr "크기"
-
-#~ msgid "Image viewer"
-#~ msgstr "그림 뷰어"
 
 #~ msgid "Sort by"
 #~ msgstr "정렬 순서"
@@ -968,6 +1052,3 @@ msgstr "새 태그 추가..."
 
 #~ msgid "By Day"
 #~ msgstr "일별"
-
-#~ msgid "Path"
-#~ msgstr "경로"

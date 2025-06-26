@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 18:17+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -26,6 +26,111 @@ msgstr "Freek de Kruijf - 2020 t/m 2025"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "freekdekruijf@kde.nl"
+
+#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#, kde-format
+msgctxt "@title:group"
+msgid "General"
+msgstr "Algemeen"
+
+#: exiv2extractor.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "EXIF"
+msgstr ""
+
+#: exiv2extractor.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "IPTC"
+msgstr ""
+
+#: exiv2extractor.cpp:76
+#, kde-format
+msgctxt "@title:group"
+msgid "XMPP"
+msgstr ""
+
+#: exiv2extractor.cpp:375
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@item:intable"
+msgid "Location"
+msgstr "Locaties"
+
+#: exiv2extractor.cpp:508
+#, kde-format
+msgctxt "@item:intable %1 is image width, %2 is image height"
+msgid "%1x%2"
+msgstr ""
+
+#: exiv2extractor.cpp:514
+#, kde-format
+msgctxt "@item:intable %1 is number of millions of pixels in image"
+msgid "(%1MP)"
+msgstr ""
+
+#: exiv2extractor.cpp:520
+#, kde-format
+msgctxt "@item:intable Image file name"
+msgid "Name"
+msgstr ""
+
+#: exiv2extractor.cpp:521
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Size"
+msgstr "Bestandsnaam:"
+
+#: exiv2extractor.cpp:524
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Created:"
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr "Aangemaakt:"
+
+#: exiv2extractor.cpp:526
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Modified"
+msgstr ""
+
+#: exiv2extractor.cpp:527
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Accessed"
+msgstr ""
+
+#: exiv2extractor.cpp:528
+#, fuzzy, kde-format
+#| msgid "Path"
+msgctxt "@item:intable"
+msgid "Path"
+msgstr "Pad"
+
+#: exiv2extractor.cpp:529
+#, fuzzy, kde-format
+#| msgid "Image viewer"
+msgctxt "@item:intable"
+msgid "Image Size"
+msgstr "Afbeeldingsviewer"
+
+#: exiv2extractor.cpp:530
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Type"
+msgstr "Bestandsnaam:"
+
+#: exiv2extractor.cpp:541
+#, kde-format
+msgctxt "@item:intable"
+msgid "Comment"
+msgstr ""
 
 #: filemenu.cpp:117
 #, kde-format
@@ -449,6 +554,12 @@ msgstr "Huidige video herhalen"
 msgid "Don't repeat current video"
 msgstr "Huidige video niet herhalen"
 
+#: qml/ImageMetadataPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Configure Metadata Display"
+msgstr ""
+
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "Info"
@@ -561,18 +672,18 @@ msgstr "Vorige afbeelding"
 msgid "Next image"
 msgstr "Volgende afbeelding"
 
-#: qml/ImageViewPage.qml:671
+#: qml/ImageViewPage.qml:686
 #, kde-format
 msgid "More"
 msgstr "Meer"
 
-#: qml/ImageViewPage.qml:778 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval diavoorstelling:"
 
-#: qml/ImageViewPage.qml:795 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -580,24 +691,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 seconde"
 msgstr[1] "%1 seconden"
 
-#: qml/ImageViewPage.qml:851
+#: qml/ImageViewPage.qml:866
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Lus"
 
-#: qml/ImageViewPage.qml:860 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Willekeurig maken"
 
-#: qml/ImageViewPage.qml:872
+#: qml/ImageViewPage.qml:887
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Diavoorstelling stoppen"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:901
 #, kde-format
 msgid "Show All Controls"
 msgstr "Alle besturing tonen"
@@ -607,91 +718,49 @@ msgstr "Alle besturing tonen"
 msgid "Metadata"
 msgstr "Metagegevens"
 
-#: qml/InfoDrawerSidebarBase.qml:50
-#, kde-format
-msgctxt "@label"
-msgid "File name:"
-msgstr "Bestandsnaam:"
-
-#: qml/InfoDrawerSidebarBase.qml:57
-#, kde-format
-msgctxt "@label"
-msgid "Dimension:"
-msgstr "Afmetingen:"
-
-#: qml/InfoDrawerSidebarBase.qml:58
-#, kde-format
-msgctxt "dimensions"
-msgid "%1 x %2"
-msgstr "%1 x %2"
-
-#: qml/InfoDrawerSidebarBase.qml:65
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "Grootte:"
-
-#: qml/InfoDrawerSidebarBase.qml:74
-#, kde-format
-msgctxt "@label"
-msgid "Created:"
-msgstr "Aangemaakt:"
-
-#: qml/InfoDrawerSidebarBase.qml:82
-#, kde-format
-msgctxt "@label"
-msgid "Model:"
-msgstr "Model:"
-
-#: qml/InfoDrawerSidebarBase.qml:89
-#, kde-format
-msgctxt "@label"
-msgid "Latitude:"
-msgstr "Breedtegraad:"
-
-#: qml/InfoDrawerSidebarBase.qml:97
-#, kde-format
-msgctxt "@label"
-msgid "Longitude:"
-msgstr "Lengtegraad:"
-
-#: qml/InfoDrawerSidebarBase.qml:107
+#: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Waardering:"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
 msgstr "Huidige waardering %1"
 
-#: qml/InfoDrawerSidebarBase.qml:132
+#: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Waardering instellen op %1"
 
-#: qml/InfoDrawerSidebarBase.qml:163
+#: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "Beschrijving:"
 
-#: qml/InfoDrawerSidebarBase.qml:165
+#: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
 msgstr "Beschrijving van afbeelding…"
 
-#: qml/InfoDrawerSidebarBase.qml:176
+#: qml/InfoDrawerSidebarBase.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Tags:"
 
-#: qml/InfoDrawerSidebarBase.qml:203
+#: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
 msgstr "Tag toevoegen"
+
+#: qml/InfoDrawerSidebarBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr ""
 
 #: qml/Main.qml:67
 #, kde-format
@@ -709,12 +778,6 @@ msgstr "Afbeeldingen"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Instellingen"
-
-#: qml/PlacesPage.qml:27
-#, kde-format
-msgctxt "@title:group"
-msgid "General"
-msgstr "Algemeen"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, kde-format
@@ -861,6 +924,30 @@ msgstr "Instellingen"
 msgid "Add new tag…"
 msgstr "Nieuwe tag toevoegen…"
 
+#~ msgctxt "@label"
+#~ msgid "Dimension:"
+#~ msgstr "Afmetingen:"
+
+#~ msgctxt "dimensions"
+#~ msgid "%1 x %2"
+#~ msgstr "%1 x %2"
+
+#~ msgctxt "@label"
+#~ msgid "Size:"
+#~ msgstr "Grootte:"
+
+#~ msgctxt "@label"
+#~ msgid "Model:"
+#~ msgstr "Model:"
+
+#~ msgctxt "@label"
+#~ msgid "Latitude:"
+#~ msgstr "Breedtegraad:"
+
+#~ msgctxt "@label"
+#~ msgid "Longitude:"
+#~ msgstr "Lengtegraad:"
+
 #~ msgid "Pictures"
 #~ msgstr "Afbeeldingen"
 
@@ -900,9 +987,6 @@ msgstr "Nieuwe tag toevoegen…"
 
 #~ msgid "Size"
 #~ msgstr "Grootte"
-
-#~ msgid "Image viewer"
-#~ msgstr "Afbeeldingsviewer"
 
 #~ msgid "Properties"
 #~ msgstr "Eigenschappen"
@@ -947,6 +1031,3 @@ msgstr "Nieuwe tag toevoegen…"
 
 #~ msgid "By Day"
 #~ msgstr "Op dag"
-
-#~ msgid "Path"
-#~ msgstr "Pad"

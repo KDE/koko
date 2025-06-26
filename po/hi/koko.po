@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -26,6 +26,111 @@ msgstr "तुम्हारे नाम"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "आपके ईमेल"
+
+#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:group"
+msgid "General"
+msgstr "सामान्य"
+
+#: exiv2extractor.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "EXIF"
+msgstr ""
+
+#: exiv2extractor.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "IPTC"
+msgstr ""
+
+#: exiv2extractor.cpp:76
+#, kde-format
+msgctxt "@title:group"
+msgid "XMPP"
+msgstr ""
+
+#: exiv2extractor.cpp:375
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@item:intable"
+msgid "Location"
+msgstr "स्थानों"
+
+#: exiv2extractor.cpp:508
+#, kde-format
+msgctxt "@item:intable %1 is image width, %2 is image height"
+msgid "%1x%2"
+msgstr ""
+
+#: exiv2extractor.cpp:514
+#, kde-format
+msgctxt "@item:intable %1 is number of millions of pixels in image"
+msgid "(%1MP)"
+msgstr ""
+
+#: exiv2extractor.cpp:520
+#, kde-format
+msgctxt "@item:intable Image file name"
+msgid "Name"
+msgstr ""
+
+#: exiv2extractor.cpp:521
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Size"
+msgstr "फ़ाइल का नाम:"
+
+#: exiv2extractor.cpp:524
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Created:"
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr "बनाया था:"
+
+#: exiv2extractor.cpp:526
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Modified"
+msgstr ""
+
+#: exiv2extractor.cpp:527
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Accessed"
+msgstr ""
+
+#: exiv2extractor.cpp:528
+#, kde-format
+msgctxt "@item:intable"
+msgid "Path"
+msgstr ""
+
+#: exiv2extractor.cpp:529
+#, fuzzy, kde-format
+#| msgid "Images"
+msgctxt "@item:intable"
+msgid "Image Size"
+msgstr "इमेजिस"
+
+#: exiv2extractor.cpp:530
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "File name:"
+msgctxt "@item:intable"
+msgid "File Type"
+msgstr "फ़ाइल का नाम:"
+
+#: exiv2extractor.cpp:541
+#, kde-format
+msgctxt "@item:intable"
+msgid "Comment"
+msgstr ""
 
 #: filemenu.cpp:117
 #, kde-format
@@ -455,6 +560,12 @@ msgstr "वर्तमान वीडियो दोहराएँ"
 msgid "Don't repeat current video"
 msgstr "वर्तमान वीडियो को न दोहराएं"
 
+#: qml/ImageMetadataPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Configure Metadata Display"
+msgstr ""
+
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "Info"
@@ -567,18 +678,18 @@ msgstr "पिछली छवि"
 msgid "Next image"
 msgstr "अगली छवि"
 
-#: qml/ImageViewPage.qml:671
+#: qml/ImageViewPage.qml:686
 #, kde-format
 msgid "More"
 msgstr "अधिक"
 
-#: qml/ImageViewPage.qml:778 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "स्लाइड शो अंतराल:"
 
-#: qml/ImageViewPage.qml:795 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -586,24 +697,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "%1 सेकंड"
 msgstr[1] "%1 सेकंड"
 
-#: qml/ImageViewPage.qml:851
+#: qml/ImageViewPage.qml:866
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "कुंडली"
 
-#: qml/ImageViewPage.qml:860 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "यादृच्छिक करें"
 
-#: qml/ImageViewPage.qml:872
+#: qml/ImageViewPage.qml:887
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "स्लाइड शो रोकें"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:901
 #, kde-format
 msgid "Show All Controls"
 msgstr "सभी नियंत्रण दिखाएं"
@@ -613,91 +724,49 @@ msgstr "सभी नियंत्रण दिखाएं"
 msgid "Metadata"
 msgstr "मेटाडाटा"
 
-#: qml/InfoDrawerSidebarBase.qml:50
-#, kde-format
-msgctxt "@label"
-msgid "File name:"
-msgstr "फ़ाइल का नाम:"
-
-#: qml/InfoDrawerSidebarBase.qml:57
-#, kde-format
-msgctxt "@label"
-msgid "Dimension:"
-msgstr "आयाम:"
-
-#: qml/InfoDrawerSidebarBase.qml:58
-#, kde-format
-msgctxt "dimensions"
-msgid "%1 x %2"
-msgstr "%1 एक्स %2"
-
-#: qml/InfoDrawerSidebarBase.qml:65
-#, kde-format
-msgctxt "@label"
-msgid "Size:"
-msgstr "आकार:"
-
-#: qml/InfoDrawerSidebarBase.qml:74
-#, kde-format
-msgctxt "@label"
-msgid "Created:"
-msgstr "बनाया था:"
-
-#: qml/InfoDrawerSidebarBase.qml:82
-#, kde-format
-msgctxt "@label"
-msgid "Model:"
-msgstr "नमूना:"
-
-#: qml/InfoDrawerSidebarBase.qml:89
-#, kde-format
-msgctxt "@label"
-msgid "Latitude:"
-msgstr "अक्षांश:"
-
-#: qml/InfoDrawerSidebarBase.qml:97
-#, kde-format
-msgctxt "@label"
-msgid "Longitude:"
-msgstr "देशांतर:"
-
-#: qml/InfoDrawerSidebarBase.qml:107
+#: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "रेटिंग:"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
 msgstr "वर्तमान रेटिंग %1"
 
-#: qml/InfoDrawerSidebarBase.qml:132
+#: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
 msgstr "रेटिंग %1 पर सेट करें"
 
-#: qml/InfoDrawerSidebarBase.qml:163
+#: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "विवरण:"
 
-#: qml/InfoDrawerSidebarBase.qml:165
+#: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
 msgstr "छवि विवरण…"
 
-#: qml/InfoDrawerSidebarBase.qml:176
+#: qml/InfoDrawerSidebarBase.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "टैग:"
 
-#: qml/InfoDrawerSidebarBase.qml:203
+#: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
 msgstr "टैग जोड़ें"
+
+#: qml/InfoDrawerSidebarBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr ""
 
 #: qml/Main.qml:67
 #, fuzzy, kde-format
@@ -717,13 +786,6 @@ msgstr "इमेजिस"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "सेटिंग्स"
-
-#: qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
-msgctxt "@title:group"
-msgid "General"
-msgstr "सामान्य"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, fuzzy, kde-format
@@ -882,6 +944,30 @@ msgstr "सेटिंग्स"
 #, kde-format
 msgid "Add new tag…"
 msgstr "नया टैग जोड़ें…"
+
+#~ msgctxt "@label"
+#~ msgid "Dimension:"
+#~ msgstr "आयाम:"
+
+#~ msgctxt "dimensions"
+#~ msgid "%1 x %2"
+#~ msgstr "%1 एक्स %2"
+
+#~ msgctxt "@label"
+#~ msgid "Size:"
+#~ msgstr "आकार:"
+
+#~ msgctxt "@label"
+#~ msgid "Model:"
+#~ msgstr "नमूना:"
+
+#~ msgctxt "@label"
+#~ msgid "Latitude:"
+#~ msgstr "अक्षांश:"
+
+#~ msgctxt "@label"
+#~ msgid "Longitude:"
+#~ msgstr "देशांतर:"
 
 #~ msgid "Pictures"
 #~ msgstr "चित्र"

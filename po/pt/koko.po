@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:40+0000\n"
+"POT-Creation-Date: 2025-06-26 00:41+0000\n"
 "PO-Revision-Date: 2023-05-31 10:52+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -28,6 +28,108 @@ msgstr "José Nuno Pires"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
+
+#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:group"
+msgid "General"
+msgstr "Geral"
+
+#: exiv2extractor.cpp:72
+#, kde-format
+msgctxt "@title:group"
+msgid "EXIF"
+msgstr ""
+
+#: exiv2extractor.cpp:74
+#, kde-format
+msgctxt "@title:group"
+msgid "IPTC"
+msgstr ""
+
+#: exiv2extractor.cpp:76
+#, kde-format
+msgctxt "@title:group"
+msgid "XMPP"
+msgstr ""
+
+#: exiv2extractor.cpp:375
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgctxt "@item:intable"
+msgid "Location"
+msgstr "Locais"
+
+#: exiv2extractor.cpp:508
+#, kde-format
+msgctxt "@item:intable %1 is image width, %2 is image height"
+msgid "%1x%2"
+msgstr ""
+
+#: exiv2extractor.cpp:514
+#, kde-format
+msgctxt "@item:intable %1 is number of millions of pixels in image"
+msgid "(%1MP)"
+msgstr ""
+
+#: exiv2extractor.cpp:520
+#, kde-format
+msgctxt "@item:intable Image file name"
+msgid "Name"
+msgstr ""
+
+#: exiv2extractor.cpp:521
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgctxt "@item:intable"
+msgid "File Size"
+msgstr "Nome do Ficheiro"
+
+#: exiv2extractor.cpp:524
+#, fuzzy, kde-format
+#| msgid "Created"
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr "Criado"
+
+#: exiv2extractor.cpp:526
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Modified"
+msgstr ""
+
+#: exiv2extractor.cpp:527
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Accessed"
+msgstr ""
+
+#: exiv2extractor.cpp:528
+#, kde-format
+msgctxt "@item:intable"
+msgid "Path"
+msgstr ""
+
+#: exiv2extractor.cpp:529
+#, fuzzy, kde-format
+#| msgid "Image viewer"
+msgctxt "@item:intable"
+msgid "Image Size"
+msgstr "Visualizador de imagens"
+
+#: exiv2extractor.cpp:530
+#, fuzzy, kde-format
+#| msgid "File Name"
+msgctxt "@item:intable"
+msgid "File Type"
+msgstr "Nome do Ficheiro"
+
+#: exiv2extractor.cpp:541
+#, kde-format
+msgctxt "@item:intable"
+msgid "Comment"
+msgstr ""
 
 #: filemenu.cpp:117
 #, kde-format
@@ -463,6 +565,12 @@ msgstr "Repetir o vídeo actual"
 msgid "Don't repeat current video"
 msgstr "Não repetir o vídeo actual"
 
+#: qml/ImageMetadataPage.qml:16
+#, kde-format
+msgctxt "@title"
+msgid "Configure Metadata Display"
+msgstr ""
+
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgid "Info"
@@ -575,18 +683,18 @@ msgstr "Imagem anterior"
 msgid "Next image"
 msgstr "Imagem seguinte"
 
-#: qml/ImageViewPage.qml:671
+#: qml/ImageViewPage.qml:686
 #, kde-format
 msgid "More"
 msgstr ""
 
-#: qml/ImageViewPage.qml:778 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalo da apresentação:"
 
-#: qml/ImageViewPage.qml:795 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -594,24 +702,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 segundo"
 msgstr[1] "%1 segundos"
 
-#: qml/ImageViewPage.qml:851
+#: qml/ImageViewPage.qml:866
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Ciclo"
 
-#: qml/ImageViewPage.qml:860 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Aleatório"
 
-#: qml/ImageViewPage.qml:872
+#: qml/ImageViewPage.qml:887
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Parar a Apresentação"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:901
 #, kde-format
 msgid "Show All Controls"
 msgstr "Mostrar Todos os Controlos"
@@ -621,102 +729,52 @@ msgstr "Mostrar Todos os Controlos"
 msgid "Metadata"
 msgstr "Meta-dados"
 
-#: qml/InfoDrawerSidebarBase.qml:50
-#, fuzzy, kde-format
-#| msgid "File Name"
-msgctxt "@label"
-msgid "File name:"
-msgstr "Nome do Ficheiro"
-
-#: qml/InfoDrawerSidebarBase.qml:57
-#, fuzzy, kde-format
-#| msgid "Dimension"
-msgctxt "@label"
-msgid "Dimension:"
-msgstr "Dimensão"
-
-#: qml/InfoDrawerSidebarBase.qml:58
-#, kde-format
-msgctxt "dimensions"
-msgid "%1 x %2"
-msgstr "%1 x %2"
-
-#: qml/InfoDrawerSidebarBase.qml:65
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
-msgctxt "@label"
-msgid "Size:"
-msgstr "Tamanho:"
-
-#: qml/InfoDrawerSidebarBase.qml:74
-#, fuzzy, kde-format
-#| msgid "Created"
-msgctxt "@label"
-msgid "Created:"
-msgstr "Criado"
-
-#: qml/InfoDrawerSidebarBase.qml:82
-#, fuzzy, kde-format
-#| msgid "Model"
-msgctxt "@label"
-msgid "Model:"
-msgstr "Modelo"
-
-#: qml/InfoDrawerSidebarBase.qml:89
-#, fuzzy, kde-format
-#| msgid "Latitude"
-msgctxt "@label"
-msgid "Latitude:"
-msgstr "Latitude"
-
-#: qml/InfoDrawerSidebarBase.qml:97
-#, fuzzy, kde-format
-#| msgid "Longitude"
-msgctxt "@label"
-msgid "Longitude:"
-msgstr "Longitude"
-
-#: qml/InfoDrawerSidebarBase.qml:107
+#: qml/InfoDrawerSidebarBase.qml:68
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Classificação"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
 msgstr "Classificação actual de %1"
 
-#: qml/InfoDrawerSidebarBase.qml:132
+#: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Mudar a classificação para %1"
 
-#: qml/InfoDrawerSidebarBase.qml:163
+#: qml/InfoDrawerSidebarBase.qml:124
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@label"
 msgid "Description:"
 msgstr "Descrição"
 
-#: qml/InfoDrawerSidebarBase.qml:165
+#: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
 msgstr "Descrição da imagem…"
 
-#: qml/InfoDrawerSidebarBase.qml:176
+#: qml/InfoDrawerSidebarBase.qml:137
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Marcas"
 
-#: qml/InfoDrawerSidebarBase.qml:203
+#: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
 msgstr "Adicionar uma Marca"
+
+#: qml/InfoDrawerSidebarBase.qml:191
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr ""
 
 #: qml/Main.qml:67
 #, fuzzy, kde-format
@@ -736,13 +794,6 @@ msgstr "Imagens"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuração"
-
-#: qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
-msgctxt "@title:group"
-msgid "General"
-msgstr "Geral"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, fuzzy, kde-format
@@ -904,6 +955,41 @@ msgstr "Configuração"
 msgid "Add new tag…"
 msgstr "Adicionar uma marca nova…"
 
+#, fuzzy
+#~| msgid "Dimension"
+#~ msgctxt "@label"
+#~ msgid "Dimension:"
+#~ msgstr "Dimensão"
+
+#~ msgctxt "dimensions"
+#~ msgid "%1 x %2"
+#~ msgstr "%1 x %2"
+
+#, fuzzy
+#~| msgctxt "@title:group for crop area size spinboxes"
+#~| msgid "Size:"
+#~ msgctxt "@label"
+#~ msgid "Size:"
+#~ msgstr "Tamanho:"
+
+#, fuzzy
+#~| msgid "Model"
+#~ msgctxt "@label"
+#~ msgid "Model:"
+#~ msgstr "Modelo"
+
+#, fuzzy
+#~| msgid "Latitude"
+#~ msgctxt "@label"
+#~ msgid "Latitude:"
+#~ msgstr "Latitude"
+
+#, fuzzy
+#~| msgid "Longitude"
+#~ msgctxt "@label"
+#~ msgid "Longitude:"
+#~ msgstr "Longitude"
+
 #~ msgid "Pictures"
 #~ msgstr "Imagens"
 
@@ -944,6 +1030,3 @@ msgstr "Adicionar uma marca nova…"
 
 #~ msgid "Size"
 #~ msgstr "Tamanho"
-
-#~ msgid "Image viewer"
-#~ msgstr "Visualizador de imagens"
