@@ -19,9 +19,9 @@ import org.kde.kirigami as Kirigami
  */
 Kirigami.Action {
     id: shareAction
+
+    text: i18nc("@action Share an image/video", "&Share")
     icon.name: "emblem-shared-symbolic"
-    text: i18n("Share")
-    tooltip: i18n("Share the selected media")
 
     /**
      * This property holds the input data for purpose.
@@ -43,8 +43,7 @@ Kirigami.Action {
         }
         const shareDrawerComponent = Qt.createComponent("org.kde.koko", "ShareDrawer");
         const drawer = shareDrawerComponent.createObject(applicationWindow().overlay, {
-            inputData: shareAction.inputData,
-            title: shareAction.text
+            inputData: shareAction.inputData
         });
         drawer.open();
     }

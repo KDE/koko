@@ -21,7 +21,7 @@ Kirigami.OverlayDrawer {
     bottomPadding: 0
     topPadding: 0
 
-    property string title: i18n("Share the selected media")
+    property string title: i18nc("@title:menu", "Share")
 
     parent: applicationWindow().overlay
 
