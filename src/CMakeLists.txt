@@ -133,6 +133,7 @@ if (TARGET XCB::XCB)
 endif()
 
 add_subdirectory(resources)
+add_subdirectory(importer)
 
 add_executable(koko
     main.cpp
@@ -141,6 +142,8 @@ add_executable(koko
 target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
+    koko_importer_static
+    koko_importer_staticplugin
 )
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

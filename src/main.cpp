@@ -88,6 +88,7 @@ int main(int argc, char **argv)
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
+    parser.addOption(QCommandLineOption("import", i18n("Import photos")));
     parser.addPositionalArgument("image", i18n("path of image you want to open"));
 
     aboutData.setupCommandLine(&parser);
@@ -169,9 +170,11 @@ int main(int argc, char **argv)
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
 
-    // we want different main files on desktop or mobile
-    // very small difference as they as they are subclasses of the same thing
-    engine.loadFromModule(u"org.kde.koko"_s, u"Main"_s);
+    if (parser.isSet("import")) {
+        engine.loadFromModule(u"org.kde.koko.importer"_s, u"ImportWindow"_s);
+    } else {
+        engine.loadFromModule(u"org.kde.koko"_s, u"Main"_s);
+    }
 
     int rt = app.exec();
     trackerThread.quit();
