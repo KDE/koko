@@ -1033,12 +1033,6 @@ Kirigami.Page {
         }
     }
 
-    Binding {
-        target: root.globalToolBarItem
-        property: "visible"
-        value: root.mainWindow.controlsVisible
-    }
-
     Component.onCompleted: {
         root.mainWindow.controlsVisible = true;
         listView.forceActiveFocus();
