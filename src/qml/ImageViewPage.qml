@@ -168,11 +168,13 @@ Kirigami.Page {
         }
     ]
 
-
+    // TODO: Integrate file actions into menus (hidden actions on mobile toolbar, More > Actions… on desktop)
+    /*
     KokoPrivate.FileMenu {
         id: fileMenu
         url: listView.currentItem?.imageurl ?? ''
     }
+    */
 
     SlideshowManager {
         id: slideshowManager
@@ -248,7 +250,7 @@ Kirigami.Page {
             top: parent.top
             left: parent.left
             right: parent.right
-            bottom: thumbnailToolBar.top
+            bottom: Kirigami.Settings.isMobile ? mobileActionsToolBar.top : thumbnailToolBar.top
         }
 
         orientation: Qt.Horizontal
@@ -552,6 +554,7 @@ Kirigami.Page {
         }
     }
 
+    // Desktop thumbnail toolbar
     QQC2.ToolBar {
         id: thumbnailToolBar
         anchors.left: parent.left
@@ -588,7 +591,6 @@ Kirigami.Page {
             implicitWidth: -1 // Prevents binding loop, is unused due to anchors
 
             opacity: thumbnailToolBar.shouldShow ? 1 : 0
-
             Behavior on opacity {
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
@@ -610,19 +612,16 @@ Kirigami.Page {
         }
     }
 
-    QQC2.Pane {
-        id: mobileActionsRow
-        visible: Kirigami.Settings.isMobile
+    // Mobile actions toolbar
+    QQC2.ToolBar {
+        id: mobileActionsToolBar
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
 
-        anchors {
-            left: parent.left
-            right: parent.right
-            bottom: parent.bottom
-            bottomMargin: root.mainWindow.controlsVisible ? 0 : -height
-        }
+        readonly property bool shouldShow: Kirigami.Settings.isMobile && root.mainWindow.controlsVisible
 
-        opacity: root.mainWindow.controlsVisible && Koko.Config.imageViewPreview ? 1 : 0
-
+        anchors.bottomMargin: mobileActionsToolBar.shouldShow ? 0 : -height
         Behavior on anchors.bottomMargin {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
@@ -630,94 +629,21 @@ Kirigami.Page {
             }
         }
 
-        Behavior on opacity {
-            OpacityAnimator {
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutQuad
-            }
-        }
+        visible: anchors.bottomMargin > -height
 
-        background: Rectangle {
-            color: 'black'
-            opacity: 0.7
-        }
+        position: QQC2.ToolBar.Footer
 
-        contentItem: RowLayout {
-            Repeater {
-                model: root.actions
-
-                QQC2.AbstractButton {
-                    action: modelData
-                    visible: modelData.visible
-
-                    Layout.fillHeight: true
-                    Layout.fillWidth: true
-
-                    contentItem: ColumnLayout {
-                        spacing: 0
-
-                        Kirigami.Icon {
-                            source: modelData.icon.name
-                            color: 'white'
-                            isMask: true
-                            Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
-                            Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
-                            Layout.alignment: Qt.AlignHCenter
-                        }
-
-                        QQC2.Label {
-                            text: modelData.text
-                            font: Kirigami.Theme.smallFont
-                            horizontalAlignment: Text.AlignHCenter
-                            color: 'white'
-                            Layout.fillWidth: true
-                        }
-                    }
+        contentItem: Kirigami.ActionToolBar {
+            opacity: mobileActionsToolBar.shouldShow ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
                 }
             }
 
-            QQC2.AbstractButton {
-                id: moreButton
-
-                Layout.fillHeight: true
-                Layout.fillWidth: true
-
-                icon.name: "view-more-symbolic"
-                text: i18n("More")
-                checkable: true
-
-                onPressedChanged: {
-                    if (pressed) {
-                        // fake "pressed" while menu is open
-                        checked = Qt.binding(function() {
-                            return fileMenu.visible;
-                        });
-                        fileMenu.visualParent = this;
-                        fileMenu.open(pressX, pressY);
-                    }
-                }
-
-                contentItem: ColumnLayout {
-                    spacing: 0
-
-                    Kirigami.Icon {
-                        source: moreButton.icon.name
-                        color: 'white'
-                        isMask: true
-                        Layout.preferredWidth: Kirigami.Units.iconSizes.sizeForLabels
-                        Layout.preferredHeight: Kirigami.Units.iconSizes.sizeForLabels
-                        Layout.alignment: Qt.AlignHCenter
-                    }
-
-                    QQC2.Label {
-                        text: moreButton.text
-                        font: Kirigami.Theme.smallFont
-                        horizontalAlignment: Text.AlignHCenter
-                        color: 'white'
-                        Layout.fillWidth: true
-                    }
-                }
-            }
+            actions: root.actions
+            alignment: Qt.AlignCenter
         }
     }
 
