@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-26 00:41+0000\n"
-"PO-Revision-Date: 2025-06-21 18:17+0200\n"
+"PO-Revision-Date: 2025-06-26 12:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -37,100 +37,91 @@ msgstr "Algemeen"
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Locaties"
+msgstr "Locatie"
 
 #: exiv2extractor.cpp:508
 #, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1MP)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #: exiv2extractor.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr "Bestandsnaam:"
+msgstr "Bestandsgrootte"
 
 #: exiv2extractor.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr "Aangemaakt:"
+msgstr "Datum aangemaakt"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Datum gewijzigd"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Datum gebruikt"
 
 #: exiv2extractor.cpp:528
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Pad"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Image viewer"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Afbeeldingsviewer"
+msgstr "Afbeeldingsgrootte"
 
 #: exiv2extractor.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "Bestandsnaam:"
+msgstr "Bestandstype"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Toelichting"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -558,7 +549,7 @@ msgstr "Huidige video niet herhalen"
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Metagegevensscherm configureren"
 
 #: qml/ImageViewPage.qml:76
 #, kde-format
@@ -760,7 +751,7 @@ msgstr "Tag toevoegen"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "Kies wat te tonen"
 
 #: qml/Main.qml:67
 #, kde-format

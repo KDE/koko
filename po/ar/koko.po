@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-26 00:41+0000\n"
-"PO-Revision-Date: 2024-11-28 13:22+0400\n"
+"PO-Revision-Date: 2025-06-26 11:11+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -29,11 +29,10 @@ msgid "Your emails"
 msgstr "zayed.alsaidi@gmail.com"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr "عام"
+msgstr "عامّ"
 
 #: exiv2extractor.cpp:72
 #, kde-format
@@ -162,12 +161,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "الصور هو عارض صور لمجموعة صورك."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(©) 2013-2020 مساهمو كِيدِي"
+msgstr "© 2013-%1 مساهمو كِيدِي"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -235,74 +232,73 @@ msgstr "عنوان الصورة المشارك بها هو <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "انتقل إلى الصور"
 
 #: photosapplication.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "أضف إلى المفضّلة"
+msgstr "انتقل إلى المفضّلة"
 
 #: photosapplication.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "انتقل إلى الفيديوهات"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "انتقل إلى المهملات"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "انتقل إلى المجلدات البعيدة"
 
 #: photosapplication.cpp:85
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب الدول"
 
 #: photosapplication.cpp:92
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by states"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب الولايات"
 
 #: photosapplication.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب المدن"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب السنين"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب الشهور"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب الأسابيع"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "انتقل إلى الصور المرتبة حسب الأيام"
 
 #: qml/AlbumDelegate.qml:118
 #, kde-format
@@ -316,8 +312,7 @@ msgstr[4] "%1 صورة"
 msgstr[5] "%1 صورة"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "المجلّدات"
@@ -394,22 +389,19 @@ msgid "No Media Found"
 msgstr "لم يعثر على وسيط"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "الصور"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "الفيديوهات"
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "المفضّلة"
@@ -781,8 +773,7 @@ msgid "Choose What's Shown"
 msgstr ""
 
 #: qml/Main.qml:67
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "الأماكن"
@@ -793,32 +784,28 @@ msgid "Images"
 msgstr "الصور"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "إعدادات"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "المهملات"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "الشبكة"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "احذف العلامة"
+msgstr "العلامات"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -826,22 +813,19 @@ msgid "Locations"
 msgstr "المواقع"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "البلدان"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "الولايات"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "المدن"
@@ -852,29 +836,25 @@ msgid "Time"
 msgstr "الوقت"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "السنوات"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "الأشهر"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "الأسابيع"
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "الأيام"
@@ -890,18 +870,16 @@ msgid "Thumbnails size:"
 msgstr "حجم المصغّرات:"
 
 #: qml/Settings/GeneralConfigPage.qml:38
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow:"
 msgstr "عرض الشرائح"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
-msgstr "عام"
+msgstr "عامّ"
 
 #: qml/Settings/PhotosConfigurationView.qml:26
 #, kde-format
@@ -910,11 +888,10 @@ msgstr "حول الصور"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "حول كِيدِي"
+msgstr "عن"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format

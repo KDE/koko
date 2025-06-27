@@ -52,11 +52,10 @@ msgid "XMPP"
 msgstr ""
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "位置"
+msgstr ""
 
 #: exiv2extractor.cpp:508
 #, kde-format
@@ -107,11 +106,10 @@ msgid "Path"
 msgstr ""
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "图像"
+msgstr ""
 
 #: exiv2extractor.cpp:530
 #, kde-format
@@ -911,11 +909,3 @@ msgstr "设置"
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
-
-#~ msgctxt "dimensions"
-#~ msgid "%1 x %2"
-#~ msgstr "%1 x %2"
-
-#~ msgctxt "@label"
-#~ msgid "Size:"
-#~ msgstr "大小："

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-26 00:41+0000\n"
-"PO-Revision-Date: 2025-06-21 14:03+0100\n"
+"PO-Revision-Date: 2025-06-26 23:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -39,99 +39,91 @@ msgstr "General"
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Lugares"
+msgstr "Ubicación"
 
 #: exiv2extractor.cpp:508
 #, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1 MP)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: exiv2extractor.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr "Nombre de archivo:"
+msgstr "Tamaño del archivo"
 
 #: exiv2extractor.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr "Creada:"
+msgstr "Fecha de creación"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Fecha de modificación"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Fecha de acceso"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "Ruta"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Imágenes"
+msgstr "Tamaño de la imagen"
 
 #: exiv2extractor.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "Nombre de archivo:"
+msgstr "Tipo de archivo"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -559,7 +551,7 @@ msgstr "No repetir el vídeo actual"
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Configurar la visualización de metadatos"
 
 #: qml/ImageViewPage.qml:76
 #, kde-format
@@ -924,27 +916,3 @@ msgstr "Preferencias"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Añadir nueva etiqueta…"
-
-#~ msgctxt "@label"
-#~ msgid "Dimension:"
-#~ msgstr "Dimensión:"
-
-#~ msgctxt "dimensions"
-#~ msgid "%1 x %2"
-#~ msgstr "%1 x %2"
-
-#~ msgctxt "@label"
-#~ msgid "Size:"
-#~ msgstr "Tamaño:"
-
-#~ msgctxt "@label"
-#~ msgid "Model:"
-#~ msgstr "Modelo:"
-
-#~ msgctxt "@label"
-#~ msgid "Latitude:"
-#~ msgstr "Latitud:"
-
-#~ msgctxt "@label"
-#~ msgid "Longitude:"
-#~ msgstr "Longitud:"

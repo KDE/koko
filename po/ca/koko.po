@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2020.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-26 00:41+0000\n"
-"PO-Revision-Date: 2025-06-21 10:33+0200\n"
+"PO-Revision-Date: 2025-06-26 09:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,99 +40,91 @@ msgstr "General"
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "Exif"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Ubicacions"
+msgstr "Ubicació"
 
 #: exiv2extractor.cpp:508
 #, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1MP)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: exiv2extractor.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr "Nom del fitxer:"
+msgstr "Mida del fitxer"
 
 #: exiv2extractor.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr "Creat:"
+msgstr "Data de creació"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Data de modificació"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Data d'accés"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "Camí"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Imatges"
+msgstr "Mida de la imatge"
 
 #: exiv2extractor.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "Nom del fitxer:"
+msgstr "Tipus de fitxer"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Comentari"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -561,7 +553,7 @@ msgstr "No repeteixis el vídeo actual"
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Configuració de la visualització de les metadades"
 
 #: qml/ImageViewPage.qml:76
 #, kde-format
@@ -764,7 +756,7 @@ msgstr "Afegeix una etiqueta"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "Trieu què es mostra"
 
 #: qml/Main.qml:67
 #, kde-format
@@ -927,44 +919,3 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afegeix una etiqueta nova…"
-
-#~ msgctxt "@label"
-#~ msgid "Dimension:"
-#~ msgstr "Dimensions:"
-
-#~ msgctxt "dimensions"
-#~ msgid "%1 x %2"
-#~ msgstr "%1 x %2"
-
-#~ msgctxt "@label"
-#~ msgid "Size:"
-#~ msgstr "Mida:"
-
-#~ msgctxt "@label"
-#~ msgid "Model:"
-#~ msgstr "Model:"
-
-#~ msgctxt "@label"
-#~ msgid "Latitude:"
-#~ msgstr "Latitud:"
-
-#~ msgctxt "@label"
-#~ msgid "Longitude:"
-#~ msgstr "Longitud:"
-
-#~ msgid "Pictures"
-#~ msgstr "Imatges"
-
-#~ msgid "Videos"
-#~ msgstr "Vídeos"
-
-#~ msgid "Favorites"
-#~ msgstr "Preferides"
-
-#~ msgid "Folders"
-#~ msgstr "Carpetes"
-
-#~| msgid "Pinned Folders"
-#~ msgctxt "@title:group"
-#~ msgid "Pinned Folders"
-#~ msgstr "Carpetes fixades"
