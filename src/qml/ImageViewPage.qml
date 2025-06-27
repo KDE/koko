@@ -684,6 +684,9 @@ Kirigami.Page {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
 
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+
         readonly property bool shouldShow: Kirigami.Settings.isMobile && root.mainWindow.controlsVisible
 
         anchors.bottomMargin: mobileActionsToolBar.shouldShow ? 0 : -height
@@ -709,6 +712,7 @@ Kirigami.Page {
 
             actions: root.actions
             alignment: Qt.AlignCenter
+            display: QQC2.Button.TextUnderIcon
         }
     }
 
