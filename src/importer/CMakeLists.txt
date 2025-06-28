@@ -2,12 +2,14 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_library(koko_importer_static STATIC
-    mimetypeutils.cpp
-    mimetypeutils.h
+    deviceimagemodel.cpp
+    deviceimagemodel.h
     documentdirfinder.cpp
     documentdirfinder.h
     importerhelper.cpp
     importerhelper.h
+    mimetypeutils.cpp
+    mimetypeutils.h
 )
 
 ecm_add_qml_module(koko_importer_static

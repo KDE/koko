@@ -6,9 +6,12 @@ import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 
 import org.kde.koko as Koko
+import org.kde.koko.importer as Importer
 
 Kirigami.ScrollablePage {
     id: root
+
+    property alias url: deviceImageModel.url
 
     GridView {
         id: gridView
@@ -18,8 +21,8 @@ Kirigami.ScrollablePage {
 
         model: Koko.SortModel {
             filterRole: Koko.Roles.MimeTypeRole
-            sourceModel: Koko.ImageFolderModel {
-                url: "camera:/"
+            sourceModel: Importer.DeviceImageModel {
+                id: deviceImageModel
             }
         }
 
@@ -28,8 +31,8 @@ Kirigami.ScrollablePage {
 
             highlighted: gridView.currentIndex == index
 
-            Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
-            Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
+            Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(imageurl)
+            Controls.ToolTip.visible: hovered && itemType === Koko.Types.Image
             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
         }
     }

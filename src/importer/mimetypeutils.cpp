@@ -133,7 +133,7 @@ Kind mimeTypeKind(const QString &mimeType)
 
 Kind fileItemKind(const KFileItem &item)
 {
-    if (!item.isNull()) {
+    if (item.isNull()) {
         return KIND_UNKNOWN;
     }
     return mimeTypeKind(item.mimetype());

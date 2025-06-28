@@ -5,10 +5,8 @@
 
 #include <QDesktopServices>
 #include <QStandardPaths>
-#include <QUrl>
 
 #include <KIO/DesktopExecParser>
-#include <KIO/StatJob>
 #include <KLocalizedString>
 
 #include "documentdirfinder.h"
@@ -18,41 +16,42 @@ using namespace Qt::StringLiterals;
 ImporterHelper::ImporterHelper(QObject *parent)
     : QObject(parent)
 {
-    auto job = KIO::stat(QUrl(u"camera:/"_s));
-    connect(job, &KJob::finished, this, [this](KJob *job) {
-        if (job->error() == KIO::Error::ERR_CANNOT_CREATE_WORKER) {
-            m_isMtpWorkerAvailable = false;
-        } else {
-            m_isMtpWorkerAvailable = true;
+    m_discoverAvailable = !QStandardPaths::findExecutable(u"plasma-discover"_s).isEmpty();
+
+    refresh();
+}
+
+void ImporterHelper::refresh()
+{
+    auto finder = new DocumentDirFinder(QUrl(u"camera:"_s));
+    connect(finder, &DocumentDirFinder::done, this, [this, finder](const QUrl &url, DocumentDirFinder::Status status) {
+        if (status != DocumentDirFinder::NoDocumentFound) {
+            m_imageDirectory = url;
+            Q_EMIT imageDirectoryChanged();
         }
 
+        m_isMtpWorkerAvailable = true;
         Q_EMIT isMtpWorkerAvailableChanged();
+
+        m_loading = false;
+        Q_EMIT loadingChanged();
+
+        finder->deleteLater();
+    });
+    connect(finder, &DocumentDirFinder::protocollNotSupportedError, this, [this](const QString &errorText) {
+        Q_UNUSED(errorText);
+        m_isMtpWorkerAvailable = false;
+        Q_EMIT isMtpWorkerAvailableChanged();
+
         m_loading = false;
         Q_EMIT loadingChanged();
     });
-    job->start();
-
-    m_discoverAvailable = !QStandardPaths::findExecutable(u"plasma-discover"_s).isEmpty();
-
-    auto finder = new DocumentDirFinder(QUrl(u"camera:/"_s));
-    connect(finder, &DocumentDirFinder::done, this, [this](const QUrl &url) {
-        // QString path = QDir(d->mSrcBaseUrl.path()).relativeFilePath(d->mSrcUrl.path());
-        // QString text;
-        // if (path.isEmpty() || path == QLatin1String(".")) {
-        //     text = d->mSrcBaseName;
-        // } else {
-        //     path = QUrl::fromPercentEncoding(path.toUtf8());
-        //     path.replace('/', QString::fromUtf8(" › "));
-        //     text = QString::fromUtf8("%1 › %2").arg(d->mSrcBaseName, path);
-        // }
-        // d->mSrcUrlButton->setText(text);
-        // m_url;
-    });
-    connect(finder, &DocumentDirFinder::protocollNotSupportedError, this, [this](const QString &errorText) {
-        m_isMtpWorkerAvailable = false;
-        Q_EMIT isMtpWorkerAvailableChanged();
-    });
     finder->start();
+}
+
+QUrl ImporterHelper::imageDirectory() const
+{
+    return m_imageDirectory;
 }
 
 bool ImporterHelper::isMtpWorkerAvailable() const

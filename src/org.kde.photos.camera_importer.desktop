@@ -1,0 +1,10 @@
+[Desktop Entry]
+X-KDE-Solid-Predicate=Camera.supportedDrivers == 'gphoto'
+X-KDE-AliasFor=org.kde.koko
+Type=Service
+Actions=open;
+
+[Desktop Action open]
+Exec=koko --import=camera:/
+Icon=org.kde.koko
+Name=Download Photos

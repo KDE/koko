@@ -78,7 +78,6 @@ void DocumentDirFinder::finish(const QUrl &url, DocumentDirFinder::Status status
 {
     disconnect(mDirLister, nullptr, this, nullptr);
     Q_EMIT done(url, status);
-    deleteLater();
 }
 
 #include "moc_documentdirfinder.cpp"

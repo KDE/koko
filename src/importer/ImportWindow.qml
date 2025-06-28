@@ -16,8 +16,10 @@ Kirigami.ApplicationWindow {
         }
 
         onLoadingChanged: () => {
-            if (!loading && isMtpWorkerAvailable) {
-                root.pageStack.replace(Qt.createComponent("org.kde.koko.importer", "DevicePhotosPage"))
+            if (!loading && isMtpWorkerAvailable && imageDirectory.toString().length > 0) {
+                root.pageStack.replace(Qt.createComponent("org.kde.koko.importer", "DevicePhotosPage"), {
+                    url: importerHelper.imageDirectory,
+                })
             }
         }
     }
@@ -27,11 +29,27 @@ Kirigami.ApplicationWindow {
             anchors.centerIn: parent
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
             icon.name: 'edit-none-symbolic'
-            text: importerHelper.loading ? i18nc("@info:placeholder", "Loading") : i18nc("@info:placeholder", "Support for your camera is not installed.")
-            explanation: importerHelper.loading ? '' : i18nc("@info:placeholder", "After finishing the installation process, restart the importer to continue.")
-            visible: importerHelper.loading || !importerHelper.isMtpWorkerAvailable
+            text: if (importerHelper.loading) {
+                return i18nc("@info:placeholder", "Loading");
+            } else if (importerHelper.imageDirectory.toString().length === 0) {
+                return i18nc("@info:placeholder", "No images or camera found.")
+            } else {
+                return i18nc("@info:placeholder", "Support for your camera is not installed.")
+            }
+            explanation: if (importerHelper.loading || importerHelper.imageDirectory.toString().length === 0) {
+                return '';
+            } else {
+                return i18nc("@info:placeholder", "After finishing the installation process, restart the importer to continue.");
+            }
+            visible: importerHelper.loading || !importerHelper.isMtpWorkerAvailable || importerHelper.imageDirectory.toString().length === 0
 
-            helpfulAction: importerHelper.loading ? null : installAction
+            helpfulAction: if (importerHelper.loading) {
+                return null;
+            } else if (importerHelper.isMtpWorkerAvailable && importerHelper.imageDirectory.toString().length === 0) {
+                return refreshAction;
+            } else {
+                return installAction;
+            }
 
             Kirigami.Action {
                 id: installAction
@@ -39,6 +57,14 @@ Kirigami.ApplicationWindow {
                 icon.name: "plasmadiscover"
                 text: i18nc("@action:button", "Install Support for this Camera…")
                 onTriggered: importerHelper.installKioWorker();
+            }
+
+            Kirigami.Action {
+                id: refreshAction
+
+                icon.name: "view-refresh-symbolic"
+                text: i18nc("@action:button", "Refresh…")
+                onTriggered: importerHelper.refresh();
             }
         }
     }

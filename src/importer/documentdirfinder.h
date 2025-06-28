@@ -29,6 +29,7 @@ public:
         DocumentDirFound,
         MultipleDirsFound,
     };
+    Q_ENUM(Status);
 
     explicit DocumentDirFinder(const QUrl &rootUrl);
     ~DocumentDirFinder() override;
