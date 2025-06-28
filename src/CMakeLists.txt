@@ -85,12 +85,19 @@ ecm_add_qml_module(koko_static
         org.kde.kirigamiaddons.statefulapp
 )
 
+ecm_target_qml_sources(koko_static PRIVATE PATH editor SOURCES
+    qml/editor/AnimatedLoader.qml
+    qml/editor/AnnotationsToolBarContents.qml
+    qml/editor/ButtonGrid.qml
+    qml/editor/EditorView.qml
+    qml/editor/UndoRedoGroup.qml
+)
+
 ecm_target_qml_sources(koko_static SOURCES
     qml/AlbumDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml
     qml/DelegateLoader.qml
-    qml/EditorView.qml
     qml/ImageMetadataPage.qml
     qml/ImageViewPage.qml
     qml/InfoDrawer.qml
