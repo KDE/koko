@@ -80,5 +80,11 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <default>General.Name,General.Size,General.ImageSize,General.Created,Exif.Image.Model,General.Location</default>
         </entry>
     </group>
+    <group name="Editor">
+        <entry name="AnnotationToolType" type="int">
+            <label>Last selected annotation tool</label>
+            <default></default>
+        </entry>
+    </group>
 </kcfg>
 
