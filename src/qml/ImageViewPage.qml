@@ -622,19 +622,19 @@ Kirigami.Page {
     // Desktop thumbnail toolbar
     QQC2.ToolBar {
         id: thumbnailToolBar
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-        Kirigami.Theme.inherit: false
 
         readonly property bool shouldShow: !Kirigami.Settings.isMobile
                                         && root.mainWindow.controlsVisible
                                         && Koko.Config.imageViewPreview
                                         && listView.count > 1
 
-        anchors.bottomMargin: thumbnailToolBar.shouldShow ? 0 : -height
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: thumbnailToolBar.shouldShow ? 0 : -height
+        }
+
         Behavior on anchors.bottomMargin {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
@@ -643,12 +643,13 @@ Kirigami.Page {
         }
 
         visible: anchors.bottomMargin > -height
-
-        position: QQC2.ToolBar.Footer
-
         implicitHeight: thumbnailView.delegateSize + (padding * 2)
 
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
+
         padding: Kirigami.Units.largeSpacing
+        position: QQC2.ToolBar.Footer
 
         contentItem: QQC2.ScrollView {
             id: thumbnailScrollView
@@ -680,16 +681,16 @@ Kirigami.Page {
     // Mobile actions toolbar
     QQC2.ToolBar {
         id: mobileActionsToolBar
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
-
-        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-        Kirigami.Theme.inherit: false
 
         readonly property bool shouldShow: Kirigami.Settings.isMobile && root.mainWindow.controlsVisible
 
-        anchors.bottomMargin: mobileActionsToolBar.shouldShow ? 0 : -height
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            bottomMargin: mobileActionsToolBar.shouldShow ? 0 : -height
+        }
+
         Behavior on anchors.bottomMargin {
             NumberAnimation {
                 duration: Kirigami.Units.longDuration
@@ -698,6 +699,9 @@ Kirigami.Page {
         }
 
         visible: anchors.bottomMargin > -height
+
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        Kirigami.Theme.inherit: false
 
         position: QQC2.ToolBar.Footer
 
