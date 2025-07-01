@@ -39,7 +39,6 @@ StatefulApp.StatefulWindow {
 
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
         layers.onDepthChanged: root.updateGlobalDrawer()
-        leftSidebar: root.globalDrawer
     }
 
     minimumWidth: Kirigami.Units.gridUnit * 15
@@ -79,7 +78,7 @@ StatefulApp.StatefulWindow {
     function updateGlobalDrawer(): void {
         if (!fetchImageToOpen && globalDrawer) {
             globalDrawer.enabled = pageStack.layers.depth < 2;
-            globalDrawer.drawerOpen = !globalDrawer.modal;
+            globalDrawer.drawerOpen = !globalDrawer.modal && pageStack.layers.depth < 2;
         }
     }
 
