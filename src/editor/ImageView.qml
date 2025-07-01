@@ -14,36 +14,11 @@ import QtQuick.Layouts
 import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kquickimageeditor as KQuickImageEditor
-import "../Dialog"
 
-Kirigami.Page {
+Controls.Page {
     id: root
 
-    property string imagePath
-    onImagePathChanged: {
-        annotationEditor.document.setBaseImageFromLocalFile(imagePath.replace("file://", ""))
-    }
-
-    property bool annotating: true
-
-    signal imageEdited()
-
-    function dprRound(v: double): double {
-        return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
-    }
-
-    title: i18n("Edit")
-
-    leftPadding: mirrored && verticalScrollBar.visible ? verticalScrollBar.width : 0
-    rightPadding: !mirrored && verticalScrollBar.visible ? verticalScrollBar.width : 0
-    bottomPadding: horizontalScrollBar.visible ? horizontalScrollBar.height : 0
-
-    onBackRequested: (event) => {
-        //if (imageDoc.edited && !root.forceDiscard) {
-        //    confirmDiscardingChangeDialog.visible = true;
-        //    event.accepted = true;
-        //}
-    }
+    property alias document: annotationEditor.document
 
     readonly property real fitZoom: Math.min(flickable.width / annotationEditor.document.canvasRect.width,
                                              flickable.height / annotationEditor.document.canvasRect.height)
@@ -51,6 +26,10 @@ Kirigami.Page {
     readonly property real maxZoom: Math.max(minZoom, 8)
     readonly property real currentZoom: annotationEditor.scale
     property bool showCropTool: false
+
+    function dprRound(v: double): double {
+        return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
+    }
 
     function zoomToPercent(percent, center = flickable.mapToItem(flickable.contentItem,
                                                                  flickable.width / 2,
@@ -99,20 +78,15 @@ Kirigami.Page {
         zoomToPercent(currentZoom + (inverseRemainder % stepSize) - stepSize, centerPos)
     }
 
-    ConfirmDiscardingChange {
-        id: confirmDiscardingChangeDialog
-        onDiscardChanges: {
-            root.forceDiscard = true;
-            applicationWindow().pageStack.layers.pop();
-        }
-    }
+    leftPadding: mirrored && verticalScrollBar.visible ? verticalScrollBar.width : 0
+    rightPadding: !mirrored && verticalScrollBar.visible ? verticalScrollBar.width : 0
+    bottomPadding: horizontalScrollBar.visible ? horizontalScrollBar.height : 0
 
     contentItem: Flickable {
         id: flickable
 
-        clip: root.annotating
-        interactive: root.annotating
-            && annotationEditor.document.tool.type === KQuickImageEditor.AnnotationTool.NoTool
+        clip: true
+        interactive: annotationEditor.document.tool.type === KQuickImageEditor.AnnotationTool.NoTool
         boundsBehavior: Flickable.StopAtBounds
         rebound: Transition {} // Instant transition. Null doesn't do this.
         contentWidth: Math.max(width, annotationEditor.document.canvasRect.width * annotationEditor.scale)
@@ -120,14 +94,9 @@ Kirigami.Page {
 
         Kirigami.WheelHandler {
             property point angleDelta: Qt.point(0,0)
-            Binding on angleDelta { // reset when annotation tools are hidden
-                value: Qt.point(0,0)
-                when: !root.annotating
-                restoreMode: Binding.RestoreNone
-            }
             target: flickable
             keyNavigationEnabled: true
-            scrollFlickableTarget: root.annotating
+            scrollFlickableTarget: true
             horizontalStepSize: dprRound(Application.styleHints.wheelScrollLines * 20)
             verticalStepSize: dprRound(Application.styleHints.wheelScrollLines * 20)
             onWheel: wheel => {
@@ -185,28 +154,24 @@ Kirigami.Page {
             anchors.fill: annotationEditor
             transformOrigin: annotationEditor.transformOrigin
             scale: annotationEditor.scale
-            enabled: !root.annotating
-                || (flickable.interactive
+            enabled: flickable.interactive
                     && (flickable.contentItem.width > flickable.width
-                        || flickable.contentItem.height > flickable.height))
+                        || flickable.contentItem.height > flickable.height)
             cursorShape: enabled ?
                 (containsPress || flickable.dragging ? Qt.ClosedHandCursor : Qt.OpenHandCursor)
                 : undefined
-            onPositionChanged: if (!root.annotating) {
-                contextWindow.startDrag()
-            }
         }
 
-        KQuickImageEditor.AnnotationEditor {
+        AnnotationEditor {
             id: annotationEditor
             x: dprRound((flickable.contentItem.width - annotationEditor.document.canvasRect.width * scale) / 2)
             y: dprRound((flickable.contentItem.height - annotationEditor.document.canvasRect.height * scale) / 2)
             implicitWidth: annotationEditor.document.canvasRect.width
             implicitHeight: annotationEditor.document.canvasRect.height
             transformOrigin: Item.TopLeft
-            scale: root.fitZoom
+            scale: 1
             visible: true
-            enabled: root.annotating
+            enabled: true
             document: annotationEditor.document
             Keys.forwardTo: cropTool
             Keys.priority: Keys.AfterItem
@@ -218,7 +183,7 @@ Kirigami.Page {
             transformOrigin: annotationEditor.transformOrigin
             scale: annotationEditor.scale
             viewport: annotationEditor
-            active: root.showCropTool && root.annotating
+            active: root.showCropTool
         }
 
         AnimatedLoader {
@@ -247,37 +212,4 @@ Kirigami.Page {
             }
         }
     }
-
-    footer: AnnotationsToolBarContents {
-        document: annotationEditor.document
-    }
-
-    state: "normal"
-    states: [
-        State {
-            name: "annotating"
-            when: root.annotating
-            PropertyChanges {
-                target: annotationEditor
-                scale: 1
-            }
-        },
-        State {
-            name: "normal"
-            when: !root.annotating
-            PropertyChanges {
-                target: annotationEditor
-                scale: root.fitZoom
-            }
-        }
-    ]
-    transitions: [
-        Transition {
-            NumberAnimation {
-                property: "scale"
-                duration: Kirigami.Units.longDuration
-                easing.type: Easing.InOutSine
-            }
-        }
-    ]
 }
