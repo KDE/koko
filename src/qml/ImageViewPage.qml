@@ -144,6 +144,7 @@ Kirigami.Page {
             }
 
             shortcut: "I"
+            enabled: root.mainWindow.controlsVisible
             checkable: true
             checked: false
             onToggled: if (checked) {
@@ -314,7 +315,7 @@ Kirigami.Page {
         anchors {
             top: parent.top
             left: parent.left
-            right: parent.right
+            right: infoSideBar.left
             bottom: Kirigami.Settings.isMobile ? mobileActionsToolBar.top : thumbnailToolBar.top
         }
 
@@ -630,7 +631,7 @@ Kirigami.Page {
 
         anchors {
             left: parent.left
-            right: parent.right
+            right: infoSideBar.left
             bottom: parent.bottom
             bottomMargin: thumbnailToolBar.shouldShow ? 0 : -height
         }
@@ -717,6 +718,67 @@ Kirigami.Page {
             actions: root.actions
             alignment: Qt.AlignCenter
             display: QQC2.Button.TextUnderIcon
+        }
+    }
+
+    // Information sidebar & drawer (mobile)
+    Row {
+        id: infoSideBar
+
+        readonly property bool shouldShow: !Kirigami.Settings.isMobile && root.mainWindow.controlsVisible && infoAction.checked
+
+        anchors {
+            top: parent.top
+            right: parent.right
+            rightMargin: infoSideBar.shouldShow ? 0 : -width
+            bottom: parent.bottom
+        }
+
+        Behavior on anchors.rightMargin {
+            NumberAnimation {
+                duration: Kirigami.Units.longDuration
+                easing.type: Easing.InOutQuad
+            }
+        }
+
+        visible: anchors.rightMargin > -width
+
+        Kirigami.Separator {
+            height: parent.height
+        }
+
+        Loader {
+            id: infoSidebarLoader
+
+            height: parent.height
+            width: Math.min(Kirigami.Units.gridUnit * 14, root.width / 2)
+
+            active: visible
+            sourceComponent: InfoSidebar {
+                extractor: exiv2Extractor
+                application: root.application
+                anchors.fill: parent
+            }
+        }
+    }
+
+    Loader {
+        id: infoDrawerLoader
+        anchors.fill: parent
+
+        active: Kirigami.Settings.isMobile && infoAction.checked
+        visible: active
+
+        sourceComponent: InfoDrawer {
+            extractor: exiv2Extractor
+            application: root.application
+        }
+
+        Connections {
+            target: infoDrawerLoader.item
+            function onClosed() {
+                infoAction.checked = false
+            }
         }
     }
 
@@ -908,108 +970,6 @@ Kirigami.Page {
         HoverHandler {
             id: hoverHandler
             margin: parent.implicitHeight/2
-        }
-    }
-
-    Kirigami.Separator {
-        id: splitter
-        z: 1
-        x: root.mirrored ? 0 : root.width
-        visible: infoSidebarLoader.active
-        height: parent.height
-        width: visible ? implicitWidth : 0
-        MouseArea {
-            cursorShape: Qt.SplitHCursor
-            drag {
-                axis: Drag.XAxis
-                target: splitter
-                minimumX: root.mirrored ? 0 : root.width - splitter.width - infoSidebarLoader.implicitWidth
-                maximumX: root.mirrored ? infoSidebarLoader.implicitWidth : root.width - splitter.width
-                threshold: 0
-            }
-            anchors.fill: parent
-            anchors.margins: -Kirigami.Units.largeSpacing
-        }
-        states: [
-            State { name: "opened"; when: splitter.visible
-                PropertyChanges {
-                    explicit: true
-                    target: splitter
-                    x: root.mirrored ? infoSidebarLoader.implicitWidth : root.width - splitter.implicitWidth - infoSidebarLoader.implicitWidth
-                }
-            },
-            State { name: "closed"; when: !splitter.visible
-                PropertyChanges {
-                    explicit: true
-                    target: splitter
-                    x: root.mirrored ? 0 : root.width
-                }
-            }
-        ]
-        transitions: [
-            Transition {
-                from: "*"; to: "closed"
-                SequentialAnimation {
-                    NumberAnimation { property: "x"; duration: Kirigami.Units.longDuration; easing.type: Easing.OutCubic }
-                    PropertyAction {
-                        target: listView
-                        property: "anchors.right"
-                        value: listView.parent.right
-                    }
-                }
-            },
-            Transition {
-                from: "*"; to: "opened"
-                SequentialAnimation {
-                    PropertyAction {
-                        target: listView
-                        property: "anchors.right"
-                        value: splitter.left
-                    }
-                    NumberAnimation { property: "x"; duration: Kirigami.Units.longDuration; easing.type: Easing.OutCubic }
-                }
-            }
-        ]
-    }
-
-    Loader {
-        id: infoSidebarLoader
-        active: !Kirigami.Settings.isMobile && infoAction.checked
-        visible: active
-        sourceComponent: InfoSidebar {
-            extractor: exiv2Extractor
-            application: root.application
-            anchors.fill: parent
-        }
-        anchors {
-            left: splitter.right
-            right: parent.right
-            top: parent.top
-            bottom: parent.bottom
-        }
-
-        Connections {
-            target: infoSidebarLoader.item
-            function onClosed(): void {
-                infoAction.checked = false
-            }
-        }
-    }
-
-    Loader {
-        id: infoDrawerLoader
-        active: Kirigami.Settings.isMobile && infoAction.checked
-        visible: active
-        anchors.fill: parent
-        sourceComponent: InfoDrawer {
-            extractor: exiv2Extractor
-            application: root.application
-        }
-        Connections {
-            target: infoDrawerLoader.item
-            function onClosed() {
-                infoAction.checked = false
-            }
         }
     }
 
