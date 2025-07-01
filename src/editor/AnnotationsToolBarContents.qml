@@ -6,36 +6,27 @@ import QtQuick
 import QtQuick.Templates as T
 import QtQuick.Controls as QQC
 import org.kde.kquickimageeditor
+import org.kde.koko as Koko
 
 ButtonGrid {
     id: root
-    property bool showUndoRedo: true
     property bool showNoneButton: false
     property bool rememberToolType: false
     property alias checkedButton: toolGroup.checkedButton
     readonly property alias usingCropTool: cropToolButton.checked
 
     required property AnnotationDocument document
+    readonly property AnnotationTool tool: document.tool
     readonly property int toolType: document.tool?.type ?? AnnotationTool.NoTool
 
-    Loader {
-        visible: active
-        active: root.showUndoRedo
-        sourceComponent: UndoRedoGroup {
-            document: root.document
-            animationsEnabled: root.animationsEnabled
-            height: flow === Grid.LeftToRight ? buttonHeight : implicitHeight
-            width: flow === Grid.TopToBottom ? buttonHeight : implicitWidth
-            focusPolicy: root.focusPolicy
-            flow: root.flow
-            spacing: root.spacing
-        }
+    function dprRound(v: double): double {
+        return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
     }
 
     QQC.ButtonGroup {
         id: toolGroup
         exclusive: true
-        onClicked: Settings.annotationToolType = root.tool.type
+        onClicked: Koko.Config.annotationToolType = root.tool.type
     }
 
     QQC.ToolTip {
@@ -217,6 +208,6 @@ ButtonGrid {
     }
 
     Component.onCompleted: if (rememberToolType) {
-        root.tool.type = Settings.annotationToolType
+        root.tool.type = Koko.Config.annotationToolType
     }
 }
