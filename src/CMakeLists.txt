@@ -3,6 +3,8 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
+add_subdirectory(editor)
+
 add_library(koko_static STATIC
     imagestorage.cpp
     exiv2extractor.cpp
@@ -71,19 +73,12 @@ target_link_libraries(koko_static PUBLIC
     KF6::Notifications
     KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
+    KQuickImageEditor
 )
 
 ecm_add_qml_module(koko_static
     URI "org.kde.koko"
     GENERATE_PLUGIN_SOURCE
-)
-
-ecm_target_qml_sources(koko_static PRIVATE PATH editor SOURCES
-    qml/editor/AnimatedLoader.qml
-    qml/editor/AnnotationsToolBarContents.qml
-    qml/editor/ButtonGrid.qml
-    qml/editor/EditorView.qml
-    qml/editor/UndoRedoGroup.qml
 )
 
 ecm_target_qml_sources(koko_static SOURCES
@@ -122,12 +117,6 @@ ecm_target_qml_sources(koko_static PRIVATE
         qml/imagedelegate/VideoPlayer.qml
 )
 
-ecm_target_qml_sources(koko_static PRIVATE
-    PATH Dialog
-    SOURCES
-        qml/Dialog/ConfirmDiscardingChange.qml
-)
-
 if(ANDROID)
     target_link_libraries(koko_static PUBLIC Qt::AndroidExtras)
 else()
@@ -148,6 +137,8 @@ add_executable(koko
 target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
+    photos_editor_static
+    photos_editor_staticplugin
 )
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
