@@ -6,6 +6,7 @@
 add_subdirectory(models)
 
 add_subdirectory(thumbnails)
+add_subdirectory(editor)
 
 add_library(koko_static STATIC
     exiv2extractor.cpp
@@ -63,6 +64,7 @@ target_link_libraries(koko_static PUBLIC
     KF6::Notifications
     KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
+    KQuickImageEditor
 )
 
 ecm_add_qml_module(koko_static
@@ -71,14 +73,6 @@ ecm_add_qml_module(koko_static
     IMPORTS
         org.kde.photos.models
         org.kde.photos.thumbnails
-)
-
-ecm_target_qml_sources(koko_static PRIVATE PATH editor SOURCES
-    qml/editor/AnimatedLoader.qml
-    qml/editor/AnnotationsToolBarContents.qml
-    qml/editor/ButtonGrid.qml
-    qml/editor/EditorView.qml
-    qml/editor/UndoRedoGroup.qml
 )
 
 ecm_target_qml_sources(koko_static SOURCES
@@ -117,12 +111,6 @@ ecm_target_qml_sources(koko_static PRIVATE
         qml/imagedelegate/VideoPlayer.qml
 )
 
-ecm_target_qml_sources(koko_static PRIVATE
-    PATH Dialog
-    SOURCES
-        qml/Dialog/ConfirmDiscardingChange.qml
-)
-
 if(ANDROID)
     target_link_libraries(koko_static PUBLIC Qt::AndroidExtras)
 else()
@@ -145,6 +133,8 @@ target_link_libraries(koko PRIVATE
     koko_staticplugin
     photos_model_staticplugin
     photos_thumbnails_staticplugin
+    photos_editor_static
+    photos_editor_staticplugin
 )
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
