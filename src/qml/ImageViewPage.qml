@@ -983,15 +983,6 @@ Kirigami.Page {
         onActivated: listView.incrementCurrentIndex()
     }
 
-    Shortcut {
-        sequence: "Space"
-        onActivated: {
-            if (slideshowManager.running) {
-                slideshowManager.stop()
-            }
-        }
-    }
-
     Component.onCompleted: {
         root.mainWindow.controlsVisible = true;
         listView.forceActiveFocus();
