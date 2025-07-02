@@ -144,7 +144,7 @@ Kirigami.Page {
             }
 
             shortcut: "I"
-            enabled: root.mainWindow.controlsVisible
+            enabled: Kirigami.Settings.isMobile ? true : root.mainWindow.controlsVisible
             checkable: true
             checked: false
             onToggled: if (checked) {
