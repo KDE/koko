@@ -78,37 +78,134 @@ Flickable {
                     text: ratingDelegate.text
                 }
 
-                Row {
-                    // stars look disconnected with higher spacing
-                    spacing: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 4)
-                    Accessible.role: Accessible.List
-                    Accessible.name: i18n("Current rating %1", flickable.extractor.rating)
-                    Layout.fillWidth: true
-                    Repeater {
-                        model: [ 1, 3, 5, 7, 9 ]
-                        QQC2.AbstractButton {
-                            activeFocusOnTab: true
-                            width: height
-                            height: Kirigami.Units.iconSizes.smallMedium
-                            text: i18n("Set rating to %1", ratingTo)
-                            property int ratingTo: {
-                                if (flickable.extractor.rating == modelData + 1) {
-                                    return modelData
-                                } else if (flickable.extractor.rating == modelData) {
-                                    return modelData - 1
-                                } else {
-                                    return modelData + 1
+                // NOTE: This could be made generic and shared where other apps want a good ratings control
+                Item {
+                    implicitHeight: ratingRow.height
+                    implicitWidth: ratingRow.width
+
+                    Row {
+                        id: ratingRow
+
+                        readonly property int size: Kirigami.Units.iconSizes.smallMedium
+
+                        // stars look disconnected with higher spacing
+                        spacing: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : Math.round(Kirigami.Units.smallSpacing / 4)
+
+                        Accessible.role: Accessible.List
+                        Accessible.name: i18n("Current rating %1", flickable.extractor.rating)
+                        Layout.fillWidth: true
+
+                        Repeater {
+                            model: [ 1, 3, 5, 7, 9 ]
+                            // NOTE: Despite MouseArea handling clicking, ratings must
+                            // still be AbstractButton to allow for keyboard interaction
+                            delegate: QQC2.AbstractButton {
+                                readonly property int midRating: modelData
+                                readonly property int ratingTo: {
+                                    if (flickable.extractor.rating == midRating + 1) {
+                                        return midRating
+                                    } else if (flickable.extractor.rating == midRating) {
+                                        return midRating - 1
+                                    } else {
+                                        return midRating + 1
+                                    }
+                                }
+
+                                activeFocusOnTab: true
+                                width: ratingRow.size
+                                height: ratingRow.size
+                                text: i18n("Set rating to %1", ratingTo)
+
+                                contentItem: Kirigami.Icon {
+                                    source: {
+                                        if (flickable.extractor.rating > midRating) {
+                                            return "rating";
+                                        } else if (flickable.extractor.rating < midRating) {
+                                            return "rating-unrated";
+                                        } else {
+                                            return Qt.application.layoutDirection === Qt.LeftToRight ? "rating-half" : "rating-half-rtl";
+                                        }
+                                    }
+                                    width: parent.width
+                                    height: parent.height
+                                    color: (parent.focusReason == Qt.TabFocusReason || parent.focusReason == Qt.BacktabFocusReason) && parent.activeFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                                }
+
+                                onClicked: {
+                                    flickable.extractor.rating = ratingTo
                                 }
                             }
-                            contentItem: Kirigami.Icon {
-                                source: flickable.extractor.rating > modelData ? "rating" :
-                                        flickable.extractor.rating < modelData ? "rating-unrated" : "rating-half"
-                                width: parent.width
-                                height: parent.height
-                                color: (parent.focusReason == Qt.TabFocusReason || parent.focusReason == Qt.BacktabFocusReason) && parent.activeFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+                        }
+                    }
+
+                    // Handle dragging and clicking between rating buttons
+                    MouseArea {
+                        anchors.fill: parent
+
+                        // Only recognise a drag when we move this distance
+                        readonly property int minimumDragDistance: 2
+
+                        property int pressX: 0
+                        property int pressY: 0
+                        property bool isDrag: false
+
+                        function closestRatingItem(x: int, y: int): Item {
+                            let bestDistance = Number.MAX_VALUE;
+                            let best = null;
+
+                            for (let i = 0; i < ratingRow.children.length; ++i) {
+                                let child = ratingRow.children[i];
+                                if (child instanceof QQC2.AbstractButton) {
+                                    let dx = x - (child.x + (child.width / 2));
+                                    let dy = y - (child.y + (child.height / 2));
+
+                                    let distanceToCenter = Math.hypot(dx, dy);
+                                    if (distanceToCenter < bestDistance) {
+                                        bestDistance = distanceToCenter;
+                                        best = child;
+                                    }
+                                }
                             }
-                            onClicked: {
-                                flickable.extractor.rating = ratingTo
+
+                            return best;
+                        }
+
+                        onPressed: (mouse) => {
+                            // Store x,y such that we can recognise a drag when we move far enough
+                            pressX = mouse.x;
+                            pressY = mouse.y;
+                            isDrag = false;
+                        }
+                        onPositionChanged: (mouse) => {
+                            if (!isDrag) {
+                                // Don't start dragging until the mouse moves just a little bit
+                                isDrag = Math.hypot(mouse.x - pressX, mouse.y - pressY) >= minimumDragDistance;
+                            } else {
+                                let item = closestRatingItem(mouse.x, mouse.y);
+                                if (item) {
+                                    let localX = mouse.x - item.x;
+                                    let third = item.width / 3;
+                                    let reversed = (Qt.application.layoutDirection === Qt.RightToLeft);
+
+                                    let newRating;
+                                    if (localX < third) {
+                                        newRating = (reversed ? item.midRating + 1 : item.midRating - 1);
+                                    } else if (localX > (item.width - third)) {
+                                        newRating = (reversed ? item.midRating - 1 : item.midRating + 1);
+                                    } else {
+                                        newRating = item.midRating;
+                                    }
+
+                                    if (flickable.extractor.rating !== newRating) {
+                                        flickable.extractor.rating = newRating;
+                                    }
+                                }
+                            }
+                        }
+                        onClicked: (mouse) => {
+                            // Only handle click when we aren't dragging
+                            if (!isDrag) {
+                                closestRatingItem(mouse.x, mouse.y)?.clicked();
                             }
                         }
                     }
