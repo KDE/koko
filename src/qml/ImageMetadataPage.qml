@@ -43,7 +43,7 @@ Kirigami.ScrollablePage {
             }
 
             contentItem: Delegates.SubtitleContentItem {
-                subtitle: delegate.displayName
+                subtitle: delegate.displayName.length > 0 ? delegate.displayName : i18nc("@label Placeholder for missing metadata", "—")
                 itemDelegate: delegate
             }
         }
