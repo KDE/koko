@@ -187,6 +187,7 @@ Flickable {
         }
 
         QQC2.Button {
+            Layout.fillWidth: true
             icon.name: 'view-list-details-symbolic'
             text: i18nc("@action:button", "Choose What's Shown")
             onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.koko", "ImageMetadataPage"), {
