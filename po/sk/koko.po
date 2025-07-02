@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-02 07:03+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -347,50 +347,57 @@ msgstr "Domov"
 msgid "Root"
 msgstr "Koreň"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:328
+#, fuzzy, kde-format
+#| msgid "Share the selected media"
+msgctxt "@info:tooltip"
+msgid "Share the selected media"
+msgstr "Zdielať vybraté médiá"
+
+#: qml/AlbumView.qml:343
 #, kde-format
 msgid "Delete Selection"
 msgstr "Odstrániť sekciu"
 
-#: qml/AlbumView.qml:342
+#: qml/AlbumView.qml:344
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Presunúť vybraté položky od koša"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:350
 #, kde-format
 msgid "Restore Selection"
 msgstr "Obnoviť označenie"
 
-#: qml/AlbumView.qml:349
+#: qml/AlbumView.qml:351
 #, fuzzy, kde-format
 #| msgid "Move selected items to trash"
 msgid "Restore selected items from trash"
 msgstr "Presunúť vybraté položky od koša"
 
-#: qml/AlbumView.qml:355
+#: qml/AlbumView.qml:357
 #, kde-format
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: qml/AlbumView.qml:356
+#: qml/AlbumView.qml:358
 #, fuzzy, kde-format
 #| msgid "Selects all the images in the current view"
 msgid "Selects all the media in the current view"
 msgstr "Vyberie všetky obrázky v aktuálnom pohľade"
 
-#: qml/AlbumView.qml:363
+#: qml/AlbumView.qml:365
 #, kde-format
 msgid "Deselect All"
 msgstr "Zrušiť výber"
 
-#: qml/AlbumView.qml:364
+#: qml/AlbumView.qml:366
 #, fuzzy, kde-format
 #| msgid "De-selects all the selected images"
 msgid "De-selects all the selected media"
 msgstr "Zruší výber všetkých vybratých obrázkov"
 
-#: qml/AlbumView.qml:475
+#: qml/AlbumView.qml:477
 #, fuzzy, kde-format
 #| msgid "No Images Found"
 msgid "No Media Found"
@@ -574,131 +581,171 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
-#: qml/ImageViewPage.qml:76
-#, kde-format
-msgid "Info"
-msgstr "Info"
-
-#: qml/ImageViewPage.qml:78
-#, kde-format
-msgid "See information about video"
-msgstr ""
-
-#: qml/ImageViewPage.qml:79
-#, kde-format
-msgid "See information about image"
-msgstr ""
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
-msgid "Remove"
-msgstr "Odstrániť"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
+#: qml/ImageViewPage.qml:74
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Obľúbené"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove from favorites"
+msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Odstrániť z obľúbených"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Add to favorites"
+msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Pridať do obľúbených"
 
-#: qml/ImageViewPage.qml:100
-#, kde-format
-msgctxt "verb, edit an image"
-msgid "Edit"
+#: qml/ImageViewPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:intoolbar Edit an image"
+msgid "&Edit"
 msgstr "Upraviť"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:90
 #, fuzzy, kde-format
-#| msgid "Share Image"
-msgid "Share Video"
-msgstr "Zdieľať obrázok"
+#| msgid "Edit image"
+msgctxt "@info:tooltip"
+msgid "Edit this image"
+msgstr "Upraviť obrázok"
 
-#: qml/ImageViewPage.qml:118
-#, kde-format
-msgid "Share Image"
-msgstr "Zdieľať obrázok"
-
-#: qml/ImageViewPage.qml:119
-#, kde-format
-msgctxt "verb, share an image/video"
-msgid "Share"
+#: qml/ImageViewPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action:intoolbar Share an image/video"
+msgid "&Share"
 msgstr "Zdieľať"
 
-#: qml/ImageViewPage.qml:133
-#, kde-format
-msgid "Start Slideshow"
-msgstr "Spustiť prezentáciu"
+#: qml/ImageViewPage.qml:114
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Share this video"
+msgstr "Zdieľať obrázok"
+
+#: qml/ImageViewPage.qml:116
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Share this image"
+msgstr "Zdieľať obrázok"
 
 #: qml/ImageViewPage.qml:134
-#, kde-format
-msgid "Slideshow"
-msgstr "Prezentácia"
+#, fuzzy, kde-format
+#| msgid "Info"
+msgctxt "@action:intoolbar Show information about an image/video"
+msgid "&Info"
+msgstr "Info"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
-msgid "Thumbnail Bar"
-msgstr "Panel miniatúr"
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Hide Thumbnail Bar"
-msgstr ""
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Show Thumbnail Bar"
+msgctxt "@info:tooltip"
+msgid "See information about this video"
 msgstr ""
 
 #: qml/ImageViewPage.qml:143
 #, kde-format
-msgid "Toggle Thumbnail Bar"
+msgctxt "@info:tooltip"
+msgid "See information about this image"
 msgstr ""
 
-#: qml/ImageViewPage.qml:154
+#. i18n hint in text and dynamic tooltip text
+#: qml/ImageViewPage.qml:161
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@action:intoolbar Start a slideshow"
+msgid "&Slideshow"
+msgstr "Prezentácia"
+
+#: qml/ImageViewPage.qml:163
+#, fuzzy, kde-format
+#| msgid "Start Slideshow"
+msgctxt "@info:tooltip"
+msgid "Start slideshow"
+msgstr "Spustiť prezentáciu"
+
+#: qml/ImageViewPage.qml:176
 #, kde-format
-msgid "Fullscreen"
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show &Controls"
+msgstr ""
+
+#: qml/ImageViewPage.qml:177
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:178
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:188
+#, fuzzy, kde-format
+#| msgid "Thumbnail Bar"
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show &Thumbnail Toolbar"
+msgstr "Panel miniatúr"
+
+#: qml/ImageViewPage.qml:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show the thumbnail toolbar"
+msgstr ""
+
+#: qml/ImageViewPage.qml:190
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide the thumbnail toolbar"
+msgstr ""
+
+#: qml/ImageViewPage.qml:212
+#, fuzzy, kde-format
+#| msgid "Fullscreen"
+msgctxt "@action:intoolbar"
+msgid "&Full Screen"
 msgstr "Celá obrazovka"
 
-#: qml/ImageViewPage.qml:154 qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Exit Fullscreen"
-msgstr "Ukončiť režim celej obrazovky"
-
-#: qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Enter Fullscreen"
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Enter Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter Full Screen"
 msgstr "Prejsť na celú obrazovku"
 
-#: qml/ImageViewPage.qml:422
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Exit Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Exit Full Screen"
+msgstr "Ukončiť režim celej obrazovky"
+
+#: qml/ImageViewPage.qml:489
 #, kde-format
 msgid "Previous image"
 msgstr "Predchádzajúci obrázok"
 
-#: qml/ImageViewPage.qml:452
+#: qml/ImageViewPage.qml:519
 #, kde-format
 msgid "Next image"
 msgstr "Ďalší obrázok"
 
-#: qml/ImageViewPage.qml:686
-#, kde-format
-msgid "More"
-msgstr ""
-
-#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval prezentácie:"
 
-#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -707,24 +754,24 @@ msgstr[0] "1 sekunda"
 msgstr[1] "%1 sekundy"
 msgstr[2] "%1 sekúnd"
 
-#: qml/ImageViewPage.qml:866
+#: qml/ImageViewPage.qml:865
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Opakovať"
 
-#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Náhodne"
 
-#: qml/ImageViewPage.qml:887
+#: qml/ImageViewPage.qml:886
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Zastaviť prezentáciu"
 
-#: qml/ImageViewPage.qml:901
+#: qml/ImageViewPage.qml:900
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
@@ -781,14 +828,14 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr ""
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@title"
 msgid "Places"
 msgstr "Miesta"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Obrázky"
@@ -924,14 +971,18 @@ msgid "About KDE"
 msgstr "O"
 
 #: qml/ShareAction.qml:23
-#, kde-format
-msgid "Share"
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action Share an image/video"
+msgid "&Share"
 msgstr "Zdieľať"
 
-#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
-#, kde-format
-msgid "Share the selected media"
-msgstr "Zdielať vybraté médiá"
+#: qml/ShareDrawer.qml:24
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@title:menu"
+msgid "Share"
+msgstr "Zdieľať"
 
 #: qml/Sidebar.qml:50
 #, kde-format
@@ -958,6 +1009,17 @@ msgstr "Nastavenia"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Pridať nový štítok..."
+
+#~ msgid "Remove"
+#~ msgstr "Odstrániť"
+
+#~ msgctxt "verb, edit an image"
+#~ msgid "Edit"
+#~ msgstr "Upraviť"
+
+#~ msgctxt "verb, share an image/video"
+#~ msgid "Share"
+#~ msgstr "Zdieľať"
 
 #, fuzzy
 #~| msgid "Dimension"
@@ -1052,9 +1114,6 @@ msgstr "Pridať nový štítok..."
 
 #~ msgid "Remove Tag"
 #~ msgstr "Odstrániť značku"
-
-#~ msgid "Edit image"
-#~ msgstr "Upraviť obrázok"
 
 #~ msgctxt "verb, share an image"
 #~ msgid "Share"

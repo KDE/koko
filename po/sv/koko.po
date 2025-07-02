@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-02 07:03+0000\n"
 "PO-Revision-Date: 2025-06-28 22:11+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -330,47 +330,54 @@ msgstr "Hem"
 msgid "Root"
 msgstr "Rot"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:328
+#, fuzzy, kde-format
+#| msgid "Share the selected media"
+msgctxt "@info:tooltip"
+msgid "Share the selected media"
+msgstr "Dela de markerade medierna"
+
+#: qml/AlbumView.qml:343
 #, kde-format
 msgid "Delete Selection"
 msgstr "Ta bort markering"
 
-#: qml/AlbumView.qml:342
+#: qml/AlbumView.qml:344
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Flytta markerade objekt till papperskorgen"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:350
 #, kde-format
 msgid "Restore Selection"
 msgstr "Återställ markering"
 
-#: qml/AlbumView.qml:349
+#: qml/AlbumView.qml:351
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "Återställ markerade objekt från papperskorgen"
 
-#: qml/AlbumView.qml:355
+#: qml/AlbumView.qml:357
 #, kde-format
 msgid "Select All"
 msgstr "Markera alla"
 
-#: qml/AlbumView.qml:356
+#: qml/AlbumView.qml:358
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "Markerar alla medier i den aktuella vyn"
 
-#: qml/AlbumView.qml:363
+#: qml/AlbumView.qml:365
 #, kde-format
 msgid "Deselect All"
 msgstr "Avmarkera alla"
 
-#: qml/AlbumView.qml:364
+#: qml/AlbumView.qml:366
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "Avmarkerar alla markerade medier"
 
-#: qml/AlbumView.qml:475
+#: qml/AlbumView.qml:477
 #, kde-format
 msgid "No Media Found"
 msgstr "Inga medier hittades"
@@ -551,130 +558,176 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr "Anpassa metadatavisning"
 
-#: qml/ImageViewPage.qml:76
-#, kde-format
-msgid "Info"
-msgstr "Information"
-
-#: qml/ImageViewPage.qml:78
-#, kde-format
-msgid "See information about video"
-msgstr "Visa information om videon"
-
-#: qml/ImageViewPage.qml:79
-#, kde-format
-msgid "See information about image"
-msgstr "Visa information om bilden"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
-msgid "Remove"
-msgstr "Ta bort"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
+#: qml/ImageViewPage.qml:74
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Favorit"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove from favorites"
+msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Ta bort från favoriter"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Add to favorites"
+msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Lägg till i favoriter"
 
-#: qml/ImageViewPage.qml:100
-#, kde-format
-msgctxt "verb, edit an image"
-msgid "Edit"
+#: qml/ImageViewPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:intoolbar Edit an image"
+msgid "&Edit"
 msgstr "Redigera"
 
-#: qml/ImageViewPage.qml:118
-#, kde-format
-msgid "Share Video"
-msgstr "Dela video"
+#: qml/ImageViewPage.qml:90
+#, fuzzy, kde-format
+#| msgid "Edit image"
+msgctxt "@info:tooltip"
+msgid "Edit this image"
+msgstr "Redigera bild"
 
-#: qml/ImageViewPage.qml:118
-#, kde-format
-msgid "Share Image"
-msgstr "Dela bild"
-
-#: qml/ImageViewPage.qml:119
-#, kde-format
-msgctxt "verb, share an image/video"
-msgid "Share"
+#: qml/ImageViewPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action:intoolbar Share an image/video"
+msgid "&Share"
 msgstr "Dela"
 
-#: qml/ImageViewPage.qml:133
-#, kde-format
-msgid "Start Slideshow"
-msgstr "Starta bildspel"
+#: qml/ImageViewPage.qml:114
+#, fuzzy, kde-format
+#| msgid "Share Video"
+msgctxt "@info:tooltip"
+msgid "Share this video"
+msgstr "Dela video"
+
+#: qml/ImageViewPage.qml:116
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Share this image"
+msgstr "Dela bild"
 
 #: qml/ImageViewPage.qml:134
-#, kde-format
-msgid "Slideshow"
-msgstr "Bildspel"
+#, fuzzy, kde-format
+#| msgid "Info"
+msgctxt "@action:intoolbar Show information about an image/video"
+msgid "&Info"
+msgstr "Information"
 
 #: qml/ImageViewPage.qml:141
-#, kde-format
-msgid "Thumbnail Bar"
-msgstr "Miniatyrbildsrad"
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Hide Thumbnail Bar"
-msgstr "Dölj miniatyrbildsrad"
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Show Thumbnail Bar"
-msgstr "Visa miniatyrbildsrad"
+#, fuzzy, kde-format
+#| msgid "See information about video"
+msgctxt "@info:tooltip"
+msgid "See information about this video"
+msgstr "Visa information om videon"
 
 #: qml/ImageViewPage.qml:143
-#, kde-format
-msgid "Toggle Thumbnail Bar"
-msgstr "Växla miniatyrbildsrad"
+#, fuzzy, kde-format
+#| msgid "See information about image"
+msgctxt "@info:tooltip"
+msgid "See information about this image"
+msgstr "Visa information om bilden"
 
-#: qml/ImageViewPage.qml:154
+#. i18n hint in text and dynamic tooltip text
+#: qml/ImageViewPage.qml:161
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@action:intoolbar Start a slideshow"
+msgid "&Slideshow"
+msgstr "Bildspel"
+
+#: qml/ImageViewPage.qml:163
+#, fuzzy, kde-format
+#| msgid "Start Slideshow"
+msgctxt "@info:tooltip"
+msgid "Start slideshow"
+msgstr "Starta bildspel"
+
+#: qml/ImageViewPage.qml:176
+#, fuzzy, kde-format
+#| msgid "Show All Controls"
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show &Controls"
+msgstr "Visa alla kontroller"
+
+#: qml/ImageViewPage.qml:177
 #, kde-format
-msgid "Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:178
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:188
+#, fuzzy, kde-format
+#| msgid "Show Thumbnail Bar"
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show &Thumbnail Toolbar"
+msgstr "Visa miniatyrbildsrad"
+
+#: qml/ImageViewPage.qml:189
+#, fuzzy, kde-format
+#| msgid "Show Thumbnail Bar"
+msgctxt "@info:tooltip"
+msgid "Show the thumbnail toolbar"
+msgstr "Visa miniatyrbildsrad"
+
+#: qml/ImageViewPage.qml:190
+#, fuzzy, kde-format
+#| msgid "Hide Thumbnail Bar"
+msgctxt "@info:tooltip"
+msgid "Hide the thumbnail toolbar"
+msgstr "Dölj miniatyrbildsrad"
+
+#: qml/ImageViewPage.qml:212
+#, fuzzy, kde-format
+#| msgid "Fullscreen"
+msgctxt "@action:intoolbar"
+msgid "&Full Screen"
 msgstr "Fullskärmsläge"
 
-#: qml/ImageViewPage.qml:154 qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Exit Fullscreen"
-msgstr "Avsluta fullskärmsläge"
-
-#: qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Enter Fullscreen"
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Enter Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter Full Screen"
 msgstr "Gå till fullskärmsläge"
 
-#: qml/ImageViewPage.qml:422
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Exit Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Exit Full Screen"
+msgstr "Avsluta fullskärmsläge"
+
+#: qml/ImageViewPage.qml:489
 #, kde-format
 msgid "Previous image"
 msgstr "Föregående bild"
 
-#: qml/ImageViewPage.qml:452
+#: qml/ImageViewPage.qml:519
 #, kde-format
 msgid "Next image"
 msgstr "Nästa bild"
 
-#: qml/ImageViewPage.qml:686
-#, kde-format
-msgid "More"
-msgstr "Mer"
-
-#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Bildspelsintervall:"
 
-#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -682,24 +735,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekund"
 msgstr[1] "%1 sekunder"
 
-#: qml/ImageViewPage.qml:866
+#: qml/ImageViewPage.qml:865
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Upprepat"
 
-#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Slumpmässigt"
 
-#: qml/ImageViewPage.qml:887
+#: qml/ImageViewPage.qml:886
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Stoppa bildspel"
 
-#: qml/ImageViewPage.qml:901
+#: qml/ImageViewPage.qml:900
 #, kde-format
 msgid "Show All Controls"
 msgstr "Visa alla kontroller"
@@ -753,13 +806,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "Välj vad som visas"
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Platser"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Bilder"
@@ -880,14 +933,18 @@ msgid "About KDE"
 msgstr "Om KDE"
 
 #: qml/ShareAction.qml:23
-#, kde-format
-msgid "Share"
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action Share an image/video"
+msgid "&Share"
 msgstr "Dela"
 
-#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
-#, kde-format
-msgid "Share the selected media"
-msgstr "Dela de markerade medierna"
+#: qml/ShareDrawer.qml:24
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@title:menu"
+msgid "Share"
+msgstr "Dela"
 
 #: qml/Sidebar.qml:50
 #, kde-format
@@ -914,6 +971,26 @@ msgstr "Inställningar"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Lägg till ny etikett…"
+
+#~ msgid "Remove"
+#~ msgstr "Ta bort"
+
+#~ msgctxt "verb, edit an image"
+#~ msgid "Edit"
+#~ msgstr "Redigera"
+
+#~ msgctxt "verb, share an image/video"
+#~ msgid "Share"
+#~ msgstr "Dela"
+
+#~ msgid "Thumbnail Bar"
+#~ msgstr "Miniatyrbildsrad"
+
+#~ msgid "Toggle Thumbnail Bar"
+#~ msgstr "Växla miniatyrbildsrad"
+
+#~ msgid "More"
+#~ msgstr "Mer"
 
 #~ msgctxt "@label"
 #~ msgid "Dimension:"
@@ -997,9 +1074,6 @@ msgstr "Lägg till ny etikett…"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Ta bort etikett"
-
-#~ msgid "Edit image"
-#~ msgstr "Redigera bild"
 
 #~ msgctxt "@action:button Accept crop for an image"
 #~ msgid "Accept"

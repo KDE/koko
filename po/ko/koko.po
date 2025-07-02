@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-02 07:03+0000\n"
 "PO-Revision-Date: 2024-12-10 01:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -343,47 +343,54 @@ msgstr "홈"
 msgid "Root"
 msgstr "루트"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:328
+#, fuzzy, kde-format
+#| msgid "Share the selected media"
+msgctxt "@info:tooltip"
+msgid "Share the selected media"
+msgstr "선택한 미디어 공유"
+
+#: qml/AlbumView.qml:343
 #, kde-format
 msgid "Delete Selection"
 msgstr "선택 항목 삭제"
 
-#: qml/AlbumView.qml:342
+#: qml/AlbumView.qml:344
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "선택한 항목을 휴지통으로 이동"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:350
 #, kde-format
 msgid "Restore Selection"
 msgstr "선택 복원"
 
-#: qml/AlbumView.qml:349
+#: qml/AlbumView.qml:351
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "선택한 항목을 휴지통에서 복원"
 
-#: qml/AlbumView.qml:355
+#: qml/AlbumView.qml:357
 #, kde-format
 msgid "Select All"
 msgstr "모두 선택"
 
-#: qml/AlbumView.qml:356
+#: qml/AlbumView.qml:358
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "현재 보기의 모든 미디어 선택"
 
-#: qml/AlbumView.qml:363
+#: qml/AlbumView.qml:365
 #, kde-format
 msgid "Deselect All"
 msgstr "모두 선택 해제"
 
-#: qml/AlbumView.qml:364
+#: qml/AlbumView.qml:366
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "선택한 미디어 선택 모두 해제"
 
-#: qml/AlbumView.qml:475
+#: qml/AlbumView.qml:477
 #, kde-format
 msgid "No Media Found"
 msgstr "미디어를 찾을 수 없음"
@@ -566,154 +573,200 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
-#: qml/ImageViewPage.qml:76
-#, kde-format
-msgid "Info"
-msgstr "정보"
-
-#: qml/ImageViewPage.qml:78
-#, kde-format
-msgid "See information about video"
-msgstr "동영상 정보 표시"
-
-#: qml/ImageViewPage.qml:79
-#, kde-format
-msgid "See information about image"
-msgstr "그림 정보 표시"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
-msgid "Remove"
-msgstr "삭제"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
+#: qml/ImageViewPage.qml:74
+#, fuzzy, kde-format
+#| msgid "Favorite"
+msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "책갈피"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove from favorites"
+msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "책갈피에서 삭제"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Add to favorites"
+msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "책갈피에 추가"
 
-#: qml/ImageViewPage.qml:100
-#, kde-format
-msgctxt "verb, edit an image"
-msgid "Edit"
+#: qml/ImageViewPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:intoolbar Edit an image"
+msgid "&Edit"
 msgstr "편집"
 
-#: qml/ImageViewPage.qml:118
-#, kde-format
-msgid "Share Video"
-msgstr "동영상 공유"
+#: qml/ImageViewPage.qml:90
+#, fuzzy, kde-format
+#| msgid "Edit image"
+msgctxt "@info:tooltip"
+msgid "Edit this image"
+msgstr "그림 편집"
 
-#: qml/ImageViewPage.qml:118
-#, kde-format
-msgid "Share Image"
-msgstr "그림 공유"
-
-#: qml/ImageViewPage.qml:119
-#, kde-format
-msgctxt "verb, share an image/video"
-msgid "Share"
+#: qml/ImageViewPage.qml:108
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action:intoolbar Share an image/video"
+msgid "&Share"
 msgstr "공유"
 
-#: qml/ImageViewPage.qml:133
-#, kde-format
-msgid "Start Slideshow"
-msgstr "슬라이드 쇼 시작"
+#: qml/ImageViewPage.qml:114
+#, fuzzy, kde-format
+#| msgid "Share Video"
+msgctxt "@info:tooltip"
+msgid "Share this video"
+msgstr "동영상 공유"
+
+#: qml/ImageViewPage.qml:116
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Share this image"
+msgstr "그림 공유"
 
 #: qml/ImageViewPage.qml:134
-#, kde-format
-msgid "Slideshow"
-msgstr "슬라이드 쇼"
+#, fuzzy, kde-format
+#| msgid "Info"
+msgctxt "@action:intoolbar Show information about an image/video"
+msgid "&Info"
+msgstr "정보"
 
 #: qml/ImageViewPage.qml:141
-#, kde-format
-msgid "Thumbnail Bar"
-msgstr "섬네일 바"
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Hide Thumbnail Bar"
-msgstr "섬네일 바 숨기기"
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Show Thumbnail Bar"
-msgstr "섬네일 바 표시"
+#, fuzzy, kde-format
+#| msgid "See information about video"
+msgctxt "@info:tooltip"
+msgid "See information about this video"
+msgstr "동영상 정보 표시"
 
 #: qml/ImageViewPage.qml:143
-#, kde-format
-msgid "Toggle Thumbnail Bar"
-msgstr "섬네일 바 전환"
+#, fuzzy, kde-format
+#| msgid "See information about image"
+msgctxt "@info:tooltip"
+msgid "See information about this image"
+msgstr "그림 정보 표시"
 
-#: qml/ImageViewPage.qml:154
+#. i18n hint in text and dynamic tooltip text
+#: qml/ImageViewPage.qml:161
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@action:intoolbar Start a slideshow"
+msgid "&Slideshow"
+msgstr "슬라이드 쇼"
+
+#: qml/ImageViewPage.qml:163
+#, fuzzy, kde-format
+#| msgid "Start Slideshow"
+msgctxt "@info:tooltip"
+msgid "Start slideshow"
+msgstr "슬라이드 쇼 시작"
+
+#: qml/ImageViewPage.qml:176
+#, fuzzy, kde-format
+#| msgid "Show All Controls"
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show &Controls"
+msgstr "모든 컨트롤 표시"
+
+#: qml/ImageViewPage.qml:177
 #, kde-format
-msgid "Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:178
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:188
+#, fuzzy, kde-format
+#| msgid "Show Thumbnail Bar"
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show &Thumbnail Toolbar"
+msgstr "섬네일 바 표시"
+
+#: qml/ImageViewPage.qml:189
+#, fuzzy, kde-format
+#| msgid "Show Thumbnail Bar"
+msgctxt "@info:tooltip"
+msgid "Show the thumbnail toolbar"
+msgstr "섬네일 바 표시"
+
+#: qml/ImageViewPage.qml:190
+#, fuzzy, kde-format
+#| msgid "Hide Thumbnail Bar"
+msgctxt "@info:tooltip"
+msgid "Hide the thumbnail toolbar"
+msgstr "섬네일 바 숨기기"
+
+#: qml/ImageViewPage.qml:212
+#, fuzzy, kde-format
+#| msgid "Fullscreen"
+msgctxt "@action:intoolbar"
+msgid "&Full Screen"
 msgstr "전체 화면"
 
-#: qml/ImageViewPage.qml:154 qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Exit Fullscreen"
-msgstr "전체 화면 모드 끝내기"
-
-#: qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Enter Fullscreen"
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Enter Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter Full Screen"
 msgstr "전체 화면 모드 시작"
 
-#: qml/ImageViewPage.qml:422
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Exit Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Exit Full Screen"
+msgstr "전체 화면 모드 끝내기"
+
+#: qml/ImageViewPage.qml:489
 #, kde-format
 msgid "Previous image"
 msgstr "이전 그림"
 
-#: qml/ImageViewPage.qml:452
+#: qml/ImageViewPage.qml:519
 #, kde-format
 msgid "Next image"
 msgstr "다음 그림"
 
-#: qml/ImageViewPage.qml:686
-#, kde-format
-msgid "More"
-msgstr "더 보기"
-
-#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "슬라이드 쇼 간격:"
 
-#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/ImageViewPage.qml:866
+#: qml/ImageViewPage.qml:865
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "반복"
 
-#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "무작위"
 
-#: qml/ImageViewPage.qml:887
+#: qml/ImageViewPage.qml:886
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "슬라이드 쇼 정지"
 
-#: qml/ImageViewPage.qml:901
+#: qml/ImageViewPage.qml:900
 #, kde-format
 msgid "Show All Controls"
 msgstr "모든 컨트롤 표시"
@@ -767,14 +820,14 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr ""
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@title"
 msgid "Places"
 msgstr "위치"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "그림"
@@ -909,14 +962,18 @@ msgid "About KDE"
 msgstr "KDE 정보"
 
 #: qml/ShareAction.qml:23
-#, kde-format
-msgid "Share"
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action Share an image/video"
+msgid "&Share"
 msgstr "공유"
 
-#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
-#, kde-format
-msgid "Share the selected media"
-msgstr "선택한 미디어 공유"
+#: qml/ShareDrawer.qml:24
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@title:menu"
+msgid "Share"
+msgstr "공유"
 
 #: qml/Sidebar.qml:50
 #, kde-format
@@ -943,6 +1000,26 @@ msgstr "설정"
 #, kde-format
 msgid "Add new tag…"
 msgstr "새 태그 추가..."
+
+#~ msgid "Remove"
+#~ msgstr "삭제"
+
+#~ msgctxt "verb, edit an image"
+#~ msgid "Edit"
+#~ msgstr "편집"
+
+#~ msgctxt "verb, share an image/video"
+#~ msgid "Share"
+#~ msgstr "공유"
+
+#~ msgid "Thumbnail Bar"
+#~ msgstr "섬네일 바"
+
+#~ msgid "Toggle Thumbnail Bar"
+#~ msgstr "섬네일 바 전환"
+
+#~ msgid "More"
+#~ msgstr "더 보기"
 
 #~ msgctxt "@label"
 #~ msgid "Dimension:"
@@ -1026,9 +1103,6 @@ msgstr "새 태그 추가..."
 
 #~ msgid "Remove Tag"
 #~ msgstr "태그 삭제"
-
-#~ msgid "Edit image"
-#~ msgstr "그림 편집"
 
 #, fuzzy
 #~| msgctxt "@action:button Accept image modification"

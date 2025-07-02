@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-26 00:41+0000\n"
+"POT-Creation-Date: 2025-07-02 07:03+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -346,49 +346,56 @@ msgstr "ਮੁੱਖ-ਸਫ਼ਾ"
 msgid "Root"
 msgstr "ਮੁੱਢ"
 
-#: qml/AlbumView.qml:341
+#: qml/AlbumView.qml:328
+#, fuzzy, kde-format
+#| msgid "Share the selected images"
+msgctxt "@info:tooltip"
+msgid "Share the selected media"
+msgstr "ਚੁਣੇ ਚਿੱਤਰ ਸਾਂਝੇ ਕਰੋ"
+
+#: qml/AlbumView.qml:343
 #, kde-format
 msgid "Delete Selection"
 msgstr "ਚੋਣ ਨੂੰ ਹਟਾਓ"
 
-#: qml/AlbumView.qml:342
+#: qml/AlbumView.qml:344
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "ਚੁਣੀਆਂ ਚੀਜ਼ਾਂ ਨੂੰ ਰੱਦੀ ਵਿੱਚ ਭੇਜੋ"
 
-#: qml/AlbumView.qml:348
+#: qml/AlbumView.qml:350
 #, kde-format
 msgid "Restore Selection"
 msgstr "ਚੋਣ ਨੂੰ ਬਹਾਲ ਕਰੋ"
 
-#: qml/AlbumView.qml:349
+#: qml/AlbumView.qml:351
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "ਰੱਦੀ ਵਿੱਚੋਂ ਚੁਣੀਆਂ ਆਈਟਮਾਂ ਨੂੰ ਬਹਾਲ ਕਰੋ"
 
-#: qml/AlbumView.qml:355
+#: qml/AlbumView.qml:357
 #, kde-format
 msgid "Select All"
 msgstr "ਸਭ ਚੁਣੋ"
 
-#: qml/AlbumView.qml:356
+#: qml/AlbumView.qml:358
 #, fuzzy, kde-format
 #| msgid "Selects all the images in the current view"
 msgid "Selects all the media in the current view"
 msgstr "ਮੌਜੂਦਾ ਝਲਕ ਵਿੱਚ ਸਾਰੇ ਚਿੱਤਰਾਂ ਨੂੰ ਚੁਣੋ"
 
-#: qml/AlbumView.qml:363
+#: qml/AlbumView.qml:365
 #, kde-format
 msgid "Deselect All"
 msgstr "ਸਭ ਅਣ-ਚੁਣੇ"
 
-#: qml/AlbumView.qml:364
+#: qml/AlbumView.qml:366
 #, fuzzy, kde-format
 #| msgid "De-selects all the selected images"
 msgid "De-selects all the selected media"
 msgstr "ਚੁਣੇ ਗਏ ਸਾਰੇ ਚਿੱਤਰ ਨੂੰ ਅਣ-ਚੁਣਿਆ ਬਣਾਓ"
 
-#: qml/AlbumView.qml:475
+#: qml/AlbumView.qml:477
 #, fuzzy, kde-format
 #| msgid "No Images Found"
 msgid "No Media Found"
@@ -574,135 +581,174 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
-#: qml/ImageViewPage.qml:76
-#, kde-format
-msgid "Info"
-msgstr "ਜਾਣਕਾਰੀ"
-
-#: qml/ImageViewPage.qml:78
+#: qml/ImageViewPage.qml:74
 #, fuzzy, kde-format
-#| msgid "See information about image"
-msgid "See information about video"
-msgstr "ਚਿੱਤਰ ਬਾਰੇ ਜਾਣਕਾਰੀ ਵੇਖੋ।"
-
-#: qml/ImageViewPage.qml:79
-#, kde-format
-msgid "See information about image"
-msgstr "ਚਿੱਤਰ ਬਾਰੇ ਜਾਣਕਾਰੀ ਵੇਖੋ।"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
-msgid "Remove"
-msgstr "ਹਟਾਓ"
-
-#: qml/ImageViewPage.qml:88
-#, kde-format
+#| msgid "Favorite"
+msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "ਮਨਪਸੰਦ"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Remove from favorites"
+msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚੋਂ ਹਟਾਓ"
 
-#: qml/ImageViewPage.qml:89
-#, kde-format
+#: qml/ImageViewPage.qml:76
+#, fuzzy, kde-format
+#| msgid "Add to favorites"
+msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "ਪਸੰਦੀਦਾ ਵਿੱਚ ਜੋੜੋ"
 
-#: qml/ImageViewPage.qml:100
-#, kde-format
-msgctxt "verb, edit an image"
-msgid "Edit"
+#: qml/ImageViewPage.qml:88
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:intoolbar Edit an image"
+msgid "&Edit"
 msgstr "ਸੋਧੋ"
 
-#: qml/ImageViewPage.qml:118
+#: qml/ImageViewPage.qml:90
 #, fuzzy, kde-format
-#| msgid "Share Image"
-msgid "Share Video"
-msgstr "ਚਿੱਤਰ ਸਾਂਝਾ ਕਰੋ"
+#| msgid "Edit image"
+msgctxt "@info:tooltip"
+msgid "Edit this image"
+msgstr "ਚਿੱਤਰ ਨੂੰ ਸੋਧੋ"
 
-#: qml/ImageViewPage.qml:118
-#, kde-format
-msgid "Share Image"
-msgstr "ਚਿੱਤਰ ਸਾਂਝਾ ਕਰੋ"
-
-#: qml/ImageViewPage.qml:119
+#: qml/ImageViewPage.qml:108
 #, fuzzy, kde-format
 #| msgid "Share"
-msgctxt "verb, share an image/video"
-msgid "Share"
+msgctxt "@action:intoolbar Share an image/video"
+msgid "&Share"
 msgstr "ਸਾਂਝੇ ਕਰੋ"
 
-#: qml/ImageViewPage.qml:133
-#, kde-format
-msgid "Start Slideshow"
-msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਸ਼ੁਰੂ ਕਰੋ"
+#: qml/ImageViewPage.qml:114
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Share this video"
+msgstr "ਚਿੱਤਰ ਸਾਂਝਾ ਕਰੋ"
+
+#: qml/ImageViewPage.qml:116
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Share this image"
+msgstr "ਚਿੱਤਰ ਸਾਂਝਾ ਕਰੋ"
 
 #: qml/ImageViewPage.qml:134
-#, kde-format
-msgid "Slideshow"
-msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ"
+#, fuzzy, kde-format
+#| msgid "Info"
+msgctxt "@action:intoolbar Show information about an image/video"
+msgid "&Info"
+msgstr "ਜਾਣਕਾਰੀ"
 
 #: qml/ImageViewPage.qml:141
 #, fuzzy, kde-format
-#| msgid "Thumbnails size:"
-msgid "Thumbnail Bar"
-msgstr "ਥੰਮਨੇਲ ਦਾ ਆਕਾਰ:"
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Hide Thumbnail Bar"
-msgstr ""
-
-#: qml/ImageViewPage.qml:142
-#, kde-format
-msgid "Show Thumbnail Bar"
-msgstr ""
+#| msgid "See information about image"
+msgctxt "@info:tooltip"
+msgid "See information about this video"
+msgstr "ਚਿੱਤਰ ਬਾਰੇ ਜਾਣਕਾਰੀ ਵੇਖੋ।"
 
 #: qml/ImageViewPage.qml:143
+#, fuzzy, kde-format
+#| msgid "See information about image"
+msgctxt "@info:tooltip"
+msgid "See information about this image"
+msgstr "ਚਿੱਤਰ ਬਾਰੇ ਜਾਣਕਾਰੀ ਵੇਖੋ।"
+
+#. i18n hint in text and dynamic tooltip text
+#: qml/ImageViewPage.qml:161
+#, fuzzy, kde-format
+#| msgid "Slideshow"
+msgctxt "@action:intoolbar Start a slideshow"
+msgid "&Slideshow"
+msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ"
+
+#: qml/ImageViewPage.qml:163
+#, fuzzy, kde-format
+#| msgid "Start Slideshow"
+msgctxt "@info:tooltip"
+msgid "Start slideshow"
+msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਸ਼ੁਰੂ ਕਰੋ"
+
+#: qml/ImageViewPage.qml:176
 #, kde-format
-msgid "Toggle Thumbnail Bar"
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show &Controls"
 msgstr ""
 
-#: qml/ImageViewPage.qml:154
+#: qml/ImageViewPage.qml:177
 #, kde-format
-msgid "Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:178
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit immersive viewing mode"
+msgstr ""
+
+#: qml/ImageViewPage.qml:188
+#, fuzzy, kde-format
+#| msgid "Thumbnails size:"
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show &Thumbnail Toolbar"
+msgstr "ਥੰਮਨੇਲ ਦਾ ਆਕਾਰ:"
+
+#: qml/ImageViewPage.qml:189
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show the thumbnail toolbar"
+msgstr ""
+
+#: qml/ImageViewPage.qml:190
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide the thumbnail toolbar"
+msgstr ""
+
+#: qml/ImageViewPage.qml:212
+#, fuzzy, kde-format
+#| msgid "Fullscreen"
+msgctxt "@action:intoolbar"
+msgid "&Full Screen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ"
 
-#: qml/ImageViewPage.qml:154 qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Exit Fullscreen"
-msgstr "ਪੂਰੀ ਸਕਰੀਨ ਤੋਂ ਬਾਹਰ"
-
-#: qml/ImageViewPage.qml:155
-#, kde-format
-msgid "Enter Fullscreen"
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Enter Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Enter Full Screen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਜਾਓ"
 
-#: qml/ImageViewPage.qml:422
+#: qml/ImageViewPage.qml:214
+#, fuzzy, kde-format
+#| msgid "Exit Fullscreen"
+msgctxt "@info:tooltip"
+msgid "Exit Full Screen"
+msgstr "ਪੂਰੀ ਸਕਰੀਨ ਤੋਂ ਬਾਹਰ"
+
+#: qml/ImageViewPage.qml:489
 #, kde-format
 msgid "Previous image"
 msgstr "ਪਿਛਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:452
+#: qml/ImageViewPage.qml:519
 #, kde-format
 msgid "Next image"
 msgstr "ਅਗਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:686
-#, kde-format
-msgid "More"
-msgstr ""
-
-#: qml/ImageViewPage.qml:793 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/ImageViewPage.qml:810 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
 #, fuzzy, kde-format
 #| msgid "1 second"
 #| msgid_plural "%1 seconds"
@@ -712,26 +758,26 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 ਸਕਿੰਟ"
 msgstr[1] "%1 ਸਕਿੰਟ"
 
-#: qml/ImageViewPage.qml:866
+#: qml/ImageViewPage.qml:865
 #, fuzzy, kde-format
 #| msgid "Loop"
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:875 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "ਰਲਵਾਂ"
 
-#: qml/ImageViewPage.qml:887
+#: qml/ImageViewPage.qml:886
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਰੋਕੋ"
 
-#: qml/ImageViewPage.qml:901
+#: qml/ImageViewPage.qml:900
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
@@ -790,14 +836,14 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr ""
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@title"
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "ਚਿੱਤਰ"
@@ -934,15 +980,18 @@ msgid "About KDE"
 msgstr "ਇਸ ਬਾਰੇ"
 
 #: qml/ShareAction.qml:23
-#, kde-format
-msgid "Share"
+#, fuzzy, kde-format
+#| msgid "Share"
+msgctxt "@action Share an image/video"
+msgid "&Share"
 msgstr "ਸਾਂਝੇ ਕਰੋ"
 
-#: qml/ShareAction.qml:24 qml/ShareDrawer.qml:24
+#: qml/ShareDrawer.qml:24
 #, fuzzy, kde-format
-#| msgid "Share the selected images"
-msgid "Share the selected media"
-msgstr "ਚੁਣੇ ਚਿੱਤਰ ਸਾਂਝੇ ਕਰੋ"
+#| msgid "Share"
+msgctxt "@title:menu"
+msgid "Share"
+msgstr "ਸਾਂਝੇ ਕਰੋ"
 
 #: qml/Sidebar.qml:50
 #, kde-format
@@ -970,6 +1019,19 @@ msgstr "ਸੈਟਿੰਗਾਂ"
 #| msgid "Add new tag"
 msgid "Add new tag…"
 msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
+
+#~ msgid "Remove"
+#~ msgstr "ਹਟਾਓ"
+
+#~ msgctxt "verb, edit an image"
+#~ msgid "Edit"
+#~ msgstr "ਸੋਧੋ"
+
+#, fuzzy
+#~| msgid "Share"
+#~ msgctxt "verb, share an image/video"
+#~ msgid "Share"
+#~ msgstr "ਸਾਂਝੇ ਕਰੋ"
 
 #, fuzzy
 #~| msgid "Dimension"
@@ -1058,9 +1120,6 @@ msgstr "ਨਵਾਂ ਟੈਗ ਜੋੜੋ"
 #~| msgid "Remove %1 tag"
 #~ msgid "Remove Tag"
 #~ msgstr "%1 ਟੈਗ ਹਟਾਓ"
-
-#~ msgid "Edit image"
-#~ msgstr "ਚਿੱਤਰ ਨੂੰ ਸੋਧੋ"
 
 #, fuzzy
 #~| msgctxt "@action:button Accept image modification"
