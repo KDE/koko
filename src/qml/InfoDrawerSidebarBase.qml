@@ -55,7 +55,7 @@ Flickable {
                 required property string label
                 required property string displayName
 
-                text: label
+                text: i18nc("@label %1 is a translated title e.g. 'Date Created'", "%1:", label)
                 description: displayName
                 horizontalPadding: Kirigami.Units.smallSpacing
                 verticalPadding: Kirigami.Units.smallSpacing

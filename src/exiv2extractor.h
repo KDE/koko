@@ -150,7 +150,8 @@ public:
     bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override
     {
         const QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
-        const auto enabled = sourceModel()->data(index, Exiv2Extractor::EnabledRole).toBool();
+        const auto enabled =
+            sourceModel()->data(index, Exiv2Extractor::EnabledRole).toBool() && !sourceModel()->data(index, Qt::DisplayRole).toString().isEmpty();
         return enabled;
     }
 };
