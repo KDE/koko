@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:03+0000\n"
-"PO-Revision-Date: 2025-06-28 17:57+0400\n"
+"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"PO-Revision-Date: 2025-07-03 09:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -292,7 +292,7 @@ msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
 msgstr "انتقل إلى الصور المرتبة حسب الأيام"
 
-#: qml/AlbumDelegate.qml:118
+#: qml/AlbumDelegate.qml:132
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -336,8 +336,7 @@ msgid "Root"
 msgstr "الجذر"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "شارك الوسيط المحدد"
@@ -566,174 +565,155 @@ msgid "Configure Metadata Display"
 msgstr "ضبط عرض البيانات الوصفيّة"
 
 #: qml/ImageViewPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr "المفضّلة"
+msgstr "فضّل"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "أزل من المفضّلة"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "أضف إلى المفضّلة"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "حرّر"
+msgstr "&حرّر"
 
 #: qml/ImageViewPage.qml:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr ""
+msgstr "حرّر هذه الصورة"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "شارك"
+msgstr "&شارك"
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "شارك الفيديو"
+msgstr "شارك هذا الفيديو"
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "شارك صورة"
+msgstr "شارك هذه صورة"
 
 #: qml/ImageViewPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "معلومات"
+msgstr "&معلومات"
 
 #: qml/ImageViewPage.qml:141
-#, fuzzy, kde-format
-#| msgid "See information about video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "شاهد معلومات حول الفيديو"
+msgstr "شاهد معلومات حول هذا الفيديو"
 
 #: qml/ImageViewPage.qml:143
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "شاهد معلومات حول الصورة"
+msgstr "شاهد معلومات حول هذه الصورة"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:161
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#: qml/ImageViewPage.qml:162
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "عرض الشرائح"
+msgstr "&عرض كشرائح"
 
-#: qml/ImageViewPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#: qml/ImageViewPage.qml:164
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "ابدأ عرض الشرائح"
 
-#: qml/ImageViewPage.qml:176
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
-msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-msgid "Show &Controls"
-msgstr "أظهر جميع المتحكمات"
-
 #: qml/ImageViewPage.qml:177
 #, kde-format
-msgctxt "@info:tooltip"
-msgid "Enter immersive viewing mode"
-msgstr ""
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show &Controls"
+msgstr "أظهر ال&متحكمات"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Exit immersive viewing mode"
-msgstr ""
+msgid "Enter immersive viewing mode"
+msgstr "أدخل وضع المشاهدة الشاملة"
 
-#: qml/ImageViewPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
-msgctxt "@action:intoolbar Toggle visibility of toolbar"
-msgid "Show &Thumbnail Toolbar"
-msgstr "اعرض شريط المصغرات"
+#: qml/ImageViewPage.qml:179
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit immersive viewing mode"
+msgstr "اخرج من وضع المشاهدة الشاملة"
 
 #: qml/ImageViewPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show &Thumbnail Toolbar"
+msgstr "اعرض &شريط المصغرات"
+
+#: qml/ImageViewPage.qml:190
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "اعرض شريط المصغرات"
 
-#: qml/ImageViewPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Hide Thumbnail Bar"
+#: qml/ImageViewPage.qml:191
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "أخفِ شريط المصغرات"
 
-#: qml/ImageViewPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#: qml/ImageViewPage.qml:213
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "ملء الشّاشة"
+msgstr "&ملء الشاشة"
 
-#: qml/ImageViewPage.qml:214
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#: qml/ImageViewPage.qml:215
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "ادخل ملء الشّاشة"
+msgstr "ادخل ملء الشاشة"
 
-#: qml/ImageViewPage.qml:214
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#: qml/ImageViewPage.qml:215
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr "أخرج من ملء الشّاشة"
+msgstr "أنهِ ملء الشاشة"
 
-#: qml/ImageViewPage.qml:489
+#: qml/ImageViewPage.qml:490
 #, kde-format
 msgid "Previous image"
 msgstr "الصّورة السّابقة"
 
-#: qml/ImageViewPage.qml:519
+#: qml/ImageViewPage.qml:520
 #, kde-format
 msgid "Next image"
 msgstr "الصّورة التّالية"
 
-#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "فترة عرض الشرائح:"
 
-#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -745,29 +725,29 @@ msgstr[3] "%1 ثانية"
 msgstr[4] "%1 ثانية"
 msgstr[5] "%1 ثانية"
 
-#: qml/ImageViewPage.qml:865
+#: qml/ImageViewPage.qml:927
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "حلقة"
 
-#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "عشوائي"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:948
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "أوقف عرض الشرائح"
 
-#: qml/ImageViewPage.qml:900
+#: qml/ImageViewPage.qml:962
 #, kde-format
 msgid "Show All Controls"
 msgstr "أظهر جميع المتحكمات"
 
-#: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:42
+#: qml/InfoDrawer.qml:39
 #, kde-format
 msgid "Metadata"
 msgstr "البيانات الوصفيّة"
@@ -816,13 +796,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "اختر ماذا تريد أن تعرض"
 
-#: qml/Main.qml:68
+#: qml/Main.qml:67
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "الأماكن"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:104
 #, kde-format
 msgid "Images"
 msgstr "الصور"
@@ -943,15 +923,13 @@ msgid "About KDE"
 msgstr "حول كِيدِي"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "شارك"
+msgstr "&شارك"
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "شارك"

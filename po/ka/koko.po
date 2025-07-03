@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:03+0000\n"
-"PO-Revision-Date: 2025-06-26 05:47+0200\n"
+"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"PO-Revision-Date: 2025-07-02 17:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -292,7 +292,7 @@ msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
 msgstr "გადასვლა დღეებით დალაგებულ სურათებზე"
 
-#: qml/AlbumDelegate.qml:118
+#: qml/AlbumDelegate.qml:132
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -332,8 +332,7 @@ msgid "Root"
 msgstr "Root"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "მონიშნული მედიის გაზიარება"
@@ -558,29 +557,25 @@ msgid "Configure Metadata Display"
 msgstr "მეტამონაცემების ჩვენების მორგება"
 
 #: qml/ImageViewPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "რჩეული"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "რჩეულებიდან წაშლა"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "რჩეულებში დამატება"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr "ჩასწორება"
@@ -589,143 +584,128 @@ msgstr "ჩასწორება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr ""
+msgstr "ამ სურათის ჩასწორება"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "გაზიარება"
+msgstr "გა&ზიარება"
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "ვიდეოს გაზიარება"
+msgstr "ამ ვიდეოს გაზიარება"
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "გამოსახულებსი გაზიარება"
+msgstr "ამ გამოსახულებსი გაზიარება"
 
 #: qml/ImageViewPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "ინფორმაცია"
+msgstr "&ინფო"
 
 #: qml/ImageViewPage.qml:141
-#, fuzzy, kde-format
-#| msgid "See information about video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "ვიდეოს შესახებ ინფორმაციის ნახვა"
+msgstr "ინფორმაციის ნახვა ამ ვიდეოს შესახებ"
 
 #: qml/ImageViewPage.qml:143
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "გამოსახულების ინფორმაციის ჩვენება"
+msgstr "ინფორმაციის ნახვა ამ გამოსახულების შესახებ"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:161
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#: qml/ImageViewPage.qml:162
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "სლაიდშოუ"
 
-#: qml/ImageViewPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#: qml/ImageViewPage.qml:164
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "სლაიდშოუს დაწყება"
 
-#: qml/ImageViewPage.qml:176
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#: qml/ImageViewPage.qml:177
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "ყველა კონტროლის ჩვენება"
 
-#: qml/ImageViewPage.qml:177
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Enter immersive viewing mode"
-msgstr ""
-
 #: qml/ImageViewPage.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Exit immersive viewing mode"
-msgstr ""
+msgid "Enter immersive viewing mode"
+msgstr "გადასვლა ჩამთრევი ხედის რეჟიმში"
 
-#: qml/ImageViewPage.qml:188
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
-msgctxt "@action:intoolbar Toggle visibility of toolbar"
-msgid "Show &Thumbnail Toolbar"
-msgstr "მინიატურების ზოლის ჩვენება"
+#: qml/ImageViewPage.qml:179
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit immersive viewing mode"
+msgstr "გასვლა ჩამთრევი ხედის რეჟიმიდან"
 
 #: qml/ImageViewPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show &Thumbnail Toolbar"
+msgstr "მინია&ტურების ზოლის ჩვენება"
+
+#: qml/ImageViewPage.qml:190
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "მინიატურების ზოლის ჩვენება"
 
-#: qml/ImageViewPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Hide Thumbnail Bar"
+#: qml/ImageViewPage.qml:191
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "მინიატურების ზოლის დამალვა"
 
-#: qml/ImageViewPage.qml:212
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#: qml/ImageViewPage.qml:213
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "მთელ ეკრანზე"
+msgstr "&სრულ ეკრანზე"
 
-#: qml/ImageViewPage.qml:214
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#: qml/ImageViewPage.qml:215
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "სრულ ეკრანზე გადართვა"
 
-#: qml/ImageViewPage.qml:214
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#: qml/ImageViewPage.qml:215
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "სრული ეკრანიდან გასვლა"
 
-#: qml/ImageViewPage.qml:489
+#: qml/ImageViewPage.qml:490
 #, kde-format
 msgid "Previous image"
 msgstr "წინა გამოსახულება"
 
-#: qml/ImageViewPage.qml:519
+#: qml/ImageViewPage.qml:520
 #, kde-format
 msgid "Next image"
 msgstr "შემდეგი გამოსახულება"
 
-#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "სლაიდშოუს ინტერვალი:"
 
-#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -733,29 +713,29 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 წამი"
 msgstr[1] "%1 წამი"
 
-#: qml/ImageViewPage.qml:865
+#: qml/ImageViewPage.qml:927
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "მარყუჟი"
 
-#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "შემთხვევით"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:948
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "სლაიდშოუს შეჩერება"
 
-#: qml/ImageViewPage.qml:900
+#: qml/ImageViewPage.qml:962
 #, kde-format
 msgid "Show All Controls"
 msgstr "ყველა კონტროლის ჩვენება"
 
-#: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:42
+#: qml/InfoDrawer.qml:39
 #, kde-format
 msgid "Metadata"
 msgstr "მეტამონაცემები"
@@ -804,13 +784,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "აირჩიეთ, რა არის ნაჩვენები"
 
-#: qml/Main.qml:68
+#: qml/Main.qml:67
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "ადგილები"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:104
 #, kde-format
 msgid "Images"
 msgstr "ასლები"
@@ -931,15 +911,13 @@ msgid "About KDE"
 msgstr "KDE-ის შესახებ"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "გაზიარება"
+msgstr "გა&ზიარება"
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "გაზიარება"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:03+0000\n"
+"POT-Creation-Date: 2025-07-03 06:55+0000\n"
 "PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -303,7 +303,7 @@ msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
 msgstr ""
 
-#: qml/AlbumDelegate.qml:118
+#: qml/AlbumDelegate.qml:132
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -651,98 +651,98 @@ msgid "See information about this image"
 msgstr "Vidi informojn pri bildo"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:161
+#: qml/ImageViewPage.qml:162
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "Bildprezento"
 
-#: qml/ImageViewPage.qml:163
+#: qml/ImageViewPage.qml:164
 #, fuzzy, kde-format
 #| msgid "Start Slideshow"
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Komenci Bildprezenton"
 
-#: qml/ImageViewPage.qml:176
+#: qml/ImageViewPage.qml:177
 #, fuzzy, kde-format
 #| msgid "Show All Controls"
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Montri Ĉiujn Regilojn"
 
-#: qml/ImageViewPage.qml:177
+#: qml/ImageViewPage.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr ""
 
-#: qml/ImageViewPage.qml:178
+#: qml/ImageViewPage.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/ImageViewPage.qml:188
+#: qml/ImageViewPage.qml:189
 #, fuzzy, kde-format
 #| msgid "Show Thumbnail Bar"
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Montri Bildetobreton"
 
-#: qml/ImageViewPage.qml:189
+#: qml/ImageViewPage.qml:190
 #, fuzzy, kde-format
 #| msgid "Show Thumbnail Bar"
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Montri Bildetobreton"
 
-#: qml/ImageViewPage.qml:190
+#: qml/ImageViewPage.qml:191
 #, fuzzy, kde-format
 #| msgid "Hide Thumbnail Bar"
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Kaŝi Bildetbreton"
 
-#: qml/ImageViewPage.qml:212
+#: qml/ImageViewPage.qml:213
 #, fuzzy, kde-format
 #| msgid "Fullscreen"
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "Plenekrane"
 
-#: qml/ImageViewPage.qml:214
+#: qml/ImageViewPage.qml:215
 #, fuzzy, kde-format
 #| msgid "Enter Fullscreen"
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Eniri Plenekranon"
 
-#: qml/ImageViewPage.qml:214
+#: qml/ImageViewPage.qml:215
 #, fuzzy, kde-format
 #| msgid "Exit Fullscreen"
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Eliri Plenekranon"
 
-#: qml/ImageViewPage.qml:489
+#: qml/ImageViewPage.qml:490
 #, kde-format
 msgid "Previous image"
 msgstr "Antaŭa bildo"
 
-#: qml/ImageViewPage.qml:519
+#: qml/ImageViewPage.qml:520
 #, kde-format
 msgid "Next image"
 msgstr "Sekva bildo"
 
-#: qml/ImageViewPage.qml:792 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalo de bildoprezento:"
 
-#: qml/ImageViewPage.qml:809 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -750,29 +750,29 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekundo"
 msgstr[1] "%1 sekundoj"
 
-#: qml/ImageViewPage.qml:865
+#: qml/ImageViewPage.qml:927
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Buklo"
 
-#: qml/ImageViewPage.qml:874 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Randomigi"
 
-#: qml/ImageViewPage.qml:886
+#: qml/ImageViewPage.qml:948
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Halti Bildprezenton"
 
-#: qml/ImageViewPage.qml:900
+#: qml/ImageViewPage.qml:962
 #, kde-format
 msgid "Show All Controls"
 msgstr "Montri Ĉiujn Regilojn"
 
-#: qml/InfoDrawer.qml:39 qml/InfoSidebar.qml:42
+#: qml/InfoDrawer.qml:39
 #, kde-format
 msgid "Metadata"
 msgstr "Metadatenoj"
@@ -821,14 +821,14 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr ""
 
-#: qml/Main.qml:68
+#: qml/Main.qml:67
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@title"
 msgid "Places"
 msgstr "Lokoj"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:104
 #, kde-format
 msgid "Images"
 msgstr "Bildoj"
