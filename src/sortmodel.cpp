@@ -17,13 +17,12 @@
 #include <KIO/RestoreJob>
 
 using namespace Qt::StringLiterals;
+using namespace std::chrono_literals;
 
 SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
     , m_screenshotSize(256, 256)
     , m_containImages(false)
-    // using the same cache of the engine, they index both by url
-    , m_imageCache(std::make_unique<KImageCache>(QStringLiteral("org.kde.koko"), 10485760))
 {
     setSortLocaleAware(true);
     sort(0);
@@ -117,15 +116,28 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
         const QUrl thumbnailSource(data(index, Roles::ImageUrlRole).toString());
 
         const KFileItem item(thumbnailSource, QString());
-        QImage preview = QImage(m_screenshotSize, QImage::Format_ARGB32_Premultiplied);
 
-        if (m_imageCache->findImage(item.url().toString(), &preview)) {
-            return preview;
+        auto it = std::ranges::find_if(m_itemData, [&item](const auto &itemData) {
+            return itemData->item == item;
+        });
+
+        if (it == m_itemData.cend()) {
+            // we need to or already are generating a preview
+            auto found = std::ranges::find(m_itemsToPreview, item);
+            if (found == m_itemsToPreview.cend()) {
+                const_cast<SortModel *>(this)->m_itemsToPreview.insert(item);
+            }
+            if (!m_previewTimer->isActive()) {
+                m_previewTimer->start(100ms);
+            }
+            return false;
         }
 
-        m_previewTimer->start(100);
-        const_cast<SortModel *>(this)->m_filesToPreview[item.url()] = QPersistentModelIndex(index);
-        return false;
+        const auto pixmap = (*it)->values.value("iconPixmap").value<QImage>();
+        if (pixmap.isNull()) {
+            return false;
+        }
+        return pixmap;
     }
 
     case Roles::SourceIndex: {
@@ -304,24 +316,18 @@ int SortModel::indexForUrl(const QString &url)
 
 void SortModel::delayedPreview()
 {
-    QHash<QUrl, QPersistentModelIndex>::const_iterator i = m_filesToPreview.constBegin();
-
     KFileItemList list;
-
-    while (i != m_filesToPreview.constEnd()) {
-        QUrl file = i.key();
-        QPersistentModelIndex index = i.value();
-
-        if (!m_previewJobs.contains(file) && file.isValid()) {
-            list.append(KFileItem(file, QString(), 0));
-            m_previewJobs.insert(file, QPersistentModelIndex(index));
+    list.reserve(m_itemsToPreview.size());
+    for (const auto &item : std::as_const(m_itemsToPreview)) {
+        if (!m_itemsInPreviewGeneration.contains(item)) {
+            list << item;
+            m_itemsInPreviewGeneration << item;
         }
-
-        ++i;
     }
+    m_itemsToPreview.clear();
 
     if (list.size() > 0) {
-        const auto pluginLists = KIO::PreviewJob::availablePlugins();
+        static const auto pluginLists = KIO::PreviewJob::availablePlugins();
         KIO::PreviewJob *job = KIO::filePreview(list, m_screenshotSize, &pluginLists);
         job->setIgnoreMaximumSize(true);
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
@@ -332,7 +338,19 @@ void SortModel::delayedPreview()
         connect(job, &KIO::PreviewJob::failed, this, &SortModel::previewFailed);
     }
 
-    m_filesToPreview.clear();
+    m_itemsToPreview.clear();
+}
+
+QModelIndex SortModel::itemToIndex(const KFileItem &item)
+{
+    for (auto i = 0, count = rowCount(); i < count; i++) {
+        const QUrl url(index(i, 0).data(Roles::ImageUrlRole).toString());
+        if (url == item.url()) {
+            return index(i, 0);
+        }
+    }
+
+    return {};
 }
 
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
@@ -341,32 +359,56 @@ void SortModel::showPreview(const KFileItem &item, const QImage &preview)
 void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
 #endif
 {
-    QPersistentModelIndex index = m_previewJobs.value(item.url());
-    m_previewJobs.remove(item.url());
+    const auto index = itemToIndex(item);
+    m_itemsInPreviewGeneration.removeAll(item);
 
     if (!index.isValid()) {
         return;
     }
+    std::shared_ptr<ItemData> itemData;
+    auto it = std::ranges::find_if(m_itemData, [&item](const auto &itemData) {
+        return itemData->item == item;
+    });
+
+    if (it == m_itemData.cend()) {
+        itemData = std::make_shared<ItemData>(item, QHash<QByteArray, QVariant>{});
+        m_itemData.push_back(itemData);
+    } else {
+        itemData = *it;
+    }
 
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
-    m_imageCache->insertImage(item.url().toString(), preview);
+    itemData->values["iconPixmap"] = preview;
 #else
-    m_imageCache->insertImage(item.url().toString(), preview.toImage());
+    itemData->values["iconPixmap"] = preview.toImage();
 #endif
+
     // qDebug() << "preview size:" << preview.size();
-    emit dataChanged(index, index);
+    Q_EMIT dataChanged(index, index, {Roles::Thumbnail});
 }
 
 void SortModel::previewFailed(const KFileItem &item)
 {
     // Use folder image instead of displaying nothing then thumbnail generation fails
-    QPersistentModelIndex index = m_previewJobs.value(item.url());
-    m_previewJobs.remove(item.url());
+    const auto index = itemToIndex(item);
+    m_itemsInPreviewGeneration.removeAll(item);
 
     if (!index.isValid()) {
         return;
     }
 
-    m_imageCache->insertImage(item.url().toString(), QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage());
-    Q_EMIT dataChanged(index, index);
+    std::shared_ptr<ItemData> itemData;
+    auto it = std::ranges::find_if(m_itemData, [&item](const auto &itemData) {
+        return itemData->item == item;
+    });
+
+    if (it == m_itemData.cend()) {
+        itemData = std::make_shared<ItemData>(item, QHash<QByteArray, QVariant>{});
+        m_itemData.push_back(itemData);
+    } else {
+        itemData = *it;
+    }
+
+    itemData->values["iconPixmap"] = QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage();
+    Q_EMIT dataChanged(index, index, {Roles::Thumbnail});
 }
