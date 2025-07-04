@@ -30,6 +30,13 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
+    onBackRequested: (event) => {
+        if (imageView.document.modified && !root.forceDiscard) {
+            confirmDiscardingChangeDialog.visible = true;
+            event.accepted = true;
+        }
+    }
+
     actions: [
         Kirigami.Action {
             visible: (imageView.document.tool.options !== KQuickImageEditor.AnnotationTool.NoOptions
@@ -46,7 +53,7 @@ Kirigami.Page {
 
         Kirigami.Action {
             id: saveAction
-            enabled: imageView.document.undoStackDepth > 0
+            enabled: imageView.document.modified
             text: i18nc("@action:button Save image modification", "Save")
             icon.name: "document-save"
             onTriggered: {
@@ -58,7 +65,7 @@ Kirigami.Page {
                     return;
                 }
                 root.imageEdited();
-                applicationWindow().pageStack.layers.pop();
+                imageView.document.modified = false;
             }
         },
 
