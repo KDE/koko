@@ -9,6 +9,7 @@
 #include "roles.h"
 #include "types.h"
 #include <QDebug>
+#include <QElapsedTimer>
 #include <QIcon>
 #include <QTimer>
 
@@ -18,6 +19,10 @@
 
 using namespace Qt::StringLiterals;
 using namespace std::chrono_literals;
+
+// Maximum time in ms that the SortModel
+// may perform a blocking operation
+const int MaxBlockTimeout = 200;
 
 SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
@@ -123,9 +128,8 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
 
         if (it == m_itemData.cend()) {
             // we need to or already are generating a preview
-            auto found = std::ranges::find(m_itemsToPreview, item);
-            if (found == m_itemsToPreview.cend()) {
-                const_cast<SortModel *>(this)->m_itemsToPreview.insert(item);
+            if (!m_itemsToPreview.contains(item)) {
+                const_cast<SortModel *>(this)->m_itemsToPreview.append(item);
             }
             if (!m_previewTimer->isActive()) {
                 m_previewTimer->start(100ms);
@@ -316,19 +320,38 @@ int SortModel::indexForUrl(const QString &url)
 
 void SortModel::delayedPreview()
 {
-    KFileItemList list;
-    list.reserve(m_itemsToPreview.size());
-    for (const auto &item : std::as_const(m_itemsToPreview)) {
-        if (!m_itemsInPreviewGeneration.contains(item)) {
-            list << item;
-            m_itemsInPreviewGeneration << item;
-        }
-    }
-    m_itemsToPreview.clear();
+    KFileItemList itemSubSet;
 
-    if (list.size() > 0) {
+    if (m_itemsToPreview.isEmpty()) {
+        return;
+    }
+
+    if (m_itemsToPreview.constFirst().isMimeTypeKnown()) {
+        // Some mime types are known already, probably because they were
+        // determined when loading the icons for the visible items. Start
+        // a preview job for all items at the beginning of the list which
+        // have a known mime type.
+        do {
+            itemSubSet.append(m_itemsToPreview.takeFirst());
+        } while (!m_itemsToPreview.isEmpty() && m_itemsToPreview.constFirst().isMimeTypeKnown());
+    } else {
+        // Determine mime types for MaxBlockTimeout ms, and start a preview
+        // job for the corresponding items.
+        QElapsedTimer timer;
+        timer.start();
+
+        do {
+            const KFileItem item = m_itemsToPreview.takeFirst();
+            item.determineMimeType();
+            itemSubSet.append(item);
+        } while (!m_itemsToPreview.isEmpty() && timer.elapsed() < MaxBlockTimeout);
+    }
+
+    m_itemsInPreviewGeneration << itemSubSet;
+
+    if (itemSubSet.size() > 0) {
         static const auto pluginLists = KIO::PreviewJob::availablePlugins();
-        KIO::PreviewJob *job = KIO::filePreview(list, m_screenshotSize, &pluginLists);
+        KIO::PreviewJob *job = KIO::filePreview(itemSubSet, m_screenshotSize, &pluginLists);
         job->setIgnoreMaximumSize(true);
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
         connect(job, &KIO::PreviewJob::generated, this, &SortModel::showPreview);
@@ -336,6 +359,9 @@ void SortModel::delayedPreview()
         connect(job, &KIO::PreviewJob::gotPreview, this, &SortModel::showPreview);
 #endif
         connect(job, &KIO::PreviewJob::failed, this, &SortModel::previewFailed);
+        connect(job, &KIO::PreviewJob::finished, this, [this] {
+            delayedPreview();
+        });
     }
 
     m_itemsToPreview.clear();
