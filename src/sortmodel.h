@@ -82,7 +82,7 @@ private:
     };
     std::vector<std::shared_ptr<ItemData>> m_itemData;
 
-    QSet<KFileItem> m_itemsToPreview;
+    QList<KFileItem> m_itemsToPreview;
     QList<KFileItem> m_itemsInPreviewGeneration;
 
     QModelIndex itemToIndex(const KFileItem &item);
