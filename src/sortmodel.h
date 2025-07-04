@@ -14,8 +14,6 @@
 #include <QVariant>
 
 #include <KDirModel>
-#include <KImageCache>
-#include <KSharedDataCache>
 #include <kio_version.h>
 #include <qqmlregistration.h>
 
@@ -75,9 +73,17 @@ private:
     QItemSelectionModel *m_selectionModel;
 
     QTimer *m_previewTimer;
-    QHash<QUrl, QPersistentModelIndex> m_filesToPreview;
     QSize m_screenshotSize;
-    QHash<QUrl, QPersistentModelIndex> m_previewJobs;
     bool m_containImages;
-    std::unique_ptr<KImageCache> m_imageCache;
+
+    struct ItemData {
+        KFileItem item;
+        QHash<QByteArray, QVariant> values;
+    };
+    std::vector<std::shared_ptr<ItemData>> m_itemData;
+
+    QSet<KFileItem> m_itemsToPreview;
+    QList<KFileItem> m_itemsInPreviewGeneration;
+
+    QModelIndex itemToIndex(const KFileItem &item);
 };
