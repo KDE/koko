@@ -6,13 +6,11 @@
 
 #include "imagefavoritesmodel.h"
 #include "imagestorage.h"
-#include "roles.h"
 
-#include <kio/copyjob.h>
-#include <kio/jobuidelegate.h>
+#include <KIO/CopyJob>
 
 ImageFavoritesModel::ImageFavoritesModel(QObject *parent)
-    : OpenFileModel({}, parent)
+    : AbstractImageModel(parent)
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageFavoritesModel::slotPopulate);
     slotPopulate();

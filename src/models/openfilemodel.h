@@ -4,16 +4,17 @@
 #pragma once
 
 #include <QAbstractListModel>
-
-#include "types.h"
+#include <qqmlregistration.h>
 
 class OpenFileModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
     Q_PROPERTY(QString urlToOpen READ urlToOpen NOTIFY urlToOpenChanged)
 
 public:
-    explicit OpenFileModel(const QStringList &images, QObject *parent = nullptr);
+    explicit OpenFileModel(QObject *parent = nullptr);
     ~OpenFileModel() = default;
 
     void updateOpenFiles(const QStringList &images);

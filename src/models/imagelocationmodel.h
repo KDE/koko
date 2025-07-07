@@ -8,18 +8,17 @@
 #ifndef IMAGELOCATIONMODEL_H
 #define IMAGELOCATIONMODEL_H
 
+#include "models/imagestorage.h"
 #include <QAbstractListModel>
 #include <QGeoLocation>
 #include <QStringList>
 #include <qqmlintegration.h>
 
-#include "types.h"
-
 class ImageLocationModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
-    Q_PROPERTY(Types::LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
+    Q_PROPERTY(ImageStorage::LocationGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageLocationModel(QObject *parent = nullptr);
 
@@ -27,8 +26,8 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    Types::LocationGroup group() const;
-    void setGroup(Types::LocationGroup group);
+    ImageStorage::LocationGroup group() const;
+    void setGroup(ImageStorage::LocationGroup group);
 
 signals:
     void groupChanged();
@@ -37,7 +36,7 @@ private slots:
     void slotPopulate();
 
 private:
-    Types::LocationGroup m_group;
+    ImageStorage::LocationGroup m_group;
     QList<QPair<QByteArray, QString>> m_locations;
 };
 

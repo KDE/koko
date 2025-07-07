@@ -406,7 +406,7 @@ Kirigami.ScrollablePage {
             highlighted: gridView.currentIndex == index
 
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
-            Controls.ToolTip.visible: hovered && model.itemType === Koko.Types.Image
+            Controls.ToolTip.visible: hovered && model.itemType === Koko.ImageStorage.Image
             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 
             onPressAndHold: gridView.model.toggleSelected(delegate.index)
@@ -417,13 +417,13 @@ Kirigami.ScrollablePage {
                 gridView.model.clearSelections()
                 gridView.currentIndex = delegate.index;
                 switch(delegate.itemType) {
-                    case Koko.Types.Album: {
+                    case Koko.ImageStorage.Album: {
                         imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
                         sortedListModel.sourceModel = imageListModel
                         collectionSelected( sortedListModel, delegate.content)
                         break;
                     }
-                    case Koko.Types.Folder: {
+                    case Koko.ImageStorage.Folder: {
                         if (!page.isFolderView) {
                             imageFolderModel.url = delegate.imageurl
                             sortedListModel.sourceModel = imageFolderModel
@@ -440,7 +440,7 @@ Kirigami.ScrollablePage {
                         page.model.sourceModel.url = delegate.imageurl;
                         break;
                     }
-                    case Koko.Types.Image: {
+                    case Koko.ImageStorage.Image: {
                         if (gridView.url.toString().startsWith("trash:")) {
                             break
                         }
@@ -464,7 +464,7 @@ Kirigami.ScrollablePage {
                 selected: delegate.selected
                 index: delegate.index
                 opacity: delegate.hovered || page.state === "selecting"
-                visible: delegate.itemType !== Koko.Types.Folder && delegate.itemType !== Koko.Types.Album
+                visible: delegate.itemType !== Koko.ImageStorage.Folder && delegate.itemType !== Koko.ImageStorage.Album
 
                 anchors {
                     top: delegate.top

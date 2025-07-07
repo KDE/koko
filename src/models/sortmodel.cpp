@@ -6,8 +6,8 @@
  */
 
 #include "sortmodel.h"
+#include "imagestorage.h"
 #include "roles.h"
-#include "types.h"
 #include <QDebug>
 #include <QFileInfo>
 #include <QIcon>
@@ -42,7 +42,8 @@ SortModel::SortModel(QObject *parent)
     connect(this, &SortModel::rowsInserted, this, [this](const QModelIndex &parent, int first, int last) {
         Q_UNUSED(parent)
         for (int i = first; i <= last; i++) {
-            if (Types::Image == data(index(i, 0, QModelIndex()), Roles::ItemTypeRole).toInt() && m_containImages == false) {
+            const auto itemType = index(i, 0, {}).data(Roles::ItemTypeRole).value<ImageStorage::ItemTypes>();
+            if (ImageStorage::ItemTypes::Image == itemType && m_containImages == false) {
                 setContainImages(true);
                 break;
             }
@@ -54,8 +55,8 @@ SortModel::SortModel(QObject *parent)
             return;
         }
         for (int i = 0; i < sourceModel()->rowCount(); i++) {
-            const auto itemType = sourceModel()->data(sourceModel()->index(i, 0, {}), Roles::ItemTypeRole).toInt();
-            if (Types::Image == itemType && m_containImages == false) {
+            const auto itemType = sourceModel()->data(sourceModel()->index(i, 0, {}), Roles::ItemTypeRole).value<ImageStorage::ItemTypes>();
+            if (ImageStorage::ItemTypes::Image == itemType && m_containImages == false) {
                 setContainImages(true);
                 break;
             }
@@ -171,12 +172,13 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
 bool SortModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
 {
     if (sourceModel()) {
-        if ((sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder && sourceModel()->data(source_right, Roles::ItemTypeRole) == Types::Folder)
-            || (sourceModel()->data(source_left, Roles::ItemTypeRole) != Types::Folder
-                && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder)) {
+        const auto itemTypeLeft = sourceModel()->data(source_left, Roles::ItemTypeRole).value<ImageStorage::ItemTypes>();
+        const auto itemTypeRight = sourceModel()->data(source_right, Roles::ItemTypeRole).value<ImageStorage::ItemTypes>();
+
+        if ((itemTypeLeft == ImageStorage::ItemTypes::Folder && itemTypeRight == ImageStorage::ItemTypes::Folder)
+            || (itemTypeLeft != ImageStorage::ItemTypes::Folder && itemTypeRight != ImageStorage::ItemTypes::Folder)) {
             return QSortFilterProxyModel::lessThan(source_left, source_right);
-        } else if (sourceModel()->data(source_left, Roles::ItemTypeRole) == Types::Folder
-                   && sourceModel()->data(source_right, Roles::ItemTypeRole) != Types::Folder) {
+        } else if (itemTypeLeft == ImageStorage::ItemTypes::Folder && itemTypeRight != ImageStorage::ItemTypes::Folder) {
             return true;
         } else {
             return false;
@@ -252,7 +254,7 @@ void SortModel::selectAll()
     }
 
     for (auto index : indexList) {
-        if (Types::Image == data(index, Roles::ItemTypeRole))
+        if (ImageStorage::ItemTypes::Image == data(index, Roles::ItemTypeRole).value<ImageStorage::ItemTypes>())
             m_selectionModel->select(index, QItemSelectionModel::Select);
     }
     emit dataChanged(index(0, 0, QModelIndex()), index(rowCount() - 1, 0, QModelIndex()));

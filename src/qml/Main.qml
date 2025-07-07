@@ -92,7 +92,7 @@ StatefulApp.StatefulWindow {
 
     // fetch guard, so we don't needlessly check for image to open when it's not needed
     // this is a temporary binding that's supposed to be broken
-    property bool fetchImageToOpen: KokoPrivate.OpenFileModel.rowCount() === 1
+    property bool fetchImageToOpen: Koko.OpenFileModel.rowCount() === 1
 
     Kirigami.Action {
         fromQAction: root.application.action('open_kcommand_bar')
@@ -105,7 +105,7 @@ StatefulApp.StatefulWindow {
             application: root.application
             mainWindow: root
             model: Koko.SortModel {
-                sourceModel: KokoPrivate.OpenFileModel
+                sourceModel: Koko.OpenFileModel
             }
         }
     }
@@ -128,19 +128,19 @@ StatefulApp.StatefulWindow {
     }
 
     Connections {
-        target: KokoPrivate.OpenFileModel
+        target: Koko.OpenFileModel
         function onUpdatedImages(): void { // this gets called if we use "open with", while app is already open
-            if (KokoPrivate.OpenFileModel.rowCount() > 1) {
+            if (Koko.OpenFileModel.rowCount() > 1) {
                 pageStack.clear();
                 pageStack.layers.clear();
                 pageStack.push(openFileComponent);
-            } else if (KokoPrivate.OpenFileModel.rowCount() === 1) {
+            } else if (Koko.OpenFileModel.rowCount() === 1) {
                 pageStack.clear();
                 pageStack.layers.clear();
                 pageStack.push(albumViewComponent);
                 albumView = pageStack.currentItem;
                 albumView.isFolderView = true;
-                const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
+                const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
                 albumView.model.sourceModel.url = url;
                 fetchImageToOpen = true;
                 pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
@@ -185,37 +185,37 @@ StatefulApp.StatefulWindow {
         switch(value) {
             case "Countries": {
                 albumView.model = imageLocationModelCountry;
-                imageListModel.locationGroup = Koko.Types.Country;
+                imageListModel.locationGroup = Koko.ImageStorage.Country;
                 break;
             }
             case "States": {
                 albumView.model = imageLocationModelState;
-                imageListModel.locationGroup = Koko.Types.State;
+                imageListModel.locationGroup = Koko.ImageStorage.State;
                 break;
             }
             case "Cities": {
                 albumView.model = imageLocationModelCity;
-                imageListModel.locationGroup = Koko.Types.City;
+                imageListModel.locationGroup = Koko.ImageStorage.City;
                 break;
             }
             case "Years": {
                 albumView.model = imageTimeModelYear;
-                imageListModel.timeGroup = Koko.Types.Year;
+                imageListModel.timeGroup = Koko.ImageStorage.Year;
                 break;
             }
             case "Months": {
                 albumView.model = imageTimeModelMonth;
-                imageListModel.timeGroup = Koko.Types.Month;
+                imageListModel.timeGroup = Koko.ImageStorage.Month;
                 break;
             }
             case "Weeks": {
                 albumView.model = imageTimeModelWeek;
-                imageListModel.timeGroup = Koko.Types.Week;
+                imageListModel.timeGroup = Koko.ImageStorage.Week;
                 break;
             }
             case "Days": {
                 albumView.model = imageTimeModelDay;
-                imageListModel.timeGroup = Koko.Types.Day;
+                imageListModel.timeGroup = Koko.ImageStorage.Day;
                 break;
             }
             case "Favorites": {
@@ -285,7 +285,7 @@ StatefulApp.StatefulWindow {
     Koko.SortModel {
         id: imageTimeModelYear
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.Types.Year
+            group: Koko.ImageStorage.Year
         }
         sortRoleName: "date"
     }
@@ -293,7 +293,7 @@ StatefulApp.StatefulWindow {
     Koko.SortModel {
         id: imageTimeModelMonth
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.Types.Month
+            group: Koko.ImageStorage.Month
         }
         sortRoleName: "date"
     }
@@ -301,7 +301,7 @@ StatefulApp.StatefulWindow {
     Koko.SortModel {
         id: imageTimeModelWeek
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.Types.Week
+            group: Koko.ImageStorage.Week
         }
         sortRoleName: "date"
     }
@@ -309,7 +309,7 @@ StatefulApp.StatefulWindow {
     Koko.SortModel {
         id: imageTimeModelDay
         sourceModel: Koko.ImageTimeModel {
-            group: Koko.Types.Day
+            group: Koko.ImageStorage.Day
         }
         sortRoleName: "date"
     }
@@ -327,25 +327,25 @@ StatefulApp.StatefulWindow {
     Koko.SortModel {
         id: imageLocationModelCountry
         sourceModel: Koko.ImageLocationModel {
-            group: Koko.Types.Country
+            group: Koko.ImageStorage.Country
         }
     }
 
     Koko.SortModel {
         id: imageLocationModelState
         sourceModel: Koko.ImageLocationModel {
-            group: Koko.Types.State
+            group: Koko.ImageStorage.State
         }
     }
 
     Koko.SortModel {
         id: imageLocationModelCity
         sourceModel: Koko.ImageLocationModel {
-            group: Koko.Types.City
+            group: Koko.ImageStorage.City
         }
     }
-
-    Koko.ImageListModel {
+    
+    Koko.ImageGroupModel {
         id: imageListModel
     }
 
@@ -363,25 +363,25 @@ StatefulApp.StatefulWindow {
         root.controlsVisible = Koko.Config.controlsVisible
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
 
-        if (KokoPrivate.OpenFileModel.rowCount() === 0) {
+        if (Koko.OpenFileModel.rowCount() === 0) {
             root.application.action("place_pictures").trigger();
             return;
         }
 
-        if (KokoPrivate.OpenFileModel.rowCount() > 1) {
+        if (Koko.OpenFileModel.rowCount() > 1) {
             pageStack.initialPage = openFileComponent;
         } else {
             root.application.action("place_pictures").trigger();
             albumView.isFolderView = true;
         }
 
-        if (KokoPrivate.OpenFileModel.rowCount() === 1) {
-            if (Koko.DirModelUtils.isDirectory(KokoPrivate.OpenFileModel.urlToOpen)) {
-                albumView.model.sourceModel.url = KokoPrivate.OpenFileModel.urlToOpen
+        if (Koko.OpenFileModel.rowCount() === 1) {
+            if (Koko.DirModelUtils.isDirectory(Koko.OpenFileModel.urlToOpen)) {
+                albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen
                 return;
             }
 
-            const url = String(Koko.DirModelUtils.directoryOfUrl(KokoPrivate.OpenFileModel.urlToOpen)).replace("file:", "");
+            const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
             albumView.model.sourceModel.url = url;
             fetchImageToOpen = true;
             pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {

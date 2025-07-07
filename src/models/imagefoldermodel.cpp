@@ -6,8 +6,8 @@
  */
 
 #include "imagefoldermodel.h"
+#include "imagestorage.h"
 #include "roles.h"
-#include "types.h"
 
 #include <QDebug>
 #include <QDir>
@@ -17,8 +17,8 @@
 #include <QProcess>
 #include <QStandardPaths>
 
+#include <KDirLister>
 #include <KIO/EmptyTrashJob>
-#include <kdirlister.h>
 
 ImageFolderModel::ImageFolderModel(QObject *parent)
     : KDirModel(parent)
@@ -118,12 +118,8 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
     }
 
     case Roles::ItemTypeRole: {
-        KFileItem item = itemForIndex(index);
-        if (item.isDir()) {
-            return Types::Folder;
-        } else {
-            return Types::Image;
-        }
+        const KFileItem item = itemForIndex(index);
+        return QVariant::fromValue(item.isDir() ? ImageStorage::ItemTypes::Folder : ImageStorage::ItemTypes::Image);
     }
 
     case Roles::SelectedRole:

@@ -8,17 +8,16 @@
 #ifndef IMAGETIMEMODEL_H
 #define IMAGETIMEMODEL_H
 
+#include "imagestorage.h"
 #include <QAbstractListModel>
 #include <QStringList>
 #include <qqmlregistration.h>
-
-#include "types.h"
 
 class ImageTimeModel : public QAbstractListModel
 {
     Q_OBJECT
     QML_ELEMENT
-    Q_PROPERTY(Types::TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
+    Q_PROPERTY(ImageStorage::TimeGroup group READ group WRITE setGroup NOTIFY groupChanged)
 public:
     explicit ImageTimeModel(QObject *parent = nullptr);
 
@@ -26,8 +25,8 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    Types::TimeGroup group() const;
-    void setGroup(Types::TimeGroup group);
+    ImageStorage::TimeGroup group() const;
+    void setGroup(ImageStorage::TimeGroup group);
 
 signals:
     void groupChanged();
@@ -36,7 +35,7 @@ private slots:
     void slotPopulate();
 
 private:
-    Types::TimeGroup m_group;
+    ImageStorage::TimeGroup m_group = ImageStorage::TimeGroup::NotSet;
     QList<QPair<QByteArray, QString>> m_times;
 };
 

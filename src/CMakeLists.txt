@@ -3,11 +3,11 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
+add_subdirectory(models)
+
 add_library(koko_static STATIC
-    imagestorage.cpp
     exiv2extractor.cpp
     filesystemimagefetcher.cpp
-    openfilemodel.cpp
     reversegeocoder.cpp
     filesystemtracker.cpp
     processor.cpp
@@ -19,17 +19,7 @@ add_library(koko_static STATIC
     filemenu.h
     filemenu.cpp
     dirmodelutils.cpp
-    openfilemodel.cpp
-    imagelocationmodel.cpp
-    imagefavoritesmodel.cpp
-    imagetagsmodel.cpp
-    imagetimemodel.cpp
-    imagefoldermodel.cpp
-    sortmodel.cpp
-    imagelistmodel.cpp
     notificationmanager.cpp
-    types.cpp
-    roles.cpp
     fileinfo.cpp
     displaycolorspace.cpp
     photosapplication.cpp
@@ -49,16 +39,13 @@ kconfig_target_kcfg_file(koko_static
 )
 
 target_link_libraries(koko_static PUBLIC
-    Qt::Qml
-    Qt::Quick
+    photos_model_static
+
     Qt::Widgets
     Qt::Core
-    Qt::Positioning
-    Qt::Sql
     Qt::Svg
     Qt::QuickControls2
     KF6::CoreAddons
-    KF6::KIOCore
     KF6::KIOFileWidgets
     KF6::KIOWidgets
     KF6::DBusAddons
@@ -77,6 +64,8 @@ target_link_libraries(koko_static PUBLIC
 ecm_add_qml_module(koko_static
     URI "org.kde.koko"
     GENERATE_PLUGIN_SOURCE
+    IMPORTS
+        org.kde.photos.models
 )
 
 ecm_target_qml_sources(koko_static SOURCES
@@ -142,6 +131,7 @@ add_executable(koko
 target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
+    photos_model_staticplugin
 )
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})

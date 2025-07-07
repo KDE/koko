@@ -3,12 +3,13 @@
 
 #include "openfilemodel.h"
 
+#include "imagestorage.h"
 #include "roles.h"
+
 #include <QMimeDatabase>
 
-OpenFileModel::OpenFileModel(const QStringList &images, QObject *parent)
+OpenFileModel::OpenFileModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_images(images)
 {
 }
 
@@ -32,7 +33,7 @@ QVariant OpenFileModel::data(const QModelIndex &index, int role) const
         return m_images.at(indexValue);
 
     case Roles::ItemTypeRole:
-        return Types::Image;
+        return QVariant::fromValue(ImageStorage::ItemTypes::Image);
 
     case Roles::MimeTypeRole: {
         QMimeDatabase db;
@@ -55,13 +56,15 @@ int OpenFileModel::rowCount(const QModelIndex &parent) const
 
 void OpenFileModel::updateOpenFiles(const QStringList &images)
 {
-    if (!images.isEmpty()) {
-        beginResetModel();
-        m_images = images;
-        endResetModel();
-        Q_EMIT urlToOpenChanged();
-        Q_EMIT updatedImages();
+    if (m_images == images) {
+        return;
     }
+
+    beginResetModel();
+    m_images = images;
+    endResetModel();
+    Q_EMIT urlToOpenChanged();
+    Q_EMIT updatedImages();
 }
 
 QString OpenFileModel::urlToOpen() const
