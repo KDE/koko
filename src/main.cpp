@@ -80,7 +80,11 @@ int main(int argc, char **argv)
 
     aboutData.addAuthor(xi18nc("@info:credit", "Nicolas Fella"), xi18nc("@info:credit", "Developer"), "nicolas.fella@gmx.de");
 
-    aboutData.addAuthor(xi18nc("@info:credit", "Carl Schwan"), xi18nc("@info:credit", "Developer"), "carl@carlschwan.eu");
+    aboutData.addAuthor(xi18nc("@info:credit", "Carl Schwan"),
+                        xi18nc("@info:credit", "Developer"),
+                        "carl@carlschwan.eu",
+                        QStringLiteral("https://carlschwan.eu"),
+                        QUrl(QStringLiteral("https://carlschwan.eu/avatar.png")));
 
     aboutData.addAuthor(xi18nc("@info:credit", "Mikel Johnson"), xi18nc("@info:credit", "Developer"), "mikel5764@gmail.com");
 
