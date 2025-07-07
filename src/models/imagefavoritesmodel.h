@@ -4,15 +4,13 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef IMAGEFAVORITESMODEL_H
-#define IMAGEFAVORITESMODEL_H
+#pragma once
 
-#include <QAbstractListModel>
 #include <qqmlregistration.h>
 
-#include "openfilemodel.h"
+#include "abstractimagemodel.h"
 
-class ImageFavoritesModel : public OpenFileModel
+class ImageFavoritesModel : public AbstractImageModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -23,5 +21,3 @@ public:
 private slots:
     void slotPopulate();
 };
-
-#endif // IMAGEFAVORITESMODEL_H

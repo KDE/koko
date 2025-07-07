@@ -8,7 +8,7 @@
 #include "imagestorage.h"
 
 ImageTagsModel::ImageTagsModel(QObject *parent)
-    : OpenFileModel({}, parent)
+    : OpenFileModel(parent)
     , m_tag(QString())
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTagsModel::slotPopulate);

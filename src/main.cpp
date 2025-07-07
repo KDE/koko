@@ -140,11 +140,13 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
     KLocalization::setupLocalizedContext(&engine);
 
-    OpenFileModel openFileModel(directoryUrls);
+    const auto openFileModel = engine.singletonInstance<OpenFileModel *>("org.kde.koko", "OpenFileModel");
+    openFileModel->updateOpenFiles(directoryUrls);
+
     QObject::connect(&service,
                      &KDBusService::activateRequested,
-                     &openFileModel,
-                     [&openFileModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
+                     openFileModel,
+                     [openFileModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
                          QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
 
                          parser.parse(arguments);
@@ -154,7 +156,7 @@ int main(int argc, char **argv)
                              directoryUrls << currentDirPath.resolved(path).toString();
                          }
 
-                         openFileModel.updateOpenFiles(directoryUrls);
+                         openFileModel->updateOpenFiles(directoryUrls);
 
                          const auto rootObjects = engine.rootObjects();
                          for (auto obj : rootObjects) {
@@ -167,7 +169,6 @@ int main(int argc, char **argv)
                          }
                      });
 
-    qmlRegisterSingletonInstance("org.kde.koko.private", 1, 0, "OpenFileModel", &openFileModel);
     qmlRegisterType<VectorImage>("org.kde.koko.image", 1, 0, "VectorImage");
     qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
 
