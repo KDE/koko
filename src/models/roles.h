@@ -31,6 +31,7 @@ public:
         SelectedRole,
         SourceIndex,
         ContentRole,
+        ItemRole,
     };
 
     static QHash<int, QByteArray> roleNames()
@@ -45,6 +46,7 @@ public:
             {Roles::ItemTypeRole, "itemType"},
             {Roles::ContentRole, "content"},
             {Roles::SelectedRole, "selected"},
+            {Roles::ItemRole, "item"},
         };
     }
 };

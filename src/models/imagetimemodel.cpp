@@ -6,24 +6,20 @@
  */
 
 #include "imagetimemodel.h"
-#include "imagestorage.h"
 #include "roles.h"
-
-#include <kio/copyjob.h>
-#include <kio/jobuidelegate.h>
 
 ImageTimeModel::ImageTimeModel(QObject *parent)
     : QAbstractListModel(parent)
-    , m_group(Types::TimeGroup::Day)
+    , m_group(ImageStorage::TimeGroup::Day)
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTimeModel::slotPopulate);
+    slotPopulate();
 }
 
 void ImageTimeModel::slotPopulate()
 {
     beginResetModel();
-    auto tg = static_cast<Types::TimeGroup>(m_group);
-    m_times = ImageStorage::instance()->timeTypes(tg);
+    m_times = ImageStorage::instance()->timeTypes(m_group);
     endResetModel();
 }
 
@@ -42,29 +38,20 @@ QVariant ImageTimeModel::data(const QModelIndex &index, int role) const
     case Roles::ContentRole:
         return m_times.at(index.row()).second;
 
-    case Roles::FilesRole: {
-        const auto tg = static_cast<Types::TimeGroup>(m_group);
-        return ImageStorage::instance()->imagesForTime(key, tg);
-    }
+    case Roles::FilesRole:
+        return QVariant::fromValue(ImageStorage::instance()->imagesForTime(key, m_group));
 
-    case Roles::FileCountRole: {
-        const auto tg = static_cast<Types::TimeGroup>(m_group);
-        return ImageStorage::instance()->imagesForTime(key, tg).size();
-    }
+    case Roles::FileCountRole:
+        return ImageStorage::instance()->imagesForTime(key, m_group).size();
 
-    case Roles::ImageUrlRole: {
-        const auto tg = static_cast<Types::TimeGroup>(m_group);
-        return ImageStorage::instance()->imageForTime(key, tg);
-    }
+    case Roles::ImageUrlRole:
+        return ImageStorage::instance()->imageForTime(key, m_group);
 
-    case Roles::DateRole: {
-        const auto tg = static_cast<Types::TimeGroup>(m_group);
-        return ImageStorage::instance()->dateForKey(key, tg);
-    }
+    case Roles::DateRole:
+        return ImageStorage::instance()->dateForKey(key, m_group);
 
-    case Roles::ItemTypeRole: {
-        return Types::Album;
-    }
+    case Roles::ItemTypeRole:
+        return QVariant::fromValue(ImageStorage::ItemTypes::Album);
     }
 
     return {};
@@ -79,19 +66,21 @@ int ImageTimeModel::rowCount(const QModelIndex &parent) const
     return m_times.size();
 }
 
-Types::TimeGroup ImageTimeModel::group() const
+ImageStorage::TimeGroup ImageTimeModel::group() const
 {
     return m_group;
 }
 
-void ImageTimeModel::setGroup(Types::TimeGroup group)
+void ImageTimeModel::setGroup(ImageStorage::TimeGroup group)
 {
+    if (m_group == group) {
+        return;
+    }
+
     beginResetModel();
     m_group = group;
-
-    auto tg = static_cast<Types::TimeGroup>(m_group);
-    m_times = ImageStorage::instance()->timeTypes(tg);
+    m_times = ImageStorage::instance()->timeTypes(m_group);
     endResetModel();
 
-    emit groupChanged();
+    Q_EMIT groupChanged();
 }

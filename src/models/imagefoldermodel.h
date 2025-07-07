@@ -8,9 +8,9 @@
 #ifndef IMAGEFOLDERMODEL_H
 #define IMAGEFOLDERMODEL_H
 
+#include <KDirModel>
 #include <QSize>
 #include <QVariant>
-#include <kdirmodel.h>
 #include <qqmlregistration.h>
 
 class QTimer;

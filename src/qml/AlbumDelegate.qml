@@ -99,7 +99,7 @@ Controls.ItemDelegate {
                 top: image.top
                 bottom: countRect.visible ? countRect.top : image.bottom
             }
-            visible: root.itemType == Koko.Types.Folder || root.itemType == Koko.Types.Album
+            visible: root.itemType == Koko.ImageStorage.Folder || root.itemType == Koko.ImageStorage.Album
             verticalAlignment: Text.AlignTop
             padding: Kirigami.Units.smallSpacing
             elide: Text.ElideRight
@@ -116,7 +116,7 @@ Controls.ItemDelegate {
                 left: image.left
                 right: image.right
             }
-            visible: root.fileCount && root.itemType == Koko.Types.Folder || root.itemType == Koko.Types.Album
+            visible: root.fileCount && root.itemType == Koko.ImageStorage.Folder || root.itemType == Koko.ImageStorage.Album
             height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             color: Kirigami.Theme.backgroundColor
