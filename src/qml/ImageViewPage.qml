@@ -384,21 +384,17 @@ Kirigami.Page {
             width: ListView.view.width
             height: ListView.view.height
 
-            // Don't show other images when resizing the view
             visible: {
                 if (ListView.isCurrentItem) {
-                    return true
+                    return true;
                 }
 
-                if (!listView.moving && !listView.dragging) {
-                    return false
-                }
-
+                // Ensure we have previous and next images loaded, to avoid a blank frame when switching
                 if (index === listView.currentIndex - 1 || index === listView.currentIndex + 1) {
-                    return true
+                    return true;
                 }
 
-                return false
+                return false;
             }
 
             // Don't load images that are not going to be visible.
