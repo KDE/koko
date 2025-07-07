@@ -28,6 +28,7 @@ SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
     , m_screenshotSize(256, 256)
     , m_containImages(false)
+    , m_itemData(5000)
 {
     setSortLocaleAware(true);
     sort(0);
@@ -122,11 +123,7 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
 
         const KFileItem item(thumbnailSource, QString());
 
-        auto it = std::ranges::find_if(m_itemData, [&item](const auto &itemData) {
-            return itemData->item == item;
-        });
-
-        if (it == m_itemData.cend()) {
+        if (!m_itemData.contains(item.url())) {
             // we need to or already are generating a preview
             if (!m_itemsToPreview.contains(item)) {
                 const_cast<SortModel *>(this)->m_itemsToPreview.append(item);
@@ -137,7 +134,7 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
             return false;
         }
 
-        const auto pixmap = (*it)->values.value("iconPixmap").value<QImage>();
+        const auto pixmap = m_itemData[item.url()]->values.value("iconPixmap").value<QImage>();
         if (pixmap.isNull()) {
             return false;
         }
@@ -391,16 +388,12 @@ void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
     if (!index.isValid()) {
         return;
     }
-    std::shared_ptr<ItemData> itemData;
-    auto it = std::ranges::find_if(m_itemData, [&item](const auto &itemData) {
-        return itemData->item == item;
-    });
-
-    if (it == m_itemData.cend()) {
-        itemData = std::make_shared<ItemData>(item, QHash<QByteArray, QVariant>{});
-        m_itemData.push_back(itemData);
+    ItemData *itemData;
+    if (m_itemData.contains(item.url())) {
+        itemData = m_itemData[item.url()];
     } else {
-        itemData = *it;
+        itemData = new ItemData(item, QHash<QByteArray, QVariant>{});
+        m_itemData.insert(item.url(), itemData);
     }
 
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
@@ -423,16 +416,12 @@ void SortModel::previewFailed(const KFileItem &item)
         return;
     }
 
-    std::shared_ptr<ItemData> itemData;
-    auto it = std::ranges::find_if(m_itemData, [&item](const auto &itemData) {
-        return itemData->item == item;
-    });
-
-    if (it == m_itemData.cend()) {
-        itemData = std::make_shared<ItemData>(item, QHash<QByteArray, QVariant>{});
-        m_itemData.push_back(itemData);
+    ItemData *itemData;
+    if (m_itemData.contains(item.url())) {
+        itemData = m_itemData[item.url()];
     } else {
-        itemData = *it;
+        itemData = new ItemData(item, QHash<QByteArray, QVariant>{});
+        m_itemData.insert(item.url(), itemData);
     }
 
     itemData->values["iconPixmap"] = QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage();

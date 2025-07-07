@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include <QCache>
 #include <QItemSelectionModel>
 #include <QJsonArray>
 #include <QSize>
@@ -80,7 +81,7 @@ private:
         KFileItem item;
         QHash<QByteArray, QVariant> values;
     };
-    std::vector<std::shared_ptr<ItemData>> m_itemData;
+    QCache<QUrl, ItemData> m_itemData;
 
     QList<KFileItem> m_itemsToPreview;
     QList<KFileItem> m_itemsInPreviewGeneration;
