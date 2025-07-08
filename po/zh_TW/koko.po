@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-08 00:40+0000\n"
 "PO-Revision-Date: 2024-12-30 17:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -177,7 +177,7 @@ msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:83 main.cpp:85
+#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -207,18 +207,18 @@ msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:85
+#: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:90
+#: main.cpp:94
 #, kde-format
 msgid "Reset the database"
 msgstr "重設資料庫"
 
-#: main.cpp:91
+#: main.cpp:95
 #, kde-format
 msgid "path of image you want to open"
 msgstr "要開啟的影像的路徑"
@@ -573,6 +573,12 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
+#: qml/ImageMetadataPage.qml:46
+#, kde-format
+msgctxt "@label Placeholder for missing metadata"
+msgid "—"
+msgstr ""
+
 #: qml/ImageViewPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Favorite"
@@ -725,47 +731,47 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "離開全螢幕"
 
-#: qml/ImageViewPage.qml:490
+#: qml/ImageViewPage.qml:486
 #, kde-format
 msgid "Previous image"
 msgstr "前一張影像"
 
-#: qml/ImageViewPage.qml:520
+#: qml/ImageViewPage.qml:516
 #, kde-format
 msgid "Next image"
 msgstr "下一張影像"
 
-#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:850 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "投影播放間隔："
 
-#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:867 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 秒"
 
-#: qml/ImageViewPage.qml:927
+#: qml/ImageViewPage.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "循環"
 
-#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:932 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "隨機"
 
-#: qml/ImageViewPage.qml:948
+#: qml/ImageViewPage.qml:944
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "結束投影播放"
 
-#: qml/ImageViewPage.qml:962
+#: qml/ImageViewPage.qml:958
 #, kde-format
 msgid "Show All Controls"
 msgstr "顯示所有控制"
@@ -775,45 +781,51 @@ msgstr "顯示所有控制"
 msgid "Metadata"
 msgstr "中繼資料"
 
+#: qml/InfoDrawerSidebarBase.qml:58
+#, kde-format
+msgctxt "@label %1 is a translated title e.g. 'Date Created'"
+msgid "%1:"
+msgstr ""
+
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "評分："
 
-#: qml/InfoDrawerSidebarBase.qml:85
+#: qml/InfoDrawerSidebarBase.qml:95
 #, kde-format
 msgid "Current rating %1"
 msgstr "目前評分 %1"
 
-#: qml/InfoDrawerSidebarBase.qml:93
+#: qml/InfoDrawerSidebarBase.qml:117
 #, kde-format
 msgid "Set rating to %1"
 msgstr "設定評分為 %1"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:221
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "描述："
 
-#: qml/InfoDrawerSidebarBase.qml:126
+#: qml/InfoDrawerSidebarBase.qml:223
 #, kde-format
 msgid "Image description…"
 msgstr "影像描述…"
 
-#: qml/InfoDrawerSidebarBase.qml:137
+#: qml/InfoDrawerSidebarBase.qml:234
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "標籤："
 
-#: qml/InfoDrawerSidebarBase.qml:164
+#: qml/InfoDrawerSidebarBase.qml:261
 #, kde-format
 msgid "Add Tag"
 msgstr "新增標籤"
 
-#: qml/InfoDrawerSidebarBase.qml:191
+#: qml/InfoDrawerSidebarBase.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"

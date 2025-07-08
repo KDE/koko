@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-08 00:40+0000\n"
 "PO-Revision-Date: 2023-05-30 18:44+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -178,7 +178,7 @@ msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:83 main.cpp:85
+#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -208,18 +208,18 @@ msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:85
+#: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:90
+#: main.cpp:94
 #, kde-format
 msgid "Reset the database"
 msgstr "Datenbank zurücksetzen"
 
-#: main.cpp:91
+#: main.cpp:95
 #, kde-format
 msgid "path of image you want to open"
 msgstr "Pfad zum Bild, das Sie öffnen möchten"
@@ -578,6 +578,12 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
+#: qml/ImageMetadataPage.qml:46
+#, kde-format
+msgctxt "@label Placeholder for missing metadata"
+msgid "—"
+msgstr ""
+
 #: qml/ImageViewPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Favorite"
@@ -731,23 +737,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Vollbildmodus beenden"
 
-#: qml/ImageViewPage.qml:490
+#: qml/ImageViewPage.qml:486
 #, kde-format
 msgid "Previous image"
 msgstr "Vorheriges Bild"
 
-#: qml/ImageViewPage.qml:520
+#: qml/ImageViewPage.qml:516
 #, kde-format
 msgid "Next image"
 msgstr "Nächstes Bild"
 
-#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:850 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diaschau-Intervall:"
 
-#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:867 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -755,24 +761,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 Sekunde"
 msgstr[1] "%1 Sekunden"
 
-#: qml/ImageViewPage.qml:927
+#: qml/ImageViewPage.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Wiederholen"
 
-#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:932 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Zufällig"
 
-#: qml/ImageViewPage.qml:948
+#: qml/ImageViewPage.qml:944
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Diaschau anhalten"
 
-#: qml/ImageViewPage.qml:962
+#: qml/ImageViewPage.qml:958
 #, kde-format
 msgid "Show All Controls"
 msgstr "Alle Regler anzeigen"
@@ -782,6 +788,12 @@ msgstr "Alle Regler anzeigen"
 msgid "Metadata"
 msgstr "Metadaten"
 
+#: qml/InfoDrawerSidebarBase.qml:58
+#, kde-format
+msgctxt "@label %1 is a translated title e.g. 'Date Created'"
+msgid "%1:"
+msgstr ""
+
 #: qml/InfoDrawerSidebarBase.qml:68
 #, fuzzy, kde-format
 #| msgid "Rating"
@@ -789,41 +801,41 @@ msgctxt "@label"
 msgid "Rating:"
 msgstr "Bewertung"
 
-#: qml/InfoDrawerSidebarBase.qml:85
+#: qml/InfoDrawerSidebarBase.qml:95
 #, kde-format
 msgid "Current rating %1"
 msgstr "Aktuelle Bewertung %1"
 
-#: qml/InfoDrawerSidebarBase.qml:93
+#: qml/InfoDrawerSidebarBase.qml:117
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Bewertung auf %1 setzen"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:221
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@label"
 msgid "Description:"
 msgstr "Beschreibung"
 
-#: qml/InfoDrawerSidebarBase.qml:126
+#: qml/InfoDrawerSidebarBase.qml:223
 #, kde-format
 msgid "Image description…"
 msgstr "Bildbeschreibung ..."
 
-#: qml/InfoDrawerSidebarBase.qml:137
+#: qml/InfoDrawerSidebarBase.qml:234
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Stichwörter"
 
-#: qml/InfoDrawerSidebarBase.qml:164
+#: qml/InfoDrawerSidebarBase.qml:261
 #, kde-format
 msgid "Add Tag"
 msgstr "Stichwort hinzufügen"
 
-#: qml/InfoDrawerSidebarBase.qml:191
+#: qml/InfoDrawerSidebarBase.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-08 00:40+0000\n"
 "PO-Revision-Date: 2024-09-19 22:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -181,7 +181,7 @@ msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:83 main.cpp:85
+#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -211,18 +211,18 @@ msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:85
+#: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:90
+#: main.cpp:94
 #, kde-format
 msgid "Reset the database"
 msgstr "Επαναφορά της βάσης δεδομένων"
 
-#: main.cpp:91
+#: main.cpp:95
 #, kde-format
 msgid "path of image you want to open"
 msgstr "διαδρομή της εικόνας που θέλετε να ανοίξετε"
@@ -581,6 +581,12 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
+#: qml/ImageMetadataPage.qml:46
+#, kde-format
+msgctxt "@label Placeholder for missing metadata"
+msgid "—"
+msgstr ""
+
 #: qml/ImageViewPage.qml:74
 #, fuzzy, kde-format
 #| msgid "Favorite"
@@ -734,23 +740,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Έξοδος από πλήρη οθόνη"
 
-#: qml/ImageViewPage.qml:490
+#: qml/ImageViewPage.qml:486
 #, kde-format
 msgid "Previous image"
 msgstr "Προηγούμενη εικόνα"
 
-#: qml/ImageViewPage.qml:520
+#: qml/ImageViewPage.qml:516
 #, kde-format
 msgid "Next image"
 msgstr "Επόμενη εικόνα"
 
-#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:850 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Χρονικό διάστημα παρουσίασης διαφανειών:"
 
-#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:867 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -758,24 +764,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 δευτερόλεπτο"
 msgstr[1] "%1 δευτερόλεπτα"
 
-#: qml/ImageViewPage.qml:927
+#: qml/ImageViewPage.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Βρόχος"
 
-#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:932 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Τυχαιοποίηση"
 
-#: qml/ImageViewPage.qml:948
+#: qml/ImageViewPage.qml:944
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Διακοπή παρουσίασης"
 
-#: qml/ImageViewPage.qml:962
+#: qml/ImageViewPage.qml:958
 #, kde-format
 msgid "Show All Controls"
 msgstr "Εμφάνιση όλων των κουμπιών ελέγχου"
@@ -785,45 +791,51 @@ msgstr "Εμφάνιση όλων των κουμπιών ελέγχου"
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
 
+#: qml/InfoDrawerSidebarBase.qml:58
+#, kde-format
+msgctxt "@label %1 is a translated title e.g. 'Date Created'"
+msgid "%1:"
+msgstr ""
+
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Αξιολόγηση:"
 
-#: qml/InfoDrawerSidebarBase.qml:85
+#: qml/InfoDrawerSidebarBase.qml:95
 #, kde-format
 msgid "Current rating %1"
 msgstr "Τρέχουσα αξιολόγηση %1"
 
-#: qml/InfoDrawerSidebarBase.qml:93
+#: qml/InfoDrawerSidebarBase.qml:117
 #, kde-format
 msgid "Set rating to %1"
 msgstr "Ρύθμιση αξιολόγησης στο %1"
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:221
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: qml/InfoDrawerSidebarBase.qml:126
+#: qml/InfoDrawerSidebarBase.qml:223
 #, kde-format
 msgid "Image description…"
 msgstr "Περιγραφή εικόνας…"
 
-#: qml/InfoDrawerSidebarBase.qml:137
+#: qml/InfoDrawerSidebarBase.qml:234
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Ετικέτες:"
 
-#: qml/InfoDrawerSidebarBase.qml:164
+#: qml/InfoDrawerSidebarBase.qml:261
 #, kde-format
 msgid "Add Tag"
 msgstr "Προσθήκη ετικέτας"
 
-#: qml/InfoDrawerSidebarBase.qml:191
+#: qml/InfoDrawerSidebarBase.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"

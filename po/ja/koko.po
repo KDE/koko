@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:55+0000\n"
+"POT-Creation-Date: 2025-07-08 00:40+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -160,7 +160,7 @@ msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr ""
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:83 main.cpp:85
+#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
@@ -190,18 +190,18 @@ msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr ""
 
-#: main.cpp:85
+#: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr ""
 
-#: main.cpp:90
+#: main.cpp:94
 #, kde-format
 msgid "Reset the database"
 msgstr ""
 
-#: main.cpp:91
+#: main.cpp:95
 #, kde-format
 msgid "path of image you want to open"
 msgstr ""
@@ -550,6 +550,12 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
+#: qml/ImageMetadataPage.qml:46
+#, kde-format
+msgctxt "@label Placeholder for missing metadata"
+msgid "—"
+msgstr ""
+
 #: qml/ImageViewPage.qml:74
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
@@ -683,47 +689,47 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr ""
 
-#: qml/ImageViewPage.qml:490
+#: qml/ImageViewPage.qml:486
 #, kde-format
 msgid "Previous image"
 msgstr ""
 
-#: qml/ImageViewPage.qml:520
+#: qml/ImageViewPage.qml:516
 #, kde-format
 msgid "Next image"
 msgstr ""
 
-#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:850 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr ""
 
-#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:867 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] ""
 
-#: qml/ImageViewPage.qml:927
+#: qml/ImageViewPage.qml:923
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr ""
 
-#: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:932 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr ""
 
-#: qml/ImageViewPage.qml:948
+#: qml/ImageViewPage.qml:944
 #, kde-format
 msgid "Stop Slideshow"
 msgstr ""
 
-#: qml/ImageViewPage.qml:962
+#: qml/ImageViewPage.qml:958
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
@@ -733,45 +739,51 @@ msgstr ""
 msgid "Metadata"
 msgstr ""
 
+#: qml/InfoDrawerSidebarBase.qml:58
+#, kde-format
+msgctxt "@label %1 is a translated title e.g. 'Date Created'"
+msgid "%1:"
+msgstr ""
+
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:85
+#: qml/InfoDrawerSidebarBase.qml:95
 #, kde-format
 msgid "Current rating %1"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:93
+#: qml/InfoDrawerSidebarBase.qml:117
 #, kde-format
 msgid "Set rating to %1"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:124
+#: qml/InfoDrawerSidebarBase.qml:221
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:126
+#: qml/InfoDrawerSidebarBase.qml:223
 #, kde-format
 msgid "Image description…"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:137
+#: qml/InfoDrawerSidebarBase.qml:234
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:164
+#: qml/InfoDrawerSidebarBase.qml:261
 #, kde-format
 msgid "Add Tag"
 msgstr ""
 
-#: qml/InfoDrawerSidebarBase.qml:191
+#: qml/InfoDrawerSidebarBase.qml:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
