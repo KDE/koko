@@ -124,7 +124,6 @@ int main(int argc, char **argv)
 #endif
 
     FileSystemTracker tracker;
-    tracker.setFolder(locations.first());
     tracker.moveToThread(&trackerThread);
 
     Koko::Processor processor;
@@ -135,7 +134,12 @@ int main(int argc, char **argv)
     QObject::connect(&trackerThread, &QThread::started, &tracker, &FileSystemTracker::setupDb);
 
     trackerThread.start();
-    tracker.setSubFolder(tracker.folder());
+
+    const QString imageDirLocation = locations.first();
+    QMetaObject::invokeMethod(&tracker, [&tracker, imageDirLocation]() {
+        tracker.setFolder(imageDirLocation);
+        tracker.setSubFolder(tracker.folder());
+    });
 
     QQmlApplicationEngine engine;
     KLocalization::setupLocalizedContext(&engine);
@@ -179,5 +183,6 @@ int main(int argc, char **argv)
 
     int rt = app.exec();
     trackerThread.quit();
+    trackerThread.wait();
     return rt;
 }
