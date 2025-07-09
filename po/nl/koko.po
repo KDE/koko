@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:40+0000\n"
-"PO-Revision-Date: 2025-07-03 14:04+0200\n"
+"PO-Revision-Date: 2025-07-08 14:44+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -561,7 +561,7 @@ msgstr "Metagegevensscherm configureren"
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: qml/ImageViewPage.qml:74
 #, kde-format
@@ -751,7 +751,7 @@ msgstr "Metagegevens"
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
