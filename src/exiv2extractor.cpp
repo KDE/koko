@@ -504,17 +504,18 @@ void Exiv2Extractor::initGeneralGroup(const KFileItem &item)
 
     const QSize size(m_width, m_height);
     QString imageSize;
-    if (size.isValid()) {
-        imageSize = i18nc("@item:intable %1 is image width, %2 is image height", "%1x%2", QString::number(size.width()), QString::number(size.height()));
-
-        double megaPixels = size.width() * size.height() / 1000000.;
+    if (size.isValid() && size.width() > 0 && size.height() > 0) {
+        const double megaPixels = size.width() * size.height() / 1000000.0;
         if (megaPixels > 0.1) {
-            const QString megaPixelsString = QString::number(megaPixels, 'f', 1);
-            imageSize += u' ';
-            imageSize += i18nc("@item:intable %1 is number of millions of pixels in image", "(%1MP)", megaPixelsString);
+            imageSize = i18nc("@item:intable %1 is the image width, %2 is the image height, %3 is the number of megapixels in the image",
+                              "%1 × %2 (%3\u202FMP)",
+                              QString::number(size.width()),
+                              QString::number(size.height()),
+                              QString::number(megaPixels, 'f', 1));
+        } else {
+            imageSize =
+                i18nc("@item:intable %1 is the image width, %2 is the image height", "%1 × %2", QString::number(size.width()), QString::number(size.height()));
         }
-    } else {
-        imageSize = QLatin1Char('-');
     }
 
     m_entries << MetaInfoEntry{GroupRow::GeneralGroup, u"General.Name"_s, i18nc("@item:intable Image file name", "Name"), item.name()};
