@@ -8,6 +8,7 @@
 #pragma once
 
 #include <QCache>
+#include <QImage>
 #include <QItemSelectionModel>
 #include <QJsonArray>
 #include <QSize>
@@ -79,12 +80,13 @@ private:
 
     struct ItemData {
         KFileItem item;
-        QHash<QByteArray, QVariant> values;
+        QImage thumbnail;
     };
     QCache<QUrl, ItemData> m_itemData;
 
-    QList<KFileItem> m_itemsToPreview;
-    QList<KFileItem> m_itemsInPreviewGeneration;
+    mutable QSet<QUrl> m_filesInMimeTypeResolution;
+    mutable QSet<KFileItem> m_filesToPreview;
+    QSet<QUrl> m_filesInPreviewGeneration;
 
     QModelIndex itemToIndex(const KFileItem &item);
 };

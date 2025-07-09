@@ -14,6 +14,7 @@
 #include <QTimer>
 
 #include <KIO/CopyJob>
+#include <KIO/MimetypeJob>
 #include <KIO/PreviewJob>
 #include <KIO/RestoreJob>
 
@@ -121,24 +122,39 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
     case Roles::Thumbnail: {
         const QUrl thumbnailSource(data(index, Roles::ImageUrlRole).toString());
 
-        const KFileItem item(thumbnailSource, QString());
+        if (m_itemData.contains(thumbnailSource)) {
+            const auto pixmap = m_itemData[thumbnailSource]->thumbnail;
+            if (pixmap.isNull()) {
+                Q_ASSERT_X(false, Q_FUNC_INFO, "At that point we should have a thumbnail");
+                return false;
+            }
+            return pixmap;
+        }
 
-        if (!m_itemData.contains(item.url())) {
-            // we need to or already are generating a preview
-            if (!m_itemsToPreview.contains(item)) {
-                const_cast<SortModel *>(this)->m_itemsToPreview.append(item);
-            }
-            if (!m_previewTimer->isActive()) {
-                m_previewTimer->start(100ms);
-            }
+        const KFileItem item(thumbnailSource, {});
+
+        if (!m_filesInMimeTypeResolution.contains(thumbnailSource) && !m_filesInPreviewGeneration.contains(thumbnailSource)
+            && !m_filesToPreview.contains(item)) {
+            m_filesInMimeTypeResolution.insert(thumbnailSource);
+
+            // determine mimetype first and then generate preview in batch
+            auto mimetypeJob = KIO::mimetype(thumbnailSource, KIO::HideProgressInfo);
+            connect(mimetypeJob, &KJob::finished, this, [this, thumbnailSource, mimetypeJob] {
+                KFileItem itemWithMimetype(thumbnailSource, mimetypeJob->mimetype());
+                m_filesToPreview.insert(itemWithMimetype);
+
+                m_filesInMimeTypeResolution.remove(thumbnailSource);
+
+                if (!m_previewTimer->isActive()) {
+                    m_previewTimer->start();
+                }
+            });
+            mimetypeJob->start();
             return false;
         }
 
-        const auto pixmap = m_itemData[item.url()]->values.value("iconPixmap").value<QImage>();
-        if (pixmap.isNull()) {
-            return false;
-        }
-        return pixmap;
+        // already generating the preview
+        return false;
     }
 
     case Roles::SourceIndex: {
@@ -317,51 +333,30 @@ int SortModel::indexForUrl(const QString &url)
 
 void SortModel::delayedPreview()
 {
-    KFileItemList itemSubSet;
-
-    if (m_itemsToPreview.isEmpty()) {
+    if (m_filesToPreview.isEmpty()) {
         return;
     }
 
-    if (m_itemsToPreview.constFirst().isMimeTypeKnown()) {
-        // Some mime types are known already, probably because they were
-        // determined when loading the icons for the visible items. Start
-        // a preview job for all items at the beginning of the list which
-        // have a known mime type.
-        do {
-            itemSubSet.append(m_itemsToPreview.takeFirst());
-        } while (!m_itemsToPreview.isEmpty() && m_itemsToPreview.constFirst().isMimeTypeKnown());
-    } else {
-        // Determine mime types for MaxBlockTimeout ms, and start a preview
-        // job for the corresponding items.
-        QElapsedTimer timer;
-        timer.start();
+    Q_ASSERT(std::ranges::all_of(m_filesToPreview, [](const auto &item) {
+        return item.isMimeTypeKnown();
+    }));
 
-        do {
-            const KFileItem item = m_itemsToPreview.takeFirst();
-            item.determineMimeType();
-            itemSubSet.append(item);
-        } while (!m_itemsToPreview.isEmpty() && timer.elapsed() < MaxBlockTimeout);
+    for (const auto &file : std::as_const(m_filesToPreview)) {
+        m_filesInPreviewGeneration.insert(file.url());
     }
 
-    m_itemsInPreviewGeneration << itemSubSet;
-
-    if (itemSubSet.size() > 0) {
-        static const auto pluginLists = KIO::PreviewJob::availablePlugins();
-        KIO::PreviewJob *job = KIO::filePreview(itemSubSet, m_screenshotSize, &pluginLists);
-        job->setIgnoreMaximumSize(true);
+    static const auto pluginLists = KIO::PreviewJob::availablePlugins();
+    KIO::PreviewJob *job = KIO::filePreview(QList<KFileItem>(m_filesToPreview.cbegin(), m_filesToPreview.cend()), m_screenshotSize, &pluginLists);
+    job->setIgnoreMaximumSize(true);
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
-        connect(job, &KIO::PreviewJob::generated, this, &SortModel::showPreview);
+    connect(job, &KIO::PreviewJob::generated, this, &SortModel::showPreview);
 #else
-        connect(job, &KIO::PreviewJob::gotPreview, this, &SortModel::showPreview);
+    connect(job, &KIO::PreviewJob::gotPreview, this, &SortModel::showPreview);
 #endif
-        connect(job, &KIO::PreviewJob::failed, this, &SortModel::previewFailed);
-        connect(job, &KIO::PreviewJob::finished, this, [this] {
-            delayedPreview();
-        });
-    }
+    connect(job, &KIO::PreviewJob::failed, this, &SortModel::previewFailed);
+    job->start();
 
-    m_itemsToPreview.clear();
+    m_filesToPreview.clear();
 }
 
 QModelIndex SortModel::itemToIndex(const KFileItem &item)
@@ -383,7 +378,7 @@ void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
 #endif
 {
     const auto index = itemToIndex(item);
-    m_itemsInPreviewGeneration.removeAll(item);
+    m_filesInPreviewGeneration.remove(item.url());
 
     if (!index.isValid()) {
         return;
@@ -392,14 +387,14 @@ void SortModel::showPreview(const KFileItem &item, const QPixmap &preview)
     if (m_itemData.contains(item.url())) {
         itemData = m_itemData[item.url()];
     } else {
-        itemData = new ItemData(item, QHash<QByteArray, QVariant>{});
+        itemData = new ItemData(item, {});
         m_itemData.insert(item.url(), itemData);
     }
 
 #if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
-    itemData->values["iconPixmap"] = preview;
+    itemData->thumbnail = preview;
 #else
-    itemData->values["iconPixmap"] = preview.toImage();
+    itemData->thumbnail = preview.toImage();
 #endif
 
     // qDebug() << "preview size:" << preview.size();
@@ -410,7 +405,7 @@ void SortModel::previewFailed(const KFileItem &item)
 {
     // Use folder image instead of displaying nothing then thumbnail generation fails
     const auto index = itemToIndex(item);
-    m_itemsInPreviewGeneration.removeAll(item);
+    m_filesInPreviewGeneration.remove(item.url());
 
     if (!index.isValid()) {
         return;
@@ -420,10 +415,10 @@ void SortModel::previewFailed(const KFileItem &item)
     if (m_itemData.contains(item.url())) {
         itemData = m_itemData[item.url()];
     } else {
-        itemData = new ItemData(item, QHash<QByteArray, QVariant>{});
+        itemData = new ItemData(item, {});
         m_itemData.insert(item.url(), itemData);
     }
 
-    itemData->values["iconPixmap"] = QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage();
+    itemData->thumbnail = QIcon::fromTheme(item.iconName()).pixmap(m_screenshotSize).toImage();
     Q_EMIT dataChanged(index, index, {Roles::Thumbnail});
 }
