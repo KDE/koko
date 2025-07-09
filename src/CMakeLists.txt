@@ -34,6 +34,7 @@ add_library(koko_static STATIC
     displaycolorspace.cpp
     photosapplication.cpp
     photosapplication.h
+    devicepixelratiohelper.cpp
 )
 
 kconfig_target_kcfg_file(koko_static
