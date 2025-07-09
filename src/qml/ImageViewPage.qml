@@ -540,7 +540,6 @@ Kirigami.Page {
             visible: !Kirigami.Settings.tabletMode && opacity > 0
             opacity: listView.currentItem !== null
                 && listView.isCurrentItemInteractive
-                && !listView.isCurrentItemDragging
                 && root.mainWindow.controlsVisible
                 ? 1 : 0
             parent: listView
