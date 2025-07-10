@@ -80,6 +80,7 @@ Item {
         }
 
         audioOutput: AudioOutput {
+            id: audioOutput
             volume: volumeSlider.value
         }
 
@@ -259,14 +260,22 @@ Item {
             }
 
             Controls.ToolButton {
-                Accessible.name: videoPlayer.muted ? i18n("Unmute audio") : i18n("Mute audio")
+                Accessible.name: i18n("Mute audio")
                 visible: videoPlayer.hasAudio
-                icon.name: videoPlayer.muted ? "audio-volume-muted" :
-                           volumeSlider.value == 0 ? "audio-volume-low" :
-                           volumeSlider.value >= 0.5 ? "audio-volume-high" : "audio-volume-medium"
-                onClicked: {
-                    videoPlayer.muted = !videoPlayer.muted;
+                icon.name: {
+                    if (audioOutput.volume <= 0 || audioOutput.muted) {
+                        return "audio-volume-muted-symbolic";
+                    } else if (audioOutput.volume <= 0.25) {
+                        return "audio-volume-low-symbolic";
+                    } else if (audioOutput.volume <= 0.75) {
+                        return "audio-volume-medium-symbolic";
+                    } else {
+                        return "audio-volume-high-symbolic";
+                    }
                 }
+                checkable: true
+                checked: audioOutput.muted
+                onClicked: { audioOutput.muted = !audioOutput.muted; }
             }
 
             Controls.Slider {
@@ -277,7 +286,7 @@ Item {
                 value: 0.5
                 visible: videoPlayer.hasAudio
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 5
-                onPressedChanged: videoPlayer.muted = false
+                onPressedChanged: audioOutput.muted = false
             }
 
             Item {
