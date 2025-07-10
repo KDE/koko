@@ -84,8 +84,8 @@ private:
     };
     QCache<QUrl, ItemData> m_itemData;
 
-    mutable QSet<QUrl> m_filesInMimeTypeResolution;
-    mutable QSet<KFileItem> m_filesToPreview;
+    mutable QList<QUrl> m_filesInMimeTypeResolution;
+    mutable QList<KFileItem> m_filesToPreview;
     QSet<QUrl> m_filesInPreviewGeneration;
 
     QModelIndex itemToIndex(const KFileItem &item);

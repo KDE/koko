@@ -9,12 +9,12 @@
 #include "roles.h"
 #include "types.h"
 #include <QDebug>
-#include <QElapsedTimer>
+#include <QFileInfo>
 #include <QIcon>
+#include <QMimeDatabase>
 #include <QTimer>
 
 #include <KIO/CopyJob>
-#include <KIO/MimetypeJob>
 #include <KIO/PreviewJob>
 #include <KIO/RestoreJob>
 
@@ -133,23 +133,26 @@ QVariant SortModel::data(const QModelIndex &index, int role) const
 
         const KFileItem item(thumbnailSource, {});
 
-        if (!m_filesInMimeTypeResolution.contains(thumbnailSource) && !m_filesInPreviewGeneration.contains(thumbnailSource)
-            && !m_filesToPreview.contains(item)) {
-            m_filesInMimeTypeResolution.insert(thumbnailSource);
+        if (!m_filesInPreviewGeneration.contains(thumbnailSource) && !m_filesToPreview.contains(item)) {
+            QString mimeType;
+            static QMimeDatabase db;
+            const QString scheme = thumbnailSource.scheme();
+            QFileInfo info(thumbnailSource.path());
 
-            // determine mimetype first and then generate preview in batch
-            auto mimetypeJob = KIO::mimetype(thumbnailSource, KIO::HideProgressInfo);
-            connect(mimetypeJob, &KJob::finished, this, [this, thumbnailSource, mimetypeJob] {
-                KFileItem itemWithMimetype(thumbnailSource, mimetypeJob->mimetype());
-                m_filesToPreview.insert(itemWithMimetype);
+            if (info.isDir()) {
+                mimeType = u"inode/directory"_s;
+            } else if (scheme.startsWith(QLatin1String("http")) || scheme == QLatin1String("mailto")) {
+                mimeType = u"application/octet-stream"_s;
+            } else {
+                mimeType = db.mimeTypeForFile(thumbnailSource.path(), QMimeDatabase::MatchMode::MatchExtension).name();
+            }
 
-                m_filesInMimeTypeResolution.remove(thumbnailSource);
+            KFileItem itemWithMimetype(thumbnailSource, mimeType);
+            m_filesToPreview.append(itemWithMimetype);
 
-                if (!m_previewTimer->isActive()) {
-                    m_previewTimer->start();
-                }
-            });
-            mimetypeJob->start();
+            if (!m_previewTimer->isActive()) {
+                m_previewTimer->start();
+            }
             return false;
         }
 
