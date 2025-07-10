@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:40+0000\n"
+"POT-Creation-Date: 2025-07-10 00:40+0000\n"
 "PO-Revision-Date: 2024-12-30 17:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -62,25 +62,27 @@ msgctxt "@item:intable"
 msgid "Location"
 msgstr "位置"
 
-#: exiv2extractor.cpp:508
+#: exiv2extractor.cpp:511
 #, kde-format
-msgctxt "@item:intable %1 is image width, %2 is image height"
-msgid "%1x%2"
+msgctxt ""
+"@item:intable %1 is the image width, %2 is the image height, %3 is the "
+"number of megapixels in the image"
+msgid "%1 × %2 (%3 MP)"
 msgstr ""
 
-#: exiv2extractor.cpp:514
+#: exiv2extractor.cpp:517
 #, kde-format
-msgctxt "@item:intable %1 is number of millions of pixels in image"
-msgid "(%1MP)"
+msgctxt "@item:intable %1 is the image width, %2 is the image height"
+msgid "%1 × %2"
 msgstr ""
 
-#: exiv2extractor.cpp:520
+#: exiv2extractor.cpp:521
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr ""
 
-#: exiv2extractor.cpp:521
+#: exiv2extractor.cpp:522
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -88,7 +90,7 @@ msgctxt "@item:intable"
 msgid "File Size"
 msgstr "檔案名稱："
 
-#: exiv2extractor.cpp:524
+#: exiv2extractor.cpp:525
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -96,32 +98,32 @@ msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "建立時間："
 
-#: exiv2extractor.cpp:526
+#: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr ""
 
-#: exiv2extractor.cpp:527
+#: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr ""
 
-#: exiv2extractor.cpp:528
+#: exiv2extractor.cpp:529
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr ""
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:530
 #, fuzzy, kde-format
 #| msgid "Image viewer"
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "影像檢視器"
 
-#: exiv2extractor.cpp:530
+#: exiv2extractor.cpp:531
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -129,7 +131,7 @@ msgctxt "@item:intable"
 msgid "File Type"
 msgstr "檔案名稱："
 
-#: exiv2extractor.cpp:541
+#: exiv2extractor.cpp:542
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -741,37 +743,37 @@ msgstr "前一張影像"
 msgid "Next image"
 msgstr "下一張影像"
 
-#: qml/ImageViewPage.qml:850 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "投影播放間隔："
 
-#: qml/ImageViewPage.qml:867 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 秒"
 
-#: qml/ImageViewPage.qml:923
+#: qml/ImageViewPage.qml:922
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "循環"
 
-#: qml/ImageViewPage.qml:932 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:931 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "隨機"
 
-#: qml/ImageViewPage.qml:944
+#: qml/ImageViewPage.qml:943
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "結束投影播放"
 
-#: qml/ImageViewPage.qml:958
+#: qml/ImageViewPage.qml:957
 #, kde-format
 msgid "Show All Controls"
 msgstr "顯示所有控制"

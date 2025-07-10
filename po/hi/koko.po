@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:40+0000\n"
+"POT-Creation-Date: 2025-07-10 00:40+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -59,25 +59,27 @@ msgctxt "@item:intable"
 msgid "Location"
 msgstr "स्थानों"
 
-#: exiv2extractor.cpp:508
+#: exiv2extractor.cpp:511
 #, kde-format
-msgctxt "@item:intable %1 is image width, %2 is image height"
-msgid "%1x%2"
+msgctxt ""
+"@item:intable %1 is the image width, %2 is the image height, %3 is the "
+"number of megapixels in the image"
+msgid "%1 × %2 (%3 MP)"
 msgstr ""
 
-#: exiv2extractor.cpp:514
+#: exiv2extractor.cpp:517
 #, kde-format
-msgctxt "@item:intable %1 is number of millions of pixels in image"
-msgid "(%1MP)"
+msgctxt "@item:intable %1 is the image width, %2 is the image height"
+msgid "%1 × %2"
 msgstr ""
 
-#: exiv2extractor.cpp:520
+#: exiv2extractor.cpp:521
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr ""
 
-#: exiv2extractor.cpp:521
+#: exiv2extractor.cpp:522
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -85,7 +87,7 @@ msgctxt "@item:intable"
 msgid "File Size"
 msgstr "फ़ाइल का नाम:"
 
-#: exiv2extractor.cpp:524
+#: exiv2extractor.cpp:525
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -93,32 +95,32 @@ msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "बनाया था:"
 
-#: exiv2extractor.cpp:526
+#: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr ""
 
-#: exiv2extractor.cpp:527
+#: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr ""
 
-#: exiv2extractor.cpp:528
+#: exiv2extractor.cpp:529
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr ""
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:530
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "इमेजिस"
 
-#: exiv2extractor.cpp:530
+#: exiv2extractor.cpp:531
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -126,7 +128,7 @@ msgctxt "@item:intable"
 msgid "File Type"
 msgstr "फ़ाइल का नाम:"
 
-#: exiv2extractor.cpp:541
+#: exiv2extractor.cpp:542
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -741,13 +743,13 @@ msgstr "पिछली छवि"
 msgid "Next image"
 msgstr "अगली छवि"
 
-#: qml/ImageViewPage.qml:850 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "स्लाइड शो अंतराल:"
 
-#: qml/ImageViewPage.qml:867 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -755,24 +757,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "%1 सेकंड"
 msgstr[1] "%1 सेकंड"
 
-#: qml/ImageViewPage.qml:923
+#: qml/ImageViewPage.qml:922
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "कुंडली"
 
-#: qml/ImageViewPage.qml:932 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:931 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "यादृच्छिक करें"
 
-#: qml/ImageViewPage.qml:944
+#: qml/ImageViewPage.qml:943
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "स्लाइड शो रोकें"
 
-#: qml/ImageViewPage.qml:958
+#: qml/ImageViewPage.qml:957
 #, kde-format
 msgid "Show All Controls"
 msgstr "सभी नियंत्रण दिखाएं"
