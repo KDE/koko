@@ -89,16 +89,24 @@ Item {
         loops: videoPlayer.duration >= 5000 ? 1 : MediaPlayer.Infinite // loop short videos
 
         function seekForward(): void {
+            if (!videoPlayer.seekable) {
+                return;
+            }
+
             if (videoPlayer.position + 5000 < videoPlayer.duration) {
-                videoPlayer.seek(videoPlayer.position + 5000);
+                videoPlayer.position =+ 5000;
             } else {
-                videoPlayer.seek(0);
+                videoPlayer.position = 0;
                 videoPlayer.stop();
             }
         }
 
         function seekBackward(): void {
-            videoPlayer.seek(videoPlayer.position - 5000);
+            if (!videoPlayer.seekable) {
+                return;
+            }
+
+            videoPlayer.position -= 5000;
         }
     }
 
@@ -200,18 +208,22 @@ Item {
                 text: KCA.Format.formatDuration(timeSlider.value, KCA.FormatTypes.FoldHours)
             }
 
-            Keys.onLeftPressed: {
-                videoPlayer.seekBackward();
-                event.accepted = true;
+            Keys.onLeftPressed: (event) => {
+                if (videoPlayer.seekable) {
+                    videoPlayer.seekBackward();
+                    event.accepted = true;
+                }
             }
-            Keys.onRightPressed: {
-                videoPlayer.seekForward();
-                event.accepted = true;
+            Keys.onRightPressed: (event) => {
+                if (videoPlayer.seekable) {
+                    videoPlayer.seekForward();
+                    event.accepted = true;
+                }
             }
             // update on release
             onPressedChanged: {
                 if (!pressed) {
-                    videoPlayer.seek(value);
+                    videoPlayer.position = value;
                 }
             }
         }
