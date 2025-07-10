@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2025-06-26 16:33+0200\n"
+"PO-Revision-Date: 2025-07-09 22:44+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -334,11 +334,10 @@ msgid "Root"
 msgstr "Erroa"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Partekatu hautatutako euskarri"
+msgstr "Partekatu hautatutako hedabidea"
 
 #: qml/AlbumView.qml:343
 #, kde-format
@@ -368,7 +367,7 @@ msgstr "Hautatu dena"
 #: qml/AlbumView.qml:358
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr "Uneko ikuspegiko euskarri denak hautatzen ditu"
+msgstr "Uneko ikuspegiko hedabide denak hautatzen ditu"
 
 #: qml/AlbumView.qml:365
 #, kde-format
@@ -378,12 +377,12 @@ msgstr "Desautatu dena"
 #: qml/AlbumView.qml:366
 #, kde-format
 msgid "De-selects all the selected media"
-msgstr "Hautatutako euskarri guztiak desautatzen ditu"
+msgstr "Hautatutako hedabide denak desautatzen ditu"
 
 #: qml/AlbumView.qml:477
 #, kde-format
 msgid "No Media Found"
-msgstr "Ez da euskarririk aurkitu"
+msgstr "Ez da hedabiderik aurkitu"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
 #, kde-format
@@ -562,157 +561,137 @@ msgid "Configure Metadata Display"
 msgstr "Konfiguratu metadatuen bistaratzea"
 
 #: qml/ImageViewPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Gogokoa"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Kendu gogokoetatik"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Gehitu gogokoetara"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "Editatu"
+msgstr "&Editatu"
 
 #: qml/ImageViewPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr "Editatu irudia"
+msgstr "Editatu irudi hau"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "Partekatu"
+msgstr "&Partekatu"
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "Partekatu bideoa"
+msgstr "Partekatu bideo hau"
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "Partekatu irudia"
+msgstr "Partekatu irudi hau"
 
 #: qml/ImageViewPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "Informazioa"
+msgstr "&Informazioa"
 
 #: qml/ImageViewPage.qml:141
-#, fuzzy, kde-format
-#| msgid "See information about video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "Ikusi bideoari buruzko informazioa"
+msgstr "Ikusi bideo honi buruzko informazioa"
 
 #: qml/ImageViewPage.qml:143
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "Irudiaren tamainari buruzko informazioa"
+msgstr "Ikusi irudi honi buruzko informazioa"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "Diapositiba emanaldia"
+msgstr "&Diapositiba-emanaldia"
 
 #: qml/ImageViewPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
-msgstr "Abiatu diapositiba emanaldi"
+msgstr "Abiarazi diapositiba-emanaldi"
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr "Erakutsi aginte guztiak"
+msgstr "Erakutsi a&ginteak"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "Sartu murgiltze ikuspegi moduan"
 
 #: qml/ImageViewPage.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "Irten murgiltze ikuspegi modutik"
 
 #: qml/ImageViewPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr "Erakutsi koadro txikien barra"
+msgstr "Erakutsi &koadro txikien tresna-barra"
 
 #: qml/ImageViewPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr "Erakutsi koadro txikien barra"
+msgstr "Erakutsi koadro txikien tresna-barra"
 
 #: qml/ImageViewPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Hide Thumbnail Bar"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr "Ezkutatu koadro txikien barra"
+msgstr "Ezkutatu koadro txikien tresna-barra"
 
 #: qml/ImageViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "Pantaila-betea"
+msgstr "Pantaila &osoa"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "Sartu pantaila-betean"
+msgstr "Sartu pantaila osoan"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr "Irten Pantaila-betetik"
+msgstr "Irten Pantaila osotik"
 
 #: qml/ImageViewPage.qml:490
 #, kde-format
@@ -936,15 +915,13 @@ msgid "About KDE"
 msgstr "KDEri buruz"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Partekatu"
+msgstr "&Partekatu"
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "Partekatu"
