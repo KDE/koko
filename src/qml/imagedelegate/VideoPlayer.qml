@@ -85,7 +85,7 @@ Item {
 
         videoOutput: videoOutput
 
-        loops: videoPlayer.duration >= 5000 ? 0 : MediaPlayer.Infinite // loop short videos
+        loops: videoPlayer.duration >= 5000 ? 1 : MediaPlayer.Infinite // loop short videos
 
         function seekForward(): void {
             if (videoPlayer.position + 5000 < videoPlayer.duration) {
@@ -292,15 +292,18 @@ Item {
 
             // this local and independed from slideshow to avoid confusion
             Controls.ToolButton {
-                // Follows Elisa's convention
-                Accessible.name: videoPlayer.loops == MediaPlayer.Infinite ? i18n("Repeat current video") : i18n("Don't repeat current video")
+                Accessible.name: i18n("Repeat current video")
                 Controls.ToolTip.text: Accessible.name
                 Controls.ToolTip.visible: hovered
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
-                icon.name: videoPlayer.loops == MediaPlayer.Infinite ? "media-repeat-single" : "media-repeat-none"
+                icon.name: "media-repeat-all-symbolic"
+                checkable: true
+                checked: videoPlayer.loops === MediaPlayer.Infinite
                 onClicked: {
-                    if (videoPlayer.loops == MediaPlayer.Infinite) {
-                        videoPlayer.loops = 0;
+                    if (videoPlayer.loops === MediaPlayer.Infinite) {
+                        // BUG QTBUG-138417: We are unable to set 0, so the video will loop once more if it is already playing.
+                        //                   A value of 0 is ignored and the video would loop forever if set.
+                        videoPlayer.loops = 1;
                     } else {
                         videoPlayer.loops = MediaPlayer.Infinite;
                     }
