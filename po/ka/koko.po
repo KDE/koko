@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:40+0000\n"
-"PO-Revision-Date: 2025-07-08 04:16+0200\n"
+"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"PO-Revision-Date: 2025-07-10 03:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -64,13 +64,13 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:517
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -798,13 +798,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "აირჩიეთ, რა არის ნაჩვენები"
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "ადგილები"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "ასლები"

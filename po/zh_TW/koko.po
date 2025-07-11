@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:40+0000\n"
+"POT-Creation-Date: 2025-07-11 00:41+0000\n"
 "PO-Revision-Date: 2024-12-30 17:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -833,14 +833,14 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr ""
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@title"
 msgid "Places"
 msgstr "快速存取"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "影像"

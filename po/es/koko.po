@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:40+0000\n"
-"PO-Revision-Date: 2025-07-08 03:58+0100\n"
+"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"PO-Revision-Date: 2025-07-10 03:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,13 +65,13 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:517
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -801,13 +801,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "Escoger lo que se muestra"
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Lugares"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Imágenes"
@@ -964,11 +964,3 @@ msgstr "Preferencias"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Añadir nueva etiqueta…"
-
-#~ msgctxt "@item:intable %1 is image width, %2 is image height"
-#~ msgid "%1x%2"
-#~ msgstr "%1x%2"
-
-#~ msgctxt "@item:intable %1 is number of millions of pixels in image"
-#~ msgid "(%1MP)"
-#~ msgstr "(%1 MP)"

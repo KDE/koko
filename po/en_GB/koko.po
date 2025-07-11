@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:40+0000\n"
+"POT-Creation-Date: 2025-07-11 00:41+0000\n"
 "PO-Revision-Date: 2024-11-01 13:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -837,14 +837,14 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr ""
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, fuzzy, kde-format
 #| msgid "Places"
 msgctxt "@title"
 msgid "Places"
 msgstr "Places"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Images"

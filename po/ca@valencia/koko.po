@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:40+0000\n"
-"PO-Revision-Date: 2025-07-02 11:57+0200\n"
+"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"PO-Revision-Date: 2025-07-10 09:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -66,13 +66,13 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:517
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -566,7 +566,7 @@ msgstr "Configureu la visualització de les metadades"
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: qml/ImageViewPage.qml:74
 #, kde-format
@@ -757,7 +757,7 @@ msgstr "Metadades"
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
@@ -803,13 +803,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "Seleccioneu què es mostra"
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Llocs"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Imatges"
@@ -966,11 +966,3 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
-
-#~ msgctxt "@item:intable %1 is image width, %2 is image height"
-#~ msgid "%1x%2"
-#~ msgstr "%1x%2"
-
-#~ msgctxt "@item:intable %1 is number of millions of pixels in image"
-#~ msgid "(%1MP)"
-#~ msgstr "(%1MP)"

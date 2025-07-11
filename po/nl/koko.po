@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-10 00:40+0000\n"
-"PO-Revision-Date: 2025-07-08 14:44+0200\n"
+"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"PO-Revision-Date: 2025-07-10 13:27+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -63,13 +63,13 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:517
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -799,13 +799,13 @@ msgctxt "@action:button"
 msgid "Choose What's Shown"
 msgstr "Kies wat te tonen"
 
-#: qml/Main.qml:67
+#: qml/Main.qml:68
 #, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Plaatsen"
 
-#: qml/Main.qml:104
+#: qml/Main.qml:105
 #, kde-format
 msgid "Images"
 msgstr "Afbeeldingen"
