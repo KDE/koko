@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2024-11-06 20:49+0200\n"
+"PO-Revision-Date: 2025-07-07 21:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -28,8 +28,7 @@ msgid "Your emails"
 msgstr "translator@legisign.org"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Perusasetukset"
@@ -162,12 +161,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "Photos on kuvakokoelmasi kuvakatselin."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "© 2013–2020 KDE:n avustajat"
+msgstr "© 2013–%1 KDE:n avustajat"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -235,74 +232,73 @@ msgstr "Kuvan jako-osoite on <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "Siirry kuviin"
 
 #: photosapplication.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "Lisää suosikkeihin"
+msgstr "Siirry suosikkeihin"
 
 #: photosapplication.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "Siirry videoihin"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "Siirry roskakoriin"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "Siirry etäkansioihin"
 
 #: photosapplication.cpp:85
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "Siirry maittain lajiteltuihin kuviin"
 
 #: photosapplication.cpp:92
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by states"
-msgstr ""
+msgstr "Siirry osavaltioittain lajiteltuihin kuviin"
 
 #: photosapplication.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "Siirry kaupungeittain lajiteltuihin kuviin"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "Siirry vuoden mukaan lajiteltuihin kuviin"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "Siirry kuukauden mukaan lajiteltuihin kuviin"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "Siirry viikon mukaan lajiteltuihin kuviin"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "Siirry päivän mukaan lajiteltuihin kuviin"
 
 #: qml/AlbumDelegate.qml:132
 #, kde-format
@@ -312,8 +308,7 @@ msgstr[0] "Yksi kuva"
 msgstr[1] "%1 kuvaa"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "Kansiot"
@@ -397,22 +392,19 @@ msgid "No Media Found"
 msgstr "Mediaa ei löytynyt"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Kuvat"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videot"
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Suosikit"
@@ -824,8 +816,7 @@ msgid "Choose What's Shown"
 msgstr ""
 
 #: qml/Main.qml:67
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Sijainnit"
@@ -836,32 +827,28 @@ msgid "Images"
 msgstr "Kuvat"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Asetukset"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Roskakori"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Verkko"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Poista kirjanmerkki"
+msgstr "Kirjanmerkit"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -869,22 +856,19 @@ msgid "Locations"
 msgstr "Sijainnit"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Maat"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Osavaltiot"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Kaupungit"
@@ -895,29 +879,25 @@ msgid "Time"
 msgstr "Aika"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Vuodet"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Kuukaudet"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Viikot"
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Päivät"
@@ -933,15 +913,13 @@ msgid "Thumbnails size:"
 msgstr "Pienoiskuvan koko:"
 
 #: qml/Settings/GeneralConfigPage.qml:38
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow:"
-msgstr "Diaesitys"
+msgstr "Diaesitys:"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Perusasetukset"
@@ -953,11 +931,10 @@ msgstr "Tietoa Photosista"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "Tietoa KDE:sta"
+msgstr "Tietoa"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format

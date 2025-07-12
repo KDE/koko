@@ -28,8 +28,7 @@ msgid "Your emails"
 msgstr "vit@pelcak.org"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Obecné"
@@ -63,68 +62,67 @@ msgstr "Umístění"
 #, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1MP)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: exiv2extractor.cpp:521
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr ""
+msgstr "Velikost souboru"
 
 #: exiv2extractor.cpp:524
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr ""
+msgstr "Datum vytvoření"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Datum změny"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Poslední přístup"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Obrázky"
+msgstr "Velikost obrázku"
 
 #: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr ""
+msgstr "Typ souboru"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Komentář"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -815,8 +813,7 @@ msgid "Choose What's Shown"
 msgstr ""
 
 #: qml/Main.qml:67
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Místa"
@@ -827,8 +824,7 @@ msgid "Images"
 msgstr "Obrázky"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavení"
@@ -931,8 +927,7 @@ msgid "Slideshow:"
 msgstr "Promítání"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Obecné"
@@ -944,11 +939,10 @@ msgstr ""
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "O prostředí KDE"
+msgstr "O aplikaci"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
