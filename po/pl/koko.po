@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"POT-Creation-Date: 2025-07-12 00:41+0000\n"
 "PO-Revision-Date: 2024-10-26 12:32+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -524,12 +524,12 @@ msgstr "Zapisz jako"
 msgid "You are now editing a new file."
 msgstr "Edytujesz teraz nowy plik."
 
-#: qml/imagedelegate/VideoPlayer.qml:183
+#: qml/imagedelegate/VideoPlayer.qml:192
 #, kde-format
 msgid "Seek slider"
 msgstr "Suwak przewijania"
 
-#: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
+#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
@@ -537,40 +537,30 @@ msgstr[0] "Przewiń wstecz o 1 sekundę"
 msgstr[1] "Przewiń wstecz o %1 sekundy"
 msgstr[2] "Przewiń wstecz o %1 sekund"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Pause playback"
 msgstr "Wstrzymaj odtwarzanie"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Continue playback"
 msgstr "Kontynuuj odtwarzanie"
 
-#: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
-msgid "Unmute audio"
-msgstr "Wyłącz wyciszenie"
-
-#: qml/imagedelegate/VideoPlayer.qml:262
+#: qml/imagedelegate/VideoPlayer.qml:275
 #, kde-format
 msgid "Mute audio"
 msgstr "Włącz wyciszenie"
 
-#: qml/imagedelegate/VideoPlayer.qml:274
+#: qml/imagedelegate/VideoPlayer.qml:295
 #, kde-format
 msgid "Volume slider"
 msgstr "Suwak głośności"
 
-#: qml/imagedelegate/VideoPlayer.qml:296
+#: qml/imagedelegate/VideoPlayer.qml:316
 #, kde-format
 msgid "Repeat current video"
 msgstr "Powtórz bieżący film"
-
-#: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
-msgid "Don't repeat current video"
-msgstr "Nie powtarzaj bieżącego filmu"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
@@ -1019,6 +1009,12 @@ msgstr "Ustawienia"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Dodaj nowy znacznik..."
+
+#~ msgid "Unmute audio"
+#~ msgstr "Wyłącz wyciszenie"
+
+#~ msgid "Don't repeat current video"
+#~ msgstr "Nie powtarzaj bieżącego filmu"
 
 #~ msgid "Remove"
 #~ msgstr "Usuń"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"POT-Creation-Date: 2025-07-12 00:41+0000\n"
 "PO-Revision-Date: 2025-07-04 09:55+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -507,52 +507,42 @@ msgstr "Enregistrer sous"
 msgid "You are now editing a new file."
 msgstr "Vous êtes en cours de modification d'un nouveau document."
 
-#: qml/imagedelegate/VideoPlayer.qml:183
+#: qml/imagedelegate/VideoPlayer.qml:192
 #, kde-format
 msgid "Seek slider"
 msgstr "Curseur de recherche"
 
-#: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
+#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "Revenir en arrière de une seconde"
 msgstr[1] "Revenir en arrière de %1 secondes"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Pause playback"
 msgstr "Mettre la lecture en pause"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Continue playback"
 msgstr "Poursuivre la lecture"
 
-#: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
-msgid "Unmute audio"
-msgstr "Remettre le son"
-
-#: qml/imagedelegate/VideoPlayer.qml:262
+#: qml/imagedelegate/VideoPlayer.qml:275
 #, kde-format
 msgid "Mute audio"
 msgstr "Mettre le son en pause"
 
-#: qml/imagedelegate/VideoPlayer.qml:274
+#: qml/imagedelegate/VideoPlayer.qml:295
 #, kde-format
 msgid "Volume slider"
 msgstr "Curseur de volume"
 
-#: qml/imagedelegate/VideoPlayer.qml:296
+#: qml/imagedelegate/VideoPlayer.qml:316
 #, kde-format
 msgid "Repeat current video"
 msgstr "Répéter la vidéo courante"
-
-#: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
-msgid "Don't repeat current video"
-msgstr "Ne pas répéter la vidéo courante"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
@@ -963,6 +953,12 @@ msgstr "Configuration"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Ajouter une nouvelle étiquette..."
+
+#~ msgid "Unmute audio"
+#~ msgstr "Remettre le son"
+
+#~ msgid "Don't repeat current video"
+#~ msgstr "Ne pas répéter la vidéo courante"
 
 #~ msgctxt "@item:intable %1 is image width, %2 is image height"
 #~ msgid "%1x%2"

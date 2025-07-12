@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"POT-Creation-Date: 2025-07-12 00:41+0000\n"
 "PO-Revision-Date: 2025-06-29 15:21+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -508,52 +508,42 @@ msgstr "Salva come"
 msgid "You are now editing a new file."
 msgstr "Stai modificando un nuovo file."
 
-#: qml/imagedelegate/VideoPlayer.qml:183
+#: qml/imagedelegate/VideoPlayer.qml:192
 #, kde-format
 msgid "Seek slider"
 msgstr "Cursore di ricerca"
 
-#: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
+#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "Salta indietro di un secondo"
 msgstr[1] "Salta indietro di %1 secondi"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Pause playback"
 msgstr "Riproduzione in pausa"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Continue playback"
 msgstr "Continua riproduzione"
 
-#: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
-msgid "Unmute audio"
-msgstr "Attiva l'audio"
-
-#: qml/imagedelegate/VideoPlayer.qml:262
+#: qml/imagedelegate/VideoPlayer.qml:275
 #, kde-format
 msgid "Mute audio"
 msgstr "Silenzia"
 
-#: qml/imagedelegate/VideoPlayer.qml:274
+#: qml/imagedelegate/VideoPlayer.qml:295
 #, kde-format
 msgid "Volume slider"
 msgstr "Cursore del volume"
 
-#: qml/imagedelegate/VideoPlayer.qml:296
+#: qml/imagedelegate/VideoPlayer.qml:316
 #, kde-format
 msgid "Repeat current video"
 msgstr "Ripeti il video attuale"
-
-#: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
-msgid "Don't repeat current video"
-msgstr "Non ripetere il video attuale"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
@@ -986,6 +976,12 @@ msgstr "Impostazioni"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Aggiungi nuova etichetta…"
+
+#~ msgid "Unmute audio"
+#~ msgstr "Attiva l'audio"
+
+#~ msgid "Don't repeat current video"
+#~ msgstr "Non ripetere il video attuale"
 
 #~ msgctxt "@item:intable %1 is image width, %2 is image height"
 #~ msgid "%1x%2"

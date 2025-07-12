@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"POT-Creation-Date: 2025-07-12 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -522,52 +522,42 @@ msgstr "के रूप रक्षित करें"
 msgid "You are now editing a new file."
 msgstr "अब आप एक नई फ़ाइल संपादित कर रहे हैं."
 
-#: qml/imagedelegate/VideoPlayer.qml:183
+#: qml/imagedelegate/VideoPlayer.qml:192
 #, kde-format
 msgid "Seek slider"
 msgstr "स्लाइडर खोजें"
 
-#: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
+#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "%1 सेकंड पीछे जाएं"
 msgstr[1] "%1 सेकंड पीछे जाएं"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Pause playback"
 msgstr "प्लेबैक रोकें"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Continue playback"
 msgstr "प्लेबैक जारी रखें"
 
-#: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
-msgid "Unmute audio"
-msgstr "ऑडियो अनम्यूट करें"
-
-#: qml/imagedelegate/VideoPlayer.qml:262
+#: qml/imagedelegate/VideoPlayer.qml:275
 #, kde-format
 msgid "Mute audio"
 msgstr "ऑडियो म्यूट करें"
 
-#: qml/imagedelegate/VideoPlayer.qml:274
+#: qml/imagedelegate/VideoPlayer.qml:295
 #, kde-format
 msgid "Volume slider"
 msgstr "वॉल्यूम स्लाइडर"
 
-#: qml/imagedelegate/VideoPlayer.qml:296
+#: qml/imagedelegate/VideoPlayer.qml:316
 #, kde-format
 msgid "Repeat current video"
 msgstr "वर्तमान वीडियो दोहराएँ"
-
-#: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
-msgid "Don't repeat current video"
-msgstr "वर्तमान वीडियो को न दोहराएं"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
@@ -1014,6 +1004,12 @@ msgstr "सेटिंग्स"
 #, kde-format
 msgid "Add new tag…"
 msgstr "नया टैग जोड़ें…"
+
+#~ msgid "Unmute audio"
+#~ msgstr "ऑडियो अनम्यूट करें"
+
+#~ msgid "Don't repeat current video"
+#~ msgstr "वर्तमान वीडियो को न दोहराएं"
 
 #~ msgid "Remove"
 #~ msgstr "निकालना"

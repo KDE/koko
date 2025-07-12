@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"POT-Creation-Date: 2025-07-12 00:41+0000\n"
 "PO-Revision-Date: 2024-12-10 01:00+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -523,51 +523,41 @@ msgstr "다른 이름으로 저장"
 msgid "You are now editing a new file."
 msgstr "새 파일을 편집하고 있습니다."
 
-#: qml/imagedelegate/VideoPlayer.qml:183
+#: qml/imagedelegate/VideoPlayer.qml:192
 #, kde-format
 msgid "Seek slider"
 msgstr "검색 슬라이더"
 
-#: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
+#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "%1초 앞으로 탐색"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Pause playback"
 msgstr "재생 일시 정지"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Continue playback"
 msgstr "재생 계속"
 
-#: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
-msgid "Unmute audio"
-msgstr "오디오 음소거 해제"
-
-#: qml/imagedelegate/VideoPlayer.qml:262
+#: qml/imagedelegate/VideoPlayer.qml:275
 #, kde-format
 msgid "Mute audio"
 msgstr "오디오 음소거"
 
-#: qml/imagedelegate/VideoPlayer.qml:274
+#: qml/imagedelegate/VideoPlayer.qml:295
 #, kde-format
 msgid "Volume slider"
 msgstr "음량 슬라이더"
 
-#: qml/imagedelegate/VideoPlayer.qml:296
+#: qml/imagedelegate/VideoPlayer.qml:316
 #, kde-format
 msgid "Repeat current video"
 msgstr "현재 동영상 반복"
-
-#: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
-msgid "Don't repeat current video"
-msgstr "현재 동영상 반복하지 않음"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
@@ -1014,6 +1004,12 @@ msgstr "설정"
 #, kde-format
 msgid "Add new tag…"
 msgstr "새 태그 추가..."
+
+#~ msgid "Unmute audio"
+#~ msgstr "오디오 음소거 해제"
+
+#~ msgid "Don't repeat current video"
+#~ msgstr "현재 동영상 반복하지 않음"
 
 #~ msgid "Remove"
 #~ msgstr "삭제"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-11 00:41+0000\n"
+"POT-Creation-Date: 2025-07-12 00:41+0000\n"
 "PO-Revision-Date: 2024-06-25 10:58+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -28,8 +28,7 @@ msgid "Your emails"
 msgstr "vit@pelcak.org"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Obecné"
@@ -77,56 +76,55 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 #: exiv2extractor.cpp:522
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr ""
+msgstr "Velikost souboru"
 
 #: exiv2extractor.cpp:525
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr ""
+msgstr "Datum vytvoření"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Datum změny"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Poslední přístup"
 
 #: exiv2extractor.cpp:529
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "Cesta"
 
 #: exiv2extractor.cpp:530
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Obrázky"
+msgstr "Velikost obrázku"
 
 #: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr ""
+msgstr "Typ souboru"
 
 #: exiv2extractor.cpp:542
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Komentář"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -516,12 +514,12 @@ msgstr "Uložit jako"
 msgid "You are now editing a new file."
 msgstr "Nyní upravujete nový soubor."
 
-#: qml/imagedelegate/VideoPlayer.qml:183
+#: qml/imagedelegate/VideoPlayer.qml:192
 #, kde-format
 msgid "Seek slider"
 msgstr "Posuvník přehrávání"
 
-#: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
+#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
@@ -529,40 +527,30 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Pause playback"
 msgstr "Pozastavit přehrávání"
 
-#: qml/imagedelegate/VideoPlayer.qml:240
+#: qml/imagedelegate/VideoPlayer.qml:253
 #, kde-format
 msgid "Continue playback"
 msgstr "Pokračovat v přehrávání"
 
-#: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
-msgid "Unmute audio"
-msgstr "Povolit zvuk"
-
-#: qml/imagedelegate/VideoPlayer.qml:262
+#: qml/imagedelegate/VideoPlayer.qml:275
 #, kde-format
 msgid "Mute audio"
 msgstr "Ztlumit zvuk"
 
-#: qml/imagedelegate/VideoPlayer.qml:274
+#: qml/imagedelegate/VideoPlayer.qml:295
 #, kde-format
 msgid "Volume slider"
 msgstr "Posuvník hlasitosti"
 
-#: qml/imagedelegate/VideoPlayer.qml:296
+#: qml/imagedelegate/VideoPlayer.qml:316
 #, kde-format
 msgid "Repeat current video"
 msgstr "Opakovat aktuální video"
-
-#: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
-msgid "Don't repeat current video"
-msgstr "Neopakovat aktuální video"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
@@ -829,8 +817,7 @@ msgid "Choose What's Shown"
 msgstr ""
 
 #: qml/Main.qml:68
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Místa"
@@ -841,8 +828,7 @@ msgid "Images"
 msgstr "Obrázky"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavení"
@@ -945,8 +931,7 @@ msgid "Slideshow:"
 msgstr "Promítání"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Obecné"
@@ -958,11 +943,10 @@ msgstr ""
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "O prostředí KDE"
+msgstr "O aplikaci"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
@@ -1008,6 +992,12 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
+
+#~ msgid "Unmute audio"
+#~ msgstr "Povolit zvuk"
+
+#~ msgid "Don't repeat current video"
+#~ msgstr "Neopakovat aktuální video"
 
 #~ msgid "Remove"
 #~ msgstr "Odstranit"
