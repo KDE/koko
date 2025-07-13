@@ -6,10 +6,9 @@
  */
 
 #include "imagetimemodel.h"
-#include "roles.h"
 
 ImageTimeModel::ImageTimeModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractImageModel(parent)
     , m_group(ImageStorage::TimeGroup::Day)
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTimeModel::slotPopulate);
@@ -23,35 +22,36 @@ void ImageTimeModel::slotPopulate()
     endResetModel();
 }
 
-QHash<int, QByteArray> ImageTimeModel::roleNames() const
-{
-    return Roles::roleNames();
-}
-
 QVariant ImageTimeModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    const QByteArray key = m_times.at(index.row()).first;
+    const auto &collection = m_times.at(index.row());
 
     switch (role) {
-    case Roles::ContentRole:
-        return m_times.at(index.row()).second;
+    case ContentRole:
+        return collection.display;
 
-    case Roles::FilesRole:
-        return QVariant::fromValue(ImageStorage::instance()->imagesForTime(key, m_group));
+    case FilesRole:
+        return QVariant::fromValue(ImageStorage::instance()->imagesForTime(collection.key, m_group));
 
-    case Roles::FileCountRole:
-        return ImageStorage::instance()->imagesForTime(key, m_group).size();
+    case FileCountRole:
+        return ImageStorage::instance()->imagesForTime(collection.key, m_group).size();
 
-    case Roles::ImageUrlRole:
-        return ImageStorage::instance()->imageForTime(key, m_group);
+    case ImageUrlRole:
+        return ImageStorage::instance()->imageForTime(collection, m_group).url();
 
-    case Roles::DateRole:
-        return ImageStorage::instance()->dateForKey(key, m_group);
+    case ItemRole:
+        return ImageStorage::instance()->imageForTime(collection, m_group);
 
-    case Roles::ItemTypeRole:
-        return QVariant::fromValue(ImageStorage::ItemTypes::Album);
+    case DateRole:
+        return ImageStorage::instance()->dateForCollection(collection, m_group);
+
+    case ItemTypeRole:
+        return ItemType::Collection;
+
+    case ThumbnailRole:
+        return thumbnailForItem(ImageStorage::instance()->imageForTime(collection, m_group));
     }
 
     return {};

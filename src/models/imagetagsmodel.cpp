@@ -5,13 +5,27 @@
  */
 
 #include "imagetagsmodel.h"
+#include "abstractimagemodel.h"
 #include "imagestorage.h"
 
 ImageTagsModel::ImageTagsModel(QObject *parent)
-    : OpenFileModel(parent)
+    : AbstractImageModel(parent)
     , m_tag(QString())
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageTagsModel::slotPopulate);
+}
+
+QVariant ImageTagsModel::data(const QModelIndex &index, int role) const
+{
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
+
+    const auto &item = m_images[index.row()];
+    return dataFromItem(item, role);
+}
+
+int ImageTagsModel::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? m_images.size() : 0;
 }
 
 QString ImageTagsModel::tag() const

@@ -17,7 +17,11 @@ class ImageFavoritesModel : public AbstractImageModel
 
 public:
     explicit ImageFavoritesModel(QObject *parent = nullptr);
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-private slots:
+private:
     void slotPopulate();
+
+    KFileItemList m_images;
 };

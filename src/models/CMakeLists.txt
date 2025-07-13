@@ -20,8 +20,6 @@ add_library(photos_model_static STATIC
     imagetimemodel.h
     openfilemodel.cpp
     openfilemodel.h
-    roles.cpp
-    roles.h
     sortmodel.cpp
     sortmodel.h
 )
@@ -32,7 +30,7 @@ target_link_libraries(photos_model_static PUBLIC
     Qt::Sql
     Qt::Positioning
     KF6::KIOCore
-    KF6::KIOWidgets # for KDirModel
+    KF6::KIOGui
     KF6::GuiAddons
     KF6::CoreAddons
 )

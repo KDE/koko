@@ -22,3 +22,14 @@ void ImageFavoritesModel::slotPopulate()
     m_images = ImageStorage::instance()->imagesForFavorites();
     endResetModel();
 }
+
+QVariant ImageFavoritesModel::data(const QModelIndex &index, int role) const
+{
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
+    return dataFromItem(m_images.at(index.row()), role);
+}
+
+int ImageFavoritesModel::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : m_images.size();
+}

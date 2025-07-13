@@ -406,7 +406,7 @@ Kirigami.ScrollablePage {
             highlighted: gridView.currentIndex == index
 
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
-            Controls.ToolTip.visible: hovered && model.itemType === Koko.ImageStorage.Image
+            Controls.ToolTip.visible: hovered && model.itemType === Koko.AbstractImageModel.Image
             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 
             onPressAndHold: gridView.model.toggleSelected(delegate.index)
@@ -417,17 +417,18 @@ Kirigami.ScrollablePage {
                 gridView.model.clearSelections()
                 gridView.currentIndex = delegate.index;
                 switch(delegate.itemType) {
-                    case Koko.ImageStorage.Album: {
-                        imageListModel.query = imageListModel.queryForIndex( model.sourceIndex)
+                    case Koko.AbstractImageModel.Collection: {
+                        const sourceIndex = gridView.model.mapToSource(gridView.model.index(delegate.index, 0));
+                        imageListModel.query = imageListModel.queryForIndex(sourceIndex.row)
                         sortedListModel.sourceModel = imageListModel
-                        collectionSelected( sortedListModel, delegate.content)
+                        collectionSelected(sortedListModel, delegate.content)
                         break;
                     }
-                    case Koko.ImageStorage.Folder: {
+                    case Koko.AbstractImageModel.Folder: {
                         if (!page.isFolderView) {
                             imageFolderModel.url = delegate.imageurl
                             sortedListModel.sourceModel = imageFolderModel
-                            folderSelected(sortedListModel, delegate.contetn, delegate.imageurl)
+                            folderSelected(sortedListModel, delegate.content, delegate.imageurl)
                             return
                         }
                         const tmp = page.backUrls;
@@ -440,7 +441,7 @@ Kirigami.ScrollablePage {
                         page.model.sourceModel.url = delegate.imageurl;
                         break;
                     }
-                    case Koko.ImageStorage.Image: {
+                    case Koko.AbstractImageModel.Image: {
                         if (gridView.url.toString().startsWith("trash:")) {
                             break
                         }
@@ -464,7 +465,7 @@ Kirigami.ScrollablePage {
                 selected: delegate.selected
                 index: delegate.index
                 opacity: delegate.hovered || page.state === "selecting"
-                visible: delegate.itemType !== Koko.ImageStorage.Folder && delegate.itemType !== Koko.ImageStorage.Album
+                visible: delegate.itemType !== Koko.AbstractImageModel.Folder && delegate.itemType !== Koko.AbstractImageModel.Collection
 
                 anchors {
                     top: delegate.top

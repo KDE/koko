@@ -3,74 +3,51 @@
 
 #include "openfilemodel.h"
 
+#include "abstractimagemodel.h"
 #include "imagestorage.h"
-#include "roles.h"
 
 #include <QMimeDatabase>
 
 OpenFileModel::OpenFileModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractImageModel(parent)
 {
 }
 
-QHash<int, QByteArray> OpenFileModel::roleNames() const
-{
-    return Roles::roleNames();
-}
+OpenFileModel::~OpenFileModel() = default;
 
 QVariant OpenFileModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    const int indexValue = index.row();
-
-    switch (role) {
-    case Roles::ContentRole:
-        // TODO: return the filename component
-        return m_images.at(indexValue);
-
-    case Roles::ImageUrlRole:
-        return m_images.at(indexValue);
-
-    case Roles::ItemTypeRole:
-        return QVariant::fromValue(ImageStorage::ItemTypes::Image);
-
-    case Roles::MimeTypeRole: {
-        QMimeDatabase db;
-        QMimeType type = db.mimeTypeForFile(m_images.at(indexValue));
-        return type.name();
-    }
-
-    case Roles::SelectedRole:
-        return false;
-    }
-
-    return {};
+    const auto &item = m_images[index.row()];
+    return dataFromItem(item, role);
 }
 
 int OpenFileModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent)
-    return m_images.size();
+    return parent.isValid() ? m_images.size() : 0;
 }
 
 void OpenFileModel::updateOpenFiles(const QStringList &images)
 {
-    if (m_images == images) {
-        return;
-    }
-
     beginResetModel();
-    m_images = images;
+    m_images.clear();
+
+    std::ranges::transform(images, std::back_inserter(m_images), [](const auto &image) {
+        auto item = KFileItem(image);
+        item.setDelayedMimeTypes(true);
+        return item;
+    });
+
     endResetModel();
-    Q_EMIT urlToOpenChanged();
+    Q_EMIT itemToOpenChanged();
     Q_EMIT updatedImages();
 }
 
-QString OpenFileModel::urlToOpen() const
+KFileItem OpenFileModel::itemToOpen() const
 {
     if (m_images.length() == 1) {
         return m_images.value(0);
     }
-    return QString();
+    return {};
 }

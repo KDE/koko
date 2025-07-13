@@ -40,7 +40,7 @@ void ImageGroupModel::slotTimeGroupChanged()
     }
     m_times = ImageStorage::instance()->timeTypes(m_timeGroup);
     m_queryType = ImageStorage::QueryType::Time;
-    emit queryTypeChanged();
+    Q_EMIT queryTypeChanged();
 }
 
 void ImageGroupModel::slotResetModel()
@@ -112,11 +112,22 @@ void ImageGroupModel::setQuery(const QByteArray &statement)
 QByteArray ImageGroupModel::queryForIndex(const int &index)
 {
     if (m_queryType == ImageStorage::QueryType::Location) {
-        return m_locations.at(index).first;
+        return m_locations.at(index).key;
     } else if (m_queryType == ImageStorage::QueryType::Time) {
-        return m_times.at(index).first;
+        return m_times.at(index).key;
     }
     return QByteArray();
+}
+
+QVariant ImageGroupModel::data(const QModelIndex &index, int role) const
+{
+    Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
+    return dataFromItem(m_images.at(index.row()), role);
+}
+
+int ImageGroupModel::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : m_images.size();
 }
 
 #include "moc_imagegroupmodel.cpp"

@@ -28,6 +28,9 @@ public:
     explicit ImageGroupModel(QObject *parent = nullptr);
     ~ImageGroupModel();
 
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+
     ImageStorage::LocationGroup locationGroup() const;
     void setLocationGroup(const ImageStorage::LocationGroup &group);
 
@@ -59,6 +62,8 @@ private:
     ImageStorage::QueryType m_queryType = ImageStorage::QueryType::Location;
     QByteArray m_query;
 
-    QList<QPair<QByteArray, QString>> m_times;
-    QList<QPair<QByteArray, QString>> m_locations;
+    KFileItemList m_images;
+
+    QList<ImageStorage::Collection> m_times;
+    QList<ImageStorage::Collection> m_locations;
 };

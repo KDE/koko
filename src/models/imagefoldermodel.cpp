@@ -7,7 +7,6 @@
 
 #include "imagefoldermodel.h"
 #include "imagestorage.h"
-#include "roles.h"
 
 #include <QDebug>
 #include <QDir>
@@ -17,11 +16,12 @@
 #include <QProcess>
 #include <QStandardPaths>
 
-#include <KDirLister>
+#include <KCoreDirLister>
 #include <KIO/EmptyTrashJob>
 
 ImageFolderModel::ImageFolderModel(QObject *parent)
-    : KDirModel(parent)
+    : AbstractImageModel(parent)
+    , m_dirLister(new KCoreDirLister(this))
 {
     QMimeDatabase db;
     QList<QMimeType> mimeList = db.allMimeTypes();
@@ -33,61 +33,64 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
         }
     }
 
-    dirLister()->setMimeFilter(m_mimeTypes);
+    m_dirLister->setMimeFilter(m_mimeTypes);
 
-    connect(this, &QAbstractItemModel::rowsInserted, this, &ImageFolderModel::countChanged);
-    connect(this, &QAbstractItemModel::rowsRemoved, this, &ImageFolderModel::countChanged);
-    connect(this, &QAbstractItemModel::modelReset, this, &ImageFolderModel::countChanged);
-    // we need the complete one, not the qurl one
-    connect(dirLister(), QOverload<>::of(&KCoreDirLister::completed), this, &ImageFolderModel::jobFinished);
-}
-
-void ImageFolderModel::jobFinished()
-{
-    if (dirLister()->isFinished()) {
-        Q_EMIT finishedLoading();
-    }
-}
-
-QHash<int, QByteArray> ImageFolderModel::roleNames() const
-{
-    return Roles::roleNames();
+    connect(m_dirLister, &KCoreDirLister::newItems, this, [this](const KFileItemList &items) {
+        beginInsertRows({}, m_items.size(), m_items.size() + items.size() - 1);
+        m_items << items;
+        endInsertRows();
+    });
+    connect(m_dirLister, &KCoreDirLister::clear, this, [this] {
+        beginResetModel();
+        m_items.clear();
+        endResetModel();
+    });
 }
 
 QUrl ImageFolderModel::url() const
 {
-    return dirLister()->url();
+    return m_dirLister->url();
 }
 
-void ImageFolderModel::setUrl(QUrl &url)
+void ImageFolderModel::setUrl(const QUrl &url)
 {
+    QUrl newUrl = url;
     if (url.isEmpty()) {
-        QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
+        const QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
         Q_ASSERT(locations.size() >= 1);
-        url = QUrl::fromLocalFile(locations.first().append("/"));
+        newUrl = QUrl::fromLocalFile(locations.constFirst() + u'/');
     }
 
-    if (dirLister()->url() == url) {
-        dirLister()->updateDirectory(QUrl(url));
+    if (m_dirLister->url() == newUrl) {
+        m_dirLister->updateDirectory(newUrl);
         return;
     }
 
-    beginResetModel();
-    dirLister()->openUrl(QUrl(url));
-    endResetModel();
+    m_dirLister->openUrl(newUrl);
+
     Q_EMIT urlChanged();
 }
 
 int ImageFolderModel::indexForUrl(const QString &url) const
 {
-    return KDirModel::indexForUrl(QUrl(url)).row();
+    int i = 0;
+    KFileItem itemComp(QUrl(url), {});
+    itemComp.setDelayedMimeTypes(true);
+
+    for (const auto &item : m_items) {
+        if (item == itemComp) {
+            return i;
+        }
+        i++;
+    }
+    return -1;
 }
 
 QVariantMap ImageFolderModel::get(int i) const
 {
     QModelIndex modelIndex = index(i, 0);
 
-    KFileItem item = itemForIndex(modelIndex);
+    const KFileItem &item = m_items.at(modelIndex.row());
     const QString url = item.url().toString();
     const QString mimeType = item.mimetype();
 
@@ -106,29 +109,10 @@ void ImageFolderModel::emptyTrash()
 QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
+    return dataFromItem(m_items.at(index.row()), role);
+}
 
-    switch (role) {
-    case Roles::ImageUrlRole: {
-        KFileItem item = itemForIndex(index);
-        return item.url().toString();
-    }
-    case Roles::MimeTypeRole: {
-        KFileItem item = itemForIndex(index);
-        return item.mimetype();
-    }
-
-    case Roles::ItemTypeRole: {
-        const KFileItem item = itemForIndex(index);
-        return QVariant::fromValue(item.isDir() ? ImageStorage::ItemTypes::Folder : ImageStorage::ItemTypes::Image);
-    }
-
-    case Roles::SelectedRole:
-        return false;
-
-    case Roles::ContentRole:
-        return KDirModel::data(index, Qt::DisplayRole);
-
-    default:
-        return KDirModel::data(index, role);
-    }
+int ImageFolderModel::rowCount(const QModelIndex &parent) const
+{
+    return parent.isValid() ? 0 : m_items.size();
 }

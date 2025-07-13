@@ -6,16 +6,14 @@
 
 #include <QDataStream>
 #include <QDebug>
+#include <QDir>
 #include <QGeoAddress>
 #include <QGeoCoordinate>
-
-#include <QDir>
-#include <QStandardPaths>
-#include <QUrl>
-
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QStandardPaths>
+#include <QUrl>
 
 using namespace Qt::StringLiterals;
 
@@ -236,10 +234,10 @@ void ImageStorage::commit()
     emit storageModified();
 }
 
-QList<QPair<QByteArray, QString>> ImageStorage::locations(ImageStorage::LocationGroup loca)
+QList<ImageStorage::Collection> ImageStorage::locations(ImageStorage::LocationGroup loca)
 {
     QMutexLocker lock(&m_mutex);
-    QList<QPair<QByteArray, QString>> list;
+    QList<ImageStorage::Collection> list;
 
     if (loca == ImageStorage::LocationGroup::Country) {
         QSqlQuery query;
@@ -252,7 +250,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::locations(ImageStorage::Location
 
         while (query.next()) {
             QString val = query.value(0).toString();
-            list << qMakePair(val.toUtf8(), val);
+            list << Collection{val.toUtf8(), val, QueryType::Location};
         }
         return list;
     } else if (loca == ImageStorage::LocationGroup::State) {
@@ -273,7 +271,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::locations(ImageStorage::Location
             QDataStream stream(&key, QIODevice::WriteOnly);
             stream << country << state;
 
-            list << qMakePair(key, display);
+            list << Collection{key, display, QueryType::Location};
         }
         return list;
     } else if (loca == ImageStorage::LocationGroup::City) {
@@ -301,7 +299,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::locations(ImageStorage::Location
             QDataStream stream(&key, QIODevice::WriteOnly);
             stream << country << state << city;
 
-            list << qMakePair(key, display);
+            list << Collection{key, display, QueryType::Location};
         }
         return list;
     }
@@ -349,7 +347,7 @@ QStringList ImageStorage::tags()
     return tags;
 }
 
-QStringList ImageStorage::imagesForTag(const QString &tag)
+KFileItemList ImageStorage::imagesForTag(const QString &tag)
 {
     QMutexLocker lock(&m_mutex);
     QSqlQuery query;
@@ -359,26 +357,26 @@ QStringList ImageStorage::imagesForTag(const QString &tag)
 
     if (!query.exec()) {
         qDebug() << "imagesForTag: " << query.lastError();
-        return QStringList();
+        return {};
     }
 
-    QStringList files;
+    KFileItemList files;
     while (query.next()) {
-        files << QString("file://" + query.value(0).toString());
+        files << KFileItem(QUrl(u"file://"_s + query.value(0).toString()));
     }
 
     return files;
 }
 
-KFileItemList ImageStorage::imagesForLocation(const QByteArray &name, ImageStorage::LocationGroup loc)
+KFileItemList ImageStorage::imagesForLocation(const QByteArray &key, ImageStorage::LocationGroup loc)
 {
     QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == ImageStorage::LocationGroup::Country) {
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
-        query.addBindValue(QString::fromUtf8(name));
+        query.addBindValue(QString::fromUtf8(key));
     } else if (loc == ImageStorage::LocationGroup::State) {
-        QDataStream st(name);
+        QDataStream st(key);
 
         QString country;
         QString state;
@@ -388,7 +386,7 @@ KFileItemList ImageStorage::imagesForLocation(const QByteArray &name, ImageStora
         query.addBindValue(country);
         query.addBindValue(state);
     } else if (loc == ImageStorage::LocationGroup::City) {
-        QDataStream st(name);
+        QDataStream st(key);
 
         QString country;
         QString state;
@@ -412,15 +410,17 @@ KFileItemList ImageStorage::imagesForLocation(const QByteArray &name, ImageStora
     return files;
 }
 
-QString ImageStorage::imageForLocation(const QByteArray &name, ImageStorage::LocationGroup loc)
+KFileItem ImageStorage::imageForLocation(const Collection &collection, ImageStorage::LocationGroup loc)
 {
+    Q_ASSERT(!collection.key.isEmpty());
+
     QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == ImageStorage::LocationGroup::Country) {
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
-        query.addBindValue(QString::fromUtf8(name));
+        query.addBindValue(QString::fromUtf8(collection.key));
     } else if (loc == ImageStorage::LocationGroup::State) {
-        QDataStream st(name);
+        QDataStream st(collection.key);
 
         QString country;
         QString state;
@@ -430,7 +430,7 @@ QString ImageStorage::imageForLocation(const QByteArray &name, ImageStorage::Loc
         query.addBindValue(country);
         query.addBindValue(state);
     } else if (loc == ImageStorage::LocationGroup::City) {
-        QDataStream st(name);
+        QDataStream st(collection.key);
 
         QString country;
         QString state;
@@ -444,19 +444,21 @@ QString ImageStorage::imageForLocation(const QByteArray &name, ImageStorage::Loc
 
     if (!query.exec()) {
         qDebug() << "imageForLocation: " << loc << query.lastError();
-        return QString();
+        return {};
     }
 
     if (query.next()) {
-        return QString("file://" + query.value(0).toString());
+        return KFileItem(u"file://"_s + query.value(0).toString());
     }
-    return QString();
+
+    Q_ASSERT(false);
+    return {};
 }
 
-QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(ImageStorage::TimeGroup group)
+QList<ImageStorage::Collection> ImageStorage::timeTypes(ImageStorage::TimeGroup group)
 {
     QMutexLocker lock(&m_mutex);
-    QList<QPair<QByteArray, QString>> list;
+    QList<ImageStorage::Collection> list;
 
     QSqlQuery query;
     if (group == ImageStorage::TimeGroup::Year) {
@@ -468,7 +470,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(ImageStorage::TimeGrou
 
         while (query.next()) {
             QString val = query.value(0).toString();
-            list << qMakePair(val.toUtf8(), val);
+            list << Collection{val.toUtf8(), val, QueryType::Time};
         }
         return list;
     } else if (group == ImageStorage::TimeGroup::Month) {
@@ -488,7 +490,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(ImageStorage::TimeGrou
             QDataStream stream(&key, QIODevice::WriteOnly);
             stream << year << month;
 
-            list << qMakePair(key, display);
+            list << Collection{key, display, QueryType::Time};
         }
         return list;
     } else if (group == ImageStorage::TimeGroup::Week) {
@@ -509,7 +511,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(ImageStorage::TimeGrou
             QDataStream stream(&key, QIODevice::WriteOnly);
             stream << year << week;
 
-            list << qMakePair(key, display);
+            list << Collection{key, display, QueryType::Time};
         }
         return list;
     } else if (group == ImageStorage::TimeGroup::Day) {
@@ -525,7 +527,7 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(ImageStorage::TimeGrou
             QString display = QLocale::system().toString(date, QLocale::LongFormat);
             QByteArray key = date.toString(Qt::ISODate).toUtf8();
 
-            list << qMakePair(key, display);
+            list << Collection{key, display, QueryType::Time};
         }
         return list;
     }
@@ -533,15 +535,15 @@ QList<QPair<QByteArray, QString>> ImageStorage::timeTypes(ImageStorage::TimeGrou
     return list;
 }
 
-KFileItemList ImageStorage::imagesForTime(const QByteArray &name, ImageStorage::TimeGroup group)
+KFileItemList ImageStorage::imagesForTime(const QByteArray &key, ImageStorage::TimeGroup group)
 {
     QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (group == ImageStorage::TimeGroup::Year) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ?");
-        query.addBindValue(QString::fromUtf8(name));
+        query.addBindValue(QString::fromUtf8(key));
     } else if (group == ImageStorage::TimeGroup::Month) {
-        QDataStream stream(name);
+        QDataStream stream(key);
         QString year;
         QString month;
         stream >> year >> month;
@@ -550,7 +552,7 @@ KFileItemList ImageStorage::imagesForTime(const QByteArray &name, ImageStorage::
         query.addBindValue(year);
         query.addBindValue(month);
     } else if (group == ImageStorage::TimeGroup::Week) {
-        QDataStream stream(name);
+        QDataStream stream(key);
         QString year;
         QString week;
         stream >> year >> week;
@@ -559,7 +561,7 @@ KFileItemList ImageStorage::imagesForTime(const QByteArray &name, ImageStorage::
         query.addBindValue(year);
         query.addBindValue(week);
     } else if (group == ImageStorage::TimeGroup::Day) {
-        QDate date = QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
+        QDate date = QDate::fromString(QString::fromUtf8(key), Qt::ISODate);
 
         query.prepare("SELECT DISTINCT url from files where date(dateTime) = ?");
         query.addBindValue(date);
@@ -578,17 +580,17 @@ KFileItemList ImageStorage::imagesForTime(const QByteArray &name, ImageStorage::
     return files;
 }
 
-QString ImageStorage::imageForTime(const QByteArray &name, ImageStorage::TimeGroup group)
+KFileItem ImageStorage::imageForTime(const Collection &collection, ImageStorage::TimeGroup group)
 {
     QMutexLocker lock(&m_mutex);
-    Q_ASSERT(!name.isEmpty());
+    Q_ASSERT(!collection.key.isEmpty());
 
     QSqlQuery query;
     if (group == ImageStorage::TimeGroup::Year) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ? LIMIT 1");
-        query.addBindValue(QString::fromUtf8(name));
+        query.addBindValue(QString::fromUtf8(collection.key));
     } else if (group == ImageStorage::TimeGroup::Month) {
-        QDataStream stream(name);
+        QDataStream stream(collection.key);
         QString year;
         QString month;
         stream >> year >> month;
@@ -597,7 +599,7 @@ QString ImageStorage::imageForTime(const QByteArray &name, ImageStorage::TimeGro
         query.addBindValue(year);
         query.addBindValue(month);
     } else if (group == ImageStorage::TimeGroup::Week) {
-        QDataStream stream(name);
+        QDataStream stream(collection.key);
         QString year;
         QString week;
         stream >> year >> week;
@@ -606,7 +608,7 @@ QString ImageStorage::imageForTime(const QByteArray &name, ImageStorage::TimeGro
         query.addBindValue(year);
         query.addBindValue(week);
     } else if (group == ImageStorage::TimeGroup::Day) {
-        QDate date = QDate::fromString(QString::fromUtf8(name), Qt::ISODate);
+        QDate date = QDate::fromString(QString::fromUtf8(collection.key), Qt::ISODate);
 
         query.prepare("SELECT DISTINCT url from files where date(dateTime) = ? LIMIT 1");
         query.addBindValue(date);
@@ -614,30 +616,30 @@ QString ImageStorage::imageForTime(const QByteArray &name, ImageStorage::TimeGro
 
     if (!query.exec()) {
         qDebug() << group << query.lastError();
-        return QString();
+        return {};
     }
 
     if (query.next()) {
-        return QString("file://" + query.value(0).toString());
+        return KFileItem(u"file://"_s + query.value(0).toString());
     }
 
-    Q_ASSERT(0);
-    return QString();
+    Q_ASSERT(false);
+    return {};
 }
 
-QDate ImageStorage::dateForKey(const QByteArray &key, ImageStorage::TimeGroup group)
+QDate ImageStorage::dateForCollection(const Collection &collection, ImageStorage::TimeGroup group)
 {
     if (group == ImageStorage::TimeGroup::Year) {
-        return QDate(key.toInt(), 1, 1);
+        return QDate(collection.key.toInt(), 1, 1);
     } else if (group == ImageStorage::TimeGroup::Month) {
-        QDataStream stream(key);
+        QDataStream stream(collection.key);
         QString year;
         QString month;
         stream >> year >> month;
 
         return QDate(year.toInt(), month.toInt(), 1);
     } else if (group == ImageStorage::TimeGroup::Week) {
-        QDataStream stream(key);
+        QDataStream stream(collection.key);
         QString year;
         QString week;
         stream >> year >> week;
@@ -646,7 +648,7 @@ QDate ImageStorage::dateForKey(const QByteArray &key, ImageStorage::TimeGroup gr
         int day = week.toInt() % 4;
         return QDate(year.toInt(), month, day);
     } else if (group == ImageStorage::TimeGroup::Day) {
-        return QDate::fromString(QString::fromUtf8(key), Qt::ISODate);
+        return QDate::fromString(QString::fromUtf8(collection.key), Qt::ISODate);
     }
 
     Q_ASSERT(0);

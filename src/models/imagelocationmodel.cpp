@@ -7,10 +7,9 @@
 
 #include "imagelocationmodel.h"
 #include "imagestorage.h"
-#include "roles.h"
 
 ImageLocationModel::ImageLocationModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : AbstractImageModel(parent)
     , m_group(ImageStorage::LocationGroup::City)
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageLocationModel::slotPopulate);
@@ -23,33 +22,33 @@ void ImageLocationModel::slotPopulate()
     endResetModel();
 }
 
-QHash<int, QByteArray> ImageLocationModel::roleNames() const
-{
-    return Roles::roleNames();
-}
-
 QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    const QByteArray &key = m_locations.at(index.row()).first;
-    const QString &display = m_locations.at(index.row()).second;
+    const auto &collection = m_locations.at(index.row());
 
     switch (role) {
-    case Roles::ContentRole:
-        return display;
+    case ContentRole:
+        return collection.display;
 
-    case Roles::FilesRole:
-        return QVariant::fromValue(ImageStorage::instance()->imagesForLocation(key, m_group));
+    case FilesRole:
+        return QVariant::fromValue(ImageStorage::instance()->imagesForLocation(collection.key, m_group));
 
-    case Roles::FileCountRole:
-        return ImageStorage::instance()->imagesForLocation(key, m_group).size();
+    case FileCountRole:
+        return ImageStorage::instance()->imagesForLocation(collection.key, m_group).size();
 
-    case Roles::ImageUrlRole:
-        return ImageStorage::instance()->imageForLocation(key, m_group);
+    case ItemRole:
+        return ImageStorage::instance()->imageForLocation(collection, m_group).url();
 
-    case Roles::ItemTypeRole:
-        return QVariant::fromValue(ImageStorage::ItemTypes::Album);
+    case ImageUrlRole:
+        return ImageStorage::instance()->imageForLocation(collection, m_group).url().toLocalFile();
+
+    case ItemTypeRole:
+        return ItemType::Collection;
+
+    case ThumbnailRole:
+        return thumbnailForItem(ImageStorage::instance()->imageForLocation(collection, m_group));
     }
 
     return {};

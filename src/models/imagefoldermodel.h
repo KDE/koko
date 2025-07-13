@@ -8,12 +8,13 @@
 #ifndef IMAGEFOLDERMODEL_H
 #define IMAGEFOLDERMODEL_H
 
-#include <KDirModel>
+#include "abstractimagemodel.h"
 #include <QSize>
 #include <QVariant>
 #include <qqmlregistration.h>
 
 class QTimer;
+class KCoreDirLister;
 
 /**
  * This class provides a QML binding to KDirModel
@@ -21,7 +22,7 @@ class QTimer;
  *
  * @author Marco Martin <mart@kde.org>
  */
-class ImageFolderModel : public KDirModel
+class ImageFolderModel : public AbstractImageModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -31,24 +32,14 @@ class ImageFolderModel : public KDirModel
      */
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
 
-    /**
-     * @property count Total number of rows
-     */
-    Q_PROPERTY(int count READ count NOTIFY countChanged)
-
 public:
     explicit ImageFolderModel(QObject *parent = nullptr);
 
-    QHash<int, QByteArray> roleNames() const override;
-
-    void setUrl(QUrl &url);
+    void setUrl(const QUrl &url);
     QUrl url() const;
 
     QVariant data(const QModelIndex &index, int role) const override;
-    int count() const
-    {
-        return rowCount();
-    }
+    int rowCount(const QModelIndex &parent = {}) const override;
 
     Q_INVOKABLE int indexForUrl(const QString &url) const;
 
@@ -59,14 +50,13 @@ public:
      */
     Q_INVOKABLE void emptyTrash();
 
-    void jobFinished();
-
 Q_SIGNALS:
-    void countChanged();
     void urlChanged();
-    void finishedLoading();
 
 private:
+    KCoreDirLister *const m_dirLister;
+    KFileItemList m_items;
+
     QStringList m_mimeTypes;
     QString m_imagePath;
 };

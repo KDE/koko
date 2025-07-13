@@ -8,12 +8,13 @@
 #ifndef IMAGETIMEMODEL_H
 #define IMAGETIMEMODEL_H
 
+#include "abstractimagemodel.h"
 #include "imagestorage.h"
 #include <QAbstractListModel>
 #include <QStringList>
 #include <qqmlregistration.h>
 
-class ImageTimeModel : public QAbstractListModel
+class ImageTimeModel : public AbstractImageModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -21,7 +22,6 @@ class ImageTimeModel : public QAbstractListModel
 public:
     explicit ImageTimeModel(QObject *parent = nullptr);
 
-    QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
@@ -36,7 +36,7 @@ private slots:
 
 private:
     ImageStorage::TimeGroup m_group = ImageStorage::TimeGroup::NotSet;
-    QList<QPair<QByteArray, QString>> m_times;
+    QList<ImageStorage::Collection> m_times;
 };
 
 #endif

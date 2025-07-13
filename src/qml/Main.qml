@@ -279,7 +279,7 @@ StatefulApp.StatefulWindow {
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel
          */
-        filterRole: Koko.Roles.MimeTypeRole
+        filterRole: Koko.AbstractImageModel.MimeTypeRole
     }
 
     Koko.SortModel {
