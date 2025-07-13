@@ -9,6 +9,7 @@
 
 #include <QObject>
 #include <QRunnable>
+#include <QUrl>
 
 namespace Koko
 {
@@ -18,14 +19,14 @@ class ImageProcessorRunnable : public QObject, public QRunnable
 {
     Q_OBJECT
 public:
-    ImageProcessorRunnable(const QString &filePath, ReverseGeoCoder *coder);
+    ImageProcessorRunnable(const QUrl &url, ReverseGeoCoder *coder);
     void run() override;
 
 signals:
-    void finished();
+    void finished(const QUrl &url);
 
 private:
-    QString m_path;
+    QUrl m_path;
     ReverseGeoCoder *m_geoCoder;
 };
 }

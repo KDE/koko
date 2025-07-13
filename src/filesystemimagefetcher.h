@@ -8,6 +8,7 @@
 #define FILESYSTEMIMAGEFETCHER_H
 
 #include <QObject>
+#include <QUrl>
 
 class FileSystemImageFetcher : public QObject
 {
@@ -17,7 +18,7 @@ public:
     void fetch();
 
 signals:
-    void imageResult(const QString &filePath);
+    void imageResult(const QUrl &filePath);
     void finished();
 
 private slots:

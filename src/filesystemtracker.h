@@ -10,6 +10,7 @@
 
 #include <QObject>
 #include <QSet>
+#include <QUrl>
 
 class FileSystemTracker : public QObject
 {
@@ -25,26 +26,31 @@ public:
     void setSubFolder(const QString &folder);
     void reindexSubFolder();
 
+    void fileProcessed(const QUrl &file);
+
     void setupDb();
 
 signals:
-    void imageAdded(const QString &filePath);
-    void imageRemoved(const QString &filePath);
+    void imageAdded(const QUrl &filePath);
+    void imageRemoved(const QUrl &filePath);
     void initialScanComplete();
     void subFolderChanged();
 
 protected:
-    void removeFile(const QString &filePath);
+    void removeFile(const QUrl &filePath);
 
 private slots:
     void slotNewFiles(const QStringList &files);
-    void slotImageResult(const QString &filePath);
+    void slotImageResult(const QUrl &filePath);
     void slotFetchFinished();
 
 private:
     QString m_folder;
     QString m_subFolder;
-    QSet<QString> m_filePaths;
+
+    // Path currently found and getting processed
+    QSet<QUrl> m_processingPaths;
+    QSet<QUrl> m_filePaths;
 };
 
 #endif

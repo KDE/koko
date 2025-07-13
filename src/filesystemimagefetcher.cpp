@@ -9,7 +9,6 @@
 #include <QDirIterator>
 #include <QMimeDatabase>
 #include <QTimer>
-#include <array>
 
 using namespace Qt::StringLiterals;
 
@@ -40,7 +39,7 @@ void FileSystemImageFetcher::slotProcess()
         static QMimeDatabase db;
         const auto mimetype = db.mimeTypeForFile(filePath, QMimeDatabase::MatchMode::MatchExtension).name();
         if (mimetype.startsWith("image/"_L1) || mimetype.startsWith("video/"_L1)) {
-            Q_EMIT imageResult(filePath);
+            Q_EMIT imageResult(QUrl::fromLocalFile(filePath));
         }
     }
 

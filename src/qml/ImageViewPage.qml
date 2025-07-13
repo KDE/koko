@@ -80,8 +80,8 @@ Kirigami.Page {
             onToggled: {
                 exiv2Extractor.toggleFavorite(listView.currentItem.imageurl.toString().replace("file://", ""));
                 // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.imageurl.toString().replace("file://", ""));
-                kokoProcessor.addFile(listView.currentItem.imageurl.toString().replace("file://", ""));
+                kokoProcessor.removeFile(listView.currentItem.imageurl);
+                kokoProcessor.addFile(listView.currentItem.imageurl);
             }
         },
         Kirigami.Action {

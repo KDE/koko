@@ -14,7 +14,7 @@
 
 using namespace Koko;
 
-ImageProcessorRunnable::ImageProcessorRunnable(const QString &filePath, ReverseGeoCoder *geoCoder)
+ImageProcessorRunnable::ImageProcessorRunnable(const QUrl &filePath, ReverseGeoCoder *geoCoder)
     : QObject()
     , m_path(filePath)
     , m_geoCoder(geoCoder)
@@ -23,13 +23,18 @@ ImageProcessorRunnable::ImageProcessorRunnable(const QString &filePath, ReverseG
 
 void ImageProcessorRunnable::run()
 {
+    if (!m_path.isLocalFile()) {
+        Q_EMIT finished(m_path);
+        return;
+    }
     ImageInfo ii;
-    ii.path = m_path;
+    ii.path = m_path.toLocalFile();
 
     Exiv2Extractor extractor;
-    extractor.extract(m_path);
+    extractor.extract(m_path.toLocalFile());
     if (extractor.error()) {
-        emit finished();
+        qWarning() << "Error while extracting exiv2" << m_path;
+        Q_EMIT finished(m_path);
         return;
     }
 
@@ -54,10 +59,10 @@ void ImageProcessorRunnable::run()
 
     ii.dateTime = extractor.dateTime();
     if (ii.dateTime.isNull()) {
-        ii.dateTime = QFileInfo(m_path).birthTime();
+        ii.dateTime = QFileInfo(ii.path).birthTime();
     }
 
     QMetaObject::invokeMethod(ImageStorage::instance(), "addImage", Qt::AutoConnection, Q_ARG(const ImageInfo &, ii));
 
-    emit finished();
+    Q_EMIT finished(m_path);
 }

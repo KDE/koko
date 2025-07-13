@@ -32,7 +32,7 @@ Processor::Processor(QObject *parent)
     connect(this, &Processor::numFilesChanged, &m_commitTimer, &CommitTimer::start);
 }
 
-void Processor::addFile(const QString &filePath)
+void Processor::addFile(const QUrl &filePath)
 {
     m_files << filePath;
     m_numFiles++;
@@ -41,9 +41,9 @@ void Processor::addFile(const QString &filePath)
     emit numFilesChanged();
 }
 
-void Processor::removeFile(const QString &filePath)
+void Processor::removeFile(const QUrl &filePath)
 {
-    ImageStorage::instance()->removeImage(filePath);
+    ImageStorage::instance()->removeImage(filePath.toLocalFile());
     m_numFiles--;
 
     emit numFilesChanged();
@@ -73,20 +73,20 @@ void Processor::process()
     }
 
     m_processing = true;
-    QString path = m_files.takeLast().replace("file://", "");
 
-    ImageProcessorRunnable *runnable = new ImageProcessorRunnable(path, &m_geoCoder);
+    ImageProcessorRunnable *runnable = new ImageProcessorRunnable(m_files.takeLast(), &m_geoCoder);
     connect(runnable, &ImageProcessorRunnable::finished, this, &Processor::slotFinished);
 
     QThreadPool::globalInstance()->start(runnable);
 }
 
-void Processor::slotFinished()
+void Processor::slotFinished(const QUrl &url)
 {
     m_processing = false;
     QTimer::singleShot(0, this, &Processor::process);
 
-    emit initialProgressChanged();
+    Q_EMIT initialProgressChanged();
+    Q_EMIT fileProcessed(url);
     m_commitTimer.start();
 }
 

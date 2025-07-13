@@ -37,18 +37,19 @@ signals:
     void initialProgressChanged();
     void numFilesChanged();
     void finishedChanged();
+    void fileProcessed(const QUrl &url);
 
 public slots:
-    Q_INVOKABLE void addFile(const QString &filePath);
-    Q_INVOKABLE void removeFile(const QString &filePath);
+    Q_INVOKABLE void addFile(const QUrl &url);
+    Q_INVOKABLE void removeFile(const QUrl &url);
     void initialScanCompleted();
 
 private slots:
     void process();
-    void slotFinished();
+    void slotFinished(const QUrl &url);
 
 private:
-    QStringList m_files;
+    QList<QUrl> m_files;
     int m_numFiles;
     bool m_processing;
 

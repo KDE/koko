@@ -130,6 +130,7 @@ int main(int argc, char **argv)
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Koko::Processor::addFile);
     QObject::connect(&tracker, &FileSystemTracker::imageRemoved, &processor, &Koko::Processor::removeFile);
     QObject::connect(&tracker, &FileSystemTracker::initialScanComplete, &processor, &Koko::Processor::initialScanCompleted);
+    QObject::connect(&processor, &Koko::Processor::fileProcessed, &tracker, &FileSystemTracker::fileProcessed);
 
     QObject::connect(&trackerThread, &QThread::started, &tracker, &FileSystemTracker::setupDb);
 

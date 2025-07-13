@@ -7,21 +7,19 @@
 
 #include "filesystemtracker.h"
 
-#include "filesystemimagefetcher.h"
-
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-
 #include <QDBusConnection>
-
 #include <QDebug>
 #include <QDir>
 #include <QMimeDatabase>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <QStandardPaths>
 
 #include <KDirNotify>
-#include <kdirwatch.h>
+#include <KDirWatch>
+
+#include "filesystemimagefetcher.h"
 
 FileSystemTracker::FileSystemTracker(QObject *parent)
     : QObject(parent)
@@ -32,17 +30,17 @@ FileSystemTracker::FileSystemTracker(QObject *parent)
 
     connect(kdirnotify, &org::kde::KDirNotify::FilesRemoved, this, [this](const QStringList &files) {
         for (const QString &filePath : files) {
-            removeFile(filePath);
+            removeFile(QUrl(filePath));
         }
     });
     connect(kdirnotify, &org::kde::KDirNotify::FilesAdded, this, &FileSystemTracker::setSubFolder);
     connect(kdirnotify, &org::kde::KDirNotify::FileRenamedWithLocalPath, this, [this](const QString &src, const QString &dst, const QString &) {
-        removeFile(src);
+        removeFile(QUrl(src));
         slotNewFiles({dst});
     });
     connect(kdirnotify, &org::kde::KDirNotify::FilesChanged, this, [this](const QStringList &files) {
         for (const QString &filePath : files) {
-            removeFile(filePath);
+            removeFile(QUrl(filePath));
         }
         slotNewFiles(files);
     });
@@ -117,15 +115,15 @@ FileSystemTracker::~FileSystemTracker()
     QSqlDatabase::removeDatabase(QStringLiteral("fstracker"));
 }
 
-void FileSystemTracker::slotImageResult(const QString &file)
+void FileSystemTracker::slotImageResult(const QUrl &file)
 {
-    QString filePath = file;
-    filePath.replace("file://", "");
+    const auto filePath = file.toLocalFile();
+
     QSqlQuery query(QSqlDatabase::database("fstracker"));
     query.prepare("SELECT id, metadataChangeTime from files where url = ?");
     query.addBindValue(filePath);
     if (!query.exec()) {
-        qDebug() << query.lastError();
+        qWarning() << Q_FUNC_INFO << query.lastError() << file;
         return;
     }
 
@@ -133,25 +131,33 @@ void FileSystemTracker::slotImageResult(const QString &file)
 
     if (indexed && query.value(1).toString() != QFileInfo(filePath).metadataChangeTime().toString(Qt::ISODate)) {
         // reindex if metadata has changed
-        removeFile(filePath);
+        removeFile(file);
         indexed = false;
-        qDebug() << "REINDEXING" << filePath;
+        qDebug() << "REINDEXING" << file;
     }
 
-    if (!indexed) {
-        QSqlQuery query(QSqlDatabase::database("fstracker"));
-        query.prepare("INSERT into files(url, metadataChangeTime) VALUES (?, ?)");
-        query.addBindValue(filePath);
-        query.addBindValue(QFileInfo(filePath).metadataChangeTime().toString(Qt::ISODate));
-        if (!query.exec()) {
-            qDebug() << "slotImageResult: " << query.lastError();
-            return;
-        }
-        qDebug() << "ADDED" << filePath;
-        emit imageAdded(filePath);
+    if (!indexed && !m_processingPaths.contains(file)) {
+        // qDebug() << "ADDED" << file;
+        Q_EMIT imageAdded(file);
     }
 
-    m_filePaths << filePath;
+    m_processingPaths << file;
+    m_filePaths << file;
+}
+
+void FileSystemTracker::fileProcessed(const QUrl &file)
+{
+    const auto filePath = file.toLocalFile();
+
+    QSqlQuery query(QSqlDatabase::database("fstracker"));
+    query.prepare("INSERT into files(url, metadataChangeTime) VALUES (?, ?)");
+    query.addBindValue(filePath);
+    query.addBindValue(QFileInfo(filePath).metadataChangeTime().toString(Qt::ISODate));
+    if (!query.exec()) {
+        qWarning() << Q_FUNC_INFO << query.lastError() << file;
+    }
+
+    m_filePaths.remove(file);
 }
 
 void FileSystemTracker::slotFetchFinished()
@@ -164,10 +170,10 @@ void FileSystemTracker::slotFetchFinished()
     }
 
     while (query.next()) {
-        QString filePath = query.value(0).toString();
+        const QString filePath = query.value(0).toString();
 
-        if (filePath.contains(m_subFolder) && !m_filePaths.contains(filePath)) {
-            removeFile(filePath);
+        if (filePath.contains(m_subFolder) && !m_filePaths.contains(QUrl::fromLocalFile(filePath))) {
+            removeFile(QUrl::fromLocalFile(filePath));
         }
     }
 
@@ -177,12 +183,11 @@ void FileSystemTracker::slotFetchFinished()
     emit initialScanComplete();
 }
 
-void FileSystemTracker::removeFile(const QString &file)
+void FileSystemTracker::removeFile(const QUrl &file)
 {
-    QString filePath = file;
-    filePath.replace("file://", "");
+    QString filePath = file.toLocalFile();
     qDebug() << "REMOVED" << filePath;
-    emit imageRemoved(filePath);
+    Q_EMIT imageRemoved(file);
     QSqlQuery query(QSqlDatabase::database("fstracker"));
     query.prepare("DELETE from files where url = ?");
     query.addBindValue(filePath);
@@ -202,7 +207,7 @@ void FileSystemTracker::slotNewFiles(const QStringList &files)
     for (const QString &file : files) {
         QMimeType mimetype = db.mimeTypeForFile(file);
         if (mimetype.name().startsWith("image/") || mimetype.name().startsWith("video/")) {
-            slotImageResult(file);
+            slotImageResult(QUrl(file));
         }
     }
 
@@ -218,6 +223,22 @@ void FileSystemTracker::setFolder(const QString &folder)
     KDirWatch::self()->removeDir(m_folder);
     m_folder = folder;
     KDirWatch::self()->addDir(m_folder, KDirWatch::WatchSubDirs);
+
+    FileSystemImageFetcher *fetcher = new FileSystemImageFetcher(m_folder);
+    connect(fetcher, &FileSystemImageFetcher::imageResult, this, &FileSystemTracker::slotImageResult, Qt::QueuedConnection);
+    connect(
+        fetcher,
+        &FileSystemImageFetcher::finished,
+        this,
+        [this, fetcher] {
+            slotFetchFinished();
+            fetcher->deleteLater();
+        },
+        Qt::QueuedConnection);
+
+    fetcher->fetch();
+
+    QSqlDatabase::database("fstracker").transaction();
 }
 
 QString FileSystemTracker::folder() const
