@@ -963,7 +963,3 @@ msgstr ""
 #, kde-format
 msgid "Add new tag…"
 msgstr ""
-
-#~ msgctxt "verb, edit an image"
-#~ msgid "Edit"
-#~ msgstr "Rediger"
