@@ -31,14 +31,6 @@ class ImageStorage : public QObject
     QML_UNCREATABLE("Only enums are exposed to QML")
 
 public:
-    enum class ItemTypes {
-        NotSet,
-        Album,
-        Folder,
-        Image
-    };
-    Q_ENUM(ItemTypes)
-
     enum class TimeGroup {
         NotSet,
         Year,
@@ -63,6 +55,12 @@ public:
     };
     Q_ENUM(QueryType)
 
+    struct Collection {
+        QByteArray key;
+        QString display;
+        QueryType queryType;
+    };
+
     ImageStorage(QObject *parent = nullptr);
     virtual ~ImageStorage();
 
@@ -73,20 +71,20 @@ public:
 
     static ImageStorage *instance();
 
-    QList<QPair<QByteArray, QString>> locations(LocationGroup loca);
-    KFileItemList imagesForLocation(const QByteArray &name, LocationGroup loc);
-    QString imageForLocation(const QByteArray &name, LocationGroup loc);
+    QList<Collection> locations(LocationGroup loca);
+    KFileItemList imagesForLocation(const QByteArray &key, LocationGroup loc);
+    KFileItem imageForLocation(const Collection &collection, LocationGroup loc);
 
-    QList<QPair<QByteArray, QString>> timeTypes(TimeGroup group);
-    KFileItemList imagesForTime(const QByteArray &name, TimeGroup group);
-    QString imageForTime(const QByteArray &name, TimeGroup group);
+    QList<Collection> timeTypes(TimeGroup group);
+    KFileItemList imagesForTime(const QByteArray &key, TimeGroup group);
+    KFileItem imageForTime(const Collection &collection, TimeGroup group);
 
     KFileItemList imagesForFavorites();
 
     QStringList tags();
-    QStringList imagesForTag(const QString &tag);
+    KFileItemList imagesForTag(const QString &tag);
 
-    QDate dateForKey(const QByteArray &key, TimeGroup group);
+    QDate dateForCollection(const Collection &collection, TimeGroup group);
 
     /**
      * Fetch all the images ordered by descending date time.

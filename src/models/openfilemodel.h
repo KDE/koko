@@ -3,31 +3,30 @@
 
 #pragma once
 
-#include <QAbstractListModel>
+#include "abstractimagemodel.h"
 #include <qqmlregistration.h>
 
-class OpenFileModel : public QAbstractListModel
+class OpenFileModel : public AbstractImageModel
 {
     Q_OBJECT
     QML_ELEMENT
     QML_SINGLETON
-    Q_PROPERTY(QString urlToOpen READ urlToOpen NOTIFY urlToOpenChanged)
+    Q_PROPERTY(KFileItem itemToOpen READ itemToOpen NOTIFY itemToOpenChanged)
 
 public:
     explicit OpenFileModel(QObject *parent = nullptr);
-    ~OpenFileModel() = default;
+    ~OpenFileModel() override;
 
     void updateOpenFiles(const QStringList &images);
-    QString urlToOpen() const;
+    KFileItem itemToOpen() const;
 
-    QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex &parent = {}) const override;
 
 Q_SIGNALS:
     void updatedImages();
-    void urlToOpenChanged();
+    void itemToOpenChanged();
 
 protected:
-    QStringList m_images;
+    KFileItemList m_images;
 };

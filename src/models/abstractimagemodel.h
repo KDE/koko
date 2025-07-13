@@ -3,13 +3,21 @@
 
 #pragma once
 
-#include <KFileItem>
-#include <QAbstractListModel>
+#include "imagestorage.h"
 
+#include <QAbstractListModel>
+#include <QCache>
+#include <QImage>
+#include <QSize>
 #include <qqmlregistration.h>
 
+#include <KFileItem>
+#include <kio_version.h>
+
+class QTimer;
+
 /*!
- * Absteact model for images, this is based on a list of KFileItem
+ * Abstract model for images, take care of generating previews
  */
 class AbstractImageModel : public QAbstractListModel
 {
@@ -18,18 +26,56 @@ class AbstractImageModel : public QAbstractListModel
     QML_UNCREATABLE("Abstract type")
 
 public:
+    enum RoleNames {
+        ImageUrlRole = Qt::UserRole + 1,
+        MimeTypeRole,
+        ItemTypeRole,
+        FilesRole,
+        FileCountRole,
+        DateRole,
+        SelectedRole,
+        ContentRole,
+        ItemRole,
+        ThumbnailRole,
+    };
+    Q_ENUM(RoleNames);
+
+    enum ItemType {
+        Image,
+        Folder,
+        Collection,
+    };
+    Q_ENUM(ItemType);
+
     ~AbstractImageModel() = default;
 
-    KFileItemList images() const;
-    void setImages(const KFileItemList &images);
-
     QHash<int, QByteArray> roleNames() const override;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+
+    QVariant dataFromItem(const KFileItem &item, int role) const;
 
 protected:
     explicit AbstractImageModel(QObject *parent = nullptr);
+    QVariant thumbnailForItem(const KFileItem &item) const;
 
-protected:
-    KFileItemList m_images;
+private:
+#if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
+    void showPreview(const KFileItem &item, const QImage &preview);
+#else
+    void showPreview(const KFileItem &item, const QPixmap &preview);
+#endif
+    void previewFailed(const KFileItem &item);
+    void delayedPreview();
+    QModelIndex itemToIndex(const KFileItem &item);
+
+    QTimer *m_previewTimer;
+    QSize m_screenshotSize;
+
+    struct ItemData {
+        KFileItem item;
+        QImage thumbnail;
+    };
+    QCache<QUrl, ItemData> m_itemData;
+    mutable QList<QUrl> m_filesInMimeTypeResolution;
+    mutable QList<KFileItem> m_filesToPreview;
+    QSet<QUrl> m_filesInPreviewGeneration;
 };

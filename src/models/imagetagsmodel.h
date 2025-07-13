@@ -10,11 +10,11 @@
 #include <QAbstractListModel>
 #include <qqmlregistration.h>
 
-#include "openfilemodel.h"
+#include "abstractimagemodel.h"
 
 class QAction;
 
-class ImageTagsModel : public OpenFileModel
+class ImageTagsModel : public AbstractImageModel
 {
     Q_OBJECT
     QML_ELEMENT
@@ -26,6 +26,9 @@ public:
     QString tag() const;
     void setTag(const QString &tag);
 
+    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex &parent = {}) const override;
+
 Q_SIGNALS:
     void tagChanged();
 
@@ -34,6 +37,7 @@ private Q_SLOTS:
 
 private:
     QString m_tag;
+    KFileItemList m_images;
 };
 
 #endif // IMAGETAGSMODEL_H

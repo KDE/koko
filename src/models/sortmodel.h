@@ -7,16 +7,11 @@
 
 #pragma once
 
-#include <QCache>
-#include <QImage>
 #include <QItemSelectionModel>
 #include <QJsonArray>
-#include <QSize>
 #include <QSortFilterProxyModel>
 #include <QVariant>
 
-#include <KDirModel>
-#include <kio_version.h>
 #include <qqmlregistration.h>
 
 class QTimer;
@@ -35,7 +30,6 @@ public:
     QByteArray sortRoleName() const;
     void setSortRoleName(const QByteArray &name);
 
-    QHash<int, QByteArray> roleNames() const override;
     QVariant data(const QModelIndex &index, int role) const override;
     bool lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const override;
 
@@ -57,13 +51,6 @@ public:
 
 protected Q_SLOTS:
     void setContainImages(bool);
-#if KIO_VERSION >= QT_VERSION_CHECK(6, 15, 0)
-    void showPreview(const KFileItem &item, const QImage &preview);
-#else
-    void showPreview(const KFileItem &item, const QPixmap &preview);
-#endif
-    void previewFailed(const KFileItem &item);
-    void delayedPreview();
 
 signals:
     void sortRoleNameChanged();
@@ -73,20 +60,5 @@ signals:
 private:
     QByteArray m_sortRoleName;
     QItemSelectionModel *m_selectionModel;
-
-    QTimer *m_previewTimer;
-    QSize m_screenshotSize;
     bool m_containImages;
-
-    struct ItemData {
-        KFileItem item;
-        QImage thumbnail;
-    };
-    QCache<QUrl, ItemData> m_itemData;
-
-    mutable QList<QUrl> m_filesInMimeTypeResolution;
-    mutable QList<KFileItem> m_filesToPreview;
-    QSet<QUrl> m_filesInPreviewGeneration;
-
-    QModelIndex itemToIndex(const KFileItem &item);
 };

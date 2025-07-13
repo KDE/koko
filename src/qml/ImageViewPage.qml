@@ -328,7 +328,7 @@ Kirigami.Page {
 
         // Filter out directories
         model: Koko.SortModel {
-            filterRole: Koko.Roles.MimeTypeRole
+            filterRole: Koko.AbstractImageModel.MimeTypeRole
             filterRegularExpression: /image\/|video\//
             sourceModel: imagesModel
         }
