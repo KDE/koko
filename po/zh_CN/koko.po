@@ -947,9 +947,3 @@ msgstr "设置"
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
-
-#~ msgid "Unmute audio"
-#~ msgstr "取消静音"
-
-#~ msgid "Don't repeat current video"
-#~ msgstr "不重复播放当前视频"
