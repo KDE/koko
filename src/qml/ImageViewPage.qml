@@ -476,63 +476,69 @@ Kirigami.Page {
         }
 
         QQC2.RoundButton {
+            id: previousButton
+
+            readonly property bool shouldShow: !Kirigami.Settings.isMobile
+                                            && root.mainWindow.controlsVisible
+                                            && !listView.isCurrentItemDragging
+                                            && !overviewControl.pressed
+                                            && listView.currentIndex > 0
+
             anchors {
                 left: parent.left
                 leftMargin: Kirigami.Units.largeSpacing
                 verticalCenter: parent.verticalCenter
             }
-            width: Kirigami.Units.gridUnit * 2
-            height: width
-            icon.name: "arrow-left"
-            Accessible.name: i18n("Previous image")
-            onClicked: {
-                if (opacity === 0) return; // the best we can do without flicker unfortunately
-                listView.decrementCurrentIndex()
-            }
 
-            visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes reappearing to be delayed
-            opacity: root.mainWindow.controlsVisible
-                && listView.currentIndex > 0
-                && !listView.isCurrentItemDragging
-                && !overviewControl.pressed
-                ? 1 : 0
-
+            visible: opacity > 0
+            opacity: previousButton.shouldShow ? 1 : 0
             Behavior on opacity {
-                OpacityAnimator {
+                NumberAnimation {
                     duration: Kirigami.Units.longDuration
-                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                    easing.type: Easing.InOutQuad
                 }
             }
+
+            width: Kirigami.Units.gridUnit * 2
+            height: width
+
+            Accessible.name: i18n("Previous image")
+            icon.name: Qt.application.layoutDirection === Qt.RightToLeft ? "arrow-right-symbolic" : "arrow-left-symbolic"
+
+            onClicked: listView.decrementCurrentIndex()
         }
 
         QQC2.RoundButton {
+            id: nextButton
+
+            readonly property bool shouldShow: !Kirigami.Settings.isMobile
+                                            && root.mainWindow.controlsVisible
+                                            && !listView.isCurrentItemDragging
+                                            && !overviewControl.pressed
+                                            && listView.currentIndex < listView.count - 1
+
             anchors {
                 right: parent.right
                 rightMargin: Kirigami.Units.largeSpacing
                 verticalCenter: parent.verticalCenter
             }
-            width: Kirigami.Units.gridUnit * 2
-            height: width
-            icon.name: "arrow-right"
-            Accessible.name: i18n("Next image")
-            onClicked: {
-                if (opacity === 0) return;
-                listView.incrementCurrentIndex()
-            }
 
-            visible: !Kirigami.Settings.isMobile // Using `&& opacity > 0` causes flickering
-            opacity: root.mainWindow.controlsVisible
-                && listView.currentIndex < listView.count - 1
-                && !listView.isCurrentItemDragging
-                && !overviewControl.pressed
-                ? 1 : 0
-
+            visible: opacity > 0
+            opacity: previousButton.shouldShow ? 1 : 0
             Behavior on opacity {
-                OpacityAnimator {
+                NumberAnimation {
                     duration: Kirigami.Units.longDuration
-                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                    easing.type: Easing.InOutQuad
                 }
             }
+
+            width: Kirigami.Units.gridUnit * 2
+            height: width
+
+            Accessible.name: i18n("Next image")
+            icon.name: Qt.application.layoutDirection === Qt.RightToLeft ? "arrow-left-symbolic" : "arrow-right-symbolic"
+
+            onClicked: listView.incrementCurrentIndex()
         }
 
         OverviewControl {
@@ -970,12 +976,12 @@ Kirigami.Page {
     }
 
     Shortcut {
-        sequence: "Left"
+        sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
         onActivated: listView.decrementCurrentIndex()
     }
 
     Shortcut {
-        sequence: "Right"
+        sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
         onActivated: listView.incrementCurrentIndex()
     }
 
