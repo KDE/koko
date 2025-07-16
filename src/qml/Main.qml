@@ -78,7 +78,6 @@ StatefulApp.StatefulWindow {
 
     function updateGlobalDrawer(): void {
         if (!fetchImageToOpen && globalDrawer) {
-            globalDrawer.enabled = pageStack.layers.depth < 2;
             globalDrawer.drawerOpen = !globalDrawer.modal;
         }
     }
