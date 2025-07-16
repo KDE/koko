@@ -396,6 +396,7 @@ Kirigami.ScrollablePage {
         highlightMoveDuration: 0
         keyNavigationEnabled: true
         focus: true
+        reuseItems: true
 
         // always clean selection
         onUrlChanged: model.clearSelections()
