@@ -33,12 +33,16 @@ Kirigami.OverlayDrawer {
     topPadding: 0
     bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
 
+    // This makes the sidebar header separator look like a discrete item
+    readonly property alias header: sidebarHeader
+
     // Place
     contentItem: ColumnLayout {
         id: column
         // FIXME: Dirty workaround for 385992
         spacing: 0
         Kirigami.AbstractApplicationHeader {
+            id: sidebarHeader
             topPadding: Kirigami.Units.smallSpacing;
             bottomPadding: Kirigami.Units.smallSpacing;
             leftPadding: Kirigami.Units.largeSpacing
