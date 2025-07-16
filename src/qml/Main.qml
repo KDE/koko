@@ -258,7 +258,6 @@ StatefulApp.StatefulWindow {
     }
 
     Loader {
-        asynchronous: true
         onItemChanged: root.globalDrawer = item
         active: !Kirigami.Settings.isMobile || root.wideScreen
         sourceComponent: Sidebar {
