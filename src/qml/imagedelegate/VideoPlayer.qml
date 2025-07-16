@@ -18,9 +18,9 @@ Item {
 
     // `required` here breaks stuff
     property string source
-    readonly property alias player: videoPlayer
-    readonly property bool playing: videoPlayer.playbackState === MediaPlayer.PlayingState
-    readonly property alias mediaStatus: videoPlayer.mediaStatus
+    readonly property alias player: mediaPlayer
+    readonly property bool playing: mediaPlayer.playbackState === MediaPlayer.PlayingState
+    readonly property alias mediaStatus: mediaPlayer.mediaStatus
 
     // signals when playback starts and finishes
     signal playbackStarted()
@@ -28,15 +28,15 @@ Item {
 
     // convenience function
     function play(): void {
-        if (videoPlayer.status != MediaPlayer.Loaded) {
-            videoPlayer.autoPlay = true
+        if (mediaPlayer.status != MediaPlayer.Loaded) {
+            mediaPlayer.autoPlay = true
         } else {
-            videoPlayer.play();
+            mediaPlayer.play();
         }
     }
 
     function stop(): void {
-        videoPlayer.stop();
+        mediaPlayer.stop();
     }
 
     implicitWidth: videoOutput.implicitWidth
@@ -60,16 +60,16 @@ Item {
         }
         onDoubleClicked: {
             doubleClickTimer.running = false;
-            if (videoPlayer.playbackState === MediaPlayer.PlayingState) {
-                videoPlayer.pause();
+            if (mediaPlayer.playbackState === MediaPlayer.PlayingState) {
+                mediaPlayer.pause();
             } else{
-                videoPlayer.play();
+                mediaPlayer.play();
             }
         }
     }
 
     MediaPlayer {
-        id: videoPlayer
+        id: mediaPlayer
 
         source: videoPlayerRoot.source
 
@@ -77,7 +77,7 @@ Item {
 
         onPlaybackStateChanged: if (playbackState === MediaPlayer.StoppedState) {
             videoPlayerRoot.playbackFinished();
-            videoPlayer.showFirstFrame();
+            mediaPlayer.showFirstFrame();
         } else if (playbackState === MediaPlayer.PlayingState) {
             videoPlayerRoot.playbackStarted();
         }
@@ -89,43 +89,43 @@ Item {
 
         videoOutput: videoOutput
 
-        loops: videoPlayer.duration >= 5000 ? 1 : MediaPlayer.Infinite // loop short videos
+        loops: mediaPlayer.duration >= 5000 ? 1 : MediaPlayer.Infinite // loop short videos
 
         // When in a stopped state, we are showing a black frame, so change
         // to paused state instead so we have something better to display
         function showFirstFrame(): void {
-            if (videoPlayer.playbackState === MediaPlayer.StoppedState) {
-                videoPlayer.position = 0;
-                videoPlayer.pause();
+            if (mediaPlayer.playbackState === MediaPlayer.StoppedState) {
+                mediaPlayer.position = 0;
+                mediaPlayer.pause();
             }
         }
 
         function seekForward(): void {
-            if (!videoPlayer.seekable) {
+            if (!mediaPlayer.seekable) {
                 return;
             }
 
-            if (videoPlayer.position + 5000 < videoPlayer.duration) {
-                videoPlayer.position =+ 5000;
+            if (mediaPlayer.position + 5000 < mediaPlayer.duration) {
+                mediaPlayer.position += 5000;
             } else {
-                videoPlayer.stop();
+                mediaPlayer.stop();
             }
         }
 
         function seekBackward(): void {
-            if (!videoPlayer.seekable) {
+            if (!mediaPlayer.seekable) {
                 return;
             }
 
-            videoPlayer.position -= 5000;
+            mediaPlayer.position -= 5000;
         }
     }
 
     VideoOutput {
         id: videoOutput
 
-        implicitWidth: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.width : 0
-        implicitHeight: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.height : 0
+        implicitWidth: mediaPlayer.metaData.resolution ? mediaPlayer.metaData.resolution.width : 0
+        implicitHeight: mediaPlayer.metaData.resolution ? mediaPlayer.metaData.resolution.height : 0
 
         anchors.fill: parent
 
@@ -197,8 +197,8 @@ Item {
                 rightMargin: Kirigami.Units.smallSpacing
             }
 
-            value: pressed ? 0 : videoPlayer.position // don't change value while we drag
-            to: videoPlayer.duration
+            value: pressed ? 0 : mediaPlayer.position // don't change value while we drag
+            to: mediaPlayer.duration
 
             Controls.ToolTip {
                 parent: timeSlider.handle
@@ -207,21 +207,21 @@ Item {
             }
 
             Keys.onLeftPressed: (event) => {
-                if (videoPlayer.seekable) {
-                    videoPlayer.seekBackward();
+                if (mediaPlayer.seekable) {
+                    mediaPlayer.seekBackward();
                     event.accepted = true;
                 }
             }
             Keys.onRightPressed: (event) => {
-                if (videoPlayer.seekable) {
-                    videoPlayer.seekForward();
+                if (mediaPlayer.seekable) {
+                    mediaPlayer.seekForward();
                     event.accepted = true;
                 }
             }
             // update on release
             onPressedChanged: {
                 if (!pressed) {
-                    videoPlayer.position = value;
+                    mediaPlayer.position = value;
                 }
             }
         }
@@ -239,39 +239,39 @@ Item {
 
             Controls.ToolButton {
                 Accessible.name: i18np("Skip backward 1 second", "Skip backward %1 seconds", 5)
-                visible: videoPlayer.duration >= 5000 && !Kirigami.Settings.isMobile
+                visible: mediaPlayer.duration >= 5000 && !Kirigami.Settings.isMobile
                 icon.name: "media-skip-backward"
-                enabled: videoPlayer.playbackState != MediaPlayer.StoppedState
+                enabled: mediaPlayer.playbackState != MediaPlayer.StoppedState
                 onClicked: {
-                    videoPlayer.seekBackward();
+                    mediaPlayer.seekBackward();
                 }
             }
 
             Controls.ToolButton {
-                Accessible.name: videoPlayer.playbackState == MediaPlayer.PlayingState ? i18n("Pause playback") : i18n("Continue playback")
-                icon.name: videoPlayer.playbackState == MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
+                Accessible.name: mediaPlayer.playbackState == MediaPlayer.PlayingState ? i18n("Pause playback") : i18n("Continue playback")
+                icon.name: mediaPlayer.playbackState == MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
                 onClicked: {
-                    if (videoPlayer.playbackState === MediaPlayer.PlayingState) {
-                        videoPlayer.pause();
+                    if (mediaPlayer.playbackState === MediaPlayer.PlayingState) {
+                        mediaPlayer.pause();
                     } else {
-                        videoPlayer.play();
+                        mediaPlayer.play();
                     }
                 }
             }
 
             Controls.ToolButton {
                 Accessible.name: i18np("Skip backward 1 second", "Skip forward %1 seconds", 5)
-                visible: videoPlayer.duration >= 5000 && !Kirigami.Settings.isMobile
+                visible: mediaPlayer.duration >= 5000 && !Kirigami.Settings.isMobile
                 icon.name: "media-skip-forward"
-                enabled: videoPlayer.playbackState != MediaPlayer.StoppedState
+                enabled: mediaPlayer.playbackState != MediaPlayer.StoppedState
                 onClicked: {
-                    videoPlayer.seekForward();
+                    mediaPlayer.seekForward();
                 }
             }
 
             Controls.ToolButton {
                 Accessible.name: i18n("Mute audio")
-                visible: videoPlayer.hasAudio
+                visible: mediaPlayer.hasAudio
                 icon.name: {
                     if (audioOutput.volume <= 0 || audioOutput.muted) {
                         return "audio-volume-muted-symbolic";
@@ -294,7 +294,7 @@ Item {
                 from: 0
                 to: 1
                 value: 0.5
-                visible: videoPlayer.hasAudio
+                visible: mediaPlayer.hasAudio
                 Layout.preferredWidth: Kirigami.Units.gridUnit * 5
                 onPressedChanged: audioOutput.muted = false
             }
@@ -305,8 +305,8 @@ Item {
             }
 
             Controls.Label {
-                text: KCA.Format.formatDuration(videoPlayer.position, KCA.FormatTypes.FoldHours) + " / " +
-                      KCA.Format.formatDuration(videoPlayer.duration, KCA.FormatTypes.FoldHours)
+                text: KCA.Format.formatDuration(mediaPlayer.position, KCA.FormatTypes.FoldHours) + " / " +
+                      KCA.Format.formatDuration(mediaPlayer.duration, KCA.FormatTypes.FoldHours)
             }
 
             // this local and independed from slideshow to avoid confusion
@@ -317,14 +317,14 @@ Item {
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
                 icon.name: "media-repeat-all-symbolic"
                 checkable: true
-                checked: videoPlayer.loops === MediaPlayer.Infinite
+                checked: mediaPlayer.loops === MediaPlayer.Infinite
                 onClicked: {
-                    if (videoPlayer.loops === MediaPlayer.Infinite) {
+                    if (mediaPlayer.loops === MediaPlayer.Infinite) {
                         // BUG QTBUG-138417: We are unable to set 0, so the video will loop once more if it is already playing.
                         //                   A value of 0 is ignored and the video would loop forever if set.
-                        videoPlayer.loops = 1;
+                        mediaPlayer.loops = 1;
                     } else {
-                        videoPlayer.loops = MediaPlayer.Infinite;
+                        mediaPlayer.loops = MediaPlayer.Infinite;
                     }
                 }
             }
