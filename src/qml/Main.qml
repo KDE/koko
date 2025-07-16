@@ -184,12 +184,12 @@ StatefulApp.StatefulWindow {
         albumView.isFolderView = false;
 
         switch(value) {
-            case "Countries": { 
+            case "Countries": {
                 albumView.model = imageLocationModelCountry;
                 imageListModel.locationGroup = Koko.Types.Country;
                 break;
             }
-            case "States": { 
+            case "States": {
                 albumView.model = imageLocationModelState;
                 imageListModel.locationGroup = Koko.Types.State;
                 break;
@@ -200,7 +200,7 @@ StatefulApp.StatefulWindow {
                 break;
             }
             case "Years": {
-                albumView.model = imageTimeModelYear; 
+                albumView.model = imageTimeModelYear;
                 imageListModel.timeGroup = Koko.Types.Year;
                 break;
             }
@@ -214,8 +214,8 @@ StatefulApp.StatefulWindow {
                 imageListModel.timeGroup = Koko.Types.Week;
                 break;
             }
-            case "Days": { 
-                albumView.model = imageTimeModelDay; 
+            case "Days": {
+                albumView.model = imageTimeModelDay;
                 imageListModel.timeGroup = Koko.Types.Day;
                 break;
             }
@@ -237,7 +237,7 @@ StatefulApp.StatefulWindow {
             case "Pictures":
             case "Videos":
             case "Folders": {
-                albumView.model = imageFolderModel; 
+                albumView.model = imageFolderModel;
                 albumView.model.sourceModel.url = query;
                 albumView.isFolderView = (value === "Folders" || value === "Pictures" || value === "Videos");
                 imageListModel.locationGroup = -1;
@@ -291,7 +291,7 @@ StatefulApp.StatefulWindow {
         }
         sortRoleName: "date"
     }
-    
+
     Koko.SortModel {
         id: imageTimeModelMonth
         sourceModel: Koko.ImageTimeModel {
@@ -299,7 +299,7 @@ StatefulApp.StatefulWindow {
         }
         sortRoleName: "date"
     }
-    
+
     Koko.SortModel {
         id: imageTimeModelWeek
         sourceModel: Koko.ImageTimeModel {
@@ -307,7 +307,7 @@ StatefulApp.StatefulWindow {
         }
         sortRoleName: "date"
     }
-    
+
     Koko.SortModel {
         id: imageTimeModelDay
         sourceModel: Koko.ImageTimeModel {
@@ -332,29 +332,29 @@ StatefulApp.StatefulWindow {
             group: Koko.Types.Country
         }
     }
-        
+
     Koko.SortModel {
         id: imageLocationModelState
         sourceModel: Koko.ImageLocationModel {
             group: Koko.Types.State
         }
     }
-    
+
     Koko.SortModel {
         id: imageLocationModelCity
         sourceModel: Koko.ImageLocationModel {
             group: Koko.Types.City
         }
     }
-    
+
     Koko.ImageListModel {
         id: imageListModel
     }
-    
+
     Koko.NotificationManager {
         id: notificationManager
     }
-    
+
     KQA.Clipboard {
         id: clipboard
     }
@@ -392,7 +392,7 @@ StatefulApp.StatefulWindow {
                 mainWindow: root,
             });
         }
-        
+
         // move mobile handles to toolbar
         pageStack.globalToolBar.canContainHandles = true;
     }
