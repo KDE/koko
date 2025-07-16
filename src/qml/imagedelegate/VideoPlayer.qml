@@ -73,8 +73,11 @@ Item {
 
         source: videoPlayerRoot.source
 
+        Component.onCompleted: showFirstFrame()
+
         onPlaybackStateChanged: if (playbackState === MediaPlayer.StoppedState) {
             videoPlayerRoot.playbackFinished();
+            videoPlayer.showFirstFrame();
         } else if (playbackState === MediaPlayer.PlayingState) {
             videoPlayerRoot.playbackStarted();
         }
@@ -88,6 +91,15 @@ Item {
 
         loops: videoPlayer.duration >= 5000 ? 1 : MediaPlayer.Infinite // loop short videos
 
+        // When in a stopped state, we are showing a black frame, so change
+        // to paused state instead so we have something better to display
+        function showFirstFrame(): void {
+            if (videoPlayer.playbackState === MediaPlayer.StoppedState) {
+                videoPlayer.position = 0;
+                videoPlayer.pause();
+            }
+        }
+
         function seekForward(): void {
             if (!videoPlayer.seekable) {
                 return;
@@ -96,7 +108,6 @@ Item {
             if (videoPlayer.position + 5000 < videoPlayer.duration) {
                 videoPlayer.position =+ 5000;
             } else {
-                videoPlayer.position = 0;
                 videoPlayer.stop();
             }
         }
@@ -117,22 +128,9 @@ Item {
         implicitHeight: videoPlayer.metaData.resolution ? videoPlayer.metaData.resolution.height : 0
 
         anchors.fill: parent
-    }
 
-    Controls.ToolButton {
-        anchors.centerIn: parent
-
-        icon.name: "media-playback-start"
-        icon.color: "white"
-
-        icon.width: Kirigami.Units.gridUnit * 3
-        icon.height: Kirigami.Units.gridUnit * 3
-
-        visible: videoPlayer.playbackState === MediaPlayer.StoppedState
-
-        onClicked: {
-            videoPlayer.play();
-        }
+        // Prevents black frame showing before we skip back to start
+        endOfStreamPolicy: VideoOutput.KeepLastFrame
     }
 
     Item {
