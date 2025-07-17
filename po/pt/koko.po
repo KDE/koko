@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:41+0000\n"
+"POT-Creation-Date: 2025-07-17 00:40+0000\n"
 "PO-Revision-Date: 2023-05-31 10:52+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -401,28 +401,28 @@ msgstr "Deselecciona todos os conteúdos seleccionados"
 msgid "No Media Found"
 msgstr "Não Foram Encontrados Conteúdos"
 
-#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:92
 #, fuzzy, kde-format
 #| msgid "Pictures"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Imagens"
 
-#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:98
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Vídeos"
 
-#: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
+#: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:104
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:86
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:89
 #, kde-format
 msgid "Places"
 msgstr "Locais"
@@ -839,104 +839,104 @@ msgctxt "@title"
 msgid "Places"
 msgstr "Locais"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:104
 #, kde-format
 msgid "Images"
 msgstr "Imagens"
 
-#: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
+#: qml/PlacesPage.qml:21 qml/Sidebar.qml:238
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuração"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:111
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Lixo"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:138
 #, fuzzy, kde-format
 #| msgid "Network"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Rede"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:118
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Remover o Favorito"
 
-#: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
+#: qml/PlacesPage.qml:91 qml/Sidebar.qml:144
 #, kde-format
 msgid "Locations"
 msgstr "Locais"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:147
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Países"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:153
 #, fuzzy, kde-format
 #| msgid "States"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Estados"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:159
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Cidades"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:162
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:165
 #, kde-format
 msgid "Time"
 msgstr "Hora"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:168
 #, fuzzy, kde-format
 #| msgid "Years"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Anos"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:174
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Meses"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:180
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Semanas"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:186
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Dias"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:192
 #, kde-format
 msgid "Tags"
 msgstr "Marcas"
 
-#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:213
+#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:216
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Tamanho das miniaturas:"
@@ -989,23 +989,23 @@ msgctxt "@title:menu"
 msgid "Share"
 msgstr "Partilhar"
 
-#: qml/Sidebar.qml:50
+#: qml/Sidebar.qml:53
 #, kde-format
 msgid "Filter by"
 msgstr "Filtrar por"
 
-#: qml/Sidebar.qml:131
+#: qml/Sidebar.qml:134
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remotos"
 
-#: qml/Sidebar.qml:217
+#: qml/Sidebar.qml:220
 #, kde-format
 msgid "%1 px"
 msgstr "%1 pt"
 
-#: qml/Sidebar.qml:233
+#: qml/Sidebar.qml:236
 #, kde-format
 msgid "Settings"
 msgstr "Configuração"

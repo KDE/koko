@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:41+0000\n"
+"POT-Creation-Date: 2025-07-17 00:40+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -399,28 +399,28 @@ msgstr "सर्वाणि चयनितमाध्यमानि वि�
 msgid "No Media Found"
 msgstr "कोऽपि मीडिया न प्राप्तः"
 
-#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:92
 #, fuzzy, kde-format
 #| msgid "Pictures"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "चित्रम्"
 
-#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:98
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "विडियो"
 
-#: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
+#: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:104
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "प्रियाः"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:86
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:89
 #, kde-format
 msgid "Places"
 msgstr "स्थानाः"
@@ -834,104 +834,104 @@ msgctxt "@title"
 msgid "Places"
 msgstr "स्थानाः"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:104
 #, kde-format
 msgid "Images"
 msgstr "बिम्बाः"
 
-#: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
+#: qml/PlacesPage.qml:21 qml/Sidebar.qml:238
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:111
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "तुच्छद्रव्य"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:138
 #, fuzzy, kde-format
 #| msgid "Network"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "जालकृति"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:118
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "बुकमार्कं निष्कासयन्तु"
 
-#: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
+#: qml/PlacesPage.qml:91 qml/Sidebar.qml:144
 #, kde-format
 msgid "Locations"
 msgstr "स्थानानि"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:147
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "देशाः"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:153
 #, fuzzy, kde-format
 #| msgid "States"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "राज्यानि"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:159
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "नगराणि"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:162
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:165
 #, kde-format
 msgid "Time"
 msgstr "कालः"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:168
 #, fuzzy, kde-format
 #| msgid "Years"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "वर्षाः"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:174
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "मासाः"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:180
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "सप्ताहाः"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:186
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "दिवसाः"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:192
 #, kde-format
 msgid "Tags"
 msgstr "टैग्स"
 
-#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:213
+#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:216
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "लघुचित्रस्य आकारः :"
@@ -982,23 +982,23 @@ msgctxt "@title:menu"
 msgid "Share"
 msgstr "संविभागः"
 
-#: qml/Sidebar.qml:50
+#: qml/Sidebar.qml:53
 #, kde-format
 msgid "Filter by"
 msgstr "द्वारा छानयतु"
 
-#: qml/Sidebar.qml:131
+#: qml/Sidebar.qml:134
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "दूरस्थ"
 
-#: qml/Sidebar.qml:217
+#: qml/Sidebar.qml:220
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:233
+#: qml/Sidebar.qml:236
 #, kde-format
 msgid "Settings"
 msgstr "सेटिंग्स्"

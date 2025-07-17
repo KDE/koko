@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:41+0000\n"
+"POT-Creation-Date: 2025-07-17 00:40+0000\n"
 "PO-Revision-Date: 2025-07-07 21:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -393,25 +393,25 @@ msgstr "Poista kaikki mediavalinnat"
 msgid "No Media Found"
 msgstr "Mediaa ei löytynyt"
 
-#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:92
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Kuvat"
 
-#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:98
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videot"
 
-#: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
+#: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:104
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Suosikit"
 
-#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:86
+#: qml/BottomNavBar.qml:67 qml/Sidebar.qml:89
 #, kde-format
 msgid "Places"
 msgstr "Sijainnit"
@@ -825,93 +825,93 @@ msgctxt "@title"
 msgid "Places"
 msgstr "Sijainnit"
 
-#: qml/Main.qml:105
+#: qml/Main.qml:104
 #, kde-format
 msgid "Images"
 msgstr "Kuvat"
 
-#: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
+#: qml/PlacesPage.qml:21 qml/Sidebar.qml:238
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:111
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Roskakori"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:138
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Verkko"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:118
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
-#: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
+#: qml/PlacesPage.qml:91 qml/Sidebar.qml:144
 #, kde-format
 msgid "Locations"
 msgstr "Sijainnit"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:147
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Maat"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:153
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Osavaltiot"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:159
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Kaupungit"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:162
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:165
 #, kde-format
 msgid "Time"
 msgstr "Aika"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:168
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Vuodet"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:174
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Kuukaudet"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:180
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Viikot"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:186
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Päivät"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:192
 #, kde-format
 msgid "Tags"
 msgstr "Luokitukset"
 
-#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:213
+#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:216
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Pienoiskuvan koko:"
@@ -959,23 +959,23 @@ msgctxt "@title:menu"
 msgid "Share"
 msgstr "Jaa"
 
-#: qml/Sidebar.qml:50
+#: qml/Sidebar.qml:53
 #, kde-format
 msgid "Filter by"
 msgstr "Suodata"
 
-#: qml/Sidebar.qml:131
+#: qml/Sidebar.qml:134
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Etä"
 
-#: qml/Sidebar.qml:217
+#: qml/Sidebar.qml:220
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:233
+#: qml/Sidebar.qml:236
 #, kde-format
 msgid "Settings"
 msgstr "Asetukset"
