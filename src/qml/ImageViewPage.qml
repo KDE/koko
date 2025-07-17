@@ -402,7 +402,7 @@ Kirigami.Page {
             active: visible
             onActiveChanged: {
                 if (active && info.delegateSource && info.initialProperties) {
-                    setSource(info.delegateSource, info.initialProperties)
+                    setSource(info.delegateSource, info.initialProperties);
                 }
             }
 
@@ -423,40 +423,40 @@ Kirigami.Page {
 
                 onDelegateSourceChanged: {
                     if (loader.active && delegateSource && initialProperties) {
-                        loader.setSource(delegateSource, initialProperties)
+                        loader.setSource(delegateSource, initialProperties);
                     }
                 }
 
                 onStatusChanged: {
                     if (status != Koko.FileInfo.Ready) {
-                        return
+                        return;
                     }
 
-                    let delegate = ""
+                    let delegate = "";
                     let properties = {
                         source: Qt.binding(() => loader.imageurl),
                         isCurrent: Qt.binding(() => loader.ListView.isCurrentItem),
                         mainWindow: root.mainWindow,
-                    }
+                    };
 
                     switch (type) {
                     case Koko.FileInfo.VideoType:
-                        properties.autoplay = Qt.binding(() => loader.index === root.startIndex)
-                        properties.slideShow = slideshowManager
-                        delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml")
-                        break
+                        properties.autoplay = Qt.binding(() => loader.index === root.startIndex);
+                        properties.slideShow = slideshowManager;
+                        delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml");
+                        break;
                     case Koko.FileInfo.VectorImageType:
-                        delegate = Qt.resolvedUrl("imagedelegate/VectorImageDelegate.qml")
-                        break
+                        delegate = Qt.resolvedUrl("imagedelegate/VectorImageDelegate.qml");
+                        break;
                     case Koko.FileInfo.AnimatedImageType:
-                        delegate = Qt.resolvedUrl("imagedelegate/AnimatedImageDelegate.qml")
-                        break
+                        delegate = Qt.resolvedUrl("imagedelegate/AnimatedImageDelegate.qml");
+                        break;
                     case Koko.FileInfo.RasterImageType:
-                        delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml")
-                        break
+                        delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml");
+                        break;
                     default:
-                        console.warn("Unknown file type for URL", loader.imageurl)
-                        break
+                        console.warn("Unknown file type for URL", loader.imageurl);
+                        break;
                     }
 
                     if (delegate) {
@@ -465,11 +465,11 @@ Kirigami.Page {
                         // this needs to make sure initialProperties is changed
                         // before delegateSource, as otherwise the code will
                         // ignore the new initialProperties.
-                        initialProperties = properties
-                        delegateSource = delegate
+                        initialProperties = properties;
+                        delegateSource = delegate;
                     } else {
-                        initialProperties = {}
-                        delegateSource = ""
+                        initialProperties = {};
+                        delegateSource = "";
                     }
                 }
             }
