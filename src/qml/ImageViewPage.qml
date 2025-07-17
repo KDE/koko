@@ -325,6 +325,7 @@ Kirigami.Page {
         interactive: !isCurrentItemInteractive
         highlightRangeMode: ListView.StrictlyEnforceRange
         pixelAligned: true
+        reuseItems: true
 
         // Filter out directories
         model: Koko.SortModel {
@@ -433,14 +434,14 @@ Kirigami.Page {
 
                     let delegate = ""
                     let properties = {
-                        source: loader.imageurl,
+                        source: Qt.binding(() => loader.imageurl),
                         isCurrent: Qt.binding(() => loader.ListView.isCurrentItem),
                         mainWindow: root.mainWindow,
                     }
 
                     switch (type) {
                     case Koko.FileInfo.VideoType:
-                        properties.autoplay = loader.index === root.startIndex
+                        properties.autoplay = Qt.binding(() => loader.index === root.startIndex)
                         properties.slideShow = slideshowManager
                         delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml")
                         break
