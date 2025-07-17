@@ -44,16 +44,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         </entry>
     </group>
     <group name="WindowState">
-        <entry name="Width" type="Int">
-            <label>Last saved state for QWindow::width</label>
-            <!-- will be set on first run based on Main.qml -->
-            <default>-1</default>
-        </entry>
-        <entry name="Height" type="Int">
-            <label>Last saved state for QWindow::height</label>
-            <!-- will be set on first run based on Main.qml -->
-            <default>-1</default>
-        </entry>
         <entry name="Visibility" type="Enum">
             <label>Last saved state for QWindow::visibility</label>
             <choices name="QWindow::Visibility">
