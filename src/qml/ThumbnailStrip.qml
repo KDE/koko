@@ -38,6 +38,7 @@ ListView {
     highlightMoveDuration: Kirigami.Units.longDuration
     displayMarginBeginning: thumbnailView.containerPadding
     displayMarginEnd: thumbnailView.containerPadding
+    reuseItems: true
 
     // Center content when there aren't enough items to fill the width
     header: Item {
