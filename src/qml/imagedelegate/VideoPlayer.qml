@@ -84,7 +84,7 @@ Item {
 
         audioOutput: AudioOutput {
             id: audioOutput
-            volume: volumeSlider.value
+            volume: 1 // volumeSlider.value // TODO
         }
 
         videoOutput: videoOutput
@@ -121,18 +121,39 @@ Item {
         }
     }
 
-    VideoOutput {
-        id: videoOutput
+    Rectangle {
+        id: videoOutputContainer
+        anchors.fill: parent
 
         implicitWidth: mediaPlayer.metaData.resolution ? mediaPlayer.metaData.resolution.width : 0
         implicitHeight: mediaPlayer.metaData.resolution ? mediaPlayer.metaData.resolution.height : 0
 
-        anchors.fill: parent
+        // VideoControls' blur effect requires that the background isn't transparent, so we need to wrap it
+        color: "black"
 
-        // Prevents black frame showing before we skip back to start
-        endOfStreamPolicy: VideoOutput.KeepLastFrame
+        VideoOutput {
+            id: videoOutput
+            anchors.fill: parent
+
+            // Prevents black frame showing before we skip back to start
+            endOfStreamPolicy: VideoOutput.KeepLastFrame
+        }
     }
 
+    VideoControls {
+        anchors.margins: Kirigami.Units.largeSpacing
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        width: (parent.width < Kirigami.Units.gridUnit * 30) ? parent.width - (anchors.margins * 2)
+                                                             : Math.max((Kirigami.Units.gridUnit * 30) - (anchors.margins * 2), parent.width * 0.7)
+
+        visible: true // TODO & opacity with layer enabled, mouse timer stuff
+
+        backgroundSource: videoOutputContainer
+    }
+
+    /*
     Item {
         id: playerToolbar
 
@@ -330,4 +351,5 @@ Item {
             }
         }
     }
+    */
 }

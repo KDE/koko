@@ -114,6 +114,7 @@ ecm_target_qml_sources(koko_static PRIVATE
         qml/imagedelegate/VectorImageDelegate.qml
         qml/imagedelegate/VideoDelegate.qml
         qml/imagedelegate/VideoPlayer.qml
+        qml/imagedelegate/VideoControls.qml
 )
 
 ecm_target_qml_sources(koko_static PRIVATE
