@@ -133,6 +133,19 @@ Item {
         endOfStreamPolicy: VideoOutput.KeepLastFrame
     }
 
+    VideoControls {
+        anchors.margins: Kirigami.Units.largeSpacing
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+
+        width: (parent.width < Kirigami.Units.gridUnit * 30) ? parent.width - (anchors.margins * 2)
+                                                             : Math.max((Kirigami.Units.gridUnit * 30) - (anchors.margins * 2), parent.width * 0.7)
+
+        visible: true // TODO & opacity with layer enabled
+
+        videoOutput: videoOutput
+    }
+
     Item {
         id: playerToolbar
 
