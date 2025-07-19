@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:40+0000\n"
+"POT-Creation-Date: 2025-07-19 05:20+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -397,7 +397,7 @@ msgstr "ਸਭ ਅਣ-ਚੁਣੇ"
 msgid "De-selects all the selected media"
 msgstr "ਚੁਣੇ ਗਏ ਸਾਰੇ ਚਿੱਤਰ ਨੂੰ ਅਣ-ਚੁਣਿਆ ਬਣਾਓ"
 
-#: qml/AlbumView.qml:477
+#: qml/AlbumView.qml:478
 #, fuzzy, kde-format
 #| msgid "No Images Found"
 msgid "No Media Found"
@@ -729,24 +729,24 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "ਪੂਰੀ ਸਕਰੀਨ ਤੋਂ ਬਾਹਰ"
 
-#: qml/ImageViewPage.qml:486
+#: qml/ImageViewPage.qml:505
 #, kde-format
 msgid "Previous image"
 msgstr "ਪਿਛਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:516
+#: qml/ImageViewPage.qml:538
 #, kde-format
 msgid "Next image"
 msgstr "ਅਗਲਾ ਚਿੱਤਰ"
 
-#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
 #, fuzzy, kde-format
 #| msgid "Slideshow interval:"
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਦਾ ਅੰਤਰਾਲ:"
 
-#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
 #, fuzzy, kde-format
 #| msgid "1 second"
 #| msgid_plural "%1 seconds"
@@ -756,26 +756,26 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 ਸਕਿੰਟ"
 msgstr[1] "%1 ਸਕਿੰਟ"
 
-#: qml/ImageViewPage.qml:922
+#: qml/ImageViewPage.qml:929
 #, fuzzy, kde-format
 #| msgid "Loop"
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:931 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "ਰਲਵਾਂ"
 
-#: qml/ImageViewPage.qml:943
+#: qml/ImageViewPage.qml:950
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਰੋਕੋ"
 
-#: qml/ImageViewPage.qml:957
+#: qml/ImageViewPage.qml:964
 #, kde-format
 msgid "Show All Controls"
 msgstr ""

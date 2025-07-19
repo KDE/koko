@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:40+0000\n"
+"POT-Creation-Date: 2025-07-19 05:20+0000\n"
 "PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -392,7 +392,7 @@ msgstr "Malelekti Ĉion"
 msgid "De-selects all the selected media"
 msgstr "Malelektas ĉiujn elektitajn amaskomunikilarojn"
 
-#: qml/AlbumView.qml:477
+#: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
 msgstr "Neniu Amaskomunikilaro Trovita"
@@ -724,23 +724,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Eliri Plenekranon"
 
-#: qml/ImageViewPage.qml:486
+#: qml/ImageViewPage.qml:505
 #, kde-format
 msgid "Previous image"
 msgstr "Antaŭa bildo"
 
-#: qml/ImageViewPage.qml:516
+#: qml/ImageViewPage.qml:538
 #, kde-format
 msgid "Next image"
 msgstr "Sekva bildo"
 
-#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalo de bildoprezento:"
 
-#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -748,24 +748,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekundo"
 msgstr[1] "%1 sekundoj"
 
-#: qml/ImageViewPage.qml:922
+#: qml/ImageViewPage.qml:929
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Buklo"
 
-#: qml/ImageViewPage.qml:931 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Randomigi"
 
-#: qml/ImageViewPage.qml:943
+#: qml/ImageViewPage.qml:950
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Halti Bildprezenton"
 
-#: qml/ImageViewPage.qml:957
+#: qml/ImageViewPage.qml:964
 #, kde-format
 msgid "Show All Controls"
 msgstr "Montri Ĉiujn Regilojn"

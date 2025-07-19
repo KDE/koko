@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:40+0000\n"
+"POT-Creation-Date: 2025-07-19 05:20+0000\n"
 "PO-Revision-Date: 2024-12-30 17:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -394,7 +394,7 @@ msgstr "全部取消選取"
 msgid "De-selects all the selected media"
 msgstr "取消選取任何已選取的媒體"
 
-#: qml/AlbumView.qml:477
+#: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
 msgstr "未找到媒體"
@@ -723,47 +723,47 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "離開全螢幕"
 
-#: qml/ImageViewPage.qml:486
+#: qml/ImageViewPage.qml:505
 #, kde-format
 msgid "Previous image"
 msgstr "前一張影像"
 
-#: qml/ImageViewPage.qml:516
+#: qml/ImageViewPage.qml:538
 #, kde-format
 msgid "Next image"
 msgstr "下一張影像"
 
-#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "投影播放間隔："
 
-#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1 秒"
 
-#: qml/ImageViewPage.qml:922
+#: qml/ImageViewPage.qml:929
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "循環"
 
-#: qml/ImageViewPage.qml:931 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "隨機"
 
-#: qml/ImageViewPage.qml:943
+#: qml/ImageViewPage.qml:950
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "結束投影播放"
 
-#: qml/ImageViewPage.qml:957
+#: qml/ImageViewPage.qml:964
 #, kde-format
 msgid "Show All Controls"
 msgstr "顯示所有控制"

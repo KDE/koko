@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-17 00:40+0000\n"
+"POT-Creation-Date: 2025-07-19 05:20+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -392,7 +392,7 @@ msgstr "सबको अचयनित करो"
 msgid "De-selects all the selected media"
 msgstr "सभी चयनित मीडिया का चयन रद्द करता है"
 
-#: qml/AlbumView.qml:477
+#: qml/AlbumView.qml:478
 #, kde-format
 msgid "No Media Found"
 msgstr "कोई मीडिया नहीं मिला"
@@ -723,23 +723,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "पूर्णस्क्रीन से बाहर निकलें"
 
-#: qml/ImageViewPage.qml:486
+#: qml/ImageViewPage.qml:505
 #, kde-format
 msgid "Previous image"
 msgstr "पिछली छवि"
 
-#: qml/ImageViewPage.qml:516
+#: qml/ImageViewPage.qml:538
 #, kde-format
 msgid "Next image"
 msgstr "अगली छवि"
 
-#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "स्लाइड शो अंतराल:"
 
-#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -747,24 +747,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "%1 सेकंड"
 msgstr[1] "%1 सेकंड"
 
-#: qml/ImageViewPage.qml:922
+#: qml/ImageViewPage.qml:929
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "कुंडली"
 
-#: qml/ImageViewPage.qml:931 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "यादृच्छिक करें"
 
-#: qml/ImageViewPage.qml:943
+#: qml/ImageViewPage.qml:950
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "स्लाइड शो रोकें"
 
-#: qml/ImageViewPage.qml:957
+#: qml/ImageViewPage.qml:964
 #, kde-format
 msgid "Show All Controls"
 msgstr "सभी नियंत्रण दिखाएं"
