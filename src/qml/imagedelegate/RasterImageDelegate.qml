@@ -17,8 +17,6 @@ import org.kde.koko
 BaseImageDelegate {
     id: root
 
-    readonly property bool zoomedOut: root.zoomFactor < 1
-
     loaded: image.status == Image.Ready
     loading: image.status == Image.Loading
 
@@ -36,9 +34,13 @@ BaseImageDelegate {
 
         fillMode: Image.PreserveAspectFit
 
-        // This makes zoomed-out imaged slook better
-        smooth: root.zoomedOut
-        mipmap: root.zoomedOut
+        // Only stop being smooth at >= 400% (matches Gwenview)
+        smooth: root.zoomFactor < 4
+        // NOTE: mipmap has no effect at >= 100%, but should stay enabled as changes cause the
+        // image to reload, showing a black frame unless retainWhileLoading is true, but reloading
+        // the image is undesirable and it also causes noisy warning output: "Mipmap settings
+        // changed without having image data available."
+        mipmap: true
 
         autoTransform: true
     }
