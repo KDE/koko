@@ -31,6 +31,12 @@ SortModel::SortModel(QObject *parent)
 
     connect(this, &SortModel::rowsInserted, this, [this](const QModelIndex &parent, int first, int last) {
         Q_UNUSED(parent)
+
+        // No need to re-check if we already contain images before insertion
+        if (m_containImages) {
+            return;
+        }
+
         bool containImages = false;
         for (int i = first; i <= last; i++) {
             const auto itemType = index(i, 0, {}).data(AbstractImageModel::ItemTypeRole).value<AbstractImageModel::ItemType>();
