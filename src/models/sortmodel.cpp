@@ -17,10 +17,6 @@
 using namespace Qt::StringLiterals;
 using namespace std::chrono_literals;
 
-// Maximum time in ms that the SortModel
-// may perform a blocking operation
-const int MaxBlockTimeout = 200;
-
 SortModel::SortModel(QObject *parent)
     : QSortFilterProxyModel(parent)
     , m_containImages(false)
