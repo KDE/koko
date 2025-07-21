@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2024-12-10 01:00+0100\n"
+"PO-Revision-Date: 2025-07-21 01:11+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,8 +28,7 @@ msgid "Your emails"
 msgstr "kde@peremen.name"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "일반"
@@ -38,23 +37,22 @@ msgstr "일반"
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "위치"
@@ -63,75 +61,67 @@ msgstr "위치"
 #, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1백만 화소)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: exiv2extractor.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr "파일 이름:"
+msgstr "파일 크기"
 
 #: exiv2extractor.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Created:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr "생성됨:"
+msgstr "만든 날짜"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "수정한 날짜"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "접근한 날짜"
 
 #: exiv2extractor.cpp:528
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "경로"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Image viewer"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "그림 뷰어"
+msgstr "그림 크기"
 
 #: exiv2extractor.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "파일 이름:"
+msgstr "파일 형식"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "설명"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -162,12 +152,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "그림 모음집 뷰어입니다."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013-2020 KDE Contributors"
+msgstr "(c) 2013-%1 KDE Contributors"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -238,11 +226,10 @@ msgid "Navigate to pictures"
 msgstr ""
 
 #: photosapplication.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "책갈피에 추가"
+msgstr "책갈피로 탐색"
 
 #: photosapplication.cpp:64
 #, kde-format
@@ -344,8 +331,7 @@ msgid "Root"
 msgstr "루트"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "선택한 미디어 공유"
@@ -581,39 +567,34 @@ msgid "Favorite"
 msgstr "책갈피"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "책갈피에서 삭제"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "책갈피에 추가"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "편집"
+msgstr "편집(&E)"
 
 #: qml/ImageViewPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr "그림 편집"
+msgstr "이 그림 편집"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "공유"
+msgstr "공유(&S)"
 
 #: qml/ImageViewPage.qml:114
 #, fuzzy, kde-format
@@ -652,11 +633,10 @@ msgstr "그림 정보 표시"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "슬라이드 쇼"
+msgstr "슬라이드 쇼(&S)"
 
 #: qml/ImageViewPage.qml:164
 #, fuzzy, kde-format
@@ -666,11 +646,10 @@ msgid "Start slideshow"
 msgstr "슬라이드 쇼 시작"
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr "모든 컨트롤 표시"
+msgstr "컨트롤 표시(&C)"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
@@ -706,11 +685,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "섬네일 바 숨기기"
 
 #: qml/ImageViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "전체 화면"
+msgstr "전체 화면(&F)"
 
 #: qml/ImageViewPage.qml:215
 #, fuzzy, kde-format
@@ -720,11 +698,10 @@ msgid "Enter Full Screen"
 msgstr "전체 화면 모드 시작"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr "전체 화면 모드 끝내기"
+msgstr "전체 화면 나가기"
 
 #: qml/ImageViewPage.qml:490
 #, kde-format
@@ -833,8 +810,7 @@ msgid "Images"
 msgstr "그림"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "설정"
@@ -847,8 +823,7 @@ msgid "Trash"
 msgstr "휴지통"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "네트워크"
@@ -866,8 +841,7 @@ msgid "Locations"
 msgstr "위치"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "국가"
@@ -880,8 +854,7 @@ msgid "States"
 msgstr "주/도"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "도시"
@@ -937,8 +910,7 @@ msgid "Slideshow:"
 msgstr "슬라이드 쇼"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "일반"
@@ -962,11 +934,10 @@ msgid "About KDE"
 msgstr "KDE 정보"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "공유"
+msgstr "공유(&S)"
 
 #: qml/ShareDrawer.qml:24
 #, fuzzy, kde-format
