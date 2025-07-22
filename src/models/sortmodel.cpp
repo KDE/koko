@@ -8,6 +8,7 @@
 #include "sortmodel.h"
 #include "abstractimagemodel.h"
 
+#include <QCollator>
 #include <QDebug>
 #include <QIcon>
 
@@ -113,6 +114,14 @@ bool SortModel::lessThan(const QModelIndex &source_left, const QModelIndex &sour
 
         if ((itemTypeLeft == AbstractImageModel::ItemType::Folder && itemTypeRight == AbstractImageModel::ItemType::Folder)
             || (itemTypeLeft != AbstractImageModel::ItemType::Folder && itemTypeRight != AbstractImageModel::ItemType::Folder)) {
+            const QString leftData = sourceModel()->data(source_left, sortRole()).toString();
+            const QString rightData = sourceModel()->data(source_right, sortRole()).toString();
+            if (!leftData.isEmpty() && !rightData.isEmpty()) {
+                static QCollator collator;
+                collator.setNumericMode(true);
+                return collator.compare(leftData, rightData) < 0;
+            }
+
             return QSortFilterProxyModel::lessThan(source_left, source_right);
         } else if (itemTypeLeft == AbstractImageModel::ItemType::Folder && itemTypeRight != AbstractImageModel::ItemType::Folder) {
             return true;
