@@ -22,6 +22,7 @@ SortModel::SortModel(QObject *parent)
     , m_containImages(false)
 {
     setSortLocaleAware(true);
+    setSortRole(AbstractImageModel::ContentRole);
     sort(0);
     m_selectionModel = new QItemSelectionModel(this);
 
