@@ -14,7 +14,7 @@
 #include <qqmlregistration.h>
 
 class QTimer;
-class KCoreDirLister;
+class KDirModel;
 
 /**
  * This class provides a QML binding to KDirModel
@@ -54,7 +54,7 @@ Q_SIGNALS:
     void urlChanged();
 
 private:
-    KCoreDirLister *const m_dirLister;
+    KDirModel *const m_dirModel;
     KFileItemList m_items;
 
     QStringList m_mimeTypes;

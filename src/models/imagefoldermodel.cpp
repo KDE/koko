@@ -16,14 +16,15 @@
 #include <QProcess>
 #include <QStandardPaths>
 
-#include <KCoreDirLister>
+#include <KDirLister>
+#include <KDirModel>
 #include <KIO/EmptyTrashJob>
 
 using namespace Qt::StringLiterals;
 
 ImageFolderModel::ImageFolderModel(QObject *parent)
     : AbstractImageModel(parent)
-    , m_dirLister(new KCoreDirLister(this))
+    , m_dirModel(new KDirModel(this))
 {
     QMimeDatabase db;
     const QList<QMimeType> mimeList = db.allMimeTypes();
@@ -36,23 +37,23 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
         }
     }
 
-    m_dirLister->setMimeFilter(m_mimeTypes);
+    m_dirModel->dirLister()->setMimeFilter(m_mimeTypes);
 
-    connect(m_dirLister, &KCoreDirLister::newItems, this, [this](const KFileItemList &items) {
-        beginInsertRows({}, m_items.size(), m_items.size() + items.size() - 1);
-        m_items << items;
-        endInsertRows();
-    });
-    connect(m_dirLister, &KCoreDirLister::clear, this, [this] {
-        beginResetModel();
-        m_items.clear();
-        endResetModel();
-    });
+    connect(m_dirModel, &KDirModel::rowsAboutToBeInserted, this, &ImageFolderModel::rowsAboutToBeInserted);
+    connect(m_dirModel, &KDirModel::rowsAboutToBeMoved, this, &ImageFolderModel::rowsAboutToBeMoved);
+    connect(m_dirModel, &KDirModel::rowsAboutToBeRemoved, this, &ImageFolderModel::rowsAboutToBeRemoved);
+    connect(m_dirModel, &KDirModel::rowsInserted, this, &ImageFolderModel::rowsInserted);
+    connect(m_dirModel, &KDirModel::rowsMoved, this, &ImageFolderModel::rowsMoved);
+    connect(m_dirModel, &KDirModel::rowsRemoved, this, &ImageFolderModel::rowsRemoved);
+    connect(m_dirModel, &KDirModel::modelReset, this, &ImageFolderModel::modelReset);
+    connect(m_dirModel, &KDirModel::modelAboutToBeReset, this, &ImageFolderModel::modelAboutToBeReset);
+    connect(m_dirModel, &KDirModel::layoutChanged, this, &ImageFolderModel::layoutChanged);
+    connect(m_dirModel, &KDirModel::layoutAboutToBeChanged, this, &ImageFolderModel::layoutAboutToBeChanged);
 }
 
 QUrl ImageFolderModel::url() const
 {
-    return m_dirLister->url();
+    return m_dirModel->dirLister()->url();
 }
 
 void ImageFolderModel::setUrl(const QUrl &url)
@@ -64,12 +65,12 @@ void ImageFolderModel::setUrl(const QUrl &url)
         newUrl = QUrl::fromLocalFile(locations.constFirst() + u'/');
     }
 
-    if (m_dirLister->url() == newUrl) {
-        m_dirLister->updateDirectory(newUrl);
+    if (m_dirModel->dirLister()->url() == newUrl) {
+        m_dirModel->dirLister()->updateDirectory(newUrl);
         return;
     }
 
-    m_dirLister->openUrl(newUrl);
+    m_dirModel->openUrl(newUrl);
 
     Q_EMIT urlChanged();
 }
@@ -112,10 +113,11 @@ void ImageFolderModel::emptyTrash()
 QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
-    return dataFromItem(m_items.at(index.row()), role);
+
+    return dataFromItem(m_dirModel->index(index.row(), 0).data(KDirModel::FileItemRole).value<KFileItem>(), role);
 }
 
 int ImageFolderModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : m_items.size();
+    return parent.isValid() ? 0 : m_dirModel->rowCount();
 }

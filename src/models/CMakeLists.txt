@@ -30,6 +30,7 @@ target_link_libraries(photos_model_static PUBLIC
     Qt::Sql
     Qt::Positioning
     KF6::KIOCore
+    KF6::KIOWidgets # For KDirModel
     KF6::KIOGui
     KF6::GuiAddons
     KF6::CoreAddons
