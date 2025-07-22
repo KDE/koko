@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:20+0000\n"
+"POT-Creation-Date: 2025-07-22 00:41+0000\n"
 "PO-Revision-Date: 2025-07-03 15:48+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -506,39 +506,39 @@ msgstr "Spara som"
 msgid "You are now editing a new file."
 msgstr "Du redigerar nu en ny fil."
 
-#: qml/imagedelegate/VideoPlayer.qml:192
+#: qml/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
 msgstr "Sökreglage"
 
-#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
+#: qml/imagedelegate/VideoPlayer.qml:241 qml/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "Gå bakåt 1 sekund"
 msgstr[1] "Gå bakåt %1 sekunder"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
 msgstr "Pausa uppspelning"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
 msgstr "Fortsätt uppspelning"
 
-#: qml/imagedelegate/VideoPlayer.qml:275
+#: qml/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
 msgstr "Tysta ljud"
 
-#: qml/imagedelegate/VideoPlayer.qml:295
+#: qml/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
 msgstr "Volymreglage"
 
-#: qml/imagedelegate/VideoPlayer.qml:316
+#: qml/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
 msgstr "Upprepa aktuell video"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:20+0000\n"
+"POT-Creation-Date: 2025-07-22 00:41+0000\n"
 "PO-Revision-Date: 2025-06-27 16:39+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -509,12 +509,12 @@ msgstr "Saglabāt kā"
 msgid "You are now editing a new file."
 msgstr "Rediģējat jaunu datni."
 
-#: qml/imagedelegate/VideoPlayer.qml:192
+#: qml/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
 msgstr "Meklēšanas slīdnis"
 
-#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
+#: qml/imagedelegate/VideoPlayer.qml:241 qml/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
@@ -522,27 +522,27 @@ msgstr[0] "Iet %1 sekundi atpakaļ"
 msgstr[1] "Iet %1 sekundes atpakaļ"
 msgstr[2] "Iet %1 sekunžu atpakaļ"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
 msgstr "Pauzēt atskaņošanu"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
 msgstr "Turpināt atskaņošanu"
 
-#: qml/imagedelegate/VideoPlayer.qml:275
+#: qml/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
 msgstr "Apklusināt"
 
-#: qml/imagedelegate/VideoPlayer.qml:295
+#: qml/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
 msgstr "Skaļums slīdnis"
 
-#: qml/imagedelegate/VideoPlayer.qml:316
+#: qml/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
 msgstr "Atkārtot šo video"

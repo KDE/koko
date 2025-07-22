@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:20+0000\n"
+"POT-Creation-Date: 2025-07-22 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -522,39 +522,39 @@ msgstr "के रूप रक्षित करें"
 msgid "You are now editing a new file."
 msgstr "अब आप एक नई फ़ाइल संपादित कर रहे हैं."
 
-#: qml/imagedelegate/VideoPlayer.qml:192
+#: qml/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
 msgstr "स्लाइडर खोजें"
 
-#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
+#: qml/imagedelegate/VideoPlayer.qml:241 qml/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "%1 सेकंड पीछे जाएं"
 msgstr[1] "%1 सेकंड पीछे जाएं"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
 msgstr "प्लेबैक रोकें"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
 msgstr "प्लेबैक जारी रखें"
 
-#: qml/imagedelegate/VideoPlayer.qml:275
+#: qml/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
 msgstr "ऑडियो म्यूट करें"
 
-#: qml/imagedelegate/VideoPlayer.qml:295
+#: qml/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
 msgstr "वॉल्यूम स्लाइडर"
 
-#: qml/imagedelegate/VideoPlayer.qml:316
+#: qml/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
 msgstr "वर्तमान वीडियो दोहराएँ"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:20+0000\n"
+"POT-Creation-Date: 2025-07-22 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -503,38 +503,38 @@ msgstr "另存为"
 msgid "You are now editing a new file."
 msgstr "您现在正在编辑新文件。"
 
-#: qml/imagedelegate/VideoPlayer.qml:192
+#: qml/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
 msgstr "定位滑动条"
 
-#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
+#: qml/imagedelegate/VideoPlayer.qml:241 qml/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "后退 %1 秒"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
 msgstr "暂停播放"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
 msgstr "继续播放"
 
-#: qml/imagedelegate/VideoPlayer.qml:275
+#: qml/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
 msgstr "静音"
 
-#: qml/imagedelegate/VideoPlayer.qml:295
+#: qml/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
 msgstr "音量滑动条"
 
-#: qml/imagedelegate/VideoPlayer.qml:316
+#: qml/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
 msgstr "重复播放当前视频"

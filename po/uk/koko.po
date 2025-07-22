@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-19 05:20+0000\n"
+"POT-Creation-Date: 2025-07-22 00:41+0000\n"
 "PO-Revision-Date: 2025-07-10 16:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -511,12 +511,12 @@ msgstr "Зберегти як"
 msgid "You are now editing a new file."
 msgstr "Зараз ви редагуєте новий файл."
 
-#: qml/imagedelegate/VideoPlayer.qml:192
+#: qml/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
 msgstr "Повзунок позиції"
 
-#: qml/imagedelegate/VideoPlayer.qml:243 qml/imagedelegate/VideoPlayer.qml:265
+#: qml/imagedelegate/VideoPlayer.qml:241 qml/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
@@ -525,27 +525,27 @@ msgstr[1] "Перемотати на %1 секунди"
 msgstr[2] "Перемотати на %1 секунд"
 msgstr[3] "Перемотати на секунду"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
 msgstr "Призупинити відтворення"
 
-#: qml/imagedelegate/VideoPlayer.qml:253
+#: qml/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
 msgstr "Продовжити відтворення"
 
-#: qml/imagedelegate/VideoPlayer.qml:275
+#: qml/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
 msgstr "Вимкнути звук"
 
-#: qml/imagedelegate/VideoPlayer.qml:295
+#: qml/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
 msgstr "Повзунок гучності"
 
-#: qml/imagedelegate/VideoPlayer.qml:316
+#: qml/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
 msgstr "Повторити поточне відео"
