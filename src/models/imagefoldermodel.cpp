@@ -19,16 +19,19 @@
 #include <KCoreDirLister>
 #include <KIO/EmptyTrashJob>
 
+using namespace Qt::StringLiterals;
+
 ImageFolderModel::ImageFolderModel(QObject *parent)
     : AbstractImageModel(parent)
     , m_dirLister(new KCoreDirLister(this))
 {
     QMimeDatabase db;
-    QList<QMimeType> mimeList = db.allMimeTypes();
+    const QList<QMimeType> mimeList = db.allMimeTypes();
 
     m_mimeTypes << "inode/directory";
-    for (auto &mime : std::as_const(mimeList)) {
-        if (mime.name().startsWith(QStringLiteral("image/")) || mime.name().startsWith(QStringLiteral("video/"))) {
+    for (const auto &mime : mimeList) {
+        const auto mimeName = mime.name();
+        if (mimeName.startsWith("image/"_L1) || mimeName.startsWith("video/"_L1)) {
             m_mimeTypes << mime.name();
         }
     }
