@@ -8,18 +8,22 @@ import QtQuick
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
+import org.kde.photos.thumbnails as KokoThumbnails
 import org.kde.kquickcontrolsaddons
 
 Controls.ItemDelegate {
     id: root
 
+    // GridView or ListView used for thumbnail priority calculation
+    required property Item view
+
     required property int index
     required property bool selected
-    required property var thumbnail
     required property int itemType
     required property string content
     required property int fileCount
     required property string imageurl
+    required property var item
 
     leftPadding: Kirigami.Units.gridUnit
     rightPadding: Kirigami.Units.gridUnit
@@ -48,33 +52,27 @@ Controls.ItemDelegate {
     width: gridView.cellWidth
     height: gridView.cellHeight
 
-    function refresh() {
-        // HACK: force refresh image after it was edited.
-        const old = image.image;
-        image.image = undefined;
-        image.image = old;
-    }
-
     contentItem: Item {
+
         Kirigami.Icon {
             id: placeholderImage
 
             anchors.centerIn: parent
-            source: root.thumbnail === false ? "chronometer-symbolic" : ''
+            source: "chronometer-symbolic"
             width: Kirigami.Units.iconSizes.large
             height: width
-            visible: root.thumbnail === false
+            visible: !image.thumbnailReady
         }
 
-        QImageItem {
+        KokoThumbnails.ThumbnailItem {
             id: image
-
             anchors.centerIn: parent
-            image: root.thumbnail ? root.thumbnail : undefined
+
             width: Koko.Config.iconSize
             height: width
-            visible: root.thumbnail !== false
-            fillMode: QImageItem.PreserveAspectCrop
+
+            fileItem: root.item
+            priority: view.calculateThumbnailPriority(root)
         }
 
         Rectangle {
@@ -133,7 +131,6 @@ Controls.ItemDelegate {
             }
         }
     }
-
 
     background: Rectangle {
         radius: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : 3

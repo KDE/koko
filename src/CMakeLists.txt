@@ -5,6 +5,8 @@
 
 add_subdirectory(models)
 
+add_subdirectory(thumbnails)
+
 add_library(koko_static STATIC
     exiv2extractor.cpp
     filesystemimagefetcher.cpp
@@ -40,6 +42,7 @@ kconfig_target_kcfg_file(koko_static
 
 target_link_libraries(koko_static PUBLIC
     photos_model_static
+    photos_thumbnails_static
 
     Qt::Widgets
     Qt::Core
@@ -66,6 +69,7 @@ ecm_add_qml_module(koko_static
     GENERATE_PLUGIN_SOURCE
     IMPORTS
         org.kde.photos.models
+        org.kde.photos.thumbnails
 )
 
 ecm_target_qml_sources(koko_static SOURCES
@@ -132,6 +136,7 @@ target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
     photos_model_staticplugin
+    photos_thumbnails_staticplugin
 )
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
