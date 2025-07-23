@@ -109,7 +109,7 @@ void ImageGroupModel::setQuery(const QByteArray &statement)
     Q_EMIT queryChanged();
 }
 
-QByteArray ImageGroupModel::queryForIndex(const int &index)
+QByteArray ImageGroupModel::queryForIndex(int index)
 {
     if (m_queryType == ImageStorage::QueryType::Location) {
         return m_locations.at(index).key;
