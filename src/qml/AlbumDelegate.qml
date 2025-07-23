@@ -5,13 +5,15 @@
  */
 
 import QtQuick
+import QtQml.Models
 import QtQuick.Controls as Controls
+import QtQuick.Templates as T
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
 import org.kde.kquickcontrolsaddons
 
-Controls.ItemDelegate {
+T.ItemDelegate {
     id: root
 
     required property int index
@@ -23,36 +25,25 @@ Controls.ItemDelegate {
     required property var item
 
     property alias thumbnailPriority: image.priority
+    property ItemSelectionModel selectionModel
 
-    leftPadding: Kirigami.Units.gridUnit
-    rightPadding: Kirigami.Units.gridUnit
-    topPadding: Kirigami.Units.gridUnit
-    bottomPadding: Kirigami.Units.gridUnit
+    leftPadding: 0
+    rightPadding: 0
+    topPadding: 0
+    bottomPadding: 0
 
-    leftInset: Kirigami.Units.smallSpacing
-    rightInset: Kirigami.Units.smallSpacing
-    topInset: Kirigami.Units.smallSpacing
-    bottomInset: Kirigami.Units.smallSpacing
+    implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
+                            implicitContentWidth + leftPadding + rightPadding)
+    implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
+                             implicitContentHeight + topPadding + bottomPadding,
+                             implicitIndicatorHeight + topPadding + bottomPadding)
 
-    readonly property color stateIndicatorColor: if (root.activeFocus || root.hovered || root.selected) {
-        return Kirigami.Theme.highlightColor;
-    } else {
-        return "transparent";
-    }
-
-    readonly property real stateIndicatorOpacity: if (root.activeFocus || root.hovered) {
-        return root.selected ? 1 : 0.3;
-    } else if (root.selected) {
-        return 0.7
-    } else {
-        return 0;
-    }
+    hoverEnabled: true
 
     width: gridView.cellWidth
     height: gridView.cellHeight
 
     contentItem: Item {
-
         Kirigami.Icon {
             id: placeholderImage
 
@@ -67,74 +58,36 @@ Controls.ItemDelegate {
             id: image
             anchors.centerIn: parent
 
-            width: Koko.Config.iconSize
+            width: root.width - 1
             height: width
 
             fileItem: root.item
+
+            Rectangle {
+                visible: root.selected
+                anchors.fill: parent
+                color: "white"
+                opacity: 0.4
+            }
         }
 
-        Rectangle {
+        Loader {
+            active: root.selectionModel && root.selectionModel.hasSelection
             anchors {
-                top: image.top
-                left: image.left
-                right: image.right
+                bottom: parent.bottom
+                bottomMargin: Kirigami.Units.smallSpacing
+                right: parent.right
+                rightMargin: Kirigami.Units.smallSpacing
             }
-            visible: textLabel.visible
-            width: image.width
-            height: textLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            color: Kirigami.Theme.backgroundColor
-            opacity: 0.8
-        }
 
-        Controls.Label {
-            id: textLabel
-            anchors {
-                left: image.left
-                right: image.right
-                top: image.top
-                bottom: countRect.visible ? countRect.top : image.bottom
-            }
-            visible: root.itemType == Koko.AbstractImageModel.Folder || root.itemType == Koko.AbstractImageModel.Collection
-            verticalAlignment: Text.AlignTop
-            padding: Kirigami.Units.smallSpacing
-            elide: Text.ElideRight
-            maximumLineCount: 4
-            wrapMode: Text.WordWrap
-            color: Kirigami.Theme.textColor
-            text: root.content
-        }
-
-        Rectangle {
-            id: countRect
-            anchors {
-                bottom: image.bottom
-                left: image.left
-                right: image.right
-            }
-            visible: root.fileCount && root.itemType == Koko.AbstractImageModel.Folder || root.itemType == Koko.AbstractImageModel.Collection
-            height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            color: Kirigami.Theme.backgroundColor
-            opacity: 0.8
-
-            Controls.Label {
-                id: countLabel
-                padding: Kirigami.Units.smallSpacing
-                elide: Text.ElideRight
-                maximumLineCount: 4
-                wrapMode: Text.WordWrap
-                color: Kirigami.Theme.textColor
-                text: i18np("1 Image", "%1 Images", root.fileCount)
+            sourceComponent: Controls.CheckBox {
+                onClicked: root.clicked();
+                checked: delegate.selected
             }
         }
     }
 
-    background: Rectangle {
-        radius: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : 3
-        color: stateIndicatorColor
-        opacity: stateIndicatorOpacity
-    }
+    background: null
 
     Keys.onPressed: (event) => {
         switch (event.key) {

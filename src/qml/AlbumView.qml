@@ -5,6 +5,7 @@
  */
 
 import QtQuick
+import QtQml.Models
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 
@@ -245,7 +246,7 @@ Kirigami.ScrollablePage {
         },
         State {
             name: "selecting"
-            when: model.hasSelectedImages && Kirigami.Settings.tabletMode
+            when: model.hasSelectedImages
         }
     ]
 
@@ -377,11 +378,17 @@ Kirigami.ScrollablePage {
     Keys.onPressed: (event) => {
         switch (event.key) {
             case Qt.Key_Escape:
-                gridView.model.clearSelections()
+                itemSelectionModel.clearSelection()
                 break;
             default:
                 break;
         }
+    }
+
+    ItemSelectionModel {
+        id: itemSelectionModel
+
+        model: gridView.model.sourceModel
     }
 
     GridView {
@@ -390,8 +397,12 @@ Kirigami.ScrollablePage {
         property real widthToApproximate: (page.mainWindow.wideScreen ? page.mainWindow.pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
         property string url: model.sourceModel.url ? model.sourceModel.url : ""
 
-        cellWidth: Math.floor(width/Math.floor(width/(Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2)))
-        cellHeight: Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2
+        cellWidth: {
+            const columns = Math.max(Math.floor(gridView.width / Koko.Config.iconSize), 2);
+            return Math.floor(gridView.width / columns);
+        }
+
+        cellHeight: cellWidth
 
         highlightMoveDuration: 0
         keyNavigationEnabled: true
@@ -428,35 +439,76 @@ Kirigami.ScrollablePage {
             return row * columnCount + column;
         }
 
-        delegate: AlbumDelegate {
-            id: delegate
+        delegate: DelegateChooser {
+            role: "itemType"
 
-            GridView.onPooled: { thumbnailPriority = -1; }
-            GridView.onReused: { thumbnailPriority = Qt.binding(() => gridView.calculateThumbnailPriority(delegate)); }
-            thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
+            DelegateChoice {
+                roleValue: Koko.AbstractImageModel.Image
 
-            highlighted: gridView.currentIndex == index
+                AlbumDelegate {
+                    id: delegate
 
-            Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)
-            Controls.ToolTip.visible: hovered && model.itemType === Koko.AbstractImageModel.Image
-            Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
 
-            onPressAndHold: gridView.model.toggleSelected(delegate.index)
+                    thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
 
-            onClicked: if (page.state === "selecting" || Koko.Controller.keyboardModifiers() & Qt.ControlModifier) {
-                gridView.model.toggleSelected(delegate.index)
-            } else {
-                gridView.model.clearSelections()
-                gridView.currentIndex = delegate.index;
-                switch(delegate.itemType) {
-                    case Koko.AbstractImageModel.Collection: {
-                        const sourceIndex = gridView.model.mapToSource(gridView.model.index(delegate.index, 0));
-                        imageListModel.query = imageListModel.queryForIndex(sourceIndex.row)
-                        sortedListModel.sourceModel = imageListModel
-                        collectionSelected(sortedListModel, delegate.content)
-                        break;
+                    selectionModel: itemSelectionModel
+
+                    highlighted: gridView.currentIndex == index
+
+                    Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)
+                    Controls.ToolTip.visible: hovered
+                    Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                    GridView.onPooled: {
+                        thumbnailPriority = -1;
                     }
-                    case Koko.AbstractImageModel.Folder: {
+                    GridView.onReused: {
+                        thumbnailPriority = Qt.binding(() => gridView.calculateThumbnailPriority(delegate));
+                    }
+
+                    onClicked: if (page.state === "selecting") {
+                        itemSelectionModel.select()
+                        gridView.model.toggleSelected(delegate.index)
+                    } else {
+                        gridView.model.clearSelections()
+                        gridView.currentIndex = delegate.index;
+
+                        if (gridView.url.toString().startsWith("trash:")) {
+                            return;
+                        }
+                        page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                            startIndex: page.model.index(gridView.currentIndex, 0),
+                            imagesModel: page.model,
+                            application: page.application,
+                            mainWindow: page.mainWindow,
+                        })
+                    }
+                }
+            }
+
+            DelegateChoice {
+                roleValue: Koko.AbstractImageModel.Folder
+
+                FolderDelegate {
+                    id: delegate
+
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
+
+                    highlighted: gridView.currentIndex == index
+
+                    thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
+
+                    GridView.onPooled: {
+                        thumbnailPriority = -1;
+                    }
+                    GridView.onReused: {
+                        thumbnailPriority = Qt.binding(() => gridView.calculateThumbnailPriority(delegate));
+                    }
+
+                    onClicked: {
                         if (!page.isFolderView) {
                             imageFolderModel.url = delegate.imageurl
                             sortedListModel.sourceModel = imageFolderModel
@@ -471,37 +523,27 @@ Kirigami.ScrollablePage {
                         page.backUrls = tmp;
                         page.backUrlsPosition++;
                         page.model.sourceModel.url = delegate.imageurl;
-                        break;
-                    }
-                    case Koko.AbstractImageModel.Image: {
-                        if (gridView.url.toString().startsWith("trash:")) {
-                            break
-                        }
-                        page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                            startIndex: page.model.index(gridView.currentIndex, 0),
-                            imagesModel: page.model,
-                            application: page.application,
-                            mainWindow: page.mainWindow,
-                        })
-                        break;
-                    }
-                    default: {
-                        console.log("Unknown")
-                        break;
                     }
                 }
             }
-            SelectionButton {
-                id: selectionButton
 
-                selected: delegate.selected
-                index: delegate.index
-                opacity: delegate.hovered || page.state === "selecting"
-                visible: delegate.itemType !== Koko.AbstractImageModel.Folder && delegate.itemType !== Koko.AbstractImageModel.Collection
+            DelegateChoice {
+                roleValue: Koko.AbstractImageModel.Album
 
-                anchors {
-                    top: delegate.top
-                    left: delegate.left
+                CollectionDelegate {
+                    id: delegate
+
+                    width: gridView.cellWidth
+                    height: gridView.cellHeight
+
+                    highlighted: gridView.currentIndex == index
+
+                    onClicked: {
+                        const sourceIndex = gridView.model.mapToSource(gridView.model.index(delegate.index, 0));
+                        imageListModel.query = imageListModel.queryForIndex(sourceIndex.row)
+                        sortedListModel.sourceModel = imageListModel
+                        collectionSelected(sortedListModel, delegate.content)
+                    }
                 }
             }
         }
