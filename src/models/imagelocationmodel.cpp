@@ -13,6 +13,7 @@ ImageLocationModel::ImageLocationModel(QObject *parent)
     , m_group(ImageStorage::LocationGroup::City)
 {
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, &ImageLocationModel::slotPopulate);
+    slotPopulate();
 }
 
 void ImageLocationModel::slotPopulate()
@@ -39,10 +40,10 @@ QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
         return ImageStorage::instance()->imagesForLocation(collection.key, m_group).size();
 
     case ItemRole:
-        return ImageStorage::instance()->imageForLocation(collection, m_group).url();
+        return ImageStorage::instance()->imageForLocation(collection, m_group);
 
     case ImageUrlRole:
-        return ImageStorage::instance()->imageForLocation(collection, m_group).url().toLocalFile();
+        return ImageStorage::instance()->imageForLocation(collection, m_group).url();
 
     case ItemTypeRole:
         return ItemType::Collection;
