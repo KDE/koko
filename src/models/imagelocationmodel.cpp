@@ -47,9 +47,6 @@ QVariant ImageLocationModel::data(const QModelIndex &index, int role) const
 
     case ItemTypeRole:
         return ItemType::Collection;
-
-    case ThumbnailRole:
-        return thumbnailForItem(ImageStorage::instance()->imageForLocation(collection, m_group));
     }
 
     return {};

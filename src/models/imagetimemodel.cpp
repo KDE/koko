@@ -49,9 +49,6 @@ QVariant ImageTimeModel::data(const QModelIndex &index, int role) const
 
     case ItemTypeRole:
         return ItemType::Collection;
-
-    case ThumbnailRole:
-        return thumbnailForItem(ImageStorage::instance()->imageForTime(collection, m_group));
     }
 
     return {};

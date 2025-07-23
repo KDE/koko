@@ -16,6 +16,7 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 import org.kde.coreaddons as KCA
+import org.kde.photos.thumbnails as KokoThumbnails
 
 Kirigami.Page {
     id: root
@@ -97,7 +98,7 @@ Kirigami.Page {
                     visible: false
                 })
                 page.imageEdited.connect(function() {
-                    thumbnailView.currentItem.refresh();
+                    KokoThumbnails.ThumbnailManager.refreshThumbnail(page.imagePath);
                 });
             }
         },

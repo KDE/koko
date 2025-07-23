@@ -401,8 +401,38 @@ Kirigami.ScrollablePage {
         // always clean selection
         onUrlChanged: model.clearSelections()
 
+        // Instantiate delegates to fill height * 2 above and below
+        cacheBuffer: height * 2
+
+        // Prioritise thumbnailing delegates in order, with off-screen delegates prioritised sequentially
+        function calculateThumbnailPriority(delegate: Item): int {
+            let column = Math.floor(delegate.x / gridView.cellWidth);
+            let row = Math.ceil((delegate.y - gridView.contentY + gridView.cellHeight) / gridView.cellHeight) - 1;
+            let columnCount = Math.floor(gridView.width / gridView.cellWidth);
+
+            let firstVisibleRow = 0;
+            let lastVisibleRow = Math.ceil((gridView.height + gridView.cellHeight) / gridView.cellHeight) - 1;
+
+            if (Qt.application.layoutDirection === Qt.RightToLeft) {
+                // Reverse column order in RTL
+                column = columnCount - 1 - column;
+            }
+
+            if (row < firstVisibleRow) {
+                // Delegate is off-screen above, so match priority
+                // with rows below in reverse column order
+                row = lastVisibleRow - row - 1;
+                column = columnCount - 1 - column;
+            }
+
+            return row * columnCount + column;
+        }
+
         delegate: AlbumDelegate {
             id: delegate
+
+            view: gridView
+
             highlighted: gridView.currentIndex == index
 
             Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(model.imageurl)

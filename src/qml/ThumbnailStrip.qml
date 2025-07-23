@@ -52,8 +52,20 @@ ListView {
     // Center when width changes (e.g. due to window resizing or animations)
     onWidthChanged: positionViewAtIndex(currentIndex, ListView.Center)
 
+    // Instantiate delegates to fill width * 2 left and right
+    cacheBuffer: width * 2
+
+    // Prioritise thumbnailing delegates closest to the highlighted item
+    function calculateThumbnailPriority(delegate: Item): int {
+        let centerOffset = Math.abs(thumbnailView.currentItem.x - delegate.x);
+        let delegateSize = delegate.width + thumbnailView.spacing;
+        return Math.round(centerOffset / delegateSize);
+    }
+
     delegate: AlbumDelegate {
         id: delegate
+
+        view: thumbnailView
 
         width: thumbnailView.delegateSize
         height: thumbnailView.delegateSize
