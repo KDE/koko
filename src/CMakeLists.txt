@@ -70,6 +70,8 @@ ecm_add_qml_module(koko_static
 
 ecm_target_qml_sources(koko_static SOURCES
     qml/AlbumDelegate.qml
+    qml/FolderDelegate.qml
+    qml/CollectionDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml
     qml/EditorView.qml
@@ -81,7 +83,6 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/Main.qml
     qml/OverviewControl.qml
     qml/PlacesPage.qml
-    qml/SelectionButton.qml
     qml/ShareAction.qml
     qml/ShareDialog.qml
     qml/ShareDrawer.qml
