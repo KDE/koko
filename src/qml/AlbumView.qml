@@ -239,27 +239,16 @@ Kirigami.ScrollablePage {
         }
     }
 
-    states: [
-        State {
-            name: "browsing"
-            when: !model.hasSelectedImages
-        },
-        State {
-            name: "selecting"
-            when: model.hasSelectedImages
-        }
-    ]
-
-
-    property bool bookmarkActionVisible: page.isFolderView && !model.hasSelectedImages && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
-                                                                                       && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
+    property bool bookmarkActionVisible: page.isFolderView && !itemSelectionModel.hasSelection
+        && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
+        && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
 
     actions: [
         Kirigami.Action {
             id: bookmarkAction
             icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
             text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-            visible: !Kirigami.Settings.isMobile && page.isFolderView && !model.hasSelectedImages
+            visible: !Kirigami.Settings.isMobile && page.isFolderView && !itemSelectionModel.hasSelection
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
             displayHint: Kirigami.DisplayHint.IconOnly
@@ -324,33 +313,22 @@ Kirigami.ScrollablePage {
         },
         ShareAction {
             id: shareAction
-            visible: model.hasSelectedImages
+            visible: itemSelectionModel.hasSelection
 
             tooltip: i18nc("@info:tooltip", "Share the selected media")
-
-            property Connections connection: Connections {
-                target: model
-                function onSelectedImagesChanged() {
-                    shareAction.inputData = {
-                        urls: model.selectedImages(),
-                        mimeType: model.selectedImagesMimeTypes()
-                    };
-                }
-            }
-
         },
         Kirigami.Action {
             icon.name: "group-delete"
             text: i18n("Delete Selection")
             tooltip: i18n("Move selected items to trash")
-            visible: model.hasSelectedImages && !page.isTrashView
+            visible: itemSelectionModel.hasSelection && !page.isTrashView
             onTriggered: model.deleteSelection()
         },
         Kirigami.Action {
             icon.name: "restoration"
             text: i18n("Restore Selection")
             tooltip: i18n("Restore selected items from trash")
-            visible: model.hasSelectedImages && page.isTrashView
+            visible: itemSelectionModel.hasSelection && page.isTrashView
             onTriggered: model.restoreSelection()
         },
         Kirigami.Action {
@@ -358,15 +336,22 @@ Kirigami.ScrollablePage {
             text: i18n("Select All")
             tooltip: i18n("Selects all the media in the current view")
             visible: model.containImages
-            onTriggered: model.selectAll()
-
+            onTriggered: {
+                for (let i = 0, count = itemSelectionModel.model.rowCount(); i < count; i++) {
+                    const index = itemSelectionModel.model.index(i, 0);
+                    const isImage = index.data(Koko.AbstractImageModel.ItemTypeRole) === Koko.AbstractImageModel.Image;
+                    if (isImage) {
+                        itemSelectionModel.select(index, ItemSelectionModel.Select);
+                    }
+                }
+            }
         },
         Kirigami.Action {
             icon.name: "edit-select-none"
             text: i18n("Deselect All")
             tooltip: i18n("De-selects all the selected media")
-            onTriggered: model.clearSelections()
-            visible: model.hasSelectedImages
+            onTriggered: itemSelectionModel.clear()
+            visible: itemSelectionModel.hasSelection
         }
     ]
 
@@ -378,7 +363,7 @@ Kirigami.ScrollablePage {
     Keys.onPressed: (event) => {
         switch (event.key) {
             case Qt.Key_Escape:
-                itemSelectionModel.clearSelection()
+                itemSelectionModel.clear()
                 break;
             default:
                 break;
@@ -389,13 +374,27 @@ Kirigami.ScrollablePage {
         id: itemSelectionModel
 
         model: gridView.model.sourceModel
+
+        onSelectedIndexesChanged: {
+            const urls = [];
+            const mimeType = [];
+
+            for (let index of itemSelectionModel.selectedIndexes) {
+                urls.push(index.data(Koko.AbstractImageModel.ImageUrlRole));
+                const mime = index.data(Koko.AbstractImageModel.MimeTypeRole);
+                if (!mimeType.includes(mime)) {
+                    mimeType.push(mime);
+                }
+            }
+            shareAction.inputData = { urls, mimeType, };
+        }
     }
 
     GridView {
         id: gridView
 
-        property real widthToApproximate: (page.mainWindow.wideScreen ? page.mainWindow.pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
-        property string url: model.sourceModel.url ? model.sourceModel.url : ""
+        readonly property real widthToApproximate: (page.mainWindow.wideScreen ? page.mainWindow.pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
+        readonly property string url: model.sourceModel.url ? model.sourceModel.url : ""
 
         cellWidth: {
             const columns = Math.max(Math.floor(gridView.width / Koko.Config.iconSize), 2);
@@ -410,7 +409,7 @@ Kirigami.ScrollablePage {
         reuseItems: true
 
         // always clean selection
-        onUrlChanged: model.clearSelections()
+        onUrlChanged: itemSelectionModel.clear()
 
         // Instantiate delegates to fill height * 2 above and below
         cacheBuffer: height * 2
@@ -454,8 +453,9 @@ Kirigami.ScrollablePage {
                     thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
 
                     selectionModel: itemSelectionModel
+                    selected: selectionModel.selectedIndexes.includes(gridView.model.mapToSource(gridView.model.index(index, 0)))
 
-                    highlighted: gridView.currentIndex == index
+                    highlighted: gridView.currentIndex === index
 
                     Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)
                     Controls.ToolTip.visible: hovered
@@ -468,11 +468,10 @@ Kirigami.ScrollablePage {
                         thumbnailPriority = Qt.binding(() => gridView.calculateThumbnailPriority(delegate));
                     }
 
-                    onClicked: if (page.state === "selecting") {
-                        itemSelectionModel.select()
-                        gridView.model.toggleSelected(delegate.index)
+                    onClicked: if (itemSelectionModel.hasSelection) {
+                        const sourceIndex = gridView.model.mapToSource(gridView.model.index(index, 0));
+                        itemSelectionModel.select(sourceIndex, ItemSelectionModel.Toggle);
                     } else {
-                        gridView.model.clearSelections()
                         gridView.currentIndex = delegate.index;
 
                         if (gridView.url.toString().startsWith("trash:")) {
@@ -484,6 +483,11 @@ Kirigami.ScrollablePage {
                             application: page.application,
                             mainWindow: page.mainWindow,
                         })
+                    }
+
+                    onPressAndHold: {
+                        const sourceIndex = gridView.model.mapToSource(gridView.model.index(index, 0));
+                        itemSelectionModel.select(sourceIndex, ItemSelectionModel.Toggle);
                     }
                 }
             }
