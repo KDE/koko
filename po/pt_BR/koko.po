@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:41+0000\n"
+"POT-Creation-Date: 2025-07-24 00:41+0000\n"
 "PO-Revision-Date: 2024-03-23 19:15-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -394,7 +394,7 @@ msgstr "Desmarcar tudo"
 msgid "De-selects all the selected media"
 msgstr "Desmarca todas as mídias selecionadas"
 
-#: qml/AlbumView.qml:478
+#: qml/AlbumView.qml:479
 #, kde-format
 msgid "No Media Found"
 msgstr "Nenhuma mídia encontrada"

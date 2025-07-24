@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:41+0000\n"
+"POT-Creation-Date: 2025-07-24 00:41+0000\n"
 "PO-Revision-Date: 2025-02-01 22:15+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -392,7 +392,7 @@ msgstr "Kijelölés megszüntetése"
 msgid "De-selects all the selected media"
 msgstr "A kijelölt médiák kijelölésének megszüntetése"
 
-#: qml/AlbumView.qml:478
+#: qml/AlbumView.qml:479
 #, kde-format
 msgid "No Media Found"
 msgstr "Nem található média"

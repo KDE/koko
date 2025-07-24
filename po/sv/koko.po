@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:41+0000\n"
+"POT-Creation-Date: 2025-07-24 00:41+0000\n"
 "PO-Revision-Date: 2025-07-03 15:48+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -378,7 +378,7 @@ msgstr "Avmarkera alla"
 msgid "De-selects all the selected media"
 msgstr "Avmarkerar alla markerade medier"
 
-#: qml/AlbumView.qml:478
+#: qml/AlbumView.qml:479
 #, kde-format
 msgid "No Media Found"
 msgstr "Inga medier hittades"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:41+0000\n"
+"POT-Creation-Date: 2025-07-24 00:41+0000\n"
 "PO-Revision-Date: 2025-03-05 16:41+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -397,7 +397,7 @@ msgstr "Отменить выбор"
 msgid "De-selects all the selected media"
 msgstr "Снять выделение с всех выбранных изображений и видео"
 
-#: qml/AlbumView.qml:478
+#: qml/AlbumView.qml:479
 #, kde-format
 msgid "No Media Found"
 msgstr "Не найдено ни одного файла изображения или видео"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:41+0000\n"
+"POT-Creation-Date: 2025-07-24 00:41+0000\n"
 "PO-Revision-Date: 2025-07-10 13:27+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -378,7 +378,7 @@ msgstr "Alles deselecteren"
 msgid "De-selects all the selected media"
 msgstr "Maakt selectie ongedaan van alle geselecteerde media"
 
-#: qml/AlbumView.qml:478
+#: qml/AlbumView.qml:479
 #, kde-format
 msgid "No Media Found"
 msgstr "Geen media gevonden"
