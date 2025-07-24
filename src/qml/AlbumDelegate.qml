@@ -16,13 +16,14 @@ T.ItemDelegate {
     id: root
 
     required property int index
-    required property bool selected
     required property var thumbnail
     required property int itemType
     required property string content
     required property int fileCount
     required property string imageurl
     property ItemSelectionModel selectionModel
+
+    property bool selected: false
 
     leftPadding: 0
     rightPadding: 0
@@ -84,7 +85,7 @@ T.ItemDelegate {
 
             sourceComponent: Controls.CheckBox {
                 onClicked: root.clicked();
-                checked: delegate.selected
+                checked: root.selected
             }
         }
     }

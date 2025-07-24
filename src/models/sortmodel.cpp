@@ -148,64 +148,6 @@ bool SortModel::containImages()
     return m_containImages;
 }
 
-bool SortModel::hasSelectedImages()
-{
-    return m_selectionModel->hasSelection();
-}
-
-void SortModel::setSelected(int indexValue)
-{
-    if (indexValue < 0)
-        return;
-
-    QModelIndex index = QSortFilterProxyModel::index(indexValue, 0);
-    m_selectionModel->select(index, QItemSelectionModel::Select);
-    emit dataChanged(index, index);
-    emit selectedImagesChanged();
-}
-
-void SortModel::toggleSelected(int indexValue)
-{
-    if (indexValue < 0)
-        return;
-
-    QModelIndex index = QSortFilterProxyModel::index(indexValue, 0);
-    m_selectionModel->select(index, QItemSelectionModel::Toggle);
-    emit dataChanged(index, index);
-    emit selectedImagesChanged();
-}
-
-void SortModel::clearSelections()
-{
-    if (m_selectionModel->hasSelection()) {
-        QModelIndexList selectedIndex = m_selectionModel->selectedIndexes();
-        m_selectionModel->clear();
-        for (auto indexValue : selectedIndex) {
-            emit dataChanged(indexValue, indexValue);
-        }
-    }
-    emit selectedImagesChanged();
-}
-
-void SortModel::selectAll()
-{
-    QModelIndexList indexList;
-    for (int row = 0; row < rowCount(); row++) {
-        indexList.append(index(row, 0, QModelIndex()));
-    }
-
-    if (m_selectionModel->hasSelection()) {
-        m_selectionModel->clear();
-    }
-
-    for (const auto &index : indexList) {
-        if (AbstractImageModel::ItemType::Image == data(index, AbstractImageModel::ItemTypeRole).value<AbstractImageModel::ItemType>())
-            m_selectionModel->select(index, QItemSelectionModel::Select);
-    }
-    Q_EMIT dataChanged(index(0, 0, QModelIndex()), index(rowCount() - 1, 0, QModelIndex()));
-    Q_EMIT selectedImagesChanged();
-}
-
 void SortModel::deleteSelection()
 {
     QList<QUrl> filesToDelete;
@@ -241,30 +183,6 @@ int SortModel::proxyIndex(const int &indexValue)
 int SortModel::sourceIndex(const int &indexValue)
 {
     return mapToSource(index(indexValue, 0, QModelIndex())).row();
-}
-
-QJsonArray SortModel::selectedImages()
-{
-    QJsonArray arr;
-
-    for (auto index : m_selectionModel->selectedIndexes()) {
-        arr.push_back(QJsonValue(data(index, AbstractImageModel::ImageUrlRole).toString()));
-    }
-
-    return arr;
-}
-
-QJsonArray SortModel::selectedImagesMimeTypes()
-{
-    QJsonArray arr;
-
-    for (auto index : m_selectionModel->selectedIndexes()) {
-        if (!arr.contains(QJsonValue(data(index, AbstractImageModel::MimeTypeRole).toString()))) {
-            arr.push_back(QJsonValue(data(index, AbstractImageModel::MimeTypeRole).toString()));
-        }
-    }
-
-    return arr;
 }
 
 int SortModel::indexForUrl(const QString &url)
