@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2024-10-24 11:59+0200\n"
+"PO-Revision-Date: 2025-07-30 18:30+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -29,23 +29,22 @@ msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "General"
 
 #: exiv2extractor.cpp:72
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "Exif"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
@@ -54,70 +53,65 @@ msgid "XMPP"
 msgstr ""
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Locationes"
+msgstr "Location"
 
 #: exiv2extractor.cpp:508
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1MP)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Nomine"
 
 #: exiv2extractor.cpp:521
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "File name:"
-msgctxt "@item:intable"
-msgid "File Size"
-msgstr "Nomine de file:"
-
-#: exiv2extractor.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Created:"
-msgctxt "@item:intable"
-msgid "Date Created"
-msgstr "Create:"
-
-#: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
+msgid "File Size"
+msgstr "Grandor de file"
+
+#: exiv2extractor.cpp:524
+#, kde-format
+msgctxt "@item:intable"
+msgid "Date Created"
+msgstr "Data create"
+
+#: exiv2extractor.cpp:526
+#, fuzzy, kde-format
+msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Data Modificate"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Data Accessite"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "Percurso"
 
 #: exiv2extractor.cpp:529
 #, fuzzy, kde-format
 #| msgid "Image viewer"
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Visor de image"
+msgstr "Grandor de Imagine: "
 
 #: exiv2extractor.cpp:530
 #, fuzzy, kde-format
@@ -125,13 +119,13 @@ msgstr "Visor de image"
 #| msgid "File name:"
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "Nomine de file:"
+msgstr "Typo de file"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Commento"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -312,8 +306,7 @@ msgstr[0] "1 Imagine"
 msgstr[1] "%1 imagines"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "Dossieres"
@@ -345,8 +338,7 @@ msgid "Root"
 msgstr "Radice"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Comparti le media selectionate"
@@ -397,22 +389,19 @@ msgid "No Media Found"
 msgstr "Nulle multimedia trovate"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Photos"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videos"
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Favoritos"
@@ -583,15 +572,13 @@ msgid "Favorite"
 msgstr "Favorito"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Remove ex favoritos"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Adde a favoritos"
@@ -601,7 +588,7 @@ msgstr "Adde a favoritos"
 #| msgid "Edit"
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "Modifica"
+msgstr "&Edita"
 
 #: qml/ImageViewPage.qml:90
 #, kde-format
@@ -610,11 +597,10 @@ msgid "Edit this image"
 msgstr ""
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "Comparti"
+msgstr "&Comparti"
 
 #: qml/ImageViewPage.qml:114
 #, fuzzy, kde-format
@@ -653,11 +639,10 @@ msgstr "Vide information re imagine"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "Slideshow (Sequentia de diapositivas)"
+msgstr "&Slideshow (Sequentia de diapositivas)"
 
 #: qml/ImageViewPage.qml:164
 #, fuzzy, kde-format
@@ -667,11 +652,10 @@ msgid "Start slideshow"
 msgstr "Starta presentation (slideshow)"
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr "Monstra omne controlos"
+msgstr "Monstra &Controlos"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
@@ -707,25 +691,23 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Cela Barra de Miniatura"
 
 #: qml/ImageViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "Schermo plen"
+msgstr "Schermo &plen"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "Passa a schermo plen"
+msgstr "Inserta schermo plen"
 
 #: qml/ImageViewPage.qml:215
 #, fuzzy, kde-format
 #| msgid "Exit Fullscreen"
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr "Exi schermo plen"
+msgstr "Exi del schermo integre"
 
 #: qml/ImageViewPage.qml:490
 #, kde-format
@@ -835,8 +817,7 @@ msgid "Images"
 msgstr "Imagines"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Preferentias"
@@ -860,7 +841,7 @@ msgstr "Rete"
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Remove iste marcator de libro"
+msgstr "Marcatores de libro"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -868,22 +849,19 @@ msgid "Locations"
 msgstr "Locationes"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Paises"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Statos"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Citates"
@@ -894,22 +872,19 @@ msgid "Time"
 msgstr "Tempore"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Annos"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Menses"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Septimanas"
@@ -956,7 +931,7 @@ msgstr "A proposito de Photos"
 #| msgid "About KDE"
 msgctxt "@title:group"
 msgid "About"
-msgstr "A proposito de KDE"
+msgstr "A proposito"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
@@ -964,11 +939,10 @@ msgid "About KDE"
 msgstr "A proposito de KDE"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Comparti"
+msgstr "&Comparti"
 
 #: qml/ShareDrawer.qml:24
 #, fuzzy, kde-format
