@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
+// SPDX-FileCopyrightText: 2025 Oliver Beard <olib141@outlook.com>
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 #include "openfilemodel.h"
@@ -10,6 +11,7 @@
 
 OpenFileModel::OpenFileModel(QObject *parent)
     : AbstractImageModel(parent)
+    , m_mode(Mode::OpenNone)
 {
 }
 
@@ -19,35 +21,49 @@ QVariant OpenFileModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    const auto &item = m_images[index.row()];
-    return dataFromItem(item, role);
+    const auto &fileItem = m_fileItems[index.row()];
+    return dataFromItem(fileItem, role);
 }
 
 int OpenFileModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? m_images.size() : 0;
+    return parent.isValid() ? m_fileItems.size() : 0;
 }
 
-void OpenFileModel::updateOpenFiles(const QStringList &images)
+void OpenFileModel::updateOpenFiles(const QStringList &paths)
 {
     beginResetModel();
-    m_images.clear();
+    m_fileItems.clear();
 
-    std::ranges::transform(images, std::back_inserter(m_images), [](const auto &image) {
-        auto item = KFileItem(image);
-        item.setDelayedMimeTypes(true);
-        return item;
-    });
+    KFileItemList files;
+    KFileItemList folders;
+    for (const QString &path : paths) {
+        KFileItem fileItem = KFileItem(path);
+        fileItem.setDelayedMimeTypes(true);
+
+        if (fileItem.isFile()) {
+            files.append(fileItem);
+        } else {
+            folders.append(fileItem);
+        }
+    }
+
+    if (folders.size() > 0) {
+        // Show the folder
+        m_mode = Mode::OpenFolder;
+        m_fileItems = {folders[0]};
+    } else {
+        // Show the images
+        m_mode = Mode::OpenImages;
+        m_fileItems = std::move(files);
+    }
 
     endResetModel();
-    Q_EMIT itemToOpenChanged();
-    Q_EMIT updatedImages();
+
+    Q_EMIT modeChanged();
 }
 
-KFileItem OpenFileModel::itemToOpen() const
+OpenFileModel::Mode OpenFileModel::mode()
 {
-    if (m_images.length() == 1) {
-        return m_images.value(0);
-    }
-    return {};
+    return m_mode;
 }
