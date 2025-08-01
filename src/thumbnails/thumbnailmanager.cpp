@@ -18,6 +18,11 @@ ThumbnailManager *ThumbnailManager::instance()
     return instance;
 };
 
+ThumbnailManager *ThumbnailManager::create(QQmlEngine *, QJSEngine *engine)
+{
+    return instance();
+}
+
 ThumbnailManager::ThumbnailManager(QObject *parent)
     : QObject(parent)
     , m_thumbnailCache(s_cacheSize)
@@ -56,18 +61,16 @@ void ThumbnailManager::requestThumbnail(ThumbnailItem *item, const KFileItem &fi
     generateLater();
 }
 
-/*
-void ThumbnailManager::refreshThumbnail(ThumbnailItem *item, const KFileItem &fileItem, const QSize &size)
+void ThumbnailManager::refreshThumbnail(const QUrl &url)
 {
-    CacheEntry cacheKey{fileItem, size};
-    if (const QImage *cachedImage = m_thumbnailCache.object(cacheKey); cachedImage) {
-        m_thumbnailCache.remove(cacheKey);
-        return;
+    for (const CacheEntry &key : m_thumbnailCache.keys()) {
+        if (key.fileItem.url() == url) {
+            m_thumbnailCache.remove(key);
+        }
     }
 
-    requestThumbnail(item, fileItem, size);
+    Q_EMIT refreshedThumbnail(url);
 }
-*/
 
 void ThumbnailManager::sortQueueLater()
 {

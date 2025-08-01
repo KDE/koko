@@ -15,13 +15,20 @@
 class ThumbnailManager : public QObject
 {
     Q_OBJECT
+    QML_SINGLETON
+    QML_ELEMENT
 
 public:
     static ThumbnailManager *instance();
 
+    static ThumbnailManager *create(QQmlEngine *, QJSEngine *engine);
+
     void requestThumbnail(ThumbnailItem *item, const KFileItem &fileItem, const QSize &size);
 
-    // void refreshThumbnail(ThumbnailItem *item, const KFileItem &fileItem, const QSize &size);
+    Q_INVOKABLE void refreshThumbnail(const QUrl &imageUrl);
+
+Q_SIGNALS:
+    void refreshedThumbnail(const QUrl &url);
 
 private:
     explicit ThumbnailManager(QObject *parent = nullptr);

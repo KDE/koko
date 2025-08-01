@@ -17,6 +17,13 @@ ThumbnailItem::ThumbnailItem(QQuickItem *parent)
     , m_thumbnailReady(false)
 {
     setFlag(ItemHasContents, true);
+
+    // If an image has changed, we must re-request the thumbnail
+    connect(ThumbnailManager::instance(), &ThumbnailManager::refreshedThumbnail, this, [this](const QUrl &url) {
+        if (m_fileItem.url() == url) {
+            ThumbnailManager::instance()->requestThumbnail(this, m_fileItem, m_thumbnailSize);
+        }
+    });
 }
 
 ThumbnailItem::~ThumbnailItem()
