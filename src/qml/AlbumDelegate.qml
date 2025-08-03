@@ -71,6 +71,16 @@ T.ItemDelegate {
                 color: "white"
                 opacity: 0.4
             }
+
+            Rectangle {
+                visible: root.highlighted
+                anchors.fill: parent
+                color: "transparent"
+                border {
+                    width: 4
+                    color: Kirigami.Theme.focusColor
+                }
+            }
         }
 
         Loader {

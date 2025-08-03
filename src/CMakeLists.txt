@@ -24,6 +24,8 @@ add_library(koko_static STATIC
     notificationmanager.cpp
     fileinfo.cpp
     displaycolorspace.cpp
+    photolistactions.cpp
+    photolistactions.h
     photosapplication.cpp
     photosapplication.h
     devicepixelratiohelper.cpp

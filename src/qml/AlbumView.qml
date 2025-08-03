@@ -10,11 +10,12 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as Components
 import org.kde.koko as Koko
 import org.kde.koko.private
 
 Kirigami.ScrollablePage {
-    id: page
+    id: root
 
     property alias model: gridView.model
     property bool isFolderView: false
@@ -36,10 +37,10 @@ Kirigami.ScrollablePage {
          Layout.maximumWidth: implicitWidth + 1 // The +1 is to make sure we do not trigger eliding at max width
          Layout.minimumWidth: 0
 
-         opacity: page.isCurrentPage ? 1 : 0.4
+         opacity: root.isCurrentPage ? 1 : 0.4
          maximumLineCount: 1
          elide: Text.ElideRight
-         text: page.title
+         text: root.title
      }
 
     focus: true
@@ -49,13 +50,13 @@ Kirigami.ScrollablePage {
     // doesn't work without loader
     header: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: page.mainWindow.wideScreen && Kirigami.Settings.isMobile
+        active: root.mainWindow.wideScreen && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader
     }
 
     footer: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
-        active: !page.mainWindow.wideScreen && Kirigami.Settings.isMobile
+        active: !root.mainWindow.wideScreen && Kirigami.Settings.isMobile
         sourceComponent: mobileHeader 
     }
 
@@ -66,7 +67,7 @@ Kirigami.ScrollablePage {
             Kirigami.Theme.inherit: false
             color: Kirigami.Theme.backgroundColor
 
-            visible: page.isFolderView
+            visible: root.isFolderView
             height: visible ? implicitHeight : 0
 
             implicitHeight: column.implicitHeight
@@ -78,17 +79,17 @@ Kirigami.ScrollablePage {
                 anchors.right: parent.right
                 Kirigami.Separator {
                     Layout.fillWidth: true
-                    visible: !page.mainWindow.wideScreen
+                    visible: !root.mainWindow.wideScreen
                 }
                 Loader { 
-                    active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitleComponent
+                    active: Kirigami.Settings.isMobile && root.isFolderView; sourceComponent: folderTitleComponent
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    Layout.margins: page.mainWindow.wideScreen ? 0 : Kirigami.Units.smallSpacing
+                    Layout.margins: root.mainWindow.wideScreen ? 0 : Kirigami.Units.smallSpacing
                 }
                 Kirigami.Separator {
                     Layout.fillWidth: true
-                    visible: page.mainWindow.wideScreen
+                    visible: root.mainWindow.wideScreen
                 }
             }
         }
@@ -99,30 +100,30 @@ Kirigami.ScrollablePage {
 
         RowLayout {
             id: folderLayout
-            visible: page.isFolderView
+            visible: root.isFolderView
             Controls.ToolButton {
                 id: backButton
-                visible: page.mainWindow.wideScreen
+                visible: root.mainWindow.wideScreen
                 Layout.maximumWidth: height
-                Layout.leftMargin: (Kirigami.Settings.isMobile || !page.mainWindow.wideScreen && page.mainWindow.globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
+                Layout.leftMargin: (Kirigami.Settings.isMobile || !root.mainWindow.wideScreen && root.mainWindow.globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
                 
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
-                enabled: page.backUrlsPosition > 0
+                enabled: root.backUrlsPosition > 0
                 onClicked: {
-                    page.backUrlsPosition--;
-                    model.sourceModel.url = page.backUrls[page.backUrlsPosition];
+                    root.backUrlsPosition--;
+                    model.sourceModel.url = root.backUrls[root.backUrlsPosition];
                 }
             }
 
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
                 implicitWidth: Kirigami.Units.gridUnit * 2
-                visible: page.mainWindow.wideScreen
+                visible: root.mainWindow.wideScreen
                 icon.name: (LayoutMirroring.enabled ? "go-next-symbolic-rtl" : "go-next-symbolic")
-                enabled: page.backUrls.length < page.backUrlsPosition
+                enabled: root.backUrls.length < root.backUrlsPosition
                 onClicked: {
-                    page.backUrlsPosition++;
-                    model.sourceModel.url = page.backUrls[page.backUrlsPosition];
+                    root.backUrlsPosition++;
+                    model.sourceModel.url = root.backUrls[root.backUrlsPosition];
                 }
             }
 
@@ -142,7 +143,7 @@ Kirigami.ScrollablePage {
                     Controls.ToolButton {
                         implicitHeight: Kirigami.Units.gridUnit * 2
                         implicitWidth: Kirigami.Units.gridUnit * 2
-                        property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.inHome(page.model.sourceModel.url)
+                        property bool canBeSimplified: root.isFolderView && Koko.DirModelUtils.inHome(root.model.sourceModel.url)
                         icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
                         DragHandler {
                             enabled: scrollView.contentWidth > scrollView.width
@@ -150,13 +151,13 @@ Kirigami.ScrollablePage {
                             xAxis.enabled: false
                         }
                         onClicked: {
-                            const tmp = page.backUrls;
-                            while (page.backUrlsPosition < page.backUrls.length) {
+                            const tmp = root.backUrls;
+                            while (root.backUrlsPosition < root.backUrls.length) {
                                 tmp.pop();
                             }
-                            tmp.push(page.model.sourceModel.url);
-                            page.backUrlsPosition++;
-                            page.backUrls = tmp;
+                            tmp.push(root.model.sourceModel.url);
+                            root.backUrlsPosition++;
+                            root.backUrls = tmp;
                             if (canBeSimplified) {
                                 model.sourceModel.url = "file:///" + Koko.DirModelUtils.home;
                             } else {
@@ -165,7 +166,7 @@ Kirigami.ScrollablePage {
                         }
                     }
                     Kirigami.Icon {
-                        visible: page.model.sourceModel.url.toString() !== "file:///"
+                        visible: root.model.sourceModel.url.toString() !== "file:///"
                         source: LayoutMirroring.enabled ? "arrow-left" : "arrow-right"
                         // adds visual balance
                         Layout.leftMargin: Kirigami.Units.smallSpacing
@@ -174,7 +175,7 @@ Kirigami.ScrollablePage {
                     }
                     Repeater {
                         id: repeater
-                        model: page.isFolderView ? Koko.DirModelUtils.getUrlParts(page.model.sourceModel.url) : 0
+                        model: root.isFolderView ? Koko.DirModelUtils.getUrlParts(root.model.sourceModel.url) : 0
                         Row {
                             DragHandler {
                                 enabled: scrollView.contentWidth > scrollView.width
@@ -186,19 +187,19 @@ Kirigami.ScrollablePage {
                                 anchors.verticalCenter: parent.verticalCenter
                                 text: modelData
                                 onClicked: {
-                                    const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index + 1);
+                                    const nextUrl = Koko.DirModelUtils.partialUrlForIndex(root.model.sourceModel.url, index + 1);
 
-                                    if (String(nextUrl) === page.model.sourceModel.url + "/") {
+                                    if (String(nextUrl) === root.model.sourceModel.url + "/") {
                                         return;
                                     }
-                                    const tmp = page.backUrls;
-                                    while (page.backUrlsPosition < page.backUrls.length) {
+                                    const tmp = root.backUrls;
+                                    while (root.backUrlsPosition < root.backUrls.length) {
                                         tmp.pop();
                                     }
-                                    page.backUrlsPosition++;
-                                    tmp.push(page.model.sourceModel.url);
-                                    page.backUrls = tmp;
-                                    page.model.sourceModel.url = nextUrl;
+                                    root.backUrlsPosition++;
+                                    tmp.push(root.model.sourceModel.url);
+                                    root.backUrls = tmp;
+                                    root.model.sourceModel.url = nextUrl;
                                 }
                             }
                             Kirigami.Icon {
@@ -216,15 +217,15 @@ Kirigami.ScrollablePage {
             // bookmark button for footer
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
-                display: page.mainWindow.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
-                icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
-                text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
+                display: root.mainWindow.wideScreen ? Controls.AbstractButton.TextBesideIcon : Controls.AbstractButton.IconOnly
+                icon.name: root.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+                text: root.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
                 visible: Kirigami.Settings.isMobile && bookmarkActionVisible
                 onClicked: {
-                    if (page.model.sourceModel.url == undefined) {
+                    if (root.model.sourceModel.url == undefined) {
                         return
                     }
-                    if (page.bookmarked) {
+                    if (root.bookmarked) {
                         const index = Koko.Config.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                         if (index !== -1) {
                             Koko.Config.savedFolders.splice(index, 1);
@@ -239,24 +240,24 @@ Kirigami.ScrollablePage {
         }
     }
 
-    property bool bookmarkActionVisible: page.isFolderView && !itemSelectionModel.hasSelection
+    property bool bookmarkActionVisible: root.isFolderView && !itemSelectionModel.hasSelection
         && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
         && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
 
     actions: [
         Kirigami.Action {
             id: bookmarkAction
-            icon.name: page.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
-            text: page.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
-            visible: !Kirigami.Settings.isMobile && page.isFolderView && !itemSelectionModel.hasSelection
+            icon.name: root.bookmarked ? "bookmark-remove" : "bookmark-add-folder"
+            text: root.bookmarked ? i18n("Remove Bookmark") : i18nc("@action:button Bookmarks the current folder", "Bookmark Folder")
+            visible: !Kirigami.Settings.isMobile && root.isFolderView && !itemSelectionModel.hasSelection
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.pictures)
                 && model.sourceModel.url.toString() !== ("file://" + Koko.DirModelUtils.videos)
             displayHint: Kirigami.DisplayHint.IconOnly
             onTriggered: {
-                if (page.model.sourceModel.url == undefined) {
+                if (root.model.sourceModel.url == undefined) {
                     return
                 }
-                if (page.bookmarked) {
+                if (root.bookmarked) {
                     const index = Koko.Config.savedFolders.indexOf(model.sourceModel.url.toString().replace("file:///", "file:/"));
                     if (index !== -1) {
                         Koko.Config.savedFolders.splice(index, 1);
@@ -273,15 +274,15 @@ Kirigami.ScrollablePage {
             id: goUpAction
             icon.name: "go-up"
             text: i18n("Go Up")
-            visible: page.isFolderView && Kirigami.Settings.isMobile
+            visible: root.isFolderView && Kirigami.Settings.isMobile
             onTriggered: {
-                const tmp = page.backUrls;
-                while (page.backUrlsPosition < page.backUrls.length) {
+                const tmp = root.backUrls;
+                while (root.backUrlsPosition < root.backUrls.length) {
                     tmp.pop();
                 }
-                tmp.push(page.model.sourceModel.url);
-                page.backUrlsPosition++;
-                page.backUrls = tmp;
+                tmp.push(root.model.sourceModel.url);
+                root.backUrlsPosition++;
+                root.backUrls = tmp;
                 var str = String(model.sourceModel.url).split("/")
                 str.pop()
                 if (str.join("/") == "file://") {
@@ -292,18 +293,18 @@ Kirigami.ScrollablePage {
             }
         },
         Kirigami.Action {
-            visible: page.isFolderView && Kirigami.Settings.isMobile
-            property bool canBeSimplified: page.isFolderView && Koko.DirModelUtils.canBeSimplified(page.model.sourceModel.url)
+            visible: root.isFolderView && Kirigami.Settings.isMobile
+            property bool canBeSimplified: root.isFolderView && Koko.DirModelUtils.canBeSimplified(root.model.sourceModel.url)
             icon.name: canBeSimplified ? "go-home" : "folder-root-symbolic"
             text: canBeSimplified ? i18n("Home") : i18n("Root")
             onTriggered: {
-                const tmp = page.backUrls;
-                while (page.backUrlsPosition < page.backUrls.length) {
+                const tmp = root.backUrls;
+                while (root.backUrlsPosition < root.backUrls.length) {
                     tmp.pop();
                 }
-                tmp.push(page.model.sourceModel.url);
-                page.backUrlsPosition++;
-                page.backUrls = tmp;
+                tmp.push(root.model.sourceModel.url);
+                root.backUrlsPosition++;
+                root.backUrls = tmp;
                 if (canBeSimplified) {
                     model.sourceModel.url = "file:///" + Koko.DirModelUtils.home;
                 } else {
@@ -318,18 +319,10 @@ Kirigami.ScrollablePage {
             tooltip: i18nc("@info:tooltip", "Share the selected media")
         },
         Kirigami.Action {
-            icon.name: "group-delete"
-            text: i18n("Delete Selection")
-            tooltip: i18n("Move selected items to trash")
-            visible: itemSelectionModel.hasSelection && !page.isTrashView
-            onTriggered: model.deleteSelection()
+            fromQAction: root.application.action("movetotrash")
         },
         Kirigami.Action {
-            icon.name: "restoration"
-            text: i18n("Restore Selection")
-            tooltip: i18n("Restore selected items from trash")
-            visible: itemSelectionModel.hasSelection && page.isTrashView
-            onTriggered: model.restoreSelection()
+            fromQAction: root.application.action("photos_restore")
         },
         Kirigami.Action {
             icon.name: "edit-select-all"
@@ -390,10 +383,50 @@ Kirigami.ScrollablePage {
         }
     }
 
+    PhotoListActions {
+        id: photoListActions
+
+        selectionModel: itemSelectionModel
+        photosApplication: root.application
+        isTrashView: root.isTrashView
+
+        onEditRequested: (imagePath) => {
+            const page = root.mainWindow.pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
+                imagePath,
+                // Without this, there's an odd glitch where the root will show for a brief moment
+                // before the show animation runs.
+                visible: false
+            })
+            page.imageEdited.connect(() => {
+                // TODO
+            });
+        }
+    }
+
+    Components.ConvergentContextMenu {
+        id: imageContextMenu
+
+        Kirigami.Action {
+            fromQAction: root.application.action('movetotrash')
+        }
+
+        Kirigami.Action {
+            fromQAction: root.application.action('photos_restore')
+        }
+
+        Kirigami.Action {
+            fromQAction: root.application.action('photos_edit')
+        }
+
+        ShareAction {
+
+        }
+    }
+
     GridView {
         id: gridView
 
-        readonly property real widthToApproximate: (page.mainWindow.wideScreen ? page.mainWindow.pageStack.defaultColumnWidth : page.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
+        readonly property real widthToApproximate: (root.mainWindow.wideScreen ? root.mainWindow.pageStack.defaultColumnWidth : root.width) - (1||Kirigami.Settings.tabletMode ? Kirigami.Units.gridUnit : 0)
         readonly property string url: model.sourceModel.url ? model.sourceModel.url : ""
 
         cellWidth: {
@@ -438,6 +471,14 @@ Kirigami.ScrollablePage {
             return row * columnCount + column;
         }
 
+        onCurrentIndexChanged: if (currentIndex >= 0) {
+            const sourceIndex = gridView.model.mapToSource(gridView.model.index(currentIndex, 0));
+            itemSelectionModel.setCurrentIndex(sourceIndex, ItemSelectionModel.Current);
+            photoListActions.setActionState();
+        } else {
+            itemSelectionModel.setCurrentIndex(sourceIndex, ItemSelectionModel.Clear);
+        }
+
         delegate: DelegateChooser {
             role: "itemType"
 
@@ -473,21 +514,36 @@ Kirigami.ScrollablePage {
                         itemSelectionModel.select(sourceIndex, ItemSelectionModel.Toggle);
                     } else {
                         gridView.currentIndex = delegate.index;
+                        const sourceIndex = gridView.model.mapToSource(gridView.model.index(index, 0));
+                        itemSelectionModel.setCurrentIndex(sourceIndex, ItemSelectionModel.Current);
+                        photoListActions.setActionState();
 
-                        if (gridView.url.toString().startsWith("trash:")) {
+                        if (root.isTrashView) {
                             return;
                         }
-                        page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                            startIndex: page.model.index(gridView.currentIndex, 0),
-                            imagesModel: page.model,
-                            application: page.application,
-                            mainWindow: page.mainWindow,
+                        root.mainWindow.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                            startIndex: root.model.index(gridView.currentIndex, 0),
+                            imagesModel: root.model,
+                            application: root.application,
+                            mainWindow: root.mainWindow,
                         })
                     }
 
                     onPressAndHold: {
                         const sourceIndex = gridView.model.mapToSource(gridView.model.index(index, 0));
                         itemSelectionModel.select(sourceIndex, ItemSelectionModel.Toggle);
+                    }
+
+                    TapHandler {
+                        acceptedButtons: Qt.RightButton
+                        onTapped: {
+                            const sourceIndex = gridView.model.mapToSource(gridView.model.index(delegate.index, 0));
+                            itemSelectionModel.setCurrentIndex(sourceIndex, ItemSelectionModel.Current);
+
+                            photoListActions.setActionState();
+
+                            imageContextMenu.popup();
+                        }
                     }
                 }
             }
@@ -513,20 +569,20 @@ Kirigami.ScrollablePage {
                     }
 
                     onClicked: {
-                        if (!page.isFolderView) {
+                        if (!root.isFolderView) {
                             imageFolderModel.url = delegate.imageurl
                             sortedListModel.sourceModel = imageFolderModel
                             folderSelected(sortedListModel, delegate.content, delegate.imageurl)
                             return
                         }
-                        const tmp = page.backUrls;
-                        while (page.backUrlsPosition < page.backUrls.length) {
+                        const tmp = root.backUrls;
+                        while (root.backUrlsPosition < root.backUrls.length) {
                             tmp.pop();
                         }
-                        tmp.push(page.model.sourceModel.url);
-                        page.backUrls = tmp;
-                        page.backUrlsPosition++;
-                        page.model.sourceModel.url = delegate.imageurl;
+                        tmp.push(root.model.sourceModel.url);
+                        root.backUrls = tmp;
+                        root.backUrlsPosition++;
+                        root.model.sourceModel.url = delegate.imageurl;
                     }
                 }
             }
@@ -559,7 +615,7 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.largeSpacing * 4)
         }
 
-        //FIXME: right now if those two objects are out of this, the whole page breaks
+        //FIXME: right now if those two objects are out of this, the whole root breaks
         Koko.SortModel {
             id: sortedListModel
         }
@@ -571,15 +627,15 @@ Kirigami.ScrollablePage {
     onCollectionSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
         model: selectedModel,
         title: cover,
-        mainWindow: page.mainWindow,
-        application: page.application,
+        mainWindow: root.mainWindow,
+        application: root.application,
     })
 
     onFolderSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {
         model: selectedModel,
         title: cover,
         url: path,
-        mainWindow: page.mainWindow,
-        application: page.application,
+        mainWindow: root.mainWindow,
+        application: root.application,
     })
 }

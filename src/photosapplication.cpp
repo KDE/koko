@@ -7,10 +7,12 @@
 #include "imagestorage.h"
 #include "kokoconfig.h"
 
-#include <KIO/Global>
-#include <KLocalizedString>
 #include <QActionGroup>
 #include <QStandardPaths>
+
+#include <KIO/Global>
+#include <KLocalizedString>
+#include <KStandardAction>
 
 using namespace Qt::StringLiterals;
 
@@ -141,6 +143,17 @@ void PhotosApplication::setupActions()
 
     updateSavedFolders();
     updateTags();
+
+    // For PhotoListActions
+    auto action = KStandardActions::moveToTrash(this, [] { }, this);
+    mainCollection()->addAction(action->objectName(), action);
+
+    action = new QAction(QIcon::fromTheme(u"restoration-symbolic"_s), i18nc("@action", "Restore Selection"), this);
+    action->setToolTip(i18n("Restore selected items from trash"));
+    mainCollection()->addAction("photos_restore"_L1, action);
+
+    action = new QAction(QIcon::fromTheme(u"edit-image"_s), i18nc("@action", "Edit"), this);
+    mainCollection()->addAction("photos_edit"_L1, action);
 }
 
 QList<QAction *> PhotosApplication::savedFolders() const
