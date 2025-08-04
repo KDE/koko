@@ -122,11 +122,24 @@ void ThumbnailItem::updatePaintedRect()
         return;
     }
 
-    QSizeF scaled(m_image.size());
-    scaled.scale(boundingRect().size(), Qt::KeepAspectRatio);
+    QRectF boundingRect = this->boundingRect();
+    QSize imageSize = m_image.size();
 
+    QSizeF scaled(imageSize);
+
+    // NOTE:
+    // KIO::PreviewJob returns an image smaller than the bounds when the aspect ratio is not square.
+    // In order to show at least most images square, we ask for a preview twice as big as needed and
+    // can therefore fill when the image has an aspect of less than or equal to 2:1 or 1:2, else fit.
+    //
+    // In the future, we should have a better solution for getting a preview that can fill the size
+    // we specify, so all thumbnails are filled.
+    const Qt::AspectRatioMode aspectRatioMode =
+        (boundingRect.width() <= imageSize.width() && boundingRect.height() <= imageSize.height()) ? Qt::KeepAspectRatioByExpanding : Qt::KeepAspectRatio;
+
+    scaled.scale(boundingRect.size(), aspectRatioMode);
     QRectF rect(QPointF(0, 0), scaled);
-    rect.moveCenter(boundingRect().center());
+    rect.moveCenter(boundingRect.center());
 
     if (m_paintedRect != rect) {
         m_paintedRect = rect.toRect();
@@ -144,7 +157,8 @@ void ThumbnailItem::updateThumbnailSize(qreal devicePixelRatio)
         devicePixelRatio = window->devicePixelRatio();
     }
 
-    const QSize thumbnailSize = (size() * devicePixelRatio).toSize();
+    // Double size as noted above
+    const QSize thumbnailSize = (size() * devicePixelRatio * 2).toSize();
     if (m_thumbnailSize != thumbnailSize) {
         m_thumbnailSize = thumbnailSize;
 
