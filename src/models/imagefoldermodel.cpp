@@ -49,6 +49,7 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
     connect(m_dirModel, &KDirModel::modelAboutToBeReset, this, &ImageFolderModel::modelAboutToBeReset);
     connect(m_dirModel, &KDirModel::layoutChanged, this, &ImageFolderModel::layoutChanged);
     connect(m_dirModel, &KDirModel::layoutAboutToBeChanged, this, &ImageFolderModel::layoutAboutToBeChanged);
+    connect(m_dirModel->dirLister(), &KDirLister::completed, this, &ImageFolderModel::finishedLoading);
 }
 
 QUrl ImageFolderModel::url() const
@@ -77,16 +78,13 @@ void ImageFolderModel::setUrl(const QUrl &url)
 
 int ImageFolderModel::indexForUrl(const QString &url) const
 {
-    int i = 0;
-    KFileItem itemComp(QUrl(url), {});
-    itemComp.setDelayedMimeTypes(true);
-
-    for (const auto &item : m_items) {
-        if (item == itemComp) {
-            return i;
+    for (int row = 0; row < rowCount(); ++row) {
+        QModelIndex idx = index(row, 0);
+        if (data(idx, AbstractImageModel::ImageUrlRole).toString() == url) {
+            return row;
         }
-        i++;
     }
+
     return -1;
 }
 

@@ -52,6 +52,7 @@ public:
 
 Q_SIGNALS:
     void urlChanged();
+    void finishedLoading();
 
 private:
     KDirModel *const m_dirModel;

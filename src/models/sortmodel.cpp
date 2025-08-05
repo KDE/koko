@@ -269,13 +269,10 @@ QJsonArray SortModel::selectedImagesMimeTypes()
 
 int SortModel::indexForUrl(const QString &url)
 {
-    QModelIndexList indexList;
-    for (int row = 0; row < rowCount(); row++) {
-        indexList.append(index(row, 0, QModelIndex()));
-    }
-    for (auto index : indexList) {
-        if (url == data(index, AbstractImageModel::ImageUrlRole).toString()) {
-            return index.row();
+    for (int row = 0; row < rowCount(); ++row) {
+        QModelIndex idx = index(row, 0);
+        if (data(idx, AbstractImageModel::ImageUrlRole).toString() == url) {
+            return row;
         }
     }
     return -1;

@@ -114,9 +114,9 @@ int main(int argc, char **argv)
 
     const QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
 
-    QStringList directoryUrls;
+    QList<QUrl> directoryUrls;
     for (const auto &path : parser.positionalArguments()) {
-        directoryUrls << currentDirPath.resolved(path).toString();
+        directoryUrls << QUrl::fromUserInput(path, QDir::currentPath(), QUrl::AssumeLocalFile);
     }
 
 #ifdef Q_OS_ANDROID
@@ -145,7 +145,7 @@ int main(int argc, char **argv)
     KLocalization::setupLocalizedContext(&engine);
 
     const auto openFileModel = engine.singletonInstance<OpenFileModel *>("org.kde.koko", "OpenFileModel");
-    openFileModel->updateOpenFiles(directoryUrls);
+    openFileModel->updateOpenItems(directoryUrls);
 
     QObject::connect(&service,
                      &KDBusService::activateRequested,
@@ -155,12 +155,12 @@ int main(int argc, char **argv)
 
                          parser.parse(arguments);
 
-                         QStringList directoryUrls;
+                         QList<QUrl> directoryUrls;
                          for (const auto &path : parser.positionalArguments()) {
-                             directoryUrls << currentDirPath.resolved(path).toString();
+                             directoryUrls << QUrl::fromUserInput(path, QDir::currentPath(), QUrl::AssumeLocalFile);
                          }
 
-                         openFileModel->updateOpenFiles(directoryUrls);
+                         openFileModel->updateOpenItems(directoryUrls);
 
                          const auto rootObjects = engine.rootObjects();
                          for (auto obj : rootObjects) {

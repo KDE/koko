@@ -25,7 +25,7 @@ Kirigami.OverlayDrawer {
     handleVisible: !mainWindow.fetchImageToOpen && modal && pageStack.layers.depth < 2
 
     // Autohiding behavior
-    modal: mainWindow.fetchImageToOpen || !mainWindow.wideScreen
+    modal: !mainWindow.wideScreen
     onModalChanged: drawerOpen = !modal && pageStack.layers.depth < 2
 
     leftPadding: 0

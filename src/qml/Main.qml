@@ -77,7 +77,7 @@ StatefulApp.StatefulWindow {
     }
 
     function updateGlobalDrawer(): void {
-        if (!fetchImageToOpen && globalDrawer) {
+        if (globalDrawer) {
             globalDrawer.drawerOpen = !globalDrawer.modal;
         }
     }
@@ -92,7 +92,7 @@ StatefulApp.StatefulWindow {
 
     // fetch guard, so we don't needlessly check for image to open when it's not needed
     // this is a temporary binding that's supposed to be broken
-    property bool fetchImageToOpen: Koko.OpenFileModel.rowCount() === 1
+    property bool fetchImageToOpen: false
 
     Kirigami.Action {
         fromQAction: root.application.action('open_kcommand_bar')
@@ -129,25 +129,49 @@ StatefulApp.StatefulWindow {
 
     Connections {
         target: Koko.OpenFileModel
-        function onUpdatedImages(): void { // this gets called if we use "open with", while app is already open
-            if (Koko.OpenFileModel.rowCount() > 1) {
-                pageStack.clear();
-                pageStack.layers.clear();
-                pageStack.push(openFileComponent);
-            } else if (Koko.OpenFileModel.rowCount() === 1) {
-                pageStack.clear();
-                pageStack.layers.clear();
-                pageStack.push(albumViewComponent);
-                albumView = pageStack.currentItem;
-                albumView.isFolderView = true;
-                const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
-                albumView.model.sourceModel.url = url;
-                fetchImageToOpen = true;
-                pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                    imagesModel: imageFolderModel.sourceModel,
-                    application: root.application,
-                    mainWindow: root,
-                });
+        function onUpdated(): void {
+            // 'Open With' when app is open
+            switch (Koko.OpenFileModel.mode) {
+                case Koko.OpenFileModel.OpenNone:
+                    return;
+
+                case Koko.OpenFileModel.OpenFolder:
+                    pageStack.clear();
+                    pageStack.layers.clear();
+
+                    pageStack.push(albumViewComponent);
+                    albumView = pageStack.currentItem;
+                    albumView.isFolderView = true;
+                    albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen;
+
+                    return;
+
+                case Koko.OpenFileModel.OpenImage:
+                    pageStack.clear();
+                    pageStack.layers.clear();
+
+                    pageStack.push(albumViewComponent);
+                    albumView = pageStack.currentItem;
+                    albumView.isFolderView = true;
+                    const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
+                    albumView.model.sourceModel.url = url;
+
+                    fetchImageToOpen = true;
+                    pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                        imagesModel: imageFolderModel.sourceModel,
+                        application: root.application,
+                        mainWindow: root,
+                    });
+
+                    return;
+
+                case Koko.OpenFileModel.OpenMultiple:
+                    pageStack.clear();
+                    pageStack.layers.clear();
+
+                    pageStack.push(openFileComponent);
+
+                    return;
             }
         }
     }
@@ -363,35 +387,41 @@ StatefulApp.StatefulWindow {
         root.controlsVisible = Koko.Config.controlsVisible
         pageStack.contentItem.columnResizeMode = Kirigami.ColumnView.SingleColumn
 
-        if (Koko.OpenFileModel.rowCount() === 0) {
-            root.application.action("place_pictures").trigger();
-            return;
-        }
-
-        if (Koko.OpenFileModel.rowCount() > 1) {
-            pageStack.initialPage = openFileComponent;
-        } else {
-            root.application.action("place_pictures").trigger();
-            albumView.isFolderView = true;
-        }
-
-        if (Koko.OpenFileModel.rowCount() === 1) {
-            if (Koko.DirModelUtils.isDirectory(Koko.OpenFileModel.urlToOpen)) {
-                albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen
-                return;
-            }
-
-            const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
-            albumView.model.sourceModel.url = url;
-            fetchImageToOpen = true;
-            pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                imagesModel: imageFolderModel.sourceModel,
-                application: root.application,
-                mainWindow: root,
-            });
-        }
-
         // move mobile handles to toolbar
         pageStack.globalToolBar.canContainHandles = true;
+
+        switch (Koko.OpenFileModel.mode) {
+            case Koko.OpenFileModel.OpenNone:
+                root.application.action("place_pictures").trigger();
+                return;
+
+            case Koko.OpenFileModel.OpenFolder:
+                root.application.action("place_pictures").trigger();
+                albumView.isFolderView = true;
+
+                albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen;
+                return;
+
+            case Koko.OpenFileModel.OpenImage:
+                root.application.action("place_pictures").trigger();
+                albumView.isFolderView = true;
+
+                const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
+                albumView.model.sourceModel.url = url;
+
+                fetchImageToOpen = true;
+                pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                    imagesModel: imageFolderModel.sourceModel,
+                    application: root.application,
+                    mainWindow: root,
+                });
+
+                return;
+
+            case Koko.OpenFileModel.OpenMultiple:
+                pageStack.initialPage = openFileComponent;
+
+                return;
+        }
     }
 }

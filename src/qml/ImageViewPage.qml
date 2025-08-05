@@ -16,7 +16,6 @@ import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 import org.kde.coreaddons as KCA
-import org.kde.koko.private as KokoPrivate
 
 Kirigami.Page {
     id: root
@@ -31,11 +30,11 @@ Kirigami.Page {
         target: imagesModel
         ignoreUnknownSignals: true
         function onFinishedLoading() {
-            if (!root.mainWindow.fetchImageToOpen || listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen) === -1) {
+            if (!root.mainWindow.fetchImageToOpen || listView.model.sourceModel.indexForUrl(Koko.OpenFileModel.urlToOpen) === -1) {
                 return;
             }
             stopLoadingImages.restart();
-            startIndex = listView.model.mapFromSource(listView.model.sourceModel.index(listView.model.sourceModel.indexForUrl(KokoPrivate.OpenFileModel.urlToOpen), 0)).row;
+            startIndex = listView.model.mapFromSource(listView.model.sourceModel.index(listView.model.sourceModel.indexForUrl(Koko.OpenFileModel.urlToOpen), 0)).row;
         }
     }
 
