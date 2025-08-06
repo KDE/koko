@@ -26,7 +26,7 @@ void FileSystemImageFetcher::fetch()
 
 void FileSystemImageFetcher::slotProcess()
 {
-    static QMimeDatabase mimeDb;
+    QMimeDatabase db;
 
     QDirIterator it(m_folder, QDirIterator::Subdirectories);
     while (it.hasNext()) {
@@ -37,7 +37,6 @@ void FileSystemImageFetcher::slotProcess()
             continue;
         }
 
-        static QMimeDatabase db;
         const auto mimetype = db.mimeTypeForFile(filePath, QMimeDatabase::MatchMode::MatchExtension).name();
         if (mimetype.startsWith("image/"_L1) || mimetype.startsWith("video/"_L1)) {
             Q_EMIT imageResult(filePath);
