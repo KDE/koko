@@ -109,10 +109,9 @@ QUrl DirModelUtils::partialUrlForIndex(QUrl url, int index) const
     return url;
 }
 
-QUrl DirModelUtils::directoryOfUrl(const QString &path) const
+QUrl DirModelUtils::directoryOfUrl(const QUrl &url) const
 {
-    const int index = path.lastIndexOf(QLatin1Char('/'));
-    return QUrl::fromLocalFile(path.mid(0, index));
+    return url.adjusted(QUrl::RemoveFilename | QUrl::NormalizePathSegments);
 }
 
 bool DirModelUtils::isDirectory(const QUrl &path) const
