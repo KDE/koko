@@ -153,8 +153,8 @@ StatefulApp.StatefulWindow {
                     pageStack.push(albumViewComponent);
                     albumView = pageStack.currentItem;
                     albumView.isFolderView = true;
-                    const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
-                    albumView.model.sourceModel.url = url;
+
+                    albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
 
                     fetchImageToOpen = true;
                     pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
@@ -406,8 +406,7 @@ StatefulApp.StatefulWindow {
                 root.application.action("place_pictures").trigger();
                 albumView.isFolderView = true;
 
-                const url = String(Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen)).replace("file:", "");
-                albumView.model.sourceModel.url = url;
+                albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
 
                 fetchImageToOpen = true;
                 pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
