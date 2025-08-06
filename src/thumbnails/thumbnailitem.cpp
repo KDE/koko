@@ -55,6 +55,10 @@ int ThumbnailItem::priority() const
 
 void ThumbnailItem::setPriority(int priority)
 {
+    if (priority < 0) {
+        priority = std::numeric_limits<int>::max();
+    }
+
     if (m_priority == priority) {
         return;
     }

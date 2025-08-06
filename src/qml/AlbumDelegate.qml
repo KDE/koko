@@ -14,9 +14,6 @@ import org.kde.kquickcontrolsaddons
 Controls.ItemDelegate {
     id: root
 
-    // GridView or ListView used for thumbnail priority calculation
-    required property Item view
-
     required property int index
     required property bool selected
     required property int itemType
@@ -24,6 +21,8 @@ Controls.ItemDelegate {
     required property int fileCount
     required property string imageurl
     required property var item
+
+    property alias thumbnailPriority: image.priority
 
     leftPadding: Kirigami.Units.gridUnit
     rightPadding: Kirigami.Units.gridUnit
@@ -72,7 +71,6 @@ Controls.ItemDelegate {
             height: width
 
             fileItem: root.item
-            priority: view.calculateThumbnailPriority(root)
         }
 
         Rectangle {

@@ -65,7 +65,9 @@ ListView {
     delegate: AlbumDelegate {
         id: delegate
 
-        view: thumbnailView
+        ListView.onPooled: { thumbnailPriority = -1; }
+        ListView.onReused: { thumbnailPriority = Qt.binding(() => thumbnailView.calculateThumbnailPriority(delegate)); }
+        thumbnailPriority: thumbnailView.calculateThumbnailPriority(delegate)
 
         width: thumbnailView.delegateSize
         height: thumbnailView.delegateSize

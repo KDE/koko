@@ -431,7 +431,9 @@ Kirigami.ScrollablePage {
         delegate: AlbumDelegate {
             id: delegate
 
-            view: gridView
+            GridView.onPooled: { thumbnailPriority = -1; }
+            GridView.onReused: { thumbnailPriority = Qt.binding(() => gridView.calculateThumbnailPriority(delegate)); }
+            thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
 
             highlighted: gridView.currentIndex == index
 
