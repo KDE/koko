@@ -8,13 +8,10 @@
 KIONetworkAccessManagerFactory::KIONetworkAccessManagerFactory(QObject *parent)
     : QObject(parent)
 {
-    qDebug() << "DAVE1";
 }
 
 QNetworkAccessManager *KIONetworkAccessManagerFactory::create(QObject *parent)
 {
-    qDebug() << "DAVE2";
-
     return new KIONetworkAccessManager(parent);
 }
 
@@ -26,15 +23,13 @@ KIONetworkAccessManager::KIONetworkAccessManager(QObject *parent)
 QStringList KIONetworkAccessManager::supportedSchemes() const
 {
     QStringList protocols = KProtocolInfo::protocols();
-    protocols.removeAll(QStringLiteral("file"));
+    protocols.removeAll(QStringLiteral("file")); // an open question is whether we should let Qt to HTTP? Rather than us proxying it
     return protocols;
 }
 
 QNetworkReply *KIONetworkAccessManager::createRequest(Operation op, const QNetworkRequest &request, QIODevice *)
 {
-    qDebug() << "request" << request.url();
     if (op == QNetworkAccessManager::GetOperation && supportedSchemes().contains(request.url().scheme())) {
-        qDebug() << "doing stuff";
         auto reply = new KIONetworkReply(request);
         auto job = KIO::get(request.url(), KIO::NoReload, KIO::HideProgressInfo);
         job->setUiDelegate(KIO::createDefaultJobUiDelegate());
@@ -53,7 +48,7 @@ KIONetworkReply::KIONetworkReply(const QNetworkRequest &request, QObject *parent
     setUrl(request.url());
     setOpenMode(QIODevice::ReadOnly);
     setOperation(QNetworkAccessManager::GetOperation);
-    setHeader(QNetworkRequest::ContentTypeHeader, "image/jpg");
+    // setHeader(QNetworkRequest::ContentTypeHeader, "image/jpg"); //FIXME
     m_buffer.open(QIODevice::ReadOnly); // it's only accessed read only, we write to the underlying store
 }
 
@@ -80,7 +75,6 @@ void KIONetworkReply::slotDataReceived(KIO::Job *, const QByteArray &data)
 
 void KIONetworkReply::slotFinished(KJob *job)
 {
-    qDebug() << "finished";
     if (job->error()) {
         qDebug() << "boo";
         setError(QNetworkReply::NetworkError::UnknownNetworkError, job->errorString());
@@ -99,8 +93,6 @@ void KIONetworkReply::slotFinished(KJob *job)
 
 qint64 KIONetworkReply::readData(char *data, qint64 maxlen)
 {
-    // qDebug() << "doing read" << m_buffer.size() << m_buffer.pos();
-
     return m_buffer.read(data, maxlen);
 }
 
