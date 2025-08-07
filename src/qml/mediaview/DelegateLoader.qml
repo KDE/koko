@@ -89,11 +89,12 @@ Loader {
                 delegate = Qt.resolvedUrl("AnimatedImageDelegate.qml");
                 break;
             case Koko.FileInfo.RasterImageType:
+            default:
                 delegate = Qt.resolvedUrl("RasterImageDelegate.qml");
                 break;
-            default:
-                console.warn("Unknown file type for URL", loader.url);
-                break;
+            // default:
+            //     console.warn("Unknown file type for URL", loader.url);
+            //     break;
             }
 
             if (delegate) {

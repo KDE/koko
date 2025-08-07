@@ -35,6 +35,7 @@
 #include "filesystemtracker.h"
 #include "galleryopenmodel.h"
 #include "imagestorage.h"
+#include "kionetworkmanager.h"
 #include "kokoconfig.h"
 #include "processor.h"
 #include "version.h"
@@ -161,6 +162,7 @@ int main(int argc, char **argv)
     QQmlApplicationEngine engine;
     KLocalization::setupLocalizedContext(&engine);
     engine.addImageProvider("checkerboard", new CheckerboardImageProvider);
+    engine.setNetworkAccessManagerFactory(new KIONetworkAccessManagerFactory(&app));
 
     const auto openModel = engine.singletonInstance<GalleryOpenModel *>("org.kde.koko", "GalleryOpenModel");
     openModel->updateOpenItems(directoryUrls);
