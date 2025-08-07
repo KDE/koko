@@ -20,8 +20,8 @@ BaseImageDelegate {
     loaded: image.status == Image.Ready
     loading: image.status == Image.Loading
 
-    sourceWidth: imageInfo.width
-    sourceHeight: imageInfo.height
+    sourceWidth: 500
+    sourceHeight: 500
 
     Image {
         id: image

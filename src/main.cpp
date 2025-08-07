@@ -31,6 +31,7 @@
 #include "filemenu.h"
 #include "filesystemtracker.h"
 #include "imagestorage.h"
+#include "kionetworkmanager.h"
 #include "kokoconfig.h"
 #include "openfilemodel.h"
 #include "processor.h"
@@ -143,6 +144,7 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     KLocalization::setupLocalizedContext(&engine);
+    engine.setNetworkAccessManagerFactory(new KIONetworkAccessManagerFactory(&app));
 
     const auto openFileModel = engine.singletonInstance<OpenFileModel *>("org.kde.koko", "OpenFileModel");
     openFileModel->updateOpenItems(directoryUrls);

@@ -455,7 +455,8 @@ Kirigami.Page {
                         delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml");
                         break;
                     default:
-                        console.warn("Unknown file type for URL", loader.imageurl);
+                        delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml");
+                        // console.warn("Unknown file type for URL", loader.imageurl);
                         break;
                     }
 

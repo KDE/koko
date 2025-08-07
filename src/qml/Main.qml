@@ -27,6 +27,7 @@ StatefulApp.StatefulWindow {
         }
     }
 
+
     windowName: "MainWindow"
 
     pageStack {

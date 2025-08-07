@@ -53,6 +53,7 @@ Kirigami.OverlayDrawer {
                 text: i18n("Filter by")
             }
         }
+
         QQC2.ScrollView {
             id: scrollView
             property var currentlySelectedAction
