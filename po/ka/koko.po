@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-24 00:41+0000\n"
+"POT-Creation-Date: 2025-08-07 00:40+0000\n"
 "PO-Revision-Date: 2025-07-10 03:49+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -294,7 +294,7 @@ msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
 msgstr "გადასვლა დღეებით დალაგებულ სურათებზე"
 
-#: qml/AlbumDelegate.qml:132
+#: qml/AlbumDelegate.qml:128
 #, kde-format
 msgid "1 Image"
 msgid_plural "%1 Images"
@@ -379,7 +379,7 @@ msgstr "მონიშვნის მოხსნა"
 msgid "De-selects all the selected media"
 msgstr "ყველა მონიშნულის მოხსნა"
 
-#: qml/AlbumView.qml:479
+#: qml/AlbumView.qml:511
 #, kde-format
 msgid "No Media Found"
 msgstr "მედია ვერ ვიპოვე"
