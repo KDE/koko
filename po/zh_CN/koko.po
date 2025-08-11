@@ -37,25 +37,25 @@ msgstr "常规"
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr ""
+msgstr "地点"
 
 #: exiv2extractor.cpp:511
 #, kde-format
@@ -63,67 +63,67 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:517
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "文件名"
 
 #: exiv2extractor.cpp:522
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr ""
+msgstr "文件体积"
 
 #: exiv2extractor.cpp:525
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr ""
+msgstr "创建日期"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "修改日期"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "访问日期"
 
 #: exiv2extractor.cpp:529
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "路径"
 
 #: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr ""
+msgstr "图像尺寸"
 
 #: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr ""
+msgstr "文件类型"
 
 #: exiv2extractor.cpp:542
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "注释"
 
 #: filemenu.cpp:117
 #, kde-format
@@ -145,19 +145,19 @@ msgstr "复制位置"
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr ""
+msgstr "<application>照片</application>"
 
 #: main.cpp:65
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr ""
+msgstr "Photos 是一款图像集合查看器。"
 
 #: main.cpp:67
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr ""
+msgstr "(c) 2013-%1 KDE Contributors"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -225,31 +225,31 @@ msgstr "此图像的分享 URL 为 <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "转到图片"
 
 #: photosapplication.cpp:57
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr ""
+msgstr "转到收藏"
 
 #: photosapplication.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "转到视频"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "转到回收站"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "转到远程文件夹"
 
 #: photosapplication.cpp:85
 #, kde-format
