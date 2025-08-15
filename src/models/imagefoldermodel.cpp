@@ -50,7 +50,16 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
     connect(m_dirModel, &KDirModel::modelAboutToBeReset, this, &ImageFolderModel::modelAboutToBeReset);
     connect(m_dirModel, &KDirModel::layoutChanged, this, &ImageFolderModel::layoutChanged);
     connect(m_dirModel, &KDirModel::layoutAboutToBeChanged, this, &ImageFolderModel::layoutAboutToBeChanged);
-    connect(m_dirModel->dirLister(), &KDirLister::completed, this, &ImageFolderModel::finishedLoading);
+    connect(m_dirModel->dirLister(), &KDirLister::started, this, &ImageFolderModel::loadingChanged);
+    connect(m_dirModel->dirLister(), &KDirLister::completed, this, &ImageFolderModel::loadingChanged);
+
+    connect(m_dirModel->dirLister(), &KDirLister::completed, this, []() {
+        qDebug() << "done";
+    });
+
+    connect(m_dirModel, &KDirModel::rowsInserted, this, []() {
+        qDebug() << "new rows";
+    });
 }
 
 QUrl ImageFolderModel::url() const
@@ -119,4 +128,9 @@ QVariant ImageFolderModel::data(const QModelIndex &index, int role) const
 int ImageFolderModel::rowCount(const QModelIndex &parent) const
 {
     return parent.isValid() ? 0 : m_dirModel->rowCount();
+}
+
+bool ImageFolderModel::loading() const
+{
+    return !m_dirModel->dirLister()->isFinished() || m_dirModel->dirLister()->url().isEmpty();
 }

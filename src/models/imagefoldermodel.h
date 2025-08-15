@@ -31,6 +31,7 @@ class ImageFolderModel : public AbstractImageModel
      * @property string The url we want to browse. it may be an absolute path or a correct url of any protocol KIO supports
      */
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
+    Q_PROPERTY(bool loading READ loading NOTIFY loadingChanged FINAL) // push up?
 
 public:
     explicit ImageFolderModel(QObject *parent = nullptr);
@@ -40,6 +41,8 @@ public:
 
     QVariant data(const QModelIndex &index, int role) const override;
     int rowCount(const QModelIndex &parent = {}) const override;
+
+    bool loading() const;
 
     Q_INVOKABLE int indexForUrl(const QString &url) const;
 
@@ -52,7 +55,7 @@ public:
 
 Q_SIGNALS:
     void urlChanged();
-    void finishedLoading();
+    void loadingChanged();
 
 private:
     KDirModel *const m_dirModel;

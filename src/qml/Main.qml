@@ -142,7 +142,8 @@ StatefulApp.StatefulWindow {
                     pageStack.push(albumViewComponent);
                     albumView = pageStack.currentItem;
                     albumView.isFolderView = true;
-                    albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen;
+                    console.log("A");
+                    albumView.model.sourceModel2.url = Koko.OpenFileModel.urlToOpen;
 
                     return;
 
@@ -154,7 +155,10 @@ StatefulApp.StatefulWindow {
                     albumView = pageStack.currentItem;
                     albumView.isFolderView = true;
 
-                    albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
+                    console.log("B");
+
+
+                    albumView.model.sourceModel2.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
 
                     fetchImageToOpen = true;
                     pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
@@ -260,8 +264,9 @@ StatefulApp.StatefulWindow {
             case "Pictures":
             case "Videos":
             case "Folders": {
+                console.log("D");
                 albumView.model = imageFolderModel;
-                albumView.model.sourceModel.url = query;
+                albumView.model.sourceModel2.url = query;
                 albumView.isFolderView = (value === "Folders" || value === "Pictures" || value === "Videos");
                 imageListModel.locationGroup = -1;
                 imageListModel.timeGroup = -1;
@@ -297,9 +302,11 @@ StatefulApp.StatefulWindow {
 
     Koko.SortModel {
         id: imageFolderModel
-        sourceModel: Koko.ImageFolderModel {
+        property var sourceModel2: Koko.ImageFolderModel {
             url: ""
         }
+
+        sourceModel: sourceModel2.loading ? null : sourceModel2
         /*
          * filterRole is an Item property exposed by the QSortFilterProxyModel
          */
@@ -399,14 +406,14 @@ StatefulApp.StatefulWindow {
                 root.application.action("place_pictures").trigger();
                 albumView.isFolderView = true;
 
-                albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen;
+                albumView.model.sourceModel2.url = Koko.OpenFileModel.urlToOpen;
                 return;
 
             case Koko.OpenFileModel.OpenImage:
                 root.application.action("place_pictures").trigger();
                 albumView.isFolderView = true;
 
-                albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
+                albumView.model.sourceModel2.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
 
                 fetchImageToOpen = true;
                 pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
