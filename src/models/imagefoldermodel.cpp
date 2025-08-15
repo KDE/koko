@@ -37,6 +37,7 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
         }
     }
 
+    m_dirModel->dirLister()->setRequestMimeTypeWhileListing(true);
     m_dirModel->dirLister()->setMimeFilter(m_mimeTypes);
 
     connect(m_dirModel, &KDirModel::rowsAboutToBeInserted, this, &ImageFolderModel::rowsAboutToBeInserted);
