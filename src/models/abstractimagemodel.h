@@ -14,7 +14,7 @@
 class QTimer;
 
 /*!
- * Abstract model for images, take care of generating previews
+ * Abstract model for images
  */
 class AbstractImageModel : public QAbstractListModel
 {
@@ -22,6 +22,7 @@ class AbstractImageModel : public QAbstractListModel
     QML_ELEMENT
     QML_UNCREATABLE("Abstract type")
 
+    Q_PROPERTY(bool leading READ loading NOTIFY loadingChanged FINAL)
 public:
     enum RoleNames {
         ImageUrlRole = Qt::UserRole + 1,
@@ -48,6 +49,15 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     QVariant dataFromItem(const KFileItem &item, int role) const;
+
+    /**
+     * Returns true if we are still loading content
+     * This is used to avoid showing content that will be moved by the sort filter
+     */
+    virtual bool loading() const;
+
+Q_SIGNALS:
+    void loadingChanged();
 
 protected:
     explicit AbstractImageModel(QObject *parent = nullptr);

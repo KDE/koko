@@ -45,3 +45,8 @@ QVariant AbstractImageModel::dataFromItem(const KFileItem &item, int role) const
         return {};
     }
 }
+
+bool AbstractImageModel::loading() const
+{
+    return false;
+}
