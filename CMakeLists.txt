@@ -49,7 +49,7 @@ endif()
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
 
-find_package(LibExiv2 0.21 REQUIRED)
+find_package(LibExiv2 0.28 REQUIRED)
 
 ecm_find_qmlmodule(org.kde.kquickimageeditor)
 find_package(KQuickImageEditor COMPONENTS)
