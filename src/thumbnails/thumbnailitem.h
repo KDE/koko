@@ -18,7 +18,6 @@ class ThumbnailItem : public QQuickPaintedItem
 
     Q_PROPERTY(KFileItem fileItem READ fileItem WRITE setFileItem NOTIFY fileItemChanged REQUIRED)
     Q_PROPERTY(int priority READ priority WRITE setPriority NOTIFY priorityChanged REQUIRED)
-    Q_PROPERTY(bool thumbnailReady READ thumbnailReady NOTIFY thumbnailReadyChanged)
 
 public:
     explicit ThumbnailItem(QQuickItem *parent = nullptr);
@@ -30,7 +29,6 @@ public:
     int priority() const;
     void setPriority(int priority);
 
-    bool thumbnailReady() const;
     void setThumbnail(const QImage &image, const QUrl &url);
 
     void paint(QPainter *painter) override;
@@ -38,7 +36,6 @@ public:
 Q_SIGNALS:
     void fileItemChanged();
     void priorityChanged();
-    void thumbnailReadyChanged();
 
 protected:
     void geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry) override;
@@ -57,5 +54,4 @@ private:
     KFileItem m_fileItem;
     QSize m_thumbnailSize;
     int m_priority;
-    bool m_thumbnailReady;
 };

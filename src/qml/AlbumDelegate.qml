@@ -53,16 +53,6 @@ Controls.ItemDelegate {
 
     contentItem: Item {
 
-        Kirigami.Icon {
-            id: placeholderImage
-
-            anchors.centerIn: parent
-            source: "chronometer-symbolic"
-            width: Kirigami.Units.iconSizes.large
-            height: width
-            visible: !image.thumbnailReady
-        }
-
         KokoThumbnails.ThumbnailItem {
             id: image
             anchors.centerIn: parent

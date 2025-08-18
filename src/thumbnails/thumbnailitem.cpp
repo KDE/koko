@@ -14,7 +14,6 @@
 ThumbnailItem::ThumbnailItem(QQuickItem *parent)
     : QQuickPaintedItem(parent)
     , m_priority(std::numeric_limits<int>::max())
-    , m_thumbnailReady(false)
 {
     setFlag(ItemHasContents, true);
 
@@ -67,11 +66,6 @@ void ThumbnailItem::setPriority(int priority)
     Q_EMIT priorityChanged();
 }
 
-bool ThumbnailItem::thumbnailReady() const
-{
-    return m_thumbnailReady;
-}
-
 void ThumbnailItem::setThumbnail(const QImage &image, const QUrl &url)
 {
     if (!image.isNull() && url != fileItem().url()) {
@@ -82,24 +76,25 @@ void ThumbnailItem::setThumbnail(const QImage &image, const QUrl &url)
     m_image = image;
     updatePaintedRect();
     update();
-
-    if (m_thumbnailReady != !m_image.isNull()) {
-        m_thumbnailReady = !m_image.isNull();
-        Q_EMIT thumbnailReadyChanged();
-    }
 }
 
 void ThumbnailItem::paint(QPainter *painter)
 {
-    if (m_image.isNull()) {
-        return;
-    }
-
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing, smooth());
     painter->setRenderHint(QPainter::SmoothPixmapTransform, smooth());
 
-    painter->drawImage(m_paintedRect, m_image, m_image.rect());
+    if (m_image.isNull()) {
+        // Show the mimetype icon
+        const QIcon icon = QIcon::fromTheme(m_fileItem.iconName());
+        if (!icon.isNull()) {
+            const QPixmap iconPixmap = icon.pixmap(m_thumbnailSize);
+            painter->drawPixmap(boundingRect(), iconPixmap, iconPixmap.rect());
+        }
+    } else {
+        // Show a thumbnail
+        painter->drawImage(m_paintedRect, m_image, m_image.rect());
+    }
 
     painter->restore();
 }
@@ -109,6 +104,7 @@ void ThumbnailItem::geometryChange(const QRectF &newGeometry, const QRectF &oldG
     QQuickPaintedItem::geometryChange(newGeometry, oldGeometry);
     updatePaintedRect();
     updateThumbnailSize();
+    update();
 }
 
 void ThumbnailItem::itemChange(QQuickItem::ItemChange change, const QQuickItem::ItemChangeData &value)
