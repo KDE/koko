@@ -14,7 +14,6 @@
 ThumbnailItem::ThumbnailItem(QQuickItem *parent)
     : QQuickPaintedItem(parent)
     , m_priority(std::numeric_limits<int>::max())
-    , m_thumbnailReady(false)
 {
     setFlag(ItemHasContents, true);
 
@@ -45,6 +44,8 @@ void ThumbnailItem::setFileItem(const KFileItem &fileItem)
     // Remove current thumbnail
     setThumbnail(QImage(), QUrl());
 
+    updateMimePixmap();
+
     ThumbnailManager::instance()->requestThumbnail(this, m_fileItem, m_thumbnailSize);
 }
 
@@ -67,9 +68,15 @@ void ThumbnailItem::setPriority(int priority)
     Q_EMIT priorityChanged();
 }
 
-bool ThumbnailItem::thumbnailReady() const
+void ThumbnailItem::colorsChanged()
 {
-    return m_thumbnailReady;
+    // Workaround for folders using accent colour, which must be updated if the accent color changes
+    if (!m_fileItem.isFile()) {
+        updateMimePixmap();
+        update();
+
+        ThumbnailManager::instance()->refreshThumbnail(m_fileItem.url());
+    }
 }
 
 void ThumbnailItem::setThumbnail(const QImage &image, const QUrl &url)
@@ -79,27 +86,24 @@ void ThumbnailItem::setThumbnail(const QImage &image, const QUrl &url)
         return;
     }
 
-    m_image = image;
+    m_previewImage = image;
     updatePaintedRect();
     update();
-
-    if (m_thumbnailReady != !m_image.isNull()) {
-        m_thumbnailReady = !m_image.isNull();
-        Q_EMIT thumbnailReadyChanged();
-    }
 }
 
 void ThumbnailItem::paint(QPainter *painter)
 {
-    if (m_image.isNull()) {
-        return;
-    }
-
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing, smooth());
     painter->setRenderHint(QPainter::SmoothPixmapTransform, smooth());
 
-    painter->drawImage(m_paintedRect, m_image, m_image.rect());
+    if (m_previewImage.isNull()) {
+        // Show the mimetype icon
+        painter->drawPixmap(boundingRect(), m_mimePixmap, m_mimePixmap.rect());
+    } else {
+        // Show a thumbnail
+        painter->drawImage(m_paintedRect, m_previewImage, m_previewImage.rect());
+    }
 
     painter->restore();
 }
@@ -109,25 +113,41 @@ void ThumbnailItem::geometryChange(const QRectF &newGeometry, const QRectF &oldG
     QQuickPaintedItem::geometryChange(newGeometry, oldGeometry);
     updatePaintedRect();
     updateThumbnailSize();
+    updateMimePixmap();
 }
 
 void ThumbnailItem::itemChange(QQuickItem::ItemChange change, const QQuickItem::ItemChangeData &value)
 {
     if (change == QQuickItem::ItemDevicePixelRatioHasChanged) {
         updateThumbnailSize(value.realValue);
+        updateMimePixmap();
     }
 
     return QQuickItem::itemChange(change, value);
 }
 
+void ThumbnailItem::updateMimePixmap()
+{
+    const QIcon icon = QIcon::fromTheme(m_fileItem.iconName());
+
+    if (icon.isNull()) {
+        m_mimePixmap = QPixmap();
+        return;
+    }
+
+    m_mimePixmap = icon.pixmap(m_thumbnailSize, m_devicePixelRatio);
+
+    update();
+}
+
 void ThumbnailItem::updatePaintedRect()
 {
-    if (m_image.isNull()) {
+    if (m_previewImage.isNull()) {
         return;
     }
 
     QRectF boundingRect = this->boundingRect();
-    QSize imageSize = m_image.size();
+    QSize imageSize = m_previewImage.size();
 
     QSizeF scaled(imageSize);
 
@@ -162,8 +182,10 @@ void ThumbnailItem::updateThumbnailSize()
 
 void ThumbnailItem::updateThumbnailSize(qreal devicePixelRatio)
 {
+    m_devicePixelRatio = devicePixelRatio;
+
     // Double size as noted above
-    const QSize thumbnailSize = (size() * devicePixelRatio * 2).toSize();
+    const QSize thumbnailSize = (size() * m_devicePixelRatio * 2).toSize();
     if (m_thumbnailSize != thumbnailSize) {
         m_thumbnailSize = thumbnailSize;
 
