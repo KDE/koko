@@ -150,17 +150,18 @@ void ThumbnailItem::updatePaintedRect()
     }
 }
 
-void ThumbnailItem::updateThumbnailSize(qreal devicePixelRatio)
+void ThumbnailItem::updateThumbnailSize()
 {
-    if (devicePixelRatio == 0) {
-        const auto window = this->window();
-        if (!window) {
-            return;
-        }
-
-        devicePixelRatio = window->devicePixelRatio();
+    const auto window = this->window();
+    if (!window) {
+        return;
     }
 
+    updateThumbnailSize(window->devicePixelRatio());
+}
+
+void ThumbnailItem::updateThumbnailSize(qreal devicePixelRatio)
+{
     // Double size as noted above
     const QSize thumbnailSize = (size() * devicePixelRatio * 2).toSize();
     if (m_thumbnailSize != thumbnailSize) {

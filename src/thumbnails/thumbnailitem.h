@@ -46,7 +46,8 @@ protected:
 
 private:
     void updatePaintedRect();
-    void updateThumbnailSize(qreal devicePixelRatio = 0);
+    void updateThumbnailSize();
+    void updateThumbnailSize(qreal devicePixelRatio);
 
     QPointer<QQuickWindow> m_window = nullptr;
 
