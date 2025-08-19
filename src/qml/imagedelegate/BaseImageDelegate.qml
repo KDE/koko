@@ -13,7 +13,7 @@ import QtQuick
 import QtQml
 import QtMultimedia
 import org.kde.kirigami as Kirigami
-import org.kde.koko
+import org.kde.koko as Koko
 import org.kde.koko.image
 
 import ".."
@@ -89,5 +89,31 @@ ZoomArea {
     onIsCurrentChanged: {
         root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
         root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
+    }
+
+    Loader {
+        anchors.fill: root.contentItem
+
+        active: Koko.Config.imageViewShowCheckerboard
+        visible: root.loaded
+        sourceComponent: Image {
+
+            readonly property color tileColor: switch (Koko.Config.imageViewBackgroundColor) {
+                case 0:
+                    return "black";
+                case 1:
+                    return "white";
+                case 2:
+                    return Kirigami.Theme.backgroundColor;
+            }
+
+            source: "image://checkerboard/" + tileColor
+            sourceSize.width: 16
+            sourceSize.height: 16
+
+            fillMode: Image.Tile
+            smooth: false
+            cache: true
+        }
     }
 }

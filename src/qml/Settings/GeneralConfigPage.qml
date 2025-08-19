@@ -35,7 +35,61 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Slideshow:")
+        title: i18nc("@title:group", "Image View Background")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormRadioDelegate {
+            text: i18nc("@option:radio As in, background color", "Black")
+            checked: Koko.Config.imageViewBackgroundColor === 0
+            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+            onToggled: {
+                Koko.Config.imageViewBackgroundColor = 0;
+                Koko.Config.save();
+            }
+        }
+
+        FormCard.FormRadioDelegate {
+            text: i18nc("@option:radio As in, background color", "White")
+            checked: Koko.Config.imageViewBackgroundColor === 1
+            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+            onToggled: {
+                Koko.Config.imageViewBackgroundColor = 1;
+                Koko.Config.save();
+            }
+        }
+
+        FormCard.FormRadioDelegate {
+            id: imageViewBackgroundColorThemeDefaultDelegate
+            text: i18nc("@option:radio As in, background color", "Theme default")
+            description: i18nc("info", "Use the background color specified by the theme")
+            checked: Koko.Config.imageViewBackgroundColor === 2
+            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+            onToggled: {
+                Koko.Config.imageViewBackgroundColor = 2;
+                Koko.Config.save();
+            }
+        }
+
+        FormCard.FormDelegateSeparator {
+            above: imageViewShowCheckerboardDelegate
+            below: imageViewBackgroundColorThemeDefaultDelegate
+        }
+
+        FormCard.FormCheckDelegate {
+            id: imageViewShowCheckerboardDelegate
+            text: i18nc("@option:check", "Show a checkerboard background behind transparent images")
+            checked: Koko.Config.imageViewShowCheckerboard
+            enabled: !Koko.Config.isImageViewShowCheckerboardImmutable
+            onToggled: {
+                Koko.Config.imageViewShowCheckerboard = checked;
+                Koko.Config.save();
+            }
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Slideshow")
         visible: !Kirigami.Settings.isMobile
     }
 
