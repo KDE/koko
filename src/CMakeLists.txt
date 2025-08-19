@@ -27,6 +27,8 @@ add_library(koko_static STATIC
     photosapplication.cpp
     photosapplication.h
     devicepixelratiohelper.cpp
+    wallpaperservice.h
+    wallpaperservice.cpp
 )
 
 kconfig_target_kcfg_file(koko_static
@@ -93,6 +95,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/SlideshowManager.qml
     qml/TagInput.qml
     qml/ThumbnailStrip.qml
+    qml/WallpaperAction.qml
     qml/ZoomArea.qml
     qml/Settings/PhotosConfigurationView.qml
     qml/Settings/GeneralConfigPage.qml

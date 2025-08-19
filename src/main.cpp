@@ -36,6 +36,7 @@
 #include "processor.h"
 #include "vectorimage.h"
 #include "version.h"
+#include "wallpaperservice.h"
 
 #ifndef Q_OS_ANDROID
 #include <KConfigGroup>
@@ -175,6 +176,7 @@ int main(int argc, char **argv)
 
     qmlRegisterType<VectorImage>("org.kde.koko.image", 1, 0, "VectorImage");
     qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
+    qmlRegisterType<WallpaperService>("org.kde.koko", 1, 0, "WallpaperService");
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
 

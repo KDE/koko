@@ -126,6 +126,23 @@ Kirigami.Page {
                 }
             }
         },
+        WallpaperAction {
+            id: wallpaperAction
+
+            visible: listView.currentItem && listView.currentItem.type === Koko.FileInfo.RasterImageType
+            enabled: listView.currentItem && listView.currentItem.type === Koko.FileInfo.RasterImageType
+
+            property Connections connection: Connections {
+                target: listView
+                function onCurrentItemChanged() {
+                    if (listView.currentItem && listView.currentItem.type === Koko.FileInfo.RasterImageType) {
+                        wallpaperAction.imagePath = listView.currentItem.imageurl.toString().replace("file://", "");
+                    } else {
+                        wallpaperAction.imagePath = "";
+                    }
+                }
+            }
+        },
         Kirigami.Action {
             id: infoAction
 
@@ -983,6 +1000,15 @@ Kirigami.Page {
     Shortcut {
         sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
         onActivated: listView.incrementCurrentIndex()
+    }
+
+    Shortcut {
+        sequence: "Ctrl+B"
+        onActivated: {
+            if (wallpaperAction.enabled && wallpaperAction.imagePath !== "") {
+                wallpaperAction.trigger();
+            }
+        }
     }
 
     Component.onCompleted: {
