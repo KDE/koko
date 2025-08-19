@@ -28,6 +28,19 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <entry name="SavedFolders" type="PathList">
             <label>List of saved folders.</label>
         </entry>
+        <entry name="ImageViewBackgroundColor" type="Enum">
+            <label>Background color for image view</label>
+            <choices>
+                <choice name="Black"/>
+                <choice name="White"/>
+                <choice name="Theme"/>
+            </choices>
+            <default>Black</default>
+        </entry>
+        <entry name="ImageViewShowCheckerboard" type="Bool">
+            <label>Whether to show a checkerboard background for transparent images</label>
+            <default>true</default>
+        </entry>
     </group>
     <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">

@@ -287,7 +287,16 @@ Kirigami.Page {
     }
 
     background: Rectangle {
-        color: "black"
+        color: {
+            switch (Koko.Config.imageViewBackgroundColor) {
+                case 0:
+                    return "black";
+                case 1:
+                    return "white";
+                case 2:
+                    return Kirigami.Theme.backgroundColor;
+            }
+        }
     }
 
     Keys.onPressed: (event) => {

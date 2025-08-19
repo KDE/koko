@@ -28,6 +28,7 @@
 
 #include <iostream>
 
+#include "checkerboardimageprovider.h"
 #include "filemenu.h"
 #include "filesystemtracker.h"
 #include "imagestorage.h"
@@ -143,6 +144,7 @@ int main(int argc, char **argv)
 
     QQmlApplicationEngine engine;
     KLocalization::setupLocalizedContext(&engine);
+    engine.addImageProvider("checkerboard", new CheckerboardImageProvider);
 
     const auto openFileModel = engine.singletonInstance<OpenFileModel *>("org.kde.koko", "OpenFileModel");
     openFileModel->updateOpenItems(directoryUrls);
