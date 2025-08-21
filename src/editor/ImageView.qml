@@ -172,7 +172,6 @@ Controls.Page {
             scale: 1
             visible: true
             enabled: true
-            document: annotationEditor.document
             Keys.forwardTo: cropTool
             Keys.priority: Keys.AfterItem
         }
