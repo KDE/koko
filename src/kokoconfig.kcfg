@@ -10,7 +10,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="kokorc" />
     <include>qwindow.h</include>
-    <include>KQuickImageEditor/AnnotationTool</include>
     <group name="Backend">
         <entry name="InitialRun" type="Bool">
             <label>Initial Run</label>
@@ -79,13 +78,6 @@ SPDX-License-Identifier: LGPL-2.1-or-later
         <entry name="MetadataToDisplay" type="StringList">
             <label>List of metadata to display</label>
             <default>General.Name,General.Size,General.ImageSize,General.Created,Exif.Image.Model,General.Location</default>
-        </entry>
-    </group>
-    <group name="Editor">
-        <entry name="AnnotationToolType" type="Enum">
-            <label>The last used annotation tool type</label>
-            <choices name="AnnotationTool::Tool"></choices>
-            <default>AnnotationTool::Tool::NoTool</default>
         </entry>
     </group>
 </kcfg>
