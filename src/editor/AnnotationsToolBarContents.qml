@@ -26,7 +26,6 @@ ButtonGrid {
     QQC.ButtonGroup {
         id: toolGroup
         exclusive: true
-        onClicked: Koko.Config.annotationToolType = root.tool.type
     }
 
     QQC.ToolTip {
@@ -205,9 +204,5 @@ ButtonGrid {
         icon.name: "draw-number"
         checked: root.toolType === AnnotationTool.NumberTool
         onClicked: root.tool.type = AnnotationTool.NumberTool
-    }
-
-    Component.onCompleted: if (rememberToolType) {
-        root.tool.type = Koko.Config.annotationToolType
     }
 }
