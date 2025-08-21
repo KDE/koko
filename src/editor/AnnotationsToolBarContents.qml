@@ -16,8 +16,8 @@ ButtonGrid {
     readonly property alias usingCropTool: cropToolButton.checked
 
     required property AnnotationDocument document
-    readonly property AnnotationTool tool: document.tool
-    readonly property int toolType: document.tool?.type ?? AnnotationTool.NoTool
+    readonly property AnnotationTool tool: document?.tool ?? null
+    readonly property int toolType: tool?.type ?? AnnotationTool.NoTool
 
     function dprRound(v: double): double {
         return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
