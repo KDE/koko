@@ -12,10 +12,10 @@
         "--device=dri",
         "--env=XDG_DATA_DIRS=/usr/share:/app/share/",
         "--filesystem=home",
+        "--socket=fallback-x11",
         "--share=ipc",
         "--share=network",
-        "--socket=wayland",
-        "--socket=x11"
+        "--socket=wayland"
     ],
     "modules": [
         {
