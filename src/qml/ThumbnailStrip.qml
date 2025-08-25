@@ -57,6 +57,10 @@ ListView {
 
     // Prioritise thumbnailing delegates closest to the highlighted item
     function calculateThumbnailPriority(delegate: Item): int {
+        if (!thumbnailView.currentItem) {
+            return -1;
+        }
+
         let centerOffset = Math.abs(thumbnailView.currentItem.x - delegate.x);
         let delegateSize = delegate.width + thumbnailView.spacing;
         return Math.round(centerOffset / delegateSize);
