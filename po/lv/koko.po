@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:40+0000\n"
-"PO-Revision-Date: 2025-06-27 16:39+0300\n"
+"PO-Revision-Date: 2025-08-22 12:36+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,13 +64,13 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:517
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -232,7 +232,7 @@ msgstr "Iet uz attēliem"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "Iet uz iecienītajiem"
+msgstr "Iet uz izlasi"
 
 #: photosapplication.cpp:64
 #, kde-format
@@ -335,8 +335,7 @@ msgid "Root"
 msgstr "Sakne"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Kopīgot atlasīto multividi"
@@ -402,7 +401,7 @@ msgstr "Video"
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
-msgstr "Iecienītie"
+msgstr "Izlase"
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:89
 #, kde-format
@@ -557,156 +556,137 @@ msgstr "Konfigurēt metadatu parādīšanu"
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: qml/ImageViewPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr "Izlase"
+msgstr "Pievienot izlasei"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
-msgstr "Noņemt no iecienītajām"
+msgstr "Noņemt no izlases"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
-msgstr "Pievienot iecienītajām"
+msgstr "Pievienot izlasei"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "Rediģēt"
+msgstr "&Rediģēt"
 
 #: qml/ImageViewPage.qml:90
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr ""
+msgstr "Rediģēt šo attēlu"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "Kopīgot"
+msgstr "&Kopīgot"
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "Kopīgot video"
+msgstr "Kopīgot šo video"
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "Kopīgot attēlu"
+msgstr "Kopīgot šo attēlu"
 
 #: qml/ImageViewPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "Informācija"
+msgstr "&Informācija"
 
 #: qml/ImageViewPage.qml:141
-#, fuzzy, kde-format
-#| msgid "See information about video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "Skatīt informāciju par video"
+msgstr "Skatīt informāciju par šo video"
 
 #: qml/ImageViewPage.qml:143
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "Skatīt informāciju par attēlu"
+msgstr "Skatīt informāciju par šo attēlu"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "Slīdrāde"
+msgstr "&Slīdrāde"
 
 #: qml/ImageViewPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Sākt slīdrādi"
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr "Rādīt visas vadīklas"
+msgstr "Rādīt &visas vadīklas"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "Ieslēgt iesaistošo skatīšanās režīmu"
 
 #: qml/ImageViewPage.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "Iziet no iesaistošā skatīšanās režīma"
 
 #: qml/ImageViewPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr "Rādīt sīktēlu joslu"
+msgstr "Rādīt &sīktēlu rīkjoslu"
 
 #: qml/ImageViewPage.qml:190
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr "Rādīt sīktēlu joslu"
+msgstr "Rādīt sīktēlu rīkjoslu"
 
 #: qml/ImageViewPage.qml:191
-#, fuzzy, kde-format
-#| msgid "Hide Thumbnail Bar"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr "Slēpt sīktēlu joslu"
+msgstr "Slēpt sīktēlu rīkjoslu"
 
 #: qml/ImageViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "Pilnekrāns"
+msgstr "&Pilnekrāns"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Ieslēgt pilnekrānu"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Iziet no pilnekrāna"
@@ -767,7 +747,7 @@ msgstr "Metadati"
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
@@ -940,15 +920,13 @@ msgid "About KDE"
 msgstr "Par KDE"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Kopīgot"
+msgstr "&Kopīgot"
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "Kopīgot"
