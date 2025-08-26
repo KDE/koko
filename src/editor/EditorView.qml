@@ -57,7 +57,7 @@ Kirigami.Page {
             text: i18nc("@action:button Save image modification", "Save")
             icon.name: "document-save"
             onTriggered: {
-                const ok = PhotosEditor.EditorHelper.saveImageToPath(imageView.document.renderToImage(), imagePath.replace("file://", ""));
+                const ok = imageView.document.saveImage(imagePath.replace("file://", ""));
                 if (!ok) {
                     msg.type = Kirigami.MessageType.Error
                     msg.text = i18n("Unable to save file. Check if you have the correct permission to edit this file.")

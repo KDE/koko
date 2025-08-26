@@ -1,10 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(photos_editor_static STATIC
-    editorhelper.cpp
-    editorhelper.h
-)
+add_library(photos_editor_static STATIC)
 
 ecm_add_qml_module(photos_editor_static
     URI "org.kde.photos.editor"
