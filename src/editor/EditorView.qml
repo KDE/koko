@@ -19,7 +19,7 @@ Kirigami.Page {
 
     property string imagePath
     onImagePathChanged: {
-        imageView.document.loadImageFromPath(imagePath.replace("file://", ""))
+        imageView.document.setBaseImage(imagePath.replace("file://", ""))
     }
 
     signal imageEdited()
