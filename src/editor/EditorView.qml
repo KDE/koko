@@ -31,7 +31,7 @@ Kirigami.Page {
     rightPadding: 0
 
     onBackRequested: (event) => {
-        if (imageView.document.modified && !root.forceDiscard) {
+        if (imageView.document.modified) {
             confirmDiscardingChangeDialog.visible = true;
             event.accepted = true;
         }
@@ -137,7 +137,6 @@ Kirigami.Page {
         id: confirmDiscardingChangeDialog
 
         onDiscardChanges: {
-            root.forceDiscard = true;
             (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
         }
     }
