@@ -24,7 +24,7 @@ ListView {
                                                       - (thumbnailView.count * thumbnailView.delegateSize)
                                                       - ((thumbnailView.count - 1) * thumbnailView.spacing))
 
-    signal activated(int index)
+    signal activated(int index, url imageurl)
 
     orientation: Qt.Horizontal
 
@@ -76,7 +76,7 @@ ListView {
         width: thumbnailView.delegateSize
         height: thumbnailView.delegateSize
 
-        onClicked: thumbnailView.activated(delegate.index)
+        onClicked: thumbnailView.activated(delegate.index, delegate.imageurl)
 
         Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)
         Controls.ToolTip.visible: hovered

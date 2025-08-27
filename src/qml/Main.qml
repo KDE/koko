@@ -38,7 +38,7 @@ StatefulApp.StatefulWindow {
         popHiddenPages: true
 
         columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
-        layers.onDepthChanged: root.updateGlobalDrawer()
+        columnView.onVisibleChanged: root.updateGlobalDrawer()
         leftSidebar: root.globalDrawer
     }
 
@@ -79,6 +79,7 @@ StatefulApp.StatefulWindow {
     function updateGlobalDrawer(): void {
         if (globalDrawer) {
             globalDrawer.drawerOpen = !globalDrawer.modal;
+            globalDrawer.explicitDrawerOpen = !globalDrawer.modal;
         }
     }
 
@@ -159,6 +160,7 @@ StatefulApp.StatefulWindow {
                     fetchImageToOpen = true;
                     pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                         imagesModel: imageFolderModel.sourceModel,
+                        imageurl: Koko.OpenFileModel.urlToOpen,
                         application: root.application,
                         mainWindow: root,
                     });
@@ -178,6 +180,7 @@ StatefulApp.StatefulWindow {
 
     function filterBy(value: string, query: string): void {
         if (albumView === null || albumView !== pageStack.currentItem) {
+
             const component = Qt.createComponent("org.kde.koko", "AlbumView");
             if (component.status === Component.Error) {
                 console.error(component.errorString());
@@ -284,6 +287,11 @@ StatefulApp.StatefulWindow {
     Loader {
         onItemChanged: root.globalDrawer = item
         active: !Kirigami.Settings.isMobile || root.wideScreen
+        onActiveChanged: {
+            if (item) {
+                updateGlobalDrawer();
+            }
+        }
         sourceComponent: Sidebar {
             mainWindow: root
             application: root.application
@@ -368,7 +376,7 @@ StatefulApp.StatefulWindow {
             group: Koko.ImageStorage.City
         }
     }
-    
+
     Koko.ImageGroupModel {
         id: imageListModel
     }
@@ -403,17 +411,22 @@ StatefulApp.StatefulWindow {
                 return;
 
             case Koko.OpenFileModel.OpenImage:
+                // We first load immediately the image viewer, and then the main view
+                fetchImageToOpen = true;
+                let page = pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                    imagesModel: imageFolderModel.sourceModel,
+                    imageurl: Koko.OpenFileModel.urlToOpen,
+                    application: root.application,
+                    mainWindow: root,
+                }, QQC2.StackView.Immediate);
+                //FIXME: why is necessary to explicitly set opacity here?
+                page.opacity = 1;
+
+                // Now we can load the main view
                 root.application.action("place_pictures").trigger();
                 albumView.isFolderView = true;
 
                 albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
-
-                fetchImageToOpen = true;
-                pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
-                    imagesModel: imageFolderModel.sourceModel,
-                    application: root.application,
-                    mainWindow: root,
-                });
 
                 return;
 
