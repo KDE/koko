@@ -27,7 +27,7 @@ BaseImageDelegate {
         anchors.fill: parent
 
         source: root.source
-        asynchronous: true
+        asynchronous: root.preferAsync
         cache: false
 
         fillMode: Image.PreserveAspectFit

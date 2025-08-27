@@ -89,6 +89,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/AlbumDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml
+    qml/DelegateLoader.qml
     qml/EditorView.qml
     qml/ImageMetadataPage.qml
     qml/ImageViewPage.qml

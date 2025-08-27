@@ -50,7 +50,15 @@ ImageFolderModel::ImageFolderModel(QObject *parent)
     connect(m_dirModel, &KDirModel::modelAboutToBeReset, this, &ImageFolderModel::modelAboutToBeReset);
     connect(m_dirModel, &KDirModel::layoutChanged, this, &ImageFolderModel::layoutChanged);
     connect(m_dirModel, &KDirModel::layoutAboutToBeChanged, this, &ImageFolderModel::layoutAboutToBeChanged);
-    connect(m_dirModel->dirLister(), &KDirLister::completed, this, &ImageFolderModel::finishedLoading);
+    connect(m_dirModel->dirLister(), &KDirLister::completed, this, [this]() {
+        m_status = m_dirModel->rowCount() == 0 ? Empty : Ready;
+        Q_EMIT statusChanged(m_status);
+    });
+}
+
+ImageFolderModel::Status ImageFolderModel::status() const
+{
+    return m_status;
 }
 
 QUrl ImageFolderModel::url() const
@@ -73,7 +81,9 @@ void ImageFolderModel::setUrl(const QUrl &url)
     }
 
     m_dirModel->openUrl(newUrl);
+    m_status = Loading;
 
+    Q_EMIT statusChanged(m_status);
     Q_EMIT urlChanged();
 }
 

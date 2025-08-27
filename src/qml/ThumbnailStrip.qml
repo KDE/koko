@@ -25,7 +25,7 @@ ListView {
                                                       - (thumbnailView.count * thumbnailView.delegateSize)
                                                       - ((thumbnailView.count - 1) * thumbnailView.spacing))
 
-    signal activated(int index)
+    signal activated(int index, url imageurl)
 
     orientation: Qt.Horizontal
 
@@ -110,7 +110,7 @@ ListView {
 
         onClicked: {
             centerAnimation.centeringBehavior = ThumbnailStrip.CenteringBehavior.NoCentering;
-            thumbnailView.activated(delegate.index);
+            thumbnailView.activated(delegate.index, delegate.imageurl);
         }
 
         Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)

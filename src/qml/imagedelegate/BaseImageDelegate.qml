@@ -32,6 +32,8 @@ ZoomArea {
 
     required property Kirigami.ApplicationWindow mainWindow
 
+    property bool preferAsync: false
+
     DevicePixelRatioHelper {
         id: dprHelper
         window: root.Window.window

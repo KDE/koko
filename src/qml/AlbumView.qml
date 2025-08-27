@@ -46,7 +46,7 @@ Kirigami.ScrollablePage {
     focus: true
     titleDelegate: !Kirigami.Settings.isMobile && isFolderView ? folderTitleComponent : normalTitleComponent
     title: i18nc("@title", "Folders")
- 
+
     // doesn't work without loader
     header: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
     footer: Loader {
         height: active ? implicitHeight : 0 // fix issue where space is being reserved even if not active
         active: !page.mainWindow.wideScreen && Kirigami.Settings.isMobile
-        sourceComponent: mobileHeader 
+        sourceComponent: mobileHeader
     }
 
     Component {
@@ -81,7 +81,7 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     visible: !page.mainWindow.wideScreen
                 }
-                Loader { 
+                Loader {
                     active: Kirigami.Settings.isMobile && page.isFolderView; sourceComponent: folderTitleComponent
                     Layout.fillHeight: true
                     Layout.fillWidth: true
@@ -106,7 +106,7 @@ Kirigami.ScrollablePage {
                 visible: page.mainWindow.wideScreen
                 Layout.maximumWidth: height
                 Layout.leftMargin: (Kirigami.Settings.isMobile || !page.mainWindow.wideScreen && page.mainWindow.globalDrawer) ? 0 : -Kirigami.Units.gridUnit + Kirigami.Units.smallSpacing
-                
+
                 icon.name: (LayoutMirroring.enabled ? "go-previous-symbolic-rtl" : "go-previous-symbolic")
                 enabled: page.backUrlsPosition > 0
                 onClicked: {
@@ -135,7 +135,7 @@ Kirigami.ScrollablePage {
                 Layout.maximumWidth: Kirigami.Settings.isMobile ? -1 : folderRow.implicitWidth + 1
                 Controls.ScrollBar.horizontal.policy: Controls.ScrollBar.AlwaysOff
                 Controls.ScrollBar.vertical.policy: Controls.ScrollBar.AlwaysOff
-                
+
                 RowLayout {
                     id: folderRow
                     spacing: 0
@@ -491,6 +491,7 @@ Kirigami.ScrollablePage {
                         page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                             startIndex: page.model.index(gridView.currentIndex, 0),
                             imagesModel: page.model,
+                            imageurl: delegate.imageurl,
                             application: page.application,
                             mainWindow: page.mainWindow,
                         })

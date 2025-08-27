@@ -23,19 +23,33 @@ Kirigami.Page {
 
     property var startIndex
     required property var imagesModel
+    required property url imageurl
     required property Koko.PhotosApplication application
     required property Kirigami.ApplicationWindow mainWindow
     property int lastWindowVisibility: mainWindow.visibility
+    // Model is either an ImageFolderModel or a proxy containing one
+    // If is a different thing (tagsmodel etc) just assume ready, TODO: implement status for every model
+    readonly property int modelStatus: imagesModel?.status ?? imagesModel.sourceModel?.status ?? ImageFolderModel.Ready
+    title: {
+        const urlParts = imageurl.toString().split("/");
+        return urlParts[urlParts.length - 1];
+    }
+
+    onImageurlChanged: exiv2Extractor.updateFavorite(imageurl.toString().replace("file://", ""))
 
     Connections {
         target: imagesModel
         ignoreUnknownSignals: true
-        function onFinishedLoading() {
-            if (!root.mainWindow.fetchImageToOpen || listView.model.sourceModel.indexForUrl(Koko.OpenFileModel.urlToOpen) === -1) {
+        function onStatusChanged(): void {
+            if (imagesModel.status !== ImageFolderModel.Ready) {
+                return;
+            }
+            if (!root.mainWindow.fetchImageToOpen || sortModel.sourceModel.indexForUrl(root.imageurl) === -1) {
                 return;
             }
             stopLoadingImages.restart();
-            startIndex = listView.model.mapFromSource(listView.model.sourceModel.index(listView.model.sourceModel.indexForUrl(Koko.OpenFileModel.urlToOpen), 0)).row;
+
+            startIndex = sortModel.mapFromSource(sortModel.sourceModel.index(sortModel.sourceModel.indexForUrl(root.imageurl), 0)).row;
             thumbnailView.positionViewAtIndex(startIndex, ListView.Contain);
         }
     }
@@ -90,7 +104,7 @@ Kirigami.Page {
             icon.name: "edit-entry"
             tooltip: i18nc("@info:tooltip", "Edit this image")
 
-            visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
+            visible: (listView.currentItem && listView.currentItem.type === Koko.FileInfo.RasterImageType) || (imagePlaceholder && imagePlaceholder.type === Koko.FileInfo.RasterImageType)
             onTriggered: {
                 const page = root.mainWindow.pageStack.layers.push(Qt.resolvedUrl("EditorView.qml"), {
                     imagePath: listView.currentItem.imageurl,
@@ -117,13 +131,10 @@ Kirigami.Page {
                 return i18nc("@info:tooltip", "Share this image");
             }
 
-            property Connections connection: Connections {
-                target: listView
-                function onCurrentItemChanged() {
-                    shareAction.inputData = {
-                        urls: [listView.currentItem.imageurl.toString()],
-                        mimeType: [listView.currentItem.mimeType]
-                    };
+            inputData: {
+                return {
+                    urls: [root.imageurl.toString()],
+                    mimeType: [listView.currentItem?.mimeType ?? imagePlaceholder?.mimeType]
                 }
             }
         },
@@ -327,6 +338,23 @@ Kirigami.Page {
         }
     }
 
+    DelegateLoader {
+        id: imagePlaceholder
+        anchors.fill: listView
+        z: 1
+        asynchronous: false
+        index: 0
+        imageurl: root.imageurl
+        content: ""
+        visible: root.modelStatus !== ImageFolderModel.Ready || !listView.currentItem || listView.currentItem.status !== Loader.Ready || !listView.currentItem.item.loaded
+        supportsVideo: false
+        onVisibleChanged: {
+            if (!visible) {
+                imagePlaceholder.destroy()
+            }
+        }
+    }
+
     ListView {
         id: listView
 
@@ -350,6 +378,7 @@ Kirigami.Page {
 
         // Filter out directories
         model: Koko.SortModel {
+            id: sortModel
             filterRole: Koko.AbstractImageModel.MimeTypeRole
             filterRegularExpression: /image\/|video\//
             sourceModel: imagesModel
@@ -357,9 +386,6 @@ Kirigami.Page {
 
         // we start with this index, so we don't flash initial image
         currentIndex: -1
-
-        // don't show initial image if index is not set yet
-        visible: currentIndex !== -1
 
         Component.onCompleted: { // fun fact: without null guard this function will crash the app after a certain number of calls (I think)
             if (root.startIndex) {
@@ -370,7 +396,7 @@ Kirigami.Page {
         property alias slideshow: slideshowManager
 
         onCountChanged: {
-            if (count === 0) {
+            if (count === 0 && imagesModel.status === ImageFolderModel.Ready) {
                 infoAction.checked = false
                 root.close();
             }
@@ -381,7 +407,8 @@ Kirigami.Page {
 
         onCurrentItemChanged: {
             if (currentItem) {
-                exiv2Extractor.updateFavorite(currentItem.imageurl.toString().replace("file://", ""))
+                root.imageurl = currentItem.imageurl
+
                 const title = currentItem.content
                 if (title.includes("/")) {
                     root.title = title.split("/")[title.split("/").length-1]
@@ -391,21 +418,10 @@ Kirigami.Page {
             }
         }
 
-        delegate: Loader {
+        delegate: DelegateLoader {
             id: loader
-
-            required property int index
-            required property url imageurl
-            required property string content
-            readonly property alias type: info.type
-            readonly property alias mimeType: info.mimeType
-
-            readonly property bool dragging: item && item.dragging
-            readonly property bool interactive: item && item.interactive
-
             width: ListView.view.width
             height: ListView.view.height
-
             visible: {
                 if (ListView.isCurrentItem) {
                     return true;
@@ -417,82 +433,6 @@ Kirigami.Page {
                 }
 
                 return false;
-            }
-
-            // Don't load images that are not going to be visible.
-            active: visible
-            onActiveChanged: {
-                if (active && info.delegateSource && info.initialProperties) {
-                    setSource(info.delegateSource, info.initialProperties);
-                }
-            }
-
-            asynchronous: true
-
-            Koko.FileInfo {
-                id: info
-
-                source: loader.imageurl
-
-                // Unfortunately, just binding active to visible above and using
-                // setSource in the onStatusChanged handler leads to occasional
-                // invisible images due to a slight race condition. Therefore,
-                // we need to store them separately and update whenever either
-                // delegateSource changes or the loader's active property changes.
-                property var initialProperties
-                property url delegateSource
-
-                onDelegateSourceChanged: {
-                    if (loader.active && delegateSource && initialProperties) {
-                        loader.setSource(delegateSource, initialProperties);
-                    }
-                }
-
-                onStatusChanged: {
-                    if (status != Koko.FileInfo.Ready) {
-                        return;
-                    }
-
-                    let delegate = "";
-                    let properties = {
-                        source: Qt.binding(() => loader.imageurl),
-                        isCurrent: Qt.binding(() => loader.ListView.isCurrentItem),
-                        mainWindow: root.mainWindow,
-                    };
-
-                    switch (type) {
-                    case Koko.FileInfo.VideoType:
-                        properties.autoplay = Qt.binding(() => loader.index === root.startIndex);
-                        properties.slideShow = slideshowManager;
-                        delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml");
-                        break;
-                    case Koko.FileInfo.VectorImageType:
-                        delegate = Qt.resolvedUrl("imagedelegate/VectorImageDelegate.qml");
-                        break;
-                    case Koko.FileInfo.AnimatedImageType:
-                        delegate = Qt.resolvedUrl("imagedelegate/AnimatedImageDelegate.qml");
-                        break;
-                    case Koko.FileInfo.RasterImageType:
-                        delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml");
-                        break;
-                    default:
-                        console.warn("Unknown file type for URL", loader.imageurl);
-                        break;
-                    }
-
-                    if (delegate) {
-                        // Important: Since the signal handler responsible for
-                        // loading is attached to the onDelegateSourceChanged,
-                        // this needs to make sure initialProperties is changed
-                        // before delegateSource, as otherwise the code will
-                        // ignore the new initialProperties.
-                        initialProperties = properties;
-                        delegateSource = delegate;
-                    } else {
-                        initialProperties = {};
-                        delegateSource = "";
-                    }
-                }
             }
         }
 
@@ -650,7 +590,6 @@ Kirigami.Page {
         readonly property bool shouldShow: !Kirigami.Settings.isMobile
                                         && root.mainWindow.controlsVisible
                                         && Koko.Config.imageViewPreview
-                                        && listView.count > 1
 
         anchors {
             left: parent.left
@@ -675,29 +614,53 @@ Kirigami.Page {
         padding: Kirigami.Units.largeSpacing
         position: QQC2.ToolBar.Footer
 
-        contentItem: QQC2.ScrollView {
-            id: thumbnailScrollView
-
-            implicitWidth: -1 // Prevents binding loop, is unused due to anchors
-
-            opacity: thumbnailToolBar.shouldShow ? 1 : 0
-            Behavior on opacity {
-                NumberAnimation {
-                    duration: Kirigami.Units.longDuration
-                    easing.type: Easing.InOutQuad
+        contentItem: StackLayout {
+            currentIndex: imagePlaceholder?.visible ? 0 : 1
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                Repeater {
+                    model: imagePlaceholder?.visible ? Math.floor(parent.width / parent.height) : 0
+                    delegate: Item {
+                        Layout.fillHeight: true
+                        implicitWidth: height
+                        Kirigami.Icon {
+                            anchors.centerIn: parent
+                            source: "chronometer-symbolic"
+                            width: Kirigami.Units.iconSizes.large
+                            height: width
+                        }
+                    }
                 }
             }
+            QQC2.ScrollView {
+                id: thumbnailScrollView
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
-            QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+                implicitWidth: -1 // Prevents binding loop, is unused due to anchors
 
-            ThumbnailStrip {
-                id: thumbnailView
-                // Don't unload the model until we're off-screen
-                model: (thumbnailToolBar.shouldShow || thumbnailToolBar.visible) ? listView.model : []
-                currentIndex: listView.currentIndex
-                onActivated: (index) => { listView.currentIndex = index; }
-                containerPadding: thumbnailToolBar.padding
+                opacity: thumbnailToolBar.shouldShow ? 1 : 0
+                Behavior on opacity {
+                    NumberAnimation {
+                        duration: Kirigami.Units.longDuration
+                        easing.type: Easing.InOutQuad
+                    }
+                }
+
+                QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+                QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
+
+                ThumbnailStrip {
+                    id: thumbnailView
+                    // Don't unload the model until we're off-screen
+                    model: (thumbnailToolBar.shouldShow || thumbnailToolBar.visible) ? listView.model : []
+                    currentIndex: listView.currentIndex
+                    onActivated: (index, imageurl) => {
+                        listView.currentIndex = index;
+                    }
+                    containerPadding: thumbnailToolBar.padding
+                }
             }
         }
     }
@@ -722,7 +685,7 @@ Kirigami.Page {
             }
         }
 
-        visible: anchors.bottomMargin > -height
+        visible: shouldShow && anchors.bottomMargin > -height
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
@@ -998,11 +961,13 @@ Kirigami.Page {
 
     Shortcut {
         sequence: Application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
+        enabled: imagesModel.status === ImageFolderModel.Ready
         onActivated: listView.decrementCurrentIndex()
     }
 
     Shortcut {
         sequence: Application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
+        enabled: imagesModel.status === ImageFolderModel.Ready
         onActivated: listView.incrementCurrentIndex()
     }
 

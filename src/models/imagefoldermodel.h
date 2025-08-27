@@ -32,8 +32,19 @@ class ImageFolderModel : public AbstractImageModel
      */
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
 
+    Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+
 public:
+    enum Status {
+        Empty = 0,
+        Loading,
+        Ready
+    };
+    Q_ENUM(Status);
+
     explicit ImageFolderModel(QObject *parent = nullptr);
+
+    Status status() const;
 
     void setUrl(const QUrl &url);
     QUrl url() const;
@@ -52,7 +63,7 @@ public:
 
 Q_SIGNALS:
     void urlChanged();
-    void finishedLoading();
+    void statusChanged(Status status);
 
 private:
     KDirModel *const m_dirModel;
@@ -60,6 +71,7 @@ private:
 
     QStringList m_mimeTypes;
     QString m_imagePath;
+    Status m_status = Empty;
 };
 
 #endif // IMAGEFOLDERMODEL_H

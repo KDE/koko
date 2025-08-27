@@ -182,9 +182,9 @@ void FileInfo::setSource(const QUrl &source)
     }
 
     m_info = result;
-    Q_EMIT infoChanged();
-
     setStatus(Ready);
+
+    Q_EMIT infoChanged();
 }
 
 FileInfo::Status FileInfo::status() const
