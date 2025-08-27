@@ -92,6 +92,7 @@ Kirigami.Page {
             visible: listView.currentItem && listView.currentItem.type == Koko.FileInfo.RasterImageType
             onTriggered: {
                 const page = root.mainWindow.pageStack.layers.push(Qt.createComponent("org.kde.photos.editor", "EditorView"), {
+                    mainWindow: root.mainWindow,
                     imagePath: listView.currentItem.imageurl,
                     // Without this, there's an odd glitch where the page will show for a brief moment
                     // before the show animation runs.
