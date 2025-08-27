@@ -17,6 +17,8 @@ import org.kde.photos.editor as PhotosEditor
 Kirigami.Page {
     id: root
 
+    required property Kirigami.ApplicationWindow mainWindow
+
     property string imagePath
     onImagePathChanged: {
         imageView.document.setBaseImage(imagePath.replace("file://", ""))
@@ -137,7 +139,7 @@ Kirigami.Page {
         id: confirmDiscardingChangeDialog
 
         onDiscardChanges: {
-            (root.QQC2.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.layers.pop();
+            root.mainWindow.pageStack.layers.pop();
         }
     }
 
