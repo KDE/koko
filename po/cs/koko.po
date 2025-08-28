@@ -52,11 +52,10 @@ msgid "XMPP"
 msgstr ""
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Umístění"
+msgstr ""
 
 #: exiv2extractor.cpp:511
 #, kde-format
@@ -155,12 +154,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr ""
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013-2020 Přispěvatelé do KDE"
+msgstr ""
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -231,11 +228,10 @@ msgid "Navigate to pictures"
 msgstr ""
 
 #: photosapplication.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "Přidat do oblíbených"
+msgstr ""
 
 #: photosapplication.cpp:64
 #, kde-format
@@ -306,11 +302,10 @@ msgstr[1] "%1 obrázky"
 msgstr[2] "%1 obrázků"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
-msgstr "Složky"
+msgstr ""
 
 #: qml/AlbumView.qml:220 qml/AlbumView.qml:260
 #, kde-format
@@ -339,11 +334,10 @@ msgid "Root"
 msgstr "Kořenový adresář"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Sdílet vybraná média"
+msgstr ""
 
 #: qml/AlbumView.qml:343
 #, kde-format
@@ -391,25 +385,22 @@ msgid "No Media Found"
 msgstr "Nenalezeno žádné médium"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:92
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
-msgstr "Obrázky"
+msgstr ""
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:98
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
-msgstr "Videa"
+msgstr ""
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:104
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
-msgstr "Oblíbené"
+msgstr ""
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:89
 #, kde-format
@@ -565,32 +556,28 @@ msgid "—"
 msgstr ""
 
 #: qml/ImageViewPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr "Oblíbené"
+msgstr ""
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
-msgstr "Odstranit z oblíbených"
+msgstr ""
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
-msgstr "Přidat do oblíbených"
+msgstr ""
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "Upravit"
+msgstr ""
 
 #: qml/ImageViewPage.qml:90
 #, kde-format
@@ -599,68 +586,59 @@ msgid "Edit this image"
 msgstr ""
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "Sdílet"
+msgstr ""
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "Sdílet video"
+msgstr ""
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "Sdílet obrázek"
+msgstr ""
 
 #: qml/ImageViewPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "Informace"
+msgstr ""
 
 #: qml/ImageViewPage.qml:141
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "Zobrazit informace o obrázku"
+msgstr ""
 
 #: qml/ImageViewPage.qml:143
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "Zobrazit informace o obrázku"
+msgstr ""
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "Promítání"
+msgstr ""
 
 #: qml/ImageViewPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
-msgstr "Spustit prezentaci"
+msgstr ""
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr "Zobrazit všechna ovládání"
+msgstr ""
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
@@ -675,11 +653,10 @@ msgid "Exit immersive viewing mode"
 msgstr ""
 
 #: qml/ImageViewPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Thumbnail Bar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr "Panel s náhledy"
+msgstr ""
 
 #: qml/ImageViewPage.qml:190
 #, kde-format
@@ -694,25 +671,22 @@ msgid "Hide the thumbnail toolbar"
 msgstr ""
 
 #: qml/ImageViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "Celá obrazovka"
+msgstr ""
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "Přejít do celoobrazovkového režimu"
+msgstr ""
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr "Ukončit režim celé obrazovky"
+msgstr ""
 
 #: qml/ImageViewPage.qml:505
 #, kde-format
@@ -834,25 +808,22 @@ msgid "Settings"
 msgstr "Nastavení"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:111
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
-msgstr "Koš"
+msgstr ""
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:138
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
-msgstr "Síť"
+msgstr ""
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:118
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Smazat záložku"
+msgstr ""
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:144
 #, kde-format
@@ -860,25 +831,22 @@ msgid "Locations"
 msgstr "Umístění"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:147
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
-msgstr "Země"
+msgstr ""
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:153
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
-msgstr "Státy"
+msgstr ""
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:159
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
-msgstr "Města"
+msgstr ""
 
 #: qml/PlacesPage.qml:115 qml/Sidebar.qml:165
 #, kde-format
@@ -886,32 +854,28 @@ msgid "Time"
 msgstr "Podle času"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:168
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
-msgstr "Roky"
+msgstr ""
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:174
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
-msgstr "Měsíce"
+msgstr ""
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:180
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
-msgstr "Týdnů"
+msgstr ""
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:186
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
-msgstr "Dnů"
+msgstr ""
 
 #: qml/PlacesPage.qml:146 qml/Sidebar.qml:192
 #, kde-format
@@ -924,11 +888,10 @@ msgid "Thumbnails size:"
 msgstr "Velikost miniatury"
 
 #: qml/Settings/GeneralConfigPage.qml:38
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow:"
-msgstr "Promítání"
+msgstr ""
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format
@@ -954,18 +917,16 @@ msgid "About KDE"
 msgstr "O prostředí KDE"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Sdílet"
+msgstr ""
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
-msgstr "Sdílet"
+msgstr ""
 
 #: qml/Sidebar.qml:53
 #, kde-format
@@ -992,77 +953,3 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
-
-#~ msgid "Unmute audio"
-#~ msgstr "Povolit zvuk"
-
-#~ msgid "Don't repeat current video"
-#~ msgstr "Neopakovat aktuální video"
-
-#~ msgid "Remove"
-#~ msgstr "Odstranit"
-
-#~ msgctxt "verb, edit an image"
-#~ msgid "Edit"
-#~ msgstr "Upravit"
-
-#~ msgctxt "verb, share an image/video"
-#~ msgid "Share"
-#~ msgstr "Sdílet"
-
-#~ msgid "More"
-#~ msgstr "Více"
-
-#~ msgctxt "dimensions"
-#~ msgid "%1 x %2"
-#~ msgstr "%1 x %2"
-
-#~ msgctxt "@label"
-#~ msgid "Size:"
-#~ msgstr "Velikost:"
-
-#~ msgctxt "@label"
-#~ msgid "Latitude:"
-#~ msgstr "Zeměpisná šířka:"
-
-#~ msgctxt "@label"
-#~ msgid "Longitude:"
-#~ msgstr "Zeměpisná délka:"
-
-#~ msgid "Pictures"
-#~ msgstr "Obrázky"
-
-#~ msgid "Videos"
-#~ msgstr "Videa"
-
-#~ msgid "Favorites"
-#~ msgstr "Oblíbené"
-
-#~ msgid "Folders"
-#~ msgstr "Složky"
-
-#, fuzzy
-#~| msgid "Pinned Folders"
-#~ msgctxt "@title:group"
-#~ msgid "Pinned Folders"
-#~ msgstr "Připnuté složky"
-
-#~ msgid "Configure…"
-#~ msgstr "Nastavit…"
-
-#~ msgid "Configure"
-#~ msgstr "Nastavit"
-
-#~ msgctxt "@title:window"
-#~ msgid "Settings"
-#~ msgstr "Nastavení"
-
-#~ msgctxt "@title:group"
-#~ msgid "Slideshow settings:"
-#~ msgstr "Nastavení prezentace:"
-
-#~ msgid "Cancel"
-#~ msgstr "Zrušit"
-
-#~ msgid "Yes"
-#~ msgstr "Ano"
