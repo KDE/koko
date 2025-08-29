@@ -19,8 +19,6 @@ Kirigami.OverlayDrawer {
     required property Koko.PhotosApplication application
     required property int sidebarWidth
 
-    property bool explicitDrawerOpen
-
     edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     handleClosedIcon.source: null
     handleOpenIcon.source: null
