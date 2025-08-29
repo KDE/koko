@@ -39,6 +39,36 @@ Kirigami.Page {
         }
     }
 
+    // Get the scale for each axis
+    function getScale(matrix: matrix4x4): vector3d {
+        return Qt.vector3d(Math.sqrt(matrix.m11**2 + matrix.m21**2 + matrix.m31**2),
+                           Math.sqrt(matrix.m12**2 + matrix.m22**2 + matrix.m32**2),
+                           Math.sqrt(matrix.m13**2 + matrix.m23**2 + matrix.m33**2))
+    }
+
+    // Get just the z rotation in degrees
+    function getZDegrees(matrix: matrix4x4): real {
+        return Math.atan2(matrix.m21, matrix.m11) // in radians
+            * (180 / Math.PI) // to degrees
+    }
+
+    // The document scale must be undone and later reapplied to rotate correctly
+    // from the viewer's perspective.
+    function rotateForViewer(matrix: matrix4x4, scale: vector3d, appliedZDegrees: real): void {
+        matrix.scale(1 / scale.x, 1 / scale.y, 1 / scale.z)
+        matrix.rotate(appliedZDegrees, Qt.vector3d(0, 0, 1))
+        matrix.scale(scale)
+    }
+
+    // The document rotation must be undone and later reapplied to scale
+    // correctly from the viewer's perspective.
+    function scaleForViewer(matrix: matrix4x4, zDegrees: real, appliedXScale: real, appliedYScale: real): void {
+        const rotationAxes = Qt.vector3d(0, 0, 1)
+        matrix.rotate(-zDegrees, rotationAxes)
+        matrix.scale(appliedXScale, appliedYScale, 1)
+        matrix.rotate(zDegrees, rotationAxes)
+    }
+
     actions: [
         Kirigami.Action {
             visible: (imageView.document.tool.options !== KQuickImageEditor.AnnotationTool.NoOptions
@@ -84,6 +114,109 @@ Kirigami.Page {
             enabled: imageView.document.redoStackDepth > 0
             onTriggered: imageView.document.redo()
             displayHint: Kirigami.DisplayHint.IconOnly
+        },
+
+        Kirigami.Action {
+            id: startResizeAction
+            checkable: true
+            checked: false
+            icon.name: checked ? "dialog-cancel" : "transform-scale"
+            text: checked ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
+        },
+        Kirigami.Action {
+            id: finishResizeAction
+            property size targetSize: imageView.document.imageSize
+            icon.name: "dialog-ok"
+            text: i18nc("@action:button Resize an image", "Resize");
+            onTriggered: {
+                let matrix = Qt.matrix4x4()
+                const sx = targetSize.width / imageView.document.imageSize.width
+                const sy = targetSize.height / imageView.document.imageSize.height
+                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
+                               sx, sy)
+                imageView.document.applyTransform(matrix)
+                startResizeAction.toggle()
+            }
+            visible: startResizeAction.checked
+            onVisibleChanged: {
+                targetSize = Qt.binding(() => imageView.document.imageSize)
+            }
+        },
+        Kirigami.Action {
+            visible: startResizeAction.checked
+            displayComponent: Controls.ToolSeparator {
+                leftPadding: Kirigami.Units.largeSpacing
+                rightPadding: leftPadding
+            }
+        },
+        Kirigami.Action {
+            visible: startResizeAction.checked
+            displayComponent: Controls.Label {
+                text: i18nc("@title:group for crop area size spinboxes", "Size:")
+            }
+        },
+        Kirigami.Action {
+            visible: startResizeAction.checked
+            displayComponent: EditorSpinBox {
+                minimumContentWidth: widthTextMetrics.width
+                from: 1
+                to: imageView.document.imageSize.width * 8
+                value: finishResizeAction.targetSize.width//selectionTool.selectionWidth / editImage.ratioX
+                onValueModified: finishResizeAction.targetSize.width = value//selectionTool.selectionWidth = value * editImage.ratioX
+            }
+        },
+        Kirigami.Action {
+            visible: startResizeAction.checked
+            displayComponent: EditorSpinBox {
+                minimumContentWidth: heightTextMetrics.width
+                from: 1
+                to: imageView.document.imageSize.height * 8
+                value: finishResizeAction.targetSize.height//selectionTool.selectionHeight / editImage.ratioY
+                onValueModified: finishResizeAction.targetSize.height = value//selectionTool.selectionHeight = value * editImage.ratioY
+            }
+        },
+
+        Kirigami.Action {
+            icon.name: "object-rotate-left"
+            text: i18nc("@action:button Rotate an image to the left", "Rotate -90°");
+            onTriggered: {
+                let matrix = Qt.matrix4x4()
+                rotateForViewer(matrix, getScale(imageView.document.transform), -90)
+                imageView.document.applyTransform(matrix)
+            }
+            visible: !startResizeAction.checked
+        },
+        Kirigami.Action {
+            icon.name: "object-rotate-right"
+            text: i18nc("@action:button Rotate an image to the right", "Rotate +90°");
+            onTriggered: {
+                let matrix = Qt.matrix4x4()
+                rotateForViewer(matrix, getScale(imageView.document.transform), 90)
+                imageView.document.applyTransform(matrix)
+            }
+            visible: !startResizeAction.checked
+        },
+        Kirigami.Action {
+            icon.name: "object-flip-vertical"
+            text: i18nc("@action:button Mirror an image vertically", "Flip");
+            onTriggered: {
+                let matrix = Qt.matrix4x4()
+                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
+                               1, -1)
+                imageView.document.applyTransform(matrix)
+            }
+            visible: !startResizeAction.checked
+        },
+        Kirigami.Action {
+            icon.name: "object-flip-horizontal"
+            text: i18nc("@action:button Mirror an image horizontally", "Mirror");
+            onTriggered: {
+                let matrix = Qt.matrix4x4()
+                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
+                               -1, 1)
+                imageView.document.applyTransform(matrix)
+            }
+            visible: !startResizeAction.checked
         }
     ]
 
@@ -140,6 +273,43 @@ Kirigami.Page {
 
         onDiscardChanges: {
             root.mainWindow.pageStack.layers.pop();
+        }
+    }
+
+    TextMetrics {
+        id: widthTextMetrics
+        text: (imageView.document.imageSize.width * 10).toLocaleString(root.locale, 'f', 0)
+    }
+
+    TextMetrics {
+        id: heightTextMetrics
+        text: (imageView.document.imageSize.height * 10).toLocaleString(root.locale, 'f', 0)
+    }
+
+    component EditorSpinBox : Controls.SpinBox {
+        id: control
+        property real minimumContentWidth: 0
+        contentItem: Controls.TextField {
+            id: textField
+            implicitWidth: control.minimumContentWidth + leftPadding + rightPadding
+            implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
+            palette: control.palette
+            leftPadding: control.spacing
+            rightPadding: control.spacing
+            topPadding: 0
+            bottomPadding: 0
+            text: control.displayText
+            font: control.font
+            color: Kirigami.Theme.textColor
+            selectionColor: Kirigami.Theme.highlightColor
+            selectedTextColor: Kirigami.Theme.highlightedTextColor
+            horizontalAlignment: Qt.AlignHCenter
+            verticalAlignment: Qt.AlignVCenter
+            readOnly: !control.editable
+            validator: control.validator
+            inputMethodHints: control.inputMethodHints
+            selectByMouse: true
+            background: null
         }
     }
 
