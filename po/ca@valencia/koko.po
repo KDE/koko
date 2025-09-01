@@ -367,7 +367,7 @@ msgstr "Selecciona-ho tot"
 #: qml/AlbumView.qml:358
 #, kde-format
 msgid "Selects all the media in the current view"
-msgstr "Selecciona tots els elements multimèdia de la vista actual"
+msgstr "Tria tots els elements multimèdia de la vista actual"
 
 #: qml/AlbumView.qml:365
 #, kde-format
@@ -787,7 +787,7 @@ msgstr "Afig una etiqueta"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr "Seleccioneu què es mostra"
+msgstr "Trieu què es mostra"
 
 #: qml/Main.qml:67
 #, kde-format
