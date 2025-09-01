@@ -374,9 +374,6 @@ Kirigami.Page {
         // we start with this index, so we don't flash initial image
         currentIndex: -1
 
-        // don't show initial image if index is not set yet
-        visible: currentIndex !== -1
-
         Component.onCompleted: { // fun fact: without null guard this function will crash the app after a certain number of calls (I think)
             if (root.startIndex) {
                 listView.currentIndex = model.mapFromSource(root.startIndex).row;
@@ -386,7 +383,7 @@ Kirigami.Page {
         property alias slideshow: slideshowManager
 
         onCountChanged: {
-            if (count === 0) {
+            if (count === 0 && imagesModel.status === ImageFolderModel.Ready) {
                 infoAction.checked = false
                 root.close();
             }
