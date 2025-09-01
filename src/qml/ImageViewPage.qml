@@ -328,7 +328,7 @@ Kirigami.Page {
     DelegateLoader {
         id: imagePlaceholder
         anchors.fill: listView
-        z: 33
+        z: 1
         asynchronous: false
         index: 0
         imageurl: root.imageurl

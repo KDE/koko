@@ -10,12 +10,7 @@
 import QtQuick
 import QtQml
 import QtQuick.Window
-import QtQuick.Templates as T
-import QtQuick.Controls as QQC2
-import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
-import org.kde.coreaddons as KCA
 import org.kde.photos.thumbnails as KokoThumbnails
 
 Loader {
