@@ -180,7 +180,6 @@ StatefulApp.StatefulWindow {
 
     function filterBy(value: string, query: string): void {
         if (albumView === null || albumView !== pageStack.currentItem) {
-
             const component = Qt.createComponent("org.kde.koko", "AlbumView");
             if (component.status === Component.Error) {
                 console.error(component.errorString());

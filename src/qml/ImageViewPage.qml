@@ -30,14 +30,17 @@ Kirigami.Page {
     // Model is either an ImageFolderModel or a proxy containing one
     // If is a different thing (tagsmodel etc) just assume ready, TODO: implement status for every model
     readonly property int modelStatus: imagesModel?.status ?? imagesModel.sourceModel?.status ?? ImageFolderModel.Ready
-    title: imageurl.toString().split("/")[imageurl.toString().split("/").length - 1]
+    title: {
+        const urlParts = imageurl.toString().split("/");
+        return urlParts[urlParts.length - 1];
+    }
 
     onImageurlChanged: exiv2Extractor.updateFavorite(imageurl.toString().replace("file://", ""))
 
     Connections {
         target: imagesModel
         ignoreUnknownSignals: true
-        function onStatusChanged() {
+        function onStatusChanged(): void {
             if (imagesModel.status !== ImageFolderModel.Ready) {
                 return;
             }
@@ -577,7 +580,6 @@ Kirigami.Page {
         readonly property bool shouldShow: !Kirigami.Settings.isMobile
                                         && root.mainWindow.controlsVisible
                                         && Koko.Config.imageViewPreview
-                                        //&& listView.count > 1
 
         anchors {
             left: parent.left
