@@ -951,11 +951,13 @@ Kirigami.Page {
 
     Shortcut {
         sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
+        enabled: imagesModel.status === ImageFolderModel.Ready
         onActivated: listView.decrementCurrentIndex()
     }
 
     Shortcut {
         sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
+        enabled: imagesModel.status === ImageFolderModel.Ready
         onActivated: listView.incrementCurrentIndex()
     }
 
