@@ -88,15 +88,6 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
-            visible: (imageView.document.tool.options !== KQuickImageEditor.AnnotationTool.NoOptions
-                              || (imageView.document.tool.type === KQuickImageEditor.AnnotationTool.SelectTool
-                              && imageView.document.selectedItem.options !== KQuickImageEditor.AnnotationTool.NoOptions))
-            displayComponent: AnnotationOptionsToolBarContents {
-                document: imageView.document
-            }
-        },
-
-        Kirigami.Action {
             id: startResizeAction
             checkable: true
             checked: false
@@ -162,49 +153,63 @@ Kirigami.Page {
         },
 
         Kirigami.Action {
-            icon.name: "object-rotate-left"
-            text: i18nc("@action:button Rotate an image to the left", "Rotate -90°");
-            onTriggered: {
-                let matrix = Qt.matrix4x4()
-                rotateForViewer(matrix, getScale(imageView.document.transform), -90)
-                imageView.document.applyTransform(matrix)
-            }
+            icon.name: "image-rotate-symbolic"
+            text: i18nc("@action:button Rotate an image", "Rotate")
             visible: !startResizeAction.checked
+
+            Kirigami.Action {
+                icon.name: "image-rotate-left-symbolic"
+                text: i18nc("@action:button Rotate an image to the left", "Rotate Left")
+                onTriggered: {
+                    let matrix = Qt.matrix4x4()
+                    rotateForViewer(matrix, getScale(imageView.document.transform), -90)
+                    imageView.document.applyTransform(matrix)
+                }
+                enabled: !startResizeAction.checked
+                shortcut: "Ctrl+Shift+R"
+            }
+
+            Kirigami.Action {
+                icon.name: "image-rotate-right-symbolic"
+                text: i18nc("@action:button Rotate an image to the right", "Rotate Right")
+                onTriggered: {
+                    let matrix = Qt.matrix4x4()
+                    rotateForViewer(matrix, getScale(imageView.document.transform), 90)
+                    imageView.document.applyTransform(matrix)
+                }
+                enabled: !startResizeAction.checked
+                shortcut: "Ctrl+R"
+            }
         },
 
         Kirigami.Action {
-            icon.name: "object-rotate-right"
-            text: i18nc("@action:button Rotate an image to the right", "Rotate +90°");
-            onTriggered: {
-                let matrix = Qt.matrix4x4()
-                rotateForViewer(matrix, getScale(imageView.document.transform), 90)
-                imageView.document.applyTransform(matrix)
-            }
+            icon.name: "image-flip-horizontal-symbolic"
+            text: i18nc("@action:button Flip/mirror an image", "Flip")
             visible: !startResizeAction.checked
-        },
 
-        Kirigami.Action {
-            icon.name: "object-flip-vertical"
-            text: i18nc("@action:button Mirror an image vertically", "Flip");
-            onTriggered: {
-                let matrix = Qt.matrix4x4()
-                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
-                               1, -1)
-                imageView.document.applyTransform(matrix)
+            Kirigami.Action {
+                icon.name: "image-flip-horizontal-symbolic"
+                text: i18nc("@action:button Flip/mirror an image horizontally", "Flip Horizontally")
+                onTriggered: {
+                    let matrix = Qt.matrix4x4()
+                    scaleForViewer(matrix, getZDegrees(imageView.document.transform),
+                                -1, 1)
+                    imageView.document.applyTransform(matrix)
+                }
+                enabled: !startResizeAction.checked
             }
-            visible: !startResizeAction.checked
-        },
 
-        Kirigami.Action {
-            icon.name: "object-flip-horizontal"
-            text: i18nc("@action:button Mirror an image horizontally", "Mirror");
-            onTriggered: {
-                let matrix = Qt.matrix4x4()
-                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
-                               -1, 1)
-                imageView.document.applyTransform(matrix)
+            Kirigami.Action {
+                icon.name: "image-flip-vertical-symbolic"
+                text: i18nc("@action:button Flip/mirror an image vertically", "Flip Vertically")
+                onTriggered: {
+                    let matrix = Qt.matrix4x4()
+                    scaleForViewer(matrix, getZDegrees(imageView.document.transform),
+                                1, -1)
+                    imageView.document.applyTransform(matrix)
+                }
+                enabled: !startResizeAction.checked
             }
-            visible: !startResizeAction.checked
         },
 
         Kirigami.Action {
@@ -395,14 +400,33 @@ Kirigami.Page {
     }
 
     footer: Controls.ToolBar {
+        contentHeight: iconTextButtonMetrics.item?.height
         contentItem: RowLayout {
             spacing: Kirigami.Units.mediumSpacing
+
+            Loader {
+                id: iconTextButtonMetrics
+                visible: false
+                sourceComponent: Controls.ToolButton {
+                    display: Controls.AbstractButton.TextBesideIcon
+                    icon.name: "edit-copy"
+                    text: "metrics"
+                }
+            }
+
+            AnnotationOptionsToolBarContents {
+                id: annotationOptionsToolBarContents
+                document: imageView.document
+                visible: (imageView.document.tool.options !== KQuickImageEditor.AnnotationTool.NoOptions
+                          || (imageView.document.tool.type === KQuickImageEditor.AnnotationTool.SelectTool
+                              && imageView.document.selectedItem.options !== KQuickImageEditor.AnnotationTool.NoOptions))
+            }
+
             Item {
                 Layout.fillWidth: true
             }
 
             Controls.Label {
-                id: zoomLabel
                 text: i18n("Zoom:")
             }
 
