@@ -10,6 +10,7 @@ import QtQuick.Templates as T
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import org.kde.koko as Koko
 import org.kde.kirigami as Kirigami
 import org.kde.kquickimageeditor as KQuickImageEditor
 import org.kde.photos.editor as PhotosEditor
@@ -32,9 +33,25 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
 
+    function save(): bool {
+        const ok = imageView.document.saveImage(imagePath.replace("file://", ""));
+        if (!ok) {
+            root.msg.type = Kirigami.MessageType.Error
+            root.msg.text = i18n("Unable to save file. Check if you have the correct permissions to save this file.")
+            root.msg.visible = true;
+
+            return false;
+        }
+
+        root.imageEdited();
+        imageView.document.modified = false;
+
+        return true;
+    }
+
     onBackRequested: (event) => {
         if (imageView.document.modified) {
-            confirmDiscardingChangeDialog.visible = true;
+            confirmDiscardingChangesDialog.visible = true;
             event.accepted = true;
         }
     }
@@ -80,49 +97,13 @@ Kirigami.Page {
         },
 
         Kirigami.Action {
-            separator: true
-        },
-
-        Kirigami.Action {
-            id: saveAction
-            enabled: imageView.document.modified
-            text: i18nc("@action:button Save image modification", "Save")
-            icon.name: "document-save"
-            onTriggered: {
-                const ok = imageView.document.saveImage(imagePath.replace("file://", ""));
-                if (!ok) {
-                    msg.type = Kirigami.MessageType.Error
-                    msg.text = i18n("Unable to save file. Check if you have the correct permission to edit this file.")
-                    msg.visible = true;
-                    return;
-                }
-                root.imageEdited();
-                imageView.document.modified = false;
-            }
-        },
-
-        Kirigami.Action {
-            text: i18nc("@action:button", "Undo")
-            icon.name: "edit-undo-symbolic"
-            enabled: imageView.document.undoStackDepth > 0
-            onTriggered: imageView.document.undo()
-            displayHint: Kirigami.DisplayHint.IconOnly
-        },
-        Kirigami.Action {
-            text: i18nc("@action:button", "Redo")
-            icon.name: "edit-redo-symbolic"
-            enabled: imageView.document.redoStackDepth > 0
-            onTriggered: imageView.document.redo()
-            displayHint: Kirigami.DisplayHint.IconOnly
-        },
-
-        Kirigami.Action {
             id: startResizeAction
             checkable: true
             checked: false
             icon.name: checked ? "dialog-cancel" : "transform-scale"
             text: checked ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
         },
+
         Kirigami.Action {
             id: finishResizeAction
             property size targetSize: imageView.document.imageSize
@@ -142,6 +123,7 @@ Kirigami.Page {
                 targetSize = Qt.binding(() => imageView.document.imageSize)
             }
         },
+
         Kirigami.Action {
             visible: startResizeAction.checked
             displayComponent: Controls.ToolSeparator {
@@ -149,12 +131,14 @@ Kirigami.Page {
                 rightPadding: leftPadding
             }
         },
+
         Kirigami.Action {
             visible: startResizeAction.checked
             displayComponent: Controls.Label {
                 text: i18nc("@title:group for crop area size spinboxes", "Size:")
             }
         },
+
         Kirigami.Action {
             visible: startResizeAction.checked
             displayComponent: EditorSpinBox {
@@ -165,6 +149,7 @@ Kirigami.Page {
                 onValueModified: finishResizeAction.targetSize.width = value//selectionTool.selectionWidth = value * editImage.ratioX
             }
         },
+
         Kirigami.Action {
             visible: startResizeAction.checked
             displayComponent: EditorSpinBox {
@@ -186,6 +171,7 @@ Kirigami.Page {
             }
             visible: !startResizeAction.checked
         },
+
         Kirigami.Action {
             icon.name: "object-rotate-right"
             text: i18nc("@action:button Rotate an image to the right", "Rotate +90°");
@@ -196,6 +182,7 @@ Kirigami.Page {
             }
             visible: !startResizeAction.checked
         },
+
         Kirigami.Action {
             icon.name: "object-flip-vertical"
             text: i18nc("@action:button Mirror an image vertically", "Flip");
@@ -207,6 +194,7 @@ Kirigami.Page {
             }
             visible: !startResizeAction.checked
         },
+
         Kirigami.Action {
             icon.name: "object-flip-horizontal"
             text: i18nc("@action:button Mirror an image horizontally", "Mirror");
@@ -217,6 +205,53 @@ Kirigami.Page {
                 imageView.document.applyTransform(matrix)
             }
             visible: !startResizeAction.checked
+        },
+
+        Kirigami.Action {
+            separator: true
+        },
+
+        Kirigami.Action {
+            text: i18nc("@action:button", "Undo")
+            icon.name: "edit-undo-symbolic"
+            enabled: imageView.document.undoStackDepth > 0
+            onTriggered: imageView.document.undo()
+            displayHint: Kirigami.DisplayHint.IconOnly
+            shortcut: StandardKey.Undo
+        },
+
+        Kirigami.Action {
+            text: i18nc("@action:button", "Redo")
+            icon.name: "edit-redo-symbolic"
+            enabled: imageView.document.redoStackDepth > 0
+            onTriggered: imageView.document.redo()
+            displayHint: Kirigami.DisplayHint.IconOnly
+            shortcut: StandardKey.Redo
+        },
+
+        Kirigami.Action {
+            separator: true
+        },
+
+        Kirigami.Action {
+            id: saveAction
+            enabled: imageView.document.modified
+            text: i18nc("@action:button Save image modification", "Save")
+            icon.name: "document-save-symbolic"
+            onTriggered: {
+                confirmSavingChangesDialog.visible = true;
+            }
+            shortcut: StandardKey.Save
+        },
+
+        Kirigami.Action {
+            id: saveAsAction
+            text: i18nc("@action:button Save As image modification", "Save As")
+            icon.name: "document-save-as-symbolic"
+            onTriggered: {
+                saveAsDialog.open();
+            }
+            shortcut: StandardKey.SaveAs
         }
     ]
 
@@ -268,12 +303,58 @@ Kirigami.Page {
         }
     }
 
-    ConfirmDiscardingChange {
-        id: confirmDiscardingChangeDialog
+    Koko.FileDialogHelper {
+        id: saveAsDialogHelper
 
-        onDiscardChanges: {
-            root.mainWindow.pageStack.layers.pop();
+        selectedFile: root.imagePath
+    }
+
+    FileDialog {
+        id: saveAsDialog
+
+        fileMode: FileDialog.SaveFile
+        selectedFile: root.imagePath
+
+        nameFilters: saveAsDialogHelper.nameFilters
+        selectedNameFilter.index: saveAsDialogHelper.selectedNameFilterIndex
+
+        onAccepted: {
+            const ok = imageView.document.saveImage(saveAsDialog.selectedFile.toString().replace("file://", ""));
+            if (!ok) {
+                msg.type = Kirigami.MessageType.Error
+                msg.text = i18n("Unable to save file. Check if you have the correct permissions to save this file.")
+                msg.visible = true;
+                return;
+            }
+
+            // TODO: Would surely be better if imagePath was also a url
+            if (root.imagePath === saveAsDialog.selectedFile) {
+                root.imageEdited();
+            }
+
+            imageView.document.modified = false;
+            root.imagePath = saveAsDialog.selectedFile;
+
+            // TODO: ImageViewPage should react to imagePath changing and show that file instead
         }
+    }
+
+    ConfirmDiscardingChanges {
+        id: confirmDiscardingChangesDialog
+
+        onSaveChanges: {
+            if (root.save()) {
+                root.mainWindow.pageStack.layers.pop();
+            }
+        }
+
+        onDiscardChanges: root.mainWindow.pageStack.layers.pop()
+    }
+
+    ConfirmSavingChanges {
+        id: confirmSavingChangesDialog
+
+        onSaveChanges: root.save();
     }
 
     TextMetrics {

@@ -3,29 +3,24 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
+
 import org.kde.kirigamiaddons.components as Components
 
 Components.MessageDialog {
     id: root
 
-    signal discardChanges()
+    signal saveChanges()
 
-    title: i18n("Discard changes")
-
+    title: i18n("Save")
+    subtitle: i18n("Are you sure you want to save changes? The original image will be overwritten.")
     dialogType: Components.MessageDialog.Warning
 
-    QQC2.Label {
-        text: i18n("Are you sure you want to discard all changes?")
-        wrapMode: Text.WordWrap
-        Layout.fillWidth: true
-    }
+    standardButtons: QQC2.Dialog.Ok |  QQC2.Dialog.Cancel
 
-    standardButtons: QQC2.Dialog.Cancel | QQC2.Dialog.Ok
-
-    onRejected: close();
     onAccepted: {
-        discardChanges();
+        saveChanges();
         close();
     }
+
+    onRejected: close()
 }

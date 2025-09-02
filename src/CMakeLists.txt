@@ -29,6 +29,7 @@ add_library(koko_static STATIC
     photosapplication.h
     devicepixelratiohelper.cpp
     checkerboardimageprovider.cpp
+    filedialoghelper.cpp
 )
 
 kconfig_target_kcfg_file(koko_static
