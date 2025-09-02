@@ -36,6 +36,7 @@ Kirigami.Page {
             }
             stopLoadingImages.restart();
             startIndex = listView.model.mapFromSource(listView.model.sourceModel.index(listView.model.sourceModel.indexForUrl(Koko.OpenFileModel.urlToOpen), 0)).row;
+            thumbnailView.positionViewAtIndex(startIndex, ListView.Contain);
         }
     }
 
@@ -666,7 +667,7 @@ Kirigami.Page {
         }
 
         visible: anchors.bottomMargin > -height
-        implicitHeight: thumbnailView.delegateSize + (padding * 2)
+        implicitHeight: thumbnailView.delegateSize + (padding * 2) + thumbnailScrollView.QQC2.ScrollBar.horizontal.height
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
         Kirigami.Theme.inherit: false
@@ -687,7 +688,12 @@ Kirigami.Page {
                 }
             }
 
-            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+            QQC2.ScrollBar.horizontal.anchors {
+                left: thumbnailScrollView.left
+                right: thumbnailScrollView.right
+                bottom: thumbnailScrollView.bottom
+                margins: -thumbnailToolBar.padding
+            }
             QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
 
             ThumbnailStrip {
