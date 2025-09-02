@@ -4,6 +4,8 @@
 
 #include "dirmodelutils.h"
 
+#include <QImageWriter>
+#include <QMimeDatabase>
 #include <QStandardPaths>
 
 #include <KIO/MkdirJob>

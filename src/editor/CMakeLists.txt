@@ -14,7 +14,8 @@ ecm_target_qml_sources(photos_editor_static SOURCES
     AnnotationOptionsToolBarContents.qml
     AnnotationsToolBarContents.qml
     ButtonGrid.qml
-    ConfirmDiscardingChange.qml
+    ConfirmDiscardingChanges.qml
+    ConfirmSavingChanges.qml
     EditorView.qml
     ImageView.qml
 )
