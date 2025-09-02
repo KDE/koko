@@ -40,6 +40,22 @@ ListView {
     displayMarginEnd: thumbnailView.containerPadding
     reuseItems: true
 
+    onContentXChanged: {
+        const itemLeft = currentItem?.mapToItem(this, 0,0).x ?? -1;
+        const itemRight = currentItem?.mapToItem(this, currentItem.width, 0).x ?? -1;
+
+        // Disable apply range when current item goes out of view,
+        // because of a ListView problem with ApplyRange that does the
+        // full animation from old index to the new one even if is already scrolled
+        // to see the new index, making it look quite glitchy
+        // see https://bugreports.qt.io/browse/QTBUG-139761
+        if (!currentItem || itemRight < 0 || itemLeft > width) {
+            highlightRangeMode = ListView.NoHighlightRange
+        } else {
+            highlightRangeMode = ListView.ApplyRange
+        }
+    }
+
     // Center content when there aren't enough items to fill the width
     header: Item {
         width: Math.max(0, thumbnailView.remainingWidth / 2)
