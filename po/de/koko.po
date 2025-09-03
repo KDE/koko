@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:40+0000\n"
+"POT-Creation-Date: 2025-09-03 00:41+0000\n"
 "PO-Revision-Date: 2023-05-30 18:44+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -150,7 +150,7 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Orte"
 
-#: main.cpp:63
+#: main.cpp:64
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title"
 #| msgid "<application>Koko</application>"
@@ -158,7 +158,7 @@ msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, fuzzy, kde-kuit-format
 #| msgctxt "@title"
 #| msgid "Koko is an image viewer for your image collection."
@@ -166,7 +166,7 @@ msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Koko ist ein Bildbetrachter für Ihre Bildersammlung."
 
-#: main.cpp:67
+#: main.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:credit"
 #| msgid "(c) 2013-2020 KDE Contributors"
@@ -174,54 +174,54 @@ msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "Copyright 2013-2020, KDE-Mitwirkende"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Entwickler"
 
-#: main.cpp:77
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Reset the database"
 msgstr "Datenbank zurücksetzen"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgid "path of image you want to open"
 msgstr "Pfad zum Bild, das Sie öffnen möchten"
@@ -729,23 +729,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Vollbildmodus beenden"
 
-#: qml/ImageViewPage.qml:505
+#: qml/ImageViewPage.qml:514
 #, kde-format
 msgid "Previous image"
 msgstr "Vorheriges Bild"
 
-#: qml/ImageViewPage.qml:538
+#: qml/ImageViewPage.qml:547
 #, kde-format
 msgid "Next image"
 msgstr "Nächstes Bild"
 
-#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:865 qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diaschau-Intervall:"
 
-#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:882 qml/Settings/GeneralConfigPage.qml:126
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -753,24 +753,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 Sekunde"
 msgstr[1] "%1 Sekunden"
 
-#: qml/ImageViewPage.qml:929
+#: qml/ImageViewPage.qml:938
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Wiederholen"
 
-#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:947 qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Zufällig"
 
-#: qml/ImageViewPage.qml:950
+#: qml/ImageViewPage.qml:959
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Diaschau anhalten"
 
-#: qml/ImageViewPage.qml:964
+#: qml/ImageViewPage.qml:973
 #, kde-format
 msgid "Show All Controls"
 msgstr "Alle Regler anzeigen"
@@ -943,10 +943,46 @@ msgid "Thumbnails size:"
 msgstr "Vorschaubildgröße"
 
 #: qml/Settings/GeneralConfigPage.qml:38
+#, kde-format
+msgctxt "@title:group"
+msgid "Image View Background"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:43
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Black"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:53
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "White"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:64
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:65
+#, kde-format
+msgctxt "info"
+msgid "Use the background color specified by the theme"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:81
+#, kde-format
+msgctxt "@option:check"
+msgid "Show a checkerboard background behind transparent images"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:group"
-msgid "Slideshow:"
+msgid "Slideshow"
 msgstr "Diaschau"
 
 #: qml/Settings/PhotosConfigurationView.qml:17

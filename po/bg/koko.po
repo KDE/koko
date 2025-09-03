@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:40+0000\n"
+"POT-Creation-Date: 2025-09-03 00:41+0000\n"
 "PO-Revision-Date: 2025-08-16 22:11+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -143,72 +143,72 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "Копиране на местоположението"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Снимки</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Снимки е програма за преглед на вашата колекция от изображения."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "(c) 2013-%1 Сътрудници на KDE"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Вишеш Ханда"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Разработчик"
 
-#: main.cpp:77
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Reset the database"
 msgstr "Нулиране на базата с данни"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgid "path of image you want to open"
 msgstr "път до изображението, което искате да отворите"
@@ -689,23 +689,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Изход от цял екран"
 
-#: qml/ImageViewPage.qml:505
+#: qml/ImageViewPage.qml:514
 #, kde-format
 msgid "Previous image"
 msgstr "Предишно изображение"
 
-#: qml/ImageViewPage.qml:538
+#: qml/ImageViewPage.qml:547
 #, kde-format
 msgid "Next image"
 msgstr "Следващо изображение"
 
-#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:865 qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Пауза между изображенията:"
 
-#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:882 qml/Settings/GeneralConfigPage.qml:126
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -713,24 +713,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 секунда"
 msgstr[1] "%1 секунди"
 
-#: qml/ImageViewPage.qml:929
+#: qml/ImageViewPage.qml:938
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Повторение"
 
-#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:947 qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Случаен ред"
 
-#: qml/ImageViewPage.qml:950
+#: qml/ImageViewPage.qml:959
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Спиране на прожекцията"
 
-#: qml/ImageViewPage.qml:964
+#: qml/ImageViewPage.qml:973
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показване на всичките контроли"
@@ -890,7 +890,45 @@ msgstr "Размер на миниатюри:"
 #: qml/Settings/GeneralConfigPage.qml:38
 #, kde-format
 msgctxt "@title:group"
-msgid "Slideshow:"
+msgid "Image View Background"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:43
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Black"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:53
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "White"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:64
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:65
+#, kde-format
+msgctxt "info"
+msgid "Use the background color specified by the theme"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:81
+#, kde-format
+msgctxt "@option:check"
+msgid "Show a checkerboard background behind transparent images"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:92
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Slideshow:"
+msgctxt "@title:group"
+msgid "Slideshow"
 msgstr "Прожекция:"
 
 #: qml/Settings/PhotosConfigurationView.qml:17

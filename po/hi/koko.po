@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:40+0000\n"
+"POT-Creation-Date: 2025-09-03 00:41+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -150,19 +150,19 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "स्थान कॉपी करें"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>फ़ोटो</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "फ़ोटो आपके छवि संग्रह के लिए एक छवि दर्शक है."
 
-#: main.cpp:67
+#: main.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:credit"
 #| msgid "(c) 2013-2020 KDE Contributors"
@@ -170,54 +170,54 @@ msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "(सी) 2013-2020 केडीई योगदानकर्ता"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "डेवलपर"
 
-#: main.cpp:77
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "अतुल शर्मा"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "मार्को मार्टिन"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "निकोलस फेल्ला"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "कार्ल स्वान"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "मिकेल जॉनसन"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Reset the database"
 msgstr "डेटाबेस रीसेट करें"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgid "path of image you want to open"
 msgstr "छवि का पथ जिसे आप खोलना चाहते हैं"
@@ -723,23 +723,23 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "पूर्णस्क्रीन से बाहर निकलें"
 
-#: qml/ImageViewPage.qml:505
+#: qml/ImageViewPage.qml:514
 #, kde-format
 msgid "Previous image"
 msgstr "पिछली छवि"
 
-#: qml/ImageViewPage.qml:538
+#: qml/ImageViewPage.qml:547
 #, kde-format
 msgid "Next image"
 msgstr "अगली छवि"
 
-#: qml/ImageViewPage.qml:856 qml/Settings/GeneralConfigPage.qml:60
+#: qml/ImageViewPage.qml:865 qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "स्लाइड शो अंतराल:"
 
-#: qml/ImageViewPage.qml:873 qml/Settings/GeneralConfigPage.qml:72
+#: qml/ImageViewPage.qml:882 qml/Settings/GeneralConfigPage.qml:126
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -747,24 +747,24 @@ msgid_plural "%1 seconds"
 msgstr[0] "%1 सेकंड"
 msgstr[1] "%1 सेकंड"
 
-#: qml/ImageViewPage.qml:929
+#: qml/ImageViewPage.qml:938
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "कुंडली"
 
-#: qml/ImageViewPage.qml:938 qml/Settings/GeneralConfigPage.qml:46
+#: qml/ImageViewPage.qml:947 qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "यादृच्छिक करें"
 
-#: qml/ImageViewPage.qml:950
+#: qml/ImageViewPage.qml:959
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "स्लाइड शो रोकें"
 
-#: qml/ImageViewPage.qml:964
+#: qml/ImageViewPage.qml:973
 #, kde-format
 msgid "Show All Controls"
 msgstr "सभी नियंत्रण दिखाएं"
@@ -934,10 +934,46 @@ msgid "Thumbnails size:"
 msgstr "थंबनेल का आकार:"
 
 #: qml/Settings/GeneralConfigPage.qml:38
+#, kde-format
+msgctxt "@title:group"
+msgid "Image View Background"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:43
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Black"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:53
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "White"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:64
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:65
+#, kde-format
+msgctxt "info"
+msgid "Use the background color specified by the theme"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:81
+#, kde-format
+msgctxt "@option:check"
+msgid "Show a checkerboard background behind transparent images"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:92
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:group"
-msgid "Slideshow:"
+msgid "Slideshow"
 msgstr "स्लाइड शो"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
