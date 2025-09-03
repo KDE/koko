@@ -79,7 +79,6 @@ StatefulApp.StatefulWindow {
     function updateGlobalDrawer(): void {
         if (globalDrawer) {
             globalDrawer.drawerOpen = !globalDrawer.modal;
-            globalDrawer.explicitDrawerOpen = !globalDrawer.modal;
         }
     }
 
