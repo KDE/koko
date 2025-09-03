@@ -17,7 +17,7 @@ import org.kde.koko.image
 MouseArea {
     id: root
     readonly property bool interactive: Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height
-    property bool dragging: root.drag.active || pinchArea.pinch.active
+    property bool dragging: root.drag.active || pinchHandler.active
 
     /**
      * Properties used for contentItem manipulation.
@@ -206,43 +206,42 @@ MouseArea {
         contentItem.y = boundedContentY(contentItem.y)
     }
 
-    // TODO: test this with a device capable of generating pinch events
-    PinchArea {
-        id: pinchArea
-        property real initialWidth: 0
-        property real initialHeight: 0
-        parent: root
-        anchors.fill: parent
-        enabled: root.enabled
-        pinch {
-            dragAxis: Pinch.XAndYAxis
-            target: root.drag.target
-            minimumX: root.drag.minimumX
-            maximumX: root.drag.maximumX
-            minimumY: root.drag.minimumY
-            maximumY: root.drag.maximumY
-            minimumScale: 1
-            maximumScale: 1
-            minimumRotation: 0
-            maximumRotation: 0
+    PinchHandler {
+        id: pinchHandler
+        target: null//contentItem
+        rotationAxis.enabled: false
+        property real startPosX
+        property real startPosY
+
+        onActiveChanged: if (active) {
+            startPosX = contentItem.x;
+            startPosY = contentItem.y;
         }
 
-        onPinchStarted: {
-            initialWidth = contentItem.width
-            initialHeight = contentItem.height
-        }
+        scaleAxis.onActiveValueChanged: (delta) => {
+            contentItem.width = boundedContentWidth(contentItem.width * delta);
+            contentItem.height = boundedContentHeight(contentItem.height * delta);
 
-        onPinchUpdated: {
-            // adjust content pos due to drag
-            //contentItem.x = pinch.previousCenter.x - pinch.center.x + contentItem.x
-            //contentItem.y = pinch.previousCenter.y - pinch.center.y + contentItem.y
+            const centroidInItem = Qt.point(
+                centroid.sceneGrabPosition.x - startPosX,
+                centroid.sceneGrabPosition.y - startPosY
+            );
 
-            // resize content
-            const newSize = root.multiplyContentSize(pinch.scale, initialWidth, initialHeight)
-            contentItem.width = newSize.width
-            contentItem.height = newSize.height
-            //contentItem.x = boundedContentX(contentItem.x - pinch.center.x)
-            //contentItem.y = boundedContentY(contentItem.y - pinch.center.y)
+            const scaledCentroidInItem = Qt.point(
+                centroidInItem.x * activeScale,
+                centroidInItem.y * activeScale
+            );
+
+            contentItem.x = boundedContentX(
+                startPosX +
+                centroidInItem.x - scaledCentroidInItem.x +
+                centroid.position.x - centroid.sceneGrabPosition.x
+            );
+            contentItem.y = boundedContentY(
+                startPosY +
+                centroidInItem.y - scaledCentroidInItem.y +
+                centroid.position.y - centroid.sceneGrabPosition.y
+            );
         }
     }
 
