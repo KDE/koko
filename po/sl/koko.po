@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-03 00:41+0000\n"
-"PO-Revision-Date: 2025-07-10 07:35+0200\n"
+"PO-Revision-Date: 2025-09-03 07:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -897,45 +897,43 @@ msgstr "Velikost predogledne sličice:"
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "Ozadje pogleda slike"
 
 #: qml/Settings/GeneralConfigPage.qml:43
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "Črno"
 
 #: qml/Settings/GeneralConfigPage.qml:53
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "Belo"
 
 #: qml/Settings/GeneralConfigPage.qml:64
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "Privzeta tema"
 
 #: qml/Settings/GeneralConfigPage.qml:65
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "Uporabi barvo ozadja, ki jo določa tema"
 
 #: qml/Settings/GeneralConfigPage.qml:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Prikaži ozadje šahovnice za prozornimi slikami"
 
 #: qml/Settings/GeneralConfigPage.qml:92
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
-msgstr "Predstavitev:"
+msgstr "Predstavitev"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format

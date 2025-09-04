@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-03 00:41+0000\n"
-"PO-Revision-Date: 2025-07-10 03:48+0100\n"
+"PO-Revision-Date: 2025-09-03 22:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -892,45 +892,43 @@ msgstr "Tamaño de las miniaturas:"
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "Fondo de la vista de imágenes"
 
 #: qml/Settings/GeneralConfigPage.qml:43
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "Negro"
 
 #: qml/Settings/GeneralConfigPage.qml:53
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "Blanco"
 
 #: qml/Settings/GeneralConfigPage.qml:64
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "Predeterminado del tema"
 
 #: qml/Settings/GeneralConfigPage.qml:65
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "Usar el color de fondo especificado por el tema"
 
 #: qml/Settings/GeneralConfigPage.qml:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Mostrar un fondo ajedrezado detrás de las imágenes transparentes"
 
 #: qml/Settings/GeneralConfigPage.qml:92
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
-msgstr "Presentación:"
+msgstr "Presentación"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format
@@ -992,9 +990,3 @@ msgstr "Preferencias"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Añadir nueva etiqueta…"
-
-#~ msgid "Unmute audio"
-#~ msgstr "Reanudar el sonido"
-
-#~ msgid "Don't repeat current video"
-#~ msgstr "No repetir el vídeo actual"
