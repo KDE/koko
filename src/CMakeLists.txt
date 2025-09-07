@@ -28,6 +28,7 @@ add_library(koko_static STATIC
     photosapplication.h
     devicepixelratiohelper.cpp
     checkerboardimageprovider.cpp
+    printerhelper.cpp
 )
 
 kconfig_target_kcfg_file(koko_static
@@ -64,6 +65,11 @@ target_link_libraries(koko_static PUBLIC
     KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
 )
+
+if(Qt6PrintSupport_FOUND)
+    target_compile_definitions(koko_static PUBLIC HAVE_PRINTSUPPORT)
+    target_link_libraries(koko_static PUBLIC Qt::PrintSupport)
+endif()
 
 ecm_add_qml_module(koko_static
     URI "org.kde.koko"

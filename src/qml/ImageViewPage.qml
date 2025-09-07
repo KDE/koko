@@ -167,6 +167,19 @@ Kirigami.Page {
             onTriggered: slideshowManager.start()
         },
         Kirigami.Action {
+            id: printAction
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            text: i18nc("@action:intoolbar Print the image", "&Print")
+            icon.name: "document-print-symbolic"
+            tooltip: i18nc("@info:tooltip", "Print image")
+            visible: Koko.PrinterHelper.printerSupportAvailable
+                && listView.currentItem
+                && (listView.currentItem.type === Koko.FileInfo.RasterImageType
+                    || listView.currentItem.type === Koko.FileInfo.VectorImageType)
+            shortcut: StandardKey.Print
+            onTriggered: Koko.PrinterHelper.printFileFromUrl(listView.currentItem.imageurl, root.Window.window)
+        },
+        Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             separator: true
             visible: slideshowAction.visible
