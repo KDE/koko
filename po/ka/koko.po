@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 04:42+0200\n"
+"PO-Revision-Date: 2025-09-08 05:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -637,14 +637,13 @@ msgstr "სლაიდშოუს დაწყება"
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "&ბეჭდვა"
 
 #: qml/ImageViewPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr "წინა გამოსახულება"
+msgstr "გამოსახულების დაბეჭდვა"
 
 #: qml/ImageViewPage.qml:190
 #, kde-format

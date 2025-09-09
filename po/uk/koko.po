@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 18:12+0300\n"
+"PO-Revision-Date: 2025-09-08 16:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -645,14 +645,13 @@ msgstr "Почати показ слайдів"
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "&Надрукувати"
 
 #: qml/ImageViewPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr "Попереднє зображення"
+msgstr "Надрукувати зображення"
 
 #: qml/ImageViewPage.qml:190
 #, kde-format

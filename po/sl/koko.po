@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-08 00:41+0000\n"
-"PO-Revision-Date: 2025-09-03 07:27+0200\n"
+"PO-Revision-Date: 2025-09-08 06:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -643,14 +643,13 @@ msgstr "Začni predstavitev"
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "Tiskaj"
 
 #: qml/ImageViewPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr "Prejšnja slika"
+msgstr "Natisni sliko"
 
 #: qml/ImageViewPage.qml:190
 #, kde-format
