@@ -41,7 +41,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="sv">Foton</name>
   <name xml:lang="tr">Fotoğraflar</name>
   <name xml:lang="uk">Фотографії</name>
-  <name xml:lang="x-test">xxPhotosxx</name>
   <name xml:lang="zh-CN">照片</name>
   <name xml:lang="zh-TW">相片</name>
   <summary>Image Gallery</summary>
@@ -84,7 +83,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="sv">Bildgalleri</summary>
   <summary xml:lang="tr">Görsel Galerisi</summary>
   <summary xml:lang="uk">Галерея зображень</summary>
-  <summary xml:lang="x-test">xxImage Galleryxx</summary>
   <summary xml:lang="zh-CN">图像库</summary>
   <summary xml:lang="zh-TW">圖片庫</summary>
   <description>
@@ -127,7 +125,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <p xml:lang="sv">Ett bildgalleriprogram</p>
     <p xml:lang="tr">Bir görsel galerisi uygulaması</p>
     <p xml:lang="uk">Програма для роботи з галереями зображень</p>
-    <p xml:lang="x-test">xxAn Image gallery applicationxx</p>
     <p xml:lang="zh-CN">一款图像库应用</p>
     <p xml:lang="zh-TW">提供圖片庫功能的應用程式</p>
   </description>
