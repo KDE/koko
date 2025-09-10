@@ -206,14 +206,14 @@ Row {
                     dialog.currentColor = root.useSelectionOptions ? root.selectedItem.fillColor : root.tool.fillColor;
                     dialog.accepted.connect(() => {
                         if (root.tool.type == AnnotationTool.SelectTool) {
-                            root.selectedItem.fillColor = dialog.color;
+                            root.selectedItem.fillColor = dialog.currentColor;
                             root.selectedItem.commitChanges();
                         } else if (root.tool.type == AnnotationTool.TextTool && root.selectedItem.options & AnnotationTool.TextOption) {
-                            root.tool.fillColor = dialog.color;
-                            root.selectedItem.fillColor = dialog.color;
+                            root.tool.fillColor = dialog.currentColor;
+                            root.selectedItem.fillColor = dialog.currentColor;
                             root.selectedItem.commitChanges();
                         } else {
-                            root.tool.fillColor = dialog.color;
+                            root.tool.fillColor = dialog.currentColor;
                         }
                     });
 
@@ -356,7 +356,7 @@ Row {
                     border.width: 1
                 }
                 onClicked: {
-                    const component = Qt.createComponent("Qt.labs.platform", "ColorDialog");
+                    const component = Qt.createComponent("QtQuick.Dialogs", "ColorDialog");
                     const dialog = component.createObject(root);
                     dialog.currentColor = root.useSelectionOptions ? root.selectedItem.fontColor : root.tool.fontColor;
                     dialog.accepted.connect(() => {
