@@ -11,25 +11,22 @@
 
 import QtQuick
 import QtQml
-import QtMultimedia
-import org.kde.kirigami as Kirigami
-import org.kde.koko.image as KokoImage
+import org.kde.koko as Koko
 
 BaseImageDelegate {
     id: root
 
-    loaded: vector.status == KokoImage.VectorImage.Ready
-    loading: vector.status == KokoImage.VectorImage.Loading
+    loaded: vector.status === Koko.VectorImage.Ready
+    loading: vector.status === Koko.VectorImage.Loading
 
     sourceWidth: vector.sourceSize.width
     sourceHeight: vector.sourceSize.height
 
-    data: KokoImage.VectorImage {
+    data: Koko.VectorImage {
         id: vector
-        anchors.fill: parent
+
+        anchors.fill: root
         source: root.source
         sourceClipRect: Qt.rect(-root.contentX, -root.contentY, root.contentWidth, root.contentHeight)
     }
 }
-
-

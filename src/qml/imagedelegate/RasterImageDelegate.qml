@@ -10,8 +10,6 @@
  */
 
 import QtQuick
-import QtQml
-import org.kde.kirigami as Kirigami
 import org.kde.koko
 
 BaseImageDelegate {

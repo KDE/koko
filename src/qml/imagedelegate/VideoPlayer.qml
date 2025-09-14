@@ -12,7 +12,7 @@ import QtMultimedia
 import org.kde.coreaddons as KCA
 
 Item {
-    id: videoPlayerRoot
+    id: root
 
     required property Kirigami.ApplicationWindow mainWindow
 
@@ -28,7 +28,7 @@ Item {
 
     // convenience function
     function play(): void {
-        if (mediaPlayer.status != MediaPlayer.Loaded) {
+        if (mediaPlayer.mediaStatus != MediaPlayer.LoadedMedia) {
             mediaPlayer.autoPlay = true
         } else {
             mediaPlayer.play();
@@ -71,15 +71,15 @@ Item {
     MediaPlayer {
         id: mediaPlayer
 
-        source: videoPlayerRoot.source
+        source: root.source
 
         Component.onCompleted: showFirstFrame()
 
         onPlaybackStateChanged: if (playbackState === MediaPlayer.StoppedState) {
-            videoPlayerRoot.playbackFinished();
+            root.playbackFinished();
             mediaPlayer.showFirstFrame();
         } else if (playbackState === MediaPlayer.PlayingState) {
-            videoPlayerRoot.playbackStarted();
+            root.playbackStarted();
         }
 
         audioOutput: AudioOutput {
@@ -124,8 +124,8 @@ Item {
     VideoOutput {
         id: videoOutput
 
-        implicitWidth: mediaPlayer.metaData.resolution ? mediaPlayer.metaData.resolution.width : 0
-        implicitHeight: mediaPlayer.metaData.resolution ? mediaPlayer.metaData.resolution.height : 0
+        implicitWidth: mediaPlayer.metaData.value(MediaMetaData.Resolution)?.width ?? 0
+        implicitHeight: mediaPlayer.metaData.value(MediaMetaData.Resolution)?.height ?? 0
 
         anchors.fill: parent
 
@@ -167,7 +167,7 @@ Item {
             height: Kirigami.Units.gridUnit * 4
             opacity: 0.6
             gradient: Gradient {
-                GradientStop { position: 0.0; color: "transparent" }
+                GradientStop { position: 0.0; color: "#00000000" }
                 GradientStop { position: 1.0; color: "black" }
             }
         }
@@ -301,7 +301,7 @@ Item {
 
             Item {
                 Layout.fillWidth: true
-                height: 1
+                Layout.preferredHeight: 1
             }
 
             Controls.Label {

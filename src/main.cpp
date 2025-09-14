@@ -35,7 +35,6 @@
 #include "kokoconfig.h"
 #include "openfilemodel.h"
 #include "processor.h"
-#include "vectorimage.h"
 #include "version.h"
 
 #ifndef Q_OS_ANDROID
@@ -175,7 +174,6 @@ int main(int argc, char **argv)
                          }
                      });
 
-    qmlRegisterType<VectorImage>("org.kde.koko.image", 1, 0, "VectorImage");
     qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);

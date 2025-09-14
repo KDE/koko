@@ -12,7 +12,6 @@ import QtQml
 import QtMultimedia
 import org.kde.kirigami as Kirigami
 import org.kde.koko
-import org.kde.koko.image
 
 MouseArea {
     id: root

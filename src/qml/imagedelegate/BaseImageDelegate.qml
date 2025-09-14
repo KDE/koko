@@ -10,11 +10,10 @@
  */
 
 import QtQuick
+import QtQuick.Controls as Controls
 import QtQml
-import QtMultimedia
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
-import org.kde.koko.image
 
 import ".."
 
@@ -69,13 +68,13 @@ ZoomArea {
     Timer {
         id: doubleClickTimer
         interval: Qt.styleHints.mouseDoubleClickInterval + 1
-        onTriggered: applicationWindow().controlsVisible = !applicationWindow().controlsVisible
+        onTriggered: (root.Controls.ApplicationWindow.window as Koko.Main).controlsVisible = !(root.Controls.ApplicationWindow.window as Koko.Main).controlsVisible
     }
 
     onClicked: (mouse) => {
         if (mouse.button === Qt.LeftButton) {
-            if (applicationWindow().contextDrawer) {
-                applicationWindow().contextDrawer.drawerOpen = false
+            if ((Controls.ApplicationWindow.window as Koko.Main).contextDrawer) {
+                (Controls.ApplicationWindow.window as Koko.Main).contextDrawer.drawerOpen = false
             }
             doubleClickTimer.restart()
         }

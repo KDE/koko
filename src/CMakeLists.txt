@@ -77,6 +77,10 @@ ecm_add_qml_module(koko_static
     IMPORTS
         org.kde.photos.models
         org.kde.photos.thumbnails
+    DEPENDENCIES
+        QtCore
+        QtQml
+        QtQuick
 )
 
 ecm_target_qml_sources(koko_static SOURCES

@@ -12,16 +12,20 @@
 #include <QQuickPaintedItem>
 #include <QSvgRenderer>
 #include <memory>
+#include <qqmlregistration.h>
 
 class VectorImage : public QQuickPaintedItem
 {
     Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(Status status READ status NOTIFY statusChanged) // read only
     Q_PROPERTY(QRectF sourceClipRect READ sourceClipRect WRITE setSourceClipRect NOTIFY sourceClipRectChanged)
     Q_PROPERTY(QUrl source READ source WRITE setSource NOTIFY sourceChanged)
     Q_PROPERTY(QSize sourceSize READ sourceSize NOTIFY sourceSizeChanged) // read only
+
 public:
-    VectorImage(QQuickItem *parent = nullptr);
+    explicit VectorImage(QQuickItem *parent = nullptr);
 
     enum Status { Null, Ready, Loading, Error };
     Q_ENUM(Status)

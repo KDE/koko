@@ -12,17 +12,16 @@
 import QtQuick
 import QtQml
 import QtMultimedia
-import org.kde.kirigami as Kirigami
 import org.kde.koko
 
 BaseImageDelegate {
     id: root
 
     required property bool autoplay
-    required property Item slideShow
+    required property SlideshowManager slideShow
 
-    loaded: player.mediaStatus === MediaPlayer.Loaded
-    loading: player.mediaStatus === MediaPlayer.Loading
+    loaded: player.mediaStatus === MediaPlayer.LoadedMedia
+    loading: player.mediaStatus === MediaPlayer.LoadingMedia
 
     sourceWidth: player.implicitWidth
     sourceHeight: player.implicitHeight
