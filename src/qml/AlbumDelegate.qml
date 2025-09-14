@@ -27,8 +27,6 @@ T.ItemDelegate {
     property alias thumbnailPriority: image.priority
     property ItemSelectionModel selectionModel
 
-    property bool selected: false
-
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
