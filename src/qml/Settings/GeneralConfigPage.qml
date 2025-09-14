@@ -137,26 +137,26 @@ FormCard.FormCardPage {
                         property int oldCursorPosition: cursorPosition
                         implicitWidth: intervalMetrics.width + leftPadding + rightPadding
                         implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
-                        palette: parent.palette
-                        leftPadding: parent.spacing
-                        rightPadding: parent.spacing
+                        palette: intervalSpinBox.palette
+                        leftPadding: intervalSpinBox.spacing
+                        rightPadding: intervalSpinBox.spacing
                         topPadding: 0
                         bottomPadding: 0
-                        font: parent.font
+                        font: intervalSpinBox.font
                         color: palette.text
                         selectionColor: palette.highlight
                         selectedTextColor: palette.highlightedText
                         horizontalAlignment: Qt.AlignHCenter
                         verticalAlignment: Qt.AlignVCenter
-                        readOnly: !parent.editable
-                        validator: parent.validator
-                        inputMethodHints: parent.inputMethodHints
+                        readOnly: !intervalSpinBox.editable
+                        validator: intervalSpinBox.validator
+                        inputMethodHints: intervalSpinBox.inputMethodHints
                         selectByMouse: true
                         background: null
                         // Trying to mimic some of QSpinBox's behavior with suffixes
                         onTextChanged: if (!inputMethodComposing) {
-                            const valueText = parent.valueFromText(text).toString()
-                            const valueIndex = parent.displayText.indexOf(valueText)
+                            const valueText = intervalSpinBox.valueFromText(text).toString()
+                            const valueIndex = intervalSpinBox.displayText.indexOf(valueText)
                             if (valueIndex >= 0) {
                                 console.log(valueIndex, cursorPosition)
                                 cursorPosition = Math.min(Math.max(valueIndex, oldCursorPosition), valueIndex + valueText.length)
