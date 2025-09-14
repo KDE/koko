@@ -6,9 +6,7 @@
 import QtQuick
 import QtQml
 import QtQuick.Window
-import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 import org.kde.koko.private as KokoPrivate
@@ -20,7 +18,7 @@ Kirigami.OverlayDrawer {
     required property Koko.PhotosApplication application
 
     drawerOpen: false
-    edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
+    edge: Application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
     handleVisible: false
 
     leftPadding: root.mirrored && vScrollBar.visible ? vScrollBar.width : 0

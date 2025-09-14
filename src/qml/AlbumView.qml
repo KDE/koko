@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
@@ -173,17 +175,25 @@ Kirigami.ScrollablePage {
                     }
                     Repeater {
                         id: repeater
+
                         model: page.isFolderView ? Koko.DirModelUtils.getUrlParts(page.model.sourceModel.url) : 0
+
                         Row {
+                            id: delegate
+
+                            required property int index
+                            required property var modelData
+
                             DragHandler {
                                 enabled: scrollView.contentWidth > scrollView.width
                                 yAxis.enabled: false
                                 xAxis.enabled: false
                             }
+
                             Controls.ToolButton {
                                 height: Kirigami.Units.gridUnit * 2
                                 anchors.verticalCenter: parent.verticalCenter
-                                text: modelData
+                                text: delegate.modelData
                                 onClicked: {
                                     const nextUrl = Koko.DirModelUtils.partialUrlForIndex(page.model.sourceModel.url, index + 1);
 
@@ -200,9 +210,10 @@ Kirigami.ScrollablePage {
                                     page.model.sourceModel.url = nextUrl;
                                 }
                             }
+
                             Kirigami.Icon {
                                 anchors.verticalCenter: parent.verticalCenter
-                                visible: index != repeater.model.length - 1
+                                visible: delegate.index != repeater.model.length - 1
                                 source: LayoutMirroring.enabled ? "arrow-left" : "arrow-right"
                                 width: height
                                 height: visible ? Kirigami.Units.iconSizes.small : 0
@@ -211,7 +222,7 @@ Kirigami.ScrollablePage {
                     }
                 }
             }
-            
+
             // bookmark button for footer
             Controls.ToolButton {
                 implicitHeight: Kirigami.Units.gridUnit * 2
@@ -413,7 +424,7 @@ Kirigami.ScrollablePage {
             let firstVisibleRow = 0;
             let lastVisibleRow = Math.ceil((gridView.height + gridView.cellHeight) / gridView.cellHeight) - 1;
 
-            if (Qt.application.layoutDirection === Qt.RightToLeft) {
+            if (Application.layoutDirection === Qt.RightToLeft) {
                 // Reverse column order in RTL
                 column = columnCount - 1 - column;
             }
@@ -494,6 +505,7 @@ Kirigami.ScrollablePage {
             SelectionButton {
                 id: selectionButton
 
+                grid: gridView
                 selected: delegate.selected
                 index: delegate.index
                 opacity: delegate.hovered || page.state === "selecting"

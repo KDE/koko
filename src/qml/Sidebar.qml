@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
@@ -15,18 +17,18 @@ import org.kde.kirigamiaddons.delegates as Delegates
 Kirigami.OverlayDrawer {
     id: root
 
-    required property QQC2.ApplicationWindow mainWindow
+    required property Main mainWindow
     required property Koko.PhotosApplication application
     required property int sidebarWidth
 
-    edge: Qt.application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
+    edge: Application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     handleClosedIcon.source: null
     handleOpenIcon.source: null
-    handleVisible: !mainWindow.fetchImageToOpen && modal && pageStack.layers.depth < 2
+    handleVisible: !mainWindow.fetchImageToOpen && modal && mainWindow.pageStack.layers.depth < 2
 
     // Autohiding behavior
     modal: !mainWindow.wideScreen
-    onModalChanged: drawerOpen = !modal && pageStack.layers.depth < 2
+    onModalChanged: drawerOpen = !modal && mainWindow.pageStack.layers.depth < 2
 
     leftPadding: 0
     rightPadding: 0
@@ -196,9 +198,12 @@ Kirigami.OverlayDrawer {
                     id: tagRepeater
                     model: root.application.tags
                     PlaceItem {
+                        id: placeItem
+
                         required property var modelData
+
                         action: Kirigami.Action {
-                            fromQAction: modelData
+                            fromQAction: placeItem.modelData
                         }
                     }
                 }

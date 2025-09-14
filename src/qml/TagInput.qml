@@ -2,11 +2,12 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
+import QtQuick.Templates as T
 import QtQml.Models
-import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 
 QQC2.ComboBox {
@@ -19,7 +20,7 @@ QQC2.ComboBox {
     model: tagsListModel
 
     Connections {
-        target: root.application
+        target: comboBox.application
 
         function onTagsChanged(): void {
             if (tagsListModel.count > 0) {
@@ -58,10 +59,10 @@ QQC2.ComboBox {
 
     QQC2.Label {
         id: placeholder
-        x: comboBox.contentItem.x + comboBox.contentItem.leftPadding
-        y: comboBox.contentItem.y + comboBox.contentItem.topPadding
-        width: comboBox.contentItem.width - comboBox.contentItem.leftPadding - comboBox.contentItem.rightPadding
-        height: comboBox.contentItem.height - comboBox.contentItem.topPadding - comboBox.contentItem.bottomPadding
+        x: comboBox.contentItem.x + (comboBox.contentItem as T.TextField).leftPadding
+        y: comboBox.contentItem.y + (comboBox.contentItem as T.TextField).topPadding
+        width: comboBox.contentItem.width - (comboBox.contentItem as T.TextField).leftPadding - (comboBox.contentItem as T.TextField).rightPadding
+        height: comboBox.contentItem.height - (comboBox.contentItem as T.TextField).topPadding - (comboBox.contentItem as T.TextField).bottomPadding
         text: i18n("Add new tag…")
         font: comboBox.font
         opacity: 0.5

@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2025 Carl Schwan <carlschwan@kde.org>
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 import org.kde.kirigamiaddons.delegates as Delegates
@@ -16,7 +16,7 @@ Kirigami.ScrollablePage {
     title: i18nc("@title", "Configure Metadata Display")
 
     ListView {
-        model: extractor
+        model: root.extractor
         delegate: Delegates.CheckDelegate {
             id: delegate
 

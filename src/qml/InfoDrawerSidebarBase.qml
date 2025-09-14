@@ -3,16 +3,16 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQml
 import QtQuick.Window
-import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.koko as Koko
-import org.kde.coreaddons as KCA
 import org.kde.koko.private as KokoPrivate
 
 Flickable {
@@ -20,6 +20,47 @@ Flickable {
 
     required property Koko.Exiv2Extractor extractor
     required property Koko.PhotosApplication application
+
+    component RatingButton: QQC2.AbstractButton {
+        id: startDelegate
+
+        required property var modelData
+
+        readonly property int midRating: modelData
+        readonly property int ratingTo: {
+            if (flickable.extractor.rating == midRating + 1) {
+                return midRating
+            } else if (flickable.extractor.rating == midRating) {
+                return midRating - 1
+            } else {
+                return midRating + 1
+            }
+        }
+
+        activeFocusOnTab: true
+        width: ratingRow.size
+        height: ratingRow.size
+        text: i18n("Set rating to %1", ratingTo)
+
+        contentItem: Kirigami.Icon {
+            source: {
+                if (flickable.extractor.rating > startDelegate.midRating) {
+                    return "rating";
+                } else if (flickable.extractor.rating < startDelegate.midRating) {
+                    return "rating-unrated";
+                } else {
+                    return Application.layoutDirection === Qt.LeftToRight ? "rating-half" : "rating-half-rtl";
+                }
+            }
+            width: parent.width
+            height: parent.height
+            color: (startDelegate.focusReason == Qt.TabFocusReason || startDelegate.focusReason == Qt.BacktabFocusReason) && startDelegate.activeFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
+        }
+
+        onClicked: {
+            flickable.extractor.rating = ratingTo
+        }
+    }
 
     implicitWidth: column.implicitWidth + leftMargin + rightMargin
     implicitHeight: contentHeight + topMargin + bottomMargin
@@ -40,8 +81,6 @@ Flickable {
 
     ColumnLayout {
         id: column
-
-        property real availableWidth: width - leftPadding - rightPadding
 
         spacing: Kirigami.Units.smallSpacing
         width: parent.width
@@ -99,42 +138,7 @@ Flickable {
                             model: [ 1, 3, 5, 7, 9 ]
                             // NOTE: Despite MouseArea handling clicking, ratings must
                             // still be AbstractButton to allow for keyboard interaction
-                            delegate: QQC2.AbstractButton {
-                                readonly property int midRating: modelData
-                                readonly property int ratingTo: {
-                                    if (flickable.extractor.rating == midRating + 1) {
-                                        return midRating
-                                    } else if (flickable.extractor.rating == midRating) {
-                                        return midRating - 1
-                                    } else {
-                                        return midRating + 1
-                                    }
-                                }
-
-                                activeFocusOnTab: true
-                                width: ratingRow.size
-                                height: ratingRow.size
-                                text: i18n("Set rating to %1", ratingTo)
-
-                                contentItem: Kirigami.Icon {
-                                    source: {
-                                        if (flickable.extractor.rating > midRating) {
-                                            return "rating";
-                                        } else if (flickable.extractor.rating < midRating) {
-                                            return "rating-unrated";
-                                        } else {
-                                            return Qt.application.layoutDirection === Qt.LeftToRight ? "rating-half" : "rating-half-rtl";
-                                        }
-                                    }
-                                    width: parent.width
-                                    height: parent.height
-                                    color: (parent.focusReason == Qt.TabFocusReason || parent.focusReason == Qt.BacktabFocusReason) && parent.activeFocus ? Kirigami.Theme.highlightColor : Kirigami.Theme.textColor
-                                }
-
-                                onClicked: {
-                                    flickable.extractor.rating = ratingTo
-                                }
-                            }
+                            delegate: RatingButton {}
                         }
                     }
 
@@ -149,13 +153,13 @@ Flickable {
                         property int pressY: 0
                         property bool isDrag: false
 
-                        function closestRatingItem(x: int, y: int): Item {
+                        function closestRatingItem(x: int, y: int): RatingButton {
                             let bestDistance = Number.MAX_VALUE;
                             let best = null;
 
                             for (let i = 0; i < ratingRow.children.length; ++i) {
                                 let child = ratingRow.children[i];
-                                if (child instanceof QQC2.AbstractButton) {
+                                if (child instanceof RatingButton) {
                                     let dx = x - (child.x + (child.width / 2));
                                     let dy = y - (child.y + (child.height / 2));
 
@@ -185,7 +189,7 @@ Flickable {
                                 if (item) {
                                     let localX = mouse.x - item.x;
                                     let third = item.width / 3;
-                                    let reversed = (Qt.application.layoutDirection === Qt.RightToLeft);
+                                    let reversed = (Application.layoutDirection === Qt.RightToLeft);
 
                                     let newRating;
                                     if (localX < third) {
@@ -266,10 +270,19 @@ Flickable {
                 Flow {
                     Layout.preferredWidth: tagInputLayout.implicitWidth
                     Layout.fillWidth: true
+
                     spacing: Kirigami.Units.largeSpacing
+                    visible: tagRepeater.count
+
                     Repeater {
+                        id: tagRepeater
+
                         model: flickable.extractor.tags
+
                         Kirigami.Chip {
+                            required property int index
+                            required property var modelData
+
                             text: modelData
                             onRemoved: {
                                 const index = flickable.extractor.tags.indexOf(modelData)
@@ -287,7 +300,7 @@ Flickable {
             Layout.fillWidth: true
             icon.name: 'view-list-details-symbolic'
             text: i18nc("@action:button", "Choose What's Shown")
-            onClicked: QQC2.ApplicationWindow.window.pageStack.pushDialogLayer(Qt.createComponent("org.kde.koko", "ImageMetadataPage"), {
+            onClicked: (QQC2.ApplicationWindow.window as Main).pageStack.pushDialogLayer(Qt.createComponent("org.kde.koko", "ImageMetadataPage"), {
                 extractor: flickable.extractor,
             }, {
                 width: Kirigami.Units.gridUnit * 20,

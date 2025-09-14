@@ -6,12 +6,8 @@
 import QtQuick
 import QtQml
 import QtQuick.Window
-import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
-import QtQuick.Layouts
-import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
-import org.kde.coreaddons as KCA
 
 QQC2.Page {
     id: root
@@ -37,7 +33,7 @@ QQC2.Page {
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
             id: vScrollBar
             parent: content.parent
-            anchors.left: parent.contentItem.right
+            anchors.left: content.contentItem.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
         }

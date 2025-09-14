@@ -6,22 +6,22 @@ import QtQuick
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
-import org.kde.koko as Koko
 
 QQC2.AbstractButton {
     id: root
 
     required property bool selected
     required property int index
+    required property GridView grid
 
     width: Kirigami.Units.iconSizes.smallMedium
     height: width
-    z: gridView.z + 2
+    z: grid.z + 2
 
     onClicked: if (root.selected) {
-        gridView.model.toggleSelected(root.index)
+        grid.model.toggleSelected(root.index)
     } else {
-        gridView.model.setSelected(root.index)
+        grid.model.setSelected(root.index)
     }
 
     contentItem: Kirigami.Icon {

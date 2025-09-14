@@ -7,15 +7,15 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQml
 import QtQuick.Window
-import QtQuick.Templates as T
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
-import org.kde.coreaddons as KCA
 import org.kde.photos.thumbnails as KokoThumbnails
 
 Kirigami.Page {
@@ -234,12 +234,11 @@ Kirigami.Page {
             onToggled: {
                 if (checked) {
                     // Enter full screen
-                    Koko.Controller.saveWindowGeometry(root.mainWindow);
-                    lastWindowVisibility = root.mainWindow.visibility
+                    root.lastWindowVisibility = root.mainWindow.visibility
                     root.mainWindow.visibility = Window.FullScreen;
                 } else {
                     // Exit full screen
-                    root.mainWindow.visibility = lastWindowVisibility
+                    root.mainWindow.visibility = root.lastWindowVisibility
                 }
 
                 listView.forceActiveFocus();
@@ -276,7 +275,7 @@ Kirigami.Page {
         }
         // function that gets the next slide
         // ensures we don't land on the same image
-        function getNextSlide() {
+        function getNextSlide(): int {
             if (listView.count < 2) { // stop if there's only 1 image
                 slideshowTimer.stop();
                 return 0;
@@ -290,8 +289,7 @@ Kirigami.Page {
         }
     }
 
-    function close() {
-        Koko.Controller.restoreWindowGeometry(root.mainWindow);
+    function close(): void {
         if (root.mainWindow.footer) {
             root.mainWindow.footer.visible = true;
         }
@@ -525,7 +523,7 @@ Kirigami.Page {
             height: width
 
             Accessible.name: i18n("Previous image")
-            icon.name: Qt.application.layoutDirection === Qt.RightToLeft ? "arrow-right-symbolic" : "arrow-left-symbolic"
+            icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-right-symbolic" : "arrow-left-symbolic"
 
             onClicked: listView.decrementCurrentIndex()
         }
@@ -558,7 +556,7 @@ Kirigami.Page {
             height: width
 
             Accessible.name: i18n("Next image")
-            icon.name: Qt.application.layoutDirection === Qt.RightToLeft ? "arrow-left-symbolic" : "arrow-right-symbolic"
+            icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-left-symbolic" : "arrow-right-symbolic"
 
             onClicked: listView.incrementCurrentIndex()
         }
@@ -608,7 +606,7 @@ Kirigami.Page {
 
         QQC2.BusyIndicator {
             id: busyIndicator
-            property Item target: listView.currentItem
+            property Loader target: listView.currentItem as Loader
             anchors.centerIn: parent
             parent: listView
             visible: running
@@ -906,26 +904,26 @@ Kirigami.Page {
                             property int oldCursorPosition: cursorPosition
                             implicitWidth: intervalMetrics.width + leftPadding + rightPadding
                             implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
-                            palette: parent.palette
-                            leftPadding: parent.spacing
-                            rightPadding: parent.spacing
+                            palette: intervalSpinBox.palette
+                            leftPadding: intervalSpinBox.spacing
+                            rightPadding: intervalSpinBox.spacing
                             topPadding: 0
                             bottomPadding: 0
-                            font: parent.font
+                            font: intervalSpinBox.font
                             color: palette.text
                             selectionColor: palette.highlight
                             selectedTextColor: palette.highlightedText
                             horizontalAlignment: Qt.AlignHCenter
                             verticalAlignment: Qt.AlignVCenter
-                            readOnly: !parent.editable
-                            validator: parent.validator
-                            inputMethodHints: parent.inputMethodHints
+                            readOnly: !intervalSpinBox.editable
+                            validator: intervalSpinBox.validator
+                            inputMethodHints: intervalSpinBox.inputMethodHints
                             selectByMouse: true
                             background: null
                             // Trying to mimic some of QSpinBox's behavior with suffixes
                             onTextChanged: if (!inputMethodComposing) {
-                                const valueText = parent.valueFromText(text).toString()
-                                const valueIndex = parent.displayText.indexOf(valueText)
+                                const valueText = intervalSpinBox.valueFromText(text).toString()
+                                const valueIndex = intervalSpinBox.displayText.indexOf(valueText)
                                 if (valueIndex >= 0) {
                                     console.log(valueIndex, cursorPosition)
                                     cursorPosition = Math.min(Math.max(valueIndex, oldCursorPosition), valueIndex + valueText.length)
@@ -998,12 +996,12 @@ Kirigami.Page {
     }
 
     Shortcut {
-        sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
+        sequence: Application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
         onActivated: listView.decrementCurrentIndex()
     }
 
     Shortcut {
-        sequence: Qt.application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
+        sequence: Application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
         onActivated: listView.incrementCurrentIndex()
     }
 

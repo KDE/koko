@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
@@ -23,7 +25,7 @@ Kirigami.OverlayDrawer {
 
     property string title: i18nc("@title:menu", "Share")
 
-    parent: applicationWindow().overlay
+    parent: drawer.Controls.Overlay.overlay
 
     ColumnLayout {
         id: popupContent
@@ -31,7 +33,7 @@ Kirigami.OverlayDrawer {
         spacing: 0
 
         Kirigami.ListSectionHeader {
-            label: drawer.title
+            text: drawer.title
         }
 
         Repeater {
@@ -42,11 +44,15 @@ Kirigami.OverlayDrawer {
             }
 
             FormCard.FormButtonDelegate {
-                text: model.display
-                icon.name: model.iconName
+                required property int index
+                required property string iconName
+                required property string actionDisplay
+
+                text: actionDisplay
+                icon.name: iconName
                 onClicked: {
                     const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
-                    const dialog = applicationWindow().pageStack.pushDialogLayer(shareDialogComponent, {
+                    const dialog = (drawer.Controls.ApplicationWindow.window as Kirigami.ApplicationWindow).pageStack.pushDialogLayer(shareDialogComponent, {
                         title: drawer.title,
                         index: index,
                         model: listViewAction.model

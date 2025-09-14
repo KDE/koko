@@ -67,7 +67,7 @@ ZoomArea {
 
     Timer {
         id: doubleClickTimer
-        interval: Qt.styleHints.mouseDoubleClickInterval + 1
+        interval: Application.styleHints.mouseDoubleClickInterval + 1
         onTriggered: (root.Controls.ApplicationWindow.window as Koko.Main).controlsVisible = !(root.Controls.ApplicationWindow.window as Koko.Main).controlsVisible
     }
 

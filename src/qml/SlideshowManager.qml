@@ -6,6 +6,7 @@
 
 import QtQuick
 import QtQuick.Window
+import QtQuick.Controls as Controls
 import org.kde.koko as Koko
 
 // This object manages slideshows.
@@ -13,6 +14,8 @@ import org.kde.koko as Koko
 // so you only need to bother about *what* to do, not *how*
 
 Item {
+    id: root
+
     // this property indicates whether slideshow is running
     // this includes external media even while the timer is paused
     // *read only* (not programmatically but this will break if you write to this)
@@ -23,29 +26,28 @@ Item {
     property bool externalMediaRunning: false
 
     // save last window state before running slideshow
-    property int lastWindowVisibility: applicationWindow().visibility
-    property bool lastControlsVisible: applicationWindow().controlsVisible
+    property int lastWindowVisibility: (Controls.ApplicationWindow.window as Koko.Main).visibility
+    property bool lastControlsVisible: (Controls.ApplicationWindow.window as Koko.Main).controlsVisible
 
     // start the slideshow
     // don't use these function for anything else
     // besides actually starting and stopping the presentation
     // since this is reflected in UI unlike functions below these
-    function start() {
+    function start(): void {
         running = true;
-        lastWindowVisibility = applicationWindow().visibility
-        lastControlsVisible = applicationWindow().controlsVisible
-        Koko.Controller.saveWindowGeometry(applicationWindow());
-        applicationWindow().visibility = Window.FullScreen;
-        applicationWindow().controlsVisible = false;
+        root.lastWindowVisibility = (Controls.ApplicationWindow.window as Koko.Main).visibility;
+        root.lastControlsVisible = (Controls.ApplicationWindow.window as Koko.Main).controlsVisible;
+        (Controls.ApplicationWindow.window as Koko.Main).visibility = Window.FullScreen;
+        (Controls.ApplicationWindow.window as Koko.Main).controlsVisible = false;
         slideshowTimer.restart();
     }
 
     // stop the slideshow
-    function stop() {
+    function stop(): void {
         running = false;
         externalMediaRunning = false;
-        applicationWindow().visibility = lastWindowVisibility
-        applicationWindow().controlsVisible = lastControlsVisible
+        (Controls.ApplicationWindow.window as Koko.Main).visibility = root.lastWindowVisibility;
+        (Controls.ApplicationWindow.window as Koko.Main).controlsVisible = root.lastControlsVisible;
         slideshowTimer.stop();
     }
 
@@ -53,14 +55,14 @@ Item {
     // it's pretty easy to plop log() here to simplify debugging
 
     // call this when you need show media that isn't static (i.e. video) to pause the timer
-    function externalPlaybackStarted() {
+    function externalPlaybackStarted(): void {
         externalMediaRunning = true;
         slideshowTimer.stop();
     }
 
     // call this when when your playback has finished to move immediately to the next slide
     // and resume the timer
-    function externalPlaybackFinished() {
+    function externalPlaybackFinished(): void {
         externalMediaRunning = false;
         triggered();
         slideshowTimer.restart();

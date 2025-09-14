@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.koko as Koko
@@ -155,13 +155,13 @@ FormCard.FormCardPage {
 
             model: root.application.tags
 
-            FormCard.FormButtonDelegate {
-                id: delegate
+            delegate: FormCard.FormButtonDelegate {
+                id: actionDelegate
 
                 required property var modelData
 
                 action: Kirigami.Action {
-                    fromQAction: delegate.modelData
+                    fromQAction: actionDelegate.modelData
                 }
             }
         }

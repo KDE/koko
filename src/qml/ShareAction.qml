@@ -1,10 +1,10 @@
 // SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 // SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 
+pragma ComponentBehavior: Bound
+
 import QtQml.Models
 import QtQuick
-import QtQuick.Layouts
-import QtQuick.Controls as Controls
 import org.kde.purpose as Purpose
 import org.kde.kirigami as Kirigami
 
@@ -44,7 +44,7 @@ Kirigami.Action {
         const shareDrawerComponent = Qt.createComponent("org.kde.koko", "ShareDrawer");
         const drawer = shareDrawerComponent.createObject(applicationWindow().overlay, {
             inputData: shareAction.inputData
-        });
+        }) as ShareDrawer;
         drawer.open();
     }
 
@@ -56,9 +56,12 @@ Kirigami.Action {
         }
 
         delegate: Kirigami.Action {
-            property int index
-            text: model.display
-            icon.name: model.iconName
+            required property int index
+            required property string iconName
+            required property string actionDisplay
+
+            text: actionDisplay
+            icon.name: iconName
             onTriggered: {
                 const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
                 applicationWindow().pageStack.pushDialogLayer(shareDialogComponent, {

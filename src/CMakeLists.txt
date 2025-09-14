@@ -82,6 +82,7 @@ ecm_add_qml_module(koko_static
         QtCore
         QtQml
         QtQuick
+        org.kde.kirigamiaddons.statefulapp
 )
 
 ecm_target_qml_sources(koko_static SOURCES

@@ -8,13 +8,14 @@
  */
 
 import QtQuick
+import QtQuick.Controls as Controls
 import QtQml
-import QtMultimedia
 import org.kde.kirigami as Kirigami
-import org.kde.koko
+import org.kde.koko as Photos
 
 MouseArea {
     id: root
+
     readonly property bool interactive: Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height
     property bool dragging: root.drag.active || pinchHandler.active
 
@@ -155,7 +156,7 @@ MouseArea {
      */
     function angleDeltaToPixels(delta, dimension) {
         const singleStep = dimension !== undefined ? dimension / 20 : 20
-        return delta / 120 * singleStep * Qt.styleHints.wheelScrollLines
+        return delta / 120 * singleStep * Application.styleHints.wheelScrollLines
     }
 
     clip: true
@@ -218,8 +219,8 @@ MouseArea {
         }
 
         scaleAxis.onActiveValueChanged: (delta) => {
-            contentItem.width = boundedContentWidth(contentItem.width * delta);
-            contentItem.height = boundedContentHeight(contentItem.height * delta);
+            contentItem.width = root.boundedContentWidth(contentItem.width * delta);
+            contentItem.height = root.boundedContentHeight(contentItem.height * delta);
 
             const centroidInItem = Qt.point(
                 centroid.sceneGrabPosition.x - startPosX,
@@ -231,12 +232,12 @@ MouseArea {
                 centroidInItem.y * activeScale
             );
 
-            contentItem.x = boundedContentX(
+            contentItem.x = root.boundedContentX(
                 startPosX +
                 centroidInItem.x - scaledCentroidInItem.x +
                 centroid.position.x - centroid.sceneGrabPosition.x
             );
-            contentItem.y = boundedContentY(
+            contentItem.y = root.boundedContentY(
                 startPosY +
                 centroidInItem.y - scaledCentroidInItem.y +
                 centroid.position.y - centroid.sceneGrabPosition.y
@@ -247,7 +248,7 @@ MouseArea {
     onDoubleClicked: (mouse) => {
         if (mouse.button === Qt.LeftButton) {
             if (Kirigami.Settings.isMobile) {
-                applicationWindow().controlsVisible = false
+                (Controls.ApplicationWindow.window as Photos.Main).controlsVisible = false
             }
             if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
                 contentItem.width = Qt.binding(() => root.defaultContentRect.width)

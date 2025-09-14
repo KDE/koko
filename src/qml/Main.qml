@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
 
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Window
-import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
 import org.kde.koko.private as KokoPrivate
-import org.kde.config as KConfig
 
 StatefulApp.StatefulWindow {
     id: root
@@ -46,14 +46,14 @@ StatefulApp.StatefulWindow {
     minimumHeight: Kirigami.Units.gridUnit * 20
 
     function switchApplicationPage(page: Kirigami.Page): Kirigami.Page {
-        if (!page || pageStack.currentItem === page) {
-            return page;
+        if (!page || root.pageStack.currentItem === page) {
+            return page as Kirigami.Page;
         }
 
-        pageStack.clear();
-        pageStack.push(page);
+        root.pageStack.clear();
+        root.pageStack.push(page);
 
-        return pageStack.currentItem;
+        return root.pageStack.currentItem as Kirigami.Page;
     }
 
     function openPlacesPage(): void {
@@ -136,28 +136,28 @@ StatefulApp.StatefulWindow {
                     return;
 
                 case Koko.OpenFileModel.OpenFolder:
-                    pageStack.clear();
-                    pageStack.layers.clear();
+                    root.pageStack.clear();
+                    root.pageStack.layers.clear();
 
-                    pageStack.push(albumViewComponent);
-                    albumView = pageStack.currentItem;
-                    albumView.isFolderView = true;
-                    albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen;
+                    root.pageStack.push(albumViewComponent);
+                    root.albumView = root.pageStack.currentItem;
+                    root.albumView.isFolderView = true;
+                    root.albumView.model.sourceModel.url = Koko.OpenFileModel.urlToOpen;
 
                     return;
 
                 case Koko.OpenFileModel.OpenImage:
-                    pageStack.clear();
-                    pageStack.layers.clear();
+                    root.pageStack.clear();
+                    root.pageStack.layers.clear();
 
-                    pageStack.push(albumViewComponent);
-                    albumView = pageStack.currentItem;
-                    albumView.isFolderView = true;
+                    root.pageStack.push(albumViewComponent);
+                    root.albumView = root.pageStack.currentItem;
+                    root.albumView.isFolderView = true;
 
-                    albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
+                    root.albumView.model.sourceModel.url = Koko.DirModelUtils.directoryOfUrl(Koko.OpenFileModel.urlToOpen);
 
-                    fetchImageToOpen = true;
-                    pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
+                    root.fetchImageToOpen = true;
+                    root.pageStack.layers.push(Qt.resolvedUrl("ImageViewPage.qml"), {
                         imagesModel: imageFolderModel.sourceModel,
                         application: root.application,
                         mainWindow: root,
@@ -166,10 +166,10 @@ StatefulApp.StatefulWindow {
                     return;
 
                 case Koko.OpenFileModel.OpenMultiple:
-                    pageStack.clear();
-                    pageStack.layers.clear();
+                    root.pageStack.clear();
+                    root.pageStack.layers.clear();
 
-                    pageStack.push(openFileComponent);
+                    root.pageStack.push(openFileComponent);
 
                     return;
             }
