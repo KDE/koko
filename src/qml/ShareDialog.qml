@@ -23,7 +23,7 @@ Kirigami.Page {
 
     Controls.Action {
         shortcut: 'Escape'
-        onTriggered: window.closeDialog()
+        onTriggered: window.Kirigami.PageStack.closeDialog()
     }
 
     Component.onCompleted: jobView.start()
@@ -44,7 +44,7 @@ Kirigami.Page {
             } else if (state === Purpose.PurposeJobController.Cancelled) {
                 // Do nothing
             }
-            window.closeDialog()
+            window.Kirigami.PageStack.closeDialog()
         }
     }
 }
