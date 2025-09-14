@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(photos_model_static STATIC
+qt_add_library(photos_model_static STATIC
     abstractimagemodel.cpp
     abstractimagemodel.h
     imagefavoritesmodel.cpp
@@ -39,4 +39,5 @@ target_link_libraries(photos_model_static PUBLIC
 ecm_add_qml_module(photos_model_static
     URI "org.kde.photos.models"
     GENERATE_PLUGIN_SOURCE
+    OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/photos/models
 )

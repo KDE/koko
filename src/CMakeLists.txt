@@ -7,7 +7,7 @@ add_subdirectory(models)
 
 add_subdirectory(thumbnails)
 
-add_library(koko_static STATIC
+qt_add_library(koko_static STATIC
     exiv2extractor.cpp
     filesystemimagefetcher.cpp
     reversegeocoder.cpp
@@ -74,6 +74,7 @@ endif()
 ecm_add_qml_module(koko_static
     URI "org.kde.koko"
     GENERATE_PLUGIN_SOURCE
+    OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/koko
     IMPORTS
         org.kde.photos.models
         org.kde.photos.thumbnails
