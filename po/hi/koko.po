@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-08 00:41+0000\n"
+"POT-Creation-Date: 2025-09-15 00:40+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -150,19 +150,19 @@ msgctxt "@action:incontextmenu"
 msgid "Copy Location"
 msgstr "स्थान कॉपी करें"
 
-#: main.cpp:64
+#: main.cpp:63
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>फ़ोटो</application>"
 
-#: main.cpp:66
+#: main.cpp:65
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "फ़ोटो आपके छवि संग्रह के लिए एक छवि दर्शक है."
 
-#: main.cpp:68
+#: main.cpp:67
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:credit"
 #| msgid "(c) 2013-2020 KDE Contributors"
@@ -170,54 +170,54 @@ msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "(सी) 2013-2020 केडीई योगदानकर्ता"
 
-#: main.cpp:76
+#: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
+#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "डेवलपर"
 
-#: main.cpp:78
+#: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "अतुल शर्मा"
 
-#: main.cpp:80
+#: main.cpp:79
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "मार्को मार्टिन"
 
-#: main.cpp:82
+#: main.cpp:81
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "निकोलस फेल्ला"
 
-#: main.cpp:84
+#: main.cpp:83
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "कार्ल स्वान"
 
-#: main.cpp:90
+#: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "मिकेल जॉनसन"
 
-#: main.cpp:95
+#: main.cpp:94
 #, kde-format
 msgid "Reset the database"
 msgstr "डेटाबेस रीसेट करें"
 
-#: main.cpp:96
+#: main.cpp:95
 #, kde-format
 msgid "path of image you want to open"
 msgstr "छवि का पथ जिसे आप खोलना चाहते हैं"
