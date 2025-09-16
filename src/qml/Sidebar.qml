@@ -13,11 +13,12 @@ import org.kde.koko as Koko
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 Kirigami.OverlayDrawer {
     id: root
 
-    required property Main mainWindow
+    required property StatefulApp.StatefulWindow mainWindow
     required property Koko.PhotosApplication application
     required property int sidebarWidth
 
