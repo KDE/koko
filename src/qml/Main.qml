@@ -193,6 +193,13 @@ StatefulApp.StatefulWindow {
             });
 
             albumView = switchApplicationPage(albumView);
+            // Give an arbitrary size to the album view:
+            // Otherwise it won't get laid out when invisible when the app is started with an image
+            // as parameter and its size will stay 0,0
+            // When this happen, seems that GridView is trying to instantiate every single
+            // delegate, leading to possible long freezes in the app
+            albumView.width = 200
+            albumView.height = 200
         }
 
         if (value === "Folders" && query.length > 0) {
