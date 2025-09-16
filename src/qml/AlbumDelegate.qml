@@ -15,12 +15,12 @@ Controls.ItemDelegate {
     id: root
 
     required property int index
-    required property bool selected
+    required property string name
+    required property var fileItem
     required property int itemType
-    required property string content
     required property int fileCount
+    required property bool selected
     required property string imageurl
-    required property var item
 
     property alias thumbnailPriority: image.priority
 
@@ -70,7 +70,7 @@ Controls.ItemDelegate {
             width: Koko.Config.iconSize
             height: width
 
-            fileItem: root.item
+            fileItem: root.fileItem
         }
 
         Rectangle {
@@ -102,7 +102,7 @@ Controls.ItemDelegate {
             maximumLineCount: 4
             wrapMode: Text.WordWrap
             color: Kirigami.Theme.textColor
-            text: root.content
+            text: root.name
         }
 
         Rectangle {

@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
 add_subdirectory(models)
+add_subdirectory(models2)
 
 add_subdirectory(thumbnails)
 add_subdirectory(editor)
@@ -80,6 +81,7 @@ ecm_add_qml_module(koko_static
     OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/koko
     IMPORTS
         org.kde.photos.models
+        org.kde.photos.models2
         org.kde.photos.thumbnails
     DEPENDENCIES
         QtCore
@@ -89,6 +91,7 @@ ecm_add_qml_module(koko_static
 )
 
 ecm_target_qml_sources(koko_static SOURCES
+    qml/gallery/GalleryPage.qml
     qml/AlbumDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml
@@ -146,6 +149,7 @@ target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
     photos_model_staticplugin
+    photos_model2_staticplugin
     photos_thumbnails_staticplugin
     photos_editor_static
     photos_editor_staticplugin
