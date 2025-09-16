@@ -49,10 +49,10 @@ ImageStorage::ImageStorage(QObject *parent)
             query.exec("ALTER TABLE files ADD COLUMN favorite INTEGER");
         }
 
-        db.transaction();
-
         return;
     }
+
+    db.transaction();
 
     QSqlQuery query(db);
     query.exec(
@@ -68,8 +68,7 @@ ImageStorage::ImageStorage(QObject *parent)
         "                    FOREIGN KEY(location) REFERENCES locations(id)"
         "                    FOREIGN KEY(url) REFERENCES tags(url)"
         "                    )");
-
-    db.transaction();
+    db.commit();
 }
 
 ImageStorage::~ImageStorage()
@@ -96,6 +95,9 @@ void ImageStorage::addImage(const ImageInfo &ii)
     }
     QMutexLocker lock(&m_mutex);
     QGeoAddress addr = ii.location.address();
+
+    QSqlDatabase db = QSqlDatabase::database();
+    db.transaction();
 
     if (!addr.country().isEmpty()) {
         int locId = -1;
@@ -180,6 +182,7 @@ void ImageStorage::addImage(const ImageInfo &ii)
             }
         }
     }
+    db.commit();
 }
 
 bool ImageStorage::imageExists(const QString &filePath)
@@ -202,6 +205,8 @@ void ImageStorage::removeImage(const QString &filePath)
 {
     QMutexLocker lock(&m_mutex);
 
+    QSqlDatabase db = QSqlDatabase::database();
+    db.transaction();
     QSqlQuery query;
     query.prepare("DELETE FROM FILES WHERE URL = ?");
     query.addBindValue(filePath);
@@ -220,15 +225,17 @@ void ImageStorage::removeImage(const QString &filePath)
     if (!query3.exec()) {
         qDebug() << "tag delete" << query3.lastError();
     }
+    db.commit();
 }
 
 void ImageStorage::commit()
 {
+    qDebug() << "BOOOO!";
     {
         QMutexLocker lock(&m_mutex);
         QSqlDatabase db = QSqlDatabase::database();
-        db.commit();
-        db.transaction();
+        // db.commit();
+        // db.transaction();
     }
 
     emit storageModified();
