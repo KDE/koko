@@ -395,6 +395,13 @@ StatefulApp.StatefulWindow {
         id: clipboard
     }
 
+    // TODO: Temp test crap:
+    Koko.GalleryFolderModel {
+        id: galleryModel
+
+        url: "file:///home/oliver/kokoset/unsplash_images/"
+    }
+
     Component.onCompleted: {
         // Initialize window or config
         root.visibility = Koko.Config.visibility
@@ -404,6 +411,18 @@ StatefulApp.StatefulWindow {
         // move mobile handles to toolbar
         pageStack.globalToolBar.canContainHandles = true;
 
+        root.pageStack.clear();
+        root.pageStack.layers.clear();
+
+        root.pageStack.push(Qt.resolvedUrl("GalleryPage.qml"), {
+            application: root.application,
+            mainWindow: root,
+            galleryModel: galleryModel
+        });
+        root.albumView = root.pageStack.currentItem;
+
+
+        /*
         switch (Koko.OpenFileModel.mode) {
             case Koko.OpenFileModel.OpenNone:
                 root.application.action("place_pictures").trigger();
@@ -441,5 +460,6 @@ StatefulApp.StatefulWindow {
 
                 return;
         }
+        */
     }
 }
