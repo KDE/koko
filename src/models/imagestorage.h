@@ -83,6 +83,7 @@ public:
 
     QStringList tags();
     KFileItemList imagesForTag(const QString &tag);
+    KFileItem imageForTag(const QString &tag);
 
     QDate dateForCollection(const Collection &collection, TimeGroup group);
 
