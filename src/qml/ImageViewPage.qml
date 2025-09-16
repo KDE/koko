@@ -48,6 +48,7 @@ Kirigami.Page {
                 return;
             }
             stopLoadingImages.restart();
+            sortModel.invalidate();
             startIndex = sortModel.mapFromSource(sortModel.sourceModel.index(sortModel.sourceModel.indexForUrl(root.imageurl), 0)).row;
         }
     }
