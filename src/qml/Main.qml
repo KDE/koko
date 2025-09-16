@@ -83,12 +83,10 @@ StatefulApp.StatefulWindow {
         }
     }
 
-    signal filterChanged(string value, string query)
     signal settingsOpened(bool isPage)
     signal placesOpened()
 
-    property var settingsView: null
-    property var albumView: null
+    property var galleryPage: null
     property var placesView: null
 
     // fetch guard, so we don't needlessly check for image to open when it's not needed
@@ -99,6 +97,115 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('open_kcommand_bar')
     }
 
+    Connections {
+        target: root.application
+
+        function onNavigate(modelType, path) : void {
+            root.navigate(modelType, path);
+        }
+    }
+
+    function navigate(modelType, path) : void {
+        let targetModel;
+
+        switch (modelType) {
+            /*
+            case Koko.PhotosApplication.OpenModel:
+                targetModel = galleryOpenModel;
+                break;
+            */
+            case Koko.PhotosApplication.FolderModel:
+                targetModel = galleryFolderModel;
+                break;
+            case Koko.PhotosApplication.FavoritesModel:
+                targetModel = galleryFavoritesModel;
+                break;
+            /*
+            case Koko.PhotosApplication.LocationModel:
+                targetModel = galleryLocationModel;
+                break;
+            case Koko.PhotosApplication.TimeModel:
+                targetModel = galleryTimeModel;
+                break;
+            case Koko.PhotosApplication.TagsModel:
+                targetModel = galleryTagsModel;
+                break;
+            */
+            default:
+                return;
+        }
+
+        if (root.galleryPage === null || root.galleryPage !== pageStack.currentItem || root.galleryPage.galleryModel !== targetModel) {
+            // Create a new page
+
+            if (targetModel instanceof Koko.AbstractNavigableGalleryModel) {
+                targetModel.path = path;
+            }
+
+            const component = Qt.createComponent("org.kde.koko", "GalleryPage");
+            if (component.status === Component.Error) {
+                console.error(component.errorString());
+                return;
+            }
+
+            root.galleryPage = component.createObject(root, {
+                application: root.application,
+                mainWindow: root,
+                galleryModel: targetModel
+            })
+
+            root.galleryPage = switchApplicationPage(root.galleryPage);
+            // Give an arbitrary size to the album view:
+            // Otherwise it won't get laid out when invisible when the app is started with an image
+            // as parameter and its size will stay 0,0
+            // When this happen, seems that GridView is trying to instantiate every single
+            // delegate, leading to possible long freezes in the app
+            root.galleryPage.width = 200
+            root.galleryPage.height = 200
+        } else {
+            // Use existing page
+            root.galleryPage.navigate(path);
+        }
+
+        root.galleryPage.gridViewItem.forceActiveFocus();
+    }
+
+    /*
+    Koko.GalleryOpenModel {
+        id: galleryOpenModel
+    }
+    */
+
+    Koko.GalleryFolderModel {
+        id: galleryFolderModel
+    }
+
+    Koko.GalleryFavoritesModel {
+        id: galleryFavoritesModel
+    }
+
+    /*
+    Koko.GalleryLocationModel {
+        id: galleryLocationModel
+    }
+
+    Koko.GalleryTimeModel {
+        id: galleryTimeModel
+    }
+
+    Koko.GalleryTagsModel {
+        id: galleryTagsModel
+    }
+    */
+
+
+
+
+
+
+
+
+    /*
     Component {
         id: openFileComponent
         AlbumView {
@@ -280,6 +387,7 @@ StatefulApp.StatefulWindow {
         albumView.gridViewItem.forceActiveFocus();
         filterChanged(value, query)
     }
+    */
 
     contextDrawer: Kirigami.Settings.isMobile ? contextDrawerComponent.createObject(root) : null
     wideScreen: width >= root.pageStack.defaultColumnWidth + root.sidebarWidth
@@ -309,14 +417,12 @@ StatefulApp.StatefulWindow {
         mainWindow: root
     }
 
+    /*
     Koko.SortModel {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
             url: ""
         }
-        /*
-         * filterRole is an Item property exposed by the QSortFilterProxyModel
-         */
         filterRole: Koko.AbstractImageModel.MimeTypeRole
     }
 
@@ -386,6 +492,7 @@ StatefulApp.StatefulWindow {
     Koko.ImageGroupModel {
         id: imageListModel
     }
+    */
 
     Koko.NotificationManager {
         id: notificationManager
@@ -404,6 +511,13 @@ StatefulApp.StatefulWindow {
         // move mobile handles to toolbar
         pageStack.globalToolBar.canContainHandles = true;
 
+        root.pageStack.clear();
+        root.pageStack.layers.clear();
+
+        root.application.action("place_pictures").trigger();
+
+
+        /*
         switch (Koko.OpenFileModel.mode) {
             case Koko.OpenFileModel.OpenNone:
                 root.application.action("place_pictures").trigger();
@@ -441,5 +555,6 @@ StatefulApp.StatefulWindow {
 
                 return;
         }
+        */
     }
 }

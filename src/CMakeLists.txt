@@ -89,12 +89,16 @@ ecm_add_qml_module(koko_static
 )
 
 ecm_target_qml_sources(koko_static SOURCES
-    qml/AlbumDelegate.qml
-    qml/AlbumView.qml
+    qml/gallery/GalleryPage.qml
+    qml/gallery/GalleryDelegate.qml
+    qml/gallery/NavigatorComponent.qml
+    qml/gallery/NavigatorPathButton.qml
+    qml/mediaview/MediaViewPage.qml
+    qml/mediaview/MediaViewThumbnail.qml
+    qml/mediaview/DelegateLoader.qml
+    qml/AlbumView.qml # TODO REMOVE
     qml/BottomNavBar.qml
-    qml/DelegateLoader.qml
     qml/ImageMetadataPage.qml
-    qml/ImageViewPage.qml
     qml/InfoDrawer.qml
     qml/InfoDrawerSidebarBase.qml
     qml/InfoSidebar.qml
@@ -117,12 +121,12 @@ ecm_target_qml_sources(koko_static SOURCES
 ecm_target_qml_sources(koko_static PRIVATE
     PATH imagedelegate
     SOURCES
-        qml/imagedelegate/AnimatedImageDelegate.qml
-        qml/imagedelegate/BaseImageDelegate.qml
-        qml/imagedelegate/RasterImageDelegate.qml
-        qml/imagedelegate/VectorImageDelegate.qml
-        qml/imagedelegate/VideoDelegate.qml
-        qml/imagedelegate/VideoPlayer.qml
+        qml/mediaview/imagedelegate/AnimatedImageDelegate.qml
+        qml/mediaview/imagedelegate/BaseImageDelegate.qml
+        qml/mediaview/imagedelegate/RasterImageDelegate.qml
+        qml/mediaview/imagedelegate/VectorImageDelegate.qml
+        qml/mediaview/imagedelegate/VideoDelegate.qml
+        qml/mediaview/imagedelegate/VideoPlayer.qml
 )
 
 if(ANDROID)
