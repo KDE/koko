@@ -350,7 +350,27 @@ Kirigami.Page {
         supportsVideo: false
         onVisibleChanged: {
             if (!visible) {
+                // Transfer zoom and position to the new delegate
+                listView.currentItem.item.contentWidth = item.contentWidth
+                listView.currentItem.item.contentHeight = item.contentHeight
+                listView.currentItem.item.contentX = item.contentX
+                listView.currentItem.item.contentY = item.contentY
                 imagePlaceholder.destroy()
+            }
+        }
+
+        Rectangle {
+            anchors.fill: parent
+            z: -1
+            color: {
+                switch (Koko.Config.imageViewBackgroundColor) {
+                    case 0:
+                        return "black";
+                    case 1:
+                        return "white";
+                    case 2:
+                        return Kirigami.Theme.backgroundColor;
+                }
             }
         }
     }
