@@ -104,7 +104,7 @@ int main(int argc, char **argv)
         ImageStorage::reset();
     }
 
-    KDBusService service(KDBusService::Unique);
+    // KDBusService service(KDBusService::StartupOption::Multiple);
 
     QThread trackerThread;
 
@@ -148,31 +148,31 @@ int main(int argc, char **argv)
     const auto openFileModel = engine.singletonInstance<OpenFileModel *>("org.kde.koko", "OpenFileModel");
     openFileModel->updateOpenItems(directoryUrls);
 
-    QObject::connect(&service,
-                     &KDBusService::activateRequested,
-                     openFileModel,
-                     [openFileModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
-                         QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
-
-                         parser.parse(arguments);
-
-                         QList<QUrl> directoryUrls;
-                         for (const auto &path : parser.positionalArguments()) {
-                             directoryUrls << QUrl::fromUserInput(path, QDir::currentPath(), QUrl::AssumeLocalFile);
-                         }
-
-                         openFileModel->updateOpenItems(directoryUrls);
-
-                         const auto rootObjects = engine.rootObjects();
-                         for (auto obj : rootObjects) {
-                             auto window = qobject_cast<QQuickWindow *>(obj);
-                             if (window) {
-                                 KWindowSystem::updateStartupId(window);
-                                 KWindowSystem::activateWindow(window);
-                                 return;
-                             }
-                         }
-                     });
+    // QObject::connect(&service,
+    //                  &KDBusService::activateRequested,
+    //                  openFileModel,
+    //                  [openFileModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
+    //                      QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
+    // 
+    //                      parser.parse(arguments);
+    // 
+    //                      QList<QUrl> directoryUrls;
+    //                      for (const auto &path : parser.positionalArguments()) {
+    //                          directoryUrls << QUrl::fromUserInput(path, QDir::currentPath(), QUrl::AssumeLocalFile);
+    //                      }
+    // 
+    //                      openFileModel->updateOpenItems(directoryUrls);
+    // 
+    //                      const auto rootObjects = engine.rootObjects();
+    //                      for (auto obj : rootObjects) {
+    //                          auto window = qobject_cast<QQuickWindow *>(obj);
+    //                          if (window) {
+    //                              KWindowSystem::updateStartupId(window);
+    //                              KWindowSystem::activateWindow(window);
+    //                              return;
+    //                          }
+    //                      }
+    //                  });
 
     qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
 
