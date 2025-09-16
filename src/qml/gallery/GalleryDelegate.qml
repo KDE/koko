@@ -6,21 +6,23 @@
 
 import QtQuick
 import QtQuick.Controls as Controls
+
 import org.kde.kirigami as Kirigami
+import org.kde.kquickcontrolsaddons
+
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
-import org.kde.kquickcontrolsaddons
 
 Controls.ItemDelegate {
     id: root
 
     required property int index
-    required property bool selected
+    required property string name
+    required property var fileItem
     required property int itemType
-    required property string content
     required property int fileCount
-    required property string imageurl
-    required property var item
+    required property bool selected
+    required property url url
 
     property alias thumbnailPriority: image.priority
 
@@ -70,7 +72,7 @@ Controls.ItemDelegate {
             width: Koko.Config.iconSize
             height: width
 
-            fileItem: root.item
+            fileItem: root.fileItem
         }
 
         Rectangle {
@@ -95,14 +97,14 @@ Controls.ItemDelegate {
                 top: image.top
                 bottom: countRect.visible ? countRect.top : image.bottom
             }
-            visible: root.itemType == Koko.AbstractImageModel.Folder || root.itemType == Koko.AbstractImageModel.Collection
+            visible: root.itemType == Koko.AbstractGalleryModel.Folder || root.itemType == Koko.AbstractGalleryModel.Collection
             verticalAlignment: Text.AlignTop
             padding: Kirigami.Units.smallSpacing
             elide: Text.ElideRight
             maximumLineCount: 4
             wrapMode: Text.WordWrap
             color: Kirigami.Theme.textColor
-            text: root.content
+            text: root.name
         }
 
         Rectangle {
@@ -112,7 +114,7 @@ Controls.ItemDelegate {
                 left: image.left
                 right: image.right
             }
-            visible: root.fileCount && root.itemType == Koko.AbstractImageModel.Folder || root.itemType == Koko.AbstractImageModel.Collection
+            visible: root.fileCount && root.itemType == Koko.AbstractGalleryModel.Folder || root.itemType == Koko.AbstractGalleryModel.Collection
             height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             color: Kirigami.Theme.backgroundColor
@@ -125,7 +127,7 @@ Controls.ItemDelegate {
                 maximumLineCount: 4
                 wrapMode: Text.WordWrap
                 color: Kirigami.Theme.textColor
-                text: i18np("1 Image", "%1 Images", root.fileCount)
+                text: i18np("1 item", "%1 items", root.fileCount)
             }
         }
     }

@@ -25,7 +25,7 @@ Kirigami.OverlayDrawer {
     edge: Application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
     handleClosedIcon.source: null
     handleOpenIcon.source: null
-    handleVisible: !mainWindow.fetchImageToOpen && modal && mainWindow.pageStack.layers.depth < 2
+    handleVisible: modal && mainWindow.pageStack.layers.depth < 2
 
     // Autohiding behavior
     modal: !mainWindow.wideScreen

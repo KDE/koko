@@ -368,6 +368,27 @@ KFileItemList ImageStorage::imagesForTag(const QString &tag)
     return files;
 }
 
+KFileItem ImageStorage::previewImageForTag(const QString &tag)
+{
+    QMutexLocker lock(&m_mutex);
+    QSqlQuery query;
+
+    query.prepare("SELECT DISTINCT url FROM tags WHERE tag = ? LIMIT 1");
+    query.addBindValue(tag);
+
+    if (!query.exec()) {
+        qDebug() << "imageForTag: " << query.lastError();
+        return {};
+    }
+
+    if (query.next()) {
+        return KFileItem(QUrl(u"file://"_s + query.value(0).toString()));
+    }
+
+    Q_ASSERT(false);
+    return {};
+}
+
 KFileItemList ImageStorage::imagesForLocation(const QByteArray &key, ImageStorage::LocationGroup loc)
 {
     QMutexLocker lock(&m_mutex);
@@ -410,14 +431,14 @@ KFileItemList ImageStorage::imagesForLocation(const QByteArray &key, ImageStorag
     return files;
 }
 
-KFileItem ImageStorage::imageForLocation(const Collection &collection, ImageStorage::LocationGroup loc)
+KFileItem ImageStorage::previewImageForLocation(const Collection &collection, ImageStorage::LocationGroup loc)
 {
     Q_ASSERT(!collection.key.isEmpty());
 
     QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == ImageStorage::LocationGroup::Country) {
-        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id LIMIT 1");
         query.addBindValue(QString::fromUtf8(collection.key));
     } else if (loc == ImageStorage::LocationGroup::State) {
         QDataStream st(collection.key);
@@ -426,7 +447,7 @@ KFileItem ImageStorage::imageForLocation(const Collection &collection, ImageStor
         QString state;
         st >> country >> state;
 
-        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id LIMIT 1");
         query.addBindValue(country);
         query.addBindValue(state);
     } else if (loc == ImageStorage::LocationGroup::City) {
@@ -437,7 +458,7 @@ KFileItem ImageStorage::imageForLocation(const Collection &collection, ImageStor
         QString city;
         st >> country >> state >> city;
 
-        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id");
+        query.prepare("SELECT DISTINCT url from files, locations where country = ? AND state = ? AND files.location = locations.id LIMIT 1");
         query.addBindValue(country);
         query.addBindValue(state);
     }
@@ -580,7 +601,7 @@ KFileItemList ImageStorage::imagesForTime(const QByteArray &key, ImageStorage::T
     return files;
 }
 
-KFileItem ImageStorage::imageForTime(const Collection &collection, ImageStorage::TimeGroup group)
+KFileItem ImageStorage::previewImageForTime(const Collection &collection, ImageStorage::TimeGroup group)
 {
     QMutexLocker lock(&m_mutex);
     Q_ASSERT(!collection.key.isEmpty());

@@ -34,6 +34,8 @@ public:
     Q_INVOKABLE QUrl parentOfUrl(const QUrl &url) const;
 
     Q_INVOKABLE void mkdir(const QUrl &path) const;
+    Q_INVOKABLE void deleteUrls(const QList<QUrl> &urls) const;
+    Q_INVOKABLE void restoreUrls(const QList<QUrl> &urls) const;
 
 Q_SIGNALS:
     void homePathChanged();

@@ -2,13 +2,15 @@
 //
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-#include "dirmodelutils.h"
-
-#include <QStandardPaths>
-
-#include <KIO/MkdirJob>
 #include <QDir>
 #include <QStandardPaths>
+
+#include <KIO/CopyJob>
+#include <KIO/EmptyTrashJob>
+#include <KIO/MkdirJob>
+#include <KIO/RestoreJob>
+
+#include "dirmodelutils.h"
 
 DirModelUtils::DirModelUtils(QObject *parent)
     : QObject(parent)
@@ -88,18 +90,17 @@ QUrl DirModelUtils::partialUrlForIndex(QUrl url, int index) const
     QStringList urlParts;
     bool inHome = false;
     if (!home.isEmpty() && url.path().startsWith(home) && url.path() != home) {
-        urlParts = url.path().replace(home, "/").split(QStringLiteral("/")).mid(1);
+        urlParts = url.path().replace(home, "").split(QStringLiteral("/")).mid(1);
         inHome = true;
     } else {
         urlParts = url.path().split(QStringLiteral("/")).mid(1);
     }
+
+    urlParts = urlParts.mid(0, index);
+
     QString path = QStringLiteral("/");
-    for (int i = 0; i < index + int(inHome); i++) {
-        if (urlParts.at(i) != "") {
-            path += urlParts.at(i);
-            path += QStringLiteral("/");
-        }
-    }
+    path += urlParts.join(QStringLiteral("/"));
+
     if (inHome) {
         url.setPath(home + path);
     } else {
@@ -126,14 +127,26 @@ QString DirModelUtils::fileNameOfUrl(const QString &path) const
     return path.mid(index + 1);
 }
 
-void DirModelUtils::mkdir(const QUrl &path) const
-{
-    KIO::mkdir(path);
-}
-
 QUrl DirModelUtils::parentOfUrl(const QUrl &url) const
 {
     auto path = QDir(url.toLocalFile());
     path.cdUp();
     return QUrl(path.absolutePath());
+}
+
+void DirModelUtils::mkdir(const QUrl &path) const
+{
+    KIO::mkdir(path);
+}
+
+void DirModelUtils::deleteUrls(const QList<QUrl> &urls) const
+{
+    auto trashJob = KIO::trash(urls);
+    trashJob->exec();
+}
+
+void DirModelUtils::restoreUrls(const QList<QUrl> &urls) const
+{
+    auto restoreJob = KIO::restoreFromTrash(urls);
+    restoreJob->exec();
 }
