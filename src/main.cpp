@@ -31,9 +31,9 @@
 #include "checkerboardimageprovider.h"
 #include "filemenuactions.h"
 #include "filesystemtracker.h"
+#include "galleryopenmodel.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
-#include "openfilemodel.h"
 #include "processor.h"
 #include "version.h"
 
@@ -145,13 +145,13 @@ int main(int argc, char **argv)
     KLocalization::setupLocalizedContext(&engine);
     engine.addImageProvider("checkerboard", new CheckerboardImageProvider);
 
-    const auto openFileModel = engine.singletonInstance<OpenFileModel *>("org.kde.koko", "OpenFileModel");
-    openFileModel->updateOpenItems(directoryUrls);
+    const auto openModel = engine.singletonInstance<GalleryOpenModel *>("org.kde.koko", "GalleryOpenModel");
+    openModel->updateOpenItems(directoryUrls);
 
     QObject::connect(&service,
                      &KDBusService::activateRequested,
-                     openFileModel,
-                     [openFileModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
+                     openModel,
+                     [openModel, &parser, &engine](const QStringList &arguments, const QString &workingDirectory) {
                          QUrl currentDirPath = QUrl::fromLocalFile(workingDirectory);
 
                          parser.parse(arguments);
@@ -161,7 +161,7 @@ int main(int argc, char **argv)
                              directoryUrls << QUrl::fromUserInput(path, QDir::currentPath(), QUrl::AssumeLocalFile);
                          }
 
-                         openFileModel->updateOpenItems(directoryUrls);
+                         openModel->updateOpenItems(directoryUrls);
 
                          const auto rootObjects = engine.rootObjects();
                          for (auto obj : rootObjects) {

@@ -73,16 +73,17 @@ public:
 
     QList<Collection> locations(LocationGroup loca);
     KFileItemList imagesForLocation(const QByteArray &key, LocationGroup loc);
-    KFileItem imageForLocation(const Collection &collection, LocationGroup loc);
+    KFileItem previewImageForLocation(const Collection &collection, LocationGroup loc);
 
     QList<Collection> timeTypes(TimeGroup group);
     KFileItemList imagesForTime(const QByteArray &key, TimeGroup group);
-    KFileItem imageForTime(const Collection &collection, TimeGroup group);
+    KFileItem previewImageForTime(const Collection &collection, TimeGroup group);
 
     KFileItemList imagesForFavorites();
 
     QStringList tags();
     KFileItemList imagesForTag(const QString &tag);
+    KFileItem previewImageForTag(const QString &tag);
 
     QDate dateForCollection(const Collection &collection, TimeGroup group);
 

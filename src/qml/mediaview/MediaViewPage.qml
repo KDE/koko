@@ -4,6 +4,7 @@
  * SPDX-FileCopyrightText: 2017 Marco Martin <mart@kde.org>
  * SPDX-FileCopyrightText: 2021 Carl Schwan <carlschwan@kde.org>
  * SPDX-FileCopyrightText: 2025 Anders Lund <anders@alweb.dk>
+ * SPDX-FileCopyrightText: 2025 Oliver Beard <olib141@outlook.com>
  *
  * SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
  */
@@ -22,36 +23,39 @@ import org.kde.photos.thumbnails as KokoThumbnails
 Kirigami.Page {
     id: root
 
-    property var startIndex
-    required property var imagesModel
-    required property url imageurl
     required property Koko.PhotosApplication application
     required property Kirigami.ApplicationWindow mainWindow
+    required property Koko.GallerySortFilterProxyModel gallerySortFilterProxyModel
+    required property url url
+
     property int lastWindowVisibility: mainWindow.visibility
-    // Model is either an ImageFolderModel or a proxy containing one
-    // If is a different thing (tagsmodel etc) just assume ready, TODO: implement status for every model
-    readonly property int modelStatus: imagesModel?.status ?? imagesModel.sourceModel?.status ?? ImageFolderModel.Ready
-    title: {
-        const urlParts = imageurl.toString().split("/");
-        return urlParts[urlParts.length - 1];
+
+    // A model that is still populating might not yet contain the index we want to show
+    property bool modelReady: false
+
+    function updateModelReady() {
+        if (modelReady) {
+            return;
+        }
+
+        if (root.gallerySortFilterProxyModel.galleryModel.status === Koko.AbstractGalleryModel.Loaded) {
+            // Find index of the image we're showing in the model
+            for (let i = 0; i < mediaViewFilterModel.rowCount(); ++i) {
+                let index = mediaViewFilterModel.index(i, 0);
+                if (mediaViewFilterModel.data(index, Koko.AbstractGalleryModel.UrlRole) === root.url) {
+                    listView.currentIndex = i;
+                    thumbnailView.positionViewAtIndex(index, ListView.Center);
+                    root.modelReady = true;
+                }
+            }
+        }
     }
 
-    onImageurlChanged: exiv2Extractor.updateFavorite(imageurl.toString().replace("file://", ""))
-
     Connections {
-        target: imagesModel
-        ignoreUnknownSignals: true
-        function onStatusChanged(): void {
-            if (imagesModel.status !== ImageFolderModel.Ready) {
-                return;
-            }
-            if (!root.mainWindow.fetchImageToOpen || sortModel.sourceModel.indexForUrl(root.imageurl) === -1) {
-                return;
-            }
-            stopLoadingImages.restart();
+        target: root.gallerySortFilterProxyModel.galleryModel
 
-            startIndex = sortModel.mapFromSource(sortModel.sourceModel.index(sortModel.sourceModel.indexForUrl(root.imageurl), 0)).row;
-            thumbnailView.positionViewAtIndex(startIndex, ListView.Contain);
+        function onStatusChanged() {
+            updateModelReady();
         }
     }
 
@@ -62,34 +66,30 @@ Kirigami.Page {
         }
     }
 
-    // sometimes when loading a folder KCoreDirLister "completes" all the jobs before starting another one
-    // which means onFinishedLoading sometimes gets called preemptively
-    // one easy way to repro this behavior is to open image from one folder and then open one from another
-    // so we wait a bit before guarding fetch
-    Timer {
-        id: stopLoadingImages
-        interval: 100
-        repeat: false
-        onTriggered: {
-            root.mainWindow.fetchImageToOpen = false;
-            // NOTE: for setting index this early on may cause a crash
-            // it's definitely has something to do with listview interaction
-            // with *potentially* not fully loaded model as setting
-            // listView.currentIndex = Math.floor(Math.random() * listView.count)
-            // still causes crashes
-            // timer mostly remedies it, but it still may *rarely* crash
-            listView.currentIndex = startIndex;
-        }
+    Koko.MediaViewFilterModel {
+        id: mediaViewFilterModel
+
+        gallerySortFilterProxyModel: root.gallerySortFilterProxyModel
     }
+
+    Component.onCompleted: {
+        root.mainWindow.controlsVisible = true;
+        listView.forceActiveFocus();
+
+        updateModelReady();
+    }
+
+    title: Koko.DirModelUtils.fileNameOfUrl(root.url)
 
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
     bottomPadding: 0
 
+    onUrlChanged: exiv2Extractor.updateFavorite(root.url.toString().replace("file://", ""))
     Koko.Exiv2Extractor {
         id: exiv2Extractor
-        filePath: listView.currentItem ? listView.currentItem.imageurl : ""
+        filePath: root.url
     }
 
     readonly property list<QtObject> toolBarActions: [
@@ -101,10 +101,10 @@ Kirigami.Page {
             checkable: true
             checked: exiv2Extractor.favorite
             onToggled: {
-                exiv2Extractor.toggleFavorite(listView.currentItem.imageurl.toString().replace("file://", ""));
+                exiv2Extractor.toggleFavorite(listView.currentItem.url.toString().replace("file://", ""));
                 // makes change immediate
-                kokoProcessor.removeFile(listView.currentItem.imageurl.toString().replace("file://", ""));
-                kokoProcessor.addFile(listView.currentItem.imageurl.toString().replace("file://", ""));
+                kokoProcessor.removeFile(listView.currentItem.url.toString().replace("file://", ""));
+                kokoProcessor.addFile(listView.currentItem.url.toString().replace("file://", ""));
             }
         },
         Kirigami.Action {
@@ -116,7 +116,7 @@ Kirigami.Page {
             onTriggered: {
                 const page = root.mainWindow.pageStack.layers.push(Qt.createComponent("org.kde.photos.editor", "EditorView"), {
                     mainWindow: root.mainWindow,
-                    imagePath: listView.currentItem.imageurl,
+                    imagePath: listView.currentItem.url,
                     // Without this, there's an odd glitch where the page will show for a brief moment
                     // before the show animation runs.
                     visible: false
@@ -141,7 +141,7 @@ Kirigami.Page {
 
             inputData: {
                 return {
-                    urls: [root.imageurl.toString()],
+                    urls: [root.url.toString()],
                     mimeType: [listView.currentItem?.mimeType ?? imagePlaceholder?.mimeType]
                 }
             }
@@ -257,28 +257,28 @@ Kirigami.Page {
     Binding {
         target: Koko.FileMenuActions
         property: "url"
-        value: listView.currentItem?.imageurl ?? ""
+        value: listView.currentItem?.url ?? ""
         restoreMode: Binding.RestoreNone
     }
 
     actions: {
-        let list = []
+        let list = [];
         for (let action of toolBarActions) {
-            list.push(action)
+            list.push(action);
         }
         /* Hidden actions */
-        const fileMenuActions = Koko.FileMenuActions.actions
+        const fileMenuActions = Koko.FileMenuActions.actions;
         for (let fileMenuAction of fileMenuActions) {
             let kirigamiAction = kirigamiActionComponent.createObject(this, {
                 displayHint: Kirigami.DisplayHint.AlwaysHide,
                 fromQAction: fileMenuAction
-            })
-            list.push(kirigamiAction)
+            });
+            list.push(kirigamiAction);
         }
         for (let action of otherHiddenUiActions) {
-            list.push(action)
+            list.push(action);
         }
-        return list
+        return list;
     }
 
     SlideshowManager {
@@ -356,12 +356,13 @@ Kirigami.Page {
     DelegateLoader {
         id: imagePlaceholder
         anchors.fill: listView
+        width: listView.width
+        height: listView.height
         z: 1
         asynchronous: false
         index: 0
-        imageurl: root.imageurl
-        content: ""
-        visible: root.modelStatus !== ImageFolderModel.Ready || !listView.currentItem || listView.currentItem.status !== Loader.Ready || !listView.currentItem.item.loaded
+        url: root.url
+        visible: !root.modelReady || !listView.currentItem || listView.currentItem.status !== Loader.Ready || !listView.currentItem.item.loaded
         supportsVideo: false
         onVisibleChanged: {
             if (!visible) {
@@ -411,13 +412,7 @@ Kirigami.Page {
         pixelAligned: true
         reuseItems: true
 
-        // Filter out directories
-        model: Koko.SortModel {
-            id: sortModel
-            filterRole: Koko.AbstractImageModel.MimeTypeRole
-            filterRegularExpression: /image\/|video\//
-            sourceModel: imagesModel
-        }
+        model: mediaViewFilterModel
 
         // we start with this index, so we don't flash initial image
         currentIndex: -1
@@ -431,7 +426,7 @@ Kirigami.Page {
         property alias slideshow: slideshowManager
 
         onCountChanged: {
-            if (count === 0 && imagesModel.status === ImageFolderModel.Ready) {
+            if (count === 0 && modelReady) {
                 infoAction.checked = false
                 root.close();
             }
@@ -442,14 +437,7 @@ Kirigami.Page {
 
         onCurrentItemChanged: {
             if (currentItem) {
-                root.imageurl = currentItem.imageurl
-
-                const title = currentItem.content
-                if (title.includes("/")) {
-                    root.title = title.split("/")[title.split("/").length-1]
-                } else {
-                    root.title = title
-                }
+                root.url = currentItem.url;
             }
         }
 
@@ -672,7 +660,7 @@ Kirigami.Page {
                 // Don't unload the model until we're off-screen
                 model: (thumbnailToolBar.shouldShow || thumbnailToolBar.visible) ? listView.model : []
                 currentIndex: listView.currentIndex
-                onActivated: (index, imageurl) => {
+                onActivated: (index, url) => {
                     listView.currentIndex = index;
                 }
                 containerPadding: thumbnailToolBar.padding
@@ -1047,18 +1035,13 @@ Kirigami.Page {
 
     Shortcut {
         sequence: Application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
-        enabled: imagesModel.status === ImageFolderModel.Ready
+        enabled: root.modelReady
         onActivated: listView.decrementCurrentIndex()
     }
 
     Shortcut {
         sequence: Application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
-        enabled: imagesModel.status === ImageFolderModel.Ready
+        enabled: root.modelReady
         onActivated: listView.incrementCurrentIndex()
-    }
-
-    Component.onCompleted: {
-        root.mainWindow.controlsVisible = true;
-        listView.forceActiveFocus();
     }
 }

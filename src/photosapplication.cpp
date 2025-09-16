@@ -34,104 +34,83 @@ void PhotosApplication::setupActions()
 
     struct Place {
         QString id;
-        QString filter;
-        QString query;
+        ModelType modelType;
+        QVariant path;
         QString text;
         QIcon icon;
     };
 
+    const auto pictures = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
     const auto videos = QStandardPaths::standardLocations(QStandardPaths::MoviesLocation);
 
     const QList<Place> places = {
+        Place{QStringLiteral("place_pictures"),
+              FolderModel,
+              pictures.isEmpty() ? QUrl() : QUrl::fromLocalFile(pictures.constFirst()),
+              i18nc("@action:button Navigation button", "Navigate to pictures"),
+              QIcon::fromTheme(u"folder-pictures-symbolic"_s)},
+        Place{QStringLiteral("place_videos"),
+              FolderModel,
+              videos.isEmpty() ? QUrl() : QUrl::fromLocalFile(videos.constFirst()),
+              i18nc("@action:button Navigation button", "Navigate to videos"),
+              QIcon::fromTheme(u"folder-videos-symbolic"_s)},
+        Place{QStringLiteral("place_favorites"),
+              FavoritesModel,
+              {},
+              i18nc("@action:button Navigation button", "Navigate to favorites"),
+              QIcon::fromTheme(u"starred-symbolic"_s)},
+        Place{QStringLiteral("place_trash"),
+              FolderModel,
+              QUrl("trash:/"),
+              i18nc("@action:button Navigation button", "Navigate to the trash"),
+              QIcon::fromTheme(u"user-trash-symbolic"_s)},
+        Place{QStringLiteral("place_remote"),
+              FolderModel,
+              QStringLiteral("remote:/"),
+              i18nc("@action:button Navigation button", "Navigate to the remote folders"),
+              QIcon::fromTheme(u"folder-cloud-symbolic"_s)},
         Place{
-            u"place_pictures"_s,
-            u"Pictures"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures"),
-            QIcon::fromTheme(u"folder-pictures-symbolic"_s),
-        },
-        Place{
-            u"place_favorites"_s,
-            u"Favorites"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to favorites"),
-            QIcon::fromTheme(u"starred-symbolic"_s),
-        },
-        Place{
-            u"place_videos"_s,
-            u"Videos"_s,
-            u"file://"_s + (videos.isEmpty() ? QString() : videos.constFirst()),
-            i18nc("@action:button Navigation button", "Navigate to videos"),
-            QIcon::fromTheme(u"folder-videos-symbolic"_s),
-        },
-        Place{
-            u"place_trash"_s,
-            u"Trash"_s,
-            u"trash:/"_s,
-            i18nc("@action:button Navigation button", "Navigate to the trash"),
-            QIcon::fromTheme(u"user-trash-symbolic"_s),
-        },
-        Place{
-            u"place_remote"_s,
-            u"Remote"_s,
-            u"remote:/"_s,
-            i18nc("@action:button Navigation button", "Navigate to the remote folders"),
-            QIcon::fromTheme(u"folder-cloud-symbolic"_s),
-        },
-        Place{
-            u"place_countries"_s,
-            u"Countries"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by countries"),
+            QStringLiteral("place_countries"),
+            LocationModel,
+            QStringList({QStringLiteral("countries")}),
+            i18nc("@action:button Navigation button", "Navigate to pictures grouped by country"),
             QIcon::fromTheme(u"tag-places-symbolic"_s),
         },
-        Place{
-            u"place_states"_s,
-            u"States"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by states"),
-            QIcon::fromTheme(u"tag-places-symbolic"_s),
-        },
-        Place{
-            u"place_cities"_s,
-            u"Cities"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by cities"),
-            QIcon::fromTheme(u"tag-places-symbolic"_s),
-        },
-        Place{
-            u"place_years"_s,
-            u"Years"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by years"),
-            QIcon::fromTheme(u"view-calendar-symbolic"_s),
-        },
-        Place{
-            u"place_months"_s,
-            u"Months"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by months"),
-            QIcon::fromTheme(u"view-calendar-symbolic"_s),
-        },
-        Place{
-            u"place_weeks"_s,
-            u"Weeks"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by weeks"),
-            QIcon::fromTheme(u"view-calendar-symbolic"_s),
-        },
-        Place{
-            u"place_days"_s,
-            u"Days"_s,
-            {},
-            i18nc("@action:button Navigation button", "Navigate to pictures sorted by days"),
-            QIcon::fromTheme(u"view-calendar-symbolic"_s),
-        },
+        Place{QStringLiteral("place_states"),
+              LocationModel,
+              QStringList({QStringLiteral("states")}),
+              i18nc("@action:button Navigation button, state as in country subdivision", "Navigate to pictures grouped by state"),
+              QIcon::fromTheme(u"tag-places-symbolic"_s)},
+        Place{QStringLiteral("place_cities"),
+              LocationModel,
+              QStringList({QStringLiteral("cities")}),
+              i18nc("@action:button Navigation button", "Navigate to pictures grouped by cities"),
+              QIcon::fromTheme(u"tag-places-symbolic"_s)},
+        Place{QStringLiteral("place_years"),
+              TimeModel,
+              QStringList({QStringLiteral("years")}),
+              i18nc("@action:button Navigation button", "Navigate to pictures grouped by year"),
+              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+        Place{QStringLiteral("place_months"),
+              TimeModel,
+              QStringList({QStringLiteral("months")}),
+              i18nc("@action:button Navigation button", "Navigate to pictures grouped by month"),
+              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+        Place{QStringLiteral("place_weeks"),
+              TimeModel,
+              QStringList({QStringLiteral("weeks")}),
+              i18nc("@action:button Navigation button", "Navigate to pictures grouped by week"),
+              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+        Place{QStringLiteral("place_days"),
+              TimeModel,
+              QStringList({QStringLiteral("days")}),
+              i18nc("@action:button Navigation button", "Navigate to pictures grouped by day"),
+              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
     };
 
     for (const auto &place : places) {
-        auto placeAction = mainCollection()->addAction(place.id, this, [this, filter = place.filter, query = place.query] {
-            Q_EMIT filterBy(filter, query);
+        auto placeAction = mainCollection()->addAction(place.id, this, [this, modelType = place.modelType, path = place.path] {
+            Q_EMIT navigate(modelType, path);
         });
         placeAction->setCheckable(true);
         placeAction->setActionGroup(m_pagesGroup);
@@ -171,7 +150,7 @@ void PhotosApplication::updateSavedFolders()
 
         auto action = new QAction(QIcon::fromTheme(KIO::iconNameForUrl(folder)), text, this);
         connect(action, &QAction::triggered, this, [this, folder] {
-            Q_EMIT filterBy(u"Folders"_s, folder);
+            Q_EMIT navigate(FolderModel, folder);
         });
         action->setCheckable(true);
         action->setActionGroup(m_pagesGroup);
@@ -196,7 +175,7 @@ void PhotosApplication::updateTags()
     for (const auto &tag : std::as_const(m_tagNames)) {
         auto action = new QAction(QIcon::fromTheme(u"tag-symbolic"_s), tag, this);
         connect(action, &QAction::triggered, this, [this, tag] {
-            Q_EMIT filterBy(u"Tags"_s, tag);
+            Q_EMIT navigate(TagsModel, QStringList(tag));
         });
         action->setCheckable(true);
         action->setActionGroup(m_pagesGroup);

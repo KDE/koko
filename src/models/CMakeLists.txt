@@ -1,27 +1,29 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-qt_add_library(photos_model_static STATIC
-    abstractimagemodel.cpp
-    abstractimagemodel.h
-    imagefavoritesmodel.cpp
-    imagefavoritesmodel.h
-    imagefoldermodel.cpp
-    imagefoldermodel.h
-    imagegroupmodel.cpp
-    imagegroupmodel.h
-    imagelocationmodel.cpp
-    imagelocationmodel.h
-    imagestorage.cpp
+add_library(photos_model_static STATIC
+    abstractgallerymodel.h
+    abstractgallerymodel.cpp
+    abstractnavigablegallerymodel.h
+    abstractnavigablegallerymodel.cpp
+    gallerysortfilterproxymodel.h
+    gallerysortfilterproxymodel.cpp
+    mediaviewfiltermodel.h
+    mediaviewfiltermodel.cpp
     imagestorage.h
-    imagetagsmodel.cpp
-    imagetagsmodel.h
-    imagetimemodel.cpp
-    imagetimemodel.h
-    openfilemodel.cpp
-    openfilemodel.h
-    sortmodel.cpp
-    sortmodel.h
+    imagestorage.cpp
+    galleryopenmodel.h
+    galleryopenmodel.cpp
+    galleryfoldermodel.h
+    galleryfoldermodel.cpp
+    galleryfavoritesmodel.h
+    galleryfavoritesmodel.cpp
+    gallerytagsmodel.h
+    gallerytagsmodel.cpp
+    gallerytimemodel.h
+    gallerytimemodel.cpp
+    gallerylocationmodel.h
+    gallerylocationmodel.cpp
 )
 
 target_link_libraries(photos_model_static PUBLIC
@@ -33,10 +35,10 @@ target_link_libraries(photos_model_static PUBLIC
     KF6::KIOWidgets # For KDirModel
     KF6::KIOGui
     KF6::CoreAddons
+    KF6::I18n
 )
 
 ecm_add_qml_module(photos_model_static
     URI "org.kde.photos.models"
     GENERATE_PLUGIN_SOURCE
-    OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/photos/models
 )

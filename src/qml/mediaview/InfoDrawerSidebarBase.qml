@@ -299,7 +299,7 @@ Flickable {
             Layout.fillWidth: true
             icon.name: 'view-list-details-symbolic'
             text: i18nc("@action:button", "Choose What's Shown")
-            onClicked: (QQC2.ApplicationWindow.window as Main).pageStack.pushDialogLayer(Qt.createComponent("org.kde.koko", "ImageMetadataPage"), {
+            onClicked: (QQC2.ApplicationWindow.window as Main).pageStack.pushDialogLayer(Qt.createComponent("org.kde.koko", "MediaMetadataPage"), {
                 extractor: flickable.extractor,
             }, {
                 width: Kirigami.Units.gridUnit * 20,

@@ -25,7 +25,7 @@ ListView {
                                                       - (thumbnailView.count * thumbnailView.delegateSize)
                                                       - ((thumbnailView.count - 1) * thumbnailView.spacing))
 
-    signal activated(int index, url imageurl)
+    signal activated(int index, url url)
 
     orientation: Qt.Horizontal
 
@@ -93,7 +93,7 @@ ListView {
         return Math.round(centerOffset / delegateSize);
     }
 
-    delegate: AlbumDelegate {
+    delegate: MediaViewThumbnail {
         id: delegate
 
         ListView.onPooled: { thumbnailPriority = -1; }
@@ -105,10 +105,10 @@ ListView {
 
         onClicked: {
             centerAnimation.centeringBehavior = ThumbnailStrip.CenteringBehavior.NoCentering;
-            thumbnailView.activated(delegate.index, delegate.imageurl);
+            thumbnailView.activated(delegate.index, delegate.url);
         }
 
-        Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)
+        Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.url)
         Controls.ToolTip.visible: hovered
         Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 

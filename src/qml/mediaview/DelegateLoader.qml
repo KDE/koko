@@ -17,8 +17,7 @@ Loader {
     id: loader
 
     required property int index
-    required property url imageurl
-    required property string content
+    required property url url
     readonly property alias type: info.type
     readonly property alias mimeType: info.mimeType
 
@@ -44,7 +43,7 @@ Loader {
     Koko.FileInfo {
         id: info
 
-        source: loader.imageurl
+        source: loader.url
 
         // Unfortunately, just binding active to visible above and using
         // setSource in the onStatusChanged handler leads to occasional
@@ -68,7 +67,7 @@ Loader {
 
             let delegate = "";
             let properties = {
-                source: Qt.binding(() => loader.imageurl),
+                source: Qt.binding(() => loader.url),
                 isCurrent: Qt.binding(() => loader.ListView.isCurrentItem),
                 mainWindow: root.mainWindow,
                 preferAsync: loader.asynchronous
@@ -81,19 +80,19 @@ Loader {
                 }
                 properties.autoplay = Qt.binding(() => loader.index === root.startIndex);
                 properties.slideShow = slideshowManager;
-                delegate = Qt.resolvedUrl("imagedelegate/VideoDelegate.qml");
+                delegate = Qt.resolvedUrl("VideoDelegate.qml");
                 break;
             case Koko.FileInfo.VectorImageType:
-                delegate = Qt.resolvedUrl("imagedelegate/VectorImageDelegate.qml");
+                delegate = Qt.resolvedUrl("VectorImageDelegate.qml");
                 break;
             case Koko.FileInfo.AnimatedImageType:
-                delegate = Qt.resolvedUrl("imagedelegate/AnimatedImageDelegate.qml");
+                delegate = Qt.resolvedUrl("AnimatedImageDelegate.qml");
                 break;
             case Koko.FileInfo.RasterImageType:
-                delegate = Qt.resolvedUrl("imagedelegate/RasterImageDelegate.qml");
+                delegate = Qt.resolvedUrl("RasterImageDelegate.qml");
                 break;
             default:
-                console.warn("Unknown file type for URL", loader.imageurl);
+                console.warn("Unknown file type for URL", loader.url);
                 break;
             }
 

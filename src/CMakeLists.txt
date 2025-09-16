@@ -87,40 +87,40 @@ ecm_add_qml_module(koko_static
 )
 
 ecm_target_qml_sources(koko_static SOURCES
-    qml/AlbumDelegate.qml
-    qml/AlbumView.qml
+    qml/gallery/GalleryPage.qml
+    qml/gallery/GalleryDelegate.qml
+    qml/gallery/NavigatorComponent.qml
+    qml/gallery/NavigatorPathButton.qml
+
+    qml/mediaview/MediaViewPage.qml
+    qml/mediaview/MediaViewThumbnail.qml
+    qml/mediaview/DelegateLoader.qml
+    qml/mediaview/ThumbnailStrip.qml
+    qml/mediaview/OverviewControl.qml
+    qml/mediaview/SlideshowManager.qml
+    qml/mediaview/InfoDrawer.qml
+    qml/mediaview/InfoDrawerSidebarBase.qml
+    qml/mediaview/InfoSidebar.qml
+    qml/mediaview/MediaMetadataPage.qml
+    qml/mediaview/TagInput.qml
+
+    qml/mediaview/imagedelegate/ZoomArea.qml
+    qml/mediaview/imagedelegate/AnimatedImageDelegate.qml
+    qml/mediaview/imagedelegate/BaseImageDelegate.qml
+    qml/mediaview/imagedelegate/RasterImageDelegate.qml
+    qml/mediaview/imagedelegate/VectorImageDelegate.qml
+    qml/mediaview/imagedelegate/VideoDelegate.qml
+    qml/mediaview/imagedelegate/VideoPlayer.qml
+
     qml/BottomNavBar.qml
-    qml/DelegateLoader.qml
-    qml/ImageMetadataPage.qml
-    qml/ImageViewPage.qml
-    qml/InfoDrawer.qml
-    qml/InfoDrawerSidebarBase.qml
-    qml/InfoSidebar.qml
     qml/Main.qml
-    qml/OverviewControl.qml
     qml/PlacesPage.qml
-    qml/SelectionButton.qml
     qml/ShareAction.qml
     qml/ShareDialog.qml
     qml/ShareMenu.qml
     qml/Sidebar.qml
-    qml/SlideshowManager.qml
-    qml/TagInput.qml
-    qml/ThumbnailStrip.qml
-    qml/ZoomArea.qml
     qml/Settings/PhotosConfigurationView.qml
     qml/Settings/GeneralConfigPage.qml
-)
-
-ecm_target_qml_sources(koko_static PRIVATE
-    PATH imagedelegate
-    SOURCES
-        qml/imagedelegate/AnimatedImageDelegate.qml
-        qml/imagedelegate/BaseImageDelegate.qml
-        qml/imagedelegate/RasterImageDelegate.qml
-        qml/imagedelegate/VectorImageDelegate.qml
-        qml/imagedelegate/VideoDelegate.qml
-        qml/imagedelegate/VideoPlayer.qml
 )
 
 if(ANDROID)

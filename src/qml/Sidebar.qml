@@ -26,7 +26,7 @@ Kirigami.OverlayDrawer {
     required property int sidebarWidth
 
     edge: Application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-    handleVisible: modal && !Settings.isMobile
+    handleVisible: modal && mainWindow.pageStack.layers.depth < 2
 
     // Autohiding behavior
     modal: !mainWindow.wideScreen

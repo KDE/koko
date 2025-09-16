@@ -19,13 +19,23 @@ public:
     explicit PhotosApplication(QObject *parent = nullptr);
     ~PhotosApplication() override;
 
+    enum ModelType {
+        OpenModel,
+        FolderModel,
+        FavoritesModel,
+        LocationModel,
+        TimeModel,
+        TagsModel,
+    };
+    Q_ENUM(ModelType)
+
     QList<QAction *> savedFolders() const;
     QList<QAction *> tags() const;
 
 Q_SIGNALS:
     void savedFoldersChanged();
     void tagsChanged();
-    void filterBy(const QString &filter, const QString &query);
+    void navigate(const ModelType model, const QVariant path);
 
 private:
     void setupActions() override;
