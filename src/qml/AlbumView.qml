@@ -527,12 +527,14 @@ Kirigami.ScrollablePage {
         }
 
         //FIXME: right now if those two objects are out of this, the whole page breaks
+        /*
         Koko.SortModel {
             id: sortedListModel
         }
         Koko.ImageFolderModel {
             id: imageFolderModel
         }
+        */
     }
 
     onCollectionSelected: pageStack.push(Qt.resolvedUrl("AlbumView.qml"), {

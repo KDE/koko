@@ -89,6 +89,10 @@ ecm_add_qml_module(koko_static
 )
 
 ecm_target_qml_sources(koko_static SOURCES
+    qml/gallery/GalleryPage.qml
+    qml/gallery/GalleryDelegate.qml
+    qml/gallery/NavigatorComponent.qml
+    qml/gallery/NavigatorPathButton.qml
     qml/AlbumDelegate.qml
     qml/AlbumView.qml
     qml/BottomNavBar.qml

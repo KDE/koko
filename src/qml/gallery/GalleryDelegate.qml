@@ -6,10 +6,12 @@
 
 import QtQuick
 import QtQuick.Controls as Controls
+
 import org.kde.kirigami as Kirigami
+import org.kde.kquickcontrolsaddons
+
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
-import org.kde.kquickcontrolsaddons
 
 Controls.ItemDelegate {
     id: root
@@ -20,7 +22,7 @@ Controls.ItemDelegate {
     required property int itemType
     required property int fileCount
     required property bool selected
-    required property string imageurl
+    required property url url
 
     property alias thumbnailPriority: image.priority
 
@@ -95,7 +97,7 @@ Controls.ItemDelegate {
                 top: image.top
                 bottom: countRect.visible ? countRect.top : image.bottom
             }
-            visible: root.itemType == Koko.AbstractImageModel.Folder || root.itemType == Koko.AbstractImageModel.Collection
+            visible: root.itemType == Koko.AbstractGalleryModel.Folder || root.itemType == Koko.AbstractGalleryModel.Collection
             verticalAlignment: Text.AlignTop
             padding: Kirigami.Units.smallSpacing
             elide: Text.ElideRight
@@ -112,7 +114,7 @@ Controls.ItemDelegate {
                 left: image.left
                 right: image.right
             }
-            visible: root.fileCount && root.itemType == Koko.AbstractImageModel.Folder || root.itemType == Koko.AbstractImageModel.Collection
+            visible: root.fileCount && root.itemType == Koko.AbstractGalleryModel.Folder || root.itemType == Koko.AbstractGalleryModel.Collection
             height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             color: Kirigami.Theme.backgroundColor

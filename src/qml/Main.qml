@@ -99,6 +99,7 @@ StatefulApp.StatefulWindow {
         fromQAction: root.application.action('open_kcommand_bar')
     }
 
+    /*
     Component {
         id: openFileComponent
         AlbumView {
@@ -280,6 +281,7 @@ StatefulApp.StatefulWindow {
         albumView.gridViewItem.forceActiveFocus();
         filterChanged(value, query)
     }
+    */
 
     contextDrawer: Kirigami.Settings.isMobile ? contextDrawerComponent.createObject(root) : null
     wideScreen: width >= root.pageStack.defaultColumnWidth + root.sidebarWidth
@@ -309,14 +311,12 @@ StatefulApp.StatefulWindow {
         mainWindow: root
     }
 
+    /*
     Koko.SortModel {
         id: imageFolderModel
         sourceModel: Koko.ImageFolderModel {
             url: ""
         }
-        /*
-         * filterRole is an Item property exposed by the QSortFilterProxyModel
-         */
         filterRole: Koko.AbstractImageModel.MimeTypeRole
     }
 
@@ -386,6 +386,7 @@ StatefulApp.StatefulWindow {
     Koko.ImageGroupModel {
         id: imageListModel
     }
+    */
 
     Koko.NotificationManager {
         id: notificationManager
@@ -393,6 +394,13 @@ StatefulApp.StatefulWindow {
 
     KQA.Clipboard {
         id: clipboard
+    }
+
+    // TODO: Temp test crap:
+    Koko.GalleryFolderModel {
+        id: galleryModel
+
+        path: "file:///home"
     }
 
     Component.onCompleted: {
@@ -404,6 +412,18 @@ StatefulApp.StatefulWindow {
         // move mobile handles to toolbar
         pageStack.globalToolBar.canContainHandles = true;
 
+        root.pageStack.clear();
+        root.pageStack.layers.clear();
+
+        root.pageStack.push(Qt.resolvedUrl("GalleryPage.qml"), {
+            application: root.application,
+            mainWindow: root,
+            galleryModel: galleryModel
+        });
+        root.albumView = root.pageStack.currentItem;
+
+
+        /*
         switch (Koko.OpenFileModel.mode) {
             case Koko.OpenFileModel.OpenNone:
                 root.application.action("place_pictures").trigger();
@@ -441,5 +461,6 @@ StatefulApp.StatefulWindow {
 
                 return;
         }
+        */
     }
 }
