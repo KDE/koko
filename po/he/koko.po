@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:40+0000\n"
+"POT-Creation-Date: 2025-09-17 00:41+0000\n"
 "PO-Revision-Date: 2025-09-03 11:16+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -386,25 +386,25 @@ msgstr "ביטול בחירת כל המדיה שנבחרה"
 msgid "No Media Found"
 msgstr "לא נמצאה מדיה"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:94
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:95
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "תמונות"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:100
+#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:101
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "סרטונים"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:106
+#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:107
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "מועדפים"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:91
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:92
 #, kde-format
 msgid "Places"
 msgstr "מקומות"
@@ -820,88 +820,88 @@ msgstr "מקומות"
 msgid "Images"
 msgstr "תמונות"
 
-#: qml/PlacesPage.qml:21 qml/Sidebar.qml:243
+#: qml/PlacesPage.qml:21 qml/Sidebar.qml:244
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "הגדרות"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:113
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:114
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "אשפה"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:140
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:141
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "רשת"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:120
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:121
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "סימניות"
 
-#: qml/PlacesPage.qml:91 qml/Sidebar.qml:146
+#: qml/PlacesPage.qml:91 qml/Sidebar.qml:147
 #, kde-format
 msgid "Locations"
 msgstr "מקומות"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:149
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:150
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "ארצות"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:155
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:156
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "מדינות"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:162
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "ערים"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:167
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:168
 #, kde-format
 msgid "Time"
 msgstr "שעה"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:170
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:171
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "שנים"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:176
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:177
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "חודשים"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:182
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:183
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "שבועות"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:188
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:189
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "ימים"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:194
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:195
 #, kde-format
 msgid "Tags"
 msgstr "תגיות"
 
-#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:221
+#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:222
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "גודל תמונה ממוזערת:"
@@ -983,23 +983,23 @@ msgctxt "@title:menu"
 msgid "Share"
 msgstr "שיתוף"
 
-#: qml/Sidebar.qml:55
+#: qml/Sidebar.qml:56
 #, kde-format
 msgid "Filter by"
 msgstr "סינון לפי"
 
-#: qml/Sidebar.qml:136
+#: qml/Sidebar.qml:137
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "מרוחק"
 
-#: qml/Sidebar.qml:225
+#: qml/Sidebar.qml:226
 #, kde-format
 msgid "%1 px"
 msgstr "%1 פיקסלים"
 
-#: qml/Sidebar.qml:241
+#: qml/Sidebar.qml:242
 #, kde-format
 msgid "Settings"
 msgstr "הגדרות"

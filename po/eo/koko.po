@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:40+0000\n"
+"POT-Creation-Date: 2025-09-17 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -397,28 +397,28 @@ msgstr "Malelektas ĉiujn elektitajn amaskomunikilarojn"
 msgid "No Media Found"
 msgstr "Neniu Amaskomunikilaro Trovita"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:94
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:95
 #, fuzzy, kde-format
 #| msgid "Pictures"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Bildoj"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:100
+#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:101
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videoj"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:106
+#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:107
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Plej ŝatataj"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:91
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:92
 #, kde-format
 msgid "Places"
 msgstr "Lokoj"
@@ -850,99 +850,99 @@ msgstr "Lokoj"
 msgid "Images"
 msgstr "Bildoj"
 
-#: qml/PlacesPage.qml:21 qml/Sidebar.qml:243
+#: qml/PlacesPage.qml:21 qml/Sidebar.qml:244
 #, fuzzy, kde-format
 #| msgid "Settings"
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Agordoj"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:113
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:114
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Rubujo"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:140
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:141
 #, fuzzy, kde-format
 #| msgid "Network"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Reto"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:120
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:121
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Forigi legosignon"
 
-#: qml/PlacesPage.qml:91 qml/Sidebar.qml:146
+#: qml/PlacesPage.qml:91 qml/Sidebar.qml:147
 #, kde-format
 msgid "Locations"
 msgstr "Lokoj"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:149
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:150
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Landoj"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:155
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:156
 #, fuzzy, kde-format
 #| msgid "States"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Ŝtatoj"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:161
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:162
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Urboj"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:167
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:168
 #, kde-format
 msgid "Time"
 msgstr "Tempo"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:170
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:171
 #, fuzzy, kde-format
 #| msgid "Years"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Jaroj"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:176
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:177
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Monatoj"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:182
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:183
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Semajnoj"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:188
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:189
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Tagoj"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:194
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:195
 #, kde-format
 msgid "Tags"
 msgstr "Etikedoj"
 
-#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:221
+#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:222
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Grandeco de bildetoj:"
@@ -1029,23 +1029,23 @@ msgctxt "@title:menu"
 msgid "Share"
 msgstr "Kunhavigi"
 
-#: qml/Sidebar.qml:55
+#: qml/Sidebar.qml:56
 #, kde-format
 msgid "Filter by"
 msgstr "Filtri per"
 
-#: qml/Sidebar.qml:136
+#: qml/Sidebar.qml:137
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Malproksima"
 
-#: qml/Sidebar.qml:225
+#: qml/Sidebar.qml:226
 #, kde-format
 msgid "%1 px"
 msgstr "%1 px"
 
-#: qml/Sidebar.qml:241
+#: qml/Sidebar.qml:242
 #, kde-format
 msgid "Settings"
 msgstr "Agordoj"
