@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-17 00:41+0000\n"
-"PO-Revision-Date: 2025-07-13 23:32+0300\n"
+"PO-Revision-Date: 2025-09-19 18:26+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -638,14 +638,13 @@ msgstr "Aloita diaesitys"
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "Tu&losta"
 
 #: qml/ImageViewPage.qml:174
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr "Edellinen kuva"
+msgstr "Tulosta kuva"
 
 #: qml/ImageViewPage.qml:190
 #, kde-format
@@ -903,45 +902,43 @@ msgstr "Pienoiskuvan koko:"
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "Kuvanäkymän tausta"
 
 #: qml/Settings/GeneralConfigPage.qml:43
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "Musta"
 
 #: qml/Settings/GeneralConfigPage.qml:53
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "Valkoinen"
 
 #: qml/Settings/GeneralConfigPage.qml:64
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "Teeman oletus"
 
 #: qml/Settings/GeneralConfigPage.qml:65
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "Käytä teeman määrittämää taustaväriä"
 
 #: qml/Settings/GeneralConfigPage.qml:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Näytä läpinäkyvien kuvien taustalla ruutukuvio"
 
 #: qml/Settings/GeneralConfigPage.qml:92
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
-msgstr "Diaesitys:"
+msgstr "Diaesitys"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format
