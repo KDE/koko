@@ -31,15 +31,46 @@ ListView {
 
     spacing: thumbnailView.containerPadding
 
-    highlightRangeMode: ListView.ApplyRange
-    highlightFollowsCurrentItem: true
-    preferredHighlightBegin: (width - thumbnailView.delegateSize) / 2
-    preferredHighlightEnd: (width + thumbnailView.delegateSize) / 2
-    highlightMoveVelocity: -1
-    highlightMoveDuration: Kirigami.Units.longDuration
     displayMarginBeginning: thumbnailView.containerPadding
     displayMarginEnd: thumbnailView.containerPadding
     reuseItems: true
+
+    enum CenteringBehavior {
+        NoCentering,
+        ImmediateCentering,
+        AnimatedCentering
+    }
+
+    // Use a custom animation instead of highlightRangeMode as it tends to be very glitchy,
+    // see https://bugreports.qt.io/browse/QTBUG-139761
+    NumberAnimation {
+        id: centerAnimation
+        target: thumbnailView
+        property: "contentX"
+        from: thumbnailView.contentX
+        property bool enabled: false
+        property int centeringBehavior: ThumbnailStrip.CenteringBehavior.ImmediateCentering
+        to: Math.min(thumbnailView.contentWidth - thumbnailView.width,
+                Math.max(0,
+                    (thumbnailView.delegateSize + thumbnailView.spacing) * thumbnailView.currentIndex - thumbnailView.width/2 + thumbnailView.delegateSize/2))
+        onToChanged: {
+            if (thumbnailView.currentIndex < 0) {
+                return;
+            }
+            switch (centeringBehavior) {
+            case ThumbnailStrip.CenteringBehavior.AnimatedCentering:
+                restart();
+                break;
+            case ThumbnailStrip.CenteringBehavior.ImmediateCentering:
+                thumbnailView.contentX = to;
+                break;
+            default:
+                break;
+            }
+
+            centeringBehavior = ThumbnailStrip.CenteringBehavior.AnimatedCentering;
+        }
+    }
 
     // Center content when there aren't enough items to fill the width
     header: Item {
@@ -77,7 +108,10 @@ ListView {
         width: thumbnailView.delegateSize
         height: thumbnailView.delegateSize
 
-        onClicked: thumbnailView.activated(delegate.index)
+        onClicked: {
+            centerAnimation.centeringBehavior = ThumbnailStrip.CenteringBehavior.NoCentering;
+            thumbnailView.activated(delegate.index);
+        }
 
         Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.imageurl)
         Controls.ToolTip.visible: hovered

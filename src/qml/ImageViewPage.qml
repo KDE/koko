@@ -36,6 +36,7 @@ Kirigami.Page {
             }
             stopLoadingImages.restart();
             startIndex = listView.model.mapFromSource(listView.model.sourceModel.index(listView.model.sourceModel.indexForUrl(Koko.OpenFileModel.urlToOpen), 0)).row;
+            thumbnailView.positionViewAtIndex(startIndex, ListView.Contain);
         }
     }
 
