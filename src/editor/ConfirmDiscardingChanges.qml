@@ -9,11 +9,13 @@ import org.kde.kirigami as Kirigami
 Kirigami.PromptDialog {
     id: root
 
+    required property string imageFileName
+
     signal saveChanges()
     signal discardChanges()
 
-    title: i18n("Unsaved Changes")
-    subtitle: i18n("This image has been modified. Do you want to save your changes or discard them?")
+    title: i18nc("@title", "Unsaved Changes")
+    subtitle: xi18nc("@label", "The image <filename>%1</filename> has been modified. Do you want to save your changes or discard them?", imageFileName)
     dialogType: Kirigami.PromptDialog.Warning
 
     standardButtons: Kirigami.Dialog.Save | Kirigami.Dialog.Discard | Kirigami.Dialog.Cancel

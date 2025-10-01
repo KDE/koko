@@ -25,9 +25,11 @@ Kirigami.Page {
         imageView.document.setBaseImage(imagePath.replace("file://", ""))
     }
 
+    readonly property string imageFileName: root.imagePath.substring(root.imagePath.lastIndexOf("/") + 1)
+
     signal imageEdited()
 
-    title: i18n("Edit")
+    title: xi18nc("@title", "Edit <filename>%1</filename>", root.imageFileName)
     topPadding: 0
     bottomPadding: 0
     leftPadding: 0
@@ -37,7 +39,7 @@ Kirigami.Page {
         const ok = imageView.document.saveImage(imagePath.replace("file://", ""));
         if (!ok) {
             root.msg.type = Kirigami.MessageType.Error
-            root.msg.text = i18n("Unable to save file. Check if you have the correct permissions to save this file.")
+            root.msg.text = i18nc("@label", "Unable to save file. Check if you have the correct permissions to save this file.")
             root.msg.visible = true;
 
             return false;
@@ -323,7 +325,7 @@ Kirigami.Page {
             const ok = imageView.document.saveImage(saveAsDialog.selectedFile.toString().replace("file://", ""));
             if (!ok) {
                 msg.type = Kirigami.MessageType.Error
-                msg.text = i18n("Unable to save file. Check if you have the correct permissions to save this file.")
+                msg.text = i18nc("@label", "Unable to save file. Check if you have the correct permissions to save this file.")
                 msg.visible = true;
                 return;
             }
@@ -342,6 +344,8 @@ Kirigami.Page {
 
     ConfirmDiscardingChanges {
         id: confirmDiscardingChangesDialog
+
+        imageFileName: root.imageFileName
 
         onSaveChanges: {
             if (root.save()) {
@@ -417,7 +421,7 @@ Kirigami.Page {
             }
 
             Controls.Label {
-                text: i18n("Zoom:")
+                text: i18nc("@label", "Zoom:")
             }
 
             Controls.SpinBox {
@@ -432,7 +436,7 @@ Kirigami.Page {
                 valueFromText: (text, locale) => {
                     return Number.fromLocaleString(locale, text.replace(/\D/g,''))
                 }
-                Controls.ToolTip.text: i18n("Image Zoom")
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Image Zoom")
                 Controls.ToolTip.visible: hovered
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
                 Binding {
