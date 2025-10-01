@@ -634,53 +634,33 @@ Kirigami.Page {
         padding: Kirigami.Units.largeSpacing
         position: QQC2.ToolBar.Footer
 
-        contentItem: StackLayout {
-            currentIndex: imagePlaceholder?.visible ? 0 : 1
-            RowLayout {
-                Layout.fillWidth: true
-                Layout.fillHeight: true
-                Repeater {
-                    model: imagePlaceholder?.visible ? Math.floor(parent.width / parent.height) : 0
-                    delegate: Item {
-                        Layout.fillHeight: true
-                        implicitWidth: height
-                        Kirigami.Icon {
-                            anchors.centerIn: parent
-                            source: "chronometer-symbolic"
-                            width: Kirigami.Units.iconSizes.large
-                            height: width
-                        }
-                    }
+        contentItem: QQC2.ScrollView {
+            id: thumbnailScrollView
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            implicitWidth: -1 // Prevents binding loop, is unused due to anchors
+
+            opacity: thumbnailToolBar.shouldShow ? 1 : 0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: Easing.InOutQuad
                 }
             }
-            QQC2.ScrollView {
-                id: thumbnailScrollView
-                Layout.fillWidth: true
-                Layout.fillHeight: true
 
-                implicitWidth: -1 // Prevents binding loop, is unused due to anchors
+            QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
+            QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
 
-                opacity: thumbnailToolBar.shouldShow ? 1 : 0
-                Behavior on opacity {
-                    NumberAnimation {
-                        duration: Kirigami.Units.longDuration
-                        easing.type: Easing.InOutQuad
-                    }
+            ThumbnailStrip {
+                id: thumbnailView
+                // Don't unload the model until we're off-screen
+                model: (thumbnailToolBar.shouldShow || thumbnailToolBar.visible) ? listView.model : []
+                currentIndex: listView.currentIndex
+                onActivated: (index, imageurl) => {
+                    listView.currentIndex = index;
                 }
-
-                QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
-                QQC2.ScrollBar.vertical.policy: QQC2.ScrollBar.AlwaysOff
-
-                ThumbnailStrip {
-                    id: thumbnailView
-                    // Don't unload the model until we're off-screen
-                    model: (thumbnailToolBar.shouldShow || thumbnailToolBar.visible) ? listView.model : []
-                    currentIndex: listView.currentIndex
-                    onActivated: (index, imageurl) => {
-                        listView.currentIndex = index;
-                    }
-                    containerPadding: thumbnailToolBar.padding
-                }
+                containerPadding: thumbnailToolBar.padding
             }
         }
     }
