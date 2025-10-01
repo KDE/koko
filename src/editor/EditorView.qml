@@ -243,9 +243,7 @@ Kirigami.Page {
             enabled: imageView.document.modified
             text: i18nc("@action:button Save image modification", "Save")
             icon.name: "document-save-symbolic"
-            onTriggered: {
-                confirmSavingChangesDialog.visible = true;
-            }
+            onTriggered: root.save()
             shortcut: StandardKey.Save
         },
 
@@ -253,9 +251,7 @@ Kirigami.Page {
             id: saveAsAction
             text: i18nc("@action:button Save As image modification", "Save As")
             icon.name: "document-save-as-symbolic"
-            onTriggered: {
-                saveAsDialog.open();
-            }
+            onTriggered: saveAsDialog.open()
             shortcut: StandardKey.SaveAs
         }
     ]
@@ -354,12 +350,6 @@ Kirigami.Page {
         }
 
         onDiscardChanges: root.mainWindow.pageStack.layers.pop()
-    }
-
-    ConfirmSavingChanges {
-        id: confirmSavingChangesDialog
-
-        onSaveChanges: root.save();
     }
 
     TextMetrics {
