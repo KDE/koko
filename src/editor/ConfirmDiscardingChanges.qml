@@ -4,19 +4,19 @@
 import QtQuick
 import QtQuick.Controls as QQC2
 
-import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigami as Kirigami
 
-Components.MessageDialog {
+Kirigami.PromptDialog {
     id: root
 
     signal saveChanges()
     signal discardChanges()
 
-    title: i18n("Discard changes")
+    title: i18n("Unsaved Changes")
     subtitle: i18n("This image has been modified. Do you want to save your changes or discard them?")
-    dialogType: Components.MessageDialog.Warning
+    dialogType: Kirigami.PromptDialog.Warning
 
-    standardButtons: QQC2.Dialog.Save | QQC2.Dialog.Discard | QQC2.Dialog.Cancel
+    standardButtons: Kirigami.Dialog.Save | Kirigami.Dialog.Discard | Kirigami.Dialog.Cancel
 
     onAccepted: {
         saveChanges();
