@@ -57,7 +57,7 @@ Row {
 
             Controls.CheckBox {
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Stroke:")
+                text: i18nc("@label, annotation tool option", "Stroke:")
                 checked: colorRect.color.a > 0
                 onToggled: if (root.useSelectionOptions) {
                     root.selectedItem.strokeColor.a = checked
@@ -94,7 +94,7 @@ Row {
                 valueFromText: (text, locale) => {
                     return Number.fromLocaleString(locale, text.replace(/\D/g,''))
                 }
-                Controls.ToolTip.text: i18n("Stroke Width")
+                Controls.ToolTip.text: i18nc("@label, annotation tool option", "Stroke Width")
                 Controls.ToolTip.visible: hovered
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
                 // not using onValueModified because of https://bugreports.qt.io/browse/QTBUG-91281
@@ -124,7 +124,7 @@ Row {
             ToolButton {
                 anchors.verticalCenter: parent.verticalCenter
                 display: Controls.ToolButton.IconOnly
-                Controls.ToolTip.text: i18n("Stroke Color")
+                Controls.ToolTip.text: i18nc("@label, annotation tool option", "Stroke Color")
                 Rectangle { // should we use some kind of image provider instead?
                     id: colorRect
                     anchors.centerIn: parent
@@ -175,7 +175,7 @@ Row {
 
             Controls.CheckBox {
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Fill:")
+                text: i18nc("@label, annotation tool option", "Fill:")
                 checked: colorRect.color.a > 0
                 onToggled: if (root.useSelectionOptions) {
                     root.selectedItem.fillColor.a = checked
@@ -187,7 +187,7 @@ Row {
             ToolButton {
                 anchors.verticalCenter: parent.verticalCenter
                 display: Controls.ToolButton.IconOnly
-                Controls.ToolTip.text: i18n("Fill Color")
+                Controls.ToolTip.text: i18nc("@label", "Fill Color")
                 Rectangle {
                     id: colorRect
                     anchors.centerIn: parent
@@ -240,7 +240,7 @@ Row {
 
             Controls.Label {
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18nc("@label:slider strength of effect", "Strength:")
+                text: i18nc("@label:slider Strength of annotation tool effect", "Strength:")
             }
 
             Controls.Slider {
@@ -283,7 +283,7 @@ Row {
                 leftPadding: root.mirrored ? 0 : parent.spacing
                 rightPadding: root.mirrored ? parent.spacing : 0
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Font:")
+                text: i18nc("@label", "Font:")
             }
 
             ToolButton {
@@ -342,7 +342,7 @@ Row {
             ToolButton {
                 anchors.verticalCenter: parent.verticalCenter
                 display: Controls.ToolButton.IconOnly
-                Controls.ToolTip.text: i18n("Font Color")
+                Controls.ToolTip.text: i18nc("@label", "Font Color")
                 Rectangle {
                     id: colorRect
                     anchors.centerIn: parent
@@ -395,7 +395,7 @@ Row {
                 leftPadding: root.mirrored ? 0 : parent.spacing
                 rightPadding: root.mirrored ? parent.spacing : 0
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Number:")
+                text: i18nc("@label, annotation tool option", "Number:")
             }
 
             Controls.SpinBox {
@@ -414,7 +414,7 @@ Row {
                 to: Math.max(999, number + 1)
                 stepSize: 1
                 value: number
-                Controls.ToolTip.text: i18n("Number for number annotations")
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Number for number annotations")
                 Controls.ToolTip.visible: hovered
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
                 // not using onValueModified because of https://bugreports.qt.io/browse/QTBUG-91281
@@ -438,7 +438,7 @@ Row {
         id: shadowCheckBox
         anchors.verticalCenter: parent.verticalCenter
         visible: root.options & AnnotationTool.ShadowOption
-        text: i18n("Shadow")
+        text: i18nc("@label, annotation tool option", "Shadow")
         checked: {
             if (root.tool.type === AnnotationTool.TextTool && root.selectedItem.options & AnnotationTool.TextOption) {
                 return root.tool.shadow;
