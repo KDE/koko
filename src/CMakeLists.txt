@@ -64,6 +64,7 @@ target_link_libraries(koko_static PUBLIC
     KF6::Notifications
     KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
+    ${LibTesseract_LIBRARIES}
 )
 
 if(Qt6PrintSupport_FOUND)
