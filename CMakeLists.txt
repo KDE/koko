@@ -50,6 +50,7 @@ endif()
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO CoreAddons Notifications FileMetaData DBusAddons)
 
 find_package(LibExiv2 0.28 REQUIRED)
+find_package(PkgConfig REQUIRED)
 
 ecm_find_qmlmodule(org.kde.kquickimageeditor)
 find_package(KQuickImageEditor 0.6.0 COMPONENTS)
@@ -95,6 +96,9 @@ set_package_properties(KF6Purpose PROPERTIES
     PURPOSE "Required at runtime to run Koko and allow sharing of files"
     TYPE RUNTIME
 )
+
+pkg_check_modules(LibTesseract REQUIRED tesseract) 
+pkg_check_modules(LibLeptonica REQUIRED lept)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
