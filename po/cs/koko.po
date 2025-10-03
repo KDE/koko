@@ -641,11 +641,10 @@ msgid "&Print"
 msgstr ""
 
 #: qml/ImageViewPage.qml:186
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr "Předchozí obrázek"
+msgstr ""
 
 #: qml/ImageViewPage.qml:202
 #, kde-format
@@ -937,11 +936,10 @@ msgid "Show a checkerboard background behind transparent images"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:92
-#, fuzzy, kde-format
-#| msgid "Stop Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
-msgstr "Zastavit promítání"
+msgstr ""
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format
