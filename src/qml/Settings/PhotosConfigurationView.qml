@@ -18,6 +18,12 @@ KirigamiSettings.ConfigurationView {
             icon.name: "preferences-desktop-theme-global"
             page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
         },
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "ocr"
+            text: i18nc("@action:button", "Text extraction")
+            icon.name: "insert-text"
+            page: () => Qt.createComponent("org.kde.koko", "OcrConfigPage")
+        },
         KirigamiSettings.ShortcutsConfigurationModule {
             application: root.application
         },
