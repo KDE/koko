@@ -118,6 +118,14 @@ Kirigami.Page {
                 });
             }
         },
+        Kirigami.Action {
+            id: ocrAction
+            text: i18nc("@action:intoolbar Extract text from the image", "&Extract text")
+            icon.name: "insert-text"
+            tooltip: i18nc("@info:tooltip", "Extract text")
+            visible: Koko.Ocr.supported && listView.currentItem.type === Koko.FileInfo.RasterImageType
+            onTriggered: Koko.Ocr.extractText(listView.currentItem.imageurl)
+        },
         ShareAction {
             id: shareAction
 

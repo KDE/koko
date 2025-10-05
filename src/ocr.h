@@ -1,0 +1,61 @@
+// SPDX-FileCopyrightText: 2025 Florian RICHER <florian.richer@protonmail.com>
+// SPDX-License-Identifier: LGPL-2.0-or-later
+
+#pragma once
+
+#include <QObject>
+#include <QTimer>
+#include <qqmlregistration.h>
+#include <tesseract/baseapi.h>
+
+class Ocr : public QObject
+{
+    Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
+    Q_PROPERTY(bool supported READ supported NOTIFY supportedChanged)
+    Q_PROPERTY(bool loaded READ loaded NOTIFY loadedChanged)
+    Q_PROPERTY(QStringList availableLanguages READ availableLanguages NOTIFY availableLanguagesChanged) // NOTE: Define as CONSTANT ?
+    Q_PROPERTY(QStringList loadedLanguages READ loadedLanguages NOTIFY loadedLanguagesChanged)
+
+public:
+    explicit Ocr(QObject *parent = nullptr);
+    virtual ~Ocr();
+
+    bool supported() const;
+    bool loaded() const;
+    QStringList availableLanguages() const;
+    QStringList loadedLanguages() const;
+
+    Q_INVOKABLE void extractText(const QString imagePath);
+    Q_INVOKABLE void loadLanguage(const QString language);
+    Q_INVOKABLE void unloadLanguage(const QString language);
+
+signals:
+    void supportedChanged();
+    void loadedChanged();
+    void loadedLanguagesChanged();
+    void availableLanguagesChanged();
+
+private slots:
+    void loadPendingLanguages();
+
+private:
+    bool m_supported = false;
+    bool m_loaded = false;
+
+    QTimer m_loadTimer;
+
+    QStringList m_loadedLanguages = {};
+    QStringList m_availableLanguages = {};
+    QStringList m_pendingLanguages = {};
+
+    tesseract::TessBaseAPI *m_api{nullptr};
+
+    bool load(const QStringList languages);
+    void unload();
+
+    void refreshAvailableLanguages();
+    void refreshLoadedLanguages();
+};
