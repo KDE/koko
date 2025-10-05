@@ -31,6 +31,7 @@ qt_add_library(koko_static STATIC
     checkerboardimageprovider.cpp
     printerhelper.cpp
     filedialoghelper.cpp
+    ocr.cpp
 )
 
 kconfig_target_kcfg_file(koko_static
@@ -114,6 +115,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/ZoomArea.qml
     qml/Settings/PhotosConfigurationView.qml
     qml/Settings/GeneralConfigPage.qml
+    qml/Settings/OcrConfigPage.qml
 )
 
 ecm_target_qml_sources(koko_static PRIVATE
