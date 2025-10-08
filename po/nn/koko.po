@@ -1238,6 +1238,3 @@ msgstr ""
 #, kde-format
 msgid "Add new tag…"
 msgstr ""
-
-#~ msgid "Edit"
-#~ msgstr "Rediger"
