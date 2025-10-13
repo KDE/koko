@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-07-21 01:11+0200\n"
+"PO-Revision-Date: 2025-10-12 12:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -31,7 +31,7 @@ msgstr "kde@peremen.name"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "획:"
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -41,150 +41,147 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
+msgstr[0] "%1픽셀"
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "획 너비"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "획 색상"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "채우기:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "채우기 색상"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "강도:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "효과의 강도입니다."
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "글꼴:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
+msgstr[0] "%2 %3 %1포인트"
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
+msgstr[0] "%2 %1포인트"
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "글꼴 색상"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "번호:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "번호 표기에 사용할 번호"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "그림자"
 
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr ""
+msgstr "없음"
 
 #: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "자르기"
 
 #: editor/AnnotationsToolBarContents.qml:120
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "모두 선택"
+msgstr "선택"
 
 #: editor/AnnotationsToolBarContents.qml:129
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr ""
+msgstr "자유형"
 
 #: editor/AnnotationsToolBarContents.qml:130
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
-msgstr ""
+msgstr "Shift: 직선으로 고정"
 
 #: editor/AnnotationsToolBarContents.qml:137
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
-msgstr ""
+msgstr "강조 도구"
 
 #: editor/AnnotationsToolBarContents.qml:146
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
-msgstr ""
+msgstr "선"
 
 #: editor/AnnotationsToolBarContents.qml:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr ""
+msgstr "Shift: 45도 단위로 고정"
 
 #: editor/AnnotationsToolBarContents.qml:154
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
-msgstr ""
+msgstr "화살표"
 
 #: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
-msgstr ""
+msgstr "직사각형"
 
 #: editor/AnnotationsToolBarContents.qml:165
 #, kde-format
@@ -193,43 +190,44 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
+"Shift: 대각선 이동으로 고정\n"
+"Ctrl: 중심점 기준으로 크기 조정"
 
 #: editor/AnnotationsToolBarContents.qml:172
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
-msgstr ""
+msgstr "타원"
 
 #: editor/AnnotationsToolBarContents.qml:180
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
-msgstr ""
+msgstr "픽셀화"
 
 #: editor/AnnotationsToolBarContents.qml:188
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
-msgstr ""
+msgstr "흐리게"
 
 #: editor/AnnotationsToolBarContents.qml:196
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
-msgstr ""
+msgstr "텍스트"
 
 #: editor/AnnotationsToolBarContents.qml:203
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
-msgstr ""
+msgstr "숫자"
 
 #: editor/ConfirmDiscardingChanges.qml:17
-#, fuzzy, kde-format
-#| msgid "Discard changes"
+#, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr "변경 사항 무시"
+msgstr "저장하지 않은 변경 사항"
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -238,18 +236,17 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
+"<filename>%1</filename> 그림이 수정되었습니다. 변경 사항을 저장하거나 무시하"
+"시겠습니까?"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
-msgstr ""
+msgstr "<filename>%1</filename> 편집"
 
 #: editor/EditorView.qml:42 editor/EditorView.qml:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to save file. Check if you have the correct permission to edit "
-#| "this file."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
@@ -277,53 +274,43 @@ msgid "Size:"
 msgstr "크기:"
 
 #: editor/EditorView.qml:159
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
-msgstr "왼쪽으로 회전"
+msgstr "회전"
 
 #: editor/EditorView.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "왼쪽으로 회전"
 
 #: editor/EditorView.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the right"
-#| msgid "Rotate right"
+#, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "오른쪽으로 회전"
 
 #: editor/EditorView.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
-msgstr "상하 뒤집기"
+msgstr "뒤집기"
 
 #: editor/EditorView.qml:194
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
-msgstr ""
+msgstr "상하 반전"
 
 #: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
-msgstr ""
+msgstr "좌우 반전"
 
 #: editor/EditorView.qml:222
-#, fuzzy, kde-format
-#| msgctxt "@action:button Undo modification"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "실행 취소"
@@ -332,7 +319,7 @@ msgstr "실행 취소"
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
-msgstr ""
+msgstr "다시 실행"
 
 #: editor/EditorView.qml:246
 #, kde-format
@@ -341,8 +328,7 @@ msgid "Save"
 msgstr "저장"
 
 #: editor/EditorView.qml:254
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "다른 이름으로 저장"
@@ -351,14 +337,13 @@ msgstr "다른 이름으로 저장"
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
-msgstr ""
+msgstr "확대/축소:"
 
 #: editor/EditorView.qml:439
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
-msgstr "그림"
+msgstr "그림 확대/축소"
 
 #: editor/ImageView.qml:196
 #, kde-format
@@ -368,6 +353,9 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
+"선택하려면 클릭한 후 드래그하십시오.\n"
+"선택을 두 번 클릭하면 수락하고 잘라냅니다.\n"
+"오른쪽 클릭하면 선택을 지웁니다."
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
 #, kde-format
@@ -567,7 +555,7 @@ msgstr "그림을 <a href='%1'>%1</a> URL로 공유했습니다"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "그림으로 탐색"
 
 #: photosapplication.cpp:57
 #, kde-format
@@ -579,61 +567,61 @@ msgstr "책갈피로 탐색"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "동영상으로 탐색"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "휴지통으로 탐색"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "원격 폴더로 탐색"
 
 #: photosapplication.cpp:85
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "국가별로 정렬된 그림으로 탐색"
 
 #: photosapplication.cpp:92
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by states"
-msgstr ""
+msgstr "주/도별로 정렬된 그림으로 탐색"
 
 #: photosapplication.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "도시별로 정렬된 그림으로 탐색"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "연도별로 정렬된 그림으로 탐색"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "월별로 정렬된 그림으로 탐색"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "주별로 정렬된 그림으로 탐색"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "날짜별로 정렬된 그림으로 탐색"
 
 #: qml/AlbumDelegate.qml:128
 #, kde-format
@@ -642,8 +630,7 @@ msgid_plural "%1 Images"
 msgstr[0] "그림 %1개"
 
 #: qml/AlbumView.qml:48
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "폴더"
@@ -726,22 +713,19 @@ msgid "No Media Found"
 msgstr "미디어를 찾을 수 없음"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:95
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "그림"
 
 #: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:101
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "동영상"
 
 #: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:107
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "책갈피"
@@ -791,17 +775,16 @@ msgstr "현재 동영상 반복"
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "메타데이터 표시 설정"
 
 #: qml/ImageMetadataPage.qml:46
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: qml/ImageViewPage.qml:89
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "책갈피"
@@ -837,39 +820,34 @@ msgid "&Share"
 msgstr "공유(&S)"
 
 #: qml/ImageViewPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "동영상 공유"
+msgstr "이 동영상 공유"
 
 #: qml/ImageViewPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "그림 공유"
+msgstr "이 그림 공유"
 
 #: qml/ImageViewPage.qml:147
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "정보"
+msgstr "정보(&I)"
 
 #: qml/ImageViewPage.qml:154
-#, fuzzy, kde-format
-#| msgid "See information about video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "동영상 정보 표시"
+msgstr "이 동영상의 정보 표시"
 
 #: qml/ImageViewPage.qml:156
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "그림 정보 표시"
+msgstr "이 그림의 정보 표시"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:175
@@ -879,8 +857,7 @@ msgid "&Slideshow"
 msgstr "슬라이드 쇼(&S)"
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "슬라이드 쇼 시작"
@@ -889,14 +866,13 @@ msgstr "슬라이드 쇼 시작"
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "인쇄(&P)"
 
 #: qml/ImageViewPage.qml:187
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr "이전 그림"
+msgstr "그림 인쇄"
 
 #: qml/ImageViewPage.qml:203
 #, kde-format
@@ -908,34 +884,31 @@ msgstr "컨트롤 표시(&C)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "몰입 보기 모드로 들어가기"
 
 #: qml/ImageViewPage.qml:205
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "몰입 보기 모드 끝내기"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr "섬네일 바 표시"
+msgstr "섬네일 도구 모음 표시(&T)"
 
 #: qml/ImageViewPage.qml:216
-#, fuzzy, kde-format
-#| msgid "Show Thumbnail Bar"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr "섬네일 바 표시"
+msgstr "섬네일 도구 모음 표시"
 
 #: qml/ImageViewPage.qml:217
-#, fuzzy, kde-format
-#| msgid "Hide Thumbnail Bar"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr "섬네일 바 숨기기"
+msgstr "섬네일 도구 모음 숨기기"
 
 #: qml/ImageViewPage.qml:239
 #, kde-format
@@ -944,11 +917,10 @@ msgid "&Full Screen"
 msgstr "전체 화면(&F)"
 
 #: qml/ImageViewPage.qml:241
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "전체 화면 모드 시작"
+msgstr "전체 화면으로 전환"
 
 #: qml/ImageViewPage.qml:241
 #, kde-format
@@ -1015,7 +987,7 @@ msgstr "별점을 %1(으)로 설정"
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: qml/InfoDrawerSidebarBase.qml:107
 #, kde-format
@@ -1054,11 +1026,10 @@ msgstr "태그 추가"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "표시할 항목 선택"
 
 #: qml/Main.qml:69
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "위치"
@@ -1075,8 +1046,7 @@ msgid "Settings"
 msgstr "설정"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:114
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "휴지통"
@@ -1088,11 +1058,10 @@ msgid "Network"
 msgstr "네트워크"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:121
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "책갈피 삭제"
+msgstr "책갈피"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:147
 #, kde-format
@@ -1106,8 +1075,7 @@ msgid "Countries"
 msgstr "국가"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "주/도"
@@ -1124,29 +1092,25 @@ msgid "Time"
 msgstr "시간"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "연도"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "월"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:183
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "주"
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:189
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "일"
@@ -1165,41 +1129,40 @@ msgstr "섬네일 크기:"
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "그림 보기 배경"
 
 #: qml/Settings/GeneralConfigPage.qml:43
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "검은색"
 
 #: qml/Settings/GeneralConfigPage.qml:53
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "흰색"
 
 #: qml/Settings/GeneralConfigPage.qml:64
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "테마 기본값"
 
 #: qml/Settings/GeneralConfigPage.qml:65
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "테마에서 지정한 배경색 사용"
 
 #: qml/Settings/GeneralConfigPage.qml:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "투명한 그림 뒤에 바둑판 무늬 배경 표시"
 
 #: qml/Settings/GeneralConfigPage.qml:92
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
@@ -1217,11 +1180,10 @@ msgstr "정보"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "KDE 정보"
+msgstr "정보"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
@@ -1235,8 +1197,7 @@ msgid "&Share"
 msgstr "공유(&S)"
 
 #: qml/ShareDrawer.qml:26
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "공유"
