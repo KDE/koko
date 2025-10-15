@@ -117,6 +117,7 @@ ecm_target_qml_sources(koko_static SOURCES
 
     qml/BottomNavBar.qml
     qml/Main.qml
+    qml/OcrResultDelegate.qml
     qml/PlacesPage.qml
     qml/ShareAction.qml
     qml/ShareDialog.qml

@@ -20,6 +20,8 @@ add_library(photos_model_static STATIC
     galleryfavoritesmodel.cpp
     gallerytagsmodel.h
     gallerytagsmodel.cpp
+    ocrtextmodel.cpp
+    ocrtextmodel.h
     gallerytimemodel.h
     gallerytimemodel.cpp
     gallerylocationmodel.h
