@@ -47,5 +47,12 @@ BaseImageDelegate {
         id: imageInfo
         source: root.source
     }
+
+    OcrResultDelegate {
+        image: image
+        zoomFactor: root.zoomFactor
+
+        anchors.fill: parent
+    }
 }
 

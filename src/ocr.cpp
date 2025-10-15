@@ -56,6 +56,15 @@ QStringList Ocr::loadedLanguages() const
     return m_loadedLanguages;
 }
 
+QList<OcrTextModel *> Ocr::ocrResult() const
+{
+    QList<OcrTextModel *> lists;
+    for (const OcrTextModel::Ptr &e : m_ocrResult) {
+        lists.append(e.get());
+    }
+    return lists;
+}
+
 void Ocr::extractText(const QString imagePath)
 {
     if (!m_loaded) {
@@ -87,6 +96,7 @@ void Ocr::extractText(const QString imagePath)
         return;
     }
 
+    m_ocrResult.clear();
     do {
         const char *word = ri->GetUTF8Text(level);
         float conf = ri->Confidence(level);
@@ -97,10 +107,12 @@ void Ocr::extractText(const QString imagePath)
 
         ri->BoundingBox(level, &x1, &y1, &x2, &y2);
 
-        qInfo() << "Word:" << word << "conf:" << conf << "BoundingBox:" << x1 << y1 << x2 << y2;
+        const auto ocrTextModel = std::make_shared<OcrTextModel>(x1, y1, x2 - x1, y2 - y1, conf, QString::fromUtf8(word), this);
+        m_ocrResult.append(ocrTextModel);
 
         delete[] word;
     } while (ri->Next(level));
+    Q_EMIT ocrResultChanged();
 
     m_api->Clear();
 }

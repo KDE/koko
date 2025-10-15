@@ -18,6 +18,8 @@ qt_add_library(photos_model_static STATIC
     imagetagsmodel.h
     imagetimemodel.cpp
     imagetimemodel.h
+    ocrtextmodel.cpp
+    ocrtextmodel.h
     openfilemodel.cpp
     openfilemodel.h
     sortmodel.cpp
