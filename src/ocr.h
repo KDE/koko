@@ -8,6 +8,8 @@
 #include <qqmlregistration.h>
 #include <tesseract/baseapi.h>
 
+#include "ocrtextmodel.h"
+
 class Ocr : public QObject
 {
     Q_OBJECT
@@ -18,6 +20,7 @@ class Ocr : public QObject
     Q_PROPERTY(bool loaded READ loaded NOTIFY loadedChanged)
     Q_PROPERTY(QStringList availableLanguages READ availableLanguages NOTIFY availableLanguagesChanged) // NOTE: Define as CONSTANT ?
     Q_PROPERTY(QStringList loadedLanguages READ loadedLanguages NOTIFY loadedLanguagesChanged)
+    Q_PROPERTY(QList<OcrTextModel *> ocrResult READ ocrResult NOTIFY ocrResultChanged)
 
 public:
     explicit Ocr(QObject *parent = nullptr);
@@ -27,6 +30,7 @@ public:
     bool loaded() const;
     QStringList availableLanguages() const;
     QStringList loadedLanguages() const;
+    QList<OcrTextModel *> ocrResult() const;
 
     Q_INVOKABLE void extractText(const QString imagePath);
     Q_INVOKABLE void loadLanguage(const QString language);
@@ -37,6 +41,7 @@ signals:
     void loadedChanged();
     void loadedLanguagesChanged();
     void availableLanguagesChanged();
+    void ocrResultChanged();
 
 private slots:
     void loadPendingLanguages();
@@ -52,6 +57,7 @@ private:
     QStringList m_pendingLanguages = {};
 
     tesseract::TessBaseAPI *m_api{nullptr};
+    QList<OcrTextModel::Ptr> m_ocrResult;
 
     bool load(const QStringList languages);
     void unload();

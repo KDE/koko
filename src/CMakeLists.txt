@@ -100,6 +100,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/InfoDrawerSidebarBase.qml
     qml/InfoSidebar.qml
     qml/Main.qml
+    qml/OcrResultDelegate.qml
     qml/OverviewControl.qml
     qml/PlacesPage.qml
     qml/SelectionButton.qml
