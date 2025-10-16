@@ -454,6 +454,9 @@ Kirigami.Page {
 
         onCurrentItemChanged: {
             if (currentItem) {
+                // Reset previous ocr result to avoid display the result on wrong media
+                Koko.Ocr.resetOcrResult()
+
                 root.url = currentItem.url;
             }
         }
