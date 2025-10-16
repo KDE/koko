@@ -3,6 +3,8 @@
 
 #include "ocr.h"
 
+#include "kokoconfig.h"
+
 #include <leptonica/allheaders.h>
 
 #include <QDebug>
@@ -24,8 +26,9 @@ Ocr::Ocr(QObject *parent)
     m_supported = true;
     Q_EMIT supportedChanged();
 
-    // load({"jpn", "jpn_vert", "fra", "eng"});
-    load({"fra"});
+    auto config = Config::self();
+    const auto languages = config->languages();
+    load(languages);
 
     // m_api->Init must be call before otherwise the API don't know the data directory
     refreshAvailableLanguages();
@@ -140,6 +143,11 @@ void Ocr::unloadLanguage(const QString language)
 void Ocr::loadPendingLanguages()
 {
     load(m_pendingLanguages);
+
+    auto config = Config::self();
+    config->setLanguages(m_pendingLanguages);
+    config->save();
+
     m_pendingLanguages.clear();
 }
 
