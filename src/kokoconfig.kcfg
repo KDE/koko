@@ -84,5 +84,11 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <default>General.Name,General.Size,General.ImageSize,General.Created,Exif.Image.Model,General.Location</default>
         </entry>
     </group>
+    <group name="Ocr">
+        <entry name="Languages" type="StringList">
+            <label>List of languages to use with Tesseract</label>
+            <default>eng</default>
+        </entry>
+    </group>
 </kcfg>
 
