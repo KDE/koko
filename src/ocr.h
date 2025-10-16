@@ -35,6 +35,7 @@ public:
     Q_INVOKABLE void extractText(const QString imagePath);
     Q_INVOKABLE void loadLanguage(const QString language);
     Q_INVOKABLE void unloadLanguage(const QString language);
+    Q_INVOKABLE void resetOcrResult();
 
 signals:
     void supportedChanged();

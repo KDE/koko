@@ -140,6 +140,12 @@ void Ocr::unloadLanguage(const QString language)
     m_loadTimer.start();
 }
 
+void Ocr::resetOcrResult()
+{
+    m_ocrResult.clear();
+    Q_EMIT ocrResultChanged();
+}
+
 void Ocr::loadPendingLanguages()
 {
     load(m_pendingLanguages);
