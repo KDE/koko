@@ -136,19 +136,16 @@ msgid "None"
 msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
-msgstr "Oříznout"
+msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:120
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "Vybrat vše"
+msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:129
 #, kde-format
@@ -231,11 +228,10 @@ msgid "Number"
 msgstr ""
 
 #: editor/ConfirmDiscardingChanges.qml:17
-#, fuzzy, kde-format
-#| msgid "Discard changes"
+#, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr "Zahodit změny"
+msgstr ""
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -252,15 +248,12 @@ msgid "Edit <filename>%1</filename>"
 msgstr ""
 
 #: editor/EditorView.qml:42 editor/EditorView.qml:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to save file. Check if you have the correct permission to edit "
-#| "this file."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
 "file."
-msgstr "Soubor nelze uložit. Zkontrolujte, zda máte oprávnění k jeho úpravě."
+msgstr ""
 
 #: editor/EditorView.qml:97
 #, kde-format
@@ -287,28 +280,22 @@ msgid "Rotate"
 msgstr "Otočit"
 
 #: editor/EditorView.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
-msgstr "Otočit doleva"
+msgstr ""
 
 #: editor/EditorView.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the right"
-#| msgid "Rotate right"
+#, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
-msgstr "Otočit doprava"
+msgstr ""
 
 #: editor/EditorView.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
-msgstr "Převrátit"
+msgstr ""
 
 #: editor/EditorView.qml:194
 #, kde-format
@@ -341,11 +328,10 @@ msgid "Save"
 msgstr "Uložit"
 
 #: editor/EditorView.qml:254
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
-msgstr "Uložit jako"
+msgstr ""
 
 #: editor/EditorView.qml:424
 #, kde-format
@@ -354,11 +340,10 @@ msgid "Zoom:"
 msgstr ""
 
 #: editor/EditorView.qml:439
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
-msgstr "Obrázky"
+msgstr ""
 
 #: editor/ImageView.qml:196
 #, kde-format
@@ -1245,20 +1230,3 @@ msgstr "Nastavení"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Přidat novou značku…"
-
-#~ msgid "Are you sure you want to discard all changes?"
-#~ msgstr "Opravdu si přejete zahodit všechny změny?"
-
-#~ msgid "Edit"
-#~ msgstr "Upravit"
-
-#~ msgctxt "@action:button Mirror an image horizontally"
-#~ msgid "Mirror"
-#~ msgstr "Zrcadlit"
-
-#~ msgctxt "@title:group for crop area position spinboxes"
-#~ msgid "Position:"
-#~ msgstr "Pozice:"
-
-#~ msgid "You are now editing a new file."
-#~ msgstr "Nyní upravujete nový soubor."
