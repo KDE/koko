@@ -511,12 +511,10 @@ msgid "Photos is an image viewer for your image collection."
 msgstr "Koko ist ein Bildbetrachter für Ihre Bildersammlung."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "Copyright 2013-2020, KDE-Mitwirkende"
+msgstr "© 2013–%1, KDE-Mitwirkende"
 
 #: main.cpp:75
 #, kde-kuit-format
