@@ -109,11 +109,9 @@ ButtonGrid {
         QQC.ButtonGroup.group: toolGroup
         text: i18nc("@action:intoolbar crop image tool", "Crop")
         icon.name: "transform-crop"
-        onClicked: root.tool.type = AnnotationTool.NoTool
-        // Setting checked in onCompleted so that 2 clicks aren't needed to check this.
-        Component.onCompleted: {
-            checked = root.toolType === AnnotationTool.NoTool && !root.showNoneButton
-        }
+        checked: root.toolType === AnnotationTool.CropTool
+        onClicked: root.tool.type = AnnotationTool.CropTool
+
     }
     ToolButton {
         QQC.ButtonGroup.group: toolGroup

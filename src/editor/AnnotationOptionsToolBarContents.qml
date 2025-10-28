@@ -465,4 +465,66 @@ Row {
             }
         }
     }
+
+    Loader { // crop
+        id: cropLoader
+        anchors.verticalCenter: parent.verticalCenter
+        visible: active
+        active: root.tool.type === AnnotationTool.CropTool
+        sourceComponent: Row {
+            spacing: root.spacing
+
+            Controls.Label {
+                leftPadding: root.mirrored ? 0 : parent.spacing
+                rightPadding: root.mirrored ? parent.spacing : 0
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18n("Crop Area:")
+            }
+
+            component SpinBox : Controls.SpinBox {
+                id: spinBox
+                anchors.verticalCenter: parent.verticalCenter
+                stepSize: 1
+                Controls.ToolTip.visible: hovered
+                Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+                Binding {
+                    target: spinBox.contentItem
+                    property: "horizontalAlignment"
+                    value: Text.AlignRight
+                    restoreMode: Binding.RestoreNone
+                }
+            }
+
+            SpinBox {
+                from: 0
+                to: widthSpinBox.to - widthSpinBox.from
+                value: root.tool.geometry.x * root.document.imageDpr
+                Controls.ToolTip.text: i18n("Crop area X position")
+                onValueModified: root.tool.geometry.x = value / root.document.imageDpr
+            }
+            SpinBox {
+                from: 0
+                to: heightSpinBox.to - heightSpinBox.from
+                value: root.tool.geometry.x * root.document.imageDpr
+                Controls.ToolTip.text: i18n("Crop area Y position")
+                onValueModified: root.tool.geometry.y = value / root.document.imageDpr
+            }
+            SpinBox {
+                id: widthSpinBox
+                from: 1
+                to: root.document.canvasRect.width * 10 * root.document.imageDpr
+                value: root.tool.geometry.width * root.document.imageDpr
+                Controls.ToolTip.text: i18n("Crop area width")
+                onValueModified: root.tool.geometry.width = value / root.document.imageDpr
+            }
+            SpinBox {
+                id: heightSpinBox
+                from: 1
+                to: root.document.canvasRect.height * 10 * root.document.imageDpr
+                value: root.tool.geometry.height * root.document.imageDpr
+                Controls.ToolTip.text: i18n("Crop area height")
+                onValueModified: root.tool.geometry.height = value / root.document.imageDpr
+            }
+        }
+    }
 }
