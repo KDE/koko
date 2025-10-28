@@ -465,4 +465,123 @@ Row {
             }
         }
     }
+
+    Loader { // crop
+        id: cropLoader
+        anchors.verticalCenter: parent.verticalCenter
+        visible: active
+        active: root.tool.type === AnnotationTool.CropTool
+        sourceComponent: Row {
+            spacing: root.spacing
+
+            Controls.Label {
+                leftPadding: root.mirrored ? 0 : parent.spacing
+                rightPadding: root.mirrored ? parent.spacing : 0
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18nc("@label crop area position", "Position:")
+            }
+
+            component SpinBox : Controls.SpinBox {
+                id: spinBox
+                anchors.verticalCenter: parent.verticalCenter
+                stepSize: 1
+                Controls.ToolTip.visible: hovered
+                Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+                Binding {
+                    target: spinBox.contentItem
+                    property: "horizontalAlignment"
+                    value: Text.AlignRight
+                    restoreMode: Binding.RestoreNone
+                }
+            }
+
+            SpinBox {
+                from: 0
+                to: widthSpinBox.to - widthSpinBox.from
+                value: Math.abs(root.tool.geometry.x * root.document.imageDpr)
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Crop area X position")
+                onValueModified: {
+                    const absX = value / root.document.imageDpr
+                    const absY = Math.abs(root.tool.geometry.y)
+                    const absW = Math.abs(root.tool.geometry.width)
+                    const absH = Math.abs(root.tool.geometry.height)
+                    root.tool.geometry.x = absX
+                    root.tool.geometry.y = absY
+                    root.tool.geometry.width = absW
+                    root.tool.geometry.height = absH
+                }
+            }
+            SpinBox {
+                from: 0
+                to: heightSpinBox.to - heightSpinBox.from
+                value: Math.abs(root.tool.geometry.y * root.document.imageDpr)
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Crop area Y position")
+                onValueModified: {
+                    const absX = Math.abs(root.tool.geometry.x)
+                    const absY = value / root.document.imageDpr
+                    const absW = Math.abs(root.tool.geometry.width)
+                    const absH = Math.abs(root.tool.geometry.height)
+                    root.tool.geometry.x = absX
+                    root.tool.geometry.y = absY
+                    root.tool.geometry.width = absW
+                    root.tool.geometry.height = absH
+                }
+            }
+
+            Controls.Label {
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18nc("@label crop area size", "Size:")
+            }
+
+            SpinBox {
+                id: widthSpinBox
+                from: root.tool.geometry.width === 0 ? 0 : 1
+                to: root.document.canvasRect.width * 10 * root.document.imageDpr
+                value: Math.abs(root.tool.geometry.width * root.document.imageDpr)
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Crop area width")
+                onValueModified: {
+                    const absX = Math.abs(root.tool.geometry.x)
+                    const absY = Math.abs(root.tool.geometry.y)
+                    const absW = value / root.document.imageDpr
+                    const absH = Math.abs(root.tool.geometry.height)
+                    root.tool.geometry.x = absX
+                    root.tool.geometry.y = absY
+                    root.tool.geometry.width = absW
+                    root.tool.geometry.height = absH
+                }
+            }
+            SpinBox {
+                id: heightSpinBox
+                from: root.tool.geometry.height === 0 ? 0 : 1
+                to: root.document.canvasRect.height * 10 * root.document.imageDpr
+                value: Math.abs(root.tool.geometry.height * root.document.imageDpr)
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Crop area height")
+                onValueModified: {
+                    const absX = Math.abs(root.tool.geometry.x)
+                    const absY = Math.abs(root.tool.geometry.y)
+                    const absW = Math.abs(root.tool.geometry.width)
+                    const absH = value / root.document.imageDpr
+                    root.tool.geometry.x = absX
+                    root.tool.geometry.y = absY
+                    root.tool.geometry.width = absW
+                    root.tool.geometry.height = absH
+                }
+            }
+
+            ToolButton {
+                icon.name: "edit-undo"
+                text: i18nc("@action reset selection", "Reset")
+                onClicked: root.tool.geometry = undefined
+            }
+
+            ToolButton {
+                icon.name: "dialog-ok"
+                text: i18nc("@action accept selection", "Accept")
+                onClicked: {
+                    root.document.cropCanvas(root.tool.geometry)
+                    root.tool.geometry = undefined
+                }
+            }
+        }
+    }
 }
