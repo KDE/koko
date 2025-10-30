@@ -245,11 +245,20 @@ MouseArea {
         }
     }
 
+    // Support fullscreen view on mobile using longpress.
+    TapHandler {
+        acceptedDevices: PointerDevice.TouchScreen
+        onLongPressed: {
+            if (applicationWindow().visibility === Window.FullScreen) {
+                applicationWindow().visibility = Window.Windowed
+            } else {
+                applicationWindow().visibility = Window.FullScreen
+            }
+        }
+    }
+
     onDoubleClicked: (mouse) => {
         if (mouse.button === Qt.LeftButton) {
-            if (Kirigami.Settings.isMobile) {
-                (Controls.ApplicationWindow.window as Photos.Main).controlsVisible = false
-            }
             if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
                 contentItem.width = Qt.binding(() => root.defaultContentRect.width)
                 contentItem.height = Qt.binding(() => root.defaultContentRect.height)
