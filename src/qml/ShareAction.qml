@@ -11,7 +11,7 @@ import org.kde.kirigami as Kirigami
 /**
  * Action that allows an user to share data with other apps and service
  * installed on their computer. The goal of this high level API is to
- * adapte itself for each platform and adopt the native component.
+ * adapt itself for each platform and adopt the native component.
  *
  * TODO add more doc, before moving to Peruse upstream
  *

@@ -309,7 +309,7 @@ Item {
                       KCA.Format.formatDuration(mediaPlayer.duration, KCA.FormatTypes.FoldHours)
             }
 
-            // this local and independed from slideshow to avoid confusion
+            // local and independent from slideshow to avoid confusion
             Controls.ToolButton {
                 Accessible.name: i18n("Repeat current video")
                 Controls.ToolTip.text: Accessible.name
