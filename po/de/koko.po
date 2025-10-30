@@ -2,20 +2,21 @@
 # This file is distributed under the same license as the koko package.
 # SPDX-FileCopyrightText: 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2023-05-30 18:44+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2025-10-19 19:42+0200\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,8 +29,7 @@ msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Allgemein"
@@ -38,130 +38,119 @@ msgstr "Allgemein"
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Orte"
+msgstr "Ort"
 
 #: exiv2extractor.cpp:508
 #, kde-format
 msgctxt "@item:intable %1 is image width, %2 is image height"
 msgid "%1x%2"
-msgstr ""
+msgstr "%1x%2"
 
 #: exiv2extractor.cpp:514
 #, kde-format
 msgctxt "@item:intable %1 is number of millions of pixels in image"
 msgid "(%1MP)"
-msgstr ""
+msgstr "(%1 MP)"
 
 #: exiv2extractor.cpp:520
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: exiv2extractor.cpp:521
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr "Dateiname"
+msgstr "Dateigröße"
 
 #: exiv2extractor.cpp:524
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr "Erstellt"
+msgstr "Erstelldatum"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Änderungsdatum"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Zugriffsdatum"
 
 #: exiv2extractor.cpp:528
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Pfad"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "Image viewer"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Bildbetrachter"
+msgstr "Bildgröße"
 
 #: exiv2extractor.cpp:530
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "Dateiname"
+msgstr "Dateityp"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Ordner mit diesem Inhalt öffnen"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Kopieren"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Orte"
+msgstr "Ort kopieren"
 
 #: main.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Fotos</application>"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko ist ein Bildbetrachter für Ihre Bildersammlung."
+msgstr "Fotos ist ein Bildbetrachter für Ihre Bildersammlung."
 
 #: main.cpp:67
 #, kde-kuit-format
@@ -235,38 +224,37 @@ msgstr "Geteilte URL für das Bild ist <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "Zu Bildern gehen"
 
 #: photosapplication.cpp:57
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "Zu Favoriten hinzufügen"
+msgstr "Zu Favoriten gehen"
 
 #: photosapplication.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "Zu Videos gehen"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "Zum Papierkorb gehen"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "Zu Netzwerkordnern gehen"
 
 #: photosapplication.cpp:85
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "Zu Bildern gehen, die nach Ländern sortiert sind"
 
 #: photosapplication.cpp:92
 #, kde-format
@@ -278,31 +266,31 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "Zu Bildern gehen, die nach Städten sortiert sind"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "Zu Bildern gehen, die nach Jahren sortiert sind"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "Zu Bildern gehen, die nach Monaten sortiert sind"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "Zu Bildern gehen, die nach Wochen sortiert sind"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "Zu Bildern gehen, die nach Tagen sortiert sind"
 
 #: qml/AlbumDelegate.qml:132
 #, kde-format
@@ -312,8 +300,7 @@ msgstr[0] "1 Bild"
 msgstr[1] "%1 Bilder"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "Ordner"
@@ -345,8 +332,7 @@ msgid "Root"
 msgstr "Basisordner"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Ausgewählte Medien teilen"
@@ -397,22 +383,19 @@ msgid "No Media Found"
 msgstr "Keine Medien gefunden"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Bilder"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
-#, fuzzy, kde-format
-#| msgid "Videos"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videos"
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Favoriten"
@@ -573,106 +556,92 @@ msgstr "Aktuelles Video nicht wiederholen"
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Metadaten-Anzeige einrichten"
 
 #: qml/ImageViewPage.qml:74
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr "Favoriten"
+msgstr "Favorisieren"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Aus Favoriten entfernen"
 
 #: qml/ImageViewPage.qml:76
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Zu Favoriten hinzufügen"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "Bearbeiten"
+msgstr "&Bearbeiten"
 
 #: qml/ImageViewPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr "Bild bearbeiten"
+msgstr "Dieses Bild bearbeiten"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "Teilen"
+msgstr "&Teilen"
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "Video teilen"
+msgstr "Dieses Video teilen"
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "Bild teilen"
+msgstr "Dieses Bild teilen"
 
 #: qml/ImageViewPage.qml:134
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr "Information"
+msgstr "&Information"
 
 #: qml/ImageViewPage.qml:141
-#, fuzzy, kde-format
-#| msgid "See information about video"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "Informationen über das Video"
+msgstr "Informationen über dieses Video anzeigen"
 
 #: qml/ImageViewPage.qml:143
-#, fuzzy, kde-format
-#| msgid "See information about image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "Informationen über das Bild"
+msgstr "Informationen über dieses Bild anzeigen"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr "Diaschau"
+msgstr "&Diaschau"
 
 #: qml/ImageViewPage.qml:164
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Diaschau starten"
 
 #: qml/ImageViewPage.qml:177
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr "Alle Regler anzeigen"
+msgstr "&Bedienelemente anzeigen"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
@@ -708,22 +677,19 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Vorschaubereich ausblenden"
 
 #: qml/ImageViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr "Vollbild"
+msgstr "&Vollbild"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "Vollbildmodus"
+msgstr "Vollbildmodus aktivieren"
 
 #: qml/ImageViewPage.qml:215
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Vollbildmodus beenden"
@@ -772,7 +738,7 @@ msgstr "Diaschau anhalten"
 #: qml/ImageViewPage.qml:962
 #, kde-format
 msgid "Show All Controls"
-msgstr "Alle Regler anzeigen"
+msgstr "Alle Bedienelemente anzeigen"
 
 #: qml/InfoDrawer.qml:39
 #, kde-format
@@ -780,11 +746,10 @@ msgid "Metadata"
 msgstr "Metadaten"
 
 #: qml/InfoDrawerSidebarBase.qml:68
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Bewertung"
+msgstr "Bewertung:"
 
 #: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
@@ -797,11 +762,10 @@ msgid "Set rating to %1"
 msgstr "Bewertung auf %1 setzen"
 
 #: qml/InfoDrawerSidebarBase.qml:124
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Beschreibung"
+msgstr "Beschreibung:"
 
 #: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
@@ -809,11 +773,10 @@ msgid "Image description…"
 msgstr "Bildbeschreibung ..."
 
 #: qml/InfoDrawerSidebarBase.qml:137
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Stichwörter"
+msgstr "Stichwörter:"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
@@ -824,11 +787,10 @@ msgstr "Stichwort hinzufügen"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "Wählen Sie, was angezeigt werden soll"
 
 #: qml/Main.qml:67
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Orte"
@@ -839,32 +801,28 @@ msgid "Images"
 msgstr "Bilder"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
-#, fuzzy, kde-format
-#| msgid "Trash"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Papierkorb"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
-#, fuzzy, kde-format
-#| msgid "Network"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Netzwerk"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Lesezeichen entfernen"
+msgstr "Lesezeichen"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -872,22 +830,19 @@ msgid "Locations"
 msgstr "Orte"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Länder"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Staaten"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Städte"
@@ -898,29 +853,25 @@ msgid "Time"
 msgstr "Zeit"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Jahre"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Monate"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Wochen"
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Tage"
@@ -936,49 +887,42 @@ msgid "Thumbnails size:"
 msgstr "Vorschaubildgröße"
 
 #: qml/Settings/GeneralConfigPage.qml:38
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow:"
-msgstr "Diaschau"
+msgstr "Diaschau:"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
-msgstr "Allgemein"
+msgstr "Allgemein:"
 
 #: qml/Settings/PhotosConfigurationView.qml:26
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About Photos"
-msgstr "Über Koko"
+msgstr "Über Fotos"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "Über Koko"
+msgstr "Über"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
-#, fuzzy, kde-format
-#| msgid "About Koko"
+#, kde-format
 msgid "About KDE"
-msgstr "Über Koko"
+msgstr "Über KDE"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Teilen"
+msgstr "&Teilen"
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "Teilen"
