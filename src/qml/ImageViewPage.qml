@@ -54,6 +54,13 @@ Kirigami.Page {
         }
     }
 
+    // exit full screen on mobile, where only image view should be full screen.
+    onBackRequested: {
+        if (Kirigami.Settings.isMobile && applicationWindow().visibility === Window.FullScreen) {
+            applicationWindow().visibility = Window.Windowed
+        }
+    }
+
     // sometimes when loading a folder KCoreDirLister "completes" all the jobs before starting another one
     // which means onFinishedLoading sometimes gets called preemptively
     // one easy way to repro this behavior is to open image from one folder and then open one from another
