@@ -478,7 +478,7 @@ Row {
                 leftPadding: root.mirrored ? 0 : parent.spacing
                 rightPadding: root.mirrored ? parent.spacing : 0
                 anchors.verticalCenter: parent.verticalCenter
-                text: i18n("Crop Area:")
+                text: i18nc("@label crop area position", "Position:")
             }
 
             component SpinBox : Controls.SpinBox {
@@ -509,6 +509,12 @@ Row {
                 Controls.ToolTip.text: i18n("Crop area Y position")
                 onValueModified: root.tool.geometry.y = value / root.document.imageDpr
             }
+
+            Controls.Label {
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18nc("@label crop area size", "Size:")
+            }
+
             SpinBox {
                 id: widthSpinBox
                 from: 1
@@ -524,6 +530,62 @@ Row {
                 value: root.tool.geometry.height * root.document.imageDpr
                 Controls.ToolTip.text: i18n("Crop area height")
                 onValueModified: root.tool.geometry.height = value / root.document.imageDpr
+            }
+
+            Controls.Label {
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18nc("@label", "Aspect Ratio:")
+            }
+
+            Controls.ComboBox {
+                id: aspectRatioComboBox
+                function updateGeometry() {
+                    if (!currentValue) {
+                        return
+                    }
+                    let w = root.tool.geometry.width
+                    let h = root.tool.geometry.height
+                    if (currentValue > 1) {
+                        h = w / currentValue
+                    } else if (currentValue < 1) {
+                        w = h * currentValue
+                    } else {
+                        w = Math.min(w, h)
+                        h = w
+                    }
+                    root.tool.geometry.width = w
+                    root.tool.geometry.height = h
+                }
+                currentValue: null
+                textRole: "text"
+                valueRole: "ratio"
+                model: [
+                    {text: i18n("None"), ratio: null},
+                    {text: i18n("Current Image"), ratio: root.document.canvasRect.width/root.document.canvasRect.height},
+                    {text: i18n("Square"), ratio: 1},
+                    {text: i18n("This Screen"), ratio: Screen.width/Screen.height},
+                    {text: i18n("16:9"), ratio: 16/9},
+                    {text: i18n("7:5"), ratio: 7/5},
+                    {text: i18n("3:2"), ratio: 3/2},
+                    {text: i18n("4:3"), ratio: 4/3},
+                    {text: i18n("5:4"), ratio: 5/4},
+                    {text: i18n("ISO (A4, A3...)"), ratio: Math.SQRT2},
+                    {text: i18n("US Letter"), ratio: 11/8.5},
+                    {text: i18n("9:16"), ratio: 9/16},
+                    {text: i18n("5:7"), ratio: 5/7},
+                    {text: i18n("2:3"), ratio: 2/3},
+                    {text: i18n("3:4"), ratio: 3/4},
+                    {text: i18n("4:5"), ratio: 4/5},
+                    {text: i18n("ISO (A4, A3...)"), ratio: 1/Math.SQRT2},
+                    {text: i18n("US Letter"), ratio: 8.5/11}
+                ]
+                onCurrentValueChanged: updateGeometry()
+                Connections {
+                    target: root.tool
+                    function onGeometryChanged() {
+                        aspectRatioComboBox.updateGeometry()
+                    }
+                }
             }
         }
     }
