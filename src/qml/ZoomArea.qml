@@ -216,6 +216,13 @@ MouseArea {
         onActiveChanged: if (active) {
             startPosX = contentItem.x;
             startPosY = contentItem.y;
+        } else {
+            // pinch finished. Zoom to image or widget size if contentItem is smaller
+            if (contentWidth < Math.min(root.defaultContentRect.width,implicitContentWidth) &&
+                contentHeight < Math.min(root.defaultContentRect.height, implicitContentHeight)) {
+                contentItem.width = root.defaultContentRect.width
+                contentItem.height = root.defaultContentRect.height
+            }
         }
 
         scaleAxis.onActiveValueChanged: (delta) => {
