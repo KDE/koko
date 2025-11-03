@@ -16,7 +16,8 @@ import org.kde.koko as Photos
 MouseArea {
     id: root
 
-    readonly property bool interactive: Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height
+    property bool canMove: false // allow to drag to next image even if the current one is zoomed using touch screens
+    readonly property bool interactive: (Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height) && !root.canMove
     property bool dragging: root.drag.active || pinchHandler.active
 
     /**
@@ -250,6 +251,48 @@ MouseArea {
                 centroid.position.y - centroid.sceneGrabPosition.y
             );
         }
+    }
+
+    // Allow navigating images while zoomed in with touch devices (finger, stylus)
+    // If the zoomed image is on a side edge when grabbed, allow to drag over edges.
+    // Peaking allowed - if not moving image, the state is kept.
+    // Withdraw after one try.
+    property bool mayMove: false;
+    DragHandler {
+        id: dragHandler
+        grabPermissions: PointerHandler.CanTakeOverFromItems
+        enabled: !pinchHandler.active
+        acceptedDevices: PointerDevice.TouchScreen | PointerDevice.Stylus
+        onGrabChanged: (t) => {
+            if (t == PointerDevice.UngrabExclusive) {
+                if (contentItem.x == xAxis.minimum || contentItem.x == xAxis.maximum) {
+                    mayMove = true
+                    if (canMove) {
+                        canMove = false
+                        target = contentItem
+                    }
+                }
+            }
+            else if (t == PointerDevice.GrabExclusive) {
+                if (canMove) {
+                    canMove = false
+                    target = contentItem
+                }
+                else if (mayMove && (contentItem.x == xAxis.minimum || contentItem.x == xAxis.maximum)) {
+                    canMove = true
+                    mayMove = false
+                }
+            } else if (contentItem.x != xAxis.minimum && contentItem.x != xAxis.maximum) {
+                mayMove = false
+                canMove = false
+                target = contentItem
+            }
+        }
+        target: root.interactive? contentItem : null
+        xAxis.minimum: root.minContentX(contentItem.width)
+        xAxis.maximum: root.maxContentX(contentItem.width)
+        yAxis.minimum: root.minContentY(contentItem.height)
+        yAxis.maximum: root.maxContentY(contentItem.height)
     }
 
     onDoubleClicked: (mouse) => {
