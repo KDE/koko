@@ -306,6 +306,48 @@ MouseArea {
         }
     }
 
+    // Allow navigating images while zoomed in with touch devices (finger, stylus)
+    // If the zoomed image is on a side edge when grabbed, allow to drag over edges.
+    // Peaking allowed - if not moving image, the state is kept.
+    // Withdraw after one try.
+    property bool mayMove: false;
+    DragHandler {
+        id: dragHandler
+        grabPermissions: PointerHandler.CanTakeOverFromItems
+        enabled: !pinchHandler.active
+        acceptedDevices: PointerDevice.TouchScreen | PointerDevice.Stylus
+        onGrabChanged: (t) => {
+            if (t == PointerDevice.UngrabExclusive) {
+                if (contentItem.x == xAxis.minimum || contentItem.x == xAxis.maximum) {
+                    mayMove = true
+                    if (canMove) {
+                        canMove = false
+                        target = contentItem
+                    }
+                }
+            }
+            else if (t == PointerDevice.GrabExclusive) {
+                if (canMove) {
+                    canMove = false
+                    target = contentItem
+                }
+                else if (mayMove && (contentItem.x == xAxis.minimum || contentItem.x == xAxis.maximum)) {
+                    canMove = true
+                    mayMove = false
+                }
+            } else if (contentItem.x != xAxis.minimum && contentItem.x != xAxis.maximum) {
+                mayMove = false
+                canMove = false
+                target = contentItem
+            }
+        }
+        target: root.interactive? contentItem : null
+        xAxis.minimum: root.minContentX(contentItem.width)
+        xAxis.maximum: root.maxContentX(contentItem.width)
+        yAxis.minimum: root.minContentY(contentItem.height)
+        yAxis.maximum: root.maxContentY(contentItem.height)
+    }
+
     onDoubleClicked: (mouse) => {
         if (mouse.button === Qt.LeftButton) {
             if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
