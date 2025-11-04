@@ -348,6 +348,18 @@ MouseArea {
         yAxis.maximum: root.maxContentY(contentItem.height)
     }
 
+    // Support fullscreen view on mobile using longpress.
+    TapHandler {
+        acceptedDevices: PointerDevice.TouchScreen
+        onLongPressed: {
+            if (applicationWindow().visibility === Window.FullScreen) {
+                applicationWindow().visibility = Window.Windowed
+            } else {
+                applicationWindow().visibility = Window.FullScreen
+            }
+        }
+    }
+
     onDoubleClicked: (mouse) => {
         if (mouse.button === Qt.LeftButton) {
             if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
