@@ -1,62 +1,62 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
 # Martin Schlander <mschlander@opensuse.org>, 2020.
+# SPDX-FileCopyrightText: 2025 Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:55+0000\n"
-"PO-Revision-Date: 2020-08-22 14:10+0200\n"
-"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"PO-Revision-Date: 2025-11-04 12:33+0100\n"
+"Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Martin Schlander"
+msgstr "Martin Schlander, Rasmus Rosendahl-Kaa"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "mschlander@opensuse.org"
+msgstr "mschlander@opensuse.org, rasmus@rosendahl-kaa.name"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: exiv2extractor.cpp:72
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:74
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:76
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:375
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Placeringer"
+msgstr "Placering"
 
 #: exiv2extractor.cpp:508
 #, kde-format
@@ -74,99 +74,89 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: exiv2extractor.cpp:521
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr ""
+msgstr "Filstørrelse"
 
 #: exiv2extractor.cpp:524
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr ""
+msgstr "Dato oprettet"
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Dato for ændring"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Dato for adgang"
 
 #: exiv2extractor.cpp:528
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Sti"
 
 #: exiv2extractor.cpp:529
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "1 billede"
+msgstr "Billedstørrelse"
 
 #: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr ""
+msgstr "Filens type"
 
 #: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Åbn indeholdende mappe"
 
 #: filemenu.cpp:131
 #, kde-format
 msgid "&Copy"
-msgstr ""
+msgstr "&Kopiér"
 
 #: filemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:incontextmenu"
 msgid "Copy Location"
-msgstr "Placeringer"
+msgstr "Kopiér placering"
 
 #: main.cpp:63
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Koko</application>"
+msgstr "<application>Billeder</application>"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Koko er en billedfremviser til billedsamling."
+msgstr "Billeder er en billedfremviser til din billedsamling."
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013-2020 KDE-bidragsydere"
+msgstr "(c) 2013-%1 KDE-bidragsydere"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -208,7 +198,7 @@ msgstr "Carl Schwan"
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:90
 #, kde-format
@@ -223,7 +213,7 @@ msgstr "sti til billedet du vil åbne"
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
-msgstr ""
+msgstr "Deling mislykkedes"
 
 #: notificationmanager.cpp:22
 #, kde-format
@@ -234,73 +224,73 @@ msgstr "Delt URL for billedet er <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "Navigér til billeder"
 
 #: photosapplication.cpp:57
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr ""
+msgstr "Navigér til favoritter"
 
 #: photosapplication.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "Navigér til videoer"
 
 #: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "Navigér til papirkurven"
 
 #: photosapplication.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "Navigér til fjernmapperne"
 
 #: photosapplication.cpp:85
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter lande"
 
 #: photosapplication.cpp:92
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by states"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter delstater"
 
 #: photosapplication.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter byer"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter år"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter måneder"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter uger"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "Navigér til billeder sorteret efter dage"
 
 #: qml/AlbumDelegate.qml:132
 #, kde-format
@@ -310,8 +300,7 @@ msgstr[0] "1 billede"
 msgstr[1] "%1 billeder"
 
 #: qml/AlbumView.qml:46
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "Mapper"
@@ -319,58 +308,54 @@ msgstr "Mapper"
 #: qml/AlbumView.qml:220 qml/AlbumView.qml:260
 #, kde-format
 msgid "Remove Bookmark"
-msgstr ""
+msgstr "Fjern bogmærke"
 
 #: qml/AlbumView.qml:220 qml/AlbumView.qml:260
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr "Efter mappe"
+msgstr "Bogmærkemappe"
 
 #: qml/AlbumView.qml:285
 #, kde-format
 msgid "Go Up"
-msgstr ""
+msgstr "Gå op"
 
 #: qml/AlbumView.qml:308
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
 #: qml/AlbumView.qml:308
 #, kde-format
 msgid "Root"
-msgstr ""
+msgstr "Rod"
 
 #: qml/AlbumView.qml:328
-#, fuzzy, kde-format
-#| msgid "Share the selected images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Del de valgte billeder"
+msgstr "Del de valgte medier"
 
 #: qml/AlbumView.qml:343
 #, kde-format
 msgid "Delete Selection"
-msgstr "Slet valgte"
+msgstr "Slet de valgte medier"
 
 #: qml/AlbumView.qml:344
 #, kde-format
 msgid "Move selected items to trash"
-msgstr "Flyt valgte elementer til papirkurven"
+msgstr "Flyt de valgte elementer til papirkurven"
 
 #: qml/AlbumView.qml:350
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgid "Restore Selection"
-msgstr "Slet valgte"
+msgstr "Gendan de valgte medier"
 
 #: qml/AlbumView.qml:351
-#, fuzzy, kde-format
-#| msgid "Move selected items to trash"
+#, kde-format
 msgid "Restore selected items from trash"
-msgstr "Flyt valgte elementer til papirkurven"
+msgstr "Gendan de valgte elementer fra papirkurven"
 
 #: qml/AlbumView.qml:357
 #, kde-format
@@ -378,10 +363,9 @@ msgid "Select All"
 msgstr "Vælg alle"
 
 #: qml/AlbumView.qml:358
-#, fuzzy, kde-format
-#| msgid "Selects all the images in the current view"
+#, kde-format
 msgid "Selects all the media in the current view"
-msgstr "Vælger alle billederne i den aktuelle visning"
+msgstr "Vælger alle medierne i den aktuelle visning"
 
 #: qml/AlbumView.qml:365
 #, kde-format
@@ -389,44 +373,44 @@ msgid "Deselect All"
 msgstr "Fravælg alle"
 
 #: qml/AlbumView.qml:366
-#, fuzzy, kde-format
-#| msgid "De-selects all the selected images"
+#, kde-format
 msgid "De-selects all the selected media"
-msgstr "Fravælger alle de valgte billeder"
+msgstr "Fravælger alle de valgte medier"
 
 #: qml/AlbumView.qml:477
-#, fuzzy, kde-format
-#| msgid "No Images Found"
+#, kde-format
 msgid "No Media Found"
-msgstr "Ingen billeder fundet"
+msgstr "Intet medie fundet"
 
 #: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:32 qml/Sidebar.qml:89
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
-msgstr ""
+msgstr "Billeder"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:39 qml/Sidebar.qml:95
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
-msgstr ""
+msgstr "Videoer"
 
 #: qml/BottomNavBar.qml:62 qml/PlacesPage.qml:46 qml/Sidebar.qml:101
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritter"
 
 #: qml/BottomNavBar.qml:67 qml/Sidebar.qml:86
 #, kde-format
 msgid "Places"
-msgstr ""
+msgstr "Steder"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:14
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Unsaved Changes"
 msgid "Discard changes"
-msgstr ""
+msgstr "Ændringer, som ikke er gemt"
 
 #: qml/Dialog/ConfirmDiscardingChange.qml:19
 #, kde-format
@@ -442,56 +426,72 @@ msgstr "Redigér"
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr ""
+msgstr "Gem"
 
 #: qml/EditorView.qml:67 qml/EditorView.qml:257
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid ""
+#| "Unable to save file. Check if you have the correct permissions to save "
+#| "this file."
 msgid ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 msgstr ""
+"Kunne ikke gemme fil. Tjek om du har de korrekte tilladelser for at gemme "
+"denne fil."
 
 #: qml/EditorView.qml:76
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Undo"
 msgctxt "@action:button Undo modification"
 msgid "Undo"
-msgstr ""
+msgstr "Fortryd"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "Annullér"
 
 #: qml/EditorView.qml:87 qml/EditorView.qml:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar crop image tool"
+#| msgid "Crop"
 msgctxt "@action:button Crop an image"
 msgid "Crop"
-msgstr ""
+msgstr "Beskær"
 
 #: qml/EditorView.qml:99 qml/EditorView.qml:105
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr ""
+msgstr "Ændr størrelse"
 
 #: qml/EditorView.qml:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button Rotate an image to the left"
+#| msgid "Rotate Left"
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate left"
-msgstr ""
+msgstr "Rotér til venstre"
 
 #: qml/EditorView.qml:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button Rotate an image to the right"
+#| msgid "Rotate Right"
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate right"
-msgstr ""
+msgstr "Rotér til højre"
 
 #: qml/EditorView.qml:123
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button Flip/mirror an image"
+#| msgid "Flip"
 msgctxt "@action:button Mirror an image vertically"
 msgid "Flip"
-msgstr ""
+msgstr "Spejl"
 
 #: qml/EditorView.qml:129
 #, kde-format
@@ -503,18 +503,22 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group for crop area size spinboxes"
 msgid "Size:"
-msgstr ""
+msgstr "Størrelse:"
 
 #: qml/EditorView.qml:175
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Description:"
 msgctxt "@title:group for crop area position spinboxes"
 msgid "Position:"
-msgstr ""
+msgstr "Beskrivelse:"
 
 #: qml/EditorView.qml:247
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button Save As image modification"
+#| msgid "Save As"
 msgid "Save As"
-msgstr ""
+msgstr "Gem som"
 
 #: qml/EditorView.qml:253
 #, kde-format
@@ -524,145 +528,142 @@ msgstr ""
 #: qml/imagedelegate/VideoPlayer.qml:183
 #, kde-format
 msgid "Seek slider"
-msgstr ""
+msgstr "Skydeknap til søgning"
 
 #: qml/imagedelegate/VideoPlayer.qml:230 qml/imagedelegate/VideoPlayer.qml:252
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Spring 1 sekund tilbage"
+msgstr[1] "Spring %1 sekunder tilbage"
 
 #: qml/imagedelegate/VideoPlayer.qml:240
 #, kde-format
 msgid "Pause playback"
-msgstr ""
+msgstr "Sæt afspilning på pause"
 
 #: qml/imagedelegate/VideoPlayer.qml:240
 #, kde-format
 msgid "Continue playback"
-msgstr ""
+msgstr "Fortsæt afspilning"
 
 #: qml/imagedelegate/VideoPlayer.qml:262
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mute audio"
 msgid "Unmute audio"
-msgstr ""
+msgstr "Slå lyden fra"
 
 #: qml/imagedelegate/VideoPlayer.qml:262
 #, kde-format
 msgid "Mute audio"
-msgstr ""
+msgstr "Slå lyden fra"
 
 #: qml/imagedelegate/VideoPlayer.qml:274
 #, kde-format
 msgid "Volume slider"
-msgstr ""
+msgstr "Skydeknap til lydstyrke"
 
 #: qml/imagedelegate/VideoPlayer.qml:296
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "Gentag aktuelle video"
 
 #: qml/imagedelegate/VideoPlayer.qml:296
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Repeat current video"
 msgid "Don't repeat current video"
-msgstr ""
+msgstr "Gentag aktuelle video"
 
 #: qml/ImageMetadataPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Indstil visning af metadata"
 
 #: qml/ImageViewPage.qml:74
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr ""
+msgstr "Favorit"
 
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Fjern fra favoritter"
 
 #: qml/ImageViewPage.qml:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
-msgstr ""
+msgstr "Føj til favoritter"
 
 #: qml/ImageViewPage.qml:88
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr "Redigér"
+msgstr "&Redigér"
 
 #: qml/ImageViewPage.qml:90
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr "Redigér billede"
+msgstr "Redigér dette billede"
 
 #: qml/ImageViewPage.qml:108
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr "Del"
+msgstr "&Del"
 
 #: qml/ImageViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "Del billede"
+msgstr "Del denne video"
 
 #: qml/ImageViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "Del billede"
+msgstr "Del dette billede"
 
 #: qml/ImageViewPage.qml:134
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr ""
+msgstr "&Info"
 
 #: qml/ImageViewPage.qml:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr ""
+msgstr "Se information om denne video"
 
 #: qml/ImageViewPage.qml:143
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr ""
+msgstr "Se information om dette billede"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:162
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr ""
+msgstr "&Diasshow"
 
 #: qml/ImageViewPage.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
-msgstr ""
+msgstr "Start diasshow"
 
 #: qml/ImageViewPage.qml:177
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr ""
+msgstr "Vis %kontroller"
 
 #: qml/ImageViewPage.qml:178
 #, kde-format
@@ -677,175 +678,170 @@ msgid "Exit immersive viewing mode"
 msgstr ""
 
 #: qml/ImageViewPage.qml:189
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr "Str. på miniaturer:"
+msgstr "Vis &miniatureværktøjslinje"
 
 #: qml/ImageViewPage.qml:190
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr ""
+msgstr "Vis miniatureværktøjslinjen"
 
 #: qml/ImageViewPage.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr ""
+msgstr "Skjul miniatureværktøjslinjen"
 
 #: qml/ImageViewPage.qml:213
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr ""
+msgstr "&Fuldskærm"
 
 #: qml/ImageViewPage.qml:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr ""
+msgstr "Gå til fuldskærm"
 
 #: qml/ImageViewPage.qml:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "Afslut fuldskærm"
 
 #: qml/ImageViewPage.qml:490
 #, kde-format
 msgid "Previous image"
-msgstr ""
+msgstr "Forrige billede"
 
 #: qml/ImageViewPage.qml:520
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgid "Next image"
-msgstr "Redigér billede"
+msgstr "Næste billede"
 
 #: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:60
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr ""
+msgstr "Diasshowets interval:"
 
 #: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:72
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 sekund"
+msgstr[1] "%1 sekunder"
 
 #: qml/ImageViewPage.qml:927
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr ""
+msgstr "Gentag"
 
 #: qml/ImageViewPage.qml:936 qml/Settings/GeneralConfigPage.qml:46
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr ""
+msgstr "Tilfældig rækkefølge"
 
 #: qml/ImageViewPage.qml:948
 #, kde-format
 msgid "Stop Slideshow"
-msgstr ""
+msgstr "Stop diasshow"
 
 #: qml/ImageViewPage.qml:962
 #, kde-format
 msgid "Show All Controls"
-msgstr ""
+msgstr "Vis alle kontroller"
 
 #: qml/InfoDrawer.qml:39
 #, kde-format
 msgid "Metadata"
-msgstr ""
+msgstr "Metadata"
 
 #: qml/InfoDrawerSidebarBase.qml:68
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr ""
+msgstr "Bedømmelse:"
 
 #: qml/InfoDrawerSidebarBase.qml:85
 #, kde-format
 msgid "Current rating %1"
-msgstr ""
+msgstr "Nuværende bedømmelse %1"
 
 #: qml/InfoDrawerSidebarBase.qml:93
 #, kde-format
 msgid "Set rating to %1"
-msgstr ""
+msgstr "Sæt bedømmelsen til %1"
 
 #: qml/InfoDrawerSidebarBase.qml:124
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr ""
+msgstr "Beskrivelse:"
 
 #: qml/InfoDrawerSidebarBase.qml:126
 #, kde-format
 msgid "Image description…"
-msgstr ""
+msgstr "Billedets beskrivelse…"
 
 #: qml/InfoDrawerSidebarBase.qml:137
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr ""
+msgstr "Mærker:"
 
 #: qml/InfoDrawerSidebarBase.qml:164
 #, kde-format
 msgid "Add Tag"
-msgstr ""
+msgstr "Tilføj mærke"
 
 #: qml/InfoDrawerSidebarBase.qml:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "Vælg, hvad der skal vises"
 
 #: qml/Main.qml:67
 #, kde-format
 msgctxt "@title"
 msgid "Places"
-msgstr ""
+msgstr "Steder"
 
 #: qml/Main.qml:104
-#, fuzzy, kde-format
-#| msgid "1 Image"
-#| msgid_plural "%1 Images"
+#, kde-format
 msgid "Images"
-msgstr "1 billede"
+msgstr "Billeder"
 
 #: qml/PlacesPage.qml:21 qml/Sidebar.qml:235
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr ""
+msgstr "Indstillinger"
 
 #: qml/PlacesPage.qml:54 qml/Sidebar.qml:108
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
-msgstr ""
+msgstr "Papirkurv"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:135
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
-msgstr ""
+msgstr "Netværk"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:115
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Efter mappe"
+msgstr "Bogmærker"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:141
 #, kde-format
@@ -853,24 +849,22 @@ msgid "Locations"
 msgstr "Placeringer"
 
 #: qml/PlacesPage.qml:96 qml/Sidebar.qml:144
-#, fuzzy, kde-format
-#| msgid "By Country"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
-msgstr "Efter land"
+msgstr "Lande"
 
 #: qml/PlacesPage.qml:102 qml/Sidebar.qml:150
-#, fuzzy, kde-format
-#| msgid "By State"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
-msgstr "Efter delstat"
+msgstr "Delstater"
 
 #: qml/PlacesPage.qml:108 qml/Sidebar.qml:156
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
-msgstr ""
+msgstr "Byer"
 
 #: qml/PlacesPage.qml:115 qml/Sidebar.qml:162
 #, kde-format
@@ -878,36 +872,33 @@ msgid "Time"
 msgstr "Tid"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:165
-#, fuzzy, kde-format
-#| msgid "By Year"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
-msgstr "Efter år"
+msgstr "År"
 
 #: qml/PlacesPage.qml:126 qml/Sidebar.qml:171
-#, fuzzy, kde-format
-#| msgid "By Month"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
-msgstr "Efter måned"
+msgstr "Måneder"
 
 #: qml/PlacesPage.qml:132 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "By Week"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
-msgstr "Efter uge"
+msgstr "Uger"
 
 #: qml/PlacesPage.qml:138 qml/Sidebar.qml:183
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
-msgstr ""
+msgstr "Dage"
 
 #: qml/PlacesPage.qml:146 qml/Sidebar.qml:189
 #, kde-format
 msgid "Tags"
-msgstr ""
+msgstr "Mærker"
 
 #: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:213
 #, kde-format
@@ -915,47 +906,44 @@ msgid "Thumbnails size:"
 msgstr "Str. på miniaturer:"
 
 #: qml/Settings/GeneralConfigPage.qml:38
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Slideshow"
 msgctxt "@title:group"
 msgid "Slideshow:"
-msgstr ""
+msgstr "Diasshow"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format
 msgctxt "@action:button"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
 #: qml/Settings/PhotosConfigurationView.qml:26
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About Photos"
-msgstr "Om"
+msgstr "Om Billeder"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Om"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "Om"
+msgstr "Om KDE"
 
 #: qml/ShareAction.qml:23
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Del"
+msgstr "&Del"
 
 #: qml/ShareDrawer.qml:24
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Share"
 msgstr "Del"
@@ -963,28 +951,259 @@ msgstr "Del"
 #: qml/Sidebar.qml:50
 #, kde-format
 msgid "Filter by"
-msgstr ""
+msgstr "Filtrér efter"
 
 #: qml/Sidebar.qml:131
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
+msgstr "Ekstern"
 
 #: qml/Sidebar.qml:217
 #, kde-format
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Sidebar.qml:233
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Indstillinger"
 
 #: qml/TagInput.qml:65
 #, kde-format
 msgid "Add new tag…"
-msgstr ""
+msgstr "Tilføj nyt mærke…"
+
+#~ msgctxt "@label, annotation tool option"
+#~ msgid "Stroke:"
+#~ msgstr "Strøg:"
+
+#~ msgctxt "px: pixels"
+#~ msgid "%1px"
+#~ msgid_plural "%1px"
+#~ msgstr[0] "%1px"
+#~ msgstr[1] "%1px"
+
+#~ msgctxt "@label, annotation tool option"
+#~ msgid "Stroke Width"
+#~ msgstr "Strøgbredde"
+
+#~ msgctxt "@label, annotation tool option"
+#~ msgid "Stroke Color"
+#~ msgstr "Strøgfarve"
+
+#~ msgctxt "@label, annotation tool option"
+#~ msgid "Fill:"
+#~ msgstr "Udfyldning:"
+
+#~ msgctxt "@label"
+#~ msgid "Fill Color"
+#~ msgstr "Udfyldningsfarve"
+
+#~ msgctxt "@label:slider Strength of annotation tool effect"
+#~ msgid "Strength:"
+#~ msgstr "Styrke:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The strength of the effect."
+#~ msgstr "Styrken af effekten."
+
+#~ msgctxt "@label"
+#~ msgid "Font:"
+#~ msgstr "Skrifttype:"
+
+#~ msgctxt "%2 font family, %3 font style name, %1 font point size"
+#~ msgid "%2 %3 %1pt"
+#~ msgid_plural "%2 %3 %1pts"
+#~ msgstr[0] "%2 %3 %1pt"
+#~ msgstr[1] "%2 %3 %1pts"
+
+#~ msgctxt "%2 font family %1 font point size"
+#~ msgid "%2 %1pt"
+#~ msgid_plural "%2 %1pts"
+#~ msgstr[0] "%2 %1pt"
+#~ msgstr[1] "%2 %1pts"
+
+#~ msgctxt "@label"
+#~ msgid "Font Color"
+#~ msgstr "Farve på skrifttype"
+
+#~ msgctxt "@label, annotation tool option"
+#~ msgid "Number:"
+#~ msgstr "Nummer:"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Number for number annotations"
+#~ msgstr "Nummer for nummerannoteringer"
+
+#~ msgctxt "@label, annotation tool option"
+#~ msgid "Shadow"
+#~ msgstr "Skygge"
+
+#~ msgctxt "@action:intoolbar no tool, to allow dragging"
+#~ msgid "None"
+#~ msgstr "Ingen"
+
+#~| msgid "Select All"
+#~ msgctxt "@action:intoolbar select annotation tool"
+#~ msgid "Select"
+#~ msgstr "Vælg"
+
+#~ msgctxt "@action:intoolbar freehand line tool"
+#~ msgid "Freehand"
+#~ msgstr "Frihånd"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Shift: Snap to straight lines"
+#~ msgstr "Skift: Hægt til faste linjer"
+
+#~ msgctxt "@action:intoolbar highlighter line tool"
+#~ msgid "Highlighter"
+#~ msgstr "Fremhæver"
+
+#~ msgctxt "@action:intoolbar straight line tool"
+#~ msgid "Line"
+#~ msgstr "Linje"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Shift: Snap to 45 degree increments"
+#~ msgstr "Skift: Hægt til 45-graders intervaller"
+
+#~ msgctxt "@action:intoolbar arrow line tool"
+#~ msgid "Arrow"
+#~ msgstr "Pil"
+
+#~ msgctxt "@action:intoolbar rectangle tool"
+#~ msgid "Rectangle"
+#~ msgstr "Rektangel"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid ""
+#~ "Shift: Snap to diagonal movements\n"
+#~ "Control: Resize from center"
+#~ msgstr ""
+#~ "Skift: Vægt til diagonale bevægelser\n"
+#~ "Kontrol: Ændr størrelse fra midten"
+
+#~ msgctxt "@action:intoolbar ellipse tool"
+#~ msgid "Ellipse"
+#~ msgstr "Ellipse"
+
+#~ msgctxt "@action:intoolbar pixelate tool"
+#~ msgid "Pixelate"
+#~ msgstr "Pixelér"
+
+#~ msgctxt "@action:intoolbar blur tool"
+#~ msgid "Blur"
+#~ msgstr "Slør"
+
+#~ msgctxt "@action:intoolbar text tool"
+#~ msgid "Text"
+#~ msgstr "Tekst"
+
+#~ msgctxt "@action:intoolbar number stamp tool"
+#~ msgid "Number"
+#~ msgstr "Nummer"
+
+#~ msgctxt "@label"
+#~ msgid ""
+#~ "The image <filename>%1</filename> has been modified. Do you want to save "
+#~ "your changes or discard them?"
+#~ msgstr ""
+#~ "Billedet <filename>%1</filename> er blevet modificeret. Vil du gemme dine "
+#~ "ændringer eller kassere dem?"
+
+#~ msgctxt "@title"
+#~ msgid "Edit <filename>%1</filename>"
+#~ msgstr "Redigér <filename>%1</filename>"
+
+#~| msgid "By State"
+#~ msgctxt "@action:button Rotate an image"
+#~ msgid "Rotate"
+#~ msgstr "Rotér"
+
+#~ msgctxt "@action:button Flip/mirror an image horizontally"
+#~ msgid "Flip Horizontally"
+#~ msgstr "Spejl vandret"
+
+#~ msgctxt "@action:button Flip/mirror an image vertically"
+#~ msgid "Flip Vertically"
+#~ msgstr "Spejl lodret"
+
+#~ msgctxt "@action:button"
+#~ msgid "Redo"
+#~ msgstr "Gendan"
+
+#~ msgctxt "@label"
+#~ msgid "Zoom:"
+#~ msgstr "Zoom:"
+
+#~| msgid "1 Image"
+#~| msgid_plural "%1 Images"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Image Zoom"
+#~ msgstr "Billedezoom"
+
+#~ msgctxt "@info crop tool explanation"
+#~ msgid ""
+#~ "Click and drag to make a selection.\n"
+#~ "Double click the selection to accept and crop.\n"
+#~ "Right click to clear the selection."
+#~ msgstr ""
+#~ "Klik og træk for at lave en markering.\n"
+#~ "Dobbeltklik markeringen for at accepterer og beskær.\n"
+#~ "Højreklik for at rydde markeringen."
+
+#~ msgctxt ""
+#~ "@item:intable %1 is the image width, %2 is the image height, %3 is the "
+#~ "number of megapixels in the image"
+#~ msgid "%1 × %2 (%3 MP)"
+#~ msgstr "%1 × %2 (%3 MP)"
+
+#~ msgctxt "@item:intable %1 is the image width, %2 is the image height"
+#~ msgid "%1 × %2"
+#~ msgstr "%1 × %2"
+
+#~ msgctxt "@label Placeholder for missing metadata"
+#~ msgid "—"
+#~ msgstr "—"
+
+#~ msgctxt "@action:intoolbar Print the image"
+#~ msgid "&Print"
+#~ msgstr "&Udskriv"
+
+#~| msgid "Edit image"
+#~ msgctxt "@info:tooltip"
+#~ msgid "Print image"
+#~ msgstr "Udskriv billede"
+
+#~ msgctxt "@label %1 is a translated title e.g. 'Date Created'"
+#~ msgid "%1:"
+#~ msgstr "%1:"
+
+#~ msgctxt "@title:group"
+#~ msgid "Image View Background"
+#~ msgstr "Baggrund på billedevisning"
+
+#~ msgctxt "@option:radio As in, background color"
+#~ msgid "Black"
+#~ msgstr "Sort"
+
+#~ msgctxt "@option:radio As in, background color"
+#~ msgid "White"
+#~ msgstr "Hvid"
+
+#~ msgctxt "@option:radio As in, background color"
+#~ msgid "Theme default"
+#~ msgstr "Standard for tema"
+
+#~ msgctxt "info"
+#~ msgid "Use the background color specified by the theme"
+#~ msgstr "Brug baggrundsfarven specificeret af temaet"
+
+#~ msgctxt "@option:check"
+#~ msgid "Show a checkerboard background behind transparent images"
+#~ msgstr "Vis en skakternet baggrund bag gennemsigtige billeder"
 
 #~ msgctxt "verb, edit an image"
 #~ msgid "Edit"
