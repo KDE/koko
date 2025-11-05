@@ -575,23 +575,6 @@ Row {
 
             Controls.ComboBox {
                 id: aspectRatioComboBox
-                function updateGeometry() {
-                    if (!currentValue) {
-                        return
-                    }
-                    let w = root.tool.geometry.width
-                    let h = root.tool.geometry.height
-                    if (currentValue > 1) {
-                        h = w / currentValue
-                    } else if (currentValue < 1) {
-                        w = h * currentValue
-                    } else {
-                        w = Math.min(w, h)
-                        h = w
-                    }
-                    root.tool.geometry.width = w
-                    root.tool.geometry.height = h
-                }
                 currentValue: 0
                 textRole: "text"
                 valueRole: "ratio"
@@ -615,13 +598,7 @@ Row {
                     {text: i18nc("@item:inlistbox aspect ratio", "ISO Paper (Portrait)"), ratio: Math.SQRT1_2},
                     {text: i18nc("@item:inlistbox aspect ratio", "US Letter (Portrait)"), ratio: 8.5/11}
                 ]
-                onCurrentValueChanged: updateGeometry()
-                Connections {
-                    target: root.tool
-                    function onGeometryChanged() {
-                        aspectRatioComboBox.updateGeometry()
-                    }
-                }
+                onCurrentValueChanged: root.tool.aspectRatio = currentValue
             }
 
             ToolButton {
