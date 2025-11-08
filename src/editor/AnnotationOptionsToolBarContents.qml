@@ -575,7 +575,29 @@ Row {
 
             Controls.ComboBox {
                 id: aspectRatioComboBox
-                currentValue: 0
+                function parseAspectRatio(text: string): real {
+                    const numbers = text.split(":")
+                    // parseFloat turns undefined into NaN.
+                    const ratio = parseFloat(numbers[0])/parseFloat(numbers[1])
+                    return ratio // can return NaN, which is falsy
+                }
+                // https://stackoverflow.com/a/71164857
+                function toRational(x: real): var {
+                    var m  = Math.floor(x),
+                        x_ = 1/(x-m),
+                        p_ = 1,
+                        q_ = 0,
+                        p  = m,
+                        q  = 1;
+                    if (x === m) return {n:p,d:q};
+                    while (Math.abs(x - p/q) > Number.EPSILON){
+                        m  = Math.floor(x_);
+                        x_ = 1/(x_-m);
+                        [p_, q_, p, q] = [p, q, m*p+p_, m*q+q_];
+                    }
+                    return isNaN(x) ? NaN : {n:p,d:q};
+                }
+                editable: true
                 textRole: "text"
                 valueRole: "ratio"
                 model: [
@@ -598,7 +620,44 @@ Row {
                     {text: i18nc("@item:inlistbox aspect ratio", "ISO Paper (Portrait)"), ratio: Math.SQRT1_2},
                     {text: i18nc("@item:inlistbox aspect ratio", "US Letter (Portrait)"), ratio: 8.5/11}
                 ]
-                onCurrentValueChanged: root.tool.aspectRatio = currentValue
+                Text {
+                    readonly property Item contentItem: aspectRatioComboBox.contentItem
+                    parent: aspectRatioComboBox
+                    x: parent.leftPadding
+                    y: parent.topPadding
+                    width: parent.availableWidth
+                    height: parent.availableHeight
+
+                    text: i18nc("@item:inlistbox aspect ratio placeholder", "Width:Height")
+                    font: parent.font
+                    color: parent.palette.placeholderText
+                    LayoutMirroring.enabled: false
+                    horizontalAlignment: contentItem?.effectiveHorizontalAlignment ?? (parent.mirrored ? Text.AlignRight : Text.AlignLeft)
+                    verticalAlignment: contentItem?.verticalAlignment ?? Text.AlignVCenter
+                    visible: aspectRatioComboBox.editText === "" && (!contentItem.activeFocus || horizontalAlignment !== Text.AlignHCenter)
+                    elide: Text.ElideRight
+                }
+                // The order in which text changed signals are emitted and
+                // currentIndex/currentText/currentValue changed signals are
+                // emitted makes it so we have to parse the text first to react
+                // in a timely manner to user input. We fall back to model values
+                // when parsed text does not give a number.
+                onEditTextChanged: {
+                    const value = parseAspectRatio(editText) || valueAt(currentIndex)
+                    root.tool.aspectRatio = value
+                    if (value && indexOfValue(value) < 0 && !contentItem.activeFocus) {
+                        const fraction = toRational(root.tool.aspectRatio)
+                        editText = `${fraction.n}:${fraction.d}`
+                    }
+                }
+                Component.onCompleted: {
+                    const ratio = root.tool.aspectRatio
+                    currentIndex = indexOfValue(ratio)
+                    if (ratio && currentIndex < 0) {
+                        const fraction = toRational(ratio)
+                        editText = `${fraction.n}:${fraction.d}`
+                    }
+                }
             }
 
             ToolButton {
