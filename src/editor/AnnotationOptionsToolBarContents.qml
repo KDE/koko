@@ -663,7 +663,11 @@ Row {
             ToolButton {
                 icon.name: "edit-undo"
                 text: i18nc("@action reset selection", "Reset")
-                onClicked: root.tool.geometry = undefined
+                onClicked: {
+                    root.tool.geometry = undefined
+                    root.tool.aspectRatio = undefined
+                    aspectRatioComboBox.currentIndex = 0
+                }
             }
 
             ToolButton {
