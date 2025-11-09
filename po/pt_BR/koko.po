@@ -3,20 +3,21 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021, 2023, 2024.
 # SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-07 00:40+0000\n"
-"PO-Revision-Date: 2025-10-07 07:27-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2025-11-08 21:16-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1016,7 +1017,7 @@ msgstr "Descrição:"
 #: qml/InfoDrawerSidebarBase.qml:227
 #, kde-format
 msgid "Image description…"
-msgstr "Descrição da imagem..."
+msgstr "Descrição da imagem…"
 
 #: qml/InfoDrawerSidebarBase.qml:238
 #, kde-format
@@ -1233,7 +1234,7 @@ msgstr "Configurações"
 #: qml/TagInput.qml:66
 #, kde-format
 msgid "Add new tag…"
-msgstr "Adicionar nova etiqueta..."
+msgstr "Adicionar nova etiqueta…"
 
 #~ msgid "Are you sure you want to discard all changes?"
 #~ msgstr "Tem certeza que deseja descartar todas as mudanças?"
