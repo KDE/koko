@@ -176,8 +176,8 @@ Kirigami.Page {
             icon.name: "view-presentation-symbolic"
             tooltip: i18nc("@info:tooltip", "Start slideshow")
 
-            visible: listView.count > 1 && !slideshowManager.running && !Kirigami.Settings.isMobile
-            onTriggered: slideshowManager.start()
+            visible: listView.count > 1 && !slideshowManager.running
+            onTriggered: Kirigami.Settings.isMobile ? mobileSlideshowConfig.open() : slideshowManager.start()
         },
         Kirigami.Action {
             id: printAction
@@ -957,6 +957,77 @@ Kirigami.Page {
         HoverHandler {
             id: hoverHandler
             margin: parent.implicitHeight/2
+        }
+    }
+
+    // Slideshow handling for mobile devices
+    MouseArea {
+        acceptedButtons: Qt.LeftButton
+        anchors.fill: parent
+        enabled: Kirigami.Settings.isMobile && slideshowManager.running
+        onClicked: mobileSlideshowConfig.open()
+    }
+
+    Kirigami.Dialog {
+        id: mobileSlideshowConfig
+        preferredWidth: Kirigami.Units.gridUnit * 20
+        title: "Slideshow"
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: slideshowManager.running ? i18nc("@action: button", "Stop") : i18nc("@action: button","Start")
+                icon.name: slideshowManager.running ? "media-playback-stop" : "media-playback-start"
+                onTriggered: {
+                    mobileSlideshowConfig.close();
+                    if (slideshowManager.running) {
+                        slideshowManager.stop()
+                    } else {
+                        slideshowManager.start()
+
+                    }
+                    mobileSlideshowConfig.close();
+                }
+            }
+        ]
+
+        ColumnLayout {
+            RowLayout {
+                Layout.leftMargin: Kirigami.Units.mediumSpacing
+                QQC2.Label {
+                    text: i18nc("@label:Slideshow image changing interval", "Interval:")
+                }
+                TextInput {
+                    maximumLength: 2
+                    validator: IntValidator { bottom: 1; top:99 }
+                    text: Koko.Config.nextImageInterval
+                    onActiveFocusChanged: { if (focus) selectAll() }
+                    onTextEdited: {
+                        Koko.Config.nextImageInterval = text;
+                        Koko.Config.save();
+                    }
+                }
+                QQC2.Label {
+                    text: i18n("seconds")
+                }
+            }
+            QQC2.CheckBox {
+                Layout.leftMargin: Kirigami.Units.mediumSpacing
+                text: i18nc("@option:check", "Loop")
+                checked: Koko.Config.loopImages
+                onToggled: {
+                    Koko.Config.loopImages = checked
+                    Koko.Config.save()
+                }
+            }
+            QQC2.CheckBox {
+                Layout.leftMargin: Kirigami.Units.mediumSpacing
+                text: i18nc("@option:check", "Randomize")
+                checked: Koko.Config.randomizeImages
+                onToggled: {
+                    Koko.Config.randomizeImages = checked
+                    Koko.Config.save()
+                }
+            }
         }
     }
 
