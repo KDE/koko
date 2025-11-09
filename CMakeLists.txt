@@ -35,21 +35,34 @@ ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KOKO
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/src/version.h
 )
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg)
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS Qml Quick Widgets Test Sql Positioning Svg QuickControls2)
 if(Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.9.0")
     find_package(Qt6 ${REQUIRED_QT_VERSION} CONFIG REQUIRED GuiPrivate)
 endif()
 find_package(Qt6 ${QT_MIN_VERSION} COMPONENTS PrintSupport)
 
-qt_policy(SET QTP0001 NEW)
-
 if(ANDROID)
-    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
+    find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons)
+set_package_properties(Qt6 PROPERTIES
+    TYPE REQUIRED
+    DESCRIPTION "Base components"
+)
 
-find_package(LibExiv2 0.28 REQUIRED)
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS I18n Declarative Config ConfigWidgets KIO GuiAddons CoreAddons Notifications FileMetaData DBusAddons Kirigami Purpose)
+set_package_properties(KF6 PROPERTIES
+    TYPE REQUIRED
+    DESCRIPTION "Base components"
+)
+
+find_package(LibExiv2 0.28)
+set_package_properties(LibExiv2 PROPERTIES
+    TYPE REQUIRED
+    DESCRIPTION "Image metadata library and tools"
+    URL "https://github.com/Exiv2/exiv2"
+    PURPOSE "Get image metadata"
+)
 
 ecm_find_qmlmodule(org.kde.kquickimageeditor)
 find_package(KQuickImageEditor COMPONENTS)
@@ -66,20 +79,6 @@ set_package_properties(XCB PROPERTIES
     TYPE OPTIONAL
 )
 
-find_package(Qt6QuickControls2 ${QT_MIN_VER} REQUIRED)
-set_package_properties(Qt6QuickControls2 PROPERTIES
-    DESCRIPTION "User interface controls based on Qt Quick"
-    PURPOSE "Required at runtime to run Koko"
-    TYPE RUNTIME
-)
-
-find_package(KF6Kirigami)
-set_package_properties(KF6Kirigami PROPERTIES
-    DESCRIPTION "A QtQuick based components set"
-    PURPOSE "Required at runtime to run Koko"
-    TYPE RUNTIME
-)
-
 ecm_find_qmlmodule(org.kde.kirigamiaddons.formcard REQUIRED)
 ecm_find_qmlmodule(org.kde.kirigamiaddons.delegates REQUIRED)
 
@@ -89,12 +88,10 @@ set_package_properties(KF6KirigamiAddons PROPERTIES
     PURPOSE "Required runtime dependency"
 )
 
-find_package(KF6Purpose)
-set_package_properties(KF6Purpose PROPERTIES
-    DESCRIPTION "Offers available actions for a specific purpose"
-    PURPOSE "Required at runtime to run Koko and allow sharing of files"
-    TYPE RUNTIME
-)
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+qt_policy(SET QTP0001 NEW)
+qt_policy(SET QTP0004 NEW)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
@@ -115,5 +112,3 @@ install(FILES org.kde.koko.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
-
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
