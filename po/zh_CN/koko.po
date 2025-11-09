@@ -31,7 +31,7 @@ msgstr "kde-china@kde.org, i@guoyunhe.me, tds00@qq.com, wordless@echo.moe"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "线条："
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -41,150 +41,147 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
+msgstr[0] "%1 像素"
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "线条宽度"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "线条颜色"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "填充："
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "填充颜色"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "强度："
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "效果的强度。"
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "字体："
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
+msgstr[0] "%2 %3 %1 点"
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
+msgstr[0] "%2 %1 点"
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "字体颜色"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "数字："
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "数字标注的数字"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "投影"
 
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "裁剪"
 
 #: editor/AnnotationsToolBarContents.qml:120
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "全选"
+msgstr "选择"
 
 #: editor/AnnotationsToolBarContents.qml:129
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr ""
+msgstr "手绘"
 
 #: editor/AnnotationsToolBarContents.qml:130
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
-msgstr ""
+msgstr "Shift：吸附到直线"
 
 #: editor/AnnotationsToolBarContents.qml:137
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
-msgstr ""
+msgstr "高亮"
 
 #: editor/AnnotationsToolBarContents.qml:146
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
-msgstr ""
+msgstr "线"
 
 #: editor/AnnotationsToolBarContents.qml:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr ""
+msgstr "Shift：吸附到 45 度增量"
 
 #: editor/AnnotationsToolBarContents.qml:154
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
-msgstr ""
+msgstr "箭头"
 
 #: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
-msgstr ""
+msgstr "矩形"
 
 #: editor/AnnotationsToolBarContents.qml:165
 #, kde-format
@@ -193,43 +190,44 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
+"Shift：吸附到对角线方向\n"
+"Ctrl：以中心为参照点调整大小"
 
 #: editor/AnnotationsToolBarContents.qml:172
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
-msgstr ""
+msgstr "椭圆形"
 
 #: editor/AnnotationsToolBarContents.qml:180
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
-msgstr ""
+msgstr "马赛克"
 
 #: editor/AnnotationsToolBarContents.qml:188
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
-msgstr ""
+msgstr "模糊"
 
 #: editor/AnnotationsToolBarContents.qml:196
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
-msgstr ""
+msgstr "文本"
 
 #: editor/AnnotationsToolBarContents.qml:203
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
-msgstr ""
+msgstr "数值"
 
 #: editor/ConfirmDiscardingChanges.qml:17
-#, fuzzy, kde-format
-#| msgid "Discard changes"
+#, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr "放弃更改"
+msgstr "未保存的更改"
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -237,24 +235,21 @@ msgctxt "@label"
 msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
-msgstr ""
+msgstr "图片 <filename>%1</filename> 已经被修改。您想要保存还是丢弃更改？"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
-msgstr ""
+msgstr "编辑 <filename>%1</filename>"
 
 #: editor/EditorView.qml:42 editor/EditorView.qml:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to save file. Check if you have the correct permission to edit "
-#| "this file."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
 "file."
-msgstr "无法保存文件，请检查您是否有权限编辑此文件。"
+msgstr "无法保存文件，请检查您是否有权限保存此文件。"
 
 #: editor/EditorView.qml:97
 #, kde-format
@@ -275,33 +270,25 @@ msgid "Size:"
 msgstr "大小："
 
 #: editor/EditorView.qml:159
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
-msgstr "旋转 (向左)"
+msgstr "旋转"
 
 #: editor/EditorView.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "旋转 (向左)"
 
 #: editor/EditorView.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the right"
-#| msgid "Rotate right"
+#, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "旋转 (向右)"
 
 #: editor/EditorView.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "翻转 (垂直)"
@@ -310,18 +297,16 @@ msgstr "翻转 (垂直)"
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
-msgstr ""
+msgstr "翻转 (水平)"
 
 #: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
-msgstr ""
+msgstr "翻转 (垂直)"
 
 #: editor/EditorView.qml:222
-#, fuzzy, kde-format
-#| msgctxt "@action:button Undo modification"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "撤销"
@@ -330,7 +315,7 @@ msgstr "撤销"
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
-msgstr ""
+msgstr "恢复"
 
 #: editor/EditorView.qml:246
 #, kde-format
@@ -339,8 +324,7 @@ msgid "Save"
 msgstr "保存"
 
 #: editor/EditorView.qml:254
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "另存为"
@@ -349,14 +333,13 @@ msgstr "另存为"
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
-msgstr ""
+msgstr "缩放："
 
 #: editor/EditorView.qml:439
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
-msgstr "图像"
+msgstr "图像缩放"
 
 #: editor/ImageView.qml:196
 #, kde-format
@@ -366,6 +349,9 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
+"单击并拖动以建立选区。\n"
+"双击以接受选区并进行剪切。\n"
+"右键单击以清除选区。"
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
 #, kde-format
@@ -595,43 +581,43 @@ msgstr "转到远程文件夹"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by countries"
-msgstr ""
+msgstr "转到按国家分类的图片"
 
 #: photosapplication.cpp:92
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by states"
-msgstr ""
+msgstr "转到按州分类的图片"
 
 #: photosapplication.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by cities"
-msgstr ""
+msgstr "转到按城市分类的图片"
 
 #: photosapplication.cpp:106
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by years"
-msgstr ""
+msgstr "转到按年分类的图片"
 
 #: photosapplication.cpp:113
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by months"
-msgstr ""
+msgstr "转到按月分类的图片"
 
 #: photosapplication.cpp:120
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by weeks"
-msgstr ""
+msgstr "转到按周分类的图片"
 
 #: photosapplication.cpp:127
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures sorted by days"
-msgstr ""
+msgstr "转到按天分类的图片"
 
 #: qml/AlbumDelegate.qml:128
 #, kde-format
@@ -785,13 +771,13 @@ msgstr "重复播放当前视频"
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "配置元数据显示"
 
 #: qml/ImageMetadataPage.qml:46
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: qml/ImageViewPage.qml:89
 #, kde-format
@@ -815,128 +801,128 @@ msgstr "添加到收藏"
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
-msgstr ""
+msgstr "编辑(&E)"
 
 #: qml/ImageViewPage.qml:105
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr ""
+msgstr "编辑此图像"
 
 #: qml/ImageViewPage.qml:124
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
-msgstr ""
+msgstr "分享(&S)"
 
 #: qml/ImageViewPage.qml:130
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr ""
+msgstr "分享此视频"
 
 #: qml/ImageViewPage.qml:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr ""
+msgstr "分享此图像"
 
 #: qml/ImageViewPage.qml:147
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
-msgstr ""
+msgstr "信息(&I)"
 
 #: qml/ImageViewPage.qml:154
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr ""
+msgstr "查看该视频的信息"
 
 #: qml/ImageViewPage.qml:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr ""
+msgstr "查看该图像的信息"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/ImageViewPage.qml:175
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
-msgstr ""
+msgstr "幻灯片放映(&S)"
 
 #: qml/ImageViewPage.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
-msgstr ""
+msgstr "开始幻灯片放映"
 
 #: qml/ImageViewPage.qml:185
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "打印(&P)"
 
 #: qml/ImageViewPage.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
-msgstr ""
+msgstr "打印图像"
 
 #: qml/ImageViewPage.qml:203
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr ""
+msgstr "显示控制(&C)"
 
 #: qml/ImageViewPage.qml:204
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "进入沉浸式查看模式"
 
 #: qml/ImageViewPage.qml:205
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "退出沉浸式查看模式"
 
 #: qml/ImageViewPage.qml:215
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr ""
+msgstr "显示缩略图工具栏(&T)"
 
 #: qml/ImageViewPage.qml:216
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr ""
+msgstr "显示缩略图工具栏"
 
 #: qml/ImageViewPage.qml:217
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr ""
+msgstr "隐藏缩略图工具栏"
 
 #: qml/ImageViewPage.qml:239
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr ""
+msgstr "全屏(&F)"
 
 #: qml/ImageViewPage.qml:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr ""
+msgstr "进入全屏"
 
 #: qml/ImageViewPage.qml:241
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "退出全屏"
 
 #: qml/ImageViewPage.qml:487
 #, kde-format
@@ -997,13 +983,13 @@ msgstr "将评分设为 %1"
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr ""
+msgstr "%1："
 
 #: qml/InfoDrawerSidebarBase.qml:107
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr ""
+msgstr "评分："
 
 #: qml/InfoDrawerSidebarBase.qml:134
 #, kde-format
@@ -1014,7 +1000,7 @@ msgstr "当前评分 %1"
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr ""
+msgstr "描述："
 
 #: qml/InfoDrawerSidebarBase.qml:227
 #, kde-format
@@ -1025,7 +1011,7 @@ msgstr "图像描述…"
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr ""
+msgstr "标签："
 
 #: qml/InfoDrawerSidebarBase.qml:265
 #, kde-format
@@ -1036,7 +1022,7 @@ msgstr "添加标签"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "选择显示的内容"
 
 #: qml/Main.qml:69
 #, kde-format
@@ -1071,7 +1057,7 @@ msgstr "网络"
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr ""
+msgstr "书签"
 
 #: qml/PlacesPage.qml:91 qml/Sidebar.qml:147
 #, kde-format
@@ -1139,37 +1125,37 @@ msgstr "缩略图大小："
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "图像视图背景"
 
 #: qml/Settings/GeneralConfigPage.qml:43
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "黑色"
 
 #: qml/Settings/GeneralConfigPage.qml:53
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "白色"
 
 #: qml/Settings/GeneralConfigPage.qml:64
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "主题默认"
 
 #: qml/Settings/GeneralConfigPage.qml:65
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "使用主题指定的背景颜色"
 
 #: qml/Settings/GeneralConfigPage.qml:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "在透明图像后显示棋盘背景"
 
 #: qml/Settings/GeneralConfigPage.qml:92
 #, kde-format
@@ -1186,25 +1172,25 @@ msgstr "常规"
 #: qml/Settings/PhotosConfigurationView.qml:26
 #, kde-format
 msgid "About Photos"
-msgstr ""
+msgstr "关于 Photos"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr ""
+msgstr "关于"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
 msgid "About KDE"
-msgstr ""
+msgstr "关于 KDE"
 
 #: qml/ShareAction.qml:23
 #, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr ""
+msgstr "分享(&S)"
 
 #: qml/ShareDrawer.qml:26
 #, kde-format
@@ -1237,20 +1223,3 @@ msgstr "设置"
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
-
-#~ msgid "Are you sure you want to discard all changes?"
-#~ msgstr "您确定要放弃所有更改吗？"
-
-#~ msgid "Edit"
-#~ msgstr "编辑"
-
-#~ msgctxt "@action:button Mirror an image horizontally"
-#~ msgid "Mirror"
-#~ msgstr "翻转 (水平)"
-
-#~ msgctxt "@title:group for crop area position spinboxes"
-#~ msgid "Position:"
-#~ msgstr "位置："
-
-#~ msgid "You are now editing a new file."
-#~ msgstr "您现在正在编辑新文件。"
