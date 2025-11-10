@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"POT-Creation-Date: 2025-11-10 00:41+0000\n"
 "PO-Revision-Date: 2025-10-07 10:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -791,169 +791,169 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr "—"
 
-#: qml/ImageViewPage.qml:89
+#: qml/ImageViewPage.qml:97
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Preferida"
 
-#: qml/ImageViewPage.qml:91
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Elimina de les preferides"
 
-#: qml/ImageViewPage.qml:91
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Afig a les preferides"
 
-#: qml/ImageViewPage.qml:103
+#: qml/ImageViewPage.qml:111
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr "&Edita"
 
-#: qml/ImageViewPage.qml:105
+#: qml/ImageViewPage.qml:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Edita esta imatge"
 
-#: qml/ImageViewPage.qml:124
+#: qml/ImageViewPage.qml:132
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "Com&partix"
 
-#: qml/ImageViewPage.qml:130
+#: qml/ImageViewPage.qml:138
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Compartix este vídeo"
 
-#: qml/ImageViewPage.qml:132
+#: qml/ImageViewPage.qml:140
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Compartix esta imatge"
 
-#: qml/ImageViewPage.qml:147
+#: qml/ImageViewPage.qml:155
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "&Informació"
 
-#: qml/ImageViewPage.qml:154
+#: qml/ImageViewPage.qml:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Vegeu la informació sobre este vídeo"
 
-#: qml/ImageViewPage.qml:156
+#: qml/ImageViewPage.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Vegeu la informació sobre esta imatge"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:175
+#: qml/ImageViewPage.qml:183
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "Pre&sentació de diapositives"
 
-#: qml/ImageViewPage.qml:177
+#: qml/ImageViewPage.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Inicia la presentació de diapositives"
 
-#: qml/ImageViewPage.qml:185
+#: qml/ImageViewPage.qml:193
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
 msgstr "Im&primix"
 
-#: qml/ImageViewPage.qml:187
+#: qml/ImageViewPage.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
 msgstr "Imprimix la imatge"
 
-#: qml/ImageViewPage.qml:203
+#: qml/ImageViewPage.qml:211
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Mostra els &controls"
 
-#: qml/ImageViewPage.qml:204
+#: qml/ImageViewPage.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Entra en el mode de visualització immersiva"
 
-#: qml/ImageViewPage.qml:205
+#: qml/ImageViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Ix del mode de visualització immersiva"
 
-#: qml/ImageViewPage.qml:215
+#: qml/ImageViewPage.qml:223
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Mostra la barra d'eines de minia&tures"
 
-#: qml/ImageViewPage.qml:216
+#: qml/ImageViewPage.qml:224
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Mostra la barra d'eines de miniatures"
 
-#: qml/ImageViewPage.qml:217
+#: qml/ImageViewPage.qml:225
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Oculta la barra d'eines de miniatures"
 
-#: qml/ImageViewPage.qml:239
+#: qml/ImageViewPage.qml:247
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "&Pantalla completa"
 
-#: qml/ImageViewPage.qml:241
+#: qml/ImageViewPage.qml:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Entra a pantalla completa"
 
-#: qml/ImageViewPage.qml:241
+#: qml/ImageViewPage.qml:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Ix de pantalla completa"
 
-#: qml/ImageViewPage.qml:487
+#: qml/ImageViewPage.qml:495
 #, kde-format
 msgid "Previous image"
 msgstr "Imatge anterior"
 
-#: qml/ImageViewPage.qml:520
+#: qml/ImageViewPage.qml:528
 #, kde-format
 msgid "Next image"
 msgstr "Imatge següent"
 
 # skip-rule: kct-slideshow
-#: qml/ImageViewPage.qml:841 qml/Settings/GeneralConfigPage.qml:114
+#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval entre diapositives:"
 
-#: qml/ImageViewPage.qml:858 qml/Settings/GeneralConfigPage.qml:126
+#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:126
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -961,27 +961,54 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 segon"
 msgstr[1] "%1 segons"
 
-#: qml/ImageViewPage.qml:914
+#: qml/ImageViewPage.qml:922 qml/ImageViewPage.qml:1023
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Bucle"
 
-#: qml/ImageViewPage.qml:923 qml/Settings/GeneralConfigPage.qml:100
+#: qml/ImageViewPage.qml:931 qml/ImageViewPage.qml:1032
+#: qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Aleatori"
 
-#: qml/ImageViewPage.qml:935
+#: qml/ImageViewPage.qml:943
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Para la presentació de diapositives"
 
-#: qml/ImageViewPage.qml:949
+#: qml/ImageViewPage.qml:957
 #, kde-format
 msgid "Show All Controls"
 msgstr "Mostra tots els controls"
+
+#: qml/ImageViewPage.qml:986
+#, kde-format
+msgctxt "@action: button"
+msgid "Stop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:986
+#, kde-format
+msgctxt "@action: button"
+msgid "Start"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1005
+#, kde-format
+msgctxt "@label:Slideshow image changing interval"
+msgid "Interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1018
+#, fuzzy, kde-format
+#| msgctxt "Slideshow image changing interval"
+#| msgid "1 second"
+#| msgid_plural "%1 seconds"
+msgid "seconds"
+msgstr "1 segon"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format

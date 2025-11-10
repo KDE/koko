@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"POT-Creation-Date: 2025-11-10 00:41+0000\n"
 "PO-Revision-Date: 2025-10-12 12:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -783,195 +783,222 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr "—"
 
-#: qml/ImageViewPage.qml:89
+#: qml/ImageViewPage.qml:97
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "책갈피"
 
-#: qml/ImageViewPage.qml:91
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "책갈피에서 삭제"
 
-#: qml/ImageViewPage.qml:91
+#: qml/ImageViewPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "책갈피에 추가"
 
-#: qml/ImageViewPage.qml:103
+#: qml/ImageViewPage.qml:111
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr "편집(&E)"
 
-#: qml/ImageViewPage.qml:105
+#: qml/ImageViewPage.qml:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "이 그림 편집"
 
-#: qml/ImageViewPage.qml:124
+#: qml/ImageViewPage.qml:132
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "공유(&S)"
 
-#: qml/ImageViewPage.qml:130
+#: qml/ImageViewPage.qml:138
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "이 동영상 공유"
 
-#: qml/ImageViewPage.qml:132
+#: qml/ImageViewPage.qml:140
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "이 그림 공유"
 
-#: qml/ImageViewPage.qml:147
+#: qml/ImageViewPage.qml:155
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "정보(&I)"
 
-#: qml/ImageViewPage.qml:154
+#: qml/ImageViewPage.qml:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "이 동영상의 정보 표시"
 
-#: qml/ImageViewPage.qml:156
+#: qml/ImageViewPage.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "이 그림의 정보 표시"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:175
+#: qml/ImageViewPage.qml:183
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "슬라이드 쇼(&S)"
 
-#: qml/ImageViewPage.qml:177
+#: qml/ImageViewPage.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "슬라이드 쇼 시작"
 
-#: qml/ImageViewPage.qml:185
+#: qml/ImageViewPage.qml:193
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
 msgstr "인쇄(&P)"
 
-#: qml/ImageViewPage.qml:187
+#: qml/ImageViewPage.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Print image"
 msgstr "그림 인쇄"
 
-#: qml/ImageViewPage.qml:203
+#: qml/ImageViewPage.qml:211
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "컨트롤 표시(&C)"
 
-#: qml/ImageViewPage.qml:204
+#: qml/ImageViewPage.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "몰입 보기 모드로 들어가기"
 
-#: qml/ImageViewPage.qml:205
+#: qml/ImageViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "몰입 보기 모드 끝내기"
 
-#: qml/ImageViewPage.qml:215
+#: qml/ImageViewPage.qml:223
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "섬네일 도구 모음 표시(&T)"
 
-#: qml/ImageViewPage.qml:216
+#: qml/ImageViewPage.qml:224
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "섬네일 도구 모음 표시"
 
-#: qml/ImageViewPage.qml:217
+#: qml/ImageViewPage.qml:225
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "섬네일 도구 모음 숨기기"
 
-#: qml/ImageViewPage.qml:239
+#: qml/ImageViewPage.qml:247
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "전체 화면(&F)"
 
-#: qml/ImageViewPage.qml:241
+#: qml/ImageViewPage.qml:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "전체 화면으로 전환"
 
-#: qml/ImageViewPage.qml:241
+#: qml/ImageViewPage.qml:249
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "전체 화면 나가기"
 
-#: qml/ImageViewPage.qml:487
+#: qml/ImageViewPage.qml:495
 #, kde-format
 msgid "Previous image"
 msgstr "이전 그림"
 
-#: qml/ImageViewPage.qml:520
+#: qml/ImageViewPage.qml:528
 #, kde-format
 msgid "Next image"
 msgstr "다음 그림"
 
-#: qml/ImageViewPage.qml:841 qml/Settings/GeneralConfigPage.qml:114
+#: qml/ImageViewPage.qml:849 qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "슬라이드 쇼 간격:"
 
-#: qml/ImageViewPage.qml:858 qml/Settings/GeneralConfigPage.qml:126
+#: qml/ImageViewPage.qml:866 qml/Settings/GeneralConfigPage.qml:126
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/ImageViewPage.qml:914
+#: qml/ImageViewPage.qml:922 qml/ImageViewPage.qml:1023
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "반복"
 
-#: qml/ImageViewPage.qml:923 qml/Settings/GeneralConfigPage.qml:100
+#: qml/ImageViewPage.qml:931 qml/ImageViewPage.qml:1032
+#: qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "무작위"
 
-#: qml/ImageViewPage.qml:935
+#: qml/ImageViewPage.qml:943
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "슬라이드 쇼 정지"
 
-#: qml/ImageViewPage.qml:949
+#: qml/ImageViewPage.qml:957
 #, kde-format
 msgid "Show All Controls"
 msgstr "모든 컨트롤 표시"
+
+#: qml/ImageViewPage.qml:986
+#, kde-format
+msgctxt "@action: button"
+msgid "Stop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:986
+#, kde-format
+msgctxt "@action: button"
+msgid "Start"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1005
+#, kde-format
+msgctxt "@label:Slideshow image changing interval"
+msgid "Interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1018
+#, fuzzy, kde-format
+#| msgctxt "Slideshow image changing interval"
+#| msgid "1 second"
+#| msgid_plural "%1 seconds"
+msgid "seconds"
+msgstr "%1초"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
