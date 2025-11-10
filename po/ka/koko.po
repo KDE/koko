@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"POT-Creation-Date: 2025-11-10 02:41+0000\n"
 "PO-Revision-Date: 2025-10-07 06:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -956,13 +956,14 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 წამი"
 msgstr[1] "%1 წამი"
 
-#: qml/ImageViewPage.qml:914
+#: qml/ImageViewPage.qml:914 qml/ImageViewPage.qml:1015
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "მარყუჟი"
 
-#: qml/ImageViewPage.qml:923 qml/Settings/GeneralConfigPage.qml:100
+#: qml/ImageViewPage.qml:923 qml/ImageViewPage.qml:1024
+#: qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -977,6 +978,32 @@ msgstr "სლაიდშოუს შეჩერება"
 #, kde-format
 msgid "Show All Controls"
 msgstr "ყველა კონტროლის ჩვენება"
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Stop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Start"
+msgstr ""
+
+#: qml/ImageViewPage.qml:997
+#, kde-format
+msgctxt "@label:Slideshow image changing interval"
+msgid "Interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1010
+#, fuzzy, kde-format
+#| msgctxt "Slideshow image changing interval"
+#| msgid "1 second"
+#| msgid_plural "%1 seconds"
+msgid "seconds"
+msgstr "1 წამი"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"POT-Creation-Date: 2025-11-10 02:41+0000\n"
 "PO-Revision-Date: 2025-09-24 15:22+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -976,13 +976,14 @@ msgstr[0] "%1 sekunde"
 msgstr[1] "%1 sekundes"
 msgstr[2] "%1 sekunžu"
 
-#: qml/ImageViewPage.qml:914
+#: qml/ImageViewPage.qml:914 qml/ImageViewPage.qml:1015
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Atkārtot"
 
-#: qml/ImageViewPage.qml:923 qml/Settings/GeneralConfigPage.qml:100
+#: qml/ImageViewPage.qml:923 qml/ImageViewPage.qml:1024
+#: qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -997,6 +998,32 @@ msgstr "Apturēt slīdrādi"
 #, kde-format
 msgid "Show All Controls"
 msgstr "Rādīt visas vadīklas"
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Stop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Start"
+msgstr ""
+
+#: qml/ImageViewPage.qml:997
+#, kde-format
+msgctxt "@label:Slideshow image changing interval"
+msgid "Interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1010
+#, fuzzy, kde-format
+#| msgctxt "Slideshow image changing interval"
+#| msgid "1 second"
+#| msgid_plural "%1 seconds"
+msgid "seconds"
+msgstr "%1 sekunde"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format

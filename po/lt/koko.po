@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"POT-Creation-Date: 2025-11-10 02:41+0000\n"
 "PO-Revision-Date: 2020-09-11 02:14+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -960,13 +960,14 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: qml/ImageViewPage.qml:914
+#: qml/ImageViewPage.qml:914 qml/ImageViewPage.qml:1015
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr ""
 
-#: qml/ImageViewPage.qml:923 qml/Settings/GeneralConfigPage.qml:100
+#: qml/ImageViewPage.qml:923 qml/ImageViewPage.qml:1024
+#: qml/Settings/GeneralConfigPage.qml:100
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -980,6 +981,29 @@ msgstr ""
 #: qml/ImageViewPage.qml:949
 #, kde-format
 msgid "Show All Controls"
+msgstr ""
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Stop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Start"
+msgstr ""
+
+#: qml/ImageViewPage.qml:997
+#, kde-format
+msgctxt "@label:Slideshow image changing interval"
+msgid "Interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1010
+#, kde-format
+msgid "seconds"
 msgstr ""
 
 #: qml/InfoDrawer.qml:37

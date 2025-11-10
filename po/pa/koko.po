@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-07 00:40+0000\n"
+"POT-Creation-Date: 2025-11-10 02:41+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1009,14 +1009,15 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 ਸਕਿੰਟ"
 msgstr[1] "%1 ਸਕਿੰਟ"
 
-#: qml/ImageViewPage.qml:914
+#: qml/ImageViewPage.qml:914 qml/ImageViewPage.qml:1015
 #, fuzzy, kde-format
 #| msgid "Loop"
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "ਲੂਪ"
 
-#: qml/ImageViewPage.qml:923 qml/Settings/GeneralConfigPage.qml:100
+#: qml/ImageViewPage.qml:923 qml/ImageViewPage.qml:1024
+#: qml/Settings/GeneralConfigPage.qml:100
 #, fuzzy, kde-format
 #| msgid "Random"
 msgctxt "@option:check"
@@ -1032,6 +1033,31 @@ msgstr "ਸਲਾਇਡ-ਸ਼ੋਅ ਰੋਕੋ"
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Stop"
+msgstr ""
+
+#: qml/ImageViewPage.qml:978
+#, kde-format
+msgctxt "@action: button"
+msgid "Start"
+msgstr ""
+
+#: qml/ImageViewPage.qml:997
+#, kde-format
+msgctxt "@label:Slideshow image changing interval"
+msgid "Interval:"
+msgstr ""
+
+#: qml/ImageViewPage.qml:1010
+#, fuzzy, kde-format
+#| msgid "1 second"
+#| msgid_plural "%1 seconds"
+msgid "seconds"
+msgstr "1 ਸਕਿੰਟ"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
