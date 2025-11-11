@@ -989,12 +989,9 @@ msgid "Interval:"
 msgstr ""
 
 #: qml/ImageViewPage.qml:1010
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "%1 秒"
+msgstr ""
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
