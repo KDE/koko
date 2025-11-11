@@ -981,13 +981,13 @@ msgstr "Zobrazit všechna ovládání"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Zastavit"
 
 #: qml/ImageViewPage.qml:986
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Spustit"
 
 #: qml/ImageViewPage.qml:1005
 #, kde-format
@@ -996,12 +996,9 @@ msgid "Interval:"
 msgstr ""
 
 #: qml/ImageViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "1 sekunda"
+msgstr "sekund"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
