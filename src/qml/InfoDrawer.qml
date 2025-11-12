@@ -9,7 +9,6 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
-import org.kde.koko.private as KokoPrivate
 
 Kirigami.OverlayDrawer {
     id: root

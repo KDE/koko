@@ -14,7 +14,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
-import org.kde.koko.private as KokoPrivate
 
 StatefulApp.StatefulWindow {
     id: root

@@ -19,8 +19,7 @@ qt_add_library(koko_static STATIC
     vectorimage.cpp
     controller.cpp
     kdtree.cpp
-    filemenu.h
-    filemenu.cpp
+    filemenuactions.cpp
     dirmodelutils.cpp
     notificationmanager.cpp
     fileinfo.cpp

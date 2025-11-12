@@ -20,5 +20,5 @@ class PrinterHelper : public QObject
 public:
     explicit PrinterHelper(QObject *parent = nullptr);
     static bool printerSupportAvailable();
-    Q_INVOKABLE void printFileFromUrl(const QUrl &fileUrl, QWindow *parent = nullptr);
+    Q_INVOKABLE static void printFileFromUrl(const QUrl &fileUrl, QWindow *parent = nullptr);
 };

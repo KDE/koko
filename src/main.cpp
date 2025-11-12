@@ -29,7 +29,7 @@
 #include <iostream>
 
 #include "checkerboardimageprovider.h"
-#include "filemenu.h"
+#include "filemenuactions.h"
 #include "filesystemtracker.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
@@ -173,8 +173,6 @@ int main(int argc, char **argv)
                              }
                          }
                      });
-
-    qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
 

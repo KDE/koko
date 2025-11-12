@@ -92,7 +92,7 @@ Kirigami.Page {
         filePath: listView.currentItem ? listView.currentItem.imageurl : ""
     }
 
-    actions: [
+    readonly property list<QtObject> toolBarActions: [
         Kirigami.Action {
             text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
@@ -127,8 +127,6 @@ Kirigami.Page {
             }
         },
         ShareAction {
-            id: shareAction
-
             text: i18nc("@action:intoolbar Share an image/video", "&Share")
             tooltip: {
                 if (!listView.currentItem) {
@@ -172,8 +170,15 @@ Kirigami.Page {
                 // TODO: Should probably do this in infoSidebarLoader
                 infoSidebarLoader.forceActiveFocus();
             }
+        }
+    ]
+
+    readonly property list<QtObject> otherHiddenUiActions: [
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+            visible: slideshowAction.visible || !Kirigami.Settings.isMobile
         },
-        /* Hidden actions */
         Kirigami.Action {
             id: slideshowAction
 
@@ -186,24 +191,6 @@ Kirigami.Page {
 
             visible: listView.count > 1 && !slideshowManager.running
             onTriggered: Kirigami.Settings.isMobile ? mobileSlideshowConfig.open() : slideshowManager.start()
-        },
-        Kirigami.Action {
-            id: printAction
-            displayHint: Kirigami.DisplayHint.AlwaysHide
-            text: i18nc("@action:intoolbar Print the image", "&Print")
-            icon.name: "document-print-symbolic"
-            tooltip: i18nc("@info:tooltip", "Print image")
-            visible: Koko.PrinterHelper.printerSupportAvailable
-                && listView.currentItem
-                && (listView.currentItem.type === Koko.FileInfo.RasterImageType
-                    || listView.currentItem.type === Koko.FileInfo.VectorImageType)
-            shortcut: StandardKey.Print
-            onTriggered: Koko.PrinterHelper.printFileFromUrl(listView.currentItem.imageurl, root.Window.window)
-        },
-        Kirigami.Action {
-            displayHint: Kirigami.DisplayHint.AlwaysHide
-            separator: true
-            visible: slideshowAction.visible
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -235,11 +222,6 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
-            displayHint: Kirigami.DisplayHint.AlwaysHide
-            separator: true
-            visible: fullscreenAction.visible
-        },
-        Kirigami.Action {
             id: fullscreenAction
 
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -267,13 +249,36 @@ Kirigami.Page {
         }
     ]
 
-    // TODO: Integrate file actions into menus (hidden actions on mobile toolbar, More > Actions… on desktop)
-    /*
-    KokoPrivate.FileMenu {
-        id: fileMenu
-        url: listView.currentItem?.imageurl ?? ''
+    Component {
+        id: kirigamiActionComponent
+        Kirigami.Action {}
     }
-    */
+    Binding {
+        target: Koko.FileMenuActions
+        property: "url"
+        value: listView.currentItem?.imageurl ?? ""
+        restoreMode: Binding.RestoreNone
+    }
+
+    actions: {
+        let list = []
+        for (let action of toolBarActions) {
+            list.push(action)
+        }
+        /* Hidden actions */
+        const fileMenuActions = Koko.FileMenuActions.actions
+        for (let fileMenuAction of fileMenuActions) {
+            let kirigamiAction = kirigamiActionComponent.createObject(this, {
+                displayHint: Kirigami.DisplayHint.AlwaysHide,
+                fromQAction: fileMenuAction
+            })
+            list.push(kirigamiAction)
+        }
+        for (let action of otherHiddenUiActions) {
+            list.push(action)
+        }
+        return list
+    }
 
     SlideshowManager {
         id: slideshowManager
