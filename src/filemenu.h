@@ -6,44 +6,31 @@
 
 #pragma once
 
-#include <QObject>
-#include <QPointer>
-#include <QQuickItem>
-#include <QUrl>
+#include <QMenu>
 
-class QAction;
+class QQuickItem;
 
-class FileMenu : public QObject
+class FileMenu : public QMenu
 {
     Q_OBJECT
-    Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged)
-    Q_PROPERTY(QQuickItem *visualParent READ visualParent WRITE setVisualParent NOTIFY visualParentChanged)
-    Q_PROPERTY(bool visible READ visible WRITE setVisible NOTIFY visibleChanged)
-
+    Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChanged FINAL)
 public:
-    explicit FileMenu(QObject *parent = nullptr);
-    ~FileMenu() override;
+    FileMenu(QWidget *parent = nullptr);
 
-    QUrl url() const;
-    void setUrl(const QUrl &url);
+    /**
+     * Same as QMenu::setVisible, but it emits visibleChanged so it can be useful in QML bindings
+     */
+    void setVisible(bool visible) override;
 
-    QQuickItem *visualParent() const;
-    void setVisualParent(QQuickItem *visualParent);
-
-    bool visible() const;
-    void setVisible(bool visible);
-
-    Q_INVOKABLE void open(int x, int y);
+    /**
+     * Popup on the specified item
+     */
+    Q_INVOKABLE void popup(QQuickItem *item);
 
 Q_SIGNALS:
-    void actionTriggered(QAction *action);
-
-    void urlChanged();
-    void visualParentChanged();
     void visibleChanged();
 
-private:
-    QUrl m_url;
-    QPointer<QQuickItem> m_visualParent;
-    bool m_visible = false;
+protected:
+    void showEvent(QShowEvent *event) override;
+    void hideEvent(QHideEvent *) override;
 };

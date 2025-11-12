@@ -8,10 +8,14 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QFileDialog>
 #include <QIcon>
 #include <QMenu>
 #include <QMimeData>
+#include <QMimeDatabase>
+#include <QQuickItem>
 #include <QQuickWindow>
+#include <QScreen>
 #include <QTimer>
 
 #include <KConfigGroup>
@@ -35,7 +39,13 @@ using namespace Qt::StringLiterals;
 
 FileMenu::FileMenu(QObject *parent)
     : QObject(parent)
+    , m_menu(std::make_unique<QMenu>())
 {
+    connect(m_menu.get(), &QMenu::triggered, this, &FileMenu::actionTriggered);
+    connect(m_menu.get(), &QMenu::aboutToHide, this, [this] {
+        m_visible = false;
+        Q_EMIT visibleChanged();
+    });
 }
 
 FileMenu::~FileMenu() = default;
@@ -102,16 +112,38 @@ void FileMenu::open(int x, int y)
         return;
     }
 
+    auto menu = m_menu.get();
     KFileItem fileItem(m_url);
 
-    QMenu *menu = new QMenu();
-    menu->setAttribute(Qt::WA_DeleteOnClose, true);
-    connect(menu, &QMenu::triggered, this, &FileMenu::actionTriggered);
+    if (KProtocolManager::supportsWriting(m_url)) {
+        QAction *saveAsAction = menu->addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save As"));
+        connect(saveAsAction, &QAction::triggered, [this] {
+            // construct the file name
+            auto dialog = new QFileDialog();
+            dialog->setAcceptMode(QFileDialog::AcceptSave);
+            dialog->setFileMode(QFileDialog::AnyFile);
+            QUrl dirUrl = m_url.adjusted(QUrl::RemoveFilename);
+            dialog->setDirectoryUrl(dirUrl);
+            dialog->selectFile(m_url.fileName());
+            auto mimetype = QMimeDatabase().mimeTypeForUrl(m_url);
+            auto suffixes = mimetype.suffixes();
+            dialog->setDefaultSuffix(suffixes.value(0));
+            dialog->setMimeTypeFilters(supportedFilters);
+            dialog->selectMimeTypeFilter(mimetype.name());
 
-    connect(menu, &QMenu::aboutToHide, this, [this] {
-        m_visible = false;
-        Q_EMIT visibleChanged();
-    });
+            // Don't use exec() like the QFileDialog docs show.
+            // It can cause a race condition that leads to a crash when the QML environment is being destroyed.
+            connect(dialog, &QFileDialog::finished, this, [dialog](int result) mutable {
+                dialog->deleteLater();
+                const bool accepted = result == QDialog::Accepted;
+                const auto &selectedUrl = dialog->selectedUrls().value(0, QUrl());
+                if (accepted && !selectedUrl.fileName().isEmpty()) {
+                    url = selectedUrl;
+                }
+            });
+            dialog->open();
+        });
+    }
 
     if (KProtocolManager::supportsListing(m_url)) {
         QAction *openContainingFolderAction = menu->addAction(QIcon::fromTheme(QStringLiteral("folder-open")), i18n("Open Containing Folder"));
@@ -228,3 +260,64 @@ void FileMenu::open(int x, int y)
     m_visible = true;
     Q_EMIT visibleChanged();
 }
+
+FileMenu::FileMenuMenu(QWidget *parent)
+    : QMenu(parent)
+{
+    setAttribute(Qt::WA_TranslucentBackground);
+}
+
+void FileMenu::setVisible(bool visible)
+{
+    bool oldVisible = isVisible();
+    if (oldVisible == visible) {
+        return;
+    }
+    // Workaround for a bug where Qt Quick buttons always open the menu even when the menu is already open
+    if (visible) {
+        QMenu::setVisible(true);
+    } else {
+        QTimer::singleShot(200, this, [this] {
+            QMenu::setVisible(false);
+        });
+    }
+}
+
+void FileMenu::popup(QQuickItem *item)
+{
+    if (!item || !item->window()) {
+        return;
+    }
+    auto itemWindow = item->window();
+    auto point = item->mapToGlobal({0, item->height()});
+    auto screenRect = itemWindow->screen()->geometry();
+    auto sizeHint = this->sizeHint();
+    if (point.y() + sizeHint.height() > screenRect.bottom()) {
+        point.setY(point.y() - item->height() - sizeHint.height());
+    }
+    if (point.x() + sizeHint.width() > screenRect.right()) {
+        point.setX(point.x() - sizeHint.width() + item->width());
+    }
+    setWidgetTransientParent(this, itemWindow);
+    // Workaround same as plasma to have click anywhereto close the menu
+    QTimer::singleShot(0, this, [this, itemWindow, point]() {
+        if (itemWindow->mouseGrabberItem()) {
+            itemWindow->mouseGrabberItem()->ungrabMouse();
+        }
+        QMenu::popup(point.toPoint());
+    });
+}
+
+void FileMenu::showEvent(QShowEvent *event)
+{
+    QMenu::showEvent(event);
+    Q_EMIT visibleChanged();
+}
+
+void FileMenu::hideEvent(QHideEvent *event)
+{
+    QMenu::hideEvent(event);
+    Q_EMIT visibleChanged();
+}
+
+#include "moc_FileMenu.cpp"
