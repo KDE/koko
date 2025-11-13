@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-10 02:41+0000\n"
-"PO-Revision-Date: 2025-10-08 17:51+0400\n"
+"PO-Revision-Date: 2025-11-12 20:05+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1006,27 +1006,24 @@ msgstr "أظهر جميع المتحكمات"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "أوقف"
 
 #: qml/ImageViewPage.qml:978
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "ابدأ"
 
 #: qml/ImageViewPage.qml:997
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "الفترة:"
 
 #: qml/ImageViewPage.qml:1010
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "ثانية واحدة"
+msgstr "ثانية"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
