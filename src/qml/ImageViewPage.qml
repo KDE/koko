@@ -188,6 +188,15 @@ Kirigami.Page {
             onTriggered: Kirigami.Settings.isMobile ? mobileSlideshowConfig.open() : slideshowManager.start()
         },
         Kirigami.Action {
+            id: fileMenuAction
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            text: i18nc("@action:intoolbar", "File Menu")
+            onTriggered: {
+                Koko.FileMenu.url = listView.currentItem.imageurl
+                Koko.FileMenu.popup(root)
+            }
+        },
+        Kirigami.Action {
             id: printAction
             displayHint: Kirigami.DisplayHint.AlwaysHide
             text: i18nc("@action:intoolbar Print the image", "&Print")
