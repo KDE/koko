@@ -14,6 +14,7 @@ class QQuickItem;
 class FileMenu : public QMenu
 {
     Q_OBJECT
+    Q_PROPERTY(QList<QAction *> actions READ actions NOTIFY urlChanged FINAL)
     Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged FINAL)
     Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChanged FINAL)
 public:

@@ -29,10 +29,12 @@
 #include <KStandardAction>
 #include <KUrlMimeData>
 
+#include <KIO/ApplicationLauncherJob>
 #include <KIO/CopyJob> // for KIO::trash
 #include <KIO/DeleteJob>
 #include <KIO/FileUndoManager>
 #include <KIO/JobUiDelegate>
+#include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenFileManagerWindowJob>
 #include <KIO/WidgetsAskUserActionHandler>
 
@@ -130,12 +132,18 @@ void FileMenu::setUrl(const QUrl &url)
         });
     }
 
-    KFileItemActions *actions = new KFileItemActions(this);
+    // KFileItemActions *kFileItemActions = new KFileItemActions(this);
     KFileItemListProperties itemProperties(KFileItemList({fileItem}));
-    actions->setItemListProperties(itemProperties);
-    actions->setParentWidget(this);
+    // kFileItemActions->setItemListProperties(itemProperties);
+    // kFileItemActions->setParentWidget(this);
 
-    actions->insertOpenWithActionsTo(nullptr, this, QStringList());
+    auto openWithAction = addAction(QIcon::fromTheme(u"system-run"_s), i18nc("@action:inmenu", "&Open With…"));
+    connect(openWithAction, &QAction::triggered, [this, itemProperties] {
+        auto *job = new KIO::ApplicationLauncherJob();
+        job->setUrls(itemProperties.urlList());
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->start();
+    });
 
     // KStandardAction? But then the Ctrl+C shortcut makes no sense in this context
     QAction *copyAction = addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy"));
@@ -196,8 +204,8 @@ void FileMenu::setUrl(const QUrl &url)
         addAction(deleteAction);
     }
 
-    addSeparator();
-    actions->addActionsTo(this);
+    // addSeparator();
+    // kFileItemActions->addActionsTo(this);
     Q_EMIT urlChanged();
 }
 

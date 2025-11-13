@@ -17,6 +17,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
+import org.kde.koko.private as KokoPrivate
 import org.kde.photos.thumbnails as KokoThumbnails
 
 Kirigami.Page {
@@ -90,6 +91,18 @@ Kirigami.Page {
     Koko.Exiv2Extractor {
         id: exiv2Extractor
         filePath: listView.currentItem ? listView.currentItem.imageurl : ""
+    }
+    
+    Component {
+        id: kirigamiAction
+        Kirigami.Action {}
+    }
+    Binding {
+        target: KokoPrivate.FileMenu
+        property: "url"
+        value: listView.currentItem.imageurl
+        when: listView.currentItem !== null
+        restoreMode: Binding.RestoreNone
     }
 
     actions: [
@@ -189,11 +202,19 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: fileMenuAction
-            displayHint: Kirigami.DisplayHint.AlwaysHide
             text: i18nc("@action:intoolbar", "File Menu")
-            onTriggered: {
-                Koko.FileMenu.url = listView.currentItem.imageurl
-                Koko.FileMenu.popup(root)
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            children: if (KokoPrivate.FileMenu.actions.length > 0) {
+                let menuActions = KokoPrivate.FileMenu.actions
+                let list = []
+                for (let menuAction of menuActions) {
+                    let action = kirigamiAction.createObject(this, {
+                        fromQAction: menuAction,
+                        separator: menuAction.text === "",
+                    })
+                    list.push(action)
+                }
+                return list
             }
         },
         Kirigami.Action {
