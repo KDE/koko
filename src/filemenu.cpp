@@ -220,6 +220,10 @@ void FileMenu::setVisible(bool visible)
 void FileMenu::popup(QQuickItem *item, qreal xOffset, qreal yOffset)
 {
     if (!item || !item->window()) {
+        windowHandle()->setTransientParent(nullptr);
+        QTimer::singleShot(0, this, [&]() {
+            QMenu::popup(QCursor::pos() + QPoint{qRound(xOffset), qRound(yOffset)});
+        });
         return;
     }
     auto itemWindow = item->window();
@@ -232,7 +236,7 @@ void FileMenu::popup(QQuickItem *item, qreal xOffset, qreal yOffset)
     if (point.x() + sizeHint.width() > screenRect.right()) {
         point.setX(point.x() - sizeHint.width() + item->width());
     }
-    if (winId() && itemWindow && itemWindow->winId()) {
+    if (winId() && itemWindow->winId()) {
         windowHandle()->setTransientParent(itemWindow);
     }
     // Workaround same as plasma to have click anywhere to close the menu
