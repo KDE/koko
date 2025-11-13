@@ -174,7 +174,13 @@ int main(int argc, char **argv)
                          }
                      });
 
-    qmlRegisterType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu");
+    qmlRegisterSingletonType<FileMenu>("org.kde.koko.private", 1, 0, "FileMenu", [](QQmlEngine *engine, QJSEngine *) {
+        auto instance = FileMenu::instance();
+        Q_ASSERT(instance);
+        Q_ASSERT(instance->thread() == engine->thread());
+        QJSEngine::setObjectOwnership(instance, QJSEngine::CppOwnership);
+        return instance;
+    });
 
     engine.rootContext()->setContextProperty("kokoProcessor", &processor);
 

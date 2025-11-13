@@ -7,15 +7,20 @@
 #pragma once
 
 #include <QMenu>
+#include <QUrl>
 
 class QQuickItem;
 
 class FileMenu : public QMenu
 {
     Q_OBJECT
+    Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged FINAL)
     Q_PROPERTY(bool visible READ isVisible WRITE setVisible NOTIFY visibleChanged FINAL)
 public:
-    FileMenu(QWidget *parent = nullptr);
+    static FileMenu *instance();
+
+    QUrl url() const;
+    void setUrl(const QUrl &url);
 
     /**
      * Same as QMenu::setVisible, but it emits visibleChanged so it can be useful in QML bindings
@@ -25,12 +30,18 @@ public:
     /**
      * Popup on the specified item
      */
-    Q_INVOKABLE void popup(QQuickItem *item);
+    Q_INVOKABLE void popup(QQuickItem *item, qreal xOffset = 0, qreal yOffset = 0);
 
 Q_SIGNALS:
+    void urlChanged();
     void visibleChanged();
 
 protected:
     void showEvent(QShowEvent *event) override;
     void hideEvent(QHideEvent *) override;
+
+private:
+    explicit FileMenu(QWidget *parent = nullptr);
+    friend class FileMenuSingleton;
+    QUrl m_url;
 };

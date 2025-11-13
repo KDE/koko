@@ -10,6 +10,7 @@
 #include <QClipboard>
 #include <QFileDialog>
 #include <QIcon>
+#include <QImageWriter>
 #include <QMenu>
 #include <QMimeData>
 #include <QMimeDatabase>
@@ -37,18 +38,24 @@
 
 using namespace Qt::StringLiterals;
 
-FileMenu::FileMenu(QObject *parent)
-    : QObject(parent)
-    , m_menu(std::make_unique<QMenu>())
+class FileMenuSingleton
 {
-    connect(m_menu.get(), &QMenu::triggered, this, &FileMenu::actionTriggered);
-    connect(m_menu.get(), &QMenu::aboutToHide, this, [this] {
-        m_visible = false;
-        Q_EMIT visibleChanged();
-    });
+public:
+    FileMenu self;
+};
+
+Q_GLOBAL_STATIC(FileMenuSingleton, privateFileMenuSelf)
+
+FileMenu::FileMenu(QWidget *parent)
+    : QMenu(parent)
+{
+    setAttribute(Qt::WA_TranslucentBackground);
 }
 
-FileMenu::~FileMenu() = default;
+FileMenu *FileMenu::instance()
+{
+    return &privateFileMenuSelf->self;
+}
 
 QUrl FileMenu::url() const
 {
@@ -57,110 +64,81 @@ QUrl FileMenu::url() const
 
 void FileMenu::setUrl(const QUrl &url)
 {
-    if (m_url != url) {
-        m_url = url;
-        Q_EMIT urlChanged();
-    }
-}
-
-QQuickItem *FileMenu::visualParent() const
-{
-    return m_visualParent.data();
-}
-
-void FileMenu::setVisualParent(QQuickItem *visualParent)
-{
-    if (m_visualParent.data() == visualParent) {
+    if (m_url == url) {
         return;
     }
 
-    if (m_visualParent) {
-        disconnect(m_visualParent.data(), nullptr, this, nullptr);
-    }
-    m_visualParent = visualParent;
-    if (m_visualParent) {
-        connect(m_visualParent.data(), &QObject::destroyed, this, &FileMenu::visualParentChanged);
-    }
-    Q_EMIT visualParentChanged();
-}
-
-bool FileMenu::visible() const
-{
-    return m_visible;
-}
-
-void FileMenu::setVisible(bool visible)
-{
-    if (m_visible == visible) {
-        return;
-    }
-
-    if (visible) {
-        open(0, 0);
-    } else {
-        // TODO warning or close?
-    }
-}
-
-void FileMenu::open(int x, int y)
-{
-    if (!m_visualParent || !m_visualParent->window()) {
-        return;
-    }
-
+    clear();
+    m_url = url;
     if (!m_url.isValid()) {
+        Q_EMIT urlChanged();
         return;
     }
 
-    auto menu = m_menu.get();
     KFileItem fileItem(m_url);
 
     if (KProtocolManager::supportsWriting(m_url)) {
-        QAction *saveAsAction = menu->addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save As"));
-        connect(saveAsAction, &QAction::triggered, [this] {
-            // construct the file name
+        QAction *saveAsAction = addAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18n("Save As"));
+        static const auto saveAs = [this] {
+            QStringList supportedFilters;
+            const auto mimetype = QMimeDatabase().mimeTypeForUrl(m_url);
+            const auto mimetypeName = mimetype.name().toLatin1();
+            const auto preferredSuffix = mimetype.preferredSuffix().toLatin1();
+            const auto imageMimeTypes = QImageWriter::supportedMimeTypes();
+            const auto isWritableImageFormat = imageMimeTypes.contains(mimetypeName);
+            if (isWritableImageFormat) {
+                supportedFilters.reserve(imageMimeTypes.size());
+                for (const auto &mimeType : imageMimeTypes) {
+                    supportedFilters.append(QString::fromUtf8(mimeType).trimmed());
+                }
+            }
             auto dialog = new QFileDialog();
             dialog->setAcceptMode(QFileDialog::AcceptSave);
             dialog->setFileMode(QFileDialog::AnyFile);
             QUrl dirUrl = m_url.adjusted(QUrl::RemoveFilename);
             dialog->setDirectoryUrl(dirUrl);
             dialog->selectFile(m_url.fileName());
-            auto mimetype = QMimeDatabase().mimeTypeForUrl(m_url);
-            auto suffixes = mimetype.suffixes();
-            dialog->setDefaultSuffix(suffixes.value(0));
+            dialog->setDefaultSuffix(preferredSuffix);
             dialog->setMimeTypeFilters(supportedFilters);
             dialog->selectMimeTypeFilter(mimetype.name());
 
             // Don't use exec() like the QFileDialog docs show.
             // It can cause a race condition that leads to a crash when the QML environment is being destroyed.
-            connect(dialog, &QFileDialog::finished, this, [dialog](int result) mutable {
+            connect(dialog, &QFileDialog::finished, this, [this, dialog, isWritableImageFormat](int result) mutable {
                 dialog->deleteLater();
                 const bool accepted = result == QDialog::Accepted;
                 const auto &selectedUrl = dialog->selectedUrls().value(0, QUrl());
-                if (accepted && !selectedUrl.fileName().isEmpty()) {
-                    url = selectedUrl;
+                if (!accepted || selectedUrl.fileName().isEmpty()) {
+                    return;
                 }
+                if (isWritableImageFormat && selectedUrl.isLocalFile()) {
+                    QImage image(m_url.toLocalFile());
+                    image.save(selectedUrl.toLocalFile());
+                    return;
+                }
+                KIO::copyAs(m_url, selectedUrl)->start();
             });
             dialog->open();
-        });
+        };
+        connect(saveAsAction, &QAction::triggered, saveAs);
     }
 
     if (KProtocolManager::supportsListing(m_url)) {
-        QAction *openContainingFolderAction = menu->addAction(QIcon::fromTheme(QStringLiteral("folder-open")), i18n("Open Containing Folder"));
+        QAction *openContainingFolderAction = addAction(QIcon::fromTheme(QStringLiteral("folder-open")), i18n("Open Containing Folder"));
         connect(openContainingFolderAction, &QAction::triggered, [this] {
             KIO::highlightInFileManager({m_url});
         });
     }
 
-    KFileItemActions *actions = new KFileItemActions(menu);
+    KFileItemActions *actions = new KFileItemActions(this);
     KFileItemListProperties itemProperties(KFileItemList({fileItem}));
     actions->setItemListProperties(itemProperties);
-    actions->setParentWidget(menu);
+    actions->setParentWidget(this);
 
-    actions->insertOpenWithActionsTo(nullptr, menu, QStringList());
+    actions->insertOpenWithActionsTo(nullptr, this, QStringList());
 
     // KStandardAction? But then the Ctrl+C shortcut makes no sense in this context
-    QAction *copyAction = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy"));
+    QAction *copyAction = addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy"));
     connect(copyAction, &QAction::triggered, this, [fileItem] {
         // inspired by KDirModel::mimeData()
         QMimeData *data = new QMimeData(); // who cleans it up?
@@ -168,7 +146,7 @@ void FileMenu::open(int x, int y)
         QApplication::clipboard()->setMimeData(data);
     });
 
-    QAction *copyPathAction = menu->addAction(QIcon::fromTheme(QStringLiteral("edit-copy-path")), i18nc("@action:incontextmenu", "Copy Location"));
+    QAction *copyPathAction = addAction(QIcon::fromTheme(QStringLiteral("edit-copy-path")), i18nc("@action:incontextmenu", "Copy Location"));
     connect(copyPathAction, &QAction::triggered, this, [fileItem] {
         QString path = fileItem.localPath();
         if (path.isEmpty()) {
@@ -177,7 +155,7 @@ void FileMenu::open(int x, int y)
         QApplication::clipboard()->setText(path);
     });
 
-    menu->addSeparator();
+    addSeparator();
 
     const bool canTrash = itemProperties.isLocal() && itemProperties.supportsMoving();
     if (canTrash) {
@@ -193,9 +171,9 @@ void FileMenu::open(int x, int y)
             });
             handler->askUserDelete({m_url}, KIO::AskUserActionInterface::Trash, KIO::AskUserActionInterface::DefaultConfirmation);
         };
-        QAction *moveToTrashAction = KStandardAction::moveToTrash(this, moveToTrashLambda, menu);
+        QAction *moveToTrashAction = KStandardAction::moveToTrash(this, moveToTrashLambda, this);
         moveToTrashAction->setShortcut({}); // Can't focus notification to press Delete
-        menu->addAction(moveToTrashAction);
+        addAction(moveToTrashAction);
     }
 
     KConfigGroup cg(KSharedConfig::openConfig(), u"KDE"_s);
@@ -213,58 +191,14 @@ void FileMenu::open(int x, int y)
             });
             handler->askUserDelete({m_url}, KIO::AskUserActionInterface::Delete, KIO::AskUserActionInterface::DefaultConfirmation);
         };
-        QAction *deleteAction = KStandardAction::deleteFile(this, deleteLambda, menu);
+        QAction *deleteAction = KStandardAction::deleteFile(this, deleteLambda, this);
         deleteAction->setShortcut({});
-        menu->addAction(deleteAction);
+        addAction(deleteAction);
     }
 
-    menu->addSeparator();
-
-    actions->addActionsTo(menu);
-
-    // this is a workaround where Qt will fail to realize a mouse has been released
-    // this happens if a window which does not accept focus spawns a new window that takes focus and X grab
-    // whilst the mouse is depressed
-    // https://bugreports.qt.io/browse/QTBUG-59044
-    // this causes the next click to go missing
-
-    // by releasing manually we avoid that situation
-    auto ungrabMouseHack = [this]() {
-        if (m_visualParent && m_visualParent->window() && m_visualParent->window()->mouseGrabberItem()) {
-            m_visualParent->window()->mouseGrabberItem()->ungrabMouse();
-        }
-    };
-
-    QTimer::singleShot(0, m_visualParent, ungrabMouseHack);
-    // end workaround
-
-    QPoint pos;
-    if (x == -1 && y == -1) { // align "bottom left of visualParent"
-        menu->adjustSize();
-
-        pos = m_visualParent->mapToGlobal(QPointF(0, m_visualParent->height())).toPoint();
-
-        if (!qApp->isRightToLeft()) {
-            pos.rx() += m_visualParent->width();
-            pos.rx() -= menu->width();
-        }
-    } else {
-        pos = m_visualParent->mapToGlobal(QPointF(x, y)).toPoint();
-    }
-
-    menu->setAttribute(Qt::WA_TranslucentBackground);
-    menu->winId();
-    menu->windowHandle()->setTransientParent(m_visualParent->window());
-    menu->popup(pos);
-
-    m_visible = true;
-    Q_EMIT visibleChanged();
-}
-
-FileMenu::FileMenuMenu(QWidget *parent)
-    : QMenu(parent)
-{
-    setAttribute(Qt::WA_TranslucentBackground);
+    addSeparator();
+    actions->addActionsTo(this);
+    Q_EMIT urlChanged();
 }
 
 void FileMenu::setVisible(bool visible)
@@ -283,13 +217,13 @@ void FileMenu::setVisible(bool visible)
     }
 }
 
-void FileMenu::popup(QQuickItem *item)
+void FileMenu::popup(QQuickItem *item, qreal xOffset, qreal yOffset)
 {
     if (!item || !item->window()) {
         return;
     }
     auto itemWindow = item->window();
-    auto point = item->mapToGlobal({0, item->height()});
+    auto point = item->mapToGlobal({xOffset, yOffset});
     auto screenRect = itemWindow->screen()->geometry();
     auto sizeHint = this->sizeHint();
     if (point.y() + sizeHint.height() > screenRect.bottom()) {
@@ -298,8 +232,11 @@ void FileMenu::popup(QQuickItem *item)
     if (point.x() + sizeHint.width() > screenRect.right()) {
         point.setX(point.x() - sizeHint.width() + item->width());
     }
-    setWidgetTransientParent(this, itemWindow);
-    // Workaround same as plasma to have click anywhereto close the menu
+    if (winId() && itemWindow && itemWindow->winId()) {
+        windowHandle()->setTransientParent(itemWindow);
+    }
+    // Workaround same as plasma to have click anywhere to close the menu
+    // https://bugreports.qt.io/browse/QTBUG-59044
     QTimer::singleShot(0, this, [this, itemWindow, point]() {
         if (itemWindow->mouseGrabberItem()) {
             itemWindow->mouseGrabberItem()->ungrabMouse();
@@ -319,5 +256,3 @@ void FileMenu::hideEvent(QHideEvent *event)
     QMenu::hideEvent(event);
     Q_EMIT visibleChanged();
 }
-
-#include "moc_FileMenu.cpp"
