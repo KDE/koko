@@ -412,9 +412,6 @@ Kirigami.ScrollablePage {
         // always clean selection
         onUrlChanged: model.clearSelections()
 
-        // Instantiate delegates to fill height * 2 above and below
-        cacheBuffer: height * 2
-
         // Prioritise thumbnailing delegates in order, with off-screen delegates prioritised sequentially
         function calculateThumbnailPriority(delegate: Item): int {
             let column = Math.floor(delegate.x / gridView.cellWidth);

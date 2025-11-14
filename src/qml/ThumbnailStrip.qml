@@ -31,8 +31,6 @@ ListView {
 
     spacing: thumbnailView.containerPadding
 
-    displayMarginBeginning: thumbnailView.containerPadding
-    displayMarginEnd: thumbnailView.containerPadding
     reuseItems: true
 
     enum CenteringBehavior {
@@ -83,9 +81,6 @@ ListView {
 
     // Center when width changes (e.g. due to window resizing or animations)
     onWidthChanged: positionViewAtIndex(currentIndex, ListView.Center)
-
-    // Instantiate delegates to fill width * 2 left and right
-    cacheBuffer: width * 2
 
     // Prioritise thumbnailing delegates closest to the highlighted item
     function calculateThumbnailPriority(delegate: Item): int {
