@@ -124,12 +124,10 @@ msgid "Shadow"
 msgstr "投影"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Description:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
-msgstr "描述："
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:502
 #, kde-format
@@ -144,12 +142,10 @@ msgid "Crop area Y position"
 msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
-msgstr "大小："
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:541
 #, kde-format
@@ -176,11 +172,10 @@ msgid "Unlocked"
 msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "当前评分 %1"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
@@ -189,12 +184,10 @@ msgid "Square"
 msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "全屏(&F)"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
