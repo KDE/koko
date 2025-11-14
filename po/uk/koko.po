@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 02:41+0000\n"
+"POT-Creation-Date: 2025-11-14 02:38+0000\n"
 "PO-Revision-Date: 2025-10-07 16:32+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -135,6 +135,183 @@ msgctxt "@label, annotation tool option"
 msgid "Shadow"
 msgstr "Тінь"
 
+#: editor/AnnotationOptionsToolBarContents.qml:481
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area position spinboxes"
+#| msgid "Position:"
+msgctxt "@label crop area position"
+msgid "Position:"
+msgstr "Розташування:"
+
+#: editor/AnnotationOptionsToolBarContents.qml:502
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area X position"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:518
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area Y position"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:533
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area size spinboxes"
+#| msgid "Size:"
+msgctxt "@label crop area size"
+msgid "Size:"
+msgstr "Розмір:"
+
+#: editor/AnnotationOptionsToolBarContents.qml:541
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area width"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:558
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area height"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:573
+#, kde-format
+msgctxt "@label"
+msgid "Aspect Ratio:"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:604
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "Unlocked"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:605
+#, fuzzy, kde-format
+#| msgid "Current rating %1"
+msgctxt "@item:inlistbox aspect ratio"
+msgid "Current Image"
+msgstr "Поточна оцінка %1"
+
+#: editor/AnnotationOptionsToolBarContents.qml:606
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "Square"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:607
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar"
+#| msgid "&Full Screen"
+msgctxt "@item:inlistbox aspect ratio"
+msgid "This Screen"
+msgstr "&На весь екран"
+
+#: editor/AnnotationOptionsToolBarContents.qml:608
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "16:9"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:609
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "7:5"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:610
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "3:2"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:611
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "4:3"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:612
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "5:4"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:613
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "ISO Paper (Landscape)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:614
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "US Letter (Landscape)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:615
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "9:16"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:616
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "5:7"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:617
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "2:3"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:618
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "3:4"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:619
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "4:5"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:620
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "ISO Paper (Portrait)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:621
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "US Letter (Portrait)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:631
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio placeholder"
+msgid "Width:Height"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:665
+#, kde-format
+msgctxt "@action reset selection"
+msgid "Reset"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:675
+#, fuzzy, kde-format
+#| msgctxt "@action:button Accept crop for an image"
+#| msgid "Accept"
+msgctxt "@action accept selection"
+msgid "Accept"
+msgstr "Прийняти"
+
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
@@ -147,55 +324,55 @@ msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Обрізати"
 
-#: editor/AnnotationsToolBarContents.qml:120
+#: editor/AnnotationsToolBarContents.qml:118
 #, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
 msgstr "Позначення"
 
-#: editor/AnnotationsToolBarContents.qml:129
+#: editor/AnnotationsToolBarContents.qml:127
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
 msgstr "Довільний контур"
 
-#: editor/AnnotationsToolBarContents.qml:130
+#: editor/AnnotationsToolBarContents.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
 msgstr "Shift: прилипання до прямих"
 
-#: editor/AnnotationsToolBarContents.qml:137
+#: editor/AnnotationsToolBarContents.qml:135
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
 msgstr "Підсвічування"
 
-#: editor/AnnotationsToolBarContents.qml:146
+#: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
 msgstr "Пряма"
 
-#: editor/AnnotationsToolBarContents.qml:147
+#: editor/AnnotationsToolBarContents.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
 msgstr "Shift: прилипання до напрямків з кроком у 45 градусів"
 
-#: editor/AnnotationsToolBarContents.qml:154
+#: editor/AnnotationsToolBarContents.qml:152
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
 msgstr "Стрілка"
 
-#: editor/AnnotationsToolBarContents.qml:163
+#: editor/AnnotationsToolBarContents.qml:161
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
 msgstr "Прямокутник"
 
-#: editor/AnnotationsToolBarContents.qml:165
+#: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -206,31 +383,31 @@ msgstr ""
 "\n"
 "Ctrl: змінити розміри від центра"
 
-#: editor/AnnotationsToolBarContents.qml:172
+#: editor/AnnotationsToolBarContents.qml:170
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
 msgstr "Еліпс"
 
-#: editor/AnnotationsToolBarContents.qml:180
+#: editor/AnnotationsToolBarContents.qml:178
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
 msgstr "Пікселізація"
 
-#: editor/AnnotationsToolBarContents.qml:188
+#: editor/AnnotationsToolBarContents.qml:186
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
 msgstr "Розмивання"
 
-#: editor/AnnotationsToolBarContents.qml:196
+#: editor/AnnotationsToolBarContents.qml:194
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
 msgstr "Текст"
 
-#: editor/AnnotationsToolBarContents.qml:203
+#: editor/AnnotationsToolBarContents.qml:201
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
@@ -1287,10 +1464,6 @@ msgstr "Додати нову мітку…"
 #~ msgid "Mirror"
 #~ msgstr "Віддзеркалити"
 
-#~ msgctxt "@title:group for crop area position spinboxes"
-#~ msgid "Position:"
-#~ msgstr "Розташування:"
-
 #~ msgid "You are now editing a new file."
 #~ msgstr "Зараз ви редагуєте новий файл."
 
@@ -1412,10 +1585,6 @@ msgstr "Додати нову мітку…"
 
 #~ msgid "Remove Tag"
 #~ msgstr "Вилучити мітку"
-
-#~ msgctxt "@action:button Accept crop for an image"
-#~ msgid "Accept"
-#~ msgstr "Прийняти"
 
 #~ msgid "New tag..."
 #~ msgstr "Створити мітку…"

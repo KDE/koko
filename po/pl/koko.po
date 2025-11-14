@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-10 02:41+0000\n"
+"POT-Creation-Date: 2025-11-14 02:38+0000\n"
 "PO-Revision-Date: 2024-10-26 12:32+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -129,6 +129,182 @@ msgctxt "@label, annotation tool option"
 msgid "Shadow"
 msgstr ""
 
+#: editor/AnnotationOptionsToolBarContents.qml:481
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area position spinboxes"
+#| msgid "Position:"
+msgctxt "@label crop area position"
+msgid "Position:"
+msgstr "Położenie:"
+
+#: editor/AnnotationOptionsToolBarContents.qml:502
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area X position"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:518
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area Y position"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:533
+#, fuzzy, kde-format
+#| msgctxt "@title:group for crop area size spinboxes"
+#| msgid "Size:"
+msgctxt "@label crop area size"
+msgid "Size:"
+msgstr "Rozmiar:"
+
+#: editor/AnnotationOptionsToolBarContents.qml:541
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area width"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:558
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Crop area height"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:573
+#, kde-format
+msgctxt "@label"
+msgid "Aspect Ratio:"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:604
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "Unlocked"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:605
+#, fuzzy, kde-format
+#| msgid "Current rating %1"
+msgctxt "@item:inlistbox aspect ratio"
+msgid "Current Image"
+msgstr "Bieżąca ocena %1"
+
+#: editor/AnnotationOptionsToolBarContents.qml:606
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "Square"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:607
+#, fuzzy, kde-format
+#| msgid "Fullscreen"
+msgctxt "@item:inlistbox aspect ratio"
+msgid "This Screen"
+msgstr "Pełny ekran"
+
+#: editor/AnnotationOptionsToolBarContents.qml:608
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "16:9"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:609
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "7:5"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:610
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "3:2"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:611
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "4:3"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:612
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "5:4"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:613
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "ISO Paper (Landscape)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:614
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "US Letter (Landscape)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:615
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "9:16"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:616
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "5:7"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:617
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "2:3"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:618
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "3:4"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:619
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "4:5"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:620
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "ISO Paper (Portrait)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:621
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio"
+msgid "US Letter (Portrait)"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:631
+#, kde-format
+msgctxt "@item:inlistbox aspect ratio placeholder"
+msgid "Width:Height"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:665
+#, kde-format
+msgctxt "@action reset selection"
+msgid "Reset"
+msgstr ""
+
+#: editor/AnnotationOptionsToolBarContents.qml:675
+#, fuzzy, kde-format
+#| msgctxt "@action:button Accept crop for an image"
+#| msgid "Accept"
+msgctxt "@action accept selection"
+msgid "Accept"
+msgstr "Przyjmij"
+
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
@@ -143,56 +319,56 @@ msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Przytnij"
 
-#: editor/AnnotationsToolBarContents.qml:120
+#: editor/AnnotationsToolBarContents.qml:118
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
 msgstr "Zaznacz wszystkie"
 
-#: editor/AnnotationsToolBarContents.qml:129
+#: editor/AnnotationsToolBarContents.qml:127
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:130
+#: editor/AnnotationsToolBarContents.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:137
+#: editor/AnnotationsToolBarContents.qml:135
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:146
+#: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:147
+#: editor/AnnotationsToolBarContents.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:154
+#: editor/AnnotationsToolBarContents.qml:152
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:163
+#: editor/AnnotationsToolBarContents.qml:161
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:165
+#: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -200,31 +376,31 @@ msgid ""
 "Control: Resize from center"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:172
+#: editor/AnnotationsToolBarContents.qml:170
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:180
+#: editor/AnnotationsToolBarContents.qml:178
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:188
+#: editor/AnnotationsToolBarContents.qml:186
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:196
+#: editor/AnnotationsToolBarContents.qml:194
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:203
+#: editor/AnnotationsToolBarContents.qml:201
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
@@ -1344,10 +1520,6 @@ msgstr "Dodaj nowy znacznik..."
 #~ msgid "Mirror"
 #~ msgstr "Odbij w poziomie"
 
-#~ msgctxt "@title:group for crop area position spinboxes"
-#~ msgid "Position:"
-#~ msgstr "Położenie:"
-
 #~ msgid "You are now editing a new file."
 #~ msgstr "Edytujesz teraz nowy plik."
 
@@ -1459,10 +1631,6 @@ msgstr "Dodaj nowy znacznik..."
 
 #~ msgid "Remove Tag"
 #~ msgstr "Usuń znacznik"
-
-#~ msgctxt "@action:button Accept crop for an image"
-#~ msgid "Accept"
-#~ msgstr "Przyjmij"
 
 #~ msgid "New tag..."
 #~ msgstr "Nowy znacznik..."
