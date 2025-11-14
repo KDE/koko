@@ -117,7 +117,7 @@ ListView {
             yAxis.enabled: false
         }
 
-        background: Item {}
+        background: null
 
         Rectangle {
             z: -1
@@ -126,10 +126,13 @@ ListView {
             height: width
             color: Qt.rgba(Kirigami.Theme.highlightColor.r, Kirigami.Theme.highlightColor.g, Kirigami.Theme.highlightColor.b, 0.3)
             border.color: Kirigami.Theme.highlightColor
-            radius: 2
+            radius: Kirigami.Units.cornerRadius
             opacity: thumbnailView.currentIndex === delegate.index ? 1 : 0
+            visible: opacity !== 0 || opacityAnimator.running
             Behavior on opacity {
                 OpacityAnimator {
+                    id: opacityAnimator
+
                     duration: Kirigami.Units.longDuration
                     easing.type: Easing.InOutQuad
                 }
