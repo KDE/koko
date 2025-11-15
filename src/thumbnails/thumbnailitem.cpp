@@ -5,16 +5,17 @@
  */
 
 #include <QPainter>
-#include <QQuickWindow>
+#include <QSGImageNode>
 
 #include "thumbnailmanager.h"
 
 #include "thumbnailitem.h"
 
 ThumbnailItem::ThumbnailItem(QQuickItem *parent)
-    : QQuickPaintedItem(parent)
+    : QQuickItem(parent)
+    , m_texture(nullptr)
+    , m_newTexture(nullptr)
     , m_priority(std::numeric_limits<int>::max())
-    , m_thumbnailReady(false)
 {
     setFlag(ItemHasContents, true);
 
@@ -69,7 +70,7 @@ void ThumbnailItem::setPriority(int priority)
 
 bool ThumbnailItem::thumbnailReady() const
 {
-    return m_thumbnailReady;
+    return m_texture != nullptr;
 }
 
 void ThumbnailItem::setThumbnail(const QImage &image, const QUrl &url)
@@ -79,35 +80,18 @@ void ThumbnailItem::setThumbnail(const QImage &image, const QUrl &url)
         return;
     }
 
-    m_image = image;
-    updatePaintedRect();
+    if (image.isNull()) {
+        m_newTexture = nullptr;
+    } else {
+        m_newTexture = window()->createTextureFromImage(image);
+    }
+
     update();
-
-    if (m_thumbnailReady != !m_image.isNull()) {
-        m_thumbnailReady = !m_image.isNull();
-        Q_EMIT thumbnailReadyChanged();
-    }
-}
-
-void ThumbnailItem::paint(QPainter *painter)
-{
-    if (m_image.isNull()) {
-        return;
-    }
-
-    painter->save();
-    painter->setRenderHint(QPainter::Antialiasing, smooth());
-    painter->setRenderHint(QPainter::SmoothPixmapTransform, smooth());
-
-    painter->drawImage(m_paintedRect, m_image, m_image.rect());
-
-    painter->restore();
 }
 
 void ThumbnailItem::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
 {
-    QQuickPaintedItem::geometryChange(newGeometry, oldGeometry);
-    updatePaintedRect();
+    QQuickItem::geometryChange(newGeometry, oldGeometry);
     updateThumbnailSize();
 }
 
@@ -120,14 +104,45 @@ void ThumbnailItem::itemChange(QQuickItem::ItemChange change, const QQuickItem::
     return QQuickItem::itemChange(change, value);
 }
 
-void ThumbnailItem::updatePaintedRect()
+QSGNode *ThumbnailItem::updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *)
 {
-    if (m_image.isNull()) {
-        return;
+    auto node = static_cast<QSGImageNode *>(oldNode);
+
+    if (m_texture != m_newTexture) {
+        // Free up the old texture if necessary.
+        delete m_texture;
+
+        m_texture = m_newTexture;
+        Q_EMIT thumbnailReadyChanged();
+
+        // If set to null, that means we need to clear our thumbnail.
+        if (!m_newTexture) {
+            delete node;
+            return nullptr;
+        }
+
+        if (node) {
+            node->setTexture(m_newTexture);
+        } else {
+            node = window()->createImageNode();
+            node->setFiltering(QSGTexture::Filtering::Linear);
+            node->setTexture(m_newTexture);
+        }
     }
 
-    QRectF boundingRect = this->boundingRect();
-    QSize imageSize = m_image.size();
+    if (node) {
+        node->setRect(paintedRect());
+    }
+
+    return node;
+}
+
+QRectF ThumbnailItem::paintedRect() const
+{
+    Q_ASSERT(m_texture != nullptr);
+
+    const QRectF boundingRect = this->boundingRect();
+    const QSize imageSize = m_texture->textureSize();
 
     QSizeF scaled(imageSize);
 
@@ -139,15 +154,13 @@ void ThumbnailItem::updatePaintedRect()
     // In the future, we should have a better solution for getting a preview that can fill the size
     // we specify, so all thumbnails are filled.
     const Qt::AspectRatioMode aspectRatioMode =
-        (boundingRect.width() <= imageSize.width() && boundingRect.height() <= imageSize.height()) ? Qt::KeepAspectRatioByExpanding : Qt::KeepAspectRatio;
+        boundingRect.width() <= imageSize.width() && boundingRect.height() <= imageSize.height() ? Qt::KeepAspectRatioByExpanding : Qt::KeepAspectRatio;
 
     scaled.scale(boundingRect.size(), aspectRatioMode);
     QRectF rect(QPointF(0, 0), scaled);
     rect.moveCenter(boundingRect.center());
 
-    if (m_paintedRect != rect) {
-        m_paintedRect = rect.toRect();
-    }
+    return rect;
 }
 
 void ThumbnailItem::updateThumbnailSize(qreal devicePixelRatio)

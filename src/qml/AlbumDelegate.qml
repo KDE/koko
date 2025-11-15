@@ -71,6 +71,7 @@ Controls.ItemDelegate {
             height: width
 
             fileItem: root.item
+            clip: true
         }
 
         Rectangle {

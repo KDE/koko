@@ -6,12 +6,13 @@
 
 #pragma once
 
-#include <QImage>
-#include <QQuickPaintedItem>
+#include <QQuickItem>
 
 #include <KFileItem>
 
-class ThumbnailItem : public QQuickPaintedItem
+class QSGTexture;
+
+class ThumbnailItem : public QQuickItem
 {
     Q_OBJECT
     QML_ELEMENT
@@ -33,8 +34,6 @@ public:
     bool thumbnailReady() const;
     void setThumbnail(const QImage &image, const QUrl &url);
 
-    void paint(QPainter *painter) override;
-
 Q_SIGNALS:
     void fileItemChanged();
     void priorityChanged();
@@ -43,18 +42,17 @@ Q_SIGNALS:
 protected:
     void geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry) override;
     void itemChange(QQuickItem::ItemChange change, const QQuickItem::ItemChangeData &value) override;
+    QSGNode *updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *) override;
 
 private:
-    void updatePaintedRect();
+    QRectF paintedRect() const;
     void updateThumbnailSize(qreal devicePixelRatio = 0);
 
-    QPointer<QQuickWindow> m_window = nullptr;
-
-    QImage m_image;
-    QRect m_paintedRect;
+    // We have to do this weird double-pairing because the scene graph *really* doesn't like it when you pull a texture out from underneath it.
+    QSGTexture *m_texture;
+    QSGTexture *m_newTexture;
 
     KFileItem m_fileItem;
     QSize m_thumbnailSize;
     int m_priority;
-    bool m_thumbnailReady;
 };
