@@ -6,6 +6,7 @@
 
 OpenFileModel::OpenFileModel(QObject *parent)
     : AbstractImageModel(parent)
+    , m_mode(OpenNone)
 {
 }
 
