@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-16 00:40+0000\n"
-"PO-Revision-Date: 2025-10-11 16:01+0200\n"
+"PO-Revision-Date: 2025-11-16 09:26+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -127,9 +127,7 @@ msgid "Shadow"
 msgstr "Ombra"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "Posizione:"
@@ -147,9 +145,7 @@ msgid "Crop area Y position"
 msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Dimensione:"
@@ -170,135 +166,130 @@ msgstr ""
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "Proporzioni:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "Sbloccato"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "Voto attuale %1"
+msgstr "Immagine attuale"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "Quadrato"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "&Schermo intero"
+msgstr "Questo schermo"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "Carta ISO (orizzontale)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "US Letter (orizzontale)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "Carta ISO (verticale)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "US Letter (verticale)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Larghezza:Altezza"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "Ripristina"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
-#, fuzzy, kde-format
-#| msgctxt "@action:button Accept image modification"
-#| msgid "Accept"
+#, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "Accetta"
@@ -1162,27 +1153,24 @@ msgstr "Mostra tutti i controlli"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Ferma"
 
 #: qml/ImageViewPage.qml:986
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Avvia"
 
 #: qml/ImageViewPage.qml:1005
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Intervallo:"
 
 #: qml/ImageViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "Un secondo"
+msgstr "secondi"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
