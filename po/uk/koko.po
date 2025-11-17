@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-14 02:38+0000\n"
-"PO-Revision-Date: 2025-10-07 16:32+0300\n"
+"PO-Revision-Date: 2025-11-16 15:58+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -136,29 +136,25 @@ msgid "Shadow"
 msgstr "Тінь"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
-msgstr "Розташування:"
+msgstr "Позиція:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:502
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Позиція обрізаної області за X"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Позиція обрізаної області за Y"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Розмір:"
@@ -167,147 +163,142 @@ msgstr "Розмір:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Ширина обрізаної області"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Висота обрізаної області"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "Співвідношення розмірів:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "Розблоковано"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "Поточна оцінка %1"
+msgstr "Поточне зображення"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "Квадрат"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "&На весь екран"
+msgstr "Цей екран"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "ISO-папір (альбомна орієнтація)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "Лист США (альбомна орієнтація)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "ISO-папір (книжкова орієнтація)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "Лист США (книжкова)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Ширина:Висота"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "Скинути"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
-#, fuzzy, kde-format
-#| msgctxt "@action:button Accept crop for an image"
-#| msgid "Accept"
+#, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "Прийняти"
@@ -1177,27 +1168,24 @@ msgstr "Показати усі засоби керування"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Стоп"
 
 #: qml/ImageViewPage.qml:978
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Пуск"
 
 #: qml/ImageViewPage.qml:997
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Інтервал:"
 
 #: qml/ImageViewPage.qml:1010
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "%1 секунда"
+msgstr "секунд"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-14 02:38+0000\n"
-"PO-Revision-Date: 2025-11-10 13:46+0200\n"
+"PO-Revision-Date: 2025-11-16 15:48+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -134,9 +134,7 @@ msgid "Shadow"
 msgstr "צל"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "מקום:"
@@ -145,18 +143,16 @@ msgstr "מקום:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "נקודת X של אזור החיתוך"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "נקודת Y של אזור החיתוך"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "גודל:"
@@ -165,148 +161,145 @@ msgstr "גודל:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "רוחב אזור החיתוך"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "גובה אזור החיתוך"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "יחס גובה־רוחב:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "חופשי"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "דירוג נוכחי %1"
+msgstr "תמונה נוכחית"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "ריבוע"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "מסך מ&לא"
+msgstr "המסך הזה"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "נייר ISO (לרוחב)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "מכתב אמריקאי (לרוחב)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "נייר ISO (לאורך)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "מכתב אמריקאי (לאורך)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "רוחב:גובה"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "איפוס"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
 #, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
-msgstr ""
+msgstr "אישור"
 
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
