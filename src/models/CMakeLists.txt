@@ -32,7 +32,6 @@ target_link_libraries(photos_model_static PUBLIC
     KF6::KIOCore
     KF6::KIOWidgets # For KDirModel
     KF6::KIOGui
-    KF6::GuiAddons
     KF6::CoreAddons
 )
 
