@@ -33,7 +33,7 @@ QQC2.Page {
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
             id: vScrollBar
             parent: content.parent
-            anchors.left: content.contentItem.right
+            anchors.left: parent.contentItem.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
         }
