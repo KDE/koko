@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-21 00:41+0000\n"
-"PO-Revision-Date: 2025-11-14 18:46+0300\n"
+"PO-Revision-Date: 2025-11-21 22:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -627,8 +627,7 @@ msgid "Comment"
 msgstr "Yorum"
 
 #: filemenuactions.cpp:159
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "İçeren Klasörü Aç"
@@ -637,12 +636,10 @@ msgstr "İçeren Klasörü Aç"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "&Birlikte Aç…"
 
 #: filemenuactions.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Konumu Kopyala"

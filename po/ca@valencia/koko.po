@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-21 00:41+0000\n"
-"PO-Revision-Date: 2025-11-13 15:02+0100\n"
+"PO-Revision-Date: 2025-11-21 09:07+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -630,8 +630,7 @@ msgid "Comment"
 msgstr "Comentari"
 
 #: filemenuactions.cpp:159
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Obri la carpeta contenidora"
@@ -640,12 +639,10 @@ msgstr "Obri la carpeta contenidora"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "O&bri amb…"
 
 #: filemenuactions.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Copia la ubicació"
@@ -1422,14 +1419,3 @@ msgstr "Configuració"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Afig una etiqueta nova…"
-
-#~ msgid "&Copy"
-#~ msgstr "&Copia"
-
-#~ msgctxt "@action:intoolbar Print the image"
-#~ msgid "&Print"
-#~ msgstr "Im&primix"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Print image"
-#~ msgstr "Imprimix la imatge"
