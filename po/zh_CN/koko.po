@@ -620,11 +620,10 @@ msgid "Comment"
 msgstr "注释"
 
 #: filemenuactions.cpp:159
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
-msgstr "打开所在文件夹"
+msgstr ""
 
 #: filemenuactions.cpp:174
 #, kde-format
@@ -633,12 +632,10 @@ msgid "&Open With…"
 msgstr ""
 
 #: filemenuactions.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
-msgstr "复制位置"
+msgstr ""
 
 #: main.cpp:63
 #, kde-kuit-format
@@ -1408,14 +1405,3 @@ msgstr "设置"
 #, kde-format
 msgid "Add new tag…"
 msgstr "添加新标签…"
-
-#~ msgid "&Copy"
-#~ msgstr "复制(&C)"
-
-#~ msgctxt "@action:intoolbar Print the image"
-#~ msgid "&Print"
-#~ msgstr "打印(&P)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Print image"
-#~ msgstr "打印图像"
