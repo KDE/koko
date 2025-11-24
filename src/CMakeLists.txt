@@ -56,6 +56,7 @@ target_link_libraries(koko_static PUBLIC
     KF6::KIOWidgets
     KF6::DBusAddons
     KF6::FileMetaData
+    KF6::KOCR
     KF6::ConfigGui
     KF6::ConfigCore
     KF6::ConfigWidgets

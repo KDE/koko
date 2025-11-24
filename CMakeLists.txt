@@ -96,6 +96,13 @@ set_package_properties(KF6Purpose PROPERTIES
     TYPE RUNTIME
 )
 
+find_package(KF6KOCR)
+set_package_properties(KF6KOCR PROPERTIES
+    DESCRIPTION "Offers text extraction from an images"
+    PURPOSE "Required at runtime to run Koko and allow text extraction on images"
+    TYPE RUNTIME
+)
+
 include_directories(
   ${CMAKE_SOURCE_DIR}
   ${CMAKE_SOURCE_DIR}/src
