@@ -6,7 +6,10 @@
 #include <QObject>
 #include <QTimer>
 #include <qqmlregistration.h>
+
+#ifdef HAVE_TESSERACT_OCR
 #include <tesseract/baseapi.h>
+#endif
 
 #include "ocrtextmodel.h"
 
@@ -57,7 +60,9 @@ private:
     QStringList m_availableLanguages = {};
     QStringList m_pendingLanguages = {};
 
+#ifdef HAVE_TESSERACT_OCR
     tesseract::TessBaseAPI *m_api{nullptr};
+#endif
     QList<OcrTextModel::Ptr> m_ocrResult;
 
     bool load(const QStringList languages);

@@ -10,12 +10,15 @@
 
 Ocr::Ocr(QObject *parent)
     : QObject(parent)
+#ifdef HAVE_TESSERACT_OCR
     , m_api{new tesseract::TessBaseAPI()}
+#endif
 {
     m_loadTimer.setInterval(1000);
     m_loadTimer.setSingleShot(true);
     connect(&m_loadTimer, &QTimer::timeout, this, &Ocr::loadPendingLanguages);
 
+#ifdef HAVE_TESSERACT_OCR
     if (!m_api) {
         qCritical() << "Failed to instantiate tesseract";
         return;
@@ -30,6 +33,10 @@ Ocr::Ocr(QObject *parent)
 
     // m_api->Init must be call before otherwise the API don't know the data directory
     refreshAvailableLanguages();
+#else
+    m_supported = false;
+    Q_EMIT supportedChanged();
+#endif
 }
 
 Ocr::~Ocr()
@@ -68,6 +75,7 @@ QList<OcrTextModel *> Ocr::ocrResult() const
 
 void Ocr::extractText(const QString imagePath)
 {
+#ifdef HAVE_TESSERACT_OCR
     if (!m_loaded) {
         qWarning() << "No language loaded. Please load a language.";
         return;
@@ -110,6 +118,9 @@ void Ocr::extractText(const QString imagePath)
     Q_EMIT ocrResultChanged();
 
     m_api->Clear();
+#else
+    Q_UNUSED(imagePath)
+#endif
 }
 
 void Ocr::loadLanguage(const QString language)
@@ -151,6 +162,7 @@ void Ocr::loadPendingLanguages()
 
 bool Ocr::load(const QStringList languages)
 {
+#ifdef HAVE_TESSERACT_OCR
     if (m_loaded) {
         unload();
     }
@@ -171,10 +183,15 @@ bool Ocr::load(const QStringList languages)
     refreshLoadedLanguages();
 
     return true;
+#else
+    Q_UNUSED(languages)
+    return true;
+#endif
 }
 
 void Ocr::unload()
 {
+#ifdef HAVE_TESSERACT_OCR
     if (!m_loaded) {
         return;
     }
@@ -185,10 +202,12 @@ void Ocr::unload()
     Q_EMIT loadedChanged();
 
     refreshLoadedLanguages();
+#endif
 }
 
 void Ocr::refreshAvailableLanguages()
 {
+#ifdef HAVE_TESSERACT_OCR
     std::vector<std::string> languages;
     m_api->GetAvailableLanguagesAsVector(&languages);
 
@@ -197,10 +216,12 @@ void Ocr::refreshAvailableLanguages()
         m_availableLanguages.append(QString::fromStdString(language));
     }
     Q_EMIT availableLanguagesChanged();
+#endif
 }
 
 void Ocr::refreshLoadedLanguages()
 {
+#ifdef HAVE_TESSERACT_OCR
     std::vector<std::string> languages;
     m_api->GetLoadedLanguagesAsVector(&languages);
 
@@ -209,4 +230,5 @@ void Ocr::refreshLoadedLanguages()
         m_loadedLanguages.append(QString::fromStdString(language));
     }
     Q_EMIT loadedLanguagesChanged();
+#endif
 }

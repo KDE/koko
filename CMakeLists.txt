@@ -50,7 +50,6 @@ endif()
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO CoreAddons Notifications FileMetaData DBusAddons)
 
 find_package(LibExiv2 0.28 REQUIRED)
-find_package(PkgConfig REQUIRED)
 
 ecm_find_qmlmodule(org.kde.kquickimageeditor)
 find_package(KQuickImageEditor 0.6.0 COMPONENTS)
@@ -97,7 +96,28 @@ set_package_properties(KF6Purpose PROPERTIES
     TYPE RUNTIME
 )
 
-pkg_check_modules(LibTesseract REQUIRED tesseract) 
+# Find Tesseract for OCR functionality
+find_package(PkgConfig QUIET)
+if(PkgConfig_FOUND)
+    pkg_check_modules(TESSERACT tesseract)
+
+    if(TESSERACT_FOUND)
+        message(STATUS "Tesseract OCR support enabled")
+        set(HAVE_TESSERACT_OCR TRUE)
+    else()
+        message(STATUS "Tesseract not found - OCR functionality disabled")
+        set(HAVE_TESSERACT_OCR FALSE)
+    endif()
+
+    set_package_properties(TESSERACT PROPERTIES
+        DESCRIPTION "OCR engine for text recognition in screenshots"
+        PURPOSE "Enables optical character recognition functionality"
+        TYPE OPTIONAL
+    )
+else()
+    message(STATUS "PkgConfig not found - Tesseract detection disabled")
+    set(HAVE_TESSERACT_OCR FALSE)
+endif()
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
