@@ -66,8 +66,14 @@ target_link_libraries(koko_static PUBLIC
     KirigamiAddonsStatefulApp
     LibExiv2::LibExiv2
     KQuickImageEditor
-    ${LibTesseract_LIBRARIES}
 )
+
+# Link against Tesseract when OCR support is enabled
+if(HAVE_TESSERACT_OCR)
+    target_compile_definitions(koko_static PUBLIC HAVE_TESSERACT_OCR)
+    target_include_directories(koko_static PUBLIC ${TESSERACT_INCLUDE_DIRS})
+    target_link_libraries(koko_static PUBLIC ${TESSERACT_LIBRARIES})
+endif()
 
 if(Qt6PrintSupport_FOUND)
     target_compile_definitions(koko_static PUBLIC HAVE_PRINTSUPPORT)
