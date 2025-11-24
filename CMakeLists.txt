@@ -98,7 +98,6 @@ set_package_properties(KF6Purpose PROPERTIES
 )
 
 pkg_check_modules(LibTesseract REQUIRED tesseract) 
-pkg_check_modules(LibLeptonica REQUIRED lept)
 
 include_directories(
   ${CMAKE_SOURCE_DIR}

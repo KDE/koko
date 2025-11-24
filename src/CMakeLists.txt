@@ -67,7 +67,6 @@ target_link_libraries(koko_static PUBLIC
     LibExiv2::LibExiv2
     KQuickImageEditor
     ${LibTesseract_LIBRARIES}
-    ${LibLeptonica_LIBRARIES}
 )
 
 if(Qt6PrintSupport_FOUND)
