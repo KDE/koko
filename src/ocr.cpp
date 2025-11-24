@@ -5,8 +5,6 @@
 
 #include "kokoconfig.h"
 
-#include <leptonica/allheaders.h>
-
 #include <QDebug>
 #include <QUrl>
 
@@ -79,16 +77,10 @@ void Ocr::extractText(const QString imagePath)
 
     const QUrl url(imagePath);
     const QString localPath = url.toLocalFile();
-    const QByteArray utf8 = localPath.toUtf8();
-    const char *path = utf8.constData();
 
-    Pix *image = pixRead(path);
-    if (!image) {
-        qCritical() << "Leptonica can't process image file";
-        return;
-    }
-
-    m_api->SetImage(image);
+    const QImage image(localPath);
+    const QImage rgbImage = image.convertToFormat(QImage::Format_RGB888);
+    m_api->SetImage(rgbImage.bits(), rgbImage.width(), rgbImage.height(), 3, rgbImage.bytesPerLine());
     m_api->Recognize(0);
 
     tesseract::ResultIterator *ri = m_api->GetIterator();
