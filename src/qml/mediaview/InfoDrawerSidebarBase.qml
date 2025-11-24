@@ -97,6 +97,9 @@ Flickable {
                 description: displayName
                 horizontalPadding: Kirigami.Units.smallSpacing
                 verticalPadding: Kirigami.Units.smallSpacing
+                textItem.color: Qt.alpha(Kirigami.Theme.textColor, 0.7)
+                textItem.bottomPadding: Kirigami.Units.smallSpacing
+                descriptionItem.color: Kirigami.Theme.textColor
             }
         }
 
