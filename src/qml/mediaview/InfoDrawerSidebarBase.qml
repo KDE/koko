@@ -250,31 +250,11 @@ Flickable {
                     text: tagsDelegate.text
                 }
 
-                RowLayout {
-                    id: tagInputLayout
-                    spacing: Kirigami.Units.smallSpacing
-                    Layout.fillWidth: true
-                    TagInput {
-                        id: tagInput
-                        Layout.fillWidth: true
-                        extractor: flickable.extractor
-                        application: flickable.application
-                    }
-                    QQC2.Button {
-                        enabled: tagInput.editText
-                        display: QQC2.AbstractButton.IconOnly
-                        icon.name: "list-add"
-                        text: i18n("Add Tag")
-                        onClicked: tagInput.accepted()
-                    }
-                }
-
                 Flow {
-                    Layout.preferredWidth: tagInputLayout.implicitWidth
+                    Layout.minimumWidth: addTagsChip.implicitWidth
                     Layout.fillWidth: true
 
                     spacing: Kirigami.Units.largeSpacing
-                    visible: tagRepeater.count
 
                     Repeater {
                         id: tagRepeater
@@ -293,6 +273,90 @@ Flickable {
                                 }
                             }
                         }
+                    }
+
+                    Kirigami.Chip {
+                        id: addTagsChip
+                        icon.name: "document-edit"
+                        text: i18nc("@action open tag dialog", "Edit…")
+                        checkable: false
+                        closable: false
+                        onClicked: tagDialog.open()
+                    }
+                }
+
+                Kirigami.SearchDialog {
+                    id: tagDialog
+                    readonly property string trimmedText: text.trim()
+                    readonly property int extractorIndex: (currentItem?.extractorIndex ?? flickable.extractor.tags.indexOf(trimmedText))
+                    parent: QQC2.Overlay.overlay
+                    searchFieldPlaceholderText: i18nc("@info:placeholder", "Search for tags or write a new tag…")
+                    emptyText: i18nc("@info:placeholder", "No tag found.")
+                    // sorted list of all unique tags
+                    property list<string> allTags: []
+                    model: {
+                        if (!trimmedText.length > 0) {
+                            return allTags
+                        }
+                        // current text followed by all items that start with the text
+                        return [trimmedText].concat(allTags.filter((tag) => tag.startsWith(trimmedText) && tag !== trimmedText))
+                    }
+                    delegate: QQC2.CheckDelegate {
+                        required property string modelData
+                        readonly property int extractorIndex: flickable.extractor.tags.indexOf(text)
+                        text: modelData
+                        checkable: true
+                        checked: extractorIndex >= 0
+                        width: parent.width
+                        onToggled: {
+                            if (checked) {
+                                flickable.extractor.tags.push(text)
+                            } else {
+                                flickable.extractor.tags.splice(extractorIndex, 1)
+                            }
+                        }
+                    }
+                    Kirigami.Action {
+                        id: closeDialogAction
+                        text: i18nc("@action close tag dialog", "Close")
+                        icon.name: "window-close-symbolic"
+                        onTriggered: tagDialog.close()
+                    }
+                    Shortcut {
+                        enabled: tagDialog.visible
+                            && tagDialog.extractorIndex >= 0
+                        sequences: [StandardKey.Delete]
+                        onActivated: flickable.extractor.tags.splice(tagDialog.extractorIndex, 1)
+                    }
+                    Connections {
+                        target: flickable.application
+                        function onTagsChanged(): void {
+                            const appTags = flickable.application.tags.map((action) => action.text)
+                            const concatenated = tagDialog.allTags.concat(appTags).sort()
+                            tagDialog.allTags = [...new Set(concatenated)].filter((s) => s.length > 0)
+                        }
+                    }
+                    Connections {
+                        target: flickable.extractor
+                        function onTagsChanged(): void {
+                            const concatenated = tagDialog.allTags.concat(flickable.extractor.tags).sort()
+                            tagDialog.allTags = [...new Set(concatenated)].filter((s) => s.length > 0)
+                        }
+                    }
+                    onAccepted: {
+                        const hasTag = extractorIndex >= 0
+                        if (!hasTag) {
+                            flickable.extractor.tags.push(trimmedText)
+                        } else {
+                            flickable.extractor.tags.splice(extractorIndex, 1)
+                        }
+                    }
+                    // We have to insert actions this way to ensure a specific order and use the default clear action
+                    Component.onCompleted: {
+                        searchFieldRightActions.splice(0, 0, closeDialogAction)
+                        const appTags = flickable.application.tags.map((action) => action.text)
+                        const concatenated = appTags.concat(flickable.extractor.tags).sort()
+                        allTags = [...new Set(concatenated)].filter((s) => s.length > 0)
                     }
                 }
             }
