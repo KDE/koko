@@ -251,7 +251,6 @@ Flickable {
                 }
 
                 Flow {
-                    Layout.minimumWidth: addTagsChip.implicitWidth
                     Layout.fillWidth: true
 
                     spacing: Kirigami.Units.largeSpacing
@@ -279,9 +278,13 @@ Flickable {
                     Kirigami.Chip {
                         id: addTagsChip
                         icon.name: "document-edit"
-                        text: i18nc("@action open tag dialog", "Edit…")
+                        text: i18nc("@action open tag dialog", "Add…")
+                        display: tagRepeater.count > 0
+                            ? QQC2.AbstractButton.IconOnly
+                            : QQC2.AbstractButton.TextBesideIcon
                         checkable: false
                         closable: false
+                        interactive: true
                         onClicked: tagDialog.open()
                     }
                 }
@@ -289,31 +292,65 @@ Flickable {
                 Kirigami.SearchDialog {
                     id: tagDialog
                     readonly property string trimmedText: text.trim()
-                    readonly property int extractorIndex: (currentItem?.extractorIndex ?? flickable.extractor.tags.indexOf(trimmedText))
+                    readonly property int extractorIndex: currentItem?.extractorIndex ?? flickable.extractor.tags.indexOf(trimmedText)
                     parent: QQC2.Overlay.overlay
                     searchFieldPlaceholderText: i18nc("@info:placeholder", "Search for tags or write a new tag…")
                     emptyText: i18nc("@info:placeholder", "No tag found.")
                     // sorted list of all unique tags
                     property list<string> allTags: []
                     model: {
-                        if (!trimmedText.length > 0) {
-                            return allTags
+                        class Tag {
+                            constructor(text, isNew = "false", extractorIndex = flickable.extractor.tags.indexOf(text)) {
+                                this.text = text
+                                this.isNew = isNew
+                                this.extractorIndex = extractorIndex
+                            }
                         }
+                        const modelTags = allTags.map((string) => new Tag(string))
+                        if (trimmedText.length === 0) {
+                            return modelTags
+                        }
+                        const hasNewTag = !allTags.includes(trimmedText)
+                        const first = new Tag(trimmedText,
+                                              hasNewTag ? "true" : "false",
+                                              hasNewTag ? -1 : flickable.extractor.tags.indexOf(trimmedText))
                         // current text followed by all items that start with the text
-                        return [trimmedText].concat(allTags.filter((tag) => tag.startsWith(trimmedText) && tag !== trimmedText))
+                        return [first].concat(modelTags.filter((tag) => tag.text.startsWith(trimmedText) && tag.text !== trimmedText))
                     }
-                    delegate: QQC2.CheckDelegate {
-                        required property string modelData
-                        readonly property int extractorIndex: flickable.extractor.tags.indexOf(text)
-                        text: modelData
-                        checkable: true
-                        checked: extractorIndex >= 0
-                        width: parent.width
-                        onToggled: {
-                            if (checked) {
-                                flickable.extractor.tags.push(text)
-                            } else {
-                                flickable.extractor.tags.splice(extractorIndex, 1)
+                    section.property: "isNew"
+                    section.delegate: Kirigami.ListSectionHeader {
+                        required property string section
+                        text: section === "true" ? i18nc("@title:group", "Create New Tag") : i18nc("@title:group", "Existing Tags")
+                    }
+                    delegate: DelegateChooser {
+                        role: "isNew"
+                        DelegateChoice {
+                            roleValue: "true"
+                            QQC2.ItemDelegate {
+                                required property var modelData
+                                readonly property int extractorIndex: -1
+                                icon.name: "tag-new-symbolic"
+                                text: modelData.text
+                                width: parent.width
+                                onClicked: flickable.extractor.tags.push(text)
+                            }
+                        }
+                        DelegateChoice {
+                            roleValue: "false"
+                            QQC2.CheckDelegate {
+                                required property var modelData
+                                readonly property int extractorIndex: modelData.extractorIndex
+                                text: modelData.text
+                                checkable: true
+                                checked: extractorIndex >= 0
+                                width: parent.width
+                                onToggled: {
+                                    if (checked) {
+                                        flickable.extractor.tags.push(text)
+                                    } else {
+                                        flickable.extractor.tags.splice(extractorIndex, 1)
+                                    }
+                                }
                             }
                         }
                     }
