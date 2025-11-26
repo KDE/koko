@@ -264,7 +264,8 @@ Flickable {
                         Kirigami.Chip {
                             required property int index
                             required property var modelData
-
+                            interactive: false
+                            closable: true
                             text: modelData
                             onRemoved: {
                                 const index = flickable.extractor.tags.indexOf(modelData)
