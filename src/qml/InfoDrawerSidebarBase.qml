@@ -248,7 +248,7 @@ Flickable {
                 }
 
                 Flow {
-                    Layout.minimumWidth: addTagsChip.implicitWidth
+                    Layout.minimumWidth: editTagsButton.implicitWidth
                     Layout.fillWidth: true
 
                     spacing: Kirigami.Units.largeSpacing
@@ -271,13 +271,21 @@ Flickable {
                             }
                         }
                     }
-
                     Kirigami.Chip {
-                        id: addTagsChip
+                        id: chipMetrics
+                        visible: false
+                        icon.name: editTagsButton.icon.name
+                        text: editTagsButton.text
+                    }
+                    QQC2.Button {
+                        id: editTagsButton
+                        height: chipMetrics.height
+                        width: chipMetrics.width
                         icon.name: "document-edit"
-                        text: i18nc("@action open tag dialog", "Edit…")
-                        checkable: false
-                        closable: false
+                        icon.width: chipMetrics.icon.width
+                        icon.height: chipMetrics.icon.height
+                        font: chipMetrics.font
+                        text: i18nc("@action open tag dialog", "Add…")
                         onClicked: tagDialog.open()
                     }
                 }
