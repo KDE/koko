@@ -118,7 +118,13 @@ QVariant GalleryLocationModel::data(const QModelIndex &index, int role) const
         if (isParentCollection) {
             // We want to show data for the first collection for that group
             locationGroup = locationGroupFromKey(collection.key);
-            collection = ImageStorage::instance()->locations(locationGroup).first();
+
+            auto collections = ImageStorage::instance()->locations(locationGroup);
+            if (collections.isEmpty()) {
+                return {};
+            } else {
+                collection = collections.first();
+            }
         }
 
         switch (role) {
