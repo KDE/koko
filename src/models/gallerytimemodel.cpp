@@ -122,7 +122,13 @@ QVariant GalleryTimeModel::data(const QModelIndex &index, int role) const
         if (isParentCollection) {
             // We want to show data for the first collection for that group
             timeGroup = timeGroupFromKey(collection.key);
-            collection = ImageStorage::instance()->timeTypes(timeGroup).first();
+
+            auto collections = ImageStorage::instance()->timeTypes(timeGroup);
+            if (collections.isEmpty()) {
+                return {};
+            } else {
+                collection = collections.first();
+            }
         }
 
         switch (role) {
