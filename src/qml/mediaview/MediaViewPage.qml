@@ -17,6 +17,7 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.components as KAC
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
 
@@ -610,6 +611,171 @@ Kirigami.Page {
                     to: 1
                     duration: Kirigami.Units.veryLongDuration
                     easing.type: Easing.OutCubic
+                }
+            }
+        }
+
+        KAC.FloatingToolBar {
+            id: zoomBar
+            readonly property bool shouldShow: listView.currentItem !== null && root.mainWindow.controlsVisible
+            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+            parent: listView
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                margins: Kirigami.Units.gridUnit
+            }
+            z: 1
+            visible: opacity > 0
+            opacity: shouldShow ? 1 : 0
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                }
+            }
+            padding: Kirigami.Units.smallSpacing
+            // TODO: remove this Binding when we depend on the Kirigami Addons version after 1.11.0
+            Binding {
+                target: zoomBar.background.Kirigami.Theme
+                property: "inherit"
+                value: true
+            }
+            contentItem: RowLayout {
+                spacing: Kirigami.Units.smallSpacing
+                QQC2.ComboBox {
+                    id: zoomBox
+                    // Strips other characters from a string to get a number
+                    function parsePercent(string: string): real {
+                        // Remove mnemonics and percent signs.
+                        // We don't remove all non-number characters because attempting
+                        // to do so could break locale specific number parsing.
+                        const filtered = string.replace(RegExp(`&|%|${locale.percent}`, "gi"), "").trim()
+                        // Number.fromLocaleString may throw an exception if the
+                        // string isn't perfectly formatted for the locale.
+                        try {
+                            return Number.fromLocaleString(locale, filtered)
+                        } catch (e1) {
+                            try {
+                                // Try US if non-US fails.
+                                // Maybe the user forgot to use their locale?
+                                // US number formatting has a lot in common with
+                                // various South American, African and Asian locales.
+                                if (locale.name !== "en_US") {
+                                    return Number.fromLocaleString(Qt.locale("en_US"), filtered)
+                                }
+                                // Try parseFloat if already using US locale.
+                                // Maybe the user wrote the number in a simpler way?
+                                return parseFloat(filtered)
+                            } catch (e2) {
+                                // Try parseFloat if US fails.
+                                return parseFloat(filtered)
+                            }
+                        }
+                    }
+                    Kirigami.Theme.inherit: true
+                    implicitContentWidthPolicy: QQC2.ComboBox.WidestText
+                    model: [
+                        {text: i18nc("@item:inlistbox zoom percent", "25%"), zoom: 0.25},
+                        {text: i18nc("@item:inlistbox zoom percent", "50%"), zoom: 0.5},
+                        {text: i18nc("@item:inlistbox zoom percent", "75%"), zoom: 0.75},
+                        {text: i18nc("@item:inlistbox zoom percent", "100%"), zoom: 1},
+                        {text: i18nc("@item:inlistbox zoom percent", "150%"), zoom: 1.5},
+                        {text: i18nc("@item:inlistbox zoom percent", "200%"), zoom: 2},
+                        {text: i18nc("@item:inlistbox zoom percent", "300%"), zoom: 3},
+                        {text: i18nc("@item:inlistbox zoom percent", "400%"), zoom: 4},
+                        {text: i18nc("@item:inlistbox zoom percent", "600%"), zoom: 6},
+                        {text: i18nc("@item:inlistbox zoom percent", "800%"), zoom: 8}
+                    ]
+                    textRole: "text"
+                    valueRole: "zoom"
+                    currentIndex: indexOfValue(Koko.State.zoom)
+                    editable: true
+                    // Prevent changing the text while the user is editing it using a timer.
+                    Timer {
+                        id: textEditedTimer
+                        interval: 100
+                        repeat: false
+                        running: false
+                    }
+                    onActivated: (index) => {
+                        if (index >= 0) {
+                            Koko.State.zoom = zoomBox.currentValue
+                        }
+                    }
+                    // The order in which text changed signals are emitted and
+                    // currentIndex/currentText/currentValue changed signals are
+                    // emitted makes it so we have to parse the text first to react
+                    // in a timely manner to user input.
+                    Connections {
+                        target: zoomBox.contentItem
+                        function onTextEdited() {
+                            textEditedTimer.restart()
+                            const text = zoomBox.contentItem.text
+                            // Exact match first, then parse, then fallback to whatever the currentIndex is
+                            const index = zoomBox.find(text, Qt.MatchExactly)
+                            const value = index > 0 ? zoomBox.valueAt(index) : zoomBox.parsePercent(text) / 100 || zoomBox.valueAt(zoomBox.currentIndex)
+                            if (!value || value === Koko.State.zoom) {
+                                return
+                            }
+                            Koko.State.zoom = value
+                        }
+                    }
+                    Connections {
+                        target: Koko.State
+                        function onZoomChanged() {
+                            const zoom = Koko.State.zoom
+                            const index = zoomBox.indexOfValue(zoom)
+                            if (textEditedTimer.running || !zoom || zoomBox.currentValue === zoom) {
+                                return
+                            }
+                            const oldCursorPos = zoomBox.contentItem.cursorPosition
+                            const oldTextLength = zoomBox.editText.length
+                            zoomBox.currentIndex = Qt.binding(() => zoomBox.indexOfValue(zoom))
+                            zoomBox.editText = Qt.binding(() => zoomBox.currentIndex > 0
+                                ? zoomBox.currentText
+                                : i18nc("@item:inlistbox zoom percent", "%1%", Math.round(zoom * 100)))
+                            const percentOffset = zoomBox.editText.endsWith(locale.percent)
+                                ? locale.percent.length
+                                : (zoomBox.editText.endsWith("%") ? 1 : 0)
+                            // Preserve the cursor position relative to the end of the text before the percent sign
+                            zoomBox.contentItem.cursorPosition = Math.min(oldCursorPos + (zoomBox.editText.length - oldTextLength),
+                                                                          zoomBox.editText.length - percentOffset)
+                        }
+                    }
+                }
+                QQC2.ToolSeparator {}
+                QQC2.ToolButton {
+                    icon.name: "zoom-out"
+                    text: i18nc("@action", "Zoom Out")
+                    display: QQC2.AbstractButton.IconOnly
+                    enabled: Koko.State.zoom > zoomBox.model[0].zoom
+                    onClicked: {
+                        for (let i = zoomBox.count - 1; i >= 0; --i) {
+                            let z = zoomBox.valueAt(i)
+                            if (z < Koko.State.zoom && z > 0) {
+                                Koko.State.zoom = z
+                                zoomBox.currentIndex = i
+                                return
+                            }
+                        }
+                    }
+                }
+                QQC2.ToolButton {
+                    icon.name: "zoom-in"
+                    text: i18nc("@action", "Zoom In")
+                    display: QQC2.AbstractButton.IconOnly
+                    enabled: Koko.State.zoom < zoomBox.model[zoomBox.count -1].zoom
+                    onClicked: {
+                        for (let i = 0; i < zoomBox.count; ++i) {
+                            let z = zoomBox.valueAt(i)
+                            if (z > Koko.State.zoom) {
+                                Koko.State.zoom = z
+                                zoomBox.currentIndex = i
+                                return
+                            }
+                        }
+                    }
                 }
             }
         }

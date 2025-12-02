@@ -97,6 +97,8 @@ ZoomArea {
         if (loaded && isCurrent && !isZoomSet) {
             if (Koko.Config.rememberZoom && Koko.State.zoom * sourceWidth > 1 && Koko.State.zoom * sourceHeight > 1) {
                 const size = multiplyContentSize(Koko.State.zoom, implicitContentWidth, implicitContentHeight)
+                root.contentX = root.boundedContentX(root.contentX / root.zoomFactor * Koko.State.zoom, size.width)
+                root.contentY = root.boundedContentY(root.contentY / root.zoomFactor * Koko.State.zoom, size.height)
                 root.contentWidth = size.width
                 root.contentHeight = size.height
                 isZoomSet = true
@@ -104,19 +106,29 @@ ZoomArea {
                 root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
                 root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
             }
+            Koko.State.zoom = root.zoomFactor
         } else {
             isZoomSet = false
         }
     }
     onIsCurrentChanged: resetZoomContentSize()
     onLoadedChanged: resetZoomContentSize()
+    onZoomFactorChanged: if (loaded && isCurrent) {
+        Koko.State.zoom = root.zoomFactor
+    }
 
-    Binding {
+    Connections {
         target: Koko.State
-        property: "zoom"
-        value: root.zoomFactor
-        when: root.loaded && root.isCurrent && root.zoomFactor * root.sourceWidth > 1 && root.zoomFactor * root.sourceHeight > 1
-        restoreMode: Binding.RestoreNone
+        function onZoomChanged() {
+            if (!root.loaded || !root.isCurrent || root.dragging || Koko.State.zoom === root.zoomFactor) {
+                return
+            }
+            const size = multiplyContentSize(Koko.State.zoom, implicitContentWidth, implicitContentHeight)
+            root.contentX = root.boundedContentX(root.contentX / root.zoomFactor * Koko.State.zoom, size.width)
+            root.contentY = root.boundedContentY(root.contentY / root.zoomFactor * Koko.State.zoom, size.height)
+            root.contentWidth = size.width
+            root.contentHeight = size.height
+        }
     }
 
     Loader {
