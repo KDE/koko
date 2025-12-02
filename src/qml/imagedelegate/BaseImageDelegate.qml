@@ -87,16 +87,35 @@ ZoomArea {
         }
     }
 
-    onIsCurrentChanged: {
-        if (Koko.Config.rememberZoom && Koko.Config.zoom * sourceWidth > 1 && Koko.Config.zoom * sourceHeight > 1) {
+    onIsCurrentChanged: if (isCurrent) {
+        if (Koko.Config.rememberZoom && Koko.Config.zoom !== root.zoomFactor
+            && Koko.Config.zoom > 0) {
             const size = multiplyContentSize(Koko.Config.zoom, implicitContentWidth, implicitContentHeight)
+            root.contentX = root.boundedContentX(root.contentX / root.zoomFactor * Koko.Config.zoom, size.width)
+            root.contentY = root.boundedContentY(root.contentY / root.zoomFactor * Koko.Config.zoom, size.height)
             root.contentWidth = size.width
             root.contentHeight = size.height
         } else {
             root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
             root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
         }
-        Koko.Config.zoom = Qt.binding(() => root.zoomFactor)
+        Koko.Config.zoom = root.zoomFactor
+    }
+    onZoomFactorChanged: if (isCurrent) {
+        Koko.Config.zoom = root.zoomFactor
+    }
+    Connections {
+        target: Koko.Config
+        function onZoomChanged() {
+            if (!root.isCurrent || root.dragging || Koko.Config.zoom === root.zoomFactor) {
+                return
+            }
+            const size = multiplyContentSize(Koko.Config.zoom, implicitContentWidth, implicitContentHeight)
+            root.contentX = root.boundedContentX(root.contentX / root.zoomFactor * Koko.Config.zoom, size.width)
+            root.contentY = root.boundedContentY(root.contentY / root.zoomFactor * Koko.Config.zoom, size.height)
+            root.contentWidth = size.width
+            root.contentHeight = size.height
+        }
     }
 
     Loader {

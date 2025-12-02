@@ -14,7 +14,9 @@ import QtQuick
 import QtQml
 import QtQuick.Window
 import QtQuick.Controls as QQC2
+import QtQuick.Templates as T
 import QtQuick.Layouts
+import QtQuick.Effects as Effects
 import org.kde.kirigami as Kirigami
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
@@ -612,6 +614,154 @@ Kirigami.Page {
                     to: 1
                     duration: Kirigami.Units.veryLongDuration
                     easing.type: Easing.OutCubic
+                }
+            }
+        }
+
+        QQC2.ToolBar {
+            id: zoomBar
+            readonly property bool shouldShow: listView.currentItem !== null && root.mainWindow.controlsVisible
+            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+            parent: listView
+            anchors {
+                horizontalCenter: parent.horizontalCenter
+                bottom: parent.bottom
+                margins: Kirigami.Units.gridUnit
+            }
+            z: 1
+            visible: opacity > 0
+            opacity: shouldShow ? 1 : 0
+            Behavior on opacity {
+                OpacityAnimator {
+                    duration: Kirigami.Units.longDuration
+                    easing.type: !root.mainWindow.controlsVisible ? Easing.InOutQuad : Easing.InCubic
+                }
+            }
+            contentItem: RowLayout {
+                QQC2.ComboBox {
+                    id: zoomBox
+                    Kirigami.Theme.inherit: true
+                    implicitContentWidthPolicy: QQC2.ComboBox.WidestText
+                    model: [
+                        {text: "25%", zoom: 0.25},
+                        {text: "50%", zoom: 0.5},
+                        {text: "75%", zoom: 0.75},
+                        {text: "100%", zoom: 1},
+                        {text: "150%", zoom: 1.5},
+                        {text: "200%", zoom: 2},
+                        {text: "300%", zoom: 3},
+                        {text: "400%", zoom: 4},
+                        {text: "600%", zoom: 6},
+                        {text: "800%", zoom: 8}
+                    ]
+                    textRole: "text"
+                    valueRole: "zoom"
+                    currentIndex: indexOfValue(Koko.Config.zoom)
+                    editable: true
+                    // The order in which text changed signals are emitted and
+                    // currentIndex/currentText/currentValue changed signals are
+                    // emitted makes it so we have to parse the text first to react
+                    // in a timely manner to user input. We fall back to model values
+                    // when parsed text does not give a number.
+                    onEditTextChanged: {
+                        const value = parseFloat(editText) / 100 || valueAt(currentIndex)
+                        if (value === Koko.Config.zoom) {
+                            return
+                        }
+                        Koko.Config.zoom = value
+                        if (value && indexOfValue(value) < 0 && !contentItem.activeFocus) {
+                            editText = Math.round(value * 100) + "%"
+                        }
+                    }
+                    Connections {
+                        target: Koko.Config
+                        function onZoomChanged() {
+                            const zoom = Koko.Config.zoom
+                            if (zoom === 0 || !zoomBar.shouldShow || zoomBox.currentValue === zoom || zoomBox.contentItem.activeFocus) {
+                                return
+                            }
+                            zoomBox.currentIndex = zoomBox.indexOfValue(zoom)
+                            if (zoomBox.currentIndex < 0) {
+                                zoomBox.editText = Math.round(zoom * 100) + "%"
+                            }
+                        }
+                    }
+                }
+                QQC2.ToolSeparator {Kirigami.Theme.inherit: true}
+                QQC2.ToolButton {
+                    Kirigami.Theme.inherit: true
+                    icon.name: "zoom-out"
+                    text: i18nc("@action", "Zoom Out")
+                    display: QQC2.AbstractButton.IconOnly
+                    enabled: Koko.Config.zoom > 0.25
+                    onClicked: {
+                        for (let i = zoomBox.count - 1; i >= 0; --i) {
+                            let z = zoomBox.valueAt(i)
+                            if (z < Koko.Config.zoom && z > 0) {
+                                Koko.Config.zoom = z
+                                zoomBox.currentIndex = i
+                                return
+                            }
+                        }
+                    }
+                }
+                QQC2.ToolButton {
+                    Kirigami.Theme.inherit: true
+                    icon.name: "zoom-in"
+                    text: i18nc("@action", "Zoom In")
+                    display: QQC2.AbstractButton.IconOnly
+                    enabled: Koko.Config.zoom < 8
+                    onClicked: {
+                        for (let i = 0; i < zoomBox.count; ++i) {
+                            let z = zoomBox.valueAt(i)
+                            if (z > Koko.Config.zoom) {
+                                Koko.Config.zoom = z
+                                zoomBox.currentIndex = i
+                                return
+                            }
+                        }
+                    }
+                }
+            }
+            padding: Kirigami.Units.smallSpacing
+            background: Kirigami.ShadowedRectangle {
+                color: Qt.alpha(Kirigami.Theme.backgroundColor, 0.6)
+                radius: Kirigami.Units.cornerRadius + zoomBar.padding
+                border {
+                    width: 1
+                    color: Qt.alpha(
+                        Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.4),
+                        0.6)
+                }
+                shadow {
+                    size: Kirigami.Units.gridUnit
+                    color: Qt.rgba(0, 0, 0, 0.25)
+                    yOffset: 2
+                }
+                Effects.MultiEffect {
+                    id: zoomBarEffect
+                    anchors.fill: parent
+                    z: -1
+                    source: ShaderEffectSource {
+                        parent: zoomBarEffect
+                        anchors.fill: parent
+                        z: -1
+                        sourceRect: listView.mapFromItem(listView, zoomBar.x, zoomBar.y, zoomBar.width, zoomBar.height)
+                        sourceItem: listView
+                    }
+                    autoPaddingEnabled: false
+                    blurEnabled: true
+                    blur: 1
+                    blurMax: 64
+                    saturation: 1
+                    maskEnabled: true
+                    maskSource: Rectangle {
+                        parent: zoomBarEffect
+                        anchors.fill: parent
+                        visible: false
+                        radius: zoomBar.background.radius
+                        layer.enabled: true
+                    }
                 }
             }
         }
