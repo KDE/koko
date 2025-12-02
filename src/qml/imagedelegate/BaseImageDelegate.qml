@@ -40,8 +40,8 @@ ZoomArea {
     }
 
     // Account for scaling: e.g. at a scale of 2x, the image is shown pixel-to-pixel at half size
-    implicitContentWidth: Math.round(sourceWidth / dprHelper.devicePixelRatio)
-    implicitContentHeight: Math.round(sourceHeight / dprHelper.devicePixelRatio)
+    implicitContentWidth: sourceWidth / dprHelper.devicePixelRatio
+    implicitContentHeight: sourceHeight / dprHelper.devicePixelRatio
 
     /* Using very small min sizes and very large max sizes since there don't seem
      * to be many good reasons to use more limited ranges.
