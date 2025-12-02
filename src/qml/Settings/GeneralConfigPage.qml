@@ -86,6 +86,17 @@ FormCard.FormCardPage {
                 Koko.Config.save();
             }
         }
+
+        FormCard.FormCheckDelegate {
+            id: enlargeSmallImagesDelegate
+            text: i18nc("@option:check", "Enlarge images that are smaller than the viewport")
+            checked: Koko.Config.enlargeSmallImages
+            enabled: !Koko.Config.isEnlargeSmallImagesImmutable
+            onToggled: {
+                Koko.Config.enlargeSmallImages = checked;
+                Koko.Config.save();
+            }
+        }
     }
 
     FormCard.FormHeader {

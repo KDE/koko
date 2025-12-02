@@ -41,6 +41,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <label>Whether to show a checkerboard background for transparent images</label>
             <default>true</default>
         </entry>
+        <entry name="EnlargeSmallImages" type="Bool">
+            <label>Whether to enlarge images that are smaller than the viewport</label>
+            <default>false</default>
+        </entry>
     </group>
     <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">

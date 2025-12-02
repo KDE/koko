@@ -59,7 +59,7 @@ MouseArea {
     function fittedContentSize(w, h) {
         const factor = root.contentAspectRatio >= root.viewAspectRatio ?
             root.width / w : root.height / h
-        if (w > root.width || h > root.height) {
+        if (w > root.width || h > root.height || Photos.Config.enlargeSmallImages) {
             w = w * factor
             h = h * factor
         }
