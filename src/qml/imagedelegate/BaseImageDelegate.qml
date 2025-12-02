@@ -88,8 +88,15 @@ ZoomArea {
     }
 
     onIsCurrentChanged: {
-        root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
-        root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
+        if (Koko.Config.rememberZoom && Koko.Config.zoom * sourceWidth > 1 && Koko.Config.zoom * sourceHeight > 1) {
+            const size = multiplyContentSize(Koko.Config.zoom, implicitContentWidth, implicitContentHeight)
+            root.contentWidth = size.width
+            root.contentHeight = size.height
+        } else {
+            root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
+            root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
+        }
+        Koko.Config.zoom = Qt.binding(() => root.zoomFactor)
     }
 
     Loader {
