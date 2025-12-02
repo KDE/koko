@@ -111,6 +111,17 @@ FormCard.FormCardPage {
                 Koko.Config.save();
             }
         }
+
+        FormCard.FormCheckDelegate {
+            id: rememberZoomDelegate
+            text: i18nc("@option:check", "Remember zoom level when switching between images")
+            checked: Koko.Config.rememberZoom
+            enabled: !Koko.Config.isRememberZoomImmutable
+            onToggled: {
+                Koko.Config.rememberZoom = checked;
+                Koko.Config.save();
+            }
+        }
     }
 
     FormCard.FormHeader {

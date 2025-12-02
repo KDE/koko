@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+SPDX-FileCopyrightText: (C) 2025 Noah Davis <noahadvs@gmail.com>
+
+SPDX-License-Identifier: LGPL-2.1-or-later
+-->
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+    http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+    <kcfgfile stateConfig="true"/>
+    <group name="General">
+        <entry name="Zoom" type="Double">
+            <label>Zoom level for images</label>
+            <default>0</default>
+        </entry>
+    </group>
+</kcfg>
+

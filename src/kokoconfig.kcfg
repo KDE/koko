@@ -47,6 +47,10 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <label>Whether to enlarge images that are smaller than the viewport</label>
             <default>false</default>
         </entry>
+        <entry name="RememberZoom" type="Bool">
+            <label>Whether to remember zoom levels when switching between images</label>
+            <default>false</default>
+        </entry>
     </group>
     <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">

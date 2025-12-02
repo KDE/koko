@@ -43,6 +43,17 @@ kconfig_target_kcfg_file(koko_static
     QML_REGISTRATION
 )
 
+kconfig_target_kcfg_file(koko_static
+    FILE kokostateconfig.kcfg
+    CLASS_NAME State
+    MUTATORS
+    GENERATE_PROPERTIES
+    GENERATE_MOC
+    DEFAULT_VALUE_GETTERS
+    SINGLETON
+    QML_REGISTRATION
+)
+
 target_link_libraries(koko_static PUBLIC
     photos_model_static
     photos_thumbnails_static
