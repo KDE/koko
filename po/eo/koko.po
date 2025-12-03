@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-21 00:41+0000\n"
+"POT-Creation-Date: 2025-12-03 00:41+0000\n"
 "PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1158,13 +1158,13 @@ msgstr "Antaŭa bildo"
 msgid "Next image"
 msgstr "Sekva bildo"
 
-#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:114
+#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalo de bildoprezento:"
 
-#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:126
+#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1179,7 +1179,7 @@ msgid "Loop"
 msgstr "Buklo"
 
 #: qml/ImageViewPage.qml:936 qml/ImageViewPage.qml:1037
-#: qml/Settings/GeneralConfigPage.qml:100
+#: qml/Settings/GeneralConfigPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1422,6 +1422,12 @@ msgid "Show a checkerboard background behind transparent images"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:92
+#, kde-format
+msgctxt "@option:check"
+msgid "Enlarge images that are smaller than the viewport"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:103
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@title:group"
