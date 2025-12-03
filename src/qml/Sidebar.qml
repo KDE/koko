@@ -9,11 +9,14 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as QQC2
-import org.kde.koko as Koko
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
+
+import org.kde.coreaddons as CoreAddons
+
+import org.kde.koko as Koko
 
 Kirigami.OverlayDrawer {
     id: root
@@ -23,9 +26,7 @@ Kirigami.OverlayDrawer {
     required property int sidebarWidth
 
     edge: Application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
-    handleClosedIcon.source: null
-    handleOpenIcon.source: null
-    handleVisible: !mainWindow.fetchImageToOpen && modal && mainWindow.pageStack.layers.depth < 2
+    handleVisible: modal && !Settings.isMobile
 
     // Autohiding behavior
     modal: !mainWindow.wideScreen
@@ -34,7 +35,7 @@ Kirigami.OverlayDrawer {
     leftPadding: 0
     rightPadding: 0
     topPadding: 0
-    bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
+    bottomPadding: 0
 
     // This makes the sidebar header separator look like a discrete item
     readonly property alias header: sidebarHeader
@@ -42,20 +43,73 @@ Kirigami.OverlayDrawer {
     // Place
     contentItem: ColumnLayout {
         id: column
-        // FIXME: Dirty workaround for 385992
+
         spacing: 0
+
         Kirigami.AbstractApplicationHeader {
             id: sidebarHeader
-            topPadding: Kirigami.Units.smallSpacing;
-            bottomPadding: Kirigami.Units.smallSpacing;
-            leftPadding: Kirigami.Units.largeSpacing
-            rightPadding: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
-            Kirigami.Heading {
-                level: 1
-                text: i18n("Filter by")
+
+            RowLayout {
+                anchors.fill: parent
+
+                spacing: Kirigami.Units.smallSpacing
+
+                Kirigami.Heading {
+                    Layout.fillWidth: true
+
+                    text: i18n("Places")
+                    maximumLineCount: 1
+                    elide: Text.ElideRight
+                    textFormat: Text.PlainText
+                }
+
+                QQC2.ToolButton {
+                    id: menuButton
+
+                    icon.name: "application-menu"
+
+                    QQC2.ToolTip.text: i18nc("@info:tooltip", "Show menu")
+                    QQC2.ToolTip.visible: hovered && !mainMenu.visible
+                    QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                    onPressed: mainMenu.open()
+                    down: pressed || mainMenu.visible
+
+                    QQC2.Menu {
+                        id: mainMenu
+                        y: menuButton.height
+
+                        Kirigami.Action {
+                            fromQAction: root.application.action('options_configure')
+                        }
+
+                        QQC2.MenuSeparator {}
+
+                        Kirigami.Action {
+                            fromQAction: root.application.action('open_about_page')
+                        }
+
+                        Kirigami.Action {
+                            fromQAction: root.application.action('open_about_kde_page')
+                        }
+
+                        Kirigami.Action {
+                            text: i18nc("@action:inMenu", "Donate…")
+                            icon.name: "help-donate-" + Qt.locale().currencySymbol(Locale.CurrencyIsoCode).toLowerCase() + "-symbolic"
+                            onTriggered: Qt.openUrlExternally("https://kde.org/donate/?app=koko")
+                        }
+
+                        Kirigami.Action {
+                            text: i18nc("@action:inMenu", "Report Bug…")
+                            icon.name: "tools-report-bug-symbolic"
+                            onTriggered: Qt.openUrlExternally("https://bugs.kde.org/enter_bug.cgi?format=guided&product=koko&version=" + CoreAddons.AboutData.version)
+                        }
+                    }
+                }
             }
         }
+
         QQC2.ScrollView {
             id: scrollView
             property var currentlySelectedAction
@@ -63,7 +117,6 @@ Kirigami.OverlayDrawer {
 
             contentWidth: -1
             implicitWidth: root.sidebarWidth
-            bottomPadding: Math.round(Kirigami.Units.smallSpacing / 2)
 
             Layout.fillHeight: true
             Layout.fillWidth: true
@@ -89,7 +142,7 @@ Kirigami.OverlayDrawer {
                 spacing: 1
                 width: scrollView.availableWidth
                 PlaceHeading {
-                    text: i18n("Places")
+                    text: i18n("General")
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
@@ -209,43 +262,6 @@ Kirigami.OverlayDrawer {
                     }
                 }
             }
-        }
-        QQC2.ToolSeparator {
-            Layout.topMargin: -1;
-            Layout.fillWidth: true
-            orientation: Qt.Horizontal
-            visible: scrollView.contentHeight > scrollView.height
-        }
-
-        PlaceHeading {
-            Layout.topMargin: -Kirigami.Units.smallSpacing;
-            text: i18n("Thumbnails size:")
-        }
-
-        QQC2.Slider {
-            QQC2.ToolTip.text: i18n("%1 px", Koko.Config.iconSize)
-            QQC2.ToolTip.visible: hovered
-            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            Layout.fillWidth: true
-            Layout.leftMargin: Kirigami.Units.smallSpacing
-            Layout.rightMargin: Kirigami.Units.smallSpacing
-            from: Kirigami.Units.gridUnit * 4
-            to: Kirigami.Units.gridUnit * 8
-            value: Koko.Config.iconSize
-            onMoved: {
-                Koko.Config.iconSize = value;
-                Koko.Config.save();
-            }
-        }
-
-        Delegates.RoundedItemDelegate {
-            text: i18n("Settings")
-            action: Kirigami.Action {
-                text: i18nc("@action:button Open settings dialog", "Settings")
-                fromQAction: root.application.action('options_configure')
-            }
-
-            Layout.fillWidth: true
         }
     }
 }
