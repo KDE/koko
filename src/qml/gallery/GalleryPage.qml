@@ -563,6 +563,65 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.gridUnit * 2)
         }
 
+        function setThumbnailSize(size) {
+            const minSize = 80;
+            const maxSize = 256;
+            const stepSize = 16;
+
+            size = Math.round(size / stepSize) * stepSize; // snap
+            size = Math.max(minSize, Math.min(maxSize, size)); // clamp
+
+            if (size !== Koko.Config.iconSize) {
+                Koko.Config.iconSize = size;
+                Koko.Config.save();
+            }
+        }
+
+        function adjustThumbnailSize(steps) {
+            setThumbnailSize(Koko.Config.iconSize + steps * 16);
+        }
+
+        Shortcut {
+            sequences: [StandardKey.ZoomIn]
+            onActivated: gridView.adjustThumbnailSize(1);
+        }
+
+        Shortcut {
+            sequences: [StandardKey.ZoomOut]
+            onActivated: gridView.adjustThumbnailSize(-1);
+        }
+
+        WheelHandler {
+            id: wheelHandler
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+            acceptedModifiers: Qt.ControlModifier
+
+            onWheel: (event) => {
+                const steps = Math.trunc(wheelHandler.rotation / 15); // 15 degrees is 120 angleDelta is 1 step
+                if (steps !== 0) {
+                    wheelHandler.rotation -= steps * 15;
+                    gridView.adjustThumbnailSize(steps);
+                }
+            }
+        }
+
+        PinchHandler {
+            id: pinchHandler
+
+            target: null
+            grabPermissions: PointerHandler.CanTakeOverFromAnything
+
+            property int startSize: 0
+
+            onActiveChanged: {
+                if (active) {
+                    pinchHandler.startSize = Koko.Config.iconSize;
+                }
+            }
+
+            onScaleChanged: gridView.setThumbnailSize(startSize * scale)
+        }
+
         MouseArea {
             anchors.fill: parent
 

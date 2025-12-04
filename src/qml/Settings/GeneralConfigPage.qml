@@ -16,18 +16,32 @@ FormCard.FormCardPage {
         FormCard.AbstractFormDelegate {
             background: null
             contentItem: ColumnLayout {
+                spacing: Kirigami.Units.smallSpacing
+
                 QQC2.Label {
-                    text: i18n("Thumbnails size:")
                     Layout.fillWidth: true
+                    text: i18nc("@label:slider", "Thumbnail size:")
                 }
+
                 QQC2.Slider {
+                    id: thumbnailSizeSlider
                     Layout.fillWidth: true
-                    from: Kirigami.Units.gridUnit * 4
-                    to: Kirigami.Units.gridUnit * 8
+
+                    from: 80
+                    to: 256
+                    stepSize: 16
                     value: Koko.Config.iconSize
+                    snapMode: QQC2.Slider.SnapAlways
                     onMoved: {
                         Koko.Config.iconSize = value;
                         Koko.Config.save();
+                    }
+
+                    QQC2.ToolTip {
+                        parent: thumbnailSizeSlider.handle
+                        delay: 0
+                        visible: thumbnailSizeSlider.pressed
+                        text: i18nc("@info:tooltip, %1 is a size in pixels", "%1 px", thumbnailSizeSlider.value)
                     }
                 }
             }
