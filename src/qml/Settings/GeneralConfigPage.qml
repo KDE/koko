@@ -17,13 +17,14 @@ FormCard.FormCardPage {
             background: null
             contentItem: ColumnLayout {
                 QQC2.Label {
-                    text: i18n("Thumbnails size:")
+                    text: i18n("Thumbnail size:")
                     Layout.fillWidth: true
                 }
                 QQC2.Slider {
                     Layout.fillWidth: true
-                    from: Kirigami.Units.gridUnit * 4
-                    to: Kirigami.Units.gridUnit * 8
+                    from: 80
+                    to: 256
+                    stepSize: 16
                     value: Koko.Config.iconSize
                     onMoved: {
                         Koko.Config.iconSize = value;

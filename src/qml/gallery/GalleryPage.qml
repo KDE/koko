@@ -554,6 +554,30 @@ Kirigami.ScrollablePage {
             width: parent.width - (Kirigami.Units.gridUnit * 2)
         }
 
+        WheelHandler {
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+            acceptedModifiers: Qt.ControlModifier
+
+            onWheel: (event) => {
+                event.accepted = true;
+
+                const minSize = 80;
+                const maxSize = 256;
+                const stepSize = 16;
+
+                const steps = Math.round(event.angleDelta.y / 120);
+
+                let size = Koko.Config.iconSize + (steps * stepSize);
+                size = Math.round(size / stepSize) * stepSize; // snap
+                size = Math.max(minSize, Math.min(maxSize, size)); // clamp
+
+                if (size !== Koko.Config.iconSize) {
+                    Koko.Config.iconSize = size;
+                    Koko.Config.save();
+                }
+            }
+        }
+
         MouseArea {
             anchors.fill: parent
 
