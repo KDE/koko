@@ -19,7 +19,9 @@ SPDX-License-Identifier: LGPL-2.1-or-later
     <group name="General">
         <entry name="IconSize" type="Int">
             <label>Thumbnail Size</label>
-            <default>64</default>
+            <min>80</min>
+            <max>256</max>
+            <default>128</default>
         </entry>
         <entry name="ImageViewPreview" type="Bool">
             <label>Show a thumbnail carousel in image view</label>
