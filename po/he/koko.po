@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:41+0000\n"
-"PO-Revision-Date: 2025-11-21 12:52+0200\n"
+"PO-Revision-Date: 2025-12-03 09:07+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1364,7 +1364,7 @@ msgstr "להציג רקע משבצות מאחורי תמונות שקופות"
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "להגדיל תמונות שקטנות מהאשנב"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format

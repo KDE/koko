@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:41+0000\n"
-"PO-Revision-Date: 2025-11-21 07:05+0100\n"
+"PO-Revision-Date: 2025-12-03 07:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1366,7 +1366,7 @@ msgstr "Prikaži ozadje šahovnice za prozornimi slikami"
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Povečaj slike, ki so manjše od vidnega polja"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format

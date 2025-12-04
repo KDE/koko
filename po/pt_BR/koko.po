@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:41+0000\n"
-"PO-Revision-Date: 2025-11-21 09:26-0300\n"
+"PO-Revision-Date: 2025-12-03 08:25-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1355,7 +1355,7 @@ msgstr "Mostrar um fundo quadriculado atrás de imagens transparentes"
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Ampliar imagens que sejam menores que a área visível da tela"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format

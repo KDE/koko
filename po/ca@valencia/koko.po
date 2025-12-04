@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:41+0000\n"
-"PO-Revision-Date: 2025-11-21 09:07+0100\n"
+"PO-Revision-Date: 2025-12-03 08:41+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1358,6 +1358,7 @@ msgstr "Mostra un fons de tauler d'escacs darrere les imatges transparents"
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
+"Amplia les imatges que siguen més xicotetes que l'àrea de visualització"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format

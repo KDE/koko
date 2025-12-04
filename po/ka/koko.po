@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:41+0000\n"
-"PO-Revision-Date: 2025-11-21 04:00+0100\n"
+"PO-Revision-Date: 2025-12-03 03:37+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1352,7 +1352,7 @@ msgstr "შაშის დაფის ფონის ჩვენება �
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "ხედზე უფრო პატარა გამოსახულებების გადიდება"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format

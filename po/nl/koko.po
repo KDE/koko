@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-03 00:41+0000\n"
-"PO-Revision-Date: 2025-11-21 13:22+0100\n"
+"PO-Revision-Date: 2025-12-03 11:35+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1353,7 +1353,7 @@ msgstr "Een schaakbordbord achtergrond achter transparante afbeeldingen tonen"
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Vergroot afbeeldingen die kleiner zijn dan het kijkvenster"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
