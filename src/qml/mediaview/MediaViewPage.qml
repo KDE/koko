@@ -356,22 +356,31 @@ Kirigami.Page {
     DelegateLoader {
         id: imagePlaceholder
         anchors.fill: listView
-        width: listView.width
-        height: listView.height
+
         z: 1
-        asynchronous: false
         index: 0
+
+        asynchronous: false
         url: root.url
-        visible: !root.modelReady || !listView.currentItem || listView.currentItem.status !== Loader.Ready || !listView.currentItem.item.loaded
         supportsVideo: false
+
+        visible: !root.modelReady || !listView.currentItem || listView.currentItem.status !== Loader.Ready || !listView.currentItem.item.loaded
         onVisibleChanged: {
             if (!visible) {
-                // Transfer zoom and position to the new delegate
-                listView.currentItem.item.contentWidth = item.contentWidth
-                listView.currentItem.item.contentHeight = item.contentHeight
-                listView.currentItem.item.contentX = item.contentX
-                listView.currentItem.item.contentY = item.contentY
-                imagePlaceholder.destroy()
+                if (item && item.loaded) {
+                    // Transfer zoom and position to the new delegate
+                    listView.currentItem.item.contentWidth = item.contentWidth;
+                    listView.currentItem.item.contentHeight = item.contentHeight;
+                    listView.currentItem.item.contentX = item.contentX;
+                    listView.currentItem.item.contentY = item.contentY;
+                }
+                imagePlaceholder.destroy();
+            }
+        }
+
+        Component.onCompleted: {
+            if (root.modelReady) {
+                imagePlaceholder.destroy();
             }
         }
 
