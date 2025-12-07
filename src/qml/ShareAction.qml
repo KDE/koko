@@ -12,13 +12,11 @@ import org.kde.kirigami as Kirigami
  * Action that allows an user to share data with other apps and service
  * installed on their computer. The goal of this high level API is to
  * adapt itself for each platform and adopt the native component.
- *
- * TODO add more doc, before moving to Peruse upstream
- *
- * TODO add Android support
  */
 Kirigami.Action {
-    id: shareAction
+    id: root
+
+    required property Kirigami.ApplicationWindow application
 
     text: i18nc("@action Share an image/video", "&Share")
     icon.name: "emblem-shared-symbolic"
@@ -41,18 +39,20 @@ Kirigami.Action {
         if (!Kirigami.Settings.isMobile) {
             return;
         }
-        const shareDrawerComponent = Qt.createComponent("org.kde.koko", "ShareDrawer");
-        const drawer = shareDrawerComponent.createObject(applicationWindow().overlay, {
-            inputData: shareAction.inputData
-        }) as ShareDrawer;
-        drawer.open();
+        const shareDrawerComponent = Qt.createComponent("org.kde.koko", "ShareMenu");
+        const drawer = shareDrawerComponent.createObject(null, {
+            inputData: root.inputData,
+            application: root.application,
+            title: root.tooltip,
+        });
+        drawer.popup();
     }
 
     property Instantiator _instantiator: Instantiator {
         active: !Kirigami.Settings.isMobile
         model: Purpose.PurposeAlternativesModel {
             pluginType: "Export"
-            inputData: shareAction.inputData
+            inputData: root.inputData
         }
 
         delegate: Kirigami.Action {
@@ -64,19 +64,19 @@ Kirigami.Action {
             icon.name: iconName
             onTriggered: {
                 const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
-                applicationWindow().pageStack.pushDialogLayer(shareDialogComponent, {
-                    title: shareAction.tooltip,
+                root.application.pageStack.pushDialogLayer(shareDialogComponent, {
+                    title: root.tooltip,
                     index: index,
-                    model: shareAction._instantiator.model
+                    model: root._instantiator.model
                 })
             }
         }
         onObjectAdded: (index, object) => {
             object.index = index;
-            shareAction.children.push(object)
+            root.children.push(object)
         }
         onObjectRemoved: (index, object) => {
-            shareAction.children = Array.from(shareAction.children).filter(obj => obj.pluginId !== object.pluginId)
+            root.children = Array.from(root.children).filter(obj => obj.pluginId !== object.pluginId)
         }
     }
 }

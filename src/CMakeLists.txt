@@ -102,7 +102,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/SelectionButton.qml
     qml/ShareAction.qml
     qml/ShareDialog.qml
-    qml/ShareDrawer.qml
+    qml/ShareMenu.qml
     qml/Sidebar.qml
     qml/SlideshowManager.qml
     qml/TagInput.qml

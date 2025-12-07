@@ -334,6 +334,7 @@ Kirigami.ScrollablePage {
         ShareAction {
             id: shareAction
             visible: model.hasSelectedImages
+            application: page.Controls.ApplicationWindow.window as Kirigami.ApplicationWindow
 
             tooltip: i18nc("@info:tooltip", "Share the selected media")
 

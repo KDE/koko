@@ -128,6 +128,7 @@ Kirigami.Page {
         },
         ShareAction {
             text: i18nc("@action:intoolbar Share an image/video", "&Share")
+            application: root.mainWindow
             tooltip: {
                 if (!listView.currentItem) {
                     return "";
