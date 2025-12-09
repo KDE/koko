@@ -110,7 +110,6 @@ int main(int argc, char **argv)
 
     const QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
     Q_ASSERT(locations.size() >= 1);
-    qDebug() << locations;
 
     const QUrl currentDirPath = QUrl::fromLocalFile(QDir::currentPath().append('/'));
 

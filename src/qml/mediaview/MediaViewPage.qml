@@ -901,7 +901,6 @@ Kirigami.Page {
                                 const valueText = intervalSpinBox.valueFromText(text).toString()
                                 const valueIndex = intervalSpinBox.displayText.indexOf(valueText)
                                 if (valueIndex >= 0) {
-                                    console.log(valueIndex, cursorPosition)
                                     cursorPosition = Math.min(Math.max(valueIndex, oldCursorPosition), valueIndex + valueText.length)
                                 }
                             }
