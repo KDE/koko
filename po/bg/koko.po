@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-03 00:41+0000\n"
+"POT-Creation-Date: 2025-12-09 00:40+0000\n"
 "PO-Revision-Date: 2025-09-14 11:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -858,53 +858,53 @@ msgstr "Домашна"
 msgid "Root"
 msgstr "Root"
 
-#: qml/AlbumView.qml:338
+#: qml/AlbumView.qml:339
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Споделяне на избраната медия"
 
-#: qml/AlbumView.qml:353
+#: qml/AlbumView.qml:354
 #, kde-format
 msgid "Delete Selection"
 msgstr "Изтриване на избраното"
 
-#: qml/AlbumView.qml:354
+#: qml/AlbumView.qml:355
 #, kde-format
 msgid "Move selected items to trash"
 msgstr "Преместване на избраните елемента в кошчето"
 
-#: qml/AlbumView.qml:360
+#: qml/AlbumView.qml:361
 #, kde-format
 msgid "Restore Selection"
 msgstr "Възстановяване на избора"
 
-#: qml/AlbumView.qml:361
+#: qml/AlbumView.qml:362
 #, kde-format
 msgid "Restore selected items from trash"
 msgstr "Възстановяване на избраните елементи от кошчето"
 
-#: qml/AlbumView.qml:367
+#: qml/AlbumView.qml:368
 #, kde-format
 msgid "Select All"
 msgstr "Избиране на всички"
 
-#: qml/AlbumView.qml:368
+#: qml/AlbumView.qml:369
 #, kde-format
 msgid "Selects all the media in the current view"
 msgstr "Избор на всички медии в текущия изглед"
 
-#: qml/AlbumView.qml:375
+#: qml/AlbumView.qml:376
 #, kde-format
 msgid "Deselect All"
 msgstr "Размаркиране на всичко"
 
-#: qml/AlbumView.qml:376
+#: qml/AlbumView.qml:377
 #, kde-format
 msgid "De-selects all the selected media"
 msgstr "Отмяна на избора на всички избрани медии"
 
-#: qml/AlbumView.qml:520
+#: qml/AlbumView.qml:521
 #, kde-format
 msgid "No Media Found"
 msgstr "Не е намерена медия"
@@ -1017,120 +1017,120 @@ msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "&Споделяне"
 
-#: qml/ImageViewPage.qml:136
+#: qml/ImageViewPage.qml:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Споделяне на видеото"
 
-#: qml/ImageViewPage.qml:138
+#: qml/ImageViewPage.qml:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Споделяне на изображението"
 
-#: qml/ImageViewPage.qml:153
+#: qml/ImageViewPage.qml:154
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "&Информация"
 
-#: qml/ImageViewPage.qml:160
+#: qml/ImageViewPage.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Вижте информация за видеото"
 
-#: qml/ImageViewPage.qml:162
+#: qml/ImageViewPage.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Вижте информация за изображението"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:188
+#: qml/ImageViewPage.qml:189
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "&Прожекция"
 
-#: qml/ImageViewPage.qml:190
+#: qml/ImageViewPage.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Стартиране на прожекция"
 
-#: qml/ImageViewPage.qml:198
+#: qml/ImageViewPage.qml:199
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Показване на контроли"
 
-#: qml/ImageViewPage.qml:199
+#: qml/ImageViewPage.qml:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Влизане в режим на потапящо разглеждане"
 
-#: qml/ImageViewPage.qml:200
+#: qml/ImageViewPage.qml:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Илизане от режим на потапящо разглеждане"
 
-#: qml/ImageViewPage.qml:210
+#: qml/ImageViewPage.qml:211
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Показване на лентата с &умалени копия"
 
-#: qml/ImageViewPage.qml:211
+#: qml/ImageViewPage.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Показване на лентата с умалени копия"
 
-#: qml/ImageViewPage.qml:212
+#: qml/ImageViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Скриване на лентата с умалени копия"
 
-#: qml/ImageViewPage.qml:229
+#: qml/ImageViewPage.qml:230
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "&Цял екран"
 
-#: qml/ImageViewPage.qml:231
+#: qml/ImageViewPage.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Цял екран"
 
-#: qml/ImageViewPage.qml:231
+#: qml/ImageViewPage.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Изход от цял екран"
 
-#: qml/ImageViewPage.qml:500
+#: qml/ImageViewPage.qml:501
 #, kde-format
 msgid "Previous image"
 msgstr "Предишно изображение"
 
-#: qml/ImageViewPage.qml:533
+#: qml/ImageViewPage.qml:534
 #, kde-format
 msgid "Next image"
 msgstr "Следващо изображение"
 
-#: qml/ImageViewPage.qml:854 qml/Settings/GeneralConfigPage.qml:125
+#: qml/ImageViewPage.qml:855 qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Пауза между изображенията:"
 
-#: qml/ImageViewPage.qml:871 qml/Settings/GeneralConfigPage.qml:137
+#: qml/ImageViewPage.qml:872 qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1138,48 +1138,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 секунда"
 msgstr[1] "%1 секунди"
 
-#: qml/ImageViewPage.qml:927 qml/ImageViewPage.qml:1028
+#: qml/ImageViewPage.qml:928 qml/ImageViewPage.qml:1029
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Повторение"
 
-#: qml/ImageViewPage.qml:936 qml/ImageViewPage.qml:1037
+#: qml/ImageViewPage.qml:937 qml/ImageViewPage.qml:1038
 #: qml/Settings/GeneralConfigPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Случаен ред"
 
-#: qml/ImageViewPage.qml:948
+#: qml/ImageViewPage.qml:949
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Спиране на прожекцията"
 
-#: qml/ImageViewPage.qml:962
+#: qml/ImageViewPage.qml:963
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показване на всичките контроли"
 
-#: qml/ImageViewPage.qml:991
+#: qml/ImageViewPage.qml:992
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/ImageViewPage.qml:991
+#: qml/ImageViewPage.qml:992
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/ImageViewPage.qml:1010
+#: qml/ImageViewPage.qml:1011
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/ImageViewPage.qml:1023
+#: qml/ImageViewPage.qml:1024
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
@@ -1410,17 +1410,11 @@ msgstr "Относно"
 msgid "About KDE"
 msgstr "Относно KDE"
 
-#: qml/ShareAction.qml:23
+#: qml/ShareAction.qml:21
 #, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "&Споделяне"
-
-#: qml/ShareDrawer.qml:26
-#, kde-format
-msgctxt "@title:menu"
-msgid "Share"
-msgstr "Споделяне"
 
 #: qml/Sidebar.qml:56
 #, kde-format
@@ -1447,6 +1441,10 @@ msgstr "Настройки"
 #, kde-format
 msgid "Add new tag…"
 msgstr "Добавяне на нов етикет…"
+
+#~ msgctxt "@title:menu"
+#~ msgid "Share"
+#~ msgstr "Споделяне"
 
 #~ msgid "&Copy"
 #~ msgstr "&Копиране"
