@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:39+0000\n"
-"PO-Revision-Date: 2025-09-08 21:16+0200\n"
+"PO-Revision-Date: 2025-12-09 21:19+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,7 +34,7 @@ msgstr "xalba@ni.eus"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "Trazua:"
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -44,95 +44,93 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1px"
+msgstr[1] "%1px"
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "Trazuaren zabalera"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Trazuaren kolorea"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "Betegarria:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "Betegarriaren kolorea"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "Sendotasuna:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "Efektuaren sendotasuna."
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "Letra-tipoa:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 %3 %1pt"
+msgstr[1] "%2 %3 %1pt"
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 %1pt"
+msgstr[1] "%2 %1pt"
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "Letra-tipoaren kolorea"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "Zenbakia:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "Zenbakizko idatzoharretarako zenbakia"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "Itzala"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "Kokapena:"
@@ -141,18 +139,16 @@ msgstr "Kokapena:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Mozteko eremuaren X posizioa"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Mozteko eremuaren Y posizioa"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Neurria:"
@@ -161,147 +157,142 @@ msgstr "Neurria:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Mozteko eremuaren zabalera"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Mozteko eremuaren altuera"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "Aspektu-erlazioa:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "Giltzatik aske"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "Uneko balorazioa %1"
+msgstr "Egungo irudia"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "Karratua"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "Pantaila &osoa"
+msgstr "Pantaila hau"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "ISO Papera (Paisaia)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "AEB gutuna (Paisaia)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "ISO Papera (Erretratua)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "AEB gutuna (Erretratua)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Zabalera:Altuera"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "Berrezarri"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
-#, fuzzy, kde-format
-#| msgctxt "@action:button Accept crop for an image"
-#| msgid "Accept"
+#, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "Onartu"
@@ -310,64 +301,61 @@ msgstr "Onartu"
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr ""
+msgstr "Bat ere ez"
 
 #: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Moztu"
 
 #: editor/AnnotationsToolBarContents.qml:118
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "Hautatu dena"
+msgstr "Hautatu"
 
 #: editor/AnnotationsToolBarContents.qml:127
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr ""
+msgstr "Esku hutsez"
 
 #: editor/AnnotationsToolBarContents.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
-msgstr ""
+msgstr "Maius: Lerro zuzenetara atxiki"
 
 #: editor/AnnotationsToolBarContents.qml:135
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
-msgstr ""
+msgstr "Nabarmentzailea"
 
 #: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
-msgstr ""
+msgstr "Lerroa"
 
 #: editor/AnnotationsToolBarContents.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr ""
+msgstr "Maius: 45 graduko gehikuntzetara atxiki"
 
 #: editor/AnnotationsToolBarContents.qml:152
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
-msgstr ""
+msgstr "Gezia"
 
 #: editor/AnnotationsToolBarContents.qml:161
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
-msgstr ""
+msgstr "Laukizuzena"
 
 #: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
@@ -376,43 +364,44 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
+"Maius: Mugimendu diagonaletara atxiki\n"
+"Kontrola: Erdigunetik neurria aldatu"
 
 #: editor/AnnotationsToolBarContents.qml:170
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipsea"
 
 #: editor/AnnotationsToolBarContents.qml:178
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
-msgstr ""
+msgstr "Pixelatu"
 
 #: editor/AnnotationsToolBarContents.qml:186
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
-msgstr ""
+msgstr "Lausotu"
 
 #: editor/AnnotationsToolBarContents.qml:194
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
-msgstr ""
+msgstr "Testua"
 
 #: editor/AnnotationsToolBarContents.qml:201
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
-msgstr ""
+msgstr "Zenbakia"
 
 #: editor/ConfirmDiscardingChanges.qml:17
-#, fuzzy, kde-format
-#| msgid "Discard changes"
+#, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr "Baztertu aldaketak"
+msgstr "Gorde gabeko aldaketak"
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -421,25 +410,24 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
+"<filename>%1</filename> irudia aldatu egin da. Zure aldaketa gorde edo "
+"baztertu nahi dituzu?"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
-msgstr ""
+msgstr "Editatu <filename>%1</filename>"
 
 #: editor/EditorView.qml:42 editor/EditorView.qml:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to save file. Check if you have the correct permission to edit "
-#| "this file."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
 "file."
 msgstr ""
-"Ezin du fitxategia gorde. Egiaztatu fitxategi hau editatzeko beharrezko "
-"baimenak dituzun."
+"Ezin du fitxategia gorde. Egiaztatu fitxategi hau gordetzeko baimen egokiak "
+"dituzun."
 
 #: editor/EditorView.qml:97
 #, kde-format
@@ -460,33 +448,25 @@ msgid "Size:"
 msgstr "Neurria:"
 
 #: editor/EditorView.qml:159
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
-msgstr "Biratu ezkerrera"
+msgstr "Biratu"
 
 #: editor/EditorView.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Biratu ezkerrera"
 
 #: editor/EditorView.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the right"
-#| msgid "Rotate right"
+#, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Biratu eskuinera"
 
 #: editor/EditorView.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Irauli"
@@ -495,18 +475,16 @@ msgstr "Irauli"
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
-msgstr ""
+msgstr "Irauli horizontalki"
 
 #: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
-msgstr ""
+msgstr "Irauli bertikalki"
 
 #: editor/EditorView.qml:222
-#, fuzzy, kde-format
-#| msgctxt "@action:button Undo modification"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Desegin"
@@ -515,7 +493,7 @@ msgstr "Desegin"
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
-msgstr ""
+msgstr "Berregin"
 
 #: editor/EditorView.qml:246
 #, kde-format
@@ -524,8 +502,7 @@ msgid "Save"
 msgstr "Gorde"
 
 #: editor/EditorView.qml:254
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Gorde honela"
@@ -534,14 +511,13 @@ msgstr "Gorde honela"
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoom:"
 
 #: editor/EditorView.qml:439
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
-msgstr "Irudiak"
+msgstr "Irudiaren zooma"
 
 #: editor/ImageView.qml:196
 #, kde-format
@@ -551,6 +527,9 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
+"Egin klik eta arrastatu hautapen bat egiteko.\n"
+"Hautapenean klik bikoitza, onartzeko eta mozteko.\n"
+"Eskuineko klik hautapena husteko."
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
 #, kde-format
@@ -1176,27 +1155,24 @@ msgstr "Erakutsi aginte guztiak"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Gelditu"
 
 #: qml/ImageViewPage.qml:978
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Hasi"
 
 #: qml/ImageViewPage.qml:997
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Tartea:"
 
 #: qml/ImageViewPage.qml:1010
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "segundo 1"
+msgstr "segundo"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
