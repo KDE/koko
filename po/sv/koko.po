@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-09 00:40+0000\n"
+"POT-Creation-Date: 2025-12-10 00:42+0000\n"
 "PO-Revision-Date: 2025-10-10 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -726,6 +726,83 @@ msgstr "Nollställ databasen"
 msgid "path of image you want to open"
 msgstr "sökväg till bild som ska öppnas"
 
+#: models/galleryfavoritesmodel.cpp:23
+#, fuzzy, kde-format
+#| msgid "Favorites"
+msgctxt "@title"
+msgid "Favorites"
+msgstr "Favoriter"
+
+#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Countries"
+msgid "Countries"
+msgstr "Länder"
+
+#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "States"
+msgid "States"
+msgstr "Stater"
+
+#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Cities"
+msgid "Cities"
+msgstr "Städer"
+
+#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:200
+#, kde-format
+msgid "Locations"
+msgstr "Platser"
+
+#: models/galleryopenmodel.cpp:141
+#, kde-format
+msgid "Open"
+msgstr ""
+
+#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
+#, kde-format
+msgid "Tags"
+msgstr "Etiketter"
+
+#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Years"
+msgid "Years"
+msgstr "År"
+
+#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Months"
+msgid "Months"
+msgstr "Månader"
+
+#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Weeks"
+msgid "Weeks"
+msgstr "Veckor"
+
+#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Days"
+msgid "Days"
+msgstr "Dagar"
+
+#: models/gallerytimemodel.cpp:77
+#, fuzzy, kde-format
+#| msgid "Time"
+msgid "Times"
+msgstr "Tid"
+
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
@@ -742,384 +819,617 @@ msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
 msgstr "Navigera till bilder"
 
-#: photosapplication.cpp:57
-#, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to favorites"
-msgstr "Navigera till favoriter"
-
-#: photosapplication.cpp:64
+#: photosapplication.cpp:55
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
 msgstr "Navigera till videor"
 
-#: photosapplication.cpp:71
+#: photosapplication.cpp:60
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to favorites"
+msgstr "Navigera till favoriter"
+
+#: photosapplication.cpp:65
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
 msgstr "Navigera till papperskorgen"
 
-#: photosapplication.cpp:78
+#: photosapplication.cpp:70
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
 msgstr "Navigera till fjärrkataloger"
 
-#: photosapplication.cpp:85
-#, kde-format
+#: photosapplication.cpp:76
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by countries"
 msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by countries"
+msgid "Navigate to pictures grouped by country"
 msgstr "Navigera till bilder sorterade enligt länder"
 
-#: photosapplication.cpp:92
-#, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by states"
+#: photosapplication.cpp:82
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by states"
+msgctxt "@action:button Navigation button, state as in country subdivision"
+msgid "Navigate to pictures grouped by state"
 msgstr "Navigera till bilder sorterade enligt delstater"
 
-#: photosapplication.cpp:99
-#, kde-format
+#: photosapplication.cpp:87
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by cities"
 msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by cities"
+msgid "Navigate to pictures grouped by cities"
 msgstr "Navigera till bilder sorterade enligt städer"
 
-#: photosapplication.cpp:106
-#, kde-format
+#: photosapplication.cpp:92
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by years"
 msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by years"
+msgid "Navigate to pictures grouped by year"
 msgstr "Navigera till bilder sorterade enligt år"
 
-#: photosapplication.cpp:113
-#, kde-format
+#: photosapplication.cpp:97
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by months"
 msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by months"
+msgid "Navigate to pictures grouped by month"
 msgstr "Navigera till bilder sorterade enligt månader"
 
-#: photosapplication.cpp:120
-#, kde-format
+#: photosapplication.cpp:102
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by weeks"
 msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by weeks"
+msgid "Navigate to pictures grouped by week"
 msgstr "Navigera till bilder sorterade enligt veckor"
 
-#: photosapplication.cpp:127
-#, kde-format
+#: photosapplication.cpp:107
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to pictures sorted by days"
 msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures sorted by days"
+msgid "Navigate to pictures grouped by day"
 msgstr "Navigera till bilder sorterade enligt dagar"
 
-#: qml/AlbumDelegate.qml:128
-#, kde-format
-msgid "1 Image"
-msgid_plural "%1 Images"
-msgstr[0] "1 bild"
-msgstr[1] "%1 bilder"
-
-#: qml/AlbumView.qml:47
-#, kde-format
-msgctxt "@title"
-msgid "Folders"
-msgstr "Kataloger"
-
-#: qml/AlbumView.qml:230 qml/AlbumView.qml:270
-#, kde-format
-msgid "Remove Bookmark"
-msgstr "Ta bort bokmärke"
-
-#: qml/AlbumView.qml:230 qml/AlbumView.qml:270
-#, kde-format
-msgctxt "@action:button Bookmarks the current folder"
-msgid "Bookmark Folder"
-msgstr "Bokmärkeskatalog"
-
-#: qml/AlbumView.qml:295
-#, kde-format
-msgid "Go Up"
-msgstr "Gå upp"
-
-#: qml/AlbumView.qml:318
-#, kde-format
-msgid "Home"
-msgstr "Hem"
-
-#: qml/AlbumView.qml:318
-#, kde-format
-msgid "Root"
-msgstr "Rot"
-
-#: qml/AlbumView.qml:339
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Share the selected media"
-msgstr "Dela de markerade medierna"
-
-#: qml/AlbumView.qml:354
-#, kde-format
-msgid "Delete Selection"
-msgstr "Ta bort markering"
-
-#: qml/AlbumView.qml:355
-#, kde-format
-msgid "Move selected items to trash"
-msgstr "Flytta markerade objekt till papperskorgen"
-
-#: qml/AlbumView.qml:361
-#, kde-format
-msgid "Restore Selection"
-msgstr "Återställ markering"
-
-#: qml/AlbumView.qml:362
-#, kde-format
-msgid "Restore selected items from trash"
-msgstr "Återställ markerade objekt från papperskorgen"
-
-#: qml/AlbumView.qml:368
-#, kde-format
-msgid "Select All"
-msgstr "Markera alla"
-
-#: qml/AlbumView.qml:369
-#, kde-format
-msgid "Selects all the media in the current view"
-msgstr "Markerar alla medier i den aktuella vyn"
-
-#: qml/AlbumView.qml:376
-#, kde-format
-msgid "Deselect All"
-msgstr "Avmarkera alla"
-
-#: qml/AlbumView.qml:377
-#, kde-format
-msgid "De-selects all the selected media"
-msgstr "Avmarkerar alla markerade medier"
-
-#: qml/AlbumView.qml:521
-#, kde-format
-msgid "No Media Found"
-msgstr "Inga medier hittades"
-
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:95
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:148
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Bilder"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:101
+#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:154
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videor"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:107
+#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:160
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Favoriter"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:92
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:61
 #, kde-format
 msgid "Places"
 msgstr "Platser"
 
-#: qml/imagedelegate/VideoPlayer.qml:190
+#: qml/gallery/GalleryDelegate.qml:130
+#, kde-format
+msgid "1 item"
+msgid_plural "%1 items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: qml/gallery/GalleryPage.qml:126
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Share the selected media"
+msgstr "Dela de markerade medierna"
+
+#: qml/gallery/GalleryPage.qml:161
+#, kde-format
+msgctxt "@action:button Move the selected media to the trash"
+msgid "Move to Trash"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:162
+#, fuzzy, kde-format
+#| msgid "Move selected items to trash"
+msgctxt "@info:tooltip"
+msgid "Move the selected media to the trash"
+msgstr "Flytta markerade objekt till papperskorgen"
+
+#: qml/gallery/GalleryPage.qml:177
+#, kde-format
+msgctxt "@action:button Move the selected media to the trash"
+msgid "Restore"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:178
+#, fuzzy, kde-format
+#| msgid "Restore selected items from trash"
+msgctxt "@info:tooltip"
+msgid "Restore the selected media to their former locations"
+msgstr "Återställ markerade objekt från papperskorgen"
+
+#: qml/gallery/GalleryPage.qml:197
+#, fuzzy, kde-format
+#| msgid "Sort by"
+msgctxt "@action:button %1 is the selected sort order, e.g. Name"
+msgid "Sort: %1"
+msgstr "Sortera enligt"
+
+#: qml/gallery/GalleryPage.qml:202
+#, fuzzy, kde-format
+#| msgctxt "@item:intable Image file name"
+#| msgid "Name"
+msgctxt "@action:inmenu An order to sort media items"
+msgid "Name"
+msgstr "Namn"
+
+#: qml/gallery/GalleryPage.qml:209
+#, fuzzy, kde-format
+#| msgid "Size"
+msgctxt "@action:inmenu An order to sort media items"
+msgid "Size"
+msgstr "Storlek"
+
+#: qml/gallery/GalleryPage.qml:216
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Date Modified"
+msgctxt "@action:inmenu An order to sort media items"
+msgid "Modified"
+msgstr "Ändringsdatum"
+
+#: qml/gallery/GalleryPage.qml:217
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Date Modified"
+msgctxt "@info:tooltip An order to sort media items"
+msgid "Date Modified"
+msgstr "Ändringsdatum"
+
+#: qml/gallery/GalleryPage.qml:224
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Date Created"
+msgctxt "@action:inmenu An order to sort media items"
+msgid "Created"
+msgstr "Skapad datum"
+
+#: qml/gallery/GalleryPage.qml:225
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Date Created"
+msgctxt "@info:tooltip An order to sort media items"
+msgid "Date Created"
+msgstr "Skapad datum"
+
+#: qml/gallery/GalleryPage.qml:232
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Date Accessed"
+msgctxt "@action:inmenu An order to sort media items"
+msgid "Accessed"
+msgstr "Åtkomstdatum"
+
+#: qml/gallery/GalleryPage.qml:233
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Date Accessed"
+msgctxt "@info:tooltip An order to sort media items"
+msgid "Date Accessed"
+msgstr "Åtkomstdatum"
+
+#: qml/gallery/GalleryPage.qml:246
+#, kde-format
+msgctxt "@action:inmenu Sort media items in ascending order"
+msgid "Ascending"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:248
+#, kde-format
+msgctxt "@action:inmenu Sort media items by name in ascending order"
+msgid "A-Z"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:250
+#, kde-format
+msgctxt "@action:inmenu Sort media items by size in ascending order"
+msgid "Smallest First"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:254
+#, kde-format
+msgctxt "@action:inmenu Sort media items by date in ascending order"
+msgid "Oldest First"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:257
+#, kde-format
+msgctxt "@info:tooltip Sort media items in ascending order"
+msgid "Ascending"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:268
+#, kde-format
+msgctxt "@action:inmenu Sort media items in descending order"
+msgid "Descending"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:270
+#, kde-format
+msgctxt "@action:inmenu Sort media items by name in descending order"
+msgid "Z-A"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:272
+#, kde-format
+msgctxt "@action:inmenu Sort media items by size in descending order"
+msgid "Largest First"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:276
+#, kde-format
+msgctxt "@action:inmenu Sort media items by date in descending order"
+msgid "Newest First"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:279
+#, kde-format
+msgctxt "@info:tooltip Sort media items in descending order"
+msgid "Descending"
+msgstr ""
+
+#: qml/gallery/GalleryPage.qml:301
+#, fuzzy, kde-format
+#| msgctxt "@action:button Bookmarks the current folder"
+#| msgid "Bookmark Folder"
+msgctxt "@action:button Bookmark the current folder"
+msgid "Bookmark Folder"
+msgstr "Bokmärkeskatalog"
+
+#: qml/gallery/GalleryPage.qml:302
+#, fuzzy, kde-format
+#| msgctxt "@action:button Bookmarks the current folder"
+#| msgid "Bookmark Folder"
+msgctxt "@info:tooltip"
+msgid "Bookmark the current folder"
+msgstr "Bokmärkeskatalog"
+
+#: qml/gallery/GalleryPage.qml:330
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button"
+msgid "Select All"
+msgstr "Markera alla"
+
+#: qml/gallery/GalleryPage.qml:331
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@info:tooltip"
+msgid "Select all media"
+msgstr "Markera alla"
+
+#: qml/gallery/GalleryPage.qml:341
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar select annotation tool"
+#| msgid "Select"
+msgctxt "@action:button"
+msgid "Select None"
+msgstr "Markera"
+
+#: qml/gallery/GalleryPage.qml:342
+#, fuzzy, kde-format
+#| msgid "Deselect All"
+msgctxt "@info:tooltip"
+msgid "Deselect all media"
+msgstr "Avmarkera alla"
+
+#: qml/gallery/GalleryPage.qml:351
+#, fuzzy, kde-format
+#| msgid "Delete Selection"
+msgctxt "@action:button"
+msgid "Invert Selection"
+msgstr "Ta bort markering"
+
+#: qml/gallery/GalleryPage.qml:352
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Share the selected media"
+msgctxt "@info:tooltip"
+msgid "Invert the selected media"
+msgstr "Dela de markerade medierna"
+
+#: qml/gallery/GalleryPage.qml:561
+#, fuzzy, kde-format
+#| msgid "No Media Found"
+msgid "No media found"
+msgstr "Inga medier hittades"
+
+#: qml/gallery/NavigatorComponent.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Back"
+msgstr ""
+
+#: qml/gallery/NavigatorComponent.qml:66
+#, kde-format
+msgctxt "@action:button"
+msgid "Forward"
+msgstr ""
+
+#: qml/Main.qml:70
+#, kde-format
+msgctxt "@title"
+msgid "Places"
+msgstr "Platser"
+
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
 msgstr "Sökreglage"
 
-#: qml/imagedelegate/VideoPlayer.qml:241 qml/imagedelegate/VideoPlayer.qml:263
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:241
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] "Gå bakåt 1 sekund"
 msgstr[1] "Gå bakåt %1 sekunder"
 
-#: qml/imagedelegate/VideoPlayer.qml:251
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
 msgstr "Pausa uppspelning"
 
-#: qml/imagedelegate/VideoPlayer.qml:251
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
 msgstr "Fortsätt uppspelning"
 
-#: qml/imagedelegate/VideoPlayer.qml:273
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
 msgstr "Tysta ljud"
 
-#: qml/imagedelegate/VideoPlayer.qml:293
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
 msgstr "Volymreglage"
 
-#: qml/imagedelegate/VideoPlayer.qml:314
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
 msgstr "Upprepa aktuell video"
 
-#: qml/ImageMetadataPage.qml:16
+#: qml/mediaview/InfoDrawer.qml:36
+#, kde-format
+msgid "Metadata"
+msgstr "Metadata"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:42
+#, kde-format
+msgid "Set rating to %1"
+msgstr "Sätt betyg till %1"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:96
+#, kde-format
+msgctxt "@label %1 is a translated title e.g. 'Date Created'"
+msgid "%1:"
+msgstr "%1:"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:106
+#, kde-format
+msgctxt "@label"
+msgid "Rating:"
+msgstr "Betyg:"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:133
+#, kde-format
+msgid "Current rating %1"
+msgstr "Nuvarande betyg %1"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:224
+#, kde-format
+msgctxt "@label"
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#, kde-format
+msgid "Image description…"
+msgstr "Bildbeskrivning…"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:237
+#, kde-format
+msgctxt "@label"
+msgid "Tags:"
+msgstr "Etiketter:"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:264
+#, kde-format
+msgid "Add Tag"
+msgstr "Lägg till etikett"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:301
+#, kde-format
+msgctxt "@action:button"
+msgid "Choose What's Shown"
+msgstr "Välj vad som visas"
+
+#: qml/mediaview/MediaMetadataPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr "Anpassa metadatavisning"
 
-#: qml/ImageMetadataPage.qml:46
+#: qml/mediaview/MediaMetadataPage.qml:46
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr "—"
 
-#: qml/ImageViewPage.qml:97
+#: qml/mediaview/MediaViewPage.qml:97
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Favorit"
 
-#: qml/ImageViewPage.qml:99
+#: qml/mediaview/MediaViewPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Ta bort från favoriter"
 
-#: qml/ImageViewPage.qml:99
+#: qml/mediaview/MediaViewPage.qml:99
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Lägg till i favoriter"
 
-#: qml/ImageViewPage.qml:111
+#: qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr "&Redigera"
 
-#: qml/ImageViewPage.qml:113
+#: qml/mediaview/MediaViewPage.qml:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Redigera bilden"
 
-#: qml/ImageViewPage.qml:130
+#: qml/mediaview/MediaViewPage.qml:130
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "&Dela"
 
-#: qml/ImageViewPage.qml:137
+#: qml/mediaview/MediaViewPage.qml:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Dela videon"
 
-#: qml/ImageViewPage.qml:139
+#: qml/mediaview/MediaViewPage.qml:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Dela bilden"
 
-#: qml/ImageViewPage.qml:154
+#: qml/mediaview/MediaViewPage.qml:154
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "&Information"
 
-#: qml/ImageViewPage.qml:161
+#: qml/mediaview/MediaViewPage.qml:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Visa information om videon"
 
-#: qml/ImageViewPage.qml:163
+#: qml/mediaview/MediaViewPage.qml:163
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Visa information om bilden"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/ImageViewPage.qml:189
+#: qml/mediaview/MediaViewPage.qml:189
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "Bild&spel"
 
-#: qml/ImageViewPage.qml:191
+#: qml/mediaview/MediaViewPage.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Starta bildspel"
 
-#: qml/ImageViewPage.qml:199
+#: qml/mediaview/MediaViewPage.qml:199
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Visa &kontroller"
 
-#: qml/ImageViewPage.qml:200
+#: qml/mediaview/MediaViewPage.qml:200
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Gå till fördjupat visningsläge"
 
-#: qml/ImageViewPage.qml:201
+#: qml/mediaview/MediaViewPage.qml:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Avsluta fördjupat visningsläge"
 
-#: qml/ImageViewPage.qml:211
+#: qml/mediaview/MediaViewPage.qml:211
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Visa &miniatyrbildsverktygsrad"
 
-#: qml/ImageViewPage.qml:212
+#: qml/mediaview/MediaViewPage.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Visa miniatyrbildsverktygsraden"
 
-#: qml/ImageViewPage.qml:213
+#: qml/mediaview/MediaViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Dölj miniatyrbildsverktygsraden"
 
-#: qml/ImageViewPage.qml:230
+#: qml/mediaview/MediaViewPage.qml:230
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "&Fullskärmsläge"
 
-#: qml/ImageViewPage.qml:232
+#: qml/mediaview/MediaViewPage.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Gå till fullskärmsläge"
 
-#: qml/ImageViewPage.qml:232
+#: qml/mediaview/MediaViewPage.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Avsluta fullskärmsläge"
 
-#: qml/ImageViewPage.qml:501
+#: qml/mediaview/MediaViewPage.qml:498
 #, kde-format
 msgid "Previous image"
 msgstr "Föregående bild"
 
-#: qml/ImageViewPage.qml:534
+#: qml/mediaview/MediaViewPage.qml:531
 #, kde-format
 msgid "Next image"
 msgstr "Nästa bild"
 
-#: qml/ImageViewPage.qml:855 qml/Settings/GeneralConfigPage.qml:125
+#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Bildspelsintervall:"
 
-#: qml/ImageViewPage.qml:872 qml/Settings/GeneralConfigPage.qml:137
+#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1127,48 +1437,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekund"
 msgstr[1] "%1 sekunder"
 
-#: qml/ImageViewPage.qml:928 qml/ImageViewPage.qml:1029
+#: qml/mediaview/MediaViewPage.qml:924 qml/mediaview/MediaViewPage.qml:1025
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Upprepat"
 
-#: qml/ImageViewPage.qml:937 qml/ImageViewPage.qml:1038
+#: qml/mediaview/MediaViewPage.qml:933 qml/mediaview/MediaViewPage.qml:1034
 #: qml/Settings/GeneralConfigPage.qml:111
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Slumpmässigt"
 
-#: qml/ImageViewPage.qml:949
+#: qml/mediaview/MediaViewPage.qml:945
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Stoppa bildspel"
 
-#: qml/ImageViewPage.qml:963
+#: qml/mediaview/MediaViewPage.qml:959
 #, kde-format
 msgid "Show All Controls"
 msgstr "Visa alla kontroller"
 
-#: qml/ImageViewPage.qml:992
+#: qml/mediaview/MediaViewPage.qml:988
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/ImageViewPage.qml:992
+#: qml/mediaview/MediaViewPage.qml:988
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/ImageViewPage.qml:1011
+#: qml/mediaview/MediaViewPage.qml:1007
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/ImageViewPage.qml:1024
+#: qml/mediaview/MediaViewPage.qml:1020
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
@@ -1176,154 +1486,83 @@ msgstr ""
 msgid "seconds"
 msgstr "1 sekund"
 
-#: qml/InfoDrawer.qml:36
+#: qml/mediaview/TagInput.qml:66
 #, kde-format
-msgid "Metadata"
-msgstr "Metadata"
+msgid "Add new tag…"
+msgstr "Lägg till ny etikett…"
 
-#: qml/InfoDrawerSidebarBase.qml:42
-#, kde-format
-msgid "Set rating to %1"
-msgstr "Sätt betyg till %1"
-
-#: qml/InfoDrawerSidebarBase.qml:96
-#, kde-format
-msgctxt "@label %1 is a translated title e.g. 'Date Created'"
-msgid "%1:"
-msgstr "%1:"
-
-#: qml/InfoDrawerSidebarBase.qml:106
-#, kde-format
-msgctxt "@label"
-msgid "Rating:"
-msgstr "Betyg:"
-
-#: qml/InfoDrawerSidebarBase.qml:133
-#, kde-format
-msgid "Current rating %1"
-msgstr "Nuvarande betyg %1"
-
-#: qml/InfoDrawerSidebarBase.qml:224
-#, kde-format
-msgctxt "@label"
-msgid "Description:"
-msgstr "Beskrivning:"
-
-#: qml/InfoDrawerSidebarBase.qml:226
-#, kde-format
-msgid "Image description…"
-msgstr "Bildbeskrivning…"
-
-#: qml/InfoDrawerSidebarBase.qml:237
-#, kde-format
-msgctxt "@label"
-msgid "Tags:"
-msgstr "Etiketter:"
-
-#: qml/InfoDrawerSidebarBase.qml:264
-#, kde-format
-msgid "Add Tag"
-msgstr "Lägg till etikett"
-
-#: qml/InfoDrawerSidebarBase.qml:301
-#, kde-format
-msgctxt "@action:button"
-msgid "Choose What's Shown"
-msgstr "Välj vad som visas"
-
-#: qml/Main.qml:68
-#, kde-format
-msgctxt "@title"
-msgid "Places"
-msgstr "Platser"
-
-#: qml/Main.qml:104
-#, kde-format
-msgid "Images"
-msgstr "Bilder"
-
-#: qml/PlacesPage.qml:21 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:21
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:114
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:167
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Papperskorg"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:141
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:194
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Nätverk"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:121
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:174
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: qml/PlacesPage.qml:91 qml/Sidebar.qml:147
-#, kde-format
-msgid "Locations"
-msgstr "Platser"
-
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:150
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:203
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Länder"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:156
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:209
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Stater"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:162
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:215
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Städer"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:168
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:221
 #, kde-format
 msgid "Time"
 msgstr "Tid"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:171
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:224
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "År"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:177
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:230
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Månader"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:183
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:236
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Veckor"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:189
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:242
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Dagar"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:195
-#, kde-format
-msgid "Tags"
-msgstr "Etiketter"
-
-#: qml/Settings/GeneralConfigPage.qml:20 qml/Sidebar.qml:222
+#: qml/Settings/GeneralConfigPage.qml:20
 #, kde-format
 msgid "Thumbnails size:"
 msgstr "Miniatyrbildsstorlek:"
@@ -1405,31 +1644,78 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "&Dela"
 
-#: qml/Sidebar.qml:56
+#: qml/Sidebar.qml:72
 #, kde-format
-msgid "Filter by"
-msgstr "Filtrera enligt"
+msgctxt "@info:tooltip"
+msgid "Show menu"
+msgstr ""
 
-#: qml/Sidebar.qml:137
+#: qml/Sidebar.qml:98
+#, kde-format
+msgctxt "@action:inMenu"
+msgid "Donate…"
+msgstr ""
+
+#: qml/Sidebar.qml:104
+#, kde-format
+msgctxt "@action:inMenu"
+msgid "Report Bug…"
+msgstr ""
+
+#: qml/Sidebar.qml:145
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "General"
+msgid "General"
+msgstr "Allmänt"
+
+#: qml/Sidebar.qml:190
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Fjärr"
 
-#: qml/Sidebar.qml:226
-#, kde-format
-msgid "%1 px"
-msgstr "%1 bildpunkter"
+#~ msgid "1 Image"
+#~ msgid_plural "%1 Images"
+#~ msgstr[0] "1 bild"
+#~ msgstr[1] "%1 bilder"
 
-#: qml/Sidebar.qml:242
-#, kde-format
-msgid "Settings"
-msgstr "Inställningar"
+#~ msgctxt "@title"
+#~ msgid "Folders"
+#~ msgstr "Kataloger"
 
-#: qml/TagInput.qml:66
-#, kde-format
-msgid "Add new tag…"
-msgstr "Lägg till ny etikett…"
+#~ msgid "Remove Bookmark"
+#~ msgstr "Ta bort bokmärke"
+
+#~ msgid "Go Up"
+#~ msgstr "Gå upp"
+
+#~ msgid "Home"
+#~ msgstr "Hem"
+
+#~ msgid "Root"
+#~ msgstr "Rot"
+
+#~ msgid "Restore Selection"
+#~ msgstr "Återställ markering"
+
+#~ msgid "Selects all the media in the current view"
+#~ msgstr "Markerar alla medier i den aktuella vyn"
+
+#~ msgid "De-selects all the selected media"
+#~ msgstr "Avmarkerar alla markerade medier"
+
+#~ msgid "Images"
+#~ msgstr "Bilder"
+
+#~ msgid "Filter by"
+#~ msgstr "Filtrera enligt"
+
+#~ msgid "%1 px"
+#~ msgstr "%1 bildpunkter"
+
+#~ msgid "Settings"
+#~ msgstr "Inställningar"
 
 #~ msgctxt "@title:menu"
 #~ msgid "Share"
@@ -1523,9 +1809,6 @@ msgstr "Lägg till ny etikett…"
 #~ msgid "Videos"
 #~ msgstr "Videor"
 
-#~ msgid "Favorites"
-#~ msgstr "Favoriter"
-
 #~ msgid "Folders"
 #~ msgstr "Kataloger"
 
@@ -1554,12 +1837,6 @@ msgstr "Lägg till ny etikett…"
 
 #~ msgid "Yes"
 #~ msgstr "Ja"
-
-#~ msgid "Size"
-#~ msgstr "Storlek"
-
-#~ msgid "Sort by"
-#~ msgstr "Sortera enligt"
 
 #~ msgid "General:"
 #~ msgstr "Allmänt:"
