@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-10 00:42+0000\n"
-"PO-Revision-Date: 2025-12-03 08:25-0300\n"
+"PO-Revision-Date: 2025-12-10 05:19-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -717,30 +717,23 @@ msgid "path of image you want to open"
 msgstr "caminho da imagem que você quer abrir"
 
 #: models/galleryfavoritesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Favoritos"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Países"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Estados"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Cidades"
 
@@ -752,7 +745,7 @@ msgstr "Localizações"
 #: models/galleryopenmodel.cpp:141
 #, kde-format
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -760,38 +753,29 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Anos"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Meses"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Semanas"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Dias"
 
 #: models/gallerytimemodel.cpp:77
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
-msgstr "Hora"
+msgstr "Horas"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -834,60 +818,46 @@ msgid "Navigate to the remote folders"
 msgstr "Navegar pelas pastas remotas"
 
 #: photosapplication.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by countries"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
-msgstr "Navegar pelas imagens ordenadas por países"
+msgstr "Navegar pelas imagens agrupadas por país"
 
 #: photosapplication.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by states"
+#, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr "Navegar pelas imagens ordenadas por estados"
+msgstr "Navegar pelas imagens agrupadas por estado"
 
 #: photosapplication.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by cities"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
-msgstr "Navegar pelas imagens ordenadas por cidades"
+msgstr "Navegar pelas imagens agrupadas por cidade"
 
 #: photosapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by years"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr "Navegar pelas imagens ordenadas por anos"
+msgstr "Navegar pelas imagens agrupadas por ano"
 
 #: photosapplication.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by months"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr "Navegar pelas imagens ordenadas por meses"
+msgstr "Navegar pelas imagens agrupadas por mês"
 
 #: photosapplication.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by weeks"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr "Navegar pelas imagens ordenadas por semanas"
+msgstr "Navegar pelas imagens agrupadas por semana"
 
 #: photosapplication.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by days"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr "Navegar pelas imagens ordenadas por dias"
+msgstr "Navegar pelas imagens agrupadas por dia"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:148
 #, kde-format
@@ -916,8 +886,8 @@ msgstr "Locais"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 item"
+msgstr[1] "%1 itens"
 
 #: qml/gallery/GalleryPage.qml:126
 #, kde-format
@@ -929,94 +899,76 @@ msgstr "Compartilhar as mídias selecionadas"
 #, kde-format
 msgctxt "@action:button Move the selected media to the trash"
 msgid "Move to Trash"
-msgstr ""
+msgstr "Mover para a Lixeira"
 
 #: qml/gallery/GalleryPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Move selected items to trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
-msgstr "Mover itens selecionados para a Lixeira"
+msgstr "Move mídias selecionados para a Lixeira"
 
 #: qml/gallery/GalleryPage.qml:177
 #, kde-format
 msgctxt "@action:button Move the selected media to the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Restaurar"
 
 #: qml/gallery/GalleryPage.qml:178
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Restaurar itens selecionados da Lixeira"
+msgstr "Restaura mídias selecionados para seus locais de origem"
 
 #: qml/gallery/GalleryPage.qml:197
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr "Ordenar por"
+msgstr "Ordenar: %1"
 
 #: qml/gallery/GalleryPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@item:intable Image file name"
-#| msgid "Name"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Nome"
 
 #: qml/gallery/GalleryPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Tamanho"
 
 #: qml/gallery/GalleryPage.qml:216
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr "Data de modificação"
+msgstr "Modificação"
 
 #: qml/gallery/GalleryPage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Data de modificação"
 
 #: qml/gallery/GalleryPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr "Data de criação"
+msgstr "Criação"
 
 #: qml/gallery/GalleryPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Data de criação"
 
 #: qml/gallery/GalleryPage.qml:232
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr "Data de acesso"
+msgstr "Acessado"
 
 #: qml/gallery/GalleryPage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Data de acesso"
@@ -1025,125 +977,112 @@ msgstr "Data de acesso"
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Crescente"
 
 #: qml/gallery/GalleryPage.qml:248
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "A-Z"
 
 #: qml/gallery/GalleryPage.qml:250
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "Primeiro os menores"
 
 #: qml/gallery/GalleryPage.qml:254
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "Primeiro os mais antigos"
 
 #: qml/gallery/GalleryPage.qml:257
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Crescente"
 
 #: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Decrescente"
 
 #: qml/gallery/GalleryPage.qml:270
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "Z-A"
 
 #: qml/gallery/GalleryPage.qml:272
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "Primeiro os maiores"
 
 #: qml/gallery/GalleryPage.qml:276
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "Primeiro os mais novos"
 
 #: qml/gallery/GalleryPage.qml:279
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Decrescente"
 
 #: qml/gallery/GalleryPage.qml:301
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Favoritar pasta"
 
 #: qml/gallery/GalleryPage.qml:302
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "Favoritar pasta"
+msgstr "Favorita a pasta atual"
 
 #: qml/gallery/GalleryPage.qml:330
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Selecionar tudo"
 
 #: qml/gallery/GalleryPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Selecionar tudo"
+msgstr "Seleciona todas as mídias"
 
 #: qml/gallery/GalleryPage.qml:341
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar select annotation tool"
-#| msgid "Select"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select None"
-msgstr "Selecionar"
+msgstr "Selecionar nenhum"
 
 #: qml/gallery/GalleryPage.qml:342
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Desmarcar tudo"
+msgstr "Desmarca todas as mídias"
 
 #: qml/gallery/GalleryPage.qml:351
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "Excluir seleção"
+msgstr "Inverter seleção"
 
 #: qml/gallery/GalleryPage.qml:352
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Compartilhar as mídias selecionadas"
+msgstr "Inverte as mídias selecionadas"
 
 #: qml/gallery/GalleryPage.qml:561
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgid "No media found"
 msgstr "Nenhuma mídia encontrada"
 
@@ -1151,13 +1090,13 @@ msgstr "Nenhuma mídia encontrada"
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "Voltar"
 
 #: qml/gallery/NavigatorComponent.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "Avançar"
 
 #: qml/Main.qml:70
 #, kde-format
@@ -1635,24 +1574,22 @@ msgstr "&Compartilhar"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "Mostrar menu"
 
 #: qml/Sidebar.qml:98
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "Doar..."
 
 #: qml/Sidebar.qml:104
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "Relatar bug..."
 
 #: qml/Sidebar.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Geral"
 

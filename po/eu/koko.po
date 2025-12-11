@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-10 00:42+0000\n"
-"PO-Revision-Date: 2025-12-09 21:19+0100\n"
+"PO-Revision-Date: 2025-12-10 20:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -718,30 +718,23 @@ msgid "path of image you want to open"
 msgstr "ireki nahi duzun irudiaren bide-izena"
 
 #: models/galleryfavoritesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr "Gogokoenak"
+msgstr "Gogokoak"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Herrialdeak"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Estatuak"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Hiriak"
 
@@ -753,7 +746,7 @@ msgstr "Kokalekuak"
 #: models/galleryopenmodel.cpp:141
 #, kde-format
 msgid "Open"
-msgstr ""
+msgstr "Ireki"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -761,38 +754,29 @@ msgid "Tags"
 msgstr "Etiketak"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Urteak"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Hilabeteak"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Asteak"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Egunak"
 
 #: models/gallerytimemodel.cpp:77
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
-msgstr "Ordua"
+msgstr "Orduak"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -835,60 +819,46 @@ msgid "Navigate to the remote folders"
 msgstr "Nabigatu urruneko karpetetara"
 
 #: photosapplication.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by countries"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr "Nabigatu herrialdeen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by states"
+#, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr "Nabigatu estatuen arabera sailkatutako irudietara"
+msgstr "Nabigatu estatuaren arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by cities"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr "Nabigatu hirien arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by years"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr "Nabigatu urteen arabera sailkatutako irudietara"
+msgstr "Nabigatu urtearen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by months"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr "Nabigatu hilabeteen arabera sailkatutako irudietara"
+msgstr "Nabigatu hilabetearen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by weeks"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr "Nabigatu asteen arabera sailkatutako irudietara"
+msgstr "Nabigatu astearen arabera sailkatutako irudietara"
 
 #: photosapplication.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by days"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr "Nabigatu egunen arabera sailkatutako irudietara"
+msgstr "Nabigatu egunaren arabera sailkatutako irudietara"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:148
 #, kde-format
@@ -917,8 +887,8 @@ msgstr "Lekuak"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "elementu 1"
+msgstr[1] "%1 elementu"
 
 #: qml/gallery/GalleryPage.qml:126
 #, kde-format
@@ -930,94 +900,76 @@ msgstr "Partekatu hautatutako hedabidea"
 #, kde-format
 msgctxt "@action:button Move the selected media to the trash"
 msgid "Move to Trash"
-msgstr ""
+msgstr "Eraman zakarrontzira"
 
 #: qml/gallery/GalleryPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Move selected items to trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
-msgstr "Eraman hautatutako elementuak zakarrontzira"
+msgstr "Eraman hautatutako hedabideak zakarrontzira"
 
 #: qml/gallery/GalleryPage.qml:177
 #, kde-format
 msgctxt "@action:button Move the selected media to the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Lehengoratu"
 
 #: qml/gallery/GalleryPage.qml:178
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Lehengoratu hautatutako elementuak zakarrontzitik"
+msgstr "Lehengoratu hautatutako hedabideak bere aurreko kokapenetara"
 
 #: qml/gallery/GalleryPage.qml:197
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr "Sailkatu honen arabera"
+msgstr "Sailkatu: %1"
 
 #: qml/gallery/GalleryPage.qml:202
-#, fuzzy, kde-format
-#| msgctxt "@item:intable Image file name"
-#| msgid "Name"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Izena"
 
 #: qml/gallery/GalleryPage.qml:209
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Neurria"
 
 #: qml/gallery/GalleryPage.qml:216
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr "Aldatze data"
+msgstr "Aldatua"
 
 #: qml/gallery/GalleryPage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Aldatze data"
 
 #: qml/gallery/GalleryPage.qml:224
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr "Sorrera data"
+msgstr "Sortua"
 
 #: qml/gallery/GalleryPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Sorrera data"
 
 #: qml/gallery/GalleryPage.qml:232
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr "Atzitze data"
+msgstr "Atzitua"
 
 #: qml/gallery/GalleryPage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Atzitze data"
@@ -1026,125 +978,112 @@ msgstr "Atzitze data"
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Goranzkoa"
 
 #: qml/gallery/GalleryPage.qml:248
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "A-Z"
 
 #: qml/gallery/GalleryPage.qml:250
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "Txikiena aurrena"
 
 #: qml/gallery/GalleryPage.qml:254
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "Zaharrena aurrena"
 
 #: qml/gallery/GalleryPage.qml:257
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Goranzkoa"
 
 #: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Beheranzkoa"
 
 #: qml/gallery/GalleryPage.qml:270
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "Z-A"
 
 #: qml/gallery/GalleryPage.qml:272
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "Handiena aurrena"
 
 #: qml/gallery/GalleryPage.qml:276
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "Berriena aurrena"
 
 #: qml/gallery/GalleryPage.qml:279
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Beheranzkoa"
 
 #: qml/gallery/GalleryPage.qml:301
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
-msgstr "Laster-markaren karpeta"
+msgstr "Laster-marka karpeta"
 
 #: qml/gallery/GalleryPage.qml:302
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "Laster-markaren karpeta"
+msgstr "Egin uneko karpetaren laster-marka"
 
 #: qml/gallery/GalleryPage.qml:330
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Hautatu dena"
 
 #: qml/gallery/GalleryPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Hautatu dena"
+msgstr "Hautatu hedabide guztiak"
 
 #: qml/gallery/GalleryPage.qml:341
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar select annotation tool"
-#| msgid "Select"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select None"
-msgstr "Hautatu"
+msgstr "Bat ere ez hautatu"
 
 #: qml/gallery/GalleryPage.qml:342
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Desautatu dena"
+msgstr "Desautatu hedabide guztiak"
 
 #: qml/gallery/GalleryPage.qml:351
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "Ezabatu hautapena"
+msgstr "Alderantzikatu hautapena"
 
 #: qml/gallery/GalleryPage.qml:352
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Partekatu hautatutako hedabidea"
+msgstr "Alderantzikatu hautatutako hedabideak"
 
 #: qml/gallery/GalleryPage.qml:561
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgid "No media found"
 msgstr "Ez da hedabiderik aurkitu"
 
@@ -1152,13 +1091,13 @@ msgstr "Ez da hedabiderik aurkitu"
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "Atzera"
 
 #: qml/gallery/NavigatorComponent.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "Aurrera"
 
 #: qml/Main.qml:70
 #, kde-format
@@ -1636,24 +1575,22 @@ msgstr "&Partekatu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "Erakutsi menua"
 
 #: qml/Sidebar.qml:98
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "Egin dohaintza…"
 
 #: qml/Sidebar.qml:104
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "Akatsa jakinarazi…"
 
 #: qml/Sidebar.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Orokorra"
 
