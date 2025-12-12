@@ -717,24 +717,22 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr ""
+msgstr "Oblíbené"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
 #, kde-format
 msgid "Countries"
-msgstr ""
+msgstr "Země"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image"
-#| msgid "Rotate"
+#, kde-format
 msgid "States"
-msgstr "Otočit"
+msgstr "Státy"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "Města"
 
 #: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:200
 #, kde-format
@@ -744,7 +742,7 @@ msgstr "Umístění"
 #: models/galleryopenmodel.cpp:141
 #, kde-format
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -754,28 +752,27 @@ msgstr "Značky"
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "Roky"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "Měsíce"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "Týdnů"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "Dnů"
 
 #: models/gallerytimemodel.cpp:77
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
-msgstr "Podle času"
+msgstr "Times"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -886,9 +883,9 @@ msgstr "Místa"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 položka"
+msgstr[1] "%1 položky"
+msgstr[2] "%1 položek"
 
 #: qml/gallery/GalleryPage.qml:126
 #, kde-format
@@ -903,11 +900,10 @@ msgid "Move to Trash"
 msgstr ""
 
 #: qml/gallery/GalleryPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
-msgstr "Obnovit vybrané položky z koše"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:177
 #, kde-format
@@ -916,11 +912,10 @@ msgid "Restore"
 msgstr ""
 
 #: qml/gallery/GalleryPage.qml:178
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Obnovit vybrané položky z koše"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:197
 #, kde-format
@@ -1053,30 +1048,26 @@ msgid "Descending"
 msgstr ""
 
 #: qml/gallery/GalleryPage.qml:301
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
-msgstr "Složka záložek"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:302
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "Složka záložek"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:330
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Vybrat vše"
 
 #: qml/gallery/GalleryPage.qml:331
 #, fuzzy, kde-format
+#| msgctxt "@action:button"
 #| msgid "Select All"
 msgctxt "@info:tooltip"
 msgid "Select all media"
@@ -1084,24 +1075,23 @@ msgstr "Vybrat vše"
 
 #: qml/gallery/GalleryPage.qml:341
 #, fuzzy, kde-format
+#| msgctxt "@action:button"
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select None"
 msgstr "Vybrat vše"
 
 #: qml/gallery/GalleryPage.qml:342
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Zrušit výběr"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:351
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "Smazat výběr"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:352
 #, kde-format
@@ -1110,22 +1100,21 @@ msgid "Invert the selected media"
 msgstr ""
 
 #: qml/gallery/GalleryPage.qml:561
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgid "No media found"
-msgstr "Nenalezeno žádné médium"
+msgstr ""
 
 #: qml/gallery/NavigatorComponent.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "Zpět"
 
 #: qml/gallery/NavigatorComponent.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "Přeposlat"
 
 #: qml/Main.qml:70
 #, kde-format
@@ -1620,9 +1609,7 @@ msgid "Report Bug…"
 msgstr ""
 
 #: qml/Sidebar.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Obecné"
 
@@ -1631,39 +1618,3 @@ msgstr "Obecné"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Vzdálené"
-
-#~ msgid "1 Image"
-#~ msgid_plural "%1 Images"
-#~ msgstr[0] "1 obrázek"
-#~ msgstr[1] "%1 obrázky"
-#~ msgstr[2] "%1 obrázků"
-
-#~ msgid "Remove Bookmark"
-#~ msgstr "Smazat záložku"
-
-#~ msgid "Go Up"
-#~ msgstr "Přejít nahoru"
-
-#~ msgid "Home"
-#~ msgstr "Domů"
-
-#~ msgid "Root"
-#~ msgstr "Kořenový adresář"
-
-#~ msgid "Restore Selection"
-#~ msgstr "Obnovit výběr"
-
-#~ msgid "Images"
-#~ msgstr "Obrázky"
-
-#~ msgid "Filter by"
-#~ msgstr "Filtrovat podle"
-
-#~ msgid "%1 px"
-#~ msgstr "%1 px"
-
-#~ msgid "Settings"
-#~ msgstr "Nastavení"
-
-#~ msgid "&Copy"
-#~ msgstr "&Kopírovat"
