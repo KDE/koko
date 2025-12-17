@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2023-11-05 01:46+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -1147,40 +1147,40 @@ msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:106
+#: qml/mediaview/InfoDrawerSidebarBase.qml:109
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:133
+#: qml/mediaview/InfoDrawerSidebarBase.qml:136
 #, kde-format
 msgid "Current rating %1"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:224
+#: qml/mediaview/InfoDrawerSidebarBase.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#: qml/mediaview/InfoDrawerSidebarBase.qml:229
 #, kde-format
 msgid "Image description…"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:237
+#: qml/mediaview/InfoDrawerSidebarBase.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:264
+#: qml/mediaview/InfoDrawerSidebarBase.qml:267
 #, kde-format
 msgid "Add Tag"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:301
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"

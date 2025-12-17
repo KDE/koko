@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2021-05-01 23:35-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -1217,45 +1217,45 @@ msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:106
+#: qml/mediaview/InfoDrawerSidebarBase.qml:109
 #, fuzzy, kde-format
 #| msgid "Rating"
 msgctxt "@label"
 msgid "Rating:"
 msgstr "ਰੇਟਿੰਗ"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:133
+#: qml/mediaview/InfoDrawerSidebarBase.qml:136
 #, kde-format
 msgid "Current rating %1"
 msgstr "ਮੌਜੂਦਾ ਰੇਟਿੰਗ %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:224
+#: qml/mediaview/InfoDrawerSidebarBase.qml:227
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@label"
 msgid "Description:"
 msgstr "ਵਰਣਨ"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#: qml/mediaview/InfoDrawerSidebarBase.qml:229
 #, fuzzy, kde-format
 #| msgid "Image description..."
 msgid "Image description…"
 msgstr "ਚਿੱਤਰ ਦਾ ਵਰਣਨ..."
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:237
+#: qml/mediaview/InfoDrawerSidebarBase.qml:240
 #, fuzzy, kde-format
 #| msgid "Tags"
 msgctxt "@label"
 msgid "Tags:"
 msgstr "ਟੈਗ"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:264
+#: qml/mediaview/InfoDrawerSidebarBase.qml:267
 #, fuzzy, kde-format
 #| msgid "Add %1 tag"
 msgid "Add Tag"
 msgstr "%1 ਟੈਗ ਜੋੜੋ"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:301
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"

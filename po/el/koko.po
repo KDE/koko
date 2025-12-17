@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2024-09-19 22:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1229,40 +1229,40 @@ msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:106
+#: qml/mediaview/InfoDrawerSidebarBase.qml:109
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Αξιολόγηση:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:133
+#: qml/mediaview/InfoDrawerSidebarBase.qml:136
 #, kde-format
 msgid "Current rating %1"
 msgstr "Τρέχουσα αξιολόγηση %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:224
+#: qml/mediaview/InfoDrawerSidebarBase.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#: qml/mediaview/InfoDrawerSidebarBase.qml:229
 #, kde-format
 msgid "Image description…"
 msgstr "Περιγραφή εικόνας…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:237
+#: qml/mediaview/InfoDrawerSidebarBase.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Ετικέτες:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:264
+#: qml/mediaview/InfoDrawerSidebarBase.qml:267
 #, kde-format
 msgid "Add Tag"
 msgstr "Προσθήκη ετικέτας"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:301
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-10 00:42+0000\n"
+"POT-Creation-Date: 2025-12-17 00:41+0000\n"
 "PO-Revision-Date: 2025-11-21 22:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1216,40 +1216,40 @@ msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
 msgstr "%1:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:106
+#: qml/mediaview/InfoDrawerSidebarBase.qml:109
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Derecelendirme:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:133
+#: qml/mediaview/InfoDrawerSidebarBase.qml:136
 #, kde-format
 msgid "Current rating %1"
 msgstr "Geçerli derecelendirme %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:224
+#: qml/mediaview/InfoDrawerSidebarBase.qml:227
 #, kde-format
 msgctxt "@label"
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#: qml/mediaview/InfoDrawerSidebarBase.qml:229
 #, kde-format
 msgid "Image description…"
 msgstr "Görsel açıklaması…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:237
+#: qml/mediaview/InfoDrawerSidebarBase.qml:240
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Künyeler:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:264
+#: qml/mediaview/InfoDrawerSidebarBase.qml:267
 #, kde-format
 msgid "Add Tag"
 msgstr "Künye Ekle"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:301
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
