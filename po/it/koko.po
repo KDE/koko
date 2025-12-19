@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:41+0000\n"
+"POT-Creation-Date: 2025-12-19 00:42+0000\n"
 "PO-Revision-Date: 2025-12-01 17:50+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1246,12 +1246,44 @@ msgctxt "@label"
 msgid "Tags:"
 msgstr "Etichette:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:267
+#: qml/mediaview/InfoDrawerSidebarBase.qml:281
 #, kde-format
-msgid "Add Tag"
-msgstr "Aggiungi etichetta"
+msgctxt "@action open tag dialog"
+msgid "Add…"
+msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:304
+#: qml/mediaview/InfoDrawerSidebarBase.qml:297
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Search for tags or write a new tag…"
+msgstr ""
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:298
+#, fuzzy, kde-format
+#| msgid "No Media Found"
+msgctxt "@info:placeholder"
+msgid "No tag found."
+msgstr "Nessun file multimediale trovato"
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#, kde-format
+msgctxt "@title:group"
+msgid "Create New Tag"
+msgstr ""
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#, kde-format
+msgctxt "@title:group"
+msgid "Existing Tags"
+msgstr ""
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:359
+#, kde-format
+msgctxt "@action close tag dialog"
+msgid "Close"
+msgstr ""
+
+#: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
@@ -1412,13 +1444,13 @@ msgstr "Immagine precedente"
 msgid "Next image"
 msgstr "Immagine successiva"
 
-#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:125
+#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:139
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervallo presentazione:"
 
-#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:137
+#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:151
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1433,7 +1465,7 @@ msgid "Loop"
 msgstr "Ciclo"
 
 #: qml/mediaview/MediaViewPage.qml:933 qml/mediaview/MediaViewPage.qml:1034
-#: qml/Settings/GeneralConfigPage.qml:111
+#: qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1548,54 +1580,62 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Giorni"
 
-#: qml/Settings/GeneralConfigPage.qml:20
-#, kde-format
-msgid "Thumbnails size:"
+#: qml/Settings/GeneralConfigPage.qml:23
+#, fuzzy, kde-format
+#| msgid "Thumbnails size:"
+msgctxt "@label:slider"
+msgid "Thumbnail size:"
 msgstr "Dimensione miniature:"
 
-#: qml/Settings/GeneralConfigPage.qml:38
+#: qml/Settings/GeneralConfigPage.qml:44
+#, kde-format
+msgctxt "@info:tooltip, %1 is a size in pixels"
+msgid "%1 px"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
 msgstr "Sfondo della vista dell'immagine"
 
-#: qml/Settings/GeneralConfigPage.qml:43
+#: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Nero"
 
-#: qml/Settings/GeneralConfigPage.qml:53
+#: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Bianco"
 
-#: qml/Settings/GeneralConfigPage.qml:64
+#: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
 msgstr "Predefinito del tema"
 
-#: qml/Settings/GeneralConfigPage.qml:65
+#: qml/Settings/GeneralConfigPage.qml:79
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Usa il colore di sfondo specificato dal tema"
 
-#: qml/Settings/GeneralConfigPage.qml:81
+#: qml/Settings/GeneralConfigPage.qml:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
 msgstr "Mostra uno sfondo a scacchiera dietro alle immagini trasparenti"
 
-#: qml/Settings/GeneralConfigPage.qml:92
+#: qml/Settings/GeneralConfigPage.qml:106
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:103
+#: qml/Settings/GeneralConfigPage.qml:117
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -1660,6 +1700,9 @@ msgstr "Generale"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remota"
+
+#~ msgid "Add Tag"
+#~ msgstr "Aggiungi etichetta"
 
 #~ msgid "1 Image"
 #~ msgid_plural "%1 Images"
