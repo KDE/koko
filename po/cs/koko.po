@@ -1540,11 +1540,10 @@ msgid "Days"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr "Velikost miniatury"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
@@ -1657,6 +1656,3 @@ msgstr "Obecné"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Vzdálené"
-
-#~ msgid "Add Tag"
-#~ msgstr "Přidat značku"
