@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:42+0000\n"
-"PO-Revision-Date: 2025-12-11 10:55+0400\n"
+"PO-Revision-Date: 2025-12-20 11:23+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1206,38 +1206,37 @@ msgstr "الوسوم:"
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "أضف…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:297
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "ابحث عن الوسوم أو اكتب وسمًا جديدًا…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
-#, fuzzy, kde-format
-#| msgid "No media found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "لم يعثر على وسيط"
+msgstr "لم يعثر على وسم"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "أنشئ وسمًا جديدًا"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "الوسوم الموجودة"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "أغلق"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
@@ -1541,17 +1540,16 @@ msgid "Days"
 msgstr "الأيام"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr "حجم المصغّرات:"
+msgstr "حجم المصغّرة:"
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 بكسل"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format

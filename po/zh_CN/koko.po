@@ -1509,7 +1509,6 @@ msgstr "日"
 
 #: qml/Settings/GeneralConfigPage.qml:23
 #, fuzzy, kde-format
-#| msgid "Thumbnails size:"
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "缩略图大小："

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-19 00:42+0000\n"
-"PO-Revision-Date: 2025-12-16 22:21+0900\n"
+"PO-Revision-Date: 2025-12-21 06:48+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1183,38 +1183,37 @@ msgstr "標籤："
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "新增…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:297
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "搜尋標籤或寫入新的標籤…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
-#, fuzzy, kde-format
-#| msgid "No media found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "未找到媒體"
+msgstr "未找到標籤。"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "建立新標籤"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "現有標籤"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
@@ -1513,8 +1512,7 @@ msgid "Days"
 msgstr "日"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "縮圖大小："
@@ -1523,7 +1521,7 @@ msgstr "縮圖大小："
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
