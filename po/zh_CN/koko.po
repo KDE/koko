@@ -1508,10 +1508,10 @@ msgid "Days"
 msgstr "日"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr "缩略图大小："
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
@@ -1624,6 +1624,3 @@ msgstr ""
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "远程位置"
-
-#~ msgid "Add Tag"
-#~ msgstr "添加标签"
