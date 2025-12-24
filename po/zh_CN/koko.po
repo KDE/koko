@@ -622,7 +622,7 @@ msgstr "注释"
 #: filemenu.cpp:117
 #, kde-format
 msgid "Open Containing Folder"
-msgstr "打开包含的文件夹"
+msgstr "打开所在文件夹"
 
 #: filemenu.cpp:131
 #, kde-format
