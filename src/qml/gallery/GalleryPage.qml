@@ -174,7 +174,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             id: restoreTrashAction
             icon.name: "group-delete-symbolic"
-            text: i18nc("@action:button Move the selected media to the trash", "Restore")
+            text: i18nc("@action:button Restore the selected media from the trash", "Restore")
             tooltip: i18nc("@info:tooltip", "Restore the selected media to their former locations")
             enabled: selectionModel.hasSelection && page.isTrashView
             visible: selectionModel.hasSelection && page.isTrashView
