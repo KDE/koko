@@ -138,7 +138,7 @@ QString GalleryOpenModel::titleForPath(const QVariant &path) const
         return fileItem.name();
     }
 
-    return i18nc("@title", "Open");
+    return i18nc("@title", "Opened With");
 }
 
 QVariant GalleryOpenModel::path() const
