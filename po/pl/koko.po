@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-29 00:41+0000\n"
 "PO-Revision-Date: 2024-10-26 12:32+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -783,6 +783,7 @@ msgstr "Położenia"
 
 #: models/galleryopenmodel.cpp:141
 #, kde-format
+msgctxt "@title"
 msgid "Open"
 msgstr ""
 
@@ -960,7 +961,7 @@ msgstr "Przenosi zaznaczone rzeczy do kosza"
 
 #: qml/gallery/GalleryPage.qml:177
 #, kde-format
-msgctxt "@action:button Move the selected media to the trash"
+msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 

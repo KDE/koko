@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-29 00:41+0000\n"
 "PO-Revision-Date: 2025-12-19 09:26+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -746,7 +746,9 @@ msgid "Locations"
 msgstr "מקומות"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open"
+msgctxt "@title"
 msgid "Open"
 msgstr "פתיחה"
 
@@ -913,8 +915,10 @@ msgid "Move the selected media to the trash"
 msgstr "העברת המדיה הנבחרת לאשפה"
 
 #: qml/gallery/GalleryPage.qml:177
-#, kde-format
-msgctxt "@action:button Move the selected media to the trash"
+#, fuzzy, kde-format
+#| msgctxt "@action:button Move the selected media to the trash"
+#| msgid "Restore"
+msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "שחזור"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-29 00:41+0000\n"
 "PO-Revision-Date: 2025-12-03 19:51+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -745,6 +745,7 @@ msgstr "Orte"
 
 #: models/galleryopenmodel.cpp:141
 #, kde-format
+msgctxt "@title"
 msgid "Open"
 msgstr ""
 
@@ -926,7 +927,7 @@ msgstr "Ausgewählte Bilder in den Papierkorb verschieben"
 
 #: qml/gallery/GalleryPage.qml:177
 #, kde-format
-msgctxt "@action:button Move the selected media to the trash"
+msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 

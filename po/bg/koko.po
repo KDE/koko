@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-29 00:41+0000\n"
 "PO-Revision-Date: 2025-09-14 11:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -773,6 +773,7 @@ msgstr "Места"
 
 #: models/galleryopenmodel.cpp:141
 #, kde-format
+msgctxt "@title"
 msgid "Open"
 msgstr ""
 
@@ -962,7 +963,7 @@ msgstr "Преместване на избраните елемента в ко�
 
 #: qml/gallery/GalleryPage.qml:177
 #, kde-format
-msgctxt "@action:button Move the selected media to the trash"
+msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 

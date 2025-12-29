@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-29 00:41+0000\n"
 "PO-Revision-Date: 2025-12-21 06:48+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -738,7 +738,9 @@ msgid "Locations"
 msgstr "位置"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open"
+msgctxt "@title"
 msgid "Open"
 msgstr "開啟"
 
@@ -902,8 +904,10 @@ msgid "Move the selected media to the trash"
 msgstr "將已選媒體移到垃圾桶"
 
 #: qml/gallery/GalleryPage.qml:177
-#, kde-format
-msgctxt "@action:button Move the selected media to the trash"
+#, fuzzy, kde-format
+#| msgctxt "@action:button Move the selected media to the trash"
+#| msgid "Restore"
+msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "還原"
 

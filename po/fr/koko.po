@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:42+0000\n"
+"POT-Creation-Date: 2025-12-29 00:41+0000\n"
 "PO-Revision-Date: 2025-12-20 09:50+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -742,7 +742,9 @@ msgid "Locations"
 msgstr "Emplacements"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Open"
+msgctxt "@title"
 msgid "Open"
 msgstr "Ouvrir"
 
@@ -907,8 +909,10 @@ msgid "Move the selected media to the trash"
 msgstr "Déplacer le média sélectionné vers la corbeille"
 
 #: qml/gallery/GalleryPage.qml:177
-#, kde-format
-msgctxt "@action:button Move the selected media to the trash"
+#, fuzzy, kde-format
+#| msgctxt "@action:button Move the selected media to the trash"
+#| msgid "Restore"
+msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Restaurer"
 
