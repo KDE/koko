@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-29 00:41+0000\n"
-"PO-Revision-Date: 2025-12-23 11:55+0300\n"
+"PO-Revision-Date: 2025-12-29 11:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -741,8 +741,7 @@ msgid "Locations"
 msgstr "Konumlar"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgid "Open"
+#, kde-format
 msgctxt "@title"
 msgid "Open"
 msgstr "Aç"
@@ -908,9 +907,7 @@ msgid "Move the selected media to the trash"
 msgstr "Seçili ortamı çöp kutusuna taşı"
 
 #: qml/gallery/GalleryPage.qml:177
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Restore"
+#, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Geri Yükle"

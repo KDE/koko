@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-29 00:41+0000\n"
-"PO-Revision-Date: 2025-10-13 21:07+0300\n"
+"PO-Revision-Date: 2025-11-13 13:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -734,23 +734,17 @@ msgid "Favorites"
 msgstr "Suosikit"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Maat"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Osavaltiot"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Kaupungit"
 
@@ -771,30 +765,22 @@ msgid "Tags"
 msgstr "Luokitukset"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Vuodet"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Kuukaudet"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Viikot"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Päivät"
 
@@ -1497,27 +1483,24 @@ msgstr "Näytä kaikki säätimet"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Pysäytä"
 
 #: qml/mediaview/MediaViewPage.qml:988
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Aloita"
 
 #: qml/mediaview/MediaViewPage.qml:1007
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Väli:"
 
 #: qml/mediaview/MediaViewPage.qml:1020
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "1 sekunti"
+msgstr "sekuntia"
 
 #: qml/mediaview/TagInput.qml:66
 #, kde-format
@@ -1704,9 +1687,7 @@ msgid "Report Bug…"
 msgstr ""
 
 #: qml/Sidebar.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Perusasetukset"
 
