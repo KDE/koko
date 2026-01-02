@@ -4,14 +4,14 @@
 # This file is distributed under the same license as the koko package.
 #
 # Automatically generated, 2022.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # SPDX-FileCopyrightText: 2025 Jeff Huang <s8321414@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-29 00:41+0000\n"
-"PO-Revision-Date: 2025-12-21 06:48+0900\n"
+"PO-Revision-Date: 2026-01-02 07:35+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -738,8 +738,7 @@ msgid "Locations"
 msgstr "位置"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgid "Open"
+#, kde-format
 msgctxt "@title"
 msgid "Open"
 msgstr "開啟"
@@ -904,9 +903,7 @@ msgid "Move the selected media to the trash"
 msgstr "將已選媒體移到垃圾桶"
 
 #: qml/gallery/GalleryPage.qml:177
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Restore"
+#, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "還原"
