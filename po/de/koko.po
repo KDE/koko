@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:39+0000\n"
-"PO-Revision-Date: 2025-12-03 19:51+0100\n"
+"PO-Revision-Date: 2025-12-28 14:29+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -138,13 +138,13 @@ msgstr "Position:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "X-Position des Zuschnitts"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Y-Position des Zuschnitts"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
 #, kde-format
@@ -156,13 +156,13 @@ msgstr "Größe:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Breite des Zuschnitts"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Höhe des Zuschnitts"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
@@ -818,7 +818,7 @@ msgstr "Lesezeichen entfernen"
 #, kde-format
 msgctxt "@action:button Bookmarks the current folder"
 msgid "Bookmark Folder"
-msgstr "Lesezeichenordner"
+msgstr "Lesezeichen für Ordner erstellen"
 
 #: qml/AlbumView.qml:296
 #, kde-format
