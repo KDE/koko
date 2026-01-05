@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025, 2026 Paolo Zamponi <feus73@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-29 00:41+0000\n"
-"PO-Revision-Date: 2025-12-17 15:41+0100\n"
+"PO-Revision-Date: 2026-01-03 18:02+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -742,8 +742,7 @@ msgid "Locations"
 msgstr "Posizioni"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgid "Open"
+#, kde-format
 msgctxt "@title"
 msgid "Open"
 msgstr "Apri"
@@ -910,9 +909,7 @@ msgid "Move the selected media to the trash"
 msgstr "Cestina i file multimediali selezionati"
 
 #: qml/gallery/GalleryPage.qml:177
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Restore"
+#, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Ripristina"
@@ -1195,38 +1192,37 @@ msgstr "Etichette:"
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "Aggiungi…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:297
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "Cerca etichette o scrivine una nuova..."
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "Nessun file multimediale trovato"
+msgstr "Nessuna etichetta trovata."
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "Crea nuova etichetta"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "Etichette esistenti"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "Chiudi"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
@@ -1526,17 +1522,16 @@ msgid "Days"
 msgstr "Giorni"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr "Dimensione miniature:"
+msgstr "Dimensione delle miniature:"
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1px"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
