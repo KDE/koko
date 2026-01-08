@@ -87,16 +87,36 @@ ZoomArea {
         }
     }
 
-    onIsCurrentChanged: {
-        if (Koko.Config.rememberZoom && Koko.State.zoom * sourceWidth > 1 && Koko.State.zoom * sourceHeight > 1) {
-            const size = multiplyContentSize(Koko.State.zoom, implicitContentWidth, implicitContentHeight)
-            root.contentWidth = size.width
-            root.contentHeight = size.height
+    // TODO: Find a better way to ensure that content size is set to a value
+    // without making a binding only when loaded and is the current item.
+    // If you set it too early, the zoom will be reset because the delegate may
+    // not have the right implicit size yet. An delegate is also not always the
+    // current item when loaded.
+    property bool isZoomSet: false
+    function resetZoomContentSize() {
+        if (loaded && isCurrent && !isZoomSet) {
+            if (Koko.Config.rememberZoom && Koko.State.zoom * sourceWidth > 1 && Koko.State.zoom * sourceHeight > 1) {
+                const size = multiplyContentSize(Koko.State.zoom, implicitContentWidth, implicitContentHeight)
+                root.contentWidth = size.width
+                root.contentHeight = size.height
+                isZoomSet = true
+            } else {
+                root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
+                root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
+            }
         } else {
-            root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
-            root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
+            isZoomSet = false
         }
-        Koko.State.zoom = Qt.binding(() => root.zoomFactor)
+    }
+    onIsCurrentChanged: resetZoomContentSize()
+    onLoadedChanged: resetZoomContentSize()
+
+    Binding {
+        target: Koko.State
+        property: "zoom"
+        value: root.zoomFactor
+        when: root.loaded && root.isCurrent && root.zoomFactor * root.sourceWidth > 1 && root.zoomFactor * root.sourceHeight > 1
+        restoreMode: Binding.RestoreNone
     }
 
     Loader {
