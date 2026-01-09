@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:41+0000\n"
-"PO-Revision-Date: 2025-12-20 11:23+0400\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
+"PO-Revision-Date: 2026-01-08 11:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -751,8 +751,7 @@ msgid "Locations"
 msgstr "المواقع"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgid "Open"
+#, kde-format
 msgctxt "@title"
 msgid "Open"
 msgstr "افتح"
@@ -922,12 +921,10 @@ msgid "Move the selected media to the trash"
 msgstr "انقل العنصر المحدد إلى المهملات"
 
 #: qml/gallery/GalleryPage.qml:177
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Restore"
+#, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr "استعد"
+msgstr "استعِد"
 
 #: qml/gallery/GalleryPage.qml:178
 #, kde-format
@@ -1403,13 +1400,13 @@ msgstr "الصّورة السّابقة"
 msgid "Next image"
 msgstr "الصّورة التّالية"
 
-#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:139
+#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "فترة عرض الشرائح:"
 
-#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:151
+#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1428,7 +1425,7 @@ msgid "Loop"
 msgstr "حلقة"
 
 #: qml/mediaview/MediaViewPage.qml:933 qml/mediaview/MediaViewPage.qml:1034
-#: qml/Settings/GeneralConfigPage.qml:125
+#: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1598,6 +1595,12 @@ msgid "Enlarge images that are smaller than the viewport"
 msgstr "كبِّر الصور الأصغر من نافذة العرض"
 
 #: qml/Settings/GeneralConfigPage.qml:117
+#, kde-format
+msgctxt "@option:check"
+msgid "Remember zoom level when switching between images"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"

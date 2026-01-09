@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-29 00:41+0000\n"
+"POT-Creation-Date: 2026-01-09 00:41+0000\n"
 "PO-Revision-Date: 2020-06-13 17:20-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1365,13 +1365,13 @@ msgstr ""
 msgid "Next image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:139
+#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:151
+#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1385,7 +1385,7 @@ msgid "Loop"
 msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:933 qml/mediaview/MediaViewPage.qml:1034
-#: qml/Settings/GeneralConfigPage.qml:125
+#: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1555,6 +1555,12 @@ msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:117
+#, kde-format
+msgctxt "@option:check"
+msgid "Remember zoom level when switching between images"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
