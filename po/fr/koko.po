@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-09 10:31+0100\n"
+"PO-Revision-Date: 2026-01-10 20:02+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "Lettre américaine (Portrait)"
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr "Largeur : Hauteur"
+msgstr "Largeur : hauteur"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
@@ -408,8 +408,8 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
-"L'image <filename>%1</filename>  a été modifiée. Voulez -vous enregistrer "
-"vos modifications ou les annuler ?"
+"L'image <filename>%1</filename> a été modifiée. Voulez -vous enregistrer vos "
+"modifications ou les annuler ?"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
