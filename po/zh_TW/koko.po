@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-02 07:35+0900\n"
+"PO-Revision-Date: 2026-01-13 01:35+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -407,7 +407,7 @@ msgctxt "@label"
 msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
-msgstr "影像 <filename>%1</filename>已被更改。您想要儲存還是捨棄這些變更？"
+msgstr "影像 <filename>%1</filename> 已被更改。您想要儲存還是捨棄這些變更？"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
@@ -1570,7 +1570,7 @@ msgstr "將比檢視埠小的影像放大"
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "在影像間切換時記住縮放等級"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
