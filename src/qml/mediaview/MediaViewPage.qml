@@ -666,9 +666,20 @@ Kirigami.Page {
                                 }
                                 // Try parseFloat if already using US locale.
                                 // Maybe the user wrote the number in a simpler way?
+
+                                // Search for the locale's group separator and group separators that aren't sometimes decimal points.
+                                // Escape periods so the group separator regex works correctly with periods.
+                                const groupRegex = RegExp(`(${locale.groupSeparator.replace(/\./g, "\\.")}|[\s'’٬])+`, "g")
+                                // Search for the locale's decimal point and common non-period decimal points.
+                                const decimalRegex = RegExp(`(${locale.decimalPoint.replace(/\./g, "\\.")}|[,٫])+`)
+                                // Remove group separators and replace decimal points with period to make it work better with parseFloat.
+                                filtered = string.replace(groupRegex, "").replace(decimalRegex, ".")
                                 return parseFloat(filtered)
                             } catch (e2) {
                                 // Try parseFloat if US fails.
+                                const groupRegex = RegExp(`(${locale.groupSeparator.replace(/\./g, "\\.")}|[\s'’٬])+`, "g")
+                                const decimalRegex = RegExp(`(${locale.decimalPoint.replace(/\./g, "\\.")}|[,٫])+`)
+                                filtered = string.replace(groupRegex, "").replace(decimalRegex, ".")
                                 return parseFloat(filtered)
                             }
                         }
