@@ -650,7 +650,7 @@ Kirigami.Page {
                         // Remove mnemonics and percent signs.
                         // We don't remove all non-number characters because attempting
                         // to do so could break locale specific number parsing.
-                        const filtered = string.replace(RegExp(`&|%|${locale.percent}`, "gi"), "").trim()
+                        let filtered = string.replace(RegExp(`${locale.percent}|[&%٪％]`, "gi"), "").trim()
                         // Number.fromLocaleString may throw an exception if the
                         // string isn't perfectly formatted for the locale.
                         try {
