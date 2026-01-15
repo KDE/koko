@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-03 18:02+0100\n"
+"PO-Revision-Date: 2026-01-10 15:42+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1579,7 +1579,7 @@ msgstr "Ingrandisci le immagini più piccole dell'area di visualizzazione"
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Ricorda il livello d'ingrandimento passando da un'immagine all'altra"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
