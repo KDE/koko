@@ -740,11 +740,10 @@ msgid "Locations"
 msgstr "Umístění"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgid "Open"
+#, kde-format
 msgctxt "@title"
 msgid "Open"
-msgstr "Otevřít"
+msgstr ""
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
