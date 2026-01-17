@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-09 00:41+0000\n"
-"PO-Revision-Date: 2026-01-10 00:16+0200\n"
+"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"PO-Revision-Date: 2026-01-16 14:05+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -33,7 +33,7 @@ msgstr "<>"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "Brūkštelėjimas:"
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -43,102 +43,102 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1piks."
+msgstr[1] "%1piks."
+msgstr[2] "%1piks."
+msgstr[3] "%1piks."
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "Brūkštelėjimo plotis"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Brūkštelėjimo spalva"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "Užpildas:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "Užpildo spalva"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "Stiprumas:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "Efekto stiprumas."
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "Šriftas:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%2 %3 %1tšk."
+msgstr[1] "%2 %3 %1tšk."
+msgstr[2] "%2 %3 %1tšk."
+msgstr[3] "%2 %3 %1tšk."
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%2 %1tšk."
+msgstr[1] "%2 %1tšk."
+msgstr[2] "%2 %1tšk."
+msgstr[3] "%2 %1tšk."
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "Šrifto spalva"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "Skaičius:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "Skaičių anotacijų skaičius"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "Šešėlis"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
 #, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
-msgstr ""
+msgstr "Pozicija:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:502
 #, kde-format
@@ -156,7 +156,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
-msgstr ""
+msgstr "Dydis:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:541
 #, kde-format
@@ -569,7 +569,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -587,25 +587,25 @@ msgstr "Failo dydis"
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr ""
+msgstr "Sukūrimo data"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Modifikavimo data"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Prieigos data"
 
 #: exiv2extractor.cpp:529
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr ""
+msgstr "Kelias"
 
 #: exiv2extractor.cpp:530
 #, kde-format
@@ -635,19 +635,19 @@ msgstr "Atverti vidinį aplanką"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "&Atverti naudojant…"
 
 #: filemenuactions.cpp:190
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
-msgstr ""
+msgstr "Kopijuoti vietą"
 
 #: main.cpp:63
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr ""
+msgstr "<application>Nuotraukos</application>"
 
 #: main.cpp:65
 #, kde-kuit-format
@@ -659,54 +659,54 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr ""
+msgstr "(c) 2013–%1 KDE talkininkai"
 
 #: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
-msgstr ""
+msgstr "Vishesh Handa"
 
 #: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "Plėtotojas"
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr ""
+msgstr "Atul Sharma"
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
-msgstr ""
+msgstr "Marco Martin"
 
 #: main.cpp:81
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
-msgstr ""
+msgstr "Nicolas Fella"
 
 #: main.cpp:83
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:94
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "Atstatyti duomenų bazę"
 
 #: main.cpp:95
 #, kde-format
@@ -743,7 +743,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Open"
-msgstr ""
+msgstr "Atverti"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1242,156 +1242,236 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:97
+#: qml/mediaview/MediaViewPage.qml:98
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:99
+#: qml/mediaview/MediaViewPage.qml:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:99
+#: qml/mediaview/MediaViewPage.qml:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:111
+#: qml/mediaview/MediaViewPage.qml:112
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:113
+#: qml/mediaview/MediaViewPage.qml:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:130
+#: qml/mediaview/MediaViewPage.qml:131
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:137
+#: qml/mediaview/MediaViewPage.qml:138
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:139
+#: qml/mediaview/MediaViewPage.qml:140
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:154
+#: qml/mediaview/MediaViewPage.qml:155
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:161
+#: qml/mediaview/MediaViewPage.qml:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:163
+#: qml/mediaview/MediaViewPage.qml:164
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr ""
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/mediaview/MediaViewPage.qml:189
+#: qml/mediaview/MediaViewPage.qml:190
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:191
+#: qml/mediaview/MediaViewPage.qml:192
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:199
+#: qml/mediaview/MediaViewPage.qml:200
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:200
+#: qml/mediaview/MediaViewPage.qml:201
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:201
+#: qml/mediaview/MediaViewPage.qml:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:211
+#: qml/mediaview/MediaViewPage.qml:212
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:212
+#: qml/mediaview/MediaViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:213
+#: qml/mediaview/MediaViewPage.qml:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:230
+#: qml/mediaview/MediaViewPage.qml:231
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:232
+#: qml/mediaview/MediaViewPage.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:232
+#: qml/mediaview/MediaViewPage.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:498
+#: qml/mediaview/MediaViewPage.qml:499
 #, kde-format
 msgid "Previous image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:531
+#: qml/mediaview/MediaViewPage.qml:532
 #, kde-format
 msgid "Next image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:852 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:690
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "25%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:691
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "50%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:692
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox aspect ratio"
+#| msgid "7:5"
+msgctxt "@item:inlistbox zoom percent"
+msgid "75%"
+msgstr "7:5"
+
+#: qml/mediaview/MediaViewPage.qml:693
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "100%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:694
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "150%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:695
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "200%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:696
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "300%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:697
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "400%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:698
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "600%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:699
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "800%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:748
+#, kde-format
+msgctxt "@item:inlistbox zoom percent"
+msgid "%1%"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:761
+#, kde-format
+msgctxt "@action"
+msgid "Zoom Out"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:777
+#, kde-format
+msgctxt "@action"
+msgid "Zoom In"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:1029 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Skaidrių rodymo intervalas:"
 
-#: qml/mediaview/MediaViewPage.qml:869 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1046 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1401,48 +1481,48 @@ msgstr[1] "%1 sekundės"
 msgstr[2] "%1 sekundžių"
 msgstr[3] "%1 sekundė"
 
-#: qml/mediaview/MediaViewPage.qml:924 qml/mediaview/MediaViewPage.qml:1025
+#: qml/mediaview/MediaViewPage.qml:1101 qml/mediaview/MediaViewPage.qml:1202
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Rodyti ciklu"
 
-#: qml/mediaview/MediaViewPage.qml:933 qml/mediaview/MediaViewPage.qml:1034
+#: qml/mediaview/MediaViewPage.qml:1110 qml/mediaview/MediaViewPage.qml:1211
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Atsitiktinė tvarka"
 
-#: qml/mediaview/MediaViewPage.qml:945
+#: qml/mediaview/MediaViewPage.qml:1122
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Stabdyti skaidrių rodymą"
 
-#: qml/mediaview/MediaViewPage.qml:959
+#: qml/mediaview/MediaViewPage.qml:1136
 #, kde-format
 msgid "Show All Controls"
 msgstr "Rodyti visus valdiklius"
 
-#: qml/mediaview/MediaViewPage.qml:988
+#: qml/mediaview/MediaViewPage.qml:1165
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Stabdyti"
 
-#: qml/mediaview/MediaViewPage.qml:988
+#: qml/mediaview/MediaViewPage.qml:1165
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Pradėti"
 
-#: qml/mediaview/MediaViewPage.qml:1007
+#: qml/mediaview/MediaViewPage.qml:1184
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Intervalas:"
 
-#: qml/mediaview/MediaViewPage.qml:1020
+#: qml/mediaview/MediaViewPage.qml:1197
 #, kde-format
 msgid "seconds"
 msgstr "sek."
