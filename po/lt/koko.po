@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:39+0000\n"
-"PO-Revision-Date: 2026-01-10 00:16+0200\n"
+"PO-Revision-Date: 2026-01-16 14:08+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -33,7 +33,7 @@ msgstr "<>"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "Brūkštelėjimas:"
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -43,102 +43,102 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%1piks."
+msgstr[1] "%1piks."
+msgstr[2] "%1piks."
+msgstr[3] "%1piks."
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "Brūkštelėjimo plotis"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Brūkštelėjimo spalva"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "Užpildas:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "Užpildo spalva"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "Stiprumas:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "Efekto stiprumas."
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "Šriftas:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%2 %3 %1tšk."
+msgstr[1] "%2 %3 %1tšk."
+msgstr[2] "%2 %3 %1tšk."
+msgstr[3] "%2 %3 %1tšk."
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%2 %1tšk."
+msgstr[1] "%2 %1tšk."
+msgstr[2] "%2 %1tšk."
+msgstr[3] "%2 %1tšk."
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "Šrifto spalva"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "Skaičius:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "Skaičių anotacijų skaičius"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "Šešėlis"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
 #, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
-msgstr ""
+msgstr "Pozicija:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:502
 #, kde-format
@@ -156,7 +156,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
-msgstr ""
+msgstr "Dydis:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:541
 #, kde-format
@@ -324,7 +324,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr ""
+msgstr "Laisvas piešimas"
 
 #: editor/AnnotationsToolBarContents.qml:128
 #, kde-format
@@ -569,7 +569,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:521
 #, kde-format
@@ -587,19 +587,19 @@ msgstr "Failo dydis"
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr ""
+msgstr "Sukūrimo data"
 
 #: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Modifikavimo data"
 
 #: exiv2extractor.cpp:528
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Prieigos data"
 
 #: exiv2extractor.cpp:529
 #, kde-format
@@ -645,7 +645,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr ""
+msgstr "<application>Nuotraukos</application>"
 
 #: main.cpp:65
 #, kde-kuit-format
@@ -657,54 +657,54 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr ""
+msgstr "(c) 2013–%1 KDE talkininkai"
 
 #: main.cpp:75
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
-msgstr ""
+msgstr "Vishesh Handa"
 
 #: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr ""
+msgstr "Plėtotojas"
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr ""
+msgstr "Atul Sharma"
 
 #: main.cpp:79
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
-msgstr ""
+msgstr "Marco Martin"
 
 #: main.cpp:81
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
-msgstr ""
+msgstr "Nicolas Fella"
 
 #: main.cpp:83
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr ""
+msgstr "Carl Schwan"
 
 #: main.cpp:89
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr ""
+msgstr "Mikel Johnson"
 
 #: main.cpp:94
 #, kde-format
 msgid "Reset the database"
-msgstr ""
+msgstr "Atstatyti duomenų bazę"
 
 #: main.cpp:95
 #, kde-format
