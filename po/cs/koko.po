@@ -1473,13 +1473,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Oddálit"
 
 #: qml/mediaview/MediaViewPage.qml:777
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Přiblížit"
 
 #: qml/mediaview/MediaViewPage.qml:1029 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
