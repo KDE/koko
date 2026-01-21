@@ -504,7 +504,7 @@ Kirigami.ScrollablePage {
             selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))
 
             Controls.ToolTip.text: name
-            Controls.ToolTip.visible: hovered && itemType === Koko.AbstractGalleryModel.Media
+            Controls.ToolTip.visible: hovered && name.length !== 0 && (itemType === Koko.AbstractGalleryModel.Media || delegate.nameTruncated)
             Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 
             onPressAndHold: selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.Toggle)

@@ -26,6 +26,8 @@ Controls.ItemDelegate {
 
     property alias thumbnailPriority: image.priority
 
+    readonly property bool nameTruncated: textLabel.truncated
+
     leftPadding: Kirigami.Units.gridUnit
     rightPadding: Kirigami.Units.gridUnit
     topPadding: Kirigami.Units.gridUnit
