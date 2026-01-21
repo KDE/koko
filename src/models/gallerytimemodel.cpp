@@ -116,16 +116,16 @@ QVariant GalleryTimeModel::data(const QModelIndex &index, int role) const
     case ParentCollectionMode:
     case CollectionMode: {
         ImageStorage::TimeGroup timeGroup = timeGroupFromPath(m_path);
-        ImageStorage::Collection collection = m_collections.at(index.row());
+        std::optional<ImageStorage::Collection> collection = m_collections.at(index.row());
 
         const bool isParentCollection = (m_mode == ParentCollectionMode);
         if (isParentCollection) {
             // We want to show data for the first collection for that group
-            timeGroup = timeGroupFromKey(collection.key);
+            timeGroup = timeGroupFromKey(collection.value().key);
 
             auto collections = ImageStorage::instance()->timeTypes(timeGroup);
             if (collections.isEmpty()) {
-                return {};
+                collection = std::nullopt;
             } else {
                 collection = collections.first();
             }
@@ -134,18 +134,21 @@ QVariant GalleryTimeModel::data(const QModelIndex &index, int role) const
         switch (role) {
         case Qt::DisplayRole:
             // Return a sensible value for sorting
-            return isParentCollection ? QVariant((int)timeGroup) : QVariant(ImageStorage::instance()->dateForCollection(collection, timeGroup));
+            return isParentCollection ? QVariant((int)timeGroup) : QVariant(ImageStorage::instance()->dateForCollection(collection.value(), timeGroup));
         case NameRole:
             return m_collections.at(index.row()).display;
         case FileItemRole:
-            return ImageStorage::instance()->previewImageForTime(collection, timeGroup);
+            return collection.has_value() ? ImageStorage::instance()->previewImageForTime(collection.value(), timeGroup) : KFileItem();
         case ItemTypeRole:
             return ItemType::Collection;
         case UrlRole:
-            return ImageStorage::instance()->previewImageForTime(collection, timeGroup).url();
+            return collection.has_value() ? ImageStorage::instance()->previewImageForTime(collection.value(), timeGroup).url() : QUrl();
         case FileCountRole:
-            return isParentCollection ? ImageStorage::instance()->timeTypes(timeGroup).size()
-                                      : ImageStorage::instance()->imagesForTime(collection.key, timeGroup).size();
+            if (isParentCollection) {
+                return ImageStorage::instance()->timeTypes(timeGroup).size();
+            } else {
+                return collection.has_value() ? ImageStorage::instance()->imagesForTime(collection.value().key, timeGroup).size() : 0;
+            }
         default:
             return {};
         }

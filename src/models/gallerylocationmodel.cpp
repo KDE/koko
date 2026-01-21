@@ -112,16 +112,17 @@ QVariant GalleryLocationModel::data(const QModelIndex &index, int role) const
     case ParentCollectionMode:
     case CollectionMode: {
         ImageStorage::LocationGroup locationGroup = locationGroupFromPath(m_path);
-        ImageStorage::Collection collection = m_collections.at(index.row());
+        std::optional<ImageStorage::Collection> collection = m_collections.at(index.row());
 
         const bool isParentCollection = (m_mode == ParentCollectionMode);
         if (isParentCollection) {
-            // We want to show data for the first collection for that group
-            locationGroup = locationGroupFromKey(collection.key);
+            // We want to show data for the first collection for that group, and if
+            // that collection is empty (nullopt) then we should show it as empty
+            locationGroup = locationGroupFromKey(collection.value().key);
 
             auto collections = ImageStorage::instance()->locations(locationGroup);
             if (collections.isEmpty()) {
-                return {};
+                collection = std::nullopt;
             } else {
                 collection = collections.first();
             }
@@ -130,18 +131,21 @@ QVariant GalleryLocationModel::data(const QModelIndex &index, int role) const
         switch (role) {
         case Qt::DisplayRole:
             // Return a sensible value for sorting
-            return isParentCollection ? QVariant((int)locationGroup) : collection.display;
+            return isParentCollection ? QVariant((int)locationGroup) : collection.value().display;
         case NameRole:
             return m_collections.at(index.row()).display;
         case FileItemRole:
-            return ImageStorage::instance()->previewImageForLocation(collection, locationGroup);
+            return collection.has_value() ? ImageStorage::instance()->previewImageForLocation(collection.value(), locationGroup) : KFileItem();
         case ItemTypeRole:
             return ItemType::Collection;
         case UrlRole:
-            return ImageStorage::instance()->previewImageForLocation(collection, locationGroup).url();
+            return collection.has_value() ? ImageStorage::instance()->previewImageForLocation(collection.value(), locationGroup).url() : QUrl();
         case FileCountRole:
-            return isParentCollection ? ImageStorage::instance()->locations(locationGroup).size()
-                                      : ImageStorage::instance()->imagesForLocation(collection.key, locationGroup).size();
+            if (isParentCollection) {
+                return ImageStorage::instance()->locations(locationGroup).size();
+            } else {
+                return collection.has_value() ? ImageStorage::instance()->imagesForLocation(collection.value().key, locationGroup).size() : 0;
+            }
         default:
             return {};
         }
