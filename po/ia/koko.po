@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-17 00:41+0000\n"
-"PO-Revision-Date: 2026-01-20 16:17+0100\n"
+"PO-Revision-Date: 2026-01-22 11:51+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -137,13 +137,13 @@ msgstr "Position:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Talia position de area X"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Talia position de area Y"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
 #, kde-format
@@ -155,13 +155,13 @@ msgstr "Dimension:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Talia largessa de area"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Talia altessa de area"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "US Letter (Orientation Vertical)"
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Largessa:Altessa"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
@@ -408,6 +408,8 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
+"Le imagine <filename>%1</filename> ha essite modificate. Tu "
+"volelsalveguardar tu modificationes o annullar los?"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
@@ -1194,7 +1196,7 @@ msgstr "Adde…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "Cerca etiquettas o scrive un nove etiquetta..."
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
 #, kde-format
@@ -1635,25 +1637,25 @@ msgstr "Thema predefinite "
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "Usa le color de fundo specificate per le thema"
 
 #: qml/Settings/GeneralConfigPage.qml:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Monstra un fundo de chacchiero detra imagines transparente"
 
 #: qml/Settings/GeneralConfigPage.qml:106
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Aggrandi imagines que es plus parve de fenestra de vista"
 
 #: qml/Settings/GeneralConfigPage.qml:117
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Memora nivello de zoom quando commuta inter imagines"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
