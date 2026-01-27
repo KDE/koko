@@ -162,6 +162,7 @@ Kirigami.ScrollablePage {
             tooltip: i18nc("@info:tooltip", "Move the selected media to the trash")
             enabled: selectionModel.hasSelection && !page.isTrashView
             visible: selectionModel.hasSelection && !page.isTrashView
+            shortcut: StandardKey.Delete
             onTriggered: {
                 let urls = [];
                 selectionModel.selectedIndexes.forEach(index => {
