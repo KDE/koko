@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-28 00:42+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -749,19 +749,19 @@ msgctxt "@title"
 msgid "Favorites"
 msgstr "Obľúbené"
 
-#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
+#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgid "Countries"
 msgstr "Krajiny"
 
-#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
+#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
 #, fuzzy, kde-format
 #| msgid "States"
 msgid "States"
 msgstr "Štáty"
 
-#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
+#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
 #, kde-format
 msgid "Cities"
 msgstr ""
@@ -782,25 +782,25 @@ msgstr ""
 msgid "Tags"
 msgstr "Značky"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
+#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:188
 #, fuzzy, kde-format
 #| msgid "Years"
 msgid "Years"
 msgstr "Roky"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
+#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:189
 #, fuzzy, kde-format
 #| msgid "Months"
 msgid "Months"
 msgstr "Mesiace"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
+#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:190
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgid "Weeks"
 msgstr "Týždne"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
+#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:191
 #, fuzzy, kde-format
 #| msgid "Days"
 msgid "Days"
@@ -921,7 +921,7 @@ msgstr "Obľúbené"
 msgid "Places"
 msgstr "Miesta"
 
-#: qml/gallery/GalleryDelegate.qml:130
+#: qml/gallery/GalleryDelegate.qml:132
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -949,195 +949,195 @@ msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
 msgstr "Presunúť vybraté položky od koša"
 
-#: qml/gallery/GalleryPage.qml:177
+#: qml/gallery/GalleryPage.qml:178
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:179
 #, fuzzy, kde-format
 #| msgid "Move selected items to trash"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Presunúť vybraté položky od koša"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, fuzzy, kde-format
 #| msgid "Sort by"
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Triediť podľa"
 
-#: qml/gallery/GalleryPage.qml:202
+#: qml/gallery/GalleryPage.qml:203
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:209
+#: qml/gallery/GalleryPage.qml:210
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:217
+#: qml/gallery/GalleryPage.qml:218
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:224
+#: qml/gallery/GalleryPage.qml:225
 #, fuzzy, kde-format
 #| msgid "Created"
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Vytvorené"
 
-#: qml/gallery/GalleryPage.qml:225
+#: qml/gallery/GalleryPage.qml:226
 #, fuzzy, kde-format
 #| msgid "Created"
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Vytvorené"
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:233
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:233
+#: qml/gallery/GalleryPage.qml:234
 #, fuzzy, kde-format
 #| msgid "Created"
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Vytvorené"
 
-#: qml/gallery/GalleryPage.qml:246
+#: qml/gallery/GalleryPage.qml:247
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:248
+#: qml/gallery/GalleryPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:250
+#: qml/gallery/GalleryPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:254
+#: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:257
+#: qml/gallery/GalleryPage.qml:258
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:272
+#: qml/gallery/GalleryPage.qml:273
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:276
+#: qml/gallery/GalleryPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:279
+#: qml/gallery/GalleryPage.qml:280
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:301
+#: qml/gallery/GalleryPage.qml:302
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Podľa priečinku"
 
-#: qml/gallery/GalleryPage.qml:302
+#: qml/gallery/GalleryPage.qml:303
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Podľa priečinku"
 
-#: qml/gallery/GalleryPage.qml:330
+#: qml/gallery/GalleryPage.qml:331
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: qml/gallery/GalleryPage.qml:331
+#: qml/gallery/GalleryPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Vybrať všetko"
 
-#: qml/gallery/GalleryPage.qml:341
+#: qml/gallery/GalleryPage.qml:342
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select None"
 msgstr "Vybrať všetko"
 
-#: qml/gallery/GalleryPage.qml:342
+#: qml/gallery/GalleryPage.qml:343
 #, fuzzy, kde-format
 #| msgid "Deselect All"
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Zrušiť výber"
 
-#: qml/gallery/GalleryPage.qml:351
+#: qml/gallery/GalleryPage.qml:352
 #, fuzzy, kde-format
 #| msgid "Delete Selection"
 msgctxt "@action:button"
 msgid "Invert Selection"
 msgstr "Odstrániť sekciu"
 
-#: qml/gallery/GalleryPage.qml:352
+#: qml/gallery/GalleryPage.qml:353
 #, fuzzy, kde-format
 #| msgid "Share the selected media"
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Zdielať vybraté médiá"
 
-#: qml/gallery/GalleryPage.qml:561
+#: qml/gallery/GalleryPage.qml:562
 #, fuzzy, kde-format
 #| msgid "No Images Found"
 msgid "No media found"

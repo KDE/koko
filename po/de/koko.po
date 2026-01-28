@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-28 00:42+0000\n"
 "PO-Revision-Date: 2025-12-28 14:29+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -722,17 +722,17 @@ msgctxt "@title"
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
+#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
 msgid "Countries"
 msgstr "Länder"
 
-#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
+#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
 #, kde-format
 msgid "States"
 msgstr "Staaten"
 
-#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
+#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
 #, kde-format
 msgid "Cities"
 msgstr "Städte"
@@ -753,22 +753,22 @@ msgstr ""
 msgid "Tags"
 msgstr "Stichwörter"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
+#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:188
 #, kde-format
 msgid "Years"
 msgstr "Jahre"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
+#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:189
 #, kde-format
 msgid "Months"
 msgstr "Monate"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
+#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:190
 #, kde-format
 msgid "Weeks"
 msgstr "Wochen"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
+#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:191
 #, kde-format
 msgid "Days"
 msgstr "Tage"
@@ -883,7 +883,7 @@ msgstr "Favoriten"
 msgid "Places"
 msgstr "Orte"
 
-#: qml/gallery/GalleryDelegate.qml:130
+#: qml/gallery/GalleryDelegate.qml:132
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -908,181 +908,181 @@ msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
 msgstr "Ausgewählte Medien in den Papierkorb verschieben"
 
-#: qml/gallery/GalleryPage.qml:177
+#: qml/gallery/GalleryPage.qml:178
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Ausgewählte Medien an ihren ursprünglichen Ort wiederherstellen"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Sortieren: %1"
 
-#: qml/gallery/GalleryPage.qml:202
+#: qml/gallery/GalleryPage.qml:203
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Name"
 
-#: qml/gallery/GalleryPage.qml:209
+#: qml/gallery/GalleryPage.qml:210
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Größe"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Geändert"
 
-#: qml/gallery/GalleryPage.qml:217
+#: qml/gallery/GalleryPage.qml:218
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Änderungsdatum"
 
-#: qml/gallery/GalleryPage.qml:224
+#: qml/gallery/GalleryPage.qml:225
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Erstellt"
 
-#: qml/gallery/GalleryPage.qml:225
+#: qml/gallery/GalleryPage.qml:226
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Erstelldatum"
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:233
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Zugegriffen"
 
-#: qml/gallery/GalleryPage.qml:233
+#: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Zugriffsdatum"
 
-#: qml/gallery/GalleryPage.qml:246
+#: qml/gallery/GalleryPage.qml:247
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Aufsteigend"
 
-#: qml/gallery/GalleryPage.qml:248
+#: qml/gallery/GalleryPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "A–Z"
 
-#: qml/gallery/GalleryPage.qml:250
+#: qml/gallery/GalleryPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Kleinste zuerst"
 
-#: qml/gallery/GalleryPage.qml:254
+#: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Älteste zuerst"
 
-#: qml/gallery/GalleryPage.qml:257
+#: qml/gallery/GalleryPage.qml:258
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Aufsteigend"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Absteigend"
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Z–A"
 
-#: qml/gallery/GalleryPage.qml:272
+#: qml/gallery/GalleryPage.qml:273
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Größte zuerst"
 
-#: qml/gallery/GalleryPage.qml:276
+#: qml/gallery/GalleryPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Neueste zuerst"
 
-#: qml/gallery/GalleryPage.qml:279
+#: qml/gallery/GalleryPage.qml:280
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Absteigend"
 
-#: qml/gallery/GalleryPage.qml:301
+#: qml/gallery/GalleryPage.qml:302
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Lesezeichen für Ordner erstellen"
 
-#: qml/gallery/GalleryPage.qml:302
+#: qml/gallery/GalleryPage.qml:303
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Ein Lesezeichen für den aktuellen Ordner erstellen"
 
-#: qml/gallery/GalleryPage.qml:330
+#: qml/gallery/GalleryPage.qml:331
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Alles auswählen"
 
-#: qml/gallery/GalleryPage.qml:331
+#: qml/gallery/GalleryPage.qml:332
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Alle Medien auswählen"
 
-#: qml/gallery/GalleryPage.qml:341
+#: qml/gallery/GalleryPage.qml:342
 #, kde-format
 msgctxt "@action:button"
 msgid "Select None"
 msgstr "Nichts auswählen"
 
-#: qml/gallery/GalleryPage.qml:342
+#: qml/gallery/GalleryPage.qml:343
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Auswahl aller Medien aufheben"
 
-#: qml/gallery/GalleryPage.qml:351
+#: qml/gallery/GalleryPage.qml:352
 #, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
 msgstr "Auswahl umkehren"
 
-#: qml/gallery/GalleryPage.qml:352
+#: qml/gallery/GalleryPage.qml:353
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Auswahl aller Medien umkehren"
 
-#: qml/gallery/GalleryPage.qml:561
+#: qml/gallery/GalleryPage.qml:562
 #, kde-format
 msgid "No media found"
 msgstr "Keine Medien gefunden"

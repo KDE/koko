@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-17 00:41+0000\n"
+"POT-Creation-Date: 2026-01-28 00:42+0000\n"
 "PO-Revision-Date: 2025-09-14 11:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -745,21 +745,21 @@ msgctxt "@title"
 msgid "Favorites"
 msgstr "Любими"
 
-#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:181
+#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "Countries"
 msgid "Countries"
 msgstr "Държави"
 
-#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:182
+#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "States"
 msgid "States"
 msgstr "Щати"
 
-#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:183
+#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "Cities"
@@ -782,28 +782,28 @@ msgstr ""
 msgid "Tags"
 msgstr "Етикети"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:185
+#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "Years"
 msgid "Years"
 msgstr "Години"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:186
+#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "Months"
 msgid "Months"
 msgstr "Месеци"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:187
+#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:190
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "Weeks"
 msgid "Weeks"
 msgstr "Седмици"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:188
+#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:191
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation entry in sidebar"
 #| msgid "Days"
@@ -935,7 +935,7 @@ msgstr "Любими"
 msgid "Places"
 msgstr "Места"
 
-#: qml/gallery/GalleryDelegate.qml:130
+#: qml/gallery/GalleryDelegate.qml:132
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -961,26 +961,26 @@ msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
 msgstr "Преместване на избраните елемента в кошчето"
 
-#: qml/gallery/GalleryPage.qml:177
+#: qml/gallery/GalleryPage.qml:178
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:179
 #, fuzzy, kde-format
 #| msgid "Restore selected items from trash"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Възстановяване на избраните елементи от кошчето"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:202
+#: qml/gallery/GalleryPage.qml:203
 #, fuzzy, kde-format
 #| msgctxt "@item:intable Image file name"
 #| msgid "Name"
@@ -988,7 +988,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Име"
 
-#: qml/gallery/GalleryPage.qml:209
+#: qml/gallery/GalleryPage.qml:210
 #, fuzzy, kde-format
 #| msgctxt "@title:group for crop area size spinboxes"
 #| msgid "Size:"
@@ -996,7 +996,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Големина:"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Modified"
@@ -1004,7 +1004,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Дата на промяна"
 
-#: qml/gallery/GalleryPage.qml:217
+#: qml/gallery/GalleryPage.qml:218
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Modified"
@@ -1012,7 +1012,7 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Дата на промяна"
 
-#: qml/gallery/GalleryPage.qml:224
+#: qml/gallery/GalleryPage.qml:225
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Created"
@@ -1020,7 +1020,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Дата на създаване"
 
-#: qml/gallery/GalleryPage.qml:225
+#: qml/gallery/GalleryPage.qml:226
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Created"
@@ -1028,7 +1028,7 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Дата на създаване"
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:233
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Accessed"
@@ -1036,7 +1036,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Дата на достъп"
 
-#: qml/gallery/GalleryPage.qml:233
+#: qml/gallery/GalleryPage.qml:234
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Accessed"
@@ -1044,67 +1044,67 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Дата на достъп"
 
-#: qml/gallery/GalleryPage.qml:246
+#: qml/gallery/GalleryPage.qml:247
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:248
+#: qml/gallery/GalleryPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:250
+#: qml/gallery/GalleryPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:254
+#: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:257
+#: qml/gallery/GalleryPage.qml:258
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:272
+#: qml/gallery/GalleryPage.qml:273
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:276
+#: qml/gallery/GalleryPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:279
+#: qml/gallery/GalleryPage.qml:280
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:301
+#: qml/gallery/GalleryPage.qml:302
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1112,7 +1112,7 @@ msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Папка с отметки"
 
-#: qml/gallery/GalleryPage.qml:302
+#: qml/gallery/GalleryPage.qml:303
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1120,42 +1120,42 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Папка с отметки"
 
-#: qml/gallery/GalleryPage.qml:330
+#: qml/gallery/GalleryPage.qml:331
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Избиране на всички"
 
-#: qml/gallery/GalleryPage.qml:331
+#: qml/gallery/GalleryPage.qml:332
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Избиране на всички"
 
-#: qml/gallery/GalleryPage.qml:341
+#: qml/gallery/GalleryPage.qml:342
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:button"
 msgid "Select None"
 msgstr "Избиране на всички"
 
-#: qml/gallery/GalleryPage.qml:342
+#: qml/gallery/GalleryPage.qml:343
 #, fuzzy, kde-format
 #| msgid "Deselect All"
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Размаркиране на всичко"
 
-#: qml/gallery/GalleryPage.qml:351
+#: qml/gallery/GalleryPage.qml:352
 #, fuzzy, kde-format
 #| msgid "Delete Selection"
 msgctxt "@action:button"
 msgid "Invert Selection"
 msgstr "Изтриване на избраното"
 
-#: qml/gallery/GalleryPage.qml:352
+#: qml/gallery/GalleryPage.qml:353
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Share the selected media"
@@ -1163,7 +1163,7 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Споделяне на избраната медия"
 
-#: qml/gallery/GalleryPage.qml:561
+#: qml/gallery/GalleryPage.qml:562
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
