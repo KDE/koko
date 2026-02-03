@@ -18,8 +18,8 @@ BaseImageDelegate {
     loaded: image.status == Image.Ready
     loading: image.status == Image.Loading
 
-    sourceWidth: imageInfo.width
-    sourceHeight: imageInfo.height
+    sourceWidth: image.implicitWidth
+    sourceHeight: image.implicitHeight
 
     Image {
         id: image
@@ -41,11 +41,6 @@ BaseImageDelegate {
         mipmap: true
 
         autoTransform: true
-    }
-
-    FileInfo {
-        id: imageInfo
-        source: root.source
     }
 }
 
