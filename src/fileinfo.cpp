@@ -96,11 +96,25 @@ public:
 
         if (entry->type != FileInfo::VideoType) {
             QImageReader reader(source.toLocalFile());
+            reader.setAutoTransform(true);
+
             auto size = reader.size();
             if (size.isValid()) {
+                // QImageReader::size() does not respect auto transform, and
+                // reads directly from image headers, meaning we have to apply
+                // any advertised transformation ourselves
+
+                if (reader.transformation().testFlag(QImageIOHandler::TransformationRotate90)) {
+                    // Rotations by 90 or 270 degrees swap dimensions; other
+                    // relevant values include the TransformationRotate90 bit,
+                    // so we only need to handle it
+                    size.transpose();
+                }
+
                 entry->width = size.width();
                 entry->height = size.height();
             } else {
+                // If we can't get size from metadata, read into a QImage for it
                 auto image = reader.read();
                 entry->width = image.width();
                 entry->height = image.height();

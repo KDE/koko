@@ -14,6 +14,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QFileInfo>
+#include <QImageReader>
 #include <QSize>
 #include <QStandardPaths>
 
@@ -346,12 +347,29 @@ void Exiv2Extractor::extract(const QString &filePath)
         }
     }
 
-    {
-        QImage img(m_filePath);
-        if (!img.isNull()) {
-            m_height = img.size().height();
-            m_width = img.size().width();
+    QImageReader reader(m_filePath);
+    reader.setAutoTransform(true);
+
+    auto size = reader.size();
+    if (size.isValid()) {
+        // QImageReader::size() does not respect auto transform, and
+        // reads directly from image headers, meaning we have to apply
+        // any advertised transformation ourselves
+
+        if (reader.transformation().testFlag(QImageIOHandler::TransformationRotate90)) {
+            // Rotations by 90 or 270 degrees swap dimensions; other
+            // relevant values include the TransformationRotate90 bit,
+            // so we only need to handle it
+            size.transpose();
         }
+
+        m_width = size.width();
+        m_height = size.height();
+    } else {
+        // If we can't get size from metadata, read into a QImage for it
+        auto image = reader.read();
+        m_width = image.width();
+        m_height = image.height();
     }
 
     beginResetModel();
