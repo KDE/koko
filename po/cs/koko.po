@@ -348,7 +348,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr ""
+msgstr "Shift: Přichytit po 45 stupních"
 
 #: editor/AnnotationsToolBarContents.qml:152
 #, kde-format
@@ -369,6 +369,8 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
+"Shift: Přichytit k diagonálám\n"
+"Control: Změnit velikost ze středu"
 
 #: editor/AnnotationsToolBarContents.qml:170
 #, kde-format
@@ -526,6 +528,9 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
+"Výběr proveďte kliknutím a tažením.\n"
+"Ořezání dle výběru schválíte dvojitým poklepáním.\n"
+"Zrušení výběru provedete pravým kliknutí myši."
 
 #: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
 #, kde-format
