@@ -731,23 +731,17 @@ msgid "Favorites"
 msgstr "책갈피"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "국가"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "주/도"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "도시"
 
@@ -768,30 +762,22 @@ msgid "Tags"
 msgstr "태그"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:188
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "연도"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "월"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "주"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "일"
 
@@ -1788,9 +1774,7 @@ msgid "Report Bug…"
 msgstr ""
 
 #: qml/Sidebar.qml:145
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "일반"
 
