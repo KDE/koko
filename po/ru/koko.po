@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:39+0000\n"
-"PO-Revision-Date: 2026-02-03 19:44+0300\n"
+"PO-Revision-Date: 2026-02-05 18:52+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -144,13 +144,13 @@ msgstr "Расположение"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Расположение области кадрирования по X"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Расположение области кадрирования по Y"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
 #, kde-format
@@ -162,13 +162,13 @@ msgstr "Размер:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Ширина области кадрирования"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Высота области кадрирования"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
@@ -306,7 +306,7 @@ msgstr "Принять"
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr ""
+msgstr "Перемещение"
 
 #: editor/AnnotationsToolBarContents.qml:110
 #, kde-format
@@ -315,11 +315,10 @@ msgid "Crop"
 msgstr "Кадрирование"
 
 #: editor/AnnotationsToolBarContents.qml:118
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "Выбрать все"
+msgstr "Выбрать"
 
 #: editor/AnnotationsToolBarContents.qml:127
 #, kde-format
@@ -814,8 +813,7 @@ msgstr[2] "%1 изображений"
 msgstr[3] "одно изображение"
 
 #: qml/AlbumView.qml:48
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgctxt "@title"
 msgid "Folders"
 msgstr "Папки"
@@ -1054,7 +1052,7 @@ msgstr "Запустить слайд-шоу"
 #, kde-format
 msgctxt "@action:intoolbar Print the image"
 msgid "&Print"
-msgstr ""
+msgstr "&Печать"
 
 #: qml/ImageViewPage.qml:187
 #, kde-format
@@ -1063,8 +1061,7 @@ msgid "Print image"
 msgstr "Предыдущее изображение"
 
 #: qml/ImageViewPage.qml:203
-#, fuzzy, kde-format
-#| msgid "Show All Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Показать &элементы управления"
@@ -1073,13 +1070,13 @@ msgstr "Показать &элементы управления"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "Перейти в режим просмотра без полей"
 
 #: qml/ImageViewPage.qml:205
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "Выйти из режима просмотра без полей"
 
 #: qml/ImageViewPage.qml:215
 #, kde-format
@@ -1170,27 +1167,24 @@ msgstr "Показать все элементы управления"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Остановить"
 
 #: qml/ImageViewPage.qml:978
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Запустить"
 
 #: qml/ImageViewPage.qml:997
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Интервал:"
 
 #: qml/ImageViewPage.qml:1010
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "%1 секунда"
+msgstr "с"
 
 #: qml/InfoDrawer.qml:37
 #, kde-format
@@ -1348,44 +1342,44 @@ msgstr "Размер миниатюр:"
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "Фон области просмотра изображения"
 
 #: qml/Settings/GeneralConfigPage.qml:43
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "Чёрный"
 
 #: qml/Settings/GeneralConfigPage.qml:53
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "Белый"
 
 #: qml/Settings/GeneralConfigPage.qml:64
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "В соответствии с оформлением "
 
 #: qml/Settings/GeneralConfigPage.qml:65
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr ""
+"Использовать фон области просмотра, соответствующий цветовому оформлению"
 
 #: qml/Settings/GeneralConfigPage.qml:81
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Фон «шахматная доска» для изображений с прозрачностью"
 
 #: qml/Settings/GeneralConfigPage.qml:92
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
-msgstr "Слайд-шоу:"
+msgstr "Слайд-шоу"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
 #, kde-format
