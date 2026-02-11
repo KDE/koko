@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:39+0000\n"
-"PO-Revision-Date: 2025-11-16 09:26+0100\n"
+"PO-Revision-Date: 2026-02-07 17:33+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -136,13 +136,13 @@ msgstr "Posizione:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Posizione X dell'area di ritaglio"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Posizione Y dell'area di ritaglio"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
 #, kde-format
@@ -154,13 +154,13 @@ msgstr "Dimensione:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Larghezza dell'area di ritaglio"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Altezza dell'area di ritaglio"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
