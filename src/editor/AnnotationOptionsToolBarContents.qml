@@ -356,7 +356,7 @@ Row {
                     border.width: 1
                 }
                 onClicked: {
-                    const component = Qt.createComponent("QtQuick.Dialogs", "ColorDialog");
+                    const component = Qt.createComponent("Qt.labs.platform", "ColorDialog");
                     const dialog = component.createObject(root);
                     dialog.currentColor = root.useSelectionOptions ? root.selectedItem.fontColor : root.tool.fontColor;
                     dialog.accepted.connect(() => {
