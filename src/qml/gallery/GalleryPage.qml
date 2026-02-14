@@ -584,12 +584,16 @@ Kirigami.ScrollablePage {
 
         Shortcut {
             sequences: [StandardKey.ZoomIn]
-            onActivated: gridView.adjustThumbnailSize(1);
+            context: Qt.WindowShortcut
+            enabled: gridView.visible
+            onActivated: gridView.adjustThumbnailSize(1)
         }
 
         Shortcut {
             sequences: [StandardKey.ZoomOut]
-            onActivated: gridView.adjustThumbnailSize(-1);
+            context: Qt.WindowShortcut
+            enabled: gridView.visible
+            onActivated: gridView.adjustThumbnailSize(-1)
         }
 
         WheelHandler {

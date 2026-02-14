@@ -628,6 +628,29 @@ Kirigami.Page {
             z: 1
             visible: opacity > 0
             opacity: shouldShow ? 1 : 0
+
+            function zoomIn(): void {
+                for (let i = 0; i < zoomBox.count; ++i) {
+                    let z = zoomBox.valueAt(i)
+                    if (z > Koko.State.zoom) {
+                        Koko.State.zoom = z
+                        zoomBox.currentIndex = i
+                        return
+                    }
+                }
+            }
+
+            function zoomOut(): void {
+                for (let i = zoomBox.count - 1; i >= 0; --i) {
+                    let z = zoomBox.valueAt(i)
+                    if (z < Koko.State.zoom && z > 0) {
+                        Koko.State.zoom = z
+                        zoomBox.currentIndex = i
+                        return
+                    }
+                }
+            }
+
             Behavior on opacity {
                 OpacityAnimator {
                     duration: Kirigami.Units.longDuration
@@ -757,36 +780,21 @@ Kirigami.Page {
                 }
                 QQC2.ToolSeparator {}
                 QQC2.ToolButton {
+                    id: zoomOutButton
                     icon.name: "zoom-out"
                     text: i18nc("@action", "Zoom Out")
                     display: QQC2.AbstractButton.IconOnly
                     enabled: Koko.State.zoom > zoomBox.model[0].zoom
-                    onClicked: {
-                        for (let i = zoomBox.count - 1; i >= 0; --i) {
-                            let z = zoomBox.valueAt(i)
-                            if (z < Koko.State.zoom && z > 0) {
-                                Koko.State.zoom = z
-                                zoomBox.currentIndex = i
-                                return
-                            }
-                        }
-                    }
+                    onClicked: zoomBar.zoomOut()
                 }
+
                 QQC2.ToolButton {
+                    id: zoomInButton
                     icon.name: "zoom-in"
                     text: i18nc("@action", "Zoom In")
                     display: QQC2.AbstractButton.IconOnly
                     enabled: Koko.State.zoom < zoomBox.model[zoomBox.count -1].zoom
-                    onClicked: {
-                        for (let i = 0; i < zoomBox.count; ++i) {
-                            let z = zoomBox.valueAt(i)
-                            if (z > Koko.State.zoom) {
-                                Koko.State.zoom = z
-                                zoomBox.currentIndex = i
-                                return
-                            }
-                        }
-                    }
+                    onClicked: zoomBar.zoomIn()
                 }
             }
         }
@@ -1216,6 +1224,20 @@ Kirigami.Page {
                 }
             }
         }
+    }
+
+    Shortcut {
+        sequences: [StandardKey.ZoomOut]
+        context: Qt.WindowShortcut
+        enabled: root.visible && zoomOutButton.enabled
+        onActivated: zoomBar.zoomOut()
+    }
+
+    Shortcut {
+        sequences: [StandardKey.ZoomIn]
+        context: Qt.WindowShortcut
+        enabled: root.visible && zoomInButton.enabled
+        onActivated: zoomBar.zoomIn()
     }
 
     Shortcut {
