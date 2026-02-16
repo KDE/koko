@@ -183,6 +183,11 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
       <description>
         <p>This release modernizes the settings page, updates the style of the album page and adds a confirmation dialog before discarding image edits. This also fixes the full screen and slideshow mode.</p>
+        <p xml:lang="ca">Aquesta versió modernitza la pàgina de configuració, actualitza l'estil de la pàgina d'àlbum i afegeix un diàleg de confirmació abans de descartar les edicions d'imatges. També corregeix la pantalla completa i el mode de presentació de diapositives.</p>
+        <p xml:lang="he">המהדורה הזאת מחדשת את עמוד ההגדרות, מעדכנת את סגנון עמוד האלבומים ומוסיפה חלונית אישור לפני סילוק עריכות תמונות. מתקנת גם את מצב המסך המלא והמצגת.</p>
+        <p xml:lang="ka">ეს გამოშვება მორგების გვერდს ათანამედროვებს, ალბომის გვერდის სტილს ანახლებს და სურათის ჩასწორებების გაუქმებამდე დადასტურების დიალოგს ამატებს; ასევე, გასწორდა სრულეკრანიანი და სლაიდშოუს რეჟიმები.</p>
+        <p xml:lang="pt-BR">Esta versão moderniza a página de configurações, atualiza o estilo da página do álbum e adiciona uma caixa de diálogo de confirmação antes de descartar as edições de imagem. Também corrige os modos de tela cheia e apresentação de slides.</p>
+        <p xml:lang="ru">В этом выпуске обновлена страница настроек, изменён стиль страницы альбома и добавлен диалог подтверждения перед отменой изменений изображения. Также исправлены полноэкранный режим и режим слайд-шоу.</p>
       </description>
     </release>
     <release version="22.11" date="2022-11-30">
@@ -196,7 +201,17 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <ul>
           <li>Fixes related to window activation</li>
+          <li xml:lang="ca">Correccions relacionades amb l'activació de les finestres</li>
+          <li xml:lang="he">תיקונים שקשורים בהפעלת חלונות</li>
+          <li xml:lang="ka">გასწორდა ფანჯრის აქტივაციასთან დაკავშირებული შეცდომები</li>
+          <li xml:lang="pt-BR">Correções relacionadas à ativação de janelas</li>
+          <li xml:lang="ru">Исправления, связанные с активацией окна</li>
           <li>Various code improvements and bugfixes</li>
+          <li xml:lang="ca">Millores diverses del codi i esmenes d'errors</li>
+          <li xml:lang="he">מגוון שיפורי קוד ותיקוני תקלות</li>
+          <li xml:lang="ka">კოდის სხვადასხვა გაუმჯობესებები</li>
+          <li xml:lang="pt-BR">Diversas melhorias no código e correções de bugs</li>
+          <li xml:lang="ru">Различные улучшения кода и исправления ошибок</li>
         </ul>
       </description>
     </release>
@@ -208,6 +223,11 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <ul>
           <li>Raise window on activation.</li>
+          <li xml:lang="ca">Puja la finestra a l'activació.</li>
+          <li xml:lang="he">הגבהת החלון בעת ההפעלה.</li>
+          <li xml:lang="ka">ფანჯრის ამოწევა აქტივაციისას.</li>
+          <li xml:lang="pt-BR">Elevar a janela ao ativar.</li>
+          <li xml:lang="ru">Поднятие окна при активации.</li>
         </ul>
       </description>
     </release>
@@ -216,9 +236,29 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <ul>
           <li>User interface improvements.</li>
+          <li xml:lang="ca">Millores en la interfície d'usuari.</li>
+          <li xml:lang="he">שיפורי ממשק משתמש.</li>
+          <li xml:lang="ka">მომხმარებლის ინტერფეისის ზოგადი გაუმჯობესება.</li>
+          <li xml:lang="pt-BR">Melhorias na interface do usuário.</li>
+          <li xml:lang="ru">Улучшения пользовательского интерфейса.</li>
           <li>Image resizing and cropping support improvements.</li>
+          <li xml:lang="ca">Millores en la implementació del canvi de mida i l'escapçat d'imatges.</li>
+          <li xml:lang="he">שיפורים בתמיכה בשינוי גודל תמונות וחיתוך.</li>
+          <li xml:lang="ka">გაუმჯობესდა გამოსახულების ზომის შეცვლისა და ამოჭრის მხარდაჭერა.</li>
+          <li xml:lang="pt-BR">Melhorias no suporte para redimensionamento e recorte de imagens.</li>
+          <li xml:lang="ru">Улучшена поддержка изменения размера и обрезки изображений.</li>
           <li>Improvements for SVG rendering</li>
+          <li xml:lang="ca">Millores a la renderització de SVG</li>
+          <li xml:lang="he">שיפורים בעיבוד SVG</li>
+          <li xml:lang="ka">გაუმჯობესდა SVG-ის რენდერი</li>
+          <li xml:lang="pt-BR">Melhorias na renderização de SVG</li>
+          <li xml:lang="ru">Улучшения отрисовки SVG</li>
           <li>Support for color correction on X11</li>
+          <li xml:lang="ca">Implementació de la correcció de color a X11</li>
+          <li xml:lang="he">תמיכה בתיקון צבע ב־X11</li>
+          <li xml:lang="ka">ფერების კორექციის მხარდაჭერა X11-ზე</li>
+          <li xml:lang="pt-BR">Suporte para correção de cor no X11</li>
+          <li xml:lang="ru">Поддержка коррекции цвета в X11</li>
         </ul>
       </description>
     </release>
@@ -231,6 +271,11 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <release version="21.06" date="2021-06-10">
       <description>
         <p>This release contains only a small bugfix and updated translations.</p>
+        <p xml:lang="ca">Aquest llançament només conté una correcció d'error petita i traduccions actualitzades.</p>
+        <p xml:lang="he">המהדורה הזאת מכילה תיקוני תקלות קטנים ותרגומים עדכניים.</p>
+        <p xml:lang="ka">ეს ვერსია შეიცავს, მხოლოდ, პატარა შეცდომების გასწორებას და განახლებულ თარგმანებს.</p>
+        <p xml:lang="pt-BR">Esta versão contém apenas uma pequena correção de bug e traduções atualizadas.</p>
+        <p xml:lang="ru">В этом выпуске исправлена небольшая ошибка и обновлены переводы.</p>
       </description>
       <url>https://www.plasma-mobile.org/2021/06/10/plasma-mobile-update-june/</url>
     </release>
@@ -238,6 +283,11 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <url>https://www.plasma-mobile.org/2021/05/10/plasma-mobile-gear-may-2021/</url>
       <description>
         <p>Initial release of Koko, an convergent image viewer for Plasma Mobile and desktop</p>
+        <p xml:lang="ca">Versió inicial del Koko, un visualitzador d'imatges convergent per al Plasma Mobile i l'escriptori</p>
+        <p xml:lang="he">המהדורה הראשונית של Koko, מציג תמונות גמיש לפלזמה לניידים ולשולחן העבודה</p>
+        <p xml:lang="ka">Koko-ის, Plasma Mobile და Plasma Desktop-ის გამოსახულებების დამთვალიერებლის პირველი ვერსია</p>
+        <p xml:lang="pt-BR">Lançamento inicial do Koko, um visualizador de imagens convergente para Plasma Mobile e desktop</p>
+        <p xml:lang="ru">Представлен первый выпуск Koko — универсального просмотрщика изображений для Plasma Mobile и настольных систем</p>
       </description>
     </release>
   </releases>
