@@ -183,6 +183,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <url>https://plasma-mobile.org/2023/01/30/january-blog-post/</url>
       <description>
         <p>This release modernizes the settings page, updates the style of the album page and adds a confirmation dialog before discarding image edits. This also fixes the full screen and slideshow mode.</p>
+        <p xml:lang="ar">يُحدّث هذا الإصدار صفحة الإعدادات، ويُحدّث نمط صفحة الألبوم ويضيف حوار تأكيد قبل تجاهل تعديلات الصور. كما يُصلح وضع ملء الشاشة وعرض الشرائح.</p>
         <p xml:lang="ca">Aquesta versió modernitza la pàgina de configuració, actualitza l'estil de la pàgina d'àlbum i afegeix un diàleg de confirmació abans de descartar les edicions d'imatges. També corregeix la pantalla completa i el mode de presentació de diapositives.</p>
         <p xml:lang="ca-valencia">Esta versió modernitza la pàgina de configuració, actualitza l'estil de la pàgina d'àlbum i afig un diàleg de confirmació abans de descartar les edicions d'imatges. També corregix la pantalla completa i el mode de presentació de diapositives.</p>
         <p xml:lang="he">המהדורה הזאת מחדשת את עמוד ההגדרות, מעדכנת את סגנון עמוד האלבומים ומוסיפה חלונית אישור לפני סילוק עריכות תמונות. מתקנת גם את מצב המסך המלא והמצגת.</p>
@@ -201,12 +202,14 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <ul>
           <li>Fixes related to window activation</li>
+          <li xml:lang="ar">إصلاحات متعلقة بتنشيط النافذة</li>
           <li xml:lang="ca">Correccions relacionades amb l'activació de les finestres</li>
           <li xml:lang="ca-valencia">Correccions relacionades amb l'activació de les finestres</li>
           <li xml:lang="he">תיקונים שקשורים בהפעלת חלונות</li>
           <li xml:lang="pt-BR">Correções relacionadas à ativação de janelas</li>
           <li xml:lang="ru">Исправления, связанные с активацией окна</li>
           <li>Various code improvements and bugfixes</li>
+          <li xml:lang="ar">تحسينات متنوعة على الكود وإصلاح علل</li>
           <li xml:lang="ca">Millores diverses del codi i esmenes d'errors</li>
           <li xml:lang="ca-valencia">Millores diverses del codi i esmenes d'errors</li>
           <li xml:lang="he">מגוון שיפורי קוד ותיקוני תקלות</li>
@@ -223,6 +226,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <ul>
           <li>Raise window on activation.</li>
+          <li xml:lang="ar">رفع النافذة عند التنشيط.</li>
           <li xml:lang="ca">Puja la finestra a l'activació.</li>
           <li xml:lang="ca-valencia">Puja la finestra a l'activació.</li>
           <li xml:lang="he">הגבהת החלון בעת ההפעלה.</li>
@@ -236,24 +240,28 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <ul>
           <li>User interface improvements.</li>
+          <li xml:lang="ar">تحسينات واجهة المستخدم.</li>
           <li xml:lang="ca">Millores en la interfície d'usuari.</li>
           <li xml:lang="ca-valencia">Millores en la interfície d'usuari.</li>
           <li xml:lang="he">שיפורי ממשק משתמש.</li>
           <li xml:lang="pt-BR">Melhorias na interface do usuário.</li>
           <li xml:lang="ru">Улучшения пользовательского интерфейса.</li>
           <li>Image resizing and cropping support improvements.</li>
+          <li xml:lang="ar">تحسينات دعم تغيير حجم الصور وقصها.</li>
           <li xml:lang="ca">Millores en la implementació del canvi de mida i l'escapçat d'imatges.</li>
           <li xml:lang="ca-valencia">Millores en la implementació del canvi de mida i l'escapçat d'imatges.</li>
           <li xml:lang="he">שיפורים בתמיכה בשינוי גודל תמונות וחיתוך.</li>
           <li xml:lang="pt-BR">Melhorias no suporte para redimensionamento e recorte de imagens.</li>
           <li xml:lang="ru">Улучшена поддержка изменения размера и обрезки изображений.</li>
           <li>Improvements for SVG rendering</li>
+          <li xml:lang="ar">تحسينات لتصيير SVG</li>
           <li xml:lang="ca">Millores a la renderització de SVG</li>
           <li xml:lang="ca-valencia">Millores a la renderització de SVG</li>
           <li xml:lang="he">שיפורים בעיבוד SVG</li>
           <li xml:lang="pt-BR">Melhorias na renderização de SVG</li>
           <li xml:lang="ru">Улучшения отрисовки SVG</li>
           <li>Support for color correction on X11</li>
+          <li xml:lang="ar">دعم تصحيح الألوان على X11</li>
           <li xml:lang="ca">Implementació de la correcció de color a X11</li>
           <li xml:lang="ca-valencia">Implementació de la correcció de color a X11</li>
           <li xml:lang="he">תמיכה בתיקון צבע ב־X11</li>
@@ -271,6 +279,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <release version="21.06" date="2021-06-10">
       <description>
         <p>This release contains only a small bugfix and updated translations.</p>
+        <p xml:lang="ar">يحتوي هذا الإصدار على إصلاح علة صغير وتحديث للترجمات فقط.</p>
         <p xml:lang="ca">Aquest llançament només conté una correcció d'error petita i traduccions actualitzades.</p>
         <p xml:lang="ca-valencia">Este llançament només conté una esmena d'errors xicoteta i traduccions actualitzades.</p>
         <p xml:lang="he">המהדורה הזאת מכילה תיקוני תקלות קטנים ותרגומים עדכניים.</p>
@@ -283,6 +292,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <url>https://www.plasma-mobile.org/2021/05/10/plasma-mobile-gear-may-2021/</url>
       <description>
         <p>Initial release of Koko, an convergent image viewer for Plasma Mobile and desktop</p>
+        <p xml:lang="ar">الإصدار الأولي لـ كوكو، عارض صور متقارب لبلازما الجوال وسطح المكتب</p>
         <p xml:lang="ca">Versió inicial del Koko, un visualitzador d'imatges convergent per al Plasma Mobile i l'escriptori</p>
         <p xml:lang="ca-valencia">Versió inicial de Koko, un visor d'imatges convergent per a Plasma Mobile i l'escriptori</p>
         <p xml:lang="he">המהדורה הראשונית של Koko, מציג תמונות גמיש לפלזמה לניידים ולשולחן העבודה</p>
