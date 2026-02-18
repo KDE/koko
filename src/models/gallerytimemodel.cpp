@@ -134,7 +134,8 @@ QVariant GalleryTimeModel::data(const QModelIndex &index, int role) const
         switch (role) {
         case Qt::DisplayRole:
             // Return a sensible value for sorting
-            return isParentCollection ? QVariant((int)timeGroup) : QVariant(ImageStorage::instance()->dateForCollection(collection.value(), timeGroup));
+            return isParentCollection ? QVariant(static_cast<int>(timeGroup))
+                                      : QVariant(ImageStorage::instance()->dateForCollection(collection.value(), timeGroup));
         case NameRole:
             return m_collections.at(index.row()).display;
         case FileItemRole:
