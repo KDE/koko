@@ -88,7 +88,7 @@ void FileMenuActions::setUrl(const QUrl &url)
     const auto readableImageMimetypes = QImageReader::supportedMimeTypes();
     const auto isReadableImageMimetype = readableImageMimetypes.contains(mimetype);
 
-    auto saveAsLambda = [=] {
+    auto saveAsLambda = [=, this] {
         const auto suffix = fileItem.suffix();
         const auto writableImageMimetypes = QImageWriter::supportedMimeTypes();
         // We only list different writable types when writing as a different
