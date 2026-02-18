@@ -53,6 +53,7 @@ void DisplayColorSpace::update()
 
         auto length = xcb_get_property_value_length(result);
         if (length <= 0) {
+            free(result);
             return;
         }
 
