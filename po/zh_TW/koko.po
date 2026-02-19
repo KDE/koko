@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-19 00:42+0000\n"
 "PO-Revision-Date: 2026-01-19 19:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -525,37 +525,37 @@ msgstr ""
 "雙擊選區以確認並裁剪。\n"
 "右鍵單擊以清除選取範圍。"
 
-#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#: exiv2extractor.cpp:71 qml/PlacesPage.qml:27
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "一般"
 
-#: exiv2extractor.cpp:72
+#: exiv2extractor.cpp:73
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
 msgstr "EXIF"
 
-#: exiv2extractor.cpp:74
+#: exiv2extractor.cpp:75
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
 msgstr "IPTC"
 
-#: exiv2extractor.cpp:76
+#: exiv2extractor.cpp:77
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
 msgstr "XMPP"
 
-#: exiv2extractor.cpp:375
+#: exiv2extractor.cpp:393
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "位置"
 
-#: exiv2extractor.cpp:511
+#: exiv2extractor.cpp:529
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -563,61 +563,61 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr "%1 × %2 (%3 MP)"
 
-#: exiv2extractor.cpp:517
+#: exiv2extractor.cpp:535
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr "%1 × %2"
 
-#: exiv2extractor.cpp:521
+#: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr "名稱"
 
-#: exiv2extractor.cpp:522
+#: exiv2extractor.cpp:540
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
 msgstr "檔案大小"
 
-#: exiv2extractor.cpp:525
+#: exiv2extractor.cpp:543
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "建立日期"
 
-#: exiv2extractor.cpp:527
+#: exiv2extractor.cpp:545
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr "變更日期"
 
-#: exiv2extractor.cpp:528
+#: exiv2extractor.cpp:546
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr "存取日期"
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:547
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "路徑"
 
-#: exiv2extractor.cpp:530
+#: exiv2extractor.cpp:548
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "影像大小"
 
-#: exiv2extractor.cpp:531
+#: exiv2extractor.cpp:549
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
 msgstr "檔案類型"
 
-#: exiv2extractor.cpp:542
+#: exiv2extractor.cpp:560
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -748,22 +748,22 @@ msgstr "開啟"
 msgid "Tags"
 msgstr "標籤"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:188
+#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
 #, kde-format
 msgid "Years"
 msgstr "年"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:189
+#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
 #, kde-format
 msgid "Months"
 msgstr "月"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:190
+#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
 #, kde-format
 msgid "Weeks"
 msgstr "週"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:191
+#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
 #, kde-format
 msgid "Days"
 msgstr "日"

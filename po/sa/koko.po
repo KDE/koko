@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-15 00:41+0000\n"
+"POT-Creation-Date: 2026-02-19 00:42+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -548,39 +548,39 @@ msgid ""
 "Right click to clear the selection."
 msgstr ""
 
-#: exiv2extractor.cpp:70 qml/PlacesPage.qml:27
+#: exiv2extractor.cpp:71 qml/PlacesPage.qml:27
 #, fuzzy, kde-format
 #| msgid "General"
 msgctxt "@title:group"
 msgid "General"
 msgstr "सामान्य"
 
-#: exiv2extractor.cpp:72
+#: exiv2extractor.cpp:73
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
 msgstr ""
 
-#: exiv2extractor.cpp:74
+#: exiv2extractor.cpp:75
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
 msgstr ""
 
-#: exiv2extractor.cpp:76
+#: exiv2extractor.cpp:77
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
 msgstr ""
 
-#: exiv2extractor.cpp:375
+#: exiv2extractor.cpp:393
 #, fuzzy, kde-format
 #| msgid "Locations"
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "स्थानानि"
 
-#: exiv2extractor.cpp:511
+#: exiv2extractor.cpp:529
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -588,19 +588,19 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr ""
 
-#: exiv2extractor.cpp:517
+#: exiv2extractor.cpp:535
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr ""
 
-#: exiv2extractor.cpp:521
+#: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr ""
 
-#: exiv2extractor.cpp:522
+#: exiv2extractor.cpp:540
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -608,7 +608,7 @@ msgctxt "@item:intable"
 msgid "File Size"
 msgstr "सञ्चिकानाम :"
 
-#: exiv2extractor.cpp:525
+#: exiv2extractor.cpp:543
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -616,32 +616,32 @@ msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "निर्मितः :"
 
-#: exiv2extractor.cpp:527
+#: exiv2extractor.cpp:545
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr ""
 
-#: exiv2extractor.cpp:528
+#: exiv2extractor.cpp:546
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr ""
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:547
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr ""
 
-#: exiv2extractor.cpp:530
+#: exiv2extractor.cpp:548
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "बिम्बाः"
 
-#: exiv2extractor.cpp:531
+#: exiv2extractor.cpp:549
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -649,7 +649,7 @@ msgctxt "@item:intable"
 msgid "File Type"
 msgstr "सञ्चिकानाम :"
 
-#: exiv2extractor.cpp:542
+#: exiv2extractor.cpp:560
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -789,25 +789,25 @@ msgstr ""
 msgid "Tags"
 msgstr "टैग्स"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:188
+#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
 #, fuzzy, kde-format
 #| msgid "Years"
 msgid "Years"
 msgstr "वर्षाः"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:189
+#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
 #, fuzzy, kde-format
 #| msgid "Months"
 msgid "Months"
 msgstr "मासाः"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:190
+#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgid "Weeks"
 msgstr "सप्ताहाः"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:191
+#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
 #, fuzzy, kde-format
 #| msgid "Days"
 msgid "Days"
