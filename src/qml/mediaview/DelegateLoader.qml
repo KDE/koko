@@ -24,8 +24,8 @@ Loader {
     readonly property bool dragging: item && item.dragging
     readonly property bool interactive: item && item.interactive
 
-    width: ListView.view.width
-    height: ListView.view.height
+    width: ListView.view ? ListView.view.width : 0
+    height: ListView.view ? ListView.view.height : 0
 
     property bool supportsVideo: true
 
