@@ -131,7 +131,7 @@ QVariant GalleryLocationModel::data(const QModelIndex &index, int role) const
         switch (role) {
         case Qt::DisplayRole:
             // Return a sensible value for sorting
-            return isParentCollection ? QVariant((int)locationGroup) : collection.value().display;
+            return isParentCollection ? QVariant(static_cast<int>(locationGroup)) : collection.value().display;
         case NameRole:
             return m_collections.at(index.row()).display;
         case FileItemRole:
