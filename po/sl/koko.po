@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-01-17 08:30+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -748,10 +748,12 @@ msgid "Locations"
 msgstr "Lokacije"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr "Odpri"
+msgid "Selected Files"
+msgstr "Izberi vse"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1732,6 +1734,10 @@ msgstr "Splošno"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Oddaljeni"
+
+#~ msgctxt "@title"
+#~ msgid "Open"
+#~ msgstr "Odpri"
 
 #~ msgid "Add Tag"
 #~ msgstr "Dodaj oznako"

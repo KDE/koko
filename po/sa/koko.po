@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -779,10 +779,11 @@ msgid "Locations"
 msgstr "स्थानानि"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr ""
+msgid "Selected Files"
+msgstr "सर्वं चिनोतु"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format

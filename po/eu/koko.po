@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 11:07+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -744,10 +744,12 @@ msgid "Locations"
 msgstr "Kokalekuak"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr "Ireki"
+msgid "Selected Files"
+msgstr "Hautatu dena"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1730,6 +1732,10 @@ msgstr "Orokorra"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Urrutikoa"
+
+#~ msgctxt "@title"
+#~ msgid "Open"
+#~ msgstr "Ireki"
 
 #~ msgid "Add Tag"
 #~ msgstr "Gehitu etiketa"

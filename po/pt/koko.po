@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2023-05-31 10:52+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -778,10 +778,11 @@ msgid "Locations"
 msgstr "Locais"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr ""
+msgid "Selected Files"
+msgstr "Seleccionar Tudo"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format

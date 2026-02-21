@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-02-07 17:33+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -742,10 +742,12 @@ msgid "Locations"
 msgstr "Posizioni"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr "Apri"
+msgid "Selected Files"
+msgstr "Seleziona tutto"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1721,6 +1723,10 @@ msgstr "Generale"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remota"
+
+#~ msgctxt "@title"
+#~ msgid "Open"
+#~ msgstr "Apri"
 
 #~ msgid "Add Tag"
 #~ msgstr "Aggiungi etichetta"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-02-02 23:09+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -749,10 +749,12 @@ msgid "Locations"
 msgstr "Vietovės"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr "Atverti"
+msgid "Selected Files"
+msgstr "Žymėti visus"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1733,3 +1735,7 @@ msgstr ""
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr ""
+
+#~ msgctxt "@title"
+#~ msgid "Open"
+#~ msgstr "Atverti"

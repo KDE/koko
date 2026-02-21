@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-01-19 19:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -738,10 +738,12 @@ msgid "Locations"
 msgstr "位置"
 
 #: models/galleryopenmodel.cpp:141
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Select All"
 msgctxt "@title"
-msgid "Open"
-msgstr "開啟"
+msgid "Selected Files"
+msgstr "全部選取"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1713,6 +1715,10 @@ msgstr "一般"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "遠端"
+
+#~ msgctxt "@title"
+#~ msgid "Open"
+#~ msgstr "開啟"
 
 #~ msgid "Add Tag"
 #~ msgstr "新增標籤"
