@@ -15,7 +15,7 @@ KirigamiSettings.ConfigurationView {
         KirigamiSettings.ConfigurationModule {
             moduleId: "general"
             text: i18nc("@action:button", "General")
-            icon.name: "preferences-desktop-theme-global"
+            icon.name: "photo-symbolic"
             page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
         },
         KirigamiSettings.ShortcutsConfigurationModule {
@@ -24,14 +24,14 @@ KirigamiSettings.ConfigurationView {
         KirigamiSettings.ConfigurationModule {
             moduleId: "about"
             text: i18n("About Photos")
-            icon.name: "org.kde.koko"
+            icon.name: "help-about-symbolic"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage")
             category: i18nc("@title:group", "About")
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "aboutkde"
             text: i18n("About KDE")
-            icon.name: "kde"
+            icon.name: "kde-symbolic"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage")
             category: i18nc("@title:group", "About")
         }
