@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-21 00:41+0000\n"
-"PO-Revision-Date: 2026-01-17 12:41+0100\n"
+"PO-Revision-Date: 2026-02-21 11:35+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -744,12 +744,10 @@ msgid "Locations"
 msgstr "Ubicacions"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Selecciona-ho tot"
+msgstr "Fitxers seleccionats"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
 #, kde-format
@@ -1728,7 +1726,3 @@ msgstr "General"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remotes"
-
-#~ msgctxt "@title"
-#~ msgid "Open"
-#~ msgstr "Obri"
