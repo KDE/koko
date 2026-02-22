@@ -91,6 +91,7 @@ Kirigami.OverlayDrawer {
                         }
 
                         Kirigami.Action {
+                            icon.name: "kde-symbolic"
                             fromQAction: root.application.action('open_about_kde_page')
                         }
 
