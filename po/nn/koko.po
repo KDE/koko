@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:42+0000\n"
 "PO-Revision-Date: 2024-07-14 12:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -734,7 +734,7 @@ msgstr ""
 msgid "Cities"
 msgstr ""
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:200
+#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:201
 #, kde-format
 msgid "Locations"
 msgstr "Stadar"
@@ -746,7 +746,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Merk alle"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:248
+#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:249
 #, kde-format
 msgid "Tags"
 msgstr ""
@@ -859,19 +859,19 @@ msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
 msgstr ""
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:148
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:149
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr ""
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:154
+#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:155
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr ""
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:160
+#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:161
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1544,66 +1544,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr ""
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:167
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:168
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr ""
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:194
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:195
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr ""
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:174
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:175
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr ""
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:203
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:204
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr ""
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:209
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:210
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr ""
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:215
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:216
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr ""
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:221
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:222
 #, kde-format
 msgid "Time"
 msgstr "Tid"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:224
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:225
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr ""
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:230
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:231
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr ""
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:236
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:237
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr ""
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:242
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:243
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1712,24 +1712,24 @@ msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr ""
 
-#: qml/Sidebar.qml:98
+#: qml/Sidebar.qml:99
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
 msgstr ""
 
-#: qml/Sidebar.qml:104
+#: qml/Sidebar.qml:105
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
 msgstr ""
 
-#: qml/Sidebar.qml:145
+#: qml/Sidebar.qml:146
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: qml/Sidebar.qml:190
+#: qml/Sidebar.qml:191
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
