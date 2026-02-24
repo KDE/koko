@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-23 00:42+0000\n"
-"PO-Revision-Date: 2026-01-18 09:24+0100\n"
+"PO-Revision-Date: 2026-02-22 07:50+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -742,12 +742,10 @@ msgid "Locations"
 msgstr "Emplacements"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Tout sélectionner"
+msgstr "Fichiers sélectionnés"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:249
 #, kde-format
