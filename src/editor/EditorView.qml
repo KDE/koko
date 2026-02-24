@@ -90,74 +90,8 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
-            id: startResizeAction
-            checkable: true
-            checked: false
-            icon.name: checked ? "dialog-cancel" : "transform-scale"
-            text: checked ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
-        },
-
-        Kirigami.Action {
-            id: finishResizeAction
-            property size targetSize: imageView.document.imageSize
-            icon.name: "dialog-ok"
-            text: i18nc("@action:button Resize an image", "Resize");
-            onTriggered: {
-                let matrix = Qt.matrix4x4()
-                const sx = targetSize.width / imageView.document.imageSize.width
-                const sy = targetSize.height / imageView.document.imageSize.height
-                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
-                               sx, sy)
-                imageView.document.applyTransform(matrix)
-                startResizeAction.toggle()
-            }
-            visible: startResizeAction.checked
-            onVisibleChanged: {
-                targetSize = Qt.binding(() => imageView.document.imageSize)
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: Controls.ToolSeparator {
-                leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: leftPadding
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: Controls.Label {
-                text: i18nc("@title:group for crop area size spinboxes", "Size:")
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: EditorSpinBox {
-                minimumContentWidth: widthTextMetrics.width
-                from: 1
-                to: imageView.document.imageSize.width * 8
-                value: finishResizeAction.targetSize.width//selectionTool.selectionWidth / editImage.ratioX
-                onValueModified: finishResizeAction.targetSize.width = value//selectionTool.selectionWidth = value * editImage.ratioX
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: EditorSpinBox {
-                minimumContentWidth: heightTextMetrics.width
-                from: 1
-                to: imageView.document.imageSize.height * 8
-                value: finishResizeAction.targetSize.height//selectionTool.selectionHeight / editImage.ratioY
-                onValueModified: finishResizeAction.targetSize.height = value//selectionTool.selectionHeight = value * editImage.ratioY
-            }
-        },
-
-        Kirigami.Action {
             icon.name: "image-rotate-symbolic"
             text: i18nc("@action:button Rotate an image", "Rotate")
-            visible: !startResizeAction.checked
 
             Kirigami.Action {
                 icon.name: "image-rotate-left-symbolic"
@@ -167,7 +101,6 @@ Kirigami.Page {
                     rotateForViewer(matrix, getScale(imageView.document.transform), -90)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
                 shortcut: "Ctrl+Shift+R"
             }
 
@@ -179,7 +112,6 @@ Kirigami.Page {
                     rotateForViewer(matrix, getScale(imageView.document.transform), 90)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
                 shortcut: "Ctrl+R"
             }
         },
@@ -187,7 +119,6 @@ Kirigami.Page {
         Kirigami.Action {
             icon.name: "image-flip-horizontal-symbolic"
             text: i18nc("@action:button Flip/mirror an image", "Flip")
-            visible: !startResizeAction.checked
 
             Kirigami.Action {
                 icon.name: "image-flip-horizontal-symbolic"
@@ -198,7 +129,6 @@ Kirigami.Page {
                                 -1, 1)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
             }
 
             Kirigami.Action {
@@ -210,7 +140,6 @@ Kirigami.Page {
                                 1, -1)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
             }
         },
 
@@ -298,9 +227,6 @@ Kirigami.Page {
 
         ImageView {
             id: imageView
-
-            showCropTool: annotationsToolBarContents.usingCropTool
-
             Layout.fillWidth: true
             Layout.fillHeight: true
         }

@@ -111,7 +111,14 @@ ButtonGrid {
         icon.name: "transform-crop"
         checked: root.toolType === AnnotationTool.CropTool
         onClicked: root.tool.type = AnnotationTool.CropTool
-
+    }
+    ToolButton {
+        id: resizeToolButton
+        QQC.ButtonGroup.group: toolGroup
+        text: i18nc("@action:intoolbar resize image tool", "Resize")
+        icon.name: "transform-scale"
+        checked: root.toolType === AnnotationTool.ResizeTool
+        onClicked: root.tool.type = AnnotationTool.ResizeTool
     }
     ToolButton {
         QQC.ButtonGroup.group: toolGroup

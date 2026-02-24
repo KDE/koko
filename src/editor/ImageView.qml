@@ -25,7 +25,6 @@ Controls.Page {
     readonly property real minZoom: Math.min(fitZoom, 1)
     readonly property real maxZoom: Math.max(minZoom, 8)
     readonly property real currentZoom: annotationEditor.scale
-    property bool showCropTool: false
 
     function dprRound(v: double): double {
         return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
@@ -172,43 +171,112 @@ Controls.Page {
             scale: 1
             visible: true
             enabled: true
-            Keys.forwardTo: cropTool
+            Keys.forwardTo: resizeTool.active ? resizeTool : cropTool
             Keys.priority: Keys.AfterItem
         }
 
-        KQuickImageEditor.CropTool {
+        Loader {
             id: cropTool
             anchors.fill: annotationEditor
             transformOrigin: annotationEditor.transformOrigin
             scale: annotationEditor.scale
-            viewport: annotationEditor
-            active: root.showCropTool
+            active: root.document.tool.type === KQuickImageEditor.AnnotationTool.CropTool
+            visible: active
+            sourceComponent: KQuickImageEditor.RectangleSelectionTool {
+                viewport: annotationEditor
+                onAccepted: (geometry) => {
+                    document.cropCanvas(geometry)
+                    tool.geometry = undefined
+                }
+            }
         }
 
-        AnimatedLoader {
+        Loader {
+            id: resizeTool
+            anchors.fill: annotationEditor
+            transformOrigin: annotationEditor.transformOrigin
+            scale: annotationEditor.scale
+            active: root.document.tool.type === KQuickImageEditor.AnnotationTool.ResizeTool
+            visible: active
+            sourceComponent: KQuickImageEditor.RectangleSelectionTool {
+                id: rectangleSelectionTool
+                viewport: annotationEditor
+                background: Item {
+                    parent: rectangleSelectionTool
+                    anchors.fill: parent
+                    z: -1
+                    visible: rectangleSelectionTool.tool.geometry.width !== 0
+                        && rectangleSelectionTool.tool.geometry.height !== 0
+                    Rectangle {
+                        anchors.fill: parent
+                        // anchors.margins: -1 // just in case the image below peeks out slightly
+                        color: palette.window
+                    }
+                }
+                ShaderEffectSource {
+                    readonly property alias tool: rectangleSelectionTool.tool
+                    visible: tool.geometry.width !== 0 && tool.geometry.height !== 0
+                    x: tool.geometry.x
+                    y: tool.geometry.y
+                    width: tool.geometry.width
+                    height: tool.geometry.height
+                    sourceItem: rectangleSelectionTool.viewport
+                    sourceRect: Qt.rect(0, 0, sourceItem.width, sourceItem.height)
+                    smooth: true
+                }
+                onAccepted: (geometry) => {
+                    let matrix = Qt.matrix4x4()
+                    const sx = tool.geometry.width / document.imageSize.width
+                    const sy = tool.geometry.height / document.imageSize.height
+                    const zDegrees = Math.atan2(matrix.m21, matrix.m11) // in radians
+                                   * (180 / Math.PI) // to degrees
+                    const rotationAxes = Qt.vector3d(0, 0, 1)
+                    matrix.rotate(-zDegrees, rotationAxes)
+                    matrix.scale(sx, sy, 1)
+                    matrix.rotate(zDegrees, rotationAxes)
+                    document.applyTransform(matrix)
+                    tool.geometry = undefined
+                }
+            }
+        }
+
+        component HelpHeadingLoader : AnimatedLoader {
+            id: loader
+            property Item target: null
+            property string text: ""
             parent: flickable
             anchors.centerIn: parent
-            state: cropTool.item && !cropTool.item.activeFocus && cropTool.item.opacity === 0 ? "active" : "inactive"
+            state: target && !target.activeFocus && target.opacity === 0 ? "active" : "inactive"
             sourceComponent: Kirigami.Heading {
-                id: cropToolHelp
+                id: helpHeading
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
-                text: i18nc("@info crop tool explanation", "Click and drag to make a selection.\nDouble click the selection to accept and crop.\nRight click to clear the selection.")
-                padding: cropToolHelpMetrics.height - cropToolHelpMetrics.descent
-                leftPadding: cropToolHelpMetrics.height
-                rightPadding: cropToolHelpMetrics.height
+                text: loader.text
+                padding: helpMetrics.height - helpMetrics.descent
+                leftPadding: helpMetrics.height
+                rightPadding: helpMetrics.height
                 background: Kirigami.ShadowedRectangle {
                     color: Qt.rgba(palette.window.r, palette.window.g, palette.window.b, 0.9)
-                    radius: cropToolHelpMetrics.height
+                    radius: helpMetrics.height
                     shadow.color: Qt.rgba(0,0,0,0.2)
                     shadow.size: 9
                     shadow.yOffset: 2
                 }
                 FontMetrics {
-                    id: cropToolHelpMetrics
-                    font: cropToolHelp.font
+                    id: helpMetrics
+                    font: helpHeading.font
                 }
             }
+        }
+
+        HelpHeadingLoader {
+            target: cropTool.item
+            text: i18nc("@info crop tool explanation", "Click and drag to make a selection.\nDouble click the selection to accept and crop.\nRight click to clear the selection.")
+        }
+
+        HelpHeadingLoader {
+            target: resizeTool.item
+            text: i18nc("@info resize tool explanation", "Click and drag to start resizing.\nDouble click the image to accept and complete the resize.\nRight click to clear the resize.\nUse the controls at the bottom of the window for more precise control.")
         }
     }
 }

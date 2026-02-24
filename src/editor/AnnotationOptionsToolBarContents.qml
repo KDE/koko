@@ -47,6 +47,140 @@ Row {
         Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
     }
 
+    component SpinBox : Controls.SpinBox {
+        id: spinBox
+        anchors.verticalCenter: parent.verticalCenter
+        stepSize: 1
+        property real minimumContentWidth: 0
+        contentItem: Controls.TextField {
+            id: textField
+            implicitWidth: Math.max(Math.ceil(contentWidth), spinBox.minimumContentWidth) + leftPadding + rightPadding
+            implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
+            palette: spinBox.palette
+            leftPadding: spinBox.spacing
+            rightPadding: spinBox.spacing
+            topPadding: 0
+            bottomPadding: 0
+            text: spinBox.displayText
+            font: spinBox.font
+            color: Kirigami.Theme.textColor
+            selectionColor: Kirigami.Theme.highlightColor
+            selectedTextColor: Kirigami.Theme.highlightedTextColor
+            horizontalAlignment: Qt.AlignHCenter
+            verticalAlignment: Qt.AlignVCenter
+            readOnly: !spinBox.editable
+            validator: spinBox.validator
+            inputMethodHints: spinBox.inputMethodHints
+            selectByMouse: true
+            background: null
+        }
+        Controls.ToolTip.visible: hovered
+        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+        Binding {
+            target: spinBox.contentItem
+            property: "horizontalAlignment"
+            value: Text.AlignRight
+            restoreMode: Binding.RestoreNone
+        }
+    }
+
+    TextMetrics {
+        id: widthTextMetrics
+        text: (imageView.document.imageSize.width * 10).toLocaleString(root.locale, 'f', 0)
+    }
+
+    TextMetrics {
+        id: heightTextMetrics
+        text: (imageView.document.imageSize.height * 10).toLocaleString(root.locale, 'f', 0)
+    }
+
+    component AspectRatioComboBox : Controls.ComboBox {
+        id: aspectRatioComboBox
+        function parseAspectRatio(text: string): real {
+            const numbers = text.split(":")
+            // parseFloat turns undefined into NaN.
+            const ratio = parseFloat(numbers[0])/parseFloat(numbers[1])
+            return ratio // can return NaN, which is falsy
+        }
+        // https://stackoverflow.com/a/71164857
+        function toRational(x: real): var {
+            var m  = Math.floor(x),
+                x_ = 1/(x-m),
+                p_ = 1,
+                q_ = 0,
+                p  = m,
+                q  = 1;
+            if (x === m) return {n:p,d:q};
+            while (Math.abs(x - p/q) > Number.EPSILON){
+                m  = Math.floor(x_);
+                x_ = 1/(x_-m);
+                [p_, q_, p, q] = [p, q, m*p+p_, m*q+q_];
+            }
+            return isNaN(x) ? NaN : {n:p,d:q};
+        }
+        editable: true
+        textRole: "text"
+        valueRole: "ratio"
+        model: [
+            {text: i18nc("@item:inlistbox aspect ratio", "Unlocked"), ratio: 0},
+            {text: i18nc("@item:inlistbox aspect ratio", "Current Image"), ratio: root.document.canvasRect.width/root.document.canvasRect.height},
+            {text: i18nc("@item:inlistbox aspect ratio", "Square"), ratio: 1},
+            {text: i18nc("@item:inlistbox aspect ratio", "This Screen"), ratio: Screen.width/Screen.height},
+            {text: i18nc("@item:inlistbox aspect ratio", "16:9"), ratio: 16/9},
+            {text: i18nc("@item:inlistbox aspect ratio", "7:5"), ratio: 7/5},
+            {text: i18nc("@item:inlistbox aspect ratio", "3:2"), ratio: 3/2},
+            {text: i18nc("@item:inlistbox aspect ratio", "4:3"), ratio: 4/3},
+            {text: i18nc("@item:inlistbox aspect ratio", "5:4"), ratio: 5/4},
+            {text: i18nc("@item:inlistbox aspect ratio", "ISO Paper (Landscape)"), ratio: Math.SQRT2},
+            {text: i18nc("@item:inlistbox aspect ratio", "US Letter (Landscape)"), ratio: 11/8.5},
+            {text: i18nc("@item:inlistbox aspect ratio", "9:16"), ratio: 9/16},
+            {text: i18nc("@item:inlistbox aspect ratio", "5:7"), ratio: 5/7},
+            {text: i18nc("@item:inlistbox aspect ratio", "2:3"), ratio: 2/3},
+            {text: i18nc("@item:inlistbox aspect ratio", "3:4"), ratio: 3/4},
+            {text: i18nc("@item:inlistbox aspect ratio", "4:5"), ratio: 4/5},
+            {text: i18nc("@item:inlistbox aspect ratio", "ISO Paper (Portrait)"), ratio: Math.SQRT1_2},
+            {text: i18nc("@item:inlistbox aspect ratio", "US Letter (Portrait)"), ratio: 8.5/11}
+        ]
+        Text {
+            readonly property Item contentItem: aspectRatioComboBox.contentItem
+            parent: aspectRatioComboBox
+            x: parent.leftPadding
+            y: parent.topPadding
+            width: parent.availableWidth
+            height: parent.availableHeight
+
+            text: i18nc("@item:inlistbox aspect ratio placeholder", "Width:Height")
+            font: parent.font
+            color: parent.palette.placeholderText
+            LayoutMirroring.enabled: false
+            horizontalAlignment: contentItem?.effectiveHorizontalAlignment ?? (parent.mirrored ? Text.AlignRight : Text.AlignLeft)
+            verticalAlignment: contentItem?.verticalAlignment ?? Text.AlignVCenter
+            visible: aspectRatioComboBox.editText === "" && (!contentItem.activeFocus || horizontalAlignment !== Text.AlignHCenter)
+            elide: Text.ElideRight
+        }
+        // The order in which text changed signals are emitted and
+        // currentIndex/currentText/currentValue changed signals are
+        // emitted makes it so we have to parse the text first to react
+        // in a timely manner to user input. We fall back to model values
+        // when parsed text does not give a number.
+        onEditTextChanged: {
+            const value = parseAspectRatio(editText) || valueAt(currentIndex)
+            root.tool.aspectRatio = value
+            if (value && indexOfValue(value) < 0 && !contentItem.activeFocus) {
+                const fraction = toRational(root.tool.aspectRatio)
+                editText = `${fraction.n}:${fraction.d}`
+            }
+        }
+        Component.onCompleted: {
+            const ratio = root.tool.aspectRatio
+            currentIndex = indexOfValue(ratio)
+            if (ratio && currentIndex < 0) {
+                const fraction = toRational(ratio)
+                editText = `${fraction.n}:${fraction.d}`
+            }
+        }
+    }
+
     Loader { // stroke
         id: strokeLoader
         anchors.verticalCenter: parent.verticalCenter
@@ -481,20 +615,6 @@ Row {
                 text: i18nc("@label crop area position", "Position:")
             }
 
-            component SpinBox : Controls.SpinBox {
-                id: spinBox
-                anchors.verticalCenter: parent.verticalCenter
-                stepSize: 1
-                Controls.ToolTip.visible: hovered
-                Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
-                Binding {
-                    target: spinBox.contentItem
-                    property: "horizontalAlignment"
-                    value: Text.AlignRight
-                    restoreMode: Binding.RestoreNone
-                }
-            }
-
             SpinBox {
                 from: 0
                 to: widthSpinBox.to - widthSpinBox.from
@@ -573,91 +693,8 @@ Row {
                 text: i18nc("@label", "Aspect Ratio:")
             }
 
-            Controls.ComboBox {
-                id: aspectRatioComboBox
-                function parseAspectRatio(text: string): real {
-                    const numbers = text.split(":")
-                    // parseFloat turns undefined into NaN.
-                    const ratio = parseFloat(numbers[0])/parseFloat(numbers[1])
-                    return ratio // can return NaN, which is falsy
-                }
-                // https://stackoverflow.com/a/71164857
-                function toRational(x: real): var {
-                    var m  = Math.floor(x),
-                        x_ = 1/(x-m),
-                        p_ = 1,
-                        q_ = 0,
-                        p  = m,
-                        q  = 1;
-                    if (x === m) return {n:p,d:q};
-                    while (Math.abs(x - p/q) > Number.EPSILON){
-                        m  = Math.floor(x_);
-                        x_ = 1/(x_-m);
-                        [p_, q_, p, q] = [p, q, m*p+p_, m*q+q_];
-                    }
-                    return isNaN(x) ? NaN : {n:p,d:q};
-                }
-                editable: true
-                textRole: "text"
-                valueRole: "ratio"
-                model: [
-                    {text: i18nc("@item:inlistbox aspect ratio", "Unlocked"), ratio: 0},
-                    {text: i18nc("@item:inlistbox aspect ratio", "Current Image"), ratio: root.document.canvasRect.width/root.document.canvasRect.height},
-                    {text: i18nc("@item:inlistbox aspect ratio", "Square"), ratio: 1},
-                    {text: i18nc("@item:inlistbox aspect ratio", "This Screen"), ratio: Screen.width/Screen.height},
-                    {text: i18nc("@item:inlistbox aspect ratio", "16:9"), ratio: 16/9},
-                    {text: i18nc("@item:inlistbox aspect ratio", "7:5"), ratio: 7/5},
-                    {text: i18nc("@item:inlistbox aspect ratio", "3:2"), ratio: 3/2},
-                    {text: i18nc("@item:inlistbox aspect ratio", "4:3"), ratio: 4/3},
-                    {text: i18nc("@item:inlistbox aspect ratio", "5:4"), ratio: 5/4},
-                    {text: i18nc("@item:inlistbox aspect ratio", "ISO Paper (Landscape)"), ratio: Math.SQRT2},
-                    {text: i18nc("@item:inlistbox aspect ratio", "US Letter (Landscape)"), ratio: 11/8.5},
-                    {text: i18nc("@item:inlistbox aspect ratio", "9:16"), ratio: 9/16},
-                    {text: i18nc("@item:inlistbox aspect ratio", "5:7"), ratio: 5/7},
-                    {text: i18nc("@item:inlistbox aspect ratio", "2:3"), ratio: 2/3},
-                    {text: i18nc("@item:inlistbox aspect ratio", "3:4"), ratio: 3/4},
-                    {text: i18nc("@item:inlistbox aspect ratio", "4:5"), ratio: 4/5},
-                    {text: i18nc("@item:inlistbox aspect ratio", "ISO Paper (Portrait)"), ratio: Math.SQRT1_2},
-                    {text: i18nc("@item:inlistbox aspect ratio", "US Letter (Portrait)"), ratio: 8.5/11}
-                ]
-                Text {
-                    readonly property Item contentItem: aspectRatioComboBox.contentItem
-                    parent: aspectRatioComboBox
-                    x: parent.leftPadding
-                    y: parent.topPadding
-                    width: parent.availableWidth
-                    height: parent.availableHeight
-
-                    text: i18nc("@item:inlistbox aspect ratio placeholder", "Width:Height")
-                    font: parent.font
-                    color: parent.palette.placeholderText
-                    LayoutMirroring.enabled: false
-                    horizontalAlignment: contentItem?.effectiveHorizontalAlignment ?? (parent.mirrored ? Text.AlignRight : Text.AlignLeft)
-                    verticalAlignment: contentItem?.verticalAlignment ?? Text.AlignVCenter
-                    visible: aspectRatioComboBox.editText === "" && (!contentItem.activeFocus || horizontalAlignment !== Text.AlignHCenter)
-                    elide: Text.ElideRight
-                }
-                // The order in which text changed signals are emitted and
-                // currentIndex/currentText/currentValue changed signals are
-                // emitted makes it so we have to parse the text first to react
-                // in a timely manner to user input. We fall back to model values
-                // when parsed text does not give a number.
-                onEditTextChanged: {
-                    const value = parseAspectRatio(editText) || valueAt(currentIndex)
-                    root.tool.aspectRatio = value
-                    if (value && indexOfValue(value) < 0 && !contentItem.activeFocus) {
-                        const fraction = toRational(root.tool.aspectRatio)
-                        editText = `${fraction.n}:${fraction.d}`
-                    }
-                }
-                Component.onCompleted: {
-                    const ratio = root.tool.aspectRatio
-                    currentIndex = indexOfValue(ratio)
-                    if (ratio && currentIndex < 0) {
-                        const fraction = toRational(ratio)
-                        editText = `${fraction.n}:${fraction.d}`
-                    }
-                }
+            AspectRatioComboBox {
+                id: cropAspectRatioComboBox
             }
 
             ToolButton {
@@ -666,7 +703,7 @@ Row {
                 onClicked: {
                     root.tool.geometry = undefined
                     root.tool.aspectRatio = undefined
-                    aspectRatioComboBox.currentIndex = 0
+                    cropAspectRatioComboBox.currentIndex = 0
                 }
             }
 
@@ -675,6 +712,96 @@ Row {
                 text: i18nc("@action accept selection", "Accept")
                 onClicked: {
                     root.document.cropCanvas(root.tool.geometry)
+                    root.tool.geometry = undefined
+                }
+            }
+        }
+    }
+
+    Loader { // resize
+        id: resizeLoader
+        anchors.verticalCenter: parent.verticalCenter
+        visible: active
+        active: root.tool.type === AnnotationTool.ResizeTool
+        sourceComponent: Row {
+            spacing: root.spacing
+
+            Controls.Label {
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18nc("@label crop area size", "Size:")
+            }
+
+            SpinBox {
+                id: widthSpinBox
+                minimumContentWidth: widthTextMetrics.width
+                from: root.tool.geometry.width === 0 ? 0 : 1
+                to: root.document.canvasRect.width * 10 * root.document.imageDpr
+                value: Math.abs(root.tool.geometry.width * root.document.imageDpr)
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Resize area width")
+                onValueModified: {
+                    const absX = Math.abs(root.tool.geometry.x)
+                    const absY = Math.abs(root.tool.geometry.y)
+                    const absW = value / root.document.imageDpr
+                    const absH = Math.abs(root.tool.geometry.height)
+                    root.tool.geometry.x = absX
+                    root.tool.geometry.y = absY
+                    root.tool.geometry.width = absW
+                    root.tool.geometry.height = absH
+                }
+            }
+            SpinBox {
+                id: heightSpinBox
+                minimumContentWidth: heightTextMetrics.width
+                from: root.tool.geometry.height === 0 ? 0 : 1
+                to: root.document.canvasRect.height * 10 * root.document.imageDpr
+                value: Math.abs(root.tool.geometry.height * root.document.imageDpr)
+                Controls.ToolTip.text: i18nc("@info:tooltip", "Resize area height")
+                onValueModified: {
+                    const absX = Math.abs(root.tool.geometry.x)
+                    const absY = Math.abs(root.tool.geometry.y)
+                    const absW = Math.abs(root.tool.geometry.width)
+                    const absH = value / root.document.imageDpr
+                    root.tool.geometry.x = absX
+                    root.tool.geometry.y = absY
+                    root.tool.geometry.width = absW
+                    root.tool.geometry.height = absH
+                }
+            }
+
+            Controls.Label {
+                anchors.verticalCenter: parent.verticalCenter
+                text: i18nc("@label", "Aspect Ratio:")
+            }
+
+            AspectRatioComboBox {
+                id: resizeAspectRatioComboBox
+            }
+
+            ToolButton {
+                icon.name: "edit-undo"
+                text: i18nc("@action reset selection", "Reset")
+                onClicked: {
+                    root.tool.geometry = undefined
+                    root.tool.aspectRatio = undefined
+                    resizeAspectRatioComboBox.currentIndex = 0
+                }
+            }
+
+            ToolButton {
+                icon.name: "dialog-ok"
+                text: i18nc("@action accept selection", "Accept")
+                enabled: root.tool.geometry.width !== 0 && root.tool.geometry.height !== 0
+                onClicked: {
+                    let matrix = Qt.matrix4x4()
+                    const sx = root.tool.geometry.width / root.document.imageSize.width
+                    const sy = root.tool.geometry.height / root.document.imageSize.height
+                    const zDegrees = Math.atan2(matrix.m21, matrix.m11) // in radians
+                                   * (180 / Math.PI) // to degrees
+                    const rotationAxes = Qt.vector3d(0, 0, 1)
+                    matrix.rotate(-zDegrees, rotationAxes)
+                    matrix.scale(sx, sy, 1)
+                    matrix.rotate(zDegrees, rotationAxes)
+                    root.document.applyTransform(matrix)
                     root.tool.geometry = undefined
                 }
             }
