@@ -257,8 +257,8 @@ Kirigami.Page {
     }
     Binding {
         target: Koko.FileMenuActions
-        property: "url"
-        value: listView.currentItem?.url ?? ""
+        property: "urls"
+        value: listView.currentItem ? [listView.currentItem.url] : []
         restoreMode: Binding.RestoreNone
     }
 
