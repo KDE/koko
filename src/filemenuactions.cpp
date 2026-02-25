@@ -52,25 +52,25 @@ QList<QObject *> FileMenuActions::actions() const
     return m_actions;
 }
 
-QUrl FileMenuActions::url() const
+QList<QUrl> FileMenuActions::urls() const
 {
-    return m_url;
+    return m_urls;
 }
 
-void FileMenuActions::setUrl(const QUrl &url)
+void FileMenuActions::setUrls(const QList<QUrl> &urls)
 {
-    if (m_url == url) {
+    if (m_urls == urls) {
         return;
     }
 
-    m_url = url;
+    m_urls = urls;
     for (auto action : m_actions) {
         action->deleteLater();
     }
     m_actions.clear();
 
-    if (!m_url.isValid()) {
-        Q_EMIT urlChanged();
+    if (m_urls.isEmpty()) {
+        Q_EMIT urlsChanged();
         return;
     }
 
@@ -81,112 +81,141 @@ void FileMenuActions::setUrl(const QUrl &url)
         return action;
     };
 
-    KFileItem fileItem(m_url);
-    KFileItemListProperties itemProperties(KFileItemList({fileItem}));
+    KFileItemList fileItems;
+    fileItems.reserve(m_urls.size());
+    std::transform(urls.cbegin(), urls.cend(), std::back_inserter(fileItems), [](const QUrl &url) {
+        return KFileItem(url);
+    });
 
-    const auto mimetype = fileItem.mimetype().toLatin1();
-    const auto readableImageMimetypes = QImageReader::supportedMimeTypes();
-    const auto isReadableImageMimetype = readableImageMimetypes.contains(mimetype);
+    KFileItemListProperties itemProperties(fileItems);
 
-    auto saveAsLambda = [=, this] {
-        const auto suffix = fileItem.suffix();
-        const auto writableImageMimetypes = QImageWriter::supportedMimeTypes();
-        // We only list different writable types when writing as a different
-        // type is possible.
-        // For an image file to be converted with QImage, it needs to be
-        // readable and writable by QImage.
-        QStringList mimetypeFilters{};
-        if (isReadableImageMimetype && fileItem.isLocalFile()) {
-            mimetypeFilters.reserve(mimetypeFilters.size() + writableImageMimetypes.size());
-            // If we can read the mimetype with QImage, but not write it with QImage,
-            // we can still make a copy.
-            if (!writableImageMimetypes.contains(mimetype)) {
-                mimetypeFilters.append(mimetype);
-            }
-            for (const auto &imageMimetype : writableImageMimetypes) {
-                mimetypeFilters.append(QString::fromUtf8(imageMimetype).trimmed());
-            }
-        } else if (!mimetype.isEmpty()) {
-            // we can still make a copy.
-            mimetypeFilters.append(mimetype);
-        }
-        // Add an "All files" filter at the end.
-        mimetypeFilters.append(u"application/octet-stream"_s);
-        auto dialog = new QFileDialog();
-        dialog->setAcceptMode(QFileDialog::AcceptSave);
-        dialog->setFileMode(QFileDialog::AnyFile);
-        QUrl dirUrl = url.adjusted(QUrl::RemoveFilename);
-        dialog->setDirectoryUrl(dirUrl);
-        dialog->selectFile(url.fileName());
-        dialog->setDefaultSuffix(suffix);
-        dialog->setMimeTypeFilters(mimetypeFilters);
-        dialog->selectMimeTypeFilter(mimetype);
+    const bool singleFile = fileItems.size() == 1;
+    const auto singleFileMimetype = fileItems[0].mimetype().toLatin1();
+    const auto singleFileReadableImageMimetype = QImageReader::supportedMimeTypes().contains(singleFileMimetype);
 
-        // Don't use exec() like the QFileDialog docs show.
-        // It can cause a race condition that leads to a crash when the QML environment is being destroyed.
-        connect(dialog, &QFileDialog::finished, this, [this, dialog, mimetype, writableImageMimetypes, isReadableImageMimetype](int result) mutable {
-            dialog->deleteLater();
-            const bool accepted = result == QDialog::Accepted;
-            const auto &selectedUrl = dialog->selectedUrls().value(0, QUrl());
-            if (!accepted || selectedUrl.fileName().isEmpty()) {
-                return;
-            }
-            if (isReadableImageMimetype && selectedUrl.isLocalFile()) {
-                auto selectedUrlMimetype = QMimeDatabase().mimeTypeForUrl(selectedUrl).name().toLatin1();
-                if (mimetype != selectedUrlMimetype
-                    && writableImageMimetypes.contains(selectedUrlMimetype)) {
-                    QImage image(m_url.toLocalFile());
-                    image.save(selectedUrl.toLocalFile());
-                    return;
+    // Save As action
+    if (singleFile) {
+        // TODO: Mix of using m_urls, urls and fileItem, pick one
+        auto saveAsLambda = [=, this] {
+            const auto suffix = fileItems[0].suffix();
+            const auto writableImageMimetypes = QImageWriter::supportedMimeTypes();
+            // We only list different writable types when writing as a different
+            // type is possible.
+            // For an image file to be converted with QImage, it needs to be
+            // readable and writable by QImage.
+            QStringList mimetypeFilters{};
+            if (singleFileReadableImageMimetype && fileItems[0].isLocalFile()) {
+                mimetypeFilters.reserve(mimetypeFilters.size() + writableImageMimetypes.size());
+                // If we can read the mimetype with QImage, but not write it with QImage,
+                // we can still make a copy.
+                if (!writableImageMimetypes.contains(singleFileMimetype)) {
+                    mimetypeFilters.append(singleFileMimetype);
                 }
-                // TODO: Maybe catch cases where users select a url with a
-                // mimetype that isn't supported by QImageWriter? It's unclear
-                // how that should be handled. Mimetypes for urls are based on
-                // filename extensions, but a filename can have no extension or
-                // an unusual extension and still be read by apps that support
-                // the mimetype for the file's data.
+                for (const auto &imageMimetype : writableImageMimetypes) {
+                    mimetypeFilters.append(QString::fromUtf8(imageMimetype).trimmed());
+                }
+            } else if (!singleFileMimetype.isEmpty()) {
+                // we can still make a copy.
+                mimetypeFilters.append(singleFileMimetype);
             }
-            KIO::copyAs(m_url, selectedUrl)->start();
-        });
-        dialog->open();
-    };
-    m_actions.push_back(KStandardAction::saveAs(this, saveAsLambda, this));
+            // Add an "All files" filter at the end.
+            mimetypeFilters.append(u"application/octet-stream"_s);
+            auto dialog = new QFileDialog();
+            dialog->setAcceptMode(QFileDialog::AcceptSave);
+            dialog->setFileMode(QFileDialog::AnyFile);
+            QUrl dirUrl = urls[0].adjusted(QUrl::RemoveFilename);
+            dialog->setDirectoryUrl(dirUrl);
+            dialog->selectFile(urls[0].fileName());
+            dialog->setDefaultSuffix(suffix);
+            dialog->setMimeTypeFilters(mimetypeFilters);
+            dialog->selectMimeTypeFilter(singleFileMimetype);
 
-    if (KProtocolManager::supportsListing(m_url)) {
+            // Don't use exec() like the QFileDialog docs show.
+            // It can cause a race condition that leads to a crash when the QML environment is being destroyed.
+            connect(dialog,
+                    &QFileDialog::finished,
+                    this,
+                    [this, dialog, singleFileMimetype, writableImageMimetypes, singleFileReadableImageMimetype](int result) mutable {
+                        dialog->deleteLater();
+                        const bool accepted = result == QDialog::Accepted;
+                        const auto &selectedUrl = dialog->selectedUrls().value(0, QUrl());
+                        if (!accepted || selectedUrl.fileName().isEmpty()) {
+                            return;
+                        }
+                        if (singleFileReadableImageMimetype && selectedUrl.isLocalFile()) {
+                            auto selectedUrlMimetype = QMimeDatabase().mimeTypeForUrl(selectedUrl).name().toLatin1();
+                            if (singleFileMimetype != selectedUrlMimetype && writableImageMimetypes.contains(selectedUrlMimetype)) {
+                                QImage image(m_urls[0].toLocalFile());
+                                image.save(selectedUrl.toLocalFile());
+                                return;
+                            }
+                            // TODO: Maybe catch cases where users select a url with a
+                            // mimetype that isn't supported by QImageWriter? It's unclear
+                            // how that should be handled. Mimetypes for urls are based on
+                            // filename extensions, but a filename can have no extension or
+                            // an unusual extension and still be read by apps that support
+                            // the mimetype for the file's data.
+                        }
+                        KIO::copyAs(m_urls[0], selectedUrl)->start();
+                    });
+            dialog->open();
+        };
+        m_actions.push_back(KStandardAction::saveAs(this, saveAsLambda, this));
+    }
+
+    // Open Containing Folder action
+    if (std::all_of(m_urls.cbegin(), m_urls.cend(), [](const QUrl &url) {
+            return KProtocolManager::supportsListing(url);
+        })) {
         auto openFolderLambda = [this] {
-            KIO::highlightInFileManager({m_url});
+            KIO::highlightInFileManager(m_urls);
         };
         addAction(QIcon::fromTheme(u"folder-open"_s), i18nc("@action:inmenu", "Open Containing Folder"), openFolderLambda);
     }
 
+    // Standard actions
     KFileItemActions kFileItemActions(this);
     kFileItemActions.setItemListProperties(itemProperties);
+
     QMenu menu;
     kFileItemActions.insertOpenWithActionsTo(nullptr, &menu, {qApp->desktopFileName()});
 
     auto openWithLambda = [this] {
         auto job = new KIO::ApplicationLauncherJob(this);
-        job->setUrls({m_url});
-        job->setSuggestedFileName(m_url.fileName());
+        job->setUrls(m_urls);
         job->setUiDelegate(KIO::createDefaultJobUiDelegate());
         job->start();
     };
     addAction(QIcon::fromTheme(u"system-run"_s), i18nc("@action:inmenu", "&Open With…"), openWithLambda);
 
-    auto copyLambda = [fileItem] {
+    auto copyLambda = [fileItems] {
         QMimeData *data = new QMimeData(); // Cleaned up by Qt later
-        KUrlMimeData::setUrls({fileItem.url()}, {fileItem.mostLocalUrl()}, data);
+
+        QList<QUrl> urls;
+        QList<QUrl> mostLocalUrls;
+        urls.reserve(fileItems.size());
+        mostLocalUrls.reserve(fileItems.size());
+        for (const KFileItem &item : fileItems) {
+            urls << item.url();
+            mostLocalUrls << item.mostLocalUrl();
+        }
+
+        KUrlMimeData::setUrls(urls, mostLocalUrls, data);
         QApplication::clipboard()->setMimeData(data);
     };
     m_actions.push_back(KStandardAction::copy(this, copyLambda, this));
 
-    auto copyPathLambda = [fileItem] {
-        QString path = fileItem.localPath();
+    auto copyPathLambda = [fileItems] {
+        // TODO: Is better behaviour possible for multiple fileItems?
+        //       Maybe with multiple, we don't have fallback and verify that all
+        //       localPath is the same first? Is fallback even proper?
+        QString path = fileItems[0].localPath();
         if (path.isEmpty()) {
-            path = fileItem.url().toDisplayString();
+            path = fileItems[0].url().toDisplayString();
         }
         QApplication::clipboard()->setText(path);
     };
+
     addAction(QIcon::fromTheme(u"edit-copy-path"_s), i18nc("@action:inmenu", "Copy Location"), copyPathLambda);
 
     const bool canTrash = itemProperties.isLocal() && itemProperties.supportsMoving();
@@ -201,7 +230,7 @@ void FileMenuActions::setUrl(const QUrl &url)
                 }
                 handler->deleteLater();
             });
-            handler->askUserDelete({m_url}, KIO::AskUserActionInterface::Trash, KIO::AskUserActionInterface::DefaultConfirmation);
+            handler->askUserDelete({m_urls}, KIO::AskUserActionInterface::Trash, KIO::AskUserActionInterface::DefaultConfirmation);
         };
         m_actions.push_back(KStandardAction::moveToTrash(this, moveToTrashLambda, this));
     }
@@ -219,18 +248,18 @@ void FileMenuActions::setUrl(const QUrl &url)
                 }
                 handler->deleteLater();
             });
-            handler->askUserDelete({m_url}, KIO::AskUserActionInterface::Delete, KIO::AskUserActionInterface::DefaultConfirmation);
+            handler->askUserDelete(m_urls, KIO::AskUserActionInterface::Delete, KIO::AskUserActionInterface::DefaultConfirmation);
         };
         m_actions.push_back(KStandardAction::deleteFile(this, deleteLambda, this));
     }
 
     // QPrinter requires the use of QPainter, so it must be a readable image.
-    if (PrinterHelper::printerSupportAvailable() && isReadableImageMimetype) {
+    if (singleFile && PrinterHelper::printerSupportAvailable() && singleFileReadableImageMimetype) {
         auto printLambda = [this] {
-            PrinterHelper::printFileFromUrl(m_url);
+            PrinterHelper::printFileFromUrl(m_urls[0]);
         };
         m_actions.push_back(KStandardAction::print(this, printLambda, this));
     }
 
-    Q_EMIT urlChanged();
+    Q_EMIT urlsChanged();
 }
