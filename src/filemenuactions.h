@@ -17,8 +17,8 @@ class QQuickItem;
 class FileMenuActions : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QList<QObject *> actions READ actions NOTIFY urlChanged FINAL)
-    Q_PROPERTY(QUrl url READ url WRITE setUrl NOTIFY urlChanged FINAL)
+    Q_PROPERTY(QList<QObject *> actions READ actions NOTIFY urlsChanged FINAL)
+    Q_PROPERTY(QList<QUrl> urls READ urls WRITE setUrls NOTIFY urlsChanged FINAL)
     QML_ELEMENT
     QML_SINGLETON
 public:
@@ -26,13 +26,13 @@ public:
 
     QList<QObject *> actions() const;
 
-    QUrl url() const;
-    void setUrl(const QUrl &url);
+    QList<QUrl> urls() const;
+    void setUrls(const QList<QUrl> &urls);
 
 Q_SIGNALS:
-    void urlChanged();
+    void urlsChanged();
 
 private:
     QList<QObject *> m_actions;
-    QUrl m_url;
+    QList<QUrl> m_urls;
 };
