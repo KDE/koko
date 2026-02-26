@@ -56,6 +56,8 @@ Kirigami.OverlayDrawer {
                 spacing: Kirigami.Units.smallSpacing
 
                 Kirigami.Heading {
+                    // Align with sidebar ListSectionHeader margins, which is smallSpacing + mediumSpacing
+                    Layout.leftMargin: Kirigami.Units.smallSpacing
                     Layout.fillWidth: true
 
                     text: i18n("Places")
