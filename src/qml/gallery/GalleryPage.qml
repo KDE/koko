@@ -119,7 +119,7 @@ Kirigami.ScrollablePage {
         exclusive: true
     }
 
-    actions: [
+    readonly property list<QtObject> toolBarActions: [
         // Selection
         ShareAction {
             id: shareAction
@@ -322,9 +322,14 @@ Kirigami.ScrollablePage {
                     Koko.Config.save();
                 }
             }
-        },
+        }
+    ]
 
-        // Hidden
+    readonly property list<QtObject> otherHiddenUiActions: [
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+        },
         Kirigami.Action {
             id: selectAllAction
             icon.name: "edit-select-all-symbolic"
@@ -356,6 +361,35 @@ Kirigami.ScrollablePage {
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Toggle | ItemSelectionModel.Columns)
         }
     ]
+
+    Koko.FileMenuActions {
+        id: fileMenuActions
+        urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
+    }
+
+    Component {
+        id: kirigamiActionComponent
+        Kirigami.Action {}
+    }
+
+    actions: {
+        let list = [];
+        for (let action of toolBarActions) {
+            list.push(action);
+        }
+        /* Hidden actions */
+        for (let fileMenuAction of fileMenuActions.actions) {
+            let kirigamiAction = kirigamiActionComponent.createObject(this, {
+                displayHint: Kirigami.DisplayHint.AlwaysHide,
+                fromQAction: fileMenuAction
+            });
+            list.push(kirigamiAction);
+        }
+        for (let action of otherHiddenUiActions) {
+            list.push(action);
+        }
+        return list;
+    }
 
     title: page.galleryModel.title
 
