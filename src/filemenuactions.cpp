@@ -74,8 +74,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         return;
     }
 
-    static const auto addAction = [this](const QIcon &icon, const QString &text, auto func) {
+    static const auto addAction = [this](const QIcon &icon, const QString &text, auto func, const bool enabled = true) {
         auto action = new QAction(icon, text, this);
+        action->setEnabled(enabled);
         connect(action, &QAction::triggered, this, func);
         m_actions.push_back(action);
         return action;
@@ -94,7 +95,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     const auto singleFileReadableImageMimetype = QImageReader::supportedMimeTypes().contains(singleFileMimetype);
 
     // Save As action
-    if (singleFile) {
+    if (singleFile && singleFileMimetype != "inode/directory") {
         // TODO: Mix of using m_urls, urls and fileItem, pick one
         auto saveAsLambda = [=, this] {
             const auto suffix = fileItems[0].suffix();
@@ -216,7 +217,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         QApplication::clipboard()->setText(path);
     };
 
-    addAction(QIcon::fromTheme(u"edit-copy-path"_s), i18nc("@action:inmenu", "Copy Location"), copyPathLambda);
+    addAction(QIcon::fromTheme(u"edit-copy-path"_s), i18nc("@action:inmenu", "Copy Location"), copyPathLambda, singleFile);
 
     const bool canTrash = itemProperties.isLocal() && itemProperties.supportsMoving();
     if (canTrash) {
