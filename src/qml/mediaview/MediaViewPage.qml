@@ -255,11 +255,10 @@ Kirigami.Page {
         id: kirigamiActionComponent
         Kirigami.Action {}
     }
-    Binding {
-        target: Koko.FileMenuActions
-        property: "urls"
-        value: listView.currentItem ? [listView.currentItem.url] : []
-        restoreMode: Binding.RestoreNone
+
+    Koko.FileMenuActions {
+        id: fileMenuActions
+        urls: listView.currentItem ? [listView.currentItem.url] : []
     }
 
     actions: {
@@ -268,8 +267,7 @@ Kirigami.Page {
             list.push(action);
         }
         /* Hidden actions */
-        const fileMenuActions = Koko.FileMenuActions.actions;
-        for (let fileMenuAction of fileMenuActions) {
+        for (let fileMenuAction of fileMenuActions.actions) {
             let kirigamiAction = kirigamiActionComponent.createObject(this, {
                 displayHint: Kirigami.DisplayHint.AlwaysHide,
                 fromQAction: fileMenuAction
