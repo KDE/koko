@@ -20,7 +20,6 @@ class FileMenuActions : public QObject
     Q_PROPERTY(QList<QObject *> actions READ actions NOTIFY urlsChanged FINAL)
     Q_PROPERTY(QList<QUrl> urls READ urls WRITE setUrls NOTIFY urlsChanged FINAL)
     QML_ELEMENT
-    QML_SINGLETON
 public:
     explicit FileMenuActions(QObject *parent = nullptr);
 
