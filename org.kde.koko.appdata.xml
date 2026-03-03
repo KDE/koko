@@ -192,6 +192,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="he">המהדורה הזאת מחדשת את עמוד ההגדרות, מעדכנת את סגנון עמוד האלבומים ומוסיפה חלונית אישור לפני סילוק עריכות תמונות. מתקנת גם את מצב המסך המלא והמצגת.</p>
         <p xml:lang="ia">Iste version modernisa le pagina de preferentias, actualisa le stilo del pagina de album e adde un dialogo de confirmation ante annullar modificationes de imagine. Isto anque corrige le modo de schermo plen e de presentation a diapositiva. </p>
         <p xml:lang="it">Questa versione modernizza la pagina delle impostazioni, aggiorna lo stile della pagina degli album, e aggiunge una finestra di conferma prima di eliminare le modifiche alle immagini. Inoltre, corregge la modalità a schermo intero e la modalità presentazione.</p>
+        <p xml:lang="ka">ეს გამოშვება მორგების გვერდს ათანამედროვებს, ალბომის გვერდის სტილს ანახლებს და სურათის ჩასწორებების გაუქმებამდე დადასტურების დიალოგს ამატებს; ასევე, გასწორდა სრულეკრანიანი და სლაიდშოუს რეჟიმები.</p>
         <p xml:lang="nl">Deze uitgave moderniseert de instellingenpagina, vernieuwt de stijl van de albumpagina en voegt een bevestigingsvenster toe voordat bewerkte afbeeldingen worden verwijderd. Ook de problemen met de volledige schermmodus en de diavoorstelling zijn hiermee opgelost.</p>
         <p xml:lang="pt-BR">Esta versão moderniza a página de configurações, atualiza o estilo da página do álbum e adiciona uma caixa de diálogo de confirmação antes de descartar as edições de imagem. Também corrige os modos de tela cheia e apresentação de slides.</p>
         <p xml:lang="ru">В этом выпуске обновлена страница настроек, изменён стиль страницы альбома и добавлен диалог подтверждения перед отменой изменений изображения. Также исправлены полноэкранный режим и режим слайд-шоу.</p>
@@ -218,6 +219,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">תיקונים שקשורים בהפעלת חלונות</li>
           <li xml:lang="ia">Correctiones affin a activaction de fenestra</li>
           <li xml:lang="it">Correzioni in merito all'attivazione della finestra</li>
+          <li xml:lang="ka">გასწორდა ფანჯრის აქტივაციასთან დაკავშირებული შეცდომები</li>
           <li xml:lang="nl">Oplossingen met betrekking tot vensteractivering</li>
           <li xml:lang="pt-BR">Correções relacionadas à ativação de janelas</li>
           <li xml:lang="ru">Исправления, связанные с активацией окна</li>
@@ -232,6 +234,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">מגוון שיפורי קוד ותיקוני תקלות</li>
           <li xml:lang="ia">Varie perfectionamentos de codice e correctiones de faltas</li>
           <li xml:lang="it">Vari miglioramenti al codice, e correzioni di bug</li>
+          <li xml:lang="ka">კოდის სხვადასხვა გაუმჯობესებები</li>
           <li xml:lang="nl">Diverse codeverbeteringen en reparaties van fouten</li>
           <li xml:lang="pt-BR">Várias melhorias no código e correções de bugs</li>
           <li xml:lang="ru">Различные улучшения кода и исправления ошибок</li>
@@ -256,6 +259,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">הגבהת החלון בעת ההפעלה.</li>
           <li xml:lang="ia">Eleva fenestra sur activation.</li>
           <li xml:lang="it">Alza la finestra all'attivazione.</li>
+          <li xml:lang="ka">ფანჯრის ამოწევა აქტივაციისას</li>
           <li xml:lang="nl">Verhoog het venster bij activering.</li>
           <li xml:lang="pt-BR">Elevar a janela ao ativar.</li>
           <li xml:lang="ru">Поднятие окна при активации.</li>
@@ -277,6 +281,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">שיפורי ממשק משתמש.</li>
           <li xml:lang="ia">Perfectionamentos de interfacie de usator. </li>
           <li xml:lang="it">Miglioramenti all'interfaccia utente.</li>
+          <li xml:lang="ka">მომხმარებლის ინტერფეისის ზოგადი გაუმჯობესება.</li>
           <li xml:lang="nl">Verbeteringen aan het gebruikersinterface.</li>
           <li xml:lang="pt-BR">Melhorias na interface do usuário.</li>
           <li xml:lang="ru">Улучшения пользовательского интерфейса.</li>
@@ -291,6 +296,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">שיפורים בתמיכה בשינוי גודל תמונות וחיתוך.</li>
           <li xml:lang="ia">Perfectionamentos de supporto de redimensionar e taliar imagines.</li>
           <li xml:lang="it">Miglioramenti al ridimensionamento delle immagini e al supporto al ritaglio.</li>
+          <li xml:lang="ka">გაუმჯობესდა გამოსახულების ზომის შეცვლისა და ამოჭრის მხარდაჭერა.</li>
           <li xml:lang="nl">Ondersteuning voor het vergroten/verkleinen en bijsnijden van afbeeldingen is verbeterd.</li>
           <li xml:lang="pt-BR">Melhorias no suporte para redimensionamento e recorte de imagens.</li>
           <li xml:lang="ru">Улучшена поддержка изменения размера и обрезки изображений.</li>
@@ -305,6 +311,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">שיפורים בעיבוד SVG</li>
           <li xml:lang="ia">Perfectionamentos per rendition SVG</li>
           <li xml:lang="it">Miglioramenti al rendering SVG</li>
+          <li xml:lang="ka">გაუმჯობესდა SVG-ის რენდერი</li>
           <li xml:lang="nl">Verbeteringen voor SVG-weergave</li>
           <li xml:lang="pt-BR">Melhorias na renderização de SVG</li>
           <li xml:lang="ru">Улучшения отрисовки SVG</li>
@@ -319,6 +326,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="he">תמיכה בתיקון צבע ב־X11</li>
           <li xml:lang="ia">Supporto per correctiones de color sur X11</li>
           <li xml:lang="it">Supporto alla correzione dei colori in X11</li>
+          <li xml:lang="ka">ფერების კორექციის მხარდაჭერა X11-ზე</li>
           <li xml:lang="nl">Ondersteuning voor kleurcorrectie op X11</li>
           <li xml:lang="pt-BR">Suporte para correção de cor no X11</li>
           <li xml:lang="ru">Поддержка коррекции цвета в X11</li>
@@ -344,6 +352,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="he">המהדורה הזאת מכילה תיקוני תקלות קטנים ותרגומים עדכניים.</p>
         <p xml:lang="ia">Iste version contine solmente un parve correction de falta e traductiones actualisate.</p>
         <p xml:lang="it">Questa versione contiene solo una piccola correzione di bug e aggiornamenti alle traduzioni.</p>
+        <p xml:lang="ka">ეს ვერსია შეიცავს, მხოლოდ, პატარა შეცდომების გასწორებას და განახლებულ თარგმანებს.</p>
         <p xml:lang="nl">Deze uitgave bevat slechts een kleine reparaties van fouten en bijgewerkte vertalingen.</p>
         <p xml:lang="pt-BR">Esta versão contém apenas uma pequena correção de bug e traduções atualizadas.</p>
         <p xml:lang="ru">В этом выпуске исправлена небольшая ошибка и обновлены переводы.</p>
@@ -364,6 +373,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="he">המהדורה הראשונית של Koko, מציג תמונות גמיש לפלזמה לניידים ולשולחן העבודה</p>
         <p xml:lang="ia">Version initial de Koko,un visor de imagine convergente per Plasma Mobile e scriptorio</p>
         <p xml:lang="it">Versione iniziale di Koko, un semplice visualizzatore di immagini per Plasma Mobile e desktop</p>
+        <p xml:lang="ka">Koko-ს, კონვერგენტული გამოსახულების დამთვალიერებლის Plasma Mobile-ისა და დესკტოპისთვის, პირველი გამოცემა</p>
         <p xml:lang="nl">Eerste uitgave van Koko, een convergente afbeeldingsviewer voor Plasma Mobile en bureaublad</p>
         <p xml:lang="pt-BR">Lançamento inicial do Koko, um visualizador de imagens convergente para Plasma Mobile e desktop</p>
         <p xml:lang="ru">Представлен первый выпуск Koko — универсального просмотрщика изображений для Plasma Mobile и настольных систем</p>
