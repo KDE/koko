@@ -10,7 +10,7 @@ import QtQuick.Layouts
 import QtQml.Models
 
 import org.kde.kirigami as Kirigami
-
+import org.kde.kirigami.actioncollection as AC
 import org.kde.koko as Koko
 
 Kirigami.ScrollablePage {
@@ -366,30 +366,26 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             id: selectAllAction
-            icon.name: "edit-select-all-symbolic"
-            text: i18nc("@action:button", "Select All")
-            tooltip: i18nc("@info:tooltip", "Select all media")
+            objectName: "SelectAll"
+            AC.ActionCollection.collection: "org.kde.koko.gallery"
             enabled: !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            shortcut: StandardKey.SelectAll
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Select | ItemSelectionModel.Columns)
 
         },
         Kirigami.Action {
             id: deselectAllAction
-            icon.name: "edit-select-none-symbolic"
-            text: i18nc("@action:button", "Select None")
-            tooltip: i18nc("@info:tooltip", "Deselect all media")
             enabled: !page.isEmpty && selectionModel.hasSelection
+            objectName: "SelectNone"
+            AC.ActionCollection.collection: "org.kde.koko.gallery"
+            enabled: !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            shortcut: StandardKey.Deselect
             onTriggered: selectionModel.clearSelection()
         },
         Kirigami.Action {
             id: invertSelectionAction
-            icon.name: "edit-select-invert-symbolic"
-            text: i18nc("@action:button", "Invert Selection")
-            tooltip: i18nc("@info:tooltip", "Invert the selected media")
+            objectName: "InvertSelection"
+            AC.ActionCollection.collection: "org.kde.koko.gallery"
             enabled: !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Toggle | ItemSelectionModel.Columns)

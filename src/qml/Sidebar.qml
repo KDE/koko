@@ -11,6 +11,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.actioncollection as AC
 import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
@@ -84,30 +85,41 @@ Kirigami.OverlayDrawer {
                         y: menuButton.height
 
                         Kirigami.Action {
-                            fromQAction: root.application.action('options_configure')
+                            objectName: "Preferences"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            onTriggered: root.application.configurationView.open()
+                        }
+
+                        Kirigami.Action {
+                            objectName: "KeyBindings"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
+                        }
+
+                        Kirigami.Action {
+                            objectName: "FindAction"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         QQC2.MenuSeparator {}
 
                         Kirigami.Action {
-                            fromQAction: root.application.action('open_about_page')
+                            objectName: "AboutApp"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            icon.name: "kde-symbolic"
-                            fromQAction: root.application.action('open_about_kde_page')
+                            objectName: "AboutKDE"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            text: i18nc("@action:inMenu", "Donate…")
-                            icon.name: "help-donate-" + Qt.locale().currencySymbol(Locale.CurrencyIsoCode).toLowerCase() + "-symbolic"
-                            onTriggered: Qt.openUrlExternally("https://kde.org/donate/?app=koko")
+                            objectName: "Donate"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            text: i18nc("@action:inMenu", "Report Bug…")
-                            icon.name: "tools-report-bug-symbolic"
-                            onTriggered: Qt.openUrlExternally("https://bugs.kde.org/enter_bug.cgi?format=guided&product=koko&version=" + CoreAddons.AboutData.version)
+                            objectName: "ReportBug"
+                            AC.ActionCollection.collection: "org.kde.standardactions"
                         }
                     }
                 }
