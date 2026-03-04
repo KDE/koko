@@ -126,6 +126,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/mediaview/imagedelegate/VideoDelegate.qml
     qml/mediaview/imagedelegate/VideoPlayer.qml
 
+    qml/ActionCollection.qml
     qml/BottomNavBar.qml
     qml/Main.qml
     qml/PlacesPage.qml
