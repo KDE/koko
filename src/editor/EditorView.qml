@@ -88,76 +88,205 @@ Kirigami.Page {
         matrix.rotate(zDegrees, rotationAxes)
     }
 
+    component EditorSpinBox : Controls.SpinBox {
+        id: spinBox
+        stepSize: 1
+        Controls.ToolTip.visible: hovered
+        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+        Binding {
+            target: spinBox.contentItem
+            property: "horizontalAlignment"
+            value: Text.AlignRight
+            restoreMode: Binding.RestoreNone
+        }
+    }
+
     actions: [
         Kirigami.Action {
-            id: startResizeAction
-            checkable: true
-            checked: false
-            icon.name: checked ? "dialog-cancel" : "transform-scale"
-            text: checked ? i18nc("@action:button", "Cancel") : i18nc("@action:button Resize an image", "Resize");
-        },
-
-        Kirigami.Action {
-            id: finishResizeAction
-            property size targetSize: imageView.document.imageSize
-            icon.name: "dialog-ok"
-            text: i18nc("@action:button Resize an image", "Resize");
-            onTriggered: {
-                let matrix = Qt.matrix4x4()
-                const sx = targetSize.width / imageView.document.imageSize.width
-                const sy = targetSize.height / imageView.document.imageSize.height
-                scaleForViewer(matrix, getZDegrees(imageView.document.transform),
-                               sx, sy)
-                imageView.document.applyTransform(matrix)
-                startResizeAction.toggle()
-            }
-            visible: startResizeAction.checked
-            onVisibleChanged: {
-                targetSize = Qt.binding(() => imageView.document.imageSize)
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: Controls.ToolSeparator {
-                leftPadding: Kirigami.Units.largeSpacing
-                rightPadding: leftPadding
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: Controls.Label {
-                text: i18nc("@title:group for crop area size spinboxes", "Size:")
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: EditorSpinBox {
-                minimumContentWidth: widthTextMetrics.width
-                from: 1
-                to: imageView.document.imageSize.width * 8
-                value: finishResizeAction.targetSize.width//selectionTool.selectionWidth / editImage.ratioX
-                onValueModified: finishResizeAction.targetSize.width = value//selectionTool.selectionWidth = value * editImage.ratioX
-            }
-        },
-
-        Kirigami.Action {
-            visible: startResizeAction.checked
-            displayComponent: EditorSpinBox {
-                minimumContentWidth: heightTextMetrics.width
-                from: 1
-                to: imageView.document.imageSize.height * 8
-                value: finishResizeAction.targetSize.height//selectionTool.selectionHeight / editImage.ratioY
-                onValueModified: finishResizeAction.targetSize.height = value//selectionTool.selectionHeight = value * editImage.ratioY
+            id: resizeAction
+            icon.name: "transform-scale-symbolic"
+            text: i18nc("@action:button Resize an image", "Resize")
+            displayComponent: Controls.ToolButton {
+                id: resizeButton
+                Accessible.role: Accessible.ButtonMenu
+                icon.name: resizeAction.icon.name
+                text: resizeAction.text
+                down: resizePopup.visible || pressed
+                onClicked: if (!resizePopup.visible) {
+                    resizePopup.open()
+                    widthSpinBox.forceActiveFocus(resizeButton.focusReason)
+                }
+                Controls.Popup {
+                    id: resizePopup
+                    property size targetSize: imageView.document.imageSize
+                    function resetToPixels(): void {
+                        widthSpinBox.to = Qt.binding(() => imageView.document.imageSize.width * 10)
+                        heightSpinBox.to = Qt.binding(() => imageView.document.imageSize.height * 10)
+                        resizePopup.targetSize = Qt.binding(() => imageView.document.imageSize)
+                        widthSpinBox.value = Qt.binding(() => resizePopup.targetSize.width)
+                        widthSpinBox.contentItem.text = Qt.binding(() => widthSpinBox.displayText)
+                        heightSpinBox.value = Qt.binding(() => resizePopup.targetSize.height)
+                        heightSpinBox.contentItem.text = Qt.binding(() => heightSpinBox.displayText)
+                    }
+                    function resetToPercentage(): void {
+                        widthSpinBox.to = 1000
+                        heightSpinBox.to = 1000
+                        resizePopup.targetSize.width = 100
+                        resizePopup.targetSize.height = 100
+                        widthSpinBox.value = Qt.binding(() => resizePopup.targetSize.width)
+                        widthSpinBox.contentItem.text = Qt.binding(() => widthSpinBox.displayText)
+                        heightSpinBox.value = Qt.binding(() => resizePopup.targetSize.height)
+                        heightSpinBox.contentItem.text = Qt.binding(() => heightSpinBox.displayText)
+                    }
+                    Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Menu
+                    z: Kirigami.OverlayZStacking.z
+                    y: resizeButton.height
+                    clip: false
+                    ColumnLayout {
+                        spacing: Kirigami.Units.mediumSpacing
+                        anchors.fill: parent
+                        Controls.Label {
+                            text: i18nc("@title:group for radio buttons to resize by type", "Resize by:")
+                        }
+                        Controls.ButtonGroup { buttons: radioButtonRow.children }
+                        RowLayout {
+                            id: radioButtonRow
+                            spacing: parent.spacing
+                            Layout.fillWidth: true
+                            Controls.RadioButton {
+                                id: pixelsRadioButton
+                                Layout.fillWidth: true
+                                checked: true
+                                text: i18nc("@option:radio resize by pixels", "Pixels")
+                                onToggled: resizePopup.resetToPixels()
+                            }
+                            Controls.RadioButton {
+                                id: percentageRadioButton
+                                Layout.fillWidth: true
+                                checked: false
+                                text: i18nc("@option:radio resize by percentage", "Percentage")
+                                onToggled: resizePopup.resetToPercentage()
+                            }
+                        }
+                        RowLayout {
+                            spacing: parent.spacing
+                            Layout.fillWidth: true
+                            EditorSpinBox {
+                                id: widthSpinBox
+                                focus: true
+                                Layout.fillWidth: true
+                                Accessible.name: i18nc("@info:tooltip resize width spinbox", "Width")
+                                Controls.ToolTip.text: Accessible.name
+                                from: 1
+                                to: imageView.document.imageSize.width * 10
+                                value: resizePopup.targetSize.width
+                                onValueModified: {
+                                    resizePopup.targetSize.width = value
+                                    if (lockAspectRatioCheckBox.checked) {
+                                        resizePopup.targetSize.height = percentageRadioButton.checked
+                                            ? value
+                                            : value / imageView.document.imageSize.width * imageView.document.imageSize.height
+                                        heightSpinBox.value = Qt.binding(() => resizePopup.targetSize.height)
+                                        heightSpinBox.contentItem.text = Qt.binding(() => heightSpinBox.displayText)
+                                    }
+                                }
+                            }
+                            Text {
+                                color: palette.windowText
+                                text: i18nc("multiplication sign between width and height adjusting spinboxes", "×")
+                            }
+                            EditorSpinBox {
+                                id: heightSpinBox
+                                Layout.fillWidth: true
+                                Accessible.name: i18nc("@info:tooltip resize height spinbox", "Height")
+                                Controls.ToolTip.text: Accessible.name
+                                from: 1
+                                to: imageView.document.imageSize.height * 10
+                                value: resizePopup.targetSize.height
+                                onValueModified: {
+                                    resizePopup.targetSize.height = value
+                                    if (lockAspectRatioCheckBox.checked) {
+                                        resizePopup.targetSize.width = percentageRadioButton.checked
+                                            ? value
+                                            : value / imageView.document.imageSize.height * imageView.document.imageSize.width
+                                        widthSpinBox.value = Qt.binding(() => resizePopup.targetSize.width)
+                                        widthSpinBox.contentItem.text = Qt.binding(() => widthSpinBox.displayText)
+                                    }
+                                }
+                            }
+                        }
+                        Controls.CheckBox {
+                            id: lockAspectRatioCheckBox
+                            Layout.fillWidth: true
+                            checked: true
+                            text: i18nc("@option:check", "Keep aspect ratio")
+                        }
+                        RowLayout {
+                            Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
+                            spacing: parent.spacing
+                            Controls.Button {
+                                icon.name: "edit-undo-symbolic"
+                                text: i18nc("@action:button reset size spinboxes", "Reset")
+                                enabled: applyButton.enabled
+                                onClicked: if (pixelsRadioButton.checked) {
+                                    resizePopup.resetToPixels()
+                                } else {
+                                    resizePopup.resetToPercentage()
+                                }
+                            }
+                            Controls.Button {
+                                id: applyButton
+                                icon.name: "dialog-ok-apply-symbolic"
+                                text: i18nc("@action:button apply resize to image", "Apply")
+                                enabled: percentageRadioButton.checked
+                                    ? resizePopup.targetSize.width !== 100
+                                        || resizePopup.targetSize.height !== 100
+                                    : resizePopup.targetSize.width !== imageView.document.imageSize.width
+                                        || resizePopup.targetSize.height !== imageView.document.imageSize.height
+                                onClicked: {
+                                    const usePercentage = percentageRadioButton.checked
+                                    let matrix = Qt.matrix4x4()
+                                    const xDenominator = usePercentage ? 100 : imageView.document.imageSize.width
+                                    const yDenominator = usePercentage ? 100 : imageView.document.imageSize.height
+                                    const sx = resizePopup.targetSize.width / xDenominator
+                                    const sy = resizePopup.targetSize.height / yDenominator
+                                    scaleForViewer(matrix, getZDegrees(imageView.document.transform),
+                                                sx, sy)
+                                    imageView.document.applyTransform(matrix)
+                                    if (pixelsRadioButton.checked) {
+                                        resizePopup.resetToPixels()
+                                    } else {
+                                        resizePopup.resetToPercentage()
+                                    }
+                                    resizePopup.close()
+                                }
+                            }
+                        }
+                    }
+                    // contentItem.parent is the Popup's internal Page that acts
+                    // as a root item and focus scope.
+                    contentItem.parent.Keys.onPressed: (event) => {
+                        if (!event.accepted && (event.key === Qt.Key_Enter || event.key === Qt.Key_Return)) {
+                            // animate the click so the user can see the apply
+                            // button was pressed.
+                            applyButton.animateClick()
+                            event.accepted = true
+                        }
+                    }
+                    onVisibleChanged: if (visible) {
+                        if (pixelsRadioButton.checked) {
+                            resizePopup.resetToPixels()
+                        } else {
+                            resizePopup.resetToPercentage()
+                        }
+                    }
+                }
             }
         },
 
         Kirigami.Action {
             icon.name: "image-rotate-symbolic"
             text: i18nc("@action:button Rotate an image", "Rotate")
-            visible: !startResizeAction.checked
 
             Kirigami.Action {
                 icon.name: "image-rotate-left-symbolic"
@@ -167,7 +296,6 @@ Kirigami.Page {
                     rotateForViewer(matrix, getScale(imageView.document.transform), -90)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
                 shortcut: "Ctrl+Shift+R"
             }
 
@@ -179,7 +307,6 @@ Kirigami.Page {
                     rotateForViewer(matrix, getScale(imageView.document.transform), 90)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
                 shortcut: "Ctrl+R"
             }
         },
@@ -187,7 +314,6 @@ Kirigami.Page {
         Kirigami.Action {
             icon.name: "image-flip-horizontal-symbolic"
             text: i18nc("@action:button Flip/mirror an image", "Flip")
-            visible: !startResizeAction.checked
 
             Kirigami.Action {
                 icon.name: "image-flip-horizontal-symbolic"
@@ -198,7 +324,6 @@ Kirigami.Page {
                                 -1, 1)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
             }
 
             Kirigami.Action {
@@ -210,7 +335,6 @@ Kirigami.Page {
                                 1, -1)
                     imageView.document.applyTransform(matrix)
                 }
-                enabled: !startResizeAction.checked
             }
         },
 
@@ -354,43 +478,6 @@ Kirigami.Page {
         }
 
         onDiscardChanges: root.mainWindow.pageStack.layers.pop()
-    }
-
-    TextMetrics {
-        id: widthTextMetrics
-        text: (imageView.document.imageSize.width * 10).toLocaleString(root.locale, 'f', 0)
-    }
-
-    TextMetrics {
-        id: heightTextMetrics
-        text: (imageView.document.imageSize.height * 10).toLocaleString(root.locale, 'f', 0)
-    }
-
-    component EditorSpinBox : Controls.SpinBox {
-        id: control
-        property real minimumContentWidth: 0
-        contentItem: Controls.TextField {
-            id: textField
-            implicitWidth: control.minimumContentWidth + leftPadding + rightPadding
-            implicitHeight: Math.ceil(contentHeight) + topPadding + bottomPadding
-            palette: control.palette
-            leftPadding: control.spacing
-            rightPadding: control.spacing
-            topPadding: 0
-            bottomPadding: 0
-            text: control.displayText
-            font: control.font
-            color: Kirigami.Theme.textColor
-            selectionColor: Kirigami.Theme.highlightColor
-            selectedTextColor: Kirigami.Theme.highlightedTextColor
-            horizontalAlignment: Qt.AlignHCenter
-            verticalAlignment: Qt.AlignVCenter
-            readOnly: !control.editable
-            validator: control.validator
-            inputMethodHints: control.inputMethodHints
-            selectByMouse: true
-            background: null
-        }
     }
 
     footer: Controls.ToolBar {
