@@ -12,6 +12,7 @@ import QtQuick.Window
 
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
+import org.kde.kirigami.actioncollection as AC
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
 
@@ -28,6 +29,10 @@ StatefulApp.StatefulWindow {
     }
 
     windowName: "MainWindow"
+
+    ActionCollection {
+        pageRow: root.pageStack
+    }
 
     title: pageStack?.currentItem?.title ?? "";
 
