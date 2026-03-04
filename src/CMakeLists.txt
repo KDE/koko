@@ -6,7 +6,6 @@
 add_subdirectory(models)
 
 add_subdirectory(thumbnails)
-add_subdirectory(editor)
 
 qt_add_library(koko_static STATIC
     exiv2extractor.cpp
@@ -156,8 +155,6 @@ target_link_libraries(koko PRIVATE
     koko_staticplugin
     photos_model_staticplugin
     photos_thumbnails_staticplugin
-    photos_editor_static
-    photos_editor_staticplugin
 )
 
 install(FILES koko.notifyrc DESTINATION ${KDE_INSTALL_KNOTIFYRCDIR})
