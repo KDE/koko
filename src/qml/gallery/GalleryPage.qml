@@ -10,6 +10,7 @@ import QtQuick.Layouts
 import QtQml.Models
 
 import org.kde.kirigami as Kirigami
+
 import org.kde.koko as Koko
 
 Kirigami.ScrollablePage {
@@ -37,6 +38,9 @@ Kirigami.ScrollablePage {
 
     property list<var> navigationHistory: []
     property int navigationIndex: -1
+
+    property bool selectionMode: selectionModel.hasSelection
+    property bool suppressVisibleSelectionMode: false
 
     Component.onCompleted: {
         if (page.canNavigate) {
@@ -121,60 +125,9 @@ Kirigami.ScrollablePage {
 
     readonly property list<QtObject> toolBarActions: [
         // Selection
-        ShareAction {
-            id: shareAction
-            tooltip: i18nc("@info:tooltip", "Share the selected media")
-            enabled: selectionModel.hasSelection
-            visible: selectionModel.hasSelection
-            application: page.mainWindow
-
-            property Connections connection: Connections {
-                target: selectionModel
-
-                function onSelectionChanged() {
-                    let urls = [];
-                    let mimeTypes = new Set();
-
-                    selectionModel.selectedIndexes.forEach(index => {
-                        const url = selectionModel.model.data(index, AbstractGalleryModel.UrlRole);
-                        const mimeType = selectionModel.model.data(index, AbstractGalleryModel.MimeTypeRole);
-
-                        if (url) {
-                            urls.push(url.toString());
-                        }
-
-                        if (mimeType) {
-                            mimeTypes.add(mimeType);
-                        }
-                    });
-
-                    shareAction.inputData = {
-                        urls: urls,
-                        mimeType: Array.from(mimeTypes)
-                    };
-                }
-            }
-        },
-        Kirigami.Action {
-            id: moveToTrashAction
-            icon.name: "group-delete-symbolic"
-            text: i18nc("@action:button Move the selected media to the trash", "Move to Trash")
-            tooltip: i18nc("@info:tooltip", "Move the selected media to the trash")
-            enabled: selectionModel.hasSelection && !page.isTrashView
-            visible: selectionModel.hasSelection && !page.isTrashView
-            shortcut: StandardKey.Delete
-            onTriggered: {
-                let urls = [];
-                selectionModel.selectedIndexes.forEach(index => {
-                    urls.push(selectionModel.model.data(index, AbstractGalleryModel.UrlRole));
-                });
-
-                Koko.DirModelUtils.deleteUrls(urls);
-            }
-        },
         Kirigami.Action {
             id: restoreTrashAction
-            icon.name: "group-delete-symbolic"
+            icon.name: "edit-reset-symbolic"
             text: i18nc("@action:button Restore the selected media from the trash", "Restore")
             tooltip: i18nc("@info:tooltip", "Restore the selected media to their former locations")
             enabled: selectionModel.hasSelection && page.isTrashView
@@ -192,7 +145,7 @@ Kirigami.ScrollablePage {
         // Sort/filter
         Kirigami.Action {
             separator: true
-            visible: shareAction.visible || moveToTrashAction.visible || restoreTrashAction.visible
+            visible: restoreTrashAction.visible
         },
         Kirigami.Action {
             text: i18nc("@action:button %1 is the selected sort order, e.g. Name", "Sort: %1", sortGroup.checkedAction.text)
@@ -325,6 +278,78 @@ Kirigami.ScrollablePage {
         }
     ]
 
+    Koko.Exiv2Extractor {
+        id: exiv2Extractor
+        filePath: selectionModel.selectedIndexes.length === 1
+                        ? selectionModel.model.data(selectionModel.selectedIndexes[0], AbstractGalleryModel.UrlRole)
+                        : ""
+    }
+
+    readonly property list<QtObject> extraHiddenUiActions: [
+        Kirigami.Action {
+            id: favoriteAction
+            text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
+            icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
+            tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
+            checkable: true
+            checked: exiv2Extractor.favorite
+            enabled: selectionModel.selectedIndexes.length === 1
+            visible: selectionModel.selectedIndexes.length === 1
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onToggled: {
+                exiv2Extractor.toggleFavorite(exiv2Extractor.filePath.toString().replace("file://", ""));
+                // makes change immediate
+                kokoProcessor.removeFile(exiv2Extractor.filePath.toString().replace("file://", ""));
+                kokoProcessor.addFile(exiv2Extractor.filePath.toString().replace("file://", ""));
+            }
+        },
+        ShareAction {
+            id: shareAction
+            tooltip: i18nc("@info:tooltip", "Share the selected media")
+            enabled: selectionModel.hasSelection
+            visible: selectionModel.hasSelection
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            application: page.mainWindow
+
+            property Connections connection: Connections {
+                target: selectionModel
+
+                function onSelectionChanged() {
+                    let urls = [];
+                    let mimeTypes = new Set();
+
+                    selectionModel.selectedIndexes.forEach(index => {
+                        const url = selectionModel.model.data(index, AbstractGalleryModel.UrlRole);
+                        const mimeType = selectionModel.model.data(index, AbstractGalleryModel.MimeTypeRole);
+
+                        if (url) {
+                            urls.push(url.toString());
+                        }
+
+                        if (mimeType) {
+                            mimeTypes.add(mimeType);
+                        }
+                    });
+
+                    shareAction.inputData = {
+                        urls: urls,
+                        mimeType: Array.from(mimeTypes)
+                    };
+                }
+            }
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+            visible: favoriteAction.visible
+        }
+    ]
+
+    Koko.FileMenuActions {
+        id: fileMenuActions
+        urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
+    }
+
     readonly property list<QtObject> otherHiddenUiActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -346,7 +371,7 @@ Kirigami.ScrollablePage {
             icon.name: "edit-select-none-symbolic"
             text: i18nc("@action:button", "Select None")
             tooltip: i18nc("@info:tooltip", "Deselect all media")
-            enabled: !page.isEmpty && !page.disallowMassSelection
+            enabled: !page.isEmpty && selectionModel.hasSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             shortcut: StandardKey.Deselect
             onTriggered: selectionModel.clearSelection()
@@ -362,11 +387,6 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    Koko.FileMenuActions {
-        id: fileMenuActions
-        urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
-    }
-
     Component {
         id: kirigamiActionComponent
         Kirigami.Action {}
@@ -378,6 +398,9 @@ Kirigami.ScrollablePage {
             list.push(action);
         }
         /* Hidden actions */
+        for (let action of extraHiddenUiActions) {
+            list.push(action);
+        }
         for (let fileMenuAction of fileMenuActions.actions) {
             let kirigamiAction = kirigamiActionComponent.createObject(this, {
                 displayHint: Kirigami.DisplayHint.AlwaysHide,
@@ -526,7 +549,6 @@ Kirigami.ScrollablePage {
             return row * columnCount + column;
         }
 
-        // TODO: Make handling + selection more Dolphin-like?
         delegate: GalleryDelegate {
             id: delegate
 
@@ -536,34 +558,131 @@ Kirigami.ScrollablePage {
 
             highlighted: gridView.currentIndex == index
             selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))
+            selectionMode: page.selectionMode
+            suppressVisibleSelectionMode: page.suppressVisibleSelectionMode
 
-            Controls.ToolTip.text: name
-            Controls.ToolTip.visible: hovered && name.length !== 0 && (itemType === Koko.AbstractGalleryModel.Media || delegate.nameTruncated)
-            Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
-
-            onPressAndHold: selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.Toggle)
-
-            onClicked: {
-                if (selectionModel.hasSelection || Koko.Controller.keyboardModifiers() & Qt.ControlModifier) {
-                    selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.Toggle);
-                } else {
-                    gridView.currentIndex = delegate.index;
-                    switch (delegate.itemType) {
-                        case Koko.AbstractGalleryModel.Media:
-                            page.openMediaViewPage(delegate.url);
-                            break;
-                        case Koko.AbstractGalleryModel.Folder:
-                        case Koko.AbstractGalleryModel.Collection:
-                            let gallerySortFilterProxyModelIndex = gallerySortFilterProxyModel.index(delegate.index, 0);
-                            let galleryModelIndex = gallerySortFilterProxyModel.mapToGalleryModelIndex(gallerySortFilterProxyModelIndex);
-                            let path = page.galleryModel.pathForIndex(galleryModelIndex);
-
-                            page.navigate(path);
-                            break;
-                        default:
-                            break;
+            TapHandler {
+                acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
+                acceptedButtons: Qt.RightButton | Qt.LeftButton
+                onTapped: (eventPoint, button) => {
+                    if (button === Qt.RightButton) {
+                        delegate.showMenu();
+                    } else if (button === Qt.LeftButton) {
+                        if (point.modifiers & Qt.ShiftModifier) {
+                            delegate.shiftSelect();
+                        } else if (point.modifiers & Qt.ControlModifier) {
+                            delegate.ctrlSelect();
+                        } else {
+                            page.selectionMode ? delegate.ctrlSelect()
+                                               : delegate.open();
+                        }
                     }
                 }
+            }
+
+            TapHandler {
+                acceptedDevices: PointerDevice.TouchScreen
+                onTapped: page.selectionMode ? delegate.ctrlSelect()
+                                             : delegate.open()
+                onLongPressed: page.selectionMode ? delegate.select()
+                                                  : delegate.showMenu()
+            }
+
+            Keys.onSpacePressed: delegate.ctrlSelect()
+            Keys.onReturnPressed: event => Keys.enterPressed(event)
+            Keys.onEnterPressed: page.selectionMode ? delegate.ctrlSelect()
+                                                    : delegate.open()
+
+            function open() {
+                gridView.currentIndex = delegate.index;
+                switch (delegate.itemType) {
+                    case Koko.AbstractGalleryModel.Media:
+                        page.openMediaViewPage(delegate.url);
+                        break;
+                    case Koko.AbstractGalleryModel.Folder:
+                    case Koko.AbstractGalleryModel.Collection:
+                        let gallerySortFilterProxyModelIndex = gallerySortFilterProxyModel.index(delegate.index, 0);
+                        let galleryModelIndex = gallerySortFilterProxyModel.mapToGalleryModelIndex(gallerySortFilterProxyModelIndex);
+                        let path = page.galleryModel.pathForIndex(galleryModelIndex);
+
+                        page.navigate(path);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            function select() {
+                gridView.currentIndex = delegate.index;
+                selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.ClearAndSelect);
+            }
+
+            function shiftSelect() {
+                let fromIndex = Math.min(gridView.currentIndex, delegate.index);
+                let toIndex = Math.max(gridView.currentIndex, delegate.index);
+
+                // NOTE: This is not performant, but QML API doesn't allow for anything better
+                for (let i = fromIndex; i <= toIndex; ++i) {
+                    selectionModel.select(gridView.model.index(i, 0), ItemSelectionModel.Select);
+                }
+            }
+
+            function ctrlSelect() {
+                gridView.currentIndex = delegate.index;
+                selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.Toggle);
+            }
+
+            function showMenu() {
+                let selectionWasEmpty = !selectionModel.hasSelection;
+                if (selectionWasEmpty) {
+                    // NOTE: This is ugly. It would be better if we could create gallery page actions by
+                    // creating a QML QtObject with all of the actions as properties, pass it a KFileItemList
+                    // and have it set them up, and then add them to an actions list by referencing their
+                    // properties. That would nicely separate context menu actions from the page actions, and
+                    // make it so we don't have to select for the context menu. Probably better for Marco's
+                    // action collection stuff too. File actions can be exported as proprties of FileMenuActions
+                    // and just converted to Kirigami.Action from QAction.
+                    page.suppressVisibleSelectionMode = true;
+                }
+
+                if (!selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))) {
+                    selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.ClearAndSelect);
+                }
+
+                let list = [];
+
+                list.push(favoriteAction);
+                list.push(shareAction);
+
+                let separatorAction = kirigamiActionComponent.createObject(this, {
+                    separator: true
+                });
+                list.push(separatorAction);
+
+                list.push(restoreTrashAction);
+
+                for (let fileMenuAction of fileMenuActions.actions) {
+                    let kirigamiAction = kirigamiActionComponent.createObject(this, {
+                        displayHint: Kirigami.DisplayHint.AlwaysHide,
+                        fromQAction: fileMenuAction
+                    });
+                    list.push(kirigamiAction);
+                }
+
+                let contextMenu = galleryContextMenu.createObject(page.mainWindow, {
+                    galleryActions: list,
+                    titleText: selectionModel.selectedIndexes.length === 1 ? selectionModel.model.data(selectionModel.selectedIndexes[0], AbstractGalleryModel.NameRole)
+                                                                           : i18np("%1 item", "%1 items", selectionModel.selectedIndexes.length)
+                }) as GalleryContextMenu;
+
+                if (selectionWasEmpty) {
+                    contextMenu.closed.connect(() => {
+                        selectionModel.clearSelection();
+                        page.suppressVisibleSelectionMode = false;
+                    });
+                }
+
+                contextMenu.popup();
             }
 
             Controls.AbstractButton {
@@ -578,14 +697,14 @@ Kirigami.ScrollablePage {
                 visible: delegate.itemType === Koko.AbstractGalleryModel.Media
                          || delegate.itemType === Koko.AbstractGalleryModel.Folder
 
-                onClicked: selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.Toggle)
+                onClicked: delegate.ctrlSelect()
 
                 contentItem: Kirigami.Icon {
                     source: delegate.selected ? "emblem-remove" : "emblem-added"
                     active: parent.hovered
                 }
 
-                opacity: (delegate.hovered || selectionModel.hasSelection) ? 0.5 : 0
+                opacity: (delegate.hovered || (page.selectionMode && !page.suppressVisibleSelectionMode)) ? 0.5 : 0
             }
         }
 
@@ -676,5 +795,10 @@ Kirigami.ScrollablePage {
                 }
             }
         }
+    }
+
+    Component {
+        id: galleryContextMenu
+        GalleryContextMenu {}
     }
 }
