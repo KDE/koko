@@ -64,21 +64,19 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     }
 
     m_urls = urls;
-    for (auto action : m_actions) {
-        action->deleteLater();
-    }
-    m_actions.clear();
+
+    QList<QObject *> newActions;
 
     if (m_urls.isEmpty()) {
         Q_EMIT urlsChanged();
         return;
     }
 
-    static const auto addAction = [this](const QIcon &icon, const QString &text, auto func, const bool enabled = true) {
+    auto addAction = [this, &newActions](const QIcon &icon, const QString &text, auto func, const bool enabled = true) {
         auto action = new QAction(icon, text, this);
         action->setEnabled(enabled);
         connect(action, &QAction::triggered, this, func);
-        m_actions.push_back(action);
+        newActions.push_back(action);
         return action;
     };
 
@@ -161,7 +159,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
                     });
             dialog->open();
         };
-        m_actions.push_back(KStandardAction::saveAs(this, saveAsLambda, this));
+        newActions.push_back(KStandardAction::saveAs(this, saveAsLambda, this));
     }
 
     // Open Containing Folder action
@@ -204,7 +202,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         KUrlMimeData::setUrls(urls, mostLocalUrls, data);
         QApplication::clipboard()->setMimeData(data);
     };
-    m_actions.push_back(KStandardAction::copy(this, copyLambda, this));
+    newActions.push_back(KStandardAction::copy(this, copyLambda, this));
 
     auto copyPathLambda = [fileItems] {
         // TODO: Is better behaviour possible for multiple fileItems?
@@ -233,7 +231,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             });
             handler->askUserDelete({m_urls}, KIO::AskUserActionInterface::Trash, KIO::AskUserActionInterface::DefaultConfirmation);
         };
-        m_actions.push_back(KStandardAction::moveToTrash(this, moveToTrashLambda, this));
+        newActions.push_back(KStandardAction::moveToTrash(this, moveToTrashLambda, this));
     }
 
     KConfigGroup cg(KSharedConfig::openConfig(), u"KDE"_s);
@@ -251,7 +249,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             });
             handler->askUserDelete(m_urls, KIO::AskUserActionInterface::Delete, KIO::AskUserActionInterface::DefaultConfirmation);
         };
-        m_actions.push_back(KStandardAction::deleteFile(this, deleteLambda, this));
+        newActions.push_back(KStandardAction::deleteFile(this, deleteLambda, this));
     }
 
     // QPrinter requires the use of QPainter, so it must be a readable image.
@@ -259,8 +257,13 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         auto printLambda = [this] {
             PrinterHelper::printFileFromUrl(m_urls[0]);
         };
-        m_actions.push_back(KStandardAction::print(this, printLambda, this));
+        newActions.push_back(KStandardAction::print(this, printLambda, this));
     }
+
+    for (auto action : m_actions) {
+        action->deleteLater();
+    }
+    m_actions = std::move(newActions);
 
     Q_EMIT urlsChanged();
 }
