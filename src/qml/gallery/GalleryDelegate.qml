@@ -24,9 +24,9 @@ Controls.ItemDelegate {
     required property bool selected
     required property url url
 
-    property alias thumbnailPriority: image.priority
+    required property bool selectionMode
 
-    readonly property bool nameTruncated: textLabel.truncated
+    property alias thumbnailPriority: image.priority
 
     leftPadding: Kirigami.Units.gridUnit
     rightPadding: Kirigami.Units.gridUnit
@@ -55,6 +55,10 @@ Controls.ItemDelegate {
     width: gridView.cellWidth
     height: gridView.cellHeight
 
+    Controls.ToolTip.text: name
+    Controls.ToolTip.visible: hovered && name.length !== 0 && (itemType === Koko.AbstractGalleryModel.Media || textLabel.truncated)
+    Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
     contentItem: Item {
 
         Kirigami.Icon {
@@ -73,6 +77,21 @@ Controls.ItemDelegate {
 
             width: Koko.Config.iconSize
             height: width
+
+            transform: Scale {
+                origin.x: image.width / 2
+                origin.y: image.height / 2
+                xScale: root.selectionMode ? 0.8 : 1
+                yScale: root.selectionMode ? 0.8 : 1
+
+                Behavior on xScale {
+                    NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
+                }
+
+                Behavior on yScale {
+                    NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
+                }
+            }
 
             fileItem: root.fileItem
         }
