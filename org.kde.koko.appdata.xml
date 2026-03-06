@@ -267,7 +267,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="pt-BR">Elevar a janela ao ativar.</li>
           <li xml:lang="ru">Поднятие окна при активации.</li>
           <li xml:lang="sl">Dvigni okno ob aktivaciji.</li>
-          <li xml:lang="tr">Etkinleştirince pencereyi yükselt</li>
+          <li xml:lang="tr">Etkinleştirildiğinde pencereyi öne getir</li>
           <li xml:lang="uk">Реалізовано підняття вікна при активації.</li>
         </ul>
       </description>
