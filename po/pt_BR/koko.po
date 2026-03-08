@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:41+0000\n"
-"PO-Revision-Date: 2026-02-21 08:36-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2026-03-06 15:57-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -1685,7 +1685,7 @@ msgstr "Sobre"
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
 msgid "About KDE"
-msgstr "Sobre o KDE"
+msgstr "Sobre a KDE"
 
 #: qml/ShareAction.qml:21
 #, kde-format
