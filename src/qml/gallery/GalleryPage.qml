@@ -330,7 +330,7 @@ Kirigami.ScrollablePage {
             id: selectAllAction
             AC.ActionCollection.action: "SelectAll"
             AC.ActionCollection.collection: "org.kde.koko.gallery"
-            enabled: !page.isEmpty && !page.disallowMassSelection
+            enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Select | ItemSelectionModel.Columns)
 
@@ -339,7 +339,7 @@ Kirigami.ScrollablePage {
             id: deselectAllAction
             AC.ActionCollection.action: "SelectNone"
             AC.ActionCollection.collection: "org.kde.koko.gallery"
-            enabled: !page.isEmpty && !page.disallowMassSelection
+            enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.clearSelection()
         },
@@ -347,7 +347,7 @@ Kirigami.ScrollablePage {
             id: invertSelectionAction
             AC.ActionCollection.action: "InvertSelection"
             AC.ActionCollection.collection: "org.kde.koko.gallery"
-            enabled: !page.isEmpty && !page.disallowMassSelection
+            enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Toggle | ItemSelectionModel.Columns)
         }
