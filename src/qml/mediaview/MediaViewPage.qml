@@ -17,6 +17,7 @@ import QtQuick.Window
 import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.actioncollection as AC
 import org.kde.kirigamiaddons.components as KAC
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
@@ -111,9 +112,8 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: editAction
-            text: i18nc("@action:intoolbar Edit an image", "&Edit")
-            icon.name: "edit-entry"
-            tooltip: i18nc("@info:tooltip", "Edit this image")
+            AC.ActionCollection.action: "EditImage"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
 
             visible: (listView.currentItem && listView.currentItem.type === Koko.FileInfo.RasterImageType) || (imagePlaceholder && imagePlaceholder.type === Koko.FileInfo.RasterImageType)
             onTriggered: {
