@@ -5,6 +5,7 @@
 #include "resizehelper.h"
 
 #include <QBuffer>
+#include <QFileInfo>
 #include <QImageWriter>
 #include <KIO/Global>
 
@@ -27,4 +28,9 @@ QString ResizeHelper::fileSize(AnnotationDocument *doc, int width, int height, c
     qint64 size = buffer.size();
     buffer.close();
     return KIO::convertSize(size);
+}
+
+QString ResizeHelper::fileSize(const QString &path)
+{
+    return KIO::convertSize(QFileInfo(path).size());
 }

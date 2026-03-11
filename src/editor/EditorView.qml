@@ -227,6 +227,11 @@ Kirigami.Page {
                             text: i18nc("@option:check", "Keep aspect ratio")
                         }
                         Controls.Label {
+                            id: originalSizeLabel
+                            text: i18nc("@info", "Original file size: %1",
+                                        Koko.ResizeHelper.fileSize(root.imagePath))
+                        }
+                        Controls.Label {
                             id: estimatedSizeLabel
                             property string fileSize: ""
                             // Avoid getting a new size in rapid succession because it can be expensive in the current implementation.

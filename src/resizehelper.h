@@ -20,4 +20,5 @@ class ResizeHelper : public QObject
 public:
     explicit ResizeHelper(QObject *parent = nullptr);
     Q_INVOKABLE static QString fileSize(AnnotationDocument *doc, int width, int height, const QString &mimeType);
+    Q_INVOKABLE static QString fileSize(const QString &path);
 };
