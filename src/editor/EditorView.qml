@@ -20,9 +20,10 @@ Kirigami.Page {
 
     required property Kirigami.ApplicationWindow mainWindow
 
-    property string imagePath
+    property url imageUrl
+    readonly property string imagePath: imageUrl.toString().replace("file://", "")
     onImagePathChanged: {
-        imageView.document.setBaseImage(imagePath.replace("file://", ""))
+        imageView.document.setBaseImage(imagePath)
     }
 
     readonly property string imageFileName: root.imagePath.substring(root.imagePath.lastIndexOf("/") + 1)
@@ -38,7 +39,7 @@ Kirigami.Page {
     rightPadding: 0
 
     function save(): bool {
-        const ok = imageView.document.saveImage(imagePath.replace("file://", ""));
+        const ok = imageView.document.saveImage(imagePath);
         if (!ok) {
             root.msg.type = Kirigami.MessageType.Error
             root.msg.text = i18nc("@label", "Unable to save file. Check if you have the correct permissions to save this file.")
@@ -478,7 +479,7 @@ Kirigami.Page {
         id: saveAsDialog
 
         fileMode: FileDialog.SaveFile
-        selectedFile: root.imagePath
+        selectedFile: root.imageUrl
 
         nameFilters: saveAsDialogHelper.nameFilters
         selectedNameFilter.index: saveAsDialogHelper.selectedNameFilterIndex
@@ -492,13 +493,12 @@ Kirigami.Page {
                 return;
             }
 
-            // TODO: Would surely be better if imagePath was also a url
-            if (root.imagePath === saveAsDialog.selectedFile) {
+            if (root.imageUrl === saveAsDialog.selectedFile) {
                 root.imageEdited();
             }
 
             imageView.document.modified = false;
-            root.imagePath = saveAsDialog.selectedFile;
+            root.imageUrl = saveAsDialog.selectedFile;
 
             // TODO: ImageViewPage should react to imagePath changing and show that file instead
         }
