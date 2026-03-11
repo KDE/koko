@@ -38,4 +38,16 @@ AC.ActionCollectionManager {
             toolTip: i18nc("@info:tooltip", "Invert the selected media")
         }
     }
+
+    AC.ActionCollection {
+        name: "org.kde.koko.mediaview"
+        text: i18nc("Actions category", "Media View")
+        AC.ActionData {
+            name: "EditImage"
+            icon.name: "edit-entry"
+            text: i18nc("@action:intoolbar Edit an image", "&Edit")
+            toolTip: i18nc("@info:tooltip", "Edit this image")
+            defaultShortcut: "Ctrl+E"
+        }
+    }
 }
