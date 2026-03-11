@@ -79,6 +79,8 @@ ZoomArea {
                 (Controls.ApplicationWindow.window as Koko.Main).contextDrawer.drawerOpen = false
             }
             doubleClickTimer.restart()
+        } else if (mouse.button === Qt.RightButton) {
+            root.contextMenuRequested();
         }
     }
     onDoubleClicked: (mouse) => {

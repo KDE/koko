@@ -106,6 +106,7 @@ ecm_target_qml_sources(koko_static SOURCES
 
     qml/mediaview/MediaViewPage.qml
     qml/mediaview/MediaViewThumbnail.qml
+    qml/mediaview/MediaViewContextMenu.qml
     qml/mediaview/DelegateLoader.qml
     qml/mediaview/ThumbnailStrip.qml
     qml/mediaview/OverviewControl.qml

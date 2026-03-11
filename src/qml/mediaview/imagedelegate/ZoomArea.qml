@@ -53,6 +53,8 @@ MouseArea {
     // original size is the most common behavior for zoom controls.
     property real maximumZoomFactor: 100
 
+    signal contextMenuRequested()
+
     // Fit to root unless arguments are smaller than the size of root.
     // Returning size instead of using separate width and height functions
     // since they both need to be calculated together.
@@ -162,7 +164,7 @@ MouseArea {
     }
 
     clip: true
-    acceptedButtons: root.interactive ? Qt.LeftButton | Qt.MiddleButton : Qt.LeftButton
+    acceptedButtons: Qt.LeftButton | Qt.RightButton | (root.interactive ? Qt.MiddleButton : Qt.NoButton)
     cursorShape: if (root.interactive) {
         return pressed ? Qt.ClosedHandCursor : Qt.OpenHandCursor
     } else {
@@ -297,16 +299,9 @@ MouseArea {
         yAxis.maximum: root.maxContentY(contentItem.height)
     }
 
-    // Support fullscreen view on mobile using longpress.
     TapHandler {
         acceptedDevices: PointerDevice.TouchScreen
-        onLongPressed: {
-            if (applicationWindow().visibility === Window.FullScreen) {
-                applicationWindow().visibility = Window.Windowed
-            } else {
-                applicationWindow().visibility = Window.FullScreen
-            }
-        }
+        onLongPressed: root.contextMenuRequested()
     }
 
     onDoubleClicked: (mouse) => {

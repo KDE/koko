@@ -95,6 +95,7 @@ Kirigami.Page {
 
     readonly property list<QtObject> toolBarActions: [
         Kirigami.Action {
+            id: favoriteAction
             text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
             tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
@@ -109,6 +110,7 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
+            id: editAction
             text: i18nc("@action:intoolbar Edit an image", "&Edit")
             icon.name: "edit-entry"
             tooltip: i18nc("@info:tooltip", "Edit this image")
@@ -128,6 +130,7 @@ Kirigami.Page {
             }
         },
         ShareAction {
+            id: shareAction
             text: i18nc("@action:intoolbar Share an image/video", "&Share")
             application: root.mainWindow
             tooltip: {
@@ -195,6 +198,7 @@ Kirigami.Page {
             onTriggered: Kirigami.Settings.isMobile ? mobileSlideshowConfig.open() : slideshowManager.start()
         },
         Kirigami.Action {
+            id: showControlsAction
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
             text: i18nc("@action:intoolbar Toggle visibility of toolbars and other UI elements", "Show &Controls")
@@ -207,6 +211,7 @@ Kirigami.Page {
             onToggled: root.mainWindow.controlsVisible = !root.mainWindow.controlsVisible
         },
         Kirigami.Action {
+            id: showThumbnailToolBarAction
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
             text: i18nc("@action:intoolbar Toggle visibility of toolbar", "Show &Thumbnail Toolbar")
@@ -464,6 +469,46 @@ Kirigami.Page {
                 }
 
                 return false;
+            }
+
+            Connections {
+                target: loader.item
+                function onContextMenuRequested() {
+                    let list = [];
+
+                    let separatorAction = kirigamiActionComponent.createObject(this, {
+                        separator: true
+                    });
+
+                    list.push(favoriteAction);
+                    list.push(shareAction);
+
+                    list.push(separatorAction);
+
+                    list.push(editAction);
+
+                    list.push(separatorAction);
+
+                    for (let fileMenuAction of fileMenuActions.actions) {
+                        let kirigamiAction = kirigamiActionComponent.createObject(this, {
+                            displayHint: Kirigami.DisplayHint.AlwaysHide,
+                            fromQAction: fileMenuAction
+                        });
+                        list.push(kirigamiAction);
+                    }
+
+                    list.push(separatorAction);
+
+                    list.push(fullscreenAction);
+                    list.push(showControlsAction);
+                    list.push(showThumbnailToolBarAction);
+
+                    let contextMenu = mediaViewContextMenu.createObject(root.mainWindow, {
+                        mediaViewActions: list,
+                        titleText: root.title
+                    }) as MediaViewContextMenu;
+                    contextMenu.popup();
+                }
             }
         }
 
@@ -1248,5 +1293,10 @@ Kirigami.Page {
         sequence: Application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
         enabled: root.modelReady
         onActivated: listView.incrementCurrentIndex()
+    }
+
+    Component {
+        id: mediaViewContextMenu
+        MediaViewContextMenu {}
     }
 }
