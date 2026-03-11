@@ -27,6 +27,8 @@ Kirigami.Page {
 
     readonly property string imageFileName: root.imagePath.substring(root.imagePath.lastIndexOf("/") + 1)
 
+    property string mimeType
+
     signal imageEdited()
 
     title: xi18nc("@title", "Edit <filename>%1</filename>", root.imageFileName)
@@ -119,6 +121,9 @@ Kirigami.Page {
                 Controls.Popup {
                     id: resizePopup
                     property size targetSize: imageView.document.imageSize
+                    onTargetSizeChanged: if (visible) {
+                        resizeTimer.restart()
+                    }
                     function resetToPixels(): void {
                         widthSpinBox.to = Qt.binding(() => imageView.document.imageSize.width * 10)
                         heightSpinBox.to = Qt.binding(() => imageView.document.imageSize.height * 10)
@@ -221,6 +226,33 @@ Kirigami.Page {
                             checked: true
                             text: i18nc("@option:check", "Keep aspect ratio")
                         }
+                        Controls.Label {
+                            id: estimatedSizeLabel
+                            property string fileSize: ""
+                            // Avoid getting a new size in rapid succession because it can be expensive in the current implementation.
+                            Timer {
+                                id: resizeTimer
+                                // Fast enough that it doesn't feel terribly slow.
+                                // Slow enough that it won't trigger twice when my
+                                // hyperscrolling mouse wheel decelerates while
+                                // scrolling on the the spinboxes.
+                                interval: 400
+                                triggeredOnStart: true
+                                onTriggered: {
+                                    // trigger on start only the first time
+                                    triggeredOnStart = false
+                                    const usePercentage = percentageRadioButton.checked
+                                    const w = usePercentage
+                                        ? imageView.document.imageSize.width * resizePopup.targetSize.width / 100
+                                        : resizePopup.targetSize.width
+                                    const h = usePercentage
+                                        ? imageView.document.imageSize.height * resizePopup.targetSize.height / 100
+                                        : resizePopup.targetSize.height
+                                    estimatedSizeLabel.fileSize = Koko.ResizeHelper.fileSize(imageView.document, w, h, root.mimeType)
+                                }
+                            }
+                            text: i18nc("@info", "Estimated file size: %1", fileSize)
+                        }
                         RowLayout {
                             Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
                             spacing: parent.spacing
@@ -237,7 +269,7 @@ Kirigami.Page {
                             Controls.Button {
                                 id: applyButton
                                 icon.name: "dialog-ok-apply-symbolic"
-                                text: i18nc("@action:button apply resize to image", "Apply")
+                                text: i18nc("@action:button apply resize to image", "Resize")
                                 enabled: percentageRadioButton.checked
                                     ? resizePopup.targetSize.width !== 100
                                         || resizePopup.targetSize.height !== 100
@@ -273,12 +305,13 @@ Kirigami.Page {
                             event.accepted = true
                         }
                     }
-                    onVisibleChanged: if (visible) {
+                    onAboutToShow: {
                         if (pixelsRadioButton.checked) {
                             resizePopup.resetToPixels()
                         } else {
                             resizePopup.resetToPercentage()
                         }
+                        resizeTimer.restart()
                     }
                 }
             }

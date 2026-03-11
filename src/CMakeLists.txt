@@ -30,6 +30,7 @@ qt_add_library(koko_static STATIC
     checkerboardimageprovider.cpp
     printerhelper.cpp
     filedialoghelper.cpp
+    resizehelper.cpp
 )
 
 kconfig_target_kcfg_file(koko_static
