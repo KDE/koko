@@ -84,40 +84,40 @@ Kirigami.OverlayDrawer {
                         y: menuButton.height
 
                         Kirigami.Action {
-                            objectName: "Preferences"
+                            AC.ActionCollection.action: "Preferences"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                             onTriggered: root.application.configurationView.open()
                         }
 
                         Kirigami.Action {
-                            objectName: "KeyBindings"
+                            AC.ActionCollection.action: "KeyBindings"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            objectName: "FindAction"
+                            AC.ActionCollection.action: "FindAction"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         QQC2.MenuSeparator {}
 
                         Kirigami.Action {
-                            objectName: "AboutApp"
+                            AC.ActionCollection.action: "AboutApp"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            objectName: "AboutKDE"
+                            AC.ActionCollection.action: "AboutKDE"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            objectName: "Donate"
+                            AC.ActionCollection.action: "Donate"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                         }
 
                         Kirigami.Action {
-                            objectName: "ReportBug"
+                            AC.ActionCollection.action: "ReportBug"
                             AC.ActionCollection.collection: "org.kde.standardactions"
                         }
                     }
