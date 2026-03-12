@@ -197,9 +197,38 @@ Kirigami.Page {
                                     }
                                 }
                             }
-                            Text {
-                                color: palette.windowText
-                                text: i18nc("multiplication sign between width and height adjusting spinboxes", "×")
+                            // Multiplication sign with more consistent appearance.
+                            // The issue with using '×' (multiplication sign) or
+                            // '✕' (multiplication x) is that they don't always
+                            // look good in this context with different fonts.
+                            // Sometimes they're too small, too big, too thick,
+                            // too thin, kind of blurry or slightly off center.
+                            Item {
+                                Layout.fillHeight: true
+                                implicitWidth: { 
+                                    const w = Math.round(widthSpinBox.implicitHeight / 3)
+                                    return w - w % 2 // keep it even
+                                }
+                                Rectangle {
+                                    anchors.alignWhenCentered: false
+                                    anchors.centerIn: parent
+                                    rotation: 45
+                                    // Get a hypotenuse to visually fill the
+                                    // square bounds of the sign after rotation.
+                                    height: Math.sqrt(parent.width ** 2 * 2)
+                                    width: 1
+                                    color: palette.windowText
+                                    radius: width / 2
+                                    Rectangle {
+                                        anchors.alignWhenCentered: false
+                                        anchors.centerIn: parent
+                                        rotation: 90
+                                        height: parent.height
+                                        width: parent.width
+                                        color: parent.color
+                                        radius: parent.radius
+                                    }
+                                }
                             }
                             EditorSpinBox {
                                 id: heightSpinBox
