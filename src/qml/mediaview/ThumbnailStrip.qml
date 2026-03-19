@@ -103,9 +103,28 @@ ListView {
         width: thumbnailView.delegateSize
         height: thumbnailView.delegateSize
 
-        onClicked: {
+        onClicked: if (!dragHandler.active) {
             centerAnimation.centeringBehavior = ThumbnailStrip.CenteringBehavior.NoCentering;
             thumbnailView.activated(delegate.index, delegate.url);
+        }
+
+        Drag.mimeData: {"text/uri-list" : [delegate.url]}
+        Drag.dragType: Drag.Automatic
+        DragHandler {
+            id: dragHandler
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
+            target: null
+            onActiveChanged: {
+                if (!active) {
+                    parent.Drag.active = false;
+                    parent.Drag.imageSource = "";
+                    return;
+                }
+                delegate.grabToImage(result => {
+                    parent.Drag.imageSource = result.url;
+                    parent.Drag.active = true;
+                });
+            }
         }
 
         Controls.ToolTip.text: Koko.DirModelUtils.fileNameOfUrl(delegate.url)
@@ -128,7 +147,7 @@ ListView {
             border.color: Kirigami.Theme.highlightColor
             radius: Kirigami.Units.cornerRadius
             opacity: thumbnailView.currentIndex === delegate.index ? 1 : 0
-            visible: opacity !== 0 || opacityAnimator.running
+            visible: (opacity !== 0 || opacityAnimator.running) && !(dragHandler.active && !delegate.Drag.active)
             Behavior on opacity {
                 OpacityAnimator {
                     id: opacityAnimator

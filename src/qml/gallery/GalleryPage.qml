@@ -588,6 +588,27 @@ Kirigami.ScrollablePage {
                                                   : delegate.showMenu()
             }
 
+            Drag.mimeData: {"text/uri-list" : [delegate.url]}
+            Drag.dragType: Drag.Automatic
+            DragHandler {
+                id: dragHandler
+                acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
+                target: null
+                onActiveChanged: {
+                    if (!active) {
+                        parent.Drag.active = false;
+                        parent.Drag.imageSource = "";
+                        return;
+                    }
+                    delegate.grabToImage(result => {
+                        parent.Drag.imageSource = result.url;
+                        parent.Drag.active = true;
+                    });
+                }
+            }
+            // keep background hidden when generating the drag image
+            background.visible: !(dragHandler.active && !Drag.active)
+
             Keys.onSpacePressed: delegate.ctrlSelect()
             Keys.onReturnPressed: event => Keys.enterPressed(event)
             Keys.onEnterPressed: page.selectionMode ? delegate.ctrlSelect()
@@ -694,8 +715,10 @@ Kirigami.ScrollablePage {
                 height: Kirigami.Units.iconSizes.smallMedium
                 z: gridView.z + 2
 
-                visible: delegate.itemType === Koko.AbstractGalleryModel.Media
-                         || delegate.itemType === Koko.AbstractGalleryModel.Folder
+                visible: (delegate.itemType === Koko.AbstractGalleryModel.Media
+                         || delegate.itemType === Koko.AbstractGalleryModel.Folder)
+                        // keep button hidden when generating the drag image
+                        && !(dragHandler.active && !Drag.active)
 
                 onClicked: delegate.ctrlSelect()
 
