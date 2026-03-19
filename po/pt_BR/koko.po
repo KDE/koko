@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:42+0000\n"
-"PO-Revision-Date: 2026-03-06 15:57-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"PO-Revision-Date: 2026-03-18 08:53-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1089,12 +1089,10 @@ msgid "Invert the selected media"
 msgstr "Inverte as mídias selecionadas"
 
 #: qml/gallery/GalleryPage.qml:675
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 item"
+msgstr[0] "%1 item"
 msgstr[1] "%1 itens"
 
 #: qml/gallery/GalleryPage.qml:715

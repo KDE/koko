@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:42+0000\n"
-"PO-Revision-Date: 2026-02-21 11:35+0100\n"
+"PO-Revision-Date: 2026-03-18 11:04+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1093,12 +1093,10 @@ msgid "Invert the selected media"
 msgstr "Inverteix els elements multimèdia seleccionats"
 
 #: qml/gallery/GalleryPage.qml:675
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 element"
+msgstr[0] "%1 element"
 msgstr[1] "%1 elements"
 
 #: qml/gallery/GalleryPage.qml:715

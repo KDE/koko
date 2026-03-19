@@ -1092,12 +1092,10 @@ msgid "Invert the selected media"
 msgstr "Obrátit výběr vybraných médií"
 
 #: qml/gallery/GalleryPage.qml:675
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 položka"
+msgstr[0] "%1 položka"
 msgstr[1] "%1 položky"
 msgstr[2] "%1 položek"
 

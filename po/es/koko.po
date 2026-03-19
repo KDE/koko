@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-18 00:42+0000\n"
-"PO-Revision-Date: 2026-02-22 00:29+0100\n"
+"PO-Revision-Date: 2026-03-18 10:18+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1089,12 +1089,10 @@ msgid "Invert the selected media"
 msgstr "Invertir la selección de medios"
 
 #: qml/gallery/GalleryPage.qml:675
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 elemento"
+msgstr[0] "%1 elemento"
 msgstr[1] "%1 elementos"
 
 #: qml/gallery/GalleryPage.qml:715
@@ -1718,11 +1716,3 @@ msgstr "General"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remoto"
-
-#~ msgctxt "@action:button Move the selected media to the trash"
-#~ msgid "Move to Trash"
-#~ msgstr "Mover a la papelera"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move the selected media to the trash"
-#~ msgstr "Mover los medios seleccionados a la papelera"
