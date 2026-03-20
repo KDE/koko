@@ -13,6 +13,7 @@
 #include <KDirModel>
 
 #include "abstractnavigablegallerymodel.h"
+#include "kokodirlister.h"
 
 /*!
  * Model for browsing the filesystem
@@ -38,15 +39,11 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = {}) const override;
 
-    bool requiresFiltering() const override
-    {
-        return true;
-    };
-
 Q_SIGNALS:
     void urlChanged();
 
 private:
     Status m_status;
-    KDirModel *const m_dirModel;
+    KokoDirLister m_dirLister;
+    KFileItemList m_fileItems;
 };

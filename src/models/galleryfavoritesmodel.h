@@ -29,11 +29,6 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = {}) const override;
 
-    bool requiresFiltering() const override
-    {
-        return false;
-    };
-
 private:
     void populate();
 

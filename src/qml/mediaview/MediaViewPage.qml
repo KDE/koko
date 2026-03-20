@@ -39,7 +39,7 @@ Kirigami.Page {
             return;
         }
 
-        if (root.gallerySortFilterProxyModel.galleryModel.status === Koko.AbstractGalleryModel.Loaded) {
+        if (root.gallerySortFilterProxyModel.sourceModel.status === Koko.AbstractGalleryModel.Loaded) {
             // Find index of the image we're showing in the model
             for (let i = 0; i < mediaViewFilterModel.rowCount(); ++i) {
                 let index = mediaViewFilterModel.index(i, 0);
@@ -53,7 +53,7 @@ Kirigami.Page {
     }
 
     Connections {
-        target: root.gallerySortFilterProxyModel.galleryModel
+        target: root.gallerySortFilterProxyModel.sourceModel
 
         function onStatusChanged() {
             updateModelReady();
@@ -70,7 +70,7 @@ Kirigami.Page {
     Koko.MediaViewFilterModel {
         id: mediaViewFilterModel
 
-        gallerySortFilterProxyModel: root.gallerySortFilterProxyModel
+        sourceModel: root.gallerySortFilterProxyModel
     }
 
     Component.onCompleted: {

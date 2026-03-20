@@ -33,11 +33,6 @@ QHash<int, QByteArray> AbstractGalleryModel::roleNames() const
     return roles;
 }
 
-bool AbstractGalleryModel::requiresFiltering() const
-{
-    return false;
-}
-
 QVariant AbstractGalleryModel::dataFromFileItem(const KFileItem &fileItem, int role) const
 {
     switch (role) {

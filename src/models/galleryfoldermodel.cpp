@@ -13,22 +13,28 @@
 GalleryFolderModel::GalleryFolderModel(QObject *parent)
     : AbstractNavigableGalleryModel(parent)
     , m_status(Unloaded)
-    , m_dirModel(new KDirModel(this))
 {
     connect(this, &GalleryFolderModel::pathChanged, this, &GalleryFolderModel::titleChanged);
 
-    connect(m_dirModel, &KDirModel::rowsAboutToBeInserted, this, &GalleryFolderModel::rowsAboutToBeInserted);
-    connect(m_dirModel, &KDirModel::rowsAboutToBeMoved, this, &GalleryFolderModel::rowsAboutToBeMoved);
-    connect(m_dirModel, &KDirModel::rowsAboutToBeRemoved, this, &GalleryFolderModel::rowsAboutToBeRemoved);
-    connect(m_dirModel, &KDirModel::rowsInserted, this, &GalleryFolderModel::rowsInserted);
-    connect(m_dirModel, &KDirModel::rowsMoved, this, &GalleryFolderModel::rowsMoved);
-    connect(m_dirModel, &KDirModel::rowsRemoved, this, &GalleryFolderModel::rowsRemoved);
-    connect(m_dirModel, &KDirModel::modelReset, this, &GalleryFolderModel::modelReset);
-    connect(m_dirModel, &KDirModel::modelAboutToBeReset, this, &GalleryFolderModel::modelAboutToBeReset);
-    connect(m_dirModel, &KDirModel::layoutChanged, this, &GalleryFolderModel::layoutChanged);
-    connect(m_dirModel, &KDirModel::layoutAboutToBeChanged, this, &GalleryFolderModel::layoutAboutToBeChanged);
+    connect(&m_dirLister, &KokoDirLister::itemsAdded, this, [this](const KFileItemList &items) {
+        beginInsertRows(QModelIndex(), m_fileItems.size(), m_fileItems.size() + items.size() - 1);
+        m_fileItems.append(items);
+        endInsertRows();
+    });
 
-    connect(m_dirModel->dirLister(), &KCoreDirLister::completed, this, [this]() {
+    connect(&m_dirLister, &KokoDirLister::itemsDeleted, this, [this](const KFileItemList &items) {
+        // Don't bother trying to batch contiguous rows, usually we'll only see one item deleted at a time
+        for (const KFileItem &fileItem : items) {
+            int index = m_fileItems.indexOf(fileItem);
+            if (index != -1) {
+                beginRemoveRows(QModelIndex(), index, index);
+                m_fileItems.removeAt(index);
+                endRemoveRows();
+            }
+        }
+    });
+
+    connect(&m_dirLister, &KokoDirLister::completed, this, [this]() {
         m_status = Loaded;
         Q_EMIT statusChanged();
     });
@@ -36,7 +42,7 @@ GalleryFolderModel::GalleryFolderModel(QObject *parent)
 
 QString GalleryFolderModel::title() const
 {
-    return titleForPath(m_dirModel->dirLister()->url());
+    return titleForPath(m_dirLister.url());
 }
 
 AbstractGalleryModel::Status GalleryFolderModel::status() const
@@ -54,7 +60,7 @@ QString GalleryFolderModel::titleForPath(const QVariant &path) const
 
 QVariant GalleryFolderModel::path() const
 {
-    return QVariant(m_dirModel->dirLister()->url());
+    return QVariant(m_dirLister.url());
 }
 
 void GalleryFolderModel::setPath(const QVariant &path)
@@ -65,7 +71,11 @@ void GalleryFolderModel::setPath(const QVariant &path)
         return;
     }
 
-    m_dirModel->openUrl(url);
+    beginResetModel();
+    m_fileItems.clear();
+    endResetModel();
+
+    m_dirLister.setUrl(url);
     m_status = Loading;
     Q_EMIT statusChanged();
     Q_EMIT pathChanged();
@@ -80,11 +90,10 @@ QVariant GalleryFolderModel::data(const QModelIndex &index, int role) const
 {
     Q_ASSERT(checkIndex(index, CheckIndexOption::ParentIsInvalid | CheckIndexOption::IndexIsValid));
 
-    const auto &fileItem = m_dirModel->index(index.row(), 0).data(KDirModel::FileItemRole).value<KFileItem>();
-    return dataFromFileItem(fileItem, role);
+    return dataFromFileItem(m_fileItems.at(index.row()), role);
 }
 
 int GalleryFolderModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : m_dirModel->rowCount();
+    return parent.isValid() ? 0 : m_fileItems.size();
 }
