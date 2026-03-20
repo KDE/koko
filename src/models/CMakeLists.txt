@@ -1,11 +1,13 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
-add_library(photos_model_static STATIC
+add_library(photos_models_static STATIC
     abstractgallerymodel.h
     abstractgallerymodel.cpp
     abstractnavigablegallerymodel.h
     abstractnavigablegallerymodel.cpp
+    kokodirlister.h
+    kokodirlister.cpp
     gallerysortfilterproxymodel.h
     gallerysortfilterproxymodel.cpp
     mediaviewfiltermodel.h
@@ -26,19 +28,19 @@ add_library(photos_model_static STATIC
     gallerylocationmodel.cpp
 )
 
-target_link_libraries(photos_model_static PUBLIC
+target_link_libraries(photos_models_static PUBLIC
     Qt::Quick
     Qt::Qml
     Qt::Sql
     Qt::Positioning
     KF6::KIOCore
-    KF6::KIOWidgets # For KDirModel
+    KF6::KIOWidgets
     KF6::KIOGui
     KF6::CoreAddons
     KF6::I18n
 )
 
-ecm_add_qml_module(photos_model_static
+ecm_add_qml_module(photos_models_static
     URI "org.kde.photos.models"
     GENERATE_PLUGIN_SOURCE
 )

@@ -56,7 +56,7 @@ kconfig_target_kcfg_file(koko_static
 )
 
 target_link_libraries(koko_static PUBLIC
-    photos_model_static
+    photos_models_static
     photos_thumbnails_static
 
     Qt::Widgets
@@ -157,7 +157,7 @@ add_executable(koko
 target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
-    photos_model_staticplugin
+    photos_models_staticplugin
     photos_thumbnails_staticplugin
     photos_editor_static
     photos_editor_staticplugin

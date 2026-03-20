@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 
 #include "galleryopenmodel.h"
+#include "kokodirlister.h"
 
 QUrl pathToUrl(const QStringList &path, const KFileItemList &rootFileItems)
 {
@@ -35,41 +36,33 @@ GalleryOpenModel::GalleryOpenModel(QObject *parent)
     , m_mode(OpenNone)
     , m_status(Unloaded)
     , m_galleryMode(Root)
-    , m_dirLister(new KDirLister(this))
 {
     connect(this, &GalleryOpenModel::pathChanged, this, &GalleryOpenModel::titleChanged);
-    connect(m_dirLister, &KCoreDirLister::completed, this, [this]() {
+    connect(&m_dirLister, &KokoDirLister::itemsAdded, this, [this](const KFileItemList &items) {
+        Q_ASSERT(m_galleryMode == Root);
+
+        beginInsertRows(QModelIndex(), m_fileItems.size(), m_fileItems.size() + items.size() - 1);
+        m_fileItems.append(items);
+        endInsertRows();
+    });
+    connect(&m_dirLister, &KokoDirLister::itemsDeleted, this, [this](const KFileItemList &items) {
+        Q_ASSERT(m_galleryMode == Root);
+
+        // Don't bother trying to batch contiguous rows, usually we'll only see one item deleted at a time
+        for (const KFileItem &fileItem : items) {
+            int index = m_fileItems.indexOf(fileItem);
+            if (index != -1) {
+                beginRemoveRows(QModelIndex(), index, index);
+                m_fileItems.removeAt(index);
+                endRemoveRows();
+            }
+        }
+    });
+    connect(&m_dirLister, &KokoDirLister::completed, this, [this]() {
         Q_ASSERT(m_galleryMode == Root);
 
         m_status = Loaded;
         Q_EMIT statusChanged();
-    });
-    connect(m_dirLister, &KCoreDirLister::itemsAdded, this, [this](const QUrl &directoryUrl, const KFileItemList &items) {
-        Q_UNUSED(directoryUrl);
-        Q_ASSERT(m_galleryMode == Root);
-
-        if (items.isEmpty()) {
-            return;
-        }
-
-        const int beginRow = m_fileItems.count();
-        const int endRow = beginRow + items.count() - 1;
-
-        beginInsertRows(QModelIndex(), beginRow, endRow);
-        m_fileItems.append(items);
-        endInsertRows();
-    });
-    connect(m_dirLister, &KCoreDirLister::itemsDeleted, this, [this](const KFileItemList &items) {
-        Q_ASSERT(m_galleryMode == Root);
-
-        for (const auto &fileItem : items) {
-            const int row = m_fileItems.indexOf(fileItem);
-            if (row != -1) {
-                beginRemoveRows(QModelIndex(), row, row);
-                m_fileItems.removeAt(row);
-                endRemoveRows();
-            }
-        }
     });
 }
 
@@ -208,10 +201,13 @@ void GalleryOpenModel::populate(const QStringList &path)
     m_path = path;
 
     if (m_path.size() == 0) {
-        m_dirLister->stop();
+        m_dirLister.stop();
         m_rootFileItems.clear();
         for (const QUrl &url : m_openUrls) {
-            m_rootFileItems << KFileItem(url);
+            const KFileItem fileItem = KFileItem(url);
+            if (KokoDirLister::fileItemMatchesFilter(fileItem)) {
+                m_rootFileItems << fileItem;
+            }
         }
         m_fileItems = {};
         m_galleryMode = Root;
@@ -219,7 +215,7 @@ void GalleryOpenModel::populate(const QStringList &path)
     } else {
         m_fileItems = {};
         m_status = Loading;
-        m_dirLister->openUrl(pathToUrl(path, m_rootFileItems));
+        m_dirLister.setUrl(pathToUrl(path, m_rootFileItems));
         m_galleryMode = Directory;
     }
 
