@@ -104,11 +104,13 @@ Kirigami.Page {
     readonly property list<QtObject> toolBarActions: [
         Kirigami.Action {
             id: favoriteAction
-            text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
+            AC.ActionCollection.action: "ToggleFavorite"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
             tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
 
-            checkable: true
+           // checkable: true
             checked: exiv2Extractor.favorite
             onToggled: {
                 exiv2Extractor.toggleFavorite(listView.currentItem.url.toString().replace("file://", ""));
@@ -139,7 +141,8 @@ Kirigami.Page {
         },
         ShareAction {
             id: shareAction
-            text: i18nc("@action:intoolbar Share an image/video", "&Share")
+            AC.ActionCollection.action: "Share"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
             application: root.mainWindow
             tooltip: {
                 if (!listView.currentItem) {
@@ -160,11 +163,11 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: infoAction
+            AC.ActionCollection.action: "Info"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
 
             displayHint: Kirigami.DisplayHint.KeepVisible
 
-            text: i18nc("@action:intoolbar Show information about an image/video", "&Info")
-            icon.name: "info-symbolic"
             tooltip: {
                 if (!listView.currentItem) {
                     return "";
@@ -175,9 +178,7 @@ Kirigami.Page {
                 return i18nc("@info:tooltip", "See information about this image");
             }
 
-            shortcut: "I"
             enabled: Kirigami.Settings.isMobile ? true : root.mainWindow.controlsVisible
-            checkable: true
             checked: false
             onToggled: if (checked) {
                 // TODO: Should probably do this in infoSidebarLoader
@@ -194,42 +195,40 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: slideshowAction
+            AC.ActionCollection.action: "Slideshow"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
 
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
             // TODO: Checkable would be best, then toggle slideshow with changed i18n hint in text and dynamic tooltip text
-            text: i18nc("@action:intoolbar Start a slideshow", "&Slideshow")
-            icon.name: "view-presentation-symbolic"
-            tooltip: i18nc("@info:tooltip", "Start slideshow")
 
             visible: listView.count > 1 && !slideshowManager.running
             onTriggered: Kirigami.Settings.isMobile ? mobileSlideshowConfig.open() : slideshowManager.start()
         },
         Kirigami.Action {
             id: showControlsAction
+            AC.ActionCollection.action: "ShowControls"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
-            text: i18nc("@action:intoolbar Toggle visibility of toolbars and other UI elements", "Show &Controls")
             tooltip: root.mainWindow.controlsVisible ? i18nc("@info:tooltip", "Enter immersive viewing mode")
                                                      : i18nc("@info:tooltip", "Exit immersive viewing mode")
 
             visible: !Kirigami.Settings.isMobile
-            checkable: true
             checked: root.mainWindow.controlsVisible
             onToggled: root.mainWindow.controlsVisible = !root.mainWindow.controlsVisible
         },
         Kirigami.Action {
             id: showThumbnailToolBarAction
+            AC.ActionCollection.action: "ShowThumbnailToolBar"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
-            text: i18nc("@action:intoolbar Toggle visibility of toolbar", "Show &Thumbnail Toolbar")
-            tooltip: !Koko.Config.imageViewPreview ? i18nc("@info:tooltip", "Show the thumbnail toolbar")
-                                                   : i18nc("@info:tooltip", "Hide the thumbnail toolbar")
 
             visible: !Kirigami.Settings.isMobile
             enabled: root.mainWindow.controlsVisible
-            shortcut: "T"
-            checkable: true
             checked: Koko.Config.imageViewPreview
             onToggled: {
                 Koko.Config.imageViewPreview = !Koko.Config.imageViewPreview;
@@ -238,16 +237,12 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: fullscreenAction
+            AC.ActionCollection.action: "Fullscreen"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
 
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
-            text: i18nc("@action:intoolbar", "&Full Screen")
-            icon.name: !checked ? "view-fullscreen-symbolic" : "view-restore-symbolic"
-            tooltip: !checked ? i18nc("@info:tooltip", "Enter Full Screen") : i18nc("@info:tooltip", "Exit Full Screen")
-
             visible: !Kirigami.Settings.isMobile && !slideshowManager.running
-            shortcut: "F"
-            checkable: true
             checked: root.mainWindow.visibility === Window.FullScreen
             onToggled: {
                 if (checked) {
