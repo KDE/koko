@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 00:42+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2025-10-12 12:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -416,13 +416,13 @@ msgstr ""
 "<filename>%1</filename> 그림이 수정되었습니다. 변경 사항을 저장하거나 무시하"
 "시겠습니까?"
 
-#: editor/EditorView.qml:32
+#: editor/EditorView.qml:35
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "<filename>%1</filename> 편집"
 
-#: editor/EditorView.qml:42 editor/EditorView.qml:328
+#: editor/EditorView.qml:45 editor/EditorView.qml:520
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -432,91 +432,145 @@ msgstr ""
 "파일을 저장할 수 없습니다. 이 파일을 편집할 수 있는 권한이 있는지 확인하십시"
 "오."
 
-#: editor/EditorView.qml:97
-#, kde-format
-msgctxt "@action:button"
-msgid "Cancel"
-msgstr "취소"
-
-#: editor/EditorView.qml:97 editor/EditorView.qml:104
+#: editor/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "크기 조정"
 
-#: editor/EditorView.qml:131
-#, kde-format
-msgctxt "@title:group for crop area size spinboxes"
-msgid "Size:"
-msgstr "크기:"
+#: editor/EditorView.qml:155
+#, fuzzy, kde-format
+#| msgctxt "@action:button Resize an image"
+#| msgid "Resize"
+msgctxt "@title:group for radio buttons to resize by type"
+msgid "Resize by:"
+msgstr "크기 조정"
 
-#: editor/EditorView.qml:159
+#: editor/EditorView.qml:166
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar pixelate tool"
+#| msgid "Pixelate"
+msgctxt "@option:radio resize by pixels"
+msgid "Pixels"
+msgstr "픽셀화"
+
+#: editor/EditorView.qml:173
+#, kde-format
+msgctxt "@option:radio resize by percentage"
+msgid "Percentage"
+msgstr ""
+
+#: editor/EditorView.qml:184
+#, kde-format
+msgctxt "@info:tooltip resize width spinbox"
+msgid "Width"
+msgstr ""
+
+#: editor/EditorView.qml:236
+#, kde-format
+msgctxt "@info:tooltip resize height spinbox"
+msgid "Height"
+msgstr ""
+
+#: editor/EditorView.qml:257
+#, kde-format
+msgctxt "@option:check"
+msgid "Keep aspect ratio"
+msgstr ""
+
+#: editor/EditorView.qml:261
+#, kde-format
+msgctxt "@info"
+msgid "Original file size: %1"
+msgstr ""
+
+#: editor/EditorView.qml:289
+#, kde-format
+msgctxt "@info"
+msgid "Estimated file size: %1"
+msgstr ""
+
+#: editor/EditorView.qml:296
+#, kde-format
+msgctxt "@action:button reset size spinboxes"
+msgid "Reset"
+msgstr ""
+
+#: editor/EditorView.qml:307
+#, fuzzy, kde-format
+#| msgctxt "@action:button Resize an image"
+#| msgid "Resize"
+msgctxt "@action:button apply resize to image"
+msgid "Resize"
+msgstr "크기 조정"
+
+#: editor/EditorView.qml:357
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "회전"
 
-#: editor/EditorView.qml:164
+#: editor/EditorView.qml:361
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "왼쪽으로 회전"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:372
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "오른쪽으로 회전"
 
-#: editor/EditorView.qml:189
+#: editor/EditorView.qml:384
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "뒤집기"
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:388
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "상하 반전"
 
-#: editor/EditorView.qml:206
+#: editor/EditorView.qml:399
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr "좌우 반전"
 
-#: editor/EditorView.qml:222
+#: editor/EditorView.qml:414
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "실행 취소"
 
-#: editor/EditorView.qml:231
+#: editor/EditorView.qml:423
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "다시 실행"
 
-#: editor/EditorView.qml:246
+#: editor/EditorView.qml:438
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "저장"
 
-#: editor/EditorView.qml:254
+#: editor/EditorView.qml:446
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "다른 이름으로 저장"
 
-#: editor/EditorView.qml:424
+#: editor/EditorView.qml:578
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "확대/축소:"
 
-#: editor/EditorView.qml:439
+#: editor/EditorView.qml:593
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -1140,13 +1194,13 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "선택한 미디어 공유"
 
-#: qml/gallery/GalleryPage.qml:675
+#: qml/gallery/GalleryPage.qml:696
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:715
+#: qml/gallery/GalleryPage.qml:738
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
@@ -1318,180 +1372,180 @@ msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "이 그림 편집"
 
-#: qml/mediaview/MediaViewPage.qml:134
+#: qml/mediaview/MediaViewPage.qml:135
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "공유(&S)"
 
-#: qml/mediaview/MediaViewPage.qml:141
+#: qml/mediaview/MediaViewPage.qml:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "이 동영상 공유"
 
-#: qml/mediaview/MediaViewPage.qml:143
+#: qml/mediaview/MediaViewPage.qml:144
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "이 그림 공유"
 
-#: qml/mediaview/MediaViewPage.qml:158
+#: qml/mediaview/MediaViewPage.qml:159
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "정보(&I)"
 
-#: qml/mediaview/MediaViewPage.qml:165
+#: qml/mediaview/MediaViewPage.qml:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "이 동영상의 정보 표시"
 
-#: qml/mediaview/MediaViewPage.qml:167
+#: qml/mediaview/MediaViewPage.qml:168
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "이 그림의 정보 표시"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/mediaview/MediaViewPage.qml:193
+#: qml/mediaview/MediaViewPage.qml:194
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "슬라이드 쇼(&S)"
 
-#: qml/mediaview/MediaViewPage.qml:195
+#: qml/mediaview/MediaViewPage.qml:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "슬라이드 쇼 시작"
 
-#: qml/mediaview/MediaViewPage.qml:204
+#: qml/mediaview/MediaViewPage.qml:205
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "컨트롤 표시(&C)"
 
-#: qml/mediaview/MediaViewPage.qml:205
+#: qml/mediaview/MediaViewPage.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "몰입 보기 모드로 들어가기"
 
-#: qml/mediaview/MediaViewPage.qml:206
+#: qml/mediaview/MediaViewPage.qml:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "몰입 보기 모드 끝내기"
 
-#: qml/mediaview/MediaViewPage.qml:217
+#: qml/mediaview/MediaViewPage.qml:218
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "섬네일 도구 모음 표시(&T)"
 
-#: qml/mediaview/MediaViewPage.qml:218
+#: qml/mediaview/MediaViewPage.qml:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "섬네일 도구 모음 표시"
 
-#: qml/mediaview/MediaViewPage.qml:219
+#: qml/mediaview/MediaViewPage.qml:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "섬네일 도구 모음 숨기기"
 
-#: qml/mediaview/MediaViewPage.qml:236
+#: qml/mediaview/MediaViewPage.qml:237
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "전체 화면(&F)"
 
-#: qml/mediaview/MediaViewPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "전체 화면으로 전환"
 
-#: qml/mediaview/MediaViewPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "전체 화면 나가기"
 
-#: qml/mediaview/MediaViewPage.qml:542
+#: qml/mediaview/MediaViewPage.qml:543
 #, kde-format
 msgid "Previous image"
 msgstr "이전 그림"
 
-#: qml/mediaview/MediaViewPage.qml:575
+#: qml/mediaview/MediaViewPage.qml:576
 #, kde-format
 msgid "Next image"
 msgstr "다음 그림"
 
-#: qml/mediaview/MediaViewPage.qml:756
+#: qml/mediaview/MediaViewPage.qml:757
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:757
+#: qml/mediaview/MediaViewPage.qml:758
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:758
+#: qml/mediaview/MediaViewPage.qml:759
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:759
+#: qml/mediaview/MediaViewPage.qml:760
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:760
+#: qml/mediaview/MediaViewPage.qml:761
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:761
+#: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:762
+#: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:763
+#: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:764
+#: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:765
+#: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:814
+#: qml/mediaview/MediaViewPage.qml:815
 #, fuzzy, kde-format
 #| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 #| msgid "%1:"
@@ -1499,7 +1553,7 @@ msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1:"
 
-#: qml/mediaview/MediaViewPage.qml:828
+#: qml/mediaview/MediaViewPage.qml:829
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1507,7 +1561,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "확대/축소:"
 
-#: qml/mediaview/MediaViewPage.qml:837
+#: qml/mediaview/MediaViewPage.qml:838
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1515,61 +1569,61 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "확대/축소:"
 
-#: qml/mediaview/MediaViewPage.qml:1080 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1081 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "슬라이드 쇼 간격:"
 
-#: qml/mediaview/MediaViewPage.qml:1097 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1098 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/mediaview/MediaViewPage.qml:1152 qml/mediaview/MediaViewPage.qml:1253
+#: qml/mediaview/MediaViewPage.qml:1153 qml/mediaview/MediaViewPage.qml:1254
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "반복"
 
-#: qml/mediaview/MediaViewPage.qml:1161 qml/mediaview/MediaViewPage.qml:1262
+#: qml/mediaview/MediaViewPage.qml:1162 qml/mediaview/MediaViewPage.qml:1263
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "무작위"
 
-#: qml/mediaview/MediaViewPage.qml:1173
+#: qml/mediaview/MediaViewPage.qml:1174
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "슬라이드 쇼 정지"
 
-#: qml/mediaview/MediaViewPage.qml:1187
+#: qml/mediaview/MediaViewPage.qml:1188
 #, kde-format
 msgid "Show All Controls"
 msgstr "모든 컨트롤 표시"
 
-#: qml/mediaview/MediaViewPage.qml:1216
+#: qml/mediaview/MediaViewPage.qml:1217
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1216
+#: qml/mediaview/MediaViewPage.qml:1217
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1235
+#: qml/mediaview/MediaViewPage.qml:1236
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1248
+#: qml/mediaview/MediaViewPage.qml:1249
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
@@ -1777,6 +1831,14 @@ msgstr "일반"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "원격"
+
+#~ msgctxt "@action:button"
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgctxt "@title:group for crop area size spinboxes"
+#~ msgid "Size:"
+#~ msgstr "크기:"
 
 #, fuzzy
 #~| msgid "Move selected items to trash"

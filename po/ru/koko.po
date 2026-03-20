@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-18 00:42+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2026-02-21 14:05+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -418,13 +418,13 @@ msgstr ""
 "Изображение <filename>%1</filename> было изменён. Сохранить или отклонить "
 "изменения?"
 
-#: editor/EditorView.qml:32
+#: editor/EditorView.qml:35
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Изменение <filename>%1</filename>"
 
-#: editor/EditorView.qml:42 editor/EditorView.qml:328
+#: editor/EditorView.qml:45 editor/EditorView.qml:520
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -434,91 +434,151 @@ msgstr ""
 "Не удалось сохранить файл. Проверьте, достаточно ли прав доступа для "
 "сохранения этого файла."
 
-#: editor/EditorView.qml:97
-#, kde-format
-msgctxt "@action:button"
-msgid "Cancel"
-msgstr "Отмена"
-
-#: editor/EditorView.qml:97 editor/EditorView.qml:104
+#: editor/EditorView.qml:111
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Изменить размер"
 
-#: editor/EditorView.qml:131
-#, kde-format
-msgctxt "@title:group for crop area size spinboxes"
-msgid "Size:"
-msgstr "Размер:"
+#: editor/EditorView.qml:155
+#, fuzzy, kde-format
+#| msgctxt "@action:button Resize an image"
+#| msgid "Resize"
+msgctxt "@title:group for radio buttons to resize by type"
+msgid "Resize by:"
+msgstr "Изменить размер"
 
-#: editor/EditorView.qml:159
+#: editor/EditorView.qml:166
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar pixelate tool"
+#| msgid "Pixelate"
+msgctxt "@option:radio resize by pixels"
+msgid "Pixels"
+msgstr "Пикселизация"
+
+#: editor/EditorView.qml:173
+#, kde-format
+msgctxt "@option:radio resize by percentage"
+msgid "Percentage"
+msgstr ""
+
+#: editor/EditorView.qml:184
+#, kde-format
+msgctxt "@info:tooltip resize width spinbox"
+msgid "Width"
+msgstr ""
+
+#: editor/EditorView.qml:236
+#, fuzzy, kde-format
+#| msgctxt "@item:inlistbox aspect ratio placeholder"
+#| msgid "Width:Height"
+msgctxt "@info:tooltip resize height spinbox"
+msgid "Height"
+msgstr "Ширина:высота"
+
+#: editor/EditorView.qml:257
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Aspect Ratio:"
+msgctxt "@option:check"
+msgid "Keep aspect ratio"
+msgstr "Соотношение сторон:"
+
+#: editor/EditorView.qml:261
+#, kde-format
+msgctxt "@info"
+msgid "Original file size: %1"
+msgstr ""
+
+#: editor/EditorView.qml:289
+#, kde-format
+msgctxt "@info"
+msgid "Estimated file size: %1"
+msgstr ""
+
+#: editor/EditorView.qml:296
+#, fuzzy, kde-format
+#| msgctxt "@action reset selection"
+#| msgid "Reset"
+msgctxt "@action:button reset size spinboxes"
+msgid "Reset"
+msgstr "Сбросить"
+
+#: editor/EditorView.qml:307
+#, fuzzy, kde-format
+#| msgctxt "@action:button Resize an image"
+#| msgid "Resize"
+msgctxt "@action:button apply resize to image"
+msgid "Resize"
+msgstr "Изменить размер"
+
+#: editor/EditorView.qml:357
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Повернуть"
 
-#: editor/EditorView.qml:164
+#: editor/EditorView.qml:361
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Повернуть влево"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:372
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Повернуть вправо"
 
-#: editor/EditorView.qml:189
+#: editor/EditorView.qml:384
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Отразить"
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:388
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Отразить по горизонтали"
 
-#: editor/EditorView.qml:206
+#: editor/EditorView.qml:399
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr "Отразить по вертикали"
 
-#: editor/EditorView.qml:222
+#: editor/EditorView.qml:414
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Отменить действие"
 
-#: editor/EditorView.qml:231
+#: editor/EditorView.qml:423
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Повторить"
 
-#: editor/EditorView.qml:246
+#: editor/EditorView.qml:438
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Сохранить"
 
-#: editor/EditorView.qml:254
+#: editor/EditorView.qml:446
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Сохранить как"
 
-#: editor/EditorView.qml:424
+#: editor/EditorView.qml:578
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Масштаб:"
 
-#: editor/EditorView.qml:439
+#: editor/EditorView.qml:593
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -1097,7 +1157,7 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Обратить выделение файлов"
 
-#: qml/gallery/GalleryPage.qml:675
+#: qml/gallery/GalleryPage.qml:696
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1108,7 +1168,7 @@ msgstr[1] "%1 объекта"
 msgstr[2] "%1 объектов"
 msgstr[3] "один объект"
 
-#: qml/gallery/GalleryPage.qml:715
+#: qml/gallery/GalleryPage.qml:738
 #, kde-format
 msgid "No media found"
 msgstr "Не найдено ни одного файла изображения или видео"
@@ -1281,204 +1341,204 @@ msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Редактирование изображения"
 
-#: qml/mediaview/MediaViewPage.qml:134
+#: qml/mediaview/MediaViewPage.qml:135
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "&Опубликовать"
 
-#: qml/mediaview/MediaViewPage.qml:141
+#: qml/mediaview/MediaViewPage.qml:142
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Опубликовать видео"
 
-#: qml/mediaview/MediaViewPage.qml:143
+#: qml/mediaview/MediaViewPage.qml:144
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Опубликовать изображение"
 
-#: qml/mediaview/MediaViewPage.qml:158
+#: qml/mediaview/MediaViewPage.qml:159
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "Сведения"
 
-#: qml/mediaview/MediaViewPage.qml:165
+#: qml/mediaview/MediaViewPage.qml:166
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Посмотреть сведения о видео"
 
-#: qml/mediaview/MediaViewPage.qml:167
+#: qml/mediaview/MediaViewPage.qml:168
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Посмотреть сведения об изображении"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/mediaview/MediaViewPage.qml:193
+#: qml/mediaview/MediaViewPage.qml:194
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "&Слайд-шоу"
 
-#: qml/mediaview/MediaViewPage.qml:195
+#: qml/mediaview/MediaViewPage.qml:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Запустить слайд-шоу"
 
-#: qml/mediaview/MediaViewPage.qml:204
+#: qml/mediaview/MediaViewPage.qml:205
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Показать &элементы управления"
 
-#: qml/mediaview/MediaViewPage.qml:205
+#: qml/mediaview/MediaViewPage.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Перейти в режим просмотра без полей"
 
-#: qml/mediaview/MediaViewPage.qml:206
+#: qml/mediaview/MediaViewPage.qml:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Выйти из режима просмотра без полей"
 
-#: qml/mediaview/MediaViewPage.qml:217
+#: qml/mediaview/MediaViewPage.qml:218
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Показать панель миниатюр"
 
-#: qml/mediaview/MediaViewPage.qml:218
+#: qml/mediaview/MediaViewPage.qml:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Показать панель миниатюр"
 
-#: qml/mediaview/MediaViewPage.qml:219
+#: qml/mediaview/MediaViewPage.qml:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Скрыть панель миниатюр"
 
-#: qml/mediaview/MediaViewPage.qml:236
+#: qml/mediaview/MediaViewPage.qml:237
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "&Полноэкранный режим"
 
-#: qml/mediaview/MediaViewPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Перейти в полноэкранный режим"
 
-#: qml/mediaview/MediaViewPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:239
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Выйти из полноэкранного режима"
 
-#: qml/mediaview/MediaViewPage.qml:542
+#: qml/mediaview/MediaViewPage.qml:543
 #, kde-format
 msgid "Previous image"
 msgstr "Предыдущее изображение"
 
-#: qml/mediaview/MediaViewPage.qml:575
+#: qml/mediaview/MediaViewPage.qml:576
 #, kde-format
 msgid "Next image"
 msgstr "Следующее изображение"
 
-#: qml/mediaview/MediaViewPage.qml:756
+#: qml/mediaview/MediaViewPage.qml:757
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:757
+#: qml/mediaview/MediaViewPage.qml:758
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:758
+#: qml/mediaview/MediaViewPage.qml:759
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:759
+#: qml/mediaview/MediaViewPage.qml:760
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:760
+#: qml/mediaview/MediaViewPage.qml:761
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:761
+#: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:762
+#: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:763
+#: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:764
+#: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:765
+#: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:814
+#: qml/mediaview/MediaViewPage.qml:815
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/mediaview/MediaViewPage.qml:828
+#: qml/mediaview/MediaViewPage.qml:829
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Уменьшить"
 
-#: qml/mediaview/MediaViewPage.qml:837
+#: qml/mediaview/MediaViewPage.qml:838
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Увеличить"
 
-#: qml/mediaview/MediaViewPage.qml:1080 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1081 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Интервал слайд-шоу:"
 
-#: qml/mediaview/MediaViewPage.qml:1097 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1098 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1488,48 +1548,48 @@ msgstr[1] "%1 секунды"
 msgstr[2] "%1 секунд"
 msgstr[3] "%1 секунда"
 
-#: qml/mediaview/MediaViewPage.qml:1152 qml/mediaview/MediaViewPage.qml:1253
+#: qml/mediaview/MediaViewPage.qml:1153 qml/mediaview/MediaViewPage.qml:1254
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Повторять бесконечно"
 
-#: qml/mediaview/MediaViewPage.qml:1161 qml/mediaview/MediaViewPage.qml:1262
+#: qml/mediaview/MediaViewPage.qml:1162 qml/mediaview/MediaViewPage.qml:1263
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Случайно"
 
-#: qml/mediaview/MediaViewPage.qml:1173
+#: qml/mediaview/MediaViewPage.qml:1174
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Остановить слайд-шоу"
 
-#: qml/mediaview/MediaViewPage.qml:1187
+#: qml/mediaview/MediaViewPage.qml:1188
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показать все элементы управления"
 
-#: qml/mediaview/MediaViewPage.qml:1216
+#: qml/mediaview/MediaViewPage.qml:1217
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Остановить"
 
-#: qml/mediaview/MediaViewPage.qml:1216
+#: qml/mediaview/MediaViewPage.qml:1217
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Запустить"
 
-#: qml/mediaview/MediaViewPage.qml:1235
+#: qml/mediaview/MediaViewPage.qml:1236
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Интервал:"
 
-#: qml/mediaview/MediaViewPage.qml:1248
+#: qml/mediaview/MediaViewPage.qml:1249
 #, kde-format
 msgid "seconds"
 msgstr "с"
@@ -1734,6 +1794,14 @@ msgstr "Основное"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Сетевые ресурсы"
+
+#~ msgctxt "@action:button"
+#~ msgid "Cancel"
+#~ msgstr "Отмена"
+
+#~ msgctxt "@title:group for crop area size spinboxes"
+#~ msgid "Size:"
+#~ msgstr "Размер:"
 
 #~ msgctxt "@action:button Move the selected media to the trash"
 #~ msgid "Move to Trash"
