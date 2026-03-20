@@ -9,7 +9,7 @@
 
 #include <qqmlregistration.h>
 
-#include <KDirLister>
+#include "kokodirlister.h"
 
 #include "abstractnavigablegallerymodel.h"
 
@@ -54,11 +54,6 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = {}) const override;
 
-    bool requiresFiltering() const override
-    {
-        return true;
-    };
-
 Q_SIGNALS:
     void modeChanged();
     void urlToOpenChanged();
@@ -84,5 +79,5 @@ private:
     KFileItemList m_rootFileItems;
     KFileItemList m_fileItems;
 
-    KDirLister *m_dirLister;
+    KokoDirLister m_dirLister;
 };

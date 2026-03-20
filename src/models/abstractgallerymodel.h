@@ -62,9 +62,6 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    // For subclasses to indicate whether the model contents should be filtered
-    virtual bool requiresFiltering() const;
-
 Q_SIGNALS:
     void titleChanged();
     void statusChanged();

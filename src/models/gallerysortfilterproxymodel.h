@@ -9,26 +9,14 @@
 #include <QSortFilterProxyModel>
 #include <qqmlregistration.h>
 
-#include "abstractgallerymodel.h"
-
-#include <QIdentityProxyModel>
-
 /*!
- * A model which sorts the source model, and filters if needed
- *
- * If the source model advertises that it is necessary, the model will be
- * filtered \b {after} sorting, in order to reduce items jumping around as later
- * results are sorted before already sorted content.
- *
- * QIdentityProxyModel isn't perfect here, because [set]sourceModel is public,
- * but anything better would need to be much more elaborate and custom.
+ * A model which provides sorting and filtering (search) for Koko's galleries
  */
-class GallerySortFilterProxyModel : public QIdentityProxyModel
+class GallerySortFilterProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(AbstractGalleryModel *galleryModel READ galleryModel WRITE setGalleryModel NOTIFY galleryModelChanged REQUIRED)
     Q_PROPERTY(SortMode sortMode READ sortMode WRITE setSortMode NOTIFY sortModeChanged)
     Q_PROPERTY(bool sortReversed READ sortReversed WRITE setSortReversed NOTIFY sortReversedChanged)
     Q_PROPERTY(QString filterString READ filterString WRITE setFilterString NOTIFY filterStringChanged)
@@ -45,9 +33,6 @@ public:
     };
     Q_ENUM(SortMode)
 
-    AbstractGalleryModel *galleryModel() const;
-    void setGalleryModel(AbstractGalleryModel *galleryModel);
-
     SortMode sortMode() const;
     void setSortMode(SortMode sortMode);
 
@@ -57,25 +42,15 @@ public:
     QString filterString() const;
     void setFilterString(const QString &filterString);
 
-    Q_INVOKABLE QModelIndex mapToGalleryModelIndex(const QModelIndex &proxyIndex) const;
-
 Q_SIGNALS:
-    void galleryModelChanged();
     void sortModeChanged();
     void sortReversedChanged();
     void filterStringChanged();
 
+protected:
+    bool lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const override;
+
 private:
-    AbstractGalleryModel *m_galleryModel;
-
-    // Sorts and filters as specified
-    QSortFilterProxyModel *m_sortModel;
-
-    // Filters to only accepted MIME types
-    QSortFilterProxyModel *m_filterModel;
-    QStringList m_filterMimeTypes;
-
     SortMode m_sortMode;
-    bool m_sortReversed;
     QString m_filterString;
 };

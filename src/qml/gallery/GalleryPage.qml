@@ -501,7 +501,7 @@ Kirigami.ScrollablePage {
     Koko.GallerySortFilterProxyModel {
         id: gallerySortFilterProxyModel
 
-        galleryModel: page.galleryModel
+        sourceModel: page.galleryModel
         sortMode: Koko.GallerySortFilterProxyModel.Name
         sortReversed: false
         filterString: ""
@@ -623,7 +623,7 @@ Kirigami.ScrollablePage {
                     case Koko.AbstractGalleryModel.Folder:
                     case Koko.AbstractGalleryModel.Collection:
                         let gallerySortFilterProxyModelIndex = gallerySortFilterProxyModel.index(delegate.index, 0);
-                        let galleryModelIndex = gallerySortFilterProxyModel.mapToGalleryModelIndex(gallerySortFilterProxyModelIndex);
+                        let galleryModelIndex = gallerySortFilterProxyModel.mapToSource(gallerySortFilterProxyModelIndex);
                         let path = page.galleryModel.pathForIndex(galleryModelIndex);
 
                         page.navigate(path);

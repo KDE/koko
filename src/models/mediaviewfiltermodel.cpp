@@ -4,28 +4,13 @@
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
+#include "abstractgallerymodel.h"
+
 #include "mediaviewfiltermodel.h"
 
 MediaViewFilterModel::MediaViewFilterModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
-}
-
-GallerySortFilterProxyModel *MediaViewFilterModel::gallerySortFilterProxyModel() const
-{
-    return m_gallerySortFilterProxyModel;
-}
-
-void MediaViewFilterModel::setGallerySortFilterProxyModel(GallerySortFilterProxyModel *gallerySortFilterProxyModel)
-{
-    if (m_gallerySortFilterProxyModel == gallerySortFilterProxyModel) {
-        return;
-    }
-
-    m_gallerySortFilterProxyModel = gallerySortFilterProxyModel;
-    Q_EMIT gallerySortFilterProxyModelChanged();
-
-    setSourceModel(gallerySortFilterProxyModel);
 }
 
 bool MediaViewFilterModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
