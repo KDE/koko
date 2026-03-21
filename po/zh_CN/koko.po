@@ -426,20 +426,16 @@ msgid "Resize"
 msgstr "缩放"
 
 #: editor/EditorView.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "缩放"
+msgstr ""
 
 #: editor/EditorView.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "马赛克"
+msgstr ""
 
 #: editor/EditorView.qml:173
 #, kde-format
@@ -454,20 +450,16 @@ msgid "Width"
 msgstr ""
 
 #: editor/EditorView.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "宽 : 高"
+msgstr ""
 
 #: editor/EditorView.qml:257
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "宽高比："
+msgstr ""
 
 #: editor/EditorView.qml:261
 #, kde-format
@@ -482,20 +474,16 @@ msgid "Estimated file size: %1"
 msgstr ""
 
 #: editor/EditorView.qml:296
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr "重置"
+msgstr ""
 
 #: editor/EditorView.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
-msgstr "缩放"
+msgstr ""
 
 #: editor/EditorView.qml:357
 #, kde-format
@@ -1763,11 +1751,3 @@ msgstr ""
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "远程位置"
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgctxt "@title:group for crop area size spinboxes"
-#~ msgid "Size:"
-#~ msgstr "大小："
