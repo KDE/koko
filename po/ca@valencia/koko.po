@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-18 11:04+0100\n"
+"PO-Revision-Date: 2026-03-20 09:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -436,73 +436,61 @@ msgid "Resize"
 msgstr "Redimensiona"
 
 #: editor/EditorView.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "Redimensiona"
+msgstr "Redimensiona per:"
 
 #: editor/EditorView.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "Pixelació"
+msgstr "Píxels"
 
 #: editor/EditorView.qml:173
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "Percentatge"
 
 #: editor/EditorView.qml:184
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Amplària"
 
 #: editor/EditorView.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "Amplària:Alçària"
+msgstr "Alçària"
 
 #: editor/EditorView.qml:257
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "Relació d'aspecte:"
+msgstr "Mantín la relació d'aspecte"
 
 #: editor/EditorView.qml:261
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Mida original del fitxer: %1"
 
 #: editor/EditorView.qml:289
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Mida estimada del fitxer: %1"
 
 #: editor/EditorView.qml:296
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Reinicialitza"
 
 #: editor/EditorView.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Redimensiona"
@@ -1781,11 +1769,3 @@ msgstr "General"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remotes"
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@title:group for crop area size spinboxes"
-#~ msgid "Size:"
-#~ msgstr "Mida:"
