@@ -540,8 +540,9 @@ Kirigami.Page {
             width: Kirigami.Units.gridUnit * 2
             height: width
 
-            Accessible.name: i18n("Previous image")
             icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-right-symbolic" : "arrow-left-symbolic"
+            text: i18nc("@action:button", "Previous image")
+            display: QQC2.AbstractButton.IconOnly
 
             onClicked: listView.decrementCurrentIndex()
         }
@@ -573,8 +574,9 @@ Kirigami.Page {
             width: Kirigami.Units.gridUnit * 2
             height: width
 
-            Accessible.name: i18n("Next image")
             icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-left-symbolic" : "arrow-right-symbolic"
+            text: i18nc("@action:button", "Next image")
+            display: QQC2.AbstractButton.IconOnly
 
             onClicked: listView.incrementCurrentIndex()
         }
