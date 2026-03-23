@@ -563,7 +563,7 @@ Kirigami.Page {
             }
 
             visible: opacity > 0
-            opacity: previousButton.shouldShow ? 1 : 0
+            opacity: nextButton.shouldShow ? 1 : 0
             Behavior on opacity {
                 NumberAnimation {
                     duration: Kirigami.Units.longDuration
