@@ -65,13 +65,18 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
 
     m_urls = urls;
 
-    QList<QObject *> newActions;
-
     if (m_urls.isEmpty()) {
+        for (auto action : m_actions) {
+            action->deleteLater();
+        }
+        m_actions.clear();
+
         Q_EMIT urlsChanged();
+
         return;
     }
 
+    QList<QObject *> newActions;
     auto addAction = [this, &newActions](const QIcon &icon, const QString &text, auto func, const bool enabled = true) {
         auto action = new QAction(icon, text, this);
         action->setEnabled(enabled);
