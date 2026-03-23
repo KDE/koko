@@ -262,10 +262,16 @@ StatefulApp.StatefulWindow {
         root.pageStack.clear();
         root.pageStack.layers.clear();
 
+        // Suppress layer pushEnter animation whilst pushing initial content…
+        pageStack.layers.pushEnter.enabled = false;
+
         if (Koko.GalleryOpenModel.mode === Koko.GalleryOpenModel.OpenNone) {
             root.application.action("place_pictures").trigger();
         } else {
             root.openWith();
         }
+
+        // …and restore it
+        pageStack.layers.pushEnter.enabled = true;
     }
 }
