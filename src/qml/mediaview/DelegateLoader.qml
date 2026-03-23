@@ -92,7 +92,7 @@ Loader {
                 delegate = Qt.resolvedUrl("RasterImageDelegate.qml");
                 break;
             default:
-                console.warn("Unknown file type for URL", loader.url);
+                delegate = Qt.resolvedUrl("UnknownImageDelegate.qml");
                 break;
             }
 

@@ -123,6 +123,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/mediaview/imagedelegate/BaseImageDelegate.qml
     qml/mediaview/imagedelegate/RasterImageDelegate.qml
     qml/mediaview/imagedelegate/VectorImageDelegate.qml
+    qml/mediaview/imagedelegate/UnknownImageDelegate.qml
     qml/mediaview/imagedelegate/VideoDelegate.qml
     qml/mediaview/imagedelegate/VideoPlayer.qml
 
