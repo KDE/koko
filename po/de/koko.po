@@ -1,15 +1,15 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2020-2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:41+0000\n"
-"PO-Revision-Date: 2025-12-28 14:29+0100\n"
+"PO-Revision-Date: 2026-03-16 17:42+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -743,12 +743,10 @@ msgid "Locations"
 msgstr "Orte"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Alles auswählen"
+msgstr "Ausgewählte Dateien"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:251
 #, kde-format
@@ -914,7 +912,7 @@ msgstr "Ausgewählte Medien in den Papierkorb verschieben"
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Wiederherstellen"
 
 #: qml/gallery/GalleryPage.qml:179
 #, kde-format
@@ -1390,87 +1388,79 @@ msgstr "Nächstes Bild"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:714
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:715
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio"
-#| msgid "7:5"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr "7:5"
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:716
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:717
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:718
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:719
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:720
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:721
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:722
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:771
-#, fuzzy, kde-format
-#| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
-#| msgid "%1:"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1:"
+msgstr "%1 %"
 
 #: qml/mediaview/MediaViewPage.qml:785
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "Zoom:"
+msgstr "Verkleinern"
 
 #: qml/mediaview/MediaViewPage.qml:794
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "Zoom:"
+msgstr "Vergrößern"
 
 #: qml/mediaview/MediaViewPage.qml:1037 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
@@ -1666,7 +1656,7 @@ msgstr "Bilder vergrößern, die kleiner als die Darstellungsfläche sind"
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Vergrößerungsstufe beim Wechsel zwischen Bildern merken"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
