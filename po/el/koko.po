@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"POT-Creation-Date: 2026-03-24 00:41+0000\n"
 "PO-Revision-Date: 2024-09-19 22:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -708,19 +708,19 @@ msgctxt "@item:intable"
 msgid "Comment"
 msgstr ""
 
-#: filemenuactions.cpp:172
+#: filemenuactions.cpp:177
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr ""
 
-#: filemenuactions.cpp:188
+#: filemenuactions.cpp:193
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr ""
 
-#: filemenuactions.cpp:218
+#: filemenuactions.cpp:223
 #, fuzzy, kde-format
 #| msgid "Locations"
 msgctxt "@action:inmenu"
@@ -833,7 +833,7 @@ msgstr "Πόλεις"
 msgid "Locations"
 msgstr "Τοποθεσίες"
 
-#: models/galleryopenmodel.cpp:141
+#: models/galleryopenmodel.cpp:134
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@title"
@@ -1513,101 +1513,105 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Έξοδος από πλήρη οθόνη"
 
-#: qml/mediaview/MediaViewPage.qml:543
-#, kde-format
+#: qml/mediaview/MediaViewPage.qml:544
+#, fuzzy, kde-format
+#| msgid "Previous image"
+msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Προηγούμενη εικόνα"
 
-#: qml/mediaview/MediaViewPage.qml:576
-#, kde-format
+#: qml/mediaview/MediaViewPage.qml:578
+#, fuzzy, kde-format
+#| msgid "Next image"
+msgctxt "@action:button"
 msgid "Next image"
 msgstr "Επόμενη εικόνα"
 
-#: qml/mediaview/MediaViewPage.qml:757
+#: qml/mediaview/MediaViewPage.qml:759
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:758
+#: qml/mediaview/MediaViewPage.qml:760
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:759
+#: qml/mediaview/MediaViewPage.qml:761
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:760
+#: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:761
+#: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:762
+#: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:763
+#: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:764
+#: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:765
+#: qml/mediaview/MediaViewPage.qml:767
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:766
+#: qml/mediaview/MediaViewPage.qml:768
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:815
+#: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:829
+#: qml/mediaview/MediaViewPage.qml:831
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:838
+#: qml/mediaview/MediaViewPage.qml:840
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1081 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1083 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Χρονικό διάστημα παρουσίασης διαφανειών:"
 
-#: qml/mediaview/MediaViewPage.qml:1098 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1100 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1615,48 +1619,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 δευτερόλεπτο"
 msgstr[1] "%1 δευτερόλεπτα"
 
-#: qml/mediaview/MediaViewPage.qml:1153 qml/mediaview/MediaViewPage.qml:1254
+#: qml/mediaview/MediaViewPage.qml:1155 qml/mediaview/MediaViewPage.qml:1256
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Βρόχος"
 
-#: qml/mediaview/MediaViewPage.qml:1162 qml/mediaview/MediaViewPage.qml:1263
+#: qml/mediaview/MediaViewPage.qml:1164 qml/mediaview/MediaViewPage.qml:1265
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Τυχαιοποίηση"
 
-#: qml/mediaview/MediaViewPage.qml:1174
+#: qml/mediaview/MediaViewPage.qml:1176
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Διακοπή παρουσίασης"
 
-#: qml/mediaview/MediaViewPage.qml:1188
+#: qml/mediaview/MediaViewPage.qml:1190
 #, kde-format
 msgid "Show All Controls"
 msgstr "Εμφάνιση όλων των κουμπιών ελέγχου"
 
-#: qml/mediaview/MediaViewPage.qml:1217
+#: qml/mediaview/MediaViewPage.qml:1219
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1217
+#: qml/mediaview/MediaViewPage.qml:1219
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1236
+#: qml/mediaview/MediaViewPage.qml:1238
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1249
+#: qml/mediaview/MediaViewPage.qml:1251
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
