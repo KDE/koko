@@ -110,6 +110,7 @@ ListView {
 
         Drag.mimeData: {"text/uri-list" : [delegate.url]}
         Drag.dragType: Drag.Automatic
+        Drag.hotSpot: dragHandler.centroid.position
         DragHandler {
             id: dragHandler
             acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
