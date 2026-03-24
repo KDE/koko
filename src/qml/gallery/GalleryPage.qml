@@ -100,17 +100,40 @@ Kirigami.ScrollablePage {
     // as we only need select all, deselect all, invert, hasSelection and selectedIndexes, all in column 0.
     readonly property int disallowMassSelection: gridView.count > 1000
 
+    property int pendingMediaViewIndex: -1;
+
     function openMediaViewPage(url) {
         if (page.isTrashView) {
             return;
         }
 
-        page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("MediaViewPage.qml"), {
+        const mediaViewPage = page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("MediaViewPage.qml"), {
             application: page.application,
             mainWindow: page.mainWindow,
             gallerySortFilterProxyModel: gallerySortFilterProxyModel,
             url: url
         });
+
+        mediaViewPage.currentIndexChanged.connect((index) => {
+            page.pendingMediaViewIndex = index;
+        });
+    }
+
+    Connections {
+        target: gridView
+        function onVisibleChanged() {
+            if (gridView.visible && pendingMediaViewIndex !== -1) {
+                const index = page.pendingMediaViewIndex;
+                page.pendingMediaViewIndex = -1;
+
+                // HACK: We have had to defer this until the page is visible because otherwise it
+                // doesn't work. For some reason, we still need to defer it just a little more:
+                Qt.callLater(() => {
+                    gridView.currentIndex = index;
+                    gridView.positionViewAtIndex(index, GridView.Contain);
+                });
+            }
+        }
     }
 
     Controls.ActionGroup {
