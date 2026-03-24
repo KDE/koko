@@ -82,15 +82,11 @@ ListView {
     // Center when width changes (e.g. due to window resizing or animations)
     onWidthChanged: positionViewAtIndex(currentIndex, ListView.Center)
 
-    // Prioritise thumbnailing delegates closest to the highlighted item
+    // Prioritise thumbnailing delegates closest to the currentIndex
     function calculateThumbnailPriority(delegate: Item): int {
-        if (!thumbnailView.currentItem) {
-            return -1;
-        }
-
-        let centerOffset = Math.abs(thumbnailView.currentItem.x - delegate.x);
-        let delegateSize = delegate.width + thumbnailView.spacing;
-        return Math.round(centerOffset / delegateSize);
+        const distance = Math.abs(delegate.index - thumbnailView.currentIndex);
+        const isAfter = delegate.index > thumbnailView.currentIndex;
+        return (distance * 2) - (isAfter ? 1 : 0);
     }
 
     delegate: MediaViewThumbnail {
