@@ -549,6 +549,51 @@ Kirigami.ScrollablePage {
             return row * columnCount + column;
         }
 
+        Drag.dragType: Drag.Automatic
+        DragHandler {
+            id: dragHandler
+            property GalleryDelegate dragItem: null
+            readonly property bool draggingMultipleSelection: dragItem && dragItem.selected && selectionModel.selectedIndexes.length > 1
+            readonly property bool hasDragImage: dragItem && gridView.Drag.active
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
+            target: null
+            onActiveChanged: {
+                if (!active) {
+                    dragItem = null;
+                    gridView.Drag.active = false;
+                    gridView.Drag.imageSource = "";
+                    gridView.Drag.mimeData = ({});
+                    return;
+                }
+                const contentPressPos = gridView.mapToItem(gridView.contentItem, centroid.pressPosition);
+                dragItem = gridView.itemAt(contentPressPos.x, contentPressPos.y);
+                // Only a valid drag with something at the cursor position
+                if (!dragItem) {
+                    return;
+                }
+                if (draggingMultipleSelection) {
+                    // QQuickDragAttachedPrivate::createMimeData() can't encode
+                    // QMetaType(QList<QUrl>) to text/uri-list automatically.
+                    const stringList = selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole).toString());
+                    gridView.Drag.mimeData = {"text/uri-list" : stringList};
+                    gridView.Drag.hotSpot = centroid.position
+                    // Only shows the currently visible items centered on the dragged item.
+                    // We don't grab an image containing absolutely all selected items because it could be massive.
+                    gridView.grabToImage(result => {
+                        gridView.Drag.imageSource = result.url;
+                        gridView.Drag.active = true;
+                    });
+                    return;
+                }
+                gridView.Drag.mimeData = {"text/uri-list" : [dragItem.url]};
+                gridView.Drag.hotSpot = gridView.mapToItem(dragItem, centroid.position);
+                dragItem.grabToImage(result => {
+                    gridView.Drag.imageSource = result.url;
+                    gridView.Drag.active = true;
+                });
+            }
+        }
+
         delegate: GalleryDelegate {
             id: delegate
 
@@ -588,26 +633,11 @@ Kirigami.ScrollablePage {
                                                   : delegate.showMenu()
             }
 
-            Drag.mimeData: {"text/uri-list" : [delegate.url]}
-            Drag.dragType: Drag.Automatic
-            DragHandler {
-                id: dragHandler
-                acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
-                target: null
-                onActiveChanged: {
-                    if (!active) {
-                        parent.Drag.active = false;
-                        parent.Drag.imageSource = "";
-                        return;
-                    }
-                    delegate.grabToImage(result => {
-                        parent.Drag.imageSource = result.url;
-                        parent.Drag.active = true;
-                    });
-                }
-            }
-            // keep background hidden when generating the drag image
-            background.visible: !(dragHandler.active && !Drag.active)
+            // Keep unselected items out of drag image with multiple selection.
+            visible: dragHandler.draggingMultipleSelection && !dragHandler.hasDragImage && !selected ? 0 : 1
+            // keep background hidden when generating the drag image for a single unselected item
+            background.visible: !(dragHandler.active && !dragHandler.hasDragImage
+                                && dragHandler.dragItem === delegate && !dragHandler.draggingMultipleSelection)
 
             Keys.onSpacePressed: delegate.ctrlSelect()
             Keys.onReturnPressed: event => Keys.enterPressed(event)
@@ -718,7 +748,7 @@ Kirigami.ScrollablePage {
                 visible: (delegate.itemType === Koko.AbstractGalleryModel.Media
                          || delegate.itemType === Koko.AbstractGalleryModel.Folder)
                         // keep button hidden when generating the drag image
-                        && !(dragHandler.active && !Drag.active)
+                        && delegate.background.visible && !dragHandler.draggingMultipleSelection
 
                 onClicked: delegate.ctrlSelect()
 
