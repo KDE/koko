@@ -548,28 +548,11 @@ Kirigami.ScrollablePage {
 
         model: gallerySortFilterProxyModel
 
-        // Prioritise thumbnailing delegates in order, with off-screen delegates prioritised sequentially
+        // Prioritise thumbnailing delegates closest to the currentIndex
         function calculateThumbnailPriority(delegate: Item): int {
-            let column = Math.floor(delegate.x / gridView.cellWidth);
-            let row = Math.ceil((delegate.y - gridView.contentY + gridView.cellHeight) / gridView.cellHeight) - 1;
-            let columnCount = Math.floor(gridView.width / gridView.cellWidth);
-
-            let firstVisibleRow = 0;
-            let lastVisibleRow = Math.ceil((gridView.height + gridView.cellHeight) / gridView.cellHeight) - 1;
-
-            if (Application.layoutDirection === Qt.RightToLeft) {
-                // Reverse column order in RTL
-                column = columnCount - 1 - column;
-            }
-
-            if (row < firstVisibleRow) {
-                // Delegate is off-screen above, so match priority
-                // with rows below in reverse column order
-                row = lastVisibleRow - row - 1;
-                column = columnCount - 1 - column;
-            }
-
-            return row * columnCount + column;
+            const distance = Math.abs(delegate.index - gridView.currentIndex);
+            const isAfter = delegate.index > gridView.currentIndex;
+            return (distance * 2) - (isAfter ? 1 : 0);
         }
 
         delegate: GalleryDelegate {
