@@ -78,7 +78,7 @@ Loader {
                 if (!loader.supportsVideo) {
                     return;
                 }
-                properties.autoplay = Qt.binding(() => loader.index === root.startIndex);
+                properties.autoplay = false;
                 properties.slideShow = slideshowManager;
                 delegate = Qt.resolvedUrl("VideoDelegate.qml");
                 break;

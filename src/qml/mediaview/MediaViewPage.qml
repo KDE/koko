@@ -34,6 +34,9 @@ Kirigami.Page {
     // A model that is still populating might not yet contain the index we want to show
     property bool modelReady: false
 
+    // Signal the index of the image (in the gallerySortFilterProxyModel) we're looking at
+    signal currentIndexChanged(index: int)
+
     function updateModelReady() {
         if (modelReady) {
             return;
@@ -440,12 +443,11 @@ Kirigami.Page {
 
         model: mediaViewFilterModel
 
-        // we start with this index, so we don't flash initial image
         currentIndex: -1
-
-        Component.onCompleted: { // fun fact: without null guard this function will crash the app after a certain number of calls (I think)
-            if (root.startIndex) {
-                listView.currentIndex = model.mapFromSource(root.startIndex).row;
+        onCurrentIndexChanged: {
+            if (currentIndex !== -1) {
+                const gallerySortFilterProxyModelIndex = model.mapToSource(model.index(currentIndex, 0));
+                root.currentIndexChanged(gallerySortFilterProxyModelIndex.row);
             }
         }
 
