@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-24 00:41+0000\n"
-"PO-Revision-Date: 2026-03-21 01:23+0100\n"
+"PO-Revision-Date: 2026-03-25 00:49+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1418,18 +1418,16 @@ msgid "Exit Full Screen"
 msgstr "Salir de pantalla completa"
 
 #: qml/mediaview/MediaViewPage.qml:544
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Imagen anterior"
 
 #: qml/mediaview/MediaViewPage.qml:578
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
-msgstr "Siguiente imagen"
+msgstr "Imagen siguiente"
 
 #: qml/mediaview/MediaViewPage.qml:759
 #, kde-format

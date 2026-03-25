@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-24 00:41+0000\n"
-"PO-Revision-Date: 2026-03-20 09:44-0300\n"
+"PO-Revision-Date: 2026-03-24 07:23-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -1418,15 +1418,13 @@ msgid "Exit Full Screen"
 msgstr "Sair da tela cheia"
 
 #: qml/mediaview/MediaViewPage.qml:544
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Imagem anterior"
 
 #: qml/mediaview/MediaViewPage.qml:578
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Próxima imagem"

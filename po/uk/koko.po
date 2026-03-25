@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-24 00:41+0000\n"
-"PO-Revision-Date: 2026-03-20 08:38+0200\n"
+"PO-Revision-Date: 2026-03-24 08:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1432,15 +1432,13 @@ msgid "Exit Full Screen"
 msgstr "Вийти з повноекранного режиму"
 
 #: qml/mediaview/MediaViewPage.qml:544
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Попереднє зображення"
 
 #: qml/mediaview/MediaViewPage.qml:578
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Наступне зображення"
