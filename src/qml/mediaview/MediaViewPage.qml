@@ -81,6 +81,10 @@ Kirigami.Page {
     }
 
     title: Koko.DirModelUtils.fileNameOfUrl(root.url)
+    titleDelegate: Kirigami.TitleSubtitle {
+        title: root.title
+        subtitle: root.modelReady ? i18nc("@info", "%1 of %2", listView.currentIndex + 1, listView.count) : ""
+    }
 
     leftPadding: 0
     rightPadding: 0
