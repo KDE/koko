@@ -88,6 +88,8 @@ int main(int argc, char **argv)
 
     aboutData.addAuthor(xi18nc("@info:credit", "Mikel Johnson"), xi18nc("@info:credit", "Developer"), "mikel5764@gmail.com");
 
+    aboutData.addAuthor(i18nc("@info:credit", "Oliver Beard"), i18nc("@info:credit", "Developer"), QStringLiteral("olib141@outlook.com"));
+
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
