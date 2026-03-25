@@ -50,7 +50,7 @@ set_package_properties(Qt6 PROPERTIES
     DESCRIPTION "Base components"
 )
 
-find_package(KF6 ${KF_MIN_VERSION} COMPONENTS I18n Declarative Config ConfigWidgets KIO CoreAddons Notifications FileMetaData DBusAddons Kirigami Purpose)
+find_package(KF6 ${KF_MIN_VERSION} COMPONENTS I18n Declarative Config ConfigWidgets KIO CoreAddons Crash Notifications FileMetaData DBusAddons Kirigami Purpose)
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
     DESCRIPTION "Base components"

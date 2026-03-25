@@ -15,6 +15,7 @@
 #include <QThread>
 
 #include <KAboutData>
+#include <KCrash>
 #include <KDBusService>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
@@ -70,7 +71,6 @@ int main(int argc, char **argv)
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
     aboutData.setProductName(QByteArray("koko"));
-    aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=koko");
 
     aboutData.addAuthor(xi18nc("@info:credit", "Vishesh Handa"), xi18nc("@info:credit", "Developer"), "vhanda@kde.org");
 
@@ -91,6 +91,7 @@ int main(int argc, char **argv)
     aboutData.addAuthor(i18nc("@info:credit", "Oliver Beard"), i18nc("@info:credit", "Developer"), QStringLiteral("olib141@outlook.com"));
 
     KAboutData::setApplicationData(aboutData);
+    KCrash::initialize();
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));
