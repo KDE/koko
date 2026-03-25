@@ -521,6 +521,8 @@ Kirigami.ScrollablePage {
         model: gallerySortFilterProxyModel
     }
 
+    bottomPadding: inlineStatusBar.effectiveHeight
+
     GridView {
         id: gridView
 
@@ -781,6 +783,37 @@ Kirigami.ScrollablePage {
             text: i18n("No media found")
             visible: page.isEmpty
             width: parent.width - (Kirigami.Units.gridUnit * 2)
+        }
+
+        GalleryInlineStatusBar {
+            id: inlineStatusBar
+
+            text: {
+                // NOTE: Whilst scrolling, the HoverHandler on GridView seems to
+                // set hovered false sporadically. No workaround seems possible.
+                if (inlineStatusBar.parentHovered) {
+                    const p = inlineStatusBar.parentPoint.position;
+                    const index = gridView.indexAt(Math.round(p.x), Math.round(p.y));
+                    if (index !== -1) {
+                        return gridView.model.index(index, 0).data(AbstractGalleryModel.NameRole);
+                    }
+                }
+
+                if (selectionModel.selectedIndexes.length === 1) {
+                    return selectionModel.selectedIndexes[0].data(AbstractGalleryModel.NameRole);
+                }
+
+                if (selectionModel.selectedIndexes.length > 1) {
+                    return i18ncp("@info:status", "%1 item selected", "%1 items selected",
+                                  selectionModel.selectedIndexes.length);
+                }
+
+                if (gridView.count !== 0) {
+                    return i18ncp("@info:status", "%1 item", "%1 items", gridView.count);
+                }
+
+                return "";
+            }
         }
 
         function setThumbnailSize(size) {
