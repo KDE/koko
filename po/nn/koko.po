@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-24 00:41+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2024-07-14 12:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -716,7 +716,8 @@ msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
 #: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
-#, kde-kuit-format
+#: main.cpp:91
+#, kde-format, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Utviklar"
@@ -751,12 +752,18 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr ""
 
-#: main.cpp:94
+#: main.cpp:91
+#, kde-format
+msgctxt "@info:credit"
+msgid "Oliver Beard"
+msgstr ""
+
+#: main.cpp:96
 #, kde-format
 msgid "Reset the database"
 msgstr "Nullstill databasen"
 
-#: main.cpp:95
+#: main.cpp:97
 #, kde-format
 msgid "path of image you want to open"
 msgstr "adressa til biletet du vil opna"

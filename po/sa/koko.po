@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-24 00:41+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -755,7 +755,8 @@ msgid "Vishesh Handa"
 msgstr "विशेस हण्डा"
 
 #: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
-#, kde-kuit-format
+#: main.cpp:91
+#, kde-format, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "विकासकः"
@@ -790,12 +791,18 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "माइकेल् जॉन्सन्"
 
-#: main.cpp:94
+#: main.cpp:91
+#, kde-format
+msgctxt "@info:credit"
+msgid "Oliver Beard"
+msgstr ""
+
+#: main.cpp:96
 #, kde-format
 msgid "Reset the database"
 msgstr "दत्तांशकोशं पुनः सेट् कुर्वन्तु"
 
-#: main.cpp:95
+#: main.cpp:97
 #, kde-format
 msgid "path of image you want to open"
 msgstr "भवन्तः उद्घाटयितुम् इच्छन्ति तस्य प्रतिबिम्बस्य मार्गः"
