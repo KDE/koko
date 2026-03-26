@@ -59,6 +59,7 @@ Kirigami.ScrollablePage {
         }
 
         page.galleryModel.path = page.navigationHistory[--page.navigationIndex];
+        gridView.currentIndex = 0;
     }
 
     function navigateForward() : void {
@@ -71,6 +72,7 @@ Kirigami.ScrollablePage {
         }
 
         page.galleryModel.path = page.navigationHistory[++page.navigationIndex];
+        gridView.currentIndex = 0;
     }
 
     function navigate(path, preserveHistory = true) : void {
@@ -92,6 +94,7 @@ Kirigami.ScrollablePage {
         }
 
         page.galleryModel.path = path;
+        gridView.currentIndex = 0;
     }
 
     // TODO: For performance reasons, selection operations need to be disabled if they need to process and store a massive number
@@ -117,23 +120,6 @@ Kirigami.ScrollablePage {
         mediaViewPage.currentIndexChanged.connect((index) => {
             page.pendingMediaViewIndex = index;
         });
-    }
-
-    Connections {
-        target: gridView
-        function onVisibleChanged() {
-            if (gridView.visible && pendingMediaViewIndex !== -1) {
-                const index = page.pendingMediaViewIndex;
-                page.pendingMediaViewIndex = -1;
-
-                // HACK: We have had to defer this until the page is visible because otherwise it
-                // doesn't work. For some reason, we still need to defer it just a little more:
-                Qt.callLater(() => {
-                    gridView.currentIndex = index;
-                    gridView.positionViewAtIndex(index, GridView.Contain);
-                });
-            }
-        }
     }
 
     Controls.ActionGroup {
@@ -543,8 +529,26 @@ Kirigami.ScrollablePage {
 
         highlightMoveDuration: 0
         keyNavigationEnabled: true
-        focus: true
         reuseItems: true
+
+        onVisibleChanged: {
+            if (gridView.visible) {
+                // Ensure the last image in the dismissed media view is the current index
+                if (page.pendingMediaViewIndex !== -1) {
+                    const index = page.pendingMediaViewIndex;
+                    page.pendingMediaViewIndex = -1;
+
+                    // NOTE: We have to defer this until the gridView is visible and then
+                    // some, otherwise the view doesn't snap to the currentItem correctly
+                    Qt.callLater(() => {
+                        gridView.currentIndex = index;
+                    });
+                }
+
+                // Ensure we have activeFocus
+                Qt.callLater(() => gridView.forceActiveFocus());
+            }
+        }
 
         model: gallerySortFilterProxyModel
 
@@ -756,6 +760,8 @@ Kirigami.ScrollablePage {
                          || delegate.itemType === Koko.AbstractGalleryModel.Folder)
                         // keep button hidden when generating the drag image
                         && delegate.background.visible && !dragHandler.draggingMultipleSelection
+
+                focusPolicy: Qt.NoFocus
 
                 onClicked: delegate.ctrlSelect()
 
