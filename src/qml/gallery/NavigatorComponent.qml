@@ -224,8 +224,6 @@ RowLayout {
 
                 onClicked: root.navigate(rootLocations[rootLocation].path)
 
-                display: Controls.AbstractButton.IconOnly
-
                 Controls.ToolTip.text: text
                 Controls.ToolTip.visible: hovered && text.length > 0
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay

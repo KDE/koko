@@ -7,6 +7,7 @@
  */
 
 #include <KDirLister>
+#include <KIO/StatJob>
 
 #include "galleryfoldermodel.h"
 
@@ -53,6 +54,21 @@ AbstractGalleryModel::Status GalleryFolderModel::status() const
 QString GalleryFolderModel::titleForPath(const QVariant &path) const
 {
     QUrl url = path.toUrl();
+
+    KIO::StatJob *job = KIO::stat(url, KIO::StatJob::SourceSide, KIO::StatBasic, KIO::HideProgressInfo);
+    if (job->exec()) {
+        KIO::UDSEntry entry = job->statResult();
+
+        const QString displayName = entry.stringValue(KIO::UDSEntry::UDS_DISPLAY_NAME);
+        if (!displayName.isEmpty()) {
+            return displayName;
+        }
+
+        const QString name = entry.stringValue(KIO::UDSEntry::UDS_NAME);
+        if (!name.isEmpty()) {
+            return name;
+        }
+    }
 
     KFileItem fileItem(url);
     return fileItem.text();
