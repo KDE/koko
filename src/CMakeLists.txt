@@ -63,6 +63,7 @@ target_link_libraries(koko_static PUBLIC
     Qt::Svg
     Qt::QuickControls2
     KF6::CoreAddons
+    KF6::Crash
     KF6::KIOFileWidgets
     KF6::KIOWidgets
     KF6::DBusAddons
