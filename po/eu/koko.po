@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-01-04 11:07+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -707,19 +707,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopiatu kokalekua"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Photos</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Photos, zure irudi-bilduma ikusteko irudi erakusle bat da."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -774,12 +774,12 @@ msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr ""
 
-#: main.cpp:96
+#: main.cpp:97
 #, kde-format
 msgid "Reset the database"
 msgstr "Berrezarri datu-basea"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
 msgstr "ireki nahi duzun irudiaren bide-izena"

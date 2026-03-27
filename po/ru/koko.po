@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-02-21 14:05+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -713,19 +713,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Копировать расположение"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Фотографии</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "«Фотографии» — приложение для просмотра коллекции изображений."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -780,12 +780,12 @@ msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr ""
 
-#: main.cpp:96
+#: main.cpp:97
 #, kde-format
 msgid "Reset the database"
 msgstr "Сбросить базу данных"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
 msgstr "путь к изображению, которое вы хотите открыть"

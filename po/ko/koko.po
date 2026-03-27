@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -707,19 +707,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "위치 복사"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>사진</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "그림 모음집 뷰어입니다."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -774,12 +774,12 @@ msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr ""
 
-#: main.cpp:96
+#: main.cpp:97
 #, kde-format
 msgid "Reset the database"
 msgstr "데이터베이스 초기화"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
 msgstr "열 그림 경로"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -725,19 +725,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "स्थान कॉपी करें"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>फ़ोटो</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "फ़ोटो आपके छवि संग्रह के लिए एक छवि दर्शक है."
 
-#: main.cpp:67
+#: main.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:credit"
 #| msgid "(c) 2013-2020 KDE Contributors"
@@ -794,12 +794,12 @@ msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr ""
 
-#: main.cpp:96
+#: main.cpp:97
 #, kde-format
 msgid "Reset the database"
 msgstr "डेटाबेस रीसेट करें"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
 msgstr "छवि का पथ जिसे आप खोलना चाहते हैं"

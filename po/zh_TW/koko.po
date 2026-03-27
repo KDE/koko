@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-03-02 05:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -701,19 +701,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "複製位置"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>相片</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "《相片》是您的影像收藏用的影像檢視器。"
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -768,12 +768,12 @@ msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr ""
 
-#: main.cpp:96
+#: main.cpp:97
 #, kde-format
 msgid "Reset the database"
 msgstr "重設資料庫"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
 msgstr "要開啟的影像的路徑"

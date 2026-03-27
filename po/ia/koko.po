@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
-"PO-Revision-Date: 2026-03-18 10:52+0100\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
+"PO-Revision-Date: 2026-03-26 09:57+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -434,73 +434,61 @@ msgid "Resize"
 msgstr "Redimensiona"
 
 #: editor/EditorView.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "Redimensiona"
+msgstr "Redimensiona per:"
 
 #: editor/EditorView.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "A Pixel (pixelate)"
+msgstr "Pixels"
 
 #: editor/EditorView.qml:173
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "Percentage"
 
 #: editor/EditorView.qml:184
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Largessa"
 
 #: editor/EditorView.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "Largessa:Altessa"
+msgstr "Altessa"
 
 #: editor/EditorView.qml:257
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "Proportiones"
+msgstr "Mantene proportiones"
 
 #: editor/EditorView.qml:261
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Grandor original de file: %1"
 
 #: editor/EditorView.qml:289
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Dimension estimate de file: %1"
 
 #: editor/EditorView.qml:296
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Reinitialisa"
 
 #: editor/EditorView.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Redimensiona"
@@ -705,19 +693,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Copia location"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Photos</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Photos es un visor de imagines per tu collection de imagine."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -770,14 +758,14 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
-#: main.cpp:96
+#: main.cpp:97
 #, kde-format
 msgid "Reset the database"
 msgstr "Reinitia le Base de Datos"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
 msgstr "percurso de imagine que tu vole aperir"
@@ -1436,15 +1424,13 @@ msgid "Exit Full Screen"
 msgstr "Exi del schermo integre"
 
 #: qml/mediaview/MediaViewPage.qml:544
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Previe imagine"
 
 #: qml/mediaview/MediaViewPage.qml:578
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Proxime imagine"
