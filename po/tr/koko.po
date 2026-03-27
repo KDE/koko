@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 02:39+0000\n"
 "PO-Revision-Date: 2026-02-21 12:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -644,19 +644,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Konumu Kopyala"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Fotoğraflar</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Fotoğraflar, görsel koleksiyonunuz için bir görüntüleyicidir."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -704,12 +704,12 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Reset the database"
 msgstr "Veri tabanını sıfırla"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgid "path of image you want to open"
 msgstr "açmak istediğiniz görselin yolu"

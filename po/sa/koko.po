@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 02:39+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -676,19 +676,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "प्रतिलिपि स्थानम्"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>फोटो</application> इति"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "फोटो भवतः चित्रसङ्ग्रहाय चित्रदर्शकः अस्ति ।"
 
-#: main.cpp:67
+#: main.cpp:68
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:credit"
 #| msgid "(c) 2013-2020 KDE Contributors"
@@ -738,12 +738,12 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "माइकेल् जॉन्सन्"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Reset the database"
 msgstr "दत्तांशकोशं पुनः सेट् कुर्वन्तु"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgid "path of image you want to open"
 msgstr "भवन्तः उद्घाटयितुम् इच्छन्ति तस्य प्रतिबिम्बस्य मार्गः"

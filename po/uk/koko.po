@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 02:39+0000\n"
 "PO-Revision-Date: 2026-02-21 11:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -654,19 +654,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Копіювати адресу"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Фотографії</application>"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "«Фотографії» — програма для перегляду зображень з вашої збірки."
 
-#: main.cpp:67
+#: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
@@ -714,12 +714,12 @@ msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:94
+#: main.cpp:95
 #, kde-format
 msgid "Reset the database"
 msgstr "Скинути до бази даних"
 
-#: main.cpp:95
+#: main.cpp:96
 #, kde-format
 msgid "path of image you want to open"
 msgstr "шлях до зображення, яке ви хочете відкрити"
