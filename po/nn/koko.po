@@ -1787,9 +1787,3 @@ msgstr ""
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Move selected items to trash"
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move the selected media to the trash"
-#~ msgstr "Flytt dei merkte elementa til papirkorga"

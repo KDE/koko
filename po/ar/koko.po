@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-27 00:42+0000\n"
-"PO-Revision-Date: 2026-03-25 09:36+0400\n"
+"PO-Revision-Date: 2026-03-28 18:08+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -767,7 +767,7 @@ msgstr "ميكيل جونسون"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "أوليفر بيرد"
 
 #: main.cpp:97
 #, kde-format
