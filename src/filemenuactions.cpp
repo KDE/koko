@@ -21,6 +21,8 @@
 #include <QScreen>
 #include <QTimer>
 
+#include <ActionCollection/ActionCollection>
+#include <ActionCollection/ActionCollections>
 #include <KConfigGroup>
 #include <KFileItemActions>
 #include <KFileItemListProperties>
@@ -77,12 +79,44 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     }
 
     QList<QObject *> newActions;
+
+    ActionCollection *collection = ActionCollections::self()->collection(u"org.kde.koko.mediaview"_s);
+    Q_ASSERT(collection);
+
+
     auto addAction = [this, &newActions](const QIcon &icon, const QString &text, auto func, const bool enabled = true) {
         auto action = new QAction(icon, text, this);
         action->setEnabled(enabled);
         connect(action, &QAction::triggered, this, func);
         newActions.push_back(action);
         return action;
+    };
+
+    auto connectStandardAction = [this, collection](KStandardActions::StandardAction standardAction, auto func) {
+        QAction *action = collection->action(standardAction);
+        // Poor error message as KStandardActions::StandardAction is not a Q_ENUM
+        Q_ASSERT_X(action, "connecting to action, standardAction not found in collection", QString::number(standardAction).toUtf8());
+        action->setVisible(true);
+        connect(action, &QAction::triggered, this, func);
+    };
+    auto connectNamedAction = [this, collection](const QString &actionName, auto func) {
+        QAction *action = collection->action(actionName);
+        Q_ASSERT_X(action, "connecting to action, action not found in collection", actionName.toUtf8());
+        action->setVisible(true);
+        connect(action, &QAction::triggered, this, func);
+    };
+
+    auto disconnectStandardAction = [this, collection](KStandardActions::StandardAction standardAction) {
+        QAction *action = collection->action(standardAction);
+        Q_ASSERT_X(action, "disconnecting from action, standardAction not found in collection", QString::number(standardAction).toUtf8());
+        action->setVisible(false);
+        disconnect(action, &QAction::triggered, this, nullptr);
+    };
+    auto disconnectNamedAction = [this, collection](const QString &actionName) {
+        QAction *action = collection->action(actionName);
+        Q_ASSERT_X(action, "connecting to action, action not found in collection", actionName.toUtf8());
+        action->setVisible(false);
+        disconnect(action, &QAction::triggered, this, nullptr);
     };
 
     KFileItemList fileItems;
@@ -98,6 +132,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     const auto singleFileReadableImageMimetype = QImageReader::supportedMimeTypes().contains(singleFileMimetype);
 
     // Save As action
+    disconnectStandardAction(KStandardActions::SaveAs);
     if (singleFile && singleFileMimetype != "inode/directory") {
         // TODO: Mix of using m_urls, urls and fileItem, pick one
         auto saveAsLambda = [=, this] {
@@ -165,9 +200,11 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             dialog->open();
         };
         newActions.push_back(KStandardAction::saveAs(this, saveAsLambda, this));
+        connectStandardAction(KStandardActions::SaveAs, saveAsLambda);
     }
 
     // Open Containing Folder action
+    disconnectNamedAction(u"OpenFolder"_s);
     if (std::all_of(m_urls.cbegin(), m_urls.cend(), [](const QUrl &url) {
             return KProtocolManager::supportsListing(url);
         })) {
@@ -175,6 +212,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             KIO::highlightInFileManager(m_urls);
         };
         addAction(QIcon::fromTheme(u"folder-open"_s), i18nc("@action:inmenu", "Open Containing Folder"), openFolderLambda);
+        connectNamedAction(u"OpenFolder"_s, openFolderLambda);
     }
 
     // Standard actions
@@ -184,6 +222,7 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     QMenu menu;
     kFileItemActions.insertOpenWithActionsTo(nullptr, &menu, {qApp->desktopFileName()});
 
+    disconnectNamedAction(u"OpenWith"_s);
     auto openWithLambda = [this] {
         auto job = new KIO::ApplicationLauncherJob(this);
         job->setUrls(m_urls);
@@ -191,7 +230,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         job->start();
     };
     addAction(QIcon::fromTheme(u"system-run"_s), i18nc("@action:inmenu", "&Open With…"), openWithLambda);
+    connectNamedAction(u"OpenWith"_s, openWithLambda);
 
+    disconnectStandardAction(KStandardActions::Copy);
     auto copyLambda = [fileItems] {
         QMimeData *data = new QMimeData(); // Cleaned up by Qt later
 
@@ -208,7 +249,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         QApplication::clipboard()->setMimeData(data);
     };
     newActions.push_back(KStandardAction::copy(this, copyLambda, this));
+    connectStandardAction(KStandardActions::Copy, copyLambda);
 
+    disconnectNamedAction(u"CopyPath"_s);
     auto copyPathLambda = [fileItems] {
         // TODO: Is better behaviour possible for multiple fileItems?
         //       Maybe with multiple, we don't have fallback and verify that all
@@ -221,7 +264,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     };
 
     addAction(QIcon::fromTheme(u"edit-copy-path"_s), i18nc("@action:inmenu", "Copy Location"), copyPathLambda, singleFile);
+    connectNamedAction(u"CopyPath"_s, copyPathLambda);
 
+    disconnectStandardAction(KStandardActions::MoveToTrash);
     const bool canTrash = itemProperties.isLocal() && itemProperties.supportsMoving();
     if (canTrash) {
         auto moveToTrashLambda = [this] {
@@ -237,11 +282,13 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             handler->askUserDelete({m_urls}, KIO::AskUserActionInterface::Trash, KIO::AskUserActionInterface::DefaultConfirmation);
         };
         newActions.push_back(KStandardAction::moveToTrash(this, moveToTrashLambda, this));
+        connectStandardAction(KStandardActions::MoveToTrash, moveToTrashLambda);
     }
 
     KConfigGroup cg(KSharedConfig::openConfig(), u"KDE"_s);
     const bool showDeleteCommand = cg.readEntry("ShowDeleteCommand", false);
 
+    disconnectStandardAction(KStandardActions::DeleteFile);
     if (itemProperties.supportsDeleting() && (!canTrash || showDeleteCommand)) {
         auto deleteLambda = [this] {
             auto handler = new KIO::WidgetsAskUserActionHandler(this);
@@ -255,14 +302,17 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             handler->askUserDelete(m_urls, KIO::AskUserActionInterface::Delete, KIO::AskUserActionInterface::DefaultConfirmation);
         };
         newActions.push_back(KStandardAction::deleteFile(this, deleteLambda, this));
+        connectStandardAction(KStandardActions::DeleteFile, deleteLambda);
     }
 
+    disconnectStandardAction(KStandardActions::Print);
     // QPrinter requires the use of QPainter, so it must be a readable image.
     if (singleFile && PrinterHelper::printerSupportAvailable() && singleFileReadableImageMimetype) {
         auto printLambda = [this] {
             PrinterHelper::printFileFromUrl(m_urls[0]);
         };
         newActions.push_back(KStandardAction::print(this, printLambda, this));
+        connectStandardAction(KStandardActions::Print, printLambda);
     }
 
     for (auto action : m_actions) {
