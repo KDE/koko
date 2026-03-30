@@ -63,10 +63,42 @@ AC.ActionCollectionManager {
             defaultShortcut: "Ctrl+S"
         }
         AC.ActionData {
+            name: "Info"
             text: i18nc("@action:intoolbar Show information about an image/video", "Info")
             icon.name: "info-symbolic"
             defaultShortcut: "I"
             checkable: true
+        }
+
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.SaveAs
+        }
+        AC.ActionData {
+            name: "OpenFolder"
+            text: i18nc("@action:inmenu", "Open Containing Folder")
+            icon.name: "folder-open"
+        }
+        AC.ActionData {
+            name: "OpenWith"
+            text: i18nc("@action:inmenu", "&Open With…")
+            icon.name: "system-run"
+        }
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.Copy
+        }
+        AC.ActionData {
+            name: "CopyPath"
+            text: i18nc("@action:inmenu", "Copy Location")
+            icon.name: "edit-copy-path"
+        }
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.MoveToTrash
+        }
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.DeleteFile
+        }
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.Print
         }
 
         AC.ActionData {
