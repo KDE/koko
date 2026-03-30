@@ -18,19 +18,14 @@ AC.ActionCollectionManager {
     AC.ActionCollection {
         name: "org.kde.koko.gallery"
         text: i18nc("Actions category", "Gallery")
-        AC.ActionData {
-            name: "SelectAll"
-            icon.name: "edit-select-all-symbolic"
-            text: i18nc("@action:button", "Select All")
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.SelectAll
             toolTip: i18nc("@info:tooltip", "Select all media")
             defaultShortcut: StandardKey.SelectAll
         }
-        AC.ActionData {
-            name: "SelectNone"
-            icon.name: "edit-select-none-symbolic"
-            text: i18nc("@action:button", "Select None")
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.Deselect
             toolTip: i18nc("@info:tooltip", "Deselect all media")
-            defaultShortcut: StandardKey.Deselect
         }
         AC.ActionData {
             name: "InvertSelection"
