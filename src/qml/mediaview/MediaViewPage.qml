@@ -187,7 +187,60 @@ Kirigami.Page {
         }
     ]
 
-    readonly property list<QtObject> otherHiddenUiActions: [
+    Component {
+        id: kirigamiActionComponent
+        Kirigami.Action {}
+    }
+
+    Koko.FileMenuActions {
+        id: fileMenuActions
+        urls: listView.currentItem ? [listView.currentItem.url] : []
+    }
+
+    readonly property list<Kirigami.Action> fileMenuActions2: [
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.SaveAs
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: "OpenFolder"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: "OpenWith"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.Copy
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: "CopyPath"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.MoveToTrash
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.DeleteFile
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.Print
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        }
+    ]
+
+    readonly property list<Kirigami.Action> otherHiddenUiActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             separator: true
@@ -261,34 +314,7 @@ Kirigami.Page {
         }
     ]
 
-    Component {
-        id: kirigamiActionComponent
-        Kirigami.Action {}
-    }
-
-    Koko.FileMenuActions {
-        id: fileMenuActions
-        urls: listView.currentItem ? [listView.currentItem.url] : []
-    }
-
-    actions: {
-        let list = [];
-        for (let action of toolBarActions) {
-            list.push(action);
-        }
-        /* Hidden actions */
-        for (let fileMenuAction of fileMenuActions.actions) {
-            let kirigamiAction = kirigamiActionComponent.createObject(this, {
-                displayHint: Kirigami.DisplayHint.AlwaysHide,
-                fromQAction: fileMenuAction
-            });
-            list.push(kirigamiAction);
-        }
-        for (let action of otherHiddenUiActions) {
-            list.push(action);
-        }
-        return list;
-    }
+    actions: [...toolBarActions, ...fileMenuActions2, ...otherHiddenUiActions]
 
     SlideshowManager {
         id: slideshowManager
@@ -503,12 +529,8 @@ Kirigami.Page {
 
                     list.push(separatorAction);
 
-                    for (let fileMenuAction of fileMenuActions.actions) {
-                        let kirigamiAction = kirigamiActionComponent.createObject(this, {
-                            displayHint: Kirigami.DisplayHint.AlwaysHide,
-                            fromQAction: fileMenuAction
-                        });
-                        list.push(kirigamiAction);
+                    for (let fileMenuAction of fileMenuActions2) {
+                        list.push(fileMenuAction);
                     }
 
                     list.push(separatorAction);
