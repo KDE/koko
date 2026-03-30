@@ -357,7 +357,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             id: selectAllAction
-            AC.ActionCollection.action: "SelectAll"
+            AC.ActionCollection.action: AC.StandardActionData.SelectAll
             AC.ActionCollection.collection: "org.kde.koko.gallery"
             enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -366,7 +366,7 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             id: deselectAllAction
-            AC.ActionCollection.action: "SelectNone"
+            AC.ActionCollection.action: AC.StandardActionData.Deselect
             AC.ActionCollection.collection: "org.kde.koko.gallery"
             enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
