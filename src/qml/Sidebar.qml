@@ -86,40 +86,40 @@ Kirigami.OverlayDrawer {
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "Preferences"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                             onTriggered: root.application.configurationView.open()
                         }
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "KeyBindings"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                         }
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "FindAction"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                         }
 
                         QQC2.MenuSeparator {}
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "AboutApp"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                         }
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "AboutKDE"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                         }
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "Donate"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                         }
 
                         Kirigami.Action {
                             AC.ActionCollection.action: "ReportBug"
-                            AC.ActionCollection.collection: "org.kde.standardactions"
+                            AC.ActionCollection.collection: "org.kde.globalactions"
                         }
                     }
                 }
