@@ -136,6 +136,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     if (singleFile && singleFileMimetype != "inode/directory") {
         // TODO: Mix of using m_urls, urls and fileItem, pick one
         auto saveAsLambda = [=, this] {
+            if (!m_enabled) {
+                return;
+            }
             const auto suffix = fileItems[0].suffix();
             const auto writableImageMimetypes = QImageWriter::supportedMimeTypes();
             // We only list different writable types when writing as a different
@@ -209,6 +212,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             return KProtocolManager::supportsListing(url);
         })) {
         auto openFolderLambda = [this] {
+            if (!m_enabled) {
+                return;
+            }
             KIO::highlightInFileManager(m_urls);
         };
         addAction(QIcon::fromTheme(u"folder-open"_s), i18nc("@action:inmenu", "Open Containing Folder"), openFolderLambda);
@@ -224,6 +230,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
 
     disconnectNamedAction(u"OpenWith"_s);
     auto openWithLambda = [this] {
+        if (!m_enabled) {
+            return;
+        }
         auto job = new KIO::ApplicationLauncherJob(this);
         job->setUrls(m_urls);
         job->setUiDelegate(KIO::createDefaultJobUiDelegate());
@@ -233,7 +242,10 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     connectNamedAction(u"OpenWith"_s, openWithLambda);
 
     disconnectStandardAction(KStandardActions::Copy);
-    auto copyLambda = [fileItems] {
+    auto copyLambda = [fileItems, this] {
+        if (!m_enabled) {
+            return;
+        }
         QMimeData *data = new QMimeData(); // Cleaned up by Qt later
 
         QList<QUrl> urls;
@@ -252,7 +264,10 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     connectStandardAction(KStandardActions::Copy, copyLambda);
 
     disconnectNamedAction(u"CopyPath"_s);
-    auto copyPathLambda = [fileItems] {
+    auto copyPathLambda = [fileItems, this] {
+        if (!m_enabled) {
+            return;
+        }
         // TODO: Is better behaviour possible for multiple fileItems?
         //       Maybe with multiple, we don't have fallback and verify that all
         //       localPath is the same first? Is fallback even proper?
@@ -270,6 +285,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     const bool canTrash = itemProperties.isLocal() && itemProperties.supportsMoving();
     if (canTrash) {
         auto moveToTrashLambda = [this] {
+            if (!m_enabled) {
+                return;
+            }
             auto handler = new KIO::WidgetsAskUserActionHandler(this);
             connect(handler, &KIO::WidgetsAskUserActionHandler::askUserDeleteResult, [handler](bool allow, const QList<QUrl> &urls) {
                 if (allow) {
@@ -291,6 +309,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     disconnectStandardAction(KStandardActions::DeleteFile);
     if (itemProperties.supportsDeleting() && (!canTrash || showDeleteCommand)) {
         auto deleteLambda = [this] {
+            if (!m_enabled) {
+                return;
+            }
             auto handler = new KIO::WidgetsAskUserActionHandler(this);
             connect(handler, &KIO::WidgetsAskUserActionHandler::askUserDeleteResult, [handler](bool allow, const QList<QUrl> &urls) {
                 if (allow) {
@@ -309,6 +330,9 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     // QPrinter requires the use of QPainter, so it must be a readable image.
     if (singleFile && PrinterHelper::printerSupportAvailable() && singleFileReadableImageMimetype) {
         auto printLambda = [this] {
+            if (!m_enabled) {
+                return;
+            }
             PrinterHelper::printFileFromUrl(m_urls[0]);
         };
         newActions.push_back(KStandardAction::print(this, printLambda, this));

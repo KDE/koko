@@ -19,6 +19,7 @@ class FileMenuActions : public QObject
     Q_OBJECT
     Q_PROPERTY(QList<QObject *> actions READ actions NOTIFY urlsChanged FINAL)
     Q_PROPERTY(QList<QUrl> urls READ urls WRITE setUrls NOTIFY urlsChanged FINAL)
+    Q_PROPERTY(bool enabled MEMBER m_enabled NOTIFY enabledChanged FINAL)
     QML_ELEMENT
 public:
     explicit FileMenuActions(QObject *parent = nullptr);
@@ -30,8 +31,10 @@ public:
 
 Q_SIGNALS:
     void urlsChanged();
+    void enabledChanged();
 
 private:
     QList<QObject *> m_actions;
     QList<QUrl> m_urls;
+    bool m_enabled = false;
 };
