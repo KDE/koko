@@ -350,6 +350,49 @@ Kirigami.ScrollablePage {
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
     }
 
+    readonly property list<Kirigami.Action> fileMenuActions2: [
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.SaveAs
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: "OpenFolder"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: "OpenWith"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.Copy
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: "CopyPath"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.MoveToTrash
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.DeleteFile
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            AC.ActionCollection.action: AC.StandardActionData.Print
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        }
+    ]
+
     readonly property list<QtObject> otherHiddenUiActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -387,27 +430,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {}
     }
 
-    actions: {
-        let list = [];
-        for (let action of toolBarActions) {
-            list.push(action);
-        }
-        /* Hidden actions */
-        for (let action of extraHiddenUiActions) {
-            list.push(action);
-        }
-        for (let fileMenuAction of fileMenuActions.actions) {
-            let kirigamiAction = kirigamiActionComponent.createObject(this, {
-                displayHint: Kirigami.DisplayHint.AlwaysHide,
-                fromQAction: fileMenuAction
-            });
-            list.push(kirigamiAction);
-        }
-        for (let action of otherHiddenUiActions) {
-            list.push(action);
-        }
-        return list;
-    }
+    actions: [...toolBarActions, ...extraHiddenUiActions, ...fileMenuActions2, ...otherHiddenUiActions]
 
     title: page.galleryModel.title
 
@@ -707,12 +730,8 @@ Kirigami.ScrollablePage {
 
                 list.push(restoreTrashAction);
 
-                for (let fileMenuAction of fileMenuActions.actions) {
-                    let kirigamiAction = kirigamiActionComponent.createObject(this, {
-                        displayHint: Kirigami.DisplayHint.AlwaysHide,
-                        fromQAction: fileMenuAction
-                    });
-                    list.push(kirigamiAction);
+                for (let fileMenuAction of fileMenuActions2) {
+                    list.push(fileMenuAction);
                 }
 
                 let contextMenu = galleryContextMenu.createObject(page.mainWindow, {
