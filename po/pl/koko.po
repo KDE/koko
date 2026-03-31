@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
+"POT-Creation-Date: 2026-03-31 00:42+0000\n"
 "PO-Revision-Date: 2024-10-26 12:32+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1220,7 +1220,7 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Udostępnij zaznaczone treści"
 
-#: qml/gallery/GalleryPage.qml:696
+#: qml/gallery/GalleryPage.qml:726
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1228,7 +1228,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: qml/gallery/GalleryPage.qml:738
+#: qml/gallery/GalleryPage.qml:768
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"

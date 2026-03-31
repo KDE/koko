@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
+"POT-Creation-Date: 2026-03-31 00:42+0000\n"
 "PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1214,14 +1214,14 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Kunhavigi la elektitan amaskomunikilaron"
 
-#: qml/gallery/GalleryPage.qml:696
+#: qml/gallery/GalleryPage.qml:726
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:738
+#: qml/gallery/GalleryPage.qml:768
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
