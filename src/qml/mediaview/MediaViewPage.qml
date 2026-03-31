@@ -187,6 +187,7 @@ Kirigami.Page {
 
     Koko.FileMenuActions {
         id: fileMenuActions
+        enabled: root.visible
         urls: listView.currentItem ? [listView.currentItem.url] : []
     }
 

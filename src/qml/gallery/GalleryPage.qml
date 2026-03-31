@@ -347,6 +347,7 @@ Kirigami.ScrollablePage {
 
     Koko.FileMenuActions {
         id: fileMenuActions
+        enabled: page.visible
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
     }
 
