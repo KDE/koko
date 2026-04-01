@@ -30,7 +30,7 @@
 #include <iostream>
 
 #include "checkerboardimageprovider.h"
-#include "filemenuactions.h"
+#include "filemenumanager.h"
 #include "filesystemtracker.h"
 #include "galleryopenmodel.h"
 #include "imagestorage.h"

@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#include "filemenuactions.h"
+#include "filemenumanager.h"
 #include "printerhelper.h"
 
 #include <QApplication>
@@ -49,11 +49,6 @@ FileMenuActions::FileMenuActions(QObject *parent)
 {
 }
 
-QList<QObject *> FileMenuActions::actions() const
-{
-    return m_actions;
-}
-
 QList<QUrl> FileMenuActions::urls() const
 {
     return m_urls;
@@ -68,29 +63,13 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
     m_urls = urls;
 
     if (m_urls.isEmpty()) {
-        for (auto action : m_actions) {
-            action->deleteLater();
-        }
-        m_actions.clear();
-
         Q_EMIT urlsChanged();
 
         return;
     }
 
-    QList<QObject *> newActions;
-
     ActionCollection *collection = ActionCollections::self()->collection(u"org.kde.koko.mediaview"_s);
     Q_ASSERT(collection);
-
-
-    auto addAction = [this, &newActions](const QIcon &icon, const QString &text, auto func, const bool enabled = true) {
-        auto action = new QAction(icon, text, this);
-        action->setEnabled(enabled);
-        connect(action, &QAction::triggered, this, func);
-        newActions.push_back(action);
-        return action;
-    };
 
     auto connectStandardAction = [this, collection](KStandardActions::StandardAction standardAction, auto func) {
         QAction *action = collection->action(standardAction);
@@ -202,7 +181,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
                     });
             dialog->open();
         };
-        newActions.push_back(KStandardAction::saveAs(this, saveAsLambda, this));
         connectStandardAction(KStandardActions::SaveAs, saveAsLambda);
     }
 
@@ -217,7 +195,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             }
             KIO::highlightInFileManager(m_urls);
         };
-        addAction(QIcon::fromTheme(u"folder-open"_s), i18nc("@action:inmenu", "Open Containing Folder"), openFolderLambda);
         connectNamedAction(u"OpenFolder"_s, openFolderLambda);
     }
 
@@ -238,7 +215,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         job->setUiDelegate(KIO::createDefaultJobUiDelegate());
         job->start();
     };
-    addAction(QIcon::fromTheme(u"system-run"_s), i18nc("@action:inmenu", "&Open With…"), openWithLambda);
     connectNamedAction(u"OpenWith"_s, openWithLambda);
 
     disconnectStandardAction(KStandardActions::Copy);
@@ -260,7 +236,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         KUrlMimeData::setUrls(urls, mostLocalUrls, data);
         QApplication::clipboard()->setMimeData(data);
     };
-    newActions.push_back(KStandardAction::copy(this, copyLambda, this));
     connectStandardAction(KStandardActions::Copy, copyLambda);
 
     disconnectNamedAction(u"CopyPath"_s);
@@ -278,7 +253,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
         QApplication::clipboard()->setText(path);
     };
 
-    addAction(QIcon::fromTheme(u"edit-copy-path"_s), i18nc("@action:inmenu", "Copy Location"), copyPathLambda, singleFile);
     connectNamedAction(u"CopyPath"_s, copyPathLambda);
 
     disconnectStandardAction(KStandardActions::MoveToTrash);
@@ -299,7 +273,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             });
             handler->askUserDelete({m_urls}, KIO::AskUserActionInterface::Trash, KIO::AskUserActionInterface::DefaultConfirmation);
         };
-        newActions.push_back(KStandardAction::moveToTrash(this, moveToTrashLambda, this));
         connectStandardAction(KStandardActions::MoveToTrash, moveToTrashLambda);
     }
 
@@ -322,7 +295,6 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             });
             handler->askUserDelete(m_urls, KIO::AskUserActionInterface::Delete, KIO::AskUserActionInterface::DefaultConfirmation);
         };
-        newActions.push_back(KStandardAction::deleteFile(this, deleteLambda, this));
         connectStandardAction(KStandardActions::DeleteFile, deleteLambda);
     }
 
@@ -335,14 +307,8 @@ void FileMenuActions::setUrls(const QList<QUrl> &urls)
             }
             PrinterHelper::printFileFromUrl(m_urls[0]);
         };
-        newActions.push_back(KStandardAction::print(this, printLambda, this));
         connectStandardAction(KStandardActions::Print, printLambda);
     }
-
-    for (auto action : m_actions) {
-        action->deleteLater();
-    }
-    m_actions = std::move(newActions);
 
     Q_EMIT urlsChanged();
 }
