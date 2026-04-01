@@ -18,7 +18,7 @@ PhotosApplication::PhotosApplication(QObject *parent)
     : AbstractKirigamiApplication(parent)
     , m_pagesGroup(new QActionGroup(this))
 {
-    m_pagesGroup->setExclusive(true);
+    m_pagesGroup->setExclusionPolicy(QActionGroup::ExclusionPolicy::ExclusiveOptional);
     setupActions();
 
     auto config = Config::self();
