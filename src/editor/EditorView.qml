@@ -416,7 +416,6 @@ Kirigami.Page {
             enabled: imageView.document.undoStackDepth > 0
             onTriggered: imageView.document.undo()
             displayHint: Kirigami.DisplayHint.IconOnly
-            shortcut: StandardKey.Undo
         },
 
         Kirigami.Action {
@@ -425,7 +424,6 @@ Kirigami.Page {
             enabled: imageView.document.redoStackDepth > 0
             onTriggered: imageView.document.redo()
             displayHint: Kirigami.DisplayHint.IconOnly
-            shortcut: StandardKey.Redo
         },
 
         Kirigami.Action {
