@@ -144,20 +144,22 @@ void PhotosApplication::updateSavedFolders()
     m_savedFolders.clear();
 
     for (const auto &folder : savedFolders) {
-        // Not added to the managed actions
         QString text = folder;
         if (text.endsWith(u'/')) {
             text.chop(1);
         }
         text = text.split(u'/').constLast();
+        QString normalizedFolder = QUrl::fromLocalFile(QUrl(folder).toLocalFile()).toString();
 
-        auto action = new QAction(QIcon::fromTheme(KIO::iconNameForUrl(folder)), text, this);
-        connect(action, &QAction::triggered, this, [this, folder] {
-            Q_EMIT navigate(FolderModel, folder);
+        auto placeAction = new PlaceAction("", FolderModel, normalizedFolder, this);
+        placeAction->setCheckable(true);
+        placeAction->setActionGroup(m_pagesGroup);
+        placeAction->setText(text);
+        placeAction->setIcon(QIcon::fromTheme(KIO::iconNameForUrl(normalizedFolder)));
+        connect(placeAction, &QAction::triggered, this, [this, normalizedFolder] {
+            Q_EMIT navigate(FolderModel, normalizedFolder);
         });
-        action->setCheckable(true);
-        action->setActionGroup(m_pagesGroup);
-        m_savedFolders << action;
+        m_savedFolders << placeAction;
     }
 
     Q_EMIT savedFoldersChanged();
@@ -176,13 +178,15 @@ void PhotosApplication::updateTags()
     qDeleteAll(m_tags);
     m_tags.clear();
     for (const auto &tag : std::as_const(m_tagNames)) {
-        auto action = new QAction(QIcon::fromTheme(u"tag-symbolic"_s), tag, this);
-        connect(action, &QAction::triggered, this, [this, tag] {
+        auto placeAction = new PlaceAction("", TagsModel, QStringList(tag), this);
+        placeAction->setCheckable(true);
+        placeAction->setActionGroup(m_pagesGroup);
+        placeAction->setText(tag);
+        placeAction->setIcon(QIcon::fromTheme(u"tag-symbolic"_s));
+        connect(placeAction, &QAction::triggered, this, [this, tag] {
             Q_EMIT navigate(TagsModel, QStringList(tag));
         });
-        action->setCheckable(true);
-        action->setActionGroup(m_pagesGroup);
-        m_tags << action;
+        m_tags << placeAction;
     }
 
     Q_EMIT tagsChanged();
