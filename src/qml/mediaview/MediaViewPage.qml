@@ -192,13 +192,13 @@ Kirigami.Page {
         Kirigami.Action {}
     }
 
-    Koko.FileMenuActions {
-        id: fileMenuActions
+    Koko.FileMenuManager {
+        id: fileMenuManager
         enabled: root.visible
         urls: listView.currentItem ? [listView.currentItem.url] : []
     }
 
-    readonly property list<Kirigami.Action> fileMenuActions2: [
+    readonly property list<Kirigami.Action> fileMenuActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             AC.ActionCollection.action: AC.StandardActionData.SaveAs
@@ -315,7 +315,7 @@ Kirigami.Page {
         }
     ]
 
-    actions: [...toolBarActions, ...fileMenuActions2, ...otherHiddenUiActions]
+    actions: [...toolBarActions, ...fileMenuActions, ...otherHiddenUiActions]
 
     SlideshowManager {
         id: slideshowManager
@@ -530,7 +530,7 @@ Kirigami.Page {
 
                     list.push(separatorAction);
 
-                    for (let fileMenuAction of fileMenuActions2) {
+                    for (let fileMenuAction of fileMenuActions) {
                         list.push(fileMenuAction);
                     }
 
