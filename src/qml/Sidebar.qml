@@ -13,7 +13,6 @@ import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.actioncollection as AC
 import org.kde.kirigamiaddons.delegates as Delegates
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.coreaddons as CoreAddons
 
@@ -22,7 +21,7 @@ import org.kde.koko as Koko
 Kirigami.OverlayDrawer {
     id: root
 
-    required property StatefulApp.StatefulWindow mainWindow
+    required property Kirigami.ApplicationWindow mainWindow
     required property Koko.PhotosApplication application
     required property int sidebarWidth
     readonly property var galleryModel: mainWindow.galleryPage?.galleryModel ?? null
@@ -87,7 +86,7 @@ Kirigami.OverlayDrawer {
                         Kirigami.Action {
                             AC.ActionCollection.action: "Preferences"
                             AC.ActionCollection.collection: "org.kde.globalactions"
-                            onTriggered: root.application.configurationView.open()
+                            onTriggered: root.configurationView.open()
                         }
 
                         Kirigami.Action {
@@ -200,20 +199,32 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
-                    placeAction: root.application.action('place_pictures')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_pictures"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Videos")
-                    placeAction: root.application.action('place_videos')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_videos"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
-                    placeAction: root.application.action('place_favorites')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_favorites"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     icon.name: "user-trash-symbolic"
                     text: i18nc("@action:button Navigation entry in sidebar", "Trash")
-                    placeAction: root.application.action('place_trash')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_trash"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceHeading {
                     visible: savedFoldersRepeater.count > 0
@@ -236,41 +247,65 @@ Kirigami.OverlayDrawer {
                 PlaceItem {
                     icon.name: "folder-cloud"
                     text: i18nc("@action:button Navigation entry in sidebar", "Network")
-                    placeAction: root.application.action('place_remote')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_remote"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceHeading {
                     text: i18n("Locations")
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Countries")
-                    placeAction: root.application.action('place_countries')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_countries"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "States")
-                    placeAction: root.application.action('place_states')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_states"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Cities")
-                    placeAction: root.application.action('place_cities')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_cities"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceHeading {
                     text: i18n("Time")
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Years")
-                    placeAction: root.application.action('place_years')
+                    action: Kirigami.Action {
+                        AC.ActionCollection.action: "place_years"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Months")
-                    placeAction: root.application.action('place_months')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_months"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
-                    placeAction: root.application.action('place_weeks')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_weeks"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Days")
-                    placeAction: root.application.action('place_days')
+                    placeAction: Kirigami.Action {
+                        AC.ActionCollection.action: "place_days"
+                        AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    }
                 }
                 PlaceHeading {
                     text: i18n("Tags")

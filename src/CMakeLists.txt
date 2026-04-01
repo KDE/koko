@@ -76,7 +76,6 @@ target_link_libraries(koko_static PUBLIC
     KF6::I18n
     KF6::I18nQml
     KF6::Notifications
-    KirigamiAddonsStatefulApp
     KF6::KirigamiActionCollection
     LibExiv2::LibExiv2
     KQuickImageEditor
@@ -98,7 +97,6 @@ ecm_add_qml_module(koko_static
         QtCore
         QtQml
         QtQuick
-        org.kde.kirigamiaddons.statefulapp
 )
 
 ecm_target_qml_sources(koko_static SOURCES

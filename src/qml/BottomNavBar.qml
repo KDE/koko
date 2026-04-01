@@ -9,7 +9,6 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 Loader {
     id: root
@@ -23,7 +22,7 @@ Loader {
 
     property int lastCategoryRequested: BottomNavBar.Category.Pictures // tracks last page selected
 
-    required property StatefulApp.StatefulWindow mainWindow
+    required property Kirigami.ApplicationWindow mainWindow
 
     height: active ? implicitHeight : 0
     active: Kirigami.Settings.isMobile && !mainWindow.wideScreen && mainWindow.pageStack.layers.depth < 2;

@@ -3,11 +3,13 @@
 
 #pragma once
 
-#include <AbstractKirigamiApplication>
+#include <QAction>
+#include <QObject>
+#include <qqmlregistration.h>
 
 class QActionGroup;
 
-class PhotosApplication : public AbstractKirigamiApplication
+class PhotosApplication : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
@@ -32,13 +34,16 @@ public:
     QList<QAction *> savedFolders() const;
     QList<QAction *> tags() const;
 
+    // FIXME: better way to do this
+    Q_INVOKABLE void goHome();
+
 Q_SIGNALS:
     void savedFoldersChanged();
     void tagsChanged();
     void navigate(const ModelType model, const QVariant path);
 
 private:
-    void setupActions() override;
+    void setupActions();
     void updateSavedFolders();
     void updateTags();
 
