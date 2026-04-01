@@ -137,24 +137,25 @@ Kirigami.OverlayDrawer {
                 id: item
                 required property var placeAction
                 readonly property bool shouldBeChecked: {
+                    const pathsEqual = (JSON.stringify(placeAction.path) === JSON.stringify(root.galleryModel.path));
+                    if (!pathsEqual && placeAction.modelType !== Koko.PhotosApplication.FavoritesModel) {
+                        // GalleryFavoritesModel is excluded because it is not navigable, and has no path
+                        return false;
+                    }
+
                     switch (placeAction.modelType) {
                         case Koko.PhotosApplication.FolderModel:
-                            return root.galleryModel instanceof Koko.GalleryFolderModel
-                                && placeAction.path === root.galleryModel.path
+                            return root.galleryModel instanceof Koko.GalleryFolderModel;
                         case Koko.PhotosApplication.FavoritesModel:
-                            return root.galleryModel instanceof Koko.GalleryFavoritesModel
-                            // favorite action & model doesn't have path
+                            return root.galleryModel instanceof Koko.GalleryFavoritesModel;
                         case Koko.PhotosApplication.LocationModel:
-                            return root.galleryModel instanceof Koko.GalleryLocationModel
-                                && placeAction.path === root.galleryModel.path
+                            return root.galleryModel instanceof Koko.GalleryLocationModel;
                         case Koko.PhotosApplication.TimeModel:
-                            return root.galleryModel instanceof Koko.GalleryTimeModel
-                                && placeAction.path === root.galleryModel.path
+                            return root.galleryModel instanceof Koko.GalleryTimeModel;
                         case Koko.PhotosApplication.TagsModel:
-                            return root.galleryModel instanceof Koko.GalleryTagsModel
-                                && placeAction.path === root.galleryModel.path
+                            return root.galleryModel instanceof Koko.GalleryTagsModel;
                         default:
-                            return false
+                            return false;
                     }
                 }
                 // Get most of the Kirigami Action and button states from the QAction, but not all
