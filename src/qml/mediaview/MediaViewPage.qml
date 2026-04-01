@@ -173,10 +173,11 @@ Kirigami.Page {
 
             enabled: Kirigami.Settings.isMobile ? true : root.mainWindow.controlsVisible
             checked: false
-            onToggled: if (checked) {
+            onToggled: {print("AAAA",checkable,checked)
+                if (checked) {
                 // TODO: Should probably do this in infoSidebarLoader
                 infoSidebarLoader.forceActiveFocus();
-            }
+            }}
         }
     ]
 
