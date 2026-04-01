@@ -195,5 +195,9 @@ void PhotosApplication::updateTags()
 
 void PhotosApplication::goHome()
 {
-    Q_EMIT navigate(FolderModel, QUrl::fromLocalFile(QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first()));
+    ActionCollection *coll = ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
+    Q_ASSERT(coll);
+    QAction *action = coll->action("place_pictures");
+    Q_ASSERT(action);
+    action->trigger();
 }
