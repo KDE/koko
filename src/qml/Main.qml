@@ -10,25 +10,28 @@ import QtQuick
 import QtQuick.Controls as QQC
 import QtQuick.Window
 
+import org.kde.config as Config
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.statefulapp as StatefulApp
+//import org.kde.kirigamiaddons.statefulapp as StatefulApp
 import org.kde.kirigami.actioncollection as AC
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
 
-StatefulApp.StatefulWindow {
+Kirigami.ApplicationWindow {
     id: root
 
     readonly property int sidebarWidth: Kirigami.Units.gridUnit * 14
 
-    application: Koko.PhotosApplication {
-        configurationView: Koko.PhotosConfigurationView {
-            window: root
-            application: root.application
-        }
+   property QtObject application: Koko.PhotosApplication {
     }
 
-    windowName: "MainWindow"
+    readonly property QtObject configurationView: Koko.PhotosConfigurationView {
+        window: root
+    }
+
+    Config.WindowStateSaver {
+        configGroupName: "MainWindow"
+    }
 
     ActionCollection {
         pageRow: root.pageStack
@@ -271,7 +274,7 @@ StatefulApp.StatefulWindow {
         pageStack.layers.pushEnter.enabled = false;
 
         if (Koko.GalleryOpenModel.mode === Koko.GalleryOpenModel.OpenNone) {
-            root.application.action("place_pictures").trigger();
+            root.application.goHome();
         } else {
             root.openWith();
         }
