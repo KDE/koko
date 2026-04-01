@@ -9,7 +9,7 @@ import org.kde.kirigamiaddons.settings as KirigamiSettings
 KirigamiSettings.ConfigurationView {
     id: root
 
-    required property Koko.PhotosApplication application
+    //required property Koko.PhotosApplication application
 
     modules: [
         KirigamiSettings.ConfigurationModule {
@@ -18,9 +18,9 @@ KirigamiSettings.ConfigurationView {
             icon.name: "photo-symbolic"
             page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
         },
-        KirigamiSettings.ShortcutsConfigurationModule {
+       /* KirigamiSettings.ShortcutsConfigurationModule {
             application: root.application
-        },
+        },*/
         KirigamiSettings.ConfigurationModule {
             moduleId: "about"
             text: i18n("About Photos")

@@ -12,10 +12,13 @@
 #include <QActionGroup>
 #include <QStandardPaths>
 
+#include <ActionCollection/ActionCollection>
+#include <ActionCollection/ActionCollections>
+
 using namespace Qt::StringLiterals;
 
 PhotosApplication::PhotosApplication(QObject *parent)
-    : AbstractKirigamiApplication(parent)
+    : QObject(parent)
     , m_pagesGroup(new QActionGroup(this))
 {
     m_pagesGroup->setExclusive(true);
@@ -30,8 +33,6 @@ PhotosApplication::~PhotosApplication() = default;
 
 void PhotosApplication::setupActions()
 {
-    AbstractKirigamiApplication::setupActions();
-
     struct Place {
         QString id;
         ModelType modelType;
@@ -108,14 +109,13 @@ void PhotosApplication::setupActions()
               QIcon::fromTheme(u"view-calendar-symbolic"_s)},
     };
 
+    ActionCollection *coll = ActionCollections::self()->createCollection(u"org.kde.koko.navigation"_s, i18nc("Navigation buttons actions group", "Navigation"));
     for (const auto &place : places) {
-        auto placeAction = mainCollection()->addAction(place.id, this, [this, modelType = place.modelType, path = place.path] {
+        QAction *action = coll->createAction(place.id, place.icon.name(), place.text);
+        action->setActionGroup(m_pagesGroup);
+        connect(action, &QAction::triggered, this, [this, modelType = place.modelType, path = place.path] {
             Q_EMIT navigate(modelType, path);
         });
-        placeAction->setCheckable(true);
-        placeAction->setActionGroup(m_pagesGroup);
-        placeAction->setText(place.text);
-        placeAction->setIcon(place.icon);
     }
 
     updateSavedFolders();
@@ -183,4 +183,9 @@ void PhotosApplication::updateTags()
     }
 
     Q_EMIT tagsChanged();
+}
+
+void PhotosApplication::goHome()
+{
+    Q_EMIT navigate(FolderModel, QUrl::fromLocalFile(QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first()));
 }
