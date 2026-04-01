@@ -14,14 +14,14 @@ class QAction;
 
 class QQuickItem;
 
-class FileMenuActions : public QObject
+class FileMenuManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QList<QUrl> urls READ urls WRITE setUrls NOTIFY urlsChanged FINAL)
     Q_PROPERTY(bool enabled MEMBER m_enabled NOTIFY enabledChanged FINAL)
-    QML_NAMED_ELEMENT(FileMenuManager)
+    QML_ELEMENT
 public:
-    explicit FileMenuActions(QObject *parent = nullptr);
+    explicit FileMenuManager(QObject *parent = nullptr);
 
     QList<QUrl> urls() const;
     void setUrls(const QList<QUrl> &urls);

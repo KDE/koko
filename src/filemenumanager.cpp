@@ -44,17 +44,17 @@
 
 using namespace Qt::StringLiterals;
 
-FileMenuActions::FileMenuActions(QObject *parent)
+FileMenuManager::FileMenuManager(QObject *parent)
     : QObject(parent)
 {
 }
 
-QList<QUrl> FileMenuActions::urls() const
+QList<QUrl> FileMenuManager::urls() const
 {
     return m_urls;
 }
 
-void FileMenuActions::setUrls(const QList<QUrl> &urls)
+void FileMenuManager::setUrls(const QList<QUrl> &urls)
 {
     if (m_urls == urls) {
         return;
