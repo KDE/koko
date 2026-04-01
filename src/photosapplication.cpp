@@ -5,6 +5,7 @@
 
 #include "dirmodelutils.h"
 #include "imagestorage.h"
+#include "placeaction.h"
 #include "kokoconfig.h"
 
 #include <KIO/Global>
@@ -109,13 +110,15 @@ void PhotosApplication::setupActions()
     };
 
     for (const auto &place : places) {
-        auto placeAction = mainCollection()->addAction(place.id, this, [this, modelType = place.modelType, path = place.path] {
-            Q_EMIT navigate(modelType, path);
-        });
+        auto placeAction = new PlaceAction(place.id, place.modelType, place.path, this);
         placeAction->setCheckable(true);
         placeAction->setActionGroup(m_pagesGroup);
         placeAction->setText(place.text);
         placeAction->setIcon(place.icon);
+        connect(placeAction, &QAction::triggered, this, [this, modelType = place.modelType, path = place.path] {
+            Q_EMIT navigate(modelType, path);
+        });
+        mainCollection()->addAction(place.id, placeAction);
     }
 
     updateSavedFolders();
