@@ -135,6 +135,7 @@ Kirigami.OverlayDrawer {
             component PlaceItem : Delegates.RoundedItemDelegate {
                 id: item
 
+                autoExclusive: true
                 Layout.fillWidth: true
                 Keys.onDownPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
                 Keys.onUpPressed: nextItemInFocusChain(false).forceActiveFocus(Qt.TabFocusReason)
