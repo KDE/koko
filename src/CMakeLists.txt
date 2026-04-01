@@ -76,7 +76,6 @@ target_link_libraries(koko_static PUBLIC
     KF6::I18n
     KF6::I18nQml
     KF6::Notifications
-    KirigamiAddonsStatefulApp
     KF6::KirigamiActionCollection
     LibExiv2::LibExiv2
     KQuickImageEditor
