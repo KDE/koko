@@ -345,13 +345,13 @@ Kirigami.ScrollablePage {
         }
     ]
 
-    Koko.FileMenuActions {
-        id: fileMenuActions
+    Koko.FileMenuManager {
+        id: fileMenuManager
         enabled: page.visible
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
     }
 
-    readonly property list<Kirigami.Action> fileMenuActions2: [
+    readonly property list<Kirigami.Action> fileMenuActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             AC.ActionCollection.action: AC.StandardActionData.SaveAs
@@ -431,7 +431,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {}
     }
 
-    actions: [...toolBarActions, ...extraHiddenUiActions, ...fileMenuActions2, ...otherHiddenUiActions]
+    actions: [...toolBarActions, ...extraHiddenUiActions, ...fileMenuActions, ...otherHiddenUiActions]
 
     title: page.galleryModel.title
 
@@ -712,6 +712,7 @@ Kirigami.ScrollablePage {
                     // make it so we don't have to select for the context menu. Probably better for Marco's
                     // action collection stuff too. File actions can be exported as proprties of FileMenuActions
                     // and just converted to Kirigami.Action from QAction.
+                    // TODO: fixable now?
                     page.suppressVisibleSelectionMode = true;
                 }
 
@@ -731,7 +732,7 @@ Kirigami.ScrollablePage {
 
                 list.push(restoreTrashAction);
 
-                for (let fileMenuAction of fileMenuActions2) {
+                for (let fileMenuAction of fileMenuActions) {
                     list.push(fileMenuAction);
                 }
 
