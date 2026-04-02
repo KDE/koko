@@ -164,6 +164,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_pictures"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -171,6 +172,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_videos"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -178,6 +180,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_favorites"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -186,6 +189,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_trash"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceHeading {
@@ -202,6 +206,7 @@ Kirigami.OverlayDrawer {
 
                         action: Kirigami.Action {
                             fromQAction: delegate.modelData
+                            enabled: root.mainWindow.pageStack.layers.depth === 1
                         }
                     }
                 }
@@ -214,6 +219,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_remote"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceHeading {
@@ -224,6 +230,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_countries"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -231,6 +238,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_states"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -238,6 +246,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_cities"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceHeading {
@@ -248,6 +257,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_years"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -255,6 +265,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_months"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -262,6 +273,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_weeks"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceItem {
@@ -269,6 +281,7 @@ Kirigami.OverlayDrawer {
                     action: Kirigami.Action {
                         AC.ActionCollection.action: "place_days"
                         AC.ActionCollection.collection: "org.kde.koko.navigation"
+                        enabled: root.mainWindow.pageStack.layers.depth === 1
                     }
                 }
                 PlaceHeading {
@@ -285,6 +298,7 @@ Kirigami.OverlayDrawer {
 
                         action: Kirigami.Action {
                             fromQAction: placeItem.modelData
+                            enabled: root.mainWindow.pageStack.layers.depth === 1
                         }
                     }
                 }
