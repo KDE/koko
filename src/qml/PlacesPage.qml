@@ -14,12 +14,12 @@ import org.kde.koko as Koko
 FormCard.FormCardPage {
     id: root
 
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
 
     actions: [
         Kirigami.Action {
             text: i18nc("@action:button Open settings dialog", "Settings")
-            fromQAction: root.application.action('options_configure')
+            fromQAction: root.navigationActions.action('options_configure')
         }
     ]
 
@@ -31,21 +31,21 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
             action: Kirigami.Action {
-                fromQAction: root.application?.action('place_pictures') ?? null
+                fromQAction: root.navigationActions?.action('place_pictures') ?? null
             }
         }
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Videos")
             action: Kirigami.Action {
-                fromQAction: root.application?.action('place_videos') ?? null
+                fromQAction: root.navigationActions?.action('place_videos') ?? null
             }
         }
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_favorites')
+                fromQAction: root.navigationActions.action('place_favorites')
             }
         }
 
@@ -53,14 +53,14 @@ FormCard.FormCardPage {
             icon.name: "user-trash-symbolic"
             text: i18nc("@action:button Navigation entry in sidebar", "Trash")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_trash')
+                fromQAction: root.navigationActions.action('place_trash')
             }
         }
         FormCard.FormButtonDelegate {
             icon.name: "folder-cloud"
             text: i18nc("@action:button Navigation entry in sidebar", "Network")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_remote')
+                fromQAction: root.navigationActions.action('place_remote')
             }
         }
     }
@@ -74,7 +74,7 @@ FormCard.FormCardPage {
         visible: folderRepeater.count > 0
         Repeater {
             id: folderRepeater
-            model: root.application.savedFolders
+            model: root.navigationActions.savedFolders
             FormCard.FormButtonDelegate {
                 id: delegate
 
@@ -95,19 +95,19 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Countries")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_countries')
+                fromQAction: root.navigationActions.action('place_countries')
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "States")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_states')
+                fromQAction: root.navigationActions.action('place_states')
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Cities")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_cities')
+                fromQAction: root.navigationActions.action('place_cities')
             }
         }
     }
@@ -119,25 +119,25 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Years")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_years')
+                fromQAction: root.navigationActions.action('place_years')
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Months")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_months')
+                fromQAction: root.navigationActions.action('place_months')
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_weeks')
+                fromQAction: root.navigationActions.action('place_weeks')
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Days")
             action: Kirigami.Action {
-                fromQAction: root.application.action('place_days')
+                fromQAction: root.navigationActions.action('place_days')
             }
         }
     }
@@ -153,7 +153,7 @@ FormCard.FormCardPage {
         Repeater {
             id: tagRepeater
 
-            model: root.application.tags
+            model: root.navigationActions.tags
 
             delegate: FormCard.FormButtonDelegate {
                 id: actionDelegate

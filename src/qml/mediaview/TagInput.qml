@@ -14,18 +14,18 @@ QQC2.ComboBox {
     id: comboBox
 
     required property Koko.Exiv2Extractor extractor
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
 
     editable: true
     model: tagsListModel
 
     Connections {
-        target: comboBox.application
+        target: comboBox.navigationActions
 
         function onTagsChanged(): void {
             if (tagsListModel.count > 0) {
                 tagsListModel.clear();
-                comboBox.application.tags.forEach((element) => {
+                comboBox.navigationActions.tags.forEach((element) => {
                     if (!comboBox.extractor.tags.includes(element.text)) {
                         tagsListModel.append({ tag: element.text });
                     }
@@ -38,7 +38,7 @@ QQC2.ComboBox {
     // contentItem to show the first item when created instead of being blank.
     ListModel {
         id: tagsListModel
-        Component.onCompleted: comboBox.application.tags.forEach((element) => {
+        Component.onCompleted: comboBox.navigationActions.tags.forEach((element) => {
             if (!comboBox.extractor.tags.includes(element.text)) {
                 tagsListModel.append({ tag: element.text })
             }
@@ -49,7 +49,7 @@ QQC2.ComboBox {
         target: comboBox.extractor
         function onTagsChanged(): void {
             tagsListModel.clear()
-            comboBox.application.tags.forEach((element) => {
+            comboBox.navigationActions.tags.forEach((element) => {
                 if (!comboBox.extractor.tags.includes(element.text)) {
                     tagsListModel.append({ tag: element.text });
                 }

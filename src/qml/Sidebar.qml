@@ -23,7 +23,7 @@ Kirigami.OverlayDrawer {
     id: root
 
     required property Kirigami.ApplicationWindow mainWindow
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
     required property int sidebarWidth
 
     edge: Application.layoutDirection == Qt.RightToLeft ? Qt.RightEdge : Qt.LeftEdge
@@ -194,7 +194,7 @@ Kirigami.OverlayDrawer {
                 }
                 Repeater {
                     id: savedFoldersRepeater
-                    model: root.application.savedFolders
+                    model: root.navigationActions.savedFolders
                     PlaceItem {
                         id: delegate
 
@@ -277,7 +277,7 @@ Kirigami.OverlayDrawer {
                 }
                 Repeater {
                     id: tagRepeater
-                    model: root.application.tags
+                    model: root.navigationActions.tags
                     PlaceItem {
                         id: placeItem
 

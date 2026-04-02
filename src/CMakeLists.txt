@@ -24,8 +24,8 @@ qt_add_library(koko_static STATIC
     notificationmanager.cpp
     fileinfo.cpp
     displaycolorspace.cpp
-    photosapplication.cpp
-    photosapplication.h
+    navigationactions.cpp
+    navigationactions.h
     devicepixelratiohelper.cpp
     checkerboardimageprovider.cpp
     printerhelper.cpp
