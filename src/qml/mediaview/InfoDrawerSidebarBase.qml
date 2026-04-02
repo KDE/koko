@@ -18,7 +18,7 @@ Flickable {
     id: flickable
 
     required property Koko.Exiv2Extractor extractor
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
 
     component RatingButton: QQC2.AbstractButton {
         id: startDelegate
@@ -367,9 +367,9 @@ Flickable {
                         onActivated: flickable.extractor.tags.splice(tagDialog.extractorIndex, 1)
                     }
                     Connections {
-                        target: flickable.application
+                        target: flickable.navigationActions
                         function onTagsChanged(): void {
-                            const appTags = flickable.application.tags.map((action) => action.text)
+                            const appTags = flickable.navigationActions.tags.map((action) => action.text)
                             const concatenated = tagDialog.allTags.concat(appTags).sort()
                             tagDialog.allTags = [...new Set(concatenated)].filter((s) => s.length > 0)
                         }
@@ -392,7 +392,7 @@ Flickable {
                     // We have to insert actions this way to ensure a specific order and use the default clear action
                     Component.onCompleted: {
                         searchFieldRightActions.splice(0, 0, closeDialogAction)
-                        const appTags = flickable.application.tags.map((action) => action.text)
+                        const appTags = flickable.navigationActions.tags.map((action) => action.text)
                         const concatenated = appTags.concat(flickable.extractor.tags).sort()
                         allTags = [...new Set(concatenated)].filter((s) => s.length > 0)
                     }

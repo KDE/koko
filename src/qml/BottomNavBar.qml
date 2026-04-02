@@ -47,19 +47,19 @@ Loader {
                     id: picturesAction
 
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
-                    fromQAction: root.mainWindow.application.action("place_pictures")
+                    fromQAction: root.mainWindow.navigationActions.action("place_pictures")
                 },
                 Kirigami.Action {
                     id: videosAction
 
                     text: i18nc("@action:button Navigation entry in sidebar", "Videos")
-                    fromQAction: root.mainWindow.application.action("place_videos")
+                    fromQAction: root.mainWindow.navigationActions.action("place_videos")
                 },
                 Kirigami.Action {
                     id: favoritesAction
 
                     text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
-                    fromQAction: root.mainWindow.application.action("place_favorites")
+                    fromQAction: root.mainWindow.navigationActions.action("place_favorites")
                 },
                 Kirigami.Action {
                     icon.name: "compass-symbolic"

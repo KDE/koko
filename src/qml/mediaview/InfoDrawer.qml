@@ -14,7 +14,7 @@ Kirigami.OverlayDrawer {
     id: root
 
     required property Koko.Exiv2Extractor extractor
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
 
     drawerOpen: false
     edge: Application.layoutDirection == Qt.RightToLeft ? Qt.LeftEdge : Qt.RightEdge
@@ -51,7 +51,7 @@ Kirigami.OverlayDrawer {
         id: content
 
         extractor: root.extractor
-        application: root.application
+        navigationActions: root.navigationActions
 
         topMargin: 0
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
