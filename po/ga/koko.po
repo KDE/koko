@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:42+0000\n"
+"POT-Creation-Date: 2026-04-02 00:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -413,7 +413,7 @@ msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr ""
 
-#: editor/EditorView.qml:45 editor/EditorView.qml:520
+#: editor/EditorView.qml:45 editor/EditorView.qml:518
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -529,31 +529,31 @@ msgctxt "@action:button"
 msgid "Undo"
 msgstr ""
 
-#: editor/EditorView.qml:423
+#: editor/EditorView.qml:422
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr ""
 
-#: editor/EditorView.qml:438
+#: editor/EditorView.qml:436
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr ""
 
-#: editor/EditorView.qml:446
+#: editor/EditorView.qml:444
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr ""
 
-#: editor/EditorView.qml:578
+#: editor/EditorView.qml:576
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr ""
 
-#: editor/EditorView.qml:593
+#: editor/EditorView.qml:591
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"

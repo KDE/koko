@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:42+0000\n"
-"PO-Revision-Date: 2026-01-04 11:07+0100\n"
+"POT-Creation-Date: 2026-04-02 00:41+0000\n"
+"PO-Revision-Date: 2026-04-02 00:59+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -419,7 +419,7 @@ msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Editatu <filename>%1</filename>"
 
-#: editor/EditorView.qml:45 editor/EditorView.qml:520
+#: editor/EditorView.qml:45 editor/EditorView.qml:518
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -436,73 +436,61 @@ msgid "Resize"
 msgstr "Neurria aldatu"
 
 #: editor/EditorView.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "Neurria aldatu"
+msgstr "Honen arabera neurria aldatu:"
 
 #: editor/EditorView.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "Pixelatu"
+msgstr "Pixelak"
 
 #: editor/EditorView.qml:173
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "Ehuneko"
 
 #: editor/EditorView.qml:184
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Zabalera"
 
 #: editor/EditorView.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "Zabalera:Altuera"
+msgstr "Altuera"
 
 #: editor/EditorView.qml:257
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "Aspektu-erlazioa:"
+msgstr "Mantendu itxura-proportzioa"
 
 #: editor/EditorView.qml:261
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Jatorrizko fitxategiaren neurria: %1"
 
 #: editor/EditorView.qml:289
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Estimatutako fitxategi-neurria: %1"
 
 #: editor/EditorView.qml:296
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Berrezarri"
 
 #: editor/EditorView.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Neurria aldatu"
@@ -549,31 +537,31 @@ msgctxt "@action:button"
 msgid "Undo"
 msgstr "Desegin"
 
-#: editor/EditorView.qml:423
+#: editor/EditorView.qml:422
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Berregin"
 
-#: editor/EditorView.qml:438
+#: editor/EditorView.qml:436
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Gorde"
 
-#: editor/EditorView.qml:446
+#: editor/EditorView.qml:444
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Gorde honela"
 
-#: editor/EditorView.qml:578
+#: editor/EditorView.qml:576
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Zoom:"
 
-#: editor/EditorView.qml:593
+#: editor/EditorView.qml:591
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -772,7 +760,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:97
 #, kde-format
@@ -811,12 +799,10 @@ msgid "Locations"
 msgstr "Kokalekuak"
 
 #: models/galleryopenmodel.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Hautatu dena"
+msgstr "Hautatutako fitxategiak"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:251
 #, kde-format
@@ -1159,12 +1145,10 @@ msgid "Invert the selected media"
 msgstr "Alderantzikatu hautatutako hedabideak"
 
 #: qml/gallery/GalleryPage.qml:726
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "elementu 1"
+msgstr[0] "elementu %1"
 msgstr[1] "%1 elementu"
 
 #: qml/gallery/GalleryPage.qml:768
@@ -1442,15 +1426,13 @@ msgid "Exit Full Screen"
 msgstr "Irten Pantaila osotik"
 
 #: qml/mediaview/MediaViewPage.qml:544
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Aurreko irudia"
 
 #: qml/mediaview/MediaViewPage.qml:578
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Hurrengo irudia"
@@ -1459,87 +1441,79 @@ msgstr "Hurrengo irudia"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "% 25"
 
 #: qml/mediaview/MediaViewPage.qml:760
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "% 50"
 
 #: qml/mediaview/MediaViewPage.qml:761
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio"
-#| msgid "7:5"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr "7:5"
+msgstr "% 75"
 
 #: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "% 100"
 
 #: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "% 150"
 
 #: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "% 200"
 
 #: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "% 300"
 
 #: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "% 400"
 
 #: qml/mediaview/MediaViewPage.qml:767
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "% 600"
 
 #: qml/mediaview/MediaViewPage.qml:768
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "% 800"
 
 #: qml/mediaview/MediaViewPage.qml:817
-#, fuzzy, kde-format
-#| msgctxt "@item:intable %1 is image width, %2 is image height"
-#| msgid "%1x%2"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1x%2"
+msgstr "%%1"
 
 #: qml/mediaview/MediaViewPage.qml:831
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "Zoom:"
+msgstr "Zooma urrundu"
 
 #: qml/mediaview/MediaViewPage.qml:840
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "Zoom:"
+msgstr "Zooma gerturatu"
 
 #: qml/mediaview/MediaViewPage.qml:1083 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
@@ -1735,7 +1709,7 @@ msgstr "Handitu ikus-eremua baino txikiagoak diren irudiak"
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Gogoratu zoom-maila irudien artean aldatzean"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format

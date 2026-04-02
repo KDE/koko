@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:42+0000\n"
+"POT-Creation-Date: 2026-04-02 00:41+0000\n"
 "PO-Revision-Date: 2023-05-31 10:52+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -424,7 +424,7 @@ msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr ""
 
-#: editor/EditorView.qml:45 editor/EditorView.qml:520
+#: editor/EditorView.qml:45 editor/EditorView.qml:518
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to save file. Check if you have the correct permission to edit "
@@ -559,32 +559,32 @@ msgctxt "@action:button"
 msgid "Undo"
 msgstr "Desfazer"
 
-#: editor/EditorView.qml:423
+#: editor/EditorView.qml:422
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr ""
 
-#: editor/EditorView.qml:438
+#: editor/EditorView.qml:436
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Gravar"
 
-#: editor/EditorView.qml:446
+#: editor/EditorView.qml:444
 #, fuzzy, kde-format
 #| msgid "Save As"
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Gravar Como"
 
-#: editor/EditorView.qml:578
+#: editor/EditorView.qml:576
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr ""
 
-#: editor/EditorView.qml:593
+#: editor/EditorView.qml:591
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@info:tooltip"
