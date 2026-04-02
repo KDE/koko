@@ -93,7 +93,7 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
     };
     auto disconnectNamedAction = [this, collection](const QString &actionName) {
         QAction *action = collection->action(actionName);
-        Q_ASSERT_X(action, "connecting to action, action not found in collection", actionName.toUtf8());
+        Q_ASSERT_X(action, "disconnecting from action, action not found in collection", actionName.toUtf8());
         action->setVisible(false);
         disconnect(action, &QAction::triggered, this, nullptr);
     };
