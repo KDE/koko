@@ -9,7 +9,7 @@ import org.kde.kirigamiaddons.settings as KirigamiSettings
 KirigamiSettings.ConfigurationView {
     id: root
 
-    //required property Koko.PhotosApplication application
+    //required property Koko.NavigationActions application
 
     modules: [
         KirigamiSettings.ConfigurationModule {

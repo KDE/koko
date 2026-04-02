@@ -13,7 +13,7 @@ QQC2.Page {
     id: root
 
     required property Koko.Exiv2Extractor extractor
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
 
     leftPadding: root.mirrored && vScrollBar.visible ? vScrollBar.width : 0
     rightPadding: !root.mirrored && vScrollBar.visible ? vScrollBar.width : 0
@@ -28,7 +28,7 @@ QQC2.Page {
         id: content
 
         extractor: root.extractor
-        application: root.application
+        navigationActions: root.navigationActions
 
         QQC2.ScrollBar.vertical: QQC2.ScrollBar {
             id: vScrollBar

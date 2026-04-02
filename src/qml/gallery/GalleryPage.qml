@@ -16,7 +16,7 @@ import org.kde.koko as Koko
 Kirigami.ScrollablePage {
     id: page
 
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
     required property Kirigami.ApplicationWindow mainWindow
     required property Koko.AbstractGalleryModel galleryModel
 
@@ -111,7 +111,7 @@ Kirigami.ScrollablePage {
         }
 
         const mediaViewPage = page.mainWindow.pageStack.layers.push(Qt.resolvedUrl("MediaViewPage.qml"), {
-            application: page.application,
+            navigationActions: page.navigationActions,
             mainWindow: page.mainWindow,
             gallerySortFilterProxyModel: gallerySortFilterProxyModel,
             url: url
