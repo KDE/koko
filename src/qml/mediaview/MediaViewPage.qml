@@ -25,7 +25,7 @@ import org.kde.photos.thumbnails as KokoThumbnails
 Kirigami.Page {
     id: root
 
-    required property Koko.PhotosApplication application
+    required property Koko.NavigationActions navigationActions
     required property Kirigami.ApplicationWindow mainWindow
     required property Koko.GallerySortFilterProxyModel gallerySortFilterProxyModel
     required property url url
@@ -1023,7 +1023,7 @@ Kirigami.Page {
             active: visible
             sourceComponent: InfoSidebar {
                 extractor: exiv2Extractor
-                application: root.application
+                navigationActions: root.navigationActions
                 anchors.fill: parent
             }
         }
@@ -1038,7 +1038,7 @@ Kirigami.Page {
 
         sourceComponent: InfoDrawer {
             extractor: exiv2Extractor
-            application: root.application
+            navigationActions: root.navigationActions
         }
 
         Connections {

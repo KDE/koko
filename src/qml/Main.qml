@@ -22,8 +22,7 @@ Kirigami.ApplicationWindow {
 
     readonly property int sidebarWidth: Kirigami.Units.gridUnit * 14
 
-   property QtObject application: Koko.PhotosApplication {
-    }
+   property QtObject navigationActions: Koko.NavigationActions {}
 
     readonly property QtObject configurationView: Koko.PhotosConfigurationView {
         window: root
@@ -76,7 +75,7 @@ Kirigami.ApplicationWindow {
 
             const page = component.createObject(root, {
                 title: i18nc("@title", "Places"),
-                application: root.application,
+                navigationActions: root.navigationActions,
             });
 
             placesView = switchApplicationPage(page);
@@ -98,12 +97,8 @@ Kirigami.ApplicationWindow {
     property var galleryPage: null
     property var placesView: null
 
-    Kirigami.Action {
-        fromQAction: root.application.action('open_kcommand_bar')
-    }
-
     Connections {
-        target: root.application
+        target: root.navigationActions
 
         function onNavigate(modelType, path) : void {
             root.navigate(modelType, path);
@@ -114,22 +109,22 @@ Kirigami.ApplicationWindow {
         let targetModel;
 
         switch (modelType) {
-            case Koko.PhotosApplication.OpenModel:
+            case Koko.NavigationActions.OpenModel:
                 targetModel = Koko.GalleryOpenModel;
                 break;
-            case Koko.PhotosApplication.FolderModel:
+            case Koko.NavigationActions.FolderModel:
                 targetModel = galleryFolderModel;
                 break;
-            case Koko.PhotosApplication.FavoritesModel:
+            case Koko.NavigationActions.FavoritesModel:
                 targetModel = galleryFavoritesModel;
                 break;
-            case Koko.PhotosApplication.LocationModel:
+            case Koko.NavigationActions.LocationModel:
                 targetModel = galleryLocationModel;
                 break;
-            case Koko.PhotosApplication.TimeModel:
+            case Koko.NavigationActions.TimeModel:
                 targetModel = galleryTimeModel;
                 break;
-            case Koko.PhotosApplication.TagsModel:
+            case Koko.NavigationActions.TagsModel:
                 targetModel = galleryTagsModel;
                 break;
             default:
@@ -150,7 +145,7 @@ Kirigami.ApplicationWindow {
             }
 
             root.galleryPage = component.createObject(root, {
-                application: root.application,
+                navigationActions: root.navigationActions,
                 mainWindow: root,
                 galleryModel: targetModel
             })
@@ -167,7 +162,7 @@ Kirigami.ApplicationWindow {
             // Use existing page
 
             // Do not preserve history for OpenModel, which will have changed
-            let preserveHistory = (modelType === Koko.PhotosApplication.OpenModel);
+            let preserveHistory = (modelType === Koko.NavigationActions.OpenModel);
 
             root.galleryPage.navigate(path, preserveHistory);
         }
@@ -181,16 +176,16 @@ Kirigami.ApplicationWindow {
                 return;
 
             case Koko.GalleryOpenModel.OpenFolder:
-                root.navigate(Koko.PhotosApplication.FolderModel, Koko.GalleryOpenModel.urlToOpen);
+                root.navigate(Koko.NavigationActions.FolderModel, Koko.GalleryOpenModel.urlToOpen);
                 return;
 
             case Koko.GalleryOpenModel.OpenImage:
-                root.navigate(Koko.PhotosApplication.FolderModel, Koko.DirModelUtils.directoryOfUrl(Koko.GalleryOpenModel.urlToOpen));
+                root.navigate(Koko.NavigationActions.FolderModel, Koko.DirModelUtils.directoryOfUrl(Koko.GalleryOpenModel.urlToOpen));
                 root.galleryPage.openMediaViewPage(Koko.GalleryOpenModel.urlToOpen);
                 return;
 
             case Koko.GalleryOpenModel.OpenMultiple:
-                root.navigate(Koko.PhotosApplication.OpenModel, []);
+                root.navigate(Koko.NavigationActions.OpenModel, []);
                 return;
         }
     }
@@ -241,7 +236,7 @@ Kirigami.ApplicationWindow {
         }
         sourceComponent: Sidebar {
             mainWindow: root
-            application: root.application
+            navigationActions: root.navigationActions
             sidebarWidth: root.sidebarWidth
         }
     }
@@ -274,7 +269,7 @@ Kirigami.ApplicationWindow {
         pageStack.layers.pushEnter.enabled = false;
 
         if (Koko.GalleryOpenModel.mode === Koko.GalleryOpenModel.OpenNone) {
-            root.application.goHome();
+            root.navigationActions.goHome();
         } else {
             root.openWith();
         }
