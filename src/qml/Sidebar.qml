@@ -150,21 +150,21 @@ Kirigami.OverlayDrawer {
                 required property var placeAction
                 readonly property bool shouldBeChecked: {
                     const pathsEqual = (JSON.stringify(placeAction.path) === JSON.stringify(root.galleryModel.path));
-                    if (!pathsEqual && placeAction.modelType !== Koko.PhotosApplication.FavoritesModel) {
+                    if (!pathsEqual && placeAction.modelType !== Koko.NavigationActions.FavoritesModel) {
                         // GalleryFavoritesModel is excluded because it is not navigable, and has no path
                         return false;
                     }
 
                     switch (placeAction.modelType) {
-                        case Koko.PhotosApplication.FolderModel:
+                        case Koko.NavigationActions.FolderModel:
                             return root.galleryModel instanceof Koko.GalleryFolderModel;
-                        case Koko.PhotosApplication.FavoritesModel:
+                        case Koko.NavigationActions.FavoritesModel:
                             return root.galleryModel instanceof Koko.GalleryFavoritesModel;
-                        case Koko.PhotosApplication.LocationModel:
+                        case Koko.NavigationActions.LocationModel:
                             return root.galleryModel instanceof Koko.GalleryLocationModel;
-                        case Koko.PhotosApplication.TimeModel:
+                        case Koko.NavigationActions.TimeModel:
                             return root.galleryModel instanceof Koko.GalleryTimeModel;
-                        case Koko.PhotosApplication.TagsModel:
+                        case Koko.NavigationActions.TagsModel:
                             return root.galleryModel instanceof Koko.GalleryTagsModel;
                         default:
                             return false;
@@ -199,36 +199,25 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_pictures"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    //FIXME: port it back to PlaceAction
+                    placeAction: root.navigationActions.placeAction("place_pictures")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Videos")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_videos"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_videos")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_favorites"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_favorites")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     icon.name: "user-trash-symbolic"
                     text: i18nc("@action:button Navigation entry in sidebar", "Trash")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_trash"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_trash")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
                     visible: savedFoldersRepeater.count > 0
@@ -242,14 +231,10 @@ Kirigami.OverlayDrawer {
 
                         required property var modelData
 
-<<<<<<< HEAD
-                        placeAction: delegate.modelData
-=======
-                        action: Kirigami.Action {
+                        placeAction: Kirigami.Action {
                             fromQAction: delegate.modelData
                             enabled: root.mainWindow.pageStack.layers.depth === 1
                         }
->>>>>>> a4f3b8b2 (hide sidebar actions from the explorer when we are not in gallery)
                     }
                 }
                 PlaceHeading {
@@ -258,73 +243,49 @@ Kirigami.OverlayDrawer {
                 PlaceItem {
                     icon.name: "folder-cloud"
                     text: i18nc("@action:button Navigation entry in sidebar", "Network")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_remote"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_remote")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
                     text: i18n("Locations")
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Countries")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_countries"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_countries")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "States")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_states"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_states")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Cities")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_cities"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_cities")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
                     text: i18n("Time")
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Years")
-                    action: Kirigami.Action {
-                        AC.ActionCollection.action: "place_years"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_years")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Months")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_months"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_months")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_weeks"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_weeks")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Days")
-                    placeAction: Kirigami.Action {
-                        AC.ActionCollection.action: "place_days"
-                        AC.ActionCollection.collection: "org.kde.koko.navigation"
-                        enabled: root.mainWindow.pageStack.layers.depth === 1
-                    }
+                    placeAction: root.navigationActions.placeAction("place_days")
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
                     text: i18n("Tags")
