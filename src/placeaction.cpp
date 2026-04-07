@@ -4,7 +4,7 @@
 
 #include "placeaction.h"
 
-PlaceAction::PlaceAction(const QString &id, PhotosApplication::ModelType modelType, const QVariant &path, QObject *parent)
+PlaceAction::PlaceAction(const QString &id, NavigationActions::ModelType modelType, const QVariant &path, QObject *parent)
     : QAction(parent)
     , m_modelType(modelType)
     , m_path(path)
@@ -12,7 +12,7 @@ PlaceAction::PlaceAction(const QString &id, PhotosApplication::ModelType modelTy
     setObjectName(id);
 }
 
-PhotosApplication::ModelType PlaceAction::modelType() const
+NavigationActions::ModelType PlaceAction::modelType() const
 {
     return m_modelType;
 }

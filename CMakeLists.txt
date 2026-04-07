@@ -50,7 +50,7 @@ set_package_properties(Qt6 PROPERTIES
     DESCRIPTION "Base components"
 )
 
-find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO CoreAddons Crash Notifications FileMetaData DBusAddons Kirigami Purpose KirigamiAppComponents)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config ConfigWidgets KIO CoreAddons Crash Notifications FileMetaData DBusAddons Kirigami Purpose)
 
 set_package_properties(KF6 PROPERTIES
     TYPE REQUIRED
@@ -87,6 +87,12 @@ find_package(KF6KirigamiAddons)
 set_package_properties(KF6KirigamiAddons PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required runtime dependency"
+)
+
+find_package(KF6KirigamiAppComponents)
+set_package_properties(KF6KirigamiAppComponents PROPERTIES
+    TYPE REQUIRED
+    PURPOSE "Required for Shortcuts configuration"
 )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

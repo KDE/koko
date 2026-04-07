@@ -6,14 +6,16 @@
 #include "dirmodelutils.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
+#include "placeaction.h"
 
 #include <KIO/Global>
 #include <KLocalizedString>
 #include <QActionGroup>
 #include <QStandardPaths>
 
-#include <ActionCollection/ActionCollection>
-#include <ActionCollection/ActionCollections>
+// TODO: use those again instead of manual lists
+// #include <ActionCollection/ActionCollection>
+// #include <ActionCollection/ActionCollections>
 
 using namespace Qt::StringLiterals;
 
@@ -109,14 +111,15 @@ void NavigationActions::setupActions()
               QIcon::fromTheme(u"view-calendar-symbolic"_s)},
     };
 
-    ActionCollection *coll = ActionCollections::self()->createCollection(u"org.kde.koko.navigation"_s, i18nc("Navigation buttons actions group", "Navigation"));
     for (const auto &place : places) {
-        QAction *action = coll->createAction(place.id, place.icon.name(), place.text);
+        PlaceAction *action = new PlaceAction(place.id, place.modelType, place.path, this);
+        action->setIcon(place.icon);
         action->setCheckable(true);
         action->setActionGroup(m_pagesGroup);
         connect(action, &QAction::triggered, this, [this, modelType = place.modelType, path = place.path] {
             Q_EMIT navigate(modelType, path);
         });
+        m_placeActions[place.id] = action;
     }
 
     updateSavedFolders();
@@ -148,14 +151,17 @@ void NavigationActions::updateSavedFolders()
             text.chop(1);
         }
         text = text.split(u'/').constLast();
+        QString normalizedFolder = QUrl::fromLocalFile(QUrl(folder).toLocalFile()).toString();
 
-        auto action = new QAction(QIcon::fromTheme(KIO::iconNameForUrl(folder)), text, this);
-        connect(action, &QAction::triggered, this, [this, folder] {
-            Q_EMIT navigate(FolderModel, folder);
+        auto placeAction = new PlaceAction("", FolderModel, normalizedFolder, this);
+        placeAction->setCheckable(true);
+        placeAction->setActionGroup(m_pagesGroup);
+        placeAction->setText(text);
+        placeAction->setIcon(QIcon::fromTheme(KIO::iconNameForUrl(normalizedFolder)));
+        connect(placeAction, &QAction::triggered, this, [this, normalizedFolder] {
+            Q_EMIT navigate(FolderModel, normalizedFolder);
         });
-        action->setCheckable(true);
-        action->setActionGroup(m_pagesGroup);
-        m_savedFolders << action;
+        m_savedFolders << placeAction;
     }
 
     Q_EMIT savedFoldersChanged();
@@ -174,23 +180,28 @@ void NavigationActions::updateTags()
     qDeleteAll(m_tags);
     m_tags.clear();
     for (const auto &tag : std::as_const(m_tagNames)) {
-        auto action = new QAction(QIcon::fromTheme(u"tag-symbolic"_s), tag, this);
-        connect(action, &QAction::triggered, this, [this, tag] {
+        auto placeAction = new PlaceAction("", TagsModel, QStringList(tag), this);
+        placeAction->setCheckable(true);
+        placeAction->setActionGroup(m_pagesGroup);
+        placeAction->setText(tag);
+        placeAction->setIcon(QIcon::fromTheme(u"tag-symbolic"_s));
+        connect(placeAction, &QAction::triggered, this, [this, tag] {
             Q_EMIT navigate(TagsModel, QStringList(tag));
         });
-        action->setCheckable(true);
-        action->setActionGroup(m_pagesGroup);
-        m_tags << action;
+        m_tags << placeAction;
     }
 
     Q_EMIT tagsChanged();
 }
 
+QAction *NavigationActions::placeAction(const QString &name)
+{
+    return m_placeActions.value(name);
+}
+
 void NavigationActions::goHome()
 {
-    ActionCollection *coll = ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
-    Q_ASSERT(coll);
-    QAction *action = coll->action("place_pictures");
+    QAction *action = m_placeActions.value("place_pictures");
     Q_ASSERT(action);
     action->trigger();
 }
