@@ -109,7 +109,8 @@ void NavigationActions::setupActions()
               QIcon::fromTheme(u"view-calendar-symbolic"_s)},
     };
 
-    ActionCollection *coll = ActionCollections::self()->createCollection(u"org.kde.koko.navigation"_s, i18nc("Navigation buttons actions group", "Navigation"));
+    KirigamiActions::ActionCollection *coll =
+        KirigamiActions::ActionCollections::self()->createCollection(u"org.kde.koko.navigation"_s, i18nc("Navigation buttons actions group", "Navigation"));
     for (const auto &place : places) {
         QAction *action = coll->createAction(place.id, place.icon.name(), place.text);
         action->setCheckable(true);
@@ -188,7 +189,7 @@ void NavigationActions::updateTags()
 
 void NavigationActions::goHome()
 {
-    ActionCollection *coll = ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
+    KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
     Q_ASSERT(coll);
     QAction *action = coll->action("place_pictures");
     Q_ASSERT(action);
