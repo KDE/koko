@@ -70,7 +70,7 @@ KokoDirLister::KokoDirLister(QObject *parent)
 
 bool KokoDirLister::fileItemMatchesFilter(const KFileItem &fileItem)
 {
-    return nameFilter.contains(QStringLiteral("*.") + fileItem.suffix());
+    return nameFilter.contains(QStringLiteral("*.") + fileItem.suffix(), Qt::CaseInsensitive);
 };
 
 QUrl KokoDirLister::url() const
