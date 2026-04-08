@@ -47,6 +47,30 @@ Row {
         Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
     }
 
+    component CheckBoxOrLabelLoader: Loader {
+        property string text: ""
+        property bool initiallyChecked: false
+        property bool useCheckBox: false
+        sourceComponent: useCheckBox ? checkBoxComponent : labelComponent
+        signal toggled(checked: bool)
+        Component {
+            id: checkBoxComponent
+            Controls.CheckBox {
+                text: parent.text
+                checked: parent.initiallyChecked
+                onToggled: parent.toggled(checked)
+            }
+        }
+        Component {
+            id: labelComponent
+            Controls.Label {
+                text: parent.text
+                leftPadding: !root.mirrored ? root.spacing : 0
+                rightPadding: root.mirrored ? root.spacing : 0
+            }
+        }
+    }
+
     Loader { // stroke
         id: strokeLoader
         anchors.verticalCenter: parent.verticalCenter
@@ -55,14 +79,17 @@ Row {
         sourceComponent: Row {
             spacing: root.spacing
 
-            Controls.CheckBox {
+            CheckBoxOrLabelLoader {
                 anchors.verticalCenter: parent.verticalCenter
                 text: i18nc("@label, annotation tool option", "Stroke:")
-                checked: colorRect.color.a > 0
-                onToggled: if (root.useSelectionOptions) {
-                    root.selectedItem.strokeColor.a = checked
-                } else {
-                    root.tool.strokeColor.a = checked
+                initiallyChecked: colorRect.color.a > 0
+                useCheckBox: (root.options & AnnotationTool.FillOption) !== 0
+                onToggled: (checked) => {
+                    if (root.useSelectionOptions) {
+                        root.selectedItem.strokeColor.a = checked
+                    } else {
+                        root.tool.strokeColor.a = checked
+                    }
                 }
             }
 
@@ -173,14 +200,17 @@ Row {
         sourceComponent: Row {
             spacing: root.spacing
 
-            Controls.CheckBox {
+            CheckBoxOrLabelLoader {
                 anchors.verticalCenter: parent.verticalCenter
                 text: i18nc("@label, annotation tool option", "Fill:")
-                checked: colorRect.color.a > 0
-                onToggled: if (root.useSelectionOptions) {
-                    root.selectedItem.fillColor.a = checked
-                } else {
-                    root.tool.fillColor.a = checked
+                initiallyChecked: colorRect.color.a > 0
+                useCheckBox: (root.options & AnnotationTool.StrokeOption) !== 0
+                onToggled: (checked) => {
+                    if (root.useSelectionOptions) {
+                        root.selectedItem.fillColor.a = checked
+                    } else {
+                        root.tool.fillColor.a = checked
+                    }
                 }
             }
 
