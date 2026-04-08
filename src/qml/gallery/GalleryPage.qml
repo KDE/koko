@@ -734,6 +734,7 @@ Kirigami.ScrollablePage {
                 }
 
                 contextMenu.popup();
+                contextMenu.closed.connect(() => { contextMenu.destroy() });
             }
 
             Controls.AbstractButton {

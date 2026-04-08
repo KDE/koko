@@ -509,6 +509,7 @@ Kirigami.Page {
                         titleText: root.title
                     }) as MediaViewContextMenu;
                     contextMenu.popup();
+                    contextMenu.closed.connect(() => { contextMenu.destroy() });
                 }
             }
         }
