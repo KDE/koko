@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:41+0000\n"
+"POT-Creation-Date: 2026-04-09 00:42+0000\n"
 "PO-Revision-Date: 2026-03-26 06:28+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -797,7 +797,7 @@ msgstr "Zvezne države"
 msgid "Cities"
 msgstr "Mesta"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:203
+#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:229
 #, kde-format
 msgid "Locations"
 msgstr "Lokacije"
@@ -808,7 +808,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Izbrane datoteke"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:251
+#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:263
 #, kde-format
 msgid "Tags"
 msgstr "Oznake"
@@ -848,97 +848,97 @@ msgstr "Deljenje ni uspelo"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Deljeni spletni naslov za sliko je <a href='%1'>%1</a>"
 
-#: photosapplication.cpp:50
+#: photosapplication.cpp:51
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
 msgstr "Pomakni se do slik"
 
-#: photosapplication.cpp:55
+#: photosapplication.cpp:56
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
 msgstr "Pomakni se do videoposnetkov"
 
-#: photosapplication.cpp:60
+#: photosapplication.cpp:61
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
 msgstr "Pomakni se do priljubljenih"
 
-#: photosapplication.cpp:65
+#: photosapplication.cpp:66
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
 msgstr "Pomakni se do smeti"
 
-#: photosapplication.cpp:70
+#: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
 msgstr "Pomakni se do oddaljenih map"
 
-#: photosapplication.cpp:76
+#: photosapplication.cpp:77
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr "Premakni se do slik urejenih po državah"
 
-#: photosapplication.cpp:82
+#: photosapplication.cpp:83
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
 msgstr "Premakni se do slik urejenih po zveznih državah"
 
-#: photosapplication.cpp:87
+#: photosapplication.cpp:88
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr "Premakni se do slik urejenih po mestih"
 
-#: photosapplication.cpp:92
+#: photosapplication.cpp:93
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
 msgstr "Premakni se do slik urejenih po letih"
 
-#: photosapplication.cpp:97
+#: photosapplication.cpp:98
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
 msgstr "Premakni se do slik urejenih po mesecih"
 
-#: photosapplication.cpp:102
+#: photosapplication.cpp:103
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
 msgstr "Premakni se do slik urejenih po tednih"
 
-#: photosapplication.cpp:107
+#: photosapplication.cpp:108
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
 msgstr "Premakni se do slik urejenih po dnevih"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:151
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:189
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Slike"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:157
+#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:193
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videoposnetki"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:163
+#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:197
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Priljubljeni"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:63
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:64
 #, kde-format
 msgid "Places"
 msgstr "Kraji"
@@ -1598,66 +1598,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:170
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:202
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Smeti"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:197
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:225
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Omrežje"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:177
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Zaznamki"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:206
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:232
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Države"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:212
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:236
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Zvezne države"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:218
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:240
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Mesta"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:224
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:244
 #, kde-format
 msgid "Time"
 msgstr "Čas"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:227
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:247
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Leta"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:233
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:251
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Meseci"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:239
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:255
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Tedni"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:245
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:259
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1758,30 +1758,30 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "Deli"
 
-#: qml/Sidebar.qml:74
+#: qml/Sidebar.qml:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr "Prikaži meni"
 
-#: qml/Sidebar.qml:101
+#: qml/Sidebar.qml:102
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
 msgstr "Doniraj…"
 
-#: qml/Sidebar.qml:107
+#: qml/Sidebar.qml:108
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
 msgstr "Poročaj o napaki…"
 
-#: qml/Sidebar.qml:148
+#: qml/Sidebar.qml:186
 #, kde-format
 msgid "General"
 msgstr "Splošno"
 
-#: qml/Sidebar.qml:193
+#: qml/Sidebar.qml:221
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"

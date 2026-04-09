@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:41+0000\n"
+"POT-Creation-Date: 2026-04-09 00:42+0000\n"
 "PO-Revision-Date: 2022-04-18 17:59+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,7 +30,7 @@ msgstr "matejm98mthw@gmail.com"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "Ťah:"
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -40,98 +40,96 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 px"
+msgstr[1] "%1 px"
+msgstr[2] "%1 px"
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "Šírka ťahu"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Farba ťahu"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "Výplň:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "Farba výplne"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "Sila:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "Intenzita efektu."
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "Písmo:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%2 %3 %1 b"
+msgstr[1] "%2 %3 %1 b"
+msgstr[2] "%2 %3 %1 b"
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%2 %1 b"
+msgstr[1] "%2 %1 b"
+msgstr[2] "%2 %1 b"
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "Farba písma"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "Číslo:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "Číslo pre číselné anotácie"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "Tieň"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "Pozícia:"
@@ -140,18 +138,16 @@ msgstr "Pozícia:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Poloha X oblasti orezania"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Poloha Y oblasti orezania"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Veľkosť:"
@@ -160,29 +156,28 @@ msgstr "Veľkosť:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Šírka oblasti orezania"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Výška oblasti orezania"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "Pomer strán:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "Odomknuté"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
 msgstr "Predchádzajúci obrázok"
@@ -191,11 +186,10 @@ msgstr "Predchádzajúci obrázok"
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "Štvorec"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
 msgstr "Celá obrazovka"
@@ -204,166 +198,163 @@ msgstr "Celá obrazovka"
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "ISO papier (na šírku)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "US Letter (na šírku)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "ISO papier (na výšku)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "US Letter (na výšku)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Šírka:Výška"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "Resetovať"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
 #, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
-msgstr ""
+msgstr "Prijať"
 
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr ""
+msgstr "Žiadne"
 
 #: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Orezať"
 
 #: editor/AnnotationsToolBarContents.qml:118
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "Vybrať všetko"
+msgstr "Vybrať"
 
 #: editor/AnnotationsToolBarContents.qml:127
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr ""
+msgstr "Čiara voľnou rukou"
 
 #: editor/AnnotationsToolBarContents.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
-msgstr ""
+msgstr "Shift: Prichytiť na rovné čiary"
 
 #: editor/AnnotationsToolBarContents.qml:135
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
-msgstr ""
+msgstr "Zvýrazňovač"
 
 #: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
-msgstr ""
+msgstr "Čiara"
 
 #: editor/AnnotationsToolBarContents.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr ""
+msgstr "Shift: Prichytiť na 45-stupňové prírastky"
 
 #: editor/AnnotationsToolBarContents.qml:152
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
-msgstr ""
+msgstr "Šípka"
 
 #: editor/AnnotationsToolBarContents.qml:161
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
-msgstr ""
+msgstr "Obdĺžnik"
 
 #: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
@@ -372,42 +363,44 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
+"Shift: Prichytiť na diagonálne pohyby\n"
+"Control: Zmeniť veľkosť od stredu"
 
 #: editor/AnnotationsToolBarContents.qml:170
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
-msgstr ""
+msgstr "Elipsa"
 
 #: editor/AnnotationsToolBarContents.qml:178
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
-msgstr ""
+msgstr "Pixelovať"
 
 #: editor/AnnotationsToolBarContents.qml:186
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
-msgstr ""
+msgstr "Rozmazať"
 
 #: editor/AnnotationsToolBarContents.qml:194
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 #: editor/AnnotationsToolBarContents.qml:201
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
-msgstr ""
+msgstr "Číslo"
 
 #: editor/ConfirmDiscardingChanges.qml:17
 #, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr ""
+msgstr "Neuložené zmeny"
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -416,12 +409,14 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
+"Obrázok <filename>%1</filename> bol zmenený. Chcete uložiť zmeny alebo ich "
+"zahodiť?"
 
 #: editor/EditorView.qml:35
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
-msgstr ""
+msgstr "Upraviť <filename>%1</filename>"
 
 #: editor/EditorView.qml:45 editor/EditorView.qml:518
 #, kde-format
@@ -430,6 +425,8 @@ msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
 "file."
 msgstr ""
+"Súbor sa nepodarilo uložiť. Skontrolujte, či máte správne oprávnenia na "
+"uloženie tohto súboru."
 
 #: editor/EditorView.qml:111
 #, kde-format
@@ -438,9 +435,7 @@ msgid "Resize"
 msgstr "Zmeniť veľkosť"
 
 #: editor/EditorView.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Zmeniť veľkosť"
@@ -449,86 +444,76 @@ msgstr "Zmeniť veľkosť"
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr ""
+msgstr "Pixely"
 
 #: editor/EditorView.qml:173
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "Percentage"
 
 #: editor/EditorView.qml:184
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Šírka"
 
 #: editor/EditorView.qml:236
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr ""
+msgstr "Výška"
 
 #: editor/EditorView.qml:257
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "Zachovať pomer strán"
 
 #: editor/EditorView.qml:261
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Original file size: %1"
 
 #: editor/EditorView.qml:289
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Estimated file size: %1"
 
 #: editor/EditorView.qml:296
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr ""
+msgstr "Obnoviť"
 
 #: editor/EditorView.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Zmeniť veľkosť"
 
 #: editor/EditorView.qml:357
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
-msgstr "Otočiť doľava"
+msgstr "Otočiť"
 
 #: editor/EditorView.qml:361
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Otočiť doľava"
 
 #: editor/EditorView.qml:372
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the right"
-#| msgid "Rotate right"
+#, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Otočiť doprava"
 
 #: editor/EditorView.qml:384
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Prevrátiť"
@@ -537,27 +522,25 @@ msgstr "Prevrátiť"
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
-msgstr ""
+msgstr "Prevrátiť vodorovne"
 
 #: editor/EditorView.qml:399
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
-msgstr ""
+msgstr "Prevrátiť zvisle"
 
 #: editor/EditorView.qml:414
-#, fuzzy, kde-format
-#| msgctxt "@action:button Undo modification"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button"
 msgid "Undo"
-msgstr "Vrátiť"
+msgstr "Späť"
 
 #: editor/EditorView.qml:422
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
-msgstr ""
+msgstr "Znova"
 
 #: editor/EditorView.qml:436
 #, kde-format
@@ -566,8 +549,7 @@ msgid "Save"
 msgstr "Uložiť"
 
 #: editor/EditorView.qml:444
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Uložiť ako"
@@ -576,11 +558,10 @@ msgstr "Uložiť ako"
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
-msgstr ""
+msgstr "Zoom:"
 
 #: editor/EditorView.qml:591
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
 msgstr "Obrázky"
@@ -593,35 +574,36 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
+"Kliknutím a potiahnutím vytvorte výber.\n"
+"Dvojitým kliknutím na výber ho prijmete a orežete.\n"
+"Kliknutím pravým tlačidlom výber zrušíte."
 
 #: exiv2extractor.cpp:71 qml/PlacesPage.qml:27
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr "Všeobecné:"
+msgstr "Všeobecné"
 
 #: exiv2extractor.cpp:73
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr ""
+msgstr "EXIF"
 
 #: exiv2extractor.cpp:75
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr ""
+msgstr "IPTC"
 
 #: exiv2extractor.cpp:77
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr ""
+msgstr "XMPP"
 
 #: exiv2extractor.cpp:393
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "Miesta"
@@ -632,30 +614,28 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr ""
+msgstr "%1 × %2 (%3 MP)"
 
 #: exiv2extractor.cpp:535
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr ""
+msgstr "%1 × %2"
 
 #: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr ""
+msgstr "Meno"
 
 #: exiv2extractor.cpp:540
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
 msgstr "Meno súboru"
 
 #: exiv2extractor.cpp:543
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "Vytvorené"
@@ -664,31 +644,28 @@ msgstr "Vytvorené"
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr ""
+msgstr "Dátum zmeny"
 
 #: exiv2extractor.cpp:546
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr ""
+msgstr "Dátum prístupu"
 
 #: exiv2extractor.cpp:547
-#, fuzzy, kde-format
-#| msgid "Path"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Cesta"
 
 #: exiv2extractor.cpp:548
-#, fuzzy, kde-format
-#| msgid "Image viewer"
+#, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "Prehliadač obrázkov"
 
 #: exiv2extractor.cpp:549
-#, fuzzy, kde-format
-#| msgid "File Name"
+#, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
 msgstr "Meno súboru"
@@ -697,50 +674,43 @@ msgstr "Meno súboru"
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr ""
+msgstr "Komentár"
 
 #: filemenuactions.cpp:177
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
-msgstr ""
+msgstr "Otvoriť priečinok s obsahom"
 
 #: filemenuactions.cpp:193
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "&Otvoriť pomocou…"
 
 #: filemenuactions.cpp:223
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
-msgstr "Miesta"
+msgstr "Kopírovať umiestnenie"
 
 #: main.cpp:64
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Koko</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Koko</application>"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Koko is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Koko je prehliadač obrázkov pre vašu zbierku obrázkov."
 
 #: main.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:credit"
-#| msgid "(c) 2013-2020 KDE Contributors"
+#, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013-2020 KDE Prispievatelia"
+msgstr "(c) 2013-%1 KDE Contributors"
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -789,7 +759,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:97
 #, kde-format
@@ -802,75 +772,66 @@ msgid "path of image you want to open"
 msgstr "cesta k obrázku, ktorý chcete otvoriť"
 
 #: models/galleryfavoritesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Obľúbené"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Krajiny"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Štáty"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "Mestá"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:203
+#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:229
 #, kde-format
 msgid "Locations"
 msgstr "Miesta"
 
 #: models/galleryopenmodel.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
 msgstr "Vybrať všetko"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:251
+#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:263
 #, kde-format
 msgid "Tags"
 msgstr "Značky"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Roky"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Mesiace"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Týždne"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Dni"
 
 #: models/gallerytimemodel.cpp:77
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
-msgstr "Čas"
+msgstr "Časy:"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -882,101 +843,97 @@ msgstr "Zdieľanie zlyhalo"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Webová adresa zdieľaného obrázka je <a href='%1'>%1</a>"
 
-#: photosapplication.cpp:50
+#: photosapplication.cpp:51
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr ""
+msgstr "Navigovať na obrázky"
 
-#: photosapplication.cpp:55
+#: photosapplication.cpp:56
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr ""
+msgstr "Navigovať na videá"
 
-#: photosapplication.cpp:60
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#: photosapplication.cpp:61
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
 msgstr "Pridať do obľúbených"
 
-#: photosapplication.cpp:65
+#: photosapplication.cpp:66
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr ""
+msgstr "Navigovať do koša"
 
-#: photosapplication.cpp:70
+#: photosapplication.cpp:71
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr ""
+msgstr "Navigovať do vzdialených priečinkov"
 
-#: photosapplication.cpp:76
+#: photosapplication.cpp:77
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa krajiny"
 
-#: photosapplication.cpp:82
+#: photosapplication.cpp:83
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa štátu"
 
-#: photosapplication.cpp:87
+#: photosapplication.cpp:88
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa miest"
 
-#: photosapplication.cpp:92
+#: photosapplication.cpp:93
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa roka"
 
-#: photosapplication.cpp:97
+#: photosapplication.cpp:98
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa mesiaca"
 
-#: photosapplication.cpp:102
+#: photosapplication.cpp:103
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa týždňa"
 
-#: photosapplication.cpp:107
+#: photosapplication.cpp:108
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr ""
+msgstr "Prejsť na obrázky zoskupené podľa dňa"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:151
-#, fuzzy, kde-format
-#| msgid "Pictures"
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:189
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Obrázky"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:157
-#, fuzzy, kde-format
-#| msgid "Videos"
+#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:193
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videá"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:163
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:197
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Obľúbené"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:63
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:64
 #, kde-format
 msgid "Places"
 msgstr "Miesta"
@@ -985,39 +942,36 @@ msgstr "Miesta"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 položka"
+msgstr[1] "%1 položky"
+msgstr[2] "%1 položiek"
 
 #: qml/gallery/GalleryPage.qml:131
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Obnoviť"
 
 #: qml/gallery/GalleryPage.qml:132
-#, fuzzy, kde-format
-#| msgid "Move selected items to trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Presunúť vybraté položky od koša"
 
 #: qml/gallery/GalleryPage.qml:151
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr "Triediť podľa"
+msgstr "Sort: %1"
 
 #: qml/gallery/GalleryPage.qml:156
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
-msgstr ""
+msgstr "Meno"
 
 #: qml/gallery/GalleryPage.qml:163
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Veľkosť"
@@ -1026,24 +980,22 @@ msgstr "Veľkosť"
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr ""
+msgstr "Zmenené"
 
 #: qml/gallery/GalleryPage.qml:171
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
-msgstr ""
+msgstr "Dátum zmeny"
 
 #: qml/gallery/GalleryPage.qml:178
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Vytvorené"
 
 #: qml/gallery/GalleryPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Vytvorené"
@@ -1052,11 +1004,10 @@ msgstr "Vytvorené"
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr ""
+msgstr "Prístupné"
 
 #: qml/gallery/GalleryPage.qml:187
-#, fuzzy, kde-format
-#| msgid "Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Vytvorené"
@@ -1065,142 +1016,130 @@ msgstr "Vytvorené"
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Vzostupne"
 
 #: qml/gallery/GalleryPage.qml:202
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "A-Z"
 
 #: qml/gallery/GalleryPage.qml:204
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "Najmenšie na prvom mieste"
 
 #: qml/gallery/GalleryPage.qml:208
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "Najstaršie na prvom mieste"
 
 #: qml/gallery/GalleryPage.qml:211
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Vzostupne"
 
 #: qml/gallery/GalleryPage.qml:222
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Zostupne"
 
 #: qml/gallery/GalleryPage.qml:224
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "Z-A"
 
 #: qml/gallery/GalleryPage.qml:226
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "Najväčšie na prvom mieste"
 
 #: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "Najnovšie na prvom mieste"
 
 #: qml/gallery/GalleryPage.qml:233
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Zostupne"
 
 #: qml/gallery/GalleryPage.qml:255
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Podľa priečinku"
 
 #: qml/gallery/GalleryPage.qml:256
-#, fuzzy, kde-format
-#| msgid "By Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Podľa priečinku"
 
 #: qml/gallery/GalleryPage.qml:291 qml/mediaview/MediaViewPage.qml:99
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Obľúbené"
 
 #: qml/gallery/GalleryPage.qml:293 qml/mediaview/MediaViewPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Odstrániť z obľúbených"
 
 #: qml/gallery/GalleryPage.qml:293 qml/mediaview/MediaViewPage.qml:101
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Pridať do obľúbených"
 
 #: qml/gallery/GalleryPage.qml:308
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Zdielať vybraté médiá"
 
 #: qml/gallery/GalleryPage.qml:361
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Vybrať všetko"
 
 #: qml/gallery/GalleryPage.qml:362
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Vybrať všetko"
 
 #: qml/gallery/GalleryPage.qml:372
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select None"
 msgstr "Vybrať všetko"
 
 #: qml/gallery/GalleryPage.qml:373
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Zrušiť výber"
 
 #: qml/gallery/GalleryPage.qml:382
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
 msgstr "Odstrániť sekciu"
 
 #: qml/gallery/GalleryPage.qml:383
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Zdielať vybraté médiá"
@@ -1209,13 +1148,12 @@ msgstr "Zdielať vybraté médiá"
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 položka"
+msgstr[1] "%1 položky"
+msgstr[2] "%1 položiek"
 
 #: qml/gallery/GalleryPage.qml:768
-#, fuzzy, kde-format
-#| msgid "No Images Found"
+#, kde-format
 msgid "No media found"
 msgstr "Žiadne obrázky nenájdené"
 
@@ -1223,17 +1161,16 @@ msgstr "Žiadne obrázky nenájdené"
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "Späť"
 
 #: qml/gallery/NavigatorComponent.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "Dopredu"
 
 #: qml/Main.qml:70
-#, fuzzy, kde-format
-#| msgid "Places"
+#, kde-format
 msgctxt "@title"
 msgid "Places"
 msgstr "Miesta"
@@ -1248,9 +1185,9 @@ msgstr "Posuvník prehrávania"
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Pretočiť dozadu 1 sekundu"
+msgstr[1] "Pretočiť dozadu %1 sekundy"
+msgstr[2] "Pretočiť dozadu %1 sekúnd"
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:251
 #, kde-format
@@ -1265,7 +1202,7 @@ msgstr "Pokračovať v prehrávaní"
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
-msgstr ""
+msgstr "Stlmiť zvuk"
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:293
 #, kde-format
@@ -1275,7 +1212,7 @@ msgstr "Ovládač hlasitosti"
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
-msgstr ""
+msgstr "Opakovať aktuálne video"
 
 #: qml/mediaview/InfoDrawer.qml:36
 #, kde-format
@@ -1285,17 +1222,16 @@ msgstr "Metadáta"
 #: qml/mediaview/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "Set rating to %1"
-msgstr ""
+msgstr "Nastaviť hodnotenie na %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:96
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr ""
+msgstr "%1:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:109
-#, fuzzy, kde-format
-#| msgid "Rating"
+#, kde-format
 msgctxt "@label"
 msgid "Rating:"
 msgstr "Hodnotenie"
@@ -1303,42 +1239,39 @@ msgstr "Hodnotenie"
 #: qml/mediaview/InfoDrawerSidebarBase.qml:136
 #, kde-format
 msgid "Current rating %1"
-msgstr ""
+msgstr "Aktuálne hodnotenie %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:227
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@label"
 msgid "Description:"
-msgstr "Popis"
+msgstr "Popis:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:229
 #, kde-format
 msgid "Image description…"
-msgstr ""
+msgstr "Popis obrázka…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:240
-#, fuzzy, kde-format
-#| msgid "Tags"
+#, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Značky"
+msgstr "Značky:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:281
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "Pridať…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:297
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "Hľadať tagy alebo napísať nový tag…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
-#, fuzzy, kde-format
-#| msgid "No Images Found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
 msgstr "Žiadne obrázky nenájdené"
@@ -1347,76 +1280,70 @@ msgstr "Žiadne obrázky nenájdené"
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "Vytvoriť nový tag"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "Existujúce tagy"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "Zatvoriť"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "Vybrať, čo sa zobrazí"
 
 #: qml/mediaview/MediaMetadataPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Konfigurovať zobrazenie metadát"
 
 #: qml/mediaview/MediaMetadataPage.qml:46
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:114
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr "Upraviť"
 
 #: qml/mediaview/MediaViewPage.qml:116
-#, fuzzy, kde-format
-#| msgid "Edit image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Upraviť obrázok"
 
 #: qml/mediaview/MediaViewPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "Zdieľať"
 
 #: qml/mediaview/MediaViewPage.qml:142
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Zdieľať obrázok"
 
 #: qml/mediaview/MediaViewPage.qml:144
-#, fuzzy, kde-format
-#| msgid "Share Image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Zdieľať obrázok"
 
 #: qml/mediaview/MediaViewPage.qml:159
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "Info"
@@ -1425,25 +1352,23 @@ msgstr "Info"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr ""
+msgstr "Zobraziť informácie o tomto videu"
 
 #: qml/mediaview/MediaViewPage.qml:168
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr ""
+msgstr "Zobraziť informácie o tomto obrázku"
 
 #. i18n hint in text and dynamic tooltip text
 #: qml/mediaview/MediaViewPage.qml:194
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "Prezentácia"
 
 #: qml/mediaview/MediaViewPage.qml:196
-#, fuzzy, kde-format
-#| msgid "Start Slideshow"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Spustiť prezentáciu"
@@ -1452,23 +1377,22 @@ msgstr "Spustiť prezentáciu"
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
-msgstr ""
+msgstr "Zobraziť &ovládacie prvky"
 
 #: qml/mediaview/MediaViewPage.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "Vstúpiť do imerzívneho režimu prezerania"
 
 #: qml/mediaview/MediaViewPage.qml:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "Ukončiť imerzívny režim prezerania"
 
 #: qml/mediaview/MediaViewPage.qml:218
-#, fuzzy, kde-format
-#| msgid "Thumbnail Bar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Panel miniatúr"
@@ -1477,45 +1401,40 @@ msgstr "Panel miniatúr"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr ""
+msgstr "Zobraziť panel miniatúr"
 
 #: qml/mediaview/MediaViewPage.qml:220
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr ""
+msgstr "Skryť panel miniatúr"
 
 #: qml/mediaview/MediaViewPage.qml:237
-#, fuzzy, kde-format
-#| msgid "Fullscreen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "Celá obrazovka"
 
 #: qml/mediaview/MediaViewPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Enter Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Prejsť na celú obrazovku"
 
 #: qml/mediaview/MediaViewPage.qml:239
-#, fuzzy, kde-format
-#| msgid "Exit Fullscreen"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Ukončiť režim celej obrazovky"
 
 #: qml/mediaview/MediaViewPage.qml:544
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Predchádzajúci obrázok"
 
 #: qml/mediaview/MediaViewPage.qml:578
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Ďalší obrázok"
@@ -1524,79 +1443,79 @@ msgstr "Ďalší obrázok"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:760
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:761
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr ""
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:767
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:768
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr ""
+msgstr "%1 %"
 
 #: qml/mediaview/MediaViewPage.qml:831
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Oddialiť"
 
 #: qml/mediaview/MediaViewPage.qml:840
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Priblížiť"
 
 #: qml/mediaview/MediaViewPage.qml:1083 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
@@ -1634,31 +1553,28 @@ msgstr "Zastaviť prezentáciu"
 #: qml/mediaview/MediaViewPage.qml:1190
 #, kde-format
 msgid "Show All Controls"
-msgstr ""
+msgstr "Zobraziť všetky ovládacie prvky"
 
 #: qml/mediaview/MediaViewPage.qml:1219
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Zastaviť"
 
 #: qml/mediaview/MediaViewPage.qml:1219
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Spustiť"
 
 #: qml/mediaview/MediaViewPage.qml:1238
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Interval:"
 
 #: qml/mediaview/MediaViewPage.qml:1251
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
 msgstr "1 sekunda"
 
@@ -1668,89 +1584,78 @@ msgid "Add new tag…"
 msgstr "Pridať nový štítok..."
 
 #: qml/PlacesPage.qml:21
-#, fuzzy, kde-format
-#| msgid "Settings"
+#, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:170
-#, fuzzy, kde-format
-#| msgid "Trash"
+#: qml/PlacesPage.qml:54 qml/Sidebar.qml:202
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Kôš"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:197
-#, fuzzy, kde-format
-#| msgid "Network"
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:225
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Sieť"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:177
-#, fuzzy, kde-format
-#| msgid "Remove Bookmark"
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:207
+#, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Odstrániť záložku"
+msgstr "Záložky"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:206
-#, fuzzy, kde-format
-#| msgid "Countries"
+#: qml/PlacesPage.qml:96 qml/Sidebar.qml:232
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Krajiny"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:212
-#, fuzzy, kde-format
-#| msgid "States"
+#: qml/PlacesPage.qml:102 qml/Sidebar.qml:236
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Štáty"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:218
+#: qml/PlacesPage.qml:108 qml/Sidebar.qml:240
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
-msgstr ""
+msgstr "Mestá"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:224
+#: qml/PlacesPage.qml:115 qml/Sidebar.qml:244
 #, kde-format
 msgid "Time"
 msgstr "Čas"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:227
-#, fuzzy, kde-format
-#| msgid "Years"
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:247
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Roky"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:233
-#, fuzzy, kde-format
-#| msgid "Months"
+#: qml/PlacesPage.qml:126 qml/Sidebar.qml:251
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Mesiace"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:239
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:255
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Týždne"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:245
-#, fuzzy, kde-format
-#| msgid "Days"
+#: qml/PlacesPage.qml:138 qml/Sidebar.qml:259
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Dni"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Veľkosť miniatúr:"
@@ -1759,122 +1664,115 @@ msgstr "Veľkosť miniatúr:"
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "Pozadie zobrazenia obrázka"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "Čierne"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "Biele"
 
 #: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "Predvolené témy"
 
 #: qml/Settings/GeneralConfigPage.qml:79
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "Použiť farbu pozadia určenú témou"
 
 #: qml/Settings/GeneralConfigPage.qml:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Zobraziť šachovnicové pozadie za priehľadnými obrázkami"
 
 #: qml/Settings/GeneralConfigPage.qml:106
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Zväčšiť obrázky menšie ako výrez"
 
 #: qml/Settings/GeneralConfigPage.qml:117
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Zapamätať si úroveň priblíženia pri prepínaní medzi obrázkami"
 
 #: qml/Settings/GeneralConfigPage.qml:128
-#, fuzzy, kde-format
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
 msgstr "Prezentácia"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General:"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Všeobecné:"
 
 #: qml/Settings/PhotosConfigurationView.qml:26
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About Photos"
 msgstr "O"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "O"
+msgstr "O aplikácii"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
-#, fuzzy, kde-format
-#| msgid "About"
+#, kde-format
 msgid "About KDE"
-msgstr "O"
+msgstr "Informácie o KDE"
 
 #: qml/ShareAction.qml:21
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "Zdieľať"
 
-#: qml/Sidebar.qml:74
+#: qml/Sidebar.qml:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "Zobraziť ponuku"
 
-#: qml/Sidebar.qml:101
+#: qml/Sidebar.qml:102
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "Darovať…"
 
-#: qml/Sidebar.qml:107
+#: qml/Sidebar.qml:108
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "Nahlásiť chybu…"
 
-#: qml/Sidebar.qml:148
-#, fuzzy, kde-format
-#| msgid "General:"
+#: qml/Sidebar.qml:186
+#, kde-format
 msgid "General"
-msgstr "Všeobecné:"
+msgstr "Všeobecné"
 
-#: qml/Sidebar.qml:193
+#: qml/Sidebar.qml:221
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
@@ -1889,7 +1787,6 @@ msgstr "Vzdialené"
 #~ msgstr "Veľkosť:"
 
 #, fuzzy
-#~| msgid "Move selected items to trash"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Move the selected media to the trash"
 #~ msgstr "Presunúť vybraté položky od koša"
@@ -1904,7 +1801,6 @@ msgstr "Vzdialené"
 #~ msgstr[2] "%1 obrázkov"
 
 #, fuzzy
-#~| msgid "Folders"
 #~ msgctxt "@title"
 #~ msgid "Folders"
 #~ msgstr "Priečinky"
@@ -1925,12 +1821,10 @@ msgstr "Vzdialené"
 #~ msgstr "Obnoviť označenie"
 
 #, fuzzy
-#~| msgid "Selects all the images in the current view"
 #~ msgid "Selects all the media in the current view"
 #~ msgstr "Vyberie všetky obrázky v aktuálnom pohľade"
 
 #, fuzzy
-#~| msgid "De-selects all the selected images"
 #~ msgid "De-selects all the selected media"
 #~ msgstr "Zruší výber všetkých vybratých obrázkov"
 
@@ -1944,13 +1838,11 @@ msgstr "Vzdialené"
 #~ msgstr "Nastavenia"
 
 #, fuzzy
-#~| msgid "Share"
 #~ msgctxt "@title:menu"
 #~ msgid "Share"
 #~ msgstr "Zdieľať"
 
 #, fuzzy
-#~| msgid "Previous image"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Print image"
 #~ msgstr "Predchádzajúci obrázok"
@@ -1974,7 +1866,6 @@ msgstr "Vzdialené"
 #~ msgstr "Zdieľať"
 
 #, fuzzy
-#~| msgid "Dimension"
 #~ msgctxt "@label"
 #~ msgid "Dimension:"
 #~ msgstr "Rozmer"
@@ -1984,26 +1875,21 @@ msgstr "Vzdialené"
 #~ msgstr "%1 x %2"
 
 #, fuzzy
-#~| msgctxt "@title:group for crop area size spinboxes"
-#~| msgid "Size:"
 #~ msgctxt "@label"
 #~ msgid "Size:"
 #~ msgstr "Veľkosť:"
 
 #, fuzzy
-#~| msgid "Model"
 #~ msgctxt "@label"
 #~ msgid "Model:"
 #~ msgstr "Model"
 
 #, fuzzy
-#~| msgid "Latitude"
 #~ msgctxt "@label"
 #~ msgid "Latitude:"
 #~ msgstr "Zemepisná šírka"
 
 #, fuzzy
-#~| msgid "Longitude"
 #~ msgctxt "@label"
 #~ msgid "Longitude:"
 #~ msgstr "Zemepisná dĺžka"
@@ -2018,7 +1904,6 @@ msgstr "Vzdialené"
 #~ msgstr "Priečinky"
 
 #, fuzzy
-#~| msgid "Folders"
 #~ msgctxt "@title:group"
 #~ msgid "Pinned Folders"
 #~ msgstr "Priečinky"
@@ -2027,12 +1912,10 @@ msgstr "Vzdialené"
 #~ msgstr "Nastaviť..."
 
 #, fuzzy
-#~| msgid "Configure…"
 #~ msgid "Configure"
 #~ msgstr "Nastaviť..."
 
 #, fuzzy
-#~| msgid "Settings"
 #~ msgctxt "@title:window"
 #~ msgid "Settings"
 #~ msgstr "Nastavenia"
@@ -2042,13 +1925,10 @@ msgstr "Vzdialené"
 #~ msgstr "Nastavenia premietania:"
 
 #, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "Cancel"
 #~ msgid "Cancel"
 #~ msgstr "Zrušiť"
 
 #, fuzzy
-#~| msgid "Years"
 #~ msgid "Yes"
 #~ msgstr "Roky"
 
