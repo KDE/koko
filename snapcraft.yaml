@@ -47,6 +47,8 @@ parts:
     build-snaps:
       - kde-qt6-core24-sdk/latest/stable
       - kf6-core24-sdk/latest/stable
+    build-packages:
+      - zlib1g-dev
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
