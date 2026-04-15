@@ -70,6 +70,7 @@ parts:
       - libpulse0
       - libexiv2-dev
       - libxkbcommon-dev
+      - libbrotli-dev
     stage-packages:
       - libpulse0
       - libasound2
@@ -78,6 +79,7 @@ parts:
       - libexiv2-27
       - libxkbcommon0
       - sqlite3
+      - libbrotli1
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
