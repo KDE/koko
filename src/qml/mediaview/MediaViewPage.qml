@@ -323,6 +323,16 @@ Kirigami.Page {
         }
     }
 
+    QQC2.StackView.onDeactivating: {
+        if (slideshowManager.running) {
+            slideshowManager.stop()
+        }
+        if (root.mainWindow.visibility === Window.FullScreen
+            && root.lastWindowVisibility !== Window.FullScreen) {
+            root.mainWindow.visibility = root.lastWindowVisibility;
+        }
+    }
+
     function close(): void {
         if (root.mainWindow.footer) {
             root.mainWindow.footer.visible = true;
