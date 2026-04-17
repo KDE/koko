@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:41+0000\n"
+"POT-Creation-Date: 2026-04-17 00:42+0000\n"
 "PO-Revision-Date: 2025-10-10 21:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1502,81 +1502,81 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Avsluta fullskärmsläge"
 
-#: qml/mediaview/MediaViewPage.qml:545
+#: qml/mediaview/MediaViewPage.qml:547
 #, fuzzy, kde-format
 #| msgid "Previous image"
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Föregående bild"
 
-#: qml/mediaview/MediaViewPage.qml:579
+#: qml/mediaview/MediaViewPage.qml:581
 #, fuzzy, kde-format
 #| msgid "Next image"
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Nästa bild"
 
-#: qml/mediaview/MediaViewPage.qml:760
+#: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:761
+#: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:762
+#: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:763
+#: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:764
+#: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:765
+#: qml/mediaview/MediaViewPage.qml:767
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:766
+#: qml/mediaview/MediaViewPage.qml:768
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:767
+#: qml/mediaview/MediaViewPage.qml:769
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:768
+#: qml/mediaview/MediaViewPage.qml:770
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:769
+#: qml/mediaview/MediaViewPage.qml:771
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:818
+#: qml/mediaview/MediaViewPage.qml:820
 #, fuzzy, kde-format
 #| msgctxt "@item:intable %1 is image width, %2 is image height"
 #| msgid "%1x%2"
@@ -1584,7 +1584,7 @@ msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1 x %2"
 
-#: qml/mediaview/MediaViewPage.qml:832
+#: qml/mediaview/MediaViewPage.qml:834
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1592,7 +1592,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zoom:"
 
-#: qml/mediaview/MediaViewPage.qml:841
+#: qml/mediaview/MediaViewPage.qml:843
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1600,13 +1600,13 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zoom:"
 
-#: qml/mediaview/MediaViewPage.qml:1084 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1086 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Bildspelsintervall:"
 
-#: qml/mediaview/MediaViewPage.qml:1101 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1103 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1614,48 +1614,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekund"
 msgstr[1] "%1 sekunder"
 
-#: qml/mediaview/MediaViewPage.qml:1156 qml/mediaview/MediaViewPage.qml:1257
+#: qml/mediaview/MediaViewPage.qml:1158 qml/mediaview/MediaViewPage.qml:1259
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Upprepat"
 
-#: qml/mediaview/MediaViewPage.qml:1165 qml/mediaview/MediaViewPage.qml:1266
+#: qml/mediaview/MediaViewPage.qml:1167 qml/mediaview/MediaViewPage.qml:1268
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Slumpmässigt"
 
-#: qml/mediaview/MediaViewPage.qml:1177
+#: qml/mediaview/MediaViewPage.qml:1179
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Stoppa bildspel"
 
-#: qml/mediaview/MediaViewPage.qml:1191
+#: qml/mediaview/MediaViewPage.qml:1193
 #, kde-format
 msgid "Show All Controls"
 msgstr "Visa alla kontroller"
 
-#: qml/mediaview/MediaViewPage.qml:1220
+#: qml/mediaview/MediaViewPage.qml:1222
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1220
+#: qml/mediaview/MediaViewPage.qml:1222
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1239
+#: qml/mediaview/MediaViewPage.qml:1241
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1252
+#: qml/mediaview/MediaViewPage.qml:1254
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
