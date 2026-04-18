@@ -4,14 +4,14 @@
 # This file is distributed under the same license as the koko package.
 #
 # Automatically generated, 2022.
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # SPDX-FileCopyrightText: 2025 Jeff Huang <s8321414@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:42+0000\n"
-"PO-Revision-Date: 2026-03-02 05:26+0900\n"
+"PO-Revision-Date: 2026-04-17 19:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -430,73 +430,61 @@ msgid "Resize"
 msgstr "調整大小"
 
 #: editor/EditorView.qml:155
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "調整大小"
+msgstr "調整大小方法："
 
 #: editor/EditorView.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "像素化"
+msgstr "像素"
 
 #: editor/EditorView.qml:173
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "百分比"
 
 #: editor/EditorView.qml:184
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "寬度"
 
 #: editor/EditorView.qml:236
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "寬度:高度"
+msgstr "高度"
 
 #: editor/EditorView.qml:257
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "長寬比："
+msgstr "保留外觀比例"
 
 #: editor/EditorView.qml:261
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "原始檔案大小：%1"
 
 #: editor/EditorView.qml:289
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "預估檔案大小：%1"
 
 #: editor/EditorView.qml:296
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "重設"
 
 #: editor/EditorView.qml:307
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "調整大小"
@@ -766,7 +754,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:97
 #, kde-format
@@ -1150,9 +1138,7 @@ msgid "Invert the selected media"
 msgstr "反轉選取哪些媒體"
 
 #: qml/gallery/GalleryPage.qml:726
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 個項目"
@@ -1431,15 +1417,13 @@ msgid "Exit Full Screen"
 msgstr "離開全螢幕"
 
 #: qml/mediaview/MediaViewPage.qml:547
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "上一張影像"
 
 #: qml/mediaview/MediaViewPage.qml:581
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "下一張影像"

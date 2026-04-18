@@ -429,61 +429,61 @@ msgstr "缩放"
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr ""
+msgstr "调整大小，按照"
 
 #: editor/EditorView.qml:166
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr ""
+msgstr "像素"
 
 #: editor/EditorView.qml:173
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "百分比"
 
 #: editor/EditorView.qml:184
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "宽度"
 
 #: editor/EditorView.qml:236
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr ""
+msgstr "高度"
 
 #: editor/EditorView.qml:257
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "保持宽高比"
 
 #: editor/EditorView.qml:261
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "原始文件大小：%1"
 
 #: editor/EditorView.qml:289
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "预估文件大小：%1"
 
 #: editor/EditorView.qml:296
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 #: editor/EditorView.qml:307
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
-msgstr ""
+msgstr "调整尺寸"
 
 #: editor/EditorView.qml:357
 #, kde-format
@@ -750,7 +750,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:97
 #, kde-format
@@ -766,22 +766,22 @@ msgstr "您想打开的图像路径"
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr ""
+msgstr "收藏"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
 msgid "Countries"
-msgstr ""
+msgstr "国家/地区"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
 #, kde-format
 msgid "States"
-msgstr ""
+msgstr "州/省"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
 #, kde-format
 msgid "Cities"
-msgstr ""
+msgstr "城市"
 
 #: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:229
 #, kde-format
@@ -792,7 +792,7 @@ msgstr "位置"
 #, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr ""
+msgstr "选定文件"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:263
 #, kde-format
@@ -802,27 +802,27 @@ msgstr "标签"
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "年"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "月"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "周"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "日"
 
 #: models/gallerytimemodel.cpp:77
 #, kde-format
 msgid "Times"
-msgstr ""
+msgstr "时间"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -868,43 +868,43 @@ msgstr "转到远程文件夹"
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
-msgstr ""
+msgstr "转到按国家分类的图片"
 
 #: photosapplication.cpp:83
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr ""
+msgstr "转到按州分类的图片"
 
 #: photosapplication.cpp:88
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
-msgstr ""
+msgstr "转到按城市分类的图片"
 
 #: photosapplication.cpp:93
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr ""
+msgstr "转到按年分类的图片"
 
 #: photosapplication.cpp:98
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr ""
+msgstr "转到按月分类的图片"
 
 #: photosapplication.cpp:103
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr ""
+msgstr "转到按周分类的图片"
 
 #: photosapplication.cpp:108
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr ""
+msgstr "转到按天分类的图片"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:189
 #, kde-format
@@ -933,145 +933,145 @@ msgstr "位置"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
+msgstr[0] "%1 个项目"
 
 #: qml/gallery/GalleryPage.qml:131
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "恢复"
 
 #: qml/gallery/GalleryPage.qml:132
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr ""
+msgstr "将选中的媒体文件恢复到他们以前的位置"
 
 #: qml/gallery/GalleryPage.qml:151
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr ""
+msgstr "排序方式：%1"
 
 #: qml/gallery/GalleryPage.qml:156
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: qml/gallery/GalleryPage.qml:163
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
-msgstr ""
+msgstr "尺寸"
 
 #: qml/gallery/GalleryPage.qml:170
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr ""
+msgstr "已修改"
 
 #: qml/gallery/GalleryPage.qml:171
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
-msgstr ""
+msgstr "修改日期"
 
 #: qml/gallery/GalleryPage.qml:178
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr ""
+msgstr "已创建"
 
 #: qml/gallery/GalleryPage.qml:179
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
-msgstr ""
+msgstr "创建日期"
 
 #: qml/gallery/GalleryPage.qml:186
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr ""
+msgstr "已访问"
 
 #: qml/gallery/GalleryPage.qml:187
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
-msgstr ""
+msgstr "访问时间"
 
 #: qml/gallery/GalleryPage.qml:200
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "升序"
 
 #: qml/gallery/GalleryPage.qml:202
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "A-Z"
 
 #: qml/gallery/GalleryPage.qml:204
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "文件体积较小在前"
 
 #: qml/gallery/GalleryPage.qml:208
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "文件较旧在前"
 
 #: qml/gallery/GalleryPage.qml:211
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "升序"
 
 #: qml/gallery/GalleryPage.qml:222
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "降序"
 
 #: qml/gallery/GalleryPage.qml:224
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "Z-A"
 
 #: qml/gallery/GalleryPage.qml:226
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "文件体积较大在前"
 
 #: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "文件较新在前"
 
 #: qml/gallery/GalleryPage.qml:233
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "降序"
 
 #: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
-msgstr ""
+msgstr "书签文件夹"
 
 #: qml/gallery/GalleryPage.qml:256
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr ""
+msgstr "为当前文件夹添加书签"
 
 #: qml/gallery/GalleryPage.qml:291 qml/mediaview/MediaViewPage.qml:99
 #, kde-format
@@ -1101,60 +1101,60 @@ msgstr "分享所选的媒体文件"
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
-msgstr ""
+msgstr "选择全部"
 
 #: qml/gallery/GalleryPage.qml:362
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr ""
+msgstr "选择所有媒体"
 
 #: qml/gallery/GalleryPage.qml:372
 #, kde-format
 msgctxt "@action:button"
 msgid "Select None"
-msgstr ""
+msgstr "不选择"
 
 #: qml/gallery/GalleryPage.qml:373
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr ""
+msgstr "选择所有媒体文件"
 
 #: qml/gallery/GalleryPage.qml:382
 #, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr ""
+msgstr "反向选中内容"
 
 #: qml/gallery/GalleryPage.qml:383
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr ""
+msgstr "反向选中的媒体文件"
 
 #: qml/gallery/GalleryPage.qml:726
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
+msgstr[0] "%1个项目"
 
 #: qml/gallery/GalleryPage.qml:769
 #, kde-format
 msgid "No media found"
-msgstr ""
+msgstr "未找到媒体"
 
 #: qml/gallery/NavigatorComponent.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "上一个"
 
 #: qml/gallery/NavigatorComponent.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "下一个"
 
 #: qml/Main.qml:70
 #, kde-format
@@ -1247,37 +1247,37 @@ msgstr "标签："
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "添加…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:297
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "搜索标签或写入新标签…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr ""
+msgstr "未找到标签"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "创建新标签"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "已有标签"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
@@ -1416,91 +1416,91 @@ msgstr "退出全屏"
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
-msgstr ""
+msgstr "上一张图像"
 
 #: qml/mediaview/MediaViewPage.qml:581
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
-msgstr ""
+msgstr "下一张图像"
 
 #: qml/mediaview/MediaViewPage.qml:762
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25%"
 
 #: qml/mediaview/MediaViewPage.qml:763
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50%"
 
 #: qml/mediaview/MediaViewPage.qml:764
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr ""
+msgstr "75%"
 
 #: qml/mediaview/MediaViewPage.qml:765
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: qml/mediaview/MediaViewPage.qml:766
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150%"
 
 #: qml/mediaview/MediaViewPage.qml:767
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200%"
 
 #: qml/mediaview/MediaViewPage.qml:768
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300%"
 
 #: qml/mediaview/MediaViewPage.qml:769
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400%"
 
 #: qml/mediaview/MediaViewPage.qml:770
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600%"
 
 #: qml/mediaview/MediaViewPage.qml:771
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800%"
 
 #: qml/mediaview/MediaViewPage.qml:820
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: qml/mediaview/MediaViewPage.qml:834
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "缩小"
 
 #: qml/mediaview/MediaViewPage.qml:843
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "放大"
 
 #: qml/mediaview/MediaViewPage.qml:1086 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
@@ -1641,13 +1641,13 @@ msgstr "日"
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr ""
+msgstr "缩略图大小："
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 像素"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
@@ -1695,7 +1695,7 @@ msgstr "放大小于视图的图像"
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "切换图像时记住缩放级别"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
@@ -1736,24 +1736,24 @@ msgstr "分享(&S)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "显示菜单"
 
 #: qml/Sidebar.qml:102
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "捐赠…"
 
 #: qml/Sidebar.qml:108
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "报告程序缺陷…"
 
 #: qml/Sidebar.qml:186
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "通用"
 
 #: qml/Sidebar.qml:221
 #, kde-format
