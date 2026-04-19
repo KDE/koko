@@ -49,6 +49,7 @@ parts:
       - kf6-core24-sdk/latest/stable
     build-packages:
       - zlib1g-dev
+      - libexpat1-dev
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
       - -DCMAKE_BUILD_TYPE=Release
