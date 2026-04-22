@@ -5,8 +5,8 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.delegates as KD
 import org.kde.koko as Koko
-import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.ScrollablePage {
     id: root
@@ -17,7 +17,7 @@ Kirigami.ScrollablePage {
 
     ListView {
         model: root.extractor
-        delegate: Delegates.CheckDelegate {
+        delegate: KD.CheckSubtitleDelegate {
             id: delegate
 
             required property int index
@@ -26,8 +26,13 @@ Kirigami.ScrollablePage {
             required property string displayName
             required property bool enabledRole
 
+            width: ListView.view.width
+
             text: label
+            subtitle: delegate.displayName.length > 0 ? delegate.displayName : i18nc("@label Placeholder for missing metadata", "—")
+
             checked: enabledRole
+            highlighted: down
 
             onToggled: {
                 if (checked) {
@@ -42,10 +47,6 @@ Kirigami.ScrollablePage {
                 }
             }
 
-            contentItem: Delegates.SubtitleContentItem {
-                subtitle: delegate.displayName.length > 0 ? delegate.displayName : i18nc("@label Placeholder for missing metadata", "—")
-                itemDelegate: delegate
-            }
         }
 
         section {
