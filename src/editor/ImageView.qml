@@ -23,7 +23,7 @@ Controls.Page {
     readonly property real fitZoom: Math.min(flickable.width / annotationEditor.document.canvasRect.width,
                                              flickable.height / annotationEditor.document.canvasRect.height)
     readonly property real minZoom: Math.min(fitZoom, 1)
-    readonly property real maxZoom: Math.max(minZoom, 8)
+    readonly property real maxZoom: Math.max(minZoom, 100)
     readonly property real currentZoom: annotationEditor.scale
     property bool showCropTool: false
 

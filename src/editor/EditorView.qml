@@ -30,6 +30,8 @@ Kirigami.Page {
 
     property string mimeType
 
+    property vector3d initialView: Qt.vector3d(0, 0, 1)
+
     signal imageEdited()
 
     title: xi18nc("@title", "Edit <filename>%1</filename>", root.imageFileName)
@@ -600,5 +602,10 @@ Kirigami.Page {
                 onValueModified: imageView.zoomToPercent(Math.round(value) / 100)
             }
         }
+    }
+
+    Component.onCompleted: {
+        console.log(root.initialView)
+        imageView.zoomToPercent(root.initialView.z, root.initialView)
     }
 }

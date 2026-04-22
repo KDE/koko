@@ -121,6 +121,9 @@ Kirigami.Page {
                     mainWindow: root.mainWindow,
                     imageUrl: listView.currentItem.url,
                     mimeType: listView.currentItem.mimeType,
+                    initialView: Qt.vector3d(listView.currentItem.item.contentX,
+                                             listView.currentItem.item.contentY,
+                                             listView.currentItem.item.zoomFactor),
                     // Without this, there's an odd glitch where the page will show for a brief moment
                     // before the show animation runs.
                     visible: false
