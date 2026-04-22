@@ -45,8 +45,8 @@ Controls.ItemDelegate {
         return "transparent";
     }
 
-    readonly property real stateIndicatorOpacity: if (root.activeFocus || root.hovered) {
-        return root.selected ? 1 : 0.3;
+    readonly property real stateIndicatorOpacity: if (root.activeFocus || root.hovered || root.down) {
+        return root.selected || root.down ? 1 : 0.3;
     } else if (root.selected) {
         return 0.7
     } else {
