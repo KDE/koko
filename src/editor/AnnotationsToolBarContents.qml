@@ -13,7 +13,7 @@ ButtonGrid {
     property bool showNoneButton: false
     property bool rememberToolType: false
     property alias checkedButton: toolGroup.checkedButton
-    readonly property alias usingCropTool: cropToolButton.checked
+    property alias toolButtonGroup: toolGroup
 
     required property AnnotationDocument document
     readonly property AnnotationTool tool: document?.tool ?? null
@@ -103,15 +103,6 @@ ButtonGrid {
                 checked = root.toolType === AnnotationTool.NoTool
             }
         }
-    }
-    ToolButton {
-        id: cropToolButton
-        QQC.ButtonGroup.group: toolGroup
-        text: i18nc("@action:intoolbar crop image tool", "Crop")
-        icon.name: "transform-crop"
-        checked: root.toolType === AnnotationTool.CropTool
-        onClicked: root.tool.type = AnnotationTool.CropTool
-
     }
     ToolButton {
         QQC.ButtonGroup.group: toolGroup

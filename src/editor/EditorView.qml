@@ -106,6 +106,17 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
+            id: cropAction
+            text: i18nc("@action:intoolbar crop image tool", "Crop")
+            icon.name: "transform-crop"
+            checked: imageView.document.tool.type === KQuickImageEditor.AnnotationTool.CropTool
+            onTriggered: imageView.document.tool.type = KQuickImageEditor.AnnotationTool.CropTool
+            displayComponent: Controls.ToolButton {
+                action: cropAction
+                Controls.ButtonGroup.group: annotationsToolBarContents.toolButtonGroup
+            }
+        },
+        Kirigami.Action {
             id: resizeAction
             icon.name: "transform-scale-symbolic"
             text: i18nc("@action:button Resize an image", "Resize")
@@ -489,7 +500,7 @@ Kirigami.Page {
         ImageView {
             id: imageView
 
-            showCropTool: annotationsToolBarContents.usingCropTool
+            showCropTool: cropAction.checked
 
             Layout.fillWidth: true
             Layout.fillHeight: true
