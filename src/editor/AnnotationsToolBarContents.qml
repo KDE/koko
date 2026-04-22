@@ -13,7 +13,7 @@ ButtonGrid {
     property bool showNoneButton: false
     property bool rememberToolType: false
     property alias checkedButton: toolGroup.checkedButton
-    readonly property alias usingCropTool: cropToolButton.checked
+    property alias toolButtonGroup: toolGroup
 
     required property AnnotationDocument document
     readonly property AnnotationTool tool: document?.tool ?? null
@@ -89,29 +89,12 @@ ButtonGrid {
         }
     }
 
-    // Used in the image viewer where one might want to drag and drop or pan around a viewport
-    Loader {
-        active: root.showNoneButton
-        visible: active
-        sourceComponent: ToolButton {
-            QQC.ButtonGroup.group: toolGroup
-            text: i18nc("@action:intoolbar no tool, to allow dragging", "None")
-            icon.name: "transform-browse"
-            onClicked: root.tool.type = AnnotationTool.NoTool
-            // Setting checked in onCompleted so clicking the crop tool doesn't check this instead.
-            Component.onCompleted: {
-                checked = root.toolType === AnnotationTool.NoTool
-            }
-        }
-    }
     ToolButton {
-        id: cropToolButton
         QQC.ButtonGroup.group: toolGroup
-        text: i18nc("@action:intoolbar crop image tool", "Crop")
-        icon.name: "transform-crop"
-        checked: root.toolType === AnnotationTool.CropTool
-        onClicked: root.tool.type = AnnotationTool.CropTool
-
+        text: i18nc("@action:intoolbar no tool, to allow dragging", "None")
+        icon.name: "transform-browse"
+        checked: root.toolType === AnnotationTool.NoTool
+        onClicked: root.tool.type = AnnotationTool.NoTool
     }
     ToolButton {
         QQC.ButtonGroup.group: toolGroup
