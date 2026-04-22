@@ -11,6 +11,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 import org.kde.kirigamiaddons.statefulapp as StatefulApp
 
 import org.kde.coreaddons as CoreAddons
@@ -132,7 +133,7 @@ Kirigami.OverlayDrawer {
                 Layout.fillWidth: true
             }
 
-            component PlaceItem : QQC2.ItemDelegate {
+            component PlaceItem : Delegates.RoundedItemDelegate {
                 id: item
                 required property var placeAction
                 readonly property bool shouldBeChecked: {
@@ -162,7 +163,6 @@ Kirigami.OverlayDrawer {
                     fromQAction: item.placeAction
                     checked: item.shouldBeChecked
                 }
-                highlighted: checked || down
                 // automatically unchecks when another is checked,
                 // but don't assume that its impossible to uncheck all
                 autoExclusive: true
