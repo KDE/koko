@@ -106,6 +106,26 @@ Kirigami.Page {
 
     actions: [
         Kirigami.Action {
+            id: cropAction
+            property int lastTool: imageView.document.tool.type
+            text: i18nc("@action:intoolbar crop image tool", "Crop")
+            icon.name: "transform-crop"
+            checked: imageView.document.tool.type === KQuickImageEditor.AnnotationTool.CropTool
+            onTriggered: {
+                if (imageView.document.tool.type !== KQuickImageEditor.AnnotationTool.CropTool) {
+                    lastTool = imageView.document.tool.type
+                    imageView.document.tool.type = KQuickImageEditor.AnnotationTool.CropTool
+                } else {
+                    imageView.document.tool.type = lastTool
+                    lastTool = Qt.binding(() => imageView.document.tool.type)
+                }
+            }
+            displayComponent: Controls.ToolButton {
+                action: cropAction
+                Controls.ButtonGroup.group: annotationsToolBarContents.toolButtonGroup
+            }
+        },
+        Kirigami.Action {
             id: resizeAction
             icon.name: "transform-scale-symbolic"
             text: i18nc("@action:button Resize an image", "Resize")
@@ -489,7 +509,7 @@ Kirigami.Page {
         ImageView {
             id: imageView
 
-            showCropTool: annotationsToolBarContents.usingCropTool
+            showCropTool: cropAction.checked
 
             Layout.fillWidth: true
             Layout.fillHeight: true
