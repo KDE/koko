@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:42+0000\n"
+"POT-Creation-Date: 2026-04-23 00:41+0000\n"
 "PO-Revision-Date: 2026-04-02 00:59+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -946,215 +946,235 @@ msgid_plural "%1 items"
 msgstr[0] "elementu 1"
 msgstr[1] "%1 elementu"
 
-#: qml/gallery/GalleryPage.qml:131
+#: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Lehengoratu"
 
-#: qml/gallery/GalleryPage.qml:132
+#: qml/gallery/GalleryPage.qml:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Lehengoratu hautatutako hedabideak bere aurreko kokapenetara"
 
-#: qml/gallery/GalleryPage.qml:151
+#: qml/gallery/GalleryPage.qml:160
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Sailkatu: %1"
 
-#: qml/gallery/GalleryPage.qml:156
+#: qml/gallery/GalleryPage.qml:165
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Izena"
 
-#: qml/gallery/GalleryPage.qml:163
+#: qml/gallery/GalleryPage.qml:172
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Neurria"
 
-#: qml/gallery/GalleryPage.qml:170
+#: qml/gallery/GalleryPage.qml:179
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Aldatua"
 
-#: qml/gallery/GalleryPage.qml:171
+#: qml/gallery/GalleryPage.qml:180
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Aldatze data"
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:187
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Sortua"
 
-#: qml/gallery/GalleryPage.qml:179
+#: qml/gallery/GalleryPage.qml:188
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Sorrera data"
 
-#: qml/gallery/GalleryPage.qml:186
+#: qml/gallery/GalleryPage.qml:195
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Atzitua"
 
-#: qml/gallery/GalleryPage.qml:187
+#: qml/gallery/GalleryPage.qml:196
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Atzitze data"
 
-#: qml/gallery/GalleryPage.qml:200
+#: qml/gallery/GalleryPage.qml:209
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Goranzkoa"
 
-#: qml/gallery/GalleryPage.qml:202
+#: qml/gallery/GalleryPage.qml:211
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "A-Z"
 
-#: qml/gallery/GalleryPage.qml:204
+#: qml/gallery/GalleryPage.qml:213
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Txikiena aurrena"
 
-#: qml/gallery/GalleryPage.qml:208
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Zaharrena aurrena"
 
-#: qml/gallery/GalleryPage.qml:211
+#: qml/gallery/GalleryPage.qml:220
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Goranzkoa"
 
-#: qml/gallery/GalleryPage.qml:222
+#: qml/gallery/GalleryPage.qml:231
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Beheranzkoa"
 
-#: qml/gallery/GalleryPage.qml:224
+#: qml/gallery/GalleryPage.qml:233
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Z-A"
 
-#: qml/gallery/GalleryPage.qml:226
+#: qml/gallery/GalleryPage.qml:235
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Handiena aurrena"
 
-#: qml/gallery/GalleryPage.qml:230
+#: qml/gallery/GalleryPage.qml:239
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Berriena aurrena"
 
-#: qml/gallery/GalleryPage.qml:233
+#: qml/gallery/GalleryPage.qml:242
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Beheranzkoa"
 
-#: qml/gallery/GalleryPage.qml:255
+#: qml/gallery/GalleryPage.qml:264
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Laster-marka karpeta"
 
-#: qml/gallery/GalleryPage.qml:256
+#: qml/gallery/GalleryPage.qml:265
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Egin uneko karpetaren laster-marka"
 
-#: qml/gallery/GalleryPage.qml:291 qml/mediaview/MediaViewPage.qml:99
+#: qml/gallery/GalleryPage.qml:300 qml/mediaview/MediaViewPage.qml:106
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Gogokoa"
 
-#: qml/gallery/GalleryPage.qml:293 qml/mediaview/MediaViewPage.qml:101
+#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Kendu gogokoetatik"
 
-#: qml/gallery/GalleryPage.qml:293 qml/mediaview/MediaViewPage.qml:101
+#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Gehitu gogokoetara"
 
-#: qml/gallery/GalleryPage.qml:308
+#: qml/gallery/GalleryPage.qml:317
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Partekatu hautatutako hedabidea"
 
-#: qml/gallery/GalleryPage.qml:361
+#: qml/gallery/GalleryPage.qml:370
 #, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Hautatu dena"
 
-#: qml/gallery/GalleryPage.qml:362
+#: qml/gallery/GalleryPage.qml:371
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Hautatu hedabide guztiak"
 
-#: qml/gallery/GalleryPage.qml:372
+#: qml/gallery/GalleryPage.qml:381
 #, kde-format
 msgctxt "@action:button"
 msgid "Select None"
 msgstr "Bat ere ez hautatu"
 
-#: qml/gallery/GalleryPage.qml:373
+#: qml/gallery/GalleryPage.qml:382
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Desautatu hedabide guztiak"
 
-#: qml/gallery/GalleryPage.qml:382
+#: qml/gallery/GalleryPage.qml:391
 #, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
 msgstr "Alderantzikatu hautapena"
 
-#: qml/gallery/GalleryPage.qml:383
+#: qml/gallery/GalleryPage.qml:392
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Alderantzikatu hautatutako hedabideak"
 
-#: qml/gallery/GalleryPage.qml:726
+#: qml/gallery/GalleryPage.qml:738
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "elementu %1"
 msgstr[1] "%1 elementu"
 
-#: qml/gallery/GalleryPage.qml:769
+#: qml/gallery/GalleryPage.qml:783
 #, kde-format
 msgid "No media found"
 msgstr "Ez da hedabiderik aurkitu"
+
+#: qml/gallery/GalleryPage.qml:807
+#, fuzzy, kde-format
+#| msgid "%1 item"
+#| msgid_plural "%1 items"
+msgctxt "@info:status"
+msgid "%1 item selected"
+msgid_plural "%1 items selected"
+msgstr[0] "elementu %1"
+msgstr[1] "%1 elementu"
+
+#: qml/gallery/GalleryPage.qml:812
+#, fuzzy, kde-format
+#| msgid "%1 item"
+#| msgid_plural "%1 items"
+msgctxt "@info:status"
+msgid "%1 item"
+msgid_plural "%1 items"
+msgstr[0] "elementu %1"
+msgstr[1] "%1 elementu"
 
 #: qml/gallery/NavigatorComponent.qml:51
 #, kde-format
@@ -1310,218 +1330,224 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr "—"
 
-#: qml/mediaview/MediaViewPage.qml:114
+#: qml/mediaview/MediaViewPage.qml:89
+#, kde-format
+msgctxt "@info"
+msgid "%1 of %2"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:121
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "&Edit"
 msgstr "&Editatu"
 
-#: qml/mediaview/MediaViewPage.qml:116
+#: qml/mediaview/MediaViewPage.qml:123
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Editatu irudi hau"
 
-#: qml/mediaview/MediaViewPage.qml:135
+#: qml/mediaview/MediaViewPage.qml:142
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "&Share"
 msgstr "&Partekatu"
 
-#: qml/mediaview/MediaViewPage.qml:142
+#: qml/mediaview/MediaViewPage.qml:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Partekatu bideo hau"
 
-#: qml/mediaview/MediaViewPage.qml:144
+#: qml/mediaview/MediaViewPage.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Partekatu irudi hau"
 
-#: qml/mediaview/MediaViewPage.qml:159
+#: qml/mediaview/MediaViewPage.qml:166
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "&Info"
 msgstr "&Informazioa"
 
-#: qml/mediaview/MediaViewPage.qml:166
+#: qml/mediaview/MediaViewPage.qml:173
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Ikusi bideo honi buruzko informazioa"
 
-#: qml/mediaview/MediaViewPage.qml:168
+#: qml/mediaview/MediaViewPage.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Ikusi irudi honi buruzko informazioa"
 
 #. i18n hint in text and dynamic tooltip text
-#: qml/mediaview/MediaViewPage.qml:194
+#: qml/mediaview/MediaViewPage.qml:201
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "&Slideshow"
 msgstr "&Diapositiba-emanaldia"
 
-#: qml/mediaview/MediaViewPage.qml:196
+#: qml/mediaview/MediaViewPage.qml:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Abiarazi diapositiba-emanaldi"
 
-#: qml/mediaview/MediaViewPage.qml:205
+#: qml/mediaview/MediaViewPage.qml:212
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show &Controls"
 msgstr "Erakutsi a&ginteak"
 
-#: qml/mediaview/MediaViewPage.qml:206
+#: qml/mediaview/MediaViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Sartu murgiltze ikuspegi moduan"
 
-#: qml/mediaview/MediaViewPage.qml:207
+#: qml/mediaview/MediaViewPage.qml:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Irten murgiltze ikuspegi modutik"
 
-#: qml/mediaview/MediaViewPage.qml:218
+#: qml/mediaview/MediaViewPage.qml:225
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
 msgstr "Erakutsi &koadro txikien tresna-barra"
 
-#: qml/mediaview/MediaViewPage.qml:219
+#: qml/mediaview/MediaViewPage.qml:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Erakutsi koadro txikien tresna-barra"
 
-#: qml/mediaview/MediaViewPage.qml:220
+#: qml/mediaview/MediaViewPage.qml:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Ezkutatu koadro txikien tresna-barra"
 
-#: qml/mediaview/MediaViewPage.qml:237
+#: qml/mediaview/MediaViewPage.qml:244
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
 msgstr "Pantaila &osoa"
 
-#: qml/mediaview/MediaViewPage.qml:239
+#: qml/mediaview/MediaViewPage.qml:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Sartu pantaila osoan"
 
-#: qml/mediaview/MediaViewPage.qml:239
+#: qml/mediaview/MediaViewPage.qml:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Irten Pantaila osotik"
 
-#: qml/mediaview/MediaViewPage.qml:557
+#: qml/mediaview/MediaViewPage.qml:563
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Aurreko irudia"
 
-#: qml/mediaview/MediaViewPage.qml:591
+#: qml/mediaview/MediaViewPage.qml:597
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Hurrengo irudia"
 
-#: qml/mediaview/MediaViewPage.qml:772
+#: qml/mediaview/MediaViewPage.qml:778
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "% 25"
 
-#: qml/mediaview/MediaViewPage.qml:773
+#: qml/mediaview/MediaViewPage.qml:779
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "% 50"
 
-#: qml/mediaview/MediaViewPage.qml:774
+#: qml/mediaview/MediaViewPage.qml:780
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "% 75"
 
-#: qml/mediaview/MediaViewPage.qml:775
+#: qml/mediaview/MediaViewPage.qml:781
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "% 100"
 
-#: qml/mediaview/MediaViewPage.qml:776
+#: qml/mediaview/MediaViewPage.qml:782
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "% 150"
 
-#: qml/mediaview/MediaViewPage.qml:777
+#: qml/mediaview/MediaViewPage.qml:783
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "% 200"
 
-#: qml/mediaview/MediaViewPage.qml:778
+#: qml/mediaview/MediaViewPage.qml:784
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "% 300"
 
-#: qml/mediaview/MediaViewPage.qml:779
+#: qml/mediaview/MediaViewPage.qml:785
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "% 400"
 
-#: qml/mediaview/MediaViewPage.qml:780
+#: qml/mediaview/MediaViewPage.qml:786
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "% 600"
 
-#: qml/mediaview/MediaViewPage.qml:781
+#: qml/mediaview/MediaViewPage.qml:787
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "% 800"
 
-#: qml/mediaview/MediaViewPage.qml:830
+#: qml/mediaview/MediaViewPage.qml:836
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%%1"
 
-#: qml/mediaview/MediaViewPage.qml:844
+#: qml/mediaview/MediaViewPage.qml:850
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zooma urrundu"
 
-#: qml/mediaview/MediaViewPage.qml:853
+#: qml/mediaview/MediaViewPage.qml:859
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zooma gerturatu"
 
-#: qml/mediaview/MediaViewPage.qml:1096 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1102 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diapositiba emanaldiko bitartea:"
 
-#: qml/mediaview/MediaViewPage.qml:1113 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1119 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1529,48 +1555,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "segundo 1"
 msgstr[1] "%1 segundo"
 
-#: qml/mediaview/MediaViewPage.qml:1168 qml/mediaview/MediaViewPage.qml:1269
+#: qml/mediaview/MediaViewPage.qml:1174 qml/mediaview/MediaViewPage.qml:1275
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Begizta"
 
-#: qml/mediaview/MediaViewPage.qml:1177 qml/mediaview/MediaViewPage.qml:1278
+#: qml/mediaview/MediaViewPage.qml:1183 qml/mediaview/MediaViewPage.qml:1284
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Ausaz"
 
-#: qml/mediaview/MediaViewPage.qml:1189
+#: qml/mediaview/MediaViewPage.qml:1195
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Gelditu diapositiba emanaldia"
 
-#: qml/mediaview/MediaViewPage.qml:1203
+#: qml/mediaview/MediaViewPage.qml:1209
 #, kde-format
 msgid "Show All Controls"
 msgstr "Erakutsi aginte guztiak"
 
-#: qml/mediaview/MediaViewPage.qml:1232
+#: qml/mediaview/MediaViewPage.qml:1238
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Gelditu"
 
-#: qml/mediaview/MediaViewPage.qml:1232
+#: qml/mediaview/MediaViewPage.qml:1238
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Hasi"
 
-#: qml/mediaview/MediaViewPage.qml:1251
+#: qml/mediaview/MediaViewPage.qml:1257
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Tartea:"
 
-#: qml/mediaview/MediaViewPage.qml:1264
+#: qml/mediaview/MediaViewPage.qml:1270
 #, kde-format
 msgid "seconds"
 msgstr "segundo"
