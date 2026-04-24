@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 02:39+0000\n"
-"PO-Revision-Date: 2026-02-02 23:09+0200\n"
+"PO-Revision-Date: 2026-04-23 21:20+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -144,13 +144,13 @@ msgstr "Pozicija:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Apkirpimo srities X pozicija"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Apkirpimo srities Y pozicija"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
 #, kde-format
@@ -162,13 +162,13 @@ msgstr "Dydis:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Apkirpimo srities plotis"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Apkirpimo srities aukštis"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
@@ -749,12 +749,10 @@ msgid "Locations"
 msgstr "Vietovės"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Žymėti visus"
+msgstr "Pažymėti failai"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:251
 #, kde-format
@@ -1048,13 +1046,13 @@ msgstr "Mažėjančiai"
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
-msgstr ""
+msgstr "Įrašyti aplanką į žymeles"
 
 #: qml/gallery/GalleryPage.qml:303
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr ""
+msgstr "Įrašyti dabartinį aplanką į žymeles"
 
 #: qml/gallery/GalleryPage.qml:331
 #, kde-format
@@ -1197,7 +1195,7 @@ msgstr "Paveikslo aprašas…"
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr ""
+msgstr "Žymės:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:281
 #, kde-format
@@ -1209,25 +1207,25 @@ msgstr "Pridėti…"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "Ieškoti žymių arba parašyti naują žymę…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr ""
+msgstr "Nerasta jokių žymių."
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "Sukurti naują žymę"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "Esamos žymės"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
@@ -1239,37 +1237,37 @@ msgstr "Užverti"
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr ""
+msgstr "Pasirinkti, ką rodyti"
 
 #: qml/mediaview/MediaMetadataPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr ""
+msgstr "Konfigūruoti rodomus metaduomenis"
 
 #: qml/mediaview/MediaMetadataPage.qml:46
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr ""
+msgstr "–"
 
 #: qml/mediaview/MediaViewPage.qml:98
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr ""
+msgstr "Mėgstamas"
 
 #: qml/mediaview/MediaViewPage.qml:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Šalinti iš mėgstamų"
 
 #: qml/mediaview/MediaViewPage.qml:100
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
-msgstr ""
+msgstr "Pridėti į mėgstamus"
 
 #: qml/mediaview/MediaViewPage.qml:112
 #, kde-format
@@ -1342,49 +1340,49 @@ msgstr "Rodyti &valdiklius"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr ""
+msgstr "Įjungti pasinerimo peržiūros veikseną"
 
 #: qml/mediaview/MediaViewPage.qml:202
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr ""
+msgstr "Išjungti pasinerimo peržiūros veikseną"
 
 #: qml/mediaview/MediaViewPage.qml:212
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show &Thumbnail Toolbar"
-msgstr ""
+msgstr "Rodyti minia&tiūrų įrankių juostą"
 
 #: qml/mediaview/MediaViewPage.qml:213
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr ""
+msgstr "Rodyti miniatiūrų įrankių juostą"
 
 #: qml/mediaview/MediaViewPage.qml:214
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr ""
+msgstr "Slėpti miniatiūrų įrankių juostą"
 
 #: qml/mediaview/MediaViewPage.qml:231
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "&Full Screen"
-msgstr ""
+msgstr "&Visas ekranas"
 
 #: qml/mediaview/MediaViewPage.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr ""
+msgstr "Įjungti viso ekrano veikseną"
 
 #: qml/mediaview/MediaViewPage.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "Išjungti viso ekrano veikseną"
 
 #: qml/mediaview/MediaViewPage.qml:501
 #, kde-format
@@ -1466,13 +1464,13 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Mažinti"
 
 #: qml/mediaview/MediaViewPage.qml:796
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Didinti"
 
 #: qml/mediaview/MediaViewPage.qml:1039 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
@@ -1622,55 +1620,55 @@ msgstr "Miniatiūrų dydis:"
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 piks."
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View Background"
-msgstr ""
+msgstr "Paveikslo rodinio fonas"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr ""
+msgstr "Juodas"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr ""
+msgstr "Baltas"
 
 #: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr ""
+msgstr "Apipavidalinimo numatytasis"
 
 #: qml/Settings/GeneralConfigPage.qml:79
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr ""
+msgstr "Naudoti apipavidalinimo nurodytą fono spalvą"
 
 #: qml/Settings/GeneralConfigPage.qml:95
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard background behind transparent images"
-msgstr ""
+msgstr "Rodyti už permatomų paveikslų šachmatų lentos foną"
 
 #: qml/Settings/GeneralConfigPage.qml:106
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Padidinti paveikslus, kurie mažesni nei peržiūros sritis"
 
 #: qml/Settings/GeneralConfigPage.qml:117
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Prisiminti mastelio lygį perjungiant tarp paveikslų"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
@@ -1682,12 +1680,12 @@ msgstr "Skaidrių rodymas"
 #, kde-format
 msgctxt "@action:button"
 msgid "General"
-msgstr ""
+msgstr "Bendra"
 
 #: qml/Settings/PhotosConfigurationView.qml:26
 #, kde-format
 msgid "About Photos"
-msgstr ""
+msgstr "Apie Nuotraukas"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
@@ -1717,24 +1715,24 @@ msgstr "Rodyti meniu"
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "Paremti…"
 
 #: qml/Sidebar.qml:107
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "Pranešti apie klaidą…"
 
 #: qml/Sidebar.qml:148
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Bendri"
 
 #: qml/Sidebar.qml:193
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr ""
+msgstr "Nuotoliniai"
 
 #~ msgctxt "@title"
 #~ msgid "Open"
