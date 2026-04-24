@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:41+0000\n"
-"PO-Revision-Date: 2026-03-26 09:30+0200\n"
+"PO-Revision-Date: 2026-04-23 08:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1163,21 +1163,17 @@ msgid "No media found"
 msgstr "לא נמצאה מדיה"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "פריט"
-msgstr[1] "שני פריטים"
-msgstr[2] "%1 פריטים"
-msgstr[3] "%1 פריטים"
+msgstr[0] "נבחר פריט"
+msgstr[1] "נבחרו שני פריטים"
+msgstr[2] "נבחרו %1 פריטים"
+msgstr[3] "נבחרו %1 פריטים"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1346,7 +1342,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 מתוך %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format

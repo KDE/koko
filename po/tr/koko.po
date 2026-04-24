@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:41+0000\n"
-"PO-Revision-Date: 2026-03-27 00:47+0300\n"
+"PO-Revision-Date: 2026-04-23 07:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1154,19 +1154,15 @@ msgid "No media found"
 msgstr "Bulunan ortam yok"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "%1 öge"
-msgstr[1] "%1 öge"
+msgstr[0] "%1 öge seçili"
+msgstr[1] "%1 öge seçili"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1331,7 +1327,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format

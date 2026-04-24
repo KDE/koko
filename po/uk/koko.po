@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:41+0000\n"
-"PO-Revision-Date: 2026-03-26 12:56+0200\n"
+"PO-Revision-Date: 2026-04-23 14:12+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1168,21 +1168,17 @@ msgid "No media found"
 msgstr "Мультимедійних даних не знайдено"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "%1 запис"
-msgstr[1] "%1 записи"
-msgstr[2] "%1 записів"
-msgstr[3] "1 запис"
+msgstr[0] "Позначено %1 запис"
+msgstr[1] "Позначено %1 записи"
+msgstr[2] "Позначено %1 записів"
+msgstr[3] "Позначено %1 запис"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1351,7 +1347,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 з %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format

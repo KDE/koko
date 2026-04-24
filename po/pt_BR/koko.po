@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the koko package.
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2021, 2023, 2024.
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 # SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:41+0000\n"
-"PO-Revision-Date: 2026-03-26 07:45-0300\n"
+"PO-Revision-Date: 2026-04-23 07:31-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1156,19 +1156,15 @@ msgid "No media found"
 msgstr "Nenhuma mídia encontrada"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "%1 item"
-msgstr[1] "%1 itens"
+msgstr[0] "%1 item selecionado"
+msgstr[1] "%1 itens selecionados"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1333,7 +1329,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 de %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format

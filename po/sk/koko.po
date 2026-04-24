@@ -1158,20 +1158,16 @@ msgid "No media found"
 msgstr "Žiadne obrázky nenájdené"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "%1 položka"
-msgstr[1] "%1 položky"
-msgstr[2] "%1 položiek"
+msgstr[0] "Vybraná %1 položka"
+msgstr[1] "Vybrané %1 položky"
+msgstr[2] "Vybraných %1 položiek"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1338,7 +1334,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 z %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format
