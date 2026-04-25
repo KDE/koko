@@ -1145,22 +1145,18 @@ msgid "No media found"
 msgstr "未找到媒体"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "%1个项目"
+msgstr[0] ""
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "%1个项目"
+msgstr[0] ""
 
 #: qml/gallery/NavigatorComponent.qml:51
 #, kde-format
