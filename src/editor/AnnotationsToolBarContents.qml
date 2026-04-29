@@ -10,8 +10,6 @@ import org.kde.koko as Koko
 
 ButtonGrid {
     id: root
-    property bool showNoneButton: false
-    property bool rememberToolType: false
     property alias checkedButton: toolGroup.checkedButton
     property alias toolButtonGroup: toolGroup
 
