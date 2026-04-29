@@ -488,8 +488,6 @@ Kirigami.Page {
                 document: imageView.document
                 displayMode: Controls.AbstractButton.IconOnly
                 flow: Grid.TopToBottom
-                showNoneButton: true
-                rememberToolType: true
             }
 
             background: Rectangle {
