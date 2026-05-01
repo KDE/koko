@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:41+0000\n"
-"PO-Revision-Date: 2026-03-28 18:08+0400\n"
+"PO-Revision-Date: 2026-04-30 09:12+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1172,23 +1172,19 @@ msgid "No media found"
 msgstr "لم يعثر على وسيط"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "لا يوجد عناصر"
-msgstr[1] "عنصر واحد"
-msgstr[2] "عنصران"
-msgstr[3] "%1 عناصر"
-msgstr[4] "%1 عنصرًا"
-msgstr[5] "%1 عنصر"
+msgstr[0] "لم يُحدّد شيء"
+msgstr[1] "عنصر واحد محدّد"
+msgstr[2] "عنصران محدّدان"
+msgstr[3] "%1 عناصر محدّدة"
+msgstr[4] "%1 عنصرًا محدّدًا"
+msgstr[5] "%1 عنصر محدّد"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1361,7 +1357,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 من %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format
