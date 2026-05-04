@@ -14,8 +14,10 @@ class NavigationActions : public QObject
     Q_OBJECT
     QML_NAMED_ELEMENT(NavigationActions)
 
-    Q_PROPERTY(QList<QAction *> savedFolders READ savedFolders NOTIFY savedFoldersChanged)
-    Q_PROPERTY(QList<QAction *> tags READ tags NOTIFY tagsChanged)
+    // Q_PROPERTY(QList<QAction *> savedFolders READ savedFolders NOTIFY savedFoldersChanged)
+    // Q_PROPERTY(QList<QAction *> tags READ tags NOTIFY tagsChanged)
+    Q_PROPERTY(QStringList savedFolders MEMBER m_savedFolderNames NOTIFY savedFoldersChanged)
+    Q_PROPERTY(QStringList tags MEMBER m_tagNames NOTIFY tagsChanged)
 
 public:
     explicit NavigationActions(QObject *parent = nullptr);
@@ -53,6 +55,7 @@ private:
     QList<QAction *> m_savedFolders;
     QList<QAction *> m_tags;
     QHash<QString, QAction *> m_placeActions;
+    QStringList m_savedFolderNames;
     QStringList m_tagNames;
     QActionGroup *const m_pagesGroup;
 };

@@ -146,15 +146,15 @@ Kirigami.OverlayDrawer {
 
             component PlaceItem : QQC2.ItemDelegate {
                 id: item
-                required property var placeAction
+                required property string actionName
                 readonly property bool shouldBeChecked: {
-                    const pathsEqual = (JSON.stringify(placeAction.path) === JSON.stringify(root.galleryModel.path));
-                    if (!pathsEqual && placeAction.modelType !== Koko.NavigationActions.FavoritesModel) {
+                    const pathsEqual = (JSON.stringify(action.fromQAction.data.path) === JSON.stringify(root.galleryModel.path));
+                    if (!pathsEqual && action.fromQAction.data.modelType !== Koko.NavigationActions.FavoritesModel) {
                         // GalleryFavoritesModel is excluded because it is not navigable, and has no path
                         return false;
                     }
 
-                    switch (placeAction.modelType) {
+                    switch (action.fromQAction.data.modelType) {
                         case Koko.NavigationActions.FolderModel:
                             return root.galleryModel instanceof Koko.GalleryFolderModel;
                         case Koko.NavigationActions.FavoritesModel:
@@ -171,8 +171,10 @@ Kirigami.OverlayDrawer {
                 }
                 // Get most of the Kirigami Action and button states from the QAction, but not all
                 action: Kirigami.Action {
-                    fromQAction: item.placeAction
                     checked: item.shouldBeChecked
+                    AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    AC.ActionCollection.action: item.actionName
+                    enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 highlighted: checked || down
                 // automatically unchecks when another is checked,
@@ -200,23 +202,23 @@ Kirigami.OverlayDrawer {
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
                     //FIXME: port it back to PlaceAction
-                    placeAction: root.navigationActions.placeAction("place_pictures")
+                    actionName: "place_pictures"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Videos")
-                    placeAction: root.navigationActions.placeAction("place_videos")
+                    actionName: "place_videos"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
-                    placeAction: root.navigationActions.placeAction("place_favorites")
+                    actionName: "place_favorites"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     icon.name: "user-trash-symbolic"
                     text: i18nc("@action:button Navigation entry in sidebar", "Trash")
-                    placeAction: root.navigationActions.placeAction("place_trash")
+                    actionName: "place_trash"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
@@ -228,13 +230,8 @@ Kirigami.OverlayDrawer {
                     model: root.navigationActions.savedFolders
                     PlaceItem {
                         id: delegate
-
                         required property var modelData
-
-                        placeAction: Kirigami.Action {
-                            fromQAction: delegate.modelData
-                            enabled: root.mainWindow.pageStack.layers.depth === 1
-                        }
+                        actionName: modelData
                     }
                 }
                 PlaceHeading {
@@ -243,7 +240,7 @@ Kirigami.OverlayDrawer {
                 PlaceItem {
                     icon.name: "folder-cloud"
                     text: i18nc("@action:button Navigation entry in sidebar", "Network")
-                    placeAction: root.navigationActions.placeAction("place_remote")
+                    actionName: "place_remote"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
@@ -251,17 +248,17 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Countries")
-                    placeAction: root.navigationActions.placeAction("place_countries")
+                    actionName: "place_countries"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "States")
-                    placeAction: root.navigationActions.placeAction("place_states")
+                    actionName: "place_states"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Cities")
-                    placeAction: root.navigationActions.placeAction("place_cities")
+                    actionName: "place_cities"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
@@ -269,22 +266,22 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Years")
-                    placeAction: root.navigationActions.placeAction("place_years")
+                    actionName: "place_years"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Months")
-                    placeAction: root.navigationActions.placeAction("place_months")
+                    actionName: "place_months"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
-                    placeAction: root.navigationActions.placeAction("place_weeks")
+                    actionName: "place_weeks"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Days")
-                    placeAction: root.navigationActions.placeAction("place_days")
+                    actionName: "place_days"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
@@ -299,10 +296,7 @@ Kirigami.OverlayDrawer {
 
                         required property var modelData
 
-                        placeAction: Kirigami.Action {
-                            fromQAction: placeItem.modelData
-                            enabled: root.mainWindow.pageStack.layers.depth === 1
-                        }
+                        actionName: modelData
                     }
                 }
             }

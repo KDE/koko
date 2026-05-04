@@ -13,9 +13,8 @@
 #include <QActionGroup>
 #include <QStandardPaths>
 
-// TODO: use those again instead of manual lists
-// #include <ActionCollection/ActionCollection>
-// #include <ActionCollection/ActionCollections>
+#include <ActionCollection/ActionCollection>
+#include <ActionCollection/ActionCollections>
 
 using namespace Qt::StringLiterals;
 
@@ -23,6 +22,7 @@ NavigationActions::NavigationActions(QObject *parent)
     : QObject(parent)
     , m_pagesGroup(new QActionGroup(this))
 {
+    KirigamiActions::ActionCollections::self()->createCollection(u"org.kde.koko.navigation"_s, i18nc("Navigation buttons actions group", "Navigation"));
     m_pagesGroup->setExclusive(true);
     setupActions();
 
@@ -40,7 +40,7 @@ void NavigationActions::setupActions()
         ModelType modelType;
         QVariant path;
         QString text;
-        QIcon icon;
+        QString icon;
     };
 
     const auto pictures = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
@@ -51,70 +51,66 @@ void NavigationActions::setupActions()
               FolderModel,
               pictures.isEmpty() ? QUrl() : QUrl::fromLocalFile(pictures.constFirst()),
               i18nc("@action:button Navigation button", "Navigate to pictures"),
-              QIcon::fromTheme(u"folder-pictures-symbolic"_s)},
+              u"folder-pictures-symbolic"_s},
         Place{QStringLiteral("place_videos"),
               FolderModel,
               videos.isEmpty() ? QUrl() : QUrl::fromLocalFile(videos.constFirst()),
               i18nc("@action:button Navigation button", "Navigate to videos"),
-              QIcon::fromTheme(u"folder-videos-symbolic"_s)},
-        Place{QStringLiteral("place_favorites"),
-              FavoritesModel,
-              {},
-              i18nc("@action:button Navigation button", "Navigate to favorites"),
-              QIcon::fromTheme(u"starred-symbolic"_s)},
+              u"folder-videos-symbolic"_s},
+        Place{QStringLiteral("place_favorites"), FavoritesModel, {}, i18nc("@action:button Navigation button", "Navigate to favorites"), u"starred-symbolic"_s},
         Place{QStringLiteral("place_trash"),
               FolderModel,
               QUrl("trash:/"),
               i18nc("@action:button Navigation button", "Navigate to the trash"),
-              QIcon::fromTheme(u"user-trash-symbolic"_s)},
+              u"user-trash-symbolic"_s},
         Place{QStringLiteral("place_remote"),
               FolderModel,
               QStringLiteral("remote:/"),
               i18nc("@action:button Navigation button", "Navigate to the remote folders"),
-              QIcon::fromTheme(u"folder-cloud-symbolic"_s)},
-        Place{
-            QStringLiteral("place_countries"),
-            LocationModel,
-            QStringList({QStringLiteral("countries")}),
-            i18nc("@action:button Navigation button", "Navigate to pictures grouped by country"),
-            QIcon::fromTheme(u"tag-places-symbolic"_s),
-        },
+              u"folder-cloud-symbolic"_s},
+        Place{QStringLiteral("place_countries"),
+              LocationModel,
+              QStringList({QStringLiteral("countries")}),
+              i18nc("@action:button Navigation button", "Navigate to pictures grouped by country"),
+              u"tag-places-symbolic"_s},
         Place{QStringLiteral("place_states"),
               LocationModel,
               QStringList({QStringLiteral("states")}),
               i18nc("@action:button Navigation button, state as in country subdivision", "Navigate to pictures grouped by state"),
-              QIcon::fromTheme(u"tag-places-symbolic"_s)},
+              u"tag-places-symbolic"_s},
         Place{QStringLiteral("place_cities"),
               LocationModel,
               QStringList({QStringLiteral("cities")}),
               i18nc("@action:button Navigation button", "Navigate to pictures grouped by cities"),
-              QIcon::fromTheme(u"tag-places-symbolic"_s)},
+              u"tag-places-symbolic"_s},
         Place{QStringLiteral("place_years"),
               TimeModel,
               QStringList({QStringLiteral("years")}),
               i18nc("@action:button Navigation button", "Navigate to pictures grouped by year"),
-              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+              u"view-calendar-symbolic"_s},
         Place{QStringLiteral("place_months"),
               TimeModel,
               QStringList({QStringLiteral("months")}),
               i18nc("@action:button Navigation button", "Navigate to pictures grouped by month"),
-              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+              u"view-calendar-symbolic"_s},
         Place{QStringLiteral("place_weeks"),
               TimeModel,
               QStringList({QStringLiteral("weeks")}),
               i18nc("@action:button Navigation button", "Navigate to pictures grouped by week"),
-              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+              u"view-calendar-symbolic"_s},
         Place{QStringLiteral("place_days"),
               TimeModel,
               QStringList({QStringLiteral("days")}),
               i18nc("@action:button Navigation button", "Navigate to pictures grouped by day"),
-              QIcon::fromTheme(u"view-calendar-symbolic"_s)},
+              u"view-calendar-symbolic"_s},
     };
 
+    KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
     for (const auto &place : places) {
-        PlaceAction *action = new PlaceAction(place.id, place.modelType, place.path, this);
-        action->setIcon(place.icon);
+        auto action = coll->createAction(place.id, place.icon, place.text);
         action->setCheckable(true);
+        QVariantMap data = {{u"modelType"_s, place.modelType}, {u"path"_s, place.path}};
+        action->setData(data);
         action->setActionGroup(m_pagesGroup);
         connect(action, &QAction::triggered, this, [this, modelType = place.modelType, path = place.path] {
             Q_EMIT navigate(modelType, path);
@@ -143,6 +139,9 @@ void NavigationActions::updateSavedFolders()
 
     qDeleteAll(m_savedFolders);
     m_savedFolders.clear();
+    m_savedFolderNames.clear();
+
+    KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
 
     for (const auto &folder : savedFolders) {
         // Not added to the managed actions
@@ -153,15 +152,18 @@ void NavigationActions::updateSavedFolders()
         text = text.split(u'/').constLast();
         QString normalizedFolder = QUrl::fromLocalFile(QUrl(folder).toLocalFile()).toString();
 
-        auto placeAction = new PlaceAction("", FolderModel, normalizedFolder, this);
+        auto placeAction = coll->createAction(normalizedFolder, KIO::iconNameForUrl(normalizedFolder), text);
         placeAction->setCheckable(true);
         placeAction->setActionGroup(m_pagesGroup);
-        placeAction->setText(text);
-        placeAction->setIcon(QIcon::fromTheme(KIO::iconNameForUrl(normalizedFolder)));
+
+        QVariantMap data = {{u"modelType"_s, FolderModel}, {u"path"_s, normalizedFolder}};
+        placeAction->setData(data);
+
         connect(placeAction, &QAction::triggered, this, [this, normalizedFolder] {
             Q_EMIT navigate(FolderModel, normalizedFolder);
         });
         m_savedFolders << placeAction;
+        m_savedFolderNames << normalizedFolder;
     }
 
     Q_EMIT savedFoldersChanged();
@@ -179,12 +181,16 @@ void NavigationActions::updateTags()
 
     qDeleteAll(m_tags);
     m_tags.clear();
+    KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
     for (const auto &tag : std::as_const(m_tagNames)) {
-        auto placeAction = new PlaceAction("", TagsModel, QStringList(tag), this);
+        auto placeAction = coll->createAction(tag, u"tag-symbolic"_s, tag);
+
         placeAction->setCheckable(true);
         placeAction->setActionGroup(m_pagesGroup);
-        placeAction->setText(tag);
-        placeAction->setIcon(QIcon::fromTheme(u"tag-symbolic"_s));
+
+        QVariantMap data = {{u"modelType"_s, TagsModel}, {u"path"_s, QStringList(tag)}};
+        placeAction->setData(data);
+
         connect(placeAction, &QAction::triggered, this, [this, tag] {
             Q_EMIT navigate(TagsModel, QStringList(tag));
         });
