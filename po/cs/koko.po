@@ -1,21 +1,22 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 # SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2026 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-23 00:41+0000\n"
-"PO-Revision-Date: 2026-03-30 11:36+0200\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-05-03 22:52+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1160,20 +1161,16 @@ msgid "No media found"
 msgstr "Nenalezeno žádné médium"
 
 #: qml/gallery/GalleryPage.qml:807
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "%1 položka"
-msgstr[1] "%1 položky"
-msgstr[2] "%1 položek"
+msgstr[0] "vybrána %1 položka"
+msgstr[1] "vybrány %1 položky"
+msgstr[2] "vybráno %1 položek"
 
 #: qml/gallery/GalleryPage.qml:812
-#, fuzzy, kde-format
-#| msgid "%1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1340,7 +1337,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 z %2"
 
 #: qml/mediaview/MediaViewPage.qml:121
 #, kde-format
