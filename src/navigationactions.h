@@ -14,8 +14,6 @@ class NavigationActions : public QObject
     Q_OBJECT
     QML_NAMED_ELEMENT(NavigationActions)
 
-    // Q_PROPERTY(QList<QAction *> savedFolders READ savedFolders NOTIFY savedFoldersChanged)
-    // Q_PROPERTY(QList<QAction *> tags READ tags NOTIFY tagsChanged)
     Q_PROPERTY(QStringList savedFolders MEMBER m_savedFolderNames NOTIFY savedFoldersChanged)
     Q_PROPERTY(QStringList tags MEMBER m_tagNames NOTIFY tagsChanged)
 
@@ -33,12 +31,6 @@ public:
     };
     Q_ENUM(ModelType)
 
-    QList<QAction *> savedFolders() const;
-    QList<QAction *> tags() const;
-
-    // TODO: we need something different form the PlaceAction subclass inorder to use the action collection
-    Q_INVOKABLE QAction *placeAction(const QString &name);
-
     // FIXME: better way to do this
     Q_INVOKABLE void goHome();
 
@@ -52,9 +44,6 @@ private:
     void updateSavedFolders();
     void updateTags();
 
-    QList<QAction *> m_savedFolders;
-    QList<QAction *> m_tags;
-    QHash<QString, QAction *> m_placeActions;
     QStringList m_savedFolderNames;
     QStringList m_tagNames;
     QActionGroup *const m_pagesGroup;

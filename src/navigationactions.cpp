@@ -6,7 +6,6 @@
 #include "dirmodelutils.h"
 #include "imagestorage.h"
 #include "kokoconfig.h"
-#include "placeaction.h"
 
 #include <KIO/Global>
 #include <KLocalizedString>
@@ -115,21 +114,10 @@ void NavigationActions::setupActions()
         connect(action, &QAction::triggered, this, [this, modelType = place.modelType, path = place.path] {
             Q_EMIT navigate(modelType, path);
         });
-        m_placeActions[place.id] = action;
     }
 
     updateSavedFolders();
     updateTags();
-}
-
-QList<QAction *> NavigationActions::savedFolders() const
-{
-    return m_savedFolders;
-}
-
-QList<QAction *> NavigationActions::tags() const
-{
-    return m_tags;
 }
 
 void NavigationActions::updateSavedFolders()
@@ -137,8 +125,6 @@ void NavigationActions::updateSavedFolders()
     auto config = Config::self();
     const auto savedFolders = config->savedFolders();
 
-    qDeleteAll(m_savedFolders);
-    m_savedFolders.clear();
     m_savedFolderNames.clear();
 
     KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
@@ -162,7 +148,6 @@ void NavigationActions::updateSavedFolders()
         connect(placeAction, &QAction::triggered, this, [this, normalizedFolder] {
             Q_EMIT navigate(FolderModel, normalizedFolder);
         });
-        m_savedFolders << placeAction;
         m_savedFolderNames << normalizedFolder;
     }
 
@@ -179,8 +164,6 @@ void NavigationActions::updateTags()
 
     m_tagNames = tags;
 
-    qDeleteAll(m_tags);
-    m_tags.clear();
     KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
     for (const auto &tag : std::as_const(m_tagNames)) {
         auto placeAction = coll->createAction(tag, u"tag-symbolic"_s, tag);
@@ -194,20 +177,16 @@ void NavigationActions::updateTags()
         connect(placeAction, &QAction::triggered, this, [this, tag] {
             Q_EMIT navigate(TagsModel, QStringList(tag));
         });
-        m_tags << placeAction;
     }
 
     Q_EMIT tagsChanged();
 }
 
-QAction *NavigationActions::placeAction(const QString &name)
-{
-    return m_placeActions.value(name);
-}
-
 void NavigationActions::goHome()
 {
-    QAction *action = m_placeActions.value("place_pictures");
+    KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
+    Q_ASSERT(coll);
+    QAction *action = coll->action(u"place_pictures"_s);
     Q_ASSERT(action);
     action->trigger();
 }

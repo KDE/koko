@@ -201,7 +201,6 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
-                    //FIXME: port it back to PlaceAction
                     actionName: "place_pictures"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
