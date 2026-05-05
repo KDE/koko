@@ -32,6 +32,7 @@ Kirigami.Page {
 
     signal imageEdited()
 
+    globalToolBarStyle: Kirigami.ApplicationHeaderStyle.ToolBar
     title: xi18nc("@title", "Edit <filename>%1</filename>", root.imageFileName)
     topPadding: 0
     bottomPadding: 0
