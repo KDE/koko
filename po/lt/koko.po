@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-06 00:42+0000\n"
 "PO-Revision-Date: 2026-04-23 21:20+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -302,67 +302,61 @@ msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "Patvirtinti"
 
-#: editor/AnnotationsToolBarContents.qml:98
+#: editor/AnnotationsToolBarContents.qml:92
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
 msgstr "Nėra"
 
-#: editor/AnnotationsToolBarContents.qml:110
-#, kde-format
-msgctxt "@action:intoolbar crop image tool"
-msgid "Crop"
-msgstr "Apkirpti"
-
-#: editor/AnnotationsToolBarContents.qml:118
+#: editor/AnnotationsToolBarContents.qml:99
 #, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
 msgstr "Žymėti"
 
-#: editor/AnnotationsToolBarContents.qml:127
+#: editor/AnnotationsToolBarContents.qml:108
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
 msgstr "Laisvas piešimas"
 
-#: editor/AnnotationsToolBarContents.qml:128
+#: editor/AnnotationsToolBarContents.qml:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
 msgstr "Lyg2: Pritraukti, kad būtų tiesios linijos"
 
-#: editor/AnnotationsToolBarContents.qml:135
+#: editor/AnnotationsToolBarContents.qml:116
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
 msgstr "Markeris"
 
-#: editor/AnnotationsToolBarContents.qml:144
+#: editor/AnnotationsToolBarContents.qml:125
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
 msgstr "Linija"
 
-#: editor/AnnotationsToolBarContents.qml:145
+#: editor/AnnotationsToolBarContents.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
 msgstr "Lyg2: Pritraukti, kad būtų 45 laipsnių padidėjimai"
 
-#: editor/AnnotationsToolBarContents.qml:152
+#: editor/AnnotationsToolBarContents.qml:133
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
 msgstr "Rodyklė"
 
-#: editor/AnnotationsToolBarContents.qml:161
+#: editor/AnnotationsToolBarContents.qml:142
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
 msgstr "Stačiakampis"
 
-#: editor/AnnotationsToolBarContents.qml:163
+#: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -372,31 +366,31 @@ msgstr ""
 "Lyg2: Pritraukti, kad būtų diagonalūs judesiai\n"
 "Vald: Keisti dydį iš vidaus"
 
-#: editor/AnnotationsToolBarContents.qml:170
+#: editor/AnnotationsToolBarContents.qml:151
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
 msgstr "Elipsė"
 
-#: editor/AnnotationsToolBarContents.qml:178
+#: editor/AnnotationsToolBarContents.qml:159
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
 msgstr "Iškloti pikseliais"
 
-#: editor/AnnotationsToolBarContents.qml:186
+#: editor/AnnotationsToolBarContents.qml:167
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
 msgstr "Sulieti"
 
-#: editor/AnnotationsToolBarContents.qml:194
+#: editor/AnnotationsToolBarContents.qml:175
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
 msgstr "Tekstas"
 
-#: editor/AnnotationsToolBarContents.qml:201
+#: editor/AnnotationsToolBarContents.qml:182
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
@@ -418,13 +412,13 @@ msgstr ""
 "Paveikslas <filename>%1</filename> buvo modifikuotas. Ar norite pakeitimus "
 "įrašyti, ar juos atmesti?"
 
-#: editor/EditorView.qml:35
+#: editor/EditorView.qml:36
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Taisyti <filename>%1</filename>"
 
-#: editor/EditorView.qml:45 editor/EditorView.qml:518
+#: editor/EditorView.qml:46 editor/EditorView.qml:537
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -434,139 +428,145 @@ msgstr ""
 "Nepavyko įrašyti failo. Patikrinkite, ar turite tinkamus leidimus įrašyti šį "
 "failą."
 
-#: editor/EditorView.qml:111
+#: editor/EditorView.qml:112
+#, kde-format
+msgctxt "@action:intoolbar crop image tool"
+msgid "Crop"
+msgstr "Apkirpti"
+
+#: editor/EditorView.qml:132
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Keisti dydį"
 
-#: editor/EditorView.qml:155
+#: editor/EditorView.qml:176
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Keisti dydį pagal:"
 
-#: editor/EditorView.qml:166
+#: editor/EditorView.qml:187
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Pikseliai"
 
-#: editor/EditorView.qml:173
+#: editor/EditorView.qml:194
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Procentinė dalis"
 
-#: editor/EditorView.qml:184
+#: editor/EditorView.qml:205
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Plotis"
 
-#: editor/EditorView.qml:236
+#: editor/EditorView.qml:257
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Aukštis"
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:278
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Išlaikyti proporcijas"
 
-#: editor/EditorView.qml:261
+#: editor/EditorView.qml:282
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Pradinis failo dydis: %1"
 
-#: editor/EditorView.qml:289
+#: editor/EditorView.qml:310
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Apskaičiuotas failo dydis: %1"
 
-#: editor/EditorView.qml:296
+#: editor/EditorView.qml:317
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Atstatyti"
 
-#: editor/EditorView.qml:307
+#: editor/EditorView.qml:328
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Keisti dydį"
 
-#: editor/EditorView.qml:357
+#: editor/EditorView.qml:378
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Pasukti"
 
-#: editor/EditorView.qml:361
+#: editor/EditorView.qml:382
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Pasukti kairėn"
 
-#: editor/EditorView.qml:372
+#: editor/EditorView.qml:393
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Pasukti dešinėn"
 
-#: editor/EditorView.qml:384
+#: editor/EditorView.qml:405
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Apversti"
 
-#: editor/EditorView.qml:388
+#: editor/EditorView.qml:409
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Apversti horizontaliai"
 
-#: editor/EditorView.qml:399
+#: editor/EditorView.qml:420
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr "Apversti vertikaliai"
 
-#: editor/EditorView.qml:414
+#: editor/EditorView.qml:435
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Atšaukti"
 
-#: editor/EditorView.qml:422
+#: editor/EditorView.qml:443
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Grąžinti"
 
-#: editor/EditorView.qml:436
+#: editor/EditorView.qml:457
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Įrašyti"
 
-#: editor/EditorView.qml:444
+#: editor/EditorView.qml:465
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Įrašyti kaip"
 
-#: editor/EditorView.qml:576
+#: editor/EditorView.qml:595
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Mastelis:"
 
-#: editor/EditorView.qml:591
+#: editor/EditorView.qml:610
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -939,7 +939,7 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Mėgstami"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:64
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:63
 #, kde-format
 msgid "Places"
 msgstr "Vietos"
@@ -1335,7 +1335,7 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr "Konfigūruoti rodomus metaduomenis"
 
-#: qml/mediaview/MediaMetadataPage.qml:46
+#: qml/mediaview/MediaMetadataPage.qml:32
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
@@ -1785,19 +1785,19 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "&Bendrinti"
 
-#: qml/Sidebar.qml:75
+#: qml/Sidebar.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr "Rodyti meniu"
 
-#: qml/Sidebar.qml:102
+#: qml/Sidebar.qml:101
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
 msgstr "Paremti…"
 
-#: qml/Sidebar.qml:108
+#: qml/Sidebar.qml:107
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-06 00:42+0000\n"
 "PO-Revision-Date: 2024-11-01 13:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -302,70 +302,62 @@ msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "Accept"
 
-#: editor/AnnotationsToolBarContents.qml:98
+#: editor/AnnotationsToolBarContents.qml:92
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
-msgctxt "@action:intoolbar crop image tool"
-msgid "Crop"
-msgstr "Crop"
-
-#: editor/AnnotationsToolBarContents.qml:118
+#: editor/AnnotationsToolBarContents.qml:99
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
 msgstr "Select All"
 
-#: editor/AnnotationsToolBarContents.qml:127
+#: editor/AnnotationsToolBarContents.qml:108
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:128
+#: editor/AnnotationsToolBarContents.qml:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:135
+#: editor/AnnotationsToolBarContents.qml:116
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:144
+#: editor/AnnotationsToolBarContents.qml:125
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:145
+#: editor/AnnotationsToolBarContents.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:152
+#: editor/AnnotationsToolBarContents.qml:133
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:161
+#: editor/AnnotationsToolBarContents.qml:142
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:163
+#: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -373,31 +365,31 @@ msgid ""
 "Control: Resize from center"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:170
+#: editor/AnnotationsToolBarContents.qml:151
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:178
+#: editor/AnnotationsToolBarContents.qml:159
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:186
+#: editor/AnnotationsToolBarContents.qml:167
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:194
+#: editor/AnnotationsToolBarContents.qml:175
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
 msgstr ""
 
-#: editor/AnnotationsToolBarContents.qml:201
+#: editor/AnnotationsToolBarContents.qml:182
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
@@ -418,13 +410,13 @@ msgid ""
 "your changes or discard them?"
 msgstr ""
 
-#: editor/EditorView.qml:35
+#: editor/EditorView.qml:36
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr ""
 
-#: editor/EditorView.qml:45 editor/EditorView.qml:518
+#: editor/EditorView.qml:46 editor/EditorView.qml:537
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to save file. Check if you have the correct permission to edit "
@@ -437,13 +429,21 @@ msgstr ""
 "Unable to save file. Check if you have the correct permission to edit this "
 "file."
 
-#: editor/EditorView.qml:111
+#: editor/EditorView.qml:112
+#, fuzzy, kde-format
+#| msgctxt "@action:button Crop an image"
+#| msgid "Crop"
+msgctxt "@action:intoolbar crop image tool"
+msgid "Crop"
+msgstr "Crop"
+
+#: editor/EditorView.qml:132
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Resize"
 
-#: editor/EditorView.qml:155
+#: editor/EditorView.qml:176
 #, fuzzy, kde-format
 #| msgctxt "@action:button Resize an image"
 #| msgid "Resize"
@@ -451,55 +451,55 @@ msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Resize"
 
-#: editor/EditorView.qml:166
+#: editor/EditorView.qml:187
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr ""
 
-#: editor/EditorView.qml:173
+#: editor/EditorView.qml:194
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr ""
 
-#: editor/EditorView.qml:184
+#: editor/EditorView.qml:205
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr ""
 
-#: editor/EditorView.qml:236
+#: editor/EditorView.qml:257
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr ""
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:278
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr ""
 
-#: editor/EditorView.qml:261
+#: editor/EditorView.qml:282
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr ""
 
-#: editor/EditorView.qml:289
+#: editor/EditorView.qml:310
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr ""
 
-#: editor/EditorView.qml:296
+#: editor/EditorView.qml:317
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr ""
 
-#: editor/EditorView.qml:307
+#: editor/EditorView.qml:328
 #, fuzzy, kde-format
 #| msgctxt "@action:button Resize an image"
 #| msgid "Resize"
@@ -507,7 +507,7 @@ msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Resize"
 
-#: editor/EditorView.qml:357
+#: editor/EditorView.qml:378
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the left"
 #| msgid "Rotate left"
@@ -515,7 +515,7 @@ msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Rotate left"
 
-#: editor/EditorView.qml:361
+#: editor/EditorView.qml:382
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the left"
 #| msgid "Rotate left"
@@ -523,7 +523,7 @@ msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Rotate left"
 
-#: editor/EditorView.qml:372
+#: editor/EditorView.qml:393
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the right"
 #| msgid "Rotate right"
@@ -531,7 +531,7 @@ msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Rotate right"
 
-#: editor/EditorView.qml:384
+#: editor/EditorView.qml:405
 #, fuzzy, kde-format
 #| msgctxt "@action:button Mirror an image vertically"
 #| msgid "Flip"
@@ -539,19 +539,19 @@ msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Flip"
 
-#: editor/EditorView.qml:388
+#: editor/EditorView.qml:409
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr ""
 
-#: editor/EditorView.qml:399
+#: editor/EditorView.qml:420
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr ""
 
-#: editor/EditorView.qml:414
+#: editor/EditorView.qml:435
 #, fuzzy, kde-format
 #| msgctxt "@action:button Undo modification"
 #| msgid "Undo"
@@ -559,32 +559,32 @@ msgctxt "@action:button"
 msgid "Undo"
 msgstr "Undo"
 
-#: editor/EditorView.qml:422
+#: editor/EditorView.qml:443
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr ""
 
-#: editor/EditorView.qml:436
+#: editor/EditorView.qml:457
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Save"
 
-#: editor/EditorView.qml:444
+#: editor/EditorView.qml:465
 #, fuzzy, kde-format
 #| msgid "Save As"
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Save As"
 
-#: editor/EditorView.qml:576
+#: editor/EditorView.qml:595
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr ""
 
-#: editor/EditorView.qml:591
+#: editor/EditorView.qml:610
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@info:tooltip"
@@ -984,7 +984,7 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Favourites"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:64
+#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:63
 #, kde-format
 msgid "Places"
 msgstr "Places"
@@ -1396,7 +1396,7 @@ msgctxt "@title"
 msgid "Configure Metadata Display"
 msgstr ""
 
-#: qml/mediaview/MediaMetadataPage.qml:46
+#: qml/mediaview/MediaMetadataPage.qml:32
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
@@ -1882,19 +1882,19 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "Share"
 
-#: qml/Sidebar.qml:75
+#: qml/Sidebar.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr ""
 
-#: qml/Sidebar.qml:102
+#: qml/Sidebar.qml:101
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
 msgstr ""
 
-#: qml/Sidebar.qml:108
+#: qml/Sidebar.qml:107
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
