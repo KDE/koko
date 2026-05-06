@@ -890,13 +890,13 @@ msgstr "分享所选的媒体文件"
 #, kde-format
 msgctxt "@action:button Move the selected media to the trash"
 msgid "Move to Trash"
-msgstr ""
+msgstr "移动到回收站"
 
 #: qml/gallery/GalleryPage.qml:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
-msgstr ""
+msgstr "移动选中的媒体到回收站"
 
 #: qml/gallery/GalleryPage.qml:178
 #, kde-format
@@ -1491,24 +1491,24 @@ msgstr "显示所有控制"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: qml/mediaview/MediaViewPage.qml:1175
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "开始"
 
 #: qml/mediaview/MediaViewPage.qml:1194
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "切换间隔："
 
 #: qml/mediaview/MediaViewPage.qml:1207
 #, kde-format
 msgid "seconds"
-msgstr ""
+msgstr "秒数"
 
 #: qml/mediaview/TagInput.qml:66
 #, kde-format
