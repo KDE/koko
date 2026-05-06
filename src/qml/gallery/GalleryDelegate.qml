@@ -124,7 +124,7 @@ Controls.ItemDelegate {
             padding: Kirigami.Units.smallSpacing
             elide: Text.ElideRight
             maximumLineCount: 4
-            wrapMode: Text.WordWrap
+            wrapMode: Text.Wrap
             color: Kirigami.Theme.textColor
             text: root.name
         }
@@ -147,7 +147,7 @@ Controls.ItemDelegate {
                 padding: Kirigami.Units.smallSpacing
                 elide: Text.ElideRight
                 maximumLineCount: 4
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
                 color: Kirigami.Theme.textColor
                 text: i18np("1 item", "%1 items", root.fileCount)
             }
