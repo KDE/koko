@@ -223,19 +223,45 @@ StatefulApp.StatefulWindow {
         Kirigami.ContextDrawer {}
     }
 
+    Component {
+        id: desktopDrawer
+        Sidebar {
+            mainWindow: root
+            application: root.application
+            sidebarWidth: root.sidebarWidth
+        }
+    }
+
+    Component {
+        id: mobileDrawer
+        Kirigami.GlobalDrawer {
+            actions: [
+                Kirigami.Action {
+                    fromQAction: root.application.action('options_configure')
+                },
+                Kirigami.Action {
+                    text: i18nc("@action:inMenu", "Donate…")
+                    icon.name: "help-donate-" + Qt.locale().currencySymbol(Locale.CurrencyIsoCode).toLowerCase() + "-symbolic"
+                    onTriggered: Qt.openUrlExternally("https://kde.org/donate/?app=koko")
+                },
+                Kirigami.Action {
+                    text: i18nc("@action:inMenu", "Report Bug…")
+                    icon.name: "tools-report-bug-symbolic"
+                    onTriggered: Qt.openUrlExternally("https://bugs.kde.org/enter_bug.cgi?format=guided&product=koko&version=" + CoreAddons.AboutData.version)
+                }
+            ]
+        }
+    }
+
     Loader {
         onItemChanged: root.globalDrawer = item
-        active: !Kirigami.Settings.isMobile || root.wideScreen
+        active: Kirigami.Settings.isMobile && !root.wideScreen ? root.pageStack.layers.depth === 1 : true
         onActiveChanged: {
             if (item) {
                 updateGlobalDrawer();
             }
         }
-        sourceComponent: Sidebar {
-            mainWindow: root
-            application: root.application
-            sidebarWidth: root.sidebarWidth
-        }
+        sourceComponent: (Kirigami.Settings.isMobile && !root.wideScreen) ? mobileDrawer : desktopDrawer
     }
 
     footer: BottomNavBar {
