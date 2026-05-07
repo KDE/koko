@@ -294,7 +294,6 @@ Kirigami.OverlayDrawer {
                         id: placeItem
 
                         required property var modelData
-
                         actionName: modelData
                     }
                 }

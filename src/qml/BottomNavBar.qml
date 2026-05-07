@@ -9,6 +9,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.actioncollection as AC
 
 Loader {
     id: root
@@ -46,19 +47,22 @@ Loader {
                     id: picturesAction
 
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
-                    fromQAction: root.mainWindow.navigationActions.action("place_pictures")
+                    AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    AC.ActionCollection.action: "place_pictures"
                 },
                 Kirigami.Action {
                     id: videosAction
 
                     text: i18nc("@action:button Navigation entry in sidebar", "Videos")
-                    fromQAction: root.mainWindow.navigationActions.action("place_videos")
+                    AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    AC.ActionCollection.action: "place_videos"
                 },
                 Kirigami.Action {
                     id: favoritesAction
 
                     text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
-                    fromQAction: root.mainWindow.navigationActions.action("place_favorites")
+                    AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    AC.ActionCollection.action: "place_favorites"
                 },
                 Kirigami.Action {
                     icon.name: "compass-symbolic"

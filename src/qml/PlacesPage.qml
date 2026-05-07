@@ -8,6 +8,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import org.kde.kirigami as Kirigami
+import org.kde.kirigami.actioncollection as AC
 import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.koko as Koko
 
@@ -19,7 +20,8 @@ FormCard.FormCardPage {
     actions: [
         Kirigami.Action {
             text: i18nc("@action:button Open settings dialog", "Settings")
-            fromQAction: root.navigationActions.action('options_configure')
+            AC.ActionCollection.collection: "org.kde.globalactions"
+            AC.ActionCollection.action: "options_configure"
         }
     ]
 
@@ -31,21 +33,24 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions?.action('place_pictures') ?? null
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_pictures"
             }
         }
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Videos")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions?.action('place_videos') ?? null
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_videos"
             }
         }
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_favorites')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_favorites"
             }
         }
 
@@ -53,14 +58,16 @@ FormCard.FormCardPage {
             icon.name: "user-trash-symbolic"
             text: i18nc("@action:button Navigation entry in sidebar", "Trash")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_trash')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_trash"
             }
         }
         FormCard.FormButtonDelegate {
             icon.name: "folder-cloud"
             text: i18nc("@action:button Navigation entry in sidebar", "Network")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_remote')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_remote"
             }
         }
     }
@@ -81,7 +88,8 @@ FormCard.FormCardPage {
                 required property var modelData
 
                 action: Kirigami.Action {
-                    fromQAction: delegate.modelData
+                    AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    AC.ActionCollection.action: delegate.modelData
                 }
             }
         }
@@ -95,19 +103,22 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Countries")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_countries')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_countries"
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "States")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_states')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_states"
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Cities")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_cities')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_cities"
             }
         }
     }
@@ -119,25 +130,29 @@ FormCard.FormCardPage {
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Years")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_years')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_years"
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Months")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_months')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_months"
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Weeks")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_weeks')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_weeks"
             }
         }
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Days")
             action: Kirigami.Action {
-                fromQAction: root.navigationActions.action('place_days')
+                AC.ActionCollection.collection: "org.kde.koko.navigation"
+                AC.ActionCollection.action: "place_days"
             }
         }
     }
@@ -161,7 +176,8 @@ FormCard.FormCardPage {
                 required property var modelData
 
                 action: Kirigami.Action {
-                    fromQAction: actionDelegate.modelData
+                    AC.ActionCollection.collection: "org.kde.koko.navigation"
+                    AC.ActionCollection.action: actionDelegate.modelData
                 }
             }
         }
