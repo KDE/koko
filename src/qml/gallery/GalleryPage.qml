@@ -513,6 +513,7 @@ Kirigami.ScrollablePage {
         id: gallerySortFilterProxyModel
 
         sourceModel: page.galleryModel
+        sortBehavior: Koko.Config.sortBehavior
         sortMode: Koko.GallerySortFilterProxyModel.Name
         sortReversed: false
         filterString: ""

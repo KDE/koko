@@ -49,7 +49,43 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
-        title: i18nc("@title:group", "Image View Background")
+        title: i18nc("@title:group", "Gallery Sorting")
+    }
+
+    FormCard.FormCard {
+        FormCard.FormRadioDelegate {
+            text: i18nc("@option:radio As in, sorting mode", "Natural sorting")
+            checked: Koko.Config.sortBehavior === 0
+            enabled: !Koko.Config.isSortBehavorImmutable
+            onToggled: {
+                Koko.Config.sortBehavior = 0;
+                Koko.Config.save();
+            }
+        }
+
+        FormCard.FormRadioDelegate {
+            text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case insensitive)")
+            checked: Koko.Config.sortBehavior === 1
+            enabled: !Koko.Config.isSortBehavorImmutable
+            onToggled: {
+                Koko.Config.sortBehavior = 1;
+                Koko.Config.save();
+            }
+        }
+
+        FormCard.FormRadioDelegate {
+            text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case sensitive)")
+            checked: Koko.Config.sortBehavior === 2
+            enabled: !Koko.Config.isSortBehavorImmutable
+            onToggled: {
+                Koko.Config.sortBehavior = 2;
+                Koko.Config.save();
+            }
+        }
+    }
+
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Image Background")
     }
 
     FormCard.FormCard {
@@ -92,7 +128,7 @@ FormCard.FormCardPage {
 
         FormCard.FormCheckDelegate {
             id: imageViewShowCheckerboardDelegate
-            text: i18nc("@option:check", "Show a checkerboard background behind transparent images")
+            text: i18nc("@option:check", "Show a checkerboard behind transparent images")
             checked: Koko.Config.imageViewShowCheckerboard
             enabled: !Koko.Config.isImageViewShowCheckerboardImmutable
             onToggled: {
@@ -100,7 +136,13 @@ FormCard.FormCardPage {
                 Koko.Config.save();
             }
         }
+    }
 
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Image View")
+    }
+
+    FormCard.FormCard {
         FormCard.FormCheckDelegate {
             id: enlargeSmallImagesDelegate
             text: i18nc("@option:check", "Enlarge images that are smaller than the viewport")

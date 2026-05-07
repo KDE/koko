@@ -23,6 +23,15 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <max>256</max>
             <default>128</default>
         </entry>
+        <entry name="SortBehavior" type="Enum">
+            <label>Sorting mode</label>
+            <choices>
+                <choice name="Natural"/>
+                <choice name="AlphabeticalCaseInsensitive"/>
+                <choice name="AlphabeticalCaseSensitive"/>
+            </choices>
+            <default>Natural</default>
+        </entry>
         <entry name="ImageViewPreview" type="Bool">
             <label>Show a thumbnail carousel in image view</label>
             <default>true</default>
