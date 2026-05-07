@@ -106,7 +106,6 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/gallery/GalleryInlineStatusBar.qml
     qml/gallery/GalleryContextMenu.qml
     qml/gallery/NavigatorComponent.qml
-    qml/gallery/NavigatorPathButton.qml
 
     qml/mediaview/MediaViewPage.qml
     qml/mediaview/MediaViewThumbnail.qml

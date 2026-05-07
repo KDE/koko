@@ -6,7 +6,10 @@
  *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
+#include <QDir>
+
 #include <KDirLister>
+#include <KLocalizedString>
 
 #include "galleryfoldermodel.h"
 
@@ -53,6 +56,26 @@ AbstractGalleryModel::Status GalleryFolderModel::status() const
 QString GalleryFolderModel::titleForPath(const QVariant &path) const
 {
     QUrl url = path.toUrl();
+
+    if (url.isLocalFile()) {
+        QDir dir = QDir(url.toLocalFile());
+
+        if (dir == QDir::root()) {
+            return i18n("Root");
+        }
+
+        if (dir == QDir::home()) {
+            return i18n("Home");
+        }
+    }
+
+    if (url.scheme() == "trash" && url.path() == "/") {
+        return i18n("Trash");
+    }
+
+    if (url.scheme() == "remote" && url.path() == "/") {
+        return i18n("Network");
+    }
 
     KFileItem fileItem(url);
     return fileItem.text();

@@ -219,15 +219,16 @@ RowLayout {
                     }
                 })
 
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 12
+                Layout.fillWidth: navigatorRoot.restrictedWidthMode
+
                 icon.name: rootLocations[rootLocation].icon
                 text: root.galleryModel.titleForPath(rootLocations[rootLocation].path)
 
                 onClicked: root.navigate(rootLocations[rootLocation].path)
 
-                display: Controls.AbstractButton.IconOnly
-
                 Controls.ToolTip.text: text
-                Controls.ToolTip.visible: hovered && text.length > 0
+                Controls.ToolTip.visible: hovered && (width < implicitWidth) && text.length > 0
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
             }
 
@@ -254,7 +255,7 @@ RowLayout {
                         source: LayoutMirroring.enabled ? "arrow-left-symbolic" : "arrow-right-symbolic"
                     }
 
-                    NavigatorPathButton {
+                    Controls.ToolButton {
                         id: navigatorPathButton
 
                         Layout.maximumWidth: Kirigami.Units.gridUnit * 12
@@ -262,11 +263,15 @@ RowLayout {
 
                         implicitHeight: navigatorRootButton.implicitHeight // Ensure our text-only buttons match the icon buttons' height
 
-                        pathString: navigatorRoot.isUrlNavigator ? root.galleryModel.titleForPath(Koko.DirModelUtils.partialUrlForIndex(root.path, navigatorDelegate.index + 1))
+                        text: navigatorRoot.isUrlNavigator ? root.galleryModel.titleForPath(Koko.DirModelUtils.partialUrlForIndex(root.path, navigatorDelegate.index + 1))
                                                                  : root.galleryModel.titleForPath(root.path.slice(0, navigatorDelegate.index + 1))
 
                         onClicked: navigatorRoot.isUrlNavigator ? root.navigate(Koko.DirModelUtils.partialUrlForIndex(root.path, navigatorDelegate.index + 1))
                                                                 : root.navigate(root.path.slice(0, navigatorDelegate.index + 1));
+
+                        Controls.ToolTip.text: text
+                        Controls.ToolTip.visible: hovered && (width < implicitWidth) && text.length > 0
+                        Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
                     }
                 }
             }
