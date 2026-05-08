@@ -86,7 +86,7 @@ Kirigami.OverlayDrawer {
                         Kirigami.Action {
                             AC.ActionCollection.action: "Preferences"
                             AC.ActionCollection.collection: "org.kde.globalactions"
-                            onTriggered: root.configurationView.open()
+                            onTriggered: root.mainWindow.configurationView.open()
                         }
 
                         Kirigami.Action {

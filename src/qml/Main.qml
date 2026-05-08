@@ -75,6 +75,7 @@ Kirigami.ApplicationWindow {
             const page = component.createObject(root, {
                 title: i18nc("@title", "Places"),
                 navigationActions: root.navigationActions,
+                mainWindow: root
             });
 
             placesView = switchApplicationPage(page);
