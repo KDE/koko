@@ -1,21 +1,22 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
+# SPDX-FileCopyrightText: 2021, 2023-2024, 2026 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2021, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 02:39+0000\n"
-"PO-Revision-Date: 2024-10-26 12:32+0200\n"
+"PO-Revision-Date: 2026-05-09 15:49+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -759,20 +760,17 @@ msgid "Favorites"
 msgstr "Ulubione"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
-#, fuzzy, kde-format
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Kraje"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
-#, fuzzy, kde-format
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Stany"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
-#, fuzzy, kde-format
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Miasta"
 
@@ -794,26 +792,22 @@ msgid "Tags"
 msgstr "Znaczniki"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
-#, fuzzy, kde-format
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Lata"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
-#, fuzzy, kde-format
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Miesiące"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
-#, fuzzy, kde-format
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Tygodnie"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
-#, fuzzy, kde-format
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Dni"
 
@@ -1777,8 +1771,7 @@ msgid "Slideshow"
 msgstr "Pokaz obrazów"
 
 #: qml/Settings/PhotosConfigurationView.qml:17
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Ogólne"
@@ -1786,49 +1779,46 @@ msgstr "Ogólne"
 #: qml/Settings/PhotosConfigurationView.qml:26
 #, kde-format
 msgid "About Photos"
-msgstr "O Photos"
+msgstr "Opis zdjęć"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #: qml/Settings/PhotosConfigurationView.qml:36
-#, fuzzy, kde-format
-#| msgid "About KDE"
+#, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "O KDE"
+msgstr "Opis aplikacji"
 
 #: qml/Settings/PhotosConfigurationView.qml:33
 #, kde-format
 msgid "About KDE"
-msgstr "O KDE"
+msgstr "Opis KDE"
 
 #: qml/ShareAction.qml:21
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "Udostępnij"
+msgstr "Udo&stępnij"
 
 #: qml/Sidebar.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "Pokaż menu"
 
 #: qml/Sidebar.qml:101
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "Wpłać darowiznę…"
 
 #: qml/Sidebar.qml:107
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "Zgłoś błąd…"
 
 #: qml/Sidebar.qml:148
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Ogólne"
 
