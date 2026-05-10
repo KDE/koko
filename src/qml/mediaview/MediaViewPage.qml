@@ -287,6 +287,8 @@ Kirigami.Page {
                 displayHint: Kirigami.DisplayHint.AlwaysHide,
                 fromQAction: fileMenuAction
             });
+            // Has to be set here instead of in the property map used with createObject()
+            kirigamiAction.enabled = Qt.binding(() => root.enabled && root.visible && fileMenuAction.enabled)
             list.push(kirigamiAction);
         }
         for (let action of otherHiddenUiActions) {
@@ -513,6 +515,8 @@ Kirigami.Page {
                             displayHint: Kirigami.DisplayHint.AlwaysHide,
                             fromQAction: fileMenuAction
                         });
+                        // Has to be set here instead of in the property map used with createObject()
+                        kirigamiAction.enabled = Qt.binding(() => loader.enabled && loader.visible && fileMenuAction.enabled)
                         list.push(kirigamiAction);
                     }
 

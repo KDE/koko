@@ -415,6 +415,8 @@ Kirigami.ScrollablePage {
                 displayHint: Kirigami.DisplayHint.AlwaysHide,
                 fromQAction: fileMenuAction
             });
+            // Has to be set here instead of in the property map used with createObject()
+            kirigamiAction.enabled = Qt.binding(() => page.enabled && page.visible && fileMenuAction.enabled)
             list.push(kirigamiAction);
         }
         for (let action of otherHiddenUiActions) {
@@ -729,6 +731,8 @@ Kirigami.ScrollablePage {
                         displayHint: Kirigami.DisplayHint.AlwaysHide,
                         fromQAction: fileMenuAction
                     });
+                    // Has to be set here instead of in the property map used with createObject()
+                    kirigamiAction.enabled = Qt.binding(() => delegate.enabled && delegate.visible && fileMenuAction.enabled)
                     list.push(kirigamiAction);
                 }
 
