@@ -160,7 +160,7 @@ Kirigami.ScrollablePage {
             icon.name: "group-delete-symbolic"
             text: i18nc("@action:button Move the selected media to the trash", "Move to Trash")
             tooltip: i18nc("@info:tooltip", "Move the selected media to the trash")
-            enabled: selectionModel.hasSelection && !page.isTrashView
+            enabled: page.visible && page.enabled && selectionModel.hasSelection && !page.isTrashView
             visible: selectionModel.hasSelection && !page.isTrashView
             shortcut: StandardKey.Delete
             onTriggered: {

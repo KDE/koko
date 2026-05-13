@@ -276,6 +276,7 @@ Kirigami.Page {
                 displayHint: Kirigami.DisplayHint.AlwaysHide,
                 fromQAction: fileMenuAction
             });
+            kirigamiAction.enabled = Qt.binding(() => root.enabled && root.visible && fileMenuAction.enabled)
             list.push(kirigamiAction);
         }
         for (let action of otherHiddenUiActions) {
