@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 02:39+0000\n"
+"POT-Creation-Date: 2026-05-14 02:38+0000\n"
 "PO-Revision-Date: 2026-02-21 03:41+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1371,101 +1371,101 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "სრული ეკრანიდან გასვლა"
 
-#: qml/mediaview/MediaViewPage.qml:501
+#: qml/mediaview/MediaViewPage.qml:502
 #, kde-format
 msgid "Previous image"
 msgstr "წინა გამოსახულება"
 
-#: qml/mediaview/MediaViewPage.qml:534
+#: qml/mediaview/MediaViewPage.qml:535
 #, kde-format
 msgid "Next image"
 msgstr "შემდეგი გამოსახულება"
 
-#: qml/mediaview/MediaViewPage.qml:715
+#: qml/mediaview/MediaViewPage.qml:716
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:716
+#: qml/mediaview/MediaViewPage.qml:717
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:717
+#: qml/mediaview/MediaViewPage.qml:718
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:718
+#: qml/mediaview/MediaViewPage.qml:719
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:719
+#: qml/mediaview/MediaViewPage.qml:720
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:720
+#: qml/mediaview/MediaViewPage.qml:721
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:721
+#: qml/mediaview/MediaViewPage.qml:722
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:722
+#: qml/mediaview/MediaViewPage.qml:723
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:723
+#: qml/mediaview/MediaViewPage.qml:724
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:724
+#: qml/mediaview/MediaViewPage.qml:725
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:773
+#: qml/mediaview/MediaViewPage.qml:774
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/mediaview/MediaViewPage.qml:787
+#: qml/mediaview/MediaViewPage.qml:788
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "დაპატარავება"
 
-#: qml/mediaview/MediaViewPage.qml:796
+#: qml/mediaview/MediaViewPage.qml:797
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "გადიდება"
 
-#: qml/mediaview/MediaViewPage.qml:1039 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1040 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "სლაიდშოუს ინტერვალი:"
 
-#: qml/mediaview/MediaViewPage.qml:1056 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1057 qml/Settings/GeneralConfigPage.qml:162
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1473,48 +1473,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 წამი"
 msgstr[1] "%1 წამი"
 
-#: qml/mediaview/MediaViewPage.qml:1111 qml/mediaview/MediaViewPage.qml:1212
+#: qml/mediaview/MediaViewPage.qml:1112 qml/mediaview/MediaViewPage.qml:1213
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "მარყუჟი"
 
-#: qml/mediaview/MediaViewPage.qml:1120 qml/mediaview/MediaViewPage.qml:1221
+#: qml/mediaview/MediaViewPage.qml:1121 qml/mediaview/MediaViewPage.qml:1222
 #: qml/Settings/GeneralConfigPage.qml:136
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "შემთხვევით"
 
-#: qml/mediaview/MediaViewPage.qml:1132
+#: qml/mediaview/MediaViewPage.qml:1133
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "სლაიდშოუს შეჩერება"
 
-#: qml/mediaview/MediaViewPage.qml:1146
+#: qml/mediaview/MediaViewPage.qml:1147
 #, kde-format
 msgid "Show All Controls"
 msgstr "ყველა კონტროლის ჩვენება"
 
-#: qml/mediaview/MediaViewPage.qml:1175
+#: qml/mediaview/MediaViewPage.qml:1176
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "გაჩერება"
 
-#: qml/mediaview/MediaViewPage.qml:1175
+#: qml/mediaview/MediaViewPage.qml:1176
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "დაწყება"
 
-#: qml/mediaview/MediaViewPage.qml:1194
+#: qml/mediaview/MediaViewPage.qml:1195
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "ინტერვალი:"
 
-#: qml/mediaview/MediaViewPage.qml:1207
+#: qml/mediaview/MediaViewPage.qml:1208
 #, kde-format
 msgid "seconds"
 msgstr "წამი"
