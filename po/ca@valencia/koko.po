@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2026-04-23 09:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -778,6 +778,30 @@ msgctxt "@title"
 msgid "Favorites"
 msgstr "Preferides"
 
+#: models/galleryfoldermodel.cpp:64
+#, kde-format
+msgid "Root"
+msgstr ""
+
+#: models/galleryfoldermodel.cpp:68
+#, kde-format
+msgid "Home"
+msgstr ""
+
+#: models/galleryfoldermodel.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Trash"
+msgid "Trash"
+msgstr "Paperera"
+
+#: models/galleryfoldermodel.cpp:77
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Network"
+msgid "Network"
+msgstr "Xarxa"
+
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
 msgid "Countries"
@@ -1146,19 +1170,19 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Invertix els elements multimèdia seleccionats"
 
-#: qml/gallery/GalleryPage.qml:742
+#: qml/gallery/GalleryPage.qml:743
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 element"
 msgstr[1] "%1 elements"
 
-#: qml/gallery/GalleryPage.qml:787
+#: qml/gallery/GalleryPage.qml:788
 #, kde-format
 msgid "No media found"
 msgstr "No s'ha trobat cap element multimèdia"
 
-#: qml/gallery/GalleryPage.qml:811
+#: qml/gallery/GalleryPage.qml:812
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1166,7 +1190,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 element seleccionat"
 msgstr[1] "%1 elements seleccionats"
 
-#: qml/gallery/GalleryPage.qml:816
+#: qml/gallery/GalleryPage.qml:817
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1540,13 +1564,13 @@ msgid "Zoom In"
 msgstr "Amplia"
 
 # skip-rule: kct-slideshow
-#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval entre diapositives:"
 
-#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:204
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1561,7 +1585,7 @@ msgid "Loop"
 msgstr "Bucle"
 
 #: qml/mediaview/MediaViewPage.qml:1187 qml/mediaview/MediaViewPage.qml:1288
-#: qml/Settings/GeneralConfigPage.qml:136
+#: qml/Settings/GeneralConfigPage.qml:178
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1691,53 +1715,89 @@ msgstr "%1 px"
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
-msgid "Image View Background"
-msgstr "Fons de la vista d'imatges"
+msgid "Gallery Sorting"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:57
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Natural sorting"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:67
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Alphabetical (case insensitive)"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:77
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Alphabetical (case sensitive)"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:88
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Image View Background"
+msgctxt "@title:group"
+msgid "Image Background"
+msgstr "Fons de la vista d'imatges"
+
+#: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Negre"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Blanc"
 
-#: qml/Settings/GeneralConfigPage.qml:78
+#: qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
 msgstr "Predeterminat del tema"
 
-#: qml/Settings/GeneralConfigPage.qml:79
+#: qml/Settings/GeneralConfigPage.qml:115
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Utilitza el color de fons especificat pel tema"
 
-#: qml/Settings/GeneralConfigPage.qml:95
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Show a checkerboard background behind transparent images"
 msgctxt "@option:check"
-msgid "Show a checkerboard background behind transparent images"
+msgid "Show a checkerboard behind transparent images"
 msgstr "Mostra un fons de tauler d'escacs darrere les imatges transparents"
 
-#: qml/Settings/GeneralConfigPage.qml:106
+#: qml/Settings/GeneralConfigPage.qml:142
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Image Size"
+msgctxt "@title:group"
+msgid "Image View"
+msgstr "Mida de la imatge"
+
+#: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
 "Amplia les imatges que siguen més xicotetes que l'àrea de visualització"
 
-#: qml/Settings/GeneralConfigPage.qml:117
+#: qml/Settings/GeneralConfigPage.qml:159
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "Recorda el nivell de zoom en canviar entre imatges"
 
-#: qml/Settings/GeneralConfigPage.qml:128
+#: qml/Settings/GeneralConfigPage.qml:170
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2026-04-23 08:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -780,6 +780,30 @@ msgctxt "@title"
 msgid "Favorites"
 msgstr "מועדפים"
 
+#: models/galleryfoldermodel.cpp:64
+#, kde-format
+msgid "Root"
+msgstr "שורש"
+
+#: models/galleryfoldermodel.cpp:68
+#, kde-format
+msgid "Home"
+msgstr "בית"
+
+#: models/galleryfoldermodel.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Trash"
+msgid "Trash"
+msgstr "אשפה"
+
+#: models/galleryfoldermodel.cpp:77
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Network"
+msgid "Network"
+msgstr "רשת"
+
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
 msgid "Countries"
@@ -1148,7 +1172,7 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "היפוך בחירת המדיה הנבחרת"
 
-#: qml/gallery/GalleryPage.qml:742
+#: qml/gallery/GalleryPage.qml:743
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1157,12 +1181,12 @@ msgstr[1] "שני פריטים"
 msgstr[2] "%1 פריטים"
 msgstr[3] "%1 פריטים"
 
-#: qml/gallery/GalleryPage.qml:787
+#: qml/gallery/GalleryPage.qml:788
 #, kde-format
 msgid "No media found"
 msgstr "לא נמצאה מדיה"
 
-#: qml/gallery/GalleryPage.qml:811
+#: qml/gallery/GalleryPage.qml:812
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1172,7 +1196,7 @@ msgstr[1] "נבחרו שני פריטים"
 msgstr[2] "נבחרו %1 פריטים"
 msgstr[3] "נבחרו %1 פריטים"
 
-#: qml/gallery/GalleryPage.qml:816
+#: qml/gallery/GalleryPage.qml:817
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1549,13 +1573,13 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "התקרבות"
 
-#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "הפרש מצגת:"
 
-#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:204
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1572,7 +1596,7 @@ msgid "Loop"
 msgstr "לולאה"
 
 #: qml/mediaview/MediaViewPage.qml:1187 qml/mediaview/MediaViewPage.qml:1288
-#: qml/Settings/GeneralConfigPage.qml:136
+#: qml/Settings/GeneralConfigPage.qml:178
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1702,52 +1726,88 @@ msgstr "%1 פיקסלים"
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
-msgid "Image View Background"
-msgstr "רקע תצוגת תמונות"
+msgid "Gallery Sorting"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:57
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Natural sorting"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:67
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Alphabetical (case insensitive)"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:77
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Alphabetical (case sensitive)"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:88
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Image View Background"
+msgctxt "@title:group"
+msgid "Image Background"
+msgstr "רקע תצוגת תמונות"
+
+#: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "שחור"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "לבן"
 
-#: qml/Settings/GeneralConfigPage.qml:78
+#: qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
 msgstr "ברירת המחדל של ערכת העיצוב"
 
-#: qml/Settings/GeneralConfigPage.qml:79
+#: qml/Settings/GeneralConfigPage.qml:115
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "להשתמש בצבע הרקע שמוגדר בערכת העיצוב"
 
-#: qml/Settings/GeneralConfigPage.qml:95
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Show a checkerboard background behind transparent images"
 msgctxt "@option:check"
-msgid "Show a checkerboard background behind transparent images"
+msgid "Show a checkerboard behind transparent images"
 msgstr "להציג רקע משבצות מאחורי תמונות שקופות"
 
-#: qml/Settings/GeneralConfigPage.qml:106
+#: qml/Settings/GeneralConfigPage.qml:142
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Image Size"
+msgctxt "@title:group"
+msgid "Image View"
+msgstr "גודל תמונה"
+
+#: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "להגדיל תמונות שקטנות מהאשנב"
 
-#: qml/Settings/GeneralConfigPage.qml:117
+#: qml/Settings/GeneralConfigPage.qml:159
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "לזכור את מרחק התצוגה במעבר בין תמונות"
 
-#: qml/Settings/GeneralConfigPage.qml:128
+#: qml/Settings/GeneralConfigPage.qml:170
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -1850,12 +1910,6 @@ msgstr "מרוחק"
 
 #~ msgid "Go Up"
 #~ msgstr "למעלה"
-
-#~ msgid "Home"
-#~ msgstr "בית"
-
-#~ msgid "Root"
-#~ msgstr "שורש"
 
 #~ msgid "Restore Selection"
 #~ msgstr "שחזור הבחירה"

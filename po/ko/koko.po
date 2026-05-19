@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2025-10-12 12:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -791,6 +791,30 @@ msgctxt "@title"
 msgid "Favorites"
 msgstr "책갈피"
 
+#: models/galleryfoldermodel.cpp:64
+#, kde-format
+msgid "Root"
+msgstr "루트"
+
+#: models/galleryfoldermodel.cpp:68
+#, kde-format
+msgid "Home"
+msgstr "홈"
+
+#: models/galleryfoldermodel.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Trash"
+msgid "Trash"
+msgstr "휴지통"
+
+#: models/galleryfoldermodel.cpp:77
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation entry in sidebar"
+#| msgid "Network"
+msgid "Network"
+msgstr "네트워크"
+
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
 msgid "Countries"
@@ -1201,26 +1225,26 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "선택한 미디어 공유"
 
-#: qml/gallery/GalleryPage.qml:742
+#: qml/gallery/GalleryPage.qml:743
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:787
+#: qml/gallery/GalleryPage.qml:788
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "미디어를 찾을 수 없음"
 
-#: qml/gallery/GalleryPage.qml:811
+#: qml/gallery/GalleryPage.qml:812
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:816
+#: qml/gallery/GalleryPage.qml:817
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1600,13 +1624,13 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "확대/축소:"
 
-#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:150
+#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "슬라이드 쇼 간격:"
 
-#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:162
+#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:204
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1620,7 +1644,7 @@ msgid "Loop"
 msgstr "반복"
 
 #: qml/mediaview/MediaViewPage.qml:1187 qml/mediaview/MediaViewPage.qml:1288
-#: qml/Settings/GeneralConfigPage.qml:136
+#: qml/Settings/GeneralConfigPage.qml:178
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1754,52 +1778,88 @@ msgstr ""
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
-msgid "Image View Background"
-msgstr "그림 보기 배경"
+msgid "Gallery Sorting"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:57
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Natural sorting"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:67
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Alphabetical (case insensitive)"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:77
+#, kde-format
+msgctxt "@option:radio As in, sorting mode"
+msgid "Alphabetical (case sensitive)"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:88
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Image View Background"
+msgctxt "@title:group"
+msgid "Image Background"
+msgstr "그림 보기 배경"
+
+#: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "검은색"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "흰색"
 
-#: qml/Settings/GeneralConfigPage.qml:78
+#: qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
 msgstr "테마 기본값"
 
-#: qml/Settings/GeneralConfigPage.qml:79
+#: qml/Settings/GeneralConfigPage.qml:115
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "테마에서 지정한 배경색 사용"
 
-#: qml/Settings/GeneralConfigPage.qml:95
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:131
+#, fuzzy, kde-format
+#| msgctxt "@option:check"
+#| msgid "Show a checkerboard background behind transparent images"
 msgctxt "@option:check"
-msgid "Show a checkerboard background behind transparent images"
+msgid "Show a checkerboard behind transparent images"
 msgstr "투명한 그림 뒤에 바둑판 무늬 배경 표시"
 
-#: qml/Settings/GeneralConfigPage.qml:106
+#: qml/Settings/GeneralConfigPage.qml:142
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Image Size"
+msgctxt "@title:group"
+msgid "Image View"
+msgstr "그림 크기"
+
+#: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:117
+#: qml/Settings/GeneralConfigPage.qml:159
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:128
+#: qml/Settings/GeneralConfigPage.qml:170
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -1893,12 +1953,6 @@ msgstr "원격"
 
 #~ msgid "Go Up"
 #~ msgstr "위로 이동"
-
-#~ msgid "Home"
-#~ msgstr "홈"
-
-#~ msgid "Root"
-#~ msgstr "루트"
 
 #~ msgid "Restore Selection"
 #~ msgstr "선택 복원"
