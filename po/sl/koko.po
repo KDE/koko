@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-19 00:42+0000\n"
-"PO-Revision-Date: 2026-04-23 06:39+0200\n"
+"PO-Revision-Date: 2026-05-19 07:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -793,16 +793,12 @@ msgid "Home"
 msgstr "Domov"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Smeti"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Omrežje"
 
@@ -1729,33 +1725,31 @@ msgstr "%1 px"
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Razvščanje galerije"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Naravno razvrščanje"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Abecedno (neobčutljivo na velike/male črke)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Abecedno (občutljivo na velike/male črke)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Ozadje pogleda slike"
+msgstr "Ozadje slike"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1782,20 +1776,16 @@ msgid "Use the background color specified by the theme"
 msgstr "Uporabi barvo ozadja, ki jo določa tema"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "Prikaži ozadje šahovnice za prozornimi slikami"
+msgstr "Prikazuj šahovnico za prozornimi slikami"
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Velikost slike"
+msgstr "Pogled slike"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format

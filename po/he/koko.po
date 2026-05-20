@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-19 00:42+0000\n"
-"PO-Revision-Date: 2026-04-23 08:27+0300\n"
+"PO-Revision-Date: 2026-05-19 08:42+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -791,16 +791,12 @@ msgid "Home"
 msgstr "בית"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "אשפה"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "רשת"
 
@@ -1727,33 +1723,31 @@ msgstr "%1 פיקסלים"
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "מיון גלריה"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "מיון טבעי"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "אלפבתי (לא תלוי רישיות)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "אלפבתי (תלוי רישיות)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "רקע תצוגת תמונות"
+msgstr "רקע תמונה"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1780,20 +1774,16 @@ msgid "Use the background color specified by the theme"
 msgstr "להשתמש בצבע הרקע שמוגדר בערכת העיצוב"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "להציג רקע משבצות מאחורי תמונות שקופות"
+msgstr "להציג משבצות מאחורי תמונות שקופות"
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "גודל תמונה"
+msgstr "תצוגת תמונות"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format

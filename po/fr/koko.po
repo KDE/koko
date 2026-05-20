@@ -777,12 +777,14 @@ msgid "Favorites"
 msgstr "Préférés"
 
 #: models/galleryfoldermodel.cpp:64
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Root"
 msgid "Root"
 msgstr "Racine"
 
 #: models/galleryfoldermodel.cpp:68
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Home"
 msgid "Home"
 msgstr "Accueil"
 

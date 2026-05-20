@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-19 00:42+0000\n"
-"PO-Revision-Date: 2026-05-03 22:52+0200\n"
+"PO-Revision-Date: 2026-05-19 22:02+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -783,24 +783,20 @@ msgstr "Oblíbené"
 #: models/galleryfoldermodel.cpp:64
 #, kde-format
 msgid "Root"
-msgstr ""
+msgstr "Kořenový adresář"
 
 #: models/galleryfoldermodel.cpp:68
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "Domů"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Koš"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Síť"
 
@@ -1721,33 +1717,31 @@ msgstr "%1 px"
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Řazení v galerii"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Přirozené řazení"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Podle abecedy (nerozlišovat velikost písma)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Podle abecedy (rozlišovat velikost písma)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Zobrazení pozadí obrázku"
+msgstr "Pozadí stránky"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1774,20 +1768,16 @@ msgid "Use the background color specified by the theme"
 msgstr "Použijte barvu pozadí určenou motivem"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Zobrazit šachovnicové pozadí za průhlednými obrázky"
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Velikost obrázku"
+msgstr "Prohlížeč obrázků"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format

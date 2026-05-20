@@ -779,18 +779,14 @@ msgid "Home"
 msgstr ""
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
-msgstr "回收站"
+msgstr ""
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
-msgstr "网络"
+msgstr ""
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
@@ -1718,12 +1714,10 @@ msgid "Alphabetical (case sensitive)"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "图像视图背景"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1750,20 +1744,16 @@ msgid "Use the background color specified by the theme"
 msgstr "使用主题指定的背景颜色"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "在透明图像后显示棋盘背景"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "图像尺寸"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
