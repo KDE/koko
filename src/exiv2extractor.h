@@ -43,7 +43,7 @@ class Exiv2Extractor : public QAbstractListModel
     Q_PROPERTY(QUrl filePath READ filePath WRITE setFilePath NOTIFY filePathChanged)
     Q_PROPERTY(bool favorite READ favorite NOTIFY favoriteChanged)
     Q_PROPERTY(int rating READ rating WRITE setRating NOTIFY filePathChanged)
-    Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY filePathChanged)
+    Q_PROPERTY(QString comment READ comment WRITE setComment NOTIFY filePathChanged)
     Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY filePathChanged)
 
 public:
@@ -95,9 +95,9 @@ public:
         return m_rating;
     }
 
-    QString description() const
+    QString comment() const
     {
-        return m_description;
+        return m_comment;
     }
 
     QStringList tags() const
@@ -106,7 +106,7 @@ public:
     }
 
     void setRating(const int &rating);
-    void setDescription(const QString &description);
+    void setComment(const QString &comment);
     void setTags(const QStringList &tags);
 
     bool error() const;
@@ -128,7 +128,7 @@ private:
     int m_width;
     bool m_favorite;
     int m_rating;
-    QString m_description;
+    QString m_comment;
     QStringList m_tags;
 
     bool m_error;

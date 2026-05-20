@@ -229,9 +229,9 @@ void Exiv2Extractor::setRating(const int &rating)
     Q_EMIT filePathChanged();
 }
 
-void Exiv2Extractor::setDescription(const QString &description)
+void Exiv2Extractor::setComment(const QString &comment)
 {
-    if (description == m_description) {
+    if (comment == m_comment) {
         return;
     }
 
@@ -241,9 +241,9 @@ void Exiv2Extractor::setDescription(const QString &description)
 
     auto fileMetaData = KFileMetaData::UserMetaData(m_filePath);
 
-    fileMetaData.setUserComment(description);
+    fileMetaData.setUserComment(comment);
 
-    m_description = description;
+    m_comment = comment;
 
     Q_EMIT filePathChanged();
 }
@@ -282,7 +282,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     m_favorite = false;
     m_dateTime = QDateTime();
     m_rating = 0;
-    m_description = {};
+    m_comment = {};
     m_tags = {};
     m_filePath = filePath;
     m_item = KFileItem(QUrl::fromLocalFile(m_filePath));
@@ -308,7 +308,7 @@ void Exiv2Extractor::extract(const QString &filePath)
     Q_EMIT favoriteChanged();
 
     m_rating = fileMetaData.rating();
-    m_description = fileMetaData.userComment();
+    m_comment = fileMetaData.userComment();
     m_tags = fileMetaData.tags();
 
     try {

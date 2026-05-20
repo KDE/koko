@@ -220,17 +220,15 @@ Flickable {
         }
 
         FormCard.FormTextAreaDelegate {
-            id: imageDescription
-
+            id: imageComment
             horizontalPadding: Kirigami.Units.smallSpacing
             verticalPadding: Kirigami.Units.smallSpacing
-            label: i18nc("@label", "Description:")
-            text: flickable.extractor.description
-            placeholderText: i18n("Image description…")
+            label: i18nc("@label", "Comment:")
+            text: flickable.extractor.comment
             KeyNavigation.priority: KeyNavigation.BeforeItem
             Keys.onTabPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
             onEditingFinished: {
-                flickable.extractor.description = text
+                flickable.extractor.comment = text
             }
         }
 
