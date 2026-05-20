@@ -297,6 +297,9 @@ void Exiv2Extractor::extract(const QString &filePath)
 
     if (!QFileInfo::exists(m_filePath)) {
         m_error = true; // only critical error (don't prevent indexing stuff without Exif metadata)
+        beginResetModel();
+        m_entries.clear();
+        endResetModel();
         Q_EMIT filePathChanged();
         Q_EMIT favoriteChanged();
         return;
@@ -313,25 +316,13 @@ void Exiv2Extractor::extract(const QString &filePath)
 
     try {
         image = Exiv2::ImageFactory::open(fileString);
-    } catch (const std::exception &) {
-        Q_EMIT filePathChanged();
-        return;
-    }
-    if (!image.get()) {
-        Q_EMIT filePathChanged();
-        return;
-    }
-
-    if (!image->good()) {
-        Q_EMIT filePathChanged();
-        return;
-    }
-
-    try {
         image->readMetadata();
-    } catch (const std::exception &) {
-        Q_EMIT filePathChanged();
-        return;
+    } catch (const std::exception &e) {
+        qWarning() << "Exception in exiv2:" << e.what();
+    }
+
+    if (!image.get() || !image->good()) {
+        qWarning() << "invalid exiv2 image";
     }
 
     const Exiv2::ExifData &data = image->exifData();
