@@ -227,6 +227,15 @@ Flickable {
             text: flickable.extractor.comment
             KeyNavigation.priority: KeyNavigation.BeforeItem
             Keys.onTabPressed: nextItemInFocusChain().forceActiveFocus(Qt.TabFocusReason)
+
+            Connections {
+                target: flickable.extractor
+
+                function onFilePathChanged() {
+                    imageComment.text = flickable.extractor.comment;
+                }
+            }
+
             onEditingFinished: {
                 flickable.extractor.comment = text
             }
