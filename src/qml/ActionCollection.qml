@@ -34,13 +34,11 @@ AC.ActionCollectionManager {
             toolTip: i18nc("@info:tooltip", "Invert the selected media")
         }
     }
-data:AC.ActionDataGroup{id: pollo}
+
     AC.ActionCollection {
         name: "org.kde.koko.mediaview"
         text: i18nc("Actions category", "Media View")
         AC.ActionData {
-
-            actionGroup: pollo
             name: "ToggleFavorite"
             icon.name: "non-starred-symbolic"
             text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
