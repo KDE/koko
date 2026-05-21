@@ -4,6 +4,7 @@
 import QtQuick
 
 import org.kde.koko as Koko
+import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.settings as KirigamiSettings
 
 KirigamiSettings.ConfigurationView {
@@ -18,15 +19,20 @@ KirigamiSettings.ConfigurationView {
             icon.name: "photo-symbolic"
             page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
         },
-       /* KirigamiSettings.ShortcutsConfigurationModule {
-            application: root.application
-        },*/
+        KirigamiSettings.ConfigurationModule {
+            moduleId: "shortcuts"
+            text: i18nc("@action:button", "Keyboard Shortcuts")
+            icon.name: "configure-shortcuts-symbolic"
+            visible: !Kirigami.Settings.isMobile
+            page: () => Qt.createComponent("org.kde.kirigami.actioncollection", "ShortcutsEditor")
+        },
         KirigamiSettings.ConfigurationModule {
             moduleId: "about"
             text: i18n("About Photos")
             icon.name: "help-about-symbolic"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage")
             category: i18nc("@title:group", "About")
+            visible: Kirigami.Settings.isMobile
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "aboutkde"
@@ -34,6 +40,7 @@ KirigamiSettings.ConfigurationView {
             icon.name: "kde-symbolic"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage")
             category: i18nc("@title:group", "About")
+            visible: Kirigami.Settings.isMobile
         }
     ]
 }

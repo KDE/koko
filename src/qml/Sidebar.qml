@@ -90,11 +90,6 @@ Kirigami.OverlayDrawer {
                         }
 
                         Kirigami.Action {
-                            AC.ActionCollection.action: "KeyBindings"
-                            AC.ActionCollection.collection: "org.kde.globalactions"
-                        }
-
-                        Kirigami.Action {
                             AC.ActionCollection.action: "FindAction"
                             AC.ActionCollection.collection: "org.kde.globalactions"
                         }
