@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-19 00:42+0000\n"
-"PO-Revision-Date: 2026-04-23 21:20+0300\n"
+"PO-Revision-Date: 2026-05-21 16:07+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -786,24 +786,20 @@ msgstr "Mėgstami"
 #: models/galleryfoldermodel.cpp:64
 #, kde-format
 msgid "Root"
-msgstr ""
+msgstr "Šaknis"
 
 #: models/galleryfoldermodel.cpp:68
 #, kde-format
 msgid "Home"
-msgstr ""
+msgstr "Namai"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Šiukšlinė"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Tinklas"
 
@@ -1730,33 +1726,31 @@ msgstr "%1 piks."
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Galerijos rikiavimas"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Įprastas rikiavimas"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Pagal abėcėlę (neskiriant raidžių dydžio)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Pagal abėcėlę (skiriant raidžių dydį)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Paveikslo rodinio fonas"
+msgstr "Paveikslo fonas"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1783,20 +1777,16 @@ msgid "Use the background color specified by the theme"
 msgstr "Naudoti apipavidalinimo nurodytą fono spalvą"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "Rodyti už permatomų paveikslų šachmatų lentos foną"
+msgstr "Rodyti už permatomų paveikslų šachmatų lentą"
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Paveikslo dydis"
+msgstr "Paveikslo rodinys"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
