@@ -507,7 +507,6 @@ Kirigami.ScrollablePage {
             Layout.fillWidth: true
             Layout.minimumWidth: 0
             Layout.maximumWidth: implicitWidth
-
             galleryModel: page.galleryModel
             canNavigateBackward: page.canNavigateBackward
             canNavigateForward: page.canNavigateForward
