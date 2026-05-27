@@ -110,7 +110,6 @@ Kirigami.Page {
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
             tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
 
-           // checkable: true
             checked: exiv2Extractor.favorite
             onToggled: {
                 exiv2Extractor.toggleFavorite(listView.currentItem.url.toString().replace("file://", ""));
@@ -180,7 +179,7 @@ Kirigami.Page {
 
             enabled: Kirigami.Settings.isMobile ? true : root.mainWindow.controlsVisible
             checked: false
-            onToggled: {print("AAAA",checkable,checked)
+            onToggled: {
                 if (checked) {
                 // TODO: Should probably do this in infoSidebarLoader
                 infoSidebarLoader.forceActiveFocus();
