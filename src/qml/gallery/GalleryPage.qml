@@ -465,7 +465,6 @@ Kirigami.ScrollablePage {
                     Layout.fillHeight: true
                     Layout.margins: Kirigami.Units.smallSpacing
 
-                    active: true
                     sourceComponent: navigatorTitleComponent
                 }
 
@@ -487,6 +486,7 @@ Kirigami.ScrollablePage {
             galleryModel: page.galleryModel
             canNavigateBackward: page.canNavigateBackward
             canNavigateForward: page.canNavigateForward
+            flat: Kirigami.Settings.isMobile
 
             onNavigate: (path) => { page.navigate(path); }
             onNavigateBackward: page.navigateBackward()

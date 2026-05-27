@@ -20,6 +20,8 @@ RowLayout {
     required property bool canNavigateBackward
     required property bool canNavigateForward
 
+    property bool flat: false
+
     readonly property var path: galleryModel.path
 
     signal navigate(path : var)
@@ -83,7 +85,19 @@ RowLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
 
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
+
         implicitWidth: navigatorRoot.childrenContributingWidth.reduce((total, child) => total + child.implicitWidth, 0)
+
+        Controls.TextField {
+            id: backgroundDonor
+            anchors.fill: parent
+
+            visible: false
+            background.parent: root.flat ? backgroundDonor : navigatorContainer
+            background.visible: root.flat ? false : true
+        }
 
         RowLayout {
             id: navigatorRoot
@@ -224,6 +238,7 @@ RowLayout {
 
                 icon.name: rootLocations[rootLocation].icon
                 text: root.galleryModel.titleForPath(rootLocations[rootLocation].path)
+                font.bold: Koko.DirModelUtils.getUrlParts(root.path).length === 0
 
                 onClicked: root.navigate(rootLocations[rootLocation].path)
 
@@ -264,7 +279,8 @@ RowLayout {
                         implicitHeight: navigatorRootButton.implicitHeight // Ensure our text-only buttons match the icon buttons' height
 
                         text: navigatorRoot.isUrlNavigator ? root.galleryModel.titleForPath(Koko.DirModelUtils.partialUrlForIndex(root.path, navigatorDelegate.index + 1))
-                                                                 : root.galleryModel.titleForPath(root.path.slice(0, navigatorDelegate.index + 1))
+                                                           : root.galleryModel.titleForPath(root.path.slice(0, navigatorDelegate.index + 1))
+                        font.bold: navigatorDelegate.index === navigatorRepeater.count - 1
 
                         onClicked: navigatorRoot.isUrlNavigator ? root.navigate(Koko.DirModelUtils.partialUrlForIndex(root.path, navigatorDelegate.index + 1))
                                                                 : root.navigate(root.path.slice(0, navigatorDelegate.index + 1));
