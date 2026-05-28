@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-28 00:41+0000\n"
 "PO-Revision-Date: 2026-05-21 22:11+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -597,13 +597,13 @@ msgctxt "@title:group"
 msgid "XMPP"
 msgstr "XMPP"
 
-#: exiv2extractor.cpp:393
+#: exiv2extractor.cpp:384
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "位置"
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:520
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -611,61 +611,61 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr "%1 × %2 (%3 MP)"
 
-#: exiv2extractor.cpp:535
+#: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr "%1 × %2"
 
-#: exiv2extractor.cpp:539
+#: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr "名稱"
 
-#: exiv2extractor.cpp:540
+#: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
 msgstr "檔案大小"
 
-#: exiv2extractor.cpp:543
+#: exiv2extractor.cpp:534
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "建立日期"
 
-#: exiv2extractor.cpp:545
+#: exiv2extractor.cpp:536
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr "變更日期"
 
-#: exiv2extractor.cpp:546
+#: exiv2extractor.cpp:537
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr "存取日期"
 
-#: exiv2extractor.cpp:547
+#: exiv2extractor.cpp:538
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "路徑"
 
-#: exiv2extractor.cpp:548
+#: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "影像大小"
 
-#: exiv2extractor.cpp:549
+#: exiv2extractor.cpp:540
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
 msgstr "檔案類型"
 
-#: exiv2extractor.cpp:560
+#: exiv2extractor.cpp:551
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -1264,60 +1264,57 @@ msgstr "評分："
 msgid "Current rating %1"
 msgstr "目前評分 %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:227
-#, kde-format
+#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Comment"
 msgctxt "@label"
-msgid "Description:"
-msgstr "描述："
+msgid "Comment:"
+msgstr "註解"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:229
-#, kde-format
-msgid "Image description…"
-msgstr "影像描述…"
-
-#: qml/mediaview/InfoDrawerSidebarBase.qml:240
+#: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "標籤："
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:281
+#: qml/mediaview/InfoDrawerSidebarBase.qml:288
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
 msgstr "新增…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:297
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
 msgstr "搜尋標籤或寫入新的標籤…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:298
+#: qml/mediaview/InfoDrawerSidebarBase.qml:305
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
 msgstr "未找到標籤。"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
 msgstr "建立新標籤"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
 msgstr "現有標籤"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:359
+#: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
 msgstr "關閉"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:406
+#: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
@@ -1834,6 +1831,13 @@ msgstr "一般"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "遠端"
+
+#~ msgctxt "@label"
+#~ msgid "Description:"
+#~ msgstr "描述："
+
+#~ msgid "Image description…"
+#~ msgstr "影像描述…"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"

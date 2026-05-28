@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-28 00:41+0000\n"
 "PO-Revision-Date: 2024-09-19 22:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -625,14 +625,14 @@ msgctxt "@title:group"
 msgid "XMPP"
 msgstr ""
 
-#: exiv2extractor.cpp:393
+#: exiv2extractor.cpp:384
 #, fuzzy, kde-format
 #| msgid "Locations"
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "Τοποθεσίες"
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:520
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -640,19 +640,19 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr ""
 
-#: exiv2extractor.cpp:535
+#: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr ""
 
-#: exiv2extractor.cpp:539
+#: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr ""
 
-#: exiv2extractor.cpp:540
+#: exiv2extractor.cpp:531
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -660,7 +660,7 @@ msgctxt "@item:intable"
 msgid "File Size"
 msgstr "Όνομα αρχείου:"
 
-#: exiv2extractor.cpp:543
+#: exiv2extractor.cpp:534
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -668,33 +668,33 @@ msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "Δημιουργήθηκε:"
 
-#: exiv2extractor.cpp:545
+#: exiv2extractor.cpp:536
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr ""
 
-#: exiv2extractor.cpp:546
+#: exiv2extractor.cpp:537
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr ""
 
-#: exiv2extractor.cpp:547
+#: exiv2extractor.cpp:538
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Διαδρομή"
 
-#: exiv2extractor.cpp:548
+#: exiv2extractor.cpp:539
 #, fuzzy, kde-format
 #| msgid "Image viewer"
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "Πρόγραμμα προβολής εικόνων"
 
-#: exiv2extractor.cpp:549
+#: exiv2extractor.cpp:540
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -702,7 +702,7 @@ msgctxt "@item:intable"
 msgid "File Type"
 msgstr "Όνομα αρχείου:"
 
-#: exiv2extractor.cpp:560
+#: exiv2extractor.cpp:551
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -1354,61 +1354,56 @@ msgstr "Αξιολόγηση:"
 msgid "Current rating %1"
 msgstr "Τρέχουσα αξιολόγηση %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:227
+#: qml/mediaview/InfoDrawerSidebarBase.qml:226
 #, kde-format
 msgctxt "@label"
-msgid "Description:"
-msgstr "Περιγραφή:"
+msgid "Comment:"
+msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:229
-#, kde-format
-msgid "Image description…"
-msgstr "Περιγραφή εικόνας…"
-
-#: qml/mediaview/InfoDrawerSidebarBase.qml:240
+#: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Ετικέτες:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:281
+#: qml/mediaview/InfoDrawerSidebarBase.qml:288
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:297
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:298
+#: qml/mediaview/InfoDrawerSidebarBase.qml:305
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgctxt "@info:placeholder"
 msgid "No tag found."
 msgstr "Δε βρέθηκαν πολυμέσα"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:359
+#: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
 msgstr ""
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:406
+#: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
@@ -1968,6 +1963,13 @@ msgstr "Γενικά"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Απομακρυσμένα"
+
+#~ msgctxt "@label"
+#~ msgid "Description:"
+#~ msgstr "Περιγραφή:"
+
+#~ msgid "Image description…"
+#~ msgstr "Περιγραφή εικόνας…"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"

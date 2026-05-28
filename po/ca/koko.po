@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-28 00:41+0000\n"
 "PO-Revision-Date: 2026-05-19 09:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -603,13 +603,13 @@ msgctxt "@title:group"
 msgid "XMPP"
 msgstr "XMPP"
 
-#: exiv2extractor.cpp:393
+#: exiv2extractor.cpp:384
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "Ubicació"
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:520
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -617,61 +617,61 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr "%1 × %2 (%3 MP)"
 
-#: exiv2extractor.cpp:535
+#: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr "%1 × %2"
 
-#: exiv2extractor.cpp:539
+#: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr "Nom"
 
-#: exiv2extractor.cpp:540
+#: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
 msgstr "Mida del fitxer"
 
-#: exiv2extractor.cpp:543
+#: exiv2extractor.cpp:534
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "Data de creació"
 
-#: exiv2extractor.cpp:545
+#: exiv2extractor.cpp:536
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr "Data de modificació"
 
-#: exiv2extractor.cpp:546
+#: exiv2extractor.cpp:537
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr "Data d'accés"
 
-#: exiv2extractor.cpp:547
+#: exiv2extractor.cpp:538
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Camí"
 
-#: exiv2extractor.cpp:548
+#: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "Mida de la imatge"
 
-#: exiv2extractor.cpp:549
+#: exiv2extractor.cpp:540
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
 msgstr "Tipus de fitxer"
 
-#: exiv2extractor.cpp:560
+#: exiv2extractor.cpp:551
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -1278,60 +1278,57 @@ msgstr "Valoració:"
 msgid "Current rating %1"
 msgstr "Valoració actual %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:227
-#, kde-format
+#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Comment"
 msgctxt "@label"
-msgid "Description:"
-msgstr "Descripció:"
+msgid "Comment:"
+msgstr "Comentari"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:229
-#, kde-format
-msgid "Image description…"
-msgstr "Descripció de la imatge…"
-
-#: qml/mediaview/InfoDrawerSidebarBase.qml:240
+#: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Etiquetes:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:281
+#: qml/mediaview/InfoDrawerSidebarBase.qml:288
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
 msgstr "Afegeix…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:297
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
 msgstr "Cerqueu etiquetes o escriviu una etiqueta nova…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:298
+#: qml/mediaview/InfoDrawerSidebarBase.qml:305
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
 msgstr "No s'ha trobat cap etiqueta."
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
 msgstr "Crea una etiqueta nova"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
 msgstr "Etiquetes existents"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:359
+#: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
 msgstr "Tanca"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:406
+#: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
@@ -1850,6 +1847,13 @@ msgstr "General"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remotes"
+
+#~ msgctxt "@label"
+#~ msgid "Description:"
+#~ msgstr "Descripció:"
+
+#~ msgid "Image description…"
+#~ msgstr "Descripció de la imatge…"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"

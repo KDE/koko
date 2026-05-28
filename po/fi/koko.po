@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-28 00:41+0000\n"
 "PO-Revision-Date: 2026-01-05 17:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -612,13 +612,13 @@ msgctxt "@title:group"
 msgid "XMPP"
 msgstr "XMPP"
 
-#: exiv2extractor.cpp:393
+#: exiv2extractor.cpp:384
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "Sijainti"
 
-#: exiv2extractor.cpp:529
+#: exiv2extractor.cpp:520
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -626,61 +626,61 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr "%1 × %2 (%3 MP)"
 
-#: exiv2extractor.cpp:535
+#: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr "%1 × %2"
 
-#: exiv2extractor.cpp:539
+#: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr "Nimi"
 
-#: exiv2extractor.cpp:540
+#: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
 msgstr "Tiedostokoko"
 
-#: exiv2extractor.cpp:543
+#: exiv2extractor.cpp:534
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "Luontipäivä"
 
-#: exiv2extractor.cpp:545
+#: exiv2extractor.cpp:536
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr "Muutospäivä"
 
-#: exiv2extractor.cpp:546
+#: exiv2extractor.cpp:537
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr "Käyttöpäivä"
 
-#: exiv2extractor.cpp:547
+#: exiv2extractor.cpp:538
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Sijainti"
 
-#: exiv2extractor.cpp:548
+#: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "Kuvakoko"
 
-#: exiv2extractor.cpp:549
+#: exiv2extractor.cpp:540
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
 msgstr "Tiedostotyyppi"
 
-#: exiv2extractor.cpp:560
+#: exiv2extractor.cpp:551
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -1297,60 +1297,57 @@ msgstr "Arvostelu:"
 msgid "Current rating %1"
 msgstr "Nykyinen arvostelu %1"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:227
-#, kde-format
+#: qml/mediaview/InfoDrawerSidebarBase.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Comment"
 msgctxt "@label"
-msgid "Description:"
-msgstr "Kuvaus:"
+msgid "Comment:"
+msgstr "Huomautus"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:229
-#, kde-format
-msgid "Image description…"
-msgstr "Kuvan kuvaus…"
-
-#: qml/mediaview/InfoDrawerSidebarBase.qml:240
+#: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
 msgstr "Luokitukset:"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:281
+#: qml/mediaview/InfoDrawerSidebarBase.qml:288
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
 msgstr "Lisää…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:297
+#: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
 msgstr "Etsi luokitusta tai kirjoita uusi…"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:298
+#: qml/mediaview/InfoDrawerSidebarBase.qml:305
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
 msgstr "Luokitusta ei löytynyt."
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
 msgstr "Luo uusi luokitus"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:323
+#: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
 msgstr "Olemassa olevat luokitukset"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:359
+#: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
 msgstr "Sulje"
 
-#: qml/mediaview/InfoDrawerSidebarBase.qml:406
+#: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
@@ -1882,6 +1879,13 @@ msgstr "Perusasetukset"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Etä"
+
+#~ msgctxt "@label"
+#~ msgid "Description:"
+#~ msgstr "Kuvaus:"
+
+#~ msgid "Image description…"
+#~ msgstr "Kuvan kuvaus…"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"
