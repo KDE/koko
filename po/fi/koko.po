@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:41+0000\n"
+"POT-Creation-Date: 2026-05-29 00:41+0000\n"
 "PO-Revision-Date: 2026-01-05 17:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -588,7 +588,7 @@ msgstr ""
 "Hyväksy rajaus kaksoisnapsauttamalla valintaa.\n"
 "Tyhjennä valinta oikean painikkeen napsautuksella."
 
-#: exiv2extractor.cpp:71 qml/PlacesPage.qml:27
+#: exiv2extractor.cpp:71 qml/PlacesPage.qml:31
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
@@ -685,24 +685,6 @@ msgstr "Tiedostotyyppi"
 msgctxt "@item:intable"
 msgid "Comment"
 msgstr "Huomautus"
-
-#: filemenuactions.cpp:177
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open Containing Folder"
-msgstr "Avaa yläkansio"
-
-#: filemenuactions.cpp:193
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Open With…"
-msgstr "Avaa &ohjelmalla…"
-
-#: filemenuactions.cpp:223
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Copy Location"
-msgstr "Kopioi sijainti"
 
 #: main.cpp:64
 #, kde-kuit-format
@@ -826,7 +808,8 @@ msgstr "Osavaltiot"
 msgid "Cities"
 msgstr "Kaupungit"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:229
+#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:101
+#: qml/Sidebar.qml:241
 #, kde-format
 msgid "Locations"
 msgstr "Sijainnit"
@@ -839,7 +822,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Valitse kaikki"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:263
+#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
 msgid "Tags"
 msgstr "Luokitukset"
@@ -870,6 +853,86 @@ msgstr "Päivät"
 msgid "Times"
 msgstr "Ajat"
 
+#: navigationactions.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to videos"
+msgctxt "Navigation buttons actions group"
+msgid "Navigation"
+msgstr "Siirry videoihin"
+
+#: navigationactions.cpp:52
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures"
+msgstr "Siirry kuviin"
+
+#: navigationactions.cpp:57
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to videos"
+msgstr "Siirry videoihin"
+
+#: navigationactions.cpp:59
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to favorites"
+msgstr "Siirry suosikkeihin"
+
+#: navigationactions.cpp:63
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to the trash"
+msgstr "Siirry roskakoriin"
+
+#: navigationactions.cpp:68
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to the remote folders"
+msgstr "Siirry etäkansioihin"
+
+#: navigationactions.cpp:73
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by country"
+msgstr "Siirry maittain ryhmitettyihin kuviin"
+
+#: navigationactions.cpp:78
+#, kde-format
+msgctxt "@action:button Navigation button, state as in country subdivision"
+msgid "Navigate to pictures grouped by state"
+msgstr "Siirry osavaltioittain ryhmitettyihin kuviin"
+
+#: navigationactions.cpp:83
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by cities"
+msgstr "Siirry kaupungeittain ryhmitettyihin kuviin"
+
+#: navigationactions.cpp:88
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by year"
+msgstr "Siirry vuoden mukaan ryhmitettyihin kuviin"
+
+#: navigationactions.cpp:93
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by month"
+msgstr "Siirry kuukauden mukaan ryhmitettyihin kuviin"
+
+#: navigationactions.cpp:98
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by week"
+msgstr "Siirry viikon mukaan ryhmitettyihin kuviin"
+
+#: navigationactions.cpp:103
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by day"
+msgstr "Siirry päivän mukaan ryhmitettyihin kuviin"
+
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
@@ -880,97 +943,177 @@ msgstr "Jakaminen epäonnistui"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Kuvan jako-osoite on <a href='%1'>%1</a>"
 
-#: photosapplication.cpp:51
+#: qml/ActionCollection.qml:20
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures"
-msgstr "Siirry kuviin"
+msgctxt "Actions category"
+msgid "Gallery"
+msgstr ""
 
-#: photosapplication.cpp:56
+#: qml/ActionCollection.qml:23
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to videos"
-msgstr "Siirry videoihin"
+msgctxt "@info:tooltip"
+msgid "Select all media"
+msgstr "Valitse kaikki mediat"
 
-#: photosapplication.cpp:61
+#: qml/ActionCollection.qml:28
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to favorites"
-msgstr "Siirry suosikkeihin"
+msgctxt "@info:tooltip"
+msgid "Deselect all media"
+msgstr "Poista kaikki mediavalinnat"
 
-#: photosapplication.cpp:66
+#: qml/ActionCollection.qml:33
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to the trash"
-msgstr "Siirry roskakoriin"
+msgctxt "@action:button"
+msgid "Invert Selection"
+msgstr "Käännä valinta"
 
-#: photosapplication.cpp:71
+#: qml/ActionCollection.qml:34
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to the remote folders"
-msgstr "Siirry etäkansioihin"
+msgctxt "@info:tooltip"
+msgid "Invert the selected media"
+msgstr "Käännä valittujen medioiden valinta"
 
-#: photosapplication.cpp:77
+#: qml/ActionCollection.qml:40
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by country"
-msgstr "Siirry maittain ryhmitettyihin kuviin"
+msgctxt "Actions category"
+msgid "Media View"
+msgstr ""
 
-#: photosapplication.cpp:83
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
-msgctxt "@action:button Navigation button, state as in country subdivision"
-msgid "Navigate to pictures grouped by state"
-msgstr "Siirry osavaltioittain ryhmitettyihin kuviin"
+msgctxt "@action:intoolbar Favorite an image/video"
+msgid "Favorite"
+msgstr "Suosikki"
 
-#: photosapplication.cpp:88
+#: qml/ActionCollection.qml:50
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:intoolbar Edit an image"
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: qml/ActionCollection.qml:51
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by cities"
-msgstr "Siirry kaupungeittain ryhmitettyihin kuviin"
+msgctxt "@info:tooltip"
+msgid "Edit this image"
+msgstr "Muokkaa tätä kuvaa"
 
-#: photosapplication.cpp:93
+#: qml/ActionCollection.qml:57
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Share"
+msgctxt "@action:intoolbar Share an image/video"
+msgid "Share"
+msgstr "Jaa"
+
+#: qml/ActionCollection.qml:62
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Show information about an image/video"
+#| msgid "&Info"
+msgctxt "@action:intoolbar Show information about an image/video"
+msgid "Info"
+msgstr "T&ietoa"
+
+#: qml/ActionCollection.qml:73
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by year"
-msgstr "Siirry vuoden mukaan ryhmitettyihin kuviin"
+msgctxt "@action:inmenu"
+msgid "Open Containing Folder"
+msgstr "Avaa yläkansio"
 
-#: photosapplication.cpp:98
+#: qml/ActionCollection.qml:78
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by month"
-msgstr "Siirry kuukauden mukaan ryhmitettyihin kuviin"
+msgctxt "@action:inmenu"
+msgid "&Open With…"
+msgstr "Avaa &ohjelmalla…"
 
-#: photosapplication.cpp:103
+#: qml/ActionCollection.qml:86
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by week"
-msgstr "Siirry viikon mukaan ryhmitettyihin kuviin"
+msgctxt "@action:inmenu"
+msgid "Copy Location"
+msgstr "Kopioi sijainti"
 
-#: photosapplication.cpp:108
+#: qml/ActionCollection.qml:101
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Slideshow"
+msgctxt "@action:intoolbar Start a slideshow"
+msgid "Slideshow"
+msgstr "Diaesitys"
+
+#: qml/ActionCollection.qml:103
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by day"
-msgstr "Siirry päivän mukaan ryhmitettyihin kuviin"
+msgctxt "@info:tooltip"
+msgid "Start slideshow"
+msgstr "Aloita diaesitys"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:189
+#: qml/ActionCollection.qml:107
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+#| msgid "Show &Controls"
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show Controls"
+msgstr "Näytä &säätimet"
+
+#: qml/ActionCollection.qml:112
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
+#| msgid "Show &Thumbnail Toolbar"
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show Thumbnail Toolbar"
+msgstr "Näytä &pienoiskuvarivi"
+
+#: qml/ActionCollection.qml:113
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show the thumbnail toolbar"
+msgstr "Näytä pienoiskuvarivi"
+
+#: qml/ActionCollection.qml:114
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide the thumbnail toolbar"
+msgstr "Piilota pienoiskuvarivi"
+
+#: qml/ActionCollection.qml:120
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar"
+#| msgid "&Full Screen"
+msgctxt "@action:intoolbar"
+msgid "Full Screen"
+msgstr "K&oko näyttö"
+
+#: qml/ActionCollection.qml:122
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter Full Screen"
+msgstr "Siirry koko näytölle"
+
+#: qml/ActionCollection.qml:122
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit Full Screen"
+msgstr "Poistu koko näytöltä"
+
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Kuvat"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:193
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:203
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videot"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:197
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:208
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Suosikit"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:63
+#: qml/BottomNavBar.qml:69 qml/Sidebar.qml:64
 #, kde-format
 msgid "Places"
 msgstr "Sijainnit"
@@ -1120,19 +1263,13 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Tee nykyisestä kansiosta kirjanmerkki"
 
-#: qml/gallery/GalleryPage.qml:300 qml/mediaview/MediaViewPage.qml:106
-#, kde-format
-msgctxt "@action:intoolbar Favorite an image/video"
-msgid "Favorite"
-msgstr "Suosikki"
-
-#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:108
+#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Poista suosikeista"
 
-#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:108
+#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
@@ -1144,43 +1281,7 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Jaa valittu media"
 
-#: qml/gallery/GalleryPage.qml:370
-#, kde-format
-msgctxt "@action:button"
-msgid "Select All"
-msgstr "Valitse kaikki"
-
-#: qml/gallery/GalleryPage.qml:371
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Select all media"
-msgstr "Valitse kaikki mediat"
-
-#: qml/gallery/GalleryPage.qml:381
-#, kde-format
-msgctxt "@action:button"
-msgid "Select None"
-msgstr "Poista valinnat"
-
-#: qml/gallery/GalleryPage.qml:382
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Deselect all media"
-msgstr "Poista kaikki mediavalinnat"
-
-#: qml/gallery/GalleryPage.qml:391
-#, kde-format
-msgctxt "@action:button"
-msgid "Invert Selection"
-msgstr "Käännä valinta"
-
-#: qml/gallery/GalleryPage.qml:392
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Invert the selected media"
-msgstr "Käännä valittujen medioiden valinta"
-
-#: qml/gallery/GalleryPage.qml:743
+#: qml/gallery/GalleryPage.qml:762
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1189,12 +1290,12 @@ msgid_plural "%1 items"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/GalleryPage.qml:788
+#: qml/gallery/GalleryPage.qml:807
 #, kde-format
 msgid "No media found"
 msgstr "Mediaa ei löytynyt"
 
-#: qml/gallery/GalleryPage.qml:812
+#: qml/gallery/GalleryPage.qml:831
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1204,7 +1305,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/GalleryPage.qml:817
+#: qml/gallery/GalleryPage.qml:836
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1214,19 +1315,19 @@ msgid_plural "%1 items"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/NavigatorComponent.qml:51
+#: qml/gallery/NavigatorComponent.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Takaisin"
 
-#: qml/gallery/NavigatorComponent.qml:66
+#: qml/gallery/NavigatorComponent.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
 msgstr "Eteenpäin"
 
-#: qml/Main.qml:70
+#: qml/Main.qml:76
 #, kde-format
 msgctxt "@title"
 msgid "Places"
@@ -1365,202 +1466,123 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr "—"
 
-#: qml/mediaview/MediaViewPage.qml:89
+#: qml/mediaview/MediaViewPage.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:121
-#, kde-format
-msgctxt "@action:intoolbar Edit an image"
-msgid "&Edit"
-msgstr "&Muokkaa"
-
-#: qml/mediaview/MediaViewPage.qml:123
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Edit this image"
-msgstr "Muokkaa tätä kuvaa"
-
-#: qml/mediaview/MediaViewPage.qml:142
-#, kde-format
-msgctxt "@action:intoolbar Share an image/video"
-msgid "&Share"
-msgstr "&Jaa"
-
-#: qml/mediaview/MediaViewPage.qml:149
+#: qml/mediaview/MediaViewPage.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Jaa tämä video"
 
-#: qml/mediaview/MediaViewPage.qml:151
+#: qml/mediaview/MediaViewPage.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Jaa tämä kuva"
 
-#: qml/mediaview/MediaViewPage.qml:166
-#, kde-format
-msgctxt "@action:intoolbar Show information about an image/video"
-msgid "&Info"
-msgstr "T&ietoa"
-
-#: qml/mediaview/MediaViewPage.qml:173
+#: qml/mediaview/MediaViewPage.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Näytä videosta tietoa"
 
-#: qml/mediaview/MediaViewPage.qml:175
+#: qml/mediaview/MediaViewPage.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Näytä kuvasta tietoa"
 
-#. i18n hint in text and dynamic tooltip text
-#: qml/mediaview/MediaViewPage.qml:201
-#, kde-format
-msgctxt "@action:intoolbar Start a slideshow"
-msgid "&Slideshow"
-msgstr "&Diaesitys"
-
-#: qml/mediaview/MediaViewPage.qml:203
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Start slideshow"
-msgstr "Aloita diaesitys"
-
-#: qml/mediaview/MediaViewPage.qml:212
-#, kde-format
-msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-msgid "Show &Controls"
-msgstr "Näytä &säätimet"
-
-#: qml/mediaview/MediaViewPage.qml:213
+#: qml/mediaview/MediaViewPage.qml:277
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Siirry keskittyneeseen katselutilaan"
 
-#: qml/mediaview/MediaViewPage.qml:214
+#: qml/mediaview/MediaViewPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Poistu keskittyneestä katselutilasta"
 
-#: qml/mediaview/MediaViewPage.qml:225
-#, kde-format
-msgctxt "@action:intoolbar Toggle visibility of toolbar"
-msgid "Show &Thumbnail Toolbar"
-msgstr "Näytä &pienoiskuvarivi"
-
-#: qml/mediaview/MediaViewPage.qml:226
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Show the thumbnail toolbar"
-msgstr "Näytä pienoiskuvarivi"
-
-#: qml/mediaview/MediaViewPage.qml:227
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Hide the thumbnail toolbar"
-msgstr "Piilota pienoiskuvarivi"
-
-#: qml/mediaview/MediaViewPage.qml:244
-#, kde-format
-msgctxt "@action:intoolbar"
-msgid "&Full Screen"
-msgstr "K&oko näyttö"
-
-#: qml/mediaview/MediaViewPage.qml:246
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Enter Full Screen"
-msgstr "Siirry koko näytölle"
-
-#: qml/mediaview/MediaViewPage.qml:246
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Exit Full Screen"
-msgstr "Poistu koko näytöltä"
-
-#: qml/mediaview/MediaViewPage.qml:567
+#: qml/mediaview/MediaViewPage.qml:589
 #, fuzzy, kde-format
 #| msgid "Previous image"
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Edellinen kuva"
 
-#: qml/mediaview/MediaViewPage.qml:601
+#: qml/mediaview/MediaViewPage.qml:623
 #, fuzzy, kde-format
 #| msgid "Next image"
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Seuraava kuva"
 
-#: qml/mediaview/MediaViewPage.qml:782
+#: qml/mediaview/MediaViewPage.qml:804
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:783
+#: qml/mediaview/MediaViewPage.qml:805
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:784
+#: qml/mediaview/MediaViewPage.qml:806
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:785
+#: qml/mediaview/MediaViewPage.qml:807
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:786
+#: qml/mediaview/MediaViewPage.qml:808
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:787
+#: qml/mediaview/MediaViewPage.qml:809
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:788
+#: qml/mediaview/MediaViewPage.qml:810
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:789
+#: qml/mediaview/MediaViewPage.qml:811
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:790
+#: qml/mediaview/MediaViewPage.qml:812
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:791
+#: qml/mediaview/MediaViewPage.qml:813
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:840
+#: qml/mediaview/MediaViewPage.qml:862
 #, fuzzy, kde-format
 #| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 #| msgid "%1:"
@@ -1568,7 +1590,7 @@ msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1:"
 
-#: qml/mediaview/MediaViewPage.qml:854
+#: qml/mediaview/MediaViewPage.qml:876
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1576,7 +1598,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Lähennys:"
 
-#: qml/mediaview/MediaViewPage.qml:863
+#: qml/mediaview/MediaViewPage.qml:885
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1584,13 +1606,13 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "Lähennys:"
 
-#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:192
+#: qml/mediaview/MediaViewPage.qml:1128 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diaesityksen aikaväli:"
 
-#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:204
+#: qml/mediaview/MediaViewPage.qml:1145 qml/Settings/GeneralConfigPage.qml:204
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1598,48 +1620,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekunti"
 msgstr[1] "%1 sekuntia"
 
-#: qml/mediaview/MediaViewPage.qml:1178 qml/mediaview/MediaViewPage.qml:1279
+#: qml/mediaview/MediaViewPage.qml:1200 qml/mediaview/MediaViewPage.qml:1301
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Silmukka"
 
-#: qml/mediaview/MediaViewPage.qml:1187 qml/mediaview/MediaViewPage.qml:1288
+#: qml/mediaview/MediaViewPage.qml:1209 qml/mediaview/MediaViewPage.qml:1310
 #: qml/Settings/GeneralConfigPage.qml:178
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Satunnaista"
 
-#: qml/mediaview/MediaViewPage.qml:1199
+#: qml/mediaview/MediaViewPage.qml:1221
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Pysäytä diaesitys"
 
-#: qml/mediaview/MediaViewPage.qml:1213
+#: qml/mediaview/MediaViewPage.qml:1235
 #, kde-format
 msgid "Show All Controls"
 msgstr "Näytä kaikki säätimet"
 
-#: qml/mediaview/MediaViewPage.qml:1242
+#: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Pysäytä"
 
-#: qml/mediaview/MediaViewPage.qml:1242
+#: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Aloita"
 
-#: qml/mediaview/MediaViewPage.qml:1261
+#: qml/mediaview/MediaViewPage.qml:1283
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Väli:"
 
-#: qml/mediaview/MediaViewPage.qml:1274
+#: qml/mediaview/MediaViewPage.qml:1296
 #, kde-format
 msgid "seconds"
 msgstr "sekuntia"
@@ -1649,72 +1671,72 @@ msgstr "sekuntia"
 msgid "Add new tag…"
 msgstr "Lisää uusi luokitus…"
 
-#: qml/PlacesPage.qml:21
+#: qml/PlacesPage.qml:23
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:202
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:214
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Roskakori"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:225
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:236
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Verkko"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:207
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:220
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Kirjanmerkit"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:232
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:244
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Maat"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:236
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:249
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Osavaltiot"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:240
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:254
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Kaupungit"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:259
 #, kde-format
 msgid "Time"
 msgstr "Aika"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:247
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:262
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Vuodet"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:251
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:267
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Kuukaudet"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:255
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:272
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Viikot"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:277
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1822,25 +1844,31 @@ msgctxt "@title:group"
 msgid "Slideshow"
 msgstr "Diaesitys"
 
-#: qml/Settings/PhotosConfigurationView.qml:17
+#: qml/Settings/PhotosConfigurationView.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Perusasetukset"
 
-#: qml/Settings/PhotosConfigurationView.qml:26
+#: qml/Settings/PhotosConfigurationView.qml:22
+#, kde-format
+msgctxt "@action:button"
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
 msgid "About Photos"
 msgstr "Tietoa Photosista"
 
-#: qml/Settings/PhotosConfigurationView.qml:29
-#: qml/Settings/PhotosConfigurationView.qml:36
+#: qml/Settings/PhotosConfigurationView.qml:32
+#: qml/Settings/PhotosConfigurationView.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Tietoa"
 
-#: qml/Settings/PhotosConfigurationView.qml:33
+#: qml/Settings/PhotosConfigurationView.qml:37
 #, kde-format
 msgid "About KDE"
 msgstr "Tietoa KDE:sta"
@@ -1851,34 +1879,50 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "&Jaa"
 
-#: qml/Sidebar.qml:74
+#: qml/Sidebar.qml:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr "Näytä valikko"
 
-#: qml/Sidebar.qml:101
-#, kde-format
-msgctxt "@action:inMenu"
-msgid "Donate…"
-msgstr "Lahjoita…"
-
-#: qml/Sidebar.qml:107
-#, kde-format
-msgctxt "@action:inMenu"
-msgid "Report Bug…"
-msgstr "Ilmoita viasta…"
-
-#: qml/Sidebar.qml:186
+#: qml/Sidebar.qml:195
 #, kde-format
 msgid "General"
 msgstr "Perusasetukset"
 
-#: qml/Sidebar.qml:221
+#: qml/Sidebar.qml:232
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Etä"
+
+#~ msgctxt "@action:button"
+#~ msgid "Select All"
+#~ msgstr "Valitse kaikki"
+
+#~ msgctxt "@action:button"
+#~ msgid "Select None"
+#~ msgstr "Poista valinnat"
+
+#~ msgctxt "@action:intoolbar Edit an image"
+#~ msgid "&Edit"
+#~ msgstr "&Muokkaa"
+
+#~ msgctxt "@action:intoolbar Share an image/video"
+#~ msgid "&Share"
+#~ msgstr "&Jaa"
+
+#~ msgctxt "@action:intoolbar Start a slideshow"
+#~ msgid "&Slideshow"
+#~ msgstr "&Diaesitys"
+
+#~ msgctxt "@action:inMenu"
+#~ msgid "Donate…"
+#~ msgstr "Lahjoita…"
+
+#~ msgctxt "@action:inMenu"
+#~ msgid "Report Bug…"
+#~ msgstr "Ilmoita viasta…"
 
 #~ msgctxt "@label"
 #~ msgid "Description:"
@@ -1942,10 +1986,6 @@ msgstr "Etä"
 #~ msgid "Settings"
 #~ msgstr "Asetukset"
 
-#~ msgctxt "@title:menu"
-#~ msgid "Share"
-#~ msgstr "Jaa"
-
 #~ msgid "&Copy"
 #~ msgstr "&Kopioi"
 
@@ -1959,9 +1999,6 @@ msgstr "Etä"
 
 #~ msgid "Are you sure you want to discard all changes?"
 #~ msgstr "Haluatko varmasti hylätä kaikki muutokset?"
-
-#~ msgid "Edit"
-#~ msgstr "Muokkaa"
 
 #~ msgctxt "@action:button Mirror an image horizontally"
 #~ msgid "Mirror"

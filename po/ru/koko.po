@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-28 00:41+0000\n"
+"POT-Creation-Date: 2026-05-29 00:41+0000\n"
 "PO-Revision-Date: 2026-04-03 22:04+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -585,7 +585,7 @@ msgstr ""
 "Обрезать по выделению: двойной щелчок по выделенной области.\n"
 "Сбросить выделение: щелчок правой кнопкой."
 
-#: exiv2extractor.cpp:71 qml/PlacesPage.qml:27
+#: exiv2extractor.cpp:71 qml/PlacesPage.qml:31
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
@@ -682,24 +682,6 @@ msgstr "Тип файла"
 msgctxt "@item:intable"
 msgid "Comment"
 msgstr "Комментарий"
-
-#: filemenuactions.cpp:177
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open Containing Folder"
-msgstr "Открыть содержащую папку"
-
-#: filemenuactions.cpp:193
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Open With…"
-msgstr "&Открыть с помощью…"
-
-#: filemenuactions.cpp:223
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Copy Location"
-msgstr "Копировать расположение"
 
 #: main.cpp:64
 #, kde-kuit-format
@@ -823,7 +805,8 @@ msgstr "Регионы"
 msgid "Cities"
 msgstr "Города"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:91 qml/Sidebar.qml:229
+#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:101
+#: qml/Sidebar.qml:241
 #, kde-format
 msgid "Locations"
 msgstr "Местоположения"
@@ -834,7 +817,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Выбранные файлы"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:263
+#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
 msgid "Tags"
 msgstr "Метки"
@@ -864,6 +847,86 @@ msgstr "Дни"
 msgid "Times"
 msgstr "Время"
 
+#: navigationactions.cpp:24
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to videos"
+msgctxt "Navigation buttons actions group"
+msgid "Navigation"
+msgstr "Перейти к видеофайлам"
+
+#: navigationactions.cpp:52
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures"
+msgstr "Перейти к изображениям"
+
+#: navigationactions.cpp:57
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to videos"
+msgstr "Перейти к видеофайлам"
+
+#: navigationactions.cpp:59
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to favorites"
+msgstr "Перейти в избранное"
+
+#: navigationactions.cpp:63
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to the trash"
+msgstr "Перейти в корзину"
+
+#: navigationactions.cpp:68
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to the remote folders"
+msgstr "Перейти к сетевым папкам"
+
+#: navigationactions.cpp:73
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by country"
+msgstr "Перейти к изображениям, сгруппированным по странам"
+
+#: navigationactions.cpp:78
+#, kde-format
+msgctxt "@action:button Navigation button, state as in country subdivision"
+msgid "Navigate to pictures grouped by state"
+msgstr "Перейти к изображениям, сгруппированным по регионам"
+
+#: navigationactions.cpp:83
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by cities"
+msgstr "Перейти к изображениям, сгруппированным по городам"
+
+#: navigationactions.cpp:88
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by year"
+msgstr "Перейти к изображениям, сгруппированным по годам"
+
+#: navigationactions.cpp:93
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by month"
+msgstr "Перейти к изображениям, сгруппированным по месяцам"
+
+#: navigationactions.cpp:98
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by week"
+msgstr "Перейти к изображениям, сгруппированным по неделям"
+
+#: navigationactions.cpp:103
+#, kde-format
+msgctxt "@action:button Navigation button"
+msgid "Navigate to pictures grouped by day"
+msgstr "Перейти к изображениям, сгруппированным по дням"
+
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
@@ -874,97 +937,177 @@ msgstr "Не удалось опубликовать файл"
 msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Ссылка общего доступа для изображения: <a href='%1'>%1</a>"
 
-#: photosapplication.cpp:51
+#: qml/ActionCollection.qml:20
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures"
-msgstr "Перейти к изображениям"
+msgctxt "Actions category"
+msgid "Gallery"
+msgstr ""
 
-#: photosapplication.cpp:56
+#: qml/ActionCollection.qml:23
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to videos"
-msgstr "Перейти к видеофайлам"
+msgctxt "@info:tooltip"
+msgid "Select all media"
+msgstr "Выбрать все файлы изображений и видео"
 
-#: photosapplication.cpp:61
+#: qml/ActionCollection.qml:28
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to favorites"
-msgstr "Перейти в избранное"
+msgctxt "@info:tooltip"
+msgid "Deselect all media"
+msgstr "Отменить выбор"
 
-#: photosapplication.cpp:66
+#: qml/ActionCollection.qml:33
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to the trash"
-msgstr "Перейти в корзину"
+msgctxt "@action:button"
+msgid "Invert Selection"
+msgstr "Обратить выделение"
 
-#: photosapplication.cpp:71
+#: qml/ActionCollection.qml:34
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to the remote folders"
-msgstr "Перейти к сетевым папкам"
+msgctxt "@info:tooltip"
+msgid "Invert the selected media"
+msgstr "Обратить выделение файлов"
 
-#: photosapplication.cpp:77
+#: qml/ActionCollection.qml:40
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by country"
-msgstr "Перейти к изображениям, сгруппированным по странам"
+msgctxt "Actions category"
+msgid "Media View"
+msgstr ""
 
-#: photosapplication.cpp:83
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
-msgctxt "@action:button Navigation button, state as in country subdivision"
-msgid "Navigate to pictures grouped by state"
-msgstr "Перейти к изображениям, сгруппированным по регионам"
+msgctxt "@action:intoolbar Favorite an image/video"
+msgid "Favorite"
+msgstr "Избранное"
 
-#: photosapplication.cpp:88
+#: qml/ActionCollection.qml:50
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:intoolbar Edit an image"
+msgid "Edit"
+msgstr "Изменить"
+
+#: qml/ActionCollection.qml:51
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by cities"
-msgstr "Перейти к изображениям, сгруппированным по городам"
+msgctxt "@info:tooltip"
+msgid "Edit this image"
+msgstr "Редактирование изображения"
 
-#: photosapplication.cpp:93
+#: qml/ActionCollection.qml:57
+#, fuzzy, kde-format
+#| msgctxt "@title:menu"
+#| msgid "Share"
+msgctxt "@action:intoolbar Share an image/video"
+msgid "Share"
+msgstr "Опубликовать"
+
+#: qml/ActionCollection.qml:62
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Show information about an image/video"
+#| msgid "&Info"
+msgctxt "@action:intoolbar Show information about an image/video"
+msgid "Info"
+msgstr "Сведения"
+
+#: qml/ActionCollection.qml:73
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by year"
-msgstr "Перейти к изображениям, сгруппированным по годам"
+msgctxt "@action:inmenu"
+msgid "Open Containing Folder"
+msgstr "Открыть содержащую папку"
 
-#: photosapplication.cpp:98
+#: qml/ActionCollection.qml:78
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by month"
-msgstr "Перейти к изображениям, сгруппированным по месяцам"
+msgctxt "@action:inmenu"
+msgid "&Open With…"
+msgstr "&Открыть с помощью…"
 
-#: photosapplication.cpp:103
+#: qml/ActionCollection.qml:86
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by week"
-msgstr "Перейти к изображениям, сгруппированным по неделям"
+msgctxt "@action:inmenu"
+msgid "Copy Location"
+msgstr "Копировать расположение"
 
-#: photosapplication.cpp:108
+#: qml/ActionCollection.qml:101
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Slideshow"
+msgctxt "@action:intoolbar Start a slideshow"
+msgid "Slideshow"
+msgstr "Слайд-шоу"
+
+#: qml/ActionCollection.qml:103
 #, kde-format
-msgctxt "@action:button Navigation button"
-msgid "Navigate to pictures grouped by day"
-msgstr "Перейти к изображениям, сгруппированным по дням"
+msgctxt "@info:tooltip"
+msgid "Start slideshow"
+msgstr "Запустить слайд-шоу"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:189
+#: qml/ActionCollection.qml:107
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+#| msgid "Show &Controls"
+msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
+msgid "Show Controls"
+msgstr "Показать &элементы управления"
+
+#: qml/ActionCollection.qml:112
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
+#| msgid "Show &Thumbnail Toolbar"
+msgctxt "@action:intoolbar Toggle visibility of toolbar"
+msgid "Show Thumbnail Toolbar"
+msgstr "Показать панель миниатюр"
+
+#: qml/ActionCollection.qml:113
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Show the thumbnail toolbar"
+msgstr "Показать панель миниатюр"
+
+#: qml/ActionCollection.qml:114
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Hide the thumbnail toolbar"
+msgstr "Скрыть панель миниатюр"
+
+#: qml/ActionCollection.qml:120
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar"
+#| msgid "&Full Screen"
+msgctxt "@action:intoolbar"
+msgid "Full Screen"
+msgstr "&Полноэкранный режим"
+
+#: qml/ActionCollection.qml:122
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Enter Full Screen"
+msgstr "Перейти в полноэкранный режим"
+
+#: qml/ActionCollection.qml:122
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Exit Full Screen"
+msgstr "Выйти из полноэкранного режима"
+
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Изображения"
 
-#: qml/BottomNavBar.qml:55 qml/PlacesPage.qml:39 qml/Sidebar.qml:193
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:203
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Видео"
 
-#: qml/BottomNavBar.qml:61 qml/PlacesPage.qml:46 qml/Sidebar.qml:197
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:208
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Избранное"
 
-#: qml/BottomNavBar.qml:66 qml/Sidebar.qml:63
+#: qml/BottomNavBar.qml:69 qml/Sidebar.qml:64
 #, kde-format
 msgid "Places"
 msgstr "Места"
@@ -1116,19 +1259,13 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Добавить папку в закладки"
 
-#: qml/gallery/GalleryPage.qml:300 qml/mediaview/MediaViewPage.qml:106
-#, kde-format
-msgctxt "@action:intoolbar Favorite an image/video"
-msgid "Favorite"
-msgstr "Избранное"
-
-#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:108
+#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Удалить из избранного"
 
-#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:108
+#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
@@ -1140,43 +1277,7 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Опубликовать выбранные файлы"
 
-#: qml/gallery/GalleryPage.qml:370
-#, kde-format
-msgctxt "@action:button"
-msgid "Select All"
-msgstr "Выбрать все"
-
-#: qml/gallery/GalleryPage.qml:371
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Select all media"
-msgstr "Выбрать все файлы изображений и видео"
-
-#: qml/gallery/GalleryPage.qml:381
-#, kde-format
-msgctxt "@action:button"
-msgid "Select None"
-msgstr "Снять выделение"
-
-#: qml/gallery/GalleryPage.qml:382
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Deselect all media"
-msgstr "Отменить выбор"
-
-#: qml/gallery/GalleryPage.qml:391
-#, kde-format
-msgctxt "@action:button"
-msgid "Invert Selection"
-msgstr "Обратить выделение"
-
-#: qml/gallery/GalleryPage.qml:392
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Invert the selected media"
-msgstr "Обратить выделение файлов"
-
-#: qml/gallery/GalleryPage.qml:743
+#: qml/gallery/GalleryPage.qml:762
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1185,12 +1286,12 @@ msgstr[1] "%1 объекта"
 msgstr[2] "%1 объектов"
 msgstr[3] "%1 объект"
 
-#: qml/gallery/GalleryPage.qml:788
+#: qml/gallery/GalleryPage.qml:807
 #, kde-format
 msgid "No media found"
 msgstr "Не найдено ни одного файла изображения или видео"
 
-#: qml/gallery/GalleryPage.qml:812
+#: qml/gallery/GalleryPage.qml:831
 #, fuzzy, kde-format
 #| msgid "%1 item"
 #| msgid_plural "%1 items"
@@ -1202,7 +1303,7 @@ msgstr[1] "%1 объекта"
 msgstr[2] "%1 объектов"
 msgstr[3] "%1 объект"
 
-#: qml/gallery/GalleryPage.qml:817
+#: qml/gallery/GalleryPage.qml:836
 #, fuzzy, kde-format
 #| msgid "%1 item"
 #| msgid_plural "%1 items"
@@ -1214,19 +1315,19 @@ msgstr[1] "%1 объекта"
 msgstr[2] "%1 объектов"
 msgstr[3] "%1 объект"
 
-#: qml/gallery/NavigatorComponent.qml:51
+#: qml/gallery/NavigatorComponent.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
 msgstr "Назад"
 
-#: qml/gallery/NavigatorComponent.qml:66
+#: qml/gallery/NavigatorComponent.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
 msgstr "Вперёд"
 
-#: qml/Main.qml:70
+#: qml/Main.qml:76
 #, kde-format
 msgctxt "@title"
 msgid "Places"
@@ -1367,224 +1468,145 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr "—"
 
-#: qml/mediaview/MediaViewPage.qml:89
+#: qml/mediaview/MediaViewPage.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:121
-#, kde-format
-msgctxt "@action:intoolbar Edit an image"
-msgid "&Edit"
-msgstr "&Правка"
-
-#: qml/mediaview/MediaViewPage.qml:123
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Edit this image"
-msgstr "Редактирование изображения"
-
-#: qml/mediaview/MediaViewPage.qml:142
-#, kde-format
-msgctxt "@action:intoolbar Share an image/video"
-msgid "&Share"
-msgstr "&Опубликовать"
-
-#: qml/mediaview/MediaViewPage.qml:149
+#: qml/mediaview/MediaViewPage.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "Опубликовать видео"
 
-#: qml/mediaview/MediaViewPage.qml:151
+#: qml/mediaview/MediaViewPage.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "Опубликовать изображение"
 
-#: qml/mediaview/MediaViewPage.qml:166
-#, kde-format
-msgctxt "@action:intoolbar Show information about an image/video"
-msgid "&Info"
-msgstr "Сведения"
-
-#: qml/mediaview/MediaViewPage.qml:173
+#: qml/mediaview/MediaViewPage.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "Посмотреть сведения о видео"
 
-#: qml/mediaview/MediaViewPage.qml:175
+#: qml/mediaview/MediaViewPage.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Посмотреть сведения об изображении"
 
-#. i18n hint in text and dynamic tooltip text
-#: qml/mediaview/MediaViewPage.qml:201
-#, kde-format
-msgctxt "@action:intoolbar Start a slideshow"
-msgid "&Slideshow"
-msgstr "&Слайд-шоу"
-
-#: qml/mediaview/MediaViewPage.qml:203
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Start slideshow"
-msgstr "Запустить слайд-шоу"
-
-#: qml/mediaview/MediaViewPage.qml:212
-#, kde-format
-msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-msgid "Show &Controls"
-msgstr "Показать &элементы управления"
-
-#: qml/mediaview/MediaViewPage.qml:213
+#: qml/mediaview/MediaViewPage.qml:277
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Перейти в режим просмотра без полей"
 
-#: qml/mediaview/MediaViewPage.qml:214
+#: qml/mediaview/MediaViewPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Выйти из режима просмотра без полей"
 
-#: qml/mediaview/MediaViewPage.qml:225
-#, kde-format
-msgctxt "@action:intoolbar Toggle visibility of toolbar"
-msgid "Show &Thumbnail Toolbar"
-msgstr "Показать панель миниатюр"
-
-#: qml/mediaview/MediaViewPage.qml:226
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Show the thumbnail toolbar"
-msgstr "Показать панель миниатюр"
-
-#: qml/mediaview/MediaViewPage.qml:227
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Hide the thumbnail toolbar"
-msgstr "Скрыть панель миниатюр"
-
-#: qml/mediaview/MediaViewPage.qml:244
-#, kde-format
-msgctxt "@action:intoolbar"
-msgid "&Full Screen"
-msgstr "&Полноэкранный режим"
-
-#: qml/mediaview/MediaViewPage.qml:246
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Enter Full Screen"
-msgstr "Перейти в полноэкранный режим"
-
-#: qml/mediaview/MediaViewPage.qml:246
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Exit Full Screen"
-msgstr "Выйти из полноэкранного режима"
-
-#: qml/mediaview/MediaViewPage.qml:567
+#: qml/mediaview/MediaViewPage.qml:589
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Предыдущее изображение"
 
-#: qml/mediaview/MediaViewPage.qml:601
+#: qml/mediaview/MediaViewPage.qml:623
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Следующее изображение"
 
-#: qml/mediaview/MediaViewPage.qml:782
+#: qml/mediaview/MediaViewPage.qml:804
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:783
+#: qml/mediaview/MediaViewPage.qml:805
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:784
+#: qml/mediaview/MediaViewPage.qml:806
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:785
+#: qml/mediaview/MediaViewPage.qml:807
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:786
+#: qml/mediaview/MediaViewPage.qml:808
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:787
+#: qml/mediaview/MediaViewPage.qml:809
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:788
+#: qml/mediaview/MediaViewPage.qml:810
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:789
+#: qml/mediaview/MediaViewPage.qml:811
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:790
+#: qml/mediaview/MediaViewPage.qml:812
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:791
+#: qml/mediaview/MediaViewPage.qml:813
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:840
+#: qml/mediaview/MediaViewPage.qml:862
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/mediaview/MediaViewPage.qml:854
+#: qml/mediaview/MediaViewPage.qml:876
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Уменьшить"
 
-#: qml/mediaview/MediaViewPage.qml:863
+#: qml/mediaview/MediaViewPage.qml:885
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Увеличить"
 
-#: qml/mediaview/MediaViewPage.qml:1106 qml/Settings/GeneralConfigPage.qml:192
+#: qml/mediaview/MediaViewPage.qml:1128 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Интервал слайд-шоу:"
 
-#: qml/mediaview/MediaViewPage.qml:1123 qml/Settings/GeneralConfigPage.qml:204
+#: qml/mediaview/MediaViewPage.qml:1145 qml/Settings/GeneralConfigPage.qml:204
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1594,48 +1616,48 @@ msgstr[1] "%1 секунды"
 msgstr[2] "%1 секунд"
 msgstr[3] "%1 секунда"
 
-#: qml/mediaview/MediaViewPage.qml:1178 qml/mediaview/MediaViewPage.qml:1279
+#: qml/mediaview/MediaViewPage.qml:1200 qml/mediaview/MediaViewPage.qml:1301
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Повторять бесконечно"
 
-#: qml/mediaview/MediaViewPage.qml:1187 qml/mediaview/MediaViewPage.qml:1288
+#: qml/mediaview/MediaViewPage.qml:1209 qml/mediaview/MediaViewPage.qml:1310
 #: qml/Settings/GeneralConfigPage.qml:178
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Случайно"
 
-#: qml/mediaview/MediaViewPage.qml:1199
+#: qml/mediaview/MediaViewPage.qml:1221
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Остановить слайд-шоу"
 
-#: qml/mediaview/MediaViewPage.qml:1213
+#: qml/mediaview/MediaViewPage.qml:1235
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показать все элементы управления"
 
-#: qml/mediaview/MediaViewPage.qml:1242
+#: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Остановить"
 
-#: qml/mediaview/MediaViewPage.qml:1242
+#: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Запустить"
 
-#: qml/mediaview/MediaViewPage.qml:1261
+#: qml/mediaview/MediaViewPage.qml:1283
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Интервал:"
 
-#: qml/mediaview/MediaViewPage.qml:1274
+#: qml/mediaview/MediaViewPage.qml:1296
 #, kde-format
 msgid "seconds"
 msgstr "с"
@@ -1645,72 +1667,72 @@ msgstr "с"
 msgid "Add new tag…"
 msgstr "Создать метку…"
 
-#: qml/PlacesPage.qml:21
+#: qml/PlacesPage.qml:23
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Параметры"
 
-#: qml/PlacesPage.qml:54 qml/Sidebar.qml:202
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:214
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Корзина"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:225
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:236
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Сеть"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:207
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:220
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Закладки"
 
-#: qml/PlacesPage.qml:96 qml/Sidebar.qml:232
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:244
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Страны"
 
-#: qml/PlacesPage.qml:102 qml/Sidebar.qml:236
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:249
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Регионы"
 
-#: qml/PlacesPage.qml:108 qml/Sidebar.qml:240
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:254
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Города"
 
-#: qml/PlacesPage.qml:115 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:259
 #, kde-format
 msgid "Time"
 msgstr "Время"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:247
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:262
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Годы"
 
-#: qml/PlacesPage.qml:126 qml/Sidebar.qml:251
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:267
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Месяцы"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:255
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:272
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Недели"
 
-#: qml/PlacesPage.qml:138 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:277
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1819,25 +1841,31 @@ msgctxt "@title:group"
 msgid "Slideshow"
 msgstr "Слайд-шоу"
 
-#: qml/Settings/PhotosConfigurationView.qml:17
+#: qml/Settings/PhotosConfigurationView.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "General"
 msgstr "Общие"
 
-#: qml/Settings/PhotosConfigurationView.qml:26
+#: qml/Settings/PhotosConfigurationView.qml:22
+#, kde-format
+msgctxt "@action:button"
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
 msgid "About Photos"
 msgstr "О программе «Фотографии»"
 
-#: qml/Settings/PhotosConfigurationView.qml:29
-#: qml/Settings/PhotosConfigurationView.qml:36
+#: qml/Settings/PhotosConfigurationView.qml:32
+#: qml/Settings/PhotosConfigurationView.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
 msgstr "Описание"
 
-#: qml/Settings/PhotosConfigurationView.qml:33
+#: qml/Settings/PhotosConfigurationView.qml:37
 #, kde-format
 msgid "About KDE"
 msgstr "О KDE"
@@ -1848,34 +1876,50 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "&Опубликовать"
 
-#: qml/Sidebar.qml:74
+#: qml/Sidebar.qml:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr "Показать меню"
 
-#: qml/Sidebar.qml:101
-#, kde-format
-msgctxt "@action:inMenu"
-msgid "Donate…"
-msgstr "Поддержать…"
-
-#: qml/Sidebar.qml:107
-#, kde-format
-msgctxt "@action:inMenu"
-msgid "Report Bug…"
-msgstr "Сообщить об ошибке…"
-
-#: qml/Sidebar.qml:186
+#: qml/Sidebar.qml:195
 #, kde-format
 msgid "General"
 msgstr "Основное"
 
-#: qml/Sidebar.qml:221
+#: qml/Sidebar.qml:232
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Сетевые ресурсы"
+
+#~ msgctxt "@action:button"
+#~ msgid "Select All"
+#~ msgstr "Выбрать все"
+
+#~ msgctxt "@action:button"
+#~ msgid "Select None"
+#~ msgstr "Снять выделение"
+
+#~ msgctxt "@action:intoolbar Edit an image"
+#~ msgid "&Edit"
+#~ msgstr "&Правка"
+
+#~ msgctxt "@action:intoolbar Share an image/video"
+#~ msgid "&Share"
+#~ msgstr "&Опубликовать"
+
+#~ msgctxt "@action:intoolbar Start a slideshow"
+#~ msgid "&Slideshow"
+#~ msgstr "&Слайд-шоу"
+
+#~ msgctxt "@action:inMenu"
+#~ msgid "Donate…"
+#~ msgstr "Поддержать…"
+
+#~ msgctxt "@action:inMenu"
+#~ msgid "Report Bug…"
+#~ msgstr "Сообщить об ошибке…"
 
 #~ msgctxt "@label"
 #~ msgid "Description:"
@@ -1947,10 +1991,6 @@ msgstr "Сетевые ресурсы"
 #~ msgid "Settings"
 #~ msgstr "Параметры"
 
-#~ msgctxt "@title:menu"
-#~ msgid "Share"
-#~ msgstr "Опубликовать"
-
 #~ msgid "&Copy"
 #~ msgstr "&Копировать"
 
@@ -1962,9 +2002,6 @@ msgstr "Сетевые ресурсы"
 
 #~ msgid "Are you sure you want to discard all changes?"
 #~ msgstr "Действительно отменить все изменения?"
-
-#~ msgid "Edit"
-#~ msgstr "Изменить"
 
 #~ msgctxt "@action:button Mirror an image horizontally"
 #~ msgid "Mirror"
