@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-04-23 16:39+0200\n"
+"PO-Revision-Date: 2026-05-22 07:47+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -769,16 +769,12 @@ msgid "Home"
 msgstr "Home"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Cestino"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Rete"
 
@@ -1731,33 +1727,31 @@ msgstr "%1px"
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Ordinamento della galleria"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Ordinamento naturale"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Alfabetico (senza distinzione delle maiuscole)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Alfabetico (con distinzione delle maiuscole)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Sfondo della vista dell'immagine"
+msgstr "Sfondo dell'immagine"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1784,20 +1778,16 @@ msgid "Use the background color specified by the theme"
 msgstr "Usa il colore di sfondo specificato dal tema"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "Mostra uno sfondo a scacchiera dietro alle immagini trasparenti"
+msgstr "Mostra una scacchiera dietro alle immagini trasparenti"
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Dimensione dell'immagine"
+msgstr "Vista immagine"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format

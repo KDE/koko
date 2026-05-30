@@ -828,12 +828,10 @@ msgid "Times"
 msgstr "时间"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "转到视频"
+msgstr ""
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -960,12 +958,10 @@ msgid "Favorite"
 msgstr "收藏"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Edit an image"
-#| msgid "&Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
-msgstr "编辑(&E)"
+msgstr ""
 
 #: qml/ActionCollection.qml:51
 #, kde-format
@@ -974,20 +970,16 @@ msgid "Edit this image"
 msgstr "编辑此图像"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Share an image/video"
-#| msgid "&Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
-msgstr "分享(&S)"
+msgstr ""
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "信息(&I)"
+msgstr ""
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1008,12 +1000,10 @@ msgid "Copy Location"
 msgstr "复制位置"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
-msgstr "幻灯片放映"
+msgstr ""
 
 #: qml/ActionCollection.qml:103
 #, kde-format
@@ -1022,21 +1012,16 @@ msgid "Start slideshow"
 msgstr "开始幻灯片放映"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "显示控制(&C)"
+msgstr ""
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "显示缩略图工具栏(&T)"
+msgstr ""
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1051,12 +1036,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "隐藏缩略图工具栏"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "全屏(&F)"
+msgstr ""
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1363,12 +1346,10 @@ msgid "Current rating %1"
 msgstr "当前评分 %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "注释"
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1844,30 +1825,3 @@ msgstr "通用"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "远程位置"
-
-#~ msgctxt "@action:button"
-#~ msgid "Select All"
-#~ msgstr "选择全部"
-
-#~ msgctxt "@action:button"
-#~ msgid "Select None"
-#~ msgstr "不选择"
-
-#~ msgctxt "@action:intoolbar Start a slideshow"
-#~ msgid "&Slideshow"
-#~ msgstr "幻灯片放映(&S)"
-
-#~ msgctxt "@action:inMenu"
-#~ msgid "Donate…"
-#~ msgstr "捐赠…"
-
-#~ msgctxt "@action:inMenu"
-#~ msgid "Report Bug…"
-#~ msgstr "报告程序缺陷…"
-
-#~ msgctxt "@label"
-#~ msgid "Description:"
-#~ msgstr "描述："
-
-#~ msgid "Image description…"
-#~ msgstr "图像描述…"

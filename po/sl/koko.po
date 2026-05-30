@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-05-28 06:59+0200\n"
+"PO-Revision-Date: 2026-05-29 06:46+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -842,12 +842,10 @@ msgid "Times"
 msgstr "Časi"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Pomakni se do videoposnetkov"
+msgstr "Navigacija"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -932,12 +930,10 @@ msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Deljeni spletni naslov za sliko je <a href='%1'>%1</a>"
 
 #: qml/ActionCollection.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Gallery Sorting"
+#, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "Razvščanje galerije"
+msgstr "Galerija"
 
 #: qml/ActionCollection.qml:23
 #, kde-format
@@ -967,7 +963,7 @@ msgstr "Obrni izbrane medije"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "Pogled medija"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
@@ -976,8 +972,7 @@ msgid "Favorite"
 msgstr "Priljubljen"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Uredi"
@@ -989,20 +984,16 @@ msgid "Edit this image"
 msgstr "Uredi to sliko"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Deli"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&Informacije"
+msgstr "Informacije"
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1023,9 +1014,7 @@ msgid "Copy Location"
 msgstr "Kopiraj lokacijo"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Predstavitev"
@@ -1037,18 +1026,13 @@ msgid "Start slideshow"
 msgstr "Začni predstavitev"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
 msgstr "Prikaži kontrole"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr "Prikaži vrstico predoglednih sličic"
@@ -1066,9 +1050,7 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Skrij vrstico predoglednih sličic"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
 msgstr "Celotni zaslon"
@@ -1834,7 +1816,7 @@ msgstr "Splošno"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Bližnjice na tipkovnici"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format

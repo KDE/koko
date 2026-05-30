@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-05-28 04:29+0200\n"
+"PO-Revision-Date: 2026-05-29 06:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -834,12 +834,10 @@ msgid "Times"
 msgstr "საათი"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "გადასვლა ვიდეოებზე"
+msgstr "ნავიგაცია"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -924,12 +922,10 @@ msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "გამოსახულების გაზიარებული URL-ია <a href='%1'>%1</a>"
 
 #: qml/ActionCollection.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Gallery Sorting"
+#, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "გალერეის დალაგება"
+msgstr "გალერეა"
 
 #: qml/ActionCollection.qml:23
 #, kde-format
@@ -959,7 +955,7 @@ msgstr "მონიშნული მედიის ინვერსია"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "მედიის ხედი"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
@@ -968,8 +964,7 @@ msgid "Favorite"
 msgstr "რჩეული"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "ჩასწორება"
@@ -981,20 +976,16 @@ msgid "Edit this image"
 msgstr "ამ სურათის ჩასწორება"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "გაზიარება"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&ინფო"
+msgstr "ინფორმაცია"
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1015,9 +1006,7 @@ msgid "Copy Location"
 msgstr "მდებარეობის კოპირება"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "სლაიდშოუ"
@@ -1029,21 +1018,16 @@ msgid "Start slideshow"
 msgstr "სლაიდშოუს დაწყება"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "ყველა კონტროლის ჩვენება"
+msgstr "კონტროლის ელემენტების ჩვენება"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "მინია&ტურების ზოლის ჩვენება"
+msgstr "მინიატურების ზოლის ჩვენება"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1058,12 +1042,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "მინიატურების ზოლის დამალვა"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "&სრულ ეკრანზე"
+msgstr "სრული ეკრანი"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1607,7 +1589,7 @@ msgstr "სლაიდშოუს შეჩერება"
 #: qml/mediaview/MediaViewPage.qml:1235
 #, kde-format
 msgid "Show All Controls"
-msgstr "ყველა კონტროლის ჩვენება"
+msgstr "ყველა კონტროლის ელემენტის ჩვენება"
 
 #: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
@@ -1814,7 +1796,7 @@ msgstr "ზოგადი"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "კლავიატურის მალსახმობები"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format

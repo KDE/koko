@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-05-28 15:08+0100\n"
+"PO-Revision-Date: 2026-05-29 17:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -837,12 +837,10 @@ msgid "Times"
 msgstr "Tiempo"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Ir a los vídeos"
+msgstr "Navegación"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -927,12 +925,10 @@ msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "El URL para las imágenes compartidas es <a href='%1'>%1</a>"
 
 #: qml/ActionCollection.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Gallery Sorting"
+#, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "Orden de la galería"
+msgstr "Galería"
 
 #: qml/ActionCollection.qml:23
 #, kde-format
@@ -962,7 +958,7 @@ msgstr "Invertir la selección de medios"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "Vista de medios"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
@@ -971,12 +967,10 @@ msgid "Favorite"
 msgstr "Favorito"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Edit an image"
-#| msgid "&Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
-msgstr "&Editar"
+msgstr "Editar"
 
 #: qml/ActionCollection.qml:51
 #, kde-format
@@ -985,20 +979,16 @@ msgid "Edit this image"
 msgstr "Editar esta imagen"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Share an image/video"
-#| msgid "&Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
-msgstr "&Compartir"
+msgstr "Compartir"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&Información"
+msgstr "Información"
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1019,9 +1009,7 @@ msgid "Copy Location"
 msgstr "Copiar ubicación"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Presentación"
@@ -1033,21 +1021,16 @@ msgid "Start slideshow"
 msgstr "Empezar la presentación"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "Mostrar &controles"
+msgstr "Mostrar controles"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "Mostrar &barra de herramientas de miniaturas"
+msgstr "Mostrar barra de herramientas de miniaturas"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1062,12 +1045,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Ocultar la barra de herramientas de miniaturas"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "&Pantalla completa"
+msgstr "Pantalla completa"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1818,7 +1799,7 @@ msgstr "General"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Atajos de teclado"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
@@ -1859,23 +1840,3 @@ msgstr "General"
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr "Remoto"
-
-#~ msgctxt "@action:button"
-#~ msgid "Select All"
-#~ msgstr "Seleccionar todo"
-
-#~ msgctxt "@action:button"
-#~ msgid "Select None"
-#~ msgstr "Deseleccionar todo"
-
-#~ msgctxt "@action:intoolbar Start a slideshow"
-#~ msgid "&Slideshow"
-#~ msgstr "&Presentación"
-
-#~ msgctxt "@action:inMenu"
-#~ msgid "Donate…"
-#~ msgstr "Donativos…"
-
-#~ msgctxt "@action:inMenu"
-#~ msgid "Report Bug…"
-#~ msgstr "Informar de fallo…"

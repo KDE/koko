@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-05-28 08:34+0300\n"
+"PO-Revision-Date: 2026-05-29 11:40+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -840,12 +840,10 @@ msgid "Times"
 msgstr "זמנים"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "ניווט לסרטונים"
+msgstr "ניווט"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -930,12 +928,10 @@ msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "כתובת שיתוף לתמונה היא <a href='%1'>%1</a>"
 
 #: qml/ActionCollection.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Gallery Sorting"
+#, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "מיון גלריה"
+msgstr "גלריה"
 
 #: qml/ActionCollection.qml:23
 #, kde-format
@@ -965,7 +961,7 @@ msgstr "היפוך בחירת המדיה הנבחרת"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "תצוגת מדיה"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
@@ -974,8 +970,7 @@ msgid "Favorite"
 msgstr "הוספה למועדפים"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "עריכה"
@@ -987,20 +982,16 @@ msgid "Edit this image"
 msgstr "עריכת התמונה הזאת"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "שיתוף"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&פרטים"
+msgstr "פרטים"
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1021,9 +1012,7 @@ msgid "Copy Location"
 msgstr "העתקת מקום"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "מצגת"
@@ -1035,21 +1024,16 @@ msgid "Start slideshow"
 msgstr "התחלת מצגת"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "הצגת &פקדים"
+msgstr "הצגת פקדים"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "הצגת &סרגל תמונות ממוזערות"
+msgstr "הצגת סרגל תמונות ממוזערות"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1064,12 +1048,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "הסתרת סרגל תמונות ממוזערות"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "מסך מ&לא"
+msgstr "מסך מלא"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1832,7 +1814,7 @@ msgstr "כללי"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "מקשי קיצור"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format

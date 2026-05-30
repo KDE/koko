@@ -1852,15 +1852,3 @@ msgstr ""
 msgctxt "Remote network locations"
 msgid "Remote"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Select All"
-#~ msgctxt "@action:button"
-#~ msgid "Select All"
-#~ msgstr "Merk alle"
-
-#, fuzzy
-#~| msgid "Select All"
-#~ msgctxt "@action:button"
-#~ msgid "Select None"
-#~ msgstr "Merk alle"

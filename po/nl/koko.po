@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-05-28 12:44+0200\n"
+"PO-Revision-Date: 2026-05-29 14:44+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -835,12 +835,10 @@ msgid "Times"
 msgstr "Times"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Naar videos navigeren"
+msgstr "Navigatie"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -925,12 +923,10 @@ msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "Gedeelde url voor afbeelding is <a href='%1'>%1</a>"
 
 #: qml/ActionCollection.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Gallery Sorting"
+#, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "Sorteren van galerij"
+msgstr "Galerij"
 
 #: qml/ActionCollection.qml:23
 #, kde-format
@@ -960,7 +956,7 @@ msgstr "De geselecteerde media omkeren"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "Mediaweergave"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
@@ -969,8 +965,7 @@ msgid "Favorite"
 msgstr "Favoriet"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Bewerken"
@@ -982,20 +977,16 @@ msgid "Edit this image"
 msgstr "Deze afbeelding bewerken"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Delen"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&Informatie"
+msgstr "Informatie"
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1016,9 +1007,7 @@ msgid "Copy Location"
 msgstr "Locatie kopiëren"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Diavoorstelling"
@@ -1030,21 +1019,16 @@ msgid "Start slideshow"
 msgstr "Diavoorstelling starten"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "&Besturing tonen"
+msgstr "Besturingen tonen"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "&Miniaturenbalk tonen"
+msgstr "Miniaturenbalk tonen"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1059,12 +1043,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "De miniaturenbalk verbergen"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "&Volledig scherm"
+msgstr "Volledig scherm"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1815,7 +1797,7 @@ msgstr "Algemeen"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Sneltoetsen"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
