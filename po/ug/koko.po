@@ -1,39 +1,38 @@
-# Lithuanian translations for koko package.
-# Copyright (C) 2020 This file is copyright:
+# Uyghur translation for koko.
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the koko package.
-# Automatically generated, 2020.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-29 00:41+0000\n"
-"PO-Revision-Date: 2026-06-01 14:44+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: lt\n"
+"PO-Revision-Date: 2026-05-31 19:10-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
-"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Moo"
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "<>"
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: editor/AnnotationOptionsToolBarContents.qml:60
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr "Brūkštelėjimas:"
+msgstr ""
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -43,318 +42,309 @@ msgstr "Brūkštelėjimas:"
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] "%1piks."
-msgstr[1] "%1piks."
-msgstr[2] "%1piks."
-msgstr[3] "%1piks."
+msgstr[0] ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr "Brūkštelėjimo plotis"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr "Brūkštelėjimo spalva"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr "Užpildas:"
+msgstr "تولدۇرۇش:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr "Užpildo spalva"
+msgstr "تولدۇرغان رەڭ"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr "Stiprumas:"
+msgstr "كۈچى:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr "Efekto stiprumas."
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr "Šriftas:"
+msgstr "خەت نۇسخا:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] "%2 %3 %1tšk."
-msgstr[1] "%2 %3 %1tšk."
-msgstr[2] "%2 %3 %1tšk."
-msgstr[3] "%2 %3 %1tšk."
+msgstr[0] ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] "%2 %1tšk."
-msgstr[1] "%2 %1tšk."
-msgstr[2] "%2 %1tšk."
-msgstr[3] "%2 %1tšk."
+msgstr[0] ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr "Šrifto spalva"
+msgstr "خەت رەڭگى"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr "Skaičius:"
+msgstr "نومۇر:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr "Skaičių anotacijų skaičius"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr "Šešėlis"
+msgstr "سايە"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
 #, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
-msgstr "Pozicija:"
+msgstr "ئورنى:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:502
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr "Apkirpimo srities X pozicija"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr "Apkirpimo srities Y pozicija"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
 #, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
-msgstr "Dydis:"
+msgstr "چوڭلۇقى:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:541
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr "Apkirpimo srities plotis"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr "Apkirpimo srities aukštis"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr "Proporcijos:"
+msgstr "تىك يانتۇلۇق نىسبىتى:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr "Atrakintos"
+msgstr "قۇلۇپسىزلانغان"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "Dabartinis paveikslas"
+msgstr "نۆۋەتتىكى سۈرەت"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr "Kvadratas"
+msgstr "تۆت چاسا"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "Šis ekranas"
+msgstr "بۇ ئېكران"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr "16:9"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr "7:5"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr "3:2"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr "4:3"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr "5:4"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr "ISO popierius (Gulsčias)"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr "US Letter (Gulsčias)"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr "9:16"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr "5:7"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr "2:3"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr "3:4"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr "4:5"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr "ISO popierius (Stačias)"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr "US Letter (Stačias)"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr "Plotis:Aukštis"
+msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr "Atstatyti"
+msgstr "ئەسلىگە قايتۇر"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
 #, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
-msgstr "Patvirtinti"
+msgstr "قوشۇل"
 
 #: editor/AnnotationsToolBarContents.qml:92
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr "Nėra"
+msgstr "يوق"
 
 #: editor/AnnotationsToolBarContents.qml:99
 #, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "Žymėti"
+msgstr "تاللا"
 
 #: editor/AnnotationsToolBarContents.qml:108
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr "Laisvas piešimas"
+msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:109
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
-msgstr "Lyg2: Pritraukti, kad būtų tiesios linijos"
+msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:116
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
-msgstr "Markeris"
+msgstr "يورۇتقۇچ"
 
 #: editor/AnnotationsToolBarContents.qml:125
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
-msgstr "Linija"
+msgstr "قۇر"
 
 #: editor/AnnotationsToolBarContents.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr "Lyg2: Pritraukti, kad būtų 45 laipsnių padidėjimai"
+msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:133
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
-msgstr "Rodyklė"
+msgstr "يا ئوق"
 
 #: editor/AnnotationsToolBarContents.qml:142
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
-msgstr "Stačiakampis"
+msgstr "تىك تۆت بۇلۇڭ"
 
 #: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
@@ -363,44 +353,42 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
-"Lyg2: Pritraukti, kad būtų diagonalūs judesiai\n"
-"Vald: Keisti dydį iš vidaus"
 
 #: editor/AnnotationsToolBarContents.qml:151
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
-msgstr "Elipsė"
+msgstr "ئېللىپىس"
 
 #: editor/AnnotationsToolBarContents.qml:159
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
-msgstr "Iškloti pikseliais"
+msgstr ""
 
 #: editor/AnnotationsToolBarContents.qml:167
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
-msgstr "Sulieti"
+msgstr "غۇۋا"
 
 #: editor/AnnotationsToolBarContents.qml:175
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
-msgstr "Tekstas"
+msgstr "تېكىست"
 
 #: editor/AnnotationsToolBarContents.qml:182
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
-msgstr "Skaičius"
+msgstr "نومۇرى"
 
 #: editor/ConfirmDiscardingChanges.qml:17
 #, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr "Neįrašyti pakeitimai"
+msgstr "ساقلانمىغان ئۆزگەرتىش"
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -409,14 +397,12 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
-"Paveikslas <filename>%1</filename> buvo modifikuotas. Ar norite pakeitimus "
-"įrašyti, ar juos atmesti?"
 
 #: editor/EditorView.qml:36
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
-msgstr "Taisyti <filename>%1</filename>"
+msgstr ""
 
 #: editor/EditorView.qml:46 editor/EditorView.qml:537
 #, kde-format
@@ -425,152 +411,152 @@ msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
 "file."
 msgstr ""
-"Nepavyko įrašyti failo. Patikrinkite, ar turite tinkamus leidimus įrašyti šį "
-"failą."
+"ھۆججەتنى ساقلىيالمايدۇ. Check if you have the correct permissions to save "
+"this file."
 
 #: editor/EditorView.qml:112
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
-msgstr "Apkirpti"
+msgstr "كەس"
 
 #: editor/EditorView.qml:132
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
-msgstr "Keisti dydį"
+msgstr "چوڭلۇقىنى ئۆزگەرت"
 
 #: editor/EditorView.qml:176
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "Keisti dydį pagal:"
+msgstr ""
 
 #: editor/EditorView.qml:187
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "Pikseliai"
+msgstr "پىكسېل"
 
 #: editor/EditorView.qml:194
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr "Procentinė dalis"
+msgstr "پىرسەنت"
 
 #: editor/EditorView.qml:205
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr "Plotis"
+msgstr "كەڭلىك"
 
 #: editor/EditorView.qml:257
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "Aukštis"
+msgstr "ئېگىزلىك"
 
 #: editor/EditorView.qml:278
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "Išlaikyti proporcijas"
+msgstr "تەرەپ نىسبىتىنى ساقلاپ قال"
 
 #: editor/EditorView.qml:282
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr "Pradinis failo dydis: %1"
+msgstr ""
 
 #: editor/EditorView.qml:310
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr "Apskaičiuotas failo dydis: %1"
+msgstr ""
 
 #: editor/EditorView.qml:317
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr "Atstatyti"
+msgstr "ئەسلىگە قايتۇر"
 
 #: editor/EditorView.qml:328
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
-msgstr "Keisti dydį"
+msgstr "چوڭلۇقىنى ئۆزگەرت"
 
 #: editor/EditorView.qml:378
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
-msgstr "Pasukti"
+msgstr "چۆرگىلەت"
 
 #: editor/EditorView.qml:382
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
-msgstr "Pasukti kairėn"
+msgstr "سولغا ئايلاندۇر"
 
 #: editor/EditorView.qml:393
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
-msgstr "Pasukti dešinėn"
+msgstr "ئوڭغا ئايلاندۇر"
 
 #: editor/EditorView.qml:405
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
-msgstr "Apversti"
+msgstr "ئۆرۈ"
 
 #: editor/EditorView.qml:409
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
-msgstr "Apversti horizontaliai"
+msgstr "يانتۇ ئايلاندۇر"
 
 #: editor/EditorView.qml:420
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
-msgstr "Apversti vertikaliai"
+msgstr "تىك ئايلاندۇر"
 
 #: editor/EditorView.qml:435
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
-msgstr "Atšaukti"
+msgstr "يېنىۋال"
 
 #: editor/EditorView.qml:443
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
-msgstr "Grąžinti"
+msgstr "قايتىلا"
 
 #: editor/EditorView.qml:457
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
-msgstr "Įrašyti"
+msgstr "ساقلا"
 
 #: editor/EditorView.qml:465
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
-msgstr "Įrašyti kaip"
+msgstr "باشقا ئاتتا ساقلا"
 
 #: editor/EditorView.qml:595
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
-msgstr "Mastelis:"
+msgstr "نىسبەت:"
 
 #: editor/EditorView.qml:610
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
-msgstr "Paveikslo mastelis"
+msgstr "سۈرەت كېڭەيت تارايت"
 
 #: editor/ImageView.qml:196
 #, kde-format
@@ -580,39 +566,36 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
-"Spustelėkite ir tempkite, kad sukurtumėte žymėjimą.\n"
-"Du kartus spustelėkite žymėjimą, kad patvirtintumėte ir apkirptumėte.\n"
-"Spustelėkite dešiniuoju pelės mygtuku norėdami panaikinti žymėjimą."
 
 #: exiv2extractor.cpp:71 qml/PlacesPage.qml:31
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr "Bendra"
+msgstr "ئادەتتىكى"
 
 #: exiv2extractor.cpp:73
 #, kde-format
 msgctxt "@title:group"
 msgid "EXIF"
-msgstr "EXIF"
+msgstr ""
 
 #: exiv2extractor.cpp:75
 #, kde-format
 msgctxt "@title:group"
 msgid "IPTC"
-msgstr "IPTC"
+msgstr ""
 
 #: exiv2extractor.cpp:77
 #, kde-format
 msgctxt "@title:group"
 msgid "XMPP"
-msgstr "XMPP"
+msgstr ""
 
 #: exiv2extractor.cpp:384
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
-msgstr "Vieta"
+msgstr "ئورنى"
 
 #: exiv2extractor.cpp:520
 #, kde-format
@@ -620,85 +603,85 @@ msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
 "number of megapixels in the image"
 msgid "%1 × %2 (%3 MP)"
-msgstr "%1 × %2 (%3 MP)"
+msgstr ""
 
 #: exiv2extractor.cpp:526
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
-msgstr "%1 × %2"
+msgstr ""
 
 #: exiv2extractor.cpp:530
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
-msgstr "Pavadinimas"
+msgstr "ئاتى"
 
 #: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
-msgstr "Failo dydis"
+msgstr "ھۆججەت چوڭلۇقى"
 
 #: exiv2extractor.cpp:534
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
-msgstr "Sukūrimo data"
+msgstr "قۇرۇلغان چېسلا"
 
 #: exiv2extractor.cpp:536
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
-msgstr "Modifikavimo data"
+msgstr "ئۆزگەرتكەن چېسلا"
 
 #: exiv2extractor.cpp:537
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
-msgstr "Prieigos data"
+msgstr "زىيارەت قىلىنغان چېسلا"
 
 #: exiv2extractor.cpp:538
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
-msgstr "Kelias"
+msgstr "يول"
 
 #: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
-msgstr "Paveikslo dydis"
+msgstr "سۈرەت چوڭلۇقى"
 
 #: exiv2extractor.cpp:540
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
-msgstr "Failo tipas"
+msgstr "ھۆججەت تۈرى"
 
 #: exiv2extractor.cpp:551
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
-msgstr "Komentaras"
+msgstr "ئىزاھات"
 
 #: main.cpp:64
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
-msgstr "<application>Nuotraukos</application>"
+msgstr ""
 
 #: main.cpp:66
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
-msgstr "Nuotraukos yra paveikslų žiūryklė jūsų paveikslų kolekcijai."
+msgstr ""
 
 #: main.cpp:68
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
-msgstr "(c) 2013–%1 KDE talkininkai"
+msgstr ""
 
 #: main.cpp:75
 #, kde-kuit-format
@@ -711,13 +694,13 @@ msgstr "Vishesh Handa"
 #, kde-format, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
-msgstr "Plėtotojas"
+msgstr "ئىجادكار"
 
 #: main.cpp:77
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
-msgstr "Atul Sharma"
+msgstr ""
 
 #: main.cpp:79
 #, kde-kuit-format
@@ -747,616 +730,607 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr "Oliver Beard"
+msgstr ""
 
 #: main.cpp:97
 #, kde-format
 msgid "Reset the database"
-msgstr "Atstatyti duomenų bazę"
+msgstr ""
 
 #: main.cpp:98
 #, kde-format
 msgid "path of image you want to open"
-msgstr "kelias iki paveikslo, kurį norite atverti"
+msgstr ""
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr "Mėgstami"
+msgstr "يىغقۇچ"
 
 #: models/galleryfoldermodel.cpp:64
 #, kde-format
 msgid "Root"
-msgstr "Šaknis"
+msgstr "غول مۇندەرىجە"
 
 #: models/galleryfoldermodel.cpp:68
 #, kde-format
 msgid "Home"
-msgstr "Namai"
+msgstr "باش بەت"
 
 #: models/galleryfoldermodel.cpp:73
 #, kde-format
 msgid "Trash"
-msgstr "Šiukšlinė"
+msgstr "ئەخلەتخانا"
 
 #: models/galleryfoldermodel.cpp:77
 #, kde-format
 msgid "Network"
-msgstr "Tinklas"
+msgstr "تور"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
 #, kde-format
 msgid "Countries"
-msgstr "Šalys"
+msgstr "دۆلەت"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
 #, kde-format
 msgid "States"
-msgstr "Apskritys"
+msgstr "ھالەت"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
 #, kde-format
 msgid "Cities"
-msgstr "Miestai"
+msgstr ""
 
 #: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:101
 #: qml/Sidebar.qml:241
 #, kde-format
 msgid "Locations"
-msgstr "Vietovės"
+msgstr "ئورنى"
 
 #: models/galleryopenmodel.cpp:134
 #, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Pažymėti failai"
+msgstr ""
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
 msgid "Tags"
-msgstr "Žymės"
+msgstr "بەلگە"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
 #, kde-format
 msgid "Years"
-msgstr "Metai"
+msgstr "يىل"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
 #, kde-format
 msgid "Months"
-msgstr "Mėnesiai"
+msgstr "ئاي"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
 #, kde-format
 msgid "Weeks"
-msgstr "Savaitės"
+msgstr "ھەپتە"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
 #, kde-format
 msgid "Days"
-msgstr "Dienos"
+msgstr "كۈن"
 
 #: models/gallerytimemodel.cpp:77
 #, kde-format
 msgid "Times"
-msgstr "Laikotarpiai"
+msgstr ""
 
 #: navigationactions.cpp:24
 #, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Naršymas"
+msgstr ""
 
 #: navigationactions.cpp:52
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures"
-msgstr "Naršyti į paveikslus"
+msgstr ""
 
 #: navigationactions.cpp:57
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to videos"
-msgstr "Naršyti į vaizdo įrašus"
+msgstr ""
 
 #: navigationactions.cpp:59
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
-msgstr "Naršyti į mėgstamus"
+msgstr ""
 
 #: navigationactions.cpp:63
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
-msgstr "Naršyti į šiukšlinę"
+msgstr ""
 
 #: navigationactions.cpp:68
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
-msgstr "Naršyti į nuotolinius aplankus"
+msgstr ""
 
 #: navigationactions.cpp:73
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal šalį"
+msgstr ""
 
 #: navigationactions.cpp:78
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal apskritį"
+msgstr ""
 
 #: navigationactions.cpp:83
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal miestus"
+msgstr ""
 
 #: navigationactions.cpp:88
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal metus"
+msgstr ""
 
 #: navigationactions.cpp:93
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal mėnesį"
+msgstr ""
 
 #: navigationactions.cpp:98
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal savaitę"
+msgstr ""
 
 #: navigationactions.cpp:103
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr "Naršyti į paveikslus, sugrupuotus pagal dieną"
+msgstr ""
 
 #: notificationmanager.cpp:16
 #, kde-format
 msgid "Sharing failed"
-msgstr "Nepavyko bendrinti"
+msgstr ""
 
 #: notificationmanager.cpp:22
 #, kde-format
 msgid "Shared url for image is <a href='%1'>%1</a>"
-msgstr "Bendrinamas paveikslo URL yra <a href='%1'>%1</a>"
+msgstr ""
 
 #: qml/ActionCollection.qml:20
 #, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "Galerija"
+msgstr ""
 
 #: qml/ActionCollection.qml:23
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Žymėti visą mediją"
+msgstr ""
 
 #: qml/ActionCollection.qml:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Nuimti žymėjimą nuo visos medijos"
+msgstr ""
 
 #: qml/ActionCollection.qml:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "Invertuoti žymėjimą"
+msgstr "ئەكسىچە تاللا"
 
 #: qml/ActionCollection.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Invertuoti pažymėtą mediją"
+msgstr ""
 
 #: qml/ActionCollection.qml:40
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr "Medijos rodinys"
+msgstr ""
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
-msgstr "Mėgstamas"
+msgstr ""
 
 #: qml/ActionCollection.qml:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@action:intoolbar Edit an image"
+#| msgid "&Edit"
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
-msgstr "Taisyti"
+msgstr "تەھرىر(&E)"
 
 #: qml/ActionCollection.qml:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
-msgstr "Taisyti šį paveikslą"
+msgstr ""
 
 #: qml/ActionCollection.qml:57
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
-msgstr "Bendrinti"
+msgstr ""
 
 #: qml/ActionCollection.qml:62
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "Informacija"
+msgstr ""
 
 #: qml/ActionCollection.qml:73
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
-msgstr "Atverti vidinį aplanką"
+msgstr "ئىچىدىكى قىسقۇچنى ئاچ"
 
 #: qml/ActionCollection.qml:78
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr "&Atverti naudojant…"
+msgstr "ئاچقۇز(&O)…"
 
 #: qml/ActionCollection.qml:86
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
-msgstr "Kopijuoti vietą"
+msgstr "ئورنىنى كۆچۈر"
 
 #: qml/ActionCollection.qml:101
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "Slideshow"
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
-msgstr "Skaidrių rodymas"
+msgstr "تام تەسۋىر"
 
 #: qml/ActionCollection.qml:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
-msgstr "Pradėti skaidrių rodymą"
+msgstr ""
 
 #: qml/ActionCollection.qml:107
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "Rodyti valdiklius"
+msgstr ""
 
 #: qml/ActionCollection.qml:112
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "Rodyti miniatiūrų įrankių juostą"
+msgstr ""
 
 #: qml/ActionCollection.qml:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
-msgstr "Rodyti miniatiūrų įrankių juostą"
+msgstr ""
 
 #: qml/ActionCollection.qml:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
-msgstr "Slėpti miniatiūrų įrankių juostą"
+msgstr ""
 
 #: qml/ActionCollection.qml:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Exit Full Screen"
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "Visas ekranas"
+msgstr "پۈتۈن ئېكراننى ئاخىرلاشتۇر"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
-msgstr "Įjungti viso ekrano veikseną"
+msgstr ""
 
 #: qml/ActionCollection.qml:122
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
-msgstr "Išjungti viso ekrano veikseną"
+msgstr "پۈتۈن ئېكراننى ئاخىرلاشتۇر"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
-msgstr "Paveikslai"
+msgstr "رەسىم"
 
 #: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:203
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
-msgstr "Vaizdo įrašai"
+msgstr "سىن"
 
 #: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:208
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
-msgstr "Mėgstami"
+msgstr "يىغقۇچ"
 
 #: qml/BottomNavBar.qml:69 qml/Sidebar.qml:64
 #, kde-format
 msgid "Places"
-msgstr "Vietos"
+msgstr "ئورۇن"
 
 #: qml/gallery/GalleryDelegate.qml:152
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 elementas"
-msgstr[1] "%1 elementai"
-msgstr[2] "%1 elementų"
-msgstr[3] "%1 elementas"
+msgstr[0] "%1 تۈر"
 
 #: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr "Atkurti"
+msgstr "ئەسلىگە كەلتۈر"
 
 #: qml/gallery/GalleryPage.qml:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Atkurti pasirinktą mediją į ankstesnę vietą"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:160
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr "Rikiuoti: %1"
+msgstr "تەرتىپ: %1"
 
 #: qml/gallery/GalleryPage.qml:165
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
-msgstr "Pavadinimas"
+msgstr "ئاتى"
 
 #: qml/gallery/GalleryPage.qml:172
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
-msgstr "Dydis"
+msgstr "چوڭلۇقى"
 
 #: qml/gallery/GalleryPage.qml:179
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr "Modifikuotas"
+msgstr "ئۆزگەرتىلگەن ۋاقتى"
 
 #: qml/gallery/GalleryPage.qml:180
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
-msgstr "Modifikavimo data"
+msgstr "ئۆزگەرتكەن چېسلا"
 
 #: qml/gallery/GalleryPage.qml:187
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr "Sukurtas"
+msgstr "قۇرغان ۋاقتى"
 
 #: qml/gallery/GalleryPage.qml:188
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
-msgstr "Sukūrimo data"
+msgstr "قۇرۇلغان چېسلا"
 
 #: qml/gallery/GalleryPage.qml:195
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr "Paskiausia prieiga"
+msgstr "ﺯﯨﻴﺎﺭﻩﺕ ﯞﺍﻗﺘﻰ"
 
 #: qml/gallery/GalleryPage.qml:196
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
-msgstr "Prieigos data"
+msgstr "زىيارەت قىلىنغان چېسلا"
 
 #: qml/gallery/GalleryPage.qml:209
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr "Didėjančiai"
+msgstr "ئۆسكۈچى"
 
 #: qml/gallery/GalleryPage.qml:211
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr "A-Ž"
+msgstr "A-Z"
 
 #: qml/gallery/GalleryPage.qml:213
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr "Pirmiausiai mažiausi"
+msgstr "كىچىكى ئالدىدا"
 
 #: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr "Pirmiausiai seniausi"
+msgstr "كونىسى ئالدىدا"
 
 #: qml/gallery/GalleryPage.qml:220
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr "Didėjančiai"
+msgstr "ئۆسكۈچى"
 
 #: qml/gallery/GalleryPage.qml:231
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr "Mažėjančiai"
+msgstr "كېمەيگۈچى"
 
 #: qml/gallery/GalleryPage.qml:233
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr "Ž-A"
+msgstr "Z-A"
 
 #: qml/gallery/GalleryPage.qml:235
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr "Pirmiausiai didžiausi"
+msgstr "چوڭى ئالدىدا"
 
 #: qml/gallery/GalleryPage.qml:239
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr "Pirmiausiai naujausi"
+msgstr "يېڭىسى ئالدىدا"
 
 #: qml/gallery/GalleryPage.qml:242
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr "Mažėjančiai"
+msgstr "كېمەيگۈچى"
 
 #: qml/gallery/GalleryPage.qml:264
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
-msgstr "Įrašyti aplanką į žymeles"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:265
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "Įrašyti dabartinį aplanką į žymeles"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
-msgstr "Šalinti iš mėgstamų"
+msgstr "يىغقۇچتىن چىقىرىۋەت"
 
 #: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
-msgstr "Pridėti į mėgstamus"
+msgstr "يىغقۇچقا قوش"
 
 #: qml/gallery/GalleryPage.qml:317
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Bendrinti pasirinktą mediją"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:762
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "%1 elementas"
-msgstr[1] "%1 elementai"
-msgstr[2] "%1 elementų"
-msgstr[3] "%1 elementas"
+msgstr[0] "%1 تۈر"
 
 #: qml/gallery/GalleryPage.qml:807
 #, kde-format
 msgid "No media found"
-msgstr "Nerasta jokia medija"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:831
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "Pažymėtas %1 elementas"
-msgstr[1] "Pažymėti %1 elementai"
-msgstr[2] "Pažymėta %1 elementų"
-msgstr[3] "Pažymėtas %1 elementas"
+msgstr[0] "%1 تۈر تاللاندى"
 
 #: qml/gallery/GalleryPage.qml:836
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "%1 elementas"
-msgstr[1] "%1 elementai"
-msgstr[2] "%1 elementų"
-msgstr[3] "%1 elementas"
+msgstr[0] "%1 تۈر"
 
 #: qml/gallery/NavigatorComponent.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr "Atgal"
+msgstr "قايت"
 
 #: qml/gallery/NavigatorComponent.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr "Pirmyn"
+msgstr "ئالدىغا"
 
 #: qml/Main.qml:76
 #, kde-format
 msgctxt "@title"
 msgid "Places"
-msgstr "Vietos"
+msgstr "ئورۇن"
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:190
 #, kde-format
 msgid "Seek slider"
-msgstr "Eigos slinktukas"
+msgstr ""
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:241
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:263
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
-msgstr[0] "Atsukti 1 sekundę atgal"
-msgstr[1] "Atsukti %1 sekundes atgal"
-msgstr[2] "Atsukti %1 sekundžių atgal"
-msgstr[3] "Atsukti %1 sekundę atgal"
+msgstr[0] ""
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Pause playback"
-msgstr "Pristabdyti atkūrimą"
+msgstr "ۋاقىتلىق توختات"
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:251
 #, kde-format
 msgid "Continue playback"
-msgstr "Tęsti atkūrimą"
+msgstr ""
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:273
 #, kde-format
 msgid "Mute audio"
-msgstr "Nutildyti garsą"
+msgstr ""
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:293
 #, kde-format
 msgid "Volume slider"
-msgstr "Garsumo slinktukas"
+msgstr ""
 
 #: qml/mediaview/imagedelegate/VideoPlayer.qml:314
 #, kde-format
 msgid "Repeat current video"
-msgstr "Kartoti dabartinį vaizdo įrašą"
+msgstr ""
 
 #: qml/mediaview/InfoDrawer.qml:36
 #, kde-format
 msgid "Metadata"
-msgstr "Metaduomenys"
+msgstr "تەپسىلىي ئۇچۇر"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:42
 #, kde-format
 msgid "Set rating to %1"
-msgstr "Nustatyti įvertinimą į %1"
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:96
 #, kde-format
@@ -1368,150 +1342,152 @@ msgstr "%1:"
 #, kde-format
 msgctxt "@label"
 msgid "Rating:"
-msgstr "Įvertinimas:"
+msgstr "باھالاش:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:136
 #, kde-format
 msgid "Current rating %1"
-msgstr "Dabartinis įvertinimas %1"
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "Comment"
 msgctxt "@label"
 msgid "Comment:"
-msgstr "Komentaras:"
+msgstr "ئىزاھات"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
 msgctxt "@label"
 msgid "Tags:"
-msgstr "Žymės:"
+msgstr "بەلگە:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:288
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr "Pridėti…"
+msgstr "قوش…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr "Ieškoti žymių arba parašyti naują žymę…"
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:305
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "Nerasta jokių žymių."
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr "Sukurti naują žymę"
+msgstr "يېڭى بەلگە قۇر"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr "Esamos žymės"
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr "Užverti"
+msgstr "ياپ"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
 msgctxt "@action:button"
 msgid "Choose What's Shown"
-msgstr "Pasirinkti, ką rodyti"
+msgstr ""
 
 #: qml/mediaview/MediaMetadataPage.qml:16
 #, kde-format
 msgctxt "@title"
 msgid "Configure Metadata Display"
-msgstr "Konfigūruoti rodomus metaduomenis"
+msgstr ""
 
 #: qml/mediaview/MediaMetadataPage.qml:32
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr "–"
+msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:90
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr "%1 iš %2"
+msgstr "%1 / %2"
 
 #: qml/mediaview/MediaViewPage.qml:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
-msgstr "Bendrinti šį vaizdo įrašą"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:153
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "Bendrinti šį paveikslą"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
-msgstr "Rodyti informaciją apie šį vaizdo įrašą"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
-msgstr "Rodyti informaciją apie šį paveikslą"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:277
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
-msgstr "Įjungti pasinerimo peržiūros veikseną"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
-msgstr "Išjungti pasinerimo peržiūros veikseną"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:589
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
-msgstr "Ankstesnis paveikslas"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:623
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
-msgstr "Kitas paveikslas"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:804
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr "25%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:805
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr "50%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:806
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr "75%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:807
 #, kde-format
@@ -1523,37 +1499,37 @@ msgstr "100%"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr "150%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:809
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr "200%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:810
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr "300%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:811
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr "400%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:812
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr "600%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:813
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr "800%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:862
 #, kde-format
@@ -1565,343 +1541,309 @@ msgstr "%1%"
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "Mažinti"
+msgstr "يىراقلات"
 
 #: qml/mediaview/MediaViewPage.qml:885
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "Didinti"
+msgstr "يېقىنلات"
 
 #: qml/mediaview/MediaViewPage.qml:1128 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
-msgstr "Skaidrių rodymo intervalas:"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:1145 qml/Settings/GeneralConfigPage.qml:204
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
-msgstr[0] "1 sekundė"
-msgstr[1] "%1 sekundės"
-msgstr[2] "%1 sekundžių"
-msgstr[3] "%1 sekundė"
+msgstr[0] "%1 سېكۇنت"
 
 #: qml/mediaview/MediaViewPage.qml:1200 qml/mediaview/MediaViewPage.qml:1301
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
-msgstr "Rodyti ciklu"
+msgstr "دەۋرىي"
 
 #: qml/mediaview/MediaViewPage.qml:1209 qml/mediaview/MediaViewPage.qml:1310
 #: qml/Settings/GeneralConfigPage.qml:178
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
-msgstr "Atsitiktinė tvarka"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:1221
 #, kde-format
 msgid "Stop Slideshow"
-msgstr "Stabdyti skaidrių rodymą"
+msgstr "تام تەسۋىرىنى توختىتىش"
 
 #: qml/mediaview/MediaViewPage.qml:1235
 #, kde-format
 msgid "Show All Controls"
-msgstr "Rodyti visus valdiklius"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr "Stabdyti"
+msgstr "توختا"
 
 #: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr "Pradėti"
+msgstr "باشلا"
 
 #: qml/mediaview/MediaViewPage.qml:1283
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr "Intervalas:"
+msgstr "مەزگىل:"
 
 #: qml/mediaview/MediaViewPage.qml:1296
 #, kde-format
 msgid "seconds"
-msgstr "sek."
+msgstr "سېكۇنت"
 
 #: qml/mediaview/TagInput.qml:66
 #, kde-format
 msgid "Add new tag…"
-msgstr "Pridėti naują žymę…"
+msgstr ""
 
 #: qml/PlacesPage.qml:23
 #, kde-format
 msgctxt "@action:button Open settings dialog"
 msgid "Settings"
-msgstr "Nuostatos"
+msgstr "تەڭشەك"
 
 #: qml/PlacesPage.qml:61 qml/Sidebar.qml:214
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
-msgstr "Šiukšlinė"
+msgstr "ئەخلەتخانا"
 
 #: qml/PlacesPage.qml:69 qml/Sidebar.qml:236
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
-msgstr "Tinklas"
+msgstr "تور"
 
 #: qml/PlacesPage.qml:78 qml/Sidebar.qml:220
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
-msgstr "Žymelės"
+msgstr "خەتكۈش"
 
 #: qml/PlacesPage.qml:106 qml/Sidebar.qml:244
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
-msgstr "Šalys"
+msgstr "دۆلەت"
 
 #: qml/PlacesPage.qml:113 qml/Sidebar.qml:249
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
-msgstr "Apskritys"
+msgstr "ھالەت"
 
 #: qml/PlacesPage.qml:120 qml/Sidebar.qml:254
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
-msgstr "Miestai"
+msgstr ""
 
 #: qml/PlacesPage.qml:128 qml/Sidebar.qml:259
 #, kde-format
 msgid "Time"
-msgstr "Laikas"
+msgstr "ۋاقىت"
 
 #: qml/PlacesPage.qml:133 qml/Sidebar.qml:262
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
-msgstr "Metai"
+msgstr "يىل"
 
 #: qml/PlacesPage.qml:140 qml/Sidebar.qml:267
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
-msgstr "Mėnesiai"
+msgstr "ئاي"
 
 #: qml/PlacesPage.qml:147 qml/Sidebar.qml:272
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
-msgstr "Savaitės"
+msgstr "ھەپتە"
 
 #: qml/PlacesPage.qml:154 qml/Sidebar.qml:277
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
-msgstr "Dienos"
+msgstr "كۈن"
 
 #: qml/Settings/GeneralConfigPage.qml:23
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr "Miniatiūrų dydis:"
+msgstr "كىچىك سۈرەت چوڭلۇقى:"
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr "%1 piks."
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr "Galerijos rikiavimas"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr "Įprastas rikiavimas"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr "Pagal abėcėlę (neskiriant raidžių dydžio)"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr "Pagal abėcėlę (skiriant raidžių dydį)"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:88
 #, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Paveikslo fonas"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
-msgstr "Juodas"
+msgstr "قارا"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
-msgstr "Baltas"
+msgstr "ئاق"
 
 #: qml/Settings/GeneralConfigPage.qml:114
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr "Apipavidalinimo numatytasis"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:115
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
-msgstr "Naudoti apipavidalinimo nurodytą fono spalvą"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:131
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "Rodyti už permatomų paveikslų šachmatų lentą"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:142
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Paveikslo rodinys"
+msgstr "سۈرەت كۆرۈنۈش"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr "Padidinti paveikslus, kurie mažesni nei peržiūros sritis"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:159
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr "Prisiminti mastelio lygį perjungiant tarp paveikslų"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:170
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
-msgstr "Skaidrių rodymas"
+msgstr "تام تەسۋىر"
 
 #: qml/Settings/PhotosConfigurationView.qml:16
 #, kde-format
 msgctxt "@action:button"
 msgid "General"
-msgstr "Bendra"
+msgstr "ئادەتتىكى"
 
 #: qml/Settings/PhotosConfigurationView.qml:22
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr "Spartieji klavišai"
+msgstr ""
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
 msgid "About Photos"
-msgstr "Apie Nuotraukas"
+msgstr ""
 
 #: qml/Settings/PhotosConfigurationView.qml:32
 #: qml/Settings/PhotosConfigurationView.qml:40
 #, kde-format
 msgctxt "@title:group"
 msgid "About"
-msgstr "Apie"
+msgstr "ھەققىدە"
 
 #: qml/Settings/PhotosConfigurationView.qml:37
 #, kde-format
 msgid "About KDE"
-msgstr "Apie KDE"
+msgstr "KDE ھەققىدە"
 
 #: qml/ShareAction.qml:21
 #, kde-format
 msgctxt "@action Share an image/video"
 msgid "&Share"
-msgstr "&Bendrinti"
+msgstr ""
 
 #: qml/Sidebar.qml:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr "Rodyti meniu"
+msgstr "تىزىملىكنى كۆرسەت"
 
 #: qml/Sidebar.qml:195
 #, kde-format
 msgid "General"
-msgstr "Bendri"
+msgstr "ئادەتتىكى"
 
 #: qml/Sidebar.qml:232
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
-msgstr "Nuotoliniai"
+msgstr "يىراقتىكى"
 
 #~ msgctxt "@action:button"
 #~ msgid "Select All"
-#~ msgstr "Žymėti visus"
+#~ msgstr "ھەممىنى تاللا"
 
 #~ msgctxt "@action:button"
 #~ msgid "Select None"
-#~ msgstr "Nuimti žymėjimą nuo visų"
-
-#~ msgctxt "@action:intoolbar Start a slideshow"
-#~ msgid "&Slideshow"
-#~ msgstr "&Skaidrių rodymas"
-
-#~ msgctxt "@action:inMenu"
-#~ msgid "Donate…"
-#~ msgstr "Paremti…"
-
-#~ msgctxt "@action:inMenu"
-#~ msgid "Report Bug…"
-#~ msgstr "Pranešti apie klaidą…"
+#~ msgstr "ھەممىنى تاللىما"
 
 #~ msgctxt "@label"
 #~ msgid "Description:"
-#~ msgstr "Aprašas:"
+#~ msgstr "چۈشەندۈرۈش:"
 
-#~ msgid "Image description…"
-#~ msgstr "Paveikslo aprašas…"
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Atsisakyti"
-
-#~ msgctxt "@title:group for crop area size spinboxes"
-#~ msgid "Size:"
-#~ msgstr "Dydis:"
-
-#~ msgctxt "@action:button Move the selected media to the trash"
-#~ msgid "Move to Trash"
-#~ msgstr "Perkelti į šiukšlinę"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Move the selected media to the trash"
-#~ msgstr "Perkelti pasirinktą mediją į šiukšlinę"
-
-#~ msgctxt "@title"
-#~ msgid "Open"
-#~ msgstr "Atverti"
+#~ msgctxt "@action:inMenu"
+#~ msgid "Donate…"
+#~ msgstr "ئىئانە…"
