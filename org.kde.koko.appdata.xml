@@ -43,6 +43,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="sl">Fotografije</name>
   <name xml:lang="sv">Foton</name>
   <name xml:lang="tr">Fotoğraflar</name>
+  <name xml:lang="ug">سۈرەت</name>
   <name xml:lang="uk">Фотографії</name>
   <name xml:lang="zh-CN">照片</name>
   <name xml:lang="zh-TW">相片</name>
@@ -86,6 +87,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <summary xml:lang="sl">Galerija slik</summary>
   <summary xml:lang="sv">Bildgalleri</summary>
   <summary xml:lang="tr">Görsel Galerisi</summary>
+  <summary xml:lang="ug">سۈرەت يىغقۇچ</summary>
   <summary xml:lang="uk">Галерея зображень</summary>
   <summary xml:lang="zh-CN">图像库</summary>
   <summary xml:lang="zh-TW">圖片庫</summary>
