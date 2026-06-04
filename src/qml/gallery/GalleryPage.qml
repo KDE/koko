@@ -301,8 +301,8 @@ Kirigami.ScrollablePage {
             tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
             checkable: true
             checked: exiv2Extractor.favorite
-            enabled: selectionModel.selectedIndexes.length === 1
-            visible: selectionModel.selectedIndexes.length === 1
+            enabled: selectionModel.selectedIndexes.length === 1 && selectionModel.model.data(selectionModel.selectedIndexes[0], AbstractGalleryModel.ItemTypeRole) === AbstractGalleryModel.Media
+            visible: selectionModel.selectedIndexes.length === 1 && selectionModel.model.data(selectionModel.selectedIndexes[0], AbstractGalleryModel.ItemTypeRole) === AbstractGalleryModel.Media
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onToggled: {
                 exiv2Extractor.toggleFavorite(exiv2Extractor.filePath.toString().replace("file://", ""));
