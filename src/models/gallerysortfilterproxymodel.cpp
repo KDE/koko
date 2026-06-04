@@ -36,6 +36,7 @@ GallerySortFilterProxyModel::GallerySortFilterProxyModel(QObject *parent)
     m_collator.setNumericMode(true);
     m_collator.setCaseSensitivity(Qt::CaseInsensitive);
 
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortRole(sortModeToRole(m_sortMode));
     sort(0, Qt::AscendingOrder);
 }
