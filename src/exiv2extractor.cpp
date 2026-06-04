@@ -321,11 +321,12 @@ void Exiv2Extractor::extract(const QString &filePath)
         qWarning() << "Exception in exiv2:" << e.what();
     }
 
+    Exiv2::ExifData data;
     if (!image.get() || !image->good()) {
         qWarning() << "invalid exiv2 image";
+    } else {
+        data = image->exifData();
     }
-
-    const Exiv2::ExifData &data = image->exifData();
 
     Exiv2::ExifData::const_iterator it = data.findKey(Exiv2::ExifKey("Exif.Photo.DateTimeOriginal"));
     if (it != data.end()) {
