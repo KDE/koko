@@ -40,7 +40,6 @@ Kirigami.ScrollablePage {
     property int navigationIndex: -1
 
     property bool selectionMode: selectionModel.hasSelection
-    property bool suppressVisibleSelectionMode: false
 
     Component.onCompleted: {
         if (page.canNavigate) {
@@ -643,7 +642,6 @@ Kirigami.ScrollablePage {
             highlighted: gridView.currentIndex == index
             selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))
             selectionMode: page.selectionMode
-            suppressVisibleSelectionMode: page.suppressVisibleSelectionMode
 
             TapHandler {
                 acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
@@ -723,19 +721,7 @@ Kirigami.ScrollablePage {
             }
 
             function showMenu() {
-                let selectionWasEmpty = !selectionModel.hasSelection;
-                if (selectionWasEmpty) {
-                    // NOTE: This is ugly. It would be better if we could create gallery page actions by
-                    // creating a QML QtObject with all of the actions as properties, pass it a KFileItemList
-                    // and have it set them up, and then add them to an actions list by referencing their
-                    // properties. That would nicely separate context menu actions from the page actions, and
-                    // make it so we don't have to select for the context menu. Probably better for Marco's
-                    // action collection stuff too. File actions can be exported as proprties of FileMenuActions
-                    // and just converted to Kirigami.Action from QAction.
-                    // TODO: fixable now?
-                    page.suppressVisibleSelectionMode = true;
-                }
-
+                gridView.currentIndex = delegate.index;
                 if (!selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))) {
                     selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.ClearAndSelect);
                 }
@@ -761,13 +747,6 @@ Kirigami.ScrollablePage {
                     titleText: selectionModel.selectedIndexes.length === 1 ? selectionModel.model.data(selectionModel.selectedIndexes[0], AbstractGalleryModel.NameRole)
                                                                            : i18np("%1 item", "%1 items", selectionModel.selectedIndexes.length)
                 }) as GalleryContextMenu;
-
-                if (selectionWasEmpty) {
-                    contextMenu.closed.connect(() => {
-                        selectionModel.clearSelection();
-                        page.suppressVisibleSelectionMode = false;
-                    });
-                }
 
                 contextMenu.popup();
                 contextMenu.closed.connect(() => { contextMenu.destroy() });
@@ -796,7 +775,7 @@ Kirigami.ScrollablePage {
                     active: parent.hovered
                 }
 
-                opacity: (delegate.hovered || (page.selectionMode && !page.suppressVisibleSelectionMode)) ? 0.5 : 0
+                opacity: (delegate.hovered || page.selectionMode) ? 0.5 : 0
             }
         }
 

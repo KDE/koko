@@ -25,7 +25,6 @@ Controls.ItemDelegate {
     required property url url
 
     required property bool selectionMode
-    required property bool suppressVisibleSelectionMode
 
     property alias thumbnailPriority: image.priority
 
@@ -82,8 +81,8 @@ Controls.ItemDelegate {
             transform: Scale {
                 origin.x: image.width / 2
                 origin.y: image.height / 2
-                xScale: (root.selectionMode && !root.suppressVisibleSelectionMode) ? 0.8 : 1
-                yScale: (root.selectionMode && !root.suppressVisibleSelectionMode) ? 0.8 : 1
+                xScale: root.selectionMode ? 0.8 : 1
+                yScale: root.selectionMode ? 0.8 : 1
 
                 Behavior on xScale {
                     NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
