@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:41+0000\n"
+"POT-Creation-Date: 2026-06-05 00:41+0000\n"
 "PO-Revision-Date: 2026-05-19 12:41+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -601,13 +601,13 @@ msgctxt "@title:group"
 msgid "XMPP"
 msgstr "XMPP"
 
-#: exiv2extractor.cpp:384
+#: exiv2extractor.cpp:385
 #, kde-format
 msgctxt "@item:intable"
 msgid "Location"
 msgstr "Location"
 
-#: exiv2extractor.cpp:520
+#: exiv2extractor.cpp:521
 #, kde-format
 msgctxt ""
 "@item:intable %1 is the image width, %2 is the image height, %3 is the "
@@ -615,61 +615,61 @@ msgctxt ""
 msgid "%1 × %2 (%3 MP)"
 msgstr "%1 × %2 (%3 MP)"
 
-#: exiv2extractor.cpp:526
+#: exiv2extractor.cpp:527
 #, kde-format
 msgctxt "@item:intable %1 is the image width, %2 is the image height"
 msgid "%1 × %2"
 msgstr "%1 × %2"
 
-#: exiv2extractor.cpp:530
+#: exiv2extractor.cpp:531
 #, kde-format
 msgctxt "@item:intable Image file name"
 msgid "Name"
 msgstr "Nomine"
 
-#: exiv2extractor.cpp:531
+#: exiv2extractor.cpp:532
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Size"
 msgstr "Grandor de file"
 
-#: exiv2extractor.cpp:534
+#: exiv2extractor.cpp:535
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Created"
 msgstr "Data create"
 
-#: exiv2extractor.cpp:536
+#: exiv2extractor.cpp:537
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Modified"
 msgstr "Data Modificate"
 
-#: exiv2extractor.cpp:537
+#: exiv2extractor.cpp:538
 #, kde-format
 msgctxt "@item:intable"
 msgid "Date Accessed"
 msgstr "Data Accessite"
 
-#: exiv2extractor.cpp:538
+#: exiv2extractor.cpp:539
 #, kde-format
 msgctxt "@item:intable"
 msgid "Path"
 msgstr "Percurso"
 
-#: exiv2extractor.cpp:539
+#: exiv2extractor.cpp:540
 #, kde-format
 msgctxt "@item:intable"
 msgid "Image Size"
 msgstr "Grandor de Imagine: "
 
-#: exiv2extractor.cpp:540
+#: exiv2extractor.cpp:541
 #, kde-format
 msgctxt "@item:intable"
 msgid "File Type"
 msgstr "Typo de file"
 
-#: exiv2extractor.cpp:551
+#: exiv2extractor.cpp:552
 #, kde-format
 msgctxt "@item:intable"
 msgid "Comment"
@@ -963,7 +963,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr ""
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:300
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:299
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
@@ -1102,182 +1102,182 @@ msgstr "Favoritos"
 msgid "Places"
 msgstr "Placias"
 
-#: qml/gallery/GalleryDelegate.qml:152
+#: qml/gallery/GalleryDelegate.qml:151
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "1 elemento"
 msgstr[1] "%1 elementos"
 
-#: qml/gallery/GalleryPage.qml:140
+#: qml/gallery/GalleryPage.qml:139
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Restabili"
 
-#: qml/gallery/GalleryPage.qml:141
+#: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Restabili medios seligite a lor previe locationes"
 
-#: qml/gallery/GalleryPage.qml:160
+#: qml/gallery/GalleryPage.qml:159
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Ordina: %1"
 
-#: qml/gallery/GalleryPage.qml:165
+#: qml/gallery/GalleryPage.qml:164
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Nomine"
 
-#: qml/gallery/GalleryPage.qml:172
+#: qml/gallery/GalleryPage.qml:171
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Dimension"
 
-#: qml/gallery/GalleryPage.qml:179
+#: qml/gallery/GalleryPage.qml:178
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Modificate"
 
-#: qml/gallery/GalleryPage.qml:180
+#: qml/gallery/GalleryPage.qml:179
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Data Modificate"
 
-#: qml/gallery/GalleryPage.qml:187
+#: qml/gallery/GalleryPage.qml:186
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Create"
 
-#: qml/gallery/GalleryPage.qml:188
+#: qml/gallery/GalleryPage.qml:187
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Data create"
 
-#: qml/gallery/GalleryPage.qml:195
+#: qml/gallery/GalleryPage.qml:194
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Accedite"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:195
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Data Accessite"
 
-#: qml/gallery/GalleryPage.qml:209
+#: qml/gallery/GalleryPage.qml:208
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Ascendente"
 
-#: qml/gallery/GalleryPage.qml:211
+#: qml/gallery/GalleryPage.qml:210
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "A-Z"
 
-#: qml/gallery/GalleryPage.qml:213
+#: qml/gallery/GalleryPage.qml:212
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Le plus parve prime"
 
-#: qml/gallery/GalleryPage.qml:217
+#: qml/gallery/GalleryPage.qml:216
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Le plus vetule prime"
 
-#: qml/gallery/GalleryPage.qml:220
+#: qml/gallery/GalleryPage.qml:219
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Ascendente"
 
-#: qml/gallery/GalleryPage.qml:231
+#: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Descendente"
 
-#: qml/gallery/GalleryPage.qml:233
+#: qml/gallery/GalleryPage.qml:232
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Z-A"
 
-#: qml/gallery/GalleryPage.qml:235
+#: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Le plus grande prime"
 
-#: qml/gallery/GalleryPage.qml:239
+#: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Le plus nove prime"
 
-#: qml/gallery/GalleryPage.qml:242
+#: qml/gallery/GalleryPage.qml:241
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Descendente"
 
-#: qml/gallery/GalleryPage.qml:264
+#: qml/gallery/GalleryPage.qml:263
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Dossier de marcator de libro"
 
-#: qml/gallery/GalleryPage.qml:265
+#: qml/gallery/GalleryPage.qml:264
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Pone in marcator de libro Dossier cuirrente"
 
-#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Remove ex favoritos"
 
-#: qml/gallery/GalleryPage.qml:302 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Adde a favoritos"
 
-#: qml/gallery/GalleryPage.qml:317
+#: qml/gallery/GalleryPage.qml:316
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Comparti le media selectionate"
 
-#: qml/gallery/GalleryPage.qml:762
+#: qml/gallery/GalleryPage.qml:748
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 elemento"
 msgstr[1] "%1 elementos"
 
-#: qml/gallery/GalleryPage.qml:807
+#: qml/gallery/GalleryPage.qml:786
 #, kde-format
 msgid "No media found"
 msgstr "Nulle multimedia (medios)  trovate"
 
-#: qml/gallery/GalleryPage.qml:831
+#: qml/gallery/GalleryPage.qml:810
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1285,7 +1285,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 elemento selectionate"
 msgstr[1] "%1 elementos selectionate"
 
-#: qml/gallery/GalleryPage.qml:836
+#: qml/gallery/GalleryPage.qml:815
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
