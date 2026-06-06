@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-05 00:41+0000\n"
-"PO-Revision-Date: 2026-05-21 12:10+0400\n"
+"PO-Revision-Date: 2026-06-05 14:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -845,12 +845,10 @@ msgid "Times"
 msgstr "الوقت"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "انتقل إلى الفيديوهات"
+msgstr "التّنقّل"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -935,12 +933,10 @@ msgid "Shared url for image is <a href='%1'>%1</a>"
 msgstr "عنوان الصورة المشارك بها هو <a href='%1'>%1</a>"
 
 #: qml/ActionCollection.qml:20
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Gallery Sorting"
+#, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr "فرز المعرض"
+msgstr "المعرض"
 
 #: qml/ActionCollection.qml:23
 #, kde-format
@@ -970,7 +966,7 @@ msgstr "اعكس تحديد الوسائط المحددة"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "عرض الوسائط"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:299
 #, kde-format
@@ -979,8 +975,7 @@ msgid "Favorite"
 msgstr "فضّل"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "حرّر"
@@ -992,20 +987,16 @@ msgid "Edit this image"
 msgstr "حرّر هذه الصورة"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "شارك"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&معلومات"
+msgstr "معلومات"
 
 #: qml/ActionCollection.qml:73
 #, kde-format
@@ -1026,9 +1017,7 @@ msgid "Copy Location"
 msgstr "انسخ المكان"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "عرض الشرائح"
@@ -1040,21 +1029,16 @@ msgid "Start slideshow"
 msgstr "ابدأ عرض الشرائح"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "أظهر ال&متحكمات"
+msgstr "اظهر أدوات التحكم"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "اعرض &شريط المصغرات"
+msgstr "اعرض شريط المصغرات"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1069,12 +1053,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "أخفِ شريط المصغرات"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "&ملء الشاشة"
+msgstr "ملء الشاشة"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1406,12 +1388,10 @@ msgid "Current rating %1"
 msgstr "التقييم الحالي %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "تعليق"
+msgstr "التعليق:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1851,7 +1831,7 @@ msgstr "عامّ"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "اختصارات لوحة المفاتيح"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
