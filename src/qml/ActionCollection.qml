@@ -18,6 +18,7 @@ AC.ActionCollectionManager {
     AC.ActionCollection {
         name: "org.kde.koko.gallery"
         text: i18nc("Actions category", "Gallery")
+
         AC.StandardActionData {
             standardAction: AC.StandardActionData.SelectAll
             toolTip: i18nc("@info:tooltip", "Select all media")
@@ -38,12 +39,7 @@ AC.ActionCollectionManager {
     AC.ActionCollection {
         name: "org.kde.koko.mediaview"
         text: i18nc("Actions category", "Media View")
-        AC.ActionData {
-            name: "ToggleFavorite"
-            icon.name: "non-starred-symbolic"
-            text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
-            checkable: true
-        }
+
         AC.ActionData {
             name: "EditImage"
             icon.name: "edit-entry"
@@ -98,6 +94,12 @@ AC.ActionCollectionManager {
         name: "org.kde.koko.file"
         text: i18nc("Actions category", "File")
 
+        AC.ActionData {
+            name: "Favorite"
+            icon.name: "non-starred-symbolic"
+            text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
+            checkable: true
+        }
         AC.StandardActionData {
             standardAction: AC.StandardActionData.SaveAs
         }
