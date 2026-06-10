@@ -265,7 +265,7 @@ Kirigami.ScrollablePage {
             checkable: true
             checked: page.isBookmarked
             enabled: canBookmark
-            visible: canBookmark
+            visible: isFolderView
             displayHint: Kirigami.DisplayHint.IconOnly
             onToggled: {
                 if (!(galleryModel instanceof Koko.GalleryFolderModel) || galleryModel.url == undefined) {
