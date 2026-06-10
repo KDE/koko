@@ -68,7 +68,7 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         return;
     }
 
-    KirigamiActions::ActionCollection *collection = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.mediaview"_s);
+    KirigamiActions::ActionCollection *collection = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.file"_s);
     Q_ASSERT(collection);
 
     auto connectStandardAction = [this, collection](KStandardActions::StandardAction standardAction, auto func) {

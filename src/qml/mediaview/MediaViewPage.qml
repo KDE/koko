@@ -203,49 +203,49 @@ Kirigami.Page {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: AC.StandardActionData.SaveAs
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: "OpenFolder"
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: "OpenWith"
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: AC.StandardActionData.Copy
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: "CopyPath"
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: AC.StandardActionData.MoveToTrash
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: AC.StandardActionData.DeleteFile
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: root.enabled && root.visible
             AC.ActionCollection.action: AC.StandardActionData.Print
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.collection: "org.kde.koko.file"
         }
     ]
 

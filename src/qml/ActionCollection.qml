@@ -64,6 +64,39 @@ AC.ActionCollectionManager {
             defaultShortcut: "I"
             checkable: true
         }
+        AC.ActionData {
+            name: "Slideshow"
+            text: i18nc("@action:intoolbar Start a slideshow", "Slideshow")
+            icon.name: "view-presentation-symbolic"
+            toolTip: i18nc("@info:tooltip", "Start slideshow")
+        }
+        AC.ActionData {
+            name: "ShowControls"
+            text: i18nc("@action:intoolbar Toggle visibility of toolbars and other UI elements", "Show Controls")
+            checkable: true
+        }
+        AC.ActionData {
+            name: "ShowThumbnailToolBar"
+            text: i18nc("@action:intoolbar Toggle visibility of toolbar", "Show Thumbnail Toolbar")
+            toolTip: !Koko.Config.imageViewPreview ? i18nc("@info:tooltip", "Show the thumbnail toolbar")
+                                                   : i18nc("@info:tooltip", "Hide the thumbnail toolbar")
+            defaultShortcut: "T"
+            checkable: true
+        }
+        AC.ActionData {
+            name: "Fullscreen"
+            text: i18nc("@action:intoolbar", "Full Screen")
+            icon.name: !checked ? "view-fullscreen-symbolic" : "view-restore-symbolic"
+            toolTip: !checked ? i18nc("@info:tooltip", "Enter Full Screen") : i18nc("@info:tooltip", "Exit Full Screen")
+
+            defaultShortcut: "F"
+            checkable: true
+        }
+    }
+
+    AC.ActionCollection {
+        name: "org.kde.koko.file"
+        text: i18nc("Actions category", "File")
 
         AC.StandardActionData {
             standardAction: AC.StandardActionData.SaveAs
@@ -94,35 +127,6 @@ AC.ActionCollectionManager {
         }
         AC.StandardActionData {
             standardAction: AC.StandardActionData.Print
-        }
-
-        AC.ActionData {
-            name: "Slideshow"
-            text: i18nc("@action:intoolbar Start a slideshow", "Slideshow")
-            icon.name: "view-presentation-symbolic"
-            toolTip: i18nc("@info:tooltip", "Start slideshow")
-        }
-        AC.ActionData {
-            name: "ShowControls"
-            text: i18nc("@action:intoolbar Toggle visibility of toolbars and other UI elements", "Show Controls")
-            checkable: true
-        }
-        AC.ActionData {
-            name: "ShowThumbnailToolBar"
-            text: i18nc("@action:intoolbar Toggle visibility of toolbar", "Show Thumbnail Toolbar")
-            toolTip: !Koko.Config.imageViewPreview ? i18nc("@info:tooltip", "Show the thumbnail toolbar")
-                                                   : i18nc("@info:tooltip", "Hide the thumbnail toolbar")
-            defaultShortcut: "T"
-            checkable: true
-        }
-        AC.ActionData {
-            name: "Fullscreen"
-            text: i18nc("@action:intoolbar", "Full Screen")
-            icon.name: !checked ? "view-fullscreen-symbolic" : "view-restore-symbolic"
-            toolTip: !checked ? i18nc("@info:tooltip", "Enter Full Screen") : i18nc("@info:tooltip", "Exit Full Screen")
-
-            defaultShortcut: "F"
-            checkable: true
         }
     }
 }
