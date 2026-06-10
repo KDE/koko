@@ -104,8 +104,8 @@ Kirigami.Page {
     readonly property list<QtObject> toolBarActions: [
         Kirigami.Action {
             id: favoriteAction
-            AC.ActionCollection.action: "ToggleFavorite"
-            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            AC.ActionCollection.action: "Favorite"
+            AC.ActionCollection.collection: "org.kde.koko.file"
 
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
             tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")

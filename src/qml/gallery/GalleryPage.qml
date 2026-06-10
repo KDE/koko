@@ -296,7 +296,9 @@ Kirigami.ScrollablePage {
     readonly property list<QtObject> extraHiddenUiActions: [
         Kirigami.Action {
             id: favoriteAction
-            text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
+            AC.ActionCollection.action: "Favorite"
+            AC.ActionCollection.collection: "org.kde.koko.file"
+
             icon.name: exiv2Extractor.favorite ? "starred-symbolic" : "non-starred-symbolic"
             tooltip: exiv2Extractor.favorite ? i18nc("@info:tooltip", "Remove from favorites") : i18nc("@info:tooltip", "Add to favorites")
             checkable: true
