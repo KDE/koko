@@ -238,7 +238,8 @@ RowLayout {
 
                 icon.name: rootLocations[rootLocation].icon
                 text: root.galleryModel.titleForPath(rootLocations[rootLocation].path)
-                font.bold: Koko.DirModelUtils.getUrlParts(root.path).length === 0
+                font.bold: navigatorRoot.isUrlNavigator ? Koko.DirModelUtils.getUrlParts(root.path).length === 0
+                                                        : root.path.length === 0
 
                 onClicked: root.navigate(rootLocations[rootLocation].path)
 
