@@ -17,20 +17,63 @@ class QQuickItem;
 class FileMenuManager : public QObject
 {
     Q_OBJECT
+
     Q_PROPERTY(QList<QUrl> urls READ urls WRITE setUrls NOTIFY urlsChanged FINAL)
-    Q_PROPERTY(bool enabled MEMBER m_enabled NOTIFY enabledChanged FINAL)
+    Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged FINAL)
+
+    Q_PROPERTY(bool canSaveAs READ canSaveAs NOTIFY canSaveAsChanged FINAL)
+    Q_PROPERTY(bool canOpenFolder READ canOpenFolder NOTIFY canOpenFolderChanged FINAL)
+    Q_PROPERTY(bool canOpenWith READ canOpenWith NOTIFY canOpenWithChanged FINAL)
+    Q_PROPERTY(bool canCopy READ canCopy NOTIFY canCopyChanged FINAL)
+    Q_PROPERTY(bool canCopyPath READ canCopyPath NOTIFY canCopyPathChanged FINAL)
+    Q_PROPERTY(bool canMoveToTrash READ canMoveToTrash NOTIFY canMoveToTrashChanged FINAL)
+    Q_PROPERTY(bool canDeleteFile READ canDeleteFile NOTIFY canDeleteFileChanged FINAL)
+    Q_PROPERTY(bool canPrint READ canPrint NOTIFY canPrintChanged FINAL)
+
     QML_ELEMENT
+
 public:
     explicit FileMenuManager(QObject *parent = nullptr);
 
     QList<QUrl> urls() const;
     void setUrls(const QList<QUrl> &urls);
 
+    bool enabled() const;
+    void setEnabled(const bool enabled);
+
+    bool canSaveAs() const;
+    bool canOpenFolder() const;
+    bool canOpenWith() const;
+    bool canCopy() const;
+    bool canCopyPath() const;
+    bool canMoveToTrash() const;
+    bool canDeleteFile() const;
+    bool canPrint() const;
+
 Q_SIGNALS:
     void urlsChanged();
     void enabledChanged();
+    void canSaveAsChanged();
+    void canOpenFolderChanged();
+    void canOpenWithChanged();
+    void canCopyChanged();
+    void canCopyPathChanged();
+    void canMoveToTrashChanged();
+    void canDeleteFileChanged();
+    void canPrintChanged();
 
 private:
     QList<QUrl> m_urls;
     bool m_enabled = false;
+
+    bool m_canSaveAs = false;
+    bool m_canOpenFolder = false;
+    bool m_canOpenWith = false;
+    bool m_canCopy = false;
+    bool m_canCopyPath = false;
+    bool m_canMoveToTrash = false;
+    bool m_canDeleteFile = false;
+    bool m_canPrint = false;
+
+    void updateActions();
 };

@@ -357,56 +357,64 @@ Kirigami.ScrollablePage {
 
     Koko.FileMenuManager {
         id: fileMenuManager
-        enabled: page.visible
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
+        enabled: page.visible && page.enabled
     }
 
     readonly property list<Kirigami.Action> fileMenuActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canSaveAs
+            visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.SaveAs
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canOpenFolder
+            visible: enabled
             AC.ActionCollection.action: "OpenFolder"
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canOpenWith
+            visible: enabled
             AC.ActionCollection.action: "OpenWith"
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canCopy
+            visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.Copy
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canCopyPath
+            visible: enabled
             AC.ActionCollection.action: "CopyPath"
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canMoveToTrash
+            visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.MoveToTrash
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canDeleteFile
+            visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.DeleteFile
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: page.enabled && page.visible
+            enabled: fileMenuManager.enabled && fileMenuManager.canPrint
+            visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.Print
             AC.ActionCollection.collection: "org.kde.koko.file"
         }

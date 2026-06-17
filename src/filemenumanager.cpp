@@ -62,12 +62,71 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
 
     m_urls = urls;
 
-    if (m_urls.isEmpty()) {
-        Q_EMIT urlsChanged();
+    updateActions();
 
+    Q_EMIT urlsChanged();
+}
+
+bool FileMenuManager::enabled() const
+{
+    return m_enabled;
+}
+
+void FileMenuManager::setEnabled(const bool enabled)
+{
+    if (m_enabled == enabled) {
         return;
     }
 
+    m_enabled = enabled;
+
+    updateActions();
+
+    Q_EMIT enabledChanged();
+}
+
+bool FileMenuManager::canSaveAs() const
+{
+    return m_canSaveAs;
+}
+
+bool FileMenuManager::canOpenFolder() const
+{
+    return m_canOpenFolder;
+}
+
+bool FileMenuManager::canOpenWith() const
+{
+    return m_canOpenWith;
+}
+
+bool FileMenuManager::canCopy() const
+{
+    return m_canCopy;
+}
+
+bool FileMenuManager::canCopyPath() const
+{
+    return m_canCopyPath;
+}
+
+bool FileMenuManager::canMoveToTrash() const
+{
+    return m_canMoveToTrash;
+}
+
+bool FileMenuManager::canDeleteFile() const
+{
+    return m_canDeleteFile;
+}
+
+bool FileMenuManager::canPrint() const
+{
+    return m_canPrint;
+}
+
+void FileMenuManager::updateActions()
+{
     KirigamiActions::ActionCollection *collection = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.file"_s);
     Q_ASSERT(collection);
 
@@ -75,49 +134,50 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         QAction *action = collection->action(standardAction);
         // Poor error message as KStandardActions::StandardAction is not a Q_ENUM
         Q_ASSERT_X(action, "connecting to action, standardAction not found in collection", QString::number(standardAction).toUtf8());
-        action->setVisible(true);
         connect(action, &QAction::triggered, this, func);
     };
     auto connectNamedAction = [this, collection](const QString &actionName, auto func) {
         QAction *action = collection->action(actionName);
         Q_ASSERT_X(action, "connecting to action, action not found in collection", actionName.toUtf8());
-        action->setVisible(true);
         connect(action, &QAction::triggered, this, func);
     };
 
     auto disconnectStandardAction = [this, collection](KStandardActions::StandardAction standardAction) {
         QAction *action = collection->action(standardAction);
         Q_ASSERT_X(action, "disconnecting from action, standardAction not found in collection", QString::number(standardAction).toUtf8());
-        action->setVisible(false);
         disconnect(action, &QAction::triggered, this, nullptr);
     };
     auto disconnectNamedAction = [this, collection](const QString &actionName) {
         QAction *action = collection->action(actionName);
         Q_ASSERT_X(action, "disconnecting from action, action not found in collection", actionName.toUtf8());
-        action->setVisible(false);
         disconnect(action, &QAction::triggered, this, nullptr);
     };
 
     KFileItemList fileItems;
     fileItems.reserve(m_urls.size());
-    std::transform(urls.cbegin(), urls.cend(), std::back_inserter(fileItems), [](const QUrl &url) {
+    std::transform(m_urls.cbegin(), m_urls.cend(), std::back_inserter(fileItems), [](const QUrl &url) {
         return KFileItem(url);
     });
 
     KFileItemListProperties itemProperties(fileItems);
 
+    const bool hasFile = fileItems.size() > 0;
     const bool singleFile = fileItems.size() == 1;
-    const auto singleFileMimetype = fileItems[0].mimetype().toLatin1();
+    const auto singleFileMimetype = hasFile ? fileItems[0].mimetype().toLatin1() : "";
     const auto singleFileReadableImageMimetype = QImageReader::supportedMimeTypes().contains(singleFileMimetype);
 
     // Save As action
+    m_canSaveAs = false;
     disconnectStandardAction(KStandardActions::SaveAs);
-    if (singleFile && singleFileMimetype != "inode/directory") {
+    if (m_enabled && singleFile && singleFileMimetype != "inode/directory") {
+        m_canSaveAs = true;
+
         // TODO: Mix of using m_urls, urls and fileItem, pick one
         auto saveAsLambda = [=, this] {
             if (!m_enabled) {
                 return;
             }
+
             const auto suffix = fileItems[0].suffix();
             const auto writableImageMimetypes = QImageWriter::supportedMimeTypes();
             // We only list different writable types when writing as a different
@@ -144,9 +204,9 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
             auto dialog = new QFileDialog();
             dialog->setAcceptMode(QFileDialog::AcceptSave);
             dialog->setFileMode(QFileDialog::AnyFile);
-            QUrl dirUrl = urls[0].adjusted(QUrl::RemoveFilename);
+            QUrl dirUrl = m_urls[0].adjusted(QUrl::RemoveFilename);
             dialog->setDirectoryUrl(dirUrl);
-            dialog->selectFile(urls[0].fileName());
+            dialog->selectFile(m_urls[0].fileName());
             dialog->setDefaultSuffix(suffix);
             dialog->setMimeTypeFilters(mimetypeFilters);
             dialog->selectMimeTypeFilter(singleFileMimetype);
@@ -183,12 +243,15 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         };
         connectStandardAction(KStandardActions::SaveAs, saveAsLambda);
     }
+    Q_EMIT canSaveAsChanged();
 
-    // Open Containing Folder action
+    // Open Containg Folder action
+    m_canOpenFolder = false;
     disconnectNamedAction(u"OpenFolder"_s);
-    if (std::all_of(m_urls.cbegin(), m_urls.cend(), [](const QUrl &url) {
+    if (m_enabled && hasFile && std::all_of(m_urls.cbegin(), m_urls.cend(), [](const QUrl &url) {
             return KProtocolManager::supportsListing(url);
         })) {
+        m_canOpenFolder = true;
         auto openFolderLambda = [this] {
             if (!m_enabled) {
                 return;
@@ -197,67 +260,84 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         };
         connectNamedAction(u"OpenFolder"_s, openFolderLambda);
     }
+    Q_EMIT canOpenFolderChanged();
 
-    // Standard actions
-    KFileItemActions kFileItemActions(this);
-    kFileItemActions.setItemListProperties(itemProperties);
-
-    QMenu menu;
-    kFileItemActions.insertOpenWithActionsTo(nullptr, &menu, {qApp->desktopFileName()});
-
+    // Open With action
+    m_canOpenWith = false;
     disconnectNamedAction(u"OpenWith"_s);
-    auto openWithLambda = [this] {
-        if (!m_enabled) {
-            return;
-        }
-        auto job = new KIO::ApplicationLauncherJob(this);
-        job->setUrls(m_urls);
-        job->setUiDelegate(KIO::createDefaultJobUiDelegate());
-        job->start();
-    };
-    connectNamedAction(u"OpenWith"_s, openWithLambda);
+    if (m_enabled && hasFile) {
+        m_canOpenWith = true;
+        auto openWithLambda = [this] {
+            if (!m_enabled) {
+                return;
+            }
 
+            auto job = new KIO::ApplicationLauncherJob(this);
+            job->setUrls(m_urls);
+            job->setUiDelegate(KIO::createDefaultJobUiDelegate());
+            job->start();
+        };
+        connectNamedAction(u"OpenWith"_s, openWithLambda);
+    }
+    Q_EMIT canOpenWithChanged();
+
+    // Copy action
+    m_canCopy = false;
     disconnectStandardAction(KStandardActions::Copy);
-    auto copyLambda = [fileItems, this] {
-        if (!m_enabled) {
-            return;
-        }
-        QMimeData *data = new QMimeData(); // Cleaned up by Qt later
+    if (m_enabled && hasFile) {
+        m_canCopy = true;
+        auto copyLambda = [fileItems, this] {
+            if (!m_enabled) {
+                return;
+            }
 
-        QList<QUrl> urls;
-        QList<QUrl> mostLocalUrls;
-        urls.reserve(fileItems.size());
-        mostLocalUrls.reserve(fileItems.size());
-        for (const KFileItem &item : fileItems) {
-            urls << item.url();
-            mostLocalUrls << item.mostLocalUrl();
-        }
+            QMimeData *data = new QMimeData(); // Cleaned up by Qt later
 
-        KUrlMimeData::setUrls(urls, mostLocalUrls, data);
-        QApplication::clipboard()->setMimeData(data);
-    };
-    connectStandardAction(KStandardActions::Copy, copyLambda);
+            QList<QUrl> urls;
+            QList<QUrl> mostLocalUrls;
+            urls.reserve(fileItems.size());
+            mostLocalUrls.reserve(fileItems.size());
+            for (const KFileItem &item : fileItems) {
+                urls << item.url();
+                mostLocalUrls << item.mostLocalUrl();
+            }
 
+            KUrlMimeData::setUrls(urls, mostLocalUrls, data);
+            QApplication::clipboard()->setMimeData(data);
+        };
+        connectStandardAction(KStandardActions::Copy, copyLambda);
+    }
+    Q_EMIT canCopyChanged();
+
+    // Copy Path action
+    m_canCopyPath = false;
     disconnectNamedAction(u"CopyPath"_s);
-    auto copyPathLambda = [fileItems, this] {
-        if (!m_enabled) {
-            return;
-        }
-        // TODO: Is better behaviour possible for multiple fileItems?
-        //       Maybe with multiple, we don't have fallback and verify that all
-        //       localPath is the same first? Is fallback even proper?
-        QString path = fileItems[0].localPath();
-        if (path.isEmpty()) {
-            path = fileItems[0].url().toDisplayString();
-        }
-        QApplication::clipboard()->setText(path);
-    };
+    if (m_enabled && singleFile) {
+        m_canCopyPath = true;
+        auto copyPathLambda = [fileItems, this] {
+            if (!m_enabled) {
+                return;
+            }
 
-    connectNamedAction(u"CopyPath"_s, copyPathLambda);
+            // TODO: Is better behaviour possible for multiple fileItems?
+            //       Maybe with multiple, we don't have fallback and verify that all
+            //       localPath is the same first? Is fallback even proper?
+            QString path = fileItems[0].localPath();
+            if (path.isEmpty()) {
+                path = fileItems[0].url().toDisplayString();
+            }
+            QApplication::clipboard()->setText(path);
+        };
+        connectNamedAction(u"CopyPath"_s, copyPathLambda);
+    }
+    Q_EMIT canCopyPathChanged();
 
+    // Move To Trash action
+    m_canMoveToTrash = false;
     disconnectStandardAction(KStandardActions::MoveToTrash);
     const bool canTrash = itemProperties.isLocal() && itemProperties.supportsMoving();
-    if (canTrash) {
+    if (m_enabled && hasFile && canTrash) {
+        m_canMoveToTrash = true;
         auto moveToTrashLambda = [this] {
             if (!m_enabled) {
                 return;
@@ -275,12 +355,14 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         };
         connectStandardAction(KStandardActions::MoveToTrash, moveToTrashLambda);
     }
+    Q_EMIT canMoveToTrashChanged();
 
-    KConfigGroup cg(KSharedConfig::openConfig(), u"KDE"_s);
-    const bool showDeleteCommand = cg.readEntry("ShowDeleteCommand", false);
-
+    // Delete action
+    m_canDeleteFile = false;
+    const bool showDelete = KConfigGroup(KSharedConfig::openConfig(), u"KDE"_s).readEntry("ShowDeleteCommand", false);
     disconnectStandardAction(KStandardActions::DeleteFile);
-    if (itemProperties.supportsDeleting() && (!canTrash || showDeleteCommand)) {
+    if (m_enabled && hasFile && itemProperties.supportsDeleting() && (!canTrash || showDelete)) {
+        m_canDeleteFile = true;
         auto deleteLambda = [this] {
             if (!m_enabled) {
                 return;
@@ -297,10 +379,14 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         };
         connectStandardAction(KStandardActions::DeleteFile, deleteLambda);
     }
+    Q_EMIT canDeleteFileChanged();
 
+    // Print action
+    m_canPrint = false;
     disconnectStandardAction(KStandardActions::Print);
     // QPrinter requires the use of QPainter, so it must be a readable image.
-    if (singleFile && PrinterHelper::printerSupportAvailable() && singleFileReadableImageMimetype) {
+    if (m_enabled && singleFile && PrinterHelper::printerSupportAvailable() && singleFileReadableImageMimetype) {
+        m_canPrint = true;
         auto printLambda = [this] {
             if (!m_enabled) {
                 return;
@@ -309,6 +395,5 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
         };
         connectStandardAction(KStandardActions::Print, printLambda);
     }
-
-    Q_EMIT urlsChanged();
-}
+    Q_EMIT canPrintChanged();
+};
