@@ -158,6 +158,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             text: i18nc("@action:button %1 is the selected sort order, e.g. Name", "Sort: %1", sortGroup.checkedAction.text)
             icon.name: "view-sort-symbolic"
+            displayHint: Kirigami.DisplayHint.KeepVisible
 
             Kirigami.Action {
                 Controls.ActionGroup.group: sortGroup
@@ -250,6 +251,8 @@ Kirigami.ScrollablePage {
                 width: Kirigami.Units.gridUnit * 10
                 onAccepted: gallerySortFilterProxyModel.filterString = text
             }
+            icon.name: "search-symbolic"
+            displayHint: Kirigami.DisplayHint.KeepVisible
         },
 
         // Bookmark
