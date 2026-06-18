@@ -23,6 +23,7 @@ class AbstractGalleryModel : public QAbstractListModel
 
     Q_PROPERTY(QString title READ title NOTIFY titleChanged)
     Q_PROPERTY(Status status READ status NOTIFY statusChanged)
+    Q_PROPERTY(bool showingCollections READ showingCollections NOTIFY showingCollectionsChanged)
 
 public:
     ~AbstractGalleryModel() = default;
@@ -60,11 +61,14 @@ public:
     // For models which are not immediately populated
     virtual Status status() const;
 
+    virtual bool showingCollections() const;
+
     QHash<int, QByteArray> roleNames() const override;
 
 Q_SIGNALS:
     void titleChanged();
     void statusChanged();
+    void showingCollectionsChanged();
 
 protected:
     explicit AbstractGalleryModel(QObject *parent = nullptr);

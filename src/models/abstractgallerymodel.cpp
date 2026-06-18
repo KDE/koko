@@ -17,6 +17,11 @@ AbstractGalleryModel::Status AbstractGalleryModel::status() const
     return Loaded;
 }
 
+bool AbstractGalleryModel::showingCollections() const
+{
+    return false;
+}
+
 QHash<int, QByteArray> AbstractGalleryModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
