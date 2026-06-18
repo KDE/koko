@@ -39,6 +39,7 @@ Kirigami.ScrollablePage {
     property list<var> navigationHistory: []
     property int navigationIndex: -1
 
+    property bool showingCollections: galleryModel.showingCollections
     property bool selectionMode: selectionModel.hasSelection
 
     Component.onCompleted: {
@@ -368,70 +369,70 @@ Kirigami.ScrollablePage {
     readonly property list<Kirigami.Action> fileMenuActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canSaveAs
+            enabled: fileMenuManager.enabled && fileMenuManager.canSaveAs && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.SaveAs
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canOpenFolder
+            enabled: fileMenuManager.enabled && fileMenuManager.canOpenFolder && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: "OpenFolder"
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canOpenWith
+            enabled: fileMenuManager.enabled && fileMenuManager.canOpenWith && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: "OpenWith"
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canCopy
+            enabled: fileMenuManager.enabled && fileMenuManager.canCopy && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.Copy
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canCopyPath
+            enabled: fileMenuManager.enabled && fileMenuManager.canCopyPath && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: "CopyPath"
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canRenameFile
+            enabled: fileMenuManager.enabled && fileMenuManager.canRenameFile && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.RenameFile
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canMoveToTrash
+            enabled: fileMenuManager.enabled && fileMenuManager.canMoveToTrash && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.MoveToTrash
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canDeleteFile
+            enabled: fileMenuManager.enabled && fileMenuManager.canDeleteFile && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.DeleteFile
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canPrint
+            enabled: fileMenuManager.enabled && fileMenuManager.canPrint && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.Print
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
-            enabled: fileMenuManager.enabled && fileMenuManager.canProperties
+            enabled: fileMenuManager.enabled && fileMenuManager.canProperties && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: "Properties"
             AC.ActionCollection.collection: "org.kde.koko.file"
@@ -447,16 +448,15 @@ Kirigami.ScrollablePage {
             id: selectAllAction
             AC.ActionCollection.action: AC.StandardActionData.SelectAll
             AC.ActionCollection.collection: "org.kde.koko.gallery"
-            enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
+            enabled: page.visible && !page.isEmpty && !page.showingCollections && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Select | ItemSelectionModel.Columns)
-
         },
         Kirigami.Action {
             id: deselectAllAction
             AC.ActionCollection.action: AC.StandardActionData.Deselect
             AC.ActionCollection.collection: "org.kde.koko.gallery"
-            enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
+            enabled: page.visible && !page.isEmpty && !page.showingCollections && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.clearSelection()
         },
@@ -464,7 +464,7 @@ Kirigami.ScrollablePage {
             id: invertSelectionAction
             AC.ActionCollection.action: "InvertSelection"
             AC.ActionCollection.collection: "org.kde.koko.gallery"
-            enabled: page.visible && !page.isEmpty && !page.disallowMassSelection
+            enabled: page.visible && !page.isEmpty && !page.showingCollections && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Toggle | ItemSelectionModel.Columns)
         }
@@ -729,11 +729,19 @@ Kirigami.ScrollablePage {
             }
 
             function select() {
+                if (page.showingCollections) {
+                    return;
+                }
+
                 gridView.currentIndex = delegate.index;
                 selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.ClearAndSelect);
             }
 
             function shiftSelect() {
+                if (page.showingCollections) {
+                    return;
+                }
+
                 let fromIndex = Math.min(gridView.currentIndex, delegate.index);
                 let toIndex = Math.max(gridView.currentIndex, delegate.index);
 
@@ -744,11 +752,19 @@ Kirigami.ScrollablePage {
             }
 
             function ctrlSelect() {
+                if (page.showingCollections) {
+                    return;
+                }
+
                 gridView.currentIndex = delegate.index;
                 selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.Toggle);
             }
 
             function showMenu() {
+                if (page.showingCollections) {
+                    return;
+                }
+
                 gridView.currentIndex = delegate.index;
                 if (!selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))) {
                     selectionModel.select(gridView.model.index(index, 0), ItemSelectionModel.ClearAndSelect);

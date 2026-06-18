@@ -35,6 +35,7 @@ GalleryLocationModel::GalleryLocationModel(QObject *parent)
     , m_mode(None)
 {
     connect(this, &GalleryLocationModel::pathChanged, this, &GalleryLocationModel::titleChanged);
+    connect(this, &GalleryLocationModel::pathChanged, this, &GalleryLocationModel::showingCollectionsChanged);
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, [this]() {
         populate(m_path);
     });
@@ -102,6 +103,11 @@ QVariant GalleryLocationModel::pathForIndex(const QModelIndex &index) const
     default:
         return {};
     }
+}
+
+bool GalleryLocationModel::showingCollections() const
+{
+    return m_mode != FileItemMode;
 }
 
 QVariant GalleryLocationModel::data(const QModelIndex &index, int role) const
