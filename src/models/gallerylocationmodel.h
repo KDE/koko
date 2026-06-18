@@ -32,6 +32,8 @@ public:
 
     Q_INVOKABLE QVariant pathForIndex(const QModelIndex &index) const override;
 
+    bool showingCollections() const override;
+
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     int rowCount(const QModelIndex &parent = {}) const override;
 

@@ -37,6 +37,7 @@ GalleryTimeModel::GalleryTimeModel(QObject *parent)
     , m_mode(None)
 {
     connect(this, &GalleryTimeModel::pathChanged, this, &GalleryTimeModel::titleChanged);
+    connect(this, &GalleryTimeModel::pathChanged, this, &GalleryTimeModel::showingCollectionsChanged);
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, [this]() {
         populate(m_path);
     });
@@ -106,6 +107,11 @@ QVariant GalleryTimeModel::pathForIndex(const QModelIndex &index) const
     default:
         return {};
     }
+}
+
+bool GalleryTimeModel::showingCollections() const
+{
+    return m_mode != FileItemMode;
 }
 
 QVariant GalleryTimeModel::data(const QModelIndex &index, int role) const

@@ -15,6 +15,7 @@ GalleryTagsModel::GalleryTagsModel(QObject *parent)
     , m_mode(None)
 {
     connect(this, &GalleryTagsModel::pathChanged, this, &GalleryTagsModel::titleChanged);
+    connect(this, &GalleryTagsModel::pathChanged, this, &GalleryTagsModel::showingCollectionsChanged);
     connect(ImageStorage::instance(), &ImageStorage::storageModified, this, [this]() {
         populate(m_path);
     });
@@ -65,6 +66,11 @@ QVariant GalleryTagsModel::pathForIndex(const QModelIndex &index) const
     case FileItemMode:
         return QVariant(index.data(AbstractGalleryModel::FileItemRole).value<KFileItem>().url());
     }
+}
+
+bool GalleryTagsModel::showingCollections() const
+{
+    return m_mode != FileItemMode;
 }
 
 QVariant GalleryTagsModel::data(const QModelIndex &index, int role) const
