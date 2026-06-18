@@ -122,6 +122,9 @@ AC.ActionCollectionManager {
             icon.name: "edit-copy-path"
         }
         AC.StandardActionData {
+            standardAction: AC.StandardActionData.RenameFile
+        }
+        AC.StandardActionData {
             standardAction: AC.StandardActionData.MoveToTrash
         }
         AC.StandardActionData {
@@ -129,6 +132,12 @@ AC.ActionCollectionManager {
         }
         AC.StandardActionData {
             standardAction: AC.StandardActionData.Print
+        }
+        AC.ActionData {
+            name: "Properties"
+            text: i18nc("@action:inmenu", "&Properties")
+            icon.name: "document-properties-symbolic"
+            defaultShortcut: "Alt+Return"
         }
     }
 }

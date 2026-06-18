@@ -40,6 +40,7 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenFileManagerWindowJob>
+#include <KIO/RenameFileDialog>
 #include <KIO/WidgetsAskUserActionHandler>
 
 using namespace Qt::StringLiterals;
@@ -110,6 +111,11 @@ bool FileMenuManager::canCopyPath() const
     return m_canCopyPath;
 }
 
+bool FileMenuManager::canRenameFile() const
+{
+    return m_canRenameFile;
+}
+
 bool FileMenuManager::canMoveToTrash() const
 {
     return m_canMoveToTrash;
@@ -123,6 +129,11 @@ bool FileMenuManager::canDeleteFile() const
 bool FileMenuManager::canPrint() const
 {
     return m_canPrint;
+}
+
+bool FileMenuManager::canProperties() const
+{
+    return m_canProperties;
 }
 
 void FileMenuManager::updateActions()
@@ -210,6 +221,10 @@ void FileMenuManager::updateActions()
             dialog->setDefaultSuffix(suffix);
             dialog->setMimeTypeFilters(mimetypeFilters);
             dialog->selectMimeTypeFilter(singleFileMimetype);
+
+            if (dialog->winId() && m_window && m_window->winId()) {
+                dialog->windowHandle()->setTransientParent(m_window);
+            }
 
             // Don't use exec() like the QFileDialog docs show.
             // It can cause a race condition that leads to a crash when the QML environment is being destroyed.
@@ -314,7 +329,7 @@ void FileMenuManager::updateActions()
     disconnectNamedAction(u"CopyPath"_s);
     if (m_enabled && singleFile) {
         m_canCopyPath = true;
-        auto copyPathLambda = [fileItems, this] {
+        auto copyPathLambda = [this, fileItems] {
             if (!m_enabled) {
                 return;
             }
@@ -331,6 +346,26 @@ void FileMenuManager::updateActions()
         connectNamedAction(u"CopyPath"_s, copyPathLambda);
     }
     Q_EMIT canCopyPathChanged();
+
+    // Rename File action
+    m_canRenameFile = false;
+    disconnectStandardAction(KStandardActions::RenameFile);
+    if (m_enabled && hasFile) {
+        m_canRenameFile = true;
+        auto renameFileLambda = [fileItems, this] {
+            if (!m_enabled) {
+                return;
+            }
+
+            auto dialog = new KIO::RenameFileDialog(fileItems, nullptr);
+            if (dialog->winId() && m_window && m_window->winId()) {
+                dialog->windowHandle()->setTransientParent(m_window);
+            }
+            dialog->open();
+        };
+        connectStandardAction(KStandardActions::RenameFile, renameFileLambda);
+    }
+    Q_EMIT canRenameFileChanged();
 
     // Move To Trash action
     m_canMoveToTrash = false;
@@ -391,9 +426,29 @@ void FileMenuManager::updateActions()
             if (!m_enabled) {
                 return;
             }
-            PrinterHelper::printFileFromUrl(m_urls[0]);
+            PrinterHelper::printFileFromUrl(m_urls[0], m_window);
         };
         connectStandardAction(KStandardActions::Print, printLambda);
     }
     Q_EMIT canPrintChanged();
+
+    // Properties action
+    m_canProperties = false;
+    disconnectNamedAction(u"Properties"_s);
+    if (m_enabled && hasFile) {
+        m_canProperties = true;
+        auto propertiesLambda = [this, fileItems] {
+            if (!m_enabled) {
+                return;
+            }
+
+            auto dialog = new KPropertiesDialog(fileItems, nullptr);
+            if (dialog->winId() && m_window && m_window->winId()) {
+                dialog->windowHandle()->setTransientParent(m_window);
+            }
+            dialog->open();
+        };
+        connectNamedAction(u"Properties"_s, propertiesLambda);
+    }
+    Q_EMIT canPropertiesChanged();
 };
