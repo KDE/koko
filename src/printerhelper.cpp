@@ -38,7 +38,7 @@ void PrinterHelper::printFileFromUrl([[maybe_unused]] const QUrl &fileUrl, [[may
     dialog->setAttribute(Qt::WA_DeleteOnClose);
 
     // properly set the transientparent chain
-    if (dialog && dialog->winId() && parent && parent->winId()) {
+    if (dialog->winId() && parent && parent->winId()) {
         dialog->windowHandle()->setTransientParent(parent);
     }
 
@@ -59,7 +59,7 @@ void PrinterHelper::printFileFromUrl([[maybe_unused]] const QUrl &fileUrl, [[may
         painter.end();
     });
 
-    dialog->setVisible(true);
+    dialog->open();
 #else
     qWarning() << "Failed to print: print support is not available";
 #endif

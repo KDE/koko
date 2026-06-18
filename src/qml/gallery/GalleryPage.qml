@@ -362,6 +362,7 @@ Kirigami.ScrollablePage {
         id: fileMenuManager
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
         enabled: page.visible && page.enabled
+        window: page.Window.window
     }
 
     readonly property list<Kirigami.Action> fileMenuActions: [
@@ -402,6 +403,13 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
+            enabled: fileMenuManager.enabled && fileMenuManager.canRenameFile
+            visible: enabled
+            AC.ActionCollection.action: AC.StandardActionData.RenameFile
+            AC.ActionCollection.collection: "org.kde.koko.file"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: fileMenuManager.enabled && fileMenuManager.canMoveToTrash
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.MoveToTrash
@@ -419,6 +427,13 @@ Kirigami.ScrollablePage {
             enabled: fileMenuManager.enabled && fileMenuManager.canPrint
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.Print
+            AC.ActionCollection.collection: "org.kde.koko.file"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            enabled: fileMenuManager.enabled && fileMenuManager.canProperties
+            visible: enabled
+            AC.ActionCollection.action: "Properties"
             AC.ActionCollection.collection: "org.kde.koko.file"
         }
     ]
