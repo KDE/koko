@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the koko package.
 # Automatically generated, 2022.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2024-2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-14 02:38+0000\n"
-"PO-Revision-Date: 2025-09-14 11:38+0200\n"
+"PO-Revision-Date: 2026-06-21 19:44+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,7 +33,7 @@ msgstr "mkondarev@yahooo.de"
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke:"
-msgstr ""
+msgstr "Щрих:"
 
 #. i18n uses so it doesn't matter that much
 #. unless someone decides to set the locale for a specific
@@ -43,115 +43,111 @@ msgstr ""
 msgctxt "px: pixels"
 msgid "%1px"
 msgid_plural "%1px"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1px"
+msgstr[1] "%1px"
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Width"
-msgstr ""
+msgstr "Широчина на щрих"
 
 #: editor/AnnotationOptionsToolBarContents.qml:127
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Stroke Color"
-msgstr ""
+msgstr "Цвят на щрих"
 
 #: editor/AnnotationOptionsToolBarContents.qml:178
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Fill:"
-msgstr ""
+msgstr "Запълване:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:190
 #, kde-format
 msgctxt "@label"
 msgid "Fill Color"
-msgstr ""
+msgstr "Цвят на запълване"
 
 #: editor/AnnotationOptionsToolBarContents.qml:243
 #, kde-format
 msgctxt "@label:slider Strength of annotation tool effect"
 msgid "Strength:"
-msgstr ""
+msgstr "Степен:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:261
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The strength of the effect."
-msgstr ""
+msgstr "Степен на изразеност на ефекта."
 
 #: editor/AnnotationOptionsToolBarContents.qml:286
 #, kde-format
 msgctxt "@label"
 msgid "Font:"
-msgstr ""
+msgstr "Шрифт:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:299
 #, kde-format
 msgctxt "%2 font family, %3 font style name, %1 font point size"
 msgid "%2 %3 %1pt"
 msgid_plural "%2 %3 %1pts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 %3 %1pt"
+msgstr[1] "%2 %3 %1pts"
 
 #: editor/AnnotationOptionsToolBarContents.qml:300
 #, kde-format
 msgctxt "%2 font family %1 font point size"
 msgid "%2 %1pt"
 msgid_plural "%2 %1pts"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 %1pt"
+msgstr[1] "%2 %1pts"
 
 #: editor/AnnotationOptionsToolBarContents.qml:345
 #, kde-format
 msgctxt "@label"
 msgid "Font Color"
-msgstr ""
+msgstr "Цвят на шрифта"
 
 #: editor/AnnotationOptionsToolBarContents.qml:398
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Number:"
-msgstr ""
+msgstr "Номер:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:417
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Number for number annotations"
-msgstr ""
+msgstr "Числа за бележки Номера"
 
 #: editor/AnnotationOptionsToolBarContents.qml:441
 #, kde-format
 msgctxt "@label, annotation tool option"
 msgid "Shadow"
-msgstr ""
+msgstr "Сенки"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Description:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
-msgstr "Описание:"
+msgstr "Длъжност:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:502
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Позиция по X на областта за изрязване"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Позиция по Y на областта за изрязване"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Големина:"
@@ -160,211 +156,205 @@ msgstr "Големина:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Ширина на зоната за изрязване"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Височина на зона за изрязване"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "Съотношение:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "Отключен"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "Текуща оценка %1"
+msgstr "Текущата страница"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "Квадрат"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "&Цял екран"
+msgstr "Този екран"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "ISO Paper (Хоризонтално)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "US Letter (Хоризонтално)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "ISO Paper (Портрет)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "US Letter (Портрет)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Широчина:Височина"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "Нулиране"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
 #, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
-msgstr ""
+msgstr "Приемане"
 
 #: editor/AnnotationsToolBarContents.qml:98
 #, kde-format
 msgctxt "@action:intoolbar no tool, to allow dragging"
 msgid "None"
-msgstr ""
+msgstr "Без"
 
 #: editor/AnnotationsToolBarContents.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Изрязване"
 
 #: editor/AnnotationsToolBarContents.qml:118
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:intoolbar select annotation tool"
 msgid "Select"
-msgstr "Избиране на всички"
+msgstr "Избор"
 
 #: editor/AnnotationsToolBarContents.qml:127
 #, kde-format
 msgctxt "@action:intoolbar freehand line tool"
 msgid "Freehand"
-msgstr ""
+msgstr "Очертаване на ръка"
 
 #: editor/AnnotationsToolBarContents.qml:128
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to straight lines"
-msgstr ""
+msgstr "Shift: Прихващане по права линия"
 
 #: editor/AnnotationsToolBarContents.qml:135
 #, kde-format
 msgctxt "@action:intoolbar highlighter line tool"
 msgid "Highlighter"
-msgstr ""
+msgstr "Маркер"
 
 #: editor/AnnotationsToolBarContents.qml:144
 #, kde-format
 msgctxt "@action:intoolbar straight line tool"
 msgid "Line"
-msgstr ""
+msgstr "Линия"
 
 #: editor/AnnotationsToolBarContents.qml:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Shift: Snap to 45 degree increments"
-msgstr ""
+msgstr "Shift: Прихващане на стъпки от 45 градуса"
 
 #: editor/AnnotationsToolBarContents.qml:152
 #, kde-format
 msgctxt "@action:intoolbar arrow line tool"
 msgid "Arrow"
-msgstr ""
+msgstr "Стрелка"
 
 #: editor/AnnotationsToolBarContents.qml:161
 #, kde-format
 msgctxt "@action:intoolbar rectangle tool"
 msgid "Rectangle"
-msgstr ""
+msgstr "Правоъгълник"
 
 #: editor/AnnotationsToolBarContents.qml:163
 #, kde-format
@@ -373,43 +363,44 @@ msgid ""
 "Shift: Snap to diagonal movements\n"
 "Control: Resize from center"
 msgstr ""
+"Shift: Преминаване към диагонални движения\n"
+"Control: Промяна на размера от центъра"
 
 #: editor/AnnotationsToolBarContents.qml:170
 #, kde-format
 msgctxt "@action:intoolbar ellipse tool"
 msgid "Ellipse"
-msgstr ""
+msgstr "Елипса"
 
 #: editor/AnnotationsToolBarContents.qml:178
 #, kde-format
 msgctxt "@action:intoolbar pixelate tool"
 msgid "Pixelate"
-msgstr ""
+msgstr "Пикселиране"
 
 #: editor/AnnotationsToolBarContents.qml:186
 #, kde-format
 msgctxt "@action:intoolbar blur tool"
 msgid "Blur"
-msgstr ""
+msgstr "Замъгляване"
 
 #: editor/AnnotationsToolBarContents.qml:194
 #, kde-format
 msgctxt "@action:intoolbar text tool"
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 #: editor/AnnotationsToolBarContents.qml:201
 #, kde-format
 msgctxt "@action:intoolbar number stamp tool"
 msgid "Number"
-msgstr ""
+msgstr "Номера"
 
 #: editor/ConfirmDiscardingChanges.qml:17
-#, fuzzy, kde-format
-#| msgid "Discard changes"
+#, kde-format
 msgctxt "@title"
 msgid "Unsaved Changes"
-msgstr "Отхвърляне на промените"
+msgstr "Незаписани промени"
 
 #: editor/ConfirmDiscardingChanges.qml:18
 #, kde-kuit-format
@@ -418,24 +409,24 @@ msgid ""
 "The image <filename>%1</filename> has been modified. Do you want to save "
 "your changes or discard them?"
 msgstr ""
+"Изображението <filename>%1</filename> беше променено. Желаете ли да запазите "
+"промените или да ги отхвърлите?"
 
 #: editor/EditorView.qml:32
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
-msgstr ""
+msgstr "Редактиране на <filename>%1</filename>"
 
 #: editor/EditorView.qml:42 editor/EditorView.qml:328
-#, fuzzy, kde-format
-#| msgid ""
-#| "Unable to save file. Check if you have the correct permission to edit "
-#| "this file."
+#, kde-format
 msgctxt "@label"
 msgid ""
 "Unable to save file. Check if you have the correct permissions to save this "
 "file."
 msgstr ""
-"Грешка при запис на файл. Моля, проверете правата си за редактиране на файла."
+"Файлът не може да бъде запазен. Проверете дали имате правилните разрешения "
+"за запазване на този файл."
 
 #: editor/EditorView.qml:97
 #, kde-format
@@ -456,33 +447,25 @@ msgid "Size:"
 msgstr "Големина:"
 
 #: editor/EditorView.qml:159
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
-msgstr "Завъртане наляво"
+msgstr "Завъртане"
 
 #: editor/EditorView.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the left"
-#| msgid "Rotate left"
+#, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Завъртане наляво"
 
 #: editor/EditorView.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Rotate an image to the right"
-#| msgid "Rotate right"
+#, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Завъртане надясно"
 
 #: editor/EditorView.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Обръщане"
@@ -491,18 +474,16 @@ msgstr "Обръщане"
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
-msgstr ""
+msgstr "Хоризонтално обръщане"
 
 #: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
-msgstr ""
+msgstr "Вертикално обръщане"
 
 #: editor/EditorView.qml:222
-#, fuzzy, kde-format
-#| msgctxt "@action:button Undo modification"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Отмяна"
@@ -511,7 +492,7 @@ msgstr "Отмяна"
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
-msgstr ""
+msgstr "Повтаряне"
 
 #: editor/EditorView.qml:246
 #, kde-format
@@ -520,24 +501,22 @@ msgid "Save"
 msgstr "Запазване"
 
 #: editor/EditorView.qml:254
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
-msgstr "Запис като"
+msgstr "Запазване като"
 
 #: editor/EditorView.qml:424
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
-msgstr ""
+msgstr "Мащаб:"
 
 #: editor/EditorView.qml:439
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
-msgstr "Изображения"
+msgstr "Мащаб на изображение"
 
 #: editor/ImageView.qml:196
 #, kde-format
@@ -547,6 +526,9 @@ msgid ""
 "Double click the selection to accept and crop.\n"
 "Right click to clear the selection."
 msgstr ""
+"Натиснете и задръжте левия бутон на мишката и очертайте селекцията.\n"
+"Двойно щракване на избрания район за потвърждаване и изрязване.\n"
+"Кликнете с десния бутон на мишката, за да изчистите селекцията."
 
 #: exiv2extractor.cpp:71 qml/PlacesPage.qml:27
 #, kde-format
@@ -647,8 +629,7 @@ msgid "Comment"
 msgstr "Коментар"
 
 #: filemenuactions.cpp:159
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Отваряне на съдържащата папка"
@@ -657,12 +638,10 @@ msgstr "Отваряне на съдържащата папка"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "&Отваряне с…"
 
 #: filemenuactions.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Копиране на местоположението"
@@ -738,31 +717,23 @@ msgid "path of image you want to open"
 msgstr "път до изображението, което искате да отворите"
 
 #: models/galleryfavoritesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
-msgstr "Любими"
+msgstr "Предпочитани"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
-msgstr "Държави"
+msgstr "Страни"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Щати"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Градове"
 
@@ -772,11 +743,10 @@ msgid "Locations"
 msgstr "Места"
 
 #: models/galleryopenmodel.cpp:141
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Избиране на всички"
+msgstr "Избрани файлове"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:146 qml/Sidebar.qml:251
 #, kde-format
@@ -784,36 +754,27 @@ msgid "Tags"
 msgstr "Етикети"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Години"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Месеци"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Седмици"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Дни"
 
 #: models/gallerytimemodel.cpp:77
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
 msgstr "Време"
 
@@ -858,60 +819,46 @@ msgid "Navigate to the remote folders"
 msgstr "Отиване до отдалечени папки"
 
 #: photosapplication.cpp:76
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by countries"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
-msgstr "Отиване до снимки, сортирани по държави"
+msgstr "Отиване до снимки, групирани по държави"
 
 #: photosapplication.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by states"
+#, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr "Отиване до снимки, сортирани по щати"
+msgstr "Отиване до снимки, групирани по щати"
 
 #: photosapplication.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by cities"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
-msgstr "Отиване до снимки, сортирани по градове"
+msgstr "Отиване до снимки, групирани по градове"
 
 #: photosapplication.cpp:92
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by years"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr "Отиване до снимки, сортирани по години"
+msgstr "Отиване до снимки, групирани по години"
 
 #: photosapplication.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by months"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr "Отиване до снимки, сортирани по месеци"
+msgstr "Отиване до снимки, групирани по месеци"
 
 #: photosapplication.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by weeks"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr "Отиване до снимки, сортирани по седмици"
+msgstr "Отиване до снимки, групирани по седмици"
 
 #: photosapplication.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by days"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr "Отиване до снимки, сортирани по дни"
+msgstr "Отиване до снимки, групирани по дни"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:32 qml/Sidebar.qml:151
 #, kde-format
@@ -940,8 +887,8 @@ msgstr "Места"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 елемент"
+msgstr[1] "%1 елемента"
 
 #: qml/gallery/GalleryPage.qml:126
 #, kde-format
@@ -953,94 +900,77 @@ msgstr "Споделяне на избраната медия"
 #, kde-format
 msgctxt "@action:button Move the selected media to the trash"
 msgid "Move to Trash"
-msgstr ""
+msgstr "Преместване в кошчето"
 
 #: qml/gallery/GalleryPage.qml:162
-#, fuzzy, kde-format
-#| msgid "Move selected items to trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Move the selected media to the trash"
-msgstr "Преместване на избраните елемента в кошчето"
+msgstr "Преместване на избраните медийни файлове в кошчето"
 
 #: qml/gallery/GalleryPage.qml:178
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Възстановяване"
 
 #: qml/gallery/GalleryPage.qml:179
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Възстановяване на избраните елементи от кошчето"
+msgstr ""
+"Възстановяване на избраните медийни файлове до предишните им местоположения"
 
 #: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr ""
+msgstr "Сортиране: %1"
 
 #: qml/gallery/GalleryPage.qml:203
-#, fuzzy, kde-format
-#| msgctxt "@item:intable Image file name"
-#| msgid "Name"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Име"
 
 #: qml/gallery/GalleryPage.qml:210
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
-msgstr "Големина:"
+msgstr "Размер"
 
 #: qml/gallery/GalleryPage.qml:217
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr "Дата на промяна"
+msgstr "Последна промяна"
 
 #: qml/gallery/GalleryPage.qml:218
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Дата на промяна"
 
 #: qml/gallery/GalleryPage.qml:225
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr "Дата на създаване"
+msgstr "Създадено"
 
 #: qml/gallery/GalleryPage.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Дата на създаване"
 
 #: qml/gallery/GalleryPage.qml:233
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr "Дата на достъп"
+msgstr "Последен достъп"
 
 #: qml/gallery/GalleryPage.qml:234
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Дата на достъп"
@@ -1049,124 +979,112 @@ msgstr "Дата на достъп"
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Възходящо"
 
 #: qml/gallery/GalleryPage.qml:249
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "А-Я"
 
 #: qml/gallery/GalleryPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "Първо най-малките"
 
 #: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "Първо най-старите"
 
 #: qml/gallery/GalleryPage.qml:258
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Възходящо"
 
 #: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Низходящо"
 
 #: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "Я-А"
 
 #: qml/gallery/GalleryPage.qml:273
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "Първо най-големите"
 
 #: qml/gallery/GalleryPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "Първо най-новите"
 
 #: qml/gallery/GalleryPage.qml:280
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Низходящо"
 
 #: qml/gallery/GalleryPage.qml:302
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Папка с отметки"
 
 #: qml/gallery/GalleryPage.qml:303
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "Папка с отметки"
+msgstr "Маркира текущата папка"
 
 #: qml/gallery/GalleryPage.qml:331
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select All"
 msgstr "Избиране на всички"
 
 #: qml/gallery/GalleryPage.qml:332
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Избиране на всички"
 
 #: qml/gallery/GalleryPage.qml:342
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action:button"
 msgid "Select None"
-msgstr "Избиране на всички"
+msgstr "Изчистване на избора"
 
 #: qml/gallery/GalleryPage.qml:343
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Размаркиране на всичко"
 
 #: qml/gallery/GalleryPage.qml:352
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "Изтриване на избраното"
+msgstr "Обръщане на селекцията"
 
 #: qml/gallery/GalleryPage.qml:353
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Споделяне на избраната медия"
+msgstr "Обръщане на селекцията"
 
 #: qml/gallery/GalleryPage.qml:562
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgid "No media found"
 msgstr "Не е намерена медия"
 
@@ -1174,13 +1092,13 @@ msgstr "Не е намерена медия"
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: qml/gallery/NavigatorComponent.qml:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "Напред"
 
 #: qml/Main.qml:70
 #, kde-format
@@ -1274,38 +1192,37 @@ msgstr "Етикети:"
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "Добавяне…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:297
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "Търсене на етикети или създаване на нов етикет…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:298
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "Не е намерена медия"
+msgstr "Не е намерен етикет"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "Създаване на нов етикет"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:323
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "С етикет"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:359
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "Затваряне"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:406
 #, kde-format
@@ -1472,81 +1389,79 @@ msgstr "Следващо изображение"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25%"
 
 #: qml/mediaview/MediaViewPage.qml:717
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50%"
 
 #: qml/mediaview/MediaViewPage.qml:718
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr ""
+msgstr "75%"
 
 #: qml/mediaview/MediaViewPage.qml:719
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: qml/mediaview/MediaViewPage.qml:720
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150%"
 
 #: qml/mediaview/MediaViewPage.qml:721
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200%"
 
 #: qml/mediaview/MediaViewPage.qml:722
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300%"
 
 #: qml/mediaview/MediaViewPage.qml:723
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400%"
 
 #: qml/mediaview/MediaViewPage.qml:724
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600%"
 
 #: qml/mediaview/MediaViewPage.qml:725
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800%"
 
 #: qml/mediaview/MediaViewPage.qml:774
-#, fuzzy, kde-format
-#| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
-#| msgid "%1:"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1:"
+msgstr "%1%"
 
 #: qml/mediaview/MediaViewPage.qml:788
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Намаляване на мащаба"
 
 #: qml/mediaview/MediaViewPage.qml:797
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr ""
+msgstr "Увеличаване на мащаба"
 
 #: qml/mediaview/MediaViewPage.qml:1040 qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
@@ -1589,27 +1504,24 @@ msgstr "Показване на всичките контроли"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Спиране"
 
 #: qml/mediaview/MediaViewPage.qml:1176
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Начало"
 
 #: qml/mediaview/MediaViewPage.qml:1195
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Интервал:"
 
 #: qml/mediaview/MediaViewPage.qml:1208
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "1 секунда"
+msgstr "секунди"
 
 #: qml/mediaview/TagInput.qml:66
 #, kde-format
@@ -1688,17 +1600,16 @@ msgid "Days"
 msgstr "Дни"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
-msgstr "Размер на миниатюри:"
+msgstr "Размер на миниатюрите:"
 
 #: qml/Settings/GeneralConfigPage.qml:44
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
@@ -1740,13 +1651,13 @@ msgstr "Показване на шахматна шарка зад прозра�
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Увеличаване на изображения, по-малки от изгледа на екрана"
 
 #: qml/Settings/GeneralConfigPage.qml:117
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Запомняне на ниво на мащабиране при превключване между изображения"
 
 #: qml/Settings/GeneralConfigPage.qml:128
 #, kde-format
@@ -1787,24 +1698,22 @@ msgstr "&Споделяне"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "Показване на меню"
 
 #: qml/Sidebar.qml:101
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Donate…"
-msgstr ""
+msgstr "Дарение…"
 
 #: qml/Sidebar.qml:107
 #, kde-format
 msgctxt "@action:inMenu"
 msgid "Report Bug…"
-msgstr ""
+msgstr "Подаване на сигнал за грешка…"
 
 #: qml/Sidebar.qml:148
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Общи"
 
