@@ -194,6 +194,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <p>This release modernizes the settings page, updates the style of the album page and adds a confirmation dialog before discarding image edits. This also fixes the full screen and slideshow mode.</p>
         <p xml:lang="ar">يُحدّث هذا الإصدار صفحة الإعدادات، ويُحدّث نمط صفحة الألبوم ويضيف حوار تأكيد قبل تجاهل تعديلات الصور. كما يُصلح وضع ملء الشاشة وعرض الشرائح.</p>
+        <p xml:lang="bg">Това издание модернизира страницата за настройки, актуализира стила на страницата с албум и добавя диалогов прозорец за потвърждение преди изхвърляне на редакции на изображения. То също така поправя режима на пълном екран и демонстрационния режим.</p>
         <p xml:lang="ca">Aquesta versió modernitza la pàgina de configuració, actualitza l'estil de la pàgina d'àlbum i afegeix un diàleg de confirmació abans de descartar les edicions d'imatges. També corregeix la pantalla completa i el mode de presentació de diapositives.</p>
         <p xml:lang="ca-valencia">Esta versió modernitza la pàgina de configuració, actualitza l'estil de la pàgina d'àlbum i afig un diàleg de confirmació abans de descartar les edicions d'imatges. També corregix la pantalla completa i el mode de presentació de diapositives.</p>
         <p xml:lang="cs">Tato verze modernizuje stránku nastavení, aktualizuje styl stránky alba a přidává potvrzovací dialogové okno před zrušením úprav obrázků. Opravuje také režim celé obrazovky a režim prezentace.</p>
@@ -228,6 +229,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <ul>
           <li>Fixes related to window activation</li>
           <li xml:lang="ar">إصلاحات متعلقة بتنشيط النافذة</li>
+          <li xml:lang="bg">Поправки, свързани с активирането на прозорците</li>
           <li xml:lang="ca">Correccions relacionades amb l'activació de les finestres</li>
           <li xml:lang="ca-valencia">Correccions relacionades amb l'activació de les finestres</li>
           <li xml:lang="cs">Oprava problémů souvisejících s aktivací oken</li>
@@ -250,6 +252,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="zh-TW">視窗作用相關的修正</li>
           <li>Various code improvements and bugfixes</li>
           <li xml:lang="ar">تحسينات متنوعة على الكود وإصلاح علل</li>
+          <li xml:lang="bg">Различни подобрения на кода и поправки на грешки</li>
           <li xml:lang="ca">Millores diverses del codi i esmenes d'errors</li>
           <li xml:lang="ca-valencia">Millores diverses del codi i esmenes d'errors</li>
           <li xml:lang="cs">Různá vylepšení kódu a opravy chyb</li>
@@ -282,6 +285,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <ul>
           <li>Raise window on activation.</li>
           <li xml:lang="ar">رفع النافذة عند التنشيط.</li>
+          <li xml:lang="bg">Показване на прозорец при активиране.</li>
           <li xml:lang="ca">Puja la finestra a l'activació.</li>
           <li xml:lang="ca-valencia">Puja la finestra a l'activació.</li>
           <li xml:lang="cs">Otevření okna při aktivaci.</li>
@@ -311,6 +315,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <ul>
           <li>User interface improvements.</li>
           <li xml:lang="ar">تحسينات واجهة المستخدم.</li>
+          <li xml:lang="bg">Подобряване на потребителския интерфейс.</li>
           <li xml:lang="ca">Millores en la interfície d'usuari.</li>
           <li xml:lang="ca-valencia">Millores en la interfície d'usuari.</li>
           <li xml:lang="cs">Vylepšení uživatelského rozhraní.</li>
@@ -333,6 +338,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="zh-TW">使用者介面改進。</li>
           <li>Image resizing and cropping support improvements.</li>
           <li xml:lang="ar">تحسينات دعم تغيير حجم الصور وقصها.</li>
+          <li xml:lang="bg">Подобрения в поддържането на мащабиране и кадриране на изображения.</li>
           <li xml:lang="ca">Millores en la implementació del canvi de mida i l'escapçat d'imatges.</li>
           <li xml:lang="ca-valencia">Millores en la implementació del canvi de mida i l'escapçat d'imatges.</li>
           <li xml:lang="cs">Vylepšení podpory změny velikosti a ořezávání obrázků.</li>
@@ -355,6 +361,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="zh-TW">改善影像大小調整與裁剪的支援。</li>
           <li>Improvements for SVG rendering</li>
           <li xml:lang="ar">تحسينات لتصيير SVG</li>
+          <li xml:lang="bg">Усъвършенствания за рендиране на SVG</li>
           <li xml:lang="ca">Millores a la renderització de SVG</li>
           <li xml:lang="ca-valencia">Millores a la renderització de SVG</li>
           <li xml:lang="cs">Vylepšení pro vykreslování SVG</li>
@@ -377,6 +384,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="zh-TW">改善 SVG 繪製</li>
           <li>Support for color correction on X11</li>
           <li xml:lang="ar">دعم تصحيح الألوان على X11</li>
+          <li xml:lang="bg">Поддръжка за корекция на цветовете в X11</li>
           <li xml:lang="ca">Implementació de la correcció de color a X11</li>
           <li xml:lang="ca-valencia">Implementació de la correcció de color a X11</li>
           <li xml:lang="cs">Podpora korekce barev na X11</li>
@@ -410,6 +418,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <p>This release contains only a small bugfix and updated translations.</p>
         <p xml:lang="ar">يحتوي هذا الإصدار على إصلاح علة صغير وتحديث للترجمات فقط.</p>
+        <p xml:lang="bg">Това издание съдържа само малка корекция на грешка и актуализирани преводи.</p>
         <p xml:lang="ca">Aquest llançament només conté una correcció d'error petita i traduccions actualitzades.</p>
         <p xml:lang="ca-valencia">Este llançament només conté una esmena d'errors xicoteta i traduccions actualitzades.</p>
         <p xml:lang="cs">Tato verze obsahuje pouze drobnou opravu chyby a aktualizované překlady.</p>
@@ -438,6 +447,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <p>Initial release of Koko, an convergent image viewer for Plasma Mobile and desktop</p>
         <p xml:lang="ar">الإصدار الأولي لـ كوكو، عارض صور متقارب لبلازما الجوال وسطح المكتب</p>
+        <p xml:lang="bg">Първоначално пускане на Koko, конвергентен изглед на изображения за Plasma Mobile и desktop</p>
         <p xml:lang="ca">Versió inicial del Koko, un visualitzador d'imatges convergent per al Plasma Mobile i l'escriptori</p>
         <p xml:lang="ca-valencia">Versió inicial de Koko, un visor d'imatges convergent per a Plasma Mobile i l'escriptori</p>
         <p xml:lang="cs">První vydání Koko, konvergentního prohlížeče obrázků pro Plasma Mobile a stolní počítače</p>
