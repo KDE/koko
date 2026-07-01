@@ -125,18 +125,35 @@ void NavigationActions::updateSavedFolders()
     auto config = Config::self();
     const auto savedFolders = config->savedFolders();
 
-    m_savedFolderNames.clear();
-
     KirigamiActions::ActionCollection *coll = KirigamiActions::ActionCollections::self()->collection(u"org.kde.koko.navigation"_s);
 
-    for (const auto &folder : savedFolders) {
+    QSet<QString> oldSavedFoldersSet(m_savedFolderNames.constBegin(), m_savedFolderNames.constEnd());
+
+    QSet<QString> newSavedFoldersSet;
+
+    std::ranges::copy(savedFolders | std::views::transform([](const QString &folder) {
+                          return QUrl::fromLocalFile(QUrl(folder).toLocalFile()).toString();
+                      }),
+                      std::inserter(newSavedFoldersSet, newSavedFoldersSet.end()));
+
+    for (const auto &folder : m_savedFolderNames) {
+        if (!newSavedFoldersSet.contains(folder)) {
+            coll->removeAction(folder);
+        }
+    }
+    m_savedFolderNames.clear();
+
+    for (const auto &normalizedFolder : newSavedFoldersSet) {
+        m_savedFolderNames << normalizedFolder;
+        if (oldSavedFoldersSet.contains(normalizedFolder)) {
+            continue;
+        }
         // Not added to the managed actions
-        QString text = folder;
+        QString text = normalizedFolder;
         if (text.endsWith(u'/')) {
             text.chop(1);
         }
         text = text.split(u'/').constLast();
-        QString normalizedFolder = QUrl::fromLocalFile(QUrl(folder).toLocalFile()).toString();
 
         auto placeAction = coll->createAction(normalizedFolder, KIO::iconNameForUrl(normalizedFolder), text);
         placeAction->setCheckable(true);
@@ -148,7 +165,6 @@ void NavigationActions::updateSavedFolders()
         connect(placeAction, &QAction::triggered, this, [this, normalizedFolder] {
             Q_EMIT navigate(FolderModel, normalizedFolder);
         });
-        m_savedFolderNames << normalizedFolder;
     }
 
     Q_EMIT savedFoldersChanged();
