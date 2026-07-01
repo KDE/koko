@@ -272,18 +272,18 @@ Kirigami.ScrollablePage {
             visible: isFolderView
             displayHint: Kirigami.DisplayHint.IconOnly
             onToggled: {
-                if (!(galleryModel instanceof Koko.GalleryFolderModel) || galleryModel.url == undefined) {
+                if (!(galleryModel instanceof Koko.GalleryFolderModel) || galleryModel.path == undefined) {
                     return;
                 }
 
                 if (page.isBookmarked) {
-                    const index = Koko.Config.savedFolders.indexOf(galleryModel.url.toString().replace("file:///", "file:/"));
+                    const index = Koko.Config.savedFolders.indexOf(galleryModel.path.toString().replace("file:///", "file:/"));
                     if (index !== -1) {
                         Koko.Config.savedFolders.splice(index, 1);
                         Koko.Config.save();
                     }
                 } else {
-                    Koko.Config.savedFolders.push(galleryModel.url.toString().replace("file:///", "file:/"));
+                    Koko.Config.savedFolders.push(galleryModel.path.toString().replace("file:///", "file:/"));
                     Koko.Config.save();
                 }
             }
