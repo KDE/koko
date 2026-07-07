@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2020-2021, 2023-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-05 00:41+0000\n"
-"PO-Revision-Date: 2025-10-10 21:38+0200\n"
+"PO-Revision-Date: 2026-07-06 23:56+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -127,9 +127,7 @@ msgid "Shadow"
 msgstr "Skugga"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "Position:"
@@ -138,18 +136,16 @@ msgstr "Position:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "Beskär områdets X-position"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "Beskär områdets Y-position"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Storlek:"
@@ -158,147 +154,142 @@ msgstr "Storlek:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "Beskär områdets bredd"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "Beskär områdets höjd"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "Proportion:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "Upplåst"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "Nuvarande betyg %1"
+msgstr "Nuvarande bild"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "Kvadrat"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "&Fullskärmsläge"
+msgstr "Den här skärmen"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "ISO-papper (liggande)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "US Letter (liggande)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "ISO-papper (stående)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "US Letter (stående)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "Bredd:Höjd"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "Återställ"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
-#, fuzzy, kde-format
-#| msgctxt "@action:button Accept crop for an image"
-#| msgid "Accept"
+#, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "Acceptera"
@@ -442,67 +433,61 @@ msgid "Resize"
 msgstr "Ändra storlek"
 
 #: editor/EditorView.qml:176
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "Ändra storlek"
+msgstr "Ändra storlek med:"
 
 #: editor/EditorView.qml:187
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "Dela upp i bildpunkter"
+msgstr "Bildpunkter"
 
 #: editor/EditorView.qml:194
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "Procentvärde"
 
 #: editor/EditorView.qml:205
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Bredd"
 
 #: editor/EditorView.qml:257
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr ""
+msgstr "Höjd"
 
 #: editor/EditorView.qml:278
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "Behåll proportion"
 
 #: editor/EditorView.qml:282
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Originalfilstorlek: %1"
 
 #: editor/EditorView.qml:310
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Uppskattad filstorlek: %1"
 
 #: editor/EditorView.qml:317
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr ""
+msgstr "Återställ"
 
 #: editor/EditorView.qml:328
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Ändra storlek"
@@ -754,7 +739,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:97
 #, kde-format
@@ -767,8 +752,7 @@ msgid "path of image you want to open"
 msgstr "sökväg till bild som ska öppnas"
 
 #: models/galleryfavoritesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Favoriter"
@@ -784,37 +768,27 @@ msgid "Home"
 msgstr "Hem"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Papperskorg"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Nätverk"
 
 #: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Länder"
 
 #: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Stater"
 
 #: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Städer"
 
@@ -825,11 +799,10 @@ msgid "Locations"
 msgstr "Platser"
 
 #: models/galleryopenmodel.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Markera alla"
+msgstr "Markerade filer"
 
 #: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
@@ -837,46 +810,35 @@ msgid "Tags"
 msgstr "Etiketter"
 
 #: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "År"
 
 #: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Månader"
 
 #: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Veckor"
 
 #: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Dagar"
 
 #: models/gallerytimemodel.cpp:77
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
-msgstr "Tid"
+msgstr "Tider"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Navigera till videor"
+msgstr "Navigering"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -909,60 +871,46 @@ msgid "Navigate to the remote folders"
 msgstr "Navigera till fjärrkataloger"
 
 #: navigationactions.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by countries"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
-msgstr "Navigera till bilder sorterade enligt länder"
+msgstr "Navigera till bilder grupperade enligt land"
 
 #: navigationactions.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by states"
+#, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
-msgstr "Navigera till bilder sorterade enligt delstater"
+msgstr "Navigera till bilder grupperade enligt stat"
 
 #: navigationactions.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by cities"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
-msgstr "Navigera till bilder sorterade enligt städer"
+msgstr "Navigera till bilder grupperade enligt städer"
 
 #: navigationactions.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by years"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
-msgstr "Navigera till bilder sorterade enligt år"
+msgstr "Navigera till bilder grupperade enligt år"
 
 #: navigationactions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by months"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
-msgstr "Navigera till bilder sorterade enligt månader"
+msgstr "Navigera till bilder grupperade enligt månad"
 
 #: navigationactions.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by weeks"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
-msgstr "Navigera till bilder sorterade enligt veckor"
+msgstr "Navigera till bilder grupperade enligt vecka"
 
 #: navigationactions.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by days"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
-msgstr "Navigera till bilder sorterade enligt dagar"
+msgstr "Navigera till bilder grupperade enligt dag"
 
 #: notificationmanager.cpp:16
 #, kde-format
@@ -978,42 +926,37 @@ msgstr "Delad webbadress för bild är <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr ""
+msgstr "Galleri"
 
 #: qml/ActionCollection.qml:23
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Markera alla"
+msgstr "Markera alla medier"
 
 #: qml/ActionCollection.qml:28
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Avmarkera alla"
+msgstr "Avmarkera alla medier"
 
 #: qml/ActionCollection.qml:33
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "Ta bort markering"
+msgstr "Invertera markering"
 
 #: qml/ActionCollection.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Dela de markerade medierna"
+msgstr "Invertera markerade medier"
 
 #: qml/ActionCollection.qml:40
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "Mediavy"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:299
 #, kde-format
@@ -1022,8 +965,7 @@ msgid "Favorite"
 msgstr "Favorit"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Redigera"
@@ -1035,24 +977,19 @@ msgid "Edit this image"
 msgstr "Redigera bilden"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Dela"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&Information"
+msgstr "Information"
 
 #: qml/ActionCollection.qml:73
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Öppna katalog med innehåll"
@@ -1061,20 +998,16 @@ msgstr "Öppna katalog med innehåll"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "Ö&ppna med…"
 
 #: qml/ActionCollection.qml:86
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopiera plats"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Bildspel"
@@ -1086,18 +1019,13 @@ msgid "Start slideshow"
 msgstr "Starta bildspel"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "Visa &kontroller"
+msgstr "Visa kontroller"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr "Visa &miniatyrbildsverktygsrad"
@@ -1115,12 +1043,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Dölj miniatyrbildsverktygsraden"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "&Fullskärmsläge"
+msgstr "Fullskärm"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1161,88 +1087,71 @@ msgstr "Platser"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 objekt"
+msgstr[1] "%1 objekt"
 
 #: qml/gallery/GalleryPage.qml:139
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Återställ"
 
 #: qml/gallery/GalleryPage.qml:140
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Återställ markerade objekt från papperskorgen"
+msgstr "Återställ markerade medier till deras tidigare platser"
 
 #: qml/gallery/GalleryPage.qml:159
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr "Sortera enligt"
+msgstr "Sortera: %1"
 
 #: qml/gallery/GalleryPage.qml:164
-#, fuzzy, kde-format
-#| msgctxt "@item:intable Image file name"
-#| msgid "Name"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Namn"
 
 #: qml/gallery/GalleryPage.qml:171
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Storlek"
 
 #: qml/gallery/GalleryPage.qml:178
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr "Ändringsdatum"
+msgstr "Ändrad"
 
 #: qml/gallery/GalleryPage.qml:179
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Ändringsdatum"
 
 #: qml/gallery/GalleryPage.qml:186
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr "Skapad datum"
+msgstr "Skapad"
 
 #: qml/gallery/GalleryPage.qml:187
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Skapad datum"
 
 #: qml/gallery/GalleryPage.qml:194
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr "Åtkomstdatum"
+msgstr "Åtkomst"
 
 #: qml/gallery/GalleryPage.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Åtkomstdatum"
@@ -1251,77 +1160,73 @@ msgstr "Åtkomstdatum"
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Stigande"
 
 #: qml/gallery/GalleryPage.qml:210
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "A-Z"
 
 #: qml/gallery/GalleryPage.qml:212
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "Minsta först"
 
 #: qml/gallery/GalleryPage.qml:216
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "Äldsta först"
 
 #: qml/gallery/GalleryPage.qml:219
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "Stigande"
 
 #: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Fallande"
 
 #: qml/gallery/GalleryPage.qml:232
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "Z-A"
 
 #: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "Största först"
 
 #: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "Nyaste först"
 
 #: qml/gallery/GalleryPage.qml:241
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "Fallande"
 
 #: qml/gallery/GalleryPage.qml:263
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Bokmärkeskatalog"
 
 #: qml/gallery/GalleryPage.qml:264
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "Bokmärkeskatalog"
+msgstr "Bokmärk nuvarande katalog"
 
 #: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
@@ -1345,12 +1250,11 @@ msgstr "Dela de markerade medierna"
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 objekt"
+msgstr[1] "%1 objekt"
 
 #: qml/gallery/GalleryPage.qml:786
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgid "No media found"
 msgstr "Inga medier hittades"
 
@@ -1359,28 +1263,28 @@ msgstr "Inga medier hittades"
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 objekt markerat"
+msgstr[1] "%1 objekt markerade"
 
 #: qml/gallery/GalleryPage.qml:815
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 objekt"
+msgstr[1] "%1 objekt"
 
 #: qml/gallery/NavigatorComponent.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "Bakåt"
 
 #: qml/gallery/NavigatorComponent.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "Framåt"
 
 #: qml/Main.qml:76
 #, kde-format
@@ -1454,12 +1358,10 @@ msgid "Current rating %1"
 msgstr "Nuvarande betyg %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "Kommentar"
+msgstr "Kommentar:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1471,38 +1373,37 @@ msgstr "Etiketter:"
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "Lägg till…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "Sök efter etiketter eller skriv en ny etikett…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:305
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "Inga medier hittades"
+msgstr "Ingen etikett hittades."
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "Skapa ny etikett"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "Befintliga etiketter"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
@@ -1526,7 +1427,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 av %2"
 
 #: qml/mediaview/MediaViewPage.qml:151
 #, kde-format
@@ -1565,15 +1466,13 @@ msgid "Exit immersive viewing mode"
 msgstr "Avsluta fördjupat visningsläge"
 
 #: qml/mediaview/MediaViewPage.qml:589
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Föregående bild"
 
 #: qml/mediaview/MediaViewPage.qml:623
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Nästa bild"
@@ -1582,85 +1481,79 @@ msgstr "Nästa bild"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:805
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:806
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr ""
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:807
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:808
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:809
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:810
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:811
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:812
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:813
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:862
-#, fuzzy, kde-format
-#| msgctxt "@item:intable %1 is image width, %2 is image height"
-#| msgid "%1x%2"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1 x %2"
+msgstr "%1 %"
 
 #: qml/mediaview/MediaViewPage.qml:876
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "Zoom:"
+msgstr "Zooma ut"
 
 #: qml/mediaview/MediaViewPage.qml:885
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "Zoom:"
+msgstr "Zooma in"
 
 #: qml/mediaview/MediaViewPage.qml:1128 qml/Settings/GeneralConfigPage.qml:192
 #, kde-format
@@ -1703,27 +1596,24 @@ msgstr "Visa alla kontroller"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "Stoppa"
 
 #: qml/mediaview/MediaViewPage.qml:1264
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "Starta"
 
 #: qml/mediaview/MediaViewPage.qml:1283
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "Intervall:"
 
 #: qml/mediaview/MediaViewPage.qml:1296
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "1 sekund"
+msgstr "sekunder"
 
 #: qml/mediaview/TagInput.qml:66
 #, kde-format
@@ -1802,8 +1692,7 @@ msgid "Days"
 msgstr "Dagar"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Miniatyrbildsstorlek:"
@@ -1812,39 +1701,37 @@ msgstr "Miniatyrbildsstorlek:"
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 bildpunkter"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Gallerisortering"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Naturlig sortering"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Alfabetisk (skiftlägesokänslig)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Alfabetisk (skiftlägeskänslig)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Visningsbakgrund för bilder"
+msgstr "Bildbakgrund"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1871,32 +1758,28 @@ msgid "Use the background color specified by the theme"
 msgstr "Använd bakgrundsfärgen som anges av temat"
 
 #: qml/Settings/GeneralConfigPage.qml:131
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "Visa en schackrutig bakgrund bakom genomskinliga bilder"
+msgstr "Visa schackrutor bakom genomskinliga bilder"
 
 #: qml/Settings/GeneralConfigPage.qml:142
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Bildstorlek"
+msgstr "Bildvy"
 
 #: qml/Settings/GeneralConfigPage.qml:148
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "Förstora bilder som är mindre än vyn"
 
 #: qml/Settings/GeneralConfigPage.qml:159
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Kom ihåg zoomnivå vid byte mellan bilder"
 
 #: qml/Settings/GeneralConfigPage.qml:170
 #, kde-format
@@ -1914,7 +1797,7 @@ msgstr "Allmänt"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Snabbtangenter"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
@@ -1943,12 +1826,10 @@ msgstr "&Dela"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "Visa meny"
 
 #: qml/Sidebar.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Allmänt"
 
