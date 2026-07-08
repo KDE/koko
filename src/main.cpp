@@ -107,7 +107,7 @@ int main(int argc, char **argv)
         ImageStorage::reset();
     }
 
-    KDBusService service(KDBusService::Unique);
+    KDBusService service(KDBusService::Multiple);
 
     QThread trackerThread;
 
