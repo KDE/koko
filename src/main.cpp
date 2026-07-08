@@ -9,6 +9,7 @@
 #include <QQmlComponent>
 #include <QQmlContext>
 
+#include <QDBusConnectionInterface>
 #include <QDebug>
 #include <QDir>
 #include <QStandardPaths>
@@ -109,8 +110,6 @@ int main(int argc, char **argv)
 
     KDBusService service(KDBusService::Multiple);
 
-    QThread trackerThread;
-
     const QStringList locations = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
     Q_ASSERT(locations.size() >= 1);
 
@@ -126,6 +125,7 @@ int main(int argc, char **argv)
 #endif
 
     FileSystemTracker tracker;
+    QThread trackerThread;
     tracker.moveToThread(&trackerThread);
 
     Koko::Processor processor;
@@ -133,15 +133,29 @@ int main(int argc, char **argv)
     QObject::connect(&tracker, &FileSystemTracker::imageRemoved, &processor, &Koko::Processor::removeFile);
     QObject::connect(&tracker, &FileSystemTracker::initialScanComplete, &processor, &Koko::Processor::initialScanCompleted);
 
-    QObject::connect(&trackerThread, &QThread::started, &tracker, &FileSystemTracker::setupDb);
-
-    trackerThread.start();
-
+    const auto sessionBusInterface = QDBusConnection::sessionBus().interface();
+    const QString trackerServiceName = QStringLiteral("org.kde.koko.FileSystemTracker");
     const QString imageDirLocation = locations.first();
-    QMetaObject::invokeMethod(&tracker, [&tracker, imageDirLocation]() {
-        tracker.setFolder(imageDirLocation);
-        tracker.setSubFolder(tracker.folder());
-    });
+
+    // Only permit one instance of the tracker per all instances of the application
+    QObject::connect(sessionBusInterface,
+                     &QDBusConnectionInterface::serviceRegistered,
+                     &app,
+                     [&trackerServiceName, &tracker, &trackerThread, &imageDirLocation](const QString &service) {
+                         if (service == trackerServiceName) {
+                             QObject::connect(&trackerThread, &QThread::started, &tracker, &FileSystemTracker::setupDb);
+                             trackerThread.start();
+
+                             QMetaObject::invokeMethod(&tracker, [&tracker, imageDirLocation]() {
+                                 tracker.setFolder(imageDirLocation);
+                                 tracker.setSubFolder(tracker.folder());
+                             });
+
+                             qInfo() << "FileSystemTracker: Now tracking";
+                         }
+                     });
+
+    sessionBusInterface->registerService(trackerServiceName, QDBusConnectionInterface::ServiceQueueOptions::QueueService);
 
     QQmlApplicationEngine engine;
     KLocalization::setupLocalizedContext(&engine);
@@ -183,7 +197,9 @@ int main(int argc, char **argv)
     engine.loadFromModule(u"org.kde.koko"_s, u"Main"_s);
 
     int rt = app.exec();
+
     trackerThread.quit();
     trackerThread.wait();
+
     return rt;
 }

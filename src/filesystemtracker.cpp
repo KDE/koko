@@ -58,7 +58,7 @@ void FileSystemTracker::setupDb()
     QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("fstracker"));
     db.setDatabaseName(dir + "/fstracker.sqlite3");
     if (!db.open()) {
-        qWarning() << "Failed to open db" << db.lastError().text();
+        qWarning() << "FileSystemTracker failed to open db" << db.lastError().text();
         return;
     }
 
