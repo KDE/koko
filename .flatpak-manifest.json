@@ -10,7 +10,6 @@
     "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--device=dri",
-        "--env=XDG_DATA_DIRS=/usr/share:/app/share/",
         "--filesystem=home",
         "--socket=fallback-x11",
         "--share=ipc",
@@ -18,12 +17,26 @@
         "--socket=wayland",
         "--talk-name=org.freedesktop.FileManager1"
     ],
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/mkspecs",
+        "/share/doc",
+        "/share/man",
+        "*.la",
+        "*.a"
+    ],
     "modules": [
         {
             "name": "exiv2",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DEXIV2_BUILD_DOC:BOOL=OFF",
+                "-DEXIV2_BUILD_EXIV2_COMMAND=OFF",
+                "-DEXIV2_BUILD_SAMPLES=OFF",
                 "-DEXIV2_ENABLE_INIH:BOOL=OFF"
+
             ],
             "sources": [
                 {
