@@ -1028,7 +1028,7 @@ msgstr "Visa kontroller"
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "Visa &miniatyrbildsverktygsrad"
+msgstr "Visa miniatyrbildsverktygsrad"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
