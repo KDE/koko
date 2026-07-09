@@ -350,7 +350,7 @@ void FileMenuManager::updateActions()
     // Rename File action
     m_canRenameFile = false;
     disconnectStandardAction(KStandardActions::RenameFile);
-    if (m_enabled && hasFile) {
+    if (m_enabled && hasFile && itemProperties.supportsMoving()) {
         m_canRenameFile = true;
         auto renameFileLambda = [fileItems, this] {
             if (!m_enabled) {
