@@ -213,6 +213,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="ru">В этом выпуске обновлена страница настроек, изменён стиль страницы альбома и добавлен диалог подтверждения перед отменой изменений изображения. Также исправлены полноэкранный режим и режим слайд-шоу.</p>
         <p xml:lang="sk">This release modernizes nastavenia page, updates the style of the album page and adds a confirmation dialog before discarding image edits. This also fixes the full screen and slideshow mode.</p>
         <p xml:lang="sl">Ta izdaja posodablja stran z nastavitvami, posodablja slog strani albuma in dodaja potrditveno pogovorno okno pred zavrženjem urejanja slik. Prav tako odpravlja celozaslonski način in način predsgtavitve.</p>
+        <p xml:lang="sv">Den här versionen moderniserar inställningssidan, uppdaterar albumsidans stil och lägger till en bekräftelsedialogruta innan bildredigeringar ignoreras. Det åtgärdar även fullskärms- och bildspelsläget.</p>
         <p xml:lang="tr">Bu yayım, ayarlar sayfasını modernize ediyor, albüm sayfasının biçemini güncelliyor ve görsel düzenlemelerini silmeden önce bir onay iletişim kutusu ekliyor. Ayrıca tam ekran ve slayt gösterisi kipindeki sorunları da gideriyor.</p>
         <p xml:lang="uk">У цьому випуску модернізовано сторінку налаштувань, оновлено стиль сторінки альбому та додано діалогове вікно підтвердження перед скасуванням редагувань зображень. Також виправлено повноекранний режим та режим показу слайдів.</p>
         <p xml:lang="zh-TW">這個版本改善了設定頁面使其更加現代化、更新相簿頁面的風格，並在捨棄影像編輯前會詢問確認。這個版本也修正了全螢幕與投影播放模式。</p>
@@ -248,6 +249,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Исправления, связанные с активацией окна</li>
           <li xml:lang="sk">Fixes related to window activation</li>
           <li xml:lang="sl">Popravki povezani z aktiviranjem oken</li>
+          <li xml:lang="sv">Rättningar relaterade till fönsteraktivering</li>
           <li xml:lang="tr">Pencere etkinleştirmeye yönelik düzeltmeler</li>
           <li xml:lang="uk">Виправлення, які пов'язано із активацією вікон</li>
           <li xml:lang="zh-TW">視窗作用相關的修正</li>
@@ -271,6 +273,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Различные улучшения кода и исправления ошибок</li>
           <li xml:lang="sk">Various code improvements and bugfixes</li>
           <li xml:lang="sl">Različne izboljšave kode in popravki napak</li>
+          <li xml:lang="sv">Diverse kodförbättringar och felrättningar</li>
           <li xml:lang="tr">Çeşitli kod iyileştirmeleri ve hata düzeltmeleri</li>
           <li xml:lang="uk">Різноманітні удосконалення програмного коду та виправлення помилок</li>
           <li xml:lang="zh-TW">許多程式碼改進與錯誤修正</li>
@@ -304,6 +307,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Поднятие окна при активации.</li>
           <li xml:lang="sk">Raise window on activation.</li>
           <li xml:lang="sl">Dvigni okno ob aktivaciji.</li>
+          <li xml:lang="sv">Höj fönster vid aktivering.</li>
           <li xml:lang="tr">Etkinleştirildiğinde pencereyi öne getir</li>
           <li xml:lang="uk">Реалізовано підняття вікна при активації.</li>
           <li xml:lang="zh-TW">觸發時抬升視窗。</li>
@@ -334,6 +338,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Улучшения пользовательского интерфейса.</li>
           <li xml:lang="sk">User interface improvements.</li>
           <li xml:lang="sl">Izboljšave uporabniškega vmesnika.</li>
+          <li xml:lang="sv">Förbättringar av användargränssnitt.</li>
           <li xml:lang="tr">Kullanıcı arayüzü iyileştirmeleri</li>
           <li xml:lang="uk">Поліпшення у інтерфейсі користувача.</li>
           <li xml:lang="zh-TW">使用者介面改進。</li>
@@ -357,6 +362,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Улучшена поддержка изменения размера и обрезки изображений.</li>
           <li xml:lang="sk">Image resizing and cropping support improvements.</li>
           <li xml:lang="sl">Izboljšave podpore za spreminjanje velikosti in obrezovanje slik.</li>
+          <li xml:lang="sv">Förbättringar av bildstorleksändringar och beskärningsstöd.</li>
           <li xml:lang="tr">Görsel yeniden boyutlandırma ve kırpma desteği iyileştirmeleri</li>
           <li xml:lang="uk">Удосконалення підтримки зміни розмірів та обрізання зображень.</li>
           <li xml:lang="zh-TW">改善影像大小調整與裁剪的支援。</li>
@@ -380,6 +386,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Улучшения отрисовки SVG</li>
           <li xml:lang="sk">Improvements for SVG rendering</li>
           <li xml:lang="sl">Izboljšave upodabljanja SVG</li>
+          <li xml:lang="sv">Förbättringar av SVG-återgivning</li>
           <li xml:lang="tr">SVG sunumu iyileştirmeleri</li>
           <li xml:lang="uk">Удосконалення обробки SVG</li>
           <li xml:lang="zh-TW">改善 SVG 繪製</li>
@@ -403,6 +410,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Поддержка коррекции цвета в X11</li>
           <li xml:lang="sk">Support for color correction on X11</li>
           <li xml:lang="sl">Podpora za korekcijo barv na X11</li>
+          <li xml:lang="sv">Stöd för färgkorrigering på X11</li>
           <li xml:lang="tr">X11 üzerinde renk düzeltme desteği</li>
           <li xml:lang="uk">Підтримка виправлення кольорів у X11</li>
           <li xml:lang="zh-TW">在 X11 上支援顏色校正</li>
@@ -437,6 +445,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="ru">В этом выпуске исправлена небольшая ошибка и обновлены переводы.</p>
         <p xml:lang="sk">This release contains only a small bugfix and updated translations.</p>
         <p xml:lang="sl">Ta izdaja vsebuje le manjši popravek napak in posodobljene prevode.</p>
+        <p xml:lang="sv">Den här utgåvan innehåller bara små felrättningar och uppdaterade översättningar.</p>
         <p xml:lang="tr">Bu yayım, yalnızca hata düzeltmeleri ve güncellenmiş çeviriler ekler.</p>
         <p xml:lang="uk">У цьому випуску маємо лише невеличкі виправлення вад та оновлено переклади.</p>
         <p xml:lang="zh-TW">這個版本只包含一個小錯誤的修正和更新過的翻譯。</p>
@@ -466,6 +475,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="ru">Представлен первый выпуск Koko — универсального просмотрщика изображений для Plasma Mobile и настольных систем</p>
         <p xml:lang="sk">Initial release of Koko, an convergent image viewer for Plasma Mobile and desktop</p>
         <p xml:lang="sl">Začetna izdaja Koka, konvergentnega pregledovalnika slik za Plasma Mobile in namizje</p>
+        <p xml:lang="sv">Originalutgåva av Koko, en konvergent bildvisare för Plasma Mobil och skrivbordsdatorer</p>
         <p xml:lang="tr">Koko’nun, Plasma Cep ve masaüstü için geliştirilmiş, yakınsak görüntüleyici uygulamasının ilk sürümü yayımlandı.</p>
         <p xml:lang="uk">Початковий випуск Koko, універсального засобу перегляду для Plasma Mobile та стільниці</p>
         <p xml:lang="zh-TW">Koko 的初始版本。Koko 是 Plasma 行動和 Plasma 桌面皆可使用的響應式影像檢視器。</p>
