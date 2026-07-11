@@ -35,7 +35,7 @@ Kirigami.ApplicationWindow {
         pageRow: root.pageStack
     }
 
-    title: pageStack?.currentItem?.title ?? "";
+    title: pageStack?.layers.currentItem?.title ?? pageStack?.currentItem?.title ?? ""
 
     pageStack {
         globalToolBar {
