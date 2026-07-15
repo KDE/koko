@@ -100,6 +100,16 @@ FormCard.FormCardPage {
         }
 
         FormCard.FormRadioDelegate {
+            text: i18nc("@option:radio As in, background color", "Gray")
+            checked: Koko.Config.imageViewBackgroundColor === 3
+            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+            onToggled: {
+                Koko.Config.imageViewBackgroundColor = 3;
+                Koko.Config.save();
+            }
+        }
+
+        FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, background color", "White")
             checked: Koko.Config.imageViewBackgroundColor === 1
             enabled: !Koko.Config.isImageViewBackgroundColorImmutable

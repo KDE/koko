@@ -45,6 +45,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
                 <choice name="Black"/>
                 <choice name="White"/>
                 <choice name="Theme"/>
+                <choice name="Gray"/>
             </choices>
             <default>Black</default>
         </entry>
