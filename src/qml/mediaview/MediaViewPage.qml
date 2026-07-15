@@ -387,6 +387,8 @@ Kirigami.Page {
                     return "white";
                 case 2:
                     return Kirigami.Theme.backgroundColor;
+                case 3:
+                    return "gray";
             }
         }
     }
@@ -449,6 +451,8 @@ Kirigami.Page {
                         return "white";
                     case 2:
                         return Kirigami.Theme.backgroundColor;
+                    case 3:
+                        return "gray";
                 }
             }
         }
