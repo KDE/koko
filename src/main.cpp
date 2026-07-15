@@ -128,6 +128,7 @@ int main(int argc, char **argv)
     QThread trackerThread;
     tracker.moveToThread(&trackerThread);
 
+    ImageStorage::instance();
     Koko::Processor processor;
     QObject::connect(&tracker, &FileSystemTracker::imageAdded, &processor, &Koko::Processor::addFile);
     QObject::connect(&tracker, &FileSystemTracker::imageRemoved, &processor, &Koko::Processor::removeFile);

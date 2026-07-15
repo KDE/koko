@@ -7,8 +7,6 @@
 #include <QDateTime>
 #include <QGeoAddress>
 #include <QGeoLocation>
-#include <QMutex>
-#include <QMutexLocker>
 #include <QObject>
 #include <qqmlregistration.h>
 
@@ -66,8 +64,7 @@ public:
 
     Q_INVOKABLE void addImage(const ImageInfo &ii);
     void removeImage(const QString &filePath);
-    bool imageExists(const QString &filePath);
-    void commit();
+    void processImagesComplete();
 
     static ImageStorage *instance();
 
@@ -99,5 +96,7 @@ signals:
     void storageModified();
 
 private:
-    mutable QMutex m_mutex;
+    void removeImageInternal(const QString &filePath);
+
+    void teardown();
 };

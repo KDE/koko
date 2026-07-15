@@ -4,6 +4,7 @@
 
 #include "imagestorage.h"
 
+#include <QCoreApplication>
 #include <QDataStream>
 #include <QDebug>
 #include <QDir>
@@ -13,6 +14,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QStandardPaths>
+#include <QTimer>
 #include <QUrl>
 
 using namespace Qt::StringLiterals;
@@ -20,6 +22,8 @@ using namespace Qt::StringLiterals;
 ImageStorage::ImageStorage(QObject *parent)
     : QObject(parent)
 {
+    // NOTE: Should not be constructed externally, ought to be private
+
     QString dir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/koko";
     QDir().mkpath(dir);
 
@@ -27,9 +31,14 @@ ImageStorage::ImageStorage(QObject *parent)
     db.setDatabaseName(dir + "/imageData.sqlite3");
 
     if (!db.open()) {
-        qDebug() << "Failed to open db" << db.lastError().text();
+        qWarning() << "ImageStorage failed to open database:" << db.lastError().text();
         return;
     }
+
+    QSqlQuery pragma(db);
+    pragma.exec(QStringLiteral("PRAGMA busy_timeout = 1000")); // Wait and retry instead of failing immediately
+    pragma.exec(QStringLiteral("PRAGMA journal_mode = WAL")); // WAL allows concurrency instead of blocking
+    pragma.exec(QStringLiteral("PRAGMA synchronous = NORMAL")); // Sync less often
 
     if (db.tables().contains("files")) {
         QSqlQuery query(db);
@@ -49,8 +58,6 @@ ImageStorage::ImageStorage(QObject *parent)
             query.exec("ALTER TABLE files ADD COLUMN favorite INTEGER");
         }
 
-        db.transaction();
-
         return;
     }
 
@@ -69,18 +76,12 @@ ImageStorage::ImageStorage(QObject *parent)
         "                    FOREIGN KEY(url) REFERENCES tags(url)"
         "                    )");
 
-    db.transaction();
+    connect(qApp, &QCoreApplication::aboutToQuit, this, &ImageStorage::teardown);
 }
 
 ImageStorage::~ImageStorage()
 {
-    QString name;
-    {
-        QSqlDatabase db = QSqlDatabase::database();
-        db.commit();
-        name = db.connectionName();
-    }
-    QSqlDatabase::removeDatabase(name);
+    teardown();
 }
 
 ImageStorage *ImageStorage::instance()
@@ -91,10 +92,11 @@ ImageStorage *ImageStorage::instance()
 
 void ImageStorage::addImage(const ImageInfo &ii)
 {
-    if (imageExists(ii.path)) {
-        removeImage(ii.path);
-    }
-    QMutexLocker lock(&m_mutex);
+    QSqlDatabase db = QSqlDatabase::database();
+    db.transaction();
+
+    removeImageInternal(ii.path);
+
     QGeoAddress addr = ii.location.address();
 
     if (!addr.country().isEmpty()) {
@@ -180,63 +182,33 @@ void ImageStorage::addImage(const ImageInfo &ii)
             }
         }
     }
-}
 
-bool ImageStorage::imageExists(const QString &filePath)
-{
-    QMutexLocker lock(&m_mutex);
-
-    QSqlQuery query;
-    query.prepare("SELECT EXISTS(SELECT 1 FROM files WHERE url = ?)");
-    query.addBindValue(filePath);
-
-    if (!query.exec()) {
-        qDebug() << query.lastError();
-        return false;
+    if (!db.commit()) {
+        qWarning() << "ImageStorage failed to commit in addImage:" << db.lastError();
+        db.rollback();
     }
-
-    return query.next();
 }
 
 void ImageStorage::removeImage(const QString &filePath)
 {
-    QMutexLocker lock(&m_mutex);
+    QSqlDatabase db = QSqlDatabase::database();
+    db.transaction();
 
-    QSqlQuery query;
-    query.prepare("DELETE FROM FILES WHERE URL = ?");
-    query.addBindValue(filePath);
-    if (!query.exec()) {
-        qDebug() << "FILE del" << query.lastError();
-    }
+    removeImageInternal(filePath);
 
-    QSqlQuery query2;
-    query2.prepare("DELETE FROM LOCATIONS WHERE id NOT IN (SELECT DISTINCT location FROM files WHERE location IS NOT NULL)");
-    if (!query2.exec()) {
-        qDebug() << "Loc del" << query2.lastError();
-    }
-
-    QSqlQuery query3;
-    query3.prepare("DELETE FROM TAGS WHERE url NOT IN (SELECT DISTINCT url FROM files)");
-    if (!query3.exec()) {
-        qDebug() << "tag delete" << query3.lastError();
+    if (!db.commit()) {
+        qWarning() << "ImageStorage failed to commit in removeImage:" << db.lastError();
+        db.rollback();
     }
 }
 
-void ImageStorage::commit()
+void ImageStorage::processImagesComplete()
 {
-    {
-        QMutexLocker lock(&m_mutex);
-        QSqlDatabase db = QSqlDatabase::database();
-        db.commit();
-        db.transaction();
-    }
-
     emit storageModified();
 }
 
 QList<ImageStorage::Collection> ImageStorage::locations(ImageStorage::LocationGroup loca)
 {
-    QMutexLocker lock(&m_mutex);
     QList<ImageStorage::Collection> list;
 
     if (loca == ImageStorage::LocationGroup::Country) {
@@ -309,7 +281,6 @@ QList<ImageStorage::Collection> ImageStorage::locations(ImageStorage::LocationGr
 
 KFileItemList ImageStorage::imagesForFavorites()
 {
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
 
     query.prepare("SELECT DISTINCT url from files where favorite = 1");
@@ -329,7 +300,6 @@ KFileItemList ImageStorage::imagesForFavorites()
 
 QStringList ImageStorage::tags()
 {
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
 
     query.prepare("SELECT DISTINCT tag from tags");
@@ -349,7 +319,6 @@ QStringList ImageStorage::tags()
 
 KFileItemList ImageStorage::imagesForTag(const QString &tag)
 {
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
 
     query.prepare("SELECT DISTINCT url from tags where tag = ?");
@@ -370,7 +339,6 @@ KFileItemList ImageStorage::imagesForTag(const QString &tag)
 
 KFileItem ImageStorage::previewImageForTag(const QString &tag)
 {
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
 
     query.prepare("SELECT DISTINCT url FROM tags WHERE tag = ? LIMIT 1");
@@ -391,7 +359,6 @@ KFileItem ImageStorage::previewImageForTag(const QString &tag)
 
 KFileItemList ImageStorage::imagesForLocation(const QByteArray &key, ImageStorage::LocationGroup loc)
 {
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == ImageStorage::LocationGroup::Country) {
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id");
@@ -435,7 +402,6 @@ KFileItem ImageStorage::previewImageForLocation(const Collection &collection, Im
 {
     Q_ASSERT(!collection.key.isEmpty());
 
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (loc == ImageStorage::LocationGroup::Country) {
         query.prepare("SELECT DISTINCT url from files, locations where country = ? AND files.location = locations.id LIMIT 1");
@@ -478,7 +444,6 @@ KFileItem ImageStorage::previewImageForLocation(const Collection &collection, Im
 
 QList<ImageStorage::Collection> ImageStorage::timeTypes(ImageStorage::TimeGroup group)
 {
-    QMutexLocker lock(&m_mutex);
     QList<ImageStorage::Collection> list;
 
     QSqlQuery query;
@@ -558,7 +523,6 @@ QList<ImageStorage::Collection> ImageStorage::timeTypes(ImageStorage::TimeGroup 
 
 KFileItemList ImageStorage::imagesForTime(const QByteArray &key, ImageStorage::TimeGroup group)
 {
-    QMutexLocker lock(&m_mutex);
     QSqlQuery query;
     if (group == ImageStorage::TimeGroup::Year) {
         query.prepare("SELECT DISTINCT url from files where strftime('%Y', dateTime) = ?");
@@ -603,7 +567,6 @@ KFileItemList ImageStorage::imagesForTime(const QByteArray &key, ImageStorage::T
 
 KFileItem ImageStorage::previewImageForTime(const Collection &collection, ImageStorage::TimeGroup group)
 {
-    QMutexLocker lock(&m_mutex);
     Q_ASSERT(!collection.key.isEmpty());
 
     QSqlQuery query;
@@ -707,8 +670,6 @@ bool ImageStorage::shouldReset()
 
 QStringList ImageStorage::allImages(int size, int offset)
 {
-    QMutexLocker lock(&m_mutex);
-
     QSqlQuery query;
     if (size == -1) {
         query.prepare("SELECT DISTINCT url from files ORDER BY dateTime DESC");
@@ -728,6 +689,35 @@ QStringList ImageStorage::allImages(int size, int offset)
         imageList << query.value(0).toString();
 
     return imageList;
+}
+
+void ImageStorage::removeImageInternal(const QString &filePath)
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM FILES WHERE URL = ?");
+    query.addBindValue(filePath);
+    if (!query.exec()) {
+        qDebug() << "FILE del" << query.lastError();
+    }
+
+    QSqlQuery query2;
+    query2.prepare("DELETE FROM LOCATIONS WHERE id NOT IN (SELECT DISTINCT location FROM files WHERE location IS NOT NULL)");
+    if (!query2.exec()) {
+        qDebug() << "Loc del" << query2.lastError();
+    }
+
+    QSqlQuery query3;
+    query3.prepare("DELETE FROM TAGS WHERE url NOT IN (SELECT DISTINCT url FROM files)");
+    if (!query3.exec()) {
+        qDebug() << "tag delete" << query3.lastError();
+    }
+}
+
+void ImageStorage::teardown()
+{
+    if (qApp) {
+        QSqlDatabase::removeDatabase(QSqlDatabase::database().connectionName());
+    }
 }
 
 #include "moc_imagestorage.cpp"
