@@ -122,6 +122,9 @@ AC.ActionCollectionManager {
             icon.name: "edit-copy-path"
         }
         AC.StandardActionData {
+            standardAction: AC.StandardActionData.Paste
+        }
+        AC.StandardActionData {
             standardAction: AC.StandardActionData.RenameFile
         }
         AC.StandardActionData {

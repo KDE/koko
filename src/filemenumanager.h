@@ -20,6 +20,7 @@ class FileMenuManager : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QList<QUrl> urls READ urls WRITE setUrls NOTIFY urlsChanged FINAL)
+    Q_PROPERTY(QUrl rootUrl READ rootUrl WRITE setRootUrl NOTIFY rootUrlChanged FINAL)
     Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged FINAL)
     Q_PROPERTY(QQuickWindow *window MEMBER m_window FINAL)
 
@@ -28,6 +29,7 @@ class FileMenuManager : public QObject
     Q_PROPERTY(bool canOpenWith READ canOpenWith NOTIFY canOpenWithChanged FINAL)
     Q_PROPERTY(bool canCopy READ canCopy NOTIFY canCopyChanged FINAL)
     Q_PROPERTY(bool canCopyPath READ canCopyPath NOTIFY canCopyPathChanged FINAL)
+    Q_PROPERTY(bool canPaste READ canPaste NOTIFY canPasteChanged FINAL)
     Q_PROPERTY(bool canRenameFile READ canRenameFile NOTIFY canRenameFileChanged FINAL)
     Q_PROPERTY(bool canMoveToTrash READ canMoveToTrash NOTIFY canMoveToTrashChanged FINAL)
     Q_PROPERTY(bool canDeleteFile READ canDeleteFile NOTIFY canDeleteFileChanged FINAL)
@@ -42,6 +44,9 @@ public:
     QList<QUrl> urls() const;
     void setUrls(const QList<QUrl> &urls);
 
+    QUrl rootUrl() const;
+    void setRootUrl(const QUrl &url);
+
     bool enabled() const;
     void setEnabled(const bool enabled);
 
@@ -50,6 +55,7 @@ public:
     bool canOpenWith() const;
     bool canCopy() const;
     bool canCopyPath() const;
+    bool canPaste() const;
     bool canRenameFile() const;
     bool canMoveToTrash() const;
     bool canDeleteFile() const;
@@ -58,20 +64,25 @@ public:
 
 Q_SIGNALS:
     void urlsChanged();
+    void rootUrlChanged();
     void enabledChanged();
     void canSaveAsChanged();
     void canOpenFolderChanged();
     void canOpenWithChanged();
     void canCopyChanged();
     void canCopyPathChanged();
+    void canPasteChanged();
     void canRenameFileChanged();
     void canMoveToTrashChanged();
     void canDeleteFileChanged();
     void canPrintChanged();
     void canPropertiesChanged();
 
+    void pastedUrls(QList<QUrl> urls);
+
 private:
     QList<QUrl> m_urls;
+    QUrl m_rootUrl;
     bool m_enabled = false;
     QQuickWindow *m_window = nullptr;
 
@@ -80,6 +91,7 @@ private:
     bool m_canOpenWith = false;
     bool m_canCopy = false;
     bool m_canCopyPath = false;
+    bool m_canPaste = false;
     bool m_canRenameFile = false;
     bool m_canMoveToTrash = false;
     bool m_canDeleteFile = false;

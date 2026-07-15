@@ -362,8 +362,46 @@ Kirigami.ScrollablePage {
     Koko.FileMenuManager {
         id: fileMenuManager
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
+        rootUrl: page.galleryModel.path
         enabled: page.visible && page.enabled
         window: page.Window.window
+
+        // Handle selection of pasted items:
+
+        property url lastPastedUrl
+        property var pastedUrls: new Set()
+
+        onPastedUrls: (urls) => {
+            urls.forEach(url => fileMenuManager.pastedUrls.add(url));
+            fileMenuManager.lastPastedUrl = urls[urls.length - 1];
+            selectionModel.clearSelection();
+
+            // If it turns out we get told about pasted urls after the model includes them:
+            // onRowsInserted(undefined, 0, gridView.model.rowCount() - 1);
+        }
+
+        function onRowsInserted(parent, first, last) {
+            if (pastedUrls.size === 0) {
+                return;
+            }
+
+            for (let row = first; row <= last; ++row) {
+                const index = gridView.model.index(row, 0);
+                const url = gridView.model.data(index, AbstractGalleryModel.UrlRole);
+
+                if (fileMenuManager.pastedUrls.has(url)) {
+                    fileMenuManager.pastedUrls.delete(url);
+                    selectionModel.select(index, ItemSelectionModel.Select);
+
+                    if (url === fileMenuManager.lastPastedUrl) {
+                        gridView.currentIndex = row;
+                        fileMenuManager.lastPastedUrl = undefined;
+                    }
+                }
+            }
+        }
+
+        Component.onCompleted: gridView.model.rowsInserted.connect(onRowsInserted)
     }
 
     readonly property list<Kirigami.Action> fileMenuActions: [
@@ -400,6 +438,13 @@ Kirigami.ScrollablePage {
             enabled: fileMenuManager.enabled && fileMenuManager.canCopyPath && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: "CopyPath"
+            AC.ActionCollection.collection: "org.kde.koko.file"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            enabled: fileMenuManager.enabled && fileMenuManager.canPaste && !page.showingCollections
+            visible: enabled
+            AC.ActionCollection.action: AC.StandardActionData.Paste
             AC.ActionCollection.collection: "org.kde.koko.file"
         },
         Kirigami.Action {

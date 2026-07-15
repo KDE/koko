@@ -40,6 +40,8 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenFileManagerWindowJob>
+#include <KIO/Paste>
+#include <KIO/PasteJob>
 #include <KIO/RenameFileDialog>
 #include <KIO/WidgetsAskUserActionHandler>
 
@@ -48,6 +50,7 @@ using namespace Qt::StringLiterals;
 FileMenuManager::FileMenuManager(QObject *parent)
     : QObject(parent)
 {
+    connect(QApplication::clipboard(), &QClipboard::dataChanged, this, &FileMenuManager::updateActions);
 }
 
 QList<QUrl> FileMenuManager::urls() const
@@ -66,6 +69,24 @@ void FileMenuManager::setUrls(const QList<QUrl> &urls)
     updateActions();
 
     Q_EMIT urlsChanged();
+}
+
+QUrl FileMenuManager::rootUrl() const
+{
+    return m_rootUrl;
+}
+
+void FileMenuManager::setRootUrl(const QUrl &url)
+{
+    if (m_rootUrl == url) {
+        return;
+    }
+
+    m_rootUrl = url;
+
+    updateActions();
+
+    Q_EMIT rootUrlChanged();
 }
 
 bool FileMenuManager::enabled() const
@@ -109,6 +130,11 @@ bool FileMenuManager::canCopy() const
 bool FileMenuManager::canCopyPath() const
 {
     return m_canCopyPath;
+}
+
+bool FileMenuManager::canPaste() const
+{
+    return m_canPaste;
 }
 
 bool FileMenuManager::canRenameFile() const
@@ -346,6 +372,30 @@ void FileMenuManager::updateActions()
         connectNamedAction(u"CopyPath"_s, copyPathLambda);
     }
     Q_EMIT canCopyPathChanged();
+
+    // Paste action
+    m_canPaste = false;
+    disconnectStandardAction(KStandardActions::Paste);
+    if (m_enabled && !hasFile && KFileItem(m_rootUrl).isWritable()) {
+        m_canPaste = true;
+        auto pasteLambda = [this] {
+            if (!m_enabled) {
+                return;
+            }
+
+            auto pastedUrls = std::make_shared<QList<QUrl>>();
+
+            auto pasteJob = KIO::paste(QApplication::clipboard()->mimeData(), m_rootUrl);
+            connect(pasteJob, &KIO::PasteJob::itemCreated, this, [pastedUrls](const QUrl &url) {
+                *pastedUrls << url;
+            });
+            connect(pasteJob, &KJob::finished, this, [this, pastedUrls]() {
+                Q_EMIT this->pastedUrls(*pastedUrls);
+            });
+        };
+        connectStandardAction(KStandardActions::Paste, pasteLambda);
+    }
+    Q_EMIT canPasteChanged();
 
     // Rename File action
     m_canRenameFile = false;
