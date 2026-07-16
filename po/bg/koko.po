@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 00:41+0000\n"
+"POT-Creation-Date: 2026-07-16 00:41+0000\n"
 "PO-Revision-Date: 2026-06-21 18:39+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -779,22 +779,22 @@ msgstr "Кошче"
 msgid "Network"
 msgstr "Мрежа"
 
-#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
+#: models/gallerylocationmodel.cpp:56 models/gallerylocationmodel.cpp:191
 #, kde-format
 msgid "Countries"
 msgstr "Страни"
 
-#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
+#: models/gallerylocationmodel.cpp:58 models/gallerylocationmodel.cpp:192
 #, kde-format
 msgid "States"
 msgstr "Щати"
 
-#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
+#: models/gallerylocationmodel.cpp:60 models/gallerylocationmodel.cpp:193
 #, kde-format
 msgid "Cities"
 msgstr "Градове"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:101
+#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
 #: qml/Sidebar.qml:241
 #, kde-format
 msgid "Locations"
@@ -806,32 +806,32 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Избрани файлове"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
 msgid "Tags"
 msgstr "Етикети"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
+#: models/gallerytimemodel.cpp:58 models/gallerytimemodel.cpp:195
 #, kde-format
 msgid "Years"
 msgstr "Години"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
+#: models/gallerytimemodel.cpp:60 models/gallerytimemodel.cpp:196
 #, kde-format
 msgid "Months"
 msgstr "Месеци"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
+#: models/gallerytimemodel.cpp:62 models/gallerytimemodel.cpp:197
 #, kde-format
 msgid "Weeks"
 msgstr "Седмици"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
+#: models/gallerytimemodel.cpp:64 models/gallerytimemodel.cpp:198
 #, kde-format
 msgid "Days"
 msgstr "Дни"
 
-#: models/gallerytimemodel.cpp:77
+#: models/gallerytimemodel.cpp:78
 #, kde-format
 msgid "Times"
 msgstr "Време"
@@ -930,137 +930,151 @@ msgctxt "Actions category"
 msgid "Gallery"
 msgstr "Галерия"
 
-#: qml/ActionCollection.qml:23
+#: qml/ActionCollection.qml:24
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
 msgstr "Избиране на всички"
 
-#: qml/ActionCollection.qml:28
+#: qml/ActionCollection.qml:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
 msgstr "Размаркиране на всичко"
 
-#: qml/ActionCollection.qml:33
+#: qml/ActionCollection.qml:34
 #, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
 msgstr "Обръщане на селекцията"
 
-#: qml/ActionCollection.qml:34
+#: qml/ActionCollection.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Обръщане на селекцията"
 
-#: qml/ActionCollection.qml:40
+#: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
 msgstr "Изглед на медия"
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:299
-#, kde-format
-msgctxt "@action:intoolbar Favorite an image/video"
-msgid "Favorite"
-msgstr "Прибавяне в Любими"
-
-#: qml/ActionCollection.qml:50
+#: qml/ActionCollection.qml:46
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: qml/ActionCollection.qml:51
+#: qml/ActionCollection.qml:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Редактиране на изображението"
 
-#: qml/ActionCollection.qml:57
+#: qml/ActionCollection.qml:53
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Споделяне"
 
-#: qml/ActionCollection.qml:62
+#: qml/ActionCollection.qml:58
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
 msgstr "Данни"
 
-#: qml/ActionCollection.qml:73
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Open Containing Folder"
-msgstr "Отваряне на съдържащата папка"
-
-#: qml/ActionCollection.qml:78
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "&Open With…"
-msgstr "&Отваряне с…"
-
-#: qml/ActionCollection.qml:86
-#, kde-format
-msgctxt "@action:inmenu"
-msgid "Copy Location"
-msgstr "Копиране на местоположението"
-
-#: qml/ActionCollection.qml:101
+#: qml/ActionCollection.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Прожекция"
 
-#: qml/ActionCollection.qml:103
+#: qml/ActionCollection.qml:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Стартиране на прожекция"
 
-#: qml/ActionCollection.qml:107
+#: qml/ActionCollection.qml:71
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
 msgstr "Показване на контроли"
 
-#: qml/ActionCollection.qml:112
+#: qml/ActionCollection.qml:76
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr "Показване на лентата с умалени копия"
 
-#: qml/ActionCollection.qml:113
+#: qml/ActionCollection.qml:77
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Показване на лентата с умалени копия"
 
-#: qml/ActionCollection.qml:114
+#: qml/ActionCollection.qml:78
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Скриване на лентата с умалени копия"
 
-#: qml/ActionCollection.qml:120
+#: qml/ActionCollection.qml:84
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
 msgstr "Цял екран"
 
-#: qml/ActionCollection.qml:122
+#: qml/ActionCollection.qml:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter Full Screen"
 msgstr "Цял екран"
 
-#: qml/ActionCollection.qml:122
+#: qml/ActionCollection.qml:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "Изход от цял екран"
+
+#: qml/ActionCollection.qml:95
+#, fuzzy, kde-format
+#| msgctxt "@item:intable"
+#| msgid "File Size"
+msgctxt "Actions category"
+msgid "File"
+msgstr "Големина на файл"
+
+#: qml/ActionCollection.qml:100
+#, kde-format
+msgctxt "@action:intoolbar Favorite an image/video"
+msgid "Favorite"
+msgstr "Прибавяне в Любими"
+
+#: qml/ActionCollection.qml:108
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Open Containing Folder"
+msgstr "Отваряне на съдържащата папка"
+
+#: qml/ActionCollection.qml:113
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Open With…"
+msgstr "&Отваряне с…"
+
+#: qml/ActionCollection.qml:121
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Copy Location"
+msgstr "Копиране на местоположението"
+
+#: qml/ActionCollection.qml:138
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "&Properties"
+msgstr ""
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1092,176 +1106,176 @@ msgid_plural "%1 items"
 msgstr[0] "1 елемент"
 msgstr[1] "%1 елемента"
 
-#: qml/gallery/GalleryPage.qml:139
+#: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: qml/gallery/GalleryPage.qml:140
+#: qml/gallery/GalleryPage.qml:141
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr ""
 "Възстановяване на избраните медийни файлове до предишните им местоположения"
 
-#: qml/gallery/GalleryPage.qml:159
+#: qml/gallery/GalleryPage.qml:160
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Сортиране: %1"
 
-#: qml/gallery/GalleryPage.qml:164
+#: qml/gallery/GalleryPage.qml:166
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Име"
 
-#: qml/gallery/GalleryPage.qml:171
+#: qml/gallery/GalleryPage.qml:173
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Размер"
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:180
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Последна промяна"
 
-#: qml/gallery/GalleryPage.qml:179
+#: qml/gallery/GalleryPage.qml:181
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Дата на промяна"
 
-#: qml/gallery/GalleryPage.qml:186
+#: qml/gallery/GalleryPage.qml:188
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Създадено"
 
-#: qml/gallery/GalleryPage.qml:187
+#: qml/gallery/GalleryPage.qml:189
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Дата на създаване"
 
-#: qml/gallery/GalleryPage.qml:194
+#: qml/gallery/GalleryPage.qml:196
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Последен достъп"
 
-#: qml/gallery/GalleryPage.qml:195
+#: qml/gallery/GalleryPage.qml:197
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Дата на достъп"
 
-#: qml/gallery/GalleryPage.qml:208
+#: qml/gallery/GalleryPage.qml:210
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Възходящо"
 
-#: qml/gallery/GalleryPage.qml:210
+#: qml/gallery/GalleryPage.qml:212
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "А-Я"
 
-#: qml/gallery/GalleryPage.qml:212
+#: qml/gallery/GalleryPage.qml:214
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Първо най-малките"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:218
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Първо най-старите"
 
-#: qml/gallery/GalleryPage.qml:219
+#: qml/gallery/GalleryPage.qml:221
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Възходящо"
 
-#: qml/gallery/GalleryPage.qml:230
+#: qml/gallery/GalleryPage.qml:232
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Низходящо"
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Я-А"
 
-#: qml/gallery/GalleryPage.qml:234
+#: qml/gallery/GalleryPage.qml:236
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Първо най-големите"
 
-#: qml/gallery/GalleryPage.qml:238
+#: qml/gallery/GalleryPage.qml:240
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Първо най-новите"
 
-#: qml/gallery/GalleryPage.qml:241
+#: qml/gallery/GalleryPage.qml:243
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Низходящо"
 
-#: qml/gallery/GalleryPage.qml:263
+#: qml/gallery/GalleryPage.qml:267
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Папка с отметки"
 
-#: qml/gallery/GalleryPage.qml:264
+#: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Маркира текущата папка"
 
-#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:307 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Премахване от Любими"
 
-#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:307 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Добавяне към Любими"
 
-#: qml/gallery/GalleryPage.qml:316
+#: qml/gallery/GalleryPage.qml:322
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Споделяне на избраната медия"
 
-#: qml/gallery/GalleryPage.qml:748
+#: qml/gallery/GalleryPage.qml:792
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 елемент"
 msgstr[1] "%1 елемента"
 
-#: qml/gallery/GalleryPage.qml:786
+#: qml/gallery/GalleryPage.qml:830
 #, kde-format
 msgid "No media found"
 msgstr "Не е намерена медия"
 
-#: qml/gallery/GalleryPage.qml:810
+#: qml/gallery/GalleryPage.qml:854
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1269,7 +1283,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "Маркиран е %1 елемент"
 msgstr[1] "Маркирани са %1 елемента"
 
-#: qml/gallery/GalleryPage.qml:815
+#: qml/gallery/GalleryPage.qml:859
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1456,115 +1470,115 @@ msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Вижте информация за изображението"
 
-#: qml/mediaview/MediaViewPage.qml:277
+#: qml/mediaview/MediaViewPage.qml:300
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Влизане в режим на потапящо разглеждане"
 
-#: qml/mediaview/MediaViewPage.qml:278
+#: qml/mediaview/MediaViewPage.qml:301
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Илизане от режим на потапящо разглеждане"
 
-#: qml/mediaview/MediaViewPage.qml:589
+#: qml/mediaview/MediaViewPage.qml:616
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Предишно изображение"
 
-#: qml/mediaview/MediaViewPage.qml:623
+#: qml/mediaview/MediaViewPage.qml:650
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Следващо изображение"
 
-#: qml/mediaview/MediaViewPage.qml:804
+#: qml/mediaview/MediaViewPage.qml:831
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:805
+#: qml/mediaview/MediaViewPage.qml:832
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:806
+#: qml/mediaview/MediaViewPage.qml:833
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:807
+#: qml/mediaview/MediaViewPage.qml:834
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:808
+#: qml/mediaview/MediaViewPage.qml:835
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:809
+#: qml/mediaview/MediaViewPage.qml:836
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:810
+#: qml/mediaview/MediaViewPage.qml:837
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:811
+#: qml/mediaview/MediaViewPage.qml:838
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:812
+#: qml/mediaview/MediaViewPage.qml:839
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:813
+#: qml/mediaview/MediaViewPage.qml:840
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:862
+#: qml/mediaview/MediaViewPage.qml:889
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/mediaview/MediaViewPage.qml:876
+#: qml/mediaview/MediaViewPage.qml:903
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Намаляване на мащаба"
 
-#: qml/mediaview/MediaViewPage.qml:885
+#: qml/mediaview/MediaViewPage.qml:912
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Увеличаване на мащаба"
 
-#: qml/mediaview/MediaViewPage.qml:1128 qml/Settings/GeneralConfigPage.qml:192
+#: qml/mediaview/MediaViewPage.qml:1155 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Пауза между изображенията:"
 
-#: qml/mediaview/MediaViewPage.qml:1145 qml/Settings/GeneralConfigPage.qml:204
+#: qml/mediaview/MediaViewPage.qml:1172 qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1572,48 +1586,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 секунда"
 msgstr[1] "%1 секунди"
 
-#: qml/mediaview/MediaViewPage.qml:1200 qml/mediaview/MediaViewPage.qml:1301
+#: qml/mediaview/MediaViewPage.qml:1227 qml/mediaview/MediaViewPage.qml:1328
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Повторение"
 
-#: qml/mediaview/MediaViewPage.qml:1209 qml/mediaview/MediaViewPage.qml:1310
-#: qml/Settings/GeneralConfigPage.qml:178
+#: qml/mediaview/MediaViewPage.qml:1236 qml/mediaview/MediaViewPage.qml:1337
+#: qml/Settings/GeneralConfigPage.qml:188
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Случаен ред"
 
-#: qml/mediaview/MediaViewPage.qml:1221
+#: qml/mediaview/MediaViewPage.qml:1248
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Спиране на прожекцията"
 
-#: qml/mediaview/MediaViewPage.qml:1235
+#: qml/mediaview/MediaViewPage.qml:1262
 #, kde-format
 msgid "Show All Controls"
 msgstr "Показване на всичките контроли"
 
-#: qml/mediaview/MediaViewPage.qml:1264
+#: qml/mediaview/MediaViewPage.qml:1291
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Спиране"
 
-#: qml/mediaview/MediaViewPage.qml:1264
+#: qml/mediaview/MediaViewPage.qml:1291
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Начало"
 
-#: qml/mediaview/MediaViewPage.qml:1283
+#: qml/mediaview/MediaViewPage.qml:1310
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Интервал:"
 
-#: qml/mediaview/MediaViewPage.qml:1296
+#: qml/mediaview/MediaViewPage.qml:1323
 #, kde-format
 msgid "seconds"
 msgstr "секунди"
@@ -1745,46 +1759,52 @@ msgstr "Черен"
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, background color"
+msgid "Gray"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:113
+#, kde-format
+msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Бял"
 
-#: qml/Settings/GeneralConfigPage.qml:114
+#: qml/Settings/GeneralConfigPage.qml:124
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
 msgstr "По подразбиране за темата"
 
-#: qml/Settings/GeneralConfigPage.qml:115
+#: qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Използване на фоновия цвят, определен от темата"
 
-#: qml/Settings/GeneralConfigPage.qml:131
+#: qml/Settings/GeneralConfigPage.qml:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Показване на шахматна шарка зад прозрачни изображения"
 
-#: qml/Settings/GeneralConfigPage.qml:142
+#: qml/Settings/GeneralConfigPage.qml:152
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr "Преглед на изображения"
 
-#: qml/Settings/GeneralConfigPage.qml:148
+#: qml/Settings/GeneralConfigPage.qml:158
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "Увеличаване на изображения, по-малки от изгледа на екрана"
 
-#: qml/Settings/GeneralConfigPage.qml:159
+#: qml/Settings/GeneralConfigPage.qml:169
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "Запомняне на ниво на мащабиране при превключване между изображения"
 
-#: qml/Settings/GeneralConfigPage.qml:170
+#: qml/Settings/GeneralConfigPage.qml:180
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
