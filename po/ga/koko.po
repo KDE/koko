@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-05 00:41+0000\n"
+"POT-Creation-Date: 2026-07-16 02:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -1466,103 +1466,103 @@ msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:589
+#: qml/mediaview/MediaViewPage.qml:593
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:623
+#: qml/mediaview/MediaViewPage.qml:627
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:804
+#: qml/mediaview/MediaViewPage.qml:808
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:805
+#: qml/mediaview/MediaViewPage.qml:809
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:806
+#: qml/mediaview/MediaViewPage.qml:810
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:807
+#: qml/mediaview/MediaViewPage.qml:811
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:808
+#: qml/mediaview/MediaViewPage.qml:812
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:809
+#: qml/mediaview/MediaViewPage.qml:813
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:810
+#: qml/mediaview/MediaViewPage.qml:814
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:811
+#: qml/mediaview/MediaViewPage.qml:815
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:812
+#: qml/mediaview/MediaViewPage.qml:816
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:813
+#: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:862
+#: qml/mediaview/MediaViewPage.qml:866
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:876
+#: qml/mediaview/MediaViewPage.qml:880
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:885
+#: qml/mediaview/MediaViewPage.qml:889
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1128 qml/Settings/GeneralConfigPage.qml:192
+#: qml/mediaview/MediaViewPage.qml:1132 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1145 qml/Settings/GeneralConfigPage.qml:204
+#: qml/mediaview/MediaViewPage.qml:1149 qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1570,48 +1570,48 @@ msgid_plural "%1 seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/mediaview/MediaViewPage.qml:1200 qml/mediaview/MediaViewPage.qml:1301
+#: qml/mediaview/MediaViewPage.qml:1204 qml/mediaview/MediaViewPage.qml:1305
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1209 qml/mediaview/MediaViewPage.qml:1310
-#: qml/Settings/GeneralConfigPage.qml:178
+#: qml/mediaview/MediaViewPage.qml:1213 qml/mediaview/MediaViewPage.qml:1314
+#: qml/Settings/GeneralConfigPage.qml:188
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1221
+#: qml/mediaview/MediaViewPage.qml:1225
 #, kde-format
 msgid "Stop Slideshow"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1235
+#: qml/mediaview/MediaViewPage.qml:1239
 #, kde-format
 msgid "Show All Controls"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1264
+#: qml/mediaview/MediaViewPage.qml:1268
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1264
+#: qml/mediaview/MediaViewPage.qml:1268
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1283
+#: qml/mediaview/MediaViewPage.qml:1287
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1296
+#: qml/mediaview/MediaViewPage.qml:1300
 #, kde-format
 msgid "seconds"
 msgstr ""
@@ -1743,46 +1743,52 @@ msgstr ""
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, background color"
+msgid "Gray"
+msgstr ""
+
+#: qml/Settings/GeneralConfigPage.qml:113
+#, kde-format
+msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:114
+#: qml/Settings/GeneralConfigPage.qml:124
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:115
+#: qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:131
+#: qml/Settings/GeneralConfigPage.qml:141
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:142
+#: qml/Settings/GeneralConfigPage.qml:152
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:148
+#: qml/Settings/GeneralConfigPage.qml:158
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:159
+#: qml/Settings/GeneralConfigPage.qml:169
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:170
+#: qml/Settings/GeneralConfigPage.qml:180
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
