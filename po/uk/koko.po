@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2023, 2024, 2025, 2026.
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025, 2026 Yuri Chornoivan <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:41+0000\n"
-"PO-Revision-Date: 2026-05-29 19:07+0300\n"
+"POT-Creation-Date: 2026-07-17 00:41+0000\n"
+"PO-Revision-Date: 2026-07-16 19:19+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -684,79 +684,79 @@ msgctxt "@item:intable"
 msgid "Comment"
 msgstr "Коментар"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Фотографії</application>"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "«Фотографії» — програма для перегляду зображень з вашої збірки."
 
-#: main.cpp:68
+#: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "© Учасники розробки KDE, 2013–%1"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
-#: main.cpp:91
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
+#: main.cpp:92
 #, kde-format, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "Розробник"
 
-#: main.cpp:77
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "Nicolas Fella"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "Mikel Johnson"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr "Oliver Beard"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "Reset the database"
 msgstr "Скинути до бази даних"
 
-#: main.cpp:98
+#: main.cpp:99
 #, kde-format
 msgid "path of image you want to open"
 msgstr "шлях до зображення, яке ви хочете відкрити"
@@ -1047,12 +1047,10 @@ msgid "Exit Full Screen"
 msgstr "Вийти з повноекранного режиму"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Розмір файла"
+msgstr "Файл"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1079,11 +1077,10 @@ msgid "Copy Location"
 msgstr "Копіювати адресу"
 
 #: qml/ActionCollection.qml:138
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr "Властивості"
+msgstr "В&ластивості"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1780,7 +1777,7 @@ msgstr "Чорне"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Сіре"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format

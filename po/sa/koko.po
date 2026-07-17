@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:41+0000\n"
+"POT-Creation-Date: 2026-07-17 00:41+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -707,19 +707,19 @@ msgctxt "@item:intable"
 msgid "Comment"
 msgstr ""
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>फोटो</application> इति"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "फोटो भवतः चित्रसङ्ग्रहाय चित्रदर्शकः अस्ति ।"
 
-#: main.cpp:68
+#: main.cpp:69
 #, fuzzy, kde-kuit-format
 #| msgctxt "@info:credit"
 #| msgid "(c) 2013-2020 KDE Contributors"
@@ -727,61 +727,61 @@ msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "(ग) 2013-2020 केडीई योगदानकर्ता"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "विशेस हण्डा"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
-#: main.cpp:91
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
+#: main.cpp:92
 #, kde-format, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "विकासकः"
 
-#: main.cpp:77
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "अतुल शर्मा"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "मार्को मार्टिन्"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "निकोलस फेला"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "कार्ल स्वान्"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "माइकेल् जॉन्सन्"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr ""
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "Reset the database"
 msgstr "दत्तांशकोशं पुनः सेट् कुर्वन्तु"
 
-#: main.cpp:98
+#: main.cpp:99
 #, kde-format
 msgid "path of image you want to open"
 msgstr "भवन्तः उद्घाटयितुम् इच्छन्ति तस्य प्रतिबिम्बस्य मार्गः"

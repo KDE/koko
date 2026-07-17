@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:41+0000\n"
-"PO-Revision-Date: 2026-05-29 06:05+0200\n"
+"POT-Creation-Date: 2026-07-17 00:41+0000\n"
+"PO-Revision-Date: 2026-07-16 06:16+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -673,79 +673,79 @@ msgctxt "@item:intable"
 msgid "Comment"
 msgstr "კომენტარი"
 
-#: main.cpp:64
+#: main.cpp:65
 #, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Photos</application>"
 msgstr "<application>Photos</application>"
 
-#: main.cpp:66
+#: main.cpp:67
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Photos is an image viewer for your image collection."
 msgstr "Photos სურათების გალერეაა თქვენი კოლექციებისთვის."
 
-#: main.cpp:68
+#: main.cpp:69
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "(c) 2013-%1 KDE Contributors"
 msgstr "(c) 2013-%1 KDE-ის მოხალისეები"
 
-#: main.cpp:75
+#: main.cpp:76
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
 msgstr "Vishesh Handa"
 
-#: main.cpp:75 main.cpp:77 main.cpp:79 main.cpp:81 main.cpp:84 main.cpp:89
-#: main.cpp:91
+#: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
+#: main.cpp:92
 #, kde-format, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Developer"
 msgstr "პროგრამისტი"
 
-#: main.cpp:77
+#: main.cpp:78
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Atul Sharma"
 msgstr "Atul Sharma"
 
-#: main.cpp:79
+#: main.cpp:80
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
 msgstr "მაკრო მარტინი"
 
-#: main.cpp:81
+#: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
 msgstr "ნიკოლას ფელა"
 
-#: main.cpp:83
+#: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
 msgstr "Carl Schwan"
 
-#: main.cpp:89
+#: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
 msgstr "მიკელ ჯონსონი"
 
-#: main.cpp:91
+#: main.cpp:92
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
 msgstr "ოლივერ ბერდი"
 
-#: main.cpp:97
+#: main.cpp:98
 #, kde-format
 msgid "Reset the database"
 msgstr "ბაზის გასუფთავება"
 
-#: main.cpp:98
+#: main.cpp:99
 #, kde-format
 msgid "path of image you want to open"
 msgstr "ბილიკი გამოსახულებამდე, რომელიც გნებავთ, გახსნათ"
@@ -1036,12 +1036,10 @@ msgid "Exit Full Screen"
 msgstr "სრული ეკრანიდან გასვლა"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "ფაილის ზომა"
+msgstr "ფაილი"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1068,11 +1066,10 @@ msgid "Copy Location"
 msgstr "მდებარეობის კოპირება"
 
 #: qml/ActionCollection.qml:138
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr "თვისებები"
+msgstr "&თვისებები"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1757,7 +1754,7 @@ msgstr "შავი"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "ნაცრისფერი"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
