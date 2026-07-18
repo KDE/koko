@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:41+0000\n"
-"PO-Revision-Date: 2026-05-29 11:40+0300\n"
+"PO-Revision-Date: 2026-07-17 12:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1042,12 +1042,10 @@ msgid "Exit Full Screen"
 msgstr "יציאה ממסך מלא"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "גודל קובץ"
+msgstr "קובץ"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1077,7 +1075,7 @@ msgstr "העתקת מקום"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "מ&אפיינים"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1774,7 +1772,7 @@ msgstr "שחור"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "אפור"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format

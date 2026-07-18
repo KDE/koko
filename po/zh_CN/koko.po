@@ -1030,12 +1030,10 @@ msgid "Exit Full Screen"
 msgstr "退出全屏"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "文件体积"
+msgstr ""
 
 #: qml/ActionCollection.qml:100
 #, kde-format
