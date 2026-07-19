@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:41+0000\n"
-"PO-Revision-Date: 2026-06-01 14:44+0300\n"
+"PO-Revision-Date: 2026-07-18 22:13+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -1045,12 +1045,10 @@ msgid "Exit Full Screen"
 msgstr "Išjungti viso ekrano veikseną"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Failo dydis"
+msgstr "Failas"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1080,7 +1078,7 @@ msgstr "Kopijuoti vietą"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "&Savybės"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1777,7 +1775,7 @@ msgstr "Juodas"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Pilka"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
