@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 02:38+0000\n"
-"PO-Revision-Date: 2026-06-01 14:44+0300\n"
+"PO-Revision-Date: 2026-07-18 22:13+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -1763,7 +1763,7 @@ msgstr "Juodas"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Pilka"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
