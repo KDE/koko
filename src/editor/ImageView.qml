@@ -15,6 +15,8 @@ import QtQuick.Dialogs
 import org.kde.kirigami as Kirigami
 import org.kde.kquickimageeditor as KQuickImageEditor
 
+pragma ComponentBehavior: Bound
+
 Controls.Page {
     id: root
 
@@ -26,6 +28,7 @@ Controls.Page {
     readonly property real maxZoom: Math.max(minZoom, 8)
     readonly property real currentZoom: annotationEditor.scale
     property bool showCropTool: false
+    property var previewColorSpace: undefined
 
     function dprRound(v: double): double {
         return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
@@ -172,8 +175,47 @@ Controls.Page {
             scale: 1
             visible: true
             enabled: true
-            Keys.forwardTo: cropTool
+            Keys.forwardTo: [cropTool, textTool, selectionTool]
             Keys.priority: Keys.AfterItem
+            layer.enabled: layer.effect.gamma !== 1
+            layer.effect: ShaderEffect {
+                property var source: annotationEditor
+                readonly property real gamma: {
+                    if (!root.previewColorSpace) {
+                        return 1;
+                    }
+                    return root.previewColorSpace.gamma / annotationEditor.document.colorSpace.gamma
+                }
+                vertexShader: "qrc:/qt/qml/org/kde/photos/editor/shaders/gammaadjust.vert.qsb"
+                fragmentShader: "qrc:/qt/qml/org/kde/photos/editor/shaders/gammaadjust.frag.qsb"
+                transformOrigin: annotationEditor.transformOrigin
+                // scale: annotationEditor.scale
+                // anchors.fill: annotationEditor
+            }
+            onPressedChanged: if (pressed) {
+                if (textTool.shouldShow) {
+                    textTool.forceActiveFocus(Qt.MouseFocusReason);
+                }
+            }
+        }
+
+        Item {
+            x: annotationEditor.x - annotationEditor.viewportRect.x
+            y: annotationEditor.y - annotationEditor.viewportRect.y
+            scale: annotationEditor.scale
+            transformOrigin: annotationEditor.transformOrigin
+            KQuickImageEditor.TextTool {
+                id: textTool
+                viewport: annotationEditor
+            }
+            KQuickImageEditor.AnnotationSelectionTool {
+                id: selectionTool
+                viewport: annotationEditor
+            }
+            KQuickImageEditor.HoverOutline {
+                viewport: annotationEditor
+                hidden: selectionTool.hovered || selectionTool.dragging
+            }
         }
 
         KQuickImageEditor.CropTool {
