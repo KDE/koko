@@ -14,30 +14,6 @@ AnnotationViewport {
     document: AnnotationDocument {}
     viewportRect: Qt.rect(0, 0, width, height)
 
-    onPressedChanged: if (pressed) {
-        if (textTool.shouldShow) {
-            textTool.forceActiveFocus(Qt.MouseFocusReason);
-        }
-    }
-
-    Item {
-        x: -root.viewportRect.x
-        y: -root.viewportRect.y
-        transformOrigin: Item.TopLeft
-        TextTool {
-            id: textTool
-            viewport: root
-        }
-        AnnotationSelectionTool {
-            id: selectionTool
-            viewport: root
-        }
-        HoverOutline {
-            viewport: root
-            hidden: selectionTool.hovered || selectionTool.dragging
-        }
-    }
-
     Shortcut {
         enabled: root.enabled
         sequences: [StandardKey.Undo]
