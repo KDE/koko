@@ -15,6 +15,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kquickimageeditor as KQuickImageEditor
 import org.kde.photos.editor as PhotosEditor
 
+pragma ComponentBehavior: Bound
+
 Kirigami.Page {
     id: root
 
@@ -428,6 +430,174 @@ Kirigami.Page {
         },
 
         Kirigami.Action {
+            id: colorAdjustmentAction
+            readonly property var sourceColorSpace: newColorSpace()
+            property var targetColorSpace: undefined
+            function newColorSpace(...sources): var {
+                // We need to copy all the properties to a new object to
+                // write new values.
+                let cs = Object.assign({}, imageView.document.colorSpace, ...sources);
+                cs.gamma = fixedFloat(cs.gamma);
+                if (cs.namedColorSpace === ColorSpace.NamedColorSpace.Unknown) {
+                    delete cs.namedColorSpace;
+                }
+                return cs;
+            }
+            // Math.fround alone doesn't fix the floating point inaccuracy issue
+            // when a C++ float gets converted to a QML real/JavaScript Number
+            function fixedFloat(num: real): real {
+                // 8 decimal places allows support for Adobe RGB gamma (2.19921875)
+                return Math.fround((num + Number.EPSILON) * 100000000) / 100000000;
+            }
+            icon.name: "color-management-symbolic"
+            text: i18nc("@action:button Adjust the colors of an image", "Adjust Colors")
+            displayComponent: Controls.ToolButton {
+                id: adjustButton
+                Accessible.role: Accessible.ButtonMenu
+                icon.name: colorAdjustmentAction.icon.name
+                text: colorAdjustmentAction.text
+                down: adjustPopup.visible || pressed
+                onClicked: if (!adjustPopup.visible) {
+                    adjustPopup.open()
+                    gammaSlider.forceActiveFocus(adjustButton.focusReason)
+                }
+                Controls.Popup {
+                    id: adjustPopup
+                    function floatToSpinBoxInt(num: real): int {
+                        return Math.fround((num + Number.EPSILON) * 100000000);
+                    }
+                    function spinBoxIntToFloat(num: int): real {
+                        return colorAdjustmentAction.fixedFloat(num / 100000000);
+                    }
+                    function displayFloat(num: real): string {
+                        // -128 is QLocale::FloatingPointShortest
+                        return Number(num).toLocaleString(gammaSlider.locale, 'f', -128);
+                    }
+                    function reset(): void {
+                        colorAdjustmentAction.targetColorSpace = undefined;
+                        gammaSlider.value = Qt.binding(() => colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma);
+                        gammaSpinBox.value = Qt.binding(() => floatToSpinBoxInt(colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma));
+                    }
+                    Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Menu
+                    z: Kirigami.OverlayZStacking.z
+                    y: adjustButton.height
+                    clip: false
+                    ColumnLayout {
+                        spacing: Kirigami.Units.mediumSpacing
+                        anchors.fill: parent
+                        RowLayout {
+                            id: gammaLayout
+                            spacing: parent.spacing
+                            Layout.fillWidth: true
+                            Controls.Label {
+                                text: i18nc("@label:slider", "Gamma:")
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            }
+                            Controls.Slider {
+                                id: gammaSlider
+                                focus: true
+                                Layout.fillWidth: true
+                                from: 0.2
+                                to: 4.2
+                                stepSize: 0.1
+                                value: colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma
+                                onMoved: {
+                                    colorAdjustmentAction.targetColorSpace = colorAdjustmentAction.newColorSpace(colorAdjustmentAction.targetColorSpace,
+                                                              {"transferFunction": ColorSpace.TransferFunction.Gamma,
+                                                               "gamma": gammaSlider.value});
+                                }
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                Layout.preferredWidth: Math.max(implicitWidth, 200)
+                                Layout.bottomMargin: rangeLabelsRow.implicitHeight
+                                RowLayout {
+                                    id: rangeLabelsRow
+                                    parent: gammaSlider
+                                    anchors.bottom: parent.bottom
+                                    anchors.bottomMargin: -implicitHeight
+                                    anchors.left: parent.left
+                                    anchors.right: parent.right
+                                    spacing: parent.spacing
+                                    Controls.Label {
+                                        text: adjustPopup.displayFloat(gammaSlider.from);
+                                        horizontalAlignment: Text.AlignLeft
+                                    }
+                                    Controls.Label {
+                                        Layout.fillWidth: true
+                                        text: adjustPopup.displayFloat(colorAdjustmentAction.fixedFloat((gammaSlider.to + gammaSlider.from) / 2.0));
+                                        horizontalAlignment: Text.AlignHCenter
+                                    }
+                                    Controls.Label {
+                                        text: adjustPopup.displayFloat(gammaSlider.to);
+                                        horizontalAlignment: Text.AlignRight
+                                    }
+                                }
+                            }
+                            EditorSpinBox {
+                                id: gammaSpinBox
+                                enabled: gammaSlider.enabled
+                                focus: true
+                                Accessible.name: i18nc("@info:tooltip colorspace gamma spinbox", "Gamma")
+                                Controls.ToolTip.text: Accessible.name
+                                from: adjustPopup.floatToSpinBoxInt(gammaSlider.from)
+                                to: adjustPopup.floatToSpinBoxInt(gammaSlider.to)
+                                stepSize: adjustPopup.floatToSpinBoxInt(gammaSlider.stepSize)
+                                value: adjustPopup.floatToSpinBoxInt(colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma)
+                                wheelEnabled: false
+                                textFromValue: (value, locale) => {
+                                    return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                                }
+                                valueFromText: (text, locale) => {
+                                    return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                                }
+                                Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                onValueModified: {
+                                    colorAdjustmentAction.targetColorSpace = colorAdjustmentAction.newColorSpace(colorAdjustmentAction.targetColorSpace,
+                                                              {"transferFunction": ColorSpace.TransferFunction.Gamma,
+                                                               "gamma": adjustPopup.spinBoxIntToFloat(value)});
+                                }
+                            }
+                        }
+                        RowLayout {
+                            Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
+                            spacing: parent.spacing
+                            Controls.Button {
+                                icon.name: "edit-undo-symbolic"
+                                text: i18nc("@action:button reset color adjustment controls", "Reset")
+                                enabled: applyAdjustmentButton.enabled
+                                onClicked: adjustPopup.reset()
+                            }
+                            Controls.Button {
+                                id: applyAdjustmentButton
+                                icon.name: "dialog-ok-apply-symbolic"
+                                text: i18nc("@action:button apply color adjustment to image", "Adjust")
+                                enabled: !!colorAdjustmentAction.targetColorSpace && JSON.stringify(colorAdjustmentAction.targetColorSpace) !== JSON.stringify(colorAdjustmentAction.sourceColorSpace)
+                                onClicked: {
+                                    imageView.document.applyColorAdjustment(colorAdjustmentAction.targetColorSpace);
+                                    adjustPopup.reset();
+                                    adjustPopup.close();
+                                }
+                            }
+                        }
+                    }
+                    // contentItem.parent is the Popup's internal Page that acts
+                    // as a root item and focus scope.
+                    contentItem.parent.Keys.onPressed: (event) => {
+                        if (!event.accepted && (event.key === Qt.Key_Enter || event.key === Qt.Key_Return)) {
+                            // animate the click so the user can see the apply
+                            // button was pressed.
+                            applyAdjustmentButton.animateClick()
+                            event.accepted = true
+                        }
+                    }
+                    onAboutToShow: {
+                        adjustPopup.reset()
+                    }
+                }
+            }
+        },
+
+        Kirigami.Action {
             separator: true
         },
 
@@ -509,6 +679,7 @@ Kirigami.Page {
             id: imageView
 
             showCropTool: cropAction.checked
+            previewColorSpace: colorAdjustmentAction.targetColorSpace
 
             Layout.fillWidth: true
             Layout.fillHeight: true

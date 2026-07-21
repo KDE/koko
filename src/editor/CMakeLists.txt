@@ -18,5 +18,17 @@ ecm_target_qml_sources(photos_editor_static SOURCES
     EditorView.qml
     ImageView.qml
 )
+qt_add_shaders(photos_editor_static "shaders"
+    PRECOMPILE
+    BATCHABLE
+    OPTIMIZED
+    PREFIX "/qt/qml/org/kde/photos/editor/shaders"
+    FILES
+        gammaadjust.vert
+        gammaadjust.frag
+    OUTPUTS
+        gammaadjust.vert.qsb
+        gammaadjust.frag.qsb
+)
 
 target_link_libraries(photos_editor_static PRIVATE Qt::Gui)
