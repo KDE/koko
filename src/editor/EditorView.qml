@@ -481,6 +481,8 @@ Kirigami.Page {
                     Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Menu
                     z: Kirigami.OverlayZStacking.z
                     y: adjustButton.height
+                    x: 0
+                    margins: 0
                     clip: false
                     ColumnLayout {
                         spacing: Kirigami.Units.mediumSpacing
@@ -507,7 +509,7 @@ Kirigami.Page {
                                                                "gamma": gammaSlider.value});
                                 }
                                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                Layout.preferredWidth: Math.max(implicitWidth, 200)
+                                Layout.preferredWidth: Math.max(implicitWidth, 320)
                                 Layout.bottomMargin: rangeLabelsRow.implicitHeight
                                 RowLayout {
                                     id: rangeLabelsRow
