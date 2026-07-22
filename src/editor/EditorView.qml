@@ -431,24 +431,6 @@ Kirigami.Page {
 
         Kirigami.Action {
             id: colorAdjustmentAction
-            readonly property var sourceColorSpace: newColorSpace()
-            property var targetColorSpace: undefined
-            function newColorSpace(...sources): var {
-                // We need to copy all the properties to a new object to
-                // write new values.
-                let cs = Object.assign({}, imageView.document.colorSpace, ...sources);
-                cs.gamma = fixedFloat(cs.gamma);
-                if (cs.namedColorSpace === ColorSpace.NamedColorSpace.Unknown) {
-                    delete cs.namedColorSpace;
-                }
-                return cs;
-            }
-            // Math.fround alone doesn't fix the floating point inaccuracy issue
-            // when a C++ float gets converted to a QML real/JavaScript Number
-            function fixedFloat(num: real): real {
-                // 8 decimal places allows support for Adobe RGB gamma (2.19921875)
-                return Math.fround((num + Number.EPSILON) * 100000000) / 100000000;
-            }
             icon.name: "color-management-symbolic"
             text: i18nc("@action:button Adjust the colors of an image", "Adjust Colors")
             displayComponent: Controls.ToolButton {
@@ -463,20 +445,33 @@ Kirigami.Page {
                 }
                 Controls.Popup {
                     id: adjustPopup
+                    // Math.fround alone doesn't fix the floating point inaccuracy issue
+                    // when a C++ float gets converted to a QML real/JavaScript Number
+                    function fixedFloat(num: real): real {
+                        // 8 decimal places allows support for Adobe RGB gamma (2.19921875)
+                        return Math.fround((num + Number.EPSILON) * 100000000) / 100000000;
+                    }
                     function floatToSpinBoxInt(num: real): int {
                         return Math.fround((num + Number.EPSILON) * 100000000);
                     }
                     function spinBoxIntToFloat(num: int): real {
-                        return colorAdjustmentAction.fixedFloat(num / 100000000);
+                        return adjustPopup.fixedFloat(num / 100000000);
                     }
                     function displayFloat(num: real): string {
                         // -128 is QLocale::FloatingPointShortest
                         return Number(num).toLocaleString(gammaSlider.locale, 'f', -128);
                     }
                     function reset(): void {
-                        colorAdjustmentAction.targetColorSpace = undefined;
-                        gammaSlider.value = Qt.binding(() => colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma);
-                        gammaSpinBox.value = Qt.binding(() => floatToSpinBoxInt(colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma));
+                        imageView.colorEffect.targetColorSpace = undefined;
+                        brightnessSlider.brightness = 0;
+                        brightnessSlider.value = Qt.binding(() => brightnessSlider.brightness);
+                        brightnessSpinBox.value = Qt.binding(() => Math.round(brightnessSlider.brightness * 10));
+                        contrastSlider.contrast = 1;
+                        contrastSlider.value = Qt.binding(() => contrastSlider.contrast);
+                        contrastSpinBox.value = Qt.binding(() => Math.round(contrastSlider.contrast * 10));
+                        gammaSlider.gamma = Qt.binding(() => imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma);
+                        gammaSlider.value = Qt.binding(() => gammaSlider.gamma);
+                        gammaSpinBox.value = Qt.binding(() => floatToSpinBoxInt(gammaSlider.gamma));
                     }
                     Kirigami.OverlayZStacking.layer: Kirigami.OverlayZStacking.Menu
                     z: Kirigami.OverlayZStacking.z
@@ -487,8 +482,182 @@ Kirigami.Page {
                     ColumnLayout {
                         spacing: Kirigami.Units.mediumSpacing
                         anchors.fill: parent
+                        Timer { // compress attempts to change the matrix
+                            id: adjustmentTimer
+                            interval: 0
+                            running: false
+                            repeat: false
+                            onTriggered: {
+                                let m = Qt.matrix4x4();
+                                if (brightnessSlider.brightness !== 0) {
+                                    m = m.times(imageView.colorEffect.brightnessMatrix(brightnessSlider.brightness));
+                                }
+                                if (contrastSlider.contrast !== 1) {
+                                    m = m.times(imageView.colorEffect.contrastMatrix(contrastSlider.contrast));
+                                }
+                                let oldGamma = imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma;
+                                imageView.colorEffect.colorMatrix = m;
+                                if (gammaSlider.gamma !== oldGamma) {
+                                    let cs = imageView.colorEffect.newColorSpace(
+                                            imageView.colorEffect.targetColorSpace,
+                                            {"transferFunction": ColorSpace.TransferFunction.Gamma, "gamma": gammaSlider.value});
+                                    // Other properties will be ignored if we don't delete namedColorSpace
+                                    delete cs.namedColorSpace;
+                                    imageView.colorEffect.targetColorSpace = cs;
+                                }
+                            }
+                        }
                         RowLayout {
-                            id: gammaLayout
+                            spacing: parent.spacing
+                            Layout.fillWidth: true
+                            Controls.Label {
+                                text: i18nc("@label:slider", "Brightness:")
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            }
+                            Controls.Slider {
+                                id: brightnessSlider
+                                property real brightness: 0
+                                focus: true
+                                Layout.fillWidth: true
+                                from: -1
+                                to: 1
+                                stepSize: 0.1
+                                value: brightness
+                                onMoved: {
+                                    brightness = value;
+                                    adjustmentTimer.restart();
+                                }
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                Layout.preferredWidth: Math.max(implicitWidth, 320)
+                                Layout.bottomMargin: brightnessRangeLabelsRow.implicitHeight
+                                RowLayout {
+                                    id: brightnessRangeLabelsRow
+                                    parent: brightnessSlider
+                                    anchors.bottom: parent.bottom
+                                    anchors.bottomMargin: -implicitHeight
+                                    anchors.left: parent.left
+                                    anchors.right: parent.right
+                                    spacing: parent.spacing
+                                    Controls.Label {
+                                        text: adjustPopup.displayFloat(brightnessSlider.from);
+                                        horizontalAlignment: Text.AlignLeft
+                                    }
+                                    Controls.Label {
+                                        Layout.fillWidth: true
+                                        text: adjustPopup.displayFloat(0);
+                                        horizontalAlignment: Text.AlignHCenter
+                                    }
+                                    Controls.Label {
+                                        text: adjustPopup.displayFloat(brightnessSlider.to);
+                                        horizontalAlignment: Text.AlignRight
+                                    }
+                                }
+                            }
+                            EditorSpinBox {
+                                id: brightnessSpinBox
+                                enabled: brightnessSlider.enabled
+                                focus: true
+                                Accessible.name: i18nc("@info:tooltip color brightness spinbox", "Brightness")
+                                Controls.ToolTip.text: Accessible.name
+                                from: -10
+                                to: 10
+                                stepSize: 1
+                                value: Math.round(brightnessSlider.brightness * 10)
+                                wheelEnabled: false
+                                textFromValue: (value, locale) => {
+                                    return adjustPopup.displayFloat(value / 10);
+                                }
+                                valueFromText: (text, locale) => {
+                                    return Math.round(Number.fromLocaleString(locale, text) * 10);
+                                }
+                                Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                validator: IntValidator {
+                                    bottom: brightnessSpinBox.from
+                                    top: brightnessSpinBox.to
+                                }
+                                onValueModified: {
+                                    brightnessSlider.brightness = value / 10;
+                                    adjustmentTimer.restart();
+                                }
+                            }
+                        }
+                        RowLayout {
+                            spacing: parent.spacing
+                            Layout.fillWidth: true
+                            Controls.Label {
+                                text: i18nc("@label:slider", "Contrast:")
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            }
+                            Controls.Slider {
+                                id: contrastSlider
+                                property real contrast: 1
+                                focus: true
+                                Layout.fillWidth: true
+                                from: 0
+                                to: 2
+                                stepSize: 0.1
+                                value: contrast
+                                onMoved: {
+                                    contrast = value;
+                                    adjustmentTimer.restart();
+                                }
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                Layout.preferredWidth: Math.max(implicitWidth, 320)
+                                Layout.bottomMargin: contrastRangeLabelsRow.implicitHeight
+                                RowLayout {
+                                    id: contrastRangeLabelsRow
+                                    parent: contrastSlider
+                                    anchors.bottom: parent.bottom
+                                    anchors.bottomMargin: -implicitHeight
+                                    anchors.left: parent.left
+                                    anchors.right: parent.right
+                                    spacing: parent.spacing
+                                    Controls.Label {
+                                        text: adjustPopup.displayFloat(contrastSlider.from);
+                                        horizontalAlignment: Text.AlignLeft
+                                    }
+                                    Controls.Label {
+                                        Layout.fillWidth: true
+                                        text: adjustPopup.displayFloat(1);
+                                        horizontalAlignment: Text.AlignHCenter
+                                    }
+                                    Controls.Label {
+                                        text: adjustPopup.displayFloat(contrastSlider.to);
+                                        horizontalAlignment: Text.AlignRight
+                                    }
+                                }
+                            }
+                            EditorSpinBox {
+                                id: contrastSpinBox
+                                enabled: contrastSlider.enabled
+                                focus: true
+                                Accessible.name: i18nc("@info:tooltip color contrast spinbox", "Contrast")
+                                Controls.ToolTip.text: Accessible.name
+                                from: 0
+                                to: 20
+                                stepSize: 1
+                                value: Math.round(contrastSlider.contrast * 10)
+                                wheelEnabled: false
+                                textFromValue: (value, locale) => {
+                                    return adjustPopup.displayFloat(value / 10);
+                                }
+                                valueFromText: (text, locale) => {
+                                    return Math.round(Number.fromLocaleString(locale, text) * 10);
+                                }
+                                Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                validator: IntValidator {
+                                    bottom: contrastSpinBox.from
+                                    top: contrastSpinBox.to
+                                }
+                                onValueModified: {
+                                    contrastSlider.contrast = value / 10;
+                                    adjustmentTimer.restart();
+                                }
+                            }
+                        }
+                        RowLayout {
                             spacing: parent.spacing
                             Layout.fillWidth: true
                             Controls.Label {
@@ -497,22 +666,22 @@ Kirigami.Page {
                             }
                             Controls.Slider {
                                 id: gammaSlider
+                                property real gamma: imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma
                                 focus: true
                                 Layout.fillWidth: true
-                                from: 0.2
-                                to: 4.2
+                                from: Math.min(0.2, imageView.colorEffect.sourceColorSpace.gamma)
+                                to: Math.max(4.2, imageView.colorEffect.sourceColorSpace.gamma)
                                 stepSize: 0.1
-                                value: colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma
+                                value: gamma
                                 onMoved: {
-                                    colorAdjustmentAction.targetColorSpace = colorAdjustmentAction.newColorSpace(colorAdjustmentAction.targetColorSpace,
-                                                              {"transferFunction": ColorSpace.TransferFunction.Gamma,
-                                                               "gamma": gammaSlider.value});
+                                    gamma = value;
+                                    adjustmentTimer.restart();
                                 }
                                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
                                 Layout.preferredWidth: Math.max(implicitWidth, 320)
-                                Layout.bottomMargin: rangeLabelsRow.implicitHeight
+                                Layout.bottomMargin: gammaRangeLabelsRow.implicitHeight
                                 RowLayout {
-                                    id: rangeLabelsRow
+                                    id: gammaRangeLabelsRow
                                     parent: gammaSlider
                                     anchors.bottom: parent.bottom
                                     anchors.bottomMargin: -implicitHeight
@@ -525,7 +694,7 @@ Kirigami.Page {
                                     }
                                     Controls.Label {
                                         Layout.fillWidth: true
-                                        text: adjustPopup.displayFloat(colorAdjustmentAction.fixedFloat((gammaSlider.to + gammaSlider.from) / 2.0));
+                                        text: adjustPopup.displayFloat(adjustPopup.fixedFloat((gammaSlider.to + gammaSlider.from) / 2.0));
                                         horizontalAlignment: Text.AlignHCenter
                                     }
                                     Controls.Label {
@@ -543,7 +712,7 @@ Kirigami.Page {
                                 from: adjustPopup.floatToSpinBoxInt(gammaSlider.from)
                                 to: adjustPopup.floatToSpinBoxInt(gammaSlider.to)
                                 stepSize: adjustPopup.floatToSpinBoxInt(gammaSlider.stepSize)
-                                value: adjustPopup.floatToSpinBoxInt(colorAdjustmentAction.targetColorSpace?.gamma ?? colorAdjustmentAction.sourceColorSpace.gamma)
+                                value: adjustPopup.floatToSpinBoxInt(imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma)
                                 wheelEnabled: false
                                 textFromValue: (value, locale) => {
                                     return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
@@ -553,10 +722,13 @@ Kirigami.Page {
                                 }
                                 Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
                                 Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                                validator: IntValidator {
+                                    bottom: gammaSpinBox.from
+                                    top: gammaSpinBox.to
+                                }
                                 onValueModified: {
-                                    colorAdjustmentAction.targetColorSpace = colorAdjustmentAction.newColorSpace(colorAdjustmentAction.targetColorSpace,
-                                                              {"transferFunction": ColorSpace.TransferFunction.Gamma,
-                                                               "gamma": adjustPopup.spinBoxIntToFloat(value)});
+                                    gammaSlider.gamma = adjustPopup.spinBoxIntToFloat(value);
+                                    adjustmentTimer.restart();
                                 }
                             }
                         }
@@ -573,9 +745,9 @@ Kirigami.Page {
                                 id: applyAdjustmentButton
                                 icon.name: "dialog-ok-apply-symbolic"
                                 text: i18nc("@action:button apply color adjustment to image", "Adjust")
-                                enabled: !!colorAdjustmentAction.targetColorSpace && JSON.stringify(colorAdjustmentAction.targetColorSpace) !== JSON.stringify(colorAdjustmentAction.sourceColorSpace)
+                                enabled: brightnessSlider.brightness !== 0 || contrastSlider.contrast !== 1 || (imageView.colorEffect.targetColorSpace !== undefined && JSON.stringify(imageView.colorEffect.targetColorSpace) !== JSON.stringify(imageView.colorEffect.sourceColorSpace))
                                 onClicked: {
-                                    imageView.document.applyColorAdjustment(colorAdjustmentAction.targetColorSpace);
+                                    imageView.document.applyColorAdjustment(imageView.colorEffect.colorMatrix, imageView.colorEffect.targetColorSpace);
                                     adjustPopup.reset();
                                     adjustPopup.close();
                                 }
@@ -681,7 +853,6 @@ Kirigami.Page {
             id: imageView
 
             showCropTool: cropAction.checked
-            previewColorSpace: colorAdjustmentAction.targetColorSpace
 
             Layout.fillWidth: true
             Layout.fillHeight: true
