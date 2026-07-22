@@ -21,6 +21,7 @@ Controls.Page {
     id: root
 
     property alias document: annotationEditor.document
+    property alias colorEffect: colorAdjustmentEffect
 
     readonly property real fitZoom: Math.min(flickable.width / annotationEditor.document.canvasRect.width,
                                              flickable.height / annotationEditor.document.canvasRect.height)
@@ -28,7 +29,6 @@ Controls.Page {
     readonly property real maxZoom: Math.max(minZoom, 8)
     readonly property real currentZoom: annotationEditor.scale
     property bool showCropTool: false
-    property var previewColorSpace: undefined
 
     function dprRound(v: double): double {
         return Math.round(v * Screen.devicePixelRatio) / Screen.devicePixelRatio
@@ -177,26 +177,29 @@ Controls.Page {
             enabled: true
             Keys.forwardTo: [cropTool, textTool, selectionTool]
             Keys.priority: Keys.AfterItem
-            layer.enabled: layer.effect.gamma !== 1
-            layer.effect: ShaderEffect {
-                property var source: annotationEditor
-                readonly property real gamma: {
-                    if (!root.previewColorSpace) {
-                        return 1;
-                    }
-                    return root.previewColorSpace.gamma / annotationEditor.document.colorSpace.gamma
-                }
-                vertexShader: "qrc:/qt/qml/org/kde/photos/editor/shaders/gammaadjust.vert.qsb"
-                fragmentShader: "qrc:/qt/qml/org/kde/photos/editor/shaders/gammaadjust.frag.qsb"
-                transformOrigin: annotationEditor.transformOrigin
-                // scale: annotationEditor.scale
-                // anchors.fill: annotationEditor
-            }
             onPressedChanged: if (pressed) {
                 if (textTool.shouldShow) {
                     textTool.forceActiveFocus(Qt.MouseFocusReason);
                 }
             }
+        }
+        ShaderEffectSource {
+            id: colorAdjustmentEffectSource
+            anchors.fill: annotationEditor
+            transformOrigin: annotationEditor.transformOrigin
+            scale: annotationEditor.scale
+            sourceItem: annotationEditor
+            // hideSource: true
+        }
+        KQuickImageEditor.ColorAdjustmentEffect {
+            id: colorAdjustmentEffect
+            anchors.fill: annotationEditor
+            transformOrigin: annotationEditor.transformOrigin
+            scale: annotationEditor.scale
+
+            source: colorAdjustmentEffectSource
+            sourceColorSpace: annotationEditor.document.colorSpace
+            onTargetColorSpaceChanged: console.log(JSON.stringify(targetColorSpace))
         }
 
         Item {
