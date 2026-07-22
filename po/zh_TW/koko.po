@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:41+0000\n"
-"PO-Revision-Date: 2026-06-26 00:01+0900\n"
+"PO-Revision-Date: 2026-07-22 01:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1034,12 +1034,10 @@ msgid "Exit Full Screen"
 msgstr "離開全螢幕"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "檔案大小"
+msgstr "檔案"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1069,7 +1067,7 @@ msgstr "複製位置"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "屬性(&P)"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1748,7 +1746,7 @@ msgstr "黑色"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "灰色"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
