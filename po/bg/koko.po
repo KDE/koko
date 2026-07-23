@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-17 00:41+0000\n"
-"PO-Revision-Date: 2026-06-21 18:39+0200\n"
+"PO-Revision-Date: 2026-07-22 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1039,12 +1039,10 @@ msgid "Exit Full Screen"
 msgstr "Изход от цял екран"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Големина на файл"
+msgstr "Файл"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1074,7 +1072,7 @@ msgstr "Копиране на местоположението"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "&Свойства"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1760,7 +1758,7 @@ msgstr "Черен"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Сив"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
