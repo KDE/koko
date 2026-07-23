@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 02:38+0000\n"
-"PO-Revision-Date: 2026-07-15 15:08+0200\n"
+"PO-Revision-Date: 2026-07-20 17:14+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1744,7 +1744,7 @@ msgstr "Nigre"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Gris"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
