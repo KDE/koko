@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:41+0000\n"
+"POT-Creation-Date: 2026-07-24 00:41+0000\n"
 "PO-Revision-Date: 2026-07-16 09:50+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1075,7 +1075,7 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Копировать расположение"
 
-#: qml/ActionCollection.qml:138
+#: qml/ActionCollection.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
@@ -1269,7 +1269,7 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Опубликовать выбранные файлы"
 
-#: qml/gallery/GalleryPage.qml:792
+#: qml/gallery/GalleryPage.qml:837
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1278,12 +1278,12 @@ msgstr[1] "%1 объекта"
 msgstr[2] "%1 объектов"
 msgstr[3] "%1 объект"
 
-#: qml/gallery/GalleryPage.qml:830
+#: qml/gallery/GalleryPage.qml:875
 #, kde-format
 msgid "No media found"
 msgstr "Не найдено ни одного файла изображения или видео"
 
-#: qml/gallery/GalleryPage.qml:854
+#: qml/gallery/GalleryPage.qml:899
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1293,7 +1293,7 @@ msgstr[1] "Выбрано %1 объекта"
 msgstr[2] "Выбрано %1 объектов"
 msgstr[3] "Выбран %1 объект"
 
-#: qml/gallery/GalleryPage.qml:859
+#: qml/gallery/GalleryPage.qml:904
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

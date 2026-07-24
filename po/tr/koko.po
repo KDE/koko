@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:41+0000\n"
+"POT-Creation-Date: 2026-07-24 00:41+0000\n"
 "PO-Revision-Date: 2026-07-16 19:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1066,7 +1066,7 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Konumu Kopyala"
 
-#: qml/ActionCollection.qml:138
+#: qml/ActionCollection.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
@@ -1258,19 +1258,19 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Seçili ortamı paylaş"
 
-#: qml/gallery/GalleryPage.qml:792
+#: qml/gallery/GalleryPage.qml:837
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 öge"
 msgstr[1] "%1 öge"
 
-#: qml/gallery/GalleryPage.qml:830
+#: qml/gallery/GalleryPage.qml:875
 #, kde-format
 msgid "No media found"
 msgstr "Bulunan ortam yok"
 
-#: qml/gallery/GalleryPage.qml:854
+#: qml/gallery/GalleryPage.qml:899
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1278,7 +1278,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 öge seçili"
 msgstr[1] "%1 öge seçili"
 
-#: qml/gallery/GalleryPage.qml:859
+#: qml/gallery/GalleryPage.qml:904
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

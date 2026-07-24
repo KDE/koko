@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:41+0000\n"
-"PO-Revision-Date: 2026-05-30 16:52+0200\n"
+"POT-Creation-Date: 2026-07-24 00:41+0000\n"
+"PO-Revision-Date: 2026-07-20 16:16+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1038,12 +1038,10 @@ msgid "Exit Full Screen"
 msgstr "Esci da schermo intero"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Dimensione del file"
+msgstr "File"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1069,11 +1067,11 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Copia posizione"
 
-#: qml/ActionCollection.qml:138
+#: qml/ActionCollection.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "&Proprietà"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
 #, kde-format
@@ -1262,19 +1260,19 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Condividi i file multimediali selezionati"
 
-#: qml/gallery/GalleryPage.qml:792
+#: qml/gallery/GalleryPage.qml:837
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 elemento"
 msgstr[1] "%1 elementi"
 
-#: qml/gallery/GalleryPage.qml:830
+#: qml/gallery/GalleryPage.qml:875
 #, kde-format
 msgid "No media found"
 msgstr "Nessun file multimediale trovato"
 
-#: qml/gallery/GalleryPage.qml:854
+#: qml/gallery/GalleryPage.qml:899
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1282,7 +1280,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 elemento selezionato"
 msgstr[1] "%1 elementi selezionati"
 
-#: qml/gallery/GalleryPage.qml:859
+#: qml/gallery/GalleryPage.qml:904
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1759,7 +1757,7 @@ msgstr "Nero"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Grigio"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format

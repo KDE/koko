@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-17 00:41+0000\n"
+"POT-Creation-Date: 2026-07-24 00:41+0000\n"
 "PO-Revision-Date: 2024-07-14 12:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -1075,7 +1075,7 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Stadar"
 
-#: qml/ActionCollection.qml:138
+#: qml/ActionCollection.qml:141
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
@@ -1267,19 +1267,19 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:792
+#: qml/gallery/GalleryPage.qml:837
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:830
+#: qml/gallery/GalleryPage.qml:875
 #, kde-format
 msgid "No media found"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:854
+#: qml/gallery/GalleryPage.qml:899
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1287,7 +1287,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:859
+#: qml/gallery/GalleryPage.qml:904
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
