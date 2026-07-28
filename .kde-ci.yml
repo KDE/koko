@@ -17,6 +17,7 @@ Dependencies:
     'frameworks/kfilemetadata': '@latest-kf6'
     'frameworks/kdbusaddons': '@latest-kf6'
     'frameworks/purpose': '@latest-kf6'
+    'frameworks/kguiaddons': '@latest-kf6'
     'libraries/kirigami-addons': '@latest-kf6'
     'libraries/kquickimageeditor': '@latest-kf6'
     'libraries/kirigami-app-components': '@latest-kf6'

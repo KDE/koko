@@ -42,6 +42,47 @@ Kirigami.ScrollablePage {
     property bool showingCollections: galleryModel.showingCollections
     property bool selectionMode: selectionModel.hasSelection
 
+    // Highlight urls on paste or drop
+    property url lastHighlightedUrl
+    property var highlightedUrls: new Set()
+
+    function highlightUrls(urls: list<url>): void {
+        console.log(urls, typeof urls)
+        urls.forEach(url => page.highlightedUrls.add(url));
+        page.lastHighlightedUrl = urls[urls.length - 1];
+        selectionModel.clearSelection();
+        // Ensure no race when model is already up to date
+        page.checkRowsForHighlight(null, 0, gridView.model.rowCount() - 1);
+    }
+
+    function checkRowsForHighlight(parent: var /*modelIndex*/, first: int, last: int): void {
+        if (page.highlightedUrls.size === 0) {
+            return;
+        }
+
+        for (let row = first; row <= last; ++row) {
+            const index = gridView.model.index(row, 0);
+            const url = gridView.model.data(index, AbstractGalleryModel.UrlRole);
+
+            if (page.highlightedUrls.has(url)) {
+                page.highlightedUrls.delete(url);
+                selectionModel.select(index, ItemSelectionModel.Select);
+
+                if (url === page.lastHighlightedUrl) {
+                    gridView.currentIndex = row;
+                    page.lastHighlightedUrl = "";
+                }
+            }
+        }
+    }
+
+    Connections {
+        target: gridView.model
+        function onRowsInserted(parent: var /*modelIndex*/, first: int, last: int) {
+            page.checkRowsForHighlight(parent, first, last);
+        }
+    }
+
     Component.onCompleted: {
         if (page.canNavigate) {
             page.navigationHistory = [page.galleryModel.path];
@@ -361,47 +402,14 @@ Kirigami.ScrollablePage {
 
     Koko.FileMenuManager {
         id: fileMenuManager
+
         urls: selectionModel.selectedIndexes.map(index => selectionModel.model.data(index, AbstractGalleryModel.UrlRole))
-        rootUrl: page.galleryModel.path
+        rootUrl: page.isFolderView ? page.galleryModel.path : ""
+
         enabled: page.visible && page.enabled
         window: page.Window.window
 
-        // Handle selection of pasted items:
-
-        property url lastPastedUrl
-        property var pastedUrls: new Set()
-
-        onPastedUrls: (urls) => {
-            urls.forEach(url => fileMenuManager.pastedUrls.add(url));
-            fileMenuManager.lastPastedUrl = urls[urls.length - 1];
-            selectionModel.clearSelection();
-
-            // If it turns out we get told about pasted urls after the model includes them:
-            // onRowsInserted(undefined, 0, gridView.model.rowCount() - 1);
-        }
-
-        function onRowsInserted(parent, first, last) {
-            if (pastedUrls.size === 0) {
-                return;
-            }
-
-            for (let row = first; row <= last; ++row) {
-                const index = gridView.model.index(row, 0);
-                const url = gridView.model.data(index, AbstractGalleryModel.UrlRole);
-
-                if (fileMenuManager.pastedUrls.has(url)) {
-                    fileMenuManager.pastedUrls.delete(url);
-                    selectionModel.select(index, ItemSelectionModel.Select);
-
-                    if (url === fileMenuManager.lastPastedUrl) {
-                        gridView.currentIndex = row;
-                        fileMenuManager.lastPastedUrl = undefined;
-                    }
-                }
-            }
-        }
-
-        Component.onCompleted: gridView.model.rowsInserted.connect(onRowsInserted)
+        onPastedUrls: (urls) => page.highlightUrls(urls)
     }
 
     readonly property list<Kirigami.Action> fileMenuActions: [
@@ -706,6 +714,32 @@ Kirigami.ScrollablePage {
             }
         }
 
+        Koko.FileDropArea {
+            id: gridViewDropArea
+            anchors.fill: parent
+
+            z: -1 // Allow delegate drop area to take precedence
+
+            window: Window.window
+            rootUrl: enabled ? page.galleryModel.path : ""
+            enabled: page.isFolderView
+
+            onDroppedUrls: (urls) => page.highlightUrls(urls)
+        }
+
+        Rectangle {
+            anchors.fill: parent
+            color: Kirigami.Theme.hoverColor
+
+            opacity: gridViewDropArea.containsDrag ? 0.2 : 0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: Kirigami.Units.shortDuration
+                    easing.type: Easing.InOutQuad
+                }
+            }
+        }
+
         delegate: GalleryDelegate {
             id: delegate
 
@@ -714,7 +748,7 @@ Kirigami.ScrollablePage {
             thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
 
             highlighted: gridView.currentIndex == index
-            selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0))
+            selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0)) || (delegateDropAreaLoader.item?.containsDrag ?? false)
             selectionMode: page.selectionMode
 
             TapHandler {
@@ -742,6 +776,19 @@ Kirigami.ScrollablePage {
                                              : delegate.open()
                 onLongPressed: page.selectionMode ? delegate.select()
                                                   : delegate.showMenu()
+            }
+
+            Loader {
+                id: delegateDropAreaLoader
+                anchors.fill: delegate
+
+                active: page.isFolderView && delegate.itemType === Koko.AbstractGalleryModel.Folder
+
+                sourceComponent: Koko.FileDropArea {
+                    anchors.fill: parent
+                    window: Window.window
+                    rootUrl: delegate.url
+                }
             }
 
             // Keep unselected items out of drag image with multiple selection.

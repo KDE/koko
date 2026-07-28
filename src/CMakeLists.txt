@@ -20,6 +20,7 @@ qt_add_library(koko_static STATIC
     controller.cpp
     kdtree.cpp
     filemenumanager.cpp
+    filedroparea.cpp
     dirmodelutils.cpp
     notificationmanager.cpp
     fileinfo.cpp
@@ -76,6 +77,7 @@ target_link_libraries(koko_static PUBLIC
     KF6::I18nQml
     KF6::Notifications
     KF6::KirigamiActionCollection
+    KF6::GuiAddons
     LibExiv2::LibExiv2
     KQuickImageEditor
 )
