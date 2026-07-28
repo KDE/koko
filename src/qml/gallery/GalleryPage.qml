@@ -605,6 +605,7 @@ Kirigami.ScrollablePage {
             readonly property bool draggingMultipleSelection: dragItem && dragItem.selected && selectionModel.selectedIndexes.length > 1
             readonly property bool hasDragImage: dragItem && gridView.Drag.active
             acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad | PointerDevice.Stylus
+            enabled: page.isFolderView
             target: null
             onActiveChanged: {
                 if (!active) {
