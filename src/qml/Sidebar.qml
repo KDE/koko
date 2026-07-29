@@ -171,7 +171,7 @@ Kirigami.OverlayDrawer {
                     AC.ActionCollection.action: item.actionName
                     enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
-                highlighted: checked || down
+                highlighted: checked || down || fileDropArea.containsDrag
                 // automatically unchecks when another is checked,
                 // but don't assume that its impossible to uncheck all
                 autoExclusive: true
@@ -186,6 +186,15 @@ Kirigami.OverlayDrawer {
                 //         item.checked = checked ? checked : Qt.binding(() => item.shouldBeChecked)
                 //     }
                 // }
+
+                Koko.FileDropArea {
+                    id: fileDropArea
+                    anchors.fill: parent
+
+                    window: Window.window
+                    rootUrl: enabled ? action.fromQAction.data.path : ""
+                    enabled: action.fromQAction.data.modelType === Koko.NavigationActions.FolderModel
+                }
             }
 
             ColumnLayout {

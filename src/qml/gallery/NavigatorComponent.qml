@@ -246,6 +246,16 @@ RowLayout {
                 Controls.ToolTip.text: text
                 Controls.ToolTip.visible: hovered && (width < implicitWidth) && text.length > 0
                 Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                Koko.FileDropArea {
+                    id: rootFileDropArea
+                    anchors.fill: parent
+
+                    window: Window.window
+                    rootUrl: enabled ? navigatorRootButton.rootLocations[navigatorRootButton.rootLocation].path : ""
+                    enabled: navigatorRoot.isUrlNavigator
+                }
+                highlighted: rootFileDropArea.containsDrag
             }
 
             Repeater {
@@ -289,6 +299,16 @@ RowLayout {
                         Controls.ToolTip.text: text
                         Controls.ToolTip.visible: hovered && (width < implicitWidth) && text.length > 0
                         Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                        Koko.FileDropArea {
+                            id: delegateFileDropArea
+                            anchors.fill: parent
+
+                            window: Window.window
+                            rootUrl: enabled ? Koko.DirModelUtils.partialUrlForIndex(root.path, navigatorDelegate.index + 1) : ""
+                            enabled: navigatorRoot.isUrlNavigator
+                        }
+                        highlighted: delegateFileDropArea.containsDrag
                     }
                 }
             }
