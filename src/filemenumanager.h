@@ -27,6 +27,7 @@ class FileMenuManager : public QObject
     Q_PROPERTY(bool canSaveAs READ canSaveAs NOTIFY canSaveAsChanged FINAL)
     Q_PROPERTY(bool canOpenFolder READ canOpenFolder NOTIFY canOpenFolderChanged FINAL)
     Q_PROPERTY(bool canOpenWith READ canOpenWith NOTIFY canOpenWithChanged FINAL)
+    Q_PROPERTY(bool canCut READ canCut NOTIFY canCutChanged FINAL)
     Q_PROPERTY(bool canCopy READ canCopy NOTIFY canCopyChanged FINAL)
     Q_PROPERTY(bool canCopyPath READ canCopyPath NOTIFY canCopyPathChanged FINAL)
     Q_PROPERTY(bool canPaste READ canPaste NOTIFY canPasteChanged FINAL)
@@ -53,6 +54,7 @@ public:
     bool canSaveAs() const;
     bool canOpenFolder() const;
     bool canOpenWith() const;
+    bool canCut() const;
     bool canCopy() const;
     bool canCopyPath() const;
     bool canPaste() const;
@@ -69,6 +71,7 @@ Q_SIGNALS:
     void canSaveAsChanged();
     void canOpenFolderChanged();
     void canOpenWithChanged();
+    void canCutChanged();
     void canCopyChanged();
     void canCopyPathChanged();
     void canPasteChanged();
@@ -89,6 +92,7 @@ private:
     bool m_canSaveAs = false;
     bool m_canOpenFolder = false;
     bool m_canOpenWith = false;
+    bool m_canCut = false;
     bool m_canCopy = false;
     bool m_canCopyPath = false;
     bool m_canPaste = false;

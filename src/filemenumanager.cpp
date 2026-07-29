@@ -122,6 +122,11 @@ bool FileMenuManager::canOpenWith() const
     return m_canOpenWith;
 }
 
+bool FileMenuManager::canCut() const
+{
+    return m_canCut;
+}
+
 bool FileMenuManager::canCopy() const
 {
     return m_canCopy;
@@ -322,29 +327,49 @@ void FileMenuManager::updateActions()
     }
     Q_EMIT canOpenWithChanged();
 
+    // Shared cut and copy impl
+    auto copyCutLambda = [fileItems, this](const bool isCut) {
+        if (!m_enabled) {
+            return;
+        }
+
+        QMimeData *data = new QMimeData(); // Cleaned up by Qt later
+
+        QList<QUrl> urls;
+        QList<QUrl> mostLocalUrls;
+        urls.reserve(fileItems.size());
+        mostLocalUrls.reserve(fileItems.size());
+        for (const KFileItem &item : fileItems) {
+            urls << item.url();
+            mostLocalUrls << item.mostLocalUrl();
+        }
+
+        KUrlMimeData::setUrls(urls, mostLocalUrls, data);
+        if (isCut) {
+            KIO::setClipboardDataCut(data, true);
+        }
+        QApplication::clipboard()->setMimeData(data);
+    };
+
+    // Cut action
+    m_canCut = false;
+    disconnectStandardAction(KStandardActions::Cut);
+    if (m_enabled && hasFile) {
+        m_canCut = true;
+        auto cutLambda = [copyCutLambda] {
+            copyCutLambda(true);
+        };
+        connectStandardAction(KStandardActions::Cut, cutLambda);
+    }
+    Q_EMIT canCutChanged();
+
     // Copy action
     m_canCopy = false;
     disconnectStandardAction(KStandardActions::Copy);
     if (m_enabled && hasFile) {
         m_canCopy = true;
-        auto copyLambda = [fileItems, this] {
-            if (!m_enabled) {
-                return;
-            }
-
-            QMimeData *data = new QMimeData(); // Cleaned up by Qt later
-
-            QList<QUrl> urls;
-            QList<QUrl> mostLocalUrls;
-            urls.reserve(fileItems.size());
-            mostLocalUrls.reserve(fileItems.size());
-            for (const KFileItem &item : fileItems) {
-                urls << item.url();
-                mostLocalUrls << item.mostLocalUrl();
-            }
-
-            KUrlMimeData::setUrls(urls, mostLocalUrls, data);
-            QApplication::clipboard()->setMimeData(data);
+        auto copyLambda = [copyCutLambda] {
+            copyCutLambda(false);
         };
         connectStandardAction(KStandardActions::Copy, copyLambda);
     }

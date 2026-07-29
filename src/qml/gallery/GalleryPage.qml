@@ -436,6 +436,13 @@ Kirigami.ScrollablePage {
         },
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
+            enabled: fileMenuManager.enabled && fileMenuManager.canCut && !page.showingCollections
+            visible: enabled
+            AC.ActionCollection.action: AC.StandardActionData.Cut
+            AC.ActionCollection.collection: "org.kde.koko.file"
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
             enabled: fileMenuManager.enabled && fileMenuManager.canCopy && !page.showingCollections
             visible: enabled
             AC.ActionCollection.action: AC.StandardActionData.Copy

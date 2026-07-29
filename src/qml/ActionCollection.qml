@@ -114,6 +114,9 @@ AC.ActionCollectionManager {
             icon.name: "system-run"
         }
         AC.StandardActionData {
+            standardAction: AC.StandardActionData.Cut
+        }
+        AC.StandardActionData {
             standardAction: AC.StandardActionData.Copy
         }
         AC.ActionData {
