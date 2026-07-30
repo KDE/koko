@@ -496,7 +496,7 @@ Kirigami.Page {
                     margins: 0
                     clip: false
                     GridLayout {
-                        columns: 2
+                        columns: 3
                         property real spacing: Kirigami.Units.mediumSpacing
                         rowSpacing: spacing
                         columnSpacing: spacing
@@ -527,244 +527,229 @@ Kirigami.Page {
                         }
                         Controls.Label {
                             text: i18nc("@label:slider", "Brightness:")
-                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            Layout.alignment: Qt.AlignTop | Qt.AlignRight
                         }
-                        RowLayout {
-                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                            spacing: parent.spacing
+                        Controls.Slider {
+                            id: brightnessSlider
+                            // brightness is always relative because it's
+                            // impractical to try to track absolute brightness
+                            readonly property real defaultBrightness: 0
+                            property real brightness: defaultBrightness
+                            focus: true
                             Layout.fillWidth: true
-                            Controls.Slider {
-                                id: brightnessSlider
-                                // brightness is always relative because it's
-                                // impractical to try to track absolute brightness
-                                readonly property real defaultBrightness: 0
-                                property real brightness: defaultBrightness
-                                focus: true
-                                Layout.fillWidth: true
-                                from: -1
-                                to: 1
-                                stepSize: 0.1
-                                value: brightness
-                                onMoved: {
-                                    brightness = value;
-                                    adjustmentTimer.restart();
+                            from: -1
+                            to: 1
+                            stepSize: 0.1
+                            value: brightness
+                            onMoved: {
+                                brightness = value;
+                                adjustmentTimer.restart();
+                            }
+                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            Layout.preferredWidth: Math.max(implicitWidth, 320)
+                            Layout.bottomMargin: brightnessRangeLabelsRow.implicitHeight
+                            RowLayout {
+                                id: brightnessRangeLabelsRow
+                                parent: brightnessSlider
+                                anchors.bottom: parent.bottom
+                                anchors.bottomMargin: -implicitHeight
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                spacing: parent.spacing
+                                Controls.Label {
+                                    text: adjustPopup.displayFloat(brightnessSlider.from);
+                                    horizontalAlignment: Text.AlignLeft
                                 }
-                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                Layout.preferredWidth: Math.max(implicitWidth, 320)
-                                Layout.bottomMargin: brightnessRangeLabelsRow.implicitHeight
-                                RowLayout {
-                                    id: brightnessRangeLabelsRow
-                                    parent: brightnessSlider
-                                    anchors.bottom: parent.bottom
-                                    anchors.bottomMargin: -implicitHeight
-                                    anchors.left: parent.left
-                                    anchors.right: parent.right
-                                    spacing: parent.spacing
-                                    Controls.Label {
-                                        text: adjustPopup.displayFloat(brightnessSlider.from);
-                                        horizontalAlignment: Text.AlignLeft
-                                    }
-                                    Controls.Label {
-                                        Layout.fillWidth: true
-                                        text: adjustPopup.displayFloat(adjustPopup.round2Decimals((brightnessSlider.to - brightnessSlider.from)/2));
-                                        horizontalAlignment: Text.AlignHCenter
-                                    }
-                                    Controls.Label {
-                                        text: adjustPopup.displayFloat(brightnessSlider.to);
-                                        horizontalAlignment: Text.AlignRight
-                                    }
+                                Controls.Label {
+                                    Layout.fillWidth: true
+                                    text: adjustPopup.displayFloat(adjustPopup.round2Decimals((brightnessSlider.to - brightnessSlider.from)/2));
+                                    horizontalAlignment: Text.AlignHCenter
+                                }
+                                Controls.Label {
+                                    text: adjustPopup.displayFloat(brightnessSlider.to);
+                                    horizontalAlignment: Text.AlignRight
                                 }
                             }
-                            EditorSpinBox {
-                                id: brightnessSpinBox
-                                enabled: brightnessSlider.enabled
-                                focus: true
-                                Accessible.name: i18nc("@info:tooltip color brightness spinbox", "Brightness")
-                                Controls.ToolTip.text: Accessible.name
-                                from: adjustPopup.floatToSpinBoxInt(brightnessSlider.from)
-                                to: adjustPopup.floatToSpinBoxInt(brightnessSlider.to)
-                                stepSize: adjustPopup.floatToSpinBoxInt(brightnessSlider.stepSize)
-                                value: adjustPopup.floatToSpinBoxInt(brightnessSlider.brightness)
-                                wheelEnabled: false
-                                textFromValue: (value, locale) => {
-                                    return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
-                                }
-                                valueFromText: (text, locale) => {
-                                    return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
-                                }
-                                Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
-                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                validator: IntValidator {
-                                    bottom: brightnessSpinBox.from
-                                    top: brightnessSpinBox.to
-                                }
-                                onValueModified: {
-                                    brightnessSlider.brightness = adjustPopup.spinBoxIntToFloat(value);
-                                    adjustmentTimer.restart();
-                                }
+                        }
+                        EditorSpinBox {
+                            id: brightnessSpinBox
+                            enabled: brightnessSlider.enabled
+                            focus: true
+                            Accessible.name: i18nc("@info:tooltip color brightness spinbox", "Brightness")
+                            Controls.ToolTip.text: Accessible.name
+                            from: adjustPopup.floatToSpinBoxInt(brightnessSlider.from)
+                            to: adjustPopup.floatToSpinBoxInt(brightnessSlider.to)
+                            stepSize: adjustPopup.floatToSpinBoxInt(brightnessSlider.stepSize)
+                            value: adjustPopup.floatToSpinBoxInt(brightnessSlider.brightness)
+                            wheelEnabled: false
+                            textFromValue: (value, locale) => {
+                                return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                            }
+                            valueFromText: (text, locale) => {
+                                return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                            }
+                            Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            validator: IntValidator {
+                                bottom: brightnessSpinBox.from
+                                top: brightnessSpinBox.to
+                            }
+                            onValueModified: {
+                                brightnessSlider.brightness = adjustPopup.spinBoxIntToFloat(value);
+                                adjustmentTimer.restart();
                             }
                         }
                         Controls.Label {
                             text: i18nc("@label:slider", "Contrast:")
-                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            Layout.alignment: Qt.AlignTop | Qt.AlignRight
                         }
-                        RowLayout {
-                            spacing: parent.spacing
-                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                        Controls.Slider {
+                            id: contrastSlider
+                            // contrast is always relative because it's
+                            // impractical to try to track absolute contrast
+                            readonly property real defaultContrast: 1
+                            property real contrast: defaultContrast
+                            focus: true
                             Layout.fillWidth: true
-                            Controls.Slider {
-                                id: contrastSlider
-                                // contrast is always relative because it's
-                                // impractical to try to track absolute contrast
-                                readonly property real defaultContrast: 1
-                                property real contrast: defaultContrast
-                                focus: true
-                                Layout.fillWidth: true
-                                from: 0
-                                to: 2
-                                stepSize: 0.1
-                                value: contrast
-                                onMoved: {
-                                    contrast = value;
-                                    adjustmentTimer.restart();
+                            from: 0
+                            to: 2
+                            stepSize: 0.1
+                            value: contrast
+                            onMoved: {
+                                contrast = value;
+                                adjustmentTimer.restart();
+                            }
+                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            Layout.preferredWidth: Math.max(implicitWidth, 320)
+                            Layout.bottomMargin: contrastRangeLabelsRow.implicitHeight
+                            RowLayout {
+                                id: contrastRangeLabelsRow
+                                parent: contrastSlider
+                                anchors.bottom: parent.bottom
+                                anchors.bottomMargin: -implicitHeight
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                spacing: parent.spacing
+                                Controls.Label {
+                                    text: adjustPopup.displayFloat(contrastSlider.from);
+                                    horizontalAlignment: Text.AlignLeft
                                 }
-                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                Layout.preferredWidth: Math.max(implicitWidth, 320)
-                                Layout.bottomMargin: contrastRangeLabelsRow.implicitHeight
-                                RowLayout {
-                                    id: contrastRangeLabelsRow
-                                    parent: contrastSlider
-                                    anchors.bottom: parent.bottom
-                                    anchors.bottomMargin: -implicitHeight
-                                    anchors.left: parent.left
-                                    anchors.right: parent.right
-                                    spacing: parent.spacing
-                                    Controls.Label {
-                                        text: adjustPopup.displayFloat(contrastSlider.from);
-                                        horizontalAlignment: Text.AlignLeft
-                                    }
-                                    Controls.Label {
-                                        Layout.fillWidth: true
-                                        text: adjustPopup.displayFloat(adjustPopup.round2Decimals((contrastSlider.to - contrastSlider.from)/2));
-                                        horizontalAlignment: Text.AlignHCenter
-                                    }
-                                    Controls.Label {
-                                        text: adjustPopup.displayFloat(contrastSlider.to);
-                                        horizontalAlignment: Text.AlignRight
-                                    }
+                                Controls.Label {
+                                    Layout.fillWidth: true
+                                    text: adjustPopup.displayFloat(adjustPopup.round2Decimals((contrastSlider.to - contrastSlider.from)/2));
+                                    horizontalAlignment: Text.AlignHCenter
+                                }
+                                Controls.Label {
+                                    text: adjustPopup.displayFloat(contrastSlider.to);
+                                    horizontalAlignment: Text.AlignRight
                                 }
                             }
-                            EditorSpinBox {
-                                id: contrastSpinBox
-                                enabled: contrastSlider.enabled
-                                focus: true
-                                Accessible.name: i18nc("@info:tooltip color contrast spinbox", "Contrast")
-                                Controls.ToolTip.text: Accessible.name
-                                from: adjustPopup.floatToSpinBoxInt(contrastSlider.from)
-                                to: adjustPopup.floatToSpinBoxInt(contrastSlider.to)
-                                stepSize: adjustPopup.floatToSpinBoxInt(contrastSlider.stepSize)
-                                value: adjustPopup.floatToSpinBoxInt(contrastSlider.contrast)
-                                wheelEnabled: false
-                                textFromValue: (value, locale) => {
-                                    return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
-                                }
-                                valueFromText: (text, locale) => {
-                                    return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
-                                }
-                                Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
-                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                validator: IntValidator {
-                                    bottom: contrastSpinBox.from
-                                    top: contrastSpinBox.to
-                                }
-                                onValueModified: {
-                                    contrastSlider.contrast = adjustPopup.spinBoxIntToFloat(value);
-                                    adjustmentTimer.restart();
-                                }
+                        }
+                        EditorSpinBox {
+                            id: contrastSpinBox
+                            enabled: contrastSlider.enabled
+                            focus: true
+                            Accessible.name: i18nc("@info:tooltip color contrast spinbox", "Contrast")
+                            Controls.ToolTip.text: Accessible.name
+                            from: adjustPopup.floatToSpinBoxInt(contrastSlider.from)
+                            to: adjustPopup.floatToSpinBoxInt(contrastSlider.to)
+                            stepSize: adjustPopup.floatToSpinBoxInt(contrastSlider.stepSize)
+                            value: adjustPopup.floatToSpinBoxInt(contrastSlider.contrast)
+                            wheelEnabled: false
+                            textFromValue: (value, locale) => {
+                                return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                            }
+                            valueFromText: (text, locale) => {
+                                return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                            }
+                            Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            validator: IntValidator {
+                                bottom: contrastSpinBox.from
+                                top: contrastSpinBox.to
+                            }
+                            onValueModified: {
+                                contrastSlider.contrast = adjustPopup.spinBoxIntToFloat(value);
+                                adjustmentTimer.restart();
                             }
                         }
                         Controls.Label {
                             text: i18nc("@label:slider", "Gamma:")
-                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            Layout.alignment: Qt.AlignTop | Qt.AlignRight
                         }
-                        RowLayout {
-                            spacing: parent.spacing
-                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                        Controls.Slider {
+                            id: gammaSlider
+                            readonly property real defaultGamma: imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma
+                            property real gamma: defaultGamma
+                            focus: true
                             Layout.fillWidth: true
-                            Controls.Slider {
-                                id: gammaSlider
-                                readonly property real defaultGamma: imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma
-                                property real gamma: defaultGamma
-                                focus: true
-                                Layout.fillWidth: true
-                                from: Math.min(0.2, imageView.colorEffect.sourceColorSpace.gamma)
-                                to: Math.max(4.2, imageView.colorEffect.sourceColorSpace.gamma)
-                                stepSize: 0.1
-                                value: gamma
-                                onMoved: {
-                                    gamma = value;
-                                    adjustmentTimer.restart();
+                            from: Math.min(0.2, imageView.colorEffect.sourceColorSpace.gamma)
+                            to: Math.max(4.2, imageView.colorEffect.sourceColorSpace.gamma)
+                            stepSize: 0.1
+                            value: gamma
+                            onMoved: {
+                                gamma = value;
+                                adjustmentTimer.restart();
+                            }
+                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            Layout.preferredWidth: Math.max(implicitWidth, 320)
+                            Layout.bottomMargin: gammaRangeLabelsRow.implicitHeight
+                            RowLayout {
+                                id: gammaRangeLabelsRow
+                                parent: gammaSlider
+                                anchors.bottom: parent.bottom
+                                anchors.bottomMargin: -implicitHeight
+                                anchors.left: parent.left
+                                anchors.right: parent.right
+                                spacing: parent.spacing
+                                Controls.Label {
+                                    text: adjustPopup.displayFloat(gammaSlider.from);
+                                    horizontalAlignment: Text.AlignLeft
                                 }
-                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                Layout.preferredWidth: Math.max(implicitWidth, 320)
-                                Layout.bottomMargin: gammaRangeLabelsRow.implicitHeight
-                                RowLayout {
-                                    id: gammaRangeLabelsRow
-                                    parent: gammaSlider
-                                    anchors.bottom: parent.bottom
-                                    anchors.bottomMargin: -implicitHeight
-                                    anchors.left: parent.left
-                                    anchors.right: parent.right
-                                    spacing: parent.spacing
-                                    Controls.Label {
-                                        text: adjustPopup.displayFloat(gammaSlider.from);
-                                        horizontalAlignment: Text.AlignLeft
-                                    }
-                                    Controls.Label {
-                                        Layout.fillWidth: true
-                                        text: adjustPopup.displayFloat(adjustPopup.round2Decimals((gammaSlider.to + gammaSlider.from) / 2.0));
-                                        horizontalAlignment: Text.AlignHCenter
-                                    }
-                                    Controls.Label {
-                                        text: adjustPopup.displayFloat(gammaSlider.to);
-                                        horizontalAlignment: Text.AlignRight
-                                    }
+                                Controls.Label {
+                                    Layout.fillWidth: true
+                                    text: adjustPopup.displayFloat(adjustPopup.round2Decimals((gammaSlider.to + gammaSlider.from) / 2.0));
+                                    horizontalAlignment: Text.AlignHCenter
+                                }
+                                Controls.Label {
+                                    text: adjustPopup.displayFloat(gammaSlider.to);
+                                    horizontalAlignment: Text.AlignRight
                                 }
                             }
-                            EditorSpinBox {
-                                id: gammaSpinBox
-                                // gamma is absolute because we have a way to track
-                                // absolute gamma.
-                                enabled: gammaSlider.enabled
-                                focus: true
-                                Accessible.name: i18nc("@info:tooltip colorspace gamma spinbox", "Gamma")
-                                Controls.ToolTip.text: Accessible.name
-                                from: adjustPopup.floatToSpinBoxInt(gammaSlider.from)
-                                to: adjustPopup.floatToSpinBoxInt(gammaSlider.to)
-                                stepSize: adjustPopup.floatToSpinBoxInt(gammaSlider.stepSize)
-                                value: adjustPopup.floatToSpinBoxInt(imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma)
-                                wheelEnabled: false
-                                textFromValue: (value, locale) => {
-                                    return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
-                                }
-                                valueFromText: (text, locale) => {
-                                    return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
-                                }
-                                Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
-                                Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
-                                validator: IntValidator {
-                                    bottom: gammaSpinBox.from
-                                    top: gammaSpinBox.to
-                                }
-                                onValueModified: {
-                                    gammaSlider.gamma = adjustPopup.spinBoxIntToFloat(value);
-                                    adjustmentTimer.restart();
-                                }
+                        }
+                        EditorSpinBox {
+                            id: gammaSpinBox
+                            // gamma is absolute because we have a way to track
+                            // absolute gamma.
+                            enabled: gammaSlider.enabled
+                            focus: true
+                            Accessible.name: i18nc("@info:tooltip colorspace gamma spinbox", "Gamma")
+                            Controls.ToolTip.text: Accessible.name
+                            from: adjustPopup.floatToSpinBoxInt(gammaSlider.from)
+                            to: adjustPopup.floatToSpinBoxInt(gammaSlider.to)
+                            stepSize: adjustPopup.floatToSpinBoxInt(gammaSlider.stepSize)
+                            value: adjustPopup.floatToSpinBoxInt(imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma)
+                            wheelEnabled: false
+                            textFromValue: (value, locale) => {
+                                return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                            }
+                            valueFromText: (text, locale) => {
+                                return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                            }
+                            Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                            Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                            validator: IntValidator {
+                                bottom: gammaSpinBox.from
+                                top: gammaSpinBox.to
+                            }
+                            onValueModified: {
+                                gammaSlider.gamma = adjustPopup.spinBoxIntToFloat(value);
+                                adjustmentTimer.restart();
                             }
                         }
                         RowLayout {
                             Layout.alignment: Qt.AlignRight|Qt.AlignVCenter
-                            Layout.columnSpan: 2
+                            Layout.columnSpan: 3
                             spacing: parent.spacing
                             Controls.Button {
                                 icon.name: "edit-undo-symbolic"
