@@ -24,6 +24,8 @@ Controls.ItemDelegate {
     required property bool selected
     required property url url
 
+    required property bool isCut
+
     required property bool selectionMode
 
     property alias thumbnailPriority: image.priority
@@ -92,6 +94,8 @@ Controls.ItemDelegate {
                     NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
                 }
             }
+
+            opacity: root.isCut ? 0.6 : 1
 
             fileItem: root.fileItem
         }

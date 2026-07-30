@@ -32,6 +32,7 @@ qt_add_library(koko_static STATIC
     printerhelper.cpp
     filedialoghelper.cpp
     resizehelper.cpp
+    cutfilehelper.cpp
 )
 
 kconfig_target_kcfg_file(koko_static

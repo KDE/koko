@@ -635,6 +635,10 @@ Kirigami.ScrollablePage {
         model: gallerySortFilterProxyModel
     }
 
+    Koko.CutFileHelper {
+        id: cutFileHelper
+    }
+
     bottomPadding: inlineStatusBar.effectiveHeight
 
     GridView {
@@ -756,6 +760,7 @@ Kirigami.ScrollablePage {
 
             highlighted: gridView.currentIndex == index
             selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0)) || (delegateDropAreaLoader.item?.containsDrag ?? false)
+            isCut: cutFileHelper.urls.some(cutUrl => cutUrl.toString() === url.toString())
             selectionMode: page.selectionMode
 
             TapHandler {
