@@ -196,10 +196,16 @@ Controls.Page {
             anchors.fill: annotationEditor
             transformOrigin: annotationEditor.transformOrigin
             scale: annotationEditor.scale
-
             source: colorAdjustmentEffectSource
-            sourceColorSpace: annotationEditor.document.colorSpace
-            onTargetColorSpaceChanged: console.log(JSON.stringify(targetColorSpace))
+            sourceColorSpace: annotationEditor.document.colorSpaceProperties()
+            // We can't rely on QQuickColorSpaceValueType yet because of various issues.
+            // See the AnnotationDocument header file for reasons why.
+            Connections {
+                target: annotationEditor.document
+                function onColorSpaceChanged() {
+                    colorAdjustmentEffect.sourceColorSpace = annotationEditor.document.colorSpaceProperties()
+                }
+            }
         }
 
         Item {
