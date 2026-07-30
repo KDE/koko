@@ -650,6 +650,15 @@ Kirigami.ScrollablePage {
         model: gallerySortFilterProxyModel
     }
 
+    Connections {
+        target: gallerySortFilterProxyModel
+        function onModelReset() {
+            // HACK: ItemSelectionModel does not emit hasSelectionChanged
+            //       after model reset results in no selection
+            page.selectionMode = Qt.binding(() => selectionModel.hasSelection);
+        }
+    }
+
     Koko.CutFileHelper {
         id: cutFileHelper
     }
