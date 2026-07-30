@@ -42,27 +42,27 @@ class FileMenuManager : public QObject
 public:
     explicit FileMenuManager(QObject *parent = nullptr);
 
-    QList<QUrl> urls() const;
+    [[nodiscard]] QList<QUrl> urls() const;
     void setUrls(const QList<QUrl> &urls);
 
-    QUrl rootUrl() const;
+    [[nodiscard]] QUrl rootUrl() const;
     void setRootUrl(const QUrl &url);
 
-    bool enabled() const;
+    [[nodiscard]] bool enabled() const;
     void setEnabled(const bool enabled);
 
-    bool canSaveAs() const;
-    bool canOpenFolder() const;
-    bool canOpenWith() const;
-    bool canCut() const;
-    bool canCopy() const;
-    bool canCopyPath() const;
-    bool canPaste() const;
-    bool canRenameFile() const;
-    bool canMoveToTrash() const;
-    bool canDeleteFile() const;
-    bool canPrint() const;
-    bool canProperties() const;
+    [[nodiscard]] bool canSaveAs() const;
+    [[nodiscard]] bool canOpenFolder() const;
+    [[nodiscard]] bool canOpenWith() const;
+    [[nodiscard]] bool canCut() const;
+    [[nodiscard]] bool canCopy() const;
+    [[nodiscard]] bool canCopyPath() const;
+    [[nodiscard]] bool canPaste() const;
+    [[nodiscard]] bool canRenameFile() const;
+    [[nodiscard]] bool canMoveToTrash() const;
+    [[nodiscard]] bool canDeleteFile() const;
+    [[nodiscard]] bool canPrint() const;
+    [[nodiscard]] bool canProperties() const;
 
 Q_SIGNALS:
     void urlsChanged();
