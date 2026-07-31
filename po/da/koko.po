@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:41+0000\n"
+"POT-Creation-Date: 2026-07-31 00:42+0000\n"
 "PO-Revision-Date: 2025-11-04 12:33+0100\n"
 "Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -819,7 +819,7 @@ msgid "Cities"
 msgstr "Byer"
 
 #: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
-#: qml/Sidebar.qml:241
+#: qml/Sidebar.qml:250
 #, kde-format
 msgid "Locations"
 msgstr "Placeringer"
@@ -831,7 +831,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Vælg alle"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:291
 #, kde-format
 msgid "Tags"
 msgstr "Mærker"
@@ -1134,7 +1134,7 @@ msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr ""
 
-#: qml/ActionCollection.qml:121
+#: qml/ActionCollection.qml:124
 #, fuzzy, kde-format
 #| msgctxt "@action:incontextmenu"
 #| msgid "Copy Location"
@@ -1142,25 +1142,25 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopiér placering"
 
-#: qml/ActionCollection.qml:141
+#: qml/ActionCollection.qml:144
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr ""
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Billeder"
 
-#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:203
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:212
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videoer"
 
-#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:208
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:217
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1171,34 +1171,34 @@ msgstr "Favoritter"
 msgid "Places"
 msgstr "Steder"
 
-#: qml/gallery/GalleryDelegate.qml:151
+#: qml/gallery/GalleryDelegate.qml:155
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:140
+#: qml/gallery/GalleryPage.qml:181
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:141
+#: qml/gallery/GalleryPage.qml:182
 #, fuzzy, kde-format
 #| msgid "Restore selected items from trash"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Gendan de valgte elementer fra papirkurven"
 
-#: qml/gallery/GalleryPage.qml:160
+#: qml/gallery/GalleryPage.qml:201
 #, fuzzy, kde-format
 #| msgid "Sort by"
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Sortér efter"
 
-#: qml/gallery/GalleryPage.qml:166
+#: qml/gallery/GalleryPage.qml:207
 #, fuzzy, kde-format
 #| msgctxt "@item:intable Image file name"
 #| msgid "Name"
@@ -1206,7 +1206,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Navn"
 
-#: qml/gallery/GalleryPage.qml:173
+#: qml/gallery/GalleryPage.qml:214
 #, fuzzy, kde-format
 #| msgctxt "@title:group for crop area size spinboxes"
 #| msgid "Size:"
@@ -1214,7 +1214,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Størrelse:"
 
-#: qml/gallery/GalleryPage.qml:180
+#: qml/gallery/GalleryPage.qml:221
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Modified"
@@ -1222,7 +1222,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Dato for ændring"
 
-#: qml/gallery/GalleryPage.qml:181
+#: qml/gallery/GalleryPage.qml:222
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Modified"
@@ -1230,7 +1230,7 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Dato for ændring"
 
-#: qml/gallery/GalleryPage.qml:188
+#: qml/gallery/GalleryPage.qml:229
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Created"
@@ -1238,7 +1238,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Dato oprettet"
 
-#: qml/gallery/GalleryPage.qml:189
+#: qml/gallery/GalleryPage.qml:230
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Created"
@@ -1246,7 +1246,7 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Dato oprettet"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:237
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Accessed"
@@ -1254,7 +1254,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Dato for adgang"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:238
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Accessed"
@@ -1262,67 +1262,67 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Dato for adgang"
 
-#: qml/gallery/GalleryPage.qml:210
+#: qml/gallery/GalleryPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:212
+#: qml/gallery/GalleryPage.qml:253
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:214
+#: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:218
+#: qml/gallery/GalleryPage.qml:259
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:221
+#: qml/gallery/GalleryPage.qml:262
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:273
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:234
+#: qml/gallery/GalleryPage.qml:275
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:236
+#: qml/gallery/GalleryPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:240
+#: qml/gallery/GalleryPage.qml:281
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:243
+#: qml/gallery/GalleryPage.qml:284
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:308
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1330,7 +1330,7 @@ msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Bogmærkemappe"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:309
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1338,38 +1338,38 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Bogmærkemappe"
 
-#: qml/gallery/GalleryPage.qml:307 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:348 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Fjern fra favoritter"
 
-#: qml/gallery/GalleryPage.qml:307 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:348 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Føj til favoritter"
 
-#: qml/gallery/GalleryPage.qml:322
+#: qml/gallery/GalleryPage.qml:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Del de valgte medier"
 
-#: qml/gallery/GalleryPage.qml:837
+#: qml/gallery/GalleryPage.qml:897
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:875
+#: qml/gallery/GalleryPage.qml:935
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "Intet medie fundet"
 
-#: qml/gallery/GalleryPage.qml:899
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1377,7 +1377,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:904
+#: qml/gallery/GalleryPage.qml:964
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1567,93 +1567,93 @@ msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Se information om dette billede"
 
-#: qml/mediaview/MediaViewPage.qml:300
+#: qml/mediaview/MediaViewPage.qml:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:301
+#: qml/mediaview/MediaViewPage.qml:308
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:616
+#: qml/mediaview/MediaViewPage.qml:623
 #, fuzzy, kde-format
 #| msgid "Previous image"
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Forrige billede"
 
-#: qml/mediaview/MediaViewPage.qml:650
+#: qml/mediaview/MediaViewPage.qml:657
 #, fuzzy, kde-format
 #| msgid "Next image"
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Næste billede"
 
-#: qml/mediaview/MediaViewPage.qml:831
+#: qml/mediaview/MediaViewPage.qml:838
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:832
+#: qml/mediaview/MediaViewPage.qml:839
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:833
+#: qml/mediaview/MediaViewPage.qml:840
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:834
+#: qml/mediaview/MediaViewPage.qml:841
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:835
+#: qml/mediaview/MediaViewPage.qml:842
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:836
+#: qml/mediaview/MediaViewPage.qml:843
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:837
+#: qml/mediaview/MediaViewPage.qml:844
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:838
+#: qml/mediaview/MediaViewPage.qml:845
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:839
+#: qml/mediaview/MediaViewPage.qml:846
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:840
+#: qml/mediaview/MediaViewPage.qml:847
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:889
+#: qml/mediaview/MediaViewPage.qml:896
 #, fuzzy, kde-format
 #| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 #| msgid "%1:"
@@ -1661,7 +1661,7 @@ msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1:"
 
-#: qml/mediaview/MediaViewPage.qml:903
+#: qml/mediaview/MediaViewPage.qml:910
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1669,7 +1669,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Zoom:"
 
-#: qml/mediaview/MediaViewPage.qml:912
+#: qml/mediaview/MediaViewPage.qml:919
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1677,13 +1677,13 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "Zoom:"
 
-#: qml/mediaview/MediaViewPage.qml:1155 qml/Settings/GeneralConfigPage.qml:202
+#: qml/mediaview/MediaViewPage.qml:1162 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Diasshowets interval:"
 
-#: qml/mediaview/MediaViewPage.qml:1172 qml/Settings/GeneralConfigPage.qml:214
+#: qml/mediaview/MediaViewPage.qml:1179 qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1691,48 +1691,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekund"
 msgstr[1] "%1 sekunder"
 
-#: qml/mediaview/MediaViewPage.qml:1227 qml/mediaview/MediaViewPage.qml:1328
+#: qml/mediaview/MediaViewPage.qml:1234 qml/mediaview/MediaViewPage.qml:1335
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Gentag"
 
-#: qml/mediaview/MediaViewPage.qml:1236 qml/mediaview/MediaViewPage.qml:1337
+#: qml/mediaview/MediaViewPage.qml:1243 qml/mediaview/MediaViewPage.qml:1344
 #: qml/Settings/GeneralConfigPage.qml:188
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Tilfældig rækkefølge"
 
-#: qml/mediaview/MediaViewPage.qml:1248
+#: qml/mediaview/MediaViewPage.qml:1255
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Stop diasshow"
 
-#: qml/mediaview/MediaViewPage.qml:1262
+#: qml/mediaview/MediaViewPage.qml:1269
 #, kde-format
 msgid "Show All Controls"
 msgstr "Vis alle kontroller"
 
-#: qml/mediaview/MediaViewPage.qml:1291
+#: qml/mediaview/MediaViewPage.qml:1298
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1291
+#: qml/mediaview/MediaViewPage.qml:1298
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1310
+#: qml/mediaview/MediaViewPage.qml:1317
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1323
+#: qml/mediaview/MediaViewPage.qml:1330
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
@@ -1751,66 +1751,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:214
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:223
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Papirkurv"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:236
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:245
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Netværk"
 
-#: qml/PlacesPage.qml:78 qml/Sidebar.qml:220
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:229
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Bogmærker"
 
-#: qml/PlacesPage.qml:106 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:253
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Lande"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:249
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:258
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Delstater"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:254
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:263
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Byer"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:268
 #, kde-format
 msgid "Time"
 msgstr "Tid"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:262
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:271
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "År"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:267
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:276
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Måneder"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:272
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:281
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Uger"
 
-#: qml/PlacesPage.qml:154 qml/Sidebar.qml:277
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:286
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1966,14 +1966,14 @@ msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr ""
 
-#: qml/Sidebar.qml:195
+#: qml/Sidebar.qml:204
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "General"
 msgid "General"
 msgstr "Generelt"
 
-#: qml/Sidebar.qml:232
+#: qml/Sidebar.qml:241
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"

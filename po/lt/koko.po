@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-24 00:41+0000\n"
+"POT-Creation-Date: 2026-07-31 00:42+0000\n"
 "PO-Revision-Date: 2026-07-18 22:13+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -801,7 +801,7 @@ msgid "Cities"
 msgstr "Miestai"
 
 #: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
-#: qml/Sidebar.qml:241
+#: qml/Sidebar.qml:250
 #, kde-format
 msgid "Locations"
 msgstr "Vietovės"
@@ -812,7 +812,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Pažymėti failai"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:291
 #, kde-format
 msgid "Tags"
 msgstr "Žymės"
@@ -1068,31 +1068,31 @@ msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "&Atverti naudojant…"
 
-#: qml/ActionCollection.qml:121
+#: qml/ActionCollection.qml:124
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopijuoti vietą"
 
-#: qml/ActionCollection.qml:141
+#: qml/ActionCollection.qml:144
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&Savybės"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:198
+#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Paveikslai"
 
-#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:203
+#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:212
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Vaizdo įrašai"
 
-#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:208
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:217
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1103,7 +1103,7 @@ msgstr "Mėgstami"
 msgid "Places"
 msgstr "Vietos"
 
-#: qml/gallery/GalleryDelegate.qml:151
+#: qml/gallery/GalleryDelegate.qml:155
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -1112,163 +1112,163 @@ msgstr[1] "%1 elementai"
 msgstr[2] "%1 elementų"
 msgstr[3] "%1 elementas"
 
-#: qml/gallery/GalleryPage.qml:140
+#: qml/gallery/GalleryPage.qml:181
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Atkurti"
 
-#: qml/gallery/GalleryPage.qml:141
+#: qml/gallery/GalleryPage.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Atkurti pasirinktą mediją į ankstesnę vietą"
 
-#: qml/gallery/GalleryPage.qml:160
+#: qml/gallery/GalleryPage.qml:201
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Rikiuoti: %1"
 
-#: qml/gallery/GalleryPage.qml:166
+#: qml/gallery/GalleryPage.qml:207
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: qml/gallery/GalleryPage.qml:173
+#: qml/gallery/GalleryPage.qml:214
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Dydis"
 
-#: qml/gallery/GalleryPage.qml:180
+#: qml/gallery/GalleryPage.qml:221
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Modifikuotas"
 
-#: qml/gallery/GalleryPage.qml:181
+#: qml/gallery/GalleryPage.qml:222
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Modifikavimo data"
 
-#: qml/gallery/GalleryPage.qml:188
+#: qml/gallery/GalleryPage.qml:229
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Sukurtas"
 
-#: qml/gallery/GalleryPage.qml:189
+#: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Sukūrimo data"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:237
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Paskiausia prieiga"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Prieigos data"
 
-#: qml/gallery/GalleryPage.qml:210
+#: qml/gallery/GalleryPage.qml:251
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Didėjančiai"
 
-#: qml/gallery/GalleryPage.qml:212
+#: qml/gallery/GalleryPage.qml:253
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "A-Ž"
 
-#: qml/gallery/GalleryPage.qml:214
+#: qml/gallery/GalleryPage.qml:255
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Pirmiausiai mažiausi"
 
-#: qml/gallery/GalleryPage.qml:218
+#: qml/gallery/GalleryPage.qml:259
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Pirmiausiai seniausi"
 
-#: qml/gallery/GalleryPage.qml:221
+#: qml/gallery/GalleryPage.qml:262
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Didėjančiai"
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:273
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Mažėjančiai"
 
-#: qml/gallery/GalleryPage.qml:234
+#: qml/gallery/GalleryPage.qml:275
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Ž-A"
 
-#: qml/gallery/GalleryPage.qml:236
+#: qml/gallery/GalleryPage.qml:277
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Pirmiausiai didžiausi"
 
-#: qml/gallery/GalleryPage.qml:240
+#: qml/gallery/GalleryPage.qml:281
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Pirmiausiai naujausi"
 
-#: qml/gallery/GalleryPage.qml:243
+#: qml/gallery/GalleryPage.qml:284
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Mažėjančiai"
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:308
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Įrašyti aplanką į žymeles"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:309
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Įrašyti dabartinį aplanką į žymeles"
 
-#: qml/gallery/GalleryPage.qml:307 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:348 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Šalinti iš mėgstamų"
 
-#: qml/gallery/GalleryPage.qml:307 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:348 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Pridėti į mėgstamus"
 
-#: qml/gallery/GalleryPage.qml:322
+#: qml/gallery/GalleryPage.qml:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Bendrinti pasirinktą mediją"
 
-#: qml/gallery/GalleryPage.qml:837
+#: qml/gallery/GalleryPage.qml:897
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1277,12 +1277,12 @@ msgstr[1] "%1 elementai"
 msgstr[2] "%1 elementų"
 msgstr[3] "%1 elementas"
 
-#: qml/gallery/GalleryPage.qml:875
+#: qml/gallery/GalleryPage.qml:935
 #, kde-format
 msgid "No media found"
 msgstr "Nerasta jokia medija"
 
-#: qml/gallery/GalleryPage.qml:899
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1292,7 +1292,7 @@ msgstr[1] "Pažymėti %1 elementai"
 msgstr[2] "Pažymėta %1 elementų"
 msgstr[3] "Pažymėtas %1 elementas"
 
-#: qml/gallery/GalleryPage.qml:904
+#: qml/gallery/GalleryPage.qml:964
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1483,115 +1483,115 @@ msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Rodyti informaciją apie šį paveikslą"
 
-#: qml/mediaview/MediaViewPage.qml:300
+#: qml/mediaview/MediaViewPage.qml:307
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "Įjungti pasinerimo peržiūros veikseną"
 
-#: qml/mediaview/MediaViewPage.qml:301
+#: qml/mediaview/MediaViewPage.qml:308
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Išjungti pasinerimo peržiūros veikseną"
 
-#: qml/mediaview/MediaViewPage.qml:616
+#: qml/mediaview/MediaViewPage.qml:623
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Ankstesnis paveikslas"
 
-#: qml/mediaview/MediaViewPage.qml:650
+#: qml/mediaview/MediaViewPage.qml:657
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Kitas paveikslas"
 
-#: qml/mediaview/MediaViewPage.qml:831
+#: qml/mediaview/MediaViewPage.qml:838
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:832
+#: qml/mediaview/MediaViewPage.qml:839
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:833
+#: qml/mediaview/MediaViewPage.qml:840
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:834
+#: qml/mediaview/MediaViewPage.qml:841
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:835
+#: qml/mediaview/MediaViewPage.qml:842
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:836
+#: qml/mediaview/MediaViewPage.qml:843
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:837
+#: qml/mediaview/MediaViewPage.qml:844
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:838
+#: qml/mediaview/MediaViewPage.qml:845
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:839
+#: qml/mediaview/MediaViewPage.qml:846
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:840
+#: qml/mediaview/MediaViewPage.qml:847
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:889
+#: qml/mediaview/MediaViewPage.qml:896
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/mediaview/MediaViewPage.qml:903
+#: qml/mediaview/MediaViewPage.qml:910
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Mažinti"
 
-#: qml/mediaview/MediaViewPage.qml:912
+#: qml/mediaview/MediaViewPage.qml:919
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Didinti"
 
-#: qml/mediaview/MediaViewPage.qml:1155 qml/Settings/GeneralConfigPage.qml:202
+#: qml/mediaview/MediaViewPage.qml:1162 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Skaidrių rodymo intervalas:"
 
-#: qml/mediaview/MediaViewPage.qml:1172 qml/Settings/GeneralConfigPage.qml:214
+#: qml/mediaview/MediaViewPage.qml:1179 qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1601,48 +1601,48 @@ msgstr[1] "%1 sekundės"
 msgstr[2] "%1 sekundžių"
 msgstr[3] "%1 sekundė"
 
-#: qml/mediaview/MediaViewPage.qml:1227 qml/mediaview/MediaViewPage.qml:1328
+#: qml/mediaview/MediaViewPage.qml:1234 qml/mediaview/MediaViewPage.qml:1335
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Rodyti ciklu"
 
-#: qml/mediaview/MediaViewPage.qml:1236 qml/mediaview/MediaViewPage.qml:1337
+#: qml/mediaview/MediaViewPage.qml:1243 qml/mediaview/MediaViewPage.qml:1344
 #: qml/Settings/GeneralConfigPage.qml:188
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Atsitiktinė tvarka"
 
-#: qml/mediaview/MediaViewPage.qml:1248
+#: qml/mediaview/MediaViewPage.qml:1255
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Stabdyti skaidrių rodymą"
 
-#: qml/mediaview/MediaViewPage.qml:1262
+#: qml/mediaview/MediaViewPage.qml:1269
 #, kde-format
 msgid "Show All Controls"
 msgstr "Rodyti visus valdiklius"
 
-#: qml/mediaview/MediaViewPage.qml:1291
+#: qml/mediaview/MediaViewPage.qml:1298
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Stabdyti"
 
-#: qml/mediaview/MediaViewPage.qml:1291
+#: qml/mediaview/MediaViewPage.qml:1298
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Pradėti"
 
-#: qml/mediaview/MediaViewPage.qml:1310
+#: qml/mediaview/MediaViewPage.qml:1317
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Intervalas:"
 
-#: qml/mediaview/MediaViewPage.qml:1323
+#: qml/mediaview/MediaViewPage.qml:1330
 #, kde-format
 msgid "seconds"
 msgstr "sek."
@@ -1658,66 +1658,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nuostatos"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:214
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:223
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Šiukšlinė"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:236
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:245
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Tinklas"
 
-#: qml/PlacesPage.qml:78 qml/Sidebar.qml:220
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:229
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Žymelės"
 
-#: qml/PlacesPage.qml:106 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:253
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Šalys"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:249
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:258
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Apskritys"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:254
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:263
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Miestai"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:268
 #, kde-format
 msgid "Time"
 msgstr "Laikas"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:262
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:271
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Metai"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:267
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:276
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Mėnesiai"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:272
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:281
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Savaitės"
 
-#: qml/PlacesPage.qml:154 qml/Sidebar.qml:277
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:286
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1866,12 +1866,12 @@ msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr "Rodyti meniu"
 
-#: qml/Sidebar.qml:195
+#: qml/Sidebar.qml:204
 #, kde-format
 msgid "General"
 msgstr "Bendri"
 
-#: qml/Sidebar.qml:232
+#: qml/Sidebar.qml:241
 #, kde-format
 msgctxt "Remote network locations"
 msgid "Remote"
