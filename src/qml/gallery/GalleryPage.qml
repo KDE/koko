@@ -173,6 +173,21 @@ Kirigami.ScrollablePage {
         exclusive: true
     }
 
+    Connections {
+        target: fileMenuManager
+
+        function onFilesTrashed(urls) {
+            mainWindow.showPassiveNotification(
+                i18ncp("@info", "%1 item moved to trash", "%1 item moved to trash", urls.length),
+                "long",
+                i18nc("@action:button Undo moving items to trash", "Undo"),
+                function() {
+                    fileMenuManager.undoTrash(urls);
+                }
+            );
+        }
+    }
+
     readonly property list<QtObject> toolBarActions: [
         // Selection
         Kirigami.Action {

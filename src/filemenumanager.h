@@ -63,6 +63,7 @@ public:
     [[nodiscard]] bool canDeleteFile() const;
     [[nodiscard]] bool canPrint() const;
     [[nodiscard]] bool canProperties() const;
+    Q_INVOKABLE void undoTrash(QList<QUrl> urls);
 
 Q_SIGNALS:
     void urlsChanged();
@@ -82,6 +83,7 @@ Q_SIGNALS:
     void canPropertiesChanged();
 
     void pastedUrls(QList<QUrl> urls);
+    void filesTrashed(QList<QUrl> urls);
 
 private:
     QList<QUrl> m_urls;

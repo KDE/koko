@@ -43,6 +43,7 @@
 #include <KIO/Paste>
 #include <KIO/PasteJob>
 #include <KIO/RenameFileDialog>
+#include <KIO/RestoreJob>
 #include <KIO/WidgetsAskUserActionHandler>
 
 using namespace Qt::StringLiterals;
@@ -165,6 +166,10 @@ bool FileMenuManager::canPrint() const
 bool FileMenuManager::canProperties() const
 {
     return m_canProperties;
+}
+
+void FileMenuManager::undoTrash(QList<QUrl> urls) {
+    KIO::restoreFromTrash(urls);
 }
 
 void FileMenuManager::updateActions()
@@ -453,11 +458,19 @@ void FileMenuManager::updateActions()
                 return;
             }
             auto handler = new KIO::WidgetsAskUserActionHandler(this);
-            connect(handler, &KIO::WidgetsAskUserActionHandler::askUserDeleteResult, [handler](bool allow, const QList<QUrl> &urls) {
+            connect(handler, &KIO::WidgetsAskUserActionHandler::askUserDeleteResult, [this, handler](bool allow, const QList<QUrl> &urls) {
                 if (allow) {
                     auto job = KIO::trash(urls);
                     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
                     KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl(QStringLiteral("trash:/")), job);
+
+                    auto trashUrls = std::make_shared<QList<QUrl>>();
+                    connect(job, &KIO::CopyJob::copyingDone, [trashUrls](KIO::Job *job, const QUrl &from, const QUrl &to, const QDateTime &mtime, bool directory, bool renamed) {
+                        *trashUrls << to;
+                    });
+                    connect(job, &KJob::finished, [this,trashUrls]() {
+                        Q_EMIT filesTrashed(*trashUrls);
+                    });
                 }
                 handler->deleteLater();
             });

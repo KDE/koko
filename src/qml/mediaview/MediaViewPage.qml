@@ -64,6 +64,21 @@ Kirigami.Page {
         }
     }
 
+    Connections {
+        target: fileMenuManager
+
+        function onFilesTrashed(urls) {
+            mainWindow.showPassiveNotification(
+                i18ncp("@info","%1 item moved to trash", "%1 item moved to trash", urls.length),
+                "long",
+                i18nc("Undo moving items to trash", "Undo"),
+                function() {
+                    fileMenuManager.undoTrash(urls);
+                }
+            )
+        }
+    }
+
     // exit full screen on mobile, where only image view should be full screen.
     onBackRequested: {
         if (Kirigami.Settings.isMobile && applicationWindow().visibility === Window.FullScreen) {
