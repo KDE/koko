@@ -1095,21 +1095,17 @@ msgid_plural "%1 items"
 msgstr[0] "%1 个项目"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to the trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "转到回收站"
+msgstr[0] ""
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
-msgstr "撤销"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:196
 #, kde-format
@@ -1441,12 +1437,10 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
-msgstr "撤销"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:105
 #, kde-format

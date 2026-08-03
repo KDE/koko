@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-02 00:42+0000\n"
-"PO-Revision-Date: 2026-07-17 12:13+0200\n"
+"PO-Revision-Date: 2026-08-02 11:22+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1109,20 +1109,16 @@ msgstr[1] "%1 položky"
 msgstr[2] "%1 položek"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "Přesunout do koše"
-msgstr[1] "Přesunout do koše"
-msgstr[2] "Přesunout do koše"
+msgstr[0] "%1 položka přesunuta do koše"
+msgstr[1] "%1 položky přesunuty do koše"
+msgstr[2] "%1 položek přesunuto do koše"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Zpět"
@@ -1465,9 +1461,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Zpět"

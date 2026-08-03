@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-02 00:42+0000\n"
-"PO-Revision-Date: 2026-07-16 19:19+0300\n"
+"PO-Revision-Date: 2026-08-02 11:50+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1115,21 +1115,17 @@ msgstr[2] "%1 записів"
 msgstr[3] "1 запис"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "Пересунути до смітника"
-msgstr[1] "Пересунути до смітника"
-msgstr[2] "Пересунути до смітника"
-msgstr[3] "Пересунути до смітника"
+msgstr[0] "%1 елемент пересунуто до смітника"
+msgstr[1] "%1 елементи пересунуто до смітника"
+msgstr[2] "%1 елементів пересунуто до смітника"
+msgstr[3] "%1 елемент пересунуто до смітника"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Скасувати"
@@ -1476,9 +1472,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Скасувати"

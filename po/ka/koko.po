@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-02 00:42+0000\n"
-"PO-Revision-Date: 2026-07-16 06:16+0200\n"
+"PO-Revision-Date: 2026-08-02 06:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -531,7 +531,7 @@ msgstr "ვერტიკალურად გადაბრუნება"
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
-msgstr "დაბრუნება"
+msgstr "გაუქმება"
 
 #: editor/EditorView.qml:443
 #, kde-format
@@ -1102,22 +1102,18 @@ msgstr[0] "1 ელემენტი"
 msgstr[1] "%1 ელემენტი"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "ნაგვის ყუთში გადატანა"
-msgstr[1] "ნაგვის ყუთში გადატანა"
+msgstr[0] "%1 ელემენტი გადატანილია ნაგვის ყუთში"
+msgstr[1] "%1 ელემენტი გადატანილია ნაგვის ყუთში"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
-msgstr "დაბრუნება"
+msgstr "გაუქმება"
 
 #: qml/gallery/GalleryPage.qml:196
 #, kde-format
@@ -1453,12 +1449,10 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
-msgstr "დაბრუნება"
+msgstr "გაუქმება"
 
 #: qml/mediaview/MediaViewPage.qml:105
 #, kde-format
