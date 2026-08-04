@@ -33,7 +33,7 @@ void FileSystemImageFetcher::slotProcess()
         const QString filePath = it.next();
         const auto fileInfo = it.fileInfo();
 
-        if (fileInfo.isDir() || fileInfo.isExecutable()) {
+        if (fileInfo.isDir()) {
             continue;
         }
 
