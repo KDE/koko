@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-02 00:42+0000\n"
+"POT-Creation-Date: 2026-08-05 00:43+0000\n"
 "PO-Revision-Date: 2025-11-04 12:33+0100\n"
 "Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1374,20 +1374,20 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Del de valgte medier"
 
-#: qml/gallery/GalleryPage.qml:912
+#: qml/gallery/GalleryPage.qml:921
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:950
+#: qml/gallery/GalleryPage.qml:959
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "Intet medie fundet"
 
-#: qml/gallery/GalleryPage.qml:974
+#: qml/gallery/GalleryPage.qml:983
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1395,7 +1395,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:979
+#: qml/gallery/GalleryPage.qml:988
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

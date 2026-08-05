@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-02 00:42+0000\n"
-"PO-Revision-Date: 2026-07-17 09:03+0200\n"
+"POT-Creation-Date: 2026-08-05 00:43+0000\n"
+"PO-Revision-Date: 2026-08-03 09:33+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1104,19 +1104,15 @@ msgstr[0] "1 élément"
 msgstr[1] "%1 éléments"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "Déplacer vers la corbeille"
-msgstr[1] "Déplacer vers la corbeille"
+msgstr[0] "L'élément %1 a été déplacé vers la corbeille"
+msgstr[1] "%1 éléments ont été déplacés vers la corbeille"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Annuler"
@@ -1277,19 +1273,19 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Partager le média sélectionné"
 
-#: qml/gallery/GalleryPage.qml:912
+#: qml/gallery/GalleryPage.qml:921
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 élément"
 msgstr[1] "%1 éléments"
 
-#: qml/gallery/GalleryPage.qml:950
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "No media found"
 msgstr "Aucune média n'a été trouvé."
 
-#: qml/gallery/GalleryPage.qml:974
+#: qml/gallery/GalleryPage.qml:983
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1297,7 +1293,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 élément sélectionné"
 msgstr[1] "%1 éléments sélectionnés"
 
-#: qml/gallery/GalleryPage.qml:979
+#: qml/gallery/GalleryPage.qml:988
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1455,9 +1451,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Annuler"

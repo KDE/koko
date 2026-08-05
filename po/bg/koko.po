@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-02 00:42+0000\n"
+"POT-Creation-Date: 2026-08-05 00:43+0000\n"
 "PO-Revision-Date: 2026-07-22 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1279,19 +1279,19 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Споделяне на избраната медия"
 
-#: qml/gallery/GalleryPage.qml:912
+#: qml/gallery/GalleryPage.qml:921
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 елемент"
 msgstr[1] "%1 елемента"
 
-#: qml/gallery/GalleryPage.qml:950
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "No media found"
 msgstr "Не е намерена медия"
 
-#: qml/gallery/GalleryPage.qml:974
+#: qml/gallery/GalleryPage.qml:983
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1299,7 +1299,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "Маркиран е %1 елемент"
 msgstr[1] "Маркирани са %1 елемента"
 
-#: qml/gallery/GalleryPage.qml:979
+#: qml/gallery/GalleryPage.qml:988
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-02 00:42+0000\n"
-"PO-Revision-Date: 2026-07-17 12:17+0300\n"
+"POT-Creation-Date: 2026-08-05 00:43+0000\n"
+"PO-Revision-Date: 2026-08-04 09:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1110,21 +1110,17 @@ msgstr[2] "%1 פריטים"
 msgstr[3] "%1 פריטים"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "העברה לאשפה"
-msgstr[1] "העברה לאשפה"
-msgstr[2] "העברה לאשפה"
-msgstr[3] "העברה לאשפה"
+msgstr[0] "פריט הועבר לאשפה"
+msgstr[1] "שני פריטים הועברו לאשפה"
+msgstr[2] "%1 פריטים הועברו לאשפה"
+msgstr[3] "%1 פריטים הועברו לאשפה"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "הסגה"
@@ -1285,7 +1281,7 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "שיתוף המדיה הנבחרת"
 
-#: qml/gallery/GalleryPage.qml:912
+#: qml/gallery/GalleryPage.qml:921
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1294,12 +1290,12 @@ msgstr[1] "שני פריטים"
 msgstr[2] "%1 פריטים"
 msgstr[3] "%1 פריטים"
 
-#: qml/gallery/GalleryPage.qml:950
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "No media found"
 msgstr "לא נמצאה מדיה"
 
-#: qml/gallery/GalleryPage.qml:974
+#: qml/gallery/GalleryPage.qml:983
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1309,7 +1305,7 @@ msgstr[1] "נבחרו שני פריטים"
 msgstr[2] "נבחרו %1 פריטים"
 msgstr[3] "נבחרו %1 פריטים"
 
-#: qml/gallery/GalleryPage.qml:979
+#: qml/gallery/GalleryPage.qml:988
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1471,9 +1467,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "הסגה"

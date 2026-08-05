@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-02 00:42+0000\n"
+"POT-Creation-Date: 2026-08-05 00:43+0000\n"
 "PO-Revision-Date: 2026-01-05 17:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1313,7 +1313,7 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Jaa valittu media"
 
-#: qml/gallery/GalleryPage.qml:912
+#: qml/gallery/GalleryPage.qml:921
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1322,12 +1322,12 @@ msgid_plural "%1 items"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/GalleryPage.qml:950
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "No media found"
 msgstr "Mediaa ei löytynyt"
 
-#: qml/gallery/GalleryPage.qml:974
+#: qml/gallery/GalleryPage.qml:983
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1337,7 +1337,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/GalleryPage.qml:979
+#: qml/gallery/GalleryPage.qml:988
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
