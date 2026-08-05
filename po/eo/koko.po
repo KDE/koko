@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 02:38+0000\n"
+"POT-Creation-Date: 2026-08-05 02:43+0000\n"
 "PO-Revision-Date: 2024-12-27 22:09+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -813,25 +813,25 @@ msgstr "Rubujo"
 msgid "Network"
 msgstr "Reto"
 
-#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
+#: models/gallerylocationmodel.cpp:56 models/gallerylocationmodel.cpp:191
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgid "Countries"
 msgstr "Landoj"
 
-#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
+#: models/gallerylocationmodel.cpp:58 models/gallerylocationmodel.cpp:192
 #, fuzzy, kde-format
 #| msgid "States"
 msgid "States"
 msgstr "Ŝtatoj"
 
-#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
+#: models/gallerylocationmodel.cpp:60 models/gallerylocationmodel.cpp:193
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgid "Cities"
 msgstr "Urboj"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:101
+#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
 #: qml/Sidebar.qml:241
 #, kde-format
 msgid "Locations"
@@ -844,36 +844,36 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Elekti ĉiujn"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
 msgid "Tags"
 msgstr "Etikedoj"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
+#: models/gallerytimemodel.cpp:58 models/gallerytimemodel.cpp:195
 #, fuzzy, kde-format
 #| msgid "Years"
 msgid "Years"
 msgstr "Jaroj"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
+#: models/gallerytimemodel.cpp:60 models/gallerytimemodel.cpp:196
 #, fuzzy, kde-format
 #| msgid "Months"
 msgid "Months"
 msgstr "Monatoj"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
+#: models/gallerytimemodel.cpp:62 models/gallerytimemodel.cpp:197
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgid "Weeks"
 msgstr "Semajnoj"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
+#: models/gallerytimemodel.cpp:64 models/gallerytimemodel.cpp:198
 #, fuzzy, kde-format
 #| msgid "Days"
 msgid "Days"
 msgstr "Tagoj"
 
-#: models/gallerytimemodel.cpp:77
+#: models/gallerytimemodel.cpp:78
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Times"
@@ -1008,7 +1008,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr ""
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:299
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
 #, fuzzy, kde-format
 #| msgid "Favorite"
 msgctxt "@action:intoolbar Favorite an image/video"
@@ -1159,32 +1159,32 @@ msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:139
+#: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:140
+#: qml/gallery/GalleryPage.qml:141
 #, fuzzy, kde-format
 #| msgid "Restore selected items from trash"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Restarigi elektitajn erojn el rubujo"
 
-#: qml/gallery/GalleryPage.qml:159
+#: qml/gallery/GalleryPage.qml:160
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:164
+#: qml/gallery/GalleryPage.qml:166
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:171
+#: qml/gallery/GalleryPage.qml:173
 #, fuzzy, kde-format
 #| msgctxt "@title:group for crop area size spinboxes"
 #| msgid "Size:"
@@ -1192,19 +1192,19 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Grandeco:"
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:180
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:179
+#: qml/gallery/GalleryPage.qml:181
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:186
+#: qml/gallery/GalleryPage.qml:188
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -1212,7 +1212,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Kreita:"
 
-#: qml/gallery/GalleryPage.qml:187
+#: qml/gallery/GalleryPage.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -1220,13 +1220,13 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Kreita:"
 
-#: qml/gallery/GalleryPage.qml:194
+#: qml/gallery/GalleryPage.qml:196
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:195
+#: qml/gallery/GalleryPage.qml:197
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Created:"
@@ -1234,67 +1234,67 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Kreita:"
 
-#: qml/gallery/GalleryPage.qml:208
+#: qml/gallery/GalleryPage.qml:210
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:210
+#: qml/gallery/GalleryPage.qml:212
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:212
+#: qml/gallery/GalleryPage.qml:214
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:218
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:219
+#: qml/gallery/GalleryPage.qml:221
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:230
+#: qml/gallery/GalleryPage.qml:232
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:234
+#: qml/gallery/GalleryPage.qml:236
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:238
+#: qml/gallery/GalleryPage.qml:240
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:241
+#: qml/gallery/GalleryPage.qml:243
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:263
+#: qml/gallery/GalleryPage.qml:267
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1302,7 +1302,7 @@ msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Legomarko Dosierujo"
 
-#: qml/gallery/GalleryPage.qml:264
+#: qml/gallery/GalleryPage.qml:268
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1310,41 +1310,41 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Legomarko Dosierujo"
 
-#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Remove from favorites"
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Forigi el plej ŝatataj"
 
-#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Add to favorites"
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Aldoni al plej ŝatataj"
 
-#: qml/gallery/GalleryPage.qml:316
+#: qml/gallery/GalleryPage.qml:320
 #, fuzzy, kde-format
 #| msgid "Share the selected media"
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Kunhavigi la elektitan amaskomunikilaron"
 
-#: qml/gallery/GalleryPage.qml:748
+#: qml/gallery/GalleryPage.qml:785
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:786
+#: qml/gallery/GalleryPage.qml:823
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "Neniu Amaskomunikilaro Trovita"
 
-#: qml/gallery/GalleryPage.qml:810
+#: qml/gallery/GalleryPage.qml:847
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1352,7 +1352,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:815
+#: qml/gallery/GalleryPage.qml:852
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1545,117 +1545,117 @@ msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "Vidi informojn pri bildo"
 
-#: qml/mediaview/MediaViewPage.qml:277
+#: qml/mediaview/MediaViewPage.qml:285
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:278
+#: qml/mediaview/MediaViewPage.qml:286
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:593
+#: qml/mediaview/MediaViewPage.qml:601
 #, fuzzy, kde-format
 #| msgid "Previous image"
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Antaŭa bildo"
 
-#: qml/mediaview/MediaViewPage.qml:627
+#: qml/mediaview/MediaViewPage.qml:635
 #, fuzzy, kde-format
 #| msgid "Next image"
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Sekva bildo"
 
-#: qml/mediaview/MediaViewPage.qml:808
+#: qml/mediaview/MediaViewPage.qml:816
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:809
+#: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:810
+#: qml/mediaview/MediaViewPage.qml:818
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:811
+#: qml/mediaview/MediaViewPage.qml:819
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:812
+#: qml/mediaview/MediaViewPage.qml:820
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:813
+#: qml/mediaview/MediaViewPage.qml:821
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:814
+#: qml/mediaview/MediaViewPage.qml:822
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:815
+#: qml/mediaview/MediaViewPage.qml:823
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:816
+#: qml/mediaview/MediaViewPage.qml:824
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:817
+#: qml/mediaview/MediaViewPage.qml:825
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:866
+#: qml/mediaview/MediaViewPage.qml:874
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:880
+#: qml/mediaview/MediaViewPage.qml:888
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:889
+#: qml/mediaview/MediaViewPage.qml:897
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1132 qml/Settings/GeneralConfigPage.qml:202
+#: qml/mediaview/MediaViewPage.qml:1140 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalo de bildoprezento:"
 
-#: qml/mediaview/MediaViewPage.qml:1149 qml/Settings/GeneralConfigPage.qml:214
+#: qml/mediaview/MediaViewPage.qml:1157 qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1663,48 +1663,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "1 sekundo"
 msgstr[1] "%1 sekundoj"
 
-#: qml/mediaview/MediaViewPage.qml:1204 qml/mediaview/MediaViewPage.qml:1305
+#: qml/mediaview/MediaViewPage.qml:1212 qml/mediaview/MediaViewPage.qml:1313
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Buklo"
 
-#: qml/mediaview/MediaViewPage.qml:1213 qml/mediaview/MediaViewPage.qml:1314
+#: qml/mediaview/MediaViewPage.qml:1221 qml/mediaview/MediaViewPage.qml:1322
 #: qml/Settings/GeneralConfigPage.qml:188
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Randomigi"
 
-#: qml/mediaview/MediaViewPage.qml:1225
+#: qml/mediaview/MediaViewPage.qml:1233
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Halti Bildprezenton"
 
-#: qml/mediaview/MediaViewPage.qml:1239
+#: qml/mediaview/MediaViewPage.qml:1247
 #, kde-format
 msgid "Show All Controls"
 msgstr "Montri Ĉiujn Regilojn"
 
-#: qml/mediaview/MediaViewPage.qml:1268
+#: qml/mediaview/MediaViewPage.qml:1276
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1268
+#: qml/mediaview/MediaViewPage.qml:1276
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1287
+#: qml/mediaview/MediaViewPage.qml:1295
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1300
+#: qml/mediaview/MediaViewPage.qml:1308
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"

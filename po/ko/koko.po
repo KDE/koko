@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 02:38+0000\n"
+"POT-Creation-Date: 2026-08-05 02:43+0000\n"
 "PO-Revision-Date: 2025-10-12 12:10+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -790,22 +790,22 @@ msgstr "휴지통"
 msgid "Network"
 msgstr "네트워크"
 
-#: models/gallerylocationmodel.cpp:55 models/gallerylocationmodel.cpp:185
+#: models/gallerylocationmodel.cpp:56 models/gallerylocationmodel.cpp:191
 #, kde-format
 msgid "Countries"
 msgstr "국가"
 
-#: models/gallerylocationmodel.cpp:57 models/gallerylocationmodel.cpp:186
+#: models/gallerylocationmodel.cpp:58 models/gallerylocationmodel.cpp:192
 #, kde-format
 msgid "States"
 msgstr "주/도"
 
-#: models/gallerylocationmodel.cpp:59 models/gallerylocationmodel.cpp:187
+#: models/gallerylocationmodel.cpp:60 models/gallerylocationmodel.cpp:193
 #, kde-format
 msgid "Cities"
 msgstr "도시"
 
-#: models/gallerylocationmodel.cpp:73 qml/PlacesPage.qml:101
+#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
 #: qml/Sidebar.qml:241
 #, kde-format
 msgid "Locations"
@@ -818,32 +818,32 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "모두 선택"
 
-#: models/gallerytagsmodel.cpp:36 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
 msgid "Tags"
 msgstr "태그"
 
-#: models/gallerytimemodel.cpp:57 models/gallerytimemodel.cpp:189
+#: models/gallerytimemodel.cpp:58 models/gallerytimemodel.cpp:195
 #, kde-format
 msgid "Years"
 msgstr "연도"
 
-#: models/gallerytimemodel.cpp:59 models/gallerytimemodel.cpp:190
+#: models/gallerytimemodel.cpp:60 models/gallerytimemodel.cpp:196
 #, kde-format
 msgid "Months"
 msgstr "월"
 
-#: models/gallerytimemodel.cpp:61 models/gallerytimemodel.cpp:191
+#: models/gallerytimemodel.cpp:62 models/gallerytimemodel.cpp:197
 #, kde-format
 msgid "Weeks"
 msgstr "주"
 
-#: models/gallerytimemodel.cpp:63 models/gallerytimemodel.cpp:192
+#: models/gallerytimemodel.cpp:64 models/gallerytimemodel.cpp:198
 #, kde-format
 msgid "Days"
 msgstr "일"
 
-#: models/gallerytimemodel.cpp:77
+#: models/gallerytimemodel.cpp:78
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Times"
@@ -994,7 +994,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr ""
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:299
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
@@ -1142,27 +1142,27 @@ msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:139
+#: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:140
+#: qml/gallery/GalleryPage.qml:141
 #, fuzzy, kde-format
 #| msgid "Restore selected items from trash"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "선택한 항목을 휴지통에서 복원"
 
-#: qml/gallery/GalleryPage.qml:159
+#: qml/gallery/GalleryPage.qml:160
 #, fuzzy, kde-format
 #| msgid "Sort by"
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "정렬 순서"
 
-#: qml/gallery/GalleryPage.qml:164
+#: qml/gallery/GalleryPage.qml:166
 #, fuzzy, kde-format
 #| msgctxt "@item:intable Image file name"
 #| msgid "Name"
@@ -1170,14 +1170,14 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "이름"
 
-#: qml/gallery/GalleryPage.qml:171
+#: qml/gallery/GalleryPage.qml:173
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "크기"
 
-#: qml/gallery/GalleryPage.qml:178
+#: qml/gallery/GalleryPage.qml:180
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Modified"
@@ -1185,7 +1185,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "수정한 날짜"
 
-#: qml/gallery/GalleryPage.qml:179
+#: qml/gallery/GalleryPage.qml:181
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Modified"
@@ -1193,7 +1193,7 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "수정한 날짜"
 
-#: qml/gallery/GalleryPage.qml:186
+#: qml/gallery/GalleryPage.qml:188
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Created"
@@ -1201,7 +1201,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "만든 날짜"
 
-#: qml/gallery/GalleryPage.qml:187
+#: qml/gallery/GalleryPage.qml:189
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Created"
@@ -1209,7 +1209,7 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "만든 날짜"
 
-#: qml/gallery/GalleryPage.qml:194
+#: qml/gallery/GalleryPage.qml:196
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Accessed"
@@ -1217,7 +1217,7 @@ msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "접근한 날짜"
 
-#: qml/gallery/GalleryPage.qml:195
+#: qml/gallery/GalleryPage.qml:197
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Date Accessed"
@@ -1225,67 +1225,67 @@ msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "접근한 날짜"
 
-#: qml/gallery/GalleryPage.qml:208
+#: qml/gallery/GalleryPage.qml:210
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:210
+#: qml/gallery/GalleryPage.qml:212
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:212
+#: qml/gallery/GalleryPage.qml:214
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:218
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:219
+#: qml/gallery/GalleryPage.qml:221
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:230
+#: qml/gallery/GalleryPage.qml:232
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:232
+#: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:234
+#: qml/gallery/GalleryPage.qml:236
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:238
+#: qml/gallery/GalleryPage.qml:240
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:241
+#: qml/gallery/GalleryPage.qml:243
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:263
+#: qml/gallery/GalleryPage.qml:267
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1293,7 +1293,7 @@ msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "폴더를 책갈피에 추가"
 
-#: qml/gallery/GalleryPage.qml:264
+#: qml/gallery/GalleryPage.qml:268
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1301,44 +1301,44 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "폴더를 책갈피에 추가"
 
-#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "책갈피에서 삭제"
 
-#: qml/gallery/GalleryPage.qml:301 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "책갈피에 추가"
 
-#: qml/gallery/GalleryPage.qml:316
+#: qml/gallery/GalleryPage.qml:320
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "선택한 미디어 공유"
 
-#: qml/gallery/GalleryPage.qml:748
+#: qml/gallery/GalleryPage.qml:785
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:786
+#: qml/gallery/GalleryPage.qml:823
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "미디어를 찾을 수 없음"
 
-#: qml/gallery/GalleryPage.qml:810
+#: qml/gallery/GalleryPage.qml:847
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:815
+#: qml/gallery/GalleryPage.qml:852
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1526,93 +1526,93 @@ msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "이 그림의 정보 표시"
 
-#: qml/mediaview/MediaViewPage.qml:277
+#: qml/mediaview/MediaViewPage.qml:285
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "몰입 보기 모드로 들어가기"
 
-#: qml/mediaview/MediaViewPage.qml:278
+#: qml/mediaview/MediaViewPage.qml:286
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "몰입 보기 모드 끝내기"
 
-#: qml/mediaview/MediaViewPage.qml:593
+#: qml/mediaview/MediaViewPage.qml:601
 #, fuzzy, kde-format
 #| msgid "Previous image"
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "이전 그림"
 
-#: qml/mediaview/MediaViewPage.qml:627
+#: qml/mediaview/MediaViewPage.qml:635
 #, fuzzy, kde-format
 #| msgid "Next image"
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "다음 그림"
 
-#: qml/mediaview/MediaViewPage.qml:808
+#: qml/mediaview/MediaViewPage.qml:816
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:809
+#: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:810
+#: qml/mediaview/MediaViewPage.qml:818
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:811
+#: qml/mediaview/MediaViewPage.qml:819
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:812
+#: qml/mediaview/MediaViewPage.qml:820
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:813
+#: qml/mediaview/MediaViewPage.qml:821
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:814
+#: qml/mediaview/MediaViewPage.qml:822
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:815
+#: qml/mediaview/MediaViewPage.qml:823
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:816
+#: qml/mediaview/MediaViewPage.qml:824
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:817
+#: qml/mediaview/MediaViewPage.qml:825
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:866
+#: qml/mediaview/MediaViewPage.qml:874
 #, fuzzy, kde-format
 #| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 #| msgid "%1:"
@@ -1620,7 +1620,7 @@ msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1:"
 
-#: qml/mediaview/MediaViewPage.qml:880
+#: qml/mediaview/MediaViewPage.qml:888
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1628,7 +1628,7 @@ msgctxt "@action"
 msgid "Zoom Out"
 msgstr "확대/축소:"
 
-#: qml/mediaview/MediaViewPage.qml:889
+#: qml/mediaview/MediaViewPage.qml:897
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Zoom:"
@@ -1636,61 +1636,61 @@ msgctxt "@action"
 msgid "Zoom In"
 msgstr "확대/축소:"
 
-#: qml/mediaview/MediaViewPage.qml:1132 qml/Settings/GeneralConfigPage.qml:202
+#: qml/mediaview/MediaViewPage.qml:1140 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "슬라이드 쇼 간격:"
 
-#: qml/mediaview/MediaViewPage.qml:1149 qml/Settings/GeneralConfigPage.qml:214
+#: qml/mediaview/MediaViewPage.qml:1157 qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
 msgid_plural "%1 seconds"
 msgstr[0] "%1초"
 
-#: qml/mediaview/MediaViewPage.qml:1204 qml/mediaview/MediaViewPage.qml:1305
+#: qml/mediaview/MediaViewPage.qml:1212 qml/mediaview/MediaViewPage.qml:1313
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "반복"
 
-#: qml/mediaview/MediaViewPage.qml:1213 qml/mediaview/MediaViewPage.qml:1314
+#: qml/mediaview/MediaViewPage.qml:1221 qml/mediaview/MediaViewPage.qml:1322
 #: qml/Settings/GeneralConfigPage.qml:188
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "무작위"
 
-#: qml/mediaview/MediaViewPage.qml:1225
+#: qml/mediaview/MediaViewPage.qml:1233
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "슬라이드 쇼 정지"
 
-#: qml/mediaview/MediaViewPage.qml:1239
+#: qml/mediaview/MediaViewPage.qml:1247
 #, kde-format
 msgid "Show All Controls"
 msgstr "모든 컨트롤 표시"
 
-#: qml/mediaview/MediaViewPage.qml:1268
+#: qml/mediaview/MediaViewPage.qml:1276
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1268
+#: qml/mediaview/MediaViewPage.qml:1276
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1287
+#: qml/mediaview/MediaViewPage.qml:1295
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1300
+#: qml/mediaview/MediaViewPage.qml:1308
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
