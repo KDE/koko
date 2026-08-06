@@ -468,21 +468,21 @@ Kirigami.Page {
                         contrastSlider.value = Qt.binding(() => contrastSlider.contrast);
                         contrastSpinBox.value = Qt.binding(() => floatToSpinBoxInt(contrastSlider.contrast));
                     }
-                    function resetColorSpace(): void {
+                    function resetGamma(): void {
                         // reset gamma
-                        imageView.colorEffect.targetColorSpace = undefined;
+                        imageView.colorEffect.gamma = 0;
                         gammaSlider.gamma = Qt.binding(() => gammaSlider.defaultGamma);
                         gammaSlider.value = Qt.binding(() => gammaSlider.gamma);
                         gammaSpinBox.value = Qt.binding(() => floatToSpinBoxInt(gammaSlider.gamma));
                     }
                     function reset(): void {
                         resetColorMatrix();
-                        resetColorSpace();
+                        resetGamma();
                     }
                     Connections {
                         target: imageView.document
                         function onColorSpaceChanged(): void {
-                            adjustPopup.resetColorSpace();
+                            adjustPopup.resetGamma();
                         }
                         function onColorMatrixChanged(): void {
                             adjustPopup.resetColorMatrix();
@@ -513,14 +513,10 @@ Kirigami.Page {
                                 if (contrastSlider.contrast !== contrastSlider.defaultContrast) {
                                     m = m.times(imageView.colorEffect.contrastMatrix(contrastSlider.contrast));
                                 }
-                                const oldGamma = imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma;
+                                const oldGamma = imageView.colorEffect.gamma || imageView.colorEffect.sourceColorSpace.gamma;
                                 imageView.colorEffect.colorMatrix = m;
                                 if (gammaSlider.gamma !== oldGamma) {
-                                    let cs = imageView.document.colorSpaceProperties();
-                                    Object.assign(cs, imageView.colorEffect.targetColorSpace);
-                                    cs.transferFunction = ColorSpace.TransferFunction.Gamma;
-                                    cs.gamma = gammaSlider.value;
-                                    imageView.colorEffect.targetColorSpace = cs;
+                                    imageView.colorEffect.gamma = gammaSlider.gamma;
                                 }
                             }
                         }
@@ -678,7 +674,7 @@ Kirigami.Page {
                         }
                         Controls.Slider {
                             id: gammaSlider
-                            readonly property real defaultGamma: imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma
+                            readonly property real defaultGamma: imageView.colorEffect.sourceColorSpace.gamma
                             property real gamma: defaultGamma
                             focus: true
                             Layout.fillWidth: true
@@ -727,7 +723,7 @@ Kirigami.Page {
                             from: adjustPopup.floatToSpinBoxInt(gammaSlider.from)
                             to: adjustPopup.floatToSpinBoxInt(gammaSlider.to)
                             stepSize: adjustPopup.floatToSpinBoxInt(gammaSlider.stepSize)
-                            value: adjustPopup.floatToSpinBoxInt(imageView.colorEffect.targetColorSpace?.gamma ?? imageView.colorEffect.sourceColorSpace.gamma)
+                            value: adjustPopup.floatToSpinBoxInt(imageView.colorEffect.gamma || imageView.colorEffect.sourceColorSpace.gamma)
                             wheelEnabled: false
                             textFromValue: (value, locale) => {
                                 return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
@@ -760,9 +756,9 @@ Kirigami.Page {
                                 id: applyAdjustmentButton
                                 icon.name: "dialog-ok-apply-symbolic"
                                 text: i18nc("@action:button apply color adjustment to image", "Adjust")
-                                enabled: brightnessSlider.brightness !== 0 || contrastSlider.contrast !== 1 || (imageView.colorEffect.targetColorSpace !== undefined && JSON.stringify(imageView.colorEffect.targetColorSpace) !== JSON.stringify(imageView.colorEffect.sourceColorSpace))
+                                enabled: brightnessSlider.brightness !== brightnessSlider.defaultBrightness || contrastSlider.contrast !== contrastSlider.defaultContrast || gammaSlider.gamma !== gammaSlider.defaultGamma
                                 onClicked: {
-                                    imageView.document.applyColorAdjustment(imageView.colorEffect.colorMatrix, imageView.colorEffect.targetColorSpace);
+                                    imageView.document.applyColorAdjustment(imageView.colorEffect.colorMatrix, imageView.colorEffect.gamma);
                                 }
                             }
                         }
