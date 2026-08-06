@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-05 00:43+0000\n"
-"PO-Revision-Date: 2026-07-18 22:13+0300\n"
+"PO-Revision-Date: 2026-08-05 13:44+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -1113,21 +1113,17 @@ msgstr[2] "%1 elementų"
 msgstr[3] "%1 elementas"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "Perkelti į šiukšlinę"
-msgstr[1] "Perkelti į šiukšlinę"
-msgstr[2] "Perkelti į šiukšlinę"
-msgstr[3] "Perkelti į šiukšlinę"
+msgstr[0] "%1 elementas perkeltas į šiukšlinę"
+msgstr[1] "%1 elementai perkelti į šiukšlinę"
+msgstr[2] "%1 elementų perkelta į šiukšlinę"
+msgstr[3] "%1 elementas perkeltas į šiukšlinę"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Atšaukti"
@@ -1474,9 +1470,7 @@ msgid "—"
 msgstr "–"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Atšaukti"
