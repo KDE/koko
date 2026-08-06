@@ -185,7 +185,7 @@ Controls.Page {
         }
         ShaderEffectSource {
             id: colorAdjustmentEffectSource
-            visible: colorAdjustmentEffect.effectVisible
+            visible: colorAdjustmentEffect.active
             anchors.fill: annotationEditor
             transformOrigin: annotationEditor.transformOrigin
             scale: annotationEditor.scale
@@ -194,7 +194,7 @@ Controls.Page {
         }
         KQuickImageEditor.ColorAdjustmentEffect {
             id: colorAdjustmentEffect
-            visible: effectVisible
+            visible: active
             anchors.fill: annotationEditor
             transformOrigin: annotationEditor.transformOrigin
             scale: annotationEditor.scale
