@@ -95,7 +95,7 @@ bool FileMenuManager::enabled() const
     return m_enabled;
 }
 
-void FileMenuManager::setEnabled(const bool enabled)
+void FileMenuManager::setEnabled(bool enabled)
 {
     if (m_enabled == enabled) {
         return;
