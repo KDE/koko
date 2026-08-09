@@ -465,7 +465,7 @@ void FileMenuManager::updateActions()
                     KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Trash, urls, QUrl(QStringLiteral("trash:/")), job);
 
                     auto trashUrls = std::make_shared<QList<QUrl>>();
-                    connect(job, &KIO::CopyJob::copyingDone, [trashUrls](KIO::Job *job, const QUrl &from, const QUrl &to, const QDateTime &mtime, bool directory, bool renamed) {
+                    connect(job, &KIO::CopyJob::copyingDone, [trashUrls](KIO::Job *, const QUrl &, const QUrl &to, const QDateTime &, bool, bool) {
                         *trashUrls << to;
                     });
                     connect(job, &KJob::finished, [this,trashUrls]() {
