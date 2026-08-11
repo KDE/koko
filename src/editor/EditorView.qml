@@ -10,6 +10,7 @@ import QtQuick.Templates as T
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import org.kde.kirigami.actioncollection as AC
 import org.kde.koko as Koko
 import org.kde.kirigami as Kirigami
 import org.kde.kquickimageeditor as KQuickImageEditor
@@ -109,8 +110,8 @@ Kirigami.Page {
         Kirigami.Action {
             id: cropAction
             property int lastTool: imageView.document.tool.type
-            text: i18nc("@action:intoolbar crop image tool", "Crop")
-            icon.name: "transform-crop"
+            AC.ActionCollection.action: "Crop"
+            AC.ActionCollection.collection: "org.kde.koko.edit"
             checked: imageView.document.tool.type === KQuickImageEditor.AnnotationTool.CropTool
             onTriggered: {
                 if (imageView.document.tool.type !== KQuickImageEditor.AnnotationTool.CropTool) {
@@ -378,25 +379,23 @@ Kirigami.Page {
             text: i18nc("@action:button Rotate an image", "Rotate")
 
             Kirigami.Action {
-                icon.name: "image-rotate-left-symbolic"
-                text: i18nc("@action:button Rotate an image to the left", "Rotate Left")
+                AC.ActionCollection.action: "RotateLeft"
+                AC.ActionCollection.collection: "org.kde.koko.edit"
                 onTriggered: {
                     let matrix = Qt.matrix4x4()
                     rotateForViewer(matrix, getScale(imageView.document.transform), -90)
                     imageView.document.applyTransform(matrix)
                 }
-                shortcut: "Ctrl+Shift+R"
             }
 
             Kirigami.Action {
-                icon.name: "image-rotate-right-symbolic"
-                text: i18nc("@action:button Rotate an image to the right", "Rotate Right")
+                AC.ActionCollection.action: "RotateRight"
+                AC.ActionCollection.collection: "org.kde.koko.edit"
                 onTriggered: {
                     let matrix = Qt.matrix4x4()
                     rotateForViewer(matrix, getScale(imageView.document.transform), 90)
                     imageView.document.applyTransform(matrix)
                 }
-                shortcut: "Ctrl+R"
             }
         },
 
@@ -405,8 +404,8 @@ Kirigami.Page {
             text: i18nc("@action:button Flip/mirror an image", "Flip")
 
             Kirigami.Action {
-                icon.name: "image-flip-horizontal-symbolic"
-                text: i18nc("@action:button Flip/mirror an image horizontally", "Flip Horizontally")
+                AC.ActionCollection.action: "FlipHorizontally"
+                AC.ActionCollection.collection: "org.kde.koko.edit"
                 onTriggered: {
                     let matrix = Qt.matrix4x4()
                     scaleForViewer(matrix, getZDegrees(imageView.document.transform),
@@ -416,8 +415,8 @@ Kirigami.Page {
             }
 
             Kirigami.Action {
-                icon.name: "image-flip-vertical-symbolic"
-                text: i18nc("@action:button Flip/mirror an image vertically", "Flip Vertically")
+                AC.ActionCollection.action: "FlipVertically"
+                AC.ActionCollection.collection: "org.kde.koko.edit"
                 onTriggered: {
                     let matrix = Qt.matrix4x4()
                     scaleForViewer(matrix, getZDegrees(imageView.document.transform),

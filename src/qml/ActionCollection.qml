@@ -99,6 +99,7 @@ AC.ActionCollectionManager {
             icon.name: "non-starred-symbolic"
             text: i18nc("@action:intoolbar Favorite an image/video", "Favorite")
             checkable: true
+            defaultShortcut: "Shift+F"
         }
         AC.StandardActionData {
             standardAction: AC.StandardActionData.SaveAs
@@ -144,6 +145,42 @@ AC.ActionCollectionManager {
             text: i18nc("@action:inmenu", "&Properties")
             icon.name: "document-properties-symbolic"
             defaultShortcut: "Alt+Return"
+        }
+    }
+
+    AC.ActionCollection {
+        name: "org.kde.koko.edit"
+        text: i18nc("Actions category", "Edit mode actions")
+
+        AC.ActionData {
+            name: "Crop"
+            text: i18nc("@action:intoolbar crop image tool", "Crop")
+            icon.name: "transform-crop"
+            defaultShortcut: "C"
+        }
+        AC.ActionData {
+            name: "RotateLeft"
+            text: i18nc("@action:button Rotate an image to the left", "Rotate Left")
+            icon.name: "image-rotate-left-symbolic"
+            defaultShortcut: "Ctrl+Shift+R"
+        }
+        AC.ActionData {
+            name: "RotateRight"
+            text: i18nc("@action:button Rotate an image to the right", "Rotate Right")
+            icon.name: "image-rotate-right-symbolic"
+            defaultShortcut: "Ctrl+R"
+        }
+        AC.ActionData {
+            name: "FlipHorizontally"
+            text: i18nc("@action:button Flip/mirror an image horizontally", "Flip Horizontally")
+            icon.name: "image-flip-horizontal-symbolic"
+            defaultShortcut: "Shift+H"
+        }
+        AC.ActionData {
+            name: "FlipVertically"
+            text: i18nc("@action:button Flip/mirror an image vertically", "Flip Vertically")
+            icon.name: "image-flip-vertical-symbolic"
+            defaultShortcut: "Shift+V"
         }
     }
 }
