@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-05 00:43+0000\n"
-"PO-Revision-Date: 2026-07-17 15:07+0400\n"
+"PO-Revision-Date: 2026-08-10 13:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1117,23 +1117,19 @@ msgstr[4] "%1 عنصرًا"
 msgstr[5] "%1 عنصر"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 item moved to trash"
-msgstr[0] "انقل إلى المهملات"
-msgstr[1] "انقل إلى المهملات"
-msgstr[2] "انقل إلى المهملات"
-msgstr[3] "انقل إلى المهملات"
-msgstr[4] "انقل إلى المهملات"
-msgstr[5] "انقل إلى المهملات"
+msgstr[0] "لم ينقل شيء للمهملات"
+msgstr[1] "انتقل عنصر واحد إلى المهملات"
+msgstr[2] "انتقل عنصرين إلى المهملات"
+msgstr[3] "انتقل %1 عناصر إلى المهملات"
+msgstr[4] "انتقل %1 عنصرًا إلى المهملات"
+msgstr[5] "انتقل %1 عنصرًا إلى المهملات"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "تراجع"
@@ -1488,9 +1484,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "تراجع"
