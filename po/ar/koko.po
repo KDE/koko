@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-05 02:43+0000\n"
-"PO-Revision-Date: 2026-07-17 15:07+0400\n"
+"PO-Revision-Date: 2026-08-10 13:53+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -46,7 +46,7 @@ msgstr[0] "%1بكسل"
 msgstr[1] "بكسل واحد"
 msgstr[2] "بكسلان"
 msgstr[3] "%1بكسل"
-msgstr[4] "%1بكسلاً"
+msgstr[4] "%1بكسلًا"
 msgstr[5] "%1بكسل"
 
 #: editor/AnnotationOptionsToolBarContents.qml:97
@@ -583,7 +583,7 @@ msgid ""
 "Right click to clear the selection."
 msgstr ""
 "انقر واسحب لإجراء تحديد.\n"
-"انقر نقراً مزدوجاً فوق التحديد للقبول والاقتصاص.\n"
+"انقر نقرًا مزدوجًا فوق التحديد للقبول والاقتصاص.\n"
 "انقر بزر الفأرة الأيمن لمسح التحديد."
 
 #: exiv2extractor.cpp:71 qml/PlacesPage.qml:31
@@ -1192,7 +1192,7 @@ msgstr "الأصغر أوّلًا"
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr "الأقدم أولاً"
+msgstr "الأقدم أولًا"
 
 #: qml/gallery/GalleryPage.qml:221
 #, kde-format
@@ -1222,7 +1222,7 @@ msgstr "الأضخم أوّلًا"
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr "الأحدث أولاً"
+msgstr "الأحدث أولًا"
 
 #: qml/gallery/GalleryPage.qml:243
 #, kde-format
