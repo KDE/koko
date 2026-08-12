@@ -444,36 +444,25 @@ Kirigami.Page {
                 }
                 Controls.Popup {
                     id: adjustPopup
-                    function round2Decimals(num: real): real {
-                        return Math.round(num * 100) / 100;
+                    // num must be -1 to 1
+                    function invCurve(num: real): real {
+                        return Math.pow(Math.abs(num), 1 / (gammaSlider.defaultGamma || 2)) * Math.sign(num);
                     }
-                    function floatToSpinBoxInt(num: real): int {
-                        return Math.round(num * 100);
-                    }
-                    function spinBoxIntToFloat(num: int): real {
-                        return adjustPopup.round2Decimals(num / 100);
-                    }
-                    function displayFloat(num: real): string {
-                        // -128 is QLocale::FloatingPointShortest
-                        return Number(num).toLocaleString(gammaSlider.locale, 'f', -128);
+                    // num must be -1 to 1
+                    function curve(num: real): real {
+                        return Math.pow(Math.abs(num), (gammaSlider.defaultGamma || 2)) * Math.sign(num);
                     }
                     function resetColorMatrix(): void {
                         imageView.colorEffect.colorMatrix = Qt.matrix4x4();
                         // reset brightness
                         brightnessSlider.brightness = Qt.binding(() => brightnessSlider.defaultBrightness);
-                        brightnessSlider.value = Qt.binding(() => brightnessSlider.brightness);
-                        brightnessSpinBox.value = Qt.binding(() => floatToSpinBoxInt(brightnessSlider.brightness));
                         // reset contrast
                         contrastSlider.contrast = Qt.binding(() => contrastSlider.defaultContrast);
-                        contrastSlider.value = Qt.binding(() => contrastSlider.contrast);
-                        contrastSpinBox.value = Qt.binding(() => floatToSpinBoxInt(contrastSlider.contrast));
                     }
                     function resetGamma(): void {
                         // reset gamma
                         imageView.colorEffect.gamma = 0;
                         gammaSlider.gamma = Qt.binding(() => gammaSlider.defaultGamma);
-                        gammaSlider.value = Qt.binding(() => gammaSlider.gamma);
-                        gammaSpinBox.value = Qt.binding(() => floatToSpinBoxInt(gammaSlider.gamma));
                     }
                     function reset(): void {
                         resetColorMatrix();
@@ -530,14 +519,24 @@ Kirigami.Page {
                             // impractical to try to track absolute brightness
                             readonly property real defaultBrightness: 0
                             property real brightness: defaultBrightness
+                            function formatNumber(num: real): string {
+                                const string = Math.round(num * 100).toLocaleString(locale, 'f', 0);
+                                return (num > 0 ? '+' + string : string) + locale.percent;
+                            }
+                            function valueForBrightness(brightness: real): real {
+                                return adjustPopup.invCurve(brightness);
+                            }
+                            function brightnessForValue(value: real): real {
+                                return adjustPopup.curve(value);
+                            }
                             focus: true
                             Layout.fillWidth: true
                             from: -1
                             to: 1
-                            stepSize: 0.1
-                            value: brightness
+                            stepSize: 0.01
+                            value: valueForBrightness(brightness)
                             onMoved: {
-                                brightness = value;
+                                brightness = brightnessForValue(value);
                                 adjustmentTimer.restart();
                             }
                             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -552,45 +551,48 @@ Kirigami.Page {
                                 anchors.right: parent.right
                                 spacing: parent.spacing
                                 Controls.Label {
-                                    text: adjustPopup.displayFloat(brightnessSlider.from);
+                                    text: brightnessSlider.formatNumber(brightnessSlider.from);
                                     horizontalAlignment: Text.AlignLeft
                                 }
                                 Controls.Label {
                                     Layout.fillWidth: true
-                                    text: adjustPopup.displayFloat(adjustPopup.round2Decimals((brightnessSlider.to - brightnessSlider.from)/2));
+                                    text: brightnessSlider.formatNumber(0)
                                     horizontalAlignment: Text.AlignHCenter
                                 }
                                 Controls.Label {
-                                    text: adjustPopup.displayFloat(brightnessSlider.to);
+                                    text: brightnessSlider.formatNumber(brightnessSlider.to);
                                     horizontalAlignment: Text.AlignRight
                                 }
                             }
                         }
                         EditorSpinBox {
                             id: brightnessSpinBox
+                            readonly property real valueScale: 100
                             enabled: brightnessSlider.enabled
                             focus: true
                             Accessible.name: i18nc("@info:tooltip color brightness spinbox", "Brightness")
                             Controls.ToolTip.text: Accessible.name
-                            from: adjustPopup.floatToSpinBoxInt(brightnessSlider.from)
-                            to: adjustPopup.floatToSpinBoxInt(brightnessSlider.to)
-                            stepSize: adjustPopup.floatToSpinBoxInt(brightnessSlider.stepSize)
-                            value: adjustPopup.floatToSpinBoxInt(brightnessSlider.brightness)
+                            from: Math.round(brightnessSlider.from * valueScale)
+                            to: Math.round(brightnessSlider.to * valueScale)
+                            stepSize: Math.round(brightnessSlider.stepSize * valueScale)
+                            value: Math.round(brightnessSlider.value * valueScale)
                             wheelEnabled: false
                             textFromValue: (value, locale) => {
-                                return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                                const string = Number(brightnessSlider.brightnessForValue(value / valueScale) * valueScale).toLocaleString(locale, 'f', 2);
+                                return value > 0 ? '+' + string : string;
                             }
                             valueFromText: (text, locale) => {
-                                return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                                return Math.round(brightnessSlider.valueForBrightness(Number.fromLocaleString(locale, text) / valueScale) * valueScale);
                             }
-                            Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                            Layout.fillWidth: true
+                            Layout.minimumWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
                             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
                             validator: IntValidator {
                                 bottom: brightnessSpinBox.from
                                 top: brightnessSpinBox.to
                             }
                             onValueModified: {
-                                brightnessSlider.brightness = adjustPopup.spinBoxIntToFloat(value);
+                                brightnessSlider.brightness = brightnessSlider.brightnessForValue(value / valueScale);
                                 adjustmentTimer.restart();
                             }
                         }
@@ -604,14 +606,27 @@ Kirigami.Page {
                             // impractical to try to track absolute contrast
                             readonly property real defaultContrast: 1
                             property real contrast: defaultContrast
+                            // A scale would be more semantically appropriate,
+                            // but an offset is easier to work with when the
+                            // effective range is 0-2x.
+                            readonly property real valueOffset: -1
+                            function formatNumber(num: real): string {
+                                return Math.round(num * 100).toLocaleString(locale, 'f', 0) + locale.percent;
+                            }
+                            function valueForContrast(contrast: real): real {
+                                return adjustPopup.invCurve(contrast + contrastSlider.valueOffset)
+                            }
+                            function contrastForValue(value: real): real {
+                                return adjustPopup.curve(value) - contrastSlider.valueOffset
+                            }
                             focus: true
                             Layout.fillWidth: true
-                            from: 0
-                            to: 2
-                            stepSize: 0.1
-                            value: contrast
+                            from: 0 + valueOffset
+                            to: 2 + valueOffset
+                            stepSize: 0.01
+                            value: valueForContrast(contrast)
                             onMoved: {
-                                contrast = value;
+                                contrast = contrastForValue(value);
                                 adjustmentTimer.restart();
                             }
                             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -626,45 +641,47 @@ Kirigami.Page {
                                 anchors.right: parent.right
                                 spacing: parent.spacing
                                 Controls.Label {
-                                    text: adjustPopup.displayFloat(contrastSlider.from);
+                                    text: contrastSlider.formatNumber(contrastSlider.contrastForValue(contrastSlider.from));
                                     horizontalAlignment: Text.AlignLeft
                                 }
                                 Controls.Label {
                                     Layout.fillWidth: true
-                                    text: adjustPopup.displayFloat(adjustPopup.round2Decimals((contrastSlider.to - contrastSlider.from)/2));
+                                    text: contrastSlider.formatNumber((contrastSlider.contrastForValue(contrastSlider.to) + contrastSlider.contrastForValue(contrastSlider.from)) / 2);
                                     horizontalAlignment: Text.AlignHCenter
                                 }
                                 Controls.Label {
-                                    text: adjustPopup.displayFloat(contrastSlider.to);
+                                    text: contrastSlider.formatNumber(contrastSlider.contrastForValue(contrastSlider.to));
                                     horizontalAlignment: Text.AlignRight
                                 }
                             }
                         }
                         EditorSpinBox {
                             id: contrastSpinBox
+                            readonly property real valueScale: 100
                             enabled: contrastSlider.enabled
                             focus: true
                             Accessible.name: i18nc("@info:tooltip color contrast spinbox", "Contrast")
                             Controls.ToolTip.text: Accessible.name
-                            from: adjustPopup.floatToSpinBoxInt(contrastSlider.from)
-                            to: adjustPopup.floatToSpinBoxInt(contrastSlider.to)
-                            stepSize: adjustPopup.floatToSpinBoxInt(contrastSlider.stepSize)
-                            value: adjustPopup.floatToSpinBoxInt(contrastSlider.contrast)
+                            from: Math.round(contrastSlider.from * valueScale)
+                            to: Math.round(contrastSlider.to * valueScale)
+                            stepSize: Math.round(contrastSlider.stepSize * valueScale)
+                            value: Math.round(contrastSlider.value * valueScale)
                             wheelEnabled: false
                             textFromValue: (value, locale) => {
-                                return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                                return Math.round(contrastSlider.contrastForValue(value / valueScale) * valueScale).toLocaleString(locale, 'f', 2);
                             }
                             valueFromText: (text, locale) => {
-                                return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                                return Math.round(contrastSlider.valueForContrast(Number.fromLocaleString(locale, text) / valueScale) * valueScale);
                             }
-                            Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                            Layout.fillWidth: true
+                            Layout.minimumWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
                             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
                             validator: IntValidator {
                                 bottom: contrastSpinBox.from
                                 top: contrastSpinBox.to
                             }
                             onValueModified: {
-                                contrastSlider.contrast = adjustPopup.spinBoxIntToFloat(value);
+                                contrastSlider.contrast = contrastSlider.contrastForValue(value / valueScale);
                                 adjustmentTimer.restart();
                             }
                         }
@@ -676,11 +693,15 @@ Kirigami.Page {
                             id: gammaSlider
                             readonly property real defaultGamma: imageView.colorEffect.sourceColorSpace.gamma
                             property real gamma: defaultGamma
+                            function formatNumber(num: real): string {
+                                // -128 is QLocale::FloatingPointShortest
+                                return (Math.round(num * 100) / 100).toLocaleString(locale, 'f', -128);
+                            }
                             focus: true
                             Layout.fillWidth: true
-                            from: Math.min(0.2, imageView.colorEffect.sourceColorSpace.gamma)
-                            to: Math.max(4.2, imageView.colorEffect.sourceColorSpace.gamma)
-                            stepSize: 0.1
+                            from: Math.min(0.2, defaultGamma)
+                            to: Math.max(4.2, defaultGamma)
+                            stepSize: 0.01
                             value: gamma
                             onMoved: {
                                 gamma = value;
@@ -698,47 +719,49 @@ Kirigami.Page {
                                 anchors.right: parent.right
                                 spacing: parent.spacing
                                 Controls.Label {
-                                    text: adjustPopup.displayFloat(gammaSlider.from);
+                                    text: gammaSlider.formatNumber(gammaSlider.from)
                                     horizontalAlignment: Text.AlignLeft
                                 }
                                 Controls.Label {
                                     Layout.fillWidth: true
-                                    text: adjustPopup.displayFloat(adjustPopup.round2Decimals((gammaSlider.to + gammaSlider.from) / 2.0));
+                                    text: gammaSlider.formatNumber((gammaSlider.to + gammaSlider.from) / 2.0)
                                     horizontalAlignment: Text.AlignHCenter
                                 }
                                 Controls.Label {
-                                    text: adjustPopup.displayFloat(gammaSlider.to);
+                                    text: gammaSlider.formatNumber(gammaSlider.to)
                                     horizontalAlignment: Text.AlignRight
                                 }
                             }
                         }
                         EditorSpinBox {
                             id: gammaSpinBox
+                            readonly property real valueScale: 100
                             // gamma is absolute because we have a way to track
                             // absolute gamma.
                             enabled: gammaSlider.enabled
                             focus: true
                             Accessible.name: i18nc("@info:tooltip colorspace gamma spinbox", "Gamma")
                             Controls.ToolTip.text: Accessible.name
-                            from: adjustPopup.floatToSpinBoxInt(gammaSlider.from)
-                            to: adjustPopup.floatToSpinBoxInt(gammaSlider.to)
-                            stepSize: adjustPopup.floatToSpinBoxInt(gammaSlider.stepSize)
-                            value: adjustPopup.floatToSpinBoxInt(imageView.colorEffect.gamma || imageView.colorEffect.sourceColorSpace.gamma)
+                            from: Math.round(gammaSlider.from * valueScale)
+                            to: Math.round(gammaSlider.to * valueScale)
+                            stepSize: Math.round(gammaSlider.stepSize * valueScale)
+                            value: Math.round(gammaSlider.value * valueScale)
                             wheelEnabled: false
                             textFromValue: (value, locale) => {
-                                return adjustPopup.displayFloat(adjustPopup.spinBoxIntToFloat(value));
+                                return Number(value / valueScale).toLocaleString(locale, 'f', 2);
                             }
                             valueFromText: (text, locale) => {
-                                return adjustPopup.floatToSpinBoxInt(Number.fromLocaleString(locale, text));
+                                return Math.round(Number.fromLocaleString(locale, text) * valueScale);
                             }
-                            Layout.preferredWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
+                            Layout.fillWidth: true
+                            Layout.minimumWidth: Math.max(implicitWidth, leftPadding + implicitContentHeight * 2 + rightPadding)
                             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
                             validator: IntValidator {
                                 bottom: gammaSpinBox.from
                                 top: gammaSpinBox.to
                             }
                             onValueModified: {
-                                gammaSlider.gamma = adjustPopup.spinBoxIntToFloat(value);
+                                gammaSlider.gamma = value / valueScale;
                                 adjustmentTimer.restart();
                             }
                         }
