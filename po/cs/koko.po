@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:43+0000\n"
+"POT-Creation-Date: 2026-08-12 00:43+0000\n"
 "PO-Revision-Date: 2026-08-02 11:22+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -409,13 +409,13 @@ msgstr ""
 "Obrázek <filename>%1</filename> byl upraven. Chcete uložit změny nebo je "
 "zrušit?"
 
-#: editor/EditorView.qml:36
+#: editor/EditorView.qml:37
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Upravit <filename>%1</filename>"
 
-#: editor/EditorView.qml:46 editor/EditorView.qml:537
+#: editor/EditorView.qml:47 editor/EditorView.qml:536
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -425,145 +425,115 @@ msgstr ""
 "Nelze uložit soubor. Zkontrolujte, zda máte správná oprávnění k uložení "
 "tohoto souboru."
 
-#: editor/EditorView.qml:112
-#, kde-format
-msgctxt "@action:intoolbar crop image tool"
-msgid "Crop"
-msgstr "Oříznout"
-
-#: editor/EditorView.qml:132
+#: editor/EditorView.qml:133
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Změnit velikost"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:177
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Změnit velikost podle:"
 
-#: editor/EditorView.qml:187
+#: editor/EditorView.qml:188
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Pixely"
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:195
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Procentní podíl"
 
-#: editor/EditorView.qml:205
+#: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Šířka"
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:258
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Výška"
 
-#: editor/EditorView.qml:278
+#: editor/EditorView.qml:279
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Zachovat poměr stran"
 
-#: editor/EditorView.qml:282
+#: editor/EditorView.qml:283
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Původní velikost souboru: %1"
 
-#: editor/EditorView.qml:310
+#: editor/EditorView.qml:311
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Odhadovaná velikost souboru: %1"
 
-#: editor/EditorView.qml:317
+#: editor/EditorView.qml:318
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Obnovit"
 
-#: editor/EditorView.qml:328
+#: editor/EditorView.qml:329
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Změnit velikost"
 
-#: editor/EditorView.qml:378
+#: editor/EditorView.qml:379
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Otočit"
 
-#: editor/EditorView.qml:382
-#, kde-format
-msgctxt "@action:button Rotate an image to the left"
-msgid "Rotate Left"
-msgstr "Otočit vlevo"
-
-#: editor/EditorView.qml:393
-#, kde-format
-msgctxt "@action:button Rotate an image to the right"
-msgid "Rotate Right"
-msgstr "Otočit vpravo"
-
-#: editor/EditorView.qml:405
+#: editor/EditorView.qml:404
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Převrátit"
 
-#: editor/EditorView.qml:409
-#, kde-format
-msgctxt "@action:button Flip/mirror an image horizontally"
-msgid "Flip Horizontally"
-msgstr "Převrátit vodorovně"
-
-#: editor/EditorView.qml:420
-#, kde-format
-msgctxt "@action:button Flip/mirror an image vertically"
-msgid "Flip Vertically"
-msgstr "Převrátit svisle"
-
-#: editor/EditorView.qml:435
+#: editor/EditorView.qml:434
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Zpět"
 
-#: editor/EditorView.qml:443
+#: editor/EditorView.qml:442
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Znovu"
 
-#: editor/EditorView.qml:457
+#: editor/EditorView.qml:456
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Uložit"
 
-#: editor/EditorView.qml:465
+#: editor/EditorView.qml:464
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Uložit jako"
 
-#: editor/EditorView.qml:595
+#: editor/EditorView.qml:594
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Zvětšení:"
 
-#: editor/EditorView.qml:610
+#: editor/EditorView.qml:609
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -1053,29 +1023,65 @@ msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Oblíbené"
 
-#: qml/ActionCollection.qml:108
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Otevřít odpovídající složku"
 
-#: qml/ActionCollection.qml:113
+#: qml/ActionCollection.qml:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "&Otevřít pomocí…"
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopírovat umístění"
 
-#: qml/ActionCollection.qml:144
+#: qml/ActionCollection.qml:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&Vlastnosti"
+
+#: qml/ActionCollection.qml:153
+#, kde-format
+msgctxt "Actions category"
+msgid "Edit mode actions"
+msgstr ""
+
+#: qml/ActionCollection.qml:157
+#, kde-format
+msgctxt "@action:intoolbar crop image tool"
+msgid "Crop"
+msgstr "Oříznout"
+
+#: qml/ActionCollection.qml:163
+#, kde-format
+msgctxt "@action:button Rotate an image to the left"
+msgid "Rotate Left"
+msgstr "Otočit vlevo"
+
+#: qml/ActionCollection.qml:169
+#, kde-format
+msgctxt "@action:button Rotate an image to the right"
+msgid "Rotate Right"
+msgstr "Otočit vpravo"
+
+#: qml/ActionCollection.qml:175
+#, kde-format
+msgctxt "@action:button Flip/mirror an image horizontally"
+msgid "Flip Horizontally"
+msgstr "Převrátit vodorovně"
+
+#: qml/ActionCollection.qml:181
+#, kde-format
+msgctxt "@action:button Flip/mirror an image vertically"
+msgid "Flip Vertically"
+msgstr "Převrátit svisle"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
 #, kde-format

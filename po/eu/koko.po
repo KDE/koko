@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:43+0000\n"
+"POT-Creation-Date: 2026-08-12 00:43+0000\n"
 "PO-Revision-Date: 2026-04-02 00:59+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -407,13 +407,13 @@ msgstr ""
 "<filename>%1</filename> irudia aldatu egin da. Zure aldaketa gorde edo "
 "baztertu nahi dituzu?"
 
-#: editor/EditorView.qml:36
+#: editor/EditorView.qml:37
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Editatu <filename>%1</filename>"
 
-#: editor/EditorView.qml:46 editor/EditorView.qml:537
+#: editor/EditorView.qml:47 editor/EditorView.qml:536
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -423,145 +423,115 @@ msgstr ""
 "Ezin du fitxategia gorde. Egiaztatu fitxategi hau gordetzeko baimen egokiak "
 "dituzun."
 
-#: editor/EditorView.qml:112
-#, kde-format
-msgctxt "@action:intoolbar crop image tool"
-msgid "Crop"
-msgstr "Moztu"
-
-#: editor/EditorView.qml:132
+#: editor/EditorView.qml:133
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Neurria aldatu"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:177
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Honen arabera neurria aldatu:"
 
-#: editor/EditorView.qml:187
+#: editor/EditorView.qml:188
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Pixelak"
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:195
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Ehuneko"
 
-#: editor/EditorView.qml:205
+#: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Zabalera"
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:258
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Altuera"
 
-#: editor/EditorView.qml:278
+#: editor/EditorView.qml:279
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Mantendu itxura-proportzioa"
 
-#: editor/EditorView.qml:282
+#: editor/EditorView.qml:283
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Jatorrizko fitxategiaren neurria: %1"
 
-#: editor/EditorView.qml:310
+#: editor/EditorView.qml:311
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Estimatutako fitxategi-neurria: %1"
 
-#: editor/EditorView.qml:317
+#: editor/EditorView.qml:318
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Berrezarri"
 
-#: editor/EditorView.qml:328
+#: editor/EditorView.qml:329
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Neurria aldatu"
 
-#: editor/EditorView.qml:378
+#: editor/EditorView.qml:379
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Biratu"
 
-#: editor/EditorView.qml:382
-#, kde-format
-msgctxt "@action:button Rotate an image to the left"
-msgid "Rotate Left"
-msgstr "Biratu ezkerrera"
-
-#: editor/EditorView.qml:393
-#, kde-format
-msgctxt "@action:button Rotate an image to the right"
-msgid "Rotate Right"
-msgstr "Biratu eskuinera"
-
-#: editor/EditorView.qml:405
+#: editor/EditorView.qml:404
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Irauli"
 
-#: editor/EditorView.qml:409
-#, kde-format
-msgctxt "@action:button Flip/mirror an image horizontally"
-msgid "Flip Horizontally"
-msgstr "Irauli horizontalki"
-
-#: editor/EditorView.qml:420
-#, kde-format
-msgctxt "@action:button Flip/mirror an image vertically"
-msgid "Flip Vertically"
-msgstr "Irauli bertikalki"
-
-#: editor/EditorView.qml:435
+#: editor/EditorView.qml:434
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Desegin"
 
-#: editor/EditorView.qml:443
+#: editor/EditorView.qml:442
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Berregin"
 
-#: editor/EditorView.qml:457
+#: editor/EditorView.qml:456
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Gorde"
 
-#: editor/EditorView.qml:465
+#: editor/EditorView.qml:464
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Gorde honela"
 
-#: editor/EditorView.qml:595
+#: editor/EditorView.qml:594
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Zoom:"
 
-#: editor/EditorView.qml:610
+#: editor/EditorView.qml:609
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -1073,30 +1043,66 @@ msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Gogokoa"
 
-#: qml/ActionCollection.qml:108
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Ireki hau barnean duen karpeta"
 
-#: qml/ActionCollection.qml:113
+#: qml/ActionCollection.qml:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "Ireki &honekin…"
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopiatu kokalekua"
 
-#: qml/ActionCollection.qml:144
+#: qml/ActionCollection.qml:145
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "Propietateak"
+
+#: qml/ActionCollection.qml:153
+#, kde-format
+msgctxt "Actions category"
+msgid "Edit mode actions"
+msgstr ""
+
+#: qml/ActionCollection.qml:157
+#, kde-format
+msgctxt "@action:intoolbar crop image tool"
+msgid "Crop"
+msgstr "Moztu"
+
+#: qml/ActionCollection.qml:163
+#, kde-format
+msgctxt "@action:button Rotate an image to the left"
+msgid "Rotate Left"
+msgstr "Biratu ezkerrera"
+
+#: qml/ActionCollection.qml:169
+#, kde-format
+msgctxt "@action:button Rotate an image to the right"
+msgid "Rotate Right"
+msgstr "Biratu eskuinera"
+
+#: qml/ActionCollection.qml:175
+#, kde-format
+msgctxt "@action:button Flip/mirror an image horizontally"
+msgid "Flip Horizontally"
+msgstr "Irauli horizontalki"
+
+#: qml/ActionCollection.qml:181
+#, kde-format
+msgctxt "@action:button Flip/mirror an image vertically"
+msgid "Flip Vertically"
+msgstr "Irauli bertikalki"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
 #, kde-format

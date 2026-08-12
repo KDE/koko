@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:43+0000\n"
+"POT-Creation-Date: 2026-08-12 00:43+0000\n"
 "PO-Revision-Date: 2026-08-02 06:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -405,13 +405,13 @@ msgstr ""
 "გამოსახულება <filename>%1</filename> შეიცვალა. გნებავთ, შეინახოთ თქვენი "
 "ცვლილებები, თუ მოვაცილო ისინი?"
 
-#: editor/EditorView.qml:36
+#: editor/EditorView.qml:37
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "<filename>%1</filename>-ის ჩასწორება"
 
-#: editor/EditorView.qml:46 editor/EditorView.qml:537
+#: editor/EditorView.qml:47 editor/EditorView.qml:536
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -419,145 +419,115 @@ msgid ""
 "file."
 msgstr "ფაილის შენახვის შეცდომა. შეამოწმეთ, გაქვთ თუ არა ჩაწერის უფლება."
 
-#: editor/EditorView.qml:112
-#, kde-format
-msgctxt "@action:intoolbar crop image tool"
-msgid "Crop"
-msgstr "ამოჭრა"
-
-#: editor/EditorView.qml:132
+#: editor/EditorView.qml:133
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "ზომის შეცვლა"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:177
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "ზომის შეცვლის პირობა:"
 
-#: editor/EditorView.qml:187
+#: editor/EditorView.qml:188
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "პიქსელი"
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:195
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "პროცენტი"
 
-#: editor/EditorView.qml:205
+#: editor/EditorView.qml:206
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "სიგანე"
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:258
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "სიმაღლე"
 
-#: editor/EditorView.qml:278
+#: editor/EditorView.qml:279
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "ფარდობის შენარჩუნება"
 
-#: editor/EditorView.qml:282
+#: editor/EditorView.qml:283
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "ორიგინალი ფაილის ზომა: %1"
 
-#: editor/EditorView.qml:310
+#: editor/EditorView.qml:311
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "დაახლოებითი ფაილის ზომა: %1"
 
-#: editor/EditorView.qml:317
+#: editor/EditorView.qml:318
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "ჩამოყრა"
 
-#: editor/EditorView.qml:328
+#: editor/EditorView.qml:329
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "ზომის შეცვლა"
 
-#: editor/EditorView.qml:378
+#: editor/EditorView.qml:379
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "შემობრუნება"
 
-#: editor/EditorView.qml:382
-#, kde-format
-msgctxt "@action:button Rotate an image to the left"
-msgid "Rotate Left"
-msgstr "მარცხნივ შებრუნება"
-
-#: editor/EditorView.qml:393
-#, kde-format
-msgctxt "@action:button Rotate an image to the right"
-msgid "Rotate Right"
-msgstr "მარჯვნივ შებრუნება"
-
-#: editor/EditorView.qml:405
+#: editor/EditorView.qml:404
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "გადაბრუნება"
 
-#: editor/EditorView.qml:409
-#, kde-format
-msgctxt "@action:button Flip/mirror an image horizontally"
-msgid "Flip Horizontally"
-msgstr "ჰორიზონტალურად გადაბრუნება"
-
-#: editor/EditorView.qml:420
-#, kde-format
-msgctxt "@action:button Flip/mirror an image vertically"
-msgid "Flip Vertically"
-msgstr "ვერტიკალურად გადაბრუნება"
-
-#: editor/EditorView.qml:435
+#: editor/EditorView.qml:434
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "გაუქმება"
 
-#: editor/EditorView.qml:443
+#: editor/EditorView.qml:442
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "გამეორება"
 
-#: editor/EditorView.qml:457
+#: editor/EditorView.qml:456
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "შენახვა"
 
-#: editor/EditorView.qml:465
+#: editor/EditorView.qml:464
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "შენახვა, როგორც"
 
-#: editor/EditorView.qml:595
+#: editor/EditorView.qml:594
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "მასშტაბი:"
 
-#: editor/EditorView.qml:610
+#: editor/EditorView.qml:609
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
@@ -1047,29 +1017,65 @@ msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "რჩეული"
 
-#: qml/ActionCollection.qml:108
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "შემცველი საქაღალდის გახსნა"
 
-#: qml/ActionCollection.qml:113
+#: qml/ActionCollection.qml:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "&გამხსნელი პროგრამა…"
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:125
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "მდებარეობის კოპირება"
 
-#: qml/ActionCollection.qml:144
+#: qml/ActionCollection.qml:145
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&თვისებები"
+
+#: qml/ActionCollection.qml:153
+#, kde-format
+msgctxt "Actions category"
+msgid "Edit mode actions"
+msgstr ""
+
+#: qml/ActionCollection.qml:157
+#, kde-format
+msgctxt "@action:intoolbar crop image tool"
+msgid "Crop"
+msgstr "ამოჭრა"
+
+#: qml/ActionCollection.qml:163
+#, kde-format
+msgctxt "@action:button Rotate an image to the left"
+msgid "Rotate Left"
+msgstr "მარცხნივ შებრუნება"
+
+#: qml/ActionCollection.qml:169
+#, kde-format
+msgctxt "@action:button Rotate an image to the right"
+msgid "Rotate Right"
+msgstr "მარჯვნივ შებრუნება"
+
+#: qml/ActionCollection.qml:175
+#, kde-format
+msgctxt "@action:button Flip/mirror an image horizontally"
+msgid "Flip Horizontally"
+msgstr "ჰორიზონტალურად გადაბრუნება"
+
+#: qml/ActionCollection.qml:181
+#, kde-format
+msgctxt "@action:button Flip/mirror an image vertically"
+msgid "Flip Vertically"
+msgstr "ვერტიკალურად გადაბრუნება"
 
 #: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
 #, kde-format
