@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-12 00:43+0000\n"
-"PO-Revision-Date: 2026-08-02 20:36+0300\n"
+"PO-Revision-Date: 2026-08-12 08:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1046,7 +1046,7 @@ msgstr "Ö&zellikler"
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Kip Eylemlerini Düzenle"
 
 #: qml/ActionCollection.qml:157
 #, kde-format

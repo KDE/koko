@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-12 00:43+0000\n"
-"PO-Revision-Date: 2026-08-02 07:35+0200\n"
+"PO-Revision-Date: 2026-08-12 12:41+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1053,7 +1053,7 @@ msgstr "Lastnosti"
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Dejanja v načinu urejanja"
 
 #: qml/ActionCollection.qml:157
 #, kde-format

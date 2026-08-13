@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-12 00:43+0000\n"
-"PO-Revision-Date: 2026-08-02 11:22+0200\n"
+"PO-Revision-Date: 2026-08-12 11:22+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1051,7 +1051,7 @@ msgstr "&Vlastnosti"
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Upravit činnosti režimu"
 
 #: qml/ActionCollection.qml:157
 #, kde-format
