@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:43+0000\n"
+"POT-Creation-Date: 2026-08-14 00:42+0000\n"
 "PO-Revision-Date: 2026-05-31 19:10-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -1110,7 +1110,7 @@ msgstr[0] "%1 تۈر"
 #, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
-msgid_plural "%1 item moved to trash"
+msgid_plural "%1 items moved to trash"
 msgstr[0] ""
 
 #: qml/gallery/GalleryPage.qml:183

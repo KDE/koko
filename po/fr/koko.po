@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:43+0000\n"
+"POT-Creation-Date: 2026-08-14 00:42+0000\n"
 "PO-Revision-Date: 2026-08-03 09:33+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -1110,10 +1110,13 @@ msgstr[0] "1 élément"
 msgstr[1] "%1 éléments"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid "%1 item moved to trash"
+#| msgid_plural "%1 item moved to trash"
 msgctxt "@info"
 msgid "%1 item moved to trash"
-msgid_plural "%1 item moved to trash"
+msgid_plural "%1 items moved to trash"
 msgstr[0] "L'élément %1 a été déplacé vers la corbeille"
 msgstr[1] "%1 éléments ont été déplacés vers la corbeille"
 

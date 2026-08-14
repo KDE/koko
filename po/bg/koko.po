@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-12 00:43+0000\n"
-"PO-Revision-Date: 2026-07-22 15:16+0200\n"
+"POT-Creation-Date: 2026-08-14 00:42+0000\n"
+"PO-Revision-Date: 2026-08-13 08:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1048,7 +1048,7 @@ msgstr "&Свойства"
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Действия в режим на редактиране"
 
 #: qml/ActionCollection.qml:157
 #, kde-format
@@ -1112,18 +1112,17 @@ msgstr[1] "%1 елемента"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
 #, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to the trash"
+#| msgctxt "@info"
+#| msgid "%1 item moved to trash"
+#| msgid_plural "%1 item moved to trash"
 msgctxt "@info"
 msgid "%1 item moved to trash"
-msgid_plural "%1 item moved to trash"
-msgstr[0] "Отиване до Кошче"
-msgstr[1] "Отиване до Кошче"
+msgid_plural "%1 items moved to trash"
+msgstr[0] "%1 елемент е преместен в кошчето"
+msgstr[1] "%1 елемента са преместени в кошчето"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Отмяна"
@@ -1463,9 +1462,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Отмяна"
