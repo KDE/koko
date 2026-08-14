@@ -138,7 +138,11 @@ void NavigationActions::updateSavedFolders()
 
     for (const auto &folder : m_savedFolderNames) {
         if (!newSavedFoldersSet.contains(folder)) {
-            coll->removeAction(folder);
+            // Can't remove it in 26.08 due to gear dep freeze requiring older kirigami-app-components
+            // Just keep it around and re-use later (because it'll still exist with that name)
+            auto placeAction = coll->action(folder);
+            placeAction->setEnabled(false);
+            placeAction->setVisible(false);
         }
     }
     m_savedFolderNames.clear();
@@ -155,7 +159,15 @@ void NavigationActions::updateSavedFolders()
         }
         text = text.split(u'/').constLast();
 
-        auto placeAction = coll->createAction(normalizedFolder, KIO::iconNameForUrl(normalizedFolder), text);
+        QAction *placeAction = nullptr;
+        if (placeAction = coll->action(normalizedFolder); placeAction != nullptr) {
+            placeAction->setEnabled(true);
+            placeAction->setVisible(true);
+            // Updating icon/text should be unnecessary, and updating icon is not possible with API
+        } else {
+            placeAction = coll->createAction(normalizedFolder, KIO::iconNameForUrl(normalizedFolder), text);
+        }
+
         placeAction->setCheckable(true);
         placeAction->setActionGroup(m_pagesGroup);
 
