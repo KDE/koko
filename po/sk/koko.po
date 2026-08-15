@@ -1751,7 +1751,7 @@ msgstr "Čierne"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Sivá"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
