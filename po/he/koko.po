@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-14 00:42+0000\n"
-"PO-Revision-Date: 2026-08-12 08:46+0300\n"
+"PO-Revision-Date: 2026-08-14 09:58+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1116,10 +1116,7 @@ msgstr[2] "%1 פריטים"
 msgstr[3] "%1 פריטים"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "%1 item moved to trash"
-#| msgid_plural "%1 item moved to trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 items moved to trash"

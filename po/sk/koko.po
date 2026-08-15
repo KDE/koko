@@ -1009,12 +1009,10 @@ msgid "Exit Full Screen"
 msgstr "Ukončiť režim celej obrazovky"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Meno súboru"
+msgstr "Súbor"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1044,13 +1042,13 @@ msgstr "Kopírovať umiestnenie"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "&Vlastnosti"
 
 #: qml/ActionCollection.qml:153
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Akcie režimu úprav"
 
 #: qml/ActionCollection.qml:157
 #, kde-format
@@ -1114,20 +1112,16 @@ msgstr[1] "%1 položky"
 msgstr[2] "%1 položiek"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to the trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 items moved to trash"
-msgstr[0] "Navigovať do koša"
-msgstr[1] "Navigovať do koša"
-msgstr[2] "Navigovať do koša"
+msgstr[0] "%1 položka presunutá do koša"
+msgstr[1] "%1 položky presunuté do koša"
+msgstr[2] "%1 položiek presunutých do koša"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Späť"
@@ -1470,9 +1464,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Späť"
@@ -1798,7 +1790,7 @@ msgstr "Čierne"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Sivá"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
