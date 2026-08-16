@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-14 00:42+0000\n"
-"PO-Revision-Date: 2026-03-16 17:42+0100\n"
+"PO-Revision-Date: 2026-08-13 12:57+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -437,12 +437,10 @@ msgid "Resize by:"
 msgstr "Größe ändern"
 
 #: editor/EditorView.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "Verpixeln"
+msgstr "Pixel"
 
 #: editor/EditorView.qml:195
 #, kde-format
@@ -454,48 +452,40 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Breite"
 
 #: editor/EditorView.qml:258
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "Breite:Höhe"
+msgstr "Höhe"
 
 #: editor/EditorView.qml:279
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "Seitenverhältnis:"
+msgstr "Seitenverhältnis beibehalten"
 
 #: editor/EditorView.qml:283
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Ursprüngliche Dateigröße: %1"
 
 #: editor/EditorView.qml:311
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Geschätzte Dateigröße: %1"
 
 #: editor/EditorView.qml:318
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
 #: editor/EditorView.qml:329
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Größe ändern"
@@ -723,7 +713,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:98
 #, kde-format
@@ -819,12 +809,10 @@ msgid "Times"
 msgstr "Zeit"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Zu Videos gehen"
+msgstr "Navigation"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -912,7 +900,7 @@ msgstr "Geteilte URL für das Bild ist <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr ""
+msgstr "Galerie"
 
 #: qml/ActionCollection.qml:24
 #, kde-format
@@ -942,11 +930,10 @@ msgstr "Auswahl aller Medien umkehren"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "Medienansicht"
 
 #: qml/ActionCollection.qml:46
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -958,25 +945,19 @@ msgid "Edit this image"
 msgstr "Dieses Bild bearbeiten"
 
 #: qml/ActionCollection.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Teilen"
 
 #: qml/ActionCollection.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "&Information"
+msgstr "Info"
 
 #: qml/ActionCollection.qml:65
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Diaschau"
@@ -988,21 +969,16 @@ msgid "Start slideshow"
 msgstr "Diaschau starten"
 
 #: qml/ActionCollection.qml:71
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "&Bedienelemente anzeigen"
+msgstr "Bedienelemente anzeigen"
 
 #: qml/ActionCollection.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "&Vorschaubild-Werkzeugleiste anzeigen"
+msgstr "Vorschaubild-Werkzeugleiste anzeigen"
 
 #: qml/ActionCollection.qml:77
 #, kde-format
@@ -1017,12 +993,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Vorschaubild-Werkzeugleiste ausblenden"
 
 #: qml/ActionCollection.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "&Vollbild"
+msgstr "Vollbild"
 
 #: qml/ActionCollection.qml:86
 #, kde-format
@@ -1037,12 +1011,10 @@ msgid "Exit Full Screen"
 msgstr "Vollbildmodus beenden"
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Dateigröße"
+msgstr "Datei"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
@@ -1072,7 +1044,7 @@ msgstr "Ort kopieren"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "&Eigenschaften"
 
 #: qml/ActionCollection.qml:153
 #, kde-format
@@ -1151,9 +1123,7 @@ msgstr[0] "In den Papierkorb verschieben"
 msgstr[1] "In den Papierkorb verschieben"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Rückgängig"
@@ -1315,12 +1285,10 @@ msgid "Share the selected media"
 msgstr "Ausgewählte Medien teilen"
 
 #: qml/gallery/GalleryPage.qml:921
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 Element"
+msgstr[0] "%1 Element"
 msgstr[1] "%1 Elemente"
 
 #: qml/gallery/GalleryPage.qml:959
@@ -1329,23 +1297,19 @@ msgid "No media found"
 msgstr "Keine Medien gefunden"
 
 #: qml/gallery/GalleryPage.qml:983
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "1 Element"
-msgstr[1] "%1 Elemente"
+msgstr[0] "%1 Element ausgewählt"
+msgstr[1] "%1 Elemente ausgewählt"
 
 #: qml/gallery/GalleryPage.qml:988
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] "1 Element"
+msgstr[0] "%1 Element"
 msgstr[1] "%1 Elemente"
 
 #: qml/gallery/NavigatorComponent.qml:53
@@ -1432,12 +1396,10 @@ msgid "Current rating %1"
 msgstr "Aktuelle Bewertung %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "Kommentar"
+msgstr "Kommentar:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1500,9 +1462,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Rückgängig"
@@ -1511,7 +1471,7 @@ msgstr "Rückgängig"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 von %2"
 
 #: qml/mediaview/MediaViewPage.qml:166
 #, kde-format
@@ -1550,15 +1510,13 @@ msgid "Exit immersive viewing mode"
 msgstr "Immersiven Ansichtsmodus beenden"
 
 #: qml/mediaview/MediaViewPage.qml:638
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Vorheriges Bild"
 
 #: qml/mediaview/MediaViewPage.qml:672
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Nächstes Bild"
@@ -1793,33 +1751,31 @@ msgstr "%1 px"
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Sortierung der Galerie"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Natürliche Sortierung"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Alphabetisch (Groß-/Kleinschreibung ignorieren)"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Alphabetisch (Groß-/Kleinschreibung beachten)"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Hintergrund der Bilderansicht"
+msgstr "Bildhintergrund"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1831,7 +1787,7 @@ msgstr "Schwarz"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Grau"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
@@ -1852,20 +1808,16 @@ msgid "Use the background color specified by the theme"
 msgstr "Durch das Design festgelegte Hintergrundfarbe verwenden"
 
 #: qml/Settings/GeneralConfigPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "Einen Schachbretthintergrund hinter transparenten Bildern anzeigen"
+msgstr "Ein Schachbrettmuster hinter transparenten Bildern anzeigen"
 
 #: qml/Settings/GeneralConfigPage.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Bildgröße"
+msgstr "Bildansicht"
 
 #: qml/Settings/GeneralConfigPage.qml:158
 #, kde-format
@@ -1895,7 +1847,7 @@ msgstr "Allgemein:"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Tastenkürzel"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
