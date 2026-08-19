@@ -44,6 +44,7 @@ kconfig_target_kcfg_file(koko_static
     DEFAULT_VALUE_GETTERS
     SINGLETON
     QML_REGISTRATION
+    GLOBAL_ENUMS
 )
 
 kconfig_target_kcfg_file(koko_static

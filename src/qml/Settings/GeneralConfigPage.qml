@@ -55,30 +55,30 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, sorting mode", "Natural sorting")
-            checked: Koko.Config.sortBehavior === 0
+            checked: Koko.Config.sortBehavior === Koko.Config.Natural
             enabled: !Koko.Config.isSortBehavorImmutable
             onToggled: {
-                Koko.Config.sortBehavior = 0;
+                Koko.Config.sortBehavior = Koko.Config.Natural;
                 Koko.Config.save();
             }
         }
 
         FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case insensitive)")
-            checked: Koko.Config.sortBehavior === 1
+            checked: Koko.Config.sortBehavior === Koko.Config.AlphabeticalCaseInsensitive
             enabled: !Koko.Config.isSortBehavorImmutable
             onToggled: {
-                Koko.Config.sortBehavior = 1;
+                Koko.Config.sortBehavior = Koko.Config.AlphabeticalCaseInsensitive;
                 Koko.Config.save();
             }
         }
 
         FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case sensitive)")
-            checked: Koko.Config.sortBehavior === 2
+            checked: Koko.Config.sortBehavior === Koko.Config.AlphabeticalCaseSensitive
             enabled: !Koko.Config.isSortBehavorImmutable
             onToggled: {
-                Koko.Config.sortBehavior = 2;
+                Koko.Config.sortBehavior = Koko.Config.AlphabeticalCaseSensitive;
                 Koko.Config.save();
             }
         }
@@ -91,30 +91,30 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, background color", "Black")
-            checked: Koko.Config.imageViewBackgroundColor === 0
+            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Black
             enabled: !Koko.Config.isImageViewBackgroundColorImmutable
             onToggled: {
-                Koko.Config.imageViewBackgroundColor = 0;
+                Koko.Config.imageViewBackgroundColor = Koko.Config.Black;
                 Koko.Config.save();
             }
         }
 
         FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, background color", "Gray")
-            checked: Koko.Config.imageViewBackgroundColor === 3
+            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Gray
             enabled: !Koko.Config.isImageViewBackgroundColorImmutable
             onToggled: {
-                Koko.Config.imageViewBackgroundColor = 3;
+                Koko.Config.imageViewBackgroundColor = Koko.Config.Gray;
                 Koko.Config.save();
             }
         }
 
         FormCard.FormRadioDelegate {
             text: i18nc("@option:radio As in, background color", "White")
-            checked: Koko.Config.imageViewBackgroundColor === 1
+            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.White
             enabled: !Koko.Config.isImageViewBackgroundColorImmutable
             onToggled: {
-                Koko.Config.imageViewBackgroundColor = 1;
+                Koko.Config.imageViewBackgroundColor = Koko.Config.White;
                 Koko.Config.save();
             }
         }
@@ -123,10 +123,10 @@ FormCard.FormCardPage {
             id: imageViewBackgroundColorThemeDefaultDelegate
             text: i18nc("@option:radio As in, background color", "Theme default")
             description: i18nc("info", "Use the background color specified by the theme")
-            checked: Koko.Config.imageViewBackgroundColor === 2
+            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Theme
             enabled: !Koko.Config.isImageViewBackgroundColorImmutable
             onToggled: {
-                Koko.Config.imageViewBackgroundColor = 2;
+                Koko.Config.imageViewBackgroundColor = Koko.Config.Theme;
                 Koko.Config.save();
             }
         }

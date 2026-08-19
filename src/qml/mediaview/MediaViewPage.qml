@@ -426,13 +426,13 @@ Kirigami.Page {
     background: Rectangle {
         color: {
             switch (Koko.Config.imageViewBackgroundColor) {
-                case 0:
+                case Koko.Config.Black:
                     return "black";
-                case 1:
+                case Koko.Config.White:
                     return "white";
-                case 2:
+                case Koko.Config.Theme:
                     return Kirigami.Theme.backgroundColor;
-                case 3:
+                case Koko.Config.Gray:
                     return "gray";
             }
         }
@@ -490,13 +490,13 @@ Kirigami.Page {
             z: -1
             color: {
                 switch (Koko.Config.imageViewBackgroundColor) {
-                    case 0:
+                    case Koko.Config.Black:
                         return "black";
-                    case 1:
+                    case Koko.Config.White:
                         return "white";
-                    case 2:
+                    case Koko.Config.Theme:
                         return Kirigami.Theme.backgroundColor;
-                    case 3:
+                    case Koko.Config.Gray:
                         return "gray";
                 }
             }

@@ -26,6 +26,8 @@ class GallerySortFilterProxyModel : public QSortFilterProxyModel
 public:
     explicit GallerySortFilterProxyModel(QObject *parent = nullptr);
 
+    // Matches kokoconfig.kcfg
+    // TODO: Use config directly rather than plumb through QML with duplicated enum
     enum SortBehavior {
         Natural,
         AlphabeticalCaseInsensitive,
