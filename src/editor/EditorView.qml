@@ -856,7 +856,7 @@ Kirigami.Page {
                             Controls.Button {
                                 id: applyAdjustmentButton
                                 icon.name: "dialog-ok-apply-symbolic"
-                                text: i18nc("@action:button apply color adjustment to image", "Adjust")
+                                text: i18nc("@action:button apply color adjustment to image", "Apply")
                                 enabled: brightnessSlider.brightness !== brightnessSlider.defaultBrightness || contrastSlider.contrast !== contrastSlider.defaultContrast || gammaSlider.gamma !== gammaSlider.defaultGamma
                                 onClicked: {
                                     imageView.document.applyColorAdjustment(imageView.colorEffect.colorMatrix, imageView.colorEffect.gamma);
