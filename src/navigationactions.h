@@ -25,6 +25,7 @@ public:
         OpenModel,
         FolderModel,
         FavoritesModel,
+        AllImagesModel,
         LocationModel,
         TimeModel,
         TagsModel,

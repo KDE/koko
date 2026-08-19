@@ -298,6 +298,25 @@ KFileItemList ImageStorage::imagesForFavorites()
     return files;
 }
 
+KFileItemList ImageStorage::imagesForAll()
+{
+    QSqlQuery query;
+
+    query.prepare("SELECT DISTINCT url from files");
+
+    if (!query.exec()) {
+        qDebug() << "imagesForFavorites: " << query.lastError();
+        return {};
+    }
+
+    KFileItemList files;
+    while (query.next()) {
+        files << KFileItem(QUrl(QStringLiteral("file://") + query.value(0).toString()));
+    }
+
+    return files;
+}
+
 QStringList ImageStorage::tags()
 {
     QSqlQuery query;

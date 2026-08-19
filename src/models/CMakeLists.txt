@@ -26,6 +26,8 @@ add_library(photos_models_static STATIC
     gallerytimemodel.cpp
     gallerylocationmodel.h
     gallerylocationmodel.cpp
+    galleryallimagesmodel.cpp
+    galleryallimagesmodel.h
 )
 
 target_link_libraries(photos_models_static PUBLIC

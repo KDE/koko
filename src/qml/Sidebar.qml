@@ -201,7 +201,7 @@ Kirigami.OverlayDrawer {
                 spacing: 1
                 width: scrollView.availableWidth
                 PlaceHeading {
-                    text: i18n("General")
+                    text: i18n("Folders")
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Pictures")
@@ -214,14 +214,28 @@ Kirigami.OverlayDrawer {
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
-                    text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
-                    actionName: "place_favorites"
+                    icon.name: "folder-cloud"
+                    text: i18nc("@action:button Navigation entry in sidebar", "Network")
+                    actionName: "place_remote"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceItem {
                     icon.name: "user-trash-symbolic"
                     text: i18nc("@action:button Navigation entry in sidebar", "Trash")
                     actionName: "place_trash"
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
+                }
+                PlaceHeading {
+                    text: i18n("Collections")
+                }
+                PlaceItem {
+                    text: i18nc("@action:button Navigation entry in sidebar", "Favorites")
+                    actionName: "place_favorites"
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
+                }
+                PlaceItem {
+                    text: i18nc("@action:button Navigation entry in sidebar", "All media")
+                    actionName: "place_all"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
@@ -236,15 +250,6 @@ Kirigami.OverlayDrawer {
                         required property var modelData
                         actionName: modelData
                     }
-                }
-                PlaceHeading {
-                    text: i18nc("Remote network locations", "Remote")
-                }
-                PlaceItem {
-                    icon.name: "folder-cloud"
-                    text: i18nc("@action:button Navigation entry in sidebar", "Network")
-                    actionName: "place_remote"
-                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
                     text: i18n("Locations")

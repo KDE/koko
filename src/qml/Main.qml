@@ -118,6 +118,9 @@ Kirigami.ApplicationWindow {
             case Koko.NavigationActions.FavoritesModel:
                 targetModel = galleryFavoritesModel;
                 break;
+            case Koko.NavigationActions.AllImagesModel:
+                targetModel = galleryAllImagesModel;
+                break;
             case Koko.NavigationActions.LocationModel:
                 targetModel = galleryLocationModel;
                 break;
@@ -196,6 +199,10 @@ Kirigami.ApplicationWindow {
 
     Koko.GalleryFavoritesModel {
         id: galleryFavoritesModel
+    }
+
+    Koko.GalleryAllImagesModel {
+        id: galleryAllImagesModel
     }
 
     Koko.GalleryLocationModel {

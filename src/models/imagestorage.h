@@ -77,6 +77,7 @@ public:
     KFileItem previewImageForTime(const Collection &collection, TimeGroup group);
 
     KFileItemList imagesForFavorites();
+    KFileItemList imagesForAll();
 
     QStringList tags();
     KFileItemList imagesForTag(const QString &tag);

@@ -56,6 +56,7 @@ void NavigationActions::setupActions()
               videos.isEmpty() ? QUrl() : QUrl::fromLocalFile(videos.constFirst()),
               i18nc("@action:button Navigation button", "Navigate to videos"),
               u"folder-videos-symbolic"_s},
+        Place{QStringLiteral("place_all"), AllImagesModel, {}, i18nc("@action:button Navigation button", "Navigate to all media"), u"folder-pictures-symbolic"_s},
         Place{QStringLiteral("place_favorites"), FavoritesModel, {}, i18nc("@action:button Navigation button", "Navigate to favorites"), u"starred-symbolic"_s},
         Place{QStringLiteral("place_trash"),
               FolderModel,
