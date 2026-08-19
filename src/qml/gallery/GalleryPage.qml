@@ -306,6 +306,7 @@ Kirigami.ScrollablePage {
         Kirigami.Action {
             displayComponent: Kirigami.SearchField {
                 width: Kirigami.Units.gridUnit * 10
+                text: gallerySortFilterProxyModel.filterString
                 onAccepted: gallerySortFilterProxyModel.filterString = text
             }
             icon.name: "search-symbolic"
