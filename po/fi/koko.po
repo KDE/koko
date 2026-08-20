@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 02:43+0000\n"
+"POT-Creation-Date: 2026-08-20 02:34+0000\n"
 "PO-Revision-Date: 2026-01-05 17:11+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -979,7 +979,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr ""
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
@@ -1251,37 +1251,37 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Laskeva"
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Tee kansiosta kirjanmerkki"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Tee nykyisestä kansiosta kirjanmerkki"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Poista suosikeista"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Lisää suosikkeihin"
 
-#: qml/gallery/GalleryPage.qml:320
+#: qml/gallery/GalleryPage.qml:321
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Jaa valittu media"
 
-#: qml/gallery/GalleryPage.qml:785
+#: qml/gallery/GalleryPage.qml:786
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1290,12 +1290,12 @@ msgid_plural "%1 items"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/GalleryPage.qml:823
+#: qml/gallery/GalleryPage.qml:824
 #, kde-format
 msgid "No media found"
 msgstr "Mediaa ei löytynyt"
 
-#: qml/gallery/GalleryPage.qml:847
+#: qml/gallery/GalleryPage.qml:848
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"
@@ -1305,7 +1305,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
-#: qml/gallery/GalleryPage.qml:852
+#: qml/gallery/GalleryPage.qml:853
 #, fuzzy, kde-format
 #| msgid "1 item"
 #| msgid_plural "%1 items"

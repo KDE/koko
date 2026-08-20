@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 02:43+0000\n"
+"POT-Creation-Date: 2026-08-20 02:34+0000\n"
 "PO-Revision-Date: 2024-09-19 22:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1015,7 +1015,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr ""
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, fuzzy, kde-format
 #| msgid "Favorite"
 msgctxt "@action:intoolbar Favorite an image/video"
@@ -1300,7 +1300,7 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:268
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1308,7 +1308,7 @@ msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Φάκελος σελιδοδεικτών"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1316,41 +1316,41 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Φάκελος σελιδοδεικτών"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Remove from favorites"
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Αφαίρεση από τα προτιμώμενα"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, fuzzy, kde-format
 #| msgid "Add to favorites"
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Προσθήκη στα προτιμώμενα"
 
-#: qml/gallery/GalleryPage.qml:320
+#: qml/gallery/GalleryPage.qml:321
 #, fuzzy, kde-format
 #| msgid "Share the selected media"
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Μοιραστείτε τα επιλεγμένα πολυμέσα"
 
-#: qml/gallery/GalleryPage.qml:785
+#: qml/gallery/GalleryPage.qml:786
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:823
+#: qml/gallery/GalleryPage.qml:824
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "Δε βρέθηκαν πολυμέσα"
 
-#: qml/gallery/GalleryPage.qml:847
+#: qml/gallery/GalleryPage.qml:848
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1358,7 +1358,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:852
+#: qml/gallery/GalleryPage.qml:853
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

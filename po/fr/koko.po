@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 02:43+0000\n"
+"POT-Creation-Date: 2026-08-20 02:34+0000\n"
 "PO-Revision-Date: 2026-07-17 09:03+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -959,7 +959,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr "Vue de média"
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
@@ -1217,49 +1217,49 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Décroissant"
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Ajouter le dossier aux signets"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Ajouter le dossier courant aux signets"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Supprimer des signets"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Ajouter aux signets"
 
-#: qml/gallery/GalleryPage.qml:320
+#: qml/gallery/GalleryPage.qml:321
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Partager le média sélectionné"
 
-#: qml/gallery/GalleryPage.qml:785
+#: qml/gallery/GalleryPage.qml:786
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 élément"
 msgstr[1] "%1 éléments"
 
-#: qml/gallery/GalleryPage.qml:823
+#: qml/gallery/GalleryPage.qml:824
 #, kde-format
 msgid "No media found"
 msgstr "Aucune média n'a été trouvé."
 
-#: qml/gallery/GalleryPage.qml:847
+#: qml/gallery/GalleryPage.qml:848
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1267,7 +1267,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 élément sélectionné"
 msgstr[1] "%1 éléments sélectionnés"
 
-#: qml/gallery/GalleryPage.qml:852
+#: qml/gallery/GalleryPage.qml:853
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

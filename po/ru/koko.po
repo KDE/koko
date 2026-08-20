@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 02:43+0000\n"
+"POT-Creation-Date: 2026-08-20 02:34+0000\n"
 "PO-Revision-Date: 2026-07-16 09:50+0300\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -967,7 +967,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr "Просмотр медиафайлов"
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
@@ -1227,37 +1227,37 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "По убыванию"
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Добавить папку в закладки"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Добавить папку в закладки"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Удалить из избранного"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Добавить в избранное"
 
-#: qml/gallery/GalleryPage.qml:320
+#: qml/gallery/GalleryPage.qml:321
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Опубликовать выбранные файлы"
 
-#: qml/gallery/GalleryPage.qml:785
+#: qml/gallery/GalleryPage.qml:786
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1266,12 +1266,12 @@ msgstr[1] "%1 объекта"
 msgstr[2] "%1 объектов"
 msgstr[3] "%1 объект"
 
-#: qml/gallery/GalleryPage.qml:823
+#: qml/gallery/GalleryPage.qml:824
 #, kde-format
 msgid "No media found"
 msgstr "Не найдено ни одного файла изображения или видео"
 
-#: qml/gallery/GalleryPage.qml:847
+#: qml/gallery/GalleryPage.qml:848
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1281,7 +1281,7 @@ msgstr[1] "Выбрано %1 объекта"
 msgstr[2] "Выбрано %1 объектов"
 msgstr[3] "Выбран %1 объект"
 
-#: qml/gallery/GalleryPage.qml:852
+#: qml/gallery/GalleryPage.qml:853
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

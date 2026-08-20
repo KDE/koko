@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 02:43+0000\n"
+"POT-Creation-Date: 2026-08-20 02:34+0000\n"
 "PO-Revision-Date: 2026-07-17 12:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -963,7 +963,7 @@ msgctxt "Actions category"
 msgid "Media View"
 msgstr "תצוגת מדיה"
 
-#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:303
+#: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
@@ -1223,37 +1223,37 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "יורד"
 
-#: qml/gallery/GalleryPage.qml:267
+#: qml/gallery/GalleryPage.qml:268
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "סימון התיקייה"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "סימון התיקייה הנוכחית"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "הסרה מהמועדפים"
 
-#: qml/gallery/GalleryPage.qml:305 qml/mediaview/MediaViewPage.qml:111
+#: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "הוספה למועדפים"
 
-#: qml/gallery/GalleryPage.qml:320
+#: qml/gallery/GalleryPage.qml:321
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "שיתוף המדיה הנבחרת"
 
-#: qml/gallery/GalleryPage.qml:785
+#: qml/gallery/GalleryPage.qml:786
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1262,12 +1262,12 @@ msgstr[1] "שני פריטים"
 msgstr[2] "%1 פריטים"
 msgstr[3] "%1 פריטים"
 
-#: qml/gallery/GalleryPage.qml:823
+#: qml/gallery/GalleryPage.qml:824
 #, kde-format
 msgid "No media found"
 msgstr "לא נמצאה מדיה"
 
-#: qml/gallery/GalleryPage.qml:847
+#: qml/gallery/GalleryPage.qml:848
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1277,7 +1277,7 @@ msgstr[1] "נבחרו שני פריטים"
 msgstr[2] "נבחרו %1 פריטים"
 msgstr[3] "נבחרו %1 פריטים"
 
-#: qml/gallery/GalleryPage.qml:852
+#: qml/gallery/GalleryPage.qml:853
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
