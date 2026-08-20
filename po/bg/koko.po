@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 00:42+0000\n"
+"POT-Creation-Date: 2026-08-20 00:42+0000\n"
 "PO-Revision-Date: 2026-08-14 23:30+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -723,6 +723,14 @@ msgstr "Нулиране на базата с данни"
 msgid "path of image you want to open"
 msgstr "път до изображението, което искате да отворите"
 
+#: models/galleryallimagesmodel.cpp:23
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all media"
+msgctxt "@title"
+msgid "All media"
+msgstr "Избиране на всички"
+
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
 msgctxt "@title"
@@ -765,7 +773,7 @@ msgid "Cities"
 msgstr "Градове"
 
 #: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
-#: qml/Sidebar.qml:250
+#: qml/Sidebar.qml:255
 #, kde-format
 msgid "Locations"
 msgstr "Места"
@@ -776,7 +784,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Избрани файлове"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:291
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:296
 #, kde-format
 msgid "Tags"
 msgstr "Етикети"
@@ -825,60 +833,68 @@ msgid "Navigate to videos"
 msgstr "Отиване до Видеозаписи"
 
 #: navigationactions.cpp:59
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to videos"
+msgctxt "@action:button Navigation button"
+msgid "Navigate to all media"
+msgstr "Отиване до Видеозаписи"
+
+#: navigationactions.cpp:60
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
 msgstr "Отиване към Любими"
 
-#: navigationactions.cpp:63
+#: navigationactions.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
 msgstr "Отиване до Кошче"
 
-#: navigationactions.cpp:68
+#: navigationactions.cpp:69
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
 msgstr "Отиване до отдалечени папки"
 
-#: navigationactions.cpp:73
+#: navigationactions.cpp:74
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr "Отиване до снимки, групирани по държави"
 
-#: navigationactions.cpp:78
+#: navigationactions.cpp:79
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
 msgstr "Отиване до снимки, групирани по щати"
 
-#: navigationactions.cpp:83
+#: navigationactions.cpp:84
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr "Отиване до снимки, групирани по градове"
 
-#: navigationactions.cpp:88
+#: navigationactions.cpp:89
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
 msgstr "Отиване до снимки, групирани по години"
 
-#: navigationactions.cpp:93
+#: navigationactions.cpp:94
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
 msgstr "Отиване до снимки, групирани по месеци"
 
-#: navigationactions.cpp:98
+#: navigationactions.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
 msgstr "Отиване до снимки, групирани по седмици"
 
-#: navigationactions.cpp:103
+#: navigationactions.cpp:104
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
@@ -1092,7 +1108,7 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Видеозаписи"
 
-#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:217
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:232
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1251,49 +1267,49 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Низходящо"
 
-#: qml/gallery/GalleryPage.qml:323
+#: qml/gallery/GalleryPage.qml:324
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Папка с отметки"
 
-#: qml/gallery/GalleryPage.qml:324
+#: qml/gallery/GalleryPage.qml:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Маркира текущата папка"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Премахване от Любими"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Добавяне към Любими"
 
-#: qml/gallery/GalleryPage.qml:378
+#: qml/gallery/GalleryPage.qml:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Споделяне на избраната медия"
 
-#: qml/gallery/GalleryPage.qml:921
+#: qml/gallery/GalleryPage.qml:922
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 елемент"
 msgstr[1] "%1 елемента"
 
-#: qml/gallery/GalleryPage.qml:959
+#: qml/gallery/GalleryPage.qml:960
 #, kde-format
 msgid "No media found"
 msgstr "Не е намерена медия"
 
-#: qml/gallery/GalleryPage.qml:983
+#: qml/gallery/GalleryPage.qml:984
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1301,7 +1317,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "Маркиран е %1 елемент"
 msgstr[1] "Маркирани са %1 елемента"
 
-#: qml/gallery/GalleryPage.qml:988
+#: qml/gallery/GalleryPage.qml:989
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1667,66 +1683,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Настройки"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:223
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:224
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Кошче"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:245
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:218
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Мрежа"
 
-#: qml/PlacesPage.qml:78 qml/Sidebar.qml:229
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:243
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Отметки"
 
-#: qml/PlacesPage.qml:106 qml/Sidebar.qml:253
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:258
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Държави"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:258
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:263
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Щати"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:263
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:268
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Градове"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:268
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:273
 #, kde-format
 msgid "Time"
 msgstr "Време"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:271
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:276
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Години"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:276
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:281
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Месеци"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:281
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:286
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Седмици"
 
-#: qml/PlacesPage.qml:154 qml/Sidebar.qml:286
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:291
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1877,11 +1893,26 @@ msgstr "Показване на меню"
 
 #: qml/Sidebar.qml:204
 #, kde-format
-msgid "General"
-msgstr "Общи"
+msgid "Folders"
+msgstr ""
 
-#: qml/Sidebar.qml:241
-#, kde-format
-msgctxt "Remote network locations"
-msgid "Remote"
-msgstr "Отдалечени"
+#: qml/Sidebar.qml:229
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgid "Collections"
+msgstr "Места"
+
+#: qml/Sidebar.qml:237
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all media"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "All media"
+msgstr "Избиране на всички"
+
+#~ msgid "General"
+#~ msgstr "Общи"
+
+#~ msgctxt "Remote network locations"
+#~ msgid "Remote"
+#~ msgstr "Отдалечени"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 00:42+0000\n"
+"POT-Creation-Date: 2026-08-20 00:42+0000\n"
 "PO-Revision-Date: 2023-05-31 10:52+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -751,6 +751,13 @@ msgstr "Repor a base de dados"
 msgid "path of image you want to open"
 msgstr "localização da imagem que deseja abrir"
 
+#: models/galleryallimagesmodel.cpp:23
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@title"
+msgid "All media"
+msgstr "Seleccionar Tudo"
+
 #: models/galleryfavoritesmodel.cpp:23
 #, fuzzy, kde-format
 #| msgid "Favorites"
@@ -799,7 +806,7 @@ msgid "Cities"
 msgstr "Cidades"
 
 #: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
-#: qml/Sidebar.qml:250
+#: qml/Sidebar.qml:255
 #, kde-format
 msgid "Locations"
 msgstr "Locais"
@@ -811,7 +818,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Seleccionar Tudo"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:291
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:296
 #, kde-format
 msgid "Tags"
 msgstr "Marcas"
@@ -868,58 +875,65 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Add to favorites"
 msgctxt "@action:button Navigation button"
+msgid "Navigate to all media"
+msgstr "Adicionar aos favoritos"
+
+#: navigationactions.cpp:60
+#, fuzzy, kde-format
+#| msgid "Add to favorites"
+msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
 msgstr "Adicionar aos favoritos"
 
-#: navigationactions.cpp:63
+#: navigationactions.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
 msgstr ""
 
-#: navigationactions.cpp:68
+#: navigationactions.cpp:69
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
 msgstr ""
 
-#: navigationactions.cpp:73
+#: navigationactions.cpp:74
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr ""
 
-#: navigationactions.cpp:78
+#: navigationactions.cpp:79
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
 msgstr ""
 
-#: navigationactions.cpp:83
+#: navigationactions.cpp:84
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr ""
 
-#: navigationactions.cpp:88
+#: navigationactions.cpp:89
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
 msgstr ""
 
-#: navigationactions.cpp:93
+#: navigationactions.cpp:94
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
 msgstr ""
 
-#: navigationactions.cpp:98
+#: navigationactions.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
 msgstr ""
 
-#: navigationactions.cpp:103
+#: navigationactions.cpp:104
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
@@ -1160,7 +1174,7 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Vídeos"
 
-#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:217
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:232
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button Navigation entry in sidebar"
@@ -1326,7 +1340,7 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:323
+#: qml/gallery/GalleryPage.qml:324
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1334,7 +1348,7 @@ msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Pasta de Favoritos"
 
-#: qml/gallery/GalleryPage.qml:324
+#: qml/gallery/GalleryPage.qml:325
 #, fuzzy, kde-format
 #| msgctxt "@action:button Bookmarks the current folder"
 #| msgid "Bookmark Folder"
@@ -1342,41 +1356,41 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Pasta de Favoritos"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Remove from favorites"
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Remover dos favoritos"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Add to favorites"
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Adicionar aos favoritos"
 
-#: qml/gallery/GalleryPage.qml:378
+#: qml/gallery/GalleryPage.qml:379
 #, fuzzy, kde-format
 #| msgid "Share the selected media"
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Partilhar os conteúdos seleccionados"
 
-#: qml/gallery/GalleryPage.qml:921
+#: qml/gallery/GalleryPage.qml:922
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:959
+#: qml/gallery/GalleryPage.qml:960
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "Não Foram Encontrados Conteúdos"
 
-#: qml/gallery/GalleryPage.qml:983
+#: qml/gallery/GalleryPage.qml:984
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1384,7 +1398,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:988
+#: qml/gallery/GalleryPage.qml:989
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1766,75 +1780,75 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Configuração"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:223
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:224
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Lixo"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:245
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:218
 #, fuzzy, kde-format
 #| msgid "Network"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Rede"
 
-#: qml/PlacesPage.qml:78 qml/Sidebar.qml:229
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:243
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Remover o Favorito"
 
-#: qml/PlacesPage.qml:106 qml/Sidebar.qml:253
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:258
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Países"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:258
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:263
 #, fuzzy, kde-format
 #| msgid "States"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Estados"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:263
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:268
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Cidades"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:268
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:273
 #, kde-format
 msgid "Time"
 msgstr "Hora"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:271
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:276
 #, fuzzy, kde-format
 #| msgid "Years"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Anos"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:276
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:281
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Meses"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:281
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:286
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Semanas"
 
-#: qml/PlacesPage.qml:154 qml/Sidebar.qml:286
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:291
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@action:button Navigation entry in sidebar"
@@ -1993,16 +2007,31 @@ msgid "Show menu"
 msgstr ""
 
 #: qml/Sidebar.qml:204
-#, fuzzy, kde-format
-#| msgid "General"
-msgid "General"
-msgstr "Geral"
-
-#: qml/Sidebar.qml:241
 #, kde-format
-msgctxt "Remote network locations"
-msgid "Remote"
-msgstr "Remotos"
+msgid "Folders"
+msgstr "Pastas"
+
+#: qml/Sidebar.qml:229
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgid "Collections"
+msgstr "Locais"
+
+#: qml/Sidebar.qml:237
+#, fuzzy, kde-format
+#| msgid "Select All"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "All media"
+msgstr "Seleccionar Tudo"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgid "General"
+#~ msgstr "Geral"
+
+#~ msgctxt "Remote network locations"
+#~ msgid "Remote"
+#~ msgstr "Remotos"
 
 #, fuzzy
 #~| msgid "Select All"
@@ -2177,9 +2206,6 @@ msgstr "Remotos"
 
 #~ msgid "Videos"
 #~ msgstr "Vídeos"
-
-#~ msgid "Folders"
-#~ msgstr "Pastas"
 
 #, fuzzy
 #~| msgid "Pinned Folders"

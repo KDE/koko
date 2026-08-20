@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 00:42+0000\n"
+"POT-Creation-Date: 2026-08-20 00:42+0000\n"
 "PO-Revision-Date: 2026-08-14 17:01+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -729,6 +729,14 @@ msgstr "Atstatyti duomenų bazę"
 msgid "path of image you want to open"
 msgstr "kelias iki paveikslo, kurį norite atverti"
 
+#: models/galleryallimagesmodel.cpp:23
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all media"
+msgctxt "@title"
+msgid "All media"
+msgstr "Žymėti visą mediją"
+
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
 msgctxt "@title"
@@ -771,7 +779,7 @@ msgid "Cities"
 msgstr "Miestai"
 
 #: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
-#: qml/Sidebar.qml:250
+#: qml/Sidebar.qml:255
 #, kde-format
 msgid "Locations"
 msgstr "Vietovės"
@@ -782,7 +790,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Pažymėti failai"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:291
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:296
 #, kde-format
 msgid "Tags"
 msgstr "Žymės"
@@ -831,60 +839,68 @@ msgid "Navigate to videos"
 msgstr "Naršyti į vaizdo įrašus"
 
 #: navigationactions.cpp:59
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to videos"
+msgctxt "@action:button Navigation button"
+msgid "Navigate to all media"
+msgstr "Naršyti į vaizdo įrašus"
+
+#: navigationactions.cpp:60
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
 msgstr "Naršyti į mėgstamus"
 
-#: navigationactions.cpp:63
+#: navigationactions.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
 msgstr "Naršyti į šiukšlinę"
 
-#: navigationactions.cpp:68
+#: navigationactions.cpp:69
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
 msgstr "Naršyti į nuotolinius aplankus"
 
-#: navigationactions.cpp:73
+#: navigationactions.cpp:74
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr "Naršyti į paveikslus, sugrupuotus pagal šalį"
 
-#: navigationactions.cpp:78
+#: navigationactions.cpp:79
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
 msgstr "Naršyti į paveikslus, sugrupuotus pagal apskritį"
 
-#: navigationactions.cpp:83
+#: navigationactions.cpp:84
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr "Naršyti į paveikslus, sugrupuotus pagal miestus"
 
-#: navigationactions.cpp:88
+#: navigationactions.cpp:89
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
 msgstr "Naršyti į paveikslus, sugrupuotus pagal metus"
 
-#: navigationactions.cpp:93
+#: navigationactions.cpp:94
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
 msgstr "Naršyti į paveikslus, sugrupuotus pagal mėnesį"
 
-#: navigationactions.cpp:98
+#: navigationactions.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
 msgstr "Naršyti į paveikslus, sugrupuotus pagal savaitę"
 
-#: navigationactions.cpp:103
+#: navigationactions.cpp:104
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
@@ -1098,7 +1114,7 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Vaizdo įrašai"
 
-#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:217
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:232
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1260,37 +1276,37 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Mažėjančiai"
 
-#: qml/gallery/GalleryPage.qml:323
+#: qml/gallery/GalleryPage.qml:324
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Įrašyti aplanką į žymeles"
 
-#: qml/gallery/GalleryPage.qml:324
+#: qml/gallery/GalleryPage.qml:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Įrašyti dabartinį aplanką į žymeles"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Šalinti iš mėgstamų"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Pridėti į mėgstamus"
 
-#: qml/gallery/GalleryPage.qml:378
+#: qml/gallery/GalleryPage.qml:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Bendrinti pasirinktą mediją"
 
-#: qml/gallery/GalleryPage.qml:921
+#: qml/gallery/GalleryPage.qml:922
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1299,12 +1315,12 @@ msgstr[1] "%1 elementai"
 msgstr[2] "%1 elementų"
 msgstr[3] "%1 elementas"
 
-#: qml/gallery/GalleryPage.qml:959
+#: qml/gallery/GalleryPage.qml:960
 #, kde-format
 msgid "No media found"
 msgstr "Nerasta jokia medija"
 
-#: qml/gallery/GalleryPage.qml:983
+#: qml/gallery/GalleryPage.qml:984
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1314,7 +1330,7 @@ msgstr[1] "Pažymėti %1 elementai"
 msgstr[2] "Pažymėta %1 elementų"
 msgstr[3] "Pažymėtas %1 elementas"
 
-#: qml/gallery/GalleryPage.qml:988
+#: qml/gallery/GalleryPage.qml:989
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1686,66 +1702,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "Nuostatos"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:223
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:224
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Šiukšlinė"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:245
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:218
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Tinklas"
 
-#: qml/PlacesPage.qml:78 qml/Sidebar.qml:229
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:243
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Žymelės"
 
-#: qml/PlacesPage.qml:106 qml/Sidebar.qml:253
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:258
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Šalys"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:258
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:263
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Apskritys"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:263
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:268
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Miestai"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:268
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:273
 #, kde-format
 msgid "Time"
 msgstr "Laikas"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:271
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:276
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Metai"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:276
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:281
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Mėnesiai"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:281
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:286
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Savaitės"
 
-#: qml/PlacesPage.qml:154 qml/Sidebar.qml:286
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:291
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1896,14 +1912,29 @@ msgstr "Rodyti meniu"
 
 #: qml/Sidebar.qml:204
 #, kde-format
-msgid "General"
-msgstr "Bendri"
+msgid "Folders"
+msgstr ""
 
-#: qml/Sidebar.qml:241
-#, kde-format
-msgctxt "Remote network locations"
-msgid "Remote"
-msgstr "Nuotoliniai"
+#: qml/Sidebar.qml:229
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgid "Collections"
+msgstr "Vietovės"
+
+#: qml/Sidebar.qml:237
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all media"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "All media"
+msgstr "Žymėti visą mediją"
+
+#~ msgid "General"
+#~ msgstr "Bendri"
+
+#~ msgctxt "Remote network locations"
+#~ msgid "Remote"
+#~ msgstr "Nuotoliniai"
 
 #~ msgctxt "@action:button"
 #~ msgid "Select All"

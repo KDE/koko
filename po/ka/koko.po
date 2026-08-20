@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-14 00:42+0000\n"
+"POT-Creation-Date: 2026-08-20 00:42+0000\n"
 "PO-Revision-Date: 2026-08-14 07:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -720,6 +720,14 @@ msgstr "ბაზის გასუფთავება"
 msgid "path of image you want to open"
 msgstr "ბილიკი გამოსახულებამდე, რომელიც გნებავთ, გახსნათ"
 
+#: models/galleryallimagesmodel.cpp:23
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all media"
+msgctxt "@title"
+msgid "All media"
+msgstr "ყველას მედიის მონიშვნა"
+
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
 msgctxt "@title"
@@ -762,7 +770,7 @@ msgid "Cities"
 msgstr "ქალაქები"
 
 #: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:101
-#: qml/Sidebar.qml:250
+#: qml/Sidebar.qml:255
 #, kde-format
 msgid "Locations"
 msgstr "მდებარეობები"
@@ -773,7 +781,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "მონიშნული ფაილები"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:291
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:296
 #, kde-format
 msgid "Tags"
 msgstr "ჭდეები"
@@ -822,60 +830,68 @@ msgid "Navigate to videos"
 msgstr "გადასვლა ვიდეოებზე"
 
 #: navigationactions.cpp:59
+#, fuzzy, kde-format
+#| msgctxt "@action:button Navigation button"
+#| msgid "Navigate to videos"
+msgctxt "@action:button Navigation button"
+msgid "Navigate to all media"
+msgstr "გადასვლა ვიდეოებზე"
+
+#: navigationactions.cpp:60
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to favorites"
 msgstr "გადასვლა რჩეულებზე"
 
-#: navigationactions.cpp:63
+#: navigationactions.cpp:64
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the trash"
 msgstr "გადასვლა ნაგვის ყუთზე"
 
-#: navigationactions.cpp:68
+#: navigationactions.cpp:69
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to the remote folders"
 msgstr "გადასვლა დაშორებულ საქაღალდეებზე"
 
-#: navigationactions.cpp:73
+#: navigationactions.cpp:74
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr "გადასვლა ქვეყნით დაჯგუფებულ სურათებზე"
 
-#: navigationactions.cpp:78
+#: navigationactions.cpp:79
 #, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
 msgstr "გადასვლა შტატით დაჯგუფებულ სურათებზე"
 
-#: navigationactions.cpp:83
+#: navigationactions.cpp:84
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr "გადასვლა ქალაქით დაჯგუფებულ სურათებზე"
 
-#: navigationactions.cpp:88
+#: navigationactions.cpp:89
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
 msgstr "გადასვლა წლით დაჯგუფებულ სურათებზე"
 
-#: navigationactions.cpp:93
+#: navigationactions.cpp:94
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
 msgstr "გადასვლა თვით დაჯგუფებულ სურათებზე"
 
-#: navigationactions.cpp:98
+#: navigationactions.cpp:99
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
 msgstr "გადასვლა კვირით დაჯგუფებულ სურათებზე"
 
-#: navigationactions.cpp:103
+#: navigationactions.cpp:104
 #, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
@@ -1089,7 +1105,7 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "ვიდეოები"
 
-#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:217
+#: qml/BottomNavBar.qml:63 qml/PlacesPage.qml:52 qml/Sidebar.qml:232
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1247,49 +1263,49 @@ msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "დაღმავალი"
 
-#: qml/gallery/GalleryPage.qml:323
+#: qml/gallery/GalleryPage.qml:324
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "სანიშნეების საქაღალდე"
 
-#: qml/gallery/GalleryPage.qml:324
+#: qml/gallery/GalleryPage.qml:325
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "მიმდინარე საქაღალდის რჩეულებში ჩამატება"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "რჩეულებიდან წაშლა"
 
-#: qml/gallery/GalleryPage.qml:363 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "რჩეულებში დამატება"
 
-#: qml/gallery/GalleryPage.qml:378
+#: qml/gallery/GalleryPage.qml:379
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "მონიშნული მედიის გაზიარება"
 
-#: qml/gallery/GalleryPage.qml:921
+#: qml/gallery/GalleryPage.qml:922
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 ელემენტი"
 msgstr[1] "%1 ელემენტი"
 
-#: qml/gallery/GalleryPage.qml:959
+#: qml/gallery/GalleryPage.qml:960
 #, kde-format
 msgid "No media found"
 msgstr "მედია აღმოჩენილი არაა"
 
-#: qml/gallery/GalleryPage.qml:983
+#: qml/gallery/GalleryPage.qml:984
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1297,7 +1313,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "მონიშნულია %1 ელემენტი"
 msgstr[1] "მონიშნულია %1 ელემენტი"
 
-#: qml/gallery/GalleryPage.qml:988
+#: qml/gallery/GalleryPage.qml:989
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1663,66 +1679,66 @@ msgctxt "@action:button Open settings dialog"
 msgid "Settings"
 msgstr "მორგება"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:223
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:224
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "ნაგვის ყუთი"
 
-#: qml/PlacesPage.qml:69 qml/Sidebar.qml:245
+#: qml/PlacesPage.qml:69 qml/Sidebar.qml:218
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "ქსელი"
 
-#: qml/PlacesPage.qml:78 qml/Sidebar.qml:229
+#: qml/PlacesPage.qml:78 qml/Sidebar.qml:243
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "სანიშნეები"
 
-#: qml/PlacesPage.qml:106 qml/Sidebar.qml:253
+#: qml/PlacesPage.qml:106 qml/Sidebar.qml:258
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "ქვეყნები"
 
-#: qml/PlacesPage.qml:113 qml/Sidebar.qml:258
+#: qml/PlacesPage.qml:113 qml/Sidebar.qml:263
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "შტატები"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:263
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:268
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "ქალაქები"
 
-#: qml/PlacesPage.qml:128 qml/Sidebar.qml:268
+#: qml/PlacesPage.qml:128 qml/Sidebar.qml:273
 #, kde-format
 msgid "Time"
 msgstr "დრო"
 
-#: qml/PlacesPage.qml:133 qml/Sidebar.qml:271
+#: qml/PlacesPage.qml:133 qml/Sidebar.qml:276
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "წელი"
 
-#: qml/PlacesPage.qml:140 qml/Sidebar.qml:276
+#: qml/PlacesPage.qml:140 qml/Sidebar.qml:281
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "თვე"
 
-#: qml/PlacesPage.qml:147 qml/Sidebar.qml:281
+#: qml/PlacesPage.qml:147 qml/Sidebar.qml:286
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "კვირა"
 
-#: qml/PlacesPage.qml:154 qml/Sidebar.qml:286
+#: qml/PlacesPage.qml:154 qml/Sidebar.qml:291
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1873,14 +1889,29 @@ msgstr "მენიუს ჩვენება"
 
 #: qml/Sidebar.qml:204
 #, kde-format
-msgid "General"
-msgstr "ზოგადი"
+msgid "Folders"
+msgstr "საქაღალდეები"
 
-#: qml/Sidebar.qml:241
-#, kde-format
-msgctxt "Remote network locations"
-msgid "Remote"
-msgstr "დაშორებული"
+#: qml/Sidebar.qml:229
+#, fuzzy, kde-format
+#| msgid "Locations"
+msgid "Collections"
+msgstr "მდებარეობები"
+
+#: qml/Sidebar.qml:237
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Select all media"
+msgctxt "@action:button Navigation entry in sidebar"
+msgid "All media"
+msgstr "ყველას მედიის მონიშვნა"
+
+#~ msgid "General"
+#~ msgstr "ზოგადი"
+
+#~ msgctxt "Remote network locations"
+#~ msgid "Remote"
+#~ msgstr "დაშორებული"
 
 #~ msgctxt "@action:button"
 #~ msgid "Select All"
@@ -2052,9 +2083,6 @@ msgstr "დაშორებული"
 
 #~ msgid "Videos"
 #~ msgstr "ვიდეო"
-
-#~ msgid "Folders"
-#~ msgstr "საქაღალდეები"
 
 #~ msgctxt "@title:group"
 #~ msgid "Pinned Folders"
