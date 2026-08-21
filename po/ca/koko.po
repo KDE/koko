@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 13:04+0200\n"
+"PO-Revision-Date: 2026-08-20 08:37+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -726,12 +726,10 @@ msgid "path of image you want to open"
 msgstr "camí de la imatge que voleu obrir"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Selecciona tots els elements multimèdia"
+msgstr "Tots els elements multimèdia"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -835,12 +833,10 @@ msgid "Navigate to videos"
 msgstr "Navega pels vídeos"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Navega pels vídeos"
+msgstr "Navega per tots els elements multimèdia"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1896,25 +1892,20 @@ msgid "Show menu"
 msgstr "Mostra el menú"
 
 #: qml/Sidebar.qml:204
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Folders"
+#, kde-format
 msgid "Folders"
 msgstr "Carpetes"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Ubicacions"
+msgstr "Col·leccions"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Selecciona tots els elements multimèdia"
+msgstr "Tots els elements multimèdia"
 
 #~ msgid "General"
 #~ msgstr "General"

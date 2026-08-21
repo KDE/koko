@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 07:28+0200\n"
+"PO-Revision-Date: 2026-08-20 06:06+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -721,12 +721,10 @@ msgid "path of image you want to open"
 msgstr "ბილიკი გამოსახულებამდე, რომელიც გნებავთ, გახსნათ"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "ყველას მედიის მონიშვნა"
+msgstr "ყველა მედია"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -830,12 +828,10 @@ msgid "Navigate to videos"
 msgstr "გადასვლა ვიდეოებზე"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "გადასვლა ვიდეოებზე"
+msgstr "გადასვლა ყველა მედიაზე"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1893,18 +1889,15 @@ msgid "Folders"
 msgstr "საქაღალდეები"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "მდებარეობები"
+msgstr "კოლექციები"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "ყველას მედიის მონიშვნა"
+msgstr "ყველა მედია"
 
 #~ msgid "General"
 #~ msgstr "ზოგადი"

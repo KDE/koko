@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 23:30+0200\n"
+"PO-Revision-Date: 2026-08-20 17:44+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -724,12 +724,10 @@ msgid "path of image you want to open"
 msgstr "път до изображението, което искате да отворите"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Избиране на всички"
+msgstr "Всички медийни файлове"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -833,12 +831,10 @@ msgid "Navigate to videos"
 msgstr "Отиване до Видеозаписи"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Отиване до Видеозаписи"
+msgstr "Към всички медийни файлове"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1894,21 +1890,18 @@ msgstr "Показване на меню"
 #: qml/Sidebar.qml:204
 #, kde-format
 msgid "Folders"
-msgstr ""
+msgstr "Папки"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Места"
+msgstr "Колекции"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Избиране на всички"
+msgstr "Всички медийни файлове"
 
 #~ msgid "General"
 #~ msgstr "Общи"

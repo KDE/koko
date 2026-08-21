@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-03 22:30+0200\n"
+"PO-Revision-Date: 2026-08-20 23:07+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -723,12 +723,10 @@ msgid "path of image you want to open"
 msgstr "percorso dell'immagine che vuoi aprire"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Seleziona tutti i file multimediali"
+msgstr "Tutti i contenuti multimediali"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -832,12 +830,10 @@ msgid "Navigate to videos"
 msgstr "Spostati nei video"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Spostati nei video"
+msgstr "Accedi a tutti i contenuti multimediali"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -919,13 +915,13 @@ msgstr "Galleria"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Seleziona tutti i file multimediali"
+msgstr "Seleziona tutti i contenuti multimediali"
 
 #: qml/ActionCollection.qml:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Deseleziona tutti i file multimediali"
+msgstr "Deseleziona tutti i contenuti multimediali"
 
 #: qml/ActionCollection.qml:34
 #, kde-format
@@ -937,13 +933,13 @@ msgstr "Inverti la selezione"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Inverti i file multimediali selezionati"
+msgstr "Inverti i contenuti multimediali selezionati"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr "Vista file multimediali"
+msgstr "Vista contenuti multimediali"
 
 #: qml/ActionCollection.qml:46
 #, kde-format
@@ -1063,7 +1059,7 @@ msgstr "&Proprietà"
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Azioni in modalità di modifica"
 
 #: qml/ActionCollection.qml:157
 #, kde-format
@@ -1126,14 +1122,11 @@ msgstr[0] "1 elemento"
 msgstr[1] "%1 elementi"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "%1 item moved to trash"
-#| msgid_plural "%1 item moved to trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 items moved to trash"
-msgstr[0] "%1 elemento spostato nel cestino"
+msgstr[0] "%1 elemento spostati nel cestino"
 msgstr[1] "%1 elementi spostati nel cestino"
 
 #: qml/gallery/GalleryPage.qml:183
@@ -1153,7 +1146,8 @@ msgstr "Ripristina"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr ""
-"Ripristina i file multimediali selezionati nelle loro posizioni originali"
+"Ripristina i contenuti multimediali selezionati nelle loro posizioni "
+"originali"
 
 #: qml/gallery/GalleryPage.qml:216
 #, kde-format
@@ -1297,7 +1291,7 @@ msgstr "Aggiungi nei preferiti"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Condividi i file multimediali selezionati"
+msgstr "Condividi i contenuti multimediali selezionati"
 
 #: qml/gallery/GalleryPage.qml:922
 #, kde-format
@@ -1309,7 +1303,7 @@ msgstr[1] "%1 elementi"
 #: qml/gallery/GalleryPage.qml:960
 #, kde-format
 msgid "No media found"
-msgstr "Nessun file multimediale trovato"
+msgstr "Nessun contenuto multimediale trovato"
 
 #: qml/gallery/GalleryPage.qml:984
 #, kde-format
@@ -1899,18 +1893,15 @@ msgid "Folders"
 msgstr "Cartelle"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Posizioni"
+msgstr "Collezioni"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Seleziona tutti i file multimediali"
+msgstr "Tutti i contenuti multimediali"
 
 #~ msgid "General"
 #~ msgstr "Generale"

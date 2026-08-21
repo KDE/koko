@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 07:13+0200\n"
+"PO-Revision-Date: 2026-08-20 06:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -729,12 +729,10 @@ msgid "path of image you want to open"
 msgstr "pot do slike, ki jo želite odpreti"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Izberi vse medije"
+msgstr "Vsi mediji"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -838,12 +836,10 @@ msgid "Navigate to videos"
 msgstr "Pomakni se do videoposnetkov"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Pomakni se do videoposnetkov"
+msgstr "Pomakni se do vseh medijev"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1915,18 +1911,15 @@ msgid "Folders"
 msgstr "Mape"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Lokacije"
+msgstr "Zbirke"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Izberi vse medije"
+msgstr "Vsi mediji"
 
 #~ msgid "General"
 #~ msgstr "Splošno"

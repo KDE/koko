@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-15 01:18+0100\n"
+"PO-Revision-Date: 2026-08-21 01:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -724,12 +724,10 @@ msgid "path of image you want to open"
 msgstr "ruta de la imagen que quiere abrir"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Seleccionar todos los medios"
+msgstr "Todos los medios"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -833,12 +831,10 @@ msgid "Navigate to videos"
 msgstr "Ir a los vídeos"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Ir a los vídeos"
+msgstr "Ir a todos los medios"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1893,25 +1889,15 @@ msgstr "Mostrar menú"
 #: qml/Sidebar.qml:204
 #, kde-format
 msgid "Folders"
-msgstr ""
+msgstr "Carpetas"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Lugares"
+msgstr "Colecciones"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Seleccionar todos los medios"
-
-#~ msgid "General"
-#~ msgstr "General"
-
-#~ msgctxt "Remote network locations"
-#~ msgid "Remote"
-#~ msgstr "Remoto"
+msgstr "Todos los medios"

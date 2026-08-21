@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 08:46+0300\n"
+"PO-Revision-Date: 2026-08-20 14:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -732,12 +732,10 @@ msgid "path of image you want to open"
 msgstr "шлях до зображення, яке ви хочете відкрити"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Позначити усі мультимедійні дані"
+msgstr "Усі мультимедійні дані"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -841,12 +839,10 @@ msgid "Navigate to videos"
 msgstr "Перейти до відео"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Перейти до відео"
+msgstr "Навігація усіма мультимедійними даними"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1918,18 +1914,15 @@ msgid "Folders"
 msgstr "Теки"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Місця"
+msgstr "Збірки"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Позначити усі мультимедійні дані"
+msgstr "Усі мультимедійні дані"
 
 #~ msgid "General"
 #~ msgstr "Загальне"
