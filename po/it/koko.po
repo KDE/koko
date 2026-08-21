@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 02:34+0000\n"
-"PO-Revision-Date: 2026-07-20 16:16+0200\n"
+"PO-Revision-Date: 2026-08-20 23:07+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -933,13 +933,13 @@ msgstr "Galleria"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Seleziona tutti i file multimediali"
+msgstr "Seleziona tutti i contenuti multimediali"
 
 #: qml/ActionCollection.qml:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Deseleziona tutti i file multimediali"
+msgstr "Deseleziona tutti i contenuti multimediali"
 
 #: qml/ActionCollection.qml:33
 #, kde-format
@@ -951,13 +951,13 @@ msgstr "Inverti la selezione"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Inverti i file multimediali selezionati"
+msgstr "Inverti i contenuti multimediali selezionati"
 
 #: qml/ActionCollection.qml:40
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr "Vista file multimediali"
+msgstr "Vista contenuti multimediali"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, kde-format
@@ -1102,7 +1102,8 @@ msgstr "Ripristina"
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr ""
-"Ripristina i file multimediali selezionati nelle loro posizioni originali"
+"Ripristina i contenuti multimediali selezionati nelle loro posizioni "
+"originali"
 
 #: qml/gallery/GalleryPage.qml:160
 #, kde-format
@@ -1246,7 +1247,7 @@ msgstr "Aggiungi nei preferiti"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Condividi i file multimediali selezionati"
+msgstr "Condividi i contenuti multimediali selezionati"
 
 #: qml/gallery/GalleryPage.qml:786
 #, kde-format
@@ -1258,7 +1259,7 @@ msgstr[1] "%1 elementi"
 #: qml/gallery/GalleryPage.qml:824
 #, kde-format
 msgid "No media found"
-msgstr "Nessun file multimediale trovato"
+msgstr "Nessun contenuto multimediale trovato"
 
 #: qml/gallery/GalleryPage.qml:848
 #, kde-format

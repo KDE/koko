@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 02:34+0000\n"
-"PO-Revision-Date: 2026-08-19 21:56+0200\n"
+"PO-Revision-Date: 2026-08-20 12:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -935,13 +935,13 @@ msgstr "Galeria"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "Hautatu hedabide guztiak"
+msgstr "Hautatu media guztiak"
 
 #: qml/ActionCollection.qml:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "Desautatu hedabide guztiak"
+msgstr "Media guztia desautatu"
 
 #: qml/ActionCollection.qml:33
 #, kde-format
@@ -953,7 +953,7 @@ msgstr "Alderantzikatu hautapena"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "Alderantzikatu hautatutako hedabideak"
+msgstr "Hautatutako media alderantzikatu"
 
 #: qml/ActionCollection.qml:40
 #, kde-format
@@ -1103,7 +1103,7 @@ msgstr "Lehengoratu"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "Lehengoratu hautatutako hedabideak bere aurreko kokapenetara"
+msgstr "Hautatutako media aurreko kokapenetara leheneratu"
 
 #: qml/gallery/GalleryPage.qml:160
 #, kde-format
@@ -1247,7 +1247,7 @@ msgstr "Gehitu gogokoetara"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
-msgstr "Partekatu hautatutako hedabidea"
+msgstr "Hautatutako media partekatu"
 
 #: qml/gallery/GalleryPage.qml:786
 #, kde-format
@@ -1259,7 +1259,7 @@ msgstr[1] "%1 elementu"
 #: qml/gallery/GalleryPage.qml:824
 #, kde-format
 msgid "No media found"
-msgstr "Ez da hedabiderik aurkitu"
+msgstr "Ez da mediarik aurkitu"
 
 #: qml/gallery/GalleryPage.qml:848
 #, kde-format
