@@ -1824,7 +1824,7 @@ msgstr "显示菜单"
 #: qml/Sidebar.qml:195
 #, kde-format
 msgid "General"
-msgstr "通用"
+msgstr "常规"
 
 #: qml/Sidebar.qml:232
 #, kde-format
