@@ -1890,8 +1890,7 @@ msgid "Show menu"
 msgstr "Afficher le menu"
 
 #: qml/Sidebar.qml:204
-#, fuzzy, kde-format
-#| msgid "Folders"
+#, kde-format
 msgid "Folders"
 msgstr "Dossiers"
 

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 19:06+0300\n"
+"PO-Revision-Date: 2026-08-21 19:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -722,12 +722,10 @@ msgid "path of image you want to open"
 msgstr "açmak istediğiniz görselin yolu"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Tüm ortamı seç"
+msgstr "Tüm Ortamlar"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -831,12 +829,10 @@ msgid "Navigate to videos"
 msgstr "Videolara Git"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Videolara Git"
+msgstr "Bütün Ortamlara Git"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1894,18 +1890,15 @@ msgid "Folders"
 msgstr "Klasörler"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Konumlar"
+msgstr "Koleksiyonlar"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Tüm ortamı seç"
+msgstr "Tüm Ortamlar"
 
 #~ msgid "General"
 #~ msgstr "Genel"

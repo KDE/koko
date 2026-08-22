@@ -715,12 +715,10 @@ msgid "path of image you want to open"
 msgstr "您想打开的图像路径"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "选择所有媒体"
+msgstr ""
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -824,12 +822,10 @@ msgid "Navigate to videos"
 msgstr "转到视频"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "转到视频"
+msgstr ""
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1880,22 +1876,12 @@ msgid "Folders"
 msgstr ""
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "位置"
+msgstr ""
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "选择所有媒体"
-
-#~ msgid "General"
-#~ msgstr "通用"
-
-#~ msgctxt "Remote network locations"
-#~ msgid "Remote"
-#~ msgstr "远程位置"
+msgstr ""
