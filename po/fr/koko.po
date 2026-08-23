@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-15 09:07+0200\n"
+"PO-Revision-Date: 2026-08-21 09:16+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -723,12 +723,10 @@ msgid "path of image you want to open"
 msgstr "Emplacement de l'image que vous voulez ouvrir"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Sélectionner tous les média"
+msgstr "Tous les média"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -832,12 +830,10 @@ msgid "Navigate to videos"
 msgstr "Accéder aux vidéos"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Accéder aux vidéos"
+msgstr "Naviguer parmi tous les media"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1895,18 +1891,15 @@ msgid "Folders"
 msgstr "Dossiers"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Emplacements"
+msgstr "Collections"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Sélectionner tous les média"
+msgstr "Tous les media"
 
 #~ msgid "General"
 #~ msgstr "Général"
