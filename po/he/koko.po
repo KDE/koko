@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 00:42+0000\n"
-"PO-Revision-Date: 2026-08-14 09:58+0300\n"
+"PO-Revision-Date: 2026-08-20 11:15+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -727,12 +727,10 @@ msgid "path of image you want to open"
 msgstr "הנתיב לתמונה לפתיחה"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "בחירה בכל המדיה"
+msgstr "כל המדיה"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -836,12 +834,10 @@ msgid "Navigate to videos"
 msgstr "ניווט לסרטונים"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "ניווט לסרטונים"
+msgstr "ניווט לכל המדיה"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -1913,18 +1909,15 @@ msgid "Folders"
 msgstr "תיקיות"
 
 #: qml/Sidebar.qml:229
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "מקומות"
+msgstr "אוספים"
 
 #: qml/Sidebar.qml:237
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "בחירה בכל המדיה"
+msgstr "כל המדיה"
 
 #~ msgid "General"
 #~ msgstr "כללי"
