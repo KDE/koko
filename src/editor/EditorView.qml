@@ -13,7 +13,7 @@ import QtQuick.Dialogs
 import org.kde.kirigami.actioncollection as AC
 import org.kde.koko as Koko
 import org.kde.kirigami as Kirigami
-import org.kde.kquickimageeditor as KQuickImageEditor
+import org.kde.kquickimageeditor as KQIE
 import org.kde.photos.editor as PhotosEditor
 
 Kirigami.Page {
@@ -112,11 +112,11 @@ Kirigami.Page {
             property int lastTool: imageView.document.tool.type
             AC.ActionCollection.action: "Crop"
             AC.ActionCollection.collection: "org.kde.koko.edit"
-            checked: imageView.document.tool.type === KQuickImageEditor.AnnotationTool.CropTool
+            checked: imageView.document.tool.type === KQIE.AnnotationTool.CropTool
             onTriggered: {
-                if (imageView.document.tool.type !== KQuickImageEditor.AnnotationTool.CropTool) {
+                if (imageView.document.tool.type !== KQIE.AnnotationTool.CropTool) {
                     lastTool = imageView.document.tool.type
-                    imageView.document.tool.type = KQuickImageEditor.AnnotationTool.CropTool
+                    imageView.document.tool.type = KQIE.AnnotationTool.CropTool
                 } else {
                     imageView.document.tool.type = lastTool
                     lastTool = Qt.binding(() => imageView.document.tool.type)
@@ -581,9 +581,9 @@ Kirigami.Page {
             AnnotationOptionsToolBarContents {
                 id: annotationOptionsToolBarContents
                 document: imageView.document
-                visible: (imageView.document.tool.options !== KQuickImageEditor.AnnotationTool.NoOptions
-                          || (imageView.document.tool.type === KQuickImageEditor.AnnotationTool.SelectTool
-                              && imageView.document.selectedItem.options !== KQuickImageEditor.AnnotationTool.NoOptions))
+                visible: (imageView.document.tool.options !== KQIE.AnnotationTool.NoOptions
+                          || (imageView.document.tool.type === KQIE.AnnotationTool.SelectTool
+                              && imageView.document.selectedItem.options !== KQIE.AnnotationTool.NoOptions))
             }
 
             Item {
