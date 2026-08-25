@@ -18,6 +18,7 @@ import org.kde.kquickimageeditor as KQuickImageEditor
 Controls.Page {
     id: root
 
+    readonly property AnnotationEditor viewport: annotationEditor
     property alias document: annotationEditor.document
 
     readonly property real fitZoom: Math.min(flickable.width / annotationEditor.document.canvasRect.width,
