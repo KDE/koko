@@ -16,6 +16,8 @@ import org.kde.kirigami as Kirigami
 import org.kde.kquickimageeditor as KQIE
 import org.kde.photos.editor as PhotosEditor
 
+pragma ComponentBehavior: Bound
+
 Kirigami.Page {
     id: root
 
