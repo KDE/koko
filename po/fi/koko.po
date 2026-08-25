@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-20 02:34+0000\n"
-"PO-Revision-Date: 2026-01-05 17:11+0200\n"
+"PO-Revision-Date: 2026-02-25 16:01+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -780,16 +780,12 @@ msgid "Home"
 msgstr "Koti"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Roskakori"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Verkko"
 
@@ -1129,7 +1125,7 @@ msgstr[1] "%1 kohdetta"
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "Palauta"
 
 #: qml/gallery/GalleryPage.qml:141
 #, kde-format
@@ -1526,85 +1522,79 @@ msgstr "Seuraava kuva"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:818
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr ""
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:819
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:820
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:821
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:822
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:823
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:824
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:825
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:874
-#, fuzzy, kde-format
-#| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
-#| msgid "%1:"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1:"
+msgstr "%1 %"
 
 #: qml/mediaview/MediaViewPage.qml:888
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "Lähennys:"
+msgstr "Loitonna"
 
 #: qml/mediaview/MediaViewPage.qml:897
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "Lähennys:"
+msgstr "Lähennä"
 
 #: qml/mediaview/MediaViewPage.qml:1140 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
@@ -1842,7 +1832,7 @@ msgstr "Suurenna näyttöä pienemmät kuvat"
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "Muista lähennystaso kuvien välillä vaihdettaessa"
 
 #: qml/Settings/GeneralConfigPage.qml:180
 #, kde-format
