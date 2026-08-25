@@ -210,6 +210,7 @@ Kirigami.OverlayDrawer {
                 }
                 PlaceItem {
                     text: i18nc("@action:button Navigation entry in sidebar", "Videos")
+                    visible: Koko.Config.mediaTypes === Koko.Config.ImagesAndVideos
                     actionName: "place_videos"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }

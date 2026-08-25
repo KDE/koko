@@ -117,6 +117,14 @@ void NavigationActions::setupActions()
         });
     }
 
+    Config *config = Config::self();
+    auto updateVideosVisibility = [coll, config]() {
+        auto action = coll->action(QStringLiteral("place_videos"));
+        action->setVisible(config->mediaTypes() == Config::EnumMediaTypes::ImagesAndVideos);
+    };
+    connect(config, &Config::MediaTypesChanged, updateVideosVisibility);
+    updateVideosVisibility();
+
     updateSavedFolders();
     updateTags();
 }

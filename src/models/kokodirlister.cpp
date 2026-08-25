@@ -6,32 +6,14 @@
 
 #include <QMimeDatabase>
 
+#include "kokoconfig.h"
 #include "kokodirlister.h"
-
-// Static name filter
-static const QString nameFilter = [] {
-    QStringList suffixes;
-
-    for (const auto &mimeType : QMimeDatabase().allMimeTypes()) {
-        const auto name = mimeType.name();
-        if (name.startsWith(QStringLiteral("image/")) || name.startsWith(QStringLiteral("video/"))) {
-            suffixes << mimeType.suffixes();
-        }
-    }
-
-    suffixes.removeDuplicates();
-
-    for (auto &s : suffixes) {
-        s.prepend(QStringLiteral("*."));
-    }
-
-    return suffixes.join(QLatin1Char(' '));
-}();
+#include "mimetypeshelper.h"
 
 KokoDirLister::KokoDirLister(QObject *parent)
     : QObject(parent)
 {
-    m_dirLister.setNameFilter(nameFilter);
+    m_dirLister.setNameFilter(MimeTypesHelper::relevantMimeTypes());
 
     m_bufferTimer.setSingleShot(true);
     m_bufferTimer.setInterval(200);
@@ -66,11 +48,17 @@ KokoDirLister::KokoDirLister(QObject *parent)
     connect(&m_bufferTimer, &QTimer::timeout, this, [this]() {
         flushBufferedFileItems();
     });
+
+    Config *config = Config::self();
+    connect(config, &Config::MediaTypesChanged, this, [this]() {
+        m_dirLister.setNameFilter(MimeTypesHelper::relevantMimeTypes());
+        m_dirLister.emitChanges();
+    });
 }
 
 bool KokoDirLister::fileItemMatchesFilter(const KFileItem &fileItem)
 {
-    return nameFilter.contains(QStringLiteral("*.") + fileItem.suffix(), Qt::CaseInsensitive);
+    return MimeTypesHelper::relevantMimeTypes().contains(QStringLiteral("*.") + fileItem.suffix(), Qt::CaseInsensitive);
 };
 
 QUrl KokoDirLister::url() const

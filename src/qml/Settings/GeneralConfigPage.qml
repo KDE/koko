@@ -49,6 +49,32 @@ FormCard.FormCardPage {
     }
 
     FormCard.FormHeader {
+        title: i18nc("@title:group", "File types")
+    }
+
+    FormCard.FormCard {
+            FormCard.FormRadioDelegate {
+                text: i18nc("@option:check", "Images and videos")
+                checked: Koko.Config.mediaTypes === Koko.Config.ImagesAndVideos
+                enabled: !Koko.Config.isMediaTypesImmutable
+                onToggled: {
+                        Koko.Config.mediaTypes = Koko.Config.ImagesAndVideos;
+                        Koko.Config.save();
+                }
+            }
+
+            FormCard.FormRadioDelegate {
+                text: i18nc("@option:check", "Images only")
+                checked: Koko.Config.mediaTypes === Koko.Config.ImagesOnly
+                enabled: !Koko.Config.isMediaTypesImmutable
+                onToggled: {
+                        Koko.Config.mediaTypes = Koko.Config.ImagesOnly;
+                        Koko.Config.save();
+                }
+            }
+    }
+
+    FormCard.FormHeader {
         title: i18nc("@title:group", "Gallery Sorting")
     }
 

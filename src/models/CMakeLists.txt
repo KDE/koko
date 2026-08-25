@@ -31,6 +31,7 @@ add_library(photos_models_static STATIC
 )
 
 target_link_libraries(photos_models_static PUBLIC
+    photos_settings_static
     Qt::Quick
     Qt::Qml
     Qt::Sql

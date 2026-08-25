@@ -3,6 +3,7 @@
 # SPDX-FileCopyrightText: 2021 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: LGPL-2.1-or-later
 
+add_subdirectory(settings)
 add_subdirectory(models)
 
 add_subdirectory(thumbnails)
@@ -35,33 +36,10 @@ qt_add_library(koko_static STATIC
     cutfilehelper.cpp
 )
 
-kconfig_target_kcfg_file(koko_static
-    FILE kokoconfig.kcfg
-    CLASS_NAME Config
-    MUTATORS
-    GENERATE_PROPERTIES
-    GENERATE_MOC
-    DEFAULT_VALUE_GETTERS
-    SINGLETON
-    QML_REGISTRATION
-    GLOBAL_ENUMS
-)
-
-kconfig_target_kcfg_file(koko_static
-    FILE kokostateconfig.kcfg
-    CLASS_NAME State
-    MUTATORS
-    GENERATE_PROPERTIES
-    GENERATE_MOC
-    DEFAULT_VALUE_GETTERS
-    SINGLETON
-    QML_REGISTRATION
-)
-
 target_link_libraries(koko_static PUBLIC
     photos_models_static
     photos_thumbnails_static
-
+    photos_settings_static
     Qt::Widgets
     Qt::Core
     Qt::Svg
@@ -72,9 +50,6 @@ target_link_libraries(koko_static PUBLIC
     KF6::KIOWidgets
     KF6::DBusAddons
     KF6::FileMetaData
-    KF6::ConfigGui
-    KF6::ConfigCore
-    KF6::ConfigWidgets
     KF6::I18n
     KF6::I18nQml
     KF6::Notifications
@@ -94,6 +69,7 @@ ecm_add_qml_module(koko_static
     GENERATE_PLUGIN_SOURCE
     OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src/org/kde/koko
     IMPORTS
+        org.kde.photos.settings
         org.kde.photos.models
         org.kde.photos.thumbnails
     DEPENDENCIES
@@ -162,6 +138,7 @@ add_executable(koko
 target_link_libraries(koko PRIVATE
     koko_static
     koko_staticplugin
+    photos_settings_staticplugin
     photos_models_staticplugin
     photos_thumbnails_staticplugin
     photos_editor_static

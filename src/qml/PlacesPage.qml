@@ -42,6 +42,7 @@ FormCard.FormCardPage {
 
         FormCard.FormButtonDelegate {
             text: i18nc("@action:button Navigation entry in sidebar", "Videos")
+            visible: Koko.Config.mediaTypes === Koko.Config.ImagesAndVideos
             action: Kirigami.Action {
                 AC.ActionCollection.collection: "org.kde.koko.navigation"
                 AC.ActionCollection.action: "place_videos"

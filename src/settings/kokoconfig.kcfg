@@ -61,6 +61,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             <label>Whether to remember zoom levels when switching between images</label>
             <default>false</default>
         </entry>
+        <entry name="MediaTypes" type="Enum">
+            <label>Types of media that Koko should show</label>
+            <choices>
+                <choice name="ImagesAndVideos"/>
+                <choice name="ImagesOnly"/>
+            </choices>
+            <default>ImagesAndVideos</default>
+        </entry>
     </group>
     <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">
