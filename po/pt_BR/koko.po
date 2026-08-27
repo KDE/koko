@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-26 00:43+0000\n"
-"PO-Revision-Date: 2026-08-20 06:01-0300\n"
+"PO-Revision-Date: 2026-08-26 06:50-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1756,27 +1756,22 @@ msgid "%1 px"
 msgstr "%1 px"
 
 #: qml/Settings/GeneralConfigPage.qml:52
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Type"
+#, kde-format
 msgctxt "@title:group"
 msgid "File types"
-msgstr "Tipo do arquivo"
+msgstr "Tipos de arquivo"
 
 #: qml/Settings/GeneralConfigPage.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
-msgstr "Navegar pelos vídeos"
+msgstr "Imagens e vídeos"
 
 #: qml/Settings/GeneralConfigPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images only"
-msgstr "Imagens"
+msgstr "Somente imagens"
 
 #: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format

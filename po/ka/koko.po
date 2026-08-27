@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-26 00:43+0000\n"
-"PO-Revision-Date: 2026-08-20 06:06+0200\n"
+"PO-Revision-Date: 2026-08-26 06:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1753,27 +1753,22 @@ msgid "%1 px"
 msgstr "%1 პიქს"
 
 #: qml/Settings/GeneralConfigPage.qml:52
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Type"
+#, kde-format
 msgctxt "@title:group"
 msgid "File types"
-msgstr "ფაილის ტიპი"
+msgstr "ფაილის ტიპები"
 
 #: qml/Settings/GeneralConfigPage.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
-msgstr "გადასვლა ვიდეოებზე"
+msgstr "გამოსახულებები და ვიდეოები"
 
 #: qml/Settings/GeneralConfigPage.qml:67
-#, fuzzy, kde-format
-#| msgid "Images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images only"
-msgstr "ასლები"
+msgstr "მხოლოდ გამოსახულებები"
 
 #: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format
