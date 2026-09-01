@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-26 00:43+0000\n"
+"POT-Creation-Date: 2026-09-01 00:43+0000\n"
 "PO-Revision-Date: 2026-08-27 19:15+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -405,13 +405,13 @@ msgstr ""
 "L'image <filename>%1</filename> a été modifiée. Voulez -vous enregistrer vos "
 "modifications ou les annuler ?"
 
-#: editor/EditorView.qml:37
+#: editor/EditorView.qml:39
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Modifier <filename>%1</filename>"
 
-#: editor/EditorView.qml:47 editor/EditorView.qml:536
+#: editor/EditorView.qml:49 editor/EditorView.qml:1044
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -421,121 +421,179 @@ msgstr ""
 "Impossible d'enregistrer le fichier. Veuillez vérifier que vous avez les "
 "droits d'accès nécessaires pour enregistrer ce fichier."
 
-#: editor/EditorView.qml:133
+#: editor/EditorView.qml:314
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Redimensionner"
 
-#: editor/EditorView.qml:177
+#: editor/EditorView.qml:358
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Redimensionner par :"
 
-#: editor/EditorView.qml:188
+#: editor/EditorView.qml:369
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Pixels"
 
-#: editor/EditorView.qml:195
+#: editor/EditorView.qml:376
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Pourcentage"
 
-#: editor/EditorView.qml:206
+#: editor/EditorView.qml:387
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Largeur"
 
-#: editor/EditorView.qml:258
+#: editor/EditorView.qml:439
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Hauteur"
 
-#: editor/EditorView.qml:279
+#: editor/EditorView.qml:460
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Conserver le ratio d'aspect"
 
-#: editor/EditorView.qml:283
+#: editor/EditorView.qml:464
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Taille du fichier d'origine : %1"
 
-#: editor/EditorView.qml:311
+#: editor/EditorView.qml:492
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Taille estimée du fichier : %1"
 
-#: editor/EditorView.qml:318
+#: editor/EditorView.qml:499
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: editor/EditorView.qml:329
+#: editor/EditorView.qml:510
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Redimensionner"
 
-#: editor/EditorView.qml:379
+#: editor/EditorView.qml:560
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Faire pivoter"
 
-#: editor/EditorView.qml:404
+#: editor/EditorView.qml:585
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Retourner"
 
-#: editor/EditorView.qml:434
+#: editor/EditorView.qml:613
+#, fuzzy, kde-format
+#| msgctxt "@label"
+#| msgid "Font Color"
+msgctxt "@action:button Adjust the colors of an image"
+msgid "Adjust Colors"
+msgstr "Couleur de police"
+
+#: editor/EditorView.qml:677
+#, kde-format
+msgctxt "@label:slider"
+msgid "Brightness:"
+msgstr ""
+
+#: editor/EditorView.qml:727
+#, kde-format
+msgctxt "@info:tooltip color brightness spinbox"
+msgid "Brightness"
+msgstr ""
+
+#: editor/EditorView.qml:758
+#, kde-format
+msgctxt "@label:slider"
+msgid "Contrast:"
+msgstr ""
+
+#: editor/EditorView.qml:806
+#, kde-format
+msgctxt "@info:tooltip color contrast spinbox"
+msgid "Contrast"
+msgstr ""
+
+#: editor/EditorView.qml:827
+#, kde-format
+msgctxt "@label:slider"
+msgid "Gamma:"
+msgstr ""
+
+#: editor/EditorView.qml:879
+#, kde-format
+msgctxt "@info:tooltip color gamma spinbox"
+msgid "Gamma"
+msgstr ""
+
+#: editor/EditorView.qml:905
+#, fuzzy, kde-format
+#| msgctxt "@action reset selection"
+#| msgid "Reset"
+msgctxt "@action:button reset color adjustment controls"
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: editor/EditorView.qml:912
+#, kde-format
+msgctxt "@action:button apply color adjustment to image"
+msgid "Apply"
+msgstr ""
+
+#: editor/EditorView.qml:942
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Annuler"
 
-#: editor/EditorView.qml:442
+#: editor/EditorView.qml:950
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Refaire"
 
-#: editor/EditorView.qml:456
+#: editor/EditorView.qml:964
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Enregistrer"
 
-#: editor/EditorView.qml:464
+#: editor/EditorView.qml:972
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Enregistrer sous"
 
-#: editor/EditorView.qml:594
+#: editor/EditorView.qml:1102
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Zoom :"
 
-#: editor/EditorView.qml:609
+#: editor/EditorView.qml:1117
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
 msgstr "Zoom sur l'image"
 
-#: editor/ImageView.qml:196
+#: editor/ImageView.qml:197
 #, kde-format
 msgctxt "@info crop tool explanation"
 msgid ""
