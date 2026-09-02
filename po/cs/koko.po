@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:43+0000\n"
-"PO-Revision-Date: 2026-08-26 11:06+0200\n"
-"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
+"PO-Revision-Date: 2026-09-02 01:22+0200\n"
+"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -504,53 +504,49 @@ msgid "Flip"
 msgstr "Převrátit"
 
 #: editor/EditorView.qml:613
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Font Color"
+#, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
-msgstr "Barva"
+msgstr "Upravit barvy"
 
 #: editor/EditorView.qml:677
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
-msgstr ""
+msgstr "Jas:"
 
 #: editor/EditorView.qml:727
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
-msgstr ""
+msgstr "Jas"
 
 #: editor/EditorView.qml:758
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast:"
-msgstr ""
+msgstr "Kontrast:"
 
 #: editor/EditorView.qml:806
 #, kde-format
 msgctxt "@info:tooltip color contrast spinbox"
 msgid "Contrast"
-msgstr ""
+msgstr "Kontrast"
 
 #: editor/EditorView.qml:827
 #, kde-format
 msgctxt "@label:slider"
 msgid "Gamma:"
-msgstr ""
+msgstr "Gama:"
 
 #: editor/EditorView.qml:879
 #, kde-format
 msgctxt "@info:tooltip color gamma spinbox"
 msgid "Gamma"
-msgstr ""
+msgstr "Gama"
 
 #: editor/EditorView.qml:905
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
 msgstr "Obnovit"
@@ -559,7 +555,7 @@ msgstr "Obnovit"
 #, kde-format
 msgctxt "@action:button apply color adjustment to image"
 msgid "Apply"
-msgstr ""
+msgstr "Použít"
 
 #: editor/EditorView.qml:942
 #, kde-format
