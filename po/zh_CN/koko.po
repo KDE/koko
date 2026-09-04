@@ -492,12 +492,10 @@ msgid "Flip"
 msgstr "翻转 (垂直)"
 
 #: editor/EditorView.qml:613
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Font Color"
+#, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
-msgstr "字体颜色"
+msgstr ""
 
 #: editor/EditorView.qml:677
 #, kde-format
@@ -536,12 +534,10 @@ msgid "Gamma"
 msgstr ""
 
 #: editor/EditorView.qml:905
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
-msgstr "重置"
+msgstr ""
 
 #: editor/EditorView.qml:912
 #, kde-format
