@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:43+0000\n"
-"PO-Revision-Date: 2026-09-01 10:17+0200\n"
+"PO-Revision-Date: 2026-09-06 17:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -163,7 +163,7 @@ msgstr "Amplada de l'àrea d'escapçat"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr "Alçada de l'àrea d'escapçat"
+msgstr "Altura de l'àrea d'escapçat"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
@@ -283,7 +283,7 @@ msgstr "Carta US (retrat)"
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr "Amplada:Alçada"
+msgstr "Amplada:Altura"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "Amplada"
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "Alçada"
+msgstr "Altura"
 
 #: editor/EditorView.qml:460
 #, kde-format
