@@ -10,7 +10,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <developer id="org.kde">
     <name translate="no">KDE</name>
   </developer>
-  <name>Photos</name>
+  <name>Koko</name>
   <name xml:lang="ar">الصور</name>
   <name xml:lang="bg">Снимки</name>
   <name xml:lang="ca">Fotos</name>
