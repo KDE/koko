@@ -62,9 +62,9 @@ int main(int argc, char **argv)
     KLocalizedString::setApplicationDomain("koko");
 
     KAboutData aboutData(QStringLiteral("koko"),
-                         xi18nc("@title", "<application>Photos</application>"),
+                         xi18nc("@title", "<application>Koko</application>"),
                          QStringLiteral(KOKO_VERSION_STRING),
-                         xi18nc("@title", "Photos is an image viewer for your image collection."),
+                         xi18nc("@title", "Koko is an image viewer for your image collection."),
                          KAboutLicense::LGPL,
                          xi18nc("@info:credit", "(c) 2013-%1 KDE Contributors", QString::number(QDate::currentDate().year())),
                          QString(),
