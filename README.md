@@ -17,7 +17,7 @@ Contributions are welcome. We use https://invent.kde.org/graphics/koko/.
 
 The [KDE Community Code of Conduct](https://kde.org/code-of-conduct) is applied.
 ## Links
-* Issues: https://bugs.kde.org/enter_bug.cgi?product=koko
+* Issues: https://bugs.kde.org/enter_bug.cgi?product=Photos
 * Project page: https://invent.kde.org/graphics/koko
 * Forum: https://discuss.kde.org/tag/koko
 

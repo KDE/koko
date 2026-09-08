@@ -71,7 +71,7 @@ int main(int argc, char **argv)
                          QStringLiteral("https://apps.kde.org/koko"));
 
     aboutData.setOrganizationDomain(QByteArray("kde.org"));
-    aboutData.setProductName(QByteArray("koko"));
+    aboutData.setProductName(QByteArray("Photos"));
 
     aboutData.addAuthor(xi18nc("@info:credit", "Vishesh Handa"), xi18nc("@info:credit", "Developer"), "vhanda@kde.org");
 
