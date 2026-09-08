@@ -757,7 +757,7 @@ Kirigami.Page {
 
         KAC.FloatingToolBar {
             id: zoomBar
-            readonly property bool shouldShow: listView.currentItem !== null && root.mainWindow.controlsVisible && listView.currentItem.type != Koko.FileInfo.VideoType
+            readonly property bool shouldShow: !Kirigami.Settings.isMobile && listView.currentItem !== null && root.mainWindow.controlsVisible && listView.currentItem.type != Koko.FileInfo.VideoType
             Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
             parent: listView
             anchors {
