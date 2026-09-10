@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-01 00:43+0000\n"
-"PO-Revision-Date: 2026-08-20 17:44+0200\n"
+"PO-Revision-Date: 2026-09-09 22:05+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -501,53 +501,49 @@ msgid "Flip"
 msgstr "Обръщане"
 
 #: editor/EditorView.qml:613
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Font Color"
+#, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
-msgstr "Цвят на шрифта"
+msgstr "Коригиране на цветовете"
 
 #: editor/EditorView.qml:677
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
-msgstr ""
+msgstr "Яркост:"
 
 #: editor/EditorView.qml:727
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
-msgstr ""
+msgstr "Яркост"
 
 #: editor/EditorView.qml:758
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast:"
-msgstr ""
+msgstr "Контраст:"
 
 #: editor/EditorView.qml:806
 #, kde-format
 msgctxt "@info:tooltip color contrast spinbox"
 msgid "Contrast"
-msgstr ""
+msgstr "Контраст"
 
 #: editor/EditorView.qml:827
 #, kde-format
 msgctxt "@label:slider"
 msgid "Gamma:"
-msgstr ""
+msgstr "Гама:"
 
 #: editor/EditorView.qml:879
 #, kde-format
 msgctxt "@info:tooltip color gamma spinbox"
 msgid "Gamma"
-msgstr ""
+msgstr "Гама"
 
 #: editor/EditorView.qml:905
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
 msgstr "Нулиране"
@@ -556,7 +552,7 @@ msgstr "Нулиране"
 #, kde-format
 msgctxt "@action:button apply color adjustment to image"
 msgid "Apply"
-msgstr ""
+msgstr "Прилагане"
 
 #: editor/EditorView.qml:942
 #, kde-format
@@ -1815,28 +1811,22 @@ msgid "%1 px"
 msgstr "%1 px"
 
 #: qml/Settings/GeneralConfigPage.qml:52
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Type"
+#, kde-format
 msgctxt "@title:group"
 msgid "File types"
-msgstr "Вид на файла"
+msgstr "Вид файлове"
 
 #: qml/Settings/GeneralConfigPage.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
-msgstr "Отиване до Видеозаписи"
+msgstr "Изображения и видео"
 
 #: qml/Settings/GeneralConfigPage.qml:67
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Image Zoom"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images only"
-msgstr "Мащаб на изображение"
+msgstr "Само изображения"
 
 #: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format
@@ -1984,10 +1974,3 @@ msgstr "Колекции"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Всички медийни файлове"
-
-#~ msgid "General"
-#~ msgstr "Общи"
-
-#~ msgctxt "Remote network locations"
-#~ msgid "Remote"
-#~ msgstr "Отдалечени"
