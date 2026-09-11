@@ -163,7 +163,7 @@ void FileMenuManager::updateActions()
 
     const bool hasFile = fileItems.size() > 0;
     const bool singleFile = fileItems.size() == 1;
-    const auto singleFileMimetype = hasFile ? fileItems[0].mimetype().toLatin1() : "";
+    const QByteArray singleFileMimetype = hasFile ? fileItems[0].mimetype().toLatin1() : QByteArray("");
     const auto singleFileReadableImageMimetype = QImageReader::supportedMimeTypes().contains(singleFileMimetype);
 
     // Save As action
