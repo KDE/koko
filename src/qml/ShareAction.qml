@@ -40,7 +40,7 @@ Kirigami.Action {
             return;
         }
         const shareDrawerComponent = Qt.createComponent("org.kde.koko", "ShareMenu");
-        const drawer = shareDrawerComponent.createObject(null, {
+        const drawer = shareDrawerComponent.createObject(application, {
             inputData: root.inputData,
             application: root.application,
             title: root.tooltip,
