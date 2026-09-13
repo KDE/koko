@@ -70,11 +70,18 @@ ZoomArea {
     TapHandler {
         onTapped: {
             let k = (applicationWindow() as Koko.Main);
-            if (k.contextDrawer) {
+            if (k.contextDrawer && k.contextDrawer.isOpen) {
                 k.contextDrawer.drawerOpen = false
             } else {
                 k.controlsVisible = !k.controlsVisible
             }
+        }
+    }
+
+    onClicked: (mouse) => {
+        console.log("clicked")
+        if (mouse.button === Qt.RightButton) {
+            root.contextMenuRequested();
         }
     }
 
