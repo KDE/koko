@@ -79,7 +79,6 @@ ZoomArea {
     }
 
     onClicked: (mouse) => {
-        console.log("clicked")
         if (mouse.button === Qt.RightButton) {
             root.contextMenuRequested();
         }
