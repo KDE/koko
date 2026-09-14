@@ -20,6 +20,7 @@ MouseArea {
     property bool canMove: false // allow to drag to next image even if the current one is zoomed using touch screens
     readonly property bool interactive: (Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height) && !root.canMove
     property bool dragging: root.drag.active || pinchHandler.active
+    property int lastWindowVisibility: applicationWindow().visibility // for switching to full screen, see TapHandler
 
     /**
      * Properties used for contentItem manipulation.
@@ -301,7 +302,17 @@ MouseArea {
 
     TapHandler {
         acceptedDevices: PointerDevice.TouchScreen
-        onLongPressed: root.contextMenuRequested()
+        onLongPressed: {
+             const app = applicationWindow();
+            if (app.visibility === Window.FullScreen) {
+                app.visibility = Window.Windowed;
+                app.visibility = root.mainWindow.visibility
+            } else {
+                // Work around https://qt-project.atlassian.net/browse/QTBUG-145832
+                root.lastWindowVisibility = app.visibility
+                app.visibility = Window.FullScreen;
+            }
+        }
     }
 
     onDoubleClicked: (mouse) => {
