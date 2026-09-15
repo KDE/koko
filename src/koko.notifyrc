@@ -48,7 +48,7 @@ Name[zh_CN]=Koko
 Name[zh_TW]=Koko
 
 [Event/sharingSuccess]
-Name=Sharing success
+Name=Item Shared
 Name[ar]=نجحت المشاركة
 Name[bg]=Споделянето е успешно
 Name[ca]=S'ha compartit amb èxit
