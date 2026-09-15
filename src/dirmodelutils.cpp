@@ -121,10 +121,9 @@ bool DirModelUtils::isDirectory(const QUrl &path) const
     return fileInfo.isDir();
 }
 
-QString DirModelUtils::fileNameOfUrl(const QString &path) const
+QString DirModelUtils::fileNameOfUrl(const QUrl &url) const
 {
-    const int index = path.lastIndexOf(QLatin1Char('/'));
-    return path.mid(index + 1);
+    return url.fileName();
 }
 
 QUrl DirModelUtils::parentOfUrl(const QUrl &url) const
