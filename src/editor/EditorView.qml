@@ -32,7 +32,7 @@ Kirigami.Page {
     // the program will print an error with a line number in the console and
     // continue running while using imagePath like an empty string.
     readonly property string imagePath: new URL(imageUrl).pathname
-    readonly property string imageFileName: root.imagePath.substring(root.imagePath.lastIndexOf("/") + 1)
+    readonly property string imageFileName: Koko.DirModelUtils.fileNameOfUrl(imageUrl)
 
     property string mimeType
 
