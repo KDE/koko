@@ -24,11 +24,10 @@ Kirigami.Page {
     required property Kirigami.ApplicationWindow mainWindow
 
     property url imageUrl
-    readonly property string imagePath: imageUrl.toString().replace("file://", "")
-    onImagePathChanged: {
-        imageView.document.setBaseImage(imagePath)
+    onImageUrlChanged: {
+        imageView.document.setBaseImage(imageUrl)
     }
-
+    readonly property string imagePath: imageUrl.toString().replace("file://", "")
     readonly property string imageFileName: root.imagePath.substring(root.imagePath.lastIndexOf("/") + 1)
 
     property string mimeType
