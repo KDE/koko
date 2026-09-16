@@ -67,19 +67,20 @@ ZoomArea {
     minimumZoomSize: 8
     maximumZoomFactor: 100
 
-    Timer {
-        id: doubleClickTimer
-        interval: Application.styleHints.mouseDoubleClickInterval + 1
-        onTriggered: (root.Controls.ApplicationWindow.window as Koko.Main).controlsVisible = !(root.Controls.ApplicationWindow.window as Koko.Main).controlsVisible
+    TapHandler {
+        onTapped: {
+            let k = (applicationWindow() as Koko.Main);
+            if (k.contextDrawer && k.contextDrawer.drawerOpen) {
+                k.contextDrawer.drawerOpen = false
+            } else {
+                k.controlsVisible = !k.controlsVisible
+            }
+        }
     }
 
+
     onClicked: (mouse) => {
-        if (mouse.button === Qt.LeftButton) {
-            if ((Controls.ApplicationWindow.window as Koko.Main).contextDrawer) {
-                (Controls.ApplicationWindow.window as Koko.Main).contextDrawer.drawerOpen = false
-            }
-            doubleClickTimer.restart()
-        } else if (mouse.button === Qt.RightButton) {
+        if (mouse.button === Qt.RightButton) {
             root.contextMenuRequested();
         }
     }
