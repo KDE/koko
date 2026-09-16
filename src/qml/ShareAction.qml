@@ -63,7 +63,7 @@ Kirigami.Action {
             text: actionDisplay
             icon.name: iconName
             onTriggered: {
-                const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
+                const shareDialogComponent = Qt.createComponent(application, "ShareDialog");
                 root.application.pageStack.pushDialogLayer(shareDialogComponent, {
                     title: root.tooltip,
                     index: index,
