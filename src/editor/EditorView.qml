@@ -24,7 +24,11 @@ Kirigami.Page {
     onImageUrlChanged: {
         imageView.document.setBaseImage(imageUrl)
     }
-    readonly property string imagePath: imageUrl.toString().replace("file://", "")
+    // JS URL will throw an error if imageUrl is not valid, but using an invalid
+    // image url in this component would be a bug to begin with. In that case,
+    // the program will print an error with a line number in the console and
+    // continue running while using imagePath like an empty string.
+    readonly property string imagePath: new URL(imageUrl).pathname
     readonly property string imageFileName: root.imagePath.substring(root.imagePath.lastIndexOf("/") + 1)
 
     property string mimeType
