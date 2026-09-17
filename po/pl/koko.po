@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 02:34+0000\n"
+"POT-Creation-Date: 2026-09-17 02:40+0000\n"
 "PO-Revision-Date: 2026-05-09 15:49+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -414,13 +414,13 @@ msgid ""
 "your changes or discard them?"
 msgstr ""
 
-#: editor/EditorView.qml:36
+#: editor/EditorView.qml:39
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr ""
 
-#: editor/EditorView.qml:46 editor/EditorView.qml:537
+#: editor/EditorView.qml:49 editor/EditorView.qml:540
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to save file. Check if you have the correct permission to edit "
@@ -433,7 +433,7 @@ msgstr ""
 "Nie można zapisać pliku. Sprawdź czy masz wystarczające uprawnienia do jego "
 "edytowania."
 
-#: editor/EditorView.qml:112
+#: editor/EditorView.qml:115
 #, fuzzy, kde-format
 #| msgctxt "@action:button Crop an image"
 #| msgid "Crop"
@@ -441,13 +441,13 @@ msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Przytnij"
 
-#: editor/EditorView.qml:132
+#: editor/EditorView.qml:135
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Zmień rozmiar"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:179
 #, fuzzy, kde-format
 #| msgctxt "@action:button Resize an image"
 #| msgid "Resize"
@@ -455,55 +455,55 @@ msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Zmień rozmiar"
 
-#: editor/EditorView.qml:187
+#: editor/EditorView.qml:190
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr ""
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:197
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr ""
 
-#: editor/EditorView.qml:205
+#: editor/EditorView.qml:208
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr ""
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:260
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr ""
 
-#: editor/EditorView.qml:278
+#: editor/EditorView.qml:281
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr ""
 
-#: editor/EditorView.qml:282
+#: editor/EditorView.qml:285
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr ""
 
-#: editor/EditorView.qml:310
+#: editor/EditorView.qml:313
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr ""
 
-#: editor/EditorView.qml:317
+#: editor/EditorView.qml:320
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr ""
 
-#: editor/EditorView.qml:328
+#: editor/EditorView.qml:331
 #, fuzzy, kde-format
 #| msgctxt "@action:button Resize an image"
 #| msgid "Resize"
@@ -511,7 +511,7 @@ msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Zmień rozmiar"
 
-#: editor/EditorView.qml:378
+#: editor/EditorView.qml:381
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the left"
 #| msgid "Rotate left"
@@ -519,7 +519,7 @@ msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Obróć w lewo"
 
-#: editor/EditorView.qml:382
+#: editor/EditorView.qml:385
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the left"
 #| msgid "Rotate left"
@@ -527,7 +527,7 @@ msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Obróć w lewo"
 
-#: editor/EditorView.qml:393
+#: editor/EditorView.qml:396
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the right"
 #| msgid "Rotate right"
@@ -535,7 +535,7 @@ msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Obróć w prawo"
 
-#: editor/EditorView.qml:405
+#: editor/EditorView.qml:408
 #, fuzzy, kde-format
 #| msgctxt "@action:button Mirror an image vertically"
 #| msgid "Flip"
@@ -543,19 +543,19 @@ msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Odbij w pionie"
 
-#: editor/EditorView.qml:409
+#: editor/EditorView.qml:412
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr ""
 
-#: editor/EditorView.qml:420
+#: editor/EditorView.qml:423
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr ""
 
-#: editor/EditorView.qml:435
+#: editor/EditorView.qml:438
 #, fuzzy, kde-format
 #| msgctxt "@action:button Undo modification"
 #| msgid "Undo"
@@ -563,32 +563,32 @@ msgctxt "@action:button"
 msgid "Undo"
 msgstr "Cofnij"
 
-#: editor/EditorView.qml:443
+#: editor/EditorView.qml:446
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr ""
 
-#: editor/EditorView.qml:457
+#: editor/EditorView.qml:460
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Zapisz"
 
-#: editor/EditorView.qml:465
+#: editor/EditorView.qml:468
 #, fuzzy, kde-format
 #| msgid "Save As"
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Zapisz jako"
 
-#: editor/EditorView.qml:595
+#: editor/EditorView.qml:598
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr ""
 
-#: editor/EditorView.qml:610
+#: editor/EditorView.qml:613
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@info:tooltip"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-20 02:34+0000\n"
+"POT-Creation-Date: 2026-09-17 02:40+0000\n"
 "PO-Revision-Date: 2026-07-16 18:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -414,13 +414,13 @@ msgstr ""
 "До зображення <filename>%1</filename> було внесено зміни. Хочете зберегти "
 "внесені зміни чи відкинути їх?"
 
-#: editor/EditorView.qml:36
+#: editor/EditorView.qml:39
 #, kde-kuit-format
 msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Змінити <filename>%1</filename>"
 
-#: editor/EditorView.qml:46 editor/EditorView.qml:537
+#: editor/EditorView.qml:49 editor/EditorView.qml:540
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -430,145 +430,145 @@ msgstr ""
 "Не вдалося зберегти файл. Перевірте, чи маєте ви належні права доступу для "
 "збереження цього файла."
 
-#: editor/EditorView.qml:112
+#: editor/EditorView.qml:115
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Обрізати"
 
-#: editor/EditorView.qml:132
+#: editor/EditorView.qml:135
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Змінити розмір"
 
-#: editor/EditorView.qml:176
+#: editor/EditorView.qml:179
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Зміна розміру:"
 
-#: editor/EditorView.qml:187
+#: editor/EditorView.qml:190
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Пікселі"
 
-#: editor/EditorView.qml:194
+#: editor/EditorView.qml:197
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Частка"
 
-#: editor/EditorView.qml:205
+#: editor/EditorView.qml:208
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Ширина"
 
-#: editor/EditorView.qml:257
+#: editor/EditorView.qml:260
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Висота"
 
-#: editor/EditorView.qml:278
+#: editor/EditorView.qml:281
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Зберігати пропорції"
 
-#: editor/EditorView.qml:282
+#: editor/EditorView.qml:285
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Початковий розмір файла: %1"
 
-#: editor/EditorView.qml:310
+#: editor/EditorView.qml:313
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Оцінка розміру нового файла: %1"
 
-#: editor/EditorView.qml:317
+#: editor/EditorView.qml:320
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Скинути"
 
-#: editor/EditorView.qml:328
+#: editor/EditorView.qml:331
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Змінити розмір"
 
-#: editor/EditorView.qml:378
+#: editor/EditorView.qml:381
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Обертання"
 
-#: editor/EditorView.qml:382
+#: editor/EditorView.qml:385
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Обернути ліворуч"
 
-#: editor/EditorView.qml:393
+#: editor/EditorView.qml:396
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Обернути праворуч"
 
-#: editor/EditorView.qml:405
+#: editor/EditorView.qml:408
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Перевернути"
 
-#: editor/EditorView.qml:409
+#: editor/EditorView.qml:412
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Віддзеркалити горизонтально"
 
-#: editor/EditorView.qml:420
+#: editor/EditorView.qml:423
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr "Віддзеркалити вертикально"
 
-#: editor/EditorView.qml:435
+#: editor/EditorView.qml:438
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Скасувати"
 
-#: editor/EditorView.qml:443
+#: editor/EditorView.qml:446
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Повторити"
 
-#: editor/EditorView.qml:457
+#: editor/EditorView.qml:460
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Зберегти"
 
-#: editor/EditorView.qml:465
+#: editor/EditorView.qml:468
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Зберегти як"
 
-#: editor/EditorView.qml:595
+#: editor/EditorView.qml:598
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Масштаб:"
 
-#: editor/EditorView.qml:610
+#: editor/EditorView.qml:613
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
