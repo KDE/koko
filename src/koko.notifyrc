@@ -49,13 +49,17 @@ Name[zh_TW]=Koko
 
 [Event/sharingSuccess]
 Name=Item Shared
+Name[ar]=عنصر مُشارَك
 Name[ca]=Element compartit
 Name[cs]=Sdílení položek
 Name[es]=Elemento compartido
+Name[he]=פריט שותף
 Name[ka]=გაზიარებული ელემენტი
+Name[lt]=Elementas bendrintas
 Name[nl]=Item gedeeld
 Name[pt_BR]=Item compartilhado
 Name[sl]=Postavka deljena
+Name[sv]=Objekt delat
 Name[tr]=Öge Paylaşıldı
 Name[uk]=Запис оприлюднено
 Name[zh_TW]=已分享項目
