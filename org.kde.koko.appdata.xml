@@ -11,42 +11,6 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <name translate="no">KDE</name>
   </developer>
   <name>Koko</name>
-  <name xml:lang="ar">الصور</name>
-  <name xml:lang="bg">Снимки</name>
-  <name xml:lang="ca">Fotos</name>
-  <name xml:lang="ca-valencia">Fotos</name>
-  <name xml:lang="cs">Fotografie</name>
-  <name xml:lang="da">Billeder</name>
-  <name xml:lang="de">Fotos</name>
-  <name xml:lang="en-GB">Photos</name>
-  <name xml:lang="eo">Fotoj</name>
-  <name xml:lang="es">Fotos</name>
-  <name xml:lang="eu">Argazkiak</name>
-  <name xml:lang="fi">Valokuvat</name>
-  <name xml:lang="fr">Photos</name>
-  <name xml:lang="gl">Fotos</name>
-  <name xml:lang="he">תמונות</name>
-  <name xml:lang="hi">तस्वीरें</name>
-  <name xml:lang="hu">Fényképek</name>
-  <name xml:lang="ia">Photos</name>
-  <name xml:lang="it">Foto</name>
-  <name xml:lang="ka">ფოტოები</name>
-  <name xml:lang="ko">사진</name>
-  <name xml:lang="lt">Nuotraukos</name>
-  <name xml:lang="lv">Fotogrāfijas</name>
-  <name xml:lang="nl">Foto's</name>
-  <name xml:lang="pl">Zdjęcia</name>
-  <name xml:lang="pt-BR">Fotos</name>
-  <name xml:lang="ru">Фотографии</name>
-  <name xml:lang="sa">फोटो</name>
-  <name xml:lang="sk">Fotografie</name>
-  <name xml:lang="sl">Fotografije</name>
-  <name xml:lang="sv">Foton</name>
-  <name xml:lang="tr">Fotoğraflar</name>
-  <name xml:lang="ug">سۈرەت</name>
-  <name xml:lang="uk">Фотографії</name>
-  <name xml:lang="zh-CN">照片</name>
-  <name xml:lang="zh-TW">相片</name>
   <summary>Image Gallery</summary>
   <summary xml:lang="ar">معرض الصور</summary>
   <summary xml:lang="ast">Galería d'imáxenes</summary>
