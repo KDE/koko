@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-19 00:42+0000\n"
 "PO-Revision-Date: 2026-09-01 23:53+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -701,15 +701,19 @@ msgid "Comment"
 msgstr "Comentario"
 
 #: main.cpp:65
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "<application>Photos</application>"
 msgctxt "@title"
-msgid "<application>Photos</application>"
+msgid "<application>Koko</application>"
 msgstr "<application>Photos</application>"
 
 #: main.cpp:67
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "Photos is an image viewer for your image collection."
 msgctxt "@title"
-msgid "Photos is an image viewer for your image collection."
+msgid "Koko is an image viewer for your image collection."
 msgstr "Photos es un visor de imágenes para su colección de imágenes."
 
 #: main.cpp:69

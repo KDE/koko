@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-17 00:42+0000\n"
+"POT-Creation-Date: 2026-09-19 00:42+0000\n"
 "PO-Revision-Date: 2024-11-01 13:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -727,16 +727,19 @@ msgid "Comment"
 msgstr ""
 
 #: main.cpp:65
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgctxt "@title"
+#| msgid "<application>Photos</application>"
 msgctxt "@title"
-msgid "<application>Photos</application>"
+msgid "<application>Koko</application>"
 msgstr "<application>Photos</application>"
 
 #: main.cpp:67
-#, kde-kuit-format
+#, fuzzy, kde-kuit-format
+#| msgid "Koko is a image viewer for your image collection."
 msgctxt "@title"
-msgid "Photos is an image viewer for your image collection."
-msgstr "Photos is an image viewer for your image collection."
+msgid "Koko is an image viewer for your image collection."
+msgstr "Koko is a image viewer for your image collection."
 
 #: main.cpp:69
 #, fuzzy, kde-kuit-format
@@ -2103,6 +2106,10 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Select All"
 
+#~ msgctxt "@title"
+#~ msgid "Photos is an image viewer for your image collection."
+#~ msgstr "Photos is an image viewer for your image collection."
+
 #, fuzzy
 #~| msgid "General"
 #~ msgid "General"
@@ -2332,6 +2339,3 @@ msgstr "Select All"
 
 #~ msgid "By Day"
 #~ msgstr "By Day"
-
-#~ msgid "Koko is a image viewer for your image collection."
-#~ msgstr "Koko is a image viewer for your image collection."
