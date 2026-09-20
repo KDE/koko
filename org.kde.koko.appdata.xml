@@ -11,17 +11,18 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <name translate="no">KDE</name>
   </developer>
   <name>Koko</name>
-  <name xml:lang="ar">كوكو</name>
   <name xml:lang="ast">Koko</name>
+  <name xml:lang="ca">Koko</name>
+  <name xml:lang="cs">Koko</name>
   <name xml:lang="da">Koko</name>
   <name xml:lang="de">Koko</name>
   <name xml:lang="el">Koko</name>
   <name xml:lang="en-GB">Koko</name>
   <name xml:lang="eo">Koko</name>
+  <name xml:lang="es">Koko</name>
   <name xml:lang="et">Koko</name>
   <name xml:lang="eu">Koko</name>
   <name xml:lang="fi">Koko</name>
-  <name xml:lang="fr">Koko</name>
   <name xml:lang="gl">Koko</name>
   <name xml:lang="ia">Koko</name>
   <name xml:lang="id">Koko</name>
@@ -29,6 +30,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="ka">Koko</name>
   <name xml:lang="ko">Koko</name>
   <name xml:lang="nl">Koko</name>
+  <name xml:lang="nn">Koko</name>
   <name xml:lang="pa">ਕੋਕੋ</name>
   <name xml:lang="pl">Koko</name>
   <name xml:lang="pt">Koko</name>
@@ -37,6 +39,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <name xml:lang="sk">Koko</name>
   <name xml:lang="sl">Koko</name>
   <name xml:lang="sv">Koko</name>
+  <name xml:lang="tr">Koko</name>
   <name xml:lang="uk">Koko</name>
   <name xml:lang="zh-TW">Koko</name>
   <summary>Image Gallery</summary>
