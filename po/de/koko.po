@@ -707,20 +707,16 @@ msgid "Comment"
 msgstr "Kommentar"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Photos</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr "<application>Fotos</application>"
+msgstr "<application>Koko</application>"
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Photos is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "Fotos ist ein Bildbetrachter für Ihre Bildersammlung."
+msgstr "Koko ist ein Bildbetrachter für Ihre Bildersammlung."
 
 #: main.cpp:69
 #, kde-kuit-format
