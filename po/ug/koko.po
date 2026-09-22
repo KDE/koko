@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:42+0000\n"
-"PO-Revision-Date: 2026-05-31 19:10-0400\n"
+"POT-Creation-Date: 2026-09-22 15:58+0000\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -493,53 +493,49 @@ msgid "Flip"
 msgstr "ئۆرۈ"
 
 #: editor/EditorView.qml:616
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Font Color"
+#, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
-msgstr "خەت رەڭگى"
+msgstr "رەڭ تەڭشەش"
 
 #: editor/EditorView.qml:680
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
-msgstr ""
+msgstr "يورۇقلۇق:"
 
 #: editor/EditorView.qml:730
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
-msgstr ""
+msgstr "يورۇقلۇق"
 
 #: editor/EditorView.qml:761
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast:"
-msgstr ""
+msgstr "سېلىشتۇرمىسى:"
 
 #: editor/EditorView.qml:809
 #, kde-format
 msgctxt "@info:tooltip color contrast spinbox"
 msgid "Contrast"
-msgstr ""
+msgstr "سېلىشتۇرمىسى"
 
 #: editor/EditorView.qml:830
 #, kde-format
 msgctxt "@label:slider"
 msgid "Gamma:"
-msgstr ""
+msgstr "گامما:"
 
 #: editor/EditorView.qml:882
 #, kde-format
 msgctxt "@info:tooltip color gamma spinbox"
 msgid "Gamma"
-msgstr ""
+msgstr "گامما"
 
 #: editor/EditorView.qml:908
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
 msgstr "ئەسلىگە قايتۇر"
@@ -548,7 +544,7 @@ msgstr "ئەسلىگە قايتۇر"
 #, kde-format
 msgctxt "@action:button apply color adjustment to image"
 msgid "Apply"
-msgstr ""
+msgstr "قوللان"
 
 #: editor/EditorView.qml:945
 #, kde-format
@@ -715,7 +711,7 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Vishesh Handa"
-msgstr "Vishesh Handa"
+msgstr ""
 
 #: main.cpp:76 main.cpp:78 main.cpp:80 main.cpp:82 main.cpp:85 main.cpp:90
 #: main.cpp:92
@@ -734,25 +730,25 @@ msgstr ""
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Marco Martin"
-msgstr "Marco Martin"
+msgstr ""
 
 #: main.cpp:82
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Nicolas Fella"
-msgstr "Nicolas Fella"
+msgstr ""
 
 #: main.cpp:84
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Carl Schwan"
-msgstr "Carl Schwan"
+msgstr ""
 
 #: main.cpp:90
 #, kde-kuit-format
 msgctxt "@info:credit"
 msgid "Mikel Johnson"
-msgstr "Mikel Johnson"
+msgstr ""
 
 #: main.cpp:92
 #, kde-format
@@ -863,7 +859,7 @@ msgstr ""
 #, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr ""
+msgstr "يولباشچى"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -957,7 +953,7 @@ msgstr ""
 #, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr ""
+msgstr "سۈرەت يىغقۇچ"
 
 #: qml/ActionCollection.qml:24
 #, kde-format
@@ -990,12 +986,10 @@ msgid "Media View"
 msgstr ""
 
 #: qml/ActionCollection.qml:46
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Edit an image"
-#| msgid "&Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
-msgstr "تەھرىر(&E)"
+msgstr "تەھرىر"
 
 #: qml/ActionCollection.qml:47
 #, kde-format
@@ -1007,18 +1001,16 @@ msgstr ""
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
-msgstr ""
+msgstr "ھەمبەھىر"
 
 #: qml/ActionCollection.qml:58
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr ""
+msgstr "ئۇچۇر"
 
 #: qml/ActionCollection.qml:65
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "تام تەسۋىر"
@@ -1033,7 +1025,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr ""
+msgstr "تىزگىننى كۆرسەت"
 
 #: qml/ActionCollection.qml:76
 #, kde-format
@@ -1054,12 +1046,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr ""
 
 #: qml/ActionCollection.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Exit Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "پۈتۈن ئېكراننى ئاخىرلاشتۇر"
+msgstr "تولۇق ئېكران"
 
 #: qml/ActionCollection.qml:86
 #, kde-format
@@ -1073,75 +1063,79 @@ msgctxt "@info:tooltip"
 msgid "Exit Full Screen"
 msgstr "پۈتۈن ئېكراننى ئاخىرلاشتۇر"
 
-#: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
-msgctxt "Actions category"
-msgid "File"
-msgstr "ھۆججەت چوڭلۇقى"
+#: qml/ActionCollection.qml:93
+#, kde-format
+msgctxt "@action:button Play or pause video"
+msgid "Play/Pause Video"
+msgstr ""
 
 #: qml/ActionCollection.qml:100
+#, kde-format
+msgctxt "Actions category"
+msgid "File"
+msgstr "ھۆججەت"
+
+#: qml/ActionCollection.qml:105
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr ""
 
-#: qml/ActionCollection.qml:109
+#: qml/ActionCollection.qml:114
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "ئىچىدىكى قىسقۇچنى ئاچ"
 
-#: qml/ActionCollection.qml:114
+#: qml/ActionCollection.qml:119
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "ئاچقۇز(&O)…"
 
-#: qml/ActionCollection.qml:125
+#: qml/ActionCollection.qml:130
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "ئورنىنى كۆچۈر"
 
-#: qml/ActionCollection.qml:145
+#: qml/ActionCollection.qml:150
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "خاسلىق(&P)"
 
-#: qml/ActionCollection.qml:153
+#: qml/ActionCollection.qml:158
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr ""
 
-#: qml/ActionCollection.qml:157
+#: qml/ActionCollection.qml:162
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "كەس"
 
-#: qml/ActionCollection.qml:163
+#: qml/ActionCollection.qml:168
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "سولغا ئايلاندۇر"
 
-#: qml/ActionCollection.qml:169
+#: qml/ActionCollection.qml:174
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "ئوڭغا ئايلاندۇر"
 
-#: qml/ActionCollection.qml:175
+#: qml/ActionCollection.qml:180
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "يانتۇ ئايلاندۇر"
 
-#: qml/ActionCollection.qml:181
+#: qml/ActionCollection.qml:186
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -1184,9 +1178,7 @@ msgid_plural "%1 items moved to trash"
 msgstr[0] ""
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "يېنىۋال"
@@ -1267,7 +1259,7 @@ msgstr "ئۆسكۈچى"
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr "A-Z"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:270
 #, kde-format
@@ -1297,7 +1289,7 @@ msgstr "كېمەيگۈچى"
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr "Z-A"
+msgstr ""
 
 #: qml/gallery/GalleryPage.qml:292
 #, kde-format
@@ -1390,39 +1382,39 @@ msgctxt "@title"
 msgid "Places"
 msgstr "ئورۇن"
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:190
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:197
 #, kde-format
 msgid "Seek slider"
 msgstr ""
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:241
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:263
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:248
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:271
 #, kde-format
 msgid "Skip backward 1 second"
 msgid_plural "Skip backward %1 seconds"
 msgstr[0] ""
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:251
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:259
 #, kde-format
 msgid "Pause playback"
 msgstr "ۋاقىتلىق توختات"
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:251
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:259
 #, kde-format
 msgid "Continue playback"
 msgstr ""
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:273
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:281
 #, kde-format
 msgid "Mute audio"
 msgstr ""
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:293
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:301
 #, kde-format
 msgid "Volume slider"
 msgstr ""
 
-#: qml/mediaview/imagedelegate/VideoPlayer.qml:314
+#: qml/mediaview/imagedelegate/VideoPlayer.qml:322
 #, kde-format
 msgid "Repeat current video"
 msgstr ""
@@ -1441,7 +1433,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label %1 is a translated title e.g. 'Date Created'"
 msgid "%1:"
-msgstr "%1:"
+msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:109
 #, kde-format
@@ -1455,12 +1447,10 @@ msgid "Current rating %1"
 msgstr ""
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "ئىزاھات"
+msgstr "ئىزاھات:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1520,12 +1510,10 @@ msgstr ""
 #, kde-format
 msgctxt "@label Placeholder for missing metadata"
 msgid "—"
-msgstr "—"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "يېنىۋال"
@@ -1606,7 +1594,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:857
 #, kde-format
@@ -1648,7 +1636,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:925
 #, kde-format
@@ -1810,12 +1798,10 @@ msgid "%1 px"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:52
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Type"
+#, kde-format
 msgctxt "@title:group"
 msgid "File types"
-msgstr "ھۆججەت تۈرى"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
@@ -1824,12 +1810,10 @@ msgid "Images and videos"
 msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:67
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Image Zoom"
+#, kde-format
 msgctxt "@option:check"
 msgid "Images only"
-msgstr "سۈرەت كېڭەيت تارايت"
+msgstr ""
 
 #: qml/Settings/GeneralConfigPage.qml:78
 #, kde-format
@@ -1871,7 +1855,7 @@ msgstr "قارا"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "كۈلرەڭ"
 
 #: qml/Settings/GeneralConfigPage.qml:139
 #, kde-format
@@ -1931,7 +1915,7 @@ msgstr "ئادەتتىكى"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "ھەرپتاختا تېزلەتمىسى"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
@@ -1965,13 +1949,12 @@ msgstr "تىزىملىكنى كۆرسەت"
 #: qml/Sidebar.qml:204
 #, kde-format
 msgid "Folders"
-msgstr ""
+msgstr "قىسقۇچ"
 
 #: qml/Sidebar.qml:230
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "ئورنى"
+msgstr "توپلام"
 
 #: qml/Sidebar.qml:238
 #, kde-format
