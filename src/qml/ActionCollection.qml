@@ -88,6 +88,11 @@ AC.ActionCollectionManager {
             defaultShortcut: "F"
             checkable: true
         }
+        AC.ActionData {
+            name: "PauseVideo"
+            text: i18nc("@action:button Play or pause video", "Play/Pause Video")
+            defaultShortcut: "Space"
+        }
     }
 
     AC.ActionCollection {

@@ -10,6 +10,7 @@ import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import QtMultimedia
 import org.kde.coreaddons as KCA
+import org.kde.kirigami.actioncollection as AC
 
 Item {
     id: root
@@ -133,6 +134,12 @@ Item {
         endOfStreamPolicy: VideoOutput.KeepLastFrame
     }
 
+    Kirigami.Action {
+        AC.ActionCollection.collection: "org.kde.koko.mediaview"
+        AC.ActionCollection.action: "PauseVideo"
+        onTriggered: playPauseButton.click()
+    }
+
     Item {
         id: playerToolbar
 
@@ -248,6 +255,7 @@ Item {
             }
 
             Controls.ToolButton {
+                id: playPauseButton
                 Accessible.name: mediaPlayer.playbackState == MediaPlayer.PlayingState ? i18n("Pause playback") : i18n("Continue playback")
                 icon.name: mediaPlayer.playbackState == MediaPlayer.PlayingState ? "media-playback-pause" : "media-playback-start"
                 onClicked: {
