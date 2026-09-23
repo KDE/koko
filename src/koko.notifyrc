@@ -50,7 +50,9 @@ Name[zh_TW]=Koko
 [Event/sharingSuccess]
 Name=Item Shared
 Name[ar]=عنصر مُشارَك
+Name[bg]=Споделен елемент
 Name[ca]=Element compartit
+Name[ca@valencia]=Element compartit
 Name[cs]=Sdílení položek
 Name[es]=Elemento compartido
 Name[fr]=Élément partagé
