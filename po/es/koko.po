@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 15:58+0000\n"
-"PO-Revision-Date: 2026-09-19 11:38+0100\n"
+"PO-Revision-Date: 2026-09-22 23:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1078,7 +1078,7 @@ msgstr "Salir de pantalla completa"
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
-msgstr ""
+msgstr "Reproducir/pausar vídeo"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
