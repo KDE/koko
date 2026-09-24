@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 15:58+0000\n"
-"PO-Revision-Date: 2026-09-01 17:51+0400\n"
+"PO-Revision-Date: 2026-09-23 17:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -709,20 +709,16 @@ msgid "Comment"
 msgstr "تعليق"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Photos</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr "<application>الصور</application>"
+msgstr "<application>كوكو</application>"
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Photos is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "الصور هو عارض صور لمجموعة صورك."
+msgstr "كوكو هو عارض صور لمجموعة صورك."
 
 #: main.cpp:69
 #, kde-kuit-format
@@ -1090,7 +1086,7 @@ msgstr "أنهِ ملء الشاشة"
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
-msgstr ""
+msgstr "شغّل/ألبث الفيديو"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
