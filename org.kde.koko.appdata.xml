@@ -11,6 +11,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <name translate="no">KDE</name>
   </developer>
   <name>Koko</name>
+  <name xml:lang="ar">كوكو</name>
   <name xml:lang="ast">Koko</name>
   <name xml:lang="bg">Koko</name>
   <name xml:lang="ca">Koko</name>
