@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 15:58+0000\n"
-"PO-Revision-Date: 2026-09-03 20:21+0200\n"
+"PO-Revision-Date: 2026-09-23 09:50+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -699,21 +699,16 @@ msgid "Comment"
 msgstr "Commento"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Photos</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr "<application>Photos</application>"
+msgstr "<application>Koko</application>"
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Photos is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr ""
-"Photos è un visualizzatore di immagini per la tua raccolta di immagini."
+msgstr "Koko è un visualizzatore di immagini per la tua raccolta di immagini."
 
 #: main.cpp:69
 #, kde-kuit-format
@@ -1081,7 +1076,7 @@ msgstr "Esci da schermo intero"
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
-msgstr ""
+msgstr "Riproduci/Metti in pausa il video"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
