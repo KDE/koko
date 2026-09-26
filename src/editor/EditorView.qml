@@ -68,6 +68,15 @@ Kirigami.Page {
         }
     }
 
+    Keys.onEscapePressed: (event) => {
+        if (imageView.document.modified) {
+            confirmDiscardingChangesDialog.visible = true;
+            event.accepted = true;
+        } else {
+            root.mainWindow.pageStack.layers.pop();
+        }
+    }
+
     // Get the scale for each axis
     function getScale(matrix: matrix4x4): vector3d {
         return Qt.vector3d(Math.sqrt(matrix.m11**2 + matrix.m21**2 + matrix.m31**2),
