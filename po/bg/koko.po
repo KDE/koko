@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 15:58+0000\n"
+"POT-Creation-Date: 2026-09-27 00:42+0000\n"
 "PO-Revision-Date: 2026-09-22 23:24+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -412,7 +412,7 @@ msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Редактиране на <filename>%1</filename>"
 
-#: editor/EditorView.qml:52 editor/EditorView.qml:1047
+#: editor/EditorView.qml:52 editor/EditorView.qml:1056
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -422,169 +422,169 @@ msgstr ""
 "Файлът не може да бъде запазен. Проверете дали имате правилните разрешения "
 "за запазване на този файл."
 
-#: editor/EditorView.qml:317
+#: editor/EditorView.qml:326
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Преоразмеряване"
 
-#: editor/EditorView.qml:361
+#: editor/EditorView.qml:370
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Преоразмеряване с:"
 
-#: editor/EditorView.qml:372
+#: editor/EditorView.qml:381
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Пиксели"
 
-#: editor/EditorView.qml:379
+#: editor/EditorView.qml:388
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Процент"
 
-#: editor/EditorView.qml:390
+#: editor/EditorView.qml:399
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Широчина"
 
-#: editor/EditorView.qml:442
+#: editor/EditorView.qml:451
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Височина"
 
-#: editor/EditorView.qml:463
+#: editor/EditorView.qml:472
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Запазване на съотношението"
 
-#: editor/EditorView.qml:467
+#: editor/EditorView.qml:476
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Размер на оригиналния файл: %1"
 
-#: editor/EditorView.qml:495
+#: editor/EditorView.qml:504
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Изчислен размер на файл: %1"
 
-#: editor/EditorView.qml:502
+#: editor/EditorView.qml:511
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Нулиране"
 
-#: editor/EditorView.qml:513
+#: editor/EditorView.qml:522
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Преоразмеряване"
 
-#: editor/EditorView.qml:563
+#: editor/EditorView.qml:572
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Завъртане"
 
-#: editor/EditorView.qml:588
+#: editor/EditorView.qml:597
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Обръщане"
 
-#: editor/EditorView.qml:616
+#: editor/EditorView.qml:625
 #, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
 msgstr "Коригиране на цветовете"
 
-#: editor/EditorView.qml:680
+#: editor/EditorView.qml:689
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
 msgstr "Яркост:"
 
-#: editor/EditorView.qml:730
+#: editor/EditorView.qml:739
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
 msgstr "Яркост"
 
-#: editor/EditorView.qml:761
+#: editor/EditorView.qml:770
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast:"
 msgstr "Контраст:"
 
-#: editor/EditorView.qml:809
+#: editor/EditorView.qml:818
 #, kde-format
 msgctxt "@info:tooltip color contrast spinbox"
 msgid "Contrast"
 msgstr "Контраст"
 
-#: editor/EditorView.qml:830
+#: editor/EditorView.qml:839
 #, kde-format
 msgctxt "@label:slider"
 msgid "Gamma:"
 msgstr "Гама:"
 
-#: editor/EditorView.qml:882
+#: editor/EditorView.qml:891
 #, kde-format
 msgctxt "@info:tooltip color gamma spinbox"
 msgid "Gamma"
 msgstr "Гама"
 
-#: editor/EditorView.qml:908
+#: editor/EditorView.qml:917
 #, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
 msgstr "Нулиране"
 
-#: editor/EditorView.qml:915
+#: editor/EditorView.qml:924
 #, kde-format
 msgctxt "@action:button apply color adjustment to image"
 msgid "Apply"
 msgstr "Прилагане"
 
-#: editor/EditorView.qml:945
+#: editor/EditorView.qml:954
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Отмяна"
 
-#: editor/EditorView.qml:953
+#: editor/EditorView.qml:962
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Повтаряне"
 
-#: editor/EditorView.qml:967
+#: editor/EditorView.qml:976
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Запазване"
 
-#: editor/EditorView.qml:975
+#: editor/EditorView.qml:984
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Запазване като"
 
-#: editor/EditorView.qml:1105
+#: editor/EditorView.qml:1114
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Мащаб:"
 
-#: editor/EditorView.qml:1120
+#: editor/EditorView.qml:1129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
