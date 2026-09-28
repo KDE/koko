@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-27 00:42+0000\n"
-"PO-Revision-Date: 2026-09-19 08:41+0200\n"
+"PO-Revision-Date: 2026-09-27 14:48+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1076,7 +1076,7 @@ msgstr "Avsluta fullskärmsläge"
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
-msgstr ""
+msgstr "Spela/pausa video"
 
 #: qml/ActionCollection.qml:100
 #, kde-format
