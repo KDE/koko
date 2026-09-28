@@ -200,6 +200,17 @@ Kirigami.Page {
                 infoSidebarLoader.forceActiveFocus();
             }}
         }
+        Kirigami.Action {
+            id: contextDrawerAction
+            visible: Kirigami.Settings.isMobile
+            AC.ActionCollection.action: "ContextDrawer"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+            icon.name: "view-more-symbolic"
+            tooltip: {
+                return i18nc("@info:tooltip", "More actions");
+            }
+            onTriggered: root.createContextMenu()
+        }
     ]
 
     Component {
@@ -298,7 +309,7 @@ Kirigami.Page {
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             separator: true
-            visible: slideshowAction.visible || !Kirigami.Settings.isMobile
+            visible: slideshowAction.visible
         },
         Kirigami.Action {
             id: slideshowAction
@@ -349,7 +360,7 @@ Kirigami.Page {
 
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
-            visible: !Kirigami.Settings.isMobile && !slideshowManager.running
+            visible: !slideshowManager.running
             checked: root.mainWindow.visibility === Window.FullScreen
             onToggled: {
                 if (checked) {
@@ -503,6 +514,40 @@ Kirigami.Page {
         }
     }
 
+    function createContextMenu() {
+        let list = [];
+
+        let separatorAction = kirigamiActionComponent.createObject(this, {
+            separator: true
+        });
+
+        list.push(favoriteAction);
+        list.push(shareAction);
+
+        list.push(separatorAction);
+
+        list.push(editAction);
+
+        list.push(separatorAction);
+
+        for (let fileMenuAction of fileMenuActions) {
+            list.push(fileMenuAction);
+        }
+
+        list.push(separatorAction);
+
+        list.push(fullscreenAction);
+        list.push(showControlsAction);
+        list.push(showThumbnailToolBarAction);
+
+        let contextMenu = mediaViewContextMenu.createObject(root.mainWindow, {
+            mediaViewActions: list,
+            titleText: root.title
+        }) as MediaViewContextMenu;
+        contextMenu.popup();
+        contextMenu.closed.connect(() => { contextMenu.destroy() });
+    }
+
     ListView {
         id: listView
 
@@ -571,39 +616,7 @@ Kirigami.Page {
 
             Connections {
                 target: loader.item
-                function onContextMenuRequested() {
-                    let list = [];
-
-                    let separatorAction = kirigamiActionComponent.createObject(this, {
-                        separator: true
-                    });
-
-                    list.push(favoriteAction);
-                    list.push(shareAction);
-
-                    list.push(separatorAction);
-
-                    list.push(editAction);
-
-                    list.push(separatorAction);
-
-                    for (let fileMenuAction of fileMenuActions) {
-                        list.push(fileMenuAction);
-                    }
-
-                    list.push(separatorAction);
-
-                    list.push(fullscreenAction);
-                    list.push(showControlsAction);
-                    list.push(showThumbnailToolBarAction);
-
-                    let contextMenu = mediaViewContextMenu.createObject(root.mainWindow, {
-                        mediaViewActions: list,
-                        titleText: root.title
-                    }) as MediaViewContextMenu;
-                    contextMenu.popup();
-                    contextMenu.closed.connect(() => { contextMenu.destroy() });
-                }
+                onContextMenuRequested: root.createContextMenu()
             }
         }
 
@@ -1038,7 +1051,7 @@ Kirigami.Page {
                 }
             }
 
-            actions: root.actions
+            actions: root.toolBarActions
             alignment: Qt.AlignCenter
             display: QQC2.Button.TextUnderIcon
         }
