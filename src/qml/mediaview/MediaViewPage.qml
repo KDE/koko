@@ -199,7 +199,7 @@ Kirigami.Page {
                 // TODO: Should probably do this in infoSidebarLoader
                 infoSidebarLoader.forceActiveFocus();
             }}
-        }
+        },
         Kirigami.Action {
             id: contextDrawerAction
             visible: Kirigami.Settings.isMobile
