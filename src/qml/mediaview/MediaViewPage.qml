@@ -299,7 +299,7 @@ Kirigami.Page {
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
             separator: true
-            visible: slideshowAction.visible || !Kirigami.Settings.isMobile
+            visible: slideshowAction.visible
         },
         Kirigami.Action {
             id: slideshowAction
@@ -350,7 +350,7 @@ Kirigami.Page {
 
             displayHint: Kirigami.DisplayHint.AlwaysHide
 
-            visible: !Kirigami.Settings.isMobile && !slideshowManager.running
+            visible: !slideshowManager.running
             checked: root.mainWindow.visibility === Window.FullScreen
             onToggled: {
                 if (checked) {
