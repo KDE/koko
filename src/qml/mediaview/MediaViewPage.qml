@@ -139,6 +139,7 @@ Kirigami.Page {
             AC.ActionCollection.collection: "org.kde.koko.mediaview"
 
             visible: (listView.currentItem && listView.currentItem.type === Koko.FileInfo.RasterImageType) || (imagePlaceholder && imagePlaceholder.type === Koko.FileInfo.RasterImageType)
+            enabled: mainWindow.pageStack.layers.depth < 3
             onTriggered: {
                 const page = root.mainWindow.pageStack.layers.push(Qt.createComponent("org.kde.photos.editor", "EditorView"), {
                     mainWindow: root.mainWindow,
