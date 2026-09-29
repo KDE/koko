@@ -20,6 +20,7 @@ MouseArea {
     property bool canMove: false // allow to drag to next image even if the current one is zoomed using touch screens
     readonly property bool interactive: (Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height) && !root.canMove
     property bool dragging: root.drag.active || pinchHandler.active
+    property int lastWindowVisibility: applicationWindow().visibility
 
     /**
      * Properties used for contentItem manipulation.
