@@ -357,13 +357,14 @@ Kirigami.Page {
                     // Enter full screen
                     root.lastWindowVisibility = root.mainWindow.visibility
                     root.mainWindow.visibility = Window.FullScreen;
+                    root.mainWindow.controlsVisible = false;
                 } else {
                     // Exit full screen
                     // Work around https://qt-project.atlassian.net/browse/QTBUG-145832
+                    root.mainWindow.controlsVisible = true;
                     root.mainWindow.visibility = Window.Windowed;
                     root.mainWindow.visibility = root.lastWindowVisibility;
                 }
-
                 listView.forceActiveFocus();
             }
         }
