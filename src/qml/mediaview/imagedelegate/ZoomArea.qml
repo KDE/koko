@@ -301,7 +301,17 @@ MouseArea {
 
     TapHandler {
         acceptedDevices: PointerDevice.TouchScreen
-        onLongPressed: root.contextMenuRequested()
+        onLongPressed: {
+             const app = applicationWindow();
+            if (app.visibility === Window.FullScreen) {
+                app.visibility = Window.Windowed;
+                app.visibility = root.mainWindow.visibility
+            } else {
+                // Work around https://qt-project.atlassian.net/browse/QTBUG-145832
+                root.lastWindowVisibility = app.visibility
+                app.visibility = Window.FullScreen;
+            }
+        }
     }
 
     onDoubleClicked: (mouse) => {
