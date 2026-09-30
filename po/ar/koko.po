@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-27 00:42+0000\n"
+"POT-Creation-Date: 2026-09-30 00:43+0000\n"
 "PO-Revision-Date: 2026-09-23 17:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1573,139 +1573,139 @@ msgctxt "@info"
 msgid "%1 of %2"
 msgstr "%1 من %2"
 
-#: qml/mediaview/MediaViewPage.qml:166
+#: qml/mediaview/MediaViewPage.qml:167
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "شارك هذا الفيديو"
 
-#: qml/mediaview/MediaViewPage.qml:168
+#: qml/mediaview/MediaViewPage.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "شارك هذه صورة"
 
-#: qml/mediaview/MediaViewPage.qml:190
+#: qml/mediaview/MediaViewPage.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "شاهد معلومات حول هذا الفيديو"
 
-#: qml/mediaview/MediaViewPage.qml:192
+#: qml/mediaview/MediaViewPage.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "شاهد معلومات حول هذه الصورة"
 
-#: qml/mediaview/MediaViewPage.qml:322
+#: qml/mediaview/MediaViewPage.qml:323
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr "أدخل وضع المشاهدة الشاملة"
 
-#: qml/mediaview/MediaViewPage.qml:323
+#: qml/mediaview/MediaViewPage.qml:324
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "اخرج من وضع المشاهدة الشاملة"
 
-#: qml/mediaview/MediaViewPage.qml:638
+#: qml/mediaview/MediaViewPage.qml:640
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "الصورة السابقة"
 
-#: qml/mediaview/MediaViewPage.qml:672
+#: qml/mediaview/MediaViewPage.qml:674
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "الصورة التالية"
 
-#: qml/mediaview/MediaViewPage.qml:853
+#: qml/mediaview/MediaViewPage.qml:855
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:854
+#: qml/mediaview/MediaViewPage.qml:856
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:855
+#: qml/mediaview/MediaViewPage.qml:857
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:856
+#: qml/mediaview/MediaViewPage.qml:858
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:857
+#: qml/mediaview/MediaViewPage.qml:859
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:858
+#: qml/mediaview/MediaViewPage.qml:860
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:859
+#: qml/mediaview/MediaViewPage.qml:861
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:860
+#: qml/mediaview/MediaViewPage.qml:862
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:861
+#: qml/mediaview/MediaViewPage.qml:863
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:862
+#: qml/mediaview/MediaViewPage.qml:864
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:911
+#: qml/mediaview/MediaViewPage.qml:913
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1٪"
 
-#: qml/mediaview/MediaViewPage.qml:925
+#: qml/mediaview/MediaViewPage.qml:927
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "بعّد"
 
-#: qml/mediaview/MediaViewPage.qml:934
+#: qml/mediaview/MediaViewPage.qml:936
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "قرّب"
 
-#: qml/mediaview/MediaViewPage.qml:1177 qml/Settings/GeneralConfigPage.qml:228
+#: qml/mediaview/MediaViewPage.qml:1179 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "فترة عرض الشرائح:"
 
-#: qml/mediaview/MediaViewPage.qml:1194 qml/Settings/GeneralConfigPage.qml:240
+#: qml/mediaview/MediaViewPage.qml:1196 qml/Settings/GeneralConfigPage.qml:240
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1717,48 +1717,48 @@ msgstr[3] "%1 ثانية"
 msgstr[4] "%1 ثانية"
 msgstr[5] "%1 ثانية"
 
-#: qml/mediaview/MediaViewPage.qml:1249 qml/mediaview/MediaViewPage.qml:1350
+#: qml/mediaview/MediaViewPage.qml:1251 qml/mediaview/MediaViewPage.qml:1352
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "حلقة"
 
-#: qml/mediaview/MediaViewPage.qml:1258 qml/mediaview/MediaViewPage.qml:1359
+#: qml/mediaview/MediaViewPage.qml:1260 qml/mediaview/MediaViewPage.qml:1361
 #: qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "عشوائي"
 
-#: qml/mediaview/MediaViewPage.qml:1270
+#: qml/mediaview/MediaViewPage.qml:1272
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "أوقف عرض الشرائح"
 
-#: qml/mediaview/MediaViewPage.qml:1284
+#: qml/mediaview/MediaViewPage.qml:1286
 #, kde-format
 msgid "Show All Controls"
 msgstr "أظهر جميع المتحكمات"
 
-#: qml/mediaview/MediaViewPage.qml:1313
+#: qml/mediaview/MediaViewPage.qml:1315
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "أوقف"
 
-#: qml/mediaview/MediaViewPage.qml:1313
+#: qml/mediaview/MediaViewPage.qml:1315
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "ابدأ"
 
-#: qml/mediaview/MediaViewPage.qml:1332
+#: qml/mediaview/MediaViewPage.qml:1334
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "الفترة:"
 
-#: qml/mediaview/MediaViewPage.qml:1345
+#: qml/mediaview/MediaViewPage.qml:1347
 #, kde-format
 msgid "seconds"
 msgstr "ثانية"
