@@ -150,7 +150,7 @@ Kirigami.Page {
                     visible: false
                 })
                 page.imageEdited.connect(function() {
-                    KokoThumbnails.ThumbnailManager.refreshThumbnail(page.imagePath);
+                    KokoThumbnails.ThumbnailManager.refreshThumbnail(page.imageUrl);
                 });
             }
         },
