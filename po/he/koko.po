@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:43+0000\n"
-"PO-Revision-Date: 2026-09-27 09:16+0300\n"
+"PO-Revision-Date: 2026-10-01 09:09+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1581,11 +1581,10 @@ msgid "See information about this image"
 msgstr "הצגת מידע על התמונה הזאת"
 
 #: qml/mediaview/MediaViewPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "מקומות"
+msgstr "פעולות"
 
 #: qml/mediaview/MediaViewPage.qml:332
 #, kde-format

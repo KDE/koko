@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:43+0000\n"
-"PO-Revision-Date: 2026-09-23 23:26+0200\n"
+"PO-Revision-Date: 2026-10-01 12:09+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -1575,11 +1575,10 @@ msgid "See information about this image"
 msgstr "Zobrazit informace o tomto obrázku"
 
 #: qml/mediaview/MediaViewPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "Umístění"
+msgstr "Činnosti"
 
 #: qml/mediaview/MediaViewPage.qml:332
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:43+0000\n"
-"PO-Revision-Date: 2026-09-23 08:06+0200\n"
+"PO-Revision-Date: 2026-10-01 05:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1563,11 +1563,10 @@ msgid "See information about this image"
 msgstr "ინფორმაციის ნახვა ამ გამოსახულების შესახებ"
 
 #: qml/mediaview/MediaViewPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "მდებარეობები"
+msgstr "ქმედებები"
 
 #: qml/mediaview/MediaViewPage.qml:332
 #, kde-format
