@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:43+0000\n"
-"PO-Revision-Date: 2026-09-27 14:48+0200\n"
+"PO-Revision-Date: 2026-10-02 21:26+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1564,11 +1564,10 @@ msgid "See information about this image"
 msgstr "Visa information om bilden"
 
 #: qml/mediaview/MediaViewPage.qml:210
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "Platser"
+msgstr "Åtgärder"
 
 #: qml/mediaview/MediaViewPage.qml:332
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-01 00:43+0000\n"
-"PO-Revision-Date: 2026-02-25 16:01+0200\n"
+"PO-Revision-Date: 2026-08-26 14:11+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -427,73 +427,61 @@ msgid "Resize"
 msgstr "Muuta kokoa"
 
 #: editor/EditorView.qml:370
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "Muuta kokoa"
+msgstr "Muuta kokoa:"
 
 #: editor/EditorView.qml:381
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "Pikselöi"
+msgstr "kuvapisteinä"
 
 #: editor/EditorView.qml:388
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "suhteellisesti"
 
 #: editor/EditorView.qml:399
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "Leveys"
 
 #: editor/EditorView.qml:451
-#, fuzzy, kde-format
-#| msgctxt "@item:inlistbox aspect ratio placeholder"
-#| msgid "Width:Height"
+#, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr "leveys:korkeus"
+msgstr "Korkeus"
 
 #: editor/EditorView.qml:472
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Aspect Ratio:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr "Kuvasuhde:"
+msgstr "Säilytä kuvasuhde"
 
 #: editor/EditorView.qml:476
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "Alkuperäinen tiedostokoko: %1"
 
 #: editor/EditorView.qml:504
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "Arvioitu tiedostokoko: %1"
 
 #: editor/EditorView.qml:511
-#, fuzzy, kde-format
-#| msgctxt "@action reset selection"
-#| msgid "Reset"
+#, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr "Nollaa"
+msgstr "Palauta"
 
 #: editor/EditorView.qml:522
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Muuta kokoa"
@@ -715,20 +703,16 @@ msgid "Comment"
 msgstr "Huomautus"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Photos</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr "<application>Photos</application>"
+msgstr "<application>Koko</application>"
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Photos is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "Photos on kuvakokoelmasi kuvakatselin."
+msgstr "Koko on kuvakokoelmasi kuvakatselin."
 
 #: main.cpp:69
 #, kde-kuit-format
@@ -783,7 +767,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:98
 #, kde-format
@@ -796,12 +780,10 @@ msgid "path of image you want to open"
 msgstr "avattavan kuvan sijainti"
 
 #: models/galleryallimagesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@title"
 msgid "All media"
-msgstr "Valitse kaikki mediat"
+msgstr "Kaikki mediat"
 
 #: models/galleryfavoritesmodel.cpp:23
 #, kde-format
@@ -851,12 +833,10 @@ msgid "Locations"
 msgstr "Sijainnit"
 
 #: models/galleryopenmodel.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "Valitse kaikki"
+msgstr "Valitut tiedostot"
 
 #: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:164 qml/Sidebar.qml:297
 #, kde-format
@@ -890,12 +870,10 @@ msgid "Times"
 msgstr "Ajat"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "Siirry videoihin"
+msgstr "Liikkuminen"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -910,12 +888,10 @@ msgid "Navigate to videos"
 msgstr "Siirry videoihin"
 
 #: navigationactions.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to all media"
-msgstr "Siirry videoihin"
+msgstr "Siirry kaikkiin medioihin"
 
 #: navigationactions.cpp:60
 #, kde-format
@@ -991,7 +967,7 @@ msgstr "Kuvan jako-osoite on <a href='%1'>%1</a>"
 #, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr ""
+msgstr "Galleria"
 
 #: qml/ActionCollection.qml:24
 #, kde-format
@@ -1021,11 +997,10 @@ msgstr "Käännä valittujen medioiden valinta"
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "Medianäkymä"
 
 #: qml/ActionCollection.qml:46
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Muokkaa"
@@ -1037,25 +1012,19 @@ msgid "Edit this image"
 msgstr "Muokkaa tätä kuvaa"
 
 #: qml/ActionCollection.qml:53
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Jaa"
 
 #: qml/ActionCollection.qml:58
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "T&ietoa"
+msgstr "Tietoa"
 
 #: qml/ActionCollection.qml:65
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Diaesitys"
@@ -1067,21 +1036,16 @@ msgid "Start slideshow"
 msgstr "Aloita diaesitys"
 
 #: qml/ActionCollection.qml:71
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "Näytä &säätimet"
+msgstr "Näytä säätimet"
 
 #: qml/ActionCollection.qml:76
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "Näytä &pienoiskuvarivi"
+msgstr "Näytä pienoiskuvarivi"
 
 #: qml/ActionCollection.qml:77
 #, kde-format
@@ -1096,12 +1060,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "Piilota pienoiskuvarivi"
 
 #: qml/ActionCollection.qml:84
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "K&oko näyttö"
+msgstr "Koko näyttö"
 
 #: qml/ActionCollection.qml:86
 #, kde-format
@@ -1122,12 +1084,10 @@ msgid "Play/Pause Video"
 msgstr ""
 
 #: qml/ActionCollection.qml:100
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "File Size"
+#, kde-format
 msgctxt "Actions category"
 msgid "File"
-msgstr "Tiedostokoko"
+msgstr "Tiedosto"
 
 #: qml/ActionCollection.qml:105
 #, kde-format
@@ -1157,13 +1117,13 @@ msgstr "Kopioi sijainti"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
-msgstr ""
+msgstr "&Ominaisuudet"
 
 #: qml/ActionCollection.qml:158
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
-msgstr ""
+msgstr "Muokkaustilan toiminnot"
 
 #: qml/ActionCollection.qml:162
 #, kde-format
@@ -1226,19 +1186,15 @@ msgstr[0] "1 kohde"
 msgstr[1] "%1 kohdetta"
 
 #: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
-#, fuzzy, kde-format
-#| msgctxt "@action:button Move the selected media to the trash"
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 items moved to trash"
-msgstr[0] "Siirrä roskakoriin"
-msgstr[1] "Siirrä roskakoriin"
+msgstr[0] "%1 kohde siirretty roskakoriin"
+msgstr[1] "%1 kohdetta siirretty roskakoriin"
 
 #: qml/gallery/GalleryPage.qml:183
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Kumoa"
@@ -1400,9 +1356,7 @@ msgid "Share the selected media"
 msgstr "Jaa valittu media"
 
 #: qml/gallery/GalleryPage.qml:922
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "1 kohde"
@@ -1414,19 +1368,15 @@ msgid "No media found"
 msgstr "Mediaa ei löytynyt"
 
 #: qml/gallery/GalleryPage.qml:984
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] "1 kohde"
-msgstr[1] "%1 kohdetta"
+msgstr[0] "%1 valittu kohde"
+msgstr[1] "%1 valittua kohdetta"
 
 #: qml/gallery/GalleryPage.qml:989
-#, fuzzy, kde-format
-#| msgid "1 item"
-#| msgid_plural "%1 items"
+#, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1517,12 +1467,10 @@ msgid "Current rating %1"
 msgstr "Nykyinen arvostelu %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "Huomautus"
+msgstr "Huomautus:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1585,9 +1533,7 @@ msgid "—"
 msgstr "—"
 
 #: qml/mediaview/MediaViewPage.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Undo"
+#, kde-format
 msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "Kumoa"
@@ -1596,7 +1542,7 @@ msgstr "Kumoa"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: qml/mediaview/MediaViewPage.qml:167
 #, kde-format
@@ -1642,15 +1588,13 @@ msgid "Exit immersive viewing mode"
 msgstr "Poistu keskittyneestä katselutilasta"
 
 #: qml/mediaview/MediaViewPage.qml:654
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Edellinen kuva"
 
 #: qml/mediaview/MediaViewPage.qml:688
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Seuraava kuva"
@@ -1908,33 +1852,31 @@ msgstr "Kuvat"
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "Gallerian lajittelu"
 
 #: qml/Settings/GeneralConfigPage.qml:83
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "Luonnollinen lajittelu"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "Aakkosjärjestys (erottaa pien- ja suuraakkoset)"
 
 #: qml/Settings/GeneralConfigPage.qml:103
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "Aakkosjärjestys (ei erota pien- ja suuraakkosia)"
 
 #: qml/Settings/GeneralConfigPage.qml:114
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "Kuvanäkymän tausta"
+msgstr "Kuvan tausta"
 
 #: qml/Settings/GeneralConfigPage.qml:119
 #, kde-format
@@ -1946,7 +1888,7 @@ msgstr "Musta"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "Harmaa"
 
 #: qml/Settings/GeneralConfigPage.qml:139
 #, kde-format
@@ -1967,20 +1909,16 @@ msgid "Use the background color specified by the theme"
 msgstr "Käytä teeman määrittämää taustaväriä"
 
 #: qml/Settings/GeneralConfigPage.qml:167
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Näytä läpinäkyvien kuvien taustalla ruutukuvio"
 
 #: qml/Settings/GeneralConfigPage.qml:178
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "Kuvakoko"
+msgstr "Kuvanäkymä"
 
 #: qml/Settings/GeneralConfigPage.qml:184
 #, kde-format
@@ -2010,7 +1948,7 @@ msgstr "Perusasetukset"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Pikanäppäimet"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
@@ -2047,18 +1985,15 @@ msgid "Folders"
 msgstr "Kansiot"
 
 #: qml/Sidebar.qml:230
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgid "Collections"
-msgstr "Sijainnit"
+msgstr "Kokoelmat"
 
 #: qml/Sidebar.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select all media"
+#, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
-msgstr "Valitse kaikki mediat"
+msgstr "Kaikki mediat"
 
 #~ msgid "General"
 #~ msgstr "Perusasetukset"
