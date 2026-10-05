@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 02:40+0000\n"
-"PO-Revision-Date: 2025-10-12 12:10+0200\n"
+"PO-Revision-Date: 2026-10-05 00:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -124,9 +124,7 @@ msgid "Shadow"
 msgstr "그림자"
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "위치:"
@@ -135,18 +133,16 @@ msgstr "위치:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area X position"
-msgstr ""
+msgstr "자르기 영역 X 위치"
 
 #: editor/AnnotationOptionsToolBarContents.qml:518
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area Y position"
-msgstr ""
+msgstr "자르기 영역 Y 위치"
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "크기:"
@@ -155,147 +151,142 @@ msgstr "크기:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area width"
-msgstr ""
+msgstr "자르기 영역 너비"
 
 #: editor/AnnotationOptionsToolBarContents.qml:558
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Crop area height"
-msgstr ""
+msgstr "자르기 영역 높이"
 
 #: editor/AnnotationOptionsToolBarContents.qml:573
 #, kde-format
 msgctxt "@label"
 msgid "Aspect Ratio:"
-msgstr ""
+msgstr "종횡 비율:"
 
 #: editor/AnnotationOptionsToolBarContents.qml:604
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Unlocked"
-msgstr ""
+msgstr "잠금 해제됨"
 
 #: editor/AnnotationOptionsToolBarContents.qml:605
-#, fuzzy, kde-format
-#| msgid "Current rating %1"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Current Image"
-msgstr "현재 별점: %1"
+msgstr "현재 그림"
 
 #: editor/AnnotationOptionsToolBarContents.qml:606
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "Square"
-msgstr ""
+msgstr "사각형"
 
 #: editor/AnnotationOptionsToolBarContents.qml:607
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "This Screen"
-msgstr "전체 화면(&F)"
+msgstr "이 화면"
 
 #: editor/AnnotationOptionsToolBarContents.qml:608
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "16:9"
-msgstr ""
+msgstr "16:9"
 
 #: editor/AnnotationOptionsToolBarContents.qml:609
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "7:5"
-msgstr ""
+msgstr "7:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:610
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:2"
-msgstr ""
+msgstr "3:2"
 
 #: editor/AnnotationOptionsToolBarContents.qml:611
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:3"
-msgstr ""
+msgstr "4:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:612
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:4"
-msgstr ""
+msgstr "5:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:613
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Landscape)"
-msgstr ""
+msgstr "ISO 용지(가로)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:614
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Landscape)"
-msgstr ""
+msgstr "US 레터(가로)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:615
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "9:16"
-msgstr ""
+msgstr "9:16"
 
 #: editor/AnnotationOptionsToolBarContents.qml:616
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "5:7"
-msgstr ""
+msgstr "5:7"
 
 #: editor/AnnotationOptionsToolBarContents.qml:617
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "2:3"
-msgstr ""
+msgstr "2:3"
 
 #: editor/AnnotationOptionsToolBarContents.qml:618
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "3:4"
-msgstr ""
+msgstr "3:4"
 
 #: editor/AnnotationOptionsToolBarContents.qml:619
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "4:5"
-msgstr ""
+msgstr "4:5"
 
 #: editor/AnnotationOptionsToolBarContents.qml:620
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "ISO Paper (Portrait)"
-msgstr ""
+msgstr "ISO 용지(세로)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:621
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio"
 msgid "US Letter (Portrait)"
-msgstr ""
+msgstr "US 레터(세로)"
 
 #: editor/AnnotationOptionsToolBarContents.qml:631
 #, kde-format
 msgctxt "@item:inlistbox aspect ratio placeholder"
 msgid "Width:Height"
-msgstr ""
+msgstr "너비:높이"
 
 #: editor/AnnotationOptionsToolBarContents.qml:665
 #, kde-format
 msgctxt "@action reset selection"
 msgid "Reset"
-msgstr ""
+msgstr "초기화"
 
 #: editor/AnnotationOptionsToolBarContents.qml:675
-#, fuzzy, kde-format
-#| msgctxt "@action:button Accept image modification"
-#| msgid "Accept"
+#, kde-format
 msgctxt "@action accept selection"
 msgid "Accept"
 msgstr "수락"
@@ -439,67 +430,61 @@ msgid "Resize"
 msgstr "크기 조정"
 
 #: editor/EditorView.qml:179
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
-msgstr "크기 조정"
+msgstr "크기 조정 단위:"
 
 #: editor/EditorView.qml:190
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar pixelate tool"
-#| msgid "Pixelate"
+#, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
-msgstr "픽셀화"
+msgstr "픽셀"
 
 #: editor/EditorView.qml:197
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
-msgstr ""
+msgstr "백분율"
 
 #: editor/EditorView.qml:208
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
-msgstr ""
+msgstr "너비"
 
 #: editor/EditorView.qml:260
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
-msgstr ""
+msgstr "높이"
 
 #: editor/EditorView.qml:281
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
-msgstr ""
+msgstr "종횡비 유지"
 
 #: editor/EditorView.qml:285
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
-msgstr ""
+msgstr "원본 파일 크기: %1"
 
 #: editor/EditorView.qml:313
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
-msgstr ""
+msgstr "예상 파일 크기: %1"
 
 #: editor/EditorView.qml:320
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
-msgstr ""
+msgstr "초기화"
 
 #: editor/EditorView.qml:331
-#, fuzzy, kde-format
-#| msgctxt "@action:button Resize an image"
-#| msgid "Resize"
+#, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "크기 조정"
@@ -751,7 +736,7 @@ msgstr "Mikel Johnson"
 #, kde-format
 msgctxt "@info:credit"
 msgid "Oliver Beard"
-msgstr ""
+msgstr "Oliver Beard"
 
 #: main.cpp:97
 #, kde-format
@@ -764,8 +749,7 @@ msgid "path of image you want to open"
 msgstr "열 그림 경로"
 
 #: models/galleryfavoritesmodel.cpp:23
-#, fuzzy, kde-format
-#| msgid "Favorites"
+#, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "책갈피"
@@ -812,11 +796,10 @@ msgid "Locations"
 msgstr "위치"
 
 #: models/galleryopenmodel.cpp:134
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title"
 msgid "Selected Files"
-msgstr "모두 선택"
+msgstr "선택한 파일"
 
 #: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:163 qml/Sidebar.qml:282
 #, kde-format
@@ -844,18 +827,15 @@ msgid "Days"
 msgstr "일"
 
 #: models/gallerytimemodel.cpp:78
-#, fuzzy, kde-format
-#| msgid "Time"
+#, kde-format
 msgid "Times"
 msgstr "시간"
 
 #: navigationactions.cpp:24
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to videos"
+#, kde-format
 msgctxt "Navigation buttons actions group"
 msgid "Navigation"
-msgstr "동영상으로 탐색"
+msgstr "탐색"
 
 #: navigationactions.cpp:52
 #, kde-format
@@ -888,57 +868,43 @@ msgid "Navigate to the remote folders"
 msgstr "원격 폴더로 탐색"
 
 #: navigationactions.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by countries"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by country"
 msgstr "국가별로 정렬된 그림으로 탐색"
 
 #: navigationactions.cpp:78
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by states"
+#, kde-format
 msgctxt "@action:button Navigation button, state as in country subdivision"
 msgid "Navigate to pictures grouped by state"
 msgstr "주/도별로 정렬된 그림으로 탐색"
 
 #: navigationactions.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by cities"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by cities"
 msgstr "도시별로 정렬된 그림으로 탐색"
 
 #: navigationactions.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by years"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by year"
 msgstr "연도별로 정렬된 그림으로 탐색"
 
 #: navigationactions.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by months"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by month"
 msgstr "월별로 정렬된 그림으로 탐색"
 
 #: navigationactions.cpp:98
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by weeks"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by week"
 msgstr "주별로 정렬된 그림으로 탐색"
 
 #: navigationactions.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation button"
-#| msgid "Navigate to pictures sorted by days"
+#, kde-format
 msgctxt "@action:button Navigation button"
 msgid "Navigate to pictures grouped by day"
 msgstr "날짜별로 정렬된 그림으로 탐색"
@@ -957,42 +923,37 @@ msgstr "그림을 <a href='%1'>%1</a> URL로 공유했습니다"
 #, kde-format
 msgctxt "Actions category"
 msgid "Gallery"
-msgstr ""
+msgstr "갤러리"
 
 #: qml/ActionCollection.qml:23
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all media"
-msgstr "모두 선택"
+msgstr "모든 미디어 선택"
 
 #: qml/ActionCollection.qml:28
-#, fuzzy, kde-format
-#| msgid "Deselect All"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Deselect all media"
-msgstr "모두 선택 해제"
+msgstr "모든 미디어 선택 해제"
 
 #: qml/ActionCollection.qml:33
-#, fuzzy, kde-format
-#| msgid "Delete Selection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Invert Selection"
-msgstr "선택 항목 삭제"
+msgstr "선택 반전"
 
 #: qml/ActionCollection.qml:34
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Invert the selected media"
-msgstr "선택한 미디어 공유"
+msgstr "선택한 미디어 반전"
 
 #: qml/ActionCollection.qml:40
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
-msgstr ""
+msgstr "미디어 보기"
 
 #: qml/ActionCollection.qml:44 qml/gallery/GalleryPage.qml:304
 #, kde-format
@@ -1001,8 +962,7 @@ msgid "Favorite"
 msgstr "책갈피"
 
 #: qml/ActionCollection.qml:50
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "편집"
@@ -1014,24 +974,19 @@ msgid "Edit this image"
 msgstr "이 그림 편집"
 
 #: qml/ActionCollection.qml:57
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "공유"
 
 #: qml/ActionCollection.qml:62
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Show information about an image/video"
-#| msgid "&Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
-msgstr "정보(&I)"
+msgstr "정보"
 
 #: qml/ActionCollection.qml:73
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "포함하는 폴더 열기"
@@ -1040,20 +995,16 @@ msgstr "포함하는 폴더 열기"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
-msgstr ""
+msgstr "다음으로 열기(&O)…"
 
 #: qml/ActionCollection.qml:86
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "위치 복사"
 
 #: qml/ActionCollection.qml:101
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Slideshow"
+#, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "슬라이드 쇼"
@@ -1065,21 +1016,16 @@ msgid "Start slideshow"
 msgstr "슬라이드 쇼 시작"
 
 #: qml/ActionCollection.qml:107
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@action:intoolbar Toggle visibility of toolbars and other UI elements"
-#| msgid "Show &Controls"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
-msgstr "컨트롤 표시(&C)"
+msgstr "컨트롤 표시"
 
 #: qml/ActionCollection.qml:112
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar Toggle visibility of toolbar"
-#| msgid "Show &Thumbnail Toolbar"
+#, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
-msgstr "섬네일 도구 모음 표시(&T)"
+msgstr "섬네일 도구 모음 표시"
 
 #: qml/ActionCollection.qml:113
 #, kde-format
@@ -1094,12 +1040,10 @@ msgid "Hide the thumbnail toolbar"
 msgstr "섬네일 도구 모음 숨기기"
 
 #: qml/ActionCollection.qml:120
-#, fuzzy, kde-format
-#| msgctxt "@action:intoolbar"
-#| msgid "&Full Screen"
+#, kde-format
 msgctxt "@action:intoolbar"
 msgid "Full Screen"
-msgstr "전체 화면(&F)"
+msgstr "전체 화면"
 
 #: qml/ActionCollection.qml:122
 #, kde-format
@@ -1140,87 +1084,70 @@ msgstr "위치"
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
+msgstr[0] "항목 %1개"
 
 #: qml/gallery/GalleryPage.qml:140
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
-msgstr ""
+msgstr "복원"
 
 #: qml/gallery/GalleryPage.qml:141
-#, fuzzy, kde-format
-#| msgid "Restore selected items from trash"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
-msgstr "선택한 항목을 휴지통에서 복원"
+msgstr "선택한 미디어를 기존 위치로 복원"
 
 #: qml/gallery/GalleryPage.qml:160
-#, fuzzy, kde-format
-#| msgid "Sort by"
+#, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
-msgstr "정렬 순서"
+msgstr "정렬: %1"
 
 #: qml/gallery/GalleryPage.qml:166
-#, fuzzy, kde-format
-#| msgctxt "@item:intable Image file name"
-#| msgid "Name"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "이름"
 
 #: qml/gallery/GalleryPage.qml:173
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "크기"
 
 #: qml/gallery/GalleryPage.qml:180
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
-msgstr "수정한 날짜"
+msgstr "수정됨"
 
 #: qml/gallery/GalleryPage.qml:181
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Modified"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "수정한 날짜"
 
 #: qml/gallery/GalleryPage.qml:188
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
-msgstr "만든 날짜"
+msgstr "생성됨"
 
 #: qml/gallery/GalleryPage.qml:189
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Created"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "만든 날짜"
 
 #: qml/gallery/GalleryPage.qml:196
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
-msgstr "접근한 날짜"
+msgstr "접근함"
 
 #: qml/gallery/GalleryPage.qml:197
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Date Accessed"
+#, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "접근한 날짜"
@@ -1229,77 +1156,73 @@ msgstr "접근한 날짜"
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "오름차순"
 
 #: qml/gallery/GalleryPage.qml:212
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
-msgstr ""
+msgstr "가-힣"
 
 #: qml/gallery/GalleryPage.qml:214
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
-msgstr ""
+msgstr "작은 항목 먼저"
 
 #: qml/gallery/GalleryPage.qml:218
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
-msgstr ""
+msgstr "오래된 항목 먼저"
 
 #: qml/gallery/GalleryPage.qml:221
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
-msgstr ""
+msgstr "오름차순"
 
 #: qml/gallery/GalleryPage.qml:232
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "내림차순"
 
 #: qml/gallery/GalleryPage.qml:234
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
-msgstr ""
+msgstr "힣-가"
 
 #: qml/gallery/GalleryPage.qml:236
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
-msgstr ""
+msgstr "큰 항목 먼저"
 
 #: qml/gallery/GalleryPage.qml:240
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
-msgstr ""
+msgstr "새 항목 먼저"
 
 #: qml/gallery/GalleryPage.qml:243
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
-msgstr ""
+msgstr "내림차순"
 
 #: qml/gallery/GalleryPage.qml:268
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "폴더를 책갈피에 추가"
 
 #: qml/gallery/GalleryPage.qml:269
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
-msgstr "폴더를 책갈피에 추가"
+msgstr "현재 폴더를 책갈피에 추가"
 
 #: qml/gallery/GalleryPage.qml:306 qml/mediaview/MediaViewPage.qml:111
 #, kde-format
@@ -1323,11 +1246,10 @@ msgstr "선택한 미디어 공유"
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
+msgstr[0] "항목 %1개"
 
 #: qml/gallery/GalleryPage.qml:824
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgid "No media found"
 msgstr "미디어를 찾을 수 없음"
 
@@ -1336,26 +1258,26 @@ msgstr "미디어를 찾을 수 없음"
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
-msgstr[0] ""
+msgstr[0] "항목 %1개 선택됨"
 
 #: qml/gallery/GalleryPage.qml:853
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
 msgid_plural "%1 items"
-msgstr[0] ""
+msgstr[0] "항목 %1개"
 
 #: qml/gallery/NavigatorComponent.qml:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Back"
-msgstr ""
+msgstr "뒤로"
 
 #: qml/gallery/NavigatorComponent.qml:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Forward"
-msgstr ""
+msgstr "앞으로"
 
 #: qml/Main.qml:76
 #, kde-format
@@ -1428,12 +1350,10 @@ msgid "Current rating %1"
 msgstr "현재 별점: %1"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Comment"
+#, kde-format
 msgctxt "@label"
 msgid "Comment:"
-msgstr "설명"
+msgstr "설명:"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:247
 #, kde-format
@@ -1445,38 +1365,37 @@ msgstr "태그:"
 #, kde-format
 msgctxt "@action open tag dialog"
 msgid "Add…"
-msgstr ""
+msgstr "추가…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:304
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search for tags or write a new tag…"
-msgstr ""
+msgstr "태그 검색 또는 새 태그 작성…"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:305
-#, fuzzy, kde-format
-#| msgid "No Media Found"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "No tag found."
-msgstr "미디어를 찾을 수 없음"
+msgstr "태그를 찾을 수 없습니다."
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Create New Tag"
-msgstr ""
+msgstr "새 태그 만들기"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:330
 #, kde-format
 msgctxt "@title:group"
 msgid "Existing Tags"
-msgstr ""
+msgstr "기존 태그"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:366
 #, kde-format
 msgctxt "@action close tag dialog"
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: qml/mediaview/InfoDrawerSidebarBase.qml:413
 #, kde-format
@@ -1500,7 +1419,7 @@ msgstr "—"
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
-msgstr ""
+msgstr "%2 중 %1"
 
 #: qml/mediaview/MediaViewPage.qml:151
 #, kde-format
@@ -1539,15 +1458,13 @@ msgid "Exit immersive viewing mode"
 msgstr "몰입 보기 모드 끝내기"
 
 #: qml/mediaview/MediaViewPage.qml:601
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "이전 그림"
 
 #: qml/mediaview/MediaViewPage.qml:635
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "다음 그림"
@@ -1556,85 +1473,79 @@ msgstr "다음 그림"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr ""
+msgstr "25%"
 
 #: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr ""
+msgstr "50%"
 
 #: qml/mediaview/MediaViewPage.qml:818
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr ""
+msgstr "75%"
 
 #: qml/mediaview/MediaViewPage.qml:819
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr ""
+msgstr "100%"
 
 #: qml/mediaview/MediaViewPage.qml:820
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr ""
+msgstr "150%"
 
 #: qml/mediaview/MediaViewPage.qml:821
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr ""
+msgstr "200%"
 
 #: qml/mediaview/MediaViewPage.qml:822
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr ""
+msgstr "300%"
 
 #: qml/mediaview/MediaViewPage.qml:823
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr ""
+msgstr "400%"
 
 #: qml/mediaview/MediaViewPage.qml:824
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr ""
+msgstr "600%"
 
 #: qml/mediaview/MediaViewPage.qml:825
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr ""
+msgstr "800%"
 
 #: qml/mediaview/MediaViewPage.qml:874
-#, fuzzy, kde-format
-#| msgctxt "@label %1 is a translated title e.g. 'Date Created'"
-#| msgid "%1:"
+#, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1:"
+msgstr "%1%"
 
 #: qml/mediaview/MediaViewPage.qml:888
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
-msgstr "확대/축소:"
+msgstr "축소"
 
 #: qml/mediaview/MediaViewPage.qml:897
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Zoom:"
+#, kde-format
 msgctxt "@action"
 msgid "Zoom In"
-msgstr "확대/축소:"
+msgstr "확대"
 
 #: qml/mediaview/MediaViewPage.qml:1140 qml/Settings/GeneralConfigPage.qml:202
 #, kde-format
@@ -1676,27 +1587,24 @@ msgstr "모든 컨트롤 표시"
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
-msgstr ""
+msgstr "정지"
 
 #: qml/mediaview/MediaViewPage.qml:1276
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
-msgstr ""
+msgstr "시작"
 
 #: qml/mediaview/MediaViewPage.qml:1295
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
-msgstr ""
+msgstr "간격:"
 
 #: qml/mediaview/MediaViewPage.qml:1308
-#, fuzzy, kde-format
-#| msgctxt "Slideshow image changing interval"
-#| msgid "1 second"
-#| msgid_plural "%1 seconds"
+#, kde-format
 msgid "seconds"
-msgstr "%1초"
+msgstr "초"
 
 #: qml/mediaview/TagInput.qml:66
 #, kde-format
@@ -1775,8 +1683,7 @@ msgid "Days"
 msgstr "일"
 
 #: qml/Settings/GeneralConfigPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Thumbnails size:"
+#, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "섬네일 크기:"
@@ -1785,39 +1692,37 @@ msgstr "섬네일 크기:"
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1픽셀"
 
 #: qml/Settings/GeneralConfigPage.qml:52
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
-msgstr ""
+msgstr "갤러리 정렬"
 
 #: qml/Settings/GeneralConfigPage.qml:57
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
-msgstr ""
+msgstr "자연스러운 정렬"
 
 #: qml/Settings/GeneralConfigPage.qml:67
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
-msgstr ""
+msgstr "가나다순, 대소문자 구분 안 함"
 
 #: qml/Settings/GeneralConfigPage.qml:77
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
-msgstr ""
+msgstr "가나다순, 대소문자 구분"
 
 #: qml/Settings/GeneralConfigPage.qml:88
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "Image View Background"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
-msgstr "그림 보기 배경"
+msgstr "이미지 배경"
 
 #: qml/Settings/GeneralConfigPage.qml:93
 #, kde-format
@@ -1829,7 +1734,7 @@ msgstr "검은색"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
-msgstr ""
+msgstr "회색"
 
 #: qml/Settings/GeneralConfigPage.qml:113
 #, kde-format
@@ -1850,32 +1755,28 @@ msgid "Use the background color specified by the theme"
 msgstr "테마에서 지정한 배경색 사용"
 
 #: qml/Settings/GeneralConfigPage.qml:141
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Show a checkerboard background behind transparent images"
+#, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
-msgstr "투명한 그림 뒤에 바둑판 무늬 배경 표시"
+msgstr "투명한 그림 뒤에 바둑판 무늬 표시"
 
 #: qml/Settings/GeneralConfigPage.qml:152
-#, fuzzy, kde-format
-#| msgctxt "@item:intable"
-#| msgid "Image Size"
+#, kde-format
 msgctxt "@title:group"
 msgid "Image View"
-msgstr "그림 크기"
+msgstr "그림 보기"
 
 #: qml/Settings/GeneralConfigPage.qml:158
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
-msgstr ""
+msgstr "뷰포트보다 작은 그림 확대"
 
 #: qml/Settings/GeneralConfigPage.qml:169
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
-msgstr ""
+msgstr "그림을 전환할 때 확대/축소 수준 기억"
 
 #: qml/Settings/GeneralConfigPage.qml:180
 #, kde-format
@@ -1893,7 +1794,7 @@ msgstr "일반"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "키보드 단축키"
 
 #: qml/Settings/PhotosConfigurationView.qml:29
 #, kde-format
@@ -1922,7 +1823,7 @@ msgstr "공유(&S)"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
-msgstr ""
+msgstr "메뉴 표시"
 
 #: qml/Sidebar.qml:195
 #, kde-format
