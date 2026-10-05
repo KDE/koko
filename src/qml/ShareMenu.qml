@@ -14,9 +14,9 @@ Components.ConvergentContextMenu {
 
     required property var inputData
     required property string title
-    required property Kirigami.ApplicationWindow applicationWindow
+    required property Kirigami.ApplicationWindow application
 
-    parent: applicationWindow.Controls.Overlay.overlay
+    parent: application.Controls.Overlay.overlay
 
     headerContentItem: Kirigami.Heading {
         level: 2
@@ -38,7 +38,7 @@ Components.ConvergentContextMenu {
             icon.name: iconName
             onTriggered: {
                 const shareDialogComponent = Qt.createComponent("org.kde.koko", "ShareDialog");
-                root.applicationWindow.pageStack.pushDialogLayer(shareDialogComponent, {
+                root.application.pageStack.pushDialogLayer(shareDialogComponent, {
                     title: root.title,
                     index: index,
                     model: root._instantiator.model
