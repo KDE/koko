@@ -329,9 +329,14 @@ MouseArea {
         acceptedDevices: PointerDevice.TouchScreen
         onLongPressed: root.contextMenuRequested()
     }
-
-    onDoubleClicked: (mouse) => {
-        if (mouse.button === Qt.LeftButton) {
+    TapHandler {
+        exclusiveSignals: (Qt.SingleTap|Qt.DoubleTap)
+        onSingleTapped: {
+            let app = applicationWindow()
+            app.controlsVisible = !app.controlsVisible
+        }
+        onDoubleTapped:  (point, button) => {
+        if (button === Qt.LeftButton) {
             if (!root.autoFit) {
                 root.resetToDefaultSize()
             } else {
@@ -340,8 +345,8 @@ MouseArea {
                 contentItem.width = root.defaultContentRect.width * 2
                 contentItem.height = root.defaultContentRect.height * 2
                 // content position * factor - mouse position
-                contentItem.x = root.boundedContentX(cX * 2 - mouse.x, contentItem.width)
-                contentItem.y = root.boundedContentY(cY * 2 - mouse.y, contentItem.height)
+                contentItem.x = root.boundedContentX(cX * 2 - point.position.x, contentItem.width)
+                contentItem.y = root.boundedContentY(cY * 2 - point.position.y, contentItem.height)
             }
         }
     }
