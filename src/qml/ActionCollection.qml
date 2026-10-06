@@ -79,13 +79,9 @@ AC.ActionCollectionManager {
             defaultShortcut: "T"
             checkable: true
         }
-        AC.ActionData {
-            name: "Fullscreen"
-            text: i18nc("@action:intoolbar", "Full Screen")
-            icon.name: !checked ? "view-fullscreen-symbolic" : "view-restore-symbolic"
-            toolTip: !checked ? i18nc("@info:tooltip", "Enter Full Screen") : i18nc("@info:tooltip", "Exit Full Screen")
-
-            defaultShortcut: "F"
+        AC.StandardActionData {
+            standardAction: AC.StandardActionData.FullScreen
+            defaultAlternateShortcut: "F"
             checkable: true
         }
         AC.ActionData {

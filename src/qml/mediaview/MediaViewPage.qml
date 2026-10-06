@@ -354,7 +354,7 @@ Kirigami.Page {
         },
         Kirigami.Action {
             id: fullscreenAction
-            AC.ActionCollection.action: "Fullscreen"
+            AC.ActionCollection.action: AC.StandardActionData.FullScreen
             AC.ActionCollection.collection: "org.kde.koko.mediaview"
 
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -1406,6 +1406,13 @@ Kirigami.Page {
         sequence: Application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
         enabled: root.modelReady
         onActivated: listView.incrementCurrentIndex()
+    }
+
+    Shortcut {
+        sequence: "F11"
+        context: Qt.WindowShortcut
+        enabled: root.visible
+        onActivated: fullscreenAction.trigger()
     }
 
     Component {
