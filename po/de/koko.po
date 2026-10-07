@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-01 00:43+0000\n"
+"POT-Creation-Date: 2026-10-07 00:45+0000\n"
 "PO-Revision-Date: 2026-08-13 12:57+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1066,97 +1066,79 @@ msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Vorschaubild-Werkzeugleiste ausblenden"
 
-#: qml/ActionCollection.qml:84
-#, kde-format
-msgctxt "@action:intoolbar"
-msgid "Full Screen"
-msgstr "Vollbild"
-
-#: qml/ActionCollection.qml:86
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Enter Full Screen"
-msgstr "Vollbildmodus aktivieren"
-
-#: qml/ActionCollection.qml:86
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "Exit Full Screen"
-msgstr "Vollbildmodus beenden"
-
-#: qml/ActionCollection.qml:93
+#: qml/ActionCollection.qml:89
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
 msgstr ""
 
-#: qml/ActionCollection.qml:100
+#: qml/ActionCollection.qml:96
 #, kde-format
 msgctxt "Actions category"
 msgid "File"
 msgstr "Datei"
 
-#: qml/ActionCollection.qml:105
+#: qml/ActionCollection.qml:101
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Favorisieren"
 
-#: qml/ActionCollection.qml:114
+#: qml/ActionCollection.qml:110
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Ordner mit diesem Inhalt öffnen"
 
-#: qml/ActionCollection.qml:119
+#: qml/ActionCollection.qml:115
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "Öff&nen mit …"
 
-#: qml/ActionCollection.qml:130
+#: qml/ActionCollection.qml:126
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Ort kopieren"
 
-#: qml/ActionCollection.qml:150
+#: qml/ActionCollection.qml:146
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&Eigenschaften"
 
-#: qml/ActionCollection.qml:158
+#: qml/ActionCollection.qml:154
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr ""
 
-#: qml/ActionCollection.qml:162
+#: qml/ActionCollection.qml:158
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Zuschneiden"
 
-#: qml/ActionCollection.qml:168
+#: qml/ActionCollection.qml:164
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Nach links drehen"
 
-#: qml/ActionCollection.qml:174
+#: qml/ActionCollection.qml:170
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Nach rechts drehen"
 
-#: qml/ActionCollection.qml:180
+#: qml/ActionCollection.qml:176
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Horizontal spiegeln"
 
-#: qml/ActionCollection.qml:186
+#: qml/ActionCollection.qml:182
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -2006,6 +1988,18 @@ msgstr "Orte"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Alle Medien auswählen"
+
+#~ msgctxt "@action:intoolbar"
+#~ msgid "Full Screen"
+#~ msgstr "Vollbild"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Enter Full Screen"
+#~ msgstr "Vollbildmodus aktivieren"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "Exit Full Screen"
+#~ msgstr "Vollbildmodus beenden"
 
 #~ msgid "General"
 #~ msgstr "Allgemein"
