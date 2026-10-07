@@ -306,6 +306,35 @@ Kirigami.Page {
         }
     ]
 
+    readonly property list<Kirigami.Action> imageNavigationActions: [
+        Kirigami.Action {
+            id: previousImageAction
+            AC.ActionCollection.action: "PreviousImage"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+
+            // Hidden from toolbars (floating arrow buttons already cover this),
+            // but kept in page actions so shortcuts and the context menu work.
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-right-symbolic" : "arrow-left-symbolic"
+            visible: listView.count > 1
+            enabled: root.modelReady && listView.currentIndex > 0
+            onTriggered: listView.decrementCurrentIndex()
+        },
+        Kirigami.Action {
+            id: nextImageAction
+            AC.ActionCollection.action: "NextImage"
+            AC.ActionCollection.collection: "org.kde.koko.mediaview"
+
+            // Hidden from toolbars (floating arrow buttons already cover this),
+            // but kept in page actions so shortcuts and the context menu work.
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-left-symbolic" : "arrow-right-symbolic"
+            visible: listView.count > 1
+            enabled: root.modelReady && listView.currentIndex < listView.count - 1
+            onTriggered: listView.incrementCurrentIndex()
+        }
+    ]
+
     readonly property list<Kirigami.Action> otherHiddenUiActions: [
         Kirigami.Action {
             displayHint: Kirigami.DisplayHint.AlwaysHide
@@ -381,7 +410,7 @@ Kirigami.Page {
         }
     ]
 
-    actions: [...toolBarActions, ...fileMenuActions, ...otherHiddenUiActions]
+    actions: [...toolBarActions, ...imageNavigationActions, ...fileMenuActions, ...otherHiddenUiActions]
 
     SlideshowManager {
         id: slideshowManager
@@ -657,11 +686,8 @@ Kirigami.Page {
             width: Kirigami.Units.gridUnit * 2
             height: width
 
-            icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-right-symbolic" : "arrow-left-symbolic"
-            text: i18nc("@action:button", "Previous image")
             display: QQC2.AbstractButton.IconOnly
-
-            onClicked: listView.decrementCurrentIndex()
+            action: previousImageAction
         }
 
         QQC2.RoundButton {
@@ -691,11 +717,8 @@ Kirigami.Page {
             width: Kirigami.Units.gridUnit * 2
             height: width
 
-            icon.name: Application.layoutDirection === Qt.RightToLeft ? "arrow-left-symbolic" : "arrow-right-symbolic"
-            text: i18nc("@action:button", "Next image")
             display: QQC2.AbstractButton.IconOnly
-
-            onClicked: listView.incrementCurrentIndex()
+            action: nextImageAction
         }
 
         OverviewControl {
@@ -1177,9 +1200,9 @@ Kirigami.Page {
 
         onClicked: (mouse) => {
             if (mouse.button == Qt.BackButton) {
-                listView.decrementCurrentIndex()
+                previousImageAction.trigger()
             } else if (mouse.button == Qt.ForwardButton) {
-                listView.incrementCurrentIndex()
+                nextImageAction.trigger()
             }
         }
     }
@@ -1438,18 +1461,6 @@ Kirigami.Page {
         context: Qt.WindowShortcut
         enabled: root.visible && zoomInButton.enabled
         onActivated: zoomBar.zoomIn()
-    }
-
-    Shortcut {
-        sequence: Application.layoutDirection === Qt.RightToLeft ? "Right" : "Left"
-        enabled: root.modelReady
-        onActivated: listView.decrementCurrentIndex()
-    }
-
-    Shortcut {
-        sequence: Application.layoutDirection === Qt.RightToLeft ? "Left" : "Right"
-        enabled: root.modelReady
-        onActivated: listView.incrementCurrentIndex()
     }
 
     Shortcut {

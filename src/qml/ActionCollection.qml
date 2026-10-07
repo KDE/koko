@@ -89,6 +89,20 @@ AC.ActionCollectionManager {
             text: i18nc("@action:button Play or pause video", "Play/Pause Video")
             defaultShortcut: "Space"
         }
+        AC.ActionData {
+            name: "PreviousImage"
+            icon.name: "arrow-left-symbolic"
+            text: i18nc("@action:button", "Previous image")
+            toolTip: i18nc("@info:tooltip", "Show the previous image")
+            defaultShortcut: StandardKey.MoveToPreviousChar
+        }
+        AC.ActionData {
+            name: "NextImage"
+            icon.name: "arrow-right-symbolic"
+            text: i18nc("@action:button", "Next image")
+            toolTip: i18nc("@info:tooltip", "Show the next image")
+            defaultShortcut: StandardKey.MoveToNextChar
+        }
     }
 
     AC.ActionCollection {

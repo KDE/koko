@@ -23,6 +23,7 @@ KirigamiSettings.ConfigurationView {
             icon.name: "configure-shortcuts-symbolic"
             visible: !Kirigami.Settings.isMobile
             page: () => Qt.createComponent("org.kde.kirigami.actioncollection", "ShortcutsEditor")
+            initialProperties: () => ({ allowModifierlessShortcuts: true })
         },
         KirigamiSettings.ConfigurationModule {
             moduleId: "about"

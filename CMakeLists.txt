@@ -89,7 +89,7 @@ set_package_properties(KF6KirigamiAddons PROPERTIES
     PURPOSE "Required runtime dependency"
 )
 
-find_package(KF6KirigamiAppComponents)
+find_package(KF6KirigamiAppComponents 1.1)
 set_package_properties(KF6KirigamiAppComponents PROPERTIES
     TYPE REQUIRED
     PURPOSE "Required for Shortcuts configuration"
