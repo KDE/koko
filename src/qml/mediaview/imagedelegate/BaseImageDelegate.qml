@@ -98,6 +98,7 @@ ZoomArea {
     function resetZoomContentSize() {
         if (loaded && isCurrent && !isZoomSet) {
             if (Koko.Config.rememberZoom && Koko.State.zoom * sourceWidth > 1 && Koko.State.zoom * sourceHeight > 1) {
+                root.autoFit = false
                 const size = multiplyContentSize(Koko.State.zoom, implicitContentWidth, implicitContentHeight)
                 root.contentX = root.boundedContentX(root.contentX / root.zoomFactor * Koko.State.zoom, size.width)
                 root.contentY = root.boundedContentY(root.contentY / root.zoomFactor * Koko.State.zoom, size.height)
@@ -105,17 +106,18 @@ ZoomArea {
                 root.contentHeight = size.height
                 isZoomSet = true
             } else {
-                root.contentWidth = Qt.binding(() => root.defaultContentRect.width)
-                root.contentHeight = Qt.binding(() => root.defaultContentRect.height)
+                root.resetToDefaultSize()
             }
-            Koko.State.zoom = root.zoomFactor
+            if (root.zoomFactor > 0) {
+                Koko.State.zoom = root.zoomFactor
+            }
         } else {
             isZoomSet = false
         }
     }
     onIsCurrentChanged: resetZoomContentSize()
     onLoadedChanged: resetZoomContentSize()
-    onZoomFactorChanged: if (loaded && isCurrent) {
+    onZoomFactorChanged: if (loaded && isCurrent && root.zoomFactor > 0) {
         Koko.State.zoom = root.zoomFactor
     }
 
@@ -125,6 +127,7 @@ ZoomArea {
             if (!root.loaded || !root.isCurrent || root.dragging || Koko.State.zoom === root.zoomFactor) {
                 return
             }
+            root.autoFit = false
             const size = multiplyContentSize(Koko.State.zoom, implicitContentWidth, implicitContentHeight)
             root.contentX = root.boundedContentX(root.contentX / root.zoomFactor * Koko.State.zoom, size.width)
             root.contentY = root.boundedContentY(root.contentY / root.zoomFactor * Koko.State.zoom, size.height)

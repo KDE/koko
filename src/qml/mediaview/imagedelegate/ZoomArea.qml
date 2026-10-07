@@ -17,6 +17,7 @@ import org.kde.koko as Photos
 MouseArea {
     id: root
 
+    property bool zoomToFill: false
     property bool canMove: false // allow to drag to next image even if the current one is zoomed using touch screens
     readonly property bool interactive: (Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height) && !root.canMove
     property bool dragging: root.drag.active || pinchHandler.active
@@ -43,7 +44,7 @@ MouseArea {
     readonly property real contentAspectRatio: contentItem.implicitWidth / contentItem.implicitHeight
     readonly property real viewAspectRatio: root.width / root.height
     // Should be the same for both width and height
-    readonly property real zoomFactor: contentItem.width / contentItem.implicitWidth
+    readonly property real zoomFactor: contentItem.implicitWidth > 0 ? contentItem.width / contentItem.implicitWidth : 0
 
     // Minimum is a size because a factor doesn't necessarily
     // limit based on what is visible on the user's screen.
@@ -55,17 +56,42 @@ MouseArea {
 
     signal contextMenuRequested()
 
+    property bool autoFit: true
+
+    function resetToDefaultSize() {
+        root.autoFit = true
+        contentItem.width = Qt.binding(() => root.defaultContentRect.width)
+        contentItem.height = Qt.binding(() => root.defaultContentRect.height)
+        contentItem.x = Qt.binding(() => root.defaultContentRect.x)
+        contentItem.y = Qt.binding(() => root.defaultContentRect.y)
+    }
+
+    function leaveAutoFit() {
+        const w = contentItem.width
+        const h = contentItem.height
+        root.autoFit = false
+        contentItem.width = w
+        contentItem.height = h
+        contentItem.x = root.boundedContentX(contentItem.x, w)
+        contentItem.y = root.boundedContentY(contentItem.y, h)
+    }
+
     // Fit to root unless arguments are smaller than the size of root.
     // Returning size instead of using separate width and height functions
     // since they both need to be calculated together.
     function fittedContentSize(w, h) {
-        const factor = root.contentAspectRatio >= root.viewAspectRatio ?
-            root.width / w : root.height / h
-        if (w > root.width || h > root.height || Photos.Config.enlargeSmallImages) {
-            w = w * factor
-            h = h * factor
+        if (!(w > 0) || !(h > 0)) {
+            return Qt.size(0, 0)
         }
-        return Qt.size(w, h)
+        const fitWidth = root.width / w
+        const fitHeight = root.height / h
+        const useWidth = root.zoomToFill ?
+            fitWidth > fitHeight : fitWidth < fitHeight
+        let factor = useWidth ? fitWidth : fitHeight
+        if (!Photos.Config.enlargeSmallImages) {
+            factor = Math.min(factor, 1)
+        }
+        return Qt.size(w * factor, h * factor)
     }
 
     // Get the X value that would center the contentItem with the given content width.
@@ -203,10 +229,10 @@ MouseArea {
         restoreMode: Binding.RestoreNone
     }
 
-    onWidthChanged: if (contentItem.width > width) {
+    onWidthChanged: if (!root.autoFit && contentItem.width > width) {
         contentItem.x = boundedContentX(contentItem.x)
     }
-    onHeightChanged: if (contentItem.height > height) {
+    onHeightChanged: if (!root.autoFit && contentItem.height > height) {
         contentItem.y = boundedContentY(contentItem.y)
     }
 
@@ -218,14 +244,14 @@ MouseArea {
         property real startPosY
 
         onActiveChanged: if (active) {
+            root.leaveAutoFit()
             startPosX = contentItem.x;
             startPosY = contentItem.y;
         } else {
             // pinch finished. Zoom to image or widget size if contentItem is smaller
             if (contentWidth < Math.min(root.defaultContentRect.width,implicitContentWidth) &&
                 contentHeight < Math.min(root.defaultContentRect.height, implicitContentHeight)) {
-                contentItem.width = root.defaultContentRect.width
-                contentItem.height = root.defaultContentRect.height
+                root.resetToDefaultSize()
             }
         }
 
@@ -306,10 +332,10 @@ MouseArea {
 
     onDoubleClicked: (mouse) => {
         if (mouse.button === Qt.LeftButton) {
-            if (contentItem.width !== root.defaultContentRect.width || contentItem.height !== root.defaultContentRect.height) {
-                contentItem.width = Qt.binding(() => root.defaultContentRect.width)
-                contentItem.height = Qt.binding(() => root.defaultContentRect.height)
+            if (!root.autoFit) {
+                root.resetToDefaultSize()
             } else {
+                root.autoFit = false
                 const cX = contentItem.x, cY = contentItem.y
                 contentItem.width = root.defaultContentRect.width * 2
                 contentItem.height = root.defaultContentRect.height * 2
@@ -342,6 +368,7 @@ MouseArea {
             }
             const oldRect = Qt.rect(contentItem.x, contentItem.y, contentItem.width, contentItem.height)
             const newSize = root.multiplyContentSize(factor)
+            root.autoFit = false
             // round to default size if within ±1
             if ((newSize.height > root.defaultContentRect.height - 1
                 && newSize.height < root.defaultContentRect.height + 1)

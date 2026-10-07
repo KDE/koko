@@ -32,6 +32,8 @@ Kirigami.Page {
 
     property int lastWindowVisibility: mainWindow.visibility
 
+    property bool zoomToFill: false
+
     // A model that is still populating might not yet contain the index we want to show
     property bool modelReady: false
 
@@ -480,11 +482,15 @@ Kirigami.Page {
         onVisibleChanged: {
             if (!visible) {
                 if (item && item.loaded) {
-                    // Transfer zoom and position to the new delegate
-                    listView.currentItem.item.contentWidth = item.contentWidth;
-                    listView.currentItem.item.contentHeight = item.contentHeight;
-                    listView.currentItem.item.contentX = item.contentX;
-                    listView.currentItem.item.contentY = item.contentY;
+                    if (item.autoFit) {
+                        listView.currentItem.item.resetToDefaultSize();
+                    } else {
+                        listView.currentItem.item.autoFit = false;
+                        listView.currentItem.item.contentWidth = item.contentWidth;
+                        listView.currentItem.item.contentHeight = item.contentHeight;
+                        listView.currentItem.item.contentX = item.contentX;
+                        listView.currentItem.item.contentY = item.contentY;
+                    }
                 }
                 imagePlaceholder.destroy();
             }
@@ -596,6 +602,7 @@ Kirigami.Page {
             if (currentItem) {
                 root.url = currentItem.url;
             }
+            zoomBox.updateDisplayedZoom();
         }
 
         delegate: DelegateLoader {
@@ -789,7 +796,7 @@ Kirigami.Page {
                 for (let i = 0; i < zoomBox.count; ++i) {
                     let z = zoomBox.valueAt(i)
                     if (z > Koko.State.zoom) {
-                        Koko.State.zoom = z
+                        zoomBar.applyManualZoom(z)
                         zoomBox.currentIndex = i
                         return
                     }
@@ -800,11 +807,26 @@ Kirigami.Page {
                 for (let i = zoomBox.count - 1; i >= 0; --i) {
                     let z = zoomBox.valueAt(i)
                     if (z < Koko.State.zoom && z > 0) {
-                        Koko.State.zoom = z
+                        zoomBar.applyManualZoom(z)
                         zoomBox.currentIndex = i
                         return
                     }
                 }
+            }
+
+            function applyManualZoom(value: real): void {
+                const item = listView.currentItem?.item
+                if (item) {
+                    item.leaveAutoFit()
+                }
+                Koko.State.zoom = value
+                zoomBox.updateDisplayedZoom()
+            }
+
+            function applyZoomMode(mode: string): void {
+                root.zoomToFill = mode === "fill"
+                listView.currentItem?.item?.resetToDefaultSize()
+                zoomBox.updateDisplayedZoom()
             }
 
             Behavior on opacity {
@@ -865,7 +887,7 @@ Kirigami.Page {
                     }
                     Kirigami.Theme.inherit: true
                     implicitContentWidthPolicy: QQC2.ComboBox.WidestText
-                    model: [
+                    readonly property var percentages: [
                         {text: i18nc("@item:inlistbox zoom percent", "25%"), zoom: 0.25},
                         {text: i18nc("@item:inlistbox zoom percent", "50%"), zoom: 0.5},
                         {text: i18nc("@item:inlistbox zoom percent", "75%"), zoom: 0.75},
@@ -877,6 +899,7 @@ Kirigami.Page {
                         {text: i18nc("@item:inlistbox zoom percent", "600%"), zoom: 6},
                         {text: i18nc("@item:inlistbox zoom percent", "800%"), zoom: 8}
                     ]
+                    model: zoomBox.percentages
                     textRole: "text"
                     valueRole: "zoom"
                     currentIndex: indexOfValue(Koko.State.zoom)
@@ -887,11 +910,13 @@ Kirigami.Page {
                         interval: 100
                         repeat: false
                         running: false
+                        onTriggered: zoomBox.updateDisplayedZoom()
                     }
                     onActivated: (index) => {
-                        if (index >= 0) {
-                            Koko.State.zoom = zoomBox.currentValue
+                        if (index < 0) {
+                            return
                         }
+                        zoomBar.applyManualZoom(zoomBox.currentValue)
                     }
                     // The order in which text changed signals are emitted and
                     // currentIndex/currentText/currentValue changed signals are
@@ -902,36 +927,39 @@ Kirigami.Page {
                         function onTextEdited() {
                             textEditedTimer.restart()
                             const text = zoomBox.contentItem.text
-                            // Exact match first, then parse, then fallback to whatever the currentIndex is
                             const index = zoomBox.find(text, Qt.MatchExactly)
-                            const value = index > 0 ? zoomBox.valueAt(index) : zoomBox.parsePercent(text) / 100 || zoomBox.valueAt(zoomBox.currentIndex)
-                            if (!value || value === Koko.State.zoom) {
+                            const value = index >= 0 ? zoomBox.valueAt(index) : zoomBox.parsePercent(text) / 100
+                            if (!Number.isFinite(value) || value <= 0) {
                                 return
                             }
-                            Koko.State.zoom = value
+                            zoomBar.applyManualZoom(value)
                         }
+                    }
+                    function updateDisplayedZoom() {
+                        const zoom = Koko.State.zoom
+                        if (textEditedTimer.running || !zoom) {
+                            return
+                        }
+                        const index = zoomBox.indexOfValue(zoom)
+                        if (zoomBox.currentIndex === index && zoomBox.currentValue === zoom) {
+                            return
+                        }
+                        const oldCursorPos = zoomBox.contentItem.cursorPosition
+                        const oldTextLength = zoomBox.editText.length
+                        zoomBox.currentIndex = index
+                        zoomBox.editText = zoomBox.currentIndex > 0
+                            ? zoomBox.currentText
+                            : i18nc("@item:inlistbox zoom percent", "%1%", Math.round(zoom * 100))
+                        const percentOffset = zoomBox.editText.endsWith(locale.percent)
+                            ? locale.percent.length
+                            : (zoomBox.editText.endsWith("%") ? 1 : 0)
+                        // Preserve the cursor position relative to the end of the text before the percent sign
+                        zoomBox.contentItem.cursorPosition = Math.min(oldCursorPos + (zoomBox.editText.length - oldTextLength),
+                                                                      zoomBox.editText.length - percentOffset)
                     }
                     Connections {
                         target: Koko.State
-                        function onZoomChanged() {
-                            const zoom = Koko.State.zoom
-                            const index = zoomBox.indexOfValue(zoom)
-                            if (textEditedTimer.running || !zoom || zoomBox.currentValue === zoom) {
-                                return
-                            }
-                            const oldCursorPos = zoomBox.contentItem.cursorPosition
-                            const oldTextLength = zoomBox.editText.length
-                            zoomBox.currentIndex = Qt.binding(() => zoomBox.indexOfValue(zoom))
-                            zoomBox.editText = Qt.binding(() => zoomBox.currentIndex > 0
-                                ? zoomBox.currentText
-                                : i18nc("@item:inlistbox zoom percent", "%1%", Math.round(zoom * 100)))
-                            const percentOffset = zoomBox.editText.endsWith(locale.percent)
-                                ? locale.percent.length
-                                : (zoomBox.editText.endsWith("%") ? 1 : 0)
-                            // Preserve the cursor position relative to the end of the text before the percent sign
-                            zoomBox.contentItem.cursorPosition = Math.min(oldCursorPos + (zoomBox.editText.length - oldTextLength),
-                                                                          zoomBox.editText.length - percentOffset)
-                        }
+                        function onZoomChanged() { zoomBox.updateDisplayedZoom() }
                     }
                 }
                 QQC2.ToolSeparator {}
@@ -940,7 +968,7 @@ Kirigami.Page {
                     icon.name: "zoom-out"
                     text: i18nc("@action", "Zoom Out")
                     display: QQC2.AbstractButton.IconOnly
-                    enabled: Koko.State.zoom > zoomBox.model[0].zoom
+                    enabled: Koko.State.zoom > zoomBox.percentages[0].zoom
                     onClicked: zoomBar.zoomOut()
                 }
 
@@ -949,8 +977,24 @@ Kirigami.Page {
                     icon.name: "zoom-in"
                     text: i18nc("@action", "Zoom In")
                     display: QQC2.AbstractButton.IconOnly
-                    enabled: Koko.State.zoom < zoomBox.model[zoomBox.count -1].zoom
+                    enabled: Koko.State.zoom < zoomBox.percentages[zoomBox.percentages.length - 1].zoom
                     onClicked: zoomBar.zoomIn()
+                }
+
+                QQC2.ToolSeparator {}
+
+                QQC2.ToolButton {
+                    id: zoomToFitButton
+                    text: i18nc("@action:button Fit the whole image within the view", "Fit")
+                    display: QQC2.AbstractButton.TextOnly
+                    onClicked: zoomBar.applyZoomMode("fit")
+                }
+
+                QQC2.ToolButton {
+                    id: zoomToFillButton
+                    text: i18nc("@action:button Fill the view with the image, cropping it if necessary", "Fill")
+                    display: QQC2.AbstractButton.TextOnly
+                    onClicked: zoomBar.applyZoomMode("fill")
                 }
             }
         }

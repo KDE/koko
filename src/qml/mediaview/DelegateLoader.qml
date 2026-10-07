@@ -70,6 +70,7 @@ Loader {
                 source: Qt.binding(() => loader.url),
                 isCurrent: Qt.binding(() => loader.ListView.isCurrentItem),
                 mainWindow: root.mainWindow,
+                zoomToFill: Qt.binding(() => root.zoomToFill),
                 preferAsync: loader.asynchronous
             };
 
