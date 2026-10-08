@@ -336,17 +336,18 @@ MouseArea {
             app.controlsVisible = !app.controlsVisible
         }
         onDoubleTapped:  (point, button) => {
-        if (button === Qt.LeftButton) {
-            if (!root.autoFit) {
-                root.resetToDefaultSize()
-            } else {
-                root.autoFit = false
-                const cX = contentItem.x, cY = contentItem.y
-                contentItem.width = root.defaultContentRect.width * 2
-                contentItem.height = root.defaultContentRect.height * 2
-                // content position * factor - mouse position
-                contentItem.x = root.boundedContentX(cX * 2 - point.position.x, contentItem.width)
-                contentItem.y = root.boundedContentY(cY * 2 - point.position.y, contentItem.height)
+            if (button === Qt.LeftButton || button === Qt.NoButton) {
+                if (!root.autoFit) {
+                    root.resetToDefaultSize()
+                } else {
+                    root.autoFit = false
+                    const cX = contentItem.x, cY = contentItem.y
+                    contentItem.width = root.defaultContentRect.width * 2
+                    contentItem.height = root.defaultContentRect.height * 2
+                    // content position * factor - mouse position
+                    contentItem.x = root.boundedContentX(cX * 2 - point.position.x, contentItem.width)
+                    contentItem.y = root.boundedContentY(cY * 2 - point.position.y, contentItem.height)
+                }
             }
         }
     }
