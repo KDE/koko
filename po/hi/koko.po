@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:45+0000\n"
+"POT-Creation-Date: 2026-10-08 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 17:35+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -1118,7 +1118,35 @@ msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
 msgstr ""
 
+#: qml/ActionCollection.qml:95
+#, fuzzy, kde-format
+#| msgid "Previous image"
+msgctxt "@action:button"
+msgid "Previous image"
+msgstr "पिछली छवि"
+
 #: qml/ActionCollection.qml:96
+#, fuzzy, kde-format
+#| msgid "Previous image"
+msgctxt "@info:tooltip"
+msgid "Show the previous image"
+msgstr "पिछली छवि"
+
+#: qml/ActionCollection.qml:102
+#, fuzzy, kde-format
+#| msgid "Next image"
+msgctxt "@action:button"
+msgid "Next image"
+msgstr "अगली छवि"
+
+#: qml/ActionCollection.qml:103
+#, fuzzy, kde-format
+#| msgid "Share Image"
+msgctxt "@info:tooltip"
+msgid "Show the next image"
+msgstr "चित्र साझा करें"
+
+#: qml/ActionCollection.qml:110
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "File name:"
@@ -1126,27 +1154,27 @@ msgctxt "Actions category"
 msgid "File"
 msgstr "फ़ाइल का नाम:"
 
-#: qml/ActionCollection.qml:101
+#: qml/ActionCollection.qml:115
 #, fuzzy, kde-format
 #| msgid "Favorite"
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "पसंदीदा"
 
-#: qml/ActionCollection.qml:110
+#: qml/ActionCollection.qml:124
 #, fuzzy, kde-format
 #| msgid "Open Containing Folder"
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "धारक फोल्डर खोलें"
 
-#: qml/ActionCollection.qml:115
+#: qml/ActionCollection.qml:129
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr ""
 
-#: qml/ActionCollection.qml:126
+#: qml/ActionCollection.qml:140
 #, fuzzy, kde-format
 #| msgctxt "@action:incontextmenu"
 #| msgid "Copy Location"
@@ -1154,19 +1182,19 @@ msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "स्थान कॉपी करें"
 
-#: qml/ActionCollection.qml:146
+#: qml/ActionCollection.qml:160
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr ""
 
-#: qml/ActionCollection.qml:154
+#: qml/ActionCollection.qml:168
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr ""
 
-#: qml/ActionCollection.qml:158
+#: qml/ActionCollection.qml:172
 #, fuzzy, kde-format
 #| msgctxt "@action:button Crop an image"
 #| msgid "Crop"
@@ -1174,7 +1202,7 @@ msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "काटना"
 
-#: qml/ActionCollection.qml:164
+#: qml/ActionCollection.qml:178
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the left"
 #| msgid "Rotate left"
@@ -1182,7 +1210,7 @@ msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "बायीं तरफ"
 
-#: qml/ActionCollection.qml:170
+#: qml/ActionCollection.qml:184
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the right"
 #| msgid "Rotate right"
@@ -1190,13 +1218,13 @@ msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "दाएं घुमाएं"
 
-#: qml/ActionCollection.qml:176
+#: qml/ActionCollection.qml:190
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr ""
 
-#: qml/ActionCollection.qml:182
+#: qml/ActionCollection.qml:196
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -1235,7 +1263,7 @@ msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:72
+#: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:74
 #, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
@@ -1402,14 +1430,14 @@ msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "बुकमार्क फ़ोल्डर"
 
-#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:128
 #, fuzzy, kde-format
 #| msgid "Remove from favorites"
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "पसंदीदा से हटाएं"
 
-#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:126
+#: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:128
 #, fuzzy, kde-format
 #| msgid "Add to favorites"
 msgctxt "@info:tooltip"
@@ -1603,7 +1631,7 @@ msgctxt "@label Placeholder for missing metadata"
 msgid "—"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:74
+#: qml/mediaview/MediaViewPage.qml:76
 #, fuzzy, kde-format
 #| msgctxt "@action:button Undo modification"
 #| msgid "Undo"
@@ -1611,158 +1639,156 @@ msgctxt "Undo moving items to trash"
 msgid "Undo"
 msgstr "पूर्ववत"
 
-#: qml/mediaview/MediaViewPage.qml:105
+#: qml/mediaview/MediaViewPage.qml:107
 #, kde-format
 msgctxt "@info"
 msgid "%1 of %2"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:167
+#: qml/mediaview/MediaViewPage.qml:169
 #, fuzzy, kde-format
 #| msgid "Share Video"
 msgctxt "@info:tooltip"
 msgid "Share this video"
 msgstr "वीडियो साझा करें"
 
-#: qml/mediaview/MediaViewPage.qml:169
+#: qml/mediaview/MediaViewPage.qml:171
 #, fuzzy, kde-format
 #| msgid "Share Image"
 msgctxt "@info:tooltip"
 msgid "Share this image"
 msgstr "चित्र साझा करें"
 
-#: qml/mediaview/MediaViewPage.qml:191
+#: qml/mediaview/MediaViewPage.qml:193
 #, fuzzy, kde-format
 #| msgid "See information about video"
 msgctxt "@info:tooltip"
 msgid "See information about this video"
 msgstr "वीडियो के बारे में जानकारी देखें"
 
-#: qml/mediaview/MediaViewPage.qml:193
+#: qml/mediaview/MediaViewPage.qml:195
 #, fuzzy, kde-format
 #| msgid "See information about image"
 msgctxt "@info:tooltip"
 msgid "See information about this image"
 msgstr "छवि के बारे में जानकारी देखें"
 
-#: qml/mediaview/MediaViewPage.qml:210
+#: qml/mediaview/MediaViewPage.qml:212
 #, fuzzy, kde-format
 #| msgid "Locations"
 msgctxt "@info:tooltip"
 msgid "Actions"
 msgstr "स्थानों"
 
-#: qml/mediaview/MediaViewPage.qml:332
+#: qml/mediaview/MediaViewPage.qml:363
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:333
+#: qml/mediaview/MediaViewPage.qml:364
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:654
-#, fuzzy, kde-format
-#| msgid "Previous image"
-msgctxt "@action:button"
-msgid "Previous image"
-msgstr "पिछली छवि"
-
-#: qml/mediaview/MediaViewPage.qml:688
-#, fuzzy, kde-format
-#| msgid "Next image"
-msgctxt "@action:button"
-msgid "Next image"
-msgstr "अगली छवि"
-
-#: qml/mediaview/MediaViewPage.qml:869
+#: qml/mediaview/MediaViewPage.qml:914
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:870
+#: qml/mediaview/MediaViewPage.qml:915
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:871
+#: qml/mediaview/MediaViewPage.qml:916
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:872
+#: qml/mediaview/MediaViewPage.qml:917
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:873
+#: qml/mediaview/MediaViewPage.qml:918
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:874
+#: qml/mediaview/MediaViewPage.qml:919
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:875
+#: qml/mediaview/MediaViewPage.qml:920
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:876
+#: qml/mediaview/MediaViewPage.qml:921
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:877
+#: qml/mediaview/MediaViewPage.qml:922
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:878
+#: qml/mediaview/MediaViewPage.qml:923
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:927
+#: qml/mediaview/MediaViewPage.qml:975
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:941
+#: qml/mediaview/MediaViewPage.qml:992
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:950
+#: qml/mediaview/MediaViewPage.qml:1001
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1193 qml/Settings/GeneralConfigPage.qml:228
+#: qml/mediaview/MediaViewPage.qml:1011
+#, kde-format
+msgctxt "@action:button Fit the whole image within the view"
+msgid "Fit"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:1018
+#, kde-format
+msgctxt "@action:button Fill the view with the image, cropping it if necessary"
+msgid "Fill"
+msgstr ""
+
+#: qml/mediaview/MediaViewPage.qml:1260 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "स्लाइड शो अंतराल:"
 
-#: qml/mediaview/MediaViewPage.qml:1210 qml/Settings/GeneralConfigPage.qml:240
+#: qml/mediaview/MediaViewPage.qml:1277 qml/Settings/GeneralConfigPage.qml:240
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1770,48 +1796,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "%1 सेकंड"
 msgstr[1] "%1 सेकंड"
 
-#: qml/mediaview/MediaViewPage.qml:1265 qml/mediaview/MediaViewPage.qml:1366
+#: qml/mediaview/MediaViewPage.qml:1332 qml/mediaview/MediaViewPage.qml:1433
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "कुंडली"
 
-#: qml/mediaview/MediaViewPage.qml:1274 qml/mediaview/MediaViewPage.qml:1375
+#: qml/mediaview/MediaViewPage.qml:1341 qml/mediaview/MediaViewPage.qml:1442
 #: qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "यादृच्छिक करें"
 
-#: qml/mediaview/MediaViewPage.qml:1286
+#: qml/mediaview/MediaViewPage.qml:1353
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "स्लाइड शो रोकें"
 
-#: qml/mediaview/MediaViewPage.qml:1300
+#: qml/mediaview/MediaViewPage.qml:1367
 #, kde-format
 msgid "Show All Controls"
 msgstr "सभी नियंत्रण दिखाएं"
 
-#: qml/mediaview/MediaViewPage.qml:1329
+#: qml/mediaview/MediaViewPage.qml:1396
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1329
+#: qml/mediaview/MediaViewPage.qml:1396
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1348
+#: qml/mediaview/MediaViewPage.qml:1415
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1361
+#: qml/mediaview/MediaViewPage.qml:1428
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
@@ -2045,20 +2071,20 @@ msgctxt "@action:button"
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: qml/Settings/PhotosConfigurationView.qml:29
+#: qml/Settings/PhotosConfigurationView.qml:30
 #, kde-format
 msgid "About Photos"
 msgstr "फ़ोटो के बारे में"
 
-#: qml/Settings/PhotosConfigurationView.qml:32
-#: qml/Settings/PhotosConfigurationView.qml:40
+#: qml/Settings/PhotosConfigurationView.qml:33
+#: qml/Settings/PhotosConfigurationView.qml:41
 #, fuzzy, kde-format
 #| msgid "About KDE"
 msgctxt "@title:group"
 msgid "About"
 msgstr "केडीई के बारे में"
 
-#: qml/Settings/PhotosConfigurationView.qml:37
+#: qml/Settings/PhotosConfigurationView.qml:38
 #, kde-format
 msgid "About KDE"
 msgstr "केडीई के बारे में"
