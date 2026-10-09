@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:43+0000\n"
-"PO-Revision-Date: 2026-10-01 08:16+0200\n"
+"PO-Revision-Date: 2026-10-08 08:05+0200\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -1076,12 +1076,10 @@ msgid "Previous image"
 msgstr "Предыдущее изображение"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "Предыдущее изображение"
+msgstr "Показать предыдущее изображение"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1090,12 +1088,10 @@ msgid "Next image"
 msgstr "Следующее изображение"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "Опубликовать изображение"
+msgstr "Показать следующее изображение"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1694,15 +1690,13 @@ msgstr "Увеличить"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "Вместить"
 
 #: qml/mediaview/MediaViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "Заливка:"
+msgstr "Заполнить"
 
 #: qml/mediaview/MediaViewPage.qml:1260 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
@@ -1924,7 +1918,7 @@ msgstr "Белый"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr "В соответствии с оформлением "
+msgstr "В соответствии с оформлением"
 
 #: qml/Settings/GeneralConfigPage.qml:151
 #, kde-format

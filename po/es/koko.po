@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:43+0000\n"
-"PO-Revision-Date: 2026-10-01 20:02+0100\n"
+"PO-Revision-Date: 2026-10-08 13:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1069,12 +1069,10 @@ msgid "Previous image"
 msgstr "Imagen anterior"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "Imagen anterior"
+msgstr "Mostrar la imagen anterior"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1083,12 +1081,10 @@ msgid "Next image"
 msgstr "Imagen siguiente"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "Compartir esta imagen"
+msgstr "Mostrar la imagen siguiente"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1675,15 +1671,13 @@ msgstr "Ampliar"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "Ajustar"
 
 #: qml/mediaview/MediaViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "Relleno:"
+msgstr "Rellenar"
 
 #: qml/mediaview/MediaViewPage.qml:1260 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
@@ -1997,15 +1991,3 @@ msgstr "Colecciones"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Todos los medios"
-
-#~ msgctxt "@action:intoolbar"
-#~ msgid "Full Screen"
-#~ msgstr "Pantalla completa"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Enter Full Screen"
-#~ msgstr "Entrar en pantalla completa"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Exit Full Screen"
-#~ msgstr "Salir de pantalla completa"

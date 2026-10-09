@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:43+0000\n"
-"PO-Revision-Date: 2026-10-01 05:59+0200\n"
+"PO-Revision-Date: 2026-10-08 05:43+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1066,12 +1066,10 @@ msgid "Previous image"
 msgstr "წინა გამოსახულება"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "წინა გამოსახულება"
+msgstr "წინა გამოსახულების ჩვენება"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1080,12 +1078,10 @@ msgid "Next image"
 msgstr "შემდეგი გამოსახულება"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "ამ გამოსახულებსი გაზიარება"
+msgstr "შემდეგი გამოსახულების ჩვენება"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1558,7 +1554,7 @@ msgstr "ამ ვიდეოს გაზიარება"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share this image"
-msgstr "ამ გამოსახულებსი გაზიარება"
+msgstr "ამ გამოსახულების გაზიარება"
 
 #: qml/mediaview/MediaViewPage.qml:193
 #, kde-format
@@ -1672,15 +1668,13 @@ msgstr "გადიდება"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "ჩატევა"
 
 #: qml/mediaview/MediaViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "შევსება:"
+msgstr "შევსება"
 
 #: qml/mediaview/MediaViewPage.qml:1260 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format

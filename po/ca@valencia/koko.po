@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:43+0000\n"
-"PO-Revision-Date: 2026-10-01 09:29+0200\n"
+"PO-Revision-Date: 2026-10-08 13:05+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1070,12 +1070,10 @@ msgid "Previous image"
 msgstr "Imatge anterior"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "Imatge anterior"
+msgstr "Mostra la imatge anterior"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1084,12 +1082,10 @@ msgid "Next image"
 msgstr "Imatge següent"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "Compartix esta imatge"
+msgstr "Mostra la imatge següent"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1600,61 +1596,61 @@ msgstr "Ix del mode de visualització immersiva"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr "25%"
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:915
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr "50%"
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:916
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr "75%"
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:917
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:918
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr "150%"
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:919
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr "200%"
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:920
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr "300%"
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:921
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr "400%"
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:922
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr "600%"
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:923
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr "800%"
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:975
 #, kde-format
@@ -1678,15 +1674,13 @@ msgstr "Amplia"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "Ajusta"
 
 #: qml/mediaview/MediaViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "Farciment:"
+msgstr "Farciment"
 
 # skip-rule: kct-slideshow
 #: qml/mediaview/MediaViewPage.qml:1260 qml/Settings/GeneralConfigPage.qml:228
@@ -2002,15 +1996,3 @@ msgstr "Col·leccions"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Tots els elements multimèdia"
-
-#~ msgctxt "@action:intoolbar"
-#~ msgid "Full Screen"
-#~ msgstr "Pantalla completa"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Enter Full Screen"
-#~ msgstr "Entra a pantalla completa"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Exit Full Screen"
-#~ msgstr "Ix de pantalla completa"
