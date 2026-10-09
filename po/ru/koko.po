@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-17 02:40+0000\n"
-"PO-Revision-Date: 2026-09-23 09:04+0200\n"
+"PO-Revision-Date: 2026-10-08 08:07+0200\n"
 "Last-Translator: Olesya Gerasimenko <goa@altlinux.org>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -1776,7 +1776,7 @@ msgstr "Белый"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr "В соответствии с оформлением "
+msgstr "В соответствии с оформлением"
 
 #: qml/Settings/GeneralConfigPage.qml:125
 #, kde-format
