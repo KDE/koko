@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:43+0000\n"
-"PO-Revision-Date: 2026-10-04 14:50+0200\n"
+"PO-Revision-Date: 2026-10-09 15:25+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1067,12 +1067,10 @@ msgid "Previous image"
 msgstr "Immagine precedente"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "Immagine precedente"
+msgstr "Mostra l'immagine precedente"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1081,12 +1079,10 @@ msgid "Next image"
 msgstr "Immagine successiva"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "Condividi questa immagine"
+msgstr "Mostra l'immagine successiva"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1675,15 +1671,13 @@ msgstr "Ingrandisci"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "Adatta"
 
 #: qml/mediaview/MediaViewPage.qml:1018
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "Riempimento:"
+msgstr "Riempi"
 
 #: qml/mediaview/MediaViewPage.qml:1260 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
