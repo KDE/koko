@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:43+0000\n"
+"POT-Creation-Date: 2026-10-19 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1157,25 +1157,25 @@ msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr "翻转 (垂直)"
 
-#: qml/BottomNavBar.qml:49 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "图像"
 
-#: qml/BottomNavBar.qml:56 qml/PlacesPage.qml:44 qml/Sidebar.qml:212
+#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:44 qml/Sidebar.qml:212
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "视频"
 
-#: qml/BottomNavBar.qml:64 qml/PlacesPage.qml:53 qml/Sidebar.qml:233
+#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:53 qml/Sidebar.qml:233
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "收藏"
 
-#: qml/BottomNavBar.qml:70 qml/Sidebar.qml:64
+#: qml/BottomNavBar.qml:71 qml/Sidebar.qml:64
 #, kde-format
 msgid "Places"
 msgstr "位置"
