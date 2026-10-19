@@ -31,6 +31,7 @@ Kirigami.Page {
     required property url url
 
     property int lastWindowVisibility: mainWindow.visibility
+    property bool lastControlsVisibility: true
 
     property bool zoomToFill: false
 
@@ -393,6 +394,7 @@ Kirigami.Page {
             visible: !slideshowManager.running
             checked: root.mainWindow.visibility === Window.FullScreen
             onToggled: {
+                root.lastControlsVisibility = root.mainWindow.controlsVisible
                 if (checked) {
                     // Enter full screen
                     root.lastWindowVisibility = root.mainWindow.visibility
@@ -401,7 +403,7 @@ Kirigami.Page {
                 } else {
                     // Exit full screen
                     // Work around https://qt-project.atlassian.net/browse/QTBUG-145832
-                    root.mainWindow.controlsVisible = true;
+                    root.mainWindow.controlsVisible = root.mainWindow.controlsVisible ? true : root.lastControlsVisibility;
                     root.mainWindow.visibility = Window.Windowed;
                     root.mainWindow.visibility = root.lastWindowVisibility;
                 }
