@@ -558,6 +558,7 @@ Kirigami.Page {
 
         list.push(favoriteAction);
         list.push(shareAction);
+        list.push(fullscreenAction);
 
         list.push(separatorAction);
 
@@ -571,7 +572,6 @@ Kirigami.Page {
 
         list.push(separatorAction);
 
-        list.push(fullscreenAction);
         list.push(showControlsAction);
         list.push(showThumbnailToolBarAction);
 
