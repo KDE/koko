@@ -394,22 +394,24 @@ Kirigami.Page {
             visible: !slideshowManager.running
             checked: root.mainWindow.visibility === Window.FullScreen
             onToggled: {
-                root.lastControlsVisibility = root.mainWindow.controlsVisible
                 if (checked) {
                     // Enter full screen
+                    root.lastControlsVisibility = root.mainWindow.controlsVisible
                     root.lastWindowVisibility = root.mainWindow.visibility
                     root.mainWindow.visibility = Window.FullScreen;
                     root.mainWindow.controlsVisible = false;
                 } else {
                     // Exit full screen
                     // Work around https://qt-project.atlassian.net/browse/QTBUG-145832
-                    root.mainWindow.controlsVisible = root.mainWindow.controlsVisible ? true : root.lastControlsVisibility;
                     root.mainWindow.visibility = Window.Windowed;
                     root.mainWindow.visibility = root.lastWindowVisibility;
+                    if (!root.mainWindow.controlsVisible) {
+                        root.mainWindow.controlsVisible = root.lastControlsVisibility;
+                    }
                 }
                 listView.forceActiveFocus();
             }
-        }
+       }
     ]
 
     actions: [...toolBarActions, ...imageNavigationActions, ...fileMenuActions, ...otherHiddenUiActions]
