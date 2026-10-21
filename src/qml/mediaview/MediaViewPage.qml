@@ -31,6 +31,7 @@ Kirigami.Page {
     required property url url
 
     property int lastWindowVisibility: mainWindow.visibility
+    property bool lastControlsVisibility: true
 
     property bool zoomToFill: false
 
@@ -395,19 +396,22 @@ Kirigami.Page {
             onToggled: {
                 if (checked) {
                     // Enter full screen
+                    root.lastControlsVisibility = root.mainWindow.controlsVisible
                     root.lastWindowVisibility = root.mainWindow.visibility
                     root.mainWindow.visibility = Window.FullScreen;
                     root.mainWindow.controlsVisible = false;
                 } else {
                     // Exit full screen
                     // Work around https://qt-project.atlassian.net/browse/QTBUG-145832
-                    root.mainWindow.controlsVisible = true;
                     root.mainWindow.visibility = Window.Windowed;
                     root.mainWindow.visibility = root.lastWindowVisibility;
+                    if (!root.mainWindow.controlsVisible) {
+                        root.mainWindow.controlsVisible = root.lastControlsVisibility;
+                    }
                 }
                 listView.forceActiveFocus();
             }
-        }
+       }
     ]
 
     actions: [...toolBarActions, ...imageNavigationActions, ...fileMenuActions, ...otherHiddenUiActions]
