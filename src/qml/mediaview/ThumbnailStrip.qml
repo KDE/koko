@@ -55,6 +55,7 @@ ListView {
             if (thumbnailView.currentIndex < 0) {
                 return;
             }
+            wheelAnimation.stop();
             switch (centeringBehavior) {
             case ThumbnailStrip.CenteringBehavior.AnimatedCentering:
                 restart();
@@ -70,6 +71,34 @@ ListView {
         }
     }
 
+    NumberAnimation {
+        id: wheelAnimation
+        target: thumbnailView
+        property: "contentX"
+        duration: Kirigami.Units.shortDuration
+        easing.type: Easing.OutCubic
+    }
+
+    function scrollByWheel(angleDelta: real): void {
+        const minX = thumbnailView.originX;
+        const maxX = Math.max(minX, minX + thumbnailView.contentWidth - thumbnailView.width);
+        const startX = wheelAnimation.running ? wheelAnimation.to : thumbnailView.contentX;
+        const step = angleDelta / 120 * (thumbnailView.delegateSize + thumbnailView.spacing);
+        centerAnimation.stop();
+        wheelAnimation.from = thumbnailView.contentX;
+        wheelAnimation.to = Math.max(minX, Math.min(maxX, startX - step));
+        wheelAnimation.restart();
+    }
+
+    WheelHandler {
+        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+        onWheel: event => {
+            const dx = event.angleDelta.x;
+            const dy = event.angleDelta.y;
+            thumbnailView.scrollByWheel(Math.abs(dy) >= Math.abs(dx) ? dy : dx);
+        }
+    }
+
     // Center content when there aren't enough items to fill the width
     header: Item {
         width: Math.max(0, thumbnailView.remainingWidth / 2)
@@ -80,7 +109,10 @@ ListView {
     }
 
     // Center when width changes (e.g. due to window resizing or animations)
-    onWidthChanged: positionViewAtIndex(currentIndex, ListView.Center)
+    onWidthChanged: {
+        wheelAnimation.stop();
+        positionViewAtIndex(currentIndex, ListView.Center);
+    }
 
     // Prioritise thumbnailing delegates closest to the currentIndex
     function calculateThumbnailPriority(delegate: Item): int {
