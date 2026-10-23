@@ -701,17 +701,13 @@ msgid "Comment"
 msgstr "Komentár"
 
 #: main.cpp:65
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Photos</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
 msgstr "<application>Koko</application>"
 
 #: main.cpp:67
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Photos is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
 msgstr "Koko je prehliadač obrázkov pre vašu zbierku obrázkov."
@@ -1064,7 +1060,7 @@ msgstr "Skryť panel miniatúr"
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
-msgstr ""
+msgstr "Prehrať/pozastaviť video"
 
 #: qml/ActionCollection.qml:95
 #, kde-format
@@ -1073,12 +1069,10 @@ msgid "Previous image"
 msgstr "Predchádzajúci obrázok"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "Predchádzajúci obrázok"
+msgstr "Zobraziť predchádzajúci obrázok"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1087,12 +1081,10 @@ msgid "Next image"
 msgstr "Ďalší obrázok"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "Zdieľať obrázok"
+msgstr "Zobraziť nasledujúci obrázok"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1586,11 +1578,10 @@ msgid "See information about this image"
 msgstr "Zobraziť informácie o tomto obrázku"
 
 #: qml/mediaview/MediaViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "Miesta"
+msgstr "Akcie"
 
 #: qml/mediaview/MediaViewPage.qml:364
 #, kde-format
@@ -1686,15 +1677,13 @@ msgstr "Priblížiť"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "Prispôsobiť"
 
 #: qml/mediaview/MediaViewPage.qml:1022
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "Výplň:"
+msgstr "Vyplniť"
 
 #: qml/mediaview/MediaViewPage.qml:1264 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
