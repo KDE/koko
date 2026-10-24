@@ -21,6 +21,7 @@ MouseArea {
     property bool canMove: false // allow to drag to next image even if the current one is zoomed using touch screens
     readonly property bool interactive: (Math.floor(contentItem.width) > root.width || Math.floor(contentItem.height) > root.height) && !root.canMove
     property bool dragging: root.drag.active || pinchHandler.active
+    property bool isPinchZooming: false // disable dragHandler after one finger was lifted after pinchzoom
 
     /**
      * Properties used for contentItem manipulation.
@@ -236,6 +237,13 @@ MouseArea {
         contentItem.y = boundedContentY(contentItem.y)
     }
 
+    Timer {
+        id: pinchZoomEndedTimer
+        running: false
+        interval: 200
+        onTriggered: root.isPinchZooming = false
+    }
+
     PinchHandler {
         id: pinchHandler
         target: null//contentItem
@@ -244,6 +252,7 @@ MouseArea {
         property real startPosY
 
         onActiveChanged: if (active) {
+            root.isPinchZooming = true
             root.leaveAutoFit()
             startPosX = contentItem.x;
             startPosY = contentItem.y;
@@ -253,6 +262,7 @@ MouseArea {
                 contentHeight < Math.min(root.defaultContentRect.height, implicitContentHeight)) {
                 root.resetToDefaultSize()
             }
+            pinchZoomEndedTimer.start()
         }
 
         scaleAxis.onActiveValueChanged: (delta) => {
@@ -291,7 +301,7 @@ MouseArea {
     DragHandler {
         id: dragHandler
         grabPermissions: PointerHandler.CanTakeOverFromItems
-        enabled: !pinchHandler.active
+        enabled: !pinchHandler.active && !root.isPinchZooming
         acceptedDevices: PointerDevice.TouchScreen | PointerDevice.Stylus
         onGrabChanged: (t) => {
             if (t == PointerDevice.UngrabExclusive) {
