@@ -252,7 +252,8 @@ MouseArea {
         property real startPosY
 
         onActiveChanged: if (active) {
-            root.isPinchZooming = true
+            root.isPinchZooming = true;
+            pinchZoomEndedTimer.stop();
             root.leaveAutoFit()
             startPosX = contentItem.x;
             startPosY = contentItem.y;
