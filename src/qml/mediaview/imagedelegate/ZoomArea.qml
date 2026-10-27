@@ -263,7 +263,7 @@ MouseArea {
                 contentHeight < Math.min(root.defaultContentRect.height, implicitContentHeight)) {
                 root.resetToDefaultSize()
             }
-            pinchZoomEndedTimer.start()
+            pinchZoomEndedTimer.restart();
         }
 
         scaleAxis.onActiveValueChanged: (delta) => {
