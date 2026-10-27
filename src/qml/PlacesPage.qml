@@ -18,15 +18,6 @@ FormCard.FormCardPage {
     required property Koko.NavigationActions navigationActions
     required property Kirigami.ApplicationWindow mainWindow
 
-    actions: [
-        Kirigami.Action {
-            text: i18nc("@action:button Open settings dialog", "Settings")
-            AC.ActionCollection.collection: "org.kde.globalactions"
-            AC.ActionCollection.action: "options_configure"
-            onTriggered: root.mainWindow.configurationView.open()
-        }
-    ]
-
     FormCard.FormHeader {
         title: i18nc("@title:group", "General")
     }

@@ -546,12 +546,27 @@ Kirigami.ScrollablePage {
         }
     ]
 
+    readonly property list<QtObject> settings: [
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+            visible: Kirigami.Settings.isMobile && !mainWindow.wideScreen
+        },
+        Kirigami.Action {
+            AC.ActionCollection.action: "Preferences"
+            AC.ActionCollection.collection: "org.kde.globalactions"
+            visible: Kirigami.Settings.isMobile && !mainWindow.wideScreen
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: page.mainWindow.configurationView.open()
+        }
+    ]
+
     Component {
         id: kirigamiActionComponent
         Kirigami.Action {}
     }
 
-    actions: [...toolBarActions, ...extraHiddenUiActions, ...fileMenuActions, ...otherHiddenUiActions]
+    actions: [...toolBarActions, ...extraHiddenUiActions, ...fileMenuActions, ...otherHiddenUiActions, ...settings]
 
     title: page.galleryModel.title
 

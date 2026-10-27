@@ -414,7 +414,20 @@ Kirigami.Page {
        }
     ]
 
-    actions: [...toolBarActions, ...imageNavigationActions, ...fileMenuActions, ...otherHiddenUiActions]
+    readonly property list<QtObject> settings: [
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+        },
+        Kirigami.Action {
+            AC.ActionCollection.action: "Preferences"
+            AC.ActionCollection.collection: "org.kde.globalactions"
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: root.mainWindow.configurationView.open()
+        }
+    ]
+
+    actions: [...toolBarActions, ...imageNavigationActions, ...fileMenuActions, ...otherHiddenUiActions, ...settings]
 
     SlideshowManager {
         id: slideshowManager
