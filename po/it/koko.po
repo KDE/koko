@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:48+0000\n"
+"POT-Creation-Date: 2026-10-28 00:58+0000\n"
 "PO-Revision-Date: 2026-10-09 15:25+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -600,7 +600,7 @@ msgstr ""
 "Doppio clic sulla selezione per accettarla e ritagliarla.\n"
 "Clic destro per annullare la selezione."
 
-#: exiv2extractor.cpp:71 qml/PlacesPage.qml:31
+#: exiv2extractor.cpp:71 qml/PlacesPage.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
@@ -822,8 +822,7 @@ msgstr "Stati"
 msgid "Cities"
 msgstr "Città"
 
-#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:102
-#: qml/Sidebar.qml:256
+#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:93 qml/Sidebar.qml:256
 #, kde-format
 msgid "Locations"
 msgstr "Posizioni"
@@ -834,7 +833,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "File selezionati"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:164 qml/Sidebar.qml:297
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:155 qml/Sidebar.qml:297
 #, kde-format
 msgid "Tags"
 msgstr "Etichette"
@@ -1156,19 +1155,19 @@ msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr "Ribalta verticalmente"
 
-#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:27 qml/Sidebar.qml:207
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Immagini"
 
-#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:44 qml/Sidebar.qml:212
+#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:35 qml/Sidebar.qml:212
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Video"
 
-#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:53 qml/Sidebar.qml:233
+#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:44 qml/Sidebar.qml:233
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
@@ -1358,19 +1357,19 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Condividi i contenuti multimediali selezionati"
 
-#: qml/gallery/GalleryPage.qml:922
+#: qml/gallery/GalleryPage.qml:937
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 elemento"
 msgstr[1] "%1 elementi"
 
-#: qml/gallery/GalleryPage.qml:960
+#: qml/gallery/GalleryPage.qml:975
 #, kde-format
 msgid "No media found"
 msgstr "Nessun contenuto multimediale trovato"
 
-#: qml/gallery/GalleryPage.qml:984
+#: qml/gallery/GalleryPage.qml:999
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1378,7 +1377,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "%1 elemento selezionato"
 msgstr[1] "%1 elementi selezionati"
 
-#: qml/gallery/GalleryPage.qml:989
+#: qml/gallery/GalleryPage.qml:1004
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1589,103 +1588,103 @@ msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr "Esci dalla modalità di visualizzazione immersiva"
 
-#: qml/mediaview/MediaViewPage.qml:918
+#: qml/mediaview/MediaViewPage.qml:931
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr "25%"
 
-#: qml/mediaview/MediaViewPage.qml:919
+#: qml/mediaview/MediaViewPage.qml:932
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr "50%"
 
-#: qml/mediaview/MediaViewPage.qml:920
+#: qml/mediaview/MediaViewPage.qml:933
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr "75%"
 
-#: qml/mediaview/MediaViewPage.qml:921
+#: qml/mediaview/MediaViewPage.qml:934
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr "100%"
 
-#: qml/mediaview/MediaViewPage.qml:922
+#: qml/mediaview/MediaViewPage.qml:935
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr "150%"
 
-#: qml/mediaview/MediaViewPage.qml:923
+#: qml/mediaview/MediaViewPage.qml:936
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr "200%"
 
-#: qml/mediaview/MediaViewPage.qml:924
+#: qml/mediaview/MediaViewPage.qml:937
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr "300%"
 
-#: qml/mediaview/MediaViewPage.qml:925
+#: qml/mediaview/MediaViewPage.qml:938
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr "400%"
 
-#: qml/mediaview/MediaViewPage.qml:926
+#: qml/mediaview/MediaViewPage.qml:939
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr "600%"
 
-#: qml/mediaview/MediaViewPage.qml:927
+#: qml/mediaview/MediaViewPage.qml:940
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr "800%"
 
-#: qml/mediaview/MediaViewPage.qml:979
+#: qml/mediaview/MediaViewPage.qml:992
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr "%1%"
 
-#: qml/mediaview/MediaViewPage.qml:996
+#: qml/mediaview/MediaViewPage.qml:1009
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr "Rimpicciolisci"
 
-#: qml/mediaview/MediaViewPage.qml:1005
+#: qml/mediaview/MediaViewPage.qml:1018
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr "Ingrandisci"
 
-#: qml/mediaview/MediaViewPage.qml:1015
+#: qml/mediaview/MediaViewPage.qml:1028
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
 msgstr "Adatta"
 
-#: qml/mediaview/MediaViewPage.qml:1022
+#: qml/mediaview/MediaViewPage.qml:1035
 #, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr "Riempi"
 
-#: qml/mediaview/MediaViewPage.qml:1264 qml/Settings/GeneralConfigPage.qml:228
+#: qml/mediaview/MediaViewPage.qml:1277 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervallo presentazione:"
 
-#: qml/mediaview/MediaViewPage.qml:1281 qml/Settings/GeneralConfigPage.qml:240
+#: qml/mediaview/MediaViewPage.qml:1294 qml/Settings/GeneralConfigPage.qml:240
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1693,48 +1692,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "Un secondo"
 msgstr[1] "%1 secondi"
 
-#: qml/mediaview/MediaViewPage.qml:1336 qml/mediaview/MediaViewPage.qml:1437
+#: qml/mediaview/MediaViewPage.qml:1349 qml/mediaview/MediaViewPage.qml:1450
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "Ciclo"
 
-#: qml/mediaview/MediaViewPage.qml:1345 qml/mediaview/MediaViewPage.qml:1446
+#: qml/mediaview/MediaViewPage.qml:1358 qml/mediaview/MediaViewPage.qml:1459
 #: qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "Casuale"
 
-#: qml/mediaview/MediaViewPage.qml:1357
+#: qml/mediaview/MediaViewPage.qml:1370
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "Interrompi presentazione"
 
-#: qml/mediaview/MediaViewPage.qml:1371
+#: qml/mediaview/MediaViewPage.qml:1384
 #, kde-format
 msgid "Show All Controls"
 msgstr "Mostra tutti i controlli"
 
-#: qml/mediaview/MediaViewPage.qml:1400
+#: qml/mediaview/MediaViewPage.qml:1413
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr "Ferma"
 
-#: qml/mediaview/MediaViewPage.qml:1400
+#: qml/mediaview/MediaViewPage.qml:1413
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr "Avvia"
 
-#: qml/mediaview/MediaViewPage.qml:1419
+#: qml/mediaview/MediaViewPage.qml:1432
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr "Intervallo:"
 
-#: qml/mediaview/MediaViewPage.qml:1432
+#: qml/mediaview/MediaViewPage.qml:1445
 #, kde-format
 msgid "seconds"
 msgstr "secondi"
@@ -1744,72 +1743,66 @@ msgstr "secondi"
 msgid "Add new tag…"
 msgstr "Aggiungi nuova etichetta…"
 
-#: qml/PlacesPage.qml:23
-#, kde-format
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "Impostazioni"
-
-#: qml/PlacesPage.qml:62 qml/Sidebar.qml:225
+#: qml/PlacesPage.qml:53 qml/Sidebar.qml:225
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Cestino"
 
-#: qml/PlacesPage.qml:70 qml/Sidebar.qml:219
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:219
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Rete"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:70 qml/Sidebar.qml:244
 #, kde-format
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Segnalibri"
 
-#: qml/PlacesPage.qml:107 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:98 qml/Sidebar.qml:259
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Nazioni"
 
-#: qml/PlacesPage.qml:114 qml/Sidebar.qml:264
+#: qml/PlacesPage.qml:105 qml/Sidebar.qml:264
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Stati"
 
-#: qml/PlacesPage.qml:121 qml/Sidebar.qml:269
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:269
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Città"
 
-#: qml/PlacesPage.qml:129 qml/Sidebar.qml:274
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:274
 #, kde-format
 msgid "Time"
 msgstr "Data/ora"
 
-#: qml/PlacesPage.qml:134 qml/Sidebar.qml:277
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:277
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Anni"
 
-#: qml/PlacesPage.qml:141 qml/Sidebar.qml:282
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:282
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Mesi"
 
-#: qml/PlacesPage.qml:148 qml/Sidebar.qml:287
+#: qml/PlacesPage.qml:139 qml/Sidebar.qml:287
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Settimane"
 
-#: qml/PlacesPage.qml:155 qml/Sidebar.qml:292
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:292
 #, kde-format
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
@@ -1991,6 +1984,10 @@ msgstr "Collezioni"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Tutti i contenuti multimediali"
+
+#~ msgctxt "@action:button Open settings dialog"
+#~ msgid "Settings"
+#~ msgstr "Impostazioni"
 
 #~ msgctxt "@action:intoolbar"
 #~ msgid "Full Screen"

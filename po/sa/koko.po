@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:48+0000\n"
+"POT-Creation-Date: 2026-10-28 00:58+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -618,7 +618,7 @@ msgid ""
 "Right click to clear the selection."
 msgstr ""
 
-#: exiv2extractor.cpp:71 qml/PlacesPage.qml:31
+#: exiv2extractor.cpp:71 qml/PlacesPage.qml:22
 #, fuzzy, kde-format
 #| msgid "General"
 msgctxt "@title:group"
@@ -862,8 +862,7 @@ msgstr "राज्यानि"
 msgid "Cities"
 msgstr "नगराणि"
 
-#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:102
-#: qml/Sidebar.qml:256
+#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:93 qml/Sidebar.qml:256
 #, kde-format
 msgid "Locations"
 msgstr "स्थानानि"
@@ -875,7 +874,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "सर्वं चिनोतु"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:164 qml/Sidebar.qml:297
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:155 qml/Sidebar.qml:297
 #, kde-format
 msgid "Tags"
 msgstr "टैग्स"
@@ -1233,21 +1232,21 @@ msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr ""
 
-#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:36 qml/Sidebar.qml:207
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:27 qml/Sidebar.qml:207
 #, fuzzy, kde-format
 #| msgid "Pictures"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "चित्रम्"
 
-#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:44 qml/Sidebar.qml:212
+#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:35 qml/Sidebar.qml:212
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "विडियो"
 
-#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:53 qml/Sidebar.qml:233
+#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:44 qml/Sidebar.qml:233
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button Navigation entry in sidebar"
@@ -1454,20 +1453,20 @@ msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "चयनितं माध्यमं साझां कुर्वन्तु"
 
-#: qml/gallery/GalleryPage.qml:922
+#: qml/gallery/GalleryPage.qml:937
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:960
+#: qml/gallery/GalleryPage.qml:975
 #, fuzzy, kde-format
 #| msgid "No Media Found"
 msgid "No media found"
 msgstr "कोऽपि मीडिया न प्राप्तः"
 
-#: qml/gallery/GalleryPage.qml:984
+#: qml/gallery/GalleryPage.qml:999
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1475,7 +1474,7 @@ msgid_plural "%1 items selected"
 msgstr[0] ""
 msgstr[1] ""
 
-#: qml/gallery/GalleryPage.qml:989
+#: qml/gallery/GalleryPage.qml:1004
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1695,103 +1694,103 @@ msgctxt "@info:tooltip"
 msgid "Exit immersive viewing mode"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:918
+#: qml/mediaview/MediaViewPage.qml:931
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:919
+#: qml/mediaview/MediaViewPage.qml:932
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:920
+#: qml/mediaview/MediaViewPage.qml:933
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:921
+#: qml/mediaview/MediaViewPage.qml:934
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:922
+#: qml/mediaview/MediaViewPage.qml:935
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:923
+#: qml/mediaview/MediaViewPage.qml:936
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:924
+#: qml/mediaview/MediaViewPage.qml:937
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:925
+#: qml/mediaview/MediaViewPage.qml:938
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:926
+#: qml/mediaview/MediaViewPage.qml:939
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:927
+#: qml/mediaview/MediaViewPage.qml:940
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:979
+#: qml/mediaview/MediaViewPage.qml:992
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:996
+#: qml/mediaview/MediaViewPage.qml:1009
 #, kde-format
 msgctxt "@action"
 msgid "Zoom Out"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1005
+#: qml/mediaview/MediaViewPage.qml:1018
 #, kde-format
 msgctxt "@action"
 msgid "Zoom In"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1015
+#: qml/mediaview/MediaViewPage.qml:1028
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1022
+#: qml/mediaview/MediaViewPage.qml:1035
 #, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1264 qml/Settings/GeneralConfigPage.qml:228
+#: qml/mediaview/MediaViewPage.qml:1277 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "स्लाइड शो अन्तरालः :"
 
-#: qml/mediaview/MediaViewPage.qml:1281 qml/Settings/GeneralConfigPage.qml:240
+#: qml/mediaview/MediaViewPage.qml:1294 qml/Settings/GeneralConfigPage.qml:240
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1799,48 +1798,48 @@ msgid_plural "%1 seconds"
 msgstr[0] "१ द्वितीयः"
 msgstr[1] "%1 सेकण्ड्"
 
-#: qml/mediaview/MediaViewPage.qml:1336 qml/mediaview/MediaViewPage.qml:1437
+#: qml/mediaview/MediaViewPage.qml:1349 qml/mediaview/MediaViewPage.qml:1450
 #, kde-format
 msgctxt "@option:check"
 msgid "Loop"
 msgstr "परिक्रम"
 
-#: qml/mediaview/MediaViewPage.qml:1345 qml/mediaview/MediaViewPage.qml:1446
+#: qml/mediaview/MediaViewPage.qml:1358 qml/mediaview/MediaViewPage.qml:1459
 #: qml/Settings/GeneralConfigPage.qml:214
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
 msgstr "यादृच्छिकं कुरुत"
 
-#: qml/mediaview/MediaViewPage.qml:1357
+#: qml/mediaview/MediaViewPage.qml:1370
 #, kde-format
 msgid "Stop Slideshow"
 msgstr "स्लाइड शो स्थगयन्तु"
 
-#: qml/mediaview/MediaViewPage.qml:1371
+#: qml/mediaview/MediaViewPage.qml:1384
 #, kde-format
 msgid "Show All Controls"
 msgstr "सर्वाणि नियन्त्रणानि दर्शयतु"
 
-#: qml/mediaview/MediaViewPage.qml:1400
+#: qml/mediaview/MediaViewPage.qml:1413
 #, kde-format
 msgctxt "@action: button"
 msgid "Stop"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1400
+#: qml/mediaview/MediaViewPage.qml:1413
 #, kde-format
 msgctxt "@action: button"
 msgid "Start"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1419
+#: qml/mediaview/MediaViewPage.qml:1432
 #, kde-format
 msgctxt "@label:Slideshow image changing interval"
 msgid "Interval:"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1432
+#: qml/mediaview/MediaViewPage.qml:1445
 #, fuzzy, kde-format
 #| msgctxt "Slideshow image changing interval"
 #| msgid "1 second"
@@ -1853,82 +1852,75 @@ msgstr "१ द्वितीयः"
 msgid "Add new tag…"
 msgstr "नूतनं टैगं योजयन्तु…"
 
-#: qml/PlacesPage.qml:23
-#, fuzzy, kde-format
-#| msgid "Settings"
-msgctxt "@action:button Open settings dialog"
-msgid "Settings"
-msgstr "सेटिंग्स्"
-
-#: qml/PlacesPage.qml:62 qml/Sidebar.qml:225
+#: qml/PlacesPage.qml:53 qml/Sidebar.qml:225
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "तुच्छद्रव्य"
 
-#: qml/PlacesPage.qml:70 qml/Sidebar.qml:219
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:219
 #, fuzzy, kde-format
 #| msgid "Network"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "जालकृति"
 
-#: qml/PlacesPage.qml:79 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:70 qml/Sidebar.qml:244
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "बुकमार्कं निष्कासयन्तु"
 
-#: qml/PlacesPage.qml:107 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:98 qml/Sidebar.qml:259
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "देशाः"
 
-#: qml/PlacesPage.qml:114 qml/Sidebar.qml:264
+#: qml/PlacesPage.qml:105 qml/Sidebar.qml:264
 #, fuzzy, kde-format
 #| msgid "States"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "राज्यानि"
 
-#: qml/PlacesPage.qml:121 qml/Sidebar.qml:269
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:269
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "नगराणि"
 
-#: qml/PlacesPage.qml:129 qml/Sidebar.qml:274
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:274
 #, kde-format
 msgid "Time"
 msgstr "कालः"
 
-#: qml/PlacesPage.qml:134 qml/Sidebar.qml:277
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:277
 #, fuzzy, kde-format
 #| msgid "Years"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "वर्षाः"
 
-#: qml/PlacesPage.qml:141 qml/Sidebar.qml:282
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:282
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "मासाः"
 
-#: qml/PlacesPage.qml:148 qml/Sidebar.qml:287
+#: qml/PlacesPage.qml:139 qml/Sidebar.qml:287
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "सप्ताहाः"
 
-#: qml/PlacesPage.qml:155 qml/Sidebar.qml:292
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:292
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@action:button Navigation entry in sidebar"
@@ -2122,6 +2114,12 @@ msgstr "स्थानानि"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "सर्वं चिनोतु"
+
+#, fuzzy
+#~| msgid "Settings"
+#~ msgctxt "@action:button Open settings dialog"
+#~ msgid "Settings"
+#~ msgstr "सेटिंग्स्"
 
 #, fuzzy
 #~| msgid "Fullscreen"
