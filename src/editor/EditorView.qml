@@ -315,10 +315,6 @@ Kirigami.Page {
                     lastTool = Qt.binding(() => imageView.document.tool.type)
                 }
             }
-            displayComponent: Controls.ToolButton {
-                action: cropAction
-                Controls.ButtonGroup.group: annotationsToolBarContents.toolButtonGroup
-            }
         },
         Kirigami.Action {
             id: resizeAction
