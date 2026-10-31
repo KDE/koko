@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 00:58+0000\n"
+"POT-Creation-Date: 2026-10-31 00:49+0000\n"
 "PO-Revision-Date: 2024-12-25 19:35+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -416,7 +416,7 @@ msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr ""
 
-#: editor/EditorView.qml:52 editor/EditorView.qml:1056
+#: editor/EditorView.qml:52 editor/EditorView.qml:1052
 #, fuzzy, kde-format
 #| msgid ""
 #| "Unable to save file. Check if you have the correct permission to edit "
@@ -429,13 +429,13 @@ msgstr ""
 "सञ्चिकां रक्षितुं असमर्थः। एतां सञ्चिकां सम्पादयितुं भवतः समीचीना अनुमतिः अस्ति वा इति "
 "पश्यन्तु ।"
 
-#: editor/EditorView.qml:326
+#: editor/EditorView.qml:322
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "आकारं परिवर्तयतु"
 
-#: editor/EditorView.qml:370
+#: editor/EditorView.qml:366
 #, fuzzy, kde-format
 #| msgctxt "@action:button Resize an image"
 #| msgid "Resize"
@@ -443,55 +443,55 @@ msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "आकारं परिवर्तयतु"
 
-#: editor/EditorView.qml:381
+#: editor/EditorView.qml:377
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr ""
 
-#: editor/EditorView.qml:388
+#: editor/EditorView.qml:384
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr ""
 
-#: editor/EditorView.qml:399
+#: editor/EditorView.qml:395
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr ""
 
-#: editor/EditorView.qml:451
+#: editor/EditorView.qml:447
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr ""
 
-#: editor/EditorView.qml:472
+#: editor/EditorView.qml:468
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr ""
 
-#: editor/EditorView.qml:476
+#: editor/EditorView.qml:472
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr ""
 
-#: editor/EditorView.qml:504
+#: editor/EditorView.qml:500
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr ""
 
-#: editor/EditorView.qml:511
+#: editor/EditorView.qml:507
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr ""
 
-#: editor/EditorView.qml:522
+#: editor/EditorView.qml:518
 #, fuzzy, kde-format
 #| msgctxt "@action:button Resize an image"
 #| msgid "Resize"
@@ -499,7 +499,7 @@ msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "आकारं परिवर्तयतु"
 
-#: editor/EditorView.qml:572
+#: editor/EditorView.qml:568
 #, fuzzy, kde-format
 #| msgctxt "@action:button Rotate an image to the left"
 #| msgid "Rotate left"
@@ -507,7 +507,7 @@ msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "वामभागे परिभ्रमन्तु"
 
-#: editor/EditorView.qml:597
+#: editor/EditorView.qml:593
 #, fuzzy, kde-format
 #| msgctxt "@action:button Mirror an image vertically"
 #| msgid "Flip"
@@ -515,61 +515,61 @@ msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "पर्यस्"
 
-#: editor/EditorView.qml:625
+#: editor/EditorView.qml:621
 #, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
 msgstr ""
 
-#: editor/EditorView.qml:689
+#: editor/EditorView.qml:685
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
 msgstr ""
 
-#: editor/EditorView.qml:739
+#: editor/EditorView.qml:735
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
 msgstr ""
 
-#: editor/EditorView.qml:770
+#: editor/EditorView.qml:766
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast:"
 msgstr ""
 
-#: editor/EditorView.qml:818
+#: editor/EditorView.qml:814
 #, kde-format
 msgctxt "@info:tooltip color contrast spinbox"
 msgid "Contrast"
 msgstr ""
 
-#: editor/EditorView.qml:839
+#: editor/EditorView.qml:835
 #, kde-format
 msgctxt "@label:slider"
 msgid "Gamma:"
 msgstr ""
 
-#: editor/EditorView.qml:891
+#: editor/EditorView.qml:887
 #, kde-format
 msgctxt "@info:tooltip color gamma spinbox"
 msgid "Gamma"
 msgstr ""
 
-#: editor/EditorView.qml:917
+#: editor/EditorView.qml:913
 #, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
 msgstr ""
 
-#: editor/EditorView.qml:924
+#: editor/EditorView.qml:920
 #, kde-format
 msgctxt "@action:button apply color adjustment to image"
 msgid "Apply"
 msgstr ""
 
-#: editor/EditorView.qml:954
+#: editor/EditorView.qml:950
 #, fuzzy, kde-format
 #| msgctxt "@action:button Undo modification"
 #| msgid "Undo"
@@ -577,32 +577,32 @@ msgctxt "@action:button"
 msgid "Undo"
 msgstr "पूर्ववत"
 
-#: editor/EditorView.qml:962
+#: editor/EditorView.qml:958
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr ""
 
-#: editor/EditorView.qml:976
+#: editor/EditorView.qml:972
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "रक्ष्"
 
-#: editor/EditorView.qml:984
+#: editor/EditorView.qml:980
 #, fuzzy, kde-format
 #| msgid "Save As"
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "As Save As इति"
 
-#: editor/EditorView.qml:1114
+#: editor/EditorView.qml:1110
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr ""
 
-#: editor/EditorView.qml:1129
+#: editor/EditorView.qml:1125
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@info:tooltip"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-28 00:58+0000\n"
+"POT-Creation-Date: 2026-10-31 00:49+0000\n"
 "PO-Revision-Date: 2026-10-09 19:11+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -418,7 +418,7 @@ msgctxt "@title"
 msgid "Edit <filename>%1</filename>"
 msgstr "Taisyti <filename>%1</filename>"
 
-#: editor/EditorView.qml:52 editor/EditorView.qml:1056
+#: editor/EditorView.qml:52 editor/EditorView.qml:1052
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -428,169 +428,169 @@ msgstr ""
 "Nepavyko įrašyti failo. Patikrinkite, ar turite tinkamus leidimus įrašyti šį "
 "failą."
 
-#: editor/EditorView.qml:326
+#: editor/EditorView.qml:322
 #, kde-format
 msgctxt "@action:button Resize an image"
 msgid "Resize"
 msgstr "Keisti dydį"
 
-#: editor/EditorView.qml:370
+#: editor/EditorView.qml:366
 #, kde-format
 msgctxt "@title:group for radio buttons to resize by type"
 msgid "Resize by:"
 msgstr "Keisti dydį pagal:"
 
-#: editor/EditorView.qml:381
+#: editor/EditorView.qml:377
 #, kde-format
 msgctxt "@option:radio resize by pixels"
 msgid "Pixels"
 msgstr "Pikseliai"
 
-#: editor/EditorView.qml:388
+#: editor/EditorView.qml:384
 #, kde-format
 msgctxt "@option:radio resize by percentage"
 msgid "Percentage"
 msgstr "Procentinė dalis"
 
-#: editor/EditorView.qml:399
+#: editor/EditorView.qml:395
 #, kde-format
 msgctxt "@info:tooltip resize width spinbox"
 msgid "Width"
 msgstr "Plotis"
 
-#: editor/EditorView.qml:451
+#: editor/EditorView.qml:447
 #, kde-format
 msgctxt "@info:tooltip resize height spinbox"
 msgid "Height"
 msgstr "Aukštis"
 
-#: editor/EditorView.qml:472
+#: editor/EditorView.qml:468
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep aspect ratio"
 msgstr "Išlaikyti proporcijas"
 
-#: editor/EditorView.qml:476
+#: editor/EditorView.qml:472
 #, kde-format
 msgctxt "@info"
 msgid "Original file size: %1"
 msgstr "Pradinis failo dydis: %1"
 
-#: editor/EditorView.qml:504
+#: editor/EditorView.qml:500
 #, kde-format
 msgctxt "@info"
 msgid "Estimated file size: %1"
 msgstr "Apskaičiuotas failo dydis: %1"
 
-#: editor/EditorView.qml:511
+#: editor/EditorView.qml:507
 #, kde-format
 msgctxt "@action:button reset size spinboxes"
 msgid "Reset"
 msgstr "Atstatyti"
 
-#: editor/EditorView.qml:522
+#: editor/EditorView.qml:518
 #, kde-format
 msgctxt "@action:button apply resize to image"
 msgid "Resize"
 msgstr "Keisti dydį"
 
-#: editor/EditorView.qml:572
+#: editor/EditorView.qml:568
 #, kde-format
 msgctxt "@action:button Rotate an image"
 msgid "Rotate"
 msgstr "Pasukti"
 
-#: editor/EditorView.qml:597
+#: editor/EditorView.qml:593
 #, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Apversti"
 
-#: editor/EditorView.qml:625
+#: editor/EditorView.qml:621
 #, kde-format
 msgctxt "@action:button Adjust the colors of an image"
 msgid "Adjust Colors"
 msgstr "Derinti spalvas"
 
-#: editor/EditorView.qml:689
+#: editor/EditorView.qml:685
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
 msgstr "Ryškumas:"
 
-#: editor/EditorView.qml:739
+#: editor/EditorView.qml:735
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
 msgstr "Ryškumas"
 
-#: editor/EditorView.qml:770
+#: editor/EditorView.qml:766
 #, kde-format
 msgctxt "@label:slider"
 msgid "Contrast:"
 msgstr "Kontrastas:"
 
-#: editor/EditorView.qml:818
+#: editor/EditorView.qml:814
 #, kde-format
 msgctxt "@info:tooltip color contrast spinbox"
 msgid "Contrast"
 msgstr "Kontrastas"
 
-#: editor/EditorView.qml:839
+#: editor/EditorView.qml:835
 #, kde-format
 msgctxt "@label:slider"
 msgid "Gamma:"
 msgstr "Gama:"
 
-#: editor/EditorView.qml:891
+#: editor/EditorView.qml:887
 #, kde-format
 msgctxt "@info:tooltip color gamma spinbox"
 msgid "Gamma"
 msgstr "Gama"
 
-#: editor/EditorView.qml:917
+#: editor/EditorView.qml:913
 #, kde-format
 msgctxt "@action:button reset color adjustment controls"
 msgid "Reset"
 msgstr "Atstatyti"
 
-#: editor/EditorView.qml:924
+#: editor/EditorView.qml:920
 #, kde-format
 msgctxt "@action:button apply color adjustment to image"
 msgid "Apply"
 msgstr "Taikyti"
 
-#: editor/EditorView.qml:954
+#: editor/EditorView.qml:950
 #, kde-format
 msgctxt "@action:button"
 msgid "Undo"
 msgstr "Atšaukti"
 
-#: editor/EditorView.qml:962
+#: editor/EditorView.qml:958
 #, kde-format
 msgctxt "@action:button"
 msgid "Redo"
 msgstr "Grąžinti"
 
-#: editor/EditorView.qml:976
+#: editor/EditorView.qml:972
 #, kde-format
 msgctxt "@action:button Save image modification"
 msgid "Save"
 msgstr "Įrašyti"
 
-#: editor/EditorView.qml:984
+#: editor/EditorView.qml:980
 #, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Įrašyti kaip"
 
-#: editor/EditorView.qml:1114
+#: editor/EditorView.qml:1110
 #, kde-format
 msgctxt "@label"
 msgid "Zoom:"
 msgstr "Mastelis:"
 
-#: editor/EditorView.qml:1129
+#: editor/EditorView.qml:1125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Image Zoom"
