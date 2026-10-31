@@ -1486,67 +1486,67 @@ msgstr "Imatge següent"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr "25%"
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:817
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr "50%"
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:818
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr "75%"
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:819
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:820
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr "150%"
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:821
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr "200%"
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:822
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr "300%"
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:823
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr "400%"
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:824
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr "600%"
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:825
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr "800%"
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:874
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: qml/mediaview/MediaViewPage.qml:888
 #, kde-format
