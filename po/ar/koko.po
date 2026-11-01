@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the koko package.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2022-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:49+0000\n"
-"PO-Revision-Date: 2026-09-23 17:48+0400\n"
+"PO-Revision-Date: 2026-10-31 17:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -1076,12 +1076,10 @@ msgid "Previous image"
 msgstr "الصورة السابقة"
 
 #: qml/ActionCollection.qml:96
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "الصورة السابقة"
+msgstr "اعرض الصورة السابقة"
 
 #: qml/ActionCollection.qml:102
 #, kde-format
@@ -1090,12 +1088,10 @@ msgid "Next image"
 msgstr "الصورة التالية"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "شارك هذه صورة"
+msgstr "اعرض الصورة التالية"
 
 #: qml/ActionCollection.qml:110
 #, kde-format
@@ -1607,11 +1603,10 @@ msgid "See information about this image"
 msgstr "شاهد معلومات حول هذه الصورة"
 
 #: qml/mediaview/MediaViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "المواقع"
+msgstr "إجراءات"
 
 #: qml/mediaview/MediaViewPage.qml:364
 #, kde-format
@@ -1707,15 +1702,13 @@ msgstr "قرّب"
 #, kde-format
 msgctxt "@action:button Fit the whole image within the view"
 msgid "Fit"
-msgstr ""
+msgstr "ناسب"
 
 #: qml/mediaview/MediaViewPage.qml:1035
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "التعبئة:"
+msgstr "املأ"
 
 #: qml/mediaview/MediaViewPage.qml:1277 qml/Settings/GeneralConfigPage.qml:228
 #, kde-format
