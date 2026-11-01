@@ -799,37 +799,27 @@ msgid "Home"
 msgstr "Inicio"
 
 #: models/galleryfoldermodel.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Trash"
+#, kde-format
 msgid "Trash"
 msgstr "Lixo"
 
 #: models/galleryfoldermodel.cpp:77
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Network"
+#, kde-format
 msgid "Network"
 msgstr "Rede"
 
 #: models/gallerylocationmodel.cpp:56 models/gallerylocationmodel.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Countries"
+#, kde-format
 msgid "Countries"
 msgstr "Países"
 
 #: models/gallerylocationmodel.cpp:58 models/gallerylocationmodel.cpp:192
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "States"
+#, kde-format
 msgid "States"
 msgstr "Estados"
 
 #: models/gallerylocationmodel.cpp:60 models/gallerylocationmodel.cpp:193
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Cities"
+#, kde-format
 msgid "Cities"
 msgstr "Cidades"
 
@@ -852,30 +842,22 @@ msgid "Tags"
 msgstr "Etiquetas"
 
 #: models/gallerytimemodel.cpp:58 models/gallerytimemodel.cpp:195
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Years"
+#, kde-format
 msgid "Years"
 msgstr "Anos"
 
 #: models/gallerytimemodel.cpp:60 models/gallerytimemodel.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Months"
+#, kde-format
 msgid "Months"
 msgstr "Meses"
 
 #: models/gallerytimemodel.cpp:62 models/gallerytimemodel.cpp:197
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Weeks"
+#, kde-format
 msgid "Weeks"
 msgstr "Semanas"
 
 #: models/gallerytimemodel.cpp:64 models/gallerytimemodel.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@action:button Navigation entry in sidebar"
-#| msgid "Days"
+#, kde-format
 msgid "Days"
 msgstr "Días"
 
@@ -1954,9 +1936,7 @@ msgid "Show menu"
 msgstr ""
 
 #: qml/Sidebar.qml:195
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Xeral"
 
