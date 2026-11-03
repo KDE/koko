@@ -127,9 +127,7 @@ msgid "Shadow"
 msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:481
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area position spinboxes"
-#| msgid "Position:"
+#, kde-format
 msgctxt "@label crop area position"
 msgid "Position:"
 msgstr "Posición:"
@@ -147,9 +145,7 @@ msgid "Crop area Y position"
 msgstr ""
 
 #: editor/AnnotationOptionsToolBarContents.qml:533
-#, fuzzy, kde-format
-#| msgctxt "@title:group for crop area size spinboxes"
-#| msgid "Size:"
+#, kde-format
 msgctxt "@label crop area size"
 msgid "Size:"
 msgstr "Tamaño:"
@@ -506,9 +502,7 @@ msgid "Rotate"
 msgstr "Rotar á esquerda"
 
 #: editor/EditorView.qml:593
-#, fuzzy, kde-format
-#| msgctxt "@action:button Mirror an image vertically"
-#| msgid "Flip"
+#, kde-format
 msgctxt "@action:button Flip/mirror an image"
 msgid "Flip"
 msgstr "Xirar"
@@ -588,8 +582,7 @@ msgid "Save"
 msgstr "Gardar"
 
 #: editor/EditorView.qml:980
-#, fuzzy, kde-format
-#| msgid "Save As"
+#, kde-format
 msgctxt "@action:button Save As image modification"
 msgid "Save As"
 msgstr "Gardar como"
@@ -1048,8 +1041,7 @@ msgid "Media View"
 msgstr ""
 
 #: qml/ActionCollection.qml:46
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Editar"
@@ -1061,15 +1053,13 @@ msgid "Edit this image"
 msgstr ""
 
 #: qml/ActionCollection.qml:53
-#, fuzzy, kde-format
-#| msgid "Share"
+#, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Compartir"
 
 #: qml/ActionCollection.qml:58
-#, fuzzy, kde-format
-#| msgid "Info"
+#, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
 msgstr "Información"
@@ -1124,8 +1114,7 @@ msgid "Play/Pause Video"
 msgstr ""
 
 #: qml/ActionCollection.qml:95
-#, fuzzy, kde-format
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Imaxe anterior"
@@ -1138,8 +1127,7 @@ msgid "Show the previous image"
 msgstr "Imaxe anterior"
 
 #: qml/ActionCollection.qml:102
-#, fuzzy, kde-format
-#| msgid "Next image"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Seguinte imaxe"
@@ -1160,15 +1148,13 @@ msgid "File"
 msgstr "Nome de ficheiro:"
 
 #: qml/ActionCollection.qml:115
-#, fuzzy, kde-format
-#| msgid "Favorite"
+#, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Favorito"
 
 #: qml/ActionCollection.qml:124
-#, fuzzy, kde-format
-#| msgid "Open Containing Folder"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Abrir o cartafol contedor"
@@ -1180,9 +1166,7 @@ msgid "&Open With…"
 msgstr ""
 
 #: qml/ActionCollection.qml:140
-#, fuzzy, kde-format
-#| msgctxt "@action:incontextmenu"
-#| msgid "Copy Location"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Copiar a localización"
@@ -1200,9 +1184,7 @@ msgid "Edit mode actions"
 msgstr ""
 
 #: qml/ActionCollection.qml:172
-#, fuzzy, kde-format
-#| msgctxt "@action:button Crop an image"
-#| msgid "Crop"
+#, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Recortar"
@@ -1309,8 +1291,7 @@ msgid "Name"
 msgstr ""
 
 #: qml/gallery/GalleryPage.qml:229
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Tamaño"
@@ -1418,9 +1399,7 @@ msgid "Descending"
 msgstr ""
 
 #: qml/gallery/GalleryPage.qml:324
-#, fuzzy, kde-format
-#| msgctxt "@action:button Bookmarks the current folder"
-#| msgid "Bookmark Folder"
+#, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Cartafol de marcadores"
@@ -1434,22 +1413,19 @@ msgid "Bookmark the current folder"
 msgstr "Cartafol de marcadores"
 
 #: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Remove from favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Retirar dos favoritos"
 
 #: qml/gallery/GalleryPage.qml:364 qml/mediaview/MediaViewPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Add to favorites"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Engadir aos favoritos"
 
 #: qml/gallery/GalleryPage.qml:379
-#, fuzzy, kde-format
-#| msgid "Share the selected media"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Compartir o contido seleccionado"
