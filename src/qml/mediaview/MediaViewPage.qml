@@ -1002,7 +1002,6 @@ Kirigami.Page {
                         function onZoomChanged() { zoomBox.updateDisplayedZoom() }
                     }
                 }
-                QQC2.ToolSeparator {}
                 QQC2.ToolButton {
                     id: zoomOutButton
                     icon.name: "zoom-out"
@@ -1372,9 +1371,6 @@ Kirigami.Page {
                     topInset: Kirigami.Units.smallSpacing
                     bottomInset: Kirigami.Units.smallSpacing
                     Layout.fillHeight: true
-                }
-                QQC2.ToolSeparator {
-                    visible: slideshowManager.running && !root.mainWindow.controlsVisible
                 }
                 QQC2.ToolButton {
                     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,

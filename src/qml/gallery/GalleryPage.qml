@@ -312,12 +312,6 @@ Kirigami.ScrollablePage {
             icon.name: "search-symbolic"
             displayHint: Kirigami.DisplayHint.KeepVisible
         },
-
-        // Bookmark
-        Kirigami.Action {
-            separator: true
-            visible: bookmarkAction.visible
-        },
         Kirigami.Action {
             id: bookmarkAction
             icon.name: "bookmark-toolbar-symbolic"

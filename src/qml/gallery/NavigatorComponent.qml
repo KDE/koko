@@ -76,10 +76,6 @@ RowLayout {
         onClicked: root.navigateForward()
     }
 
-    Kirigami.Separator {
-        Layout.fillHeight: true
-    }
-
     Item {
         id: navigatorContainer
         Layout.fillWidth: true
