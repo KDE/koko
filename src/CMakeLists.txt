@@ -114,6 +114,7 @@ ecm_target_qml_sources(koko_static SOURCES
     qml/ShareDialog.qml
     qml/ShareMenu.qml
     qml/Sidebar.qml
+    qml/Settings/ColorScheme.qml
     qml/Settings/PhotosConfigurationView.qml
     qml/Settings/GeneralConfigPage.qml
 )

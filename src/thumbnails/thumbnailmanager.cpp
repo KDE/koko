@@ -187,4 +187,13 @@ void ThumbnailManager::generate()
     generateLater();
 }
 
+// This method is needed to update the gallery folder icons on color scheme change.
+void ThumbnailManager::clearCache()
+{
+    for (const CacheEntry &key : m_thumbnailCache.keys()) {
+        m_thumbnailCache.remove(key);
+        Q_EMIT refreshedThumbnail(key.fileItem.url());
+    }
+}
+
 #include "moc_thumbnailmanager.cpp"

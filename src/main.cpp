@@ -31,6 +31,7 @@
 #include <iostream>
 
 #include "checkerboardimageprovider.h"
+#include "colorschemer.h"
 #include "filemenumanager.h"
 #include "filesystemtracker.h"
 #include "galleryopenmodel.h"
@@ -93,6 +94,8 @@ int main(int argc, char **argv)
 
     KAboutData::setApplicationData(aboutData);
     KCrash::initialize();
+
+    ColorSchemer colorScheme;
 
     QCommandLineParser parser;
     parser.addOption(QCommandLineOption("reset", i18n("Reset the database")));

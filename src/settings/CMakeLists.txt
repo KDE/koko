@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: BSD-2-Clause
 
 add_library(photos_settings_static STATIC
+    colorschemer.h
+    colorschemer.cpp
     mimetypeshelper.h
     mimetypeshelper.cpp
 )
@@ -30,6 +32,7 @@ kconfig_target_kcfg_file(photos_settings_static
 )
 
 target_link_libraries(photos_settings_static PUBLIC
+    KF6::ColorScheme
     KF6::ConfigGui
     KF6::ConfigCore
     KF6::ConfigWidgets

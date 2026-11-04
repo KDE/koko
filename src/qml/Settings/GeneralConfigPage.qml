@@ -48,6 +48,16 @@ FormCard.FormCardPage {
         }
     }
 
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.largeSpacing * 2
+        Loader {
+            id: colorSchemeDelegate
+            visible: item !== null
+            sourceComponent: Qt.createComponent('org.kde.koko', 'ColorScheme')
+            Layout.fillWidth: true
+        }
+    }
+
     FormCard.FormHeader {
         title: i18nc("@title:group", "File types")
     }

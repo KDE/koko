@@ -15,6 +15,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigami.actioncollection as AC
 import org.kde.kquickcontrolsaddons as KQA
 import org.kde.koko as Koko
+import org.kde.photos.thumbnails as KokoThumbnails
 
 Kirigami.ApplicationWindow {
     id: root
@@ -26,6 +27,12 @@ Kirigami.ApplicationWindow {
     readonly property QtObject configurationView: Koko.PhotosConfigurationView {
         window: root
     }
+
+    //Update gallery folder icons on color palette changes
+    //Dummy property referencing palette seems to be needed to actually activate handling of onPaletteChanged
+    //For reference: https://invent.kde.org/multimedia/elisa/-/merge_requests/782
+    readonly property bool dummyHasPalette: (palette !== null)
+    onPaletteChanged: KokoThumbnails.ThumbnailManager.clearCache();
 
     Config.WindowStateSaver {
         configGroupName: "MainWindow"

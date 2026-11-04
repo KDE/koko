@@ -27,6 +27,8 @@ public:
 
     Q_INVOKABLE void refreshThumbnail(const QUrl &imageUrl);
 
+    Q_INVOKABLE void clearCache();
+
 Q_SIGNALS:
     void refreshedThumbnail(const QUrl &url);
 
