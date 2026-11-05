@@ -5,7 +5,7 @@ import QtQuick
 
 import org.kde.koko as Koko
 import org.kde.kirigami as Kirigami
-import org.kde.kirigamiaddons.settings as KirigamiSettings
+import org.kde.kirigami.settings as KirigamiSettings
 
 KirigamiSettings.ConfigurationView {
     id: root
