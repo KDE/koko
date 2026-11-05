@@ -1822,7 +1822,7 @@ msgstr "Dny"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
-msgstr ""
+msgstr "Barevné schéma:"
 
 #: qml/Settings/GeneralConfigPage.qml:23
 #, kde-format
