@@ -2,19 +2,27 @@
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
 import QtQuick
+import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
-import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.kirigami as Kirigami
 
 import org.kde.koko
 
-FormCard.FormComboBoxDelegate {
+Kirigami.FormEntry {
     id: root
 
-    text: i18nc("@label:listbox", "Color scheme:")
-    textRole: "display"
-    valueRole: "display"
-    model: ColorSchemer.model
-    Component.onCompleted: currentIndex = ColorSchemer.indexForCurrentScheme()
-    onCurrentValueChanged: ColorSchemer.apply(currentIndex)
+    title: i18nc("@label:listbox", "Color scheme:")
+
+    contentItem: QQC2.ComboBox {
+        id: comboBox
+
+        Layout.fillWidth: true
+        textRole: "display"
+        valueRole: "display"
+        model: ColorSchemer.model
+
+        Component.onCompleted: currentIndex = ColorSchemer.indexForCurrentScheme()
+        onCurrentValueChanged: ColorSchemer.apply(currentIndex)
+    }
 }

@@ -6,24 +6,17 @@ import QtQuick
 import QtQuick.Controls as QQC2
 import org.kde.kirigami as Kirigami
 import QtQuick.Layouts
-import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.koko as Koko
 
-FormCard.FormCardPage {
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing * 2
+Kirigami.ScrollablePage {
+    id: root
 
-        FormCard.AbstractFormDelegate {
-            background: null
-            contentItem: ColumnLayout {
-                spacing: Kirigami.Units.smallSpacing
+    Kirigami.Form {
+        Kirigami.FormGroup {
+            Kirigami.FormEntry {
+                title: i18nc("@label:slider", "Thumbnail size:")
 
-                QQC2.Label {
-                    Layout.fillWidth: true
-                    text: i18nc("@label:slider", "Thumbnail size:")
-                }
-
-                QQC2.Slider {
+                contentItem: QQC2.Slider {
                     id: thumbnailSizeSlider
                     Layout.fillWidth: true
 
@@ -41,204 +34,227 @@ FormCard.FormCardPage {
                         parent: thumbnailSizeSlider.handle
                         delay: 0
                         visible: thumbnailSizeSlider.pressed
-                        text: i18nc("@info:tooltip, %1 is a size in pixels", "%1 px", thumbnailSizeSlider.value)
+                        text: i18nc("@info:tooltip, %1 is a size in pixels", "%1 px", thumbnailSizeSlider.value)
                     }
                 }
             }
         }
-    }
 
-    FormCard.FormCard {
-        Layout.topMargin: Kirigami.Units.largeSpacing * 2
-        Loader {
-            id: colorSchemeDelegate
-            visible: item !== null
-            sourceComponent: Qt.createComponent('org.kde.koko', 'ColorScheme')
-            Layout.fillWidth: true
+        Kirigami.FormGroup {
+            Koko.ColorScheme {}
         }
-    }
 
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "File types")
-    }
+        Kirigami.FormGroup {
+            title: i18nc("@title:group", "File types")
 
-    FormCard.FormCard {
-            FormCard.FormRadioDelegate {
-                text: i18nc("@option:check", "Images and videos")
-                checked: Koko.Config.mediaTypes === Koko.Config.ImagesAndVideos
-                enabled: !Koko.Config.isMediaTypesImmutable
-                onToggled: {
+            QQC2.ButtonGroup {
+                id: mediaTypesGroup
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:check", "Images and videos")
+                    QQC2.ButtonGroup.group: mediaTypesGroup
+                    checked: Koko.Config.mediaTypes === Koko.Config.ImagesAndVideos
+                    enabled: !Koko.Config.isMediaTypesImmutable
+                    onToggled: {
                         Koko.Config.mediaTypes = Koko.Config.ImagesAndVideos;
                         Koko.Config.save();
+                    }
                 }
             }
 
-            FormCard.FormRadioDelegate {
-                text: i18nc("@option:check", "Images only")
-                checked: Koko.Config.mediaTypes === Koko.Config.ImagesOnly
-                enabled: !Koko.Config.isMediaTypesImmutable
-                onToggled: {
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:check", "Images only")
+                    QQC2.ButtonGroup.group: mediaTypesGroup
+                    checked: Koko.Config.mediaTypes === Koko.Config.ImagesOnly
+                    enabled: !Koko.Config.isMediaTypesImmutable
+                    onToggled: {
                         Koko.Config.mediaTypes = Koko.Config.ImagesOnly;
                         Koko.Config.save();
+                    }
                 }
             }
-    }
+        }
 
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Gallery Sorting")
-    }
+        Kirigami.FormGroup {
+            title: i18nc("@title:group", "Gallery Sorting")
 
-    FormCard.FormCard {
-        FormCard.FormRadioDelegate {
-            text: i18nc("@option:radio As in, sorting mode", "Natural sorting")
-            checked: Koko.Config.sortBehavior === Koko.Config.Natural
-            enabled: !Koko.Config.isSortBehavorImmutable
-            onToggled: {
-                Koko.Config.sortBehavior = Koko.Config.Natural;
-                Koko.Config.save();
+            QQC2.ButtonGroup {
+                id: sortBehaviorGroup
             }
-        }
 
-        FormCard.FormRadioDelegate {
-            text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case insensitive)")
-            checked: Koko.Config.sortBehavior === Koko.Config.AlphabeticalCaseInsensitive
-            enabled: !Koko.Config.isSortBehavorImmutable
-            onToggled: {
-                Koko.Config.sortBehavior = Koko.Config.AlphabeticalCaseInsensitive;
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormRadioDelegate {
-            text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case sensitive)")
-            checked: Koko.Config.sortBehavior === Koko.Config.AlphabeticalCaseSensitive
-            enabled: !Koko.Config.isSortBehavorImmutable
-            onToggled: {
-                Koko.Config.sortBehavior = Koko.Config.AlphabeticalCaseSensitive;
-                Koko.Config.save();
-            }
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Image Background")
-    }
-
-    FormCard.FormCard {
-        FormCard.FormRadioDelegate {
-            text: i18nc("@option:radio As in, background color", "Black")
-            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Black
-            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
-            onToggled: {
-                Koko.Config.imageViewBackgroundColor = Koko.Config.Black;
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormRadioDelegate {
-            text: i18nc("@option:radio As in, background color", "Gray")
-            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Gray
-            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
-            onToggled: {
-                Koko.Config.imageViewBackgroundColor = Koko.Config.Gray;
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormRadioDelegate {
-            text: i18nc("@option:radio As in, background color", "White")
-            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.White
-            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
-            onToggled: {
-                Koko.Config.imageViewBackgroundColor = Koko.Config.White;
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormRadioDelegate {
-            id: imageViewBackgroundColorThemeDefaultDelegate
-            text: i18nc("@option:radio As in, background color", "Theme default")
-            description: i18nc("info", "Use the background color specified by the theme")
-            checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Theme
-            enabled: !Koko.Config.isImageViewBackgroundColorImmutable
-            onToggled: {
-                Koko.Config.imageViewBackgroundColor = Koko.Config.Theme;
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormDelegateSeparator {
-            above: imageViewShowCheckerboardDelegate
-            below: imageViewBackgroundColorThemeDefaultDelegate
-        }
-
-        FormCard.FormCheckDelegate {
-            id: imageViewShowCheckerboardDelegate
-            text: i18nc("@option:check", "Show a checkerboard behind transparent images")
-            checked: Koko.Config.imageViewShowCheckerboard
-            enabled: !Koko.Config.isImageViewShowCheckerboardImmutable
-            onToggled: {
-                Koko.Config.imageViewShowCheckerboard = checked;
-                Koko.Config.save();
-            }
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Image View")
-    }
-
-    FormCard.FormCard {
-        FormCard.FormCheckDelegate {
-            id: enlargeSmallImagesDelegate
-            text: i18nc("@option:check", "Enlarge images that are smaller than the viewport")
-            checked: Koko.Config.enlargeSmallImages
-            enabled: !Koko.Config.isEnlargeSmallImagesImmutable
-            onToggled: {
-                Koko.Config.enlargeSmallImages = checked;
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormCheckDelegate {
-            id: rememberZoomDelegate
-            text: i18nc("@option:check", "Remember zoom level when switching between images")
-            checked: Koko.Config.rememberZoom
-            enabled: !Koko.Config.isRememberZoomImmutable
-            onToggled: {
-                Koko.Config.rememberZoom = checked;
-                Koko.Config.save();
-            }
-        }
-    }
-
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Slideshow")
-        visible: !Kirigami.Settings.isMobile
-    }
-
-    FormCard.FormCard {
-        visible: !Kirigami.Settings.isMobile
-        FormCard.FormCheckDelegate {
-            id: randomizeImagesCheckbox
-            text: i18nc("@option:check", "Randomize")
-            checked: Koko.Config.randomizeImages
-            onCheckedChanged: {
-                Koko.Config.randomizeImages = checked
-                Koko.Config.save();
-            }
-        }
-
-        FormCard.FormDelegateSeparator { above: randomizeImagesCheckbox}
-
-        FormCard.AbstractFormDelegate {
-            background: null
-            contentItem: RowLayout {
-                QQC2.Label {
-                    text: i18nc("@label:spinbox Slideshow image changing interval", "Slideshow interval:")
-                    Layout.fillWidth: true
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:radio As in, sorting mode", "Natural sorting")
+                    QQC2.ButtonGroup.group: sortBehaviorGroup
+                    checked: Koko.Config.sortBehavior === Koko.Config.Natural
+                    enabled: !Koko.Config.isSortBehavorImmutable
+                    onToggled: {
+                        Koko.Config.sortBehavior = Koko.Config.Natural;
+                        Koko.Config.save();
+                    }
                 }
-                QQC2.SpinBox {
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case insensitive)")
+                    QQC2.ButtonGroup.group: sortBehaviorGroup
+                    checked: Koko.Config.sortBehavior === Koko.Config.AlphabeticalCaseInsensitive
+                    enabled: !Koko.Config.isSortBehavorImmutable
+                    onToggled: {
+                        Koko.Config.sortBehavior = Koko.Config.AlphabeticalCaseInsensitive;
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:radio As in, sorting mode", "Alphabetical (case sensitive)")
+                    QQC2.ButtonGroup.group: sortBehaviorGroup
+                    checked: Koko.Config.sortBehavior === Koko.Config.AlphabeticalCaseSensitive
+                    enabled: !Koko.Config.isSortBehavorImmutable
+                    onToggled: {
+                        Koko.Config.sortBehavior = Koko.Config.AlphabeticalCaseSensitive;
+                        Koko.Config.save();
+                    }
+                }
+            }
+        }
+
+        Kirigami.FormGroup {
+            title: i18nc("@title:group", "Image Background")
+
+            QQC2.ButtonGroup {
+                id: imageViewBackgroundColorGroup
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:radio As in, background color", "Black")
+                    QQC2.ButtonGroup.group: imageViewBackgroundColorGroup
+                    checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Black
+                    enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+                    onToggled: {
+                        Koko.Config.imageViewBackgroundColor = Koko.Config.Black;
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:radio As in, background color", "Gray")
+                    QQC2.ButtonGroup.group: imageViewBackgroundColorGroup
+                    checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Gray
+                    enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+                    onToggled: {
+                        Koko.Config.imageViewBackgroundColor = Koko.Config.Gray;
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.RadioButton {
+                    text: i18nc("@option:radio As in, background color", "White")
+                    QQC2.ButtonGroup.group: imageViewBackgroundColorGroup
+                    checked: Koko.Config.imageViewBackgroundColor === Koko.Config.White
+                    enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+                    onToggled: {
+                        Koko.Config.imageViewBackgroundColor = Koko.Config.White;
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormEntry {
+                subtitle: i18nc("info", "Use the background color specified by the theme")
+
+                contentItem: QQC2.RadioButton {
+                    id: imageViewBackgroundColorThemeDefaultDelegate
+                    text: i18nc("@option:radio As in, background color", "Theme default")
+                    QQC2.ButtonGroup.group: imageViewBackgroundColorGroup
+                    checked: Koko.Config.imageViewBackgroundColor === Koko.Config.Theme
+                    enabled: !Koko.Config.isImageViewBackgroundColorImmutable
+                    onToggled: {
+                        Koko.Config.imageViewBackgroundColor = Koko.Config.Theme;
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormSeparator {}
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: imageViewShowCheckerboardDelegate
+                    text: i18nc("@option:check", "Show a checkerboard behind transparent images")
+                    checked: Koko.Config.imageViewShowCheckerboard
+                    enabled: !Koko.Config.isImageViewShowCheckerboardImmutable
+                    onToggled: {
+                        Koko.Config.imageViewShowCheckerboard = checked;
+                        Koko.Config.save();
+                    }
+                }
+            }
+        }
+
+        Kirigami.FormGroup {
+            title: i18nc("@title:group", "Image View")
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: enlargeSmallImagesDelegate
+                    text: i18nc("@option:check", "Enlarge images that are smaller than the viewport")
+                    checked: Koko.Config.enlargeSmallImages
+                    enabled: !Koko.Config.isEnlargeSmallImagesImmutable
+                    onToggled: {
+                        Koko.Config.enlargeSmallImages = checked;
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: rememberZoomDelegate
+                    text: i18nc("@option:check", "Remember zoom level when switching between images")
+                    checked: Koko.Config.rememberZoom
+                    enabled: !Koko.Config.isRememberZoomImmutable
+                    onToggled: {
+                        Koko.Config.rememberZoom = checked;
+                        Koko.Config.save();
+                    }
+                }
+            }
+        }
+
+        Kirigami.FormGroup {
+            title: i18nc("@title:group", "Slideshow")
+            visible: !Kirigami.Settings.isMobile
+
+            Kirigami.FormEntry {
+                contentItem: QQC2.CheckBox {
+                    id: randomizeImagesCheckbox
+                    text: i18nc("@option:check", "Randomize")
+                    checked: Koko.Config.randomizeImages
+                    onCheckedChanged: {
+                        Koko.Config.randomizeImages = checked
+                        Koko.Config.save();
+                    }
+                }
+            }
+
+            Kirigami.FormSeparator {}
+
+            Kirigami.FormEntry {
+                title: i18nc("@label:spinbox Slideshow image changing interval", "Slideshow interval:")
+
+                contentItem: QQC2.SpinBox {
                     id: intervalSpinBox
                     from: 1
                     // limited to hundreds for now because I don't want
