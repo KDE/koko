@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-04 01:00+0000\n"
-"PO-Revision-Date: 2026-10-31 17:27+0400\n"
+"PO-Revision-Date: 2026-11-05 08:51+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1848,7 +1848,7 @@ msgstr "الأيام"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
-msgstr ""
+msgstr "مخطّط الألوان:"
 
 #: qml/Settings/GeneralConfigPage.qml:23
 #, kde-format
