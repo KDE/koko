@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:00+0000\n"
+"POT-Creation-Date: 2026-11-07 00:55+0000\n"
 "PO-Revision-Date: 2025-09-24 15:22+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1813,13 +1813,13 @@ msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr ""
 
-#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Slīdrādes intervāls:"
 
-#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:250
+#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:266
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1835,7 +1835,7 @@ msgid "Loop"
 msgstr "Atkārtot"
 
 #: qml/mediaview/MediaViewPage.qml:1357 qml/mediaview/MediaViewPage.qml:1455
-#: qml/Settings/GeneralConfigPage.qml:224
+#: qml/Settings/GeneralConfigPage.qml:243
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1947,26 +1947,27 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Dienas"
 
-#: qml/Settings/ColorScheme.qml:14
+#: qml/Settings/ColorScheme.qml:15
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:23
+#: qml/Settings/GeneralConfigPage.qml:17
 #, fuzzy, kde-format
 #| msgid "Thumbnails size:"
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Sīktēlu izmērs:"
 
-#: qml/Settings/GeneralConfigPage.qml:44
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:37
+#, fuzzy, kde-format
+#| msgid "%1 px"
 msgctxt "@info:tooltip, %1 is a size in pixels"
-msgid "%1 px"
-msgstr ""
+msgid "%1 px"
+msgstr "%1 px"
 
-#: qml/Settings/GeneralConfigPage.qml:62
+#: qml/Settings/GeneralConfigPage.qml:48
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "File Type"
@@ -1974,7 +1975,7 @@ msgctxt "@title:group"
 msgid "File types"
 msgstr "Datnes tips"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:56
 #, fuzzy, kde-format
 #| msgctxt "@action:button Navigation button"
 #| msgid "Navigate to videos"
@@ -1982,20 +1983,20 @@ msgctxt "@option:check"
 msgid "Images and videos"
 msgstr "Iet uz video"
 
-#: qml/Settings/GeneralConfigPage.qml:77
+#: qml/Settings/GeneralConfigPage.qml:69
 #, fuzzy, kde-format
 #| msgid "Images"
 msgctxt "@option:check"
 msgid "Images only"
 msgstr "Attēli"
 
-#: qml/Settings/GeneralConfigPage.qml:88
+#: qml/Settings/GeneralConfigPage.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:93
+#: qml/Settings/GeneralConfigPage.qml:90
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
@@ -2007,13 +2008,13 @@ msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:113
+#: qml/Settings/GeneralConfigPage.qml:116
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:124
+#: qml/Settings/GeneralConfigPage.qml:129
 #, fuzzy, kde-format
 #| msgctxt "@title:group"
 #| msgid "Image View Background"
@@ -2021,37 +2022,37 @@ msgctxt "@title:group"
 msgid "Image Background"
 msgstr "Attēlu skata fons"
 
-#: qml/Settings/GeneralConfigPage.qml:129
+#: qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Melns"
 
-#: qml/Settings/GeneralConfigPage.qml:139
+#: qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:149
+#: qml/Settings/GeneralConfigPage.qml:163
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Balts"
 
-#: qml/Settings/GeneralConfigPage.qml:160
-#, kde-format
-msgctxt "@option:radio As in, background color"
-msgid "Theme default"
-msgstr "Motīva noklusējums"
-
-#: qml/Settings/GeneralConfigPage.qml:161
+#: qml/Settings/GeneralConfigPage.qml:175
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Izmantot motīva noteikto fona krāsu"
 
-#: qml/Settings/GeneralConfigPage.qml:177
+#: qml/Settings/GeneralConfigPage.qml:179
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr "Motīva noklusējums"
+
+#: qml/Settings/GeneralConfigPage.qml:195
 #, fuzzy, kde-format
 #| msgctxt "@option:check"
 #| msgid "Show a checkerboard background behind transparent images"
@@ -2059,7 +2060,7 @@ msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Aiz caurspīdīgiem attēliem rādīt rūtiņas"
 
-#: qml/Settings/GeneralConfigPage.qml:188
+#: qml/Settings/GeneralConfigPage.qml:207
 #, fuzzy, kde-format
 #| msgctxt "@item:intable"
 #| msgid "Image Size"
@@ -2067,19 +2068,19 @@ msgctxt "@title:group"
 msgid "Image View"
 msgstr "Attēla izmērs"
 
-#: qml/Settings/GeneralConfigPage.qml:194
+#: qml/Settings/GeneralConfigPage.qml:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:205
+#: qml/Settings/GeneralConfigPage.qml:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:216
+#: qml/Settings/GeneralConfigPage.qml:237
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -2248,9 +2249,6 @@ msgstr "Atlasīt visu"
 
 #~ msgid "Filter by"
 #~ msgstr "Filtrēt pēc"
-
-#~ msgid "%1 px"
-#~ msgstr "%1 px"
 
 #~ msgid "Settings"
 #~ msgstr "Iestatījumi"

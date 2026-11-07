@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:00+0000\n"
+"POT-Creation-Date: 2026-11-07 00:55+0000\n"
 "PO-Revision-Date: 2026-11-04 22:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1676,13 +1676,13 @@ msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr "Doldur"
 
-#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Slayt gösterisi aralığı:"
 
-#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:250
+#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:266
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1697,7 +1697,7 @@ msgid "Loop"
 msgstr "Döngü"
 
 #: qml/mediaview/MediaViewPage.qml:1357 qml/mediaview/MediaViewPage.qml:1455
-#: qml/Settings/GeneralConfigPage.qml:224
+#: qml/Settings/GeneralConfigPage.qml:243
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1806,49 +1806,50 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Günler"
 
-#: qml/Settings/ColorScheme.qml:14
+#: qml/Settings/ColorScheme.qml:15
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
 msgstr "Renk şeması:"
 
-#: qml/Settings/GeneralConfigPage.qml:23
+#: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Küçük görsel boyutu:"
 
-#: qml/Settings/GeneralConfigPage.qml:44
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:37
+#, fuzzy, kde-format
+#| msgid "%1 px"
 msgctxt "@info:tooltip, %1 is a size in pixels"
-msgid "%1 px"
+msgid "%1 px"
 msgstr "%1 pks"
 
-#: qml/Settings/GeneralConfigPage.qml:62
+#: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
 msgctxt "@title:group"
 msgid "File types"
 msgstr "Dosya Türleri"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
 msgstr "Görseller ve videolar"
 
-#: qml/Settings/GeneralConfigPage.qml:77
+#: qml/Settings/GeneralConfigPage.qml:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Images only"
 msgstr "Yalnızca görseller"
 
-#: qml/Settings/GeneralConfigPage.qml:88
+#: qml/Settings/GeneralConfigPage.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
 msgstr "Galeri Sıralaması"
 
-#: qml/Settings/GeneralConfigPage.qml:93
+#: qml/Settings/GeneralConfigPage.qml:90
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
@@ -1860,73 +1861,73 @@ msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
 msgstr "Abecesel (BÜYÜK/küçük harf duyarsız)"
 
-#: qml/Settings/GeneralConfigPage.qml:113
+#: qml/Settings/GeneralConfigPage.qml:116
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
 msgstr "Abecesel (BÜYÜK/küçük harf duyarlı)"
 
-#: qml/Settings/GeneralConfigPage.qml:124
+#: qml/Settings/GeneralConfigPage.qml:129
 #, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
 msgstr "Görsel Arka Planı"
 
-#: qml/Settings/GeneralConfigPage.qml:129
+#: qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Siyah"
 
-#: qml/Settings/GeneralConfigPage.qml:139
+#: qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
 msgstr "Gri"
 
-#: qml/Settings/GeneralConfigPage.qml:149
+#: qml/Settings/GeneralConfigPage.qml:163
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Beyaz"
 
-#: qml/Settings/GeneralConfigPage.qml:160
-#, kde-format
-msgctxt "@option:radio As in, background color"
-msgid "Theme default"
-msgstr "Tema öntanımlısı"
-
-#: qml/Settings/GeneralConfigPage.qml:161
+#: qml/Settings/GeneralConfigPage.qml:175
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Tema tarafından belirtilen arka plan rengini kullan"
 
-#: qml/Settings/GeneralConfigPage.qml:177
+#: qml/Settings/GeneralConfigPage.qml:179
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr "Tema öntanımlısı"
+
+#: qml/Settings/GeneralConfigPage.qml:195
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Saydam görsellerin arkasında bir dama tahtası deseni göster"
 
-#: qml/Settings/GeneralConfigPage.qml:188
+#: qml/Settings/GeneralConfigPage.qml:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr "Görsel Görünümü"
 
-#: qml/Settings/GeneralConfigPage.qml:194
+#: qml/Settings/GeneralConfigPage.qml:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "Görüş alanından daha küçük görselleri büyüt"
 
-#: qml/Settings/GeneralConfigPage.qml:205
+#: qml/Settings/GeneralConfigPage.qml:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "Görseller arasında geçiş yaparken yakınlaştırma düzeyini anımsa"
 
-#: qml/Settings/GeneralConfigPage.qml:216
+#: qml/Settings/GeneralConfigPage.qml:237
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -1988,6 +1989,10 @@ msgstr "Koleksiyonlar"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Tüm Ortamlar"
+
+#~ msgctxt "@info:tooltip, %1 is a size in pixels"
+#~ msgid "%1 px"
+#~ msgstr "%1 pks"
 
 #~ msgctxt "@action:button Open settings dialog"
 #~ msgid "Settings"
@@ -2092,9 +2097,6 @@ msgstr "Tüm Ortamlar"
 
 #~ msgid "Filter by"
 #~ msgstr "Şuna Göre Sırala"
-
-#~ msgid "%1 px"
-#~ msgstr "%1 pks"
 
 #~ msgid "Settings"
 #~ msgstr "Ayarlar"
