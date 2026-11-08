@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:00+0000\n"
+"POT-Creation-Date: 2026-11-07 00:55+0000\n"
 "PO-Revision-Date: 2026-11-06 01:38+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -1696,13 +1696,13 @@ msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr "Užpildyti"
 
-#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Skaidrių rodymo intervalas:"
 
-#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:250
+#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:266
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1719,7 +1719,7 @@ msgid "Loop"
 msgstr "Rodyti ciklu"
 
 #: qml/mediaview/MediaViewPage.qml:1357 qml/mediaview/MediaViewPage.qml:1455
-#: qml/Settings/GeneralConfigPage.qml:224
+#: qml/Settings/GeneralConfigPage.qml:243
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1828,49 +1828,49 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Dienos"
 
-#: qml/Settings/ColorScheme.qml:14
+#: qml/Settings/ColorScheme.qml:15
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
 msgstr "Spalvų rinkinys:"
 
-#: qml/Settings/GeneralConfigPage.qml:23
+#: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Miniatiūrų dydis:"
 
-#: qml/Settings/GeneralConfigPage.qml:44
+#: qml/Settings/GeneralConfigPage.qml:37
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
-msgid "%1 px"
-msgstr "%1 piks."
+msgid "%1 px"
+msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:62
+#: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
 msgctxt "@title:group"
 msgid "File types"
 msgstr "Failo tipai"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
 msgstr "Paveikslai ir vaizdo įrašai"
 
-#: qml/Settings/GeneralConfigPage.qml:77
+#: qml/Settings/GeneralConfigPage.qml:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Images only"
 msgstr "Tik paveikslai"
 
-#: qml/Settings/GeneralConfigPage.qml:88
+#: qml/Settings/GeneralConfigPage.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
 msgstr "Galerijos rikiavimas"
 
-#: qml/Settings/GeneralConfigPage.qml:93
+#: qml/Settings/GeneralConfigPage.qml:90
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
@@ -1882,73 +1882,73 @@ msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
 msgstr "Pagal abėcėlę (neskiriant raidžių dydžio)"
 
-#: qml/Settings/GeneralConfigPage.qml:113
+#: qml/Settings/GeneralConfigPage.qml:116
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
 msgstr "Pagal abėcėlę (skiriant raidžių dydį)"
 
-#: qml/Settings/GeneralConfigPage.qml:124
+#: qml/Settings/GeneralConfigPage.qml:129
 #, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
 msgstr "Paveikslo fonas"
 
-#: qml/Settings/GeneralConfigPage.qml:129
+#: qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Juodas"
 
-#: qml/Settings/GeneralConfigPage.qml:139
+#: qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
 msgstr "Pilka"
 
-#: qml/Settings/GeneralConfigPage.qml:149
+#: qml/Settings/GeneralConfigPage.qml:163
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Baltas"
 
-#: qml/Settings/GeneralConfigPage.qml:160
-#, kde-format
-msgctxt "@option:radio As in, background color"
-msgid "Theme default"
-msgstr "Apipavidalinimo numatytasis"
-
-#: qml/Settings/GeneralConfigPage.qml:161
+#: qml/Settings/GeneralConfigPage.qml:175
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Naudoti apipavidalinimo nurodytą fono spalvą"
 
-#: qml/Settings/GeneralConfigPage.qml:177
+#: qml/Settings/GeneralConfigPage.qml:179
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr "Apipavidalinimo numatytasis"
+
+#: qml/Settings/GeneralConfigPage.qml:195
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Rodyti už permatomų paveikslų šachmatų lentą"
 
-#: qml/Settings/GeneralConfigPage.qml:188
+#: qml/Settings/GeneralConfigPage.qml:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr "Paveikslo rodinys"
 
-#: qml/Settings/GeneralConfigPage.qml:194
+#: qml/Settings/GeneralConfigPage.qml:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "Padidinti paveikslus, kurie mažesni nei peržiūros sritis"
 
-#: qml/Settings/GeneralConfigPage.qml:205
+#: qml/Settings/GeneralConfigPage.qml:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "Prisiminti mastelio lygį perjungiant tarp paveikslų"
 
-#: qml/Settings/GeneralConfigPage.qml:216
+#: qml/Settings/GeneralConfigPage.qml:237
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -2010,6 +2010,10 @@ msgstr "Rinkiniai"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Visa medija"
+
+#~ msgctxt "@info:tooltip, %1 is a size in pixels"
+#~ msgid "%1 px"
+#~ msgstr "%1 piks."
 
 #~ msgctxt "@action:button Open settings dialog"
 #~ msgid "Settings"

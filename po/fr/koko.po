@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:00+0000\n"
-"PO-Revision-Date: 2026-10-09 12:13+0200\n"
+"POT-Creation-Date: 2026-11-07 00:55+0000\n"
+"PO-Revision-Date: 2026-11-05 13:55+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1677,13 +1677,13 @@ msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr "Remplir"
 
-#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Intervalle du diaporama :"
 
-#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:250
+#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:266
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1698,7 +1698,7 @@ msgid "Loop"
 msgstr "En boucle"
 
 #: qml/mediaview/MediaViewPage.qml:1357 qml/mediaview/MediaViewPage.qml:1455
-#: qml/Settings/GeneralConfigPage.qml:224
+#: qml/Settings/GeneralConfigPage.qml:243
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1807,49 +1807,50 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Jours"
 
-#: qml/Settings/ColorScheme.qml:14
+#: qml/Settings/ColorScheme.qml:15
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
-msgstr ""
+msgstr "Thème de couleurs :"
 
-#: qml/Settings/GeneralConfigPage.qml:23
+#: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Taille de vignette :"
 
-#: qml/Settings/GeneralConfigPage.qml:44
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:37
+#, fuzzy, kde-format
+#| msgid "%1 px"
 msgctxt "@info:tooltip, %1 is a size in pixels"
-msgid "%1 px"
-msgstr "%1 px"
+msgid "%1 px"
+msgstr "%1 px"
 
-#: qml/Settings/GeneralConfigPage.qml:62
+#: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
 msgctxt "@title:group"
 msgid "File types"
 msgstr "Types de fichier"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
 msgstr "Images et vidéos"
 
-#: qml/Settings/GeneralConfigPage.qml:77
+#: qml/Settings/GeneralConfigPage.qml:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Images only"
 msgstr "Uniquement les images"
 
-#: qml/Settings/GeneralConfigPage.qml:88
+#: qml/Settings/GeneralConfigPage.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
 msgstr "Tri de la galerie"
 
-#: qml/Settings/GeneralConfigPage.qml:93
+#: qml/Settings/GeneralConfigPage.qml:90
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
@@ -1861,73 +1862,73 @@ msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
 msgstr "Alphabétique (Non sensible à la casse)"
 
-#: qml/Settings/GeneralConfigPage.qml:113
+#: qml/Settings/GeneralConfigPage.qml:116
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
 msgstr "Alphabétique (Sensible à la casse)"
 
-#: qml/Settings/GeneralConfigPage.qml:124
+#: qml/Settings/GeneralConfigPage.qml:129
 #, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
 msgstr "Arrière-plan d'images"
 
-#: qml/Settings/GeneralConfigPage.qml:129
+#: qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Noir"
 
-#: qml/Settings/GeneralConfigPage.qml:139
+#: qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
 msgstr "Gris"
 
-#: qml/Settings/GeneralConfigPage.qml:149
+#: qml/Settings/GeneralConfigPage.qml:163
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Blanc"
 
-#: qml/Settings/GeneralConfigPage.qml:160
-#, kde-format
-msgctxt "@option:radio As in, background color"
-msgid "Theme default"
-msgstr "Thème par défaut"
-
-#: qml/Settings/GeneralConfigPage.qml:161
+#: qml/Settings/GeneralConfigPage.qml:175
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Utiliser la couleur d'arrière-plan spécifiée par le thème"
 
-#: qml/Settings/GeneralConfigPage.qml:177
+#: qml/Settings/GeneralConfigPage.qml:179
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr "Thème par défaut"
+
+#: qml/Settings/GeneralConfigPage.qml:195
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Afficher un arrière-plan en damier derrière les images transparentes"
 
-#: qml/Settings/GeneralConfigPage.qml:188
+#: qml/Settings/GeneralConfigPage.qml:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr "Affichage des images"
 
-#: qml/Settings/GeneralConfigPage.qml:194
+#: qml/Settings/GeneralConfigPage.qml:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "Agrandir les images plus petites que la fenêtre d'affichage"
 
-#: qml/Settings/GeneralConfigPage.qml:205
+#: qml/Settings/GeneralConfigPage.qml:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "Se souvenir du niveau de zoom lors du passage d'une image à l'autre"
 
-#: qml/Settings/GeneralConfigPage.qml:216
+#: qml/Settings/GeneralConfigPage.qml:237
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -1989,6 +1990,10 @@ msgstr "Collections"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Tous les média"
+
+#~ msgctxt "@info:tooltip, %1 is a size in pixels"
+#~ msgid "%1 px"
+#~ msgstr "%1 px"
 
 #~ msgctxt "@action:button Open settings dialog"
 #~ msgid "Settings"
@@ -2093,9 +2098,6 @@ msgstr "Tous les média"
 
 #~ msgid "Filter by"
 #~ msgstr "Filtrer par"
-
-#~ msgid "%1 px"
-#~ msgstr "%1 px"
 
 #~ msgid "Settings"
 #~ msgstr "Configuration"

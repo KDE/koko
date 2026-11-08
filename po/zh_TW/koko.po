@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:00+0000\n"
+"POT-Creation-Date: 2026-11-07 00:55+0000\n"
 "PO-Revision-Date: 2026-11-03 21:54+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1667,13 +1667,13 @@ msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr "填充"
 
-#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "投影播放間隔："
 
-#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:250
+#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:266
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1687,7 +1687,7 @@ msgid "Loop"
 msgstr "循環"
 
 #: qml/mediaview/MediaViewPage.qml:1357 qml/mediaview/MediaViewPage.qml:1455
-#: qml/Settings/GeneralConfigPage.qml:224
+#: qml/Settings/GeneralConfigPage.qml:243
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1796,49 +1796,50 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "日"
 
-#: qml/Settings/ColorScheme.qml:14
+#: qml/Settings/ColorScheme.qml:15
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
 msgstr ""
 
-#: qml/Settings/GeneralConfigPage.qml:23
+#: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "縮圖大小："
 
-#: qml/Settings/GeneralConfigPage.qml:44
-#, kde-format
+#: qml/Settings/GeneralConfigPage.qml:37
+#, fuzzy, kde-format
+#| msgid "%1 px"
 msgctxt "@info:tooltip, %1 is a size in pixels"
-msgid "%1 px"
-msgstr "%1 px"
+msgid "%1 px"
+msgstr "%1 px"
 
-#: qml/Settings/GeneralConfigPage.qml:62
+#: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
 msgctxt "@title:group"
 msgid "File types"
 msgstr "檔案類型"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
 msgstr "影像與影片"
 
-#: qml/Settings/GeneralConfigPage.qml:77
+#: qml/Settings/GeneralConfigPage.qml:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Images only"
 msgstr "僅影像"
 
-#: qml/Settings/GeneralConfigPage.qml:88
+#: qml/Settings/GeneralConfigPage.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
 msgstr "圖庫排序"
 
-#: qml/Settings/GeneralConfigPage.qml:93
+#: qml/Settings/GeneralConfigPage.qml:90
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
@@ -1850,73 +1851,73 @@ msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
 msgstr "字母排序（不區分大小寫）"
 
-#: qml/Settings/GeneralConfigPage.qml:113
+#: qml/Settings/GeneralConfigPage.qml:116
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
 msgstr "字母排序（區分大小寫）"
 
-#: qml/Settings/GeneralConfigPage.qml:124
+#: qml/Settings/GeneralConfigPage.qml:129
 #, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
 msgstr "影像背景"
 
-#: qml/Settings/GeneralConfigPage.qml:129
+#: qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "黑色"
 
-#: qml/Settings/GeneralConfigPage.qml:139
+#: qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
 msgstr "灰色"
 
-#: qml/Settings/GeneralConfigPage.qml:149
+#: qml/Settings/GeneralConfigPage.qml:163
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "白色"
 
-#: qml/Settings/GeneralConfigPage.qml:160
-#, kde-format
-msgctxt "@option:radio As in, background color"
-msgid "Theme default"
-msgstr "主題預設值"
-
-#: qml/Settings/GeneralConfigPage.qml:161
+#: qml/Settings/GeneralConfigPage.qml:175
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "使用主題所指定的背景色"
 
-#: qml/Settings/GeneralConfigPage.qml:177
+#: qml/Settings/GeneralConfigPage.qml:179
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr "主題預設值"
+
+#: qml/Settings/GeneralConfigPage.qml:195
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "在透明影像後面顯示棋盤背景"
 
-#: qml/Settings/GeneralConfigPage.qml:188
+#: qml/Settings/GeneralConfigPage.qml:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr "影像檢視"
 
-#: qml/Settings/GeneralConfigPage.qml:194
+#: qml/Settings/GeneralConfigPage.qml:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "將比檢視埠小的影像放大"
 
-#: qml/Settings/GeneralConfigPage.qml:205
+#: qml/Settings/GeneralConfigPage.qml:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "在影像間切換時記住縮放等級"
 
-#: qml/Settings/GeneralConfigPage.qml:216
+#: qml/Settings/GeneralConfigPage.qml:237
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -1978,6 +1979,10 @@ msgstr "收藏"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "所有媒體"
+
+#~ msgctxt "@info:tooltip, %1 is a size in pixels"
+#~ msgid "%1 px"
+#~ msgstr "%1 px"
 
 #~ msgctxt "@action:button Open settings dialog"
 #~ msgid "Settings"
@@ -2081,9 +2086,6 @@ msgstr "所有媒體"
 
 #~ msgid "Filter by"
 #~ msgstr "過濾條件"
-
-#~ msgid "%1 px"
-#~ msgstr "%1 px"
 
 #~ msgid "Settings"
 #~ msgstr "設定"

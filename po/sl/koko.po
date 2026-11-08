@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-04 01:00+0000\n"
-"PO-Revision-Date: 2026-11-04 10:29+0100\n"
+"POT-Creation-Date: 2026-11-07 00:55+0000\n"
+"PO-Revision-Date: 2026-11-07 19:59+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1695,13 +1695,13 @@ msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
 msgstr "Izpolni"
 
-#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:238
+#: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
 msgctxt "@label:spinbox Slideshow image changing interval"
 msgid "Slideshow interval:"
 msgstr "Interval med prikazi predstavitve:"
 
-#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:250
+#: qml/mediaview/MediaViewPage.qml:1293 qml/Settings/GeneralConfigPage.qml:266
 #, kde-format
 msgctxt "Slideshow image changing interval"
 msgid "1 second"
@@ -1718,7 +1718,7 @@ msgid "Loop"
 msgstr "Zanka"
 
 #: qml/mediaview/MediaViewPage.qml:1357 qml/mediaview/MediaViewPage.qml:1455
-#: qml/Settings/GeneralConfigPage.qml:224
+#: qml/Settings/GeneralConfigPage.qml:243
 #, kde-format
 msgctxt "@option:check"
 msgid "Randomize"
@@ -1827,49 +1827,49 @@ msgctxt "@action:button Navigation entry in sidebar"
 msgid "Days"
 msgstr "Dnevi"
 
-#: qml/Settings/ColorScheme.qml:14
+#: qml/Settings/ColorScheme.qml:15
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
 msgstr "Barvna shema:"
 
-#: qml/Settings/GeneralConfigPage.qml:23
+#: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
 msgctxt "@label:slider"
 msgid "Thumbnail size:"
 msgstr "Velikost predogledne sličice:"
 
-#: qml/Settings/GeneralConfigPage.qml:44
+#: qml/Settings/GeneralConfigPage.qml:37
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
-msgid "%1 px"
-msgstr "%1 px"
+msgid "%1 px"
+msgstr "%1 px"
 
-#: qml/Settings/GeneralConfigPage.qml:62
+#: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
 msgctxt "@title:group"
 msgid "File types"
 msgstr "Zvrsti datoteke"
 
-#: qml/Settings/GeneralConfigPage.qml:67
+#: qml/Settings/GeneralConfigPage.qml:56
 #, kde-format
 msgctxt "@option:check"
 msgid "Images and videos"
 msgstr "Slike in videoposnetki"
 
-#: qml/Settings/GeneralConfigPage.qml:77
+#: qml/Settings/GeneralConfigPage.qml:69
 #, kde-format
 msgctxt "@option:check"
 msgid "Images only"
 msgstr "Samo slike"
 
-#: qml/Settings/GeneralConfigPage.qml:88
+#: qml/Settings/GeneralConfigPage.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Gallery Sorting"
 msgstr "Razvščanje galerije"
 
-#: qml/Settings/GeneralConfigPage.qml:93
+#: qml/Settings/GeneralConfigPage.qml:90
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Natural sorting"
@@ -1881,73 +1881,73 @@ msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case insensitive)"
 msgstr "Abecedno (neobčutljivo na velike/male črke)"
 
-#: qml/Settings/GeneralConfigPage.qml:113
+#: qml/Settings/GeneralConfigPage.qml:116
 #, kde-format
 msgctxt "@option:radio As in, sorting mode"
 msgid "Alphabetical (case sensitive)"
 msgstr "Abecedno (občutljivo na velike/male črke)"
 
-#: qml/Settings/GeneralConfigPage.qml:124
+#: qml/Settings/GeneralConfigPage.qml:129
 #, kde-format
 msgctxt "@title:group"
 msgid "Image Background"
 msgstr "Ozadje slike"
 
-#: qml/Settings/GeneralConfigPage.qml:129
+#: qml/Settings/GeneralConfigPage.qml:137
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Black"
 msgstr "Črno"
 
-#: qml/Settings/GeneralConfigPage.qml:139
+#: qml/Settings/GeneralConfigPage.qml:150
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Gray"
 msgstr "Sivo"
 
-#: qml/Settings/GeneralConfigPage.qml:149
+#: qml/Settings/GeneralConfigPage.qml:163
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "White"
 msgstr "Belo"
 
-#: qml/Settings/GeneralConfigPage.qml:160
-#, kde-format
-msgctxt "@option:radio As in, background color"
-msgid "Theme default"
-msgstr "Privzeta tema"
-
-#: qml/Settings/GeneralConfigPage.qml:161
+#: qml/Settings/GeneralConfigPage.qml:175
 #, kde-format
 msgctxt "info"
 msgid "Use the background color specified by the theme"
 msgstr "Uporabi barvo ozadja, ki jo določa tema"
 
-#: qml/Settings/GeneralConfigPage.qml:177
+#: qml/Settings/GeneralConfigPage.qml:179
+#, kde-format
+msgctxt "@option:radio As in, background color"
+msgid "Theme default"
+msgstr "Privzeta tema"
+
+#: qml/Settings/GeneralConfigPage.qml:195
 #, kde-format
 msgctxt "@option:check"
 msgid "Show a checkerboard behind transparent images"
 msgstr "Prikazuj šahovnico za prozornimi slikami"
 
-#: qml/Settings/GeneralConfigPage.qml:188
+#: qml/Settings/GeneralConfigPage.qml:207
 #, kde-format
 msgctxt "@title:group"
 msgid "Image View"
 msgstr "Pogled slike"
 
-#: qml/Settings/GeneralConfigPage.qml:194
+#: qml/Settings/GeneralConfigPage.qml:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Enlarge images that are smaller than the viewport"
 msgstr "Povečaj slike, ki so manjše od vidnega polja"
 
-#: qml/Settings/GeneralConfigPage.qml:205
+#: qml/Settings/GeneralConfigPage.qml:225
 #, kde-format
 msgctxt "@option:check"
 msgid "Remember zoom level when switching between images"
 msgstr "Zapomni si raven povečave pri preklapljanju med slikami"
 
-#: qml/Settings/GeneralConfigPage.qml:216
+#: qml/Settings/GeneralConfigPage.qml:237
 #, kde-format
 msgctxt "@title:group"
 msgid "Slideshow"
@@ -2009,6 +2009,10 @@ msgstr "Zbirke"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Vsi mediji"
+
+#~ msgctxt "@info:tooltip, %1 is a size in pixels"
+#~ msgid "%1 px"
+#~ msgstr "%1 px"
 
 #~ msgctxt "@action:button Open settings dialog"
 #~ msgid "Settings"
@@ -2115,9 +2119,6 @@ msgstr "Vsi mediji"
 
 #~ msgid "Filter by"
 #~ msgstr "Filtriraj po"
-
-#~ msgid "%1 px"
-#~ msgstr "%1 px"
 
 #~ msgid "Settings"
 #~ msgstr "Nastavitve"
