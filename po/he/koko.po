@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-07 00:55+0000\n"
-"PO-Revision-Date: 2026-11-05 13:00+0200\n"
+"PO-Revision-Date: 2026-11-07 19:38+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1838,8 +1838,7 @@ msgid "Thumbnail size:"
 msgstr "גודל תמונה ממוזערת:"
 
 #: qml/Settings/GeneralConfigPage.qml:37
-#, fuzzy, kde-format
-#| msgid "%1 px"
+#, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
 msgstr "%1 פיקסלים"
