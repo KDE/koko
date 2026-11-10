@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-07 00:55+0000\n"
-"PO-Revision-Date: 2026-11-06 01:38+0200\n"
+"PO-Revision-Date: 2026-11-09 16:27+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -1844,7 +1844,7 @@ msgstr "Miniatiūrų dydis:"
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 piks."
 
 #: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
