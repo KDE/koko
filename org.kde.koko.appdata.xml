@@ -220,7 +220,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <p xml:lang="sk">This release modernizes nastavenia page, updates the style of the album page and adds a confirmation dialog before discarding image edits. This also fixes the full screen and slideshow mode.</p>
         <p xml:lang="sl">Ta izdaja posodablja stran z nastavitvami, posodablja slog strani albuma in dodaja potrditveno pogovorno okno pred zavrženjem urejanja slik. Prav tako odpravlja celozaslonski način in način predsgtavitve.</p>
         <p xml:lang="sv">Den här versionen moderniserar inställningssidan, uppdaterar albumsidans stil och lägger till en bekräftelsedialogruta innan bildredigeringar ignoreras. Det åtgärdar även fullskärms- och bildspelsläget.</p>
-        <p xml:lang="tr">Bu yayım, ayarlar sayfasını modernize ediyor, albüm sayfasının biçemini güncelliyor ve görsel düzenlemelerini silmeden önce bir onay iletişim kutusu ekliyor. Ayrıca tam ekran ve slayt gösterisi kipindeki sorunları da gideriyor.</p>
+        <p xml:lang="tr">Bu yayım, ayarlar sayfasını modernize ediyor, albüm sayfasının stilini güncelliyor ve görsel düzenlemelerini silmeden önce bir onay iletişim kutusu ekliyor. Ayrıca tam ekran ve slayt gösterisi kipindeki sorunları da gideriyor.</p>
         <p xml:lang="uk">У цьому випуску модернізовано сторінку налаштувань, оновлено стиль сторінки альбому та додано діалогове вікно підтвердження перед скасуванням редагувань зображень. Також виправлено повноекранний режим та режим показу слайдів.</p>
         <p xml:lang="zh-TW">這個版本改善了設定頁面使其更加現代化、更新相簿頁面的風格，並在捨棄影像編輯前會詢問確認。這個版本也修正了全螢幕與投影播放模式。</p>
       </description>
