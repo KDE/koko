@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-07 00:55+0000\n"
-"PO-Revision-Date: 2026-11-07 07:45+0200\n"
+"PO-Revision-Date: 2026-11-11 22:57+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -1611,67 +1611,67 @@ msgstr "Выйти из режима просмотра без полей"
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "25%"
-msgstr "25%"
+msgstr "25 %"
 
 #: qml/mediaview/MediaViewPage.qml:932
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "50%"
-msgstr "50%"
+msgstr "50 %"
 
 #: qml/mediaview/MediaViewPage.qml:933
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "75%"
-msgstr "75%"
+msgstr "75 %"
 
 #: qml/mediaview/MediaViewPage.qml:934
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: qml/mediaview/MediaViewPage.qml:935
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "150%"
-msgstr "150%"
+msgstr "150 %"
 
 #: qml/mediaview/MediaViewPage.qml:936
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "200%"
-msgstr "200%"
+msgstr "200 %"
 
 #: qml/mediaview/MediaViewPage.qml:937
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "300%"
-msgstr "300%"
+msgstr "300 %"
 
 #: qml/mediaview/MediaViewPage.qml:938
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "400%"
-msgstr "400%"
+msgstr "400 %"
 
 #: qml/mediaview/MediaViewPage.qml:939
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "600%"
-msgstr "600%"
+msgstr "600 %"
 
 #: qml/mediaview/MediaViewPage.qml:940
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "800%"
-msgstr "800%"
+msgstr "800 %"
 
 #: qml/mediaview/MediaViewPage.qml:992
 #, kde-format
 msgctxt "@item:inlistbox zoom percent"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: qml/mediaview/MediaViewPage.qml:1008
 #, kde-format
