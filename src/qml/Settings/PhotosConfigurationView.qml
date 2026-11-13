@@ -11,14 +11,16 @@ KirigamiSettings.SettingsViewController {
     id: root
 
     modules: [
-        KirigamiSettings.ConfigurationModule {
+        KirigamiSettings.SettingsModule {
             moduleId: "general"
             text: i18nc("@action:button", "General")
             icon.name: "photo-symbolic"
             page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
         },
-        KirigamiSettings.ShortcutsConfigurationModule {},
-        KirigamiSettings.ConfigurationModule {
+        KirigamiSettings.ShortcutsSettingsModule {
+            allowModifierlessShortcuts: true
+        },
+        KirigamiSettings.SettingsModule {
             moduleId: "about"
             text: i18n("About Photos")
             icon.name: "help-about-symbolic"
@@ -26,7 +28,7 @@ KirigamiSettings.SettingsViewController {
             category: i18nc("@title:group", "About")
             visible: Kirigami.Settings.isMobile
         },
-        KirigamiSettings.ConfigurationModule {
+        KirigamiSettings.SettingsModule {
             moduleId: "aboutkde"
             text: i18n("About KDE")
             icon.name: "kde-symbolic"
