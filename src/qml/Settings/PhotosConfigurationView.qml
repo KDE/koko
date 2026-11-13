@@ -7,7 +7,7 @@ import org.kde.koko as Koko
 import org.kde.kirigami as Kirigami
 import org.kde.kirigami.settings as KirigamiSettings
 
-KirigamiSettings.ConfigurationView {
+KirigamiSettings.SettingsViewController {
     id: root
 
     modules: [
@@ -17,14 +17,7 @@ KirigamiSettings.ConfigurationView {
             icon.name: "photo-symbolic"
             page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
         },
-        KirigamiSettings.ConfigurationModule {
-            moduleId: "shortcuts"
-            text: i18nc("@action:button", "Keyboard Shortcuts")
-            icon.name: "configure-shortcuts-symbolic"
-            visible: !Kirigami.Settings.isMobile
-            page: () => Qt.createComponent("org.kde.kirigami.actioncollection", "ShortcutsEditor")
-            initialProperties: () => ({ allowModifierlessShortcuts: true })
-        },
+        KirigamiSettings.ShortcutsConfigurationModule {},
         KirigamiSettings.ConfigurationModule {
             moduleId: "about"
             text: i18n("About Photos")
