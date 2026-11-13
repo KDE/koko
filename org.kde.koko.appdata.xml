@@ -151,6 +151,46 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=Koko</url>
   <url type="donation">https://kde.org/community/donations/?app=org.kde.koko</url>
   <releases>
+    <release version="26.12.0" date="2026-12-10">
+      <description>
+        <heading>New features</heading>
+        <ul>
+          <li>“All Photos” view</li>
+          <li>Rename items</li>
+          <li>Show standard “properties” window</li>
+          <li>Cut &amp; paste items</li>
+          <li>“Fit” and “Fill” zoom modes</li>
+          <li>Drag-and-drop</li>
+          <li>Adjustable brightness, contrast, and gamma for images</li>
+          <li>Option for a neutral gray background</li>
+          <li>Option for an app-specific color scheme</li>
+          <li>Open more than one instance of the app</li>
+        </ul>
+        <heading>Significant UI improvements</heading>
+        <ul>
+          <li>Pressing space plays and pauses videos</li>
+          <li>Pressing Esc exits from the editing view</li>
+          <li>Pressing F11 and Ctrl+Shift+F also enter and exit full screen mode, in addition to the
+            existing F key binding</li>
+          <li>The previous visibility state of the controls is now remembered when entering and exiting
+            full screen</li>
+          <li>Pressing the Delete key trashes an image, with a visible option to undo it</li>
+          <li>Shortcuts for all actions in the editing view</li>
+          <li>You can get to the settings from the menu on the viewer page</li>
+          <li>Images smaller than the viewport are scaled up fit within it by default</li>
+          <li>You can independently scroll the thumbnail strip</li>
+          <li>More natural text in the sharing notification</li>
+          <li>Fewer separator lines in toolbars</li>
+        </ul>
+        <heading>Significant bug fixes</heading>
+        <ul>
+          <li>Can no longer open multiple overlapping image editing views by pressing Ctrl+E repeatedly</li>
+          <li>Thumbnails refresh when the source image is updated elsewhere</li>
+          <li>Editing images with square brackets in their names now works</li>
+          <li>Cropping is now accessible on mobile and with small window sizes</li>
+        </ul>
+      </description>
+    </release>
     <release version="26.08.3" date="2026-11-05"/>
     <release version="26.08.2" date="2026-10-08"/>
     <release version="26.08.1" date="2026-09-10"/>
