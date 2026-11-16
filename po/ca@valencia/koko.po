@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-07 00:55+0000\n"
-"PO-Revision-Date: 2026-11-05 08:48+0100\n"
+"PO-Revision-Date: 2026-11-07 09:17+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1828,7 +1828,7 @@ msgstr "Mida de les miniatures:"
 #, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
-msgstr ""
+msgstr "%1 px"
 
 #: qml/Settings/GeneralConfigPage.qml:48
 #, kde-format
@@ -1995,7 +1995,3 @@ msgstr "Col·leccions"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Tots els elements multimèdia"
-
-#~ msgctxt "@info:tooltip, %1 is a size in pixels"
-#~ msgid "%1 px"
-#~ msgstr "%1 px"
