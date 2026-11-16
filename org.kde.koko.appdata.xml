@@ -159,6 +159,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <heading xml:lang="ca-valencia">Característiques noves</heading>
         <heading xml:lang="cs">Nové funkce</heading>
         <heading xml:lang="pt-BR">Novas funcionalidades</heading>
+        <heading xml:lang="ru">Новые возможности</heading>
         <heading xml:lang="sl">Nove zmožnosti</heading>
         <heading xml:lang="tr">Yeni özellikler</heading>
         <heading xml:lang="uk">Нові можливості</heading>
@@ -169,6 +170,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Vista «Totes les fotos»</li>
           <li xml:lang="cs">Zobrazení "Všechny fotografie"</li>
           <li xml:lang="pt-BR">Visualização "Todas as fotos"</li>
+          <li xml:lang="ru">Режим «Все фотографии»</li>
           <li xml:lang="sl">Pogled "Vse fotografije"</li>
           <li xml:lang="tr">“Tüm Fotoğraflar” görünümü</li>
           <li xml:lang="uk">Режим перегляду «Усі фотографії»</li>
@@ -178,6 +180,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Canvia el nom dels elements</li>
           <li xml:lang="cs">Přejmenování položek</li>
           <li xml:lang="pt-BR">Renomear itens</li>
+          <li xml:lang="ru">Переименование элементов</li>
           <li xml:lang="sl">Preimenuj elemente</li>
           <li xml:lang="tr">Ögeleri yeniden adlandırma</li>
           <li xml:lang="uk">Перейменування об'єктів</li>
@@ -187,6 +190,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Mostra la finestra estàndard de «propietats»</li>
           <li xml:lang="cs">Zobrazení standardního okna "Vlastnosti"</li>
           <li xml:lang="pt-BR">Exibir a janela padrão de “propriedades”</li>
+          <li xml:lang="ru">Показ стандартного окна «Свойства»</li>
           <li xml:lang="sl">Prikaži standardno okno "lastnosti"</li>
           <li xml:lang="tr">Standart “Özellikler” penceresi</li>
           <li xml:lang="uk">Показ стандартного вікна «Властивості»</li>
@@ -196,6 +200,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Retalla i apega elements</li>
           <li xml:lang="cs">Vyjmutí a vložení položek</li>
           <li xml:lang="pt-BR">Recortar e colar itens</li>
+          <li xml:lang="ru">Вырезание и вставка элементов</li>
           <li xml:lang="sl">Izreži in prilepi elemente</li>
           <li xml:lang="tr">Ögeleri kesme ve yapıştırma</li>
           <li xml:lang="uk">Вирізання і вставлення об'єктів</li>
@@ -205,6 +210,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Modes de zoom «Ajusta» i «Òmpliga»</li>
           <li xml:lang="cs">Režimy přiblížení Přizpůsobit a Vyplnit</li>
           <li xml:lang="pt-BR">Modos de zoom “Ajustar” e “Preencher”</li>
+          <li xml:lang="ru">Режимы масштабирования «Вместить» и «Заполнить»</li>
           <li xml:lang="sl">Načina povečave "Prilagodi" in "Zapolni"</li>
           <li xml:lang="tr">“Sığdır” ve “Doldur” yakınlaştırma kipleri</li>
           <li xml:lang="uk">Режим масштабування «Підбір» і «Заповнення»</li>
@@ -214,6 +220,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Arrossega i deixa anar</li>
           <li xml:lang="cs">Táhnout a pustit</li>
           <li xml:lang="pt-BR">Arrastar e soltar</li>
+          <li xml:lang="ru">Перетаскивание</li>
           <li xml:lang="sl">Povleci in spusti</li>
           <li xml:lang="tr">Sürükle ve bırak</li>
           <li xml:lang="uk">Перетягування зі скиданням</li>
@@ -223,6 +230,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Brillantor, contrast i gamma ajustable de les imatges</li>
           <li xml:lang="cs">Nastavitelný jas, kontrast a gama pro obrázky</li>
           <li xml:lang="pt-BR">Brilho, contraste e gama ajustáveis ​​para imagens</li>
+          <li xml:lang="ru">Настройка яркости, контраста и гаммы изображений</li>
           <li xml:lang="sl">Nastavljiva svetlost, kontrast in gama slik</li>
           <li xml:lang="tr">Görseller için ayarlanabilir parlaklık, karşıtlık ve gama</li>
           <li xml:lang="uk">Коригування яскравості, контрастності та гамми зображень</li>
@@ -232,6 +240,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Opció per a un fons gris neutre</li>
           <li xml:lang="cs">Možnost neutrálního šedého pozadí</li>
           <li xml:lang="pt-BR">Opção de fundo cinza neutro</li>
+          <li xml:lang="ru">Возможность использовать нейтральный серый фон</li>
           <li xml:lang="sl">Možnost nevtralnega sivega ozadja</li>
           <li xml:lang="tr">Nötr gri arka plan seçeneği</li>
           <li xml:lang="uk">Можливість використання нейтрального сірого тла</li>
@@ -241,6 +250,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Opció per a un esquema de color específic de l'aplicació</li>
           <li xml:lang="cs">Možnost výběru barevného schématu pro konkrétní aplikaci</li>
           <li xml:lang="pt-BR">Opção de um esquema de cores específico para o aplicativo</li>
+          <li xml:lang="ru">Возможность задать отдельную цветовую схему для приложения</li>
           <li xml:lang="sl">Možnost barvne sheme, specifične za aplikacijo</li>
           <li xml:lang="tr">Uygulamaya özel renk şeması seçeneği</li>
           <li xml:lang="uk">Можливість використання специфічної для програми схеми кольорів</li>
@@ -250,6 +260,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Obri més d'una instància de l'aplicació</li>
           <li xml:lang="cs">Otevření více než jedné instance aplikace</li>
           <li xml:lang="pt-BR">Abrir mais de uma instância do aplicativo</li>
+          <li xml:lang="ru">Возможность открывать несколько экземпляров приложения</li>
           <li xml:lang="sl">Odpre več primerkov aplikacije</li>
           <li xml:lang="tr">Uygulamanın birden çok örneğini açma olanağı</li>
           <li xml:lang="uk">Можливість відкривати декілька екземплярів програми одночасно</li>
@@ -260,6 +271,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <heading xml:lang="ca-valencia">Millores significatives en la interfície d'usuari</heading>
         <heading xml:lang="cs">Významná vylepšení uživatelského rozhraní</heading>
         <heading xml:lang="pt-BR">Melhorias significativas na interface do usuário</heading>
+        <heading xml:lang="ru">Значительные улучшения интерфейса</heading>
         <heading xml:lang="sl">Bistvene izboljšave uporabniškega vmesnika</heading>
         <heading xml:lang="tr">Belirgin kullanıcı arayüzü iyileştirmeleri</heading>
         <heading xml:lang="uk">Значні удосконалення у інтерфейсі користувача</heading>
@@ -270,6 +282,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Prement l'espai es reproduïxen i fa pausa de vídeos</li>
           <li xml:lang="cs">Stisknutím mezerníku se přehrává a pozastavuje video</li>
           <li xml:lang="pt-BR">Pressionar a barra de espaço reproduz e pausa vídeos</li>
+          <li xml:lang="ru">Воспроизведение и приостановка видео клавишей «Пробел»</li>
           <li xml:lang="sl">S pritiskom na preslednico predvaja ali ustavi videoposnetke</li>
           <li xml:lang="tr">Boşluk düğmesi, videoları oynatır veya duraklatır.</li>
           <li xml:lang="uk">Натискання пробілу призводитиме до запуску відтворення і призупинення відтворення відео</li>
@@ -279,6 +292,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">En prémer «Esc» ix de la vista d'edició</li>
           <li xml:lang="cs">Stisknutím klávesy Esc se opustí režim úprav</li>
           <li xml:lang="pt-BR">Pressionar Esc sai da visualização de edição</li>
+          <li xml:lang="ru">Выход из режима редактирования клавишей Esc</li>
           <li xml:lang="sl">S pritiskom na tipko Esc zapusti pogled za urejanje</li>
           <li xml:lang="tr">Vazgeç (Esc) düğmesi, düzenleme görünümünden çıkar.</li>
           <li xml:lang="uk">Натискання Esc призводить до виходу з режиму редагування</li>
@@ -289,6 +303,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Prement «F11» i «Ctrl+Majús+F» també entra i ix del mode de pantalla completa, a més de la vinculació de la tecla F existent</li>
           <li xml:lang="cs">Kromě stávající klávesové zkratky s klávesou F lze do režimu celé obrazovky přepnout a z něj vystoupit také stisknutím kláves F11 a Ctrl+Shift+F</li>
           <li xml:lang="pt-BR">Pressionar F11 e Ctrl+Shift+F também permite entrar e sair do modo de tela cheia, além do atalho de tecla F já existente</li>
+          <li xml:lang="ru">Полноэкранный режим теперь включается и выключается не только клавишей F, но и клавишей F11 или сочетанием Ctrl+Shift+F</li>
           <li xml:lang="sl">Tipka F11 ter kombinacija tipk Ctrl+Shift+F omogočata vstop v celozaslonski način in izstop iz njega poleg že obstoječe bližnjice s tipko F </li>
           <li xml:lang="tr">F düğmesine ek olarak, F11 veya Kontrol+Üst Karakter+F düğmeleri, tam ekran kipine girer veya çıkar.</li>
           <li xml:lang="uk">Натискання F11 і Ctrl+Shift+F запускає і завершує роботу повноекранного режиму, на додачу до наявної клавіатурної прив'язки до клавіші F</li>
@@ -299,6 +314,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">L'estat de visibilitat anterior dels controls es recorda ara en entrar i eixir de la pantalla completa</li>
           <li xml:lang="cs">Při přechodu do režimu celé obrazovky a zpět se nyní ukládá předchozí stav viditelnosti ovládacích prvků</li>
           <li xml:lang="pt-BR">O estado de visibilidade anterior dos controles agora é lembrado ao entrar e sair do modo de tela cheia</li>
+          <li xml:lang="ru">При входе в полноэкранный режим и выходе из него теперь сохраняется прежнее состояние видимости элементов управления</li>
           <li xml:lang="sl">Prejšnje stanje vidnosti kontrolnikov se zdaj shrani ob vstopu v celozaslonski način in izstopu iz njega</li>
           <li xml:lang="tr">Denetimlerin önceki görünürlük durumu, tam ekran kipine girip çıkıldığında anımsanır.</li>
           <li xml:lang="uk">Тепер стан видимості елементів керування запам’ятовується під час переходу в повноекранний режим і виходу з нього</li>
@@ -308,6 +324,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">En prémer la tecla de Supressió s'envia una imatge a la paperera, amb una opció visible per a desfer-ho</li>
           <li xml:lang="cs">Stisknutím klávesy Delete se obrázek odstraní do koše, přičemž je k dispozici viditelná možnost tuto akci vrátit zpět</li>
           <li xml:lang="pt-BR">Pressionar a tecla Delete envia uma imagem para a lixeira, com uma opção visível para desfazer a ação</li>
+          <li xml:lang="ru">Клавиша Delete перемещает изображение в корзину, а на экране появляется возможность отменить действие</li>
           <li xml:lang="sl">S pritiskom na tipko Delete sliko premaknete v smetnjak, pri čemer je na voljo vidna možnost razveljavitve tega dejanja</li>
           <li xml:lang="tr">Sil düğmesine basmak, görseli çöp kutusuna atar ve görünür bir geri alma seçeneği bulunur.</li>
           <li xml:lang="uk">Натискання клавіші Delete пересуває зображення у смітник, причому існує можливість скасувати цю дію</li>
@@ -317,6 +334,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Dreceres per a totes les accions a la vista d'edició</li>
           <li xml:lang="cs">Zkratky pro všechny akce v editačním zobrazení</li>
           <li xml:lang="pt-BR">Atalhos para todas as ações na visualização de edição</li>
+          <li xml:lang="ru">Комбинации клавиш для всех действий в режиме редактирования</li>
           <li xml:lang="sl">Bližnjice za vsa dejanja v pogledu urejanja</li>
           <li xml:lang="tr">Düzenleme kipindeki tüm eylemler için kısayollar</li>
           <li xml:lang="uk">Клавіатурні скорочення для всіх дій у режимі редагування</li>
@@ -326,6 +344,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Podeu accedir a la configuració des del menú de la pàgina de visualització</li>
           <li xml:lang="cs">Do nastavení se dostanete z nabídky na stránce prohlížeče</li>
           <li xml:lang="pt-BR">Você pode acessar as configurações a partir do menu na página de visualização</li>
+          <li xml:lang="ru">Доступ к параметрам из меню на странице просмотра</li>
           <li xml:lang="sl">Do nastavitev lahko dostopate prek menija na strani za ogled</li>
           <li xml:lang="tr">Düzenleyici sayfasındaki menüden ayarlara gidebilirsiniz.</li>
           <li xml:lang="uk">До параметрів роботи програми можна перейти за допомогою меню на сторінці перегляду</li>
@@ -335,6 +354,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Les imatges més xicotetes que l'àrea de visualització s'escalaran per a ajustar-les de manera predeterminada</li>
           <li xml:lang="cs">Obrázky menší než zobrazovací oblast se ve výchozím nastavení zvětší tak, aby se do ní vešly</li>
           <li xml:lang="pt-BR">Imagens menores que a viewport são, por padrão, redimensionadas para caber nela</li>
+          <li xml:lang="ru">Изображения меньше области просмотра по умолчанию увеличиваются до её размеров</li>
           <li xml:lang="sl">Slike, ki so manjše od vidnega polja, se privzeto povečajo, da se vanj prilegajo</li>
           <li xml:lang="tr">Görüş alanından daha küçük görseller, öntanımlı olarak görünüme göre ölçeklenirler.</li>
           <li xml:lang="uk">Зображення, менші за область перегляду, типово масштабуються так, щоб уміститися у  ній</li>
@@ -344,6 +364,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Podeu desplaçar-vos independentment per la tira de miniatures</li>
           <li xml:lang="cs">Pruh náhledů můžete posouvat samostatně</li>
           <li xml:lang="pt-BR">Você pode rolar a faixa de miniaturas de forma independente</li>
+          <li xml:lang="ru">Возможность независимо прокручивать полосу миниатюр</li>
           <li xml:lang="sl">Neodvisno lahko pomikate trak z sličicami</li>
           <li xml:lang="tr">Küçük görsel şeridinde bağımsız olarak sarma olanağı</li>
           <li xml:lang="uk">Ви можете незалежно гортати стрічку мініатюр</li>
@@ -353,6 +374,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Text més natural a la notificació de compartició</li>
           <li xml:lang="cs">Přirozenější text v oznámení o sdílení</li>
           <li xml:lang="pt-BR">Texto mais natural na notificação de compartilhamento</li>
+          <li xml:lang="ru">Более естественный текст уведомления об отправке</li>
           <li xml:lang="sl">Bolj naravno besedilo v obvestilu o deljenju</li>
           <li xml:lang="tr">Paylaşım bildiriminde daha doğal bir metin</li>
           <li xml:lang="uk">Більш природний текст у сповіщенні про надання доступу</li>
@@ -362,6 +384,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Menys línies separadores a les barres d'eines</li>
           <li xml:lang="cs">Méně oddělovacích čar v nástrojových lištách</li>
           <li xml:lang="pt-BR">Menos linhas separadoras nas barras de ferramentas</li>
+          <li xml:lang="ru">Меньше разделительных линий на панелях инструментов</li>
           <li xml:lang="sl">Manj ločilnih črt v orodnih vrsticah</li>
           <li xml:lang="tr">Araç çubuklarında daha az ayırıcı</li>
           <li xml:lang="uk">Менше ліній-роздільників на панелях інструментів</li>
@@ -372,6 +395,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <heading xml:lang="ca-valencia">Esmenes d'errors significatius</heading>
         <heading xml:lang="cs">Významné opravy chyb</heading>
         <heading xml:lang="pt-BR">Correções de bugs importantes</heading>
+        <heading xml:lang="ru">Значительные исправления ошибок</heading>
         <heading xml:lang="sl">Pomembni popravki napak</heading>
         <heading xml:lang="tr">Kayda değer hata düzeltmeleri</heading>
         <heading xml:lang="uk">Виправлення значних вад</heading>
@@ -382,6 +406,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Ja no es poden obrir múltiples vistes d'edició d'imatges superposades prement «Ctrl+E» repetidament</li>
           <li xml:lang="cs">Již není možné otevřít více překrývajících se oken pro úpravy obrázků opakovaným stisknutím kláves Ctrl+E</li>
           <li xml:lang="pt-BR">Não é mais possível abrir várias visualizações de edição de imagem sobrepostas pressionando Ctrl+E repetidamente</li>
+          <li xml:lang="ru">Повторное нажатие Ctrl+E больше не открывает несколько перекрывающихся окон редактирования изображения</li>
           <li xml:lang="sl">Z večkratnim pritiskanjem tipk Ctrl+E ni več mogoče odpreti več prekrivajočih se pogledov za urejanje slik</li>
           <li xml:lang="tr">Kontrol+E düğmesine ard arda basınca birden çok bindirmeli düzenleme pencereleri açılmaz.</li>
           <li xml:lang="uk">Більше не можна відкривати кілька перекритих вікон редагування зображень шляхом багаторазового натискання Ctrl+E</li>
@@ -391,6 +416,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Les miniatures s'actualitzen quan la imatge d'origen s'actualitza en un altre lloc</li>
           <li xml:lang="cs">Náhledy se aktualizují, jakmile jinde dojde k aktualizaci zdrojového obrázku</li>
           <li xml:lang="pt-BR">As miniaturas são atualizadas quando a imagem de origem é alterada em outro local</li>
+          <li xml:lang="ru">Миниатюры обновляются при изменении исходного изображения в другом месте</li>
           <li xml:lang="sl">Predogledne sličice se osvežijo, ko se izvorna slika posodobi drugje</li>
           <li xml:lang="tr">Kaynak görsel başka bir yerde güncellenmişse küçük görseller güncellenir.</li>
           <li xml:lang="uk">Мініатюри оновлюються, коли базове зображення змінюється в іншому місці</li>
@@ -400,6 +426,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">Ara funciona l'edició d'imatges amb claudàtors quadrats en els seus noms</li>
           <li xml:lang="cs">Úprava obrázků, jejichž názvy obsahují hranaté závorky, nyní funguje</li>
           <li xml:lang="pt-BR">Agora é possível editar imagens que contenham colchetes em seus nomes</li>
+          <li xml:lang="ru">Исправлено редактирование изображений с квадратными скобками в именах</li>
           <li xml:lang="sl">Urejanje slik, ki imajo v imenih oglate oklepaje, zdaj deluje</li>
           <li xml:lang="tr">Adlarında köşeli ayraç içeren görseller artık düzenlenebiliyor.</li>
           <li xml:lang="uk">У новій версії працює редагування зображень, у назвах яких є квадратні дужки</li>
@@ -409,6 +436,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ca-valencia">L'escapçat ara és accessible en el mòbil i amb mides xicotetes de finestra</li>
           <li xml:lang="cs">Funkce oříznutí je nyní dostupná na mobilních zařízeních i při malých rozměrech okna</li>
           <li xml:lang="pt-BR">O recorte agora está disponível em dispositivos móveis e com janelas de tamanho reduzido</li>
+          <li xml:lang="ru">Кадрирование теперь доступно на мобильных устройствах и при небольших размерах окна</li>
           <li xml:lang="sl">Obrezovanje je zdaj dostopno na mobilnih napravah in z majhnimi okni</li>
           <li xml:lang="tr">Kırpma eylemi artık taşınabilir aygıtlarda ve küçük pencere boyutlarında erişilebilir.</li>
           <li xml:lang="uk">Обрізання тепер доступне на мобільних пристроях і за невеликим розміром вікна</li>
