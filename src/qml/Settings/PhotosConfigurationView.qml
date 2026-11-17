@@ -13,16 +13,16 @@ KirigamiSettings.SettingsViewController {
     modules: [
         KirigamiSettings.SettingsModule {
             moduleId: "general"
-            text: i18nc("@action:button", "General")
+            name: i18nc("@action:button", "General")
             icon.name: "photo-symbolic"
-            page: () => Qt.createComponent("org.kde.koko", "GeneralConfigPage")
+            page: Koko.GeneralConfigPage {}
         },
         KirigamiSettings.ShortcutsSettingsModule {
             allowModifierlessShortcuts: true
         },
         KirigamiSettings.SettingsModule {
             moduleId: "about"
-            text: i18n("About Photos")
+            name: i18n("About Photos")
             icon.name: "help-about-symbolic"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutPage")
             category: i18nc("@title:group", "About")
@@ -30,7 +30,7 @@ KirigamiSettings.SettingsViewController {
         },
         KirigamiSettings.SettingsModule {
             moduleId: "aboutkde"
-            text: i18n("About KDE")
+            name: i18n("About KDE")
             icon.name: "kde-symbolic"
             page: () => Qt.createComponent("org.kde.kirigamiaddons.formcard", "AboutKDEPage")
             category: i18nc("@title:group", "About")
