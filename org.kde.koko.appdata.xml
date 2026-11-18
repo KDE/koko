@@ -154,40 +154,191 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
     <release version="26.12.0" date="2026-12-10">
       <description>
         <heading>New features</heading>
+        <heading xml:lang="ca">Característiques noves</heading>
+        <heading xml:lang="ca-valencia">Característiques noves</heading>
+        <heading xml:lang="es">Nuevas funcionalidades</heading>
+        <heading xml:lang="nl">Nieuwe mogelijkheden</heading>
+        <heading xml:lang="pt-BR">Novas funcionalidades</heading>
+        <heading xml:lang="uk">Нові можливості</heading>
         <ul>
           <li>"All Photos" view</li>
+          <li xml:lang="ca">Vista «Totes les fotos»</li>
+          <li xml:lang="ca-valencia">Vista «Totes les fotos»</li>
+          <li xml:lang="es">Vista «Todas las fotos»</li>
+          <li xml:lang="nl">Weergave "Alle foto's"</li>
+          <li xml:lang="pt-BR">Visualização "Todas as fotos"</li>
+          <li xml:lang="uk">Режим перегляду «Усі фотографії»</li>
           <li>Rename items</li>
+          <li xml:lang="ca">Canvia el nom dels elements</li>
+          <li xml:lang="ca-valencia">Canvia el nom dels elements</li>
+          <li xml:lang="es">Cambio de nombre de elementos</li>
+          <li xml:lang="nl">Items hernoemen</li>
+          <li xml:lang="pt-BR">Renomear itens</li>
+          <li xml:lang="uk">Перейменування об'єктів</li>
           <li>Show standard "properties" window</li>
+          <li xml:lang="ca">Mostra la finestra estàndard de «propietats»</li>
+          <li xml:lang="ca-valencia">Mostra la finestra estàndard de «propietats»</li>
+          <li xml:lang="es">Mostrar la ventana de «propiedades» estándar</li>
+          <li xml:lang="nl">Standaard venster Eigenschappen tonen</li>
+          <li xml:lang="pt-BR">Exibir a janela padrão de “propriedades”</li>
+          <li xml:lang="uk">Показ стандартного вікна «Властивості»</li>
           <li>Cut &amp; paste items</li>
+          <li xml:lang="ca">Retalla i enganxa elements</li>
+          <li xml:lang="ca-valencia">Retalla i apega elements</li>
+          <li xml:lang="es">Cortar y pegar elementos</li>
+          <li xml:lang="nl">Items voor knippen &amp; plakken</li>
+          <li xml:lang="pt-BR">Recortar e colar itens</li>
+          <li xml:lang="uk">Вирізання і вставлення об'єктів</li>
           <li>"Fit" and "Fill" zoom modes</li>
+          <li xml:lang="ca">Modes de zoom «Ajusta» i «Omple»</li>
+          <li xml:lang="ca-valencia">Modes de zoom «Ajusta» i «Òmpliga»</li>
+          <li xml:lang="es">Modos de ampliación «Ajustar» y «Rellenar»</li>
+          <li xml:lang="pt-BR">Modos de zoom “Ajustar” e “Preencher”</li>
+          <li xml:lang="uk">Режими масштабування «Підбір» і «Заповнення»</li>
           <li>Drag-and-drop</li>
+          <li xml:lang="ca">Arrossega i deixa anar</li>
+          <li xml:lang="ca-valencia">Arrossega i deixa anar</li>
+          <li xml:lang="es">Arrastrar y soltar</li>
+          <li xml:lang="nl">Slepen-en-loslaten</li>
+          <li xml:lang="pt-BR">Arrastar e soltar</li>
+          <li xml:lang="uk">Перетягування зі скиданням</li>
           <li>Adjustable brightness, contrast, and gamma for images</li>
+          <li xml:lang="ca">Lluminositat, contrast i gamma ajustable de les imatges</li>
+          <li xml:lang="ca-valencia">Brillantor, contrast i gamma ajustable de les imatges</li>
+          <li xml:lang="es">Brillo, contraste y gamma ajustables para las imágenes</li>
+          <li xml:lang="pt-BR">Brilho, contraste e gama ajustáveis ​​para imagens</li>
+          <li xml:lang="uk">Коригування яскравості, контрастності та гамми зображень</li>
           <li>Option for a neutral gray background</li>
+          <li xml:lang="ca">Opció per a un fons gris neutre</li>
+          <li xml:lang="ca-valencia">Opció per a un fons gris neutre</li>
+          <li xml:lang="es">Opción para un fondo gris neutro</li>
+          <li xml:lang="pt-BR">Opção de fundo cinza neutro</li>
+          <li xml:lang="uk">Можливість використання нейтрального сірого тла</li>
           <li>Option for an app-specific color scheme</li>
+          <li xml:lang="ca">Opció per a un esquema de color específic de l'aplicació</li>
+          <li xml:lang="ca-valencia">Opció per a un esquema de color específic de l'aplicació</li>
+          <li xml:lang="es">Opción para un esquema de color específico de una aplicación</li>
+          <li xml:lang="nl">Optie voor een toepassingsspecifiek kleurenschema</li>
+          <li xml:lang="pt-BR">Opção de um esquema de cores específico para o aplicativo</li>
+          <li xml:lang="uk">Можливість використання специфічної для програми схеми кольорів</li>
           <li>Open more than one instance of the app</li>
+          <li xml:lang="ca">Obre més d'una instància de l'aplicació</li>
+          <li xml:lang="ca-valencia">Obri més d'una instància de l'aplicació</li>
+          <li xml:lang="es">Abrir más de una instancia de la aplicación</li>
+          <li xml:lang="nl">Open meer dan één exemplaar van de toepassing</li>
+          <li xml:lang="pt-BR">Abrir mais de uma instância do aplicativo</li>
+          <li xml:lang="uk">Можливість відкривати декілька екземплярів програми одночасно</li>
         </ul>
         <heading>Significant UI improvements</heading>
+        <heading xml:lang="ca">Millores significatives en la interfície d'usuari</heading>
+        <heading xml:lang="ca-valencia">Millores significatives en la interfície d'usuari</heading>
+        <heading xml:lang="es">Mejoras significativas de la interfaz de usuario</heading>
+        <heading xml:lang="nl">Significante verbeteringen aan het gebruikersinterface</heading>
+        <heading xml:lang="pt-BR">Melhorias significativas na interface do usuário</heading>
+        <heading xml:lang="uk">Значні удосконалення у інтерфейсі користувача</heading>
         <ul>
           <li>Pressing space plays and pauses videos</li>
+          <li xml:lang="ca">Prement l'espai es reprodueixen i fa pausa de vídeos</li>
+          <li xml:lang="ca-valencia">Prement l'espai es reproduïxen i fa pausa de vídeos</li>
+          <li xml:lang="es">Al pulsar Espacio se reproduce o se pausa el vídeo</li>
+          <li xml:lang="nl">Door op de spatiebalk te drukken, kunt u video's afspelen en pauzeren.</li>
+          <li xml:lang="pt-BR">Pressionar a barra de espaço reproduz e pausa vídeos</li>
+          <li xml:lang="uk">Натискання пробілу призводитиме до запуску відтворення і призупинення відтворення відео</li>
           <li>Pressing Esc exits from the editing view</li>
+          <li xml:lang="ca">En prémer Esc surt de la vista d'edició</li>
+          <li xml:lang="ca-valencia">En prémer «Esc» ix de la vista d'edició</li>
+          <li xml:lang="es">Al pulsar Esc se sale de la ventana de edición</li>
+          <li xml:lang="nl">Door op Esc te drukken verlaat u de bewerkingsweergave</li>
+          <li xml:lang="pt-BR">Pressionar Esc sai da visualização de edição</li>
+          <li xml:lang="uk">Натискання Esc призводить до виходу з режиму редагування</li>
           <li>Pressing F11 and Ctrl+Shift+F also enter and exit full screen mode, in addition to the
             existing F key binding</li>
+          <li xml:lang="ca">Prement F11 i Ctrl+Maj+F també entra i surt del mode de pantalla completa, a més de la vinculació de la tecla F existent</li>
+          <li xml:lang="ca-valencia">Prement «F11» i «Ctrl+Majús+F» també entra i ix del mode de pantalla completa, a més de la vinculació de la tecla F existent</li>
+          <li xml:lang="es">Al pulsar F11 y Ctrl+Mayús+F también se entra y sale del modo a pantalla completa, además de con la asignación de la tecla F existente.</li>
+          <li xml:lang="pt-BR">Pressionar F11 e Ctrl+Shift+F também permite entrar e sair do modo de tela cheia, além do atalho de tecla F já existente</li>
+          <li xml:lang="uk">Натискання F11 і Ctrl+Shift+F запускає і завершує роботу повноекранного режиму, на додачу до наявної клавіатурної прив'язки до клавіші F</li>
           <li>The previous visibility state of the controls is now remembered when entering and exiting
             full screen</li>
+          <li xml:lang="ca">L'estat de visibilitat anterior dels controls es recorda ara en entrar i sortir de la pantalla completa</li>
+          <li xml:lang="ca-valencia">L'estat de visibilitat anterior dels controls es recorda ara en entrar i eixir de la pantalla completa</li>
+          <li xml:lang="es">El estado anterior de visibilidad de los controles se recuerda ahora cuando se entra y sale de pantalla completa.</li>
+          <li xml:lang="pt-BR">O estado de visibilidade anterior dos controles agora é lembrado ao entrar e sair do modo de tela cheia</li>
+          <li xml:lang="uk">Тепер стан видимості елементів керування запам’ятовується під час переходу в повноекранний режим і виходу з нього</li>
           <li>Pressing the Delete key trashes an image, with a visible option to undo it</li>
+          <li xml:lang="ca">En prémer la tecla de Supressió s'envia una imatge a la paperera, amb una opció visible per a desfer-ho</li>
+          <li xml:lang="ca-valencia">En prémer la tecla de Supressió s'envia una imatge a la paperera, amb una opció visible per a desfer-ho</li>
+          <li xml:lang="es">Al pulsar la tecla Supr se envía una imagen a la papelera, con un opción visible para deshacerlo.</li>
+          <li xml:lang="pt-BR">Pressionar a tecla Delete envia uma imagem para a lixeira, com uma opção visível para desfazer a ação</li>
+          <li xml:lang="uk">Натискання клавіші Delete пересуває зображення у смітник, причому існує можливість скасувати цю дію</li>
           <li>Shortcuts for all actions in the editing view</li>
+          <li xml:lang="ca">Dreceres per a totes les accions a la vista d'edició</li>
+          <li xml:lang="ca-valencia">Dreceres per a totes les accions a la vista d'edició</li>
+          <li xml:lang="es">Atajos de teclado para todas las acciones en la vista de edición.</li>
+          <li xml:lang="pt-BR">Atalhos para todas as ações na visualização de edição</li>
+          <li xml:lang="uk">Клавіатурні скорочення для всіх дій у режимі редагування</li>
           <li>You can get to the settings from the menu on the viewer page</li>
+          <li xml:lang="ca">Podeu accedir a la configuració des del menú de la pàgina de visualització</li>
+          <li xml:lang="ca-valencia">Podeu accedir a la configuració des del menú de la pàgina de visualització</li>
+          <li xml:lang="es">Se puede acceder a la configuración desde el menú de la página del visor.</li>
+          <li xml:lang="pt-BR">Você pode acessar as configurações a partir do menu na página de visualização</li>
+          <li xml:lang="uk">До параметрів роботи програми можна перейти за допомогою меню на сторінці перегляду</li>
           <li>Images smaller than the viewport are scaled up fit within it by default</li>
+          <li xml:lang="ca">Les imatges més petites que l'àrea de visualització s'escalaran per ajustar-les de manera predeterminada</li>
+          <li xml:lang="ca-valencia">Les imatges més xicotetes que l'àrea de visualització s'escalaran per a ajustar-les de manera predeterminada</li>
+          <li xml:lang="es">De forma predeterminada, las imágenes más pequeñas que el área de visualización se amplían para ajustarse a ella.</li>
+          <li xml:lang="pt-BR">Imagens menores que a viewport são, por padrão, redimensionadas para caber nela</li>
+          <li xml:lang="uk">Зображення, менші за область перегляду, типово масштабуються так, щоб уміститися у  ній</li>
           <li>You can independently scroll the thumbnail strip</li>
+          <li xml:lang="ca">Podeu desplaçar-vos independentment per la tira de miniatures</li>
+          <li xml:lang="ca-valencia">Podeu desplaçar-vos independentment per la tira de miniatures</li>
+          <li xml:lang="es">Se puedes desplazar la franja de miniaturas de forma independiente.</li>
+          <li xml:lang="pt-BR">Você pode rolar a faixa de miniaturas de forma independente</li>
+          <li xml:lang="uk">Ви можете незалежно гортати стрічку мініатюр</li>
           <li>More natural text in the sharing notification</li>
+          <li xml:lang="ca">Text més natural a la notificació de compartició</li>
+          <li xml:lang="ca-valencia">Text més natural a la notificació de compartició</li>
+          <li xml:lang="es">Texto más natural en la notificación de compartición.</li>
+          <li xml:lang="pt-BR">Texto mais natural na notificação de compartilhamento</li>
+          <li xml:lang="uk">Більш природний текст у сповіщенні про надання доступу</li>
           <li>Fewer separator lines in toolbars</li>
+          <li xml:lang="ca">Menys línies separadores a les barres d'eines</li>
+          <li xml:lang="ca-valencia">Menys línies separadores a les barres d'eines</li>
+          <li xml:lang="es">Menos líneas de separadores en las barras de herramientas.</li>
+          <li xml:lang="pt-BR">Menos linhas separadoras nas barras de ferramentas</li>
+          <li xml:lang="uk">Менше ліній-роздільників на панелях інструментів</li>
         </ul>
         <heading>Significant bug fixes</heading>
+        <heading xml:lang="ca">Correccions d'errors significatius</heading>
+        <heading xml:lang="ca-valencia">Esmenes d'errors significatius</heading>
+        <heading xml:lang="es">Corrección de errores significativos</heading>
+        <heading xml:lang="pt-BR">Correções de bugs importantes</heading>
+        <heading xml:lang="uk">Виправлення значних вад</heading>
         <ul>
           <li>Can no longer open multiple overlapping image editing views by pressing Ctrl+E repeatedly</li>
+          <li xml:lang="ca">Ja no es poden obrir múltiples vistes d'edició d'imatges superposades prement Ctrl+E repetidament</li>
+          <li xml:lang="ca-valencia">Ja no es poden obrir múltiples vistes d'edició d'imatges superposades prement «Ctrl+E» repetidament</li>
+          <li xml:lang="es">Ya no se pueden abrir varias vistas de edición de imágenes superpuestas pulsando repetidamente Ctrl+E.</li>
+          <li xml:lang="pt-BR">Não é mais possível abrir várias visualizações de edição de imagem sobrepostas pressionando Ctrl+E repetidamente</li>
+          <li xml:lang="uk">Більше не можна відкривати кілька перекритих вікон редагування зображень шляхом багаторазового натискання Ctrl+E</li>
           <li>Thumbnails refresh when the source image is updated elsewhere</li>
+          <li xml:lang="ca">Les miniatures s'actualitzen quan la imatge d'origen s'actualitza en un altre lloc</li>
+          <li xml:lang="ca-valencia">Les miniatures s'actualitzen quan la imatge d'origen s'actualitza en un altre lloc</li>
+          <li xml:lang="es">Las miniaturas se actualizan cuando la imagen fuente se modifica en algún lugar.</li>
+          <li xml:lang="pt-BR">As miniaturas são atualizadas quando a imagem de origem é alterada em outro local</li>
+          <li xml:lang="uk">Мініатюри оновлюються, коли базове зображення змінюється в іншому місці</li>
           <li>Editing images with square brackets in their names now works</li>
+          <li xml:lang="ca">Ara funciona l'edició d'imatges amb claudàtors quadrats en els seus noms</li>
+          <li xml:lang="ca-valencia">Ara funciona l'edició d'imatges amb claudàtors quadrats en els seus noms</li>
+          <li xml:lang="es">Ya funciona la edición de imágenes que incluyen corchetes en sus nombres.</li>
+          <li xml:lang="pt-BR">Agora é possível editar imagens que contenham colchetes em seus nomes</li>
+          <li xml:lang="uk">У новій версії працює редагування зображень, у назвах яких є квадратні дужки</li>
           <li>Cropping is now accessible on mobile and with small window sizes</li>
+          <li xml:lang="ca">L'escapçat ara és accessible en el mòbil i amb mides petites de finestra</li>
+          <li xml:lang="ca-valencia">L'escapçat ara és accessible en el mòbil i amb mides xicotetes de finestra</li>
+          <li xml:lang="es">El recorte ya está disponible en dispositivos móviles y con tamaños de ventana reducidos.</li>
+          <li xml:lang="pt-BR">O recorte agora está disponível em dispositivos móveis e com janelas de tamanho reduzido</li>
+          <li xml:lang="uk">Обрізання тепер доступне на мобільних пристроях і за невеликим розміром вікна</li>
         </ul>
       </description>
     </release>
