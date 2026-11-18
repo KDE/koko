@@ -38,6 +38,22 @@ Kirigami.OverlayDrawer {
     topPadding: 0
     bottomPadding: 0
 
+    interactiveResizeEnabled: true
+
+    collapsed: Koko.State.drawerCollapsed
+    collapsible: true
+    collapsedSize: sidebarNavigationEntries.implicitWidth + (collapsed && scrollView.QQC2.ScrollBar.vertical.visible ? scrollView.QQC2.ScrollBar.vertical.width : 0)
+
+    onCollapsedChanged: {
+        Koko.State.drawerCollapsed = collapsed;
+        Koko.State.save();
+    }
+
+    onPreferredSizeChanged: {
+        Koko.State.drawerSize = preferredSize;
+        Koko.State.save();
+    }
+
     // This makes the sidebar header separator look like a discrete item
     readonly property alias header: sidebarHeader
 
@@ -65,6 +81,7 @@ Kirigami.OverlayDrawer {
                     maximumLineCount: 1
                     elide: Text.ElideRight
                     textFormat: Text.PlainText
+                    visible: !root.collapsed
                 }
 
                 QQC2.ToolButton {
@@ -78,6 +95,7 @@ Kirigami.OverlayDrawer {
 
                     onPressed: mainMenu.open()
                     down: pressed || mainMenu.visible
+                    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
                     QQC2.Menu {
                         id: mainMenu
@@ -126,8 +144,6 @@ Kirigami.OverlayDrawer {
             property var previouslySelectedAction
 
             contentWidth: -1
-            implicitWidth: root.sidebarWidth
-
             Layout.fillHeight: true
             Layout.fillWidth: true
 
@@ -137,6 +153,11 @@ Kirigami.OverlayDrawer {
 
             component PlaceHeading : Kirigami.ListSectionHeader {
                 Layout.fillWidth: true
+                opacity: !root.collapsed ? 1 : 0
+                visible: opacity > 0
+                Behavior on opacity {
+                    NumberAnimation { duration: Kirigami.Units.longDuration }
+                }
             }
 
             component PlaceItem : QQC2.ItemDelegate {
@@ -240,7 +261,11 @@ Kirigami.OverlayDrawer {
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
                 PlaceHeading {
-                    visible: savedFoldersRepeater.count > 0
+                    opacity: !root.collapsed ? 1 : 0
+                    visible: savedFoldersRepeater.count > 0 && opacity > 0
+                    Behavior on opacity {
+                        NumberAnimation { duration: Kirigami.Units.longDuration }
+                    }
                     text: i18nc("@title:group", "Bookmarks")
                 }
                 Repeater {
@@ -293,9 +318,20 @@ Kirigami.OverlayDrawer {
                     actionName: "place_days"
                     action.enabled: root.mainWindow.pageStack.layers.depth === 1
                 }
+                PlaceItem {
+                    id: sidebarNavigationEntries
+                    text: ""
+                    actionName: "place_days"
+                    action.enabled: root.mainWindow.pageStack.layers.depth === 1
+                    visible: false
+                }
                 PlaceHeading {
                     text: i18n("Tags")
-                    visible: tagRepeater.count > 0
+                    opacity: !root.collapsed ? 1 : 0
+                    visible: tagRepeater.count > 0 && opacity > 0
+                    Behavior on opacity {
+                        NumberAnimation { duration: Kirigami.Units.longDuration }
+                    }
                 }
                 Repeater {
                     id: tagRepeater
@@ -309,5 +345,28 @@ Kirigami.OverlayDrawer {
                 }
             }
         }
+        QQC2.ToolBar {
+            position: QQC2.ToolBar.Footer
+            Layout.fillWidth: true
+            visible: !root.modal
+
+            QQC2.ToolButton {
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+
+                icon.name: root.collapsed ? "sidebar-expand" : "sidebar-collapse"
+                text: root.collapsed ? "" : i18nc("@info: button's text", "Hide sidebar")
+
+                QQC2.ToolTip.text: root.collapsed ? i18nc("@info: tooltip", "Show sidebar") : i18nc("@info: tooltip", "Hide sidebar")
+                QQC2.ToolTip.visible: hovered || activeFocus
+                QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+
+                onPressed: root.collapsed = !root.collapsed
+            }
+        }
+    }
+    Component.onCompleted: {
+        root.preferredSize = Koko.State.drawerSize;
     }
 }

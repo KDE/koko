@@ -22,7 +22,7 @@ Kirigami.ApplicationWindow {
 
     readonly property int sidebarWidth: Kirigami.Units.gridUnit * 14
 
-   property QtObject navigationActions: Koko.NavigationActions {}
+    property QtObject navigationActions: Koko.NavigationActions {}
 
     readonly property QtObject configurationView: Koko.PhotosConfigurationView {
         window: root
