@@ -33,7 +33,10 @@ BaseImageDelegate {
         fillMode: Image.PreserveAspectFit
 
         // Only stop being smooth at >= 400% (matches Gwenview)
-        smooth: root.zoomFactor < 4
+        // NOTE: Image documentation for `smooth` says that "If the image is displayed at its
+        // natural size, this property has no visual or performance effect."
+        // This is demonstrably untrue in Qt 6.12, where the image gets blurry at 100% anyway.
+        smooth: root.zoomFactor < 4 && Math.abs(root.zoomFactor - 1) > 0.000001
         // NOTE: mipmap has no effect at >= 100%, but should stay enabled as changes cause the
         // image to reload, showing a black frame unless retainWhileLoading is true, but reloading
         // the image is undesirable and it also causes noisy warning output: "Mipmap settings
