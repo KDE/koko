@@ -139,7 +139,7 @@ bool GallerySortFilterProxyModel::lessThan(const QModelIndex &source_left, const
     if (sort_role == AbstractGalleryModel::ImageRoles::NameRole || sort_role == Qt::DisplayRole) {
         const int result = stringCompare(source_left.data(sort_role).toString(), source_right.data(sort_role).toString(), m_collator);
         if (result != 0) {
-            return (sortOrder() == Qt::AscendingOrder) ? result < 0 : result > 0;
+            return result < 0;
         }
     }
 
