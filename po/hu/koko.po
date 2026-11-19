@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-07 00:55+0000\n"
+"POT-Creation-Date: 2026-11-19 01:04+0000\n"
 "PO-Revision-Date: 2025-02-01 22:15+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -860,7 +860,7 @@ msgstr "Államok"
 msgid "Cities"
 msgstr "Városok"
 
-#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:93 qml/Sidebar.qml:256
+#: models/gallerylocationmodel.cpp:74 qml/PlacesPage.qml:93 qml/Sidebar.qml:281
 #, kde-format
 msgid "Locations"
 msgstr "Helyek"
@@ -872,7 +872,7 @@ msgctxt "@title"
 msgid "Selected Files"
 msgstr "Összes kijelölése"
 
-#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:155 qml/Sidebar.qml:297
+#: models/gallerytagsmodel.cpp:37 qml/PlacesPage.qml:155 qml/Sidebar.qml:329
 #, kde-format
 msgid "Tags"
 msgstr "Címkék"
@@ -1230,28 +1230,28 @@ msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
 msgstr ""
 
-#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:27 qml/Sidebar.qml:207
+#: qml/BottomNavBar.qml:50 qml/PlacesPage.qml:27 qml/Sidebar.qml:228
 #, fuzzy, kde-format
 #| msgid "Pictures"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Pictures"
 msgstr "Képek"
 
-#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:35 qml/Sidebar.qml:212
+#: qml/BottomNavBar.qml:57 qml/PlacesPage.qml:35 qml/Sidebar.qml:233
 #, fuzzy, kde-format
 #| msgid "Videos"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Videos"
 msgstr "Videók"
 
-#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:44 qml/Sidebar.qml:233
+#: qml/BottomNavBar.qml:65 qml/PlacesPage.qml:44 qml/Sidebar.qml:254
 #, fuzzy, kde-format
 #| msgid "Favorites"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Favorites"
 msgstr "Kedvencek"
 
-#: qml/BottomNavBar.qml:71 qml/Sidebar.qml:64
+#: qml/BottomNavBar.qml:71 qml/Sidebar.qml:80
 #, kde-format
 msgid "Places"
 msgstr "Helyek"
@@ -1849,75 +1849,75 @@ msgstr "1 másodperc"
 msgid "Add new tag…"
 msgstr "Új címke hozzáadása…"
 
-#: qml/PlacesPage.qml:53 qml/Sidebar.qml:225
+#: qml/PlacesPage.qml:53 qml/Sidebar.qml:246
 #, fuzzy, kde-format
 #| msgid "Trash"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Trash"
 msgstr "Kuka"
 
-#: qml/PlacesPage.qml:61 qml/Sidebar.qml:219
+#: qml/PlacesPage.qml:61 qml/Sidebar.qml:240
 #, fuzzy, kde-format
 #| msgid "Network"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Network"
 msgstr "Hálózat"
 
-#: qml/PlacesPage.qml:70 qml/Sidebar.qml:244
+#: qml/PlacesPage.qml:70 qml/Sidebar.qml:269
 #, fuzzy, kde-format
 #| msgid "Remove Bookmark"
 msgctxt "@title:group"
 msgid "Bookmarks"
 msgstr "Könyvjelző eltávolítása"
 
-#: qml/PlacesPage.qml:98 qml/Sidebar.qml:259
+#: qml/PlacesPage.qml:98 qml/Sidebar.qml:284
 #, fuzzy, kde-format
 #| msgid "Countries"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Countries"
 msgstr "Országok"
 
-#: qml/PlacesPage.qml:105 qml/Sidebar.qml:264
+#: qml/PlacesPage.qml:105 qml/Sidebar.qml:289
 #, fuzzy, kde-format
 #| msgid "States"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "States"
 msgstr "Államok"
 
-#: qml/PlacesPage.qml:112 qml/Sidebar.qml:269
+#: qml/PlacesPage.qml:112 qml/Sidebar.qml:294
 #, fuzzy, kde-format
 #| msgid "Cities"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Cities"
 msgstr "Városok"
 
-#: qml/PlacesPage.qml:120 qml/Sidebar.qml:274
+#: qml/PlacesPage.qml:120 qml/Sidebar.qml:299
 #, kde-format
 msgid "Time"
 msgstr "Idő"
 
-#: qml/PlacesPage.qml:125 qml/Sidebar.qml:277
+#: qml/PlacesPage.qml:125 qml/Sidebar.qml:302
 #, fuzzy, kde-format
 #| msgid "Years"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Years"
 msgstr "Év"
 
-#: qml/PlacesPage.qml:132 qml/Sidebar.qml:282
+#: qml/PlacesPage.qml:132 qml/Sidebar.qml:307
 #, fuzzy, kde-format
 #| msgid "Months"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Months"
 msgstr "Hónap"
 
-#: qml/PlacesPage.qml:139 qml/Sidebar.qml:287
+#: qml/PlacesPage.qml:139 qml/Sidebar.qml:312
 #, fuzzy, kde-format
 #| msgid "Weeks"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "Weeks"
 msgstr "Hét"
 
-#: qml/PlacesPage.qml:146 qml/Sidebar.qml:292
+#: qml/PlacesPage.qml:146 qml/Sidebar.qml:317
 #, fuzzy, kde-format
 #| msgid "Days"
 msgctxt "@action:button Navigation entry in sidebar"
@@ -2095,29 +2095,47 @@ msgctxt "@action Share an image/video"
 msgid "&Share"
 msgstr "Megosztás"
 
-#: qml/Sidebar.qml:75
+#: qml/Sidebar.qml:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show menu"
 msgstr ""
 
-#: qml/Sidebar.qml:204
+#: qml/Sidebar.qml:225
 #, kde-format
 msgid "Folders"
 msgstr "Mappák"
 
-#: qml/Sidebar.qml:230
+#: qml/Sidebar.qml:251
 #, fuzzy, kde-format
 #| msgid "Locations"
 msgid "Collections"
 msgstr "Helyek"
 
-#: qml/Sidebar.qml:238
+#: qml/Sidebar.qml:259
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action:button Navigation entry in sidebar"
 msgid "All media"
 msgstr "Összes kijelölése"
+
+#: qml/Sidebar.qml:359
+#, kde-format
+msgctxt "@info: button's text"
+msgid "Hide sidebar"
+msgstr ""
+
+#: qml/Sidebar.qml:361
+#, kde-format
+msgctxt "@info: tooltip"
+msgid "Show sidebar"
+msgstr ""
+
+#: qml/Sidebar.qml:361
+#, kde-format
+msgctxt "@info: tooltip"
+msgid "Hide sidebar"
+msgstr ""
 
 #, fuzzy
 #~| msgid "Settings"
