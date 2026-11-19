@@ -69,6 +69,14 @@ SPDX-License-Identifier: LGPL-2.1-or-later
             </choices>
             <default>ImagesAndVideos</default>
         </entry>
+        <entry name="ShowFileNames" type="Bool">
+            <label>Whether to show file names in the gallery view</label>
+            <default>true</default>
+        </entry>
+        <entry name="ShowFileNamesMobile" type="Bool">
+            <label>Whether to show file names in the gallery view on mobile</label>
+            <default>false</default>
+        </entry>
     </group>
     <group name="Slideshow">
         <entry name="NextImageInterval" type="Int">

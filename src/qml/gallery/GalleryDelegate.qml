@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: (C) 2017 Atul Sharma <atulsharma406@gmail.com>
+ * SPDX-FileCopyrightText: 2026 Gustavo Kazuhiko Rodrigues Mitamura <gustavokrm@gmail.com>
  *
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
@@ -13,7 +14,7 @@ import org.kde.kquickcontrolsaddons
 import org.kde.koko as Koko
 import org.kde.photos.thumbnails as KokoThumbnails
 
-Controls.ItemDelegate {
+Kirigami.AbstractCard {
     id: root
 
     required property int index
@@ -27,6 +28,8 @@ Controls.ItemDelegate {
     required property bool isCut
 
     required property bool selectionMode
+    required property bool fileNamesEnabled
+    required property FontMetrics fontMetrics
 
     property alias thumbnailPriority: image.priority
 
@@ -40,32 +43,33 @@ Controls.ItemDelegate {
     topInset: Kirigami.Units.smallSpacing
     bottomInset: Kirigami.Units.smallSpacing
 
-    readonly property color stateIndicatorColor: if (root.activeFocus || root.hovered || root.selected) {
-        return Kirigami.Theme.highlightColor;
+    readonly property bool showFileNames: root.fileNamesEnabled ? enabled : root.itemType === Koko.AbstractGalleryModel.Folder || root.itemType === Koko.AbstractGalleryModel.Collection
+
+    readonly property int thumbSize: if (countLabel.visible && (root.itemType === Koko.AbstractGalleryModel.Collection && !root.fileNamesEnabled)) {
+        return Koko.Config.iconSize - fontMetrics.height * 3;
+    } else if (countLabel.visible) {
+        return Koko.Config.iconSize - fontMetrics.height;
     } else {
-        return "transparent";
+        return Koko.Config.iconSize;
     }
 
-    readonly property real stateIndicatorOpacity: if (root.activeFocus || root.hovered || root.down) {
-        return root.selected || root.down ? 1 : 0.3;
-    } else if (root.selected) {
-        return 0.7
-    } else {
-        return 0;
-    }
+    readonly property int fileNamesHeight: countLabel.visible ? fontMetrics.height * 3 : fontMetrics.height * 2
 
     width: gridView.cellWidth
     height: gridView.cellHeight
+    showClickFeedback: true
+    hoverEnabled: true
 
     Controls.ToolTip.text: name
-    Controls.ToolTip.visible: hovered && name.length !== 0 && (itemType === Koko.AbstractGalleryModel.Media || textLabel.truncated)
+    Controls.ToolTip.visible: hovered && name.length !== 0 && ((itemType === Koko.AbstractGalleryModel.Media || itemType === Koko.AbstractGalleryModel.Folder) && textLabel.truncated) || !root.showFileNames
     Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
 
-    contentItem: Item {
+    header: Item {
+        implicitHeight: root.thumbSize - Kirigami.Units.smallSpacing
+        clip: true
 
         Kirigami.Icon {
             id: placeholderImage
-
             anchors.centerIn: parent
             source: "chronometer-symbolic"
             width: Kirigami.Units.iconSizes.large
@@ -80,86 +84,53 @@ Controls.ItemDelegate {
             width: Koko.Config.iconSize
             height: width
 
-            transform: Scale {
-                origin.x: image.width / 2
-                origin.y: image.height / 2
-                xScale: root.selectionMode ? 0.8 : 1
-                yScale: root.selectionMode ? 0.8 : 1
-
-                Behavior on xScale {
-                    NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
-                }
-
-                Behavior on yScale {
-                    NumberAnimation { duration: Kirigami.Units.shortDuration; easing.type: Easing.InOutQuad }
-                }
-            }
-
             opacity: root.isCut ? 0.6 : 1
 
             fileItem: root.fileItem
         }
+    }
 
-        Rectangle {
-            anchors {
-                top: image.top
-                left: image.left
-                right: image.right
+    footer: Column {
+        id: footer
+        z: 2        
+
+        height: root.fileNamesHeight
+
+        Item {
+            width: parent.width
+            implicitHeight: textLabel.visible ? textLabel.contentHeight : 0
+            visible: true
+
+            Rectangle {
+                anchors {
+                    left: textLabel.left
+                    right: textLabel.right
+                }
+                visible: !root.fileNamesEnabled && (root.itemType === Koko.AbstractGalleryModel.Folder) || Kirigami.Settings.isMobile && root.selected
+                height: textLabel.contentHeight + Kirigami.Units.smallSpacing
+                color: Kirigami.Theme.backgroundColor
+                opacity: 0.8
             }
-            visible: textLabel.visible
-            width: image.width
-            height: textLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            color: Kirigami.Theme.backgroundColor
-            opacity: 0.8
+
+            Controls.Label {
+                id: textLabel
+                width: parent.width
+                text: root.name
+                elide: Text.ElideRight
+                wrapMode: Text.Wrap
+                visible: root.showFileNames || Kirigami.Settings.isMobile && root.selected
+                maximumLineCount: 2
+                verticalAlignment: Text.AlignTop
+            }
         }
 
         Controls.Label {
-            id: textLabel
-            anchors {
-                left: image.left
-                right: image.right
-                top: image.top
-                bottom: countRect.visible ? countRect.top : image.bottom
-            }
-            visible: root.itemType == Koko.AbstractGalleryModel.Folder || root.itemType == Koko.AbstractGalleryModel.Collection
-            verticalAlignment: Text.AlignTop
-            padding: Kirigami.Units.smallSpacing
+            id: countLabel
+            visible: (root.itemType === Koko.AbstractGalleryModel.Folder || root.itemType === Koko.AbstractGalleryModel.Collection) && root.fileCount > 0
+            width: parent.width
+            text: i18np("1 item", "%1 items", root.fileCount)
+            color: Kirigami.Theme.disabledTextColor
             elide: Text.ElideRight
-            maximumLineCount: 4
-            wrapMode: Text.Wrap
-            color: Kirigami.Theme.textColor
-            text: root.name
         }
-
-        Rectangle {
-            id: countRect
-            anchors {
-                bottom: image.bottom
-                left: image.left
-                right: image.right
-            }
-            visible: root.fileCount && root.itemType == Koko.AbstractGalleryModel.Folder || root.itemType == Koko.AbstractGalleryModel.Collection
-            height: countLabel.contentHeight + (Kirigami.Units.smallSpacing * 2)
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            color: Kirigami.Theme.backgroundColor
-            opacity: 0.8
-
-            Controls.Label {
-                id: countLabel
-                padding: Kirigami.Units.smallSpacing
-                elide: Text.ElideRight
-                maximumLineCount: 4
-                wrapMode: Text.Wrap
-                color: Kirigami.Theme.textColor
-                text: i18np("1 item", "%1 items", root.fileCount)
-            }
-        }
-    }
-
-    background: Rectangle {
-        radius: Kirigami.Settings.isMobile ? Kirigami.Units.smallSpacing : 3
-        color: stateIndicatorColor
-        opacity: stateIndicatorOpacity
     }
 }

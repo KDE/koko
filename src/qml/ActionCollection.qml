@@ -34,6 +34,13 @@ AC.ActionCollectionManager {
             text: i18nc("@action:button", "Invert Selection")
             toolTip: i18nc("@info:tooltip", "Invert the selected media")
         }
+        AC.ActionData {
+            name: "ToggleFileNames"
+            icon.name: "view-visible-symbolic"
+            text: i18nc("@action:intoolbar", "Show File Names")
+            toolTip: i18nc("@info:tooltip", "Toggle the visibility of file names")
+            checkable: true
+        }
     }
 
     AC.ActionCollection {

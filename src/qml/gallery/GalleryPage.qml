@@ -25,6 +25,7 @@ Kirigami.ScrollablePage {
     readonly property bool isEmpty: gridView.count === 0
     readonly property bool isFolderView: galleryModel instanceof Koko.GalleryFolderModel
     readonly property bool isTrashView: isFolderView && galleryModel.path.toString().startsWith("trash:")
+    readonly property bool showFileNames: Kirigami.Settings.isMobile ? (Koko.Config.showFileNamesMobile ?? false) : Koko.Config.showFileNames
     readonly property bool isBookmarked: isFolderView && Koko.Config.savedFolders.includes(galleryModel.path.toString().replace("file:///", "file:/"))
 
     readonly property bool canBookmark: isFolderView
@@ -537,6 +538,26 @@ Kirigami.ScrollablePage {
             enabled: page.visible && !page.isEmpty && !page.showingCollections && !page.disallowMassSelection
             displayHint: Kirigami.DisplayHint.AlwaysHide
             onTriggered: selectionModel.select(gridView.model.index(0, 0), ItemSelectionModel.Toggle | ItemSelectionModel.Columns)
+        },
+        Kirigami.Action {
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            separator: true
+        },
+        Kirigami.Action {
+            id: toggleFileNamesAction
+            AC.ActionCollection.action: "ToggleFileNames"
+            AC.ActionCollection.collection: "org.kde.koko.gallery"
+            checked: page.showFileNames
+            enabled: page.visible && !page.showingCollections
+            displayHint: Kirigami.DisplayHint.AlwaysHide
+            onTriggered: {
+                if (Kirigami.Settings.isMobile) {
+                    Koko.Config.showFileNamesMobile = !page.showFileNames
+                } else {
+                    Koko.Config.showFileNames = !page.showFileNames
+                }
+                Koko.Config.save();
+            }
         }
     ]
 
@@ -675,12 +696,19 @@ Kirigami.ScrollablePage {
 
     bottomPadding: inlineStatusBar.effectiveHeight
 
+    FontMetrics {
+        id: delegateFontMetrics
+        font: Kirigami.Theme.defaultFont
+    }
+
     GridView {
-        id: gridView
+        id: gridView        
 
-        cellWidth: Math.floor(width / Math.floor(width / (Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2)))
-        cellHeight: Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2
+        leftMargin: Kirigami.Units.smallSpacing
+        topMargin: Kirigami.Units.smallSpacing
 
+        cellWidth: Math.floor(Math.max(1, width - leftMargin) / Math.floor(Math.max(1, width - leftMargin) / (Koko.Config.iconSize + Kirigami.Units.largeSpacing * 2)))
+        cellHeight: page.showFileNames ? Koko.Config.iconSize + Kirigami.Units.gridUnit * 4 : Koko.Config.iconSize + Kirigami.Units.gridUnit * 2
         highlightMoveDuration: 0
         keyNavigationEnabled: true
         reuseItems: true
@@ -788,11 +816,14 @@ Kirigami.ScrollablePage {
         delegate: GalleryDelegate {
             id: delegate
 
+            fontMetrics: delegateFontMetrics
+            fileNamesEnabled: page.showFileNames
+
             GridView.onPooled: { thumbnailPriority = -1; }
             GridView.onReused: { thumbnailPriority = Qt.binding(() => gridView.calculateThumbnailPriority(delegate)); }
             thumbnailPriority: gridView.calculateThumbnailPriority(delegate)
 
-            highlighted: gridView.currentIndex == index
+            highlighted: selected
             selected: selectionModel.selectedIndexes.includes(gridView.model.index(index, 0)) || (delegateDropAreaLoader.item?.containsDrag ?? false)
             isCut: cutFileHelper.urls.some(cutUrl => cutUrl.toString() === url.toString())
             selectionMode: page.selectionMode
@@ -839,9 +870,6 @@ Kirigami.ScrollablePage {
 
             // Keep unselected items out of drag image with multiple selection.
             visible: dragHandler.draggingMultipleSelection && !dragHandler.hasDragImage && !selected ? 0 : 1
-            // keep background hidden when generating the drag image for a single unselected item
-            background.visible: !(dragHandler.active && !dragHandler.hasDragImage
-                                && dragHandler.dragItem === delegate && !dragHandler.draggingMultipleSelection)
 
             Keys.onSpacePressed: delegate.ctrlSelect()
             Keys.onReturnPressed: event => Keys.enterPressed(event)
@@ -947,7 +975,7 @@ Kirigami.ScrollablePage {
                 visible: (delegate.itemType === Koko.AbstractGalleryModel.Media
                          || delegate.itemType === Koko.AbstractGalleryModel.Folder)
                         // keep button hidden when generating the drag image
-                        && delegate.background.visible && !dragHandler.draggingMultipleSelection
+                        && !dragHandler.draggingMultipleSelection && !dragHandler.active
 
                 focusPolicy: Qt.NoFocus
 
@@ -973,6 +1001,8 @@ Kirigami.ScrollablePage {
 
         GalleryInlineStatusBar {
             id: inlineStatusBar
+
+            visible: !(dragHandler.draggingMultipleSelection && !dragHandler.hasDragImage)
 
             text: {
                 // NOTE: Whilst scrolling, the HoverHandler on GridView seems to
