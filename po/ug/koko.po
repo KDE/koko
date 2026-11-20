@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:04+0000\n"
+"POT-Creation-Date: 2026-11-20 01:07+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -978,169 +978,181 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr ""
 
+#: qml/ActionCollection.qml:40
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Show File Names"
+msgstr ""
+
 #: qml/ActionCollection.qml:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle the visibility of file names"
+msgstr ""
+
+#: qml/ActionCollection.qml:48
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
 msgstr ""
 
-#: qml/ActionCollection.qml:46
+#: qml/ActionCollection.qml:53
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "تەھرىر"
 
-#: qml/ActionCollection.qml:47
+#: qml/ActionCollection.qml:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr ""
 
-#: qml/ActionCollection.qml:53
+#: qml/ActionCollection.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "ھەمبەھىر"
 
-#: qml/ActionCollection.qml:58
+#: qml/ActionCollection.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
 msgstr "ئۇچۇر"
 
-#: qml/ActionCollection.qml:65
+#: qml/ActionCollection.qml:72
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "تام تەسۋىر"
 
-#: qml/ActionCollection.qml:67
+#: qml/ActionCollection.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr ""
 
-#: qml/ActionCollection.qml:71
+#: qml/ActionCollection.qml:78
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
 msgstr "تىزگىننى كۆرسەت"
 
-#: qml/ActionCollection.qml:76
+#: qml/ActionCollection.qml:83
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr ""
 
-#: qml/ActionCollection.qml:77
+#: qml/ActionCollection.qml:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr ""
 
-#: qml/ActionCollection.qml:78
+#: qml/ActionCollection.qml:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr ""
 
-#: qml/ActionCollection.qml:89
+#: qml/ActionCollection.qml:96
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
 msgstr ""
 
-#: qml/ActionCollection.qml:95
+#: qml/ActionCollection.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr ""
 
-#: qml/ActionCollection.qml:96
+#: qml/ActionCollection.qml:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
 msgstr ""
 
-#: qml/ActionCollection.qml:102
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr ""
 
-#: qml/ActionCollection.qml:103
+#: qml/ActionCollection.qml:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
 msgstr ""
 
-#: qml/ActionCollection.qml:110
+#: qml/ActionCollection.qml:117
 #, kde-format
 msgctxt "Actions category"
 msgid "File"
 msgstr "ھۆججەت"
 
-#: qml/ActionCollection.qml:115
+#: qml/ActionCollection.qml:122
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr ""
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:131
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "ئىچىدىكى قىسقۇچنى ئاچ"
 
-#: qml/ActionCollection.qml:129
+#: qml/ActionCollection.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "ئاچقۇز(&O)…"
 
-#: qml/ActionCollection.qml:140
+#: qml/ActionCollection.qml:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "ئورنىنى كۆچۈر"
 
-#: qml/ActionCollection.qml:160
+#: qml/ActionCollection.qml:167
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "خاسلىق(&P)"
 
-#: qml/ActionCollection.qml:168
+#: qml/ActionCollection.qml:175
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr ""
 
-#: qml/ActionCollection.qml:172
+#: qml/ActionCollection.qml:179
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "كەس"
 
-#: qml/ActionCollection.qml:178
+#: qml/ActionCollection.qml:185
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "سولغا ئايلاندۇر"
 
-#: qml/ActionCollection.qml:184
+#: qml/ActionCollection.qml:191
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "ئوڭغا ئايلاندۇر"
 
-#: qml/ActionCollection.qml:190
+#: qml/ActionCollection.qml:197
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "يانتۇ ئايلاندۇر"
 
-#: qml/ActionCollection.qml:196
+#: qml/ActionCollection.qml:203
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -1169,200 +1181,200 @@ msgstr "يىغقۇچ"
 msgid "Places"
 msgstr "ئورۇن"
 
-#: qml/gallery/GalleryDelegate.qml:155
+#: qml/gallery/GalleryDelegate.qml:131
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 تۈر"
 
-#: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:75
+#: qml/gallery/GalleryPage.qml:182 qml/mediaview/MediaViewPage.qml:75
 #, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
 msgid_plural "%1 items moved to trash"
 msgstr[0] ""
 
-#: qml/gallery/GalleryPage.qml:183
+#: qml/gallery/GalleryPage.qml:184
 #, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "يېنىۋال"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:197
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "ئەسلىگە كەلتۈر"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "تەرتىپ: %1"
 
-#: qml/gallery/GalleryPage.qml:222
+#: qml/gallery/GalleryPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "ئاتى"
 
-#: qml/gallery/GalleryPage.qml:229
+#: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "چوڭلۇقى"
 
-#: qml/gallery/GalleryPage.qml:236
+#: qml/gallery/GalleryPage.qml:237
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "ئۆزگەرتىلگەن ۋاقتى"
 
-#: qml/gallery/GalleryPage.qml:237
+#: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "ئۆزگەرتكەن چېسلا"
 
-#: qml/gallery/GalleryPage.qml:244
+#: qml/gallery/GalleryPage.qml:245
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "قۇرغان ۋاقتى"
 
-#: qml/gallery/GalleryPage.qml:245
+#: qml/gallery/GalleryPage.qml:246
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "قۇرۇلغان چېسلا"
 
-#: qml/gallery/GalleryPage.qml:252
+#: qml/gallery/GalleryPage.qml:253
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "ﺯﯨﻴﺎﺭﻩﺕ ﯞﺍﻗﺘﻰ"
 
-#: qml/gallery/GalleryPage.qml:253
+#: qml/gallery/GalleryPage.qml:254
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "زىيارەت قىلىنغان چېسلا"
 
-#: qml/gallery/GalleryPage.qml:266
+#: qml/gallery/GalleryPage.qml:267
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "ئۆسكۈچى"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "كىچىكى ئالدىدا"
 
-#: qml/gallery/GalleryPage.qml:274
+#: qml/gallery/GalleryPage.qml:275
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "كونىسى ئالدىدا"
 
-#: qml/gallery/GalleryPage.qml:277
+#: qml/gallery/GalleryPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "ئۆسكۈچى"
 
-#: qml/gallery/GalleryPage.qml:288
+#: qml/gallery/GalleryPage.qml:289
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "كېمەيگۈچى"
 
-#: qml/gallery/GalleryPage.qml:290
+#: qml/gallery/GalleryPage.qml:291
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:292
+#: qml/gallery/GalleryPage.qml:293
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "چوڭى ئالدىدا"
 
-#: qml/gallery/GalleryPage.qml:296
+#: qml/gallery/GalleryPage.qml:297
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "يېڭىسى ئالدىدا"
 
-#: qml/gallery/GalleryPage.qml:299
+#: qml/gallery/GalleryPage.qml:300
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "كېمەيگۈچى"
 
-#: qml/gallery/GalleryPage.qml:318
+#: qml/gallery/GalleryPage.qml:319
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:319
+#: qml/gallery/GalleryPage.qml:320
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "يىغقۇچتىن چىقىرىۋەت"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "يىغقۇچقا قوش"
 
-#: qml/gallery/GalleryPage.qml:373
+#: qml/gallery/GalleryPage.qml:374
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:931
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 تۈر"
 
-#: qml/gallery/GalleryPage.qml:969
+#: qml/gallery/GalleryPage.qml:997
 #, kde-format
 msgid "No media found"
 msgstr ""
 
-#: qml/gallery/GalleryPage.qml:993
+#: qml/gallery/GalleryPage.qml:1023
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
 msgid_plural "%1 items selected"
 msgstr[0] "%1 تۈر تاللاندى"
 
-#: qml/gallery/GalleryPage.qml:998
+#: qml/gallery/GalleryPage.qml:1028
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

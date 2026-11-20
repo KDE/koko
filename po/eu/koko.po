@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:04+0000\n"
+"POT-Creation-Date: 2026-11-20 01:07+0000\n"
 "PO-Revision-Date: 2026-08-20 12:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -998,85 +998,97 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Hautatutako media alderantzikatu"
 
+#: qml/ActionCollection.qml:40
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Show File Names"
+msgstr ""
+
 #: qml/ActionCollection.qml:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle the visibility of file names"
+msgstr ""
+
+#: qml/ActionCollection.qml:48
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
 msgstr "Media-ikuspegia"
 
-#: qml/ActionCollection.qml:46
+#: qml/ActionCollection.qml:53
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Editatu"
 
-#: qml/ActionCollection.qml:47
+#: qml/ActionCollection.qml:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Irudi hau editatu"
 
-#: qml/ActionCollection.qml:53
+#: qml/ActionCollection.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Partekatu"
 
-#: qml/ActionCollection.qml:58
+#: qml/ActionCollection.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
 msgstr "Informazioa"
 
-#: qml/ActionCollection.qml:65
+#: qml/ActionCollection.qml:72
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Diapositiba emanaldia"
 
-#: qml/ActionCollection.qml:67
+#: qml/ActionCollection.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Diapositiba-emanaldi abiarazi"
 
-#: qml/ActionCollection.qml:71
+#: qml/ActionCollection.qml:78
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
 msgstr "Aginteak erakutsi"
 
-#: qml/ActionCollection.qml:76
+#: qml/ActionCollection.qml:83
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr "Koadro txikien tresna-barra erakutsi"
 
-#: qml/ActionCollection.qml:77
+#: qml/ActionCollection.qml:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Koadro txikien tresna-barra erakutsi"
 
-#: qml/ActionCollection.qml:78
+#: qml/ActionCollection.qml:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Ezkutatu koadro txikien tresna-barra"
 
-#: qml/ActionCollection.qml:89
+#: qml/ActionCollection.qml:96
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
 msgstr ""
 
-#: qml/ActionCollection.qml:95
+#: qml/ActionCollection.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Aurreko irudia"
 
-#: qml/ActionCollection.qml:96
+#: qml/ActionCollection.qml:103
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Previous image"
@@ -1084,13 +1096,13 @@ msgctxt "@info:tooltip"
 msgid "Show the previous image"
 msgstr "Aurreko irudia"
 
-#: qml/ActionCollection.qml:102
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Hurrengo irudia"
 
-#: qml/ActionCollection.qml:103
+#: qml/ActionCollection.qml:110
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Share this image"
@@ -1098,73 +1110,73 @@ msgctxt "@info:tooltip"
 msgid "Show the next image"
 msgstr "Partekatu irudi hau"
 
-#: qml/ActionCollection.qml:110
+#: qml/ActionCollection.qml:117
 #, kde-format
 msgctxt "Actions category"
 msgid "File"
 msgstr "Fitxategia"
 
-#: qml/ActionCollection.qml:115
+#: qml/ActionCollection.qml:122
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Gogokoa"
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:131
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Ireki hau barnean duen karpeta"
 
-#: qml/ActionCollection.qml:129
+#: qml/ActionCollection.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "Ireki &honekin…"
 
-#: qml/ActionCollection.qml:140
+#: qml/ActionCollection.qml:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopiatu kokalekua"
 
-#: qml/ActionCollection.qml:160
+#: qml/ActionCollection.qml:167
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&Propietateak"
 
-#: qml/ActionCollection.qml:168
+#: qml/ActionCollection.qml:175
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr "Edizio moduaren ekintzak"
 
-#: qml/ActionCollection.qml:172
+#: qml/ActionCollection.qml:179
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Moztu"
 
-#: qml/ActionCollection.qml:178
+#: qml/ActionCollection.qml:185
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Biratu ezkerrera"
 
-#: qml/ActionCollection.qml:184
+#: qml/ActionCollection.qml:191
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Biratu eskuinera"
 
-#: qml/ActionCollection.qml:190
+#: qml/ActionCollection.qml:197
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Irauli horizontalki"
 
-#: qml/ActionCollection.qml:196
+#: qml/ActionCollection.qml:203
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -1193,14 +1205,14 @@ msgstr "Gogokoak"
 msgid "Places"
 msgstr "Lekuak"
 
-#: qml/gallery/GalleryDelegate.qml:155
+#: qml/gallery/GalleryDelegate.qml:131
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "elementu 1"
 msgstr[1] "%1 elementu"
 
-#: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:75
+#: qml/gallery/GalleryPage.qml:182 qml/mediaview/MediaViewPage.qml:75
 #, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
@@ -1208,181 +1220,181 @@ msgid_plural "%1 items moved to trash"
 msgstr[0] "Elementu %1 zakarrontzira eraman da"
 msgstr[1] "%1 elementu zakarrontzira eraman dira"
 
-#: qml/gallery/GalleryPage.qml:183
+#: qml/gallery/GalleryPage.qml:184
 #, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Desegin"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:197
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Lehengoratu"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Hautatutako media aurreko kokapenetara leheneratu"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Sailkatu: %1"
 
-#: qml/gallery/GalleryPage.qml:222
+#: qml/gallery/GalleryPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Izena"
 
-#: qml/gallery/GalleryPage.qml:229
+#: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Neurria"
 
-#: qml/gallery/GalleryPage.qml:236
+#: qml/gallery/GalleryPage.qml:237
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Aldatua"
 
-#: qml/gallery/GalleryPage.qml:237
+#: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Aldatze data"
 
-#: qml/gallery/GalleryPage.qml:244
+#: qml/gallery/GalleryPage.qml:245
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Sortua"
 
-#: qml/gallery/GalleryPage.qml:245
+#: qml/gallery/GalleryPage.qml:246
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Sorrera data"
 
-#: qml/gallery/GalleryPage.qml:252
+#: qml/gallery/GalleryPage.qml:253
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Atzitua"
 
-#: qml/gallery/GalleryPage.qml:253
+#: qml/gallery/GalleryPage.qml:254
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Atzitze data"
 
-#: qml/gallery/GalleryPage.qml:266
+#: qml/gallery/GalleryPage.qml:267
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Goranzkoa"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "A-Z"
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Txikiena aurrena"
 
-#: qml/gallery/GalleryPage.qml:274
+#: qml/gallery/GalleryPage.qml:275
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Zaharrena aurrena"
 
-#: qml/gallery/GalleryPage.qml:277
+#: qml/gallery/GalleryPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Goranzkoa"
 
-#: qml/gallery/GalleryPage.qml:288
+#: qml/gallery/GalleryPage.qml:289
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Beheranzkoa"
 
-#: qml/gallery/GalleryPage.qml:290
+#: qml/gallery/GalleryPage.qml:291
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Z-A"
 
-#: qml/gallery/GalleryPage.qml:292
+#: qml/gallery/GalleryPage.qml:293
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Handiena aurrena"
 
-#: qml/gallery/GalleryPage.qml:296
+#: qml/gallery/GalleryPage.qml:297
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Berriena aurrena"
 
-#: qml/gallery/GalleryPage.qml:299
+#: qml/gallery/GalleryPage.qml:300
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Beheranzkoa"
 
-#: qml/gallery/GalleryPage.qml:318
+#: qml/gallery/GalleryPage.qml:319
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Laster-marka karpeta"
 
-#: qml/gallery/GalleryPage.qml:319
+#: qml/gallery/GalleryPage.qml:320
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Egin uneko karpetaren laster-marka"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Kendu gogokoetatik"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Gehitu gogokoetara"
 
-#: qml/gallery/GalleryPage.qml:373
+#: qml/gallery/GalleryPage.qml:374
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Hautatutako media partekatu"
 
-#: qml/gallery/GalleryPage.qml:931
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "elementu %1"
 msgstr[1] "%1 elementu"
 
-#: qml/gallery/GalleryPage.qml:969
+#: qml/gallery/GalleryPage.qml:997
 #, kde-format
 msgid "No media found"
 msgstr "Ez da mediarik aurkitu"
 
-#: qml/gallery/GalleryPage.qml:993
+#: qml/gallery/GalleryPage.qml:1023
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1390,7 +1402,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "Elementu %1 hautatu da"
 msgstr[1] "%1 elementu hautatu dira"
 
-#: qml/gallery/GalleryPage.qml:998
+#: qml/gallery/GalleryPage.qml:1028
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"

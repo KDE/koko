@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:04+0000\n"
+"POT-Creation-Date: 2026-11-20 01:07+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -989,169 +989,181 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Zdielať vybraté médiá"
 
+#: qml/ActionCollection.qml:40
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Show File Names"
+msgstr ""
+
 #: qml/ActionCollection.qml:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle the visibility of file names"
+msgstr ""
+
+#: qml/ActionCollection.qml:48
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
 msgstr "Zobrazenie médií"
 
-#: qml/ActionCollection.qml:46
+#: qml/ActionCollection.qml:53
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Upraviť"
 
-#: qml/ActionCollection.qml:47
+#: qml/ActionCollection.qml:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Upraviť obrázok"
 
-#: qml/ActionCollection.qml:53
+#: qml/ActionCollection.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Zdieľať"
 
-#: qml/ActionCollection.qml:58
+#: qml/ActionCollection.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
 msgstr "Info"
 
-#: qml/ActionCollection.qml:65
+#: qml/ActionCollection.qml:72
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Prezentácia"
 
-#: qml/ActionCollection.qml:67
+#: qml/ActionCollection.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Spustiť prezentáciu"
 
-#: qml/ActionCollection.qml:71
+#: qml/ActionCollection.qml:78
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
 msgstr "Zobraziť ovládacie prvky"
 
-#: qml/ActionCollection.qml:76
+#: qml/ActionCollection.qml:83
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr "Zobraziť panel miniatúr"
 
-#: qml/ActionCollection.qml:77
+#: qml/ActionCollection.qml:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Zobraziť panel miniatúr"
 
-#: qml/ActionCollection.qml:78
+#: qml/ActionCollection.qml:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Skryť panel miniatúr"
 
-#: qml/ActionCollection.qml:89
+#: qml/ActionCollection.qml:96
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
 msgstr "Prehrať/pozastaviť video"
 
-#: qml/ActionCollection.qml:95
+#: qml/ActionCollection.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Predchádzajúci obrázok"
 
-#: qml/ActionCollection.qml:96
+#: qml/ActionCollection.qml:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
 msgstr "Zobraziť predchádzajúci obrázok"
 
-#: qml/ActionCollection.qml:102
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Ďalší obrázok"
 
-#: qml/ActionCollection.qml:103
+#: qml/ActionCollection.qml:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
 msgstr "Zobraziť nasledujúci obrázok"
 
-#: qml/ActionCollection.qml:110
+#: qml/ActionCollection.qml:117
 #, kde-format
 msgctxt "Actions category"
 msgid "File"
 msgstr "Súbor"
 
-#: qml/ActionCollection.qml:115
+#: qml/ActionCollection.qml:122
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Obľúbené"
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:131
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Otvoriť priečinok s obsahom"
 
-#: qml/ActionCollection.qml:129
+#: qml/ActionCollection.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "&Otvoriť pomocou…"
 
-#: qml/ActionCollection.qml:140
+#: qml/ActionCollection.qml:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Kopírovať umiestnenie"
 
-#: qml/ActionCollection.qml:160
+#: qml/ActionCollection.qml:167
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&Vlastnosti"
 
-#: qml/ActionCollection.qml:168
+#: qml/ActionCollection.qml:175
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr "Akcie režimu úprav"
 
-#: qml/ActionCollection.qml:172
+#: qml/ActionCollection.qml:179
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Orezať"
 
-#: qml/ActionCollection.qml:178
+#: qml/ActionCollection.qml:185
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Otočiť doľava"
 
-#: qml/ActionCollection.qml:184
+#: qml/ActionCollection.qml:191
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Otočiť doprava"
 
-#: qml/ActionCollection.qml:190
+#: qml/ActionCollection.qml:197
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Prevrátiť vodorovne"
 
-#: qml/ActionCollection.qml:196
+#: qml/ActionCollection.qml:203
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -1180,7 +1192,7 @@ msgstr "Obľúbené"
 msgid "Places"
 msgstr "Miesta"
 
-#: qml/gallery/GalleryDelegate.qml:155
+#: qml/gallery/GalleryDelegate.qml:131
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
@@ -1188,7 +1200,7 @@ msgstr[0] "1 položka"
 msgstr[1] "%1 položky"
 msgstr[2] "%1 položiek"
 
-#: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:75
+#: qml/gallery/GalleryPage.qml:182 qml/mediaview/MediaViewPage.qml:75
 #, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
@@ -1197,169 +1209,169 @@ msgstr[0] "%1 položka presunutá do koša"
 msgstr[1] "%1 položky presunuté do koša"
 msgstr[2] "%1 položiek presunutých do koša"
 
-#: qml/gallery/GalleryPage.qml:183
+#: qml/gallery/GalleryPage.qml:184
 #, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Späť"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:197
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr "Presunúť vybraté položky od koša"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Sort: %1"
 
-#: qml/gallery/GalleryPage.qml:222
+#: qml/gallery/GalleryPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Meno"
 
-#: qml/gallery/GalleryPage.qml:229
+#: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: qml/gallery/GalleryPage.qml:236
+#: qml/gallery/GalleryPage.qml:237
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Zmenené"
 
-#: qml/gallery/GalleryPage.qml:237
+#: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Dátum zmeny"
 
-#: qml/gallery/GalleryPage.qml:244
+#: qml/gallery/GalleryPage.qml:245
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Vytvorené"
 
-#: qml/gallery/GalleryPage.qml:245
+#: qml/gallery/GalleryPage.qml:246
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Vytvorené"
 
-#: qml/gallery/GalleryPage.qml:252
+#: qml/gallery/GalleryPage.qml:253
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Prístupné"
 
-#: qml/gallery/GalleryPage.qml:253
+#: qml/gallery/GalleryPage.qml:254
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Vytvorené"
 
-#: qml/gallery/GalleryPage.qml:266
+#: qml/gallery/GalleryPage.qml:267
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Vzostupne"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "A-Z"
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Najmenšie na prvom mieste"
 
-#: qml/gallery/GalleryPage.qml:274
+#: qml/gallery/GalleryPage.qml:275
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Najstaršie na prvom mieste"
 
-#: qml/gallery/GalleryPage.qml:277
+#: qml/gallery/GalleryPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Vzostupne"
 
-#: qml/gallery/GalleryPage.qml:288
+#: qml/gallery/GalleryPage.qml:289
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Zostupne"
 
-#: qml/gallery/GalleryPage.qml:290
+#: qml/gallery/GalleryPage.qml:291
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Z-A"
 
-#: qml/gallery/GalleryPage.qml:292
+#: qml/gallery/GalleryPage.qml:293
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Najväčšie na prvom mieste"
 
-#: qml/gallery/GalleryPage.qml:296
+#: qml/gallery/GalleryPage.qml:297
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Najnovšie na prvom mieste"
 
-#: qml/gallery/GalleryPage.qml:299
+#: qml/gallery/GalleryPage.qml:300
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Zostupne"
 
-#: qml/gallery/GalleryPage.qml:318
+#: qml/gallery/GalleryPage.qml:319
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Podľa priečinku"
 
-#: qml/gallery/GalleryPage.qml:319
+#: qml/gallery/GalleryPage.qml:320
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Podľa priečinku"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Odstrániť z obľúbených"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Pridať do obľúbených"
 
-#: qml/gallery/GalleryPage.qml:373
+#: qml/gallery/GalleryPage.qml:374
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Zdielať vybraté médiá"
 
-#: qml/gallery/GalleryPage.qml:931
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
@@ -1367,12 +1379,12 @@ msgstr[0] "%1 položka"
 msgstr[1] "%1 položky"
 msgstr[2] "%1 položiek"
 
-#: qml/gallery/GalleryPage.qml:969
+#: qml/gallery/GalleryPage.qml:997
 #, kde-format
 msgid "No media found"
 msgstr "Žiadne obrázky nenájdené"
 
-#: qml/gallery/GalleryPage.qml:993
+#: qml/gallery/GalleryPage.qml:1023
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1381,7 +1393,7 @@ msgstr[0] "Vybraná %1 položka"
 msgstr[1] "Vybrané %1 položky"
 msgstr[2] "Vybraných %1 položiek"
 
-#: qml/gallery/GalleryPage.qml:998
+#: qml/gallery/GalleryPage.qml:1028
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1819,7 +1831,7 @@ msgstr "Dni"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
-msgstr ""
+msgstr "Farebná schéma:"
 
 #: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
@@ -1828,8 +1840,7 @@ msgid "Thumbnail size:"
 msgstr "Veľkosť miniatúr:"
 
 #: qml/Settings/GeneralConfigPage.qml:37
-#, fuzzy, kde-format
-#| msgid "%1 px"
+#, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
 msgstr "%1 px"
@@ -2003,19 +2014,19 @@ msgstr "Všetky médiá"
 #, kde-format
 msgctxt "@info: button's text"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Skryť bočný panel"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Show sidebar"
-msgstr ""
+msgstr "Zobraziť bočný panel"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Skryť bočný panel"
 
 #~ msgctxt "@info:tooltip, %1 is a size in pixels"
 #~ msgid "%1 px"

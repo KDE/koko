@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:04+0000\n"
-"PO-Revision-Date: 2026-11-07 22:43+0200\n"
+"POT-Creation-Date: 2026-11-20 01:07+0000\n"
+"PO-Revision-Date: 2026-11-19 22:45+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -989,169 +989,181 @@ msgctxt "@info:tooltip"
 msgid "Invert the selected media"
 msgstr "Обръщане на селекцията"
 
+#: qml/ActionCollection.qml:40
+#, kde-format
+msgctxt "@action:intoolbar"
+msgid "Show File Names"
+msgstr ""
+
 #: qml/ActionCollection.qml:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Toggle the visibility of file names"
+msgstr ""
+
+#: qml/ActionCollection.qml:48
 #, kde-format
 msgctxt "Actions category"
 msgid "Media View"
 msgstr "Изглед на медия"
 
-#: qml/ActionCollection.qml:46
+#: qml/ActionCollection.qml:53
 #, kde-format
 msgctxt "@action:intoolbar Edit an image"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: qml/ActionCollection.qml:47
+#: qml/ActionCollection.qml:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit this image"
 msgstr "Редактиране на изображението"
 
-#: qml/ActionCollection.qml:53
+#: qml/ActionCollection.qml:60
 #, kde-format
 msgctxt "@action:intoolbar Share an image/video"
 msgid "Share"
 msgstr "Споделяне"
 
-#: qml/ActionCollection.qml:58
+#: qml/ActionCollection.qml:65
 #, kde-format
 msgctxt "@action:intoolbar Show information about an image/video"
 msgid "Info"
 msgstr "Данни"
 
-#: qml/ActionCollection.qml:65
+#: qml/ActionCollection.qml:72
 #, kde-format
 msgctxt "@action:intoolbar Start a slideshow"
 msgid "Slideshow"
 msgstr "Прожекция"
 
-#: qml/ActionCollection.qml:67
+#: qml/ActionCollection.qml:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Start slideshow"
 msgstr "Стартиране на прожекция"
 
-#: qml/ActionCollection.qml:71
+#: qml/ActionCollection.qml:78
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbars and other UI elements"
 msgid "Show Controls"
 msgstr "Показване на контроли"
 
-#: qml/ActionCollection.qml:76
+#: qml/ActionCollection.qml:83
 #, kde-format
 msgctxt "@action:intoolbar Toggle visibility of toolbar"
 msgid "Show Thumbnail Toolbar"
 msgstr "Показване на лентата с умалени копия"
 
-#: qml/ActionCollection.qml:77
+#: qml/ActionCollection.qml:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the thumbnail toolbar"
 msgstr "Показване на лентата с умалени копия"
 
-#: qml/ActionCollection.qml:78
+#: qml/ActionCollection.qml:85
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Hide the thumbnail toolbar"
 msgstr "Скриване на лентата с умалени копия"
 
-#: qml/ActionCollection.qml:89
+#: qml/ActionCollection.qml:96
 #, kde-format
 msgctxt "@action:button Play or pause video"
 msgid "Play/Pause Video"
 msgstr "Възпроизвеждане/Пауза на видеото"
 
-#: qml/ActionCollection.qml:95
+#: qml/ActionCollection.qml:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous image"
 msgstr "Предишно изображение"
 
-#: qml/ActionCollection.qml:96
+#: qml/ActionCollection.qml:103
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
 msgstr "Предишно изображение"
 
-#: qml/ActionCollection.qml:102
+#: qml/ActionCollection.qml:109
 #, kde-format
 msgctxt "@action:button"
 msgid "Next image"
 msgstr "Следващо изображение"
 
-#: qml/ActionCollection.qml:103
+#: qml/ActionCollection.qml:110
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
 msgstr "Показване на следващо изображение"
 
-#: qml/ActionCollection.qml:110
+#: qml/ActionCollection.qml:117
 #, kde-format
 msgctxt "Actions category"
 msgid "File"
 msgstr "Файл"
 
-#: qml/ActionCollection.qml:115
+#: qml/ActionCollection.qml:122
 #, kde-format
 msgctxt "@action:intoolbar Favorite an image/video"
 msgid "Favorite"
 msgstr "Прибавяне в Любими"
 
-#: qml/ActionCollection.qml:124
+#: qml/ActionCollection.qml:131
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Open Containing Folder"
 msgstr "Отваряне на съдържащата папка"
 
-#: qml/ActionCollection.qml:129
+#: qml/ActionCollection.qml:136
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Open With…"
 msgstr "&Отваряне с…"
 
-#: qml/ActionCollection.qml:140
+#: qml/ActionCollection.qml:147
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Copy Location"
 msgstr "Копиране на местоположението"
 
-#: qml/ActionCollection.qml:160
+#: qml/ActionCollection.qml:167
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "&Properties"
 msgstr "&Свойства"
 
-#: qml/ActionCollection.qml:168
+#: qml/ActionCollection.qml:175
 #, kde-format
 msgctxt "Actions category"
 msgid "Edit mode actions"
 msgstr "Действия в режим на редактиране"
 
-#: qml/ActionCollection.qml:172
+#: qml/ActionCollection.qml:179
 #, kde-format
 msgctxt "@action:intoolbar crop image tool"
 msgid "Crop"
 msgstr "Изрязване"
 
-#: qml/ActionCollection.qml:178
+#: qml/ActionCollection.qml:185
 #, kde-format
 msgctxt "@action:button Rotate an image to the left"
 msgid "Rotate Left"
 msgstr "Завъртане наляво"
 
-#: qml/ActionCollection.qml:184
+#: qml/ActionCollection.qml:191
 #, kde-format
 msgctxt "@action:button Rotate an image to the right"
 msgid "Rotate Right"
 msgstr "Завъртане надясно"
 
-#: qml/ActionCollection.qml:190
+#: qml/ActionCollection.qml:197
 #, kde-format
 msgctxt "@action:button Flip/mirror an image horizontally"
 msgid "Flip Horizontally"
 msgstr "Хоризонтално обръщане"
 
-#: qml/ActionCollection.qml:196
+#: qml/ActionCollection.qml:203
 #, kde-format
 msgctxt "@action:button Flip/mirror an image vertically"
 msgid "Flip Vertically"
@@ -1180,14 +1192,14 @@ msgstr "Любими"
 msgid "Places"
 msgstr "Места"
 
-#: qml/gallery/GalleryDelegate.qml:155
+#: qml/gallery/GalleryDelegate.qml:131
 #, kde-format
 msgid "1 item"
 msgid_plural "%1 items"
 msgstr[0] "1 елемент"
 msgstr[1] "%1 елемента"
 
-#: qml/gallery/GalleryPage.qml:181 qml/mediaview/MediaViewPage.qml:75
+#: qml/gallery/GalleryPage.qml:182 qml/mediaview/MediaViewPage.qml:75
 #, kde-format
 msgctxt "@info"
 msgid "%1 item moved to trash"
@@ -1195,182 +1207,182 @@ msgid_plural "%1 items moved to trash"
 msgstr[0] "%1 елемент е преместен в кошчето"
 msgstr[1] "%1 елемента са преместени в кошчето"
 
-#: qml/gallery/GalleryPage.qml:183
+#: qml/gallery/GalleryPage.qml:184
 #, kde-format
 msgctxt "@action:button Undo moving items to trash"
 msgid "Undo"
 msgstr "Отмяна"
 
-#: qml/gallery/GalleryPage.qml:196
+#: qml/gallery/GalleryPage.qml:197
 #, kde-format
 msgctxt "@action:button Restore the selected media from the trash"
 msgid "Restore"
 msgstr "Възстановяване"
 
-#: qml/gallery/GalleryPage.qml:197
+#: qml/gallery/GalleryPage.qml:198
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Restore the selected media to their former locations"
 msgstr ""
 "Възстановяване на избраните медийни файлове до предишните им местоположения"
 
-#: qml/gallery/GalleryPage.qml:216
+#: qml/gallery/GalleryPage.qml:217
 #, kde-format
 msgctxt "@action:button %1 is the selected sort order, e.g. Name"
 msgid "Sort: %1"
 msgstr "Сортиране: %1"
 
-#: qml/gallery/GalleryPage.qml:222
+#: qml/gallery/GalleryPage.qml:223
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Name"
 msgstr "Име"
 
-#: qml/gallery/GalleryPage.qml:229
+#: qml/gallery/GalleryPage.qml:230
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Size"
 msgstr "Размер"
 
-#: qml/gallery/GalleryPage.qml:236
+#: qml/gallery/GalleryPage.qml:237
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Modified"
 msgstr "Последна промяна"
 
-#: qml/gallery/GalleryPage.qml:237
+#: qml/gallery/GalleryPage.qml:238
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Modified"
 msgstr "Дата на промяна"
 
-#: qml/gallery/GalleryPage.qml:244
+#: qml/gallery/GalleryPage.qml:245
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Created"
 msgstr "Създадено"
 
-#: qml/gallery/GalleryPage.qml:245
+#: qml/gallery/GalleryPage.qml:246
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Created"
 msgstr "Дата на създаване"
 
-#: qml/gallery/GalleryPage.qml:252
+#: qml/gallery/GalleryPage.qml:253
 #, kde-format
 msgctxt "@action:inmenu An order to sort media items"
 msgid "Accessed"
 msgstr "Последен достъп"
 
-#: qml/gallery/GalleryPage.qml:253
+#: qml/gallery/GalleryPage.qml:254
 #, kde-format
 msgctxt "@info:tooltip An order to sort media items"
 msgid "Date Accessed"
 msgstr "Дата на достъп"
 
-#: qml/gallery/GalleryPage.qml:266
+#: qml/gallery/GalleryPage.qml:267
 #, kde-format
 msgctxt "@action:inmenu Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Възходящо"
 
-#: qml/gallery/GalleryPage.qml:268
+#: qml/gallery/GalleryPage.qml:269
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in ascending order"
 msgid "A-Z"
 msgstr "А-Я"
 
-#: qml/gallery/GalleryPage.qml:270
+#: qml/gallery/GalleryPage.qml:271
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in ascending order"
 msgid "Smallest First"
 msgstr "Първо най-малките"
 
-#: qml/gallery/GalleryPage.qml:274
+#: qml/gallery/GalleryPage.qml:275
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in ascending order"
 msgid "Oldest First"
 msgstr "Първо най-старите"
 
-#: qml/gallery/GalleryPage.qml:277
+#: qml/gallery/GalleryPage.qml:278
 #, kde-format
 msgctxt "@info:tooltip Sort media items in ascending order"
 msgid "Ascending"
 msgstr "Възходящо"
 
-#: qml/gallery/GalleryPage.qml:288
+#: qml/gallery/GalleryPage.qml:289
 #, kde-format
 msgctxt "@action:inmenu Sort media items in descending order"
 msgid "Descending"
 msgstr "Низходящо"
 
-#: qml/gallery/GalleryPage.qml:290
+#: qml/gallery/GalleryPage.qml:291
 #, kde-format
 msgctxt "@action:inmenu Sort media items by name in descending order"
 msgid "Z-A"
 msgstr "Я-А"
 
-#: qml/gallery/GalleryPage.qml:292
+#: qml/gallery/GalleryPage.qml:293
 #, kde-format
 msgctxt "@action:inmenu Sort media items by size in descending order"
 msgid "Largest First"
 msgstr "Първо най-големите"
 
-#: qml/gallery/GalleryPage.qml:296
+#: qml/gallery/GalleryPage.qml:297
 #, kde-format
 msgctxt "@action:inmenu Sort media items by date in descending order"
 msgid "Newest First"
 msgstr "Първо най-новите"
 
-#: qml/gallery/GalleryPage.qml:299
+#: qml/gallery/GalleryPage.qml:300
 #, kde-format
 msgctxt "@info:tooltip Sort media items in descending order"
 msgid "Descending"
 msgstr "Низходящо"
 
-#: qml/gallery/GalleryPage.qml:318
+#: qml/gallery/GalleryPage.qml:319
 #, kde-format
 msgctxt "@action:button Bookmark the current folder"
 msgid "Bookmark Folder"
 msgstr "Папка с отметки"
 
-#: qml/gallery/GalleryPage.qml:319
+#: qml/gallery/GalleryPage.qml:320
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Bookmark the current folder"
 msgstr "Маркира текущата папка"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove from favorites"
 msgstr "Премахване от Любими"
 
-#: qml/gallery/GalleryPage.qml:358 qml/mediaview/MediaViewPage.qml:129
+#: qml/gallery/GalleryPage.qml:359 qml/mediaview/MediaViewPage.qml:129
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add to favorites"
 msgstr "Добавяне към Любими"
 
-#: qml/gallery/GalleryPage.qml:373
+#: qml/gallery/GalleryPage.qml:374
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Share the selected media"
 msgstr "Споделяне на избраната медия"
 
-#: qml/gallery/GalleryPage.qml:931
+#: qml/gallery/GalleryPage.qml:959
 #, kde-format
 msgid "%1 item"
 msgid_plural "%1 items"
 msgstr[0] "%1 елемент"
 msgstr[1] "%1 елемента"
 
-#: qml/gallery/GalleryPage.qml:969
+#: qml/gallery/GalleryPage.qml:997
 #, kde-format
 msgid "No media found"
 msgstr "Не е намерена медия"
 
-#: qml/gallery/GalleryPage.qml:993
+#: qml/gallery/GalleryPage.qml:1023
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item selected"
@@ -1378,7 +1390,7 @@ msgid_plural "%1 items selected"
 msgstr[0] "Маркиран е %1 елемент"
 msgstr[1] "Маркирани са %1 елемента"
 
-#: qml/gallery/GalleryPage.qml:998
+#: qml/gallery/GalleryPage.qml:1028
 #, kde-format
 msgctxt "@info:status"
 msgid "%1 item"
@@ -1996,16 +2008,16 @@ msgstr "Всички медийни файлове"
 #, kde-format
 msgctxt "@info: button's text"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Скриване на страничната лента"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Show sidebar"
-msgstr ""
+msgstr "Показване на страничната лента"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Скриване на страничната лента"
