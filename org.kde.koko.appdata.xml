@@ -155,43 +155,60 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
       <description>
         <heading>New features</heading>
         <heading xml:lang="ar">ميزات جديدة</heading>
+        <heading xml:lang="bg">Нови функции</heading>
         <heading xml:lang="ca">Característiques noves</heading>
         <heading xml:lang="ca-valencia">Característiques noves</heading>
         <heading xml:lang="cs">Nové funkce</heading>
         <heading xml:lang="es">Nuevas funcionalidades</heading>
+        <heading xml:lang="it">Nuove funzionalità</heading>
         <heading xml:lang="nl">Nieuwe mogelijkheden</heading>
         <heading xml:lang="pt-BR">Novas funcionalidades</heading>
         <heading xml:lang="ru">Новые возможности</heading>
+        <heading xml:lang="sk">Nové funkcie</heading>
         <heading xml:lang="uk">Нові можливості</heading>
+        <heading xml:lang="zh-TW">新功能</heading>
         <ul>
           <li>"All Photos" view</li>
+          <li xml:lang="ar">عرض "كل الصور"</li>
+          <li xml:lang="bg">Изглед „Всички снимки“</li>
           <li xml:lang="ca">Vista «Totes les fotos»</li>
           <li xml:lang="ca-valencia">Vista «Totes les fotos»</li>
+          <li xml:lang="cs">Zobrazení "Všechny fotografie"</li>
           <li xml:lang="es">Vista «Todas las fotos»</li>
           <li xml:lang="nl">Weergave "Alle foto's"</li>
           <li xml:lang="pt-BR">Visualização "Todas as fotos"</li>
           <li xml:lang="ru">Режим «Все фотографии»</li>
+          <li xml:lang="sk">Zobrazenie „Všetky fotky“</li>
           <li xml:lang="uk">Режим перегляду «Усі фотографії»</li>
           <li>Rename items</li>
           <li xml:lang="ar">تغيير التّسمية</li>
+          <li xml:lang="bg">Преименуване на елементи</li>
           <li xml:lang="ca">Canvia el nom dels elements</li>
           <li xml:lang="ca-valencia">Canvia el nom dels elements</li>
           <li xml:lang="cs">Přejmenování položek</li>
           <li xml:lang="es">Cambio de nombre de elementos</li>
+          <li xml:lang="it">Rinomina elementi</li>
           <li xml:lang="nl">Items hernoemen</li>
           <li xml:lang="pt-BR">Renomear itens</li>
           <li xml:lang="ru">Переименование элементов</li>
+          <li xml:lang="sk">Premenovanie položiek</li>
           <li xml:lang="uk">Перейменування об'єктів</li>
+          <li xml:lang="zh-TW">重新命名項目</li>
           <li>Show standard "properties" window</li>
+          <li xml:lang="ar">إظهار نافذة "الخصائص" القياسية</li>
+          <li xml:lang="bg">Показване на стандартен прозорец „Свойства“</li>
           <li xml:lang="ca">Mostra la finestra estàndard de «propietats»</li>
           <li xml:lang="ca-valencia">Mostra la finestra estàndard de «propietats»</li>
+          <li xml:lang="cs">Zobrazení standardního okna "Vlastnosti"</li>
           <li xml:lang="es">Mostrar la ventana de «propiedades» estándar</li>
           <li xml:lang="nl">Standaard venster Eigenschappen tonen</li>
           <li xml:lang="pt-BR">Exibir a janela padrão de “propriedades”</li>
           <li xml:lang="ru">Показ стандартного окна «Свойства»</li>
+          <li xml:lang="sk">Zobrazenie štandardného okna „vlastnosti“</li>
           <li xml:lang="uk">Показ стандартного вікна «Властивості»</li>
           <li>Cut &amp; paste items</li>
           <li xml:lang="ar">اقطع والصق العناصر</li>
+          <li xml:lang="bg">Изрязване и поставяне на елементи</li>
           <li xml:lang="ca">Retalla i enganxa elements</li>
           <li xml:lang="ca-valencia">Retalla i apega elements</li>
           <li xml:lang="cs">Vyjmutí a vložení položek</li>
@@ -199,27 +216,38 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Items voor knippen &amp; plakken</li>
           <li xml:lang="pt-BR">Recortar e colar itens</li>
           <li xml:lang="ru">Вырезание и вставка элементов</li>
+          <li xml:lang="sk">Vystrihnutie a vloženie položiek</li>
           <li xml:lang="uk">Вирізання і вставлення об'єктів</li>
+          <li xml:lang="zh-TW">剪下與貼上項目</li>
           <li>"Fit" and "Fill" zoom modes</li>
+          <li xml:lang="ar">نمطا التكبير "ملاءمة" و"ملء"</li>
+          <li xml:lang="bg">Режими на мащабиране „Напасване“ и „Запълване“</li>
           <li xml:lang="ca">Modes de zoom «Ajusta» i «Omple»</li>
           <li xml:lang="ca-valencia">Modes de zoom «Ajusta» i «Òmpliga»</li>
+          <li xml:lang="cs">Režimy přiblížení Přizpůsobit a Vyplnit</li>
           <li xml:lang="es">Modos de ampliación «Ajustar» y «Rellenar»</li>
           <li xml:lang="nl">Zoommodi “Passend” en “Gevuld”</li>
           <li xml:lang="pt-BR">Modos de zoom “Ajustar” e “Preencher”</li>
           <li xml:lang="ru">Режимы масштабирования «Вместить» и «Заполнить»</li>
+          <li xml:lang="sk">Režimy zväčšenia „Prispôsobiť“ a „Vyplniť“</li>
           <li xml:lang="uk">Режими масштабування «Підбір» і «Заповнення»</li>
           <li>Drag-and-drop</li>
           <li xml:lang="ar">السحب والإفلات</li>
+          <li xml:lang="bg">Плъзгане и пускане</li>
           <li xml:lang="ca">Arrossega i deixa anar</li>
           <li xml:lang="ca-valencia">Arrossega i deixa anar</li>
           <li xml:lang="cs">Táhnout a pustit</li>
           <li xml:lang="es">Arrastrar y soltar</li>
+          <li xml:lang="it">Trascinamento</li>
           <li xml:lang="nl">Slepen-en-loslaten</li>
           <li xml:lang="pt-BR">Arrastar e soltar</li>
           <li xml:lang="ru">Перетаскивание</li>
+          <li xml:lang="sk">Ťahanie a pustenie</li>
           <li xml:lang="uk">Перетягування зі скиданням</li>
+          <li xml:lang="zh-TW">拖放</li>
           <li>Adjustable brightness, contrast, and gamma for images</li>
           <li xml:lang="ar">سطوع وتباين وغاما قابلون للضبط للصور</li>
+          <li xml:lang="bg">Регулируема яркост, контраст и гама за изображения</li>
           <li xml:lang="ca">Lluminositat, contrast i gamma ajustable de les imatges</li>
           <li xml:lang="ca-valencia">Brillantor, contrast i gamma ajustable de les imatges</li>
           <li xml:lang="cs">Nastavitelný jas, kontrast a gama pro obrázky</li>
@@ -227,19 +255,26 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Aanpasbare helderheid, contrast en gamma voor afbeeldingen</li>
           <li xml:lang="pt-BR">Brilho, contraste e gama ajustáveis ​​para imagens</li>
           <li xml:lang="ru">Настройка яркости, контраста и гаммы изображений</li>
+          <li xml:lang="sk">Nastaviteľný jas, kontrast a gama obrázkov</li>
           <li xml:lang="uk">Коригування яскравості, контрастності та гамми зображень</li>
+          <li xml:lang="zh-TW">調整圖片亮度、對比、gamma 值</li>
           <li>Option for a neutral gray background</li>
           <li xml:lang="ar">خيار لخلفية رمادية محايدة</li>
+          <li xml:lang="bg">Опция за неутрален сив фон</li>
           <li xml:lang="ca">Opció per a un fons gris neutre</li>
           <li xml:lang="ca-valencia">Opció per a un fons gris neutre</li>
           <li xml:lang="cs">Možnost neutrálního šedého pozadí</li>
           <li xml:lang="es">Opción para un fondo gris neutro</li>
+          <li xml:lang="it">Opzione per uno sfondo grigio neutro</li>
           <li xml:lang="nl">Optie voor een neutrale grijze achtergrond</li>
           <li xml:lang="pt-BR">Opção de fundo cinza neutro</li>
           <li xml:lang="ru">Возможность использовать нейтральный серый фон</li>
+          <li xml:lang="sk">Možnosť neutrálneho sivého pozadia</li>
           <li xml:lang="uk">Можливість використання нейтрального сірого тла</li>
+          <li xml:lang="zh-TW">提供中性灰色背景的選項</li>
           <li>Option for an app-specific color scheme</li>
           <li xml:lang="ar">خيار لمخطط ألوان خاص بالتطبيق</li>
+          <li xml:lang="bg">Опция за специфична за приложението цветова схема</li>
           <li xml:lang="ca">Opció per a un esquema de color específic de l'aplicació</li>
           <li xml:lang="ca-valencia">Opció per a un esquema de color específic de l'aplicació</li>
           <li xml:lang="cs">Možnost výběru barevného schématu pro konkrétní aplikaci</li>
@@ -247,20 +282,27 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Optie voor een toepassingsspecifiek kleurenschema</li>
           <li xml:lang="pt-BR">Opção de um esquema de cores específico para o aplicativo</li>
           <li xml:lang="ru">Возможность задать отдельную цветовую схему для приложения</li>
+          <li xml:lang="sk">Možnosť farebnej schémy špecifickej pre aplikáciu</li>
           <li xml:lang="uk">Можливість використання специфічної для програми схеми кольорів</li>
+          <li xml:lang="zh-TW">讓 Koko 可以使用與系統不同的配色方案</li>
           <li>Open more than one instance of the app</li>
           <li xml:lang="ar">فتح أكثر من نسخة من التطبيق</li>
+          <li xml:lang="bg">Отваряне на повече от един екземпляр на приложението</li>
           <li xml:lang="ca">Obre més d'una instància de l'aplicació</li>
           <li xml:lang="ca-valencia">Obri més d'una instància de l'aplicació</li>
           <li xml:lang="cs">Otevření více než jedné instance aplikace</li>
           <li xml:lang="es">Abrir más de una instancia de la aplicación</li>
+          <li xml:lang="it">Apri più di un'istanza dell'applicazione</li>
           <li xml:lang="nl">Open meer dan één exemplaar van de toepassing</li>
           <li xml:lang="pt-BR">Abrir mais de uma instância do aplicativo</li>
           <li xml:lang="ru">Возможность открывать несколько экземпляров приложения</li>
+          <li xml:lang="sk">Otvorenie viac ako jednej inštancie aplikácie</li>
           <li xml:lang="uk">Можливість відкривати декілька екземплярів програми одночасно</li>
+          <li xml:lang="zh-TW">為應用程式開啟多於一個實體</li>
         </ul>
         <heading>Significant UI improvements</heading>
         <heading xml:lang="ar">تحسينات كبيرة في واجهة المستخدم</heading>
+        <heading xml:lang="bg">Значителни подобрения в потребителския интерфейс</heading>
         <heading xml:lang="ca">Millores significatives en la interfície d'usuari</heading>
         <heading xml:lang="ca-valencia">Millores significatives en la interfície d'usuari</heading>
         <heading xml:lang="cs">Významná vylepšení uživatelského rozhraní</heading>
@@ -268,31 +310,42 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <heading xml:lang="nl">Significante verbeteringen aan het gebruikersinterface</heading>
         <heading xml:lang="pt-BR">Melhorias significativas na interface do usuário</heading>
         <heading xml:lang="ru">Значительные улучшения интерфейса</heading>
+        <heading xml:lang="sk">Výrazné vylepšenia používateľského rozhrania</heading>
         <heading xml:lang="uk">Значні удосконалення у інтерфейсі користувача</heading>
+        <heading xml:lang="zh-TW">大幅改進使用者介面</heading>
         <ul>
           <li>Pressing space plays and pauses videos</li>
           <li xml:lang="ar">الضغط على مسافة يشغل الفيديوهات ويلبثها</li>
+          <li xml:lang="bg">Натискане на интервал за възпроизвеждане и паузиране на видеа</li>
           <li xml:lang="ca">Prement l'espai es reprodueixen i fa pausa de vídeos</li>
           <li xml:lang="ca-valencia">Prement l'espai es reproduïxen i fa pausa de vídeos</li>
           <li xml:lang="cs">Stisknutím mezerníku se přehrává a pozastavuje video</li>
           <li xml:lang="es">Al pulsar Espacio se reproduce o se pausa el vídeo</li>
+          <li xml:lang="it">La pressione della barra spaziatrice avvia e mette in pausa la riproduzione dei video</li>
           <li xml:lang="nl">Door op de spatiebalk te drukken, kunt u video's afspelen en pauzeren.</li>
           <li xml:lang="pt-BR">Pressionar a barra de espaço reproduz e pausa vídeos</li>
           <li xml:lang="ru">Воспроизведение и приостановка видео клавишей «Пробел»</li>
+          <li xml:lang="sk">Medzerník spúšťa a pozastavuje videá</li>
           <li xml:lang="uk">Натискання пробілу призводитиме до запуску відтворення і призупинення відтворення відео</li>
+          <li xml:lang="zh-TW">用空白鍵播放或暫停影片</li>
           <li>Pressing Esc exits from the editing view</li>
           <li xml:lang="ar">الضغط على Esc يخرج من عرض التحرير</li>
+          <li xml:lang="bg">Натискане на Esc за излизане от редакционния изглед</li>
           <li xml:lang="ca">En prémer Esc surt de la vista d'edició</li>
           <li xml:lang="ca-valencia">En prémer «Esc» ix de la vista d'edició</li>
           <li xml:lang="cs">Stisknutím klávesy Esc se opustí režim úprav</li>
           <li xml:lang="es">Al pulsar Esc se sale de la ventana de edición</li>
+          <li xml:lang="it">Premendo Esc si esce dalla vista di modifica</li>
           <li xml:lang="nl">Door op Esc te drukken verlaat u de bewerkingsweergave</li>
           <li xml:lang="pt-BR">Pressionar Esc sai da visualização de edição</li>
           <li xml:lang="ru">Выход из режима редактирования клавишей Esc</li>
+          <li xml:lang="sk">Esc ukončí zobrazenie úprav</li>
           <li xml:lang="uk">Натискання Esc призводить до виходу з режиму редагування</li>
+          <li xml:lang="zh-TW">用 Esc 離開編輯檢視</li>
           <li>Pressing F11 and Ctrl+Shift+F also enter and exit full screen mode, in addition to the
             existing F key binding</li>
           <li xml:lang="ar">الضغط على F11 وCtrl+Shift+F يدخل ويخرج أيضًا من نمط ملء الشاشة، إضافةً إلى ارتباط المفتاح F الموجود</li>
+          <li xml:lang="bg">Натискането на F11 и Ctrl+Shift+F също активира и деактивира режима на цял екран, допълнително към съществуващото клавишно комбиниране с F</li>
           <li xml:lang="ca">Prement F11 i Ctrl+Maj+F també entra i surt del mode de pantalla completa, a més de la vinculació de la tecla F existent</li>
           <li xml:lang="ca-valencia">Prement «F11» i «Ctrl+Majús+F» també entra i ix del mode de pantalla completa, a més de la vinculació de la tecla F existent</li>
           <li xml:lang="cs">Kromě stávající klávesové zkratky s klávesou F lze do režimu celé obrazovky přepnout a z něj vystoupit také stisknutím kláves F11 a Ctrl+Shift+F</li>
@@ -300,10 +353,13 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Naast de al bestaande sneltoets met de F-toets, kunt u ook met F11 en Ctrl+Shift+F de modus voor volledig scherm openen en verlaten.</li>
           <li xml:lang="pt-BR">Pressionar F11 e Ctrl+Shift+F também permite entrar e sair do modo de tela cheia, além do atalho de tecla F já existente</li>
           <li xml:lang="ru">Полноэкранный режим теперь включается и выключается не только клавишей F, но и клавишей F11 или сочетанием Ctrl+Shift+F</li>
+          <li xml:lang="sk">Klávesy F11 a Ctrl+Shift+F okrem existujúceho klávesu F tiež zapínajú a vypínajú režim celej obrazovky</li>
           <li xml:lang="uk">Натискання F11 і Ctrl+Shift+F запускає і завершує роботу повноекранного режиму, на додачу до наявної клавіатурної прив'язки до клавіші F</li>
+          <li xml:lang="zh-TW">除了目前的快捷鍵 F 以外，也可以用 F11 或 Ctrl+Shift+F 進入或離開全螢幕模式</li>
           <li>The previous visibility state of the controls is now remembered when entering and exiting
             full screen</li>
           <li xml:lang="ar">تُتذكر حالة ظهور عناصر التحكم السابقة الآن عند الدخول إلى ملء الشاشة والخروج منه</li>
+          <li xml:lang="bg">Запомняне на предишното състояние на видимост на контролите при влизане и излизане от цял екран</li>
           <li xml:lang="ca">L'estat de visibilitat anterior dels controls es recorda ara en entrar i sortir de la pantalla completa</li>
           <li xml:lang="ca-valencia">L'estat de visibilitat anterior dels controls es recorda ara en entrar i eixir de la pantalla completa</li>
           <li xml:lang="cs">Při přechodu do režimu celé obrazovky a zpět se nyní ukládá předchozí stav viditelnosti ovládacích prvků</li>
@@ -311,39 +367,54 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">De eerdere zichtbaarheidsstatus van de bedieningselementen wordt nu onthouden bij het openen en sluiten van de volledige schermmodus.</li>
           <li xml:lang="pt-BR">O estado de visibilidade anterior dos controles agora é lembrado ao entrar e sair do modo de tela cheia</li>
           <li xml:lang="ru">При входе в полноэкранный режим и выходе из него теперь сохраняется прежнее состояние видимости элементов управления</li>
+          <li xml:lang="sk">Predchádzajúci stav viditeľnosti ovládacích prvkov sa teraz pri prechode do režimu celej obrazovky a späť zapamätá</li>
           <li xml:lang="uk">Тепер стан видимості елементів керування запам’ятовується під час переходу в повноекранний режим і виходу з нього</li>
+          <li xml:lang="zh-TW">進入或離開全螢幕的時候會記住控制元件原本是否可見</li>
           <li>Pressing the Delete key trashes an image, with a visible option to undo it</li>
           <li xml:lang="ar">الضغط على مفتاح Delete ينقل صورة إلى المهملات، مع خيار ظاهر للتراجع عن ذلك</li>
+          <li xml:lang="bg">Изтриване на изображение с клавиша Delete, с видима опция за връщане</li>
           <li xml:lang="ca">En prémer la tecla de Supressió s'envia una imatge a la paperera, amb una opció visible per a desfer-ho</li>
           <li xml:lang="ca-valencia">En prémer la tecla de Supressió s'envia una imatge a la paperera, amb una opció visible per a desfer-ho</li>
           <li xml:lang="cs">Stisknutím klávesy Delete se obrázek odstraní do koše, přičemž je k dispozici viditelná možnost tuto akci vrátit zpět</li>
           <li xml:lang="es">Al pulsar la tecla Supr se envía una imagen a la papelera, con un opción visible para deshacerlo.</li>
+          <li xml:lang="it">La pressione di Canc elimina un'immagine, con un'opzione visibile per annullare l'operazione</li>
           <li xml:lang="nl">Door op de Delete-toets te drukken, wordt een afbeelding naar de prullenbak verplaatst, waarbij een optie zichtbaar is om dit ongedaan te maken.</li>
           <li xml:lang="pt-BR">Pressionar a tecla Delete envia uma imagem para a lixeira, com uma opção visível para desfazer a ação</li>
           <li xml:lang="ru">Клавиша Delete перемещает изображение в корзину, а на экране появляется возможность отменить действие</li>
+          <li xml:lang="sk">Kláves Delete presunie obrázok do koša s viditeľnou možnosťou vrátenia</li>
           <li xml:lang="uk">Натискання клавіші Delete пересуває зображення у смітник, причому існує можливість скасувати цю дію</li>
+          <li xml:lang="zh-TW">用 Delete 鍵將圖片移到垃圾桶，並提供復原的功能</li>
           <li>Shortcuts for all actions in the editing view</li>
           <li xml:lang="ar">اختصارات لكل الإجراءات في عرض التحرير</li>
+          <li xml:lang="bg">Клавишни комбинации за всички действия в изгледа за редактиране</li>
           <li xml:lang="ca">Dreceres per a totes les accions a la vista d'edició</li>
           <li xml:lang="ca-valencia">Dreceres per a totes les accions a la vista d'edició</li>
           <li xml:lang="cs">Zkratky pro všechny akce v editačním zobrazení</li>
           <li xml:lang="es">Atajos de teclado para todas las acciones en la vista de edición.</li>
+          <li xml:lang="it">Scorciatoie per tutte le azioni nella vista di modifica</li>
           <li xml:lang="nl">Sneltoetsen voor alle acties in de bewerkingsweergave</li>
           <li xml:lang="pt-BR">Atalhos para todas as ações na visualização de edição</li>
           <li xml:lang="ru">Комбинации клавиш для всех действий в режиме редактирования</li>
+          <li xml:lang="sk">Klávesové skratky pre všetky akcie v zobrazení úprav</li>
           <li xml:lang="uk">Клавіатурні скорочення для всіх дій у режимі редагування</li>
+          <li xml:lang="zh-TW">編輯器所有動作的快捷鍵</li>
           <li>You can get to the settings from the menu on the viewer page</li>
           <li xml:lang="ar">يمكنك الوصول إلى الإعدادات من القائمة في صفحة العارض</li>
+          <li xml:lang="bg">Достъп до настройките от менюто на страницата за преглед</li>
           <li xml:lang="ca">Podeu accedir a la configuració des del menú de la pàgina de visualització</li>
           <li xml:lang="ca-valencia">Podeu accedir a la configuració des del menú de la pàgina de visualització</li>
           <li xml:lang="cs">Do nastavení se dostanete z nabídky na stránce prohlížeče</li>
           <li xml:lang="es">Se puede acceder a la configuración desde el menú de la página del visor.</li>
+          <li xml:lang="it">Puoi accedere alle impostazioni dal menu nella pagina del visualizzatore</li>
           <li xml:lang="nl">U kunt de instellingen openen via het menu op de viewerpagina</li>
           <li xml:lang="pt-BR">Você pode acessar as configurações a partir do menu na página de visualização</li>
           <li xml:lang="ru">Доступ к параметрам из меню на странице просмотра</li>
+          <li xml:lang="sk">Do nastavení sa dostanete z ponuky na stránke prehliadača</li>
           <li xml:lang="uk">До параметрів роботи програми можна перейти за допомогою меню на сторінці перегляду</li>
+          <li xml:lang="zh-TW">從檢視器頁面的選單可以開啟設定</li>
           <li>Images smaller than the viewport are scaled up fit within it by default</li>
           <li xml:lang="ar">تُكبَّر الصور الأصغر من منطقة العرض لتناسبها مبدئيًا</li>
+          <li xml:lang="bg">По подразбиране изображенията, по-малки от прозореца, се мащабират, за да запълнят пространството</li>
           <li xml:lang="ca">Les imatges més petites que l'àrea de visualització s'escalaran per ajustar-les de manera predeterminada</li>
           <li xml:lang="ca-valencia">Les imatges més xicotetes que l'àrea de visualització s'escalaran per a ajustar-les de manera predeterminada</li>
           <li xml:lang="cs">Obrázky menší než zobrazovací oblast se ve výchozím nastavení zvětší tak, aby se do ní vešly</li>
@@ -351,9 +422,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Afbeeldingen, die kleiner zijn dan het weergavegebied (viewport), worden standaard opgeschaald zodat ze erin passen.</li>
           <li xml:lang="pt-BR">Imagens menores que a viewport são, por padrão, redimensionadas para caber nela</li>
           <li xml:lang="ru">Изображения меньше области просмотра по умолчанию увеличиваются до её размеров</li>
+          <li xml:lang="sk">Obrázky menšie ako zobrazovacia plocha sa predvolene zväčšia, aby ju vyplnili</li>
           <li xml:lang="uk">Зображення, менші за область перегляду, типово масштабуються так, щоб уміститися у  ній</li>
+          <li xml:lang="zh-TW">小於檢視埠的圖片預設會放大以符合顯示</li>
           <li>You can independently scroll the thumbnail strip</li>
           <li xml:lang="ar">يمكنك تمرير شريط المصغرات بشكل مستقل</li>
+          <li xml:lang="bg">Независимо превъртане на лентата с миниатюри</li>
           <li xml:lang="ca">Podeu desplaçar-vos independentment per la tira de miniatures</li>
           <li xml:lang="ca-valencia">Podeu desplaçar-vos independentment per la tira de miniatures</li>
           <li xml:lang="cs">Pruh náhledů můžete posouvat samostatně</li>
@@ -361,9 +435,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">U kunt de strook met miniaturen onafhankelijk schuiven.</li>
           <li xml:lang="pt-BR">Você pode rolar a faixa de miniaturas de forma independente</li>
           <li xml:lang="ru">Возможность независимо прокручивать полосу миниатюр</li>
+          <li xml:lang="sk">Pás miniatúr sa dá posúvať nezávisle</li>
           <li xml:lang="uk">Ви можете незалежно гортати стрічку мініатюр</li>
+          <li xml:lang="zh-TW">讓縮圖列可以獨立捲動</li>
           <li>More natural text in the sharing notification</li>
           <li xml:lang="ar">نص أكثر طبيعية في إشعار المشاركة</li>
+          <li xml:lang="bg">По-естествен текст в известието за споделяне</li>
           <li xml:lang="ca">Text més natural a la notificació de compartició</li>
           <li xml:lang="ca-valencia">Text més natural a la notificació de compartició</li>
           <li xml:lang="cs">Přirozenější text v oznámení o sdílení</li>
@@ -371,9 +448,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Natuurlijker geformuleerde tekst in de melding over het delen</li>
           <li xml:lang="pt-BR">Texto mais natural na notificação de compartilhamento</li>
           <li xml:lang="ru">Более естественный текст уведомления об отправке</li>
+          <li xml:lang="sk">Prirodzenejší text v oznámení o zdieľaní</li>
           <li xml:lang="uk">Більш природний текст у сповіщенні про надання доступу</li>
+          <li xml:lang="zh-TW">讓分享通知的文字更自然</li>
           <li>Fewer separator lines in toolbars</li>
           <li xml:lang="ar">أسطر فاصلة أقل في أشرطة الأدوات</li>
+          <li xml:lang="bg">По-малко разделителни линии в лентите с инструменти</li>
           <li xml:lang="ca">Menys línies separadores a les barres d'eines</li>
           <li xml:lang="ca-valencia">Menys línies separadores a les barres d'eines</li>
           <li xml:lang="cs">Méně oddělovacích čar v nástrojových lištách</li>
@@ -381,10 +461,13 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Minder scheidingslijnen in werkbalken</li>
           <li xml:lang="pt-BR">Menos linhas separadoras nas barras de ferramentas</li>
           <li xml:lang="ru">Меньше разделительных линий на панелях инструментов</li>
+          <li xml:lang="sk">Menej oddeľovacích čiar na paneloch nástrojov</li>
           <li xml:lang="uk">Менше ліній-роздільників на панелях інструментів</li>
+          <li xml:lang="zh-TW">工具列減少使用分隔線</li>
         </ul>
         <heading>Significant bug fixes</heading>
         <heading xml:lang="ar">إصلاحات كبيرة للعلل</heading>
+        <heading xml:lang="bg">Значими корекции на грешки</heading>
         <heading xml:lang="ca">Correccions d'errors significatius</heading>
         <heading xml:lang="ca-valencia">Esmenes d'errors significatius</heading>
         <heading xml:lang="cs">Významné opravy chyb</heading>
@@ -392,10 +475,13 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
         <heading xml:lang="nl">Belangrijke reparaties van bugs</heading>
         <heading xml:lang="pt-BR">Correções de bugs importantes</heading>
         <heading xml:lang="ru">Значительные исправления ошибок</heading>
+        <heading xml:lang="sk">Výrazné opravy chýb</heading>
         <heading xml:lang="uk">Виправлення значних вад</heading>
+        <heading xml:lang="zh-TW">顯著錯誤修正</heading>
         <ul>
           <li>Can no longer open multiple overlapping image editing views by pressing Ctrl+E repeatedly</li>
           <li xml:lang="ar">لم يعد ممكنًا فتح عروض تحرير صور متعددة متراكبة بالضغط على Ctrl+E مرارًا</li>
+          <li xml:lang="bg">Вече не е възможно отварянето на множество застъпващи се изгледи за редактиране на изображения чрез многократно натискане на Ctrl+E</li>
           <li xml:lang="ca">Ja no es poden obrir múltiples vistes d'edició d'imatges superposades prement Ctrl+E repetidament</li>
           <li xml:lang="ca-valencia">Ja no es poden obrir múltiples vistes d'edició d'imatges superposades prement «Ctrl+E» repetidament</li>
           <li xml:lang="cs">Již není možné otevřít více překrývajících se oken pro úpravy obrázků opakovaným stisknutím kláves Ctrl+E</li>
@@ -403,9 +489,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Het is niet langer mogelijk om meerdere overlappende beeldbewerkingsvensters te openen door herhaaldelijk op Ctrl+E te drukken</li>
           <li xml:lang="pt-BR">Não é mais possível abrir várias visualizações de edição de imagem sobrepostas pressionando Ctrl+E repetidamente</li>
           <li xml:lang="ru">Повторное нажатие Ctrl+E больше не открывает несколько перекрывающихся окон редактирования изображения</li>
+          <li xml:lang="sk">Opakovaným stláčaním Ctrl+E sa už nedá otvoriť viacero prekrývajúcich sa zobrazení úprav obrázka</li>
           <li xml:lang="uk">Більше не можна відкривати кілька перекритих вікон редагування зображень шляхом багаторазового натискання Ctrl+E</li>
+          <li xml:lang="zh-TW">修正重複按 Ctrl+E 會開啟多個重疊的圖片編輯檢視的問題</li>
           <li>Thumbnails refresh when the source image is updated elsewhere</li>
           <li xml:lang="ar">تتحدث المصغرات عندما تُحدَّث الصورة المصدر في مكان آخر</li>
+          <li xml:lang="bg">Обновяване на Thumbnail-ите при актуализиране на изходното изображение на друго място</li>
           <li xml:lang="ca">Les miniatures s'actualitzen quan la imatge d'origen s'actualitza en un altre lloc</li>
           <li xml:lang="ca-valencia">Les miniatures s'actualitzen quan la imatge d'origen s'actualitza en un altre lloc</li>
           <li xml:lang="cs">Náhledy se aktualizují, jakmile jinde dojde k aktualizaci zdrojového obrázku</li>
@@ -413,9 +502,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Miniaturen worden ververst wanneer de bronafbeelding elders wordt bijgewerkt</li>
           <li xml:lang="pt-BR">As miniaturas são atualizadas quando a imagem de origem é alterada em outro local</li>
           <li xml:lang="ru">Миниатюры обновляются при изменении исходного изображения в другом месте</li>
+          <li xml:lang="sk">Miniatúry sa obnovia, keď sa zdrojový obrázok aktualizuje inde</li>
           <li xml:lang="uk">Мініатюри оновлюються, коли базове зображення змінюється в іншому місці</li>
+          <li xml:lang="zh-TW">來源圖片在其他地方被改變時縮圖會重新整理</li>
           <li>Editing images with square brackets in their names now works</li>
           <li xml:lang="ar">تحرير الصور التي تحتوي أسماءها على أقواس مربعة يعمل الآن</li>
+          <li xml:lang="bg">Редактирането на изображения с квадратни скоби в имената им вече е възможно</li>
           <li xml:lang="ca">Ara funciona l'edició d'imatges amb claudàtors quadrats en els seus noms</li>
           <li xml:lang="ca-valencia">Ara funciona l'edició d'imatges amb claudàtors quadrats en els seus noms</li>
           <li xml:lang="cs">Úprava obrázků, jejichž názvy obsahují hranaté závorky, nyní funguje</li>
@@ -423,9 +515,12 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Het bewerken van afbeeldingen met vierkante haken in hun bestandsnaam werkt nu</li>
           <li xml:lang="pt-BR">Agora é possível editar imagens que contenham colchetes em seus nomes</li>
           <li xml:lang="ru">Исправлено редактирование изображений с квадратными скобками в именах</li>
+          <li xml:lang="sk">Úprava obrázkov s hranatými zátvorkami v názve teraz funguje</li>
           <li xml:lang="uk">У новій версії працює редагування зображень, у назвах яких є квадратні дужки</li>
+          <li xml:lang="zh-TW">修正無法編輯名稱含有中括號的圖片的問題</li>
           <li>Cropping is now accessible on mobile and with small window sizes</li>
           <li xml:lang="ar">القص متاح الآن على الهاتف المحمول ومع أحجام النوافذ الصغيرة</li>
+          <li xml:lang="bg">Възможност за изрязване на изображенията на мобилни устройства и при малки размери на прозореца</li>
           <li xml:lang="ca">L'escapçat ara és accessible en el mòbil i amb mides petites de finestra</li>
           <li xml:lang="ca-valencia">L'escapçat ara és accessible en el mòbil i amb mides xicotetes de finestra</li>
           <li xml:lang="cs">Funkce oříznutí je nyní dostupná na mobilních zařízeních i při malých rozměrech okna</li>
@@ -433,7 +528,9 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="nl">Bijsnijden is nu mogelijk op mobiele apparaten en bij kleine vensterafmetingen</li>
           <li xml:lang="pt-BR">O recorte agora está disponível em dispositivos móveis e com janelas de tamanho reduzido</li>
           <li xml:lang="ru">Кадрирование теперь доступно на мобильных устройствах и при небольших размерах окна</li>
+          <li xml:lang="sk">Orezávanie je teraz dostupné na mobiloch a pri malých oknách</li>
           <li xml:lang="uk">Обрізання тепер доступне на мобільних пристроях і за невеликим розміром вікна</li>
+          <li xml:lang="zh-TW">修正行動版或小視窗無法使用裁切功能的問題</li>
         </ul>
       </description>
     </release>
