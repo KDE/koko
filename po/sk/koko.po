@@ -1819,7 +1819,7 @@ msgstr "Dni"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Color scheme:"
-msgstr ""
+msgstr "Farebná schéma:"
 
 #: qml/Settings/GeneralConfigPage.qml:17
 #, kde-format
@@ -1828,8 +1828,7 @@ msgid "Thumbnail size:"
 msgstr "Veľkosť miniatúr:"
 
 #: qml/Settings/GeneralConfigPage.qml:37
-#, fuzzy, kde-format
-#| msgid "%1 px"
+#, kde-format
 msgctxt "@info:tooltip, %1 is a size in pixels"
 msgid "%1 px"
 msgstr "%1 px"
