@@ -88,8 +88,6 @@ public:
             entry->type = FileInfo::VideoType;
         } else if (mimeTypeName.startsWith(QStringLiteral("image/svg"))) {
             entry->type = FileInfo::VectorImageType;
-        } else if (mimeTypeName == QStringLiteral("image/gif")) {
-            entry->type = FileInfo::AnimatedImageType;
         } else if (mimeTypeName.startsWith(QStringLiteral("image/"))) {
             entry->type = FileInfo::RasterImageType;
         }
@@ -97,6 +95,10 @@ public:
         if (entry->type != FileInfo::VideoType) {
             QImageReader reader(source.toLocalFile());
             reader.setAutoTransform(true);
+
+            if (entry->type == FileInfo::RasterImageType && reader.supportsAnimation()) {
+                entry->type = FileInfo::AnimatedImageType;
+            }
 
             auto size = reader.size();
             if (size.isValid()) {
