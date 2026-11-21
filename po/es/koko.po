@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-07 12:31+0100\n"
+"PO-Revision-Date: 2026-11-19 13:41+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -2007,16 +2007,16 @@ msgstr "Todos los medios"
 #, kde-format
 msgctxt "@info: button's text"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Ocultar el panel lateral"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Show sidebar"
-msgstr ""
+msgstr "Mostrar el panel lateral"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Ocultar el panel lateral"

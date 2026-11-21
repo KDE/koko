@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-19 09:41+0100\n"
+"PO-Revision-Date: 2026-11-20 09:18+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -995,13 +995,13 @@ msgstr "Inverteix els elements multimèdia seleccionats"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "Mostra els noms de fitxers"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "Commuta la visibilitat dels noms de fitxers"
 
 #: qml/ActionCollection.qml:48
 #, kde-format

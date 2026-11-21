@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-19 14:49+0200\n"
+"PO-Revision-Date: 2026-11-20 08:16+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1001,13 +1001,13 @@ msgstr "Інвертувати позначені мультимедійні д�
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "Показувати назви файлів"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "Увімкнути або вимкнути показ назв файлів"
 
 #: qml/ActionCollection.qml:48
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-07 11:04+0100\n"
+"PO-Revision-Date: 2026-11-21 00:44+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -996,13 +996,13 @@ msgstr "Obrátit výběr vybraných médií"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "Zobrazit názvy souborů"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "Zobrazit/skrýt názvy souborů"
 
 #: qml/ActionCollection.qml:48
 #, kde-format
@@ -2017,19 +2017,19 @@ msgstr "Všechny média"
 #, kde-format
 msgctxt "@info: button's text"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Skrýt postranní panel"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Show sidebar"
-msgstr ""
+msgstr "Zobrazit postranní panel"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "Skrýt postranní panel"
 
 #~ msgctxt "@info:tooltip, %1 is a size in pixels"
 #~ msgid "%1 px"

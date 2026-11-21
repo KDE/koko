@@ -993,13 +993,13 @@ msgstr "Zdielať vybraté médiá"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "Zobraziť názvy súborov"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "Prepnúť viditeľnosť názvov súborov"
 
 #: qml/ActionCollection.qml:48
 #, kde-format

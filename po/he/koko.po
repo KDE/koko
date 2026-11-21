@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-07 19:38+0200\n"
+"PO-Revision-Date: 2026-11-20 10:32+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -996,13 +996,13 @@ msgstr "היפוך בחירת המדיה הנבחרת"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "הצגת שמות קבצים"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "החלפת מצב הצגת שמות קבצים"
 
 #: qml/ActionCollection.qml:48
 #, kde-format
@@ -2024,19 +2024,19 @@ msgstr "כל המדיה"
 #, kde-format
 msgctxt "@info: button's text"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "הסתרת סרגל צד"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Show sidebar"
-msgstr ""
+msgstr "הצגת סרגל צד"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "הסתרת סרגל צד"
 
 #~ msgctxt "@info:tooltip, %1 is a size in pixels"
 #~ msgid "%1 px"
