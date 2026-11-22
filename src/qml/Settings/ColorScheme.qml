@@ -21,8 +21,8 @@ Kirigami.FormEntry {
         textRole: "display"
         valueRole: "display"
         model: ColorSchemer.model
+        currentIndex: ColorSchemer.indexForCurrentScheme()
 
-        Component.onCompleted: currentIndex = ColorSchemer.indexForCurrentScheme()
         onCurrentValueChanged: ColorSchemer.apply(currentIndex)
     }
 }
