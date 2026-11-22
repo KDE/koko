@@ -41,6 +41,7 @@ BaseImageDelegate {
         mipmap: true
 
         autoTransform: true
+        colorSpace: DisplayColorSpace.colorSpace
     }
 }
 
