@@ -692,20 +692,16 @@ msgid "Comment"
 msgstr "注释"
 
 #: main.cpp:66
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "<application>Photos</application>"
+#, kde-kuit-format
 msgctxt "@title"
 msgid "<application>Koko</application>"
-msgstr "<application>照片</application>"
+msgstr ""
 
 #: main.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgctxt "@title"
-#| msgid "Photos is an image viewer for your image collection."
+#, kde-kuit-format
 msgctxt "@title"
 msgid "Koko is an image viewer for your image collection."
-msgstr "Photos 是一款图像集合查看器。"
+msgstr ""
 
 #: main.cpp:70
 #, kde-kuit-format
@@ -1075,12 +1071,10 @@ msgid "Previous image"
 msgstr "上一张图像"
 
 #: qml/ActionCollection.qml:103
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Previous image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the previous image"
-msgstr "上一张图像"
+msgstr ""
 
 #: qml/ActionCollection.qml:109
 #, kde-format
@@ -1089,12 +1083,10 @@ msgid "Next image"
 msgstr "下一张图像"
 
 #: qml/ActionCollection.qml:110
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Share this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show the next image"
-msgstr "分享此图像"
+msgstr ""
 
 #: qml/ActionCollection.qml:117
 #, kde-format
@@ -1576,11 +1568,10 @@ msgid "See information about this image"
 msgstr "查看该图像的信息"
 
 #: qml/mediaview/MediaViewPage.qml:213
-#, fuzzy, kde-format
-#| msgid "Locations"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Actions"
-msgstr "位置"
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:364
 #, kde-format
@@ -1679,12 +1670,10 @@ msgid "Fit"
 msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:1034
-#, fuzzy, kde-format
-#| msgctxt "@label, annotation tool option"
-#| msgid "Fill:"
+#, kde-format
 msgctxt "@action:button Fill the view with the image, cropping it if necessary"
 msgid "Fill"
-msgstr "填充："
+msgstr ""
 
 #: qml/mediaview/MediaViewPage.qml:1276 qml/Settings/GeneralConfigPage.qml:255
 #, kde-format
@@ -2015,19 +2004,3 @@ msgstr ""
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
 msgstr ""
-
-#~ msgctxt "@info:tooltip, %1 is a size in pixels"
-#~ msgid "%1 px"
-#~ msgstr "%1 像素"
-
-#~ msgctxt "@action:button Open settings dialog"
-#~ msgid "Settings"
-#~ msgstr "设置"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Enter Full Screen"
-#~ msgstr "进入全屏"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Exit Full Screen"
-#~ msgstr "退出全屏"
