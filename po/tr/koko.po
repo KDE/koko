@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-20 17:09+0300\n"
+"PO-Revision-Date: 2026-11-23 18:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1912,7 +1912,7 @@ msgstr "Tema tarafından belirtilen arka plan rengini kullan"
 #, kde-format
 msgctxt "@option:radio As in, background color"
 msgid "Theme default"
-msgstr "Tema öntanımlısı"
+msgstr "Tema varsayılanı"
 
 #: qml/Settings/GeneralConfigPage.qml:195
 #, kde-format
