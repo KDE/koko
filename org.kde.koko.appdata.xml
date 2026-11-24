@@ -485,7 +485,7 @@ SPDX-FileCopyrightText: 2018 Aleix Pol <aleixpol@kde.org>
           <li xml:lang="ru">Изображения меньше области просмотра по умолчанию увеличиваются до её размеров</li>
           <li xml:lang="sk">Obrázky menšie ako zobrazovacia plocha sa predvolene zväčšia, aby ju vyplnili</li>
           <li xml:lang="sl">Slike, ki so manjše od vidnega polja, se privzeto povečajo, da se vanj prilegajo</li>
-          <li xml:lang="tr">Görüş alanından daha küçük görseller, öntanımlı olarak görünüme göre ölçeklenirler.</li>
+          <li xml:lang="tr">Görüş alanından daha küçük görseller, varsayılan olarak görünüme göre ölçeklenirler.</li>
           <li xml:lang="uk">Зображення, менші за область перегляду, типово масштабуються так, щоб уміститися у  ній</li>
           <li xml:lang="zh-TW">小於檢視埠的圖片預設會放大以符合顯示</li>
           <li>You can independently scroll the thumbnail strip</li>
