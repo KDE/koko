@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-19 09:41+0100\n"
+"PO-Revision-Date: 2026-11-20 09:18+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -511,13 +511,13 @@ msgstr "Ajusta els colors"
 #, kde-format
 msgctxt "@label:slider"
 msgid "Brightness:"
-msgstr "Brillantor:"
+msgstr "Lluminositat:"
 
 #: editor/EditorView.qml:735
 #, kde-format
 msgctxt "@info:tooltip color brightness spinbox"
 msgid "Brightness"
-msgstr "Brillantor"
+msgstr "Lluminositat"
 
 #: editor/EditorView.qml:766
 #, kde-format
@@ -994,13 +994,13 @@ msgstr "Invertix els elements multimèdia seleccionats"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "Mostra els noms de fitxer"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "Canvia la visibilitat dels noms de fitxer"
 
 #: qml/ActionCollection.qml:48
 #, kde-format

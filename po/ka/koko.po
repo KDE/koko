@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: koko\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-20 01:07+0000\n"
-"PO-Revision-Date: 2026-11-07 05:10+0100\n"
+"PO-Revision-Date: 2026-11-25 13:55+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -990,13 +990,13 @@ msgstr "მონიშნული მედიის ინვერსია"
 #, kde-format
 msgctxt "@action:intoolbar"
 msgid "Show File Names"
-msgstr ""
+msgstr "ფაილის სახელების ჩვენება"
 
 #: qml/ActionCollection.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Toggle the visibility of file names"
-msgstr ""
+msgstr "ფაილის სახელების ხილვადობის გადართვა"
 
 #: qml/ActionCollection.qml:48
 #, kde-format
@@ -2004,19 +2004,19 @@ msgstr "ყველა მედია"
 #, kde-format
 msgctxt "@info: button's text"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "გვერდითი ზოლის დამალვა"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Show sidebar"
-msgstr ""
+msgstr "გვერდითა ზოლის ჩვენება"
 
 #: qml/Sidebar.qml:361
 #, kde-format
 msgctxt "@info: tooltip"
 msgid "Hide sidebar"
-msgstr ""
+msgstr "გვერდითი ზოლის დამალვა"
 
 #~ msgctxt "@info:tooltip, %1 is a size in pixels"
 #~ msgid "%1 px"
